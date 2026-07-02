@@ -2,7 +2,7 @@
 
 > A bilingual interface-journal mapping code, structure, and recursive learning through a cinematic web system.
 
-Romanian version: [README_RO.md](./README_RO.md)
+Romanian version: [README-RO.md](./README-RO.md)
 
 RO: *Digital Odyssey* este un portofoliu bilingv, experimental, construit la intersecția dintre documentație tehnică, jurnal de învățare și design de interfață cinematic.
 
@@ -33,7 +33,7 @@ Its visual language draws from command consoles, HUD structures, recursive bluep
 ```text
 DIGITAL-ODYSSEY/
 ├── README.md
-├── README_RO.md
+├── README-RO.md
 ├── JURNAL-EN.md
 ├── JURNAL-RO.md
 ├── en/
@@ -41,9 +41,64 @@ DIGITAL-ODYSSEY/
 │   ├── bibliography.html
 │   ├── recursive-blueprint.html
 │   ├── script.js
-│   └── style.css
+│   ├── styles.css
+│   ├── backend
+│       ├── api-log.html
+│       ├── ayth-security-log.html
+│       ├── backend-core-log.html
+│       ├── backend-language-log.html
+│       ├── deployment-log.html
+│       └── performance-log.html
+│   ├── data-bridge
+│       └── json-log.html
+│   ├── database
+│       ├── sql-log.html
+│       └── nosql-log.html
+│   ├── delivery
+│       ├── deployn=ment-pipeline-log.html
+│       ├── git-log.html
+│       └── github-log.html
+│   ├── frontend 
+│       ├── angular-log.html
+│       ├── css-log.html
+│       ├── html-log.html
+│       ├── javascript-log.html
+│       └── react-log.html
+│   ├── ux
+│       ├── accessibility-log.html
+│       └── ux-foundations-log.html
+|
 └── ro/
-    └── ...
+│   ├── index.html
+│   ├── bibliography.html
+│   ├── recursive-blueprint.html
+│   ├── script.js
+│   ├── styles.css
+│   ├── backend
+│       ├── api-log.html
+│       ├── ayth-security-log.html
+│       ├── backend-core-log.html
+│       ├── backend-language-log.html
+│       ├── deployment-log.html
+│       └── performance-log.html
+│   ├── data-bridge
+│       └── json-log.html
+│   ├── database
+│       ├── sql-log.html
+│       └── nosql-log.html
+│   ├── delivery
+│       ├── deployn=ment-pipeline-log.html
+│       ├── git-log.html
+│       └── github-log.html
+│   ├── frontend 
+│       ├── angular-log.html
+│       ├── css-log.html
+│       ├── html-log.html
+│       ├── javascript-log.html
+│       └── react-log.html
+│   ├── ux
+│       ├── accessibility-log.html
+│       └── ux-foundations-log.html
 ```
 
 ## Current Scope
