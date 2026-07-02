@@ -31,7 +31,7 @@ Limbajul său vizual se inspiră din console de comandă, structuri HUD, bluepri
 ```text
 DIGITAL-ODYSSEY/
 ├── README.md
-├── README_RO.md
+├── README-RO.md
 ├── JURNAL-EN.md
 ├── JURNAL-RO.md
 ├── en/
