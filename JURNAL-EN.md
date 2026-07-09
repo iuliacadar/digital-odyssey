@@ -109,3 +109,42 @@ At the same time, I started strengthening the navigation and interactivity mecha
 Another important step was placing the project firmly in a documentation-driven register. The journals, bibliography, and recursive-blueprint page are not mere additions; they are the tools through which the project becomes explainable from the inside. In this way, `Digital Odyssey` does not only present results, but also shows the mechanism of its own construction, which strengthens its pedagogical and portfolio value.
 
 At this point, the direction is clear: the project is advancing as a coherent ecosystem for learning, documentation, and presentation. The next natural steps are final structural refinement, journal stabilization, completion of the technical implementation, and maintaining a balanced relationship between atmosphere, rigor, and readability.
+
+---
+
+# DAY 03 - 
+
+# 10 ideal commits — 09.07.2026
+
+This plan proposes a clear and professional sequence for the first 10 commits of `Digital Odyssey`, so that the GitHub history looks coherent, readable, and well structured.
+
+1. `chore: initialize Digital Odyssey repository structure`
+   - The foundational commit for the initial repository skeleton, directories, main files, and the overall architectural separation.
+
+2. `docs: add core README and project overview`
+   - The introduction of the base documentation: project description, overall purpose, and the main orientation points.
+
+3. `docs: add Romanian and English README variants`
+   - The clear separation of bilingual documentation and the establishment of the localization logic for presenting the project.
+
+4. `docs: document Manual_project as inspiration baseline`
+   - The introduction of the parent-project section and the explicit clarification of the relationship between `Manual_project` and `Digital Odyssey`.
+
+5. `docs: add DAY 00 journal baseline entry`
+   - The journal entry that fixes the conceptual, stylistic, technical, and didactic foundation of the project.
+
+6. `docs: add DAY 01 prolegomena entry`
+   - The introduction of the project’s statement of intent and the formulation of its three main pillars.
+
+7. `docs: add DAY 02 first implementation notes`
+   - The first entry marking the transition from concept to actual implementation.
+
+8. `refactor: organize bilingual journal structure`
+   - The standardization of `JURNAL-RO.md` and `JURNAL-EN.md`, their headings, and their editorial order.
+
+9. `style: refine documentation language and GitHub presentation`
+   - The cleanup of phrasing, spacing, and stylistic consistency for a more professional GitHub presentation.
+
+10. `docs: add technical log for 09.07.2026`
+   - The addition of the journal entry for 09.07.2026, including the ideal commit plan and the new organizational directions.
+

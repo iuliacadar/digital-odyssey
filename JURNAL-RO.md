@@ -109,3 +109,44 @@ Pe partea vizuală, am fixat identitatea retro-futuristă a proiectului. Limbaju
 Un alt element important a fost așezarea proiectului în registrul său de documentare. Jurnalele, bibliografia și pagina recursive-blueprint nu sunt simple anexe, ci instrumente prin care proiectul devine explicabil din interior. În felul acesta, `Digital Odyssey` nu doar prezintă rezultate, ci arată și mecanismul propriei construcții, ceea ce îi întărește valoarea pedagogică și de portofoliu.
 
 În acest punct, direcția este clară: proiectul avansează ca ecosistem coerent de învățare, documentare și prezentare. Următoarele etape firești sunt rafinarea structurii finale, stabilizarea jurnalelor, completarea implementărilor tehnice și păstrarea unei relații echilibrate între atmosferă, rigoare și lizibilitate.
+
+---
+
+# DAY 3
+
+# 10 commituri ideale — 09.07.2026
+
+Acest plan propune o ordine clară și profesionistă a primelor 10 commituri pentru `Digital Odyssey`, astfel încât istoricul de pe GitHub să arate coerent, lizibil și bine structurat.
+
+## RO
+
+1. `chore: initialize Digital Odyssey repository structure`
+   - Commitul de bază pentru scheletul inițial al repo-ului, directoare, fișiere principale și separarea generală a arhitecturii.
+
+2. `docs: add core README and project overview`
+   - Introducerea documentației de bază: descrierea proiectului, scopul general și punctele principale de orientare.
+
+3. `docs: add Romanian and English README variants`
+   - Separarea clară a documentației bilingve și stabilirea logicii de localizare pentru prezentarea proiectului.
+
+4. `docs: document Manual_project as inspiration baseline`
+   - Introducerea secțiunii despre proiectul-mamă și explicitarea relației dintre `Manual_project` și `Digital Odyssey`.
+
+5. `docs: add DAY 00 journal baseline entry`
+   - Fixarea în jurnal a bazei conceptuale, stilistice, tehnice și didactice a proiectului.
+
+6. `docs: add DAY 01 prolegomena entry`
+   - Introducerea declarației de intenție a proiectului și formularea celor trei piloni principali.
+
+7. `docs: add DAY 02 first implementation notes`
+   - Prima intrare care marchează trecerea de la concepție la implementare efectivă.
+
+8. `refactor: organize bilingual journal structure`
+   - Uniformizarea fișierelor `JURNAL-RO.md` și `JURNAL-EN.md`, a heading-urilor și a ordinii editoriale.
+
+9. `style: refine documentation language and GitHub presentation`
+   - Curățarea formulărilor, a spațierilor și a consistenței stilistice pentru o prezentare mai profesională pe GitHub.
+
+10. `docs: add technical log for 09.07.2026`
+   - Adăugarea intrării de jurnal pentru ziua de 09.07.2026, inclusiv planul de commituri ideale și noile direcții de organizare.
+
