@@ -1,0 +1,31 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Declară documentul ca SVG și definește spațiul vectorial intern de 100 pe 100 unități -->
+
+  <!-- Desenează un cerc centrat în mijlocul suprafeței SVG -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#ff007f" stroke-width="6" />
+  <!-- cx="50" și cy="50" mută centrul cercului la mijlocul canvasului -->
+  <!-- r="45" stabilește raza cercului -->
+  <!-- fill="none" elimină umplerea, lăsând doar conturul -->
+  <!-- stroke="#ff007f" aplică o culoare roz neon conturului -->
+  <!-- stroke-width="6" setează grosimea conturului -->
+
+  <!-- Scrie litera D în interiorul cercului -->
+  <text
+    x="50"
+    y="65"
+    font-family="Arial, sans-serif"
+    font-size="50"
+    fill="#a7f3d0"
+    text-anchor="middle"
+    font-weight="bold"
+  >D</text>
+  <!-- x="50" poziționează textul pe axa orizontală, în centru -->
+  <!-- y="65" coboară litera pe axa verticală pentru a părea centrată optic -->
+  <!-- font-family="Arial, sans-serif" alege fontul principal și unul de rezervă -->
+  <!-- font-size="50" controlează dimensiunea literei -->
+  <!-- fill="#a7f3d0" colorează litera într-un verde mentă luminos -->
+  <!-- text-anchor="middle" aliniază textul după centru față de coordonata x -->
+  <!-- font-weight="bold" face litera mai groasă și mai vizibilă -->
+</svg>
+<!-- Închide documentul SVG -->

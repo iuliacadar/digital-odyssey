@@ -1,0 +1,106 @@
+<!-- @bridge:
+  Legenda comentariilor pentru acest proiect se află în ./docs/legend-ro.md.
+  O țin într-un fișier separat ca să pot păstra HTML-ul curat, iar explicațiile lungi
+  să rămână ușor de actualizat într-un singur loc.
+-->
+<!-- @reason:
+  Acest document este pagina principală în limba română a proiectului meu.
+  Comentariile din acest fișier urmează aceeași legendă de etichete ca restul proiectului,
+  pentru ca structura să rămână consecventă și ușor de citit.
+-->
+
+<!doctype html>
+<!-- @block:
+  Declar tipul documentului ca HTML5.
+  Browserul folosește această instrucțiune ca să interpreteze pagina în modul modern.
+-->
+
+<html lang="ro">
+  <!-- @block:
+    Elementul rădăcină al documentului.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
+    Asta ajută accesibilitatea, motoarele de căutare și instrumentele de procesare automată.
+  -->
+  <head>
+    <!-- @block:
+      <head> conține metadatele documentului.
+      Aici nu pun conținutul principal al paginii, ci informațiile de care browserul
+      are nevoie pentru a înțelege, a pregăti și a lega resursele paginii.
+    -->
+
+    <meta charset="UTF-8" />
+    <!-- @meta:
+      Setez codarea caracterelor la UTF-8.
+      Astfel, diacriticele, simbolurile speciale și caracterele internaționale sunt afișate corect.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      Această instrucțiune este istoric legată de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are o utilitate redusă, dar o păstrez aici dacă vreau să mențin
+      structura clasică a unui head de bază.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      Configurez viewport-ul pentru afișare responsive.
+      width=device-width aliniază lățimea paginii la lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
+    -->
+
+    <title>D::0dy55ey | Cartografierea Frontierelor Digitale</title>
+    <!-- @meta:
+      Titlul paginii.
+      Îl văd în tab-ul browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
+    -->
+    <meta
+      name="description"
+      content="Jurnalul unei călătorii prin peisajul logic al codului. O explorare cosmică a structurilor HTML, a esteticii CSS, a interactivității JavaScript și a arhitecturii datelor SQL."
+    />
+    <!-- @meta:
+      Meta-descrierea paginii.
+      O folosesc ca rezumat scurt al conținutului; nu este conținut vizibil direct în pagină,
+      dar poate fi folosită de motoarele de căutare ca text descriptiv.
+    -->
+
+    <meta name="theme-color" content="#0a0b1e" />
+    <!-- @theme:
+      Setez culoarea temei browserului pe unele dispozitive mobile.
+      Aleg nuanța #0a0b1e pentru a continua atmosfera vizuală a proiectului meu.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <!-- @path:
+      Leagă faviconul paginii.
+      ./ înseamnă "folderul curent", deci browserul caută favicon.svg în același folder
+      în care se află acest index.html.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      Inițiez din timp conexiunea către serverul de fonturi.
+      Scopul este să reduc întârzierea la încărcarea resurselor externe.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      Preconectez și domeniul de unde vor veni fișierele efective ale fonturilor.
+      crossorigin este necesar pentru resurse externe servite de pe alt origin.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      Încarc fontul Space Grotesk din Google Fonts.
+      display=swap cere browserului să afișeze temporar un font de rezervă până când fontul final se încarcă.
+    -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- @path:
+      Leg foaia de stil locală a versiunii românești.
+      Pentru că acest fișier index.html este în folderul ro/, browserul caută style.css tot în ro/.
+    -->
+  </head>
+</html>

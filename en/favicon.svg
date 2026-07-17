@@ -1,0 +1,31 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Declares the file as SVG and defines an internal 100 by 100 coordinate space -->
+
+  <!-- Draws a circle centered in the middle of the SVG area -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#ff007f" stroke-width="6" />
+  <!-- cx="50" and cy="50" place the circle center in the middle of the canvas -->
+  <!-- r="45" sets the circle radius -->
+  <!-- fill="none" removes the interior fill and keeps only the outline -->
+  <!-- stroke="#ff007f" applies a neon pink outline color -->
+  <!-- stroke-width="6" sets the thickness of the outline -->
+
+  <!-- Writes the letter D inside the circle -->
+  <text
+    x="50"
+    y="65"
+    font-family="Arial, sans-serif"
+    font-size="50"
+    fill="#a7f3d0"
+    text-anchor="middle"
+    font-weight="bold"
+  >D</text>
+  <!-- x="50" positions the text horizontally in the center -->
+  <!-- y="65" lowers the letter vertically so it appears optically centered -->
+  <!-- font-family="Arial, sans-serif" chooses the main font and a fallback -->
+  <!-- font-size="50" controls the letter size -->
+  <!-- fill="#a7f3d0" colors the letter with a bright mint green -->
+  <!-- text-anchor="middle" centers the text around the x coordinate -->
+  <!-- font-weight="bold" makes the letter thicker and more visible -->
+</svg>
+<!-- Closes the SVG document -->
