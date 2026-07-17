@@ -387,3 +387,111 @@ I edited the files locally, staged them, created a commit with a descriptive mes
 ## Why this matters
 
 Using the correct terms helps keep the workflow precise and professional. “Upload” is fine as a general expression, but in Git the exact sequence is staging, committing, and pushing.
+
+---
+
+# DAY 08 — Final architecture of the volumes
+
+I reviewed the full structure of the volumes, and in its current form it is coherent from a didactic point of view. The chapter division does not follow the same logic in every volume, but that difference is justified: each domain has its own learning structure, and the project architecture should reflect that rather than forcing artificial uniformity.
+
+In `Digital Odyssey`, the frontend volume is organized around foundational languages because the learning path there is linear and easy to follow: first structure, then style, then behavior. The database volume is split between `sql` and `nosql` because the difference between those paradigms is conceptual and methodological, not merely technical. The backend volume, by contrast, follows a different logic and should be read through system components, flows, and responsibilities rather than as a simple list of languages.
+
+## Frontend
+
+The `frontend` volume is designed as an entry point into web development, where each language has a distinct and easy-to-separate role. HTML builds structure, CSS shapes the visual form, JavaScript introduces logic and interactivity, and frameworks are treated as natural extensions of that core.
+
+### Final frontend chapters
+
+- `html-log`
+- `css-log`
+- `javascript-log`
+- `react-log`
+- `angular-log`
+
+### Why this split
+
+This structure works well for learning because it follows the natural order of building an interface. I start with what is most stable and easiest to understand, then add style, then behavior, and finally extend into frameworks. React and Angular are not placed outside JavaScript as if they belonged to a different world; instead, they appear as branches of the same logic, which preserves didactic coherence and reduces unnecessary fragmentation.
+
+## Database
+
+The `database` volume is organized around the two major conceptual families of data management: relational and non-relational. This is better than organizing it around a single tool because it helps you understand the underlying way of thinking behind each database type, not just the syntax.
+
+### Final database chapters
+
+- `sql-log`
+- `nosql-log`
+
+### Why this split
+
+Here the logic is binary and very clear: SQL means structure, relationships, queries, and consistency, while NoSQL means flexibility, alternative models, and a different way of thinking about persistence. For learning, this separation is highly effective because it contrasts two fundamental paradigms, not just two technologies. As a result, the volume becomes more than a syntax list; it becomes a lesson in different ways of organizing data.
+
+## Backend
+
+The `backend` volume should not be divided like the frontend, because backend development is not primarily learned as a sequence of languages but as a system of cooperating components. That is why the structure you now have is appropriate: it follows the essential functions of a backend, from core to API, authentication, architecture, documentation, testing, and deployment.
+
+### Final backend chapters
+
+- `backend-core-log`
+- `api-log`
+- `auth-security-log`
+- `backend-architecture-log`
+- `backend-language-log`
+- `middleware-log`
+- `testing-log`
+- `documentation-log`
+- `performance-log`
+- `deployment-log`
+
+### Why this split
+
+Backend has a systemic logic, not a “chain of languages” logic. In practice, a good backend is understood through questions such as: how does the request enter, who validates it, how is it processed, where does it connect to data, how is it documented, how is it tested, and how is it delivered. For that reason, backend chapters should reflect the request flow and the internal organization of the server, not just the tools used to implement it.
+
+`backend-core-log` establishes the working base and the system core. `api-log` covers how functionality is exposed. `auth-security-log` addresses security and access control. `backend-architecture-log` explains internal organization and the relationships between components. `backend-language-log` makes sense as a support area, but not as the central organizing principle. `middleware-log` and `testing-log` show how requests move and how system behavior is verified. `documentation-log` preserves the project’s explainability, `performance-log` covers optimization, and `deployment-log` closes the path through publication and delivery.
+
+## Delivery
+
+The `delivery` volume is separate from `backend`, and that is a good decision. Here the emphasis is no longer on building server-side logic, but on the process of delivery, publication, and verification of the project history.
+
+### Final delivery chapters
+
+- `deployment-pipeline-log`
+- `git-log`
+- `github-log`
+
+### Why this split
+
+This volume should show how the project moves from a working state to a published state. Git documents version control, GitHub documents the public repository and final synchronization, and the deployment pipeline shows the full delivery path. This separation is didactic because it explains not only what happened, but also the order in which it happened.
+
+## UX
+
+The `ux` volume is correctly separated from frontend, because UX does not mean only “how the page looks,” but how it is used, navigated, and understood. Here the learning path should focus on accessibility, flow, clarity, and user experience.
+
+### Final UX chapters
+
+- `accessibility-log`
+- `ux-foundations-log`
+
+### Why this split
+
+This structure works because it starts with the basic principles of user experience and then moves toward accessibility as a concrete and ethical requirement. UX should not be treated as a decorative appendix to frontend, but as a domain with its own logic, where perception, navigation, and cognitive comfort matter.
+
+## Data bridge
+
+The `data-bridge` volume remains a connecting space between interfaces and data systems. It is useful precisely because it does not duplicate frontend or copy database; instead, it explains the bridge between them.
+
+### Final data bridge chapters
+
+- `json-log`
+
+### Why this split
+
+JSON is a data interchange format and it makes sense to keep it as a bridge volume rather than scattering it across other areas. Here the relationship between data, structure, and transfer becomes very clear, which makes it a small but conceptually important volume.
+
+## Architectural conclusion
+
+In its current form, the volume structure is not just acceptable; it is didactically strong. Frontend is organized around languages and construction steps, database around persistence paradigms, backend around components and responsibilities, delivery around the publication process, and UX around experience and accessibility. This differentiation is correct because each domain has its own way of being learned and explained.
+
+The final order of the volumes in `index.html` should preserve this conceptual progression: first interface foundations, then data, then server logic, then experience, then delivery. In that way, the reader moves naturally from visible construction to infrastructure, from infrastructure to process, and from process to publication.
+
+---
+
