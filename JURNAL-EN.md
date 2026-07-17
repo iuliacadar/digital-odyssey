@@ -15,11 +15,13 @@ The source of inspiration is not reduced to a single visual reference, but comes
 This network of influences explains why the project has both a conceptual and an atmospheric dimension. It does not only aim to organize content, but to build a reading and navigation experience in which scientific, aesthetic, and cultural ideas meet inside a single architecture.
 
 What the source represents:
+
 - A stylistic and narrative starting point.
 - A technical base on which the new version is built.
 - A didactic reference for how knowledge is organized and transmitted.
 
 What `Digital Odyssey` adds:
+
 - A clearer and more scalable architecture.
 - A coherent bilingual presentation.
 - A stricter relationship between atmosphere, content, and structure.
@@ -51,6 +53,7 @@ The project is already conceived as a bilingual system, with a clear intention t
 At this point, the project already has a strong internal documentation layer, including implementation summaries, a technical glossary, bibliography, and journal entries that record decisions, bug fixes, optimizations, and future steps. All of this shows that `Digital Odyssey` is not only an interface, but also a process archive and a pedagogical instrument.
 
 Based on the current stage, the next natural steps are:
+
 - consolidating the final repository structure.
 - clearly separating core pages, documentation, and journals.
 - refining `index.html` as the main map.
@@ -84,6 +87,7 @@ This choice also separates the conceptual name from the project’s visual ident
 In short, this day establishes the frame within which the project can grow: identity, direction, structure, bilingualism, and method. It does not only describe the beginning of the work; it also defines how that beginning should be read later.
 
 Based on this day, the next natural steps are:
+
 - stabilizing the repository structure.
 - organizing documentation in the root and in `docs/`.
 - continuing the bilingual model with editorial consistency.
@@ -110,6 +114,7 @@ Another important step was placing the project firmly in a documentation-driven 
 At this point, the direction is clear: the project advances as a coherent ecosystem for learning, documentation, and presentation, where `index.html` commands the mother ship, the satellite modules fulfill their specific roles, and `recursive-blueprint.html` functions as a more autonomous explorer. The next natural steps are final structural refinement, journal stabilization, completion of the technical implementation, and maintaining a balanced relationship between atmosphere, rigor, and readability.
 
 Based on this day, the next natural steps are:
+
 - consolidating the final structure of the pages.
 - keeping the separation clear between modules and the command center.
 - preserving the special autonomy of the recursive page.
@@ -272,33 +277,43 @@ Through `<head>`, I set the page’s basic information, connect external files, 
 ### Important elements inside `<head>`
 
 #### `<title>`
+
 Sets the page title visible in the browser tab. It is one of the most important elements for identifying the page in bookmarks, windows, and search results.
 
 #### `<meta>`
+
 Specifies information about the document. Here I can define the character set, page description, mobile viewport instructions, browser theme color, and other useful metadata.
 
 #### `<link>`
+
 Connects the page to external files such as CSS stylesheets, the favicon, fonts, or other resources needed for rendering and presentation.
 
 #### `<style>`
+
 Allows CSS code to be added directly inside the page. I use it when I want quick local styling or when a page needs very specific rules without immediately relying on an external file.
 
 #### `<script>`
+
 Links to or contains JavaScript code. I use it for interactive logic, dynamic behavior, and features that appear after the page loads or during use.
 
 #### `<base>`
+
 Sets the base URL for relative links inside the document. I rarely use it, but it can be useful when I want all relative links to start from a fixed point.
 
 #### `<meta charset="UTF-8">`
+
 Defines the character set used by the document. In practice, UTF-8 is the standard and safest choice for diacritics and international characters.
 
 #### `<meta name="viewport">`
+
 Controls how the page adapts to different screens, especially on phones and tablets. It is essential for responsive design.
 
 #### `<meta name="description">`
+
 Provides a short description of the page. Search engines can use it, and it helps present the content clearly.
 
 #### `<meta name="theme-color">`
+
 Sets a suggested color for the browser interface, especially on mobile. It can tint the top bar or other browser UI elements, depending on platform support.
 
 ### How I use `<head>` in the project
@@ -332,3 +347,43 @@ The same logic applies to meta descriptions and titles: each page should reflect
 ## How I use `<head>`
 
 In `Digital Odyssey`, I treat `<head>` as a control and identity layer. Here I define the language, title, description, local files, and shared resources so that each page starts from a clear and predictable base. For bilingual pages, I mainly change the title and meta description, while the rest of the structure stays stable.
+
+---
+
+# DAY 07 — GitHub Workflow for Uploading Files
+
+This day documents the workflow I use to upload files to GitHub, using the correct Git terminology. In practice, I do not say only that I “uploaded” the files, but more precisely that I **added them to the repository, committed them, and pushed them to GitHub**.
+
+## Correct terms
+
+- **Repository / repo** = the project space on GitHub.
+- **Stage / add** = preparing files for commit.
+- **Commit** = saving a local version with a message.
+- **Push** = sending the commit from my computer to GitHub.
+- **Upload** = a general term; in the GitHub interface it appears as “Upload files” when I upload directly from the browser.
+
+## Standard steps
+
+1. I create or modify files locally, for example `.md`, `.html`, `.css`, or `.js`.
+2. I check what changed with `git status`.
+3. I add the files to staging with `git add .` or selectively.
+4. I create a commit with a clear and short message.
+5. I send the changes to GitHub with `git push`.
+6. I verify on GitHub that the files appeared correctly.
+
+## Example commands
+
+```bash
+git status
+git add .
+git commit -m "docs: update bilingual journal structure"
+git push
+```
+
+## How I write it in the journal
+
+I edited the files locally, staged them, created a commit with a descriptive message, and pushed the changes to GitHub. In Git terminology, this workflow means staging, committing, and pushing, not just uploading.
+
+## Why this matters
+
+Using the correct terms helps keep the workflow precise and professional. “Upload” is fine as a general expression, but in Git the exact sequence is staging, committing, and pushing.
