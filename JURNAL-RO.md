@@ -219,6 +219,12 @@ Această zi fixează convențiile de scriere a mesajelor de commit și apoi tras
 
 ## Rescrierea mesajelor existente
 
+În ziua a patra am lucrat la clarificarea modului în care denumesc commit-urile și la pașii necesari pentru rescrierea mesajului din commit-ul imediat anterior, atunci când formularea inițială nu era suficient de exactă. Am reținut că mesajul de commit trebuie să fie scurt, tehnic și consecvent cu tipul modificării, mai ales în cazul documentelor de proiect și al fișierelor de documentație bilingvă.
+
+Pentru commit-ul imediat anterior, procedura este simplă: mai întâi modific local mesajul cu `git commit --amend`, apoi salvez noul mesaj în editorul deschis de Git. După aceea, dacă commit-ul fusese deja împins pe repository-ul remote, trebuie să actualizez și istoricul de pe GitHub printr-un push forțat, preferabil cu `git push --force-with-lease`, ca să evit suprascrierea accidentală a muncii altcuiva.
+
+Am notat și că această operațiune se aplică doar cu atenție pe branch-uri deja publice. Dacă lucrez singură pe branch-ul respectiv, metoda este sigură și eficientă; dacă branch-ul este partajat, trebuie verificat foarte bine înainte de rescriere. În proiectul meu, acest lucru ajută mai ales când finalizez documente importante și vreau ca istoria commit-urilor să rămână curată, precisă și ușor de urmărit.
+
 Rescrierea mesajelor de commit deja făcute se face fără a schimba conținutul fișierelor, folosind `git rebase -i --root` și acțiunea `reword`.
 
 ## Pași urmați

@@ -219,6 +219,12 @@ This day establishes the conventions for writing commit messages and then the te
 
 ## Rewriting existing messages
 
+On the fourth day, I worked on clarifying how I name commits and on the steps required to rewrite the message of the immediately preceding commit when the original wording was not precise enough. I noted that a commit message should be short, technical, and consistent with the type of change, especially in the case of project documents and bilingual documentation files.
+
+For the immediately preceding commit, the procedure is simple: first, I change the message locally with `git commit --amend`, then I save the new message in the editor opened by Git. After that, if the commit had already been pushed to the remote repository, I also need to update the history on GitHub with a forced push, preferably using `git push --force-with-lease`, to avoid accidentally overwriting someone else’s work.
+
+I also noted that this operation should be used carefully on branches that are already public. If I am working alone on that branch, the method is safe and efficient; if the branch is shared, it must be checked very carefully before rewriting history. In my project, this is especially useful when I finish important documents and want the commit history to remain clean, precise, and easy to follow.
+
 Rewriting commit messages without changing file contents is done with `git rebase -i --root` and the `reword` action.
 
 ## Steps taken
