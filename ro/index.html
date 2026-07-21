@@ -1,12 +1,8 @@
 <!-- @bridge:
-  Legenda comentariilor pentru acest proiect se află în ./docs/legend-ro.md.
-  O țin într-un fișier separat ca să pot păstra HTML-ul curat, iar explicațiile lungi
-  să rămână ușor de actualizat într-un singur loc.
+  Legenda etichetelor comentariilor: ./docs/legend-ro.md.
 -->
 <!-- @reason:
   Acest document este pagina principală în limba română a proiectului meu.
-  Comentariile din acest fișier urmează aceeași legendă de etichete ca restul proiectului,
-  pentru ca structura să rămână consecventă și ușor de citit.
 -->
 
 <!doctype html>
@@ -25,7 +21,7 @@
     <!-- @block:
       <head> conține metadatele documentului.
       Aici nu pun conținutul principal al paginii, ci informațiile de care browserul
-      are nevoie pentru a înțelege, a pregăti și a lega resursele paginii.
+      are nevoie pentru a înțelege, a pregăți și a lega resursele paginii.
     -->
 
     <meta charset="UTF-8" />
@@ -53,6 +49,7 @@
       Titlul paginii.
       Îl văd în tab-ul browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
     -->
+
     <meta
       name="description"
       content="Jurnalul unei călătorii prin peisajul logic al codului. O explorare cosmică a structurilor HTML, a esteticii CSS, a interactivității JavaScript și a arhitecturii datelor SQL."
@@ -63,17 +60,63 @@
       dar poate fi folosită de motoarele de căutare ca text descriptiv.
     -->
 
+    <meta
+      name="keywords"
+      content="odisee digitală, frontend, html, css, javascript, sql, nosql, backend, json, ux, deployment, jurnal de învățare, portofoliu"
+    />
+    <!-- @meta:
+      Meta-tagul keywords listează temele principale ale proiectului.
+      Motoarele de căutare nu se mai bazează pe el pentru poziționare, dar rămâne
+      un rezumat util, auto-documentat, al scopului paginii și un exemplu didactic al tagului.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      Meta-tagul author declară cine a creat și întreține acest document.
+      Este un câmp standard de metadate care îl identifică pe căpitanul navei.
+    -->
+
     <meta name="theme-color" content="#0a0b1e" />
     <!-- @theme:
       Setez culoarea temei browserului pe unele dispozitive mobile.
       Aleg nuanța #0a0b1e pentru a continua atmosfera vizuală a proiectului meu.
     -->
 
+    <meta property="og:title" content="D::0dy55ey | Cartografierea Frontierelor Digitale" />
+    <!-- @meta:
+      Titlul Open Graph.
+      Când linkul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
+      acest text apare ca titlu al cardului în locul URL-ului brut.
+    -->
+
+    <meta
+      property="og:description"
+      content="Un jurnal bilingv al călătoriei prin peisajul logic al codului. O explorare cosmică a arhitecturilor frontend, backend, date și deployment."
+    />
+    <!-- @meta:
+      Descrierea Open Graph.
+      Este rezumatul însoțitor afișat sub titlul Open Graph pe cardurile distribuite.
+    -->
+
+    <meta property="og:background_color" content="#0a0b1e" />
+    <!-- @theme:
+      Culoarea de fundal Open Graph.
+      Unele suprafețe de distribuire o folosesc pentru a colora cardul cu paleta
+      deep-space a proiectului.
+    -->
+
+    <meta property="og:image" content="./favicon.svg" />
+    <!-- @path:
+      Imaginea Open Graph.
+      Este previzualizarea folosită pe cardurile distribuite. O îndrept spre faviconul
+      local ca pe un placeholder stabil, mereu disponibil, până există o captură dedicată.
+    -->
+
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <!-- @path:
       Leagă faviconul paginii.
       ./ înseamnă "folderul curent", deci browserul caută favicon.svg în același folder
-      în care se află acest index.html.
+      unde se află acest index.html.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
