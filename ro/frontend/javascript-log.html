@@ -1,0 +1,199 @@
+<!-- @bridge:
+  Legenda comentariilor: ./docs/legend-ro.md. Acest fișier face parte din modulul frontend al proiectului Digital Odyssey.
+-->
+<!-- @reason:
+  Acest document este un jurnal structurat de învățare pentru JavaScript. Înregistrează studiul conceptelor de bază, manipulării DOM-ului, gestionării evenimentelor și modelelor de comportament interactiv.
+-->
+
+<!doctype html>
+<!-- @block:
+  I declare the document type as HTML5.
+  The browser uses this instruction to interpret the page in modern standards mode.
+-->
+
+<html lang="ro">
+  <!-- @block:
+    The root element of the document.
+    The lang="ro" attribute declares that the main language of this page is Romanian.
+    This helps accessibility tools, search engines, and automated processing systems.
+  -->
+  <head>
+    <!-- @block:
+      The <head> contains the document metadata.
+      I do not place the main visible content here; instead, I keep the information
+      the browser needs in order to understand, prepare, and connect the page resources.
+    -->
+
+    <meta charset="UTF-8" />
+    <!-- @meta:
+      I set the character encoding to UTF-8.
+      This ensures that diacritics, special symbols, and international characters display correctly.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      This instruction is historically related to Internet Explorer compatibility.
+      In modern projects it has little practical use, but I keep it here if I want
+      to preserve the classic basic-head structure.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      I configure the viewport for responsive display.
+      width=device-width aligns the page width with the real screen width,
+      and initial-scale=1.0 starts without artificial zoom.
+    -->
+
+    <title>D::0dy55ey | Jurnal JavaScript</title>
+    <!-- @meta:
+      The page title.
+      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+    -->
+
+    <meta
+      name="description"
+      content="Un jurnal structurat care documentează studiul JavaScript-ului — concepte de bază, manipularea DOM-ului, evenimente, interactivitate și modele logice."
+    />
+    <!-- @meta:
+      The page description.
+      I use it as a short summary of the content; it is not directly visible in the page,
+      but search engines may use it as descriptive text.
+    -->
+
+    <meta
+      name="keywords"
+      content="javascript, dom, evenimente, interactivitate, modele logice, es6, frontend, odisee digitală"
+    />
+    <!-- @meta:
+      The keywords meta tag lists the main themes of the page.
+      Search engines no longer rank on it, but it stays a useful, self-documenting
+      summary of the page's scope and a teaching example of the tag itself.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      The author meta tag declares who created and maintains this document.
+      It is a standard metadata field that identifies the creator of the work.
+    -->
+
+    <meta name="theme-color" content="#0a0b1e" />
+    <!-- @theme:
+      I set the browser theme color on some mobile devices.
+      I choose #0a0b1e to keep the visual atmosphere consistent with the project's deep-space palette.
+    -->
+
+    <meta property="og:title" content="D::0dy55ey | Jurnal JavaScript" />
+    <!-- @meta:
+      Open Graph title.
+      When the page link is shared on social networks or portfolio sites,
+      this text appears as the card title instead of the raw URL.
+    -->
+
+    <meta
+      property="og:description"
+      content="Un jurnal structurat care documentează studiul JavaScript-ului — concepte de bază, manipularea DOM-ului, evenimente, interactivitate și modele logice."
+    />
+    <!-- @meta:
+      Open Graph description.
+      It is the companion summary shown under the Open Graph title on shared cards.
+      I keep it aligned with the meta description for consistency.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Open Graph type.
+      I declare this page as a website, the general type for standard HTML pages.
+      For journal entries, I could use "article" instead depending on the content nature.
+    -->
+
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/frontend/javascript-log.html" />
+    <!-- @meta:
+      Open Graph canonical URL.
+      When the page is shared, this tells platforms the exact, permanent address of this page.
+      It prevents confusion if the same content is accessible from multiple URLs.
+    -->
+
+    <meta property="og:locale" content="ro_RO" />
+    <!-- @meta:
+      Open Graph locale.
+      I set it to ro_RO for the Romanian version of the page.
+      This tells social platforms and aggregators the language and regional variant of the content.
+    -->
+
+    <meta property="og:site_name" content="Digital Odyssey" />
+    <!-- @meta:
+      Open Graph site name.
+      This is the overarching project name shown on social sharing cards,
+      so the audience knows which site the page belongs to.
+    -->
+
+    <meta property="og:background_color" content="#0a0b1e" />
+    <!-- @theme:
+      Open Graph background color.
+      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+    -->
+
+    <meta property="og:image" content="../favicon.svg" />
+    <!-- @path:
+      Open Graph image.
+      It is the preview picture used on shared cards. I point it at the favicon
+      in the corresponding language folder as a stable, always-available placeholder,
+      until a dedicated capture exists for each page.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Twitter card type.
+      I choose summary_large_image so that shared links on X/Twitter display
+      a large image preview alongside the title and description.
+    -->
+
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/frontend/javascript-log.html" />
+    <!-- @meta:
+      Canonical link.
+      I tell search engines that this URL is the authoritative version of the page.
+      This helps prevent duplicate-content issues and consolidates ranking signals.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Robots meta tag.
+      I allow search engines to index this page and follow its links,
+      which is the default and expected behavior for public content.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <!-- @path:
+      I link the page favicon.
+      The path is relative to the current file location.
+      The browser looks for favicon.svg in the appropriate folder.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      I start the connection to the font server early.
+      The goal is to reduce latency when loading external resources.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      I preconnect to the domain that serves the actual font files.
+      crossorigin is required for external resources served from another origin.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      I load the Space Grotesk font from Google Fonts.
+      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+    -->
+
+    <link rel="stylesheet" href="../style.css" />
+    <!-- @path:
+      I link the local stylesheet.
+      The path is relative to the current file location.
+    -->
+  </head>
+</html>

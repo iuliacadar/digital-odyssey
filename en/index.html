@@ -1,5 +1,5 @@
 <!-- @bridge:
-  The comment legend: ./docs/legend-en.md.
+  Comments legend: ./docs/legend-en.md
 -->
 <!-- @reason:
   This document is the English version of the project's main page.
@@ -111,6 +111,56 @@
       Open Graph image.
       It is the preview picture used on shared cards. I point it at the local favicon
       as a stable, always-available placeholder until a dedicated capture exists.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Open Graph type.
+      I declare this page as a website, which is the general type for standard HTML pages.
+      For journal entries, I could use "article" instead — but here "website" fits the
+      portfolio and hub role of this index page.
+    -->
+
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/index.html" />
+    <!-- @meta:
+      Open Graph canonical URL.
+      When the page is shared, this tells platforms the exact, permanent address of this page.
+      It prevents confusion if the same content is accessible from multiple URLs.
+    -->
+
+    <meta property="og:locale" content="en_US" />
+    <!-- @meta:
+      Open Graph locale.
+      I set it to en_US for the English version of the page.
+      This tells social platforms and aggregators the language and regional variant of the content.
+    -->
+
+    <meta property="og:site_name" content="Digital Odyssey" />
+    <!-- @meta:
+      Open Graph site name.
+      This is the overarching project name shown on social sharing cards,
+      so the audience knows which site the page belongs to.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Twitter card type.
+      I choose summary_large_image so that shared links on X/Twitter display
+      a large image preview alongside the title and description.
+    -->
+
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/index.html" />
+    <!-- @meta:
+      Canonical link.
+      I tell search engines that this URL is the authoritative version of the page.
+      This helps prevent duplicate-content issues and consolidates ranking signals.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Robots meta tag.
+      I allow search engines to index this page and follow its links,
+      which is the default and expected behavior for public content.
     -->
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
