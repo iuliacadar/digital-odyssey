@@ -113,6 +113,36 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - verify the favicon;
 - verify language-specific differences.
 
+---
+
+### 003 — Dedicated article/sector for frontend validation
+
+**Title:** Validation at the end of frontend chapters
+
+**Description:** Add a validation sector or daylog at the end of the chapters in the frontend volume, for HTML, CSS, and where relevant JavaScript. The section will record structure, syntax, compatibility, and best-practice checks, together with the tools used, including `.hintrc`.
+
+**Status:** Planned
+
+**Priority:** Medium
+
+**Phase:** After the main frontend chapters are stabilized
+
+**Why this idea exists:** Validation works as a closing stage of the study and completes the technical documentation of the chapter without becoming a separate volume.
+
+**Affected files:** `html-log.html`, `css-log.html`, `javascript-log.html`, `.hintrc`
+
+**Steps:**
+- add a validation sector at the end of the HTML chapter;
+- add a validation sector at the end of the CSS chapter;
+- add JS validation only where there is project-specific logic to verify;
+- record the validation tools and the main findings;
+- mention `.hintrc` as part of the verification setup.
+
+**Completion conditions:**
+- validation is integrated coherently into each chapter structure;
+- the section remains short, clear, and aligned with the backlog style;
+- `.hintrc` is documented or excluded in a justified way.
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

@@ -113,6 +113,36 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 ---
 
+### 003 — Articol/sector dedicat validării în frontend
+
+**Titlu:** Validare la finalul capitolelor frontend
+
+**Descriere:** Adăugarea unui sector sau daylog de validare la finalul capitolelor din volumul frontend, pentru HTML, CSS și, unde este relevant, JavaScript. Secțiunea va consemna verificările de structură, sintaxă, compatibilitate și bune practici, împreună cu instrumentele folosite, inclusiv `.hintrc`.
+
+**Status:** Planificat
+
+**Prioritate:** Medium
+
+**Fază:** După stabilizarea capitolelor principale din volumul frontend
+
+**De ce există această idee:** Validarea funcționează ca etapă de închidere a studiului și completează documentarea tehnică a capitolului, fără să devină volum separat.
+
+**Fișiere afectate:** `html-log.html`, `css-log.html`, `javascript-log.html`, `.hintrc`
+
+**Pași:**
+- adăugarea unui sector de validare la finalul capitolului HTML;
+- adăugarea unui sector de validare la finalul capitolului CSS;
+- adăugarea validării JS doar unde există logică proprie de verificat;
+- consemnarea instrumentelor de validare și a observațiilor principale;
+- menționarea fișierului `.hintrc` ca parte a setării de verificare.
+
+**Condiții de finalizare:**
+- validarea este integrată coerent în structura fiecărui capitol;
+- secțiunea rămâne scurtă, clară și aliniată cu stilul backlog-ului;
+- `.hintrc` este documentat sau exclus în mod justificat.
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
