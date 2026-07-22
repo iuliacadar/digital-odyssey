@@ -424,19 +424,26 @@
       </section>
     </main>
 
-    <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
-      (Will be completed in the footer injection phase)
-    -->
+    <footer class="footer">
+      <div class="external-comms">
+        <a href="bibliography.html" target="_blank" class="archive-link">
+          <span class="pulse-dot"></span>
+          Star Charts — Bibliography
+        </a>
+      </div>
+      <p>
+        SYS_ORBIT: COMMAND_DECK // STATUS:
+        <span class="telemetry-active">ONLINE</span>
+      </p>
+      <p>
+        COORDINATES: 46.7712° N, 23.6236° E // SYSTEM_TIME: 2026.07.22
+      </p>
+      <p class="copyright">
+        &copy; 2026 | Digital Odyssey by
+        <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+      </p>
+    </footer>
 
-    <!-- @path:
-      I link the JavaScript file that activates interactivity:
-      navbar hide/show on scroll, IntersectionObserver for section tracking,
-      typing animation reset, and localStorage note-saving.
-    -->
     <script src="./script.js"></script>
-    <!-- @reason:
-      Placing <script> just before </body> ensures the DOM is fully parsed
-      before the script runs, avoiding null-reference errors.
-    -->
   </body>
 </html>
