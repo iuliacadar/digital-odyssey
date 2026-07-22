@@ -28,6 +28,14 @@ What `Digital Odyssey` adds:
 - A more professional form, cleaner and better suited for publication.
 - More thematic volumes with distinct roles in the learning path.
 
+### Technical lineage from Manual_project
+
+The parent project already contained significant technical achievements that I carried forward and refined. The most visible of these is the **3D polyhedral reactor mesh** — an icosahedron built from 20 triangular faces using pure CSS `clip-path` and positioned on spherical 3D coordinates. In Manual_project, this system suffered from a critical GPU bottleneck: 20 overlapping vector triangles combined with heavy `filter: drop-shadow()` properties caused a massive repaint flood that froze browser instances and triggered CPU thermal throttling. The engineering solution was to replace heavy graphic blurring filters with strict `inset` and `box-shadow` metrics and to inject `will-change: transform, opacity` hints, forcing the browser to isolate the 3D meshes onto dedicated GPU compositing layers. This reduced overhead to near zero and locked the animation at a stable 60 FPS.
+
+The parent project also pioneered the **Dual-Isolate-Scroll** layout for desktop: a rigid CSS Grid where the sidebar navigation and content area each had their own independent scroll flow, while mobile used a tactile horizontal console. The **Intersection Observer API** was configured with precise root margins (`-20% 0px -70% 0px`) to detect article visibility and synchronise the active state in the sidebar. Six coordinated JavaScript mechanisms governed the cockpit: navbar hide/show on scroll direction, active-section tracking, terminal typing animation retriggering, desktop radar tracking, anti-displacement anchor interception, and mobile HUD auto-scroll.
+
+The bilingual strategy was already present in Manual_project through separate `style-en.css` and `style-ro.css` files, providing localized CSS overrides without breaking the layout. The recursive page concept — `recursive-blueprint.html` — was designed as a split-screen terminal that dynamically fetches and displays the project's own source code, turning the codebase into a self-documenting teaching instrument. This is where the idea of a "project within the project" becomes most visible.
+
 The current stage of the project is that of an interactive technical journal and documentation platform, with a clear intention to grow into a public-facing form. The materials show that the project does not aim only to display the final result, but also to expose the process, iteration, and structural decisions. That gives it both pedagogical value and portfolio value.
 
 The name `Digital Odyssey` points toward cosmic navigation, cockpit systems, telemetry, and digital exploration. The visual atmosphere is built around references such as `Solaris`, CRT screens, translucent HUD layers, and neon accents, integrated into a technical narrative language. Here, the interface is not just a presentation layer, but also a tool for orientation and meaning.
@@ -66,7 +74,9 @@ Based on the current stage, the next natural steps are:
 
 This entry establishes the conceptual frame of the `Digital Odyssey` project and marks the transition from `Manual_project` to the refined, bilingual, portfolio-oriented version. It is not just a starting note, but a statement of intent: the project must function at once as a technical system, a didactic object, and a presentation form with its own identity.
 
-The project rests on three main pillars. The first is the stylistic pillar, grounded in humanistic culture, literary atmosphere, artistic imagination, and attention to form and meaning. The second is the technical pillar, built on computer science, logic, mathematics, web architecture, and implementation discipline. The third is the didactic pillar, focused on pedagogy, learning theory, and the clear transfer of knowledge.
+The project rests on three main pillars, which reflect both my academic formation and my learning goals. The first is the **technical pillar**, built on computer science, logic, mathematics, web architecture, and implementation discipline — the craft of writing code that works, that is clean, and that follows standards. The second is the **didactic pillar**, focused on pedagogy, learning theory, and the clear transfer of knowledge — the craft of making code explainable from within, so that anyone who reads the source files can also learn from them. The third is the **narrative pillar**, grounded in humanistic culture, literary atmosphere, artistic imagination, and attention to form and meaning — the craft of turning a technical interface into a space that tells a story.
+
+My background in philosophy and my master's degree in American literature — with a focus on weird tales and the philosophy of narrative space — are not separate from this project. They are directly embedded in its architecture. The idea that a codebase can be read as a text, that an interface can function as a narrative space, and that learning to program is a form of exploration and discovery all come from that formation. The cosmic navigation metaphor, the command deck interface, the telemetry language, and the recursive self-documentation are not decorative flourishes: they are the practical expression of a conviction that technology and the humanities belong in the same conversation.
 
 Within the project architecture, `index.html` remains the central page, the equivalent of the command deck. The rest of the pages — logs, blueprint, bibliography, and manifesto — are organized modularly without breaking the clarity of the whole. The manifesto is kept separate from the README, and the bilingual journal functions as a living archive of the process rather than a simple commit list.
 
@@ -108,6 +118,15 @@ I also continued refining the semantic hierarchy. The project keeps a strict log
 On the visual side, I fixed the retro-futurist identity of the project. The color language, CRT scanlines, glassmorphism effects, inner shadows, and an atmosphere inspired by the philosophy of exploration, astronomy, astrophysics, literature, art, photography, music, design, and cinema define not just a style, but a distinctive reading and navigation space. `Solaris` remains an important reference point, but only one among the many influences that shape the project’s contemplative and technical tone.
 
 At the same time, I began strengthening the navigation and interactivity mechanisms. The command deck model, sticky menu, smooth scrolling, active-section tracking, and sidebar synchronization create an interface that does not let the user get lost in the content, but guides them through it in a controlled way. This supports both the technical and the didactic side of the project.
+
+The JavaScript layer is built on six coordinated mechanisms, inherited and refined from Manual_project:
+
+1. **The Cockpit Visibility Shield** — monitors scroll direction and hides the navbar when scrolling down (immersion mode), bringing it back on a short upward scroll.
+2. **Log Accessibility Coupling** — manages click states on navigation links, ensuring the `.active` class switches correctly between modules.
+3. **Terminal Re-Trigger Engine** — an Intersection Observer that watches the mission status box; when an article enters visibility (over 30%), it resets and replays the typewriter animation from the start.
+4. **Desktop Radar Tracking** — the primary Intersection Observer for the sidebar. As the user scrolls through the journal, it detects which article is on screen and moves the `.active` class to the corresponding sidebar button automatically.
+5. **Anti-Displacement Desktop Engine** — intercepts anchor clicks on desktop, prevents the native browser jump that would pull the sidebar up, and executes a controlled `scrollTo` strictly inside the text container with a 100px air cushion under the HUD.
+6. **Mobile HUD Auto-Scroll** — when reading on mobile, detects the moment a day becomes active and automatically scrolls the HUD band horizontally, bringing the current capsule to the centre of the screen.
 
 Another important step was placing the project firmly in a documentation-driven register. The journals, bibliography, and `recursive-blueprint.html` are not mere additions; they are the tools through which the project becomes explainable from the inside. In the case of the recursive page, the tool becomes part of what is explained, because the page refers to itself and inspects its own components.
 
@@ -501,19 +520,73 @@ The final order of the volumes in `index.html` should preserve this conceptual p
 
 ---
 
-# DAY 09 — Validation, backlog, and head architecture
+# DAY 09 — Backlog, head architecture, and document validation
 
-I centralized the ideas that will be implemented in backlog documents, so that future intentions remain separated from the already stabilized structure of the project. The TODO list became a guiding register in which every proposal waits for its proper implementation moment, without disturbing the current architecture.
+This day brings together the structural decisions I made after centralizing the ideas that are not yet ready for implementation and after completing the technical foundation of all HTML documents in the project. The day is divided into clearly separated notes, each covering one of the essential aspects of this working stage.
 
-I then completed the `<head>` container for all HTML documents in the project. My goal was for every page to start from the same semantic and technical base, while differences would appear only where each page defines its own identity. The template from `en/index.html` became a working model for all the other pages.
+## 1. Backlog documents for future ideas
 
-I also fixed the folder-depth rule. In a project with many files and many layers, too much depth makes maintenance harder and quickly hides the real structure of the architecture. For that reason, I aimed for an organization in which resources remain predictable, clear, and easy to navigate.
+I created a clear separation between the stabilized architecture of the project and the ideas that are waiting for their implementation moment. Instead of letting future intentions accumulate inside the current structure and risk confusion, I compiled them into a backlog register — essentially a TODO list that keeps every proposal in its proper place. Each entry waits for a dedicated implementation cycle, without disturbing the existing work.
 
-At the HTML incipit level, I clarified the difference between `meta name="..."` and `meta property="og:..."`. The first category describes the page in a general sense, for interpretation in the ordinary web context, while the second is tied to Open Graph and to the way the page appears when shared in other digital spaces. I also noted the technical observation about `/>` and void tags, so that the distinction between HTML notation and its XHTML/XML reflections remains clear.
+This approach keeps two things in balance: the current architecture remains clean and predictable, while the development direction stays visible and organised. A backlog document is not a simple list of wishes, but a working tool through which I can plan, prioritise, and track what comes next without losing sight of what is already in place.
 
-I also kept the 1024-byte rule as a safety and compatibility threshold. For this reason, in serious projects, `meta charset` should almost always appear first inside `<head>`, without long comments before it. That order is not decorative; it is part of the stability of the document’s interpretation in the browser.
+## 2. Completing the `<head>` container for all HTML documents
 
-I also left a note about frontend validation. This is not just a formal check, but part of the project’s construction discipline, especially when I am tracking the consistency of HTML structure, CSS styling, and the technical elements tied to compatibility and best practices. Later, this area can become a separate sector or daylog, dedicated to validation proper.
+I completed the `<head>` container for every HTML document in the `digital-odyssey` project. The goal was for every page — whether it is a top-level page, a chapter log, or a support page — to start from the same semantic and technical base. The template I defined in `en/index.html` became the working model for all 52 remaining HTML pages.
+
+Each `<head>` now contains the full set of essential elements: character encoding, viewport configuration, title, meta description, keywords, author, theme colour, Open Graph metadata (title, description, type, URL, locale, site name, background colour, image), Twitter card type, canonical link, robots directive, favicon, font preconnections, and the local stylesheet link. Differences between pages appear only where each document defines its own identity — the title, the description, the keywords, and the specific file paths.
+
+This uniformity means that the entire project now shares a predictable starting point. No matter which page I open, the head block follows the same architecture, with comments annotated according to the legend tags (`@block`, `@meta`, `@path`, `@reason`, `@warning`, `@theme`).
+
+## 3. Folder depth rule
+
+I fixed a clear rule for the relative paths used inside each HTML file. In a project with many nested folders — such as `en/frontend/html-log.html` or `ro/backend/api-log.html` — maintaining correct paths is essential for the page to find its resources.
+
+The rule is simple but important:
+- Pages placed directly inside the language folder (`en/` or `ro/`) — such as `bibliography.html`, `recursive-blueprint.html`, and `transmission.html` — use `./` to reference `style.css`, `favicon.svg`, and `script.js`, because the resources are in the same folder.
+- Pages placed one level deeper, inside a chapter folder such as `frontend/`, `backend/`, `database/`, `data-bridge/`, `ux/`, or `delivery/` — use `../` to go up one level and reach the language folder where the resources live.
+
+This depth rule keeps the project organised and avoids broken references. It also follows the book metaphor I adopted for the architecture: each language folder is a volume, each subfolder is a chapter, and each log page is a section inside that chapter. Resources are stored at the volume level and are always accessible through a predictable relative path.
+
+## 4. The `<head>` template and the difference between `meta name` and `meta property`
+
+I consolidated the `<head>` template into a single, reusable structure. Every page in the project now uses this template, with only the language, title, description, keywords, and paths changed per file.
+
+### `meta name="..."` vs `meta property="og:..."`
+
+The difference between these two attribute patterns is conceptual and functional:
+
+- **`<meta name="...">`** is the standard HTML way to describe a page for ordinary web context. It tells the browser and search engines basic information about the document: `description`, `keywords`, `author`, `viewport`, `theme-color`, and `robots`. These are read in the normal browsing flow.
+
+- **`<meta property="og:...">`** belongs to the Open Graph protocol. It describes how the page should appear when it is shared in other digital spaces — social networks, messaging platforms, portfolio sites, or link previews. Properties such as `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:locale`, and `og:site_name` control the card that appears when someone shares the link outside the normal browsing context.
+
+In short, `name` is for the page itself; `property` is for how the page is represented elsewhere. Both are necessary in a serious, publication-ready project.
+
+### Void tags and the `/>` notation
+
+I also clarified the notation of void (self-closing) tags such as `<meta>`, `<link>`, `<br>`, and `<img>`. In HTML5, void tags do not need a closing slash. Writing `<meta charset="UTF-8">` is perfectly valid. The form `/>` — as in `<meta charset="UTF-8" />` — is inherited from XHTML and XML syntax, where every tag, including void ones, must be explicitly closed.
+
+In my project, I consistently use the `/>` form for void elements. This is a stylistic choice that keeps the notation uniform and makes the code recognisable across both HTML and XML contexts. The important thing is to be consistent: mixing `>` and `/>` inside the same document makes the code harder to read and maintain.
+
+## 5. The 1024‑byte rule and the position of `meta charset`
+
+The `meta charset` element defines the character encoding of the document. In practice, UTF-8 is the universal and safest choice, supporting diacritics, special symbols, and international characters without issues.
+
+The rule I noted — and applied — is that `meta charset` should be the very first element inside `<head>`, ideally within the first 1024 bytes of the document. This threshold is a compatibility and safety measure inherited from the HTML parsing specification: some browsers determine the character encoding by scanning only the first 1024 bytes of the file. If `meta charset` appears later or after long comments, the browser may misinterpret the content before reaching the encoding declaration.
+
+For this reason, in the project's `<head>` template, `meta charset` is placed immediately after the `<head>` opening tag, without any comment before it. The explanation follows after the element, not before it. This respects the encoding requirement while keeping the didactic comments that make the code explainable from within.
+
+## 6. Frontend validation
+
+I added a note about frontend validation as part of the project's construction discipline. Validation is not a bureaucratic check, but a technical step that verifies the consistency of HTML structure, CSS syntax, accessibility attributes, and the technical elements that affect compatibility and best practices.
+
+In the current stage, validation helps me track:
+- whether every HTML page respects the same semantic template;
+- whether the `<head>` elements are correctly ordered and complete;
+- whether the relative paths point to existing resources;
+- whether the bilingual pages mirror each other in structure.
+
+Later, this area can become a separate sector or daylog, dedicated to automated validation, linting, and quality checks. For now, it remains a manual note — but one that keeps the project aligned with its own rigour.
 
 ---
 

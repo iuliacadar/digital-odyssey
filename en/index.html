@@ -206,4 +206,237 @@
       Because this index.html file is inside the en/ folder, the browser looks for style.css in en/.
     -->
   </head>
+
+  <body>
+    <!-- @block:
+      The <body> contains all visible content rendered by the browser.
+      I place here the structural layout of the page: navigation, hero portal,
+      main content sections, footer, and the script that activates interactive behaviors.
+    -->
+
+    <!-- @block: PRIMARY NAVIGATION CONSOLE
+      This is the fixed top HUD cockpit that stays pinned to the viewport ceiling.
+      It houses the vessel logo (portside) and the teleport menu links (starboard).
+    -->
+    <nav class="navbar">
+      <!-- @block: VESSEL IDENTITY LOGO -->
+      <div class="logo"><a href="#hero-core-portal">Digital Odyssey</a></div>
+      <!-- @structure:
+        .logo anchors the vessel brand in the top-left corner.
+        The <a> link targets the hero anchor, giving the crew a quick reset button.
+      -->
+
+      <!-- @block: HUD TELEPORT MENU -->
+      <ul class="nav-links">
+        <!-- @block: Each <li> is a navigation terminal -->
+        <li><a href="#frontend-scape">FrontEnd</a></li>
+        <!-- @reason:
+          I map the first menu item to the frontend landscape section.
+          The hash (#) targets an element id further down the page.
+        -->
+        <li><a href="#database-void">DataBase</a></li>
+        <!-- @reason:
+          The second menu item maps to the database void section.
+        -->
+      </ul>
+    </nav>
+    <!-- @concept:
+      The navbar functions as a starship bridge console — always visible,
+      always ready to teleport the crew to a different deck.
+    -->
+
+    <!-- @block: HERO PORTAL — THE ARMILLARY REACTOR CORE
+      This is the main welcome array of the mothership.
+      It occupies 100% of the viewport height and projects the 3D quantum-plasma
+      polyhedron alongside the mission title and subtitle.
+    -->
+    <header class="hero">
+      <div id="hero-core-portal" class="armillary-reactor-core">
+        <!-- @block: QUANTUM PLASMA SPHERE
+          A 3D multifaceted polyhedron constructed from 20 individual face elements.
+          Each face is a <div> styled via CSS transforms to form a geodesic shape.
+        -->
+        <div class="quantum-plasma-sphere">
+          <!-- @structure:
+            Top-tier faces (t1–t5), upper-mid faces (u1–u5),
+            lower-mid faces (l1–l5), bottom-tier faces (b1–b5).
+            Each <div> is rotated and positioned in 3D space by CSS.
+          -->
+          <!-- TOP TIER -->
+          <div class="face face-t1"></div>
+          <div class="face face-t2"></div>
+          <div class="face face-t3"></div>
+          <div class="face face-t4"></div>
+          <div class="face face-t5"></div>
+          <!-- UPPER MID TIER -->
+          <div class="face face-u1"></div>
+          <div class="face face-u2"></div>
+          <div class="face face-u3"></div>
+          <div class="face face-u4"></div>
+          <div class="face face-u5"></div>
+          <!-- LOWER MID TIER -->
+          <div class="face face-l1"></div>
+          <div class="face face-l2"></div>
+          <div class="face face-l3"></div>
+          <div class="face face-l4"></div>
+          <div class="face face-l5"></div>
+          <!-- BOTTOM TIER -->
+          <div class="face face-b1"></div>
+          <div class="face face-b2"></div>
+          <div class="face face-b3"></div>
+          <div class="face face-b4"></div>
+          <div class="face face-b5"></div>
+        </div>
+        <!-- @concept:
+          The 20-face polyhedron represents a geodesic astrolabe — a cosmic
+          navigation instrument. Each face is a node in the learning matrix.
+        -->
+
+        <div class="armillary-band-container macro-wrapper">
+          <div class="astrolabe-metal-arc macro-arc"></div>
+          <h1 class="stenciled-metal-text">Mission Log: The Code Horizon</h1>
+          <!-- @reason:
+            The stenciled-metal-text class triggers a typing animation via CSS
+            keyframes: the title types itself letter by letter over 3 seconds.
+          -->
+        </div>
+
+        <div class="armillary-band-container micro-wrapper">
+          <div class="astrolabe-metal-arc micro-arc"></div>
+          <p class="stenciled-metal-text-sub">
+            Mapping the journey to the {front}end.
+          </p>
+          <!-- @reason:
+            The sub-title follows the master title with a 3-second delay.
+            It types itself over 4 seconds in a monospace font.
+          -->
+        </div>
+      </div>
+    </header>
+    <!-- @theme:
+      The hero portal uses a deep-space radial gradient, CRT scanline overlay,
+      and neon magenta/green accents to evoke a 1970s sci-fi cockpit aesthetic.
+    -->
+
+    <!-- @block: MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+      <!-- @reason:
+        The <main> element wraps the primary content sections.
+        It is the central data deck where all chapters and log entries reside.
+      -->
+
+      <!-- @block: FRONTEND LANDSCAPE SECTION -->
+      <section id="frontend-scape">
+        <!-- @structure:
+          Each <section> with an id serves as an anchor target for the navbar.
+          The section id matches the href in the navigation menu.
+        -->
+        <header class="category-header">
+          <h2>The Frontend Landscape</h2>
+          <!-- @theme:
+            h2 uses nebula-pink (#ff007f) with a pulsating neon glow animation
+            to signify the start of a major content sector.
+          -->
+          <p>Mapping the interface between the user and the digital void.</p>
+        </header>
+
+        <article id="html" class="log-entry">
+          <h3>HyperText Markup Language (HTML)</h3>
+          <p>
+            The foundational architecture. It defines the structural matter of
+            our digital universe — the skeleton upon which all style and behavior hang.
+          </p>
+          <a href="./frontend/html-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            Each article links to a dedicated log page inside the frontend/ subdirectory.
+            The archive-link class styles it as a CTA button with phosphor-green hover.
+          -->
+        </article>
+
+        <article id="css" class="log-entry">
+          <h3>Cascading Style Sheets (CSS)</h3>
+          <p>
+            The aesthetic spectrum. CSS governs the visual laws of our landscape —
+            color, layout, animation, and the emotional atmosphere of the interface.
+          </p>
+          <a href="./frontend/css-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="javascript" class="log-entry">
+          <h3>JavaScript (JS)</h3>
+          <p>
+            The spark of life. It introduces interactivity, logic, and real-time
+            behavior into the otherwise static structure of HTML and CSS.
+          </p>
+          <a href="./frontend/javascript-log.html" class="archive-link">Access Detailed Log</a>
+          <div class="js-annex">
+            <!-- @block: JS FRAMEWORK ANNEX
+              Sub-logs for framework-specific explorations.
+              These are marked as future-log for content that is planned but not yet written.
+            -->
+            <h4>Annex: JS Framework Expansion</h4>
+            <div id="react" class="sub-log future-log">
+              <h5>React.js</h5>
+              <p>Modular UI Library... [SIGNAL PENDING]</p>
+              <a href="./frontend/react-log.html" class="archive-link">Initialize Log</a>
+            </div>
+            <div id="angular" class="sub-log future-log">
+              <h5>Angular</h5>
+              <p>Full-scale Framework... [SIGNAL PENDING]</p>
+              <a href="./frontend/angular-log.html" class="archive-link">Initialize Log</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- @structure: COSMIC DIVIDER — visual laser incision between major sections -->
+      <hr class="cosmic-divider" />
+      <!-- @reason:
+        The <hr> element creates a thematic break. In this project it is styled
+        as a radial-gradient neon-pink laser line that fades at the edges.
+      -->
+
+      <!-- @block: DATABASE VOID SECTION -->
+      <section id="database-void">
+        <header class="category-header">
+          <h2>The Database Void</h2>
+          <p>Delving into the deep memory of the cosmos.</p>
+        </header>
+
+        <article id="sql" class="log-entry">
+          <h3>Structured Query Language (SQL)</h3>
+          <p>The language of order — relational databases, tables, queries, and the discipline of structured data.</p>
+          <div class="mission-status">
+            <p>Status: Expedition started (30 Days of SQL Challenge).</p>
+            <!-- @reason:
+              .mission-status uses a typing animation that re-triggers via IntersectionObserver
+              every time the element scrolls into view.
+            -->
+          </div>
+          <a href="../database/sql-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="nosql" class="log-entry future-log">
+          <h3>Not only SQL (NoSQL)</h3>
+          <p>The nebulous archives — document stores, key-value pairs, and flexible schema design.</p>
+          <a href="../database/nosql-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+      </section>
+    </main>
+
+    <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
+      (Will be completed in the footer injection phase)
+    -->
+
+    <!-- @path:
+      I link the JavaScript file that activates interactivity:
+      navbar hide/show on scroll, IntersectionObserver for section tracking,
+      typing animation reset, and localStorage note-saving.
+    -->
+    <script src="./script.js"></script>
+    <!-- @reason:
+      Placing <script> just before </body> ensures the DOM is fully parsed
+      before the script runs, avoiding null-reference errors.
+    -->
+  </body>
 </html>

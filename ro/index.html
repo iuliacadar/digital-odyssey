@@ -196,4 +196,143 @@
       Pentru că acest fișier index.html este în folderul ro/, browserul caută style.css tot în ro/.
     -->
   </head>
+
+  <body>
+    <!-- @block:
+      The <body> contains all visible content rendered by the browser.
+      I place here the structural layout of the page: navigation, hero portal,
+      main content sections, footer, and the script that activates interactive behaviors.
+    -->
+
+    <!-- @block: PRIMARY NAVIGATION CONSOLE -->
+    <nav class="navbar">
+      <div class="logo"><a href="#hero-core-portal">Digital Odyssey</a></div>
+      <ul class="nav-links">
+        <li><a href="#frontend-scape">FrontEnd</a></li>
+        <li><a href="#database-void">Baze de Date</a></li>
+      </ul>
+    </nav>
+
+    <!-- @block: HERO PORTAL — THE ARMILLARY REACTOR CORE -->
+    <header class="hero">
+      <div id="hero-core-portal" class="armillary-reactor-core">
+        <div class="quantum-plasma-sphere">
+          <!-- TOP TIER -->
+          <div class="face face-t1"></div>
+          <div class="face face-t2"></div>
+          <div class="face face-t3"></div>
+          <div class="face face-t4"></div>
+          <div class="face face-t5"></div>
+          <!-- UPPER MID TIER -->
+          <div class="face face-u1"></div>
+          <div class="face face-u2"></div>
+          <div class="face face-u3"></div>
+          <div class="face face-u4"></div>
+          <div class="face face-u5"></div>
+          <!-- LOWER MID TIER -->
+          <div class="face face-l1"></div>
+          <div class="face face-l2"></div>
+          <div class="face face-l3"></div>
+          <div class="face face-l4"></div>
+          <div class="face face-l5"></div>
+          <!-- BOTTOM TIER -->
+          <div class="face face-b1"></div>
+          <div class="face face-b2"></div>
+          <div class="face face-b3"></div>
+          <div class="face face-b4"></div>
+          <div class="face face-b5"></div>
+        </div>
+
+        <div class="armillary-band-container macro-wrapper">
+          <div class="astrolabe-metal-arc macro-arc"></div>
+          <h1 class="stenciled-metal-text">Jurnal de Bord: Orizontul Codului</h1>
+        </div>
+
+        <div class="armillary-band-container micro-wrapper">
+          <div class="astrolabe-metal-arc micro-arc"></div>
+          <p class="stenciled-metal-text-sub">
+            Cartografierea călătoriei către {front}end.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- @block: MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+      <!-- @block: FRONTEND LANDSCAPE SECTION -->
+      <section id="frontend-scape">
+        <header class="category-header">
+          <h2>Peisajul Frontend</h2>
+          <p>Cartografierea interfeței dintre utilizator și vidul digital.</p>
+        </header>
+
+        <article id="html" class="log-entry">
+          <h3>HyperText Markup Language (HTML)</h3>
+          <p>
+            Arhitectura fundamentală. Definește materia structurală a universului
+            nostru digital — scheletul de care atârnă toate stilurile și comportamentele.
+          </p>
+          <a href="./frontend/html-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="css" class="log-entry">
+          <h3>Cascading Style Sheets (CSS)</h3>
+          <p>
+            Spectrul estetic. CSS guvernează legile vizuale ale peisajului —
+            culoare, layout, animație și atmosfera emoțională a interfeței.
+          </p>
+          <a href="./frontend/css-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="javascript" class="log-entry">
+          <h3>JavaScript (JS)</h3>
+          <p>
+            Scânteia vieții. Introduce interactivitatea, logica și comportamentul
+            în timp real în structura statică a HTML-ului și CSS-ului.
+          </p>
+          <a href="./frontend/javascript-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <div class="js-annex">
+            <h4>Anexă: Expansiune Framework-uri JS</h4>
+            <div id="react" class="sub-log future-log">
+              <h5>React.js</h5>
+              <p>Bibliotecă UI Modulară... [SEMNAL ÎN AȘTEPTARE]</p>
+              <a href="./frontend/react-log.html" class="archive-link">Inițiază Jurnalul</a>
+            </div>
+            <div id="angular" class="sub-log future-log">
+              <h5>Angular</h5>
+              <p>Framework la Scară Largă... [SEMNAL ÎN AȘTEPTARE]</p>
+              <a href="./frontend/angular-log.html" class="archive-link">Inițiază Jurnalul</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <hr class="cosmic-divider" />
+
+      <!-- @block: DATABASE VOID SECTION -->
+      <section id="database-void">
+        <header class="category-header">
+          <h2>Vidul Bazelor de Date</h2>
+          <p>Explorând memoria profundă a cosmosului.</p>
+        </header>
+
+        <article id="sql" class="log-entry">
+          <h3>Structured Query Language (SQL)</h3>
+          <p>Limbajul ordinii — baze de date relaționale, tabele, interogări și disciplina datelor structurate.</p>
+          <div class="mission-status">
+            <p>Stare: Expediție începută (30 Days of SQL Challenge).</p>
+          </div>
+          <a href="../database/sql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="nosql" class="log-entry future-log">
+          <h3>Not only SQL (NoSQL)</h3>
+          <p>Arhivele nebuloase — document stores, perechi cheie-valoare și design de schemă flexibil.</p>
+          <a href="../database/nosql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

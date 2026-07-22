@@ -28,6 +28,14 @@ Ce aduce `Digital Odyssey`:
 - O formă mai profesională, mai curată și mai potrivită pentru publicare.
 - Mai multe volume tematice, cu roluri distincte în traseul de învățare.
 
+### Moștenirea tehnică din Manual_project
+
+Proiectul-mamă conținea deja realizări tehnice semnificative pe care le-am preluat și rafinat. Cea mai vizibilă dintre acestea este **rețeaua de reactor poliedric 3D** — un icosaedru construit din 20 de fețe triunghiulare folosind CSS `clip-path` pur, poziționate pe coordonate sferice 3D. În Manual_project, acest sistem suferea de un blocaj GPU critic: 20 de triunghiuri vectoriale suprapuse, combinate cu proprietăți grele de `filter: drop-shadow()`, provocau o inundare masivă de repaint care îngheța instanțele browserului și declanșa throttling termic pe CPU. Soluția inginerească a fost înlocuirea filtrelor grele de blur cu metrici stricte de `inset` și `box-shadow` și injectarea de提示 `will-change: transform, opacity`, forțând browserul să izoleze ochiurile 3D pe straturi GPU dedicate de compozitare. Aceasta a redus overhead-ul la aproape zero și a stabilizat animația la un profil fluid de 60 FPS.
+
+Proiectul-mamă a pionierat și layout-ul **Dual-Isolate-Scroll** pentru desktop: un CSS Grid rigid în care navigația laterală și zona de conținut aveau fiecare propriul flux independent de scroll, în timp ce pe mobil se folosea o consolă tactilă orizontală. **Intersection Observer API** a fost configurat cu margini de rădăcină precise (`-20% 0px -70% 0px`) pentru a detecta vizibilitatea articolelor și a sincroniza starea activă în sidebar. Șase mecanisme JavaScript coordonate guvernau cockpitul: ascunderea/afișarea navbar-ului pe direcția de scroll, urmărirea secțiunilor active, re-declanșarea animației de typing, tracking-ul radar pe desktop, interceptarea anti-deplasare a ancorelor și auto-scroll-ul HUD pe mobil.
+
+Strategia bilingvă era deja prezentă în Manual_project prin fișierele separate `style-en.css` și `style-ro.css`, care asigurau suprascrieri CSS localizate fără a sparge layout-ul. Conceptul de pagină recursivă — `recursive-blueprint.html` — a fost gândit ca un terminal split-screen care preia și afișează dinamic propriul cod sursă al proiectului, transformând baza de cod într-un instrument didactic auto-documentat. Aici se vede cel mai clar ideea de „proiect în proiect".
+
 Stadiul curent al proiectului este acela al unei platforme interactive de jurnal tehnic și documentare, cu intenție clară de extindere către o formă publică. Din materiale reiese că proiectul nu urmărește doar afișarea rezultatului final, ci și expunerea procesului, a iterațiilor și a deciziilor structurale. Aceasta îi dă atât valoare pedagogică, cât și valoare de portofoliu.
 
 Numele `Digital Odyssey` trimite la navigație cosmică, comandă de bord, telemetrie și explorare digitală. Atmosfera vizuală este construită în jurul unor referințe precum `Solaris`, ecrane CRT, HUD-uri translucide și accente neon, integrate într-un limbaj narativ tehnic. Aici, interfața nu este doar un strat de prezentare, ci și un instrument de orientare și sens.
@@ -66,7 +74,9 @@ Pe baza stadiului actual, pașii firești sunt:
 
 Această intrare fixează cadrul conceptual al proiectului `Digital Odyssey` și marchează tranziția de la `Manual_project` către versiunea rafinată, bilingvă și orientată spre portofoliu. Nu este doar o notă de început, ci o declarație de intenție: proiectul trebuie să funcționeze simultan ca sistem tehnic, obiect didactic și formă de prezentare cu identitate proprie.
 
-Proiectul se sprijină pe trei piloni principali. Primul este pilonul stilistic, ancorat în cultură umanistă, atmosferă literară, imaginație artistică și atenție pentru formă și sens. Al doilea este pilonul tehnic, construit pe informatică, logică, matematică, arhitectură web și disciplină de implementare. Al treilea este pilonul didactic, orientat spre pedagogie, teoria învățării și transmiterea clară a cunoașterii.
+Proiectul se sprijină pe trei piloni principali, care reflectă atât formația mea academică, cât și obiectivele mele de învățare. Primul este **pilonul tehnic**, construit pe informatică, logică, matematică, arhitectură web și disciplină de implementare — meșteșugul de a scrie cod care funcționează, care este curat și care respectă standardele. Al doilea este **pilon didactic**, orientat spre pedagogie, teoria învățării și transmiterea clară a cunoașterii — meșteșugul de a face codul explicabil din interior, astfel încât oricine citește fișierele sursă să poată învăța din ele. Al treilea este **pilon narativ**, ancorat în cultură umanistă, atmosferă literară, imaginație artistică și atenție pentru formă și sens — meșteșugul de a transforma o interfață tehnică într-un spațiu care spune o poveste.
+
+Formația mea în filosofie și masteratul în literatură americană — cu accent pe weird tales și filosofia spațiului narativ — nu sunt separate de acest proiect. Ele sunt direct încorporate în arhitectura lui. Ideea că o bază de cod poate fi citită ca un text, că o interfață poate funcționa ca un spațiu narativ și că învățarea programării este o formă de explorare și descoperire provin tocmai din această formație. Metafora navigației cosmice, interfața de comandă, limbajul de telemetrie și auto-documentarea recursivă nu sunt ornamente decorative: ele sunt expresia practică a convingerii că tehnologia și umanioarele aparțin aceleiași conversații.
 
 În arhitectura proiectului, `index.html` rămâne pagina centrală, echivalentul command deck-ului. Restul paginilor — loguri, blueprint, bibliografie și manifest — sunt organizate modular, fără să rupă claritatea ansamblului. Manifestul este separat de README, iar jurnalul bilingv funcționează ca arhivă vie a procesului, nu ca simplă listă de commit-uri.
 
@@ -108,6 +118,15 @@ Am continuat și rafinarea ierarhiei semantice. Proiectul păstrează o structur
 Pe partea vizuală, am fixat identitatea retro-futuristă a proiectului. Limbajul cromatic, scanlines-urile CRT, efectele de glassmorphism, umbrele interioare și atmosfera inspirată de filosofia explorării, astronomie, astrofizică, literatură, artă, fotografie, muzică, design și cinematografie conturează nu doar un stil, ci un spațiu de lectură și navigare cu personalitate proprie. `Solaris` rămâne un reper important, dar doar unul dintre reperele care dau proiectului tonul său contemplativ și tehnic.
 
 În același timp, am început consolidarea mecanicilor de navigație și interactivitate. Modelul de command deck, meniul sticky, scroll-ul lin, urmărirea secțiunilor active și sincronizarea stării în sidebar construiesc o interfață care nu obligă utilizatorul să se piardă în conținut, ci îl ghidează controlat prin el. Această alegere susține atât partea tehnică, cât și cea didactică a proiectului.
+
+Stratul JavaScript este construit pe șase mecanisme coordonate, moștenite și rafinate din Manual_project:
+
+1. **Scutul de Vizibilitate al Cockpit-ului** — monitorizează direcția de scroll și ascunde navbar-ul la scroll în jos (mod imersiune), readucându-l la o scurtă mișcare de scroll în sus.
+2. **Cuplarea Accesibilității Log-urilor** — gestionează stările de click pe linkurile de navigație, asigurând comutarea corectă a clasei `.active` între module.
+3. **Motorul de Re-declanșare a Terminalului** — un Intersection Observer care urmărește caseta de status; când un articol intră în vizibilitate (peste 30%), resetează și reia animația de mașină de scris de la început.
+4. **Tracking-ul Radar pe Desktop** — Intersection Observer-ul principal pentru sidebar. Pe măsură ce utilizatorul parcurge jurnalul, detectează ce articol este pe ecran și mută automat clasa `.active` pe butonul corespunzător din sidebar.
+5. **Motorul Anti-Deplasare pe Desktop** — interceptează click-urile pe ancore pe desktop, previne saltul nativ al browserului care ar trage sidebar-ul în sus și execută un `scrollTo` controlat strict în interiorul containerului de text, cu o pernă de aer de 100px sub HUD.
+6. **Auto-Scroll-ul HUD pe Mobil** — la citirea pe mobil, detectează momentul în care o zi devine activă și glisează automat banda HUD pe orizontală, aducând capsula curentă în centrul ecranului.
 
 Un alt element important a fost așezarea proiectului în registrul său de documentare. Jurnalele, bibliografia și pagina `recursive-blueprint.html` nu sunt simple anexe, ci instrumente prin care proiectul devine explicabil din interior. În cazul paginii recursive, instrumentul devine parte a conținutului explicat, pentru că pagina se auto-referă și își inspectează propriile componente.
 
@@ -502,18 +521,72 @@ Ordinea finală a volumelor în `index.html` ar trebui să păstreze această pr
 
 ---
 
-# DAY 09 — Validare, backlog și architectura `<head>` 
+# DAY 09 — Backlog, arhitectura `<head>` și validarea documentelor
 
-Am centralizat ideile care urmează să fie implementate în documente de backlog, pentru a separa intențiile viitoare de structura deja stabilizată a proiectului. Lista de TODO-uri a devenit astfel un registru de orientare, în care fiecare propunere își așteaptă momentul propriu de implementare, fără să tulbure arhitectura curentă.
+Această zi reunește deciziile structurale pe care le-am luat după ce am centralizat ideile care nu sunt încă pregătite pentru implementare și după ce am completat fundația tehnică a tuturor documentelor HTML din proiect. Ziua este împărțită în note clar separate, fiecare acoperind câte un aspect esențial al acestei etape de lucru.
 
-Am completat apoi containerul `<head>` pentru toate documentele HTML din proiect. Am urmărit ca fiecare pagină să pornească de la aceeași bază semantică și tehnică, iar diferențele să apară doar acolo unde pagina își definește identitatea proprie. Template-ul din `en/index.html` a devenit, în acest sens, un model de lucru pentru toate celelalte pagini.
+## 1. Documente de backlog pentru idei viitoare
 
-Am fixat și regula de adâncime pentru căile din folder. Într-un proiect cu multe fișiere și multe straturi, adâncimea prea mare complică mentenanța și ascunde rapid structura reală a arhitecturii. De aceea, am urmărit o organizare în care resursele rămân previzibile, clare și ușor de parcurs.
+Am creat o separare clară între arhitectura deja stabilizată a proiectului și ideile care își așteaptă momentul de implementare. În loc să las intențiile viitoare să se acumuleze în structura curentă și să risc confuzie, le-am compilat într-un registru de backlog — practic o listă de TODO-uri care păstrează fiecare propunere la locul ei. Fiecare intrare așteaptă un ciclu dedicat de implementare, fără să tulbure munca deja existentă.
 
-La nivelul incipitului HTML, am clarificat diferența dintre `meta name="..."` și `meta property="og:..."`. Prima categorie descrie pagina în sens general, pentru interpretarea ei în contextul web obișnuit, în timp ce a doua este legată de Open Graph și de felul în care pagina apare când este distribuită în alte spații digitale. Am notat și o observație tehnică despre `/>` și tagurile void, pentru a păstra limpede diferența dintre notația HTML și reflecțiile ei XHTML/XML.
+Această abordare menține două lucruri în echilibru: arhitectura curentă rămâne curată și previzibilă, iar direcția de dezvoltare rămâne vizibilă și organizată. Un document de backlog nu este o simplă listă de dorințe, ci un instrument de lucru prin care pot planifica, prioritiza și urmări ce urmează, fără să pierd din vedere ce este deja în loc.
 
-Am reținut și regula celor 1024 bytes ca prag de siguranță și compatibilitate. Din acest motiv, în proiectele serioase, `meta charset` trebuie să apară aproape întotdeauna primul în `<head>`, fără comentarii lungi înaintea lui. Ordinea aceasta nu este decorativă, ci ține de stabilitatea interpretării documentului în browser.
+## 2. Completarea containerului `<head>` pentru toate documentele HTML
 
-Am lăsat și o notă legată de validarea în frontend. Aceasta nu este doar o verificare formală, ci o parte din disciplina de construcție a proiectului, mai ales atunci când urmăresc consistența structurii HTML, a stilurilor CSS și a elementelor tehnice care țin de compatibilitate și bune practici. Mai târziu, această zonă va putea deveni un sector sau un daylog separat, dedicat validării propriu-zise.
+Am completat containerul `<head>` pentru fiecare document HTML din proiectul `digital-odyssey`. Scopul a fost ca fiecare pagină — indiferent dacă este o pagină de nivel superior, un jurnal de capitol sau o pagină de suport — să pornească de la aceeași bază semantică și tehnică. Template-ul pe care l-am definit în `en/index.html` a devenit modelul de lucru pentru toate cele 52 de pagini HTML rămase.
+
+Fiecare `<head>` conține acum setul complet de elemente esențiale: codarea caracterelor, configurarea viewport-ului, titlu, meta descriere, cuvinte cheie, autor, culoarea temei, metadate Open Graph (titlu, descriere, tip, URL, localizare, numele site-ului, culoare de fundal, imagine), tipul de card Twitter, link canonic, directiva robots, favicon, preconectări pentru fonturi și legătura către foaia de stil locală. Diferențele între pagini apar doar acolo unde fiecare document își definește propria identitate — titlul, descrierea, cuvintele cheie și căile specifice către fișiere.
+
+Această uniformitate înseamnă că întregul proiect împarte acum un punct de plecare previzibil. Indiferent ce pagină deschid, blocul head urmează aceeași arhitectură, cu comentarii adnotate conform etichetelor din legendă (`@block`, `@meta`, `@path`, `@reason`, `@warning`, `@theme`).
+
+## 3. Regula de adâncime pentru căile din folder
+
+Am fixat o regulă clară pentru căile relative folosite în fiecare fișier HTML. Într-un proiect cu multe foldere imbricate — cum sunt `en/frontend/html-log.html` sau `ro/backend/api-log.html` — menținerea corectă a căilor este esențială pentru ca pagina să își găsească resursele.
+
+Regula este simplă, dar importantă:
+- Paginile plasate direct în folderul de limbă (`en/` sau `ro/`) — cum sunt `bibliography.html`, `recursive-blueprint.html` și `transmission.html` — folosesc `./` pentru a face referire la `style.css`, `favicon.svg` și `script.js`, deoarece resursele se află în același folder.
+- Paginile plasate la un nivel mai adânc, într-un folder de capitol precum `frontend/`, `backend/`, `database/`, `data-bridge/`, `ux/` sau `delivery/` — folosesc `../` pentru a urca un nivel și a ajunge la folderul de limbă unde se află resursele.
+
+Această regulă de adâncime menține proiectul organizat și evită referințe rupte. Ea urmează și metafora de carte pe care am adoptat-o pentru arhitectură: fiecare folder de limbă este un volum, fiecare subfolder este un capitol, iar fiecare pagină de jurnal este o secțiune în interiorul acelui capitol. Resursele sunt stocate la nivel de volum și sunt întotdeauna accesibile printr-o cale relativă previzibilă.
+
+## 4. Template-ul `<head>` și diferența dintre `meta name` și `meta property`
+
+Am consolidat template-ul `<head>` într-o singură structură reutilizabilă. Fiecare pagină din proiect folosește acum acest template, doar limba, titlul, descrierea, cuvintele cheie și căile fiind schimbate per fișier.
+
+### `meta name="..."` vs `meta property="og:..."`
+
+Diferența dintre cele două modele de atribut este conceptuală și funcțională:
+
+- **`<meta name="...">`** este modul standard HTML de a descrie o pagină pentru contextul web obișnuit. Îi spune browserului și motoarelor de căutare informații de bază despre document: `description`, `keywords`, `author`, `viewport`, `theme-color` și `robots`. Acestea sunt citite în fluxul normal de navigare.
+
+- **`<meta property="og:...">`** aparține protocolului Open Graph. Descrie modul în care pagina ar trebui să apară atunci când este distribuită în alte spații digitale — rețele sociale, platforme de mesagerie, site-uri de portofoliu sau previzualizări de linkuri. Proprietăți precum `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:locale` și `og:site_name` controlează cardul care apare atunci când cineva distribuie linkul în afara contextului normal de navigare.
+
+Pe scurt, `name` este pentru pagina însăși; `property` este pentru cum este reprezentată pagina în altă parte. Ambele sunt necesare într-un proiect serios, pregătit pentru publicare.
+
+### Tagurile void și notația `/>`
+
+Am clarificat și notația tagurilor void (autoinchise) precum `<meta>`, `<link>`, `<br>` și `<img>`. În HTML5, tagurile void nu au nevoie de slash de închidere. Scrierea `<meta charset="UTF-8">` este perfect validă. Forma `/>` — ca în `<meta charset="UTF-8" />` — este moștenită din sintaxa XHTML și XML, unde fiecare tag, inclusiv cele void, trebuie să fie închis explicit.
+
+În proiectul meu, folosesc în mod constant forma `/>` pentru elementele void. Aceasta este o alegere stilistică ce menține notația uniformă și face codul recognoscibil atât în contexte HTML, cât și XML. Important este să fiu consecventă: amestecarea `>` cu `/>` în același document face codul mai greu de citit și de întreținut.
+
+## 5. Regula celor 1024 de biți și poziția lui `meta charset`
+
+Elementul `meta charset` definește codarea caracterelor documentului. În practică, UTF-8 este alegerea universală și cea mai sigură, suportând diacritice, simboluri speciale și caractere internaționale fără probleme.
+
+Regula pe care am notat-o — și pe care am aplicat-o — este ca `meta charset` să fie primul element din `<head>`, ideal în primii 1024 de biți ai documentului. Acest prag este o măsură de siguranță și compatibilitate moștenită din specificația de parsare HTML: unele browsere determină codarea caracterelor scanând doar primii 1024 de biți ai fișierului. Dacă `meta charset` apare mai târziu sau după comentarii lungi, browserul poate interpreta greșit conținutul înainte să ajungă la declarația de codare.
+
+Din acest motiv, în template-ul `<head>` al proiectului, `meta charset` este plasat imediat după tagul de deschidere al `<head>`-ului, fără niciun comentariu înaintea lui. Explicația urmează după element, nu înaintea lui. Astfel, respect cerința de codare, păstrând în același timp comentariile didactice care fac codul explicabil din interior.
+
+## 6. Validarea în frontend
+
+Am adăugat o notă despre validarea în frontend ca parte a disciplinei de construcție a proiectului. Validarea nu este o verificare birocratică, ci un pas tehnic prin care verific consistența structurii HTML, sintaxa CSS, atributele de accesibilitate și elementele tehnice care țin de compatibilitate și bune practici.
+
+În stadiul actual, validarea mă ajută să urmăresc:
+- dacă fiecare pagină HTML respectă același template semantic;
+- dacă elementele din `<head>` sunt ordonate corect și complete;
+- dacă căile relative indică resurse existente;
+- dacă paginile bilingve se oglindesc între ele ca structură.
+
+Mai târziu, această zonă poate deveni un sector sau un daylog separat, dedicat validării automate, linting-ului și verificărilor de calitate. Deocamdată, rămâne o notă manuală — dar una care menține proiectul aliniat la propria sa rigoare.
 
 ---

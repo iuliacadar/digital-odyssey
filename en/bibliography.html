@@ -196,5 +196,78 @@
       The path is relative to the current file location.
     -->
   </head>
+
+  <body>
+    <!-- @block:
+      The <body> contains the entire bibliography page.
+      I list the references, resources, and readings that shaped this project.
+    -->
+
+    <!-- @block: NAVBAR — reused component from the mothership -->
+    <nav class="navbar">
+      <div class="logo"><a href="./index.html">Digital Odyssey</a></div>
+      <!-- @reason:
+        The logo links back to the index page, letting the crew return to the main deck.
+      -->
+      <ul class="nav-links">
+        <li><a href="./index.html#frontend-scape">FrontEnd</a></li>
+        <li><a href="./index.html#database-void">DataBase</a></li>
+      </ul>
+    </nav>
+
+    <!-- @block: MAIN CONTENT — BIBLIOGRAPHY DECK -->
+    <main class="main-container">
+      <section id="bibliography-deck">
+        <header class="category-header">
+          <h2>Star Charts — Bibliography</h2>
+          <p>A curated collection of references that guide this vessel through the digital cosmos.</p>
+        </header>
+
+        <article class="log-entry">
+          <h3>Web Standards & HTML</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN HTML Documentation</a></li>
+            <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">WHATWG HTML Living Standard</a></li>
+          </ul>
+        </article>
+
+        <article class="log-entry">
+          <h3>CSS & Design Systems</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN CSS Documentation</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener noreferrer">CSS Grid Layout Guide</a></li>
+          </ul>
+        </article>
+
+        <article class="log-entry">
+          <h3>JavaScript & Interactivity</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN JavaScript Guide</a></li>
+            <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info</a></li>
+          </ul>
+        </article>
+
+        <article class="log-entry">
+          <h3>Backend & Databases</h3>
+          <ul>
+            <li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer">PostgreSQL Documentation</a></li>
+            <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB Documentation</a></li>
+            <li><a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">Node.js Documentation</a></li>
+          </ul>
+        </article>
+
+        <article class="log-entry">
+          <h3>UX & Accessibility</h3>
+          <ul>
+            <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2 Specification</a></li>
+            <li><a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer">ARIA Authoring Practices Guide</a></li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
 
