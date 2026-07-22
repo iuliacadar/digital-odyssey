@@ -231,6 +231,7 @@ Această zi fixează convențiile de scriere a mesajelor de commit și apoi tras
 - `revert`: anularea unui commit anterior.
 - `improve`: îmbunătățire generală, folosită când nu se potrivește altă etichetă.
 - `wip`: lucru în desfășurare, folosit temporar.
+- `snapshot`: un punct de control sau o copie de siguranță, folosit înaintea unei restructurări majore.
 
 ## Observații de stil
 

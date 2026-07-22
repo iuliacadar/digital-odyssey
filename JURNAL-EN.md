@@ -231,6 +231,7 @@ This day establishes the conventions for writing commit messages and then the te
 - `revert`: reverting a previous commit.
 - `improve`: a general improvement when no other tag fits well.
 - `wip`: work in progress, used temporarily.
+- `snapshot`: a checkpoint or safety backup, used before a major refactor or sweep.
 
 ## Style notes
 
