@@ -501,3 +501,19 @@ JSON este un format de interschimb de date și are sens să fie păstrat ca volu
 Ordinea finală a volumelor în `index.html` ar trebui să păstreze această progresie conceptuală: mai întâi bazele de interfață, apoi datele, apoi logica de server, apoi experiența, apoi livrarea. În felul acesta, cititorul trece natural de la construcție vizibilă la infrastructură, de la infrastructură la proces, și de la proces la publicare.
 
 ---
+
+# DAY 09 — Validare, backlog și architectura `<head>` 
+
+Am centralizat ideile care urmează să fie implementate în documente de backlog, pentru a separa intențiile viitoare de structura deja stabilizată a proiectului. Lista de TODO-uri a devenit astfel un registru de orientare, în care fiecare propunere își așteaptă momentul propriu de implementare, fără să tulbure arhitectura curentă.
+
+Am completat apoi containerul `<head>` pentru toate documentele HTML din proiect. Am urmărit ca fiecare pagină să pornească de la aceeași bază semantică și tehnică, iar diferențele să apară doar acolo unde pagina își definește identitatea proprie. Template-ul din `en/index.html` a devenit, în acest sens, un model de lucru pentru toate celelalte pagini.
+
+Am fixat și regula de adâncime pentru căile din folder. Într-un proiect cu multe fișiere și multe straturi, adâncimea prea mare complică mentenanța și ascunde rapid structura reală a arhitecturii. De aceea, am urmărit o organizare în care resursele rămân previzibile, clare și ușor de parcurs.
+
+La nivelul incipitului HTML, am clarificat diferența dintre `meta name="..."` și `meta property="og:..."`. Prima categorie descrie pagina în sens general, pentru interpretarea ei în contextul web obișnuit, în timp ce a doua este legată de Open Graph și de felul în care pagina apare când este distribuită în alte spații digitale. Am notat și o observație tehnică despre `/>` și tagurile void, pentru a păstra limpede diferența dintre notația HTML și reflecțiile ei XHTML/XML.
+
+Am reținut și regula celor 1024 bytes ca prag de siguranță și compatibilitate. Din acest motiv, în proiectele serioase, `meta charset` trebuie să apară aproape întotdeauna primul în `<head>`, fără comentarii lungi înaintea lui. Ordinea aceasta nu este decorativă, ci ține de stabilitatea interpretării documentului în browser.
+
+Am lăsat și o notă legată de validarea în frontend. Aceasta nu este doar o verificare formală, ci o parte din disciplina de construcție a proiectului, mai ales atunci când urmăresc consistența structurii HTML, a stilurilor CSS și a elementelor tehnice care țin de compatibilitate și bune practici. Mai târziu, această zonă va putea deveni un sector sau un daylog separat, dedicat validării propriu-zise.
+
+---

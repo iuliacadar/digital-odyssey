@@ -501,3 +501,20 @@ The final order of the volumes in `index.html` should preserve this conceptual p
 
 ---
 
+# DAY 09 — Validation, backlog, and head architecture
+
+I centralized the ideas that will be implemented in backlog documents, so that future intentions remain separated from the already stabilized structure of the project. The TODO list became a guiding register in which every proposal waits for its proper implementation moment, without disturbing the current architecture.
+
+I then completed the `<head>` container for all HTML documents in the project. My goal was for every page to start from the same semantic and technical base, while differences would appear only where each page defines its own identity. The template from `en/index.html` became a working model for all the other pages.
+
+I also fixed the folder-depth rule. In a project with many files and many layers, too much depth makes maintenance harder and quickly hides the real structure of the architecture. For that reason, I aimed for an organization in which resources remain predictable, clear, and easy to navigate.
+
+At the HTML incipit level, I clarified the difference between `meta name="..."` and `meta property="og:..."`. The first category describes the page in a general sense, for interpretation in the ordinary web context, while the second is tied to Open Graph and to the way the page appears when shared in other digital spaces. I also noted the technical observation about `/>` and void tags, so that the distinction between HTML notation and its XHTML/XML reflections remains clear.
+
+I also kept the 1024-byte rule as a safety and compatibility threshold. For this reason, in serious projects, `meta charset` should almost always appear first inside `<head>`, without long comments before it. That order is not decorative; it is part of the stability of the document’s interpretation in the browser.
+
+I also left a note about frontend validation. This is not just a formal check, but part of the project’s construction discipline, especially when I am tracking the consistency of HTML structure, CSS styling, and the technical elements tied to compatibility and best practices. Later, this area can become a separate sector or daylog, dedicated to validation proper.
+
+---
+
+
