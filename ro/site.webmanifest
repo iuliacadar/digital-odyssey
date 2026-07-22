@@ -1,0 +1,16 @@
+{
+  "name": "Odiseea Digitală",
+  "short_name": "D::0dy55ey",
+  "start_url": "index.html",
+  "display": "browser",
+  "background_color": "#0a0b1e",
+  "theme_color": "#0a0b1e",
+  "description": "Un jurnal interactiv bilingv și platformă de învățare construită ca o punte de comandă retro-futuristă.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

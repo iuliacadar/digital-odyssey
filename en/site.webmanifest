@@ -1,0 +1,16 @@
+{
+  "name": "Digital Odyssey",
+  "short_name": "D::0dy55ey",
+  "start_url": "index.html",
+  "display": "browser",
+  "background_color": "#0a0b1e",
+  "theme_color": "#0a0b1e",
+  "description": "A bilingual interactive journal and learning platform built as a retro-futurist starship bridge.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
