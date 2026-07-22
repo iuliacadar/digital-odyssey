@@ -211,81 +211,165 @@
     -->
   </head>
 
-  <body>
-    <!-- @block:
-      The recursive blueprint maps the project's own architecture —
-      a self-referential diagram of how modules, languages, and layers connect.
+  <body class="module-view">
+    <!-- @reason:
+      The class "module-view" applies a distinct visual subset for secondary
+      pages: narrower content width, CRT screen overlay, and a slightly darker
+      background compared to the hero-focused index layout.
     -->
 
+    <!-- @block: COCKPIT NAVIGATION BAR
+      The top HUD console. On the recursive blueprint the logo is static text
+      (no hyperlink) because this page functions as a specialised engineering
+      terminal rather than a general deck.
+    -->
     <nav class="navbar">
-      <div class="logo"><a href="./index.html">Digital Odyssey</a></div>
+      <!-- @block: TERMINAL IDENTITY -->
+      <div class="logo">Digital Odyssey / Recursive Blueprint</div>
+
+      <!-- @block: NAVIGATION COMMANDS -->
       <ul class="nav-links">
-        <li><a href="./index.html#frontend-scape">FrontEnd</a></li>
-        <li><a href="./index.html#database-void">DataBase</a></li>
+        <li>
+          <a href="index.html"
+            ><!-- @reason:
+              The left-arrow symbol (←) acts as a visual back-direction cue.
+              "Return to Command Deck" links to index.html, the mothership's
+              main bridge.
+            -->← Return to Command Deck</a
+          >
+        </li>
       </ul>
     </nav>
 
-    <header class="hero">
-      <div id="blueprint-core" class="armillary-reactor-core">
-        <div class="armillary-band-container macro-wrapper">
-          <h1 class="stenciled-metal-text">Recursive Blueprint</h1>
-        </div>
-        <div class="armillary-band-container micro-wrapper">
-          <p class="stenciled-metal-text-sub">
-            A map of the map — the vessel seeing itself
+    <!-- @block: MAIN RECURSIVE ENGINE
+      Uses "blueprint-container" instead of "main-container" to enable the
+      dual-column terminal-split layout that distinguishes this page from
+      standard log entries.
+    -->
+    <main class="blueprint-container">
+      <header class="section-header">
+        <!-- @block: TERMINAL HEADER -->
+        <h1 class="blueprint-master-title">The Recursive Master Blueprint</h1>
+        <!-- @theme:
+          .blueprint-master-title renders in a large monospace font with
+          amber-green phosphor colour, emulating a vintage engineering
+          schematic display.
+        -->
+
+        <p class="blueprint-master-description">
+          This console operates in the absolute confinement of a self-documenting,
+          closed loop. The automated grid beneath performs an asynchronous
+          interrogation of the vessel&#39;s core matrix, dredging up from the depths
+          the logical decrees and hidden commentaries encrypted within
+          <code>script.js</code>.
+        </p>
+        <!-- @concept:
+          The description frames the page as a "closed loop" — it reads and
+          displays its own source files. "Recursive" here refers to this
+          self-referential property: the code documents itself.
+        -->
+      </header>
+
+      <!-- @structure: DUAL-PANEL TERMINAL SPLIT
+        .terminal-split uses CSS Grid (or Flexbox) to create two equal columns.
+        The left panel shows a hardware miniature (3D reactor); the right panel
+        displays live source code fetched from the project files.
+      -->
+      <div class="terminal-split">
+        <!-- ===== LEFT PANEL: HARDWARE MINIATURE ===== -->
+        <section class="panel">
+          <h3 class="panel-title">Active Hardware Miniature</h3>
+          <!-- @theme:
+            .panel-title uses the same amber-green monospace style as the
+            master title but at a smaller size, preserving the terminal
+            aesthetic hierarchy.
+          -->
+
+          <p class="blueprint-demo-text">
+            Within the cold symmetry of this <strong>Recursive Grid</strong>,
+            code is no dead matter, nor a ghost adrift in logbooks of stone. In
+            the starboard pane, you may chart the precise, machinic-didactic
+            telemetries of the seven primary gears — even as the background
+            geodesic core, that blind, rotating engine of the void, hums into
+            life, driven forward by the merciless decree of these very
+            inscriptions.
           </p>
-        </div>
+          <!-- @concept:
+            This paragraph sets the thematic premise: the code is alive,
+            the grid sees itself, and the reactor core is a "blind, rotating
+            engine" that powers the page's recursive self-documentation.
+          -->
+
+          <!-- @block: COMPACT 3D REACTOR
+            Unlike the 20-face polyhedron on the index page, this miniature
+            uses a subset of 5 top-tier faces (t1–t5) to keep the visual
+            footprint small while preserving the geodesic astrolabe motif.
+          -->
+          <div class="recursive-reactor-wrapper">
+            <!-- @structure:
+              .recursive-reactor-wrapper centres the sphere and applies a
+              slow CSS rotation animation that simulates a 3D spin.
+            -->
+            <div class="quantum-plasma-sphere">
+              <div class="face face-t1"></div>
+              <div class="face face-t2"></div>
+              <div class="face face-t3"></div>
+              <div class="face face-t4"></div>
+              <div class="face face-t5"></div>
+            </div>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: Operational | Source Link: script.js | Cache: Flushed</p>
+          </div>
+          <!-- @structure:
+            .mission-status displays a telemetry line that reports the
+            recursive engine is operational and points to script.js as the
+            active source being interrogated.
+          -->
+        </section>
+
+        <!-- ===== RIGHT PANEL: LIVE SOURCE STREAM ===== -->
+        <section class="panel">
+          <h3 class="panel-title">Raw Source Stream: script.js</h3>
+
+          <!-- @block: FILE SELECTOR TABS
+            Each button carries a data-file attribute that JavaScript reads
+            via the Fetch API to determine which project file to retrieve
+            and display in the code inspector below.
+          -->
+          <div class="source-selector-tabs">
+            <button class="tab-btn active-tab" data-file="script.js">
+              script.js
+            </button>
+            <!-- @reason:
+              The first tab is active by default. Class "active-tab" applies
+              bright phosphor-green styling to indicate the currently selected
+              source file.
+            -->
+            <button class="tab-btn" data-file="style.css">style.css</button>
+            <button class="tab-btn" data-file="index.html">index.html</button>
+            <button class="tab-btn" data-file="html-log.html">
+              html-log.html
+            </button>
+          </div>
+
+          <!-- @block: CODE INSPECTOR TERMINAL
+            The <pre> element preserves whitespace and line breaks, making it
+            the ideal container for raw source code. JavaScript injects the
+            fetched file content as text into this element's innerHTML.
+          -->
+          <pre
+            id="script-stream-target"
+            class="code-inspector-screen"
+          >Connecting to core files... Initializing script.js packet pull...</pre>
+          <!-- @theme:
+            .code-inspector-screen simulates a green-on-black CRT terminal with
+            a subtle scanline animation and a blinking text cursor. The
+            placeholder text appears while JavaScript is fetching the source.
+          -->
+        </section>
       </div>
-    </header>
-
-    <!-- @block: BLUEPRINT CONTENT -->
-    <main class="main-container">
-      <section id="blueprint-deck">
-        <header class="category-header">
-          <h2>System Architecture</h2>
-          <p>How the ship is built, layer by layer.</p>
-        </header>
-
-        <article class="log-entry">
-          <h3>Volume I: Frontend</h3>
-          <p>
-            HTML (semantic structure), CSS (cinematic styling), JavaScript
-            (interactivity), and framework explorations (React, Angular).
-          </p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volume II: Backend</h3>
-          <p>
-            Core architecture, API design, authentication, middleware, testing,
-            performance, documentation, deployment.
-          </p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volume III: Databases</h3>
-          <p>
-            Relational (SQL) and non-relational (NoSQL) paradigms — the deep
-            memory of the cosmos.
-          </p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volume IV: Data Bridge</h3>
-          <p>
-            JSON as the universal data-interchange format between frontend,
-            backend, and storage layers.
-          </p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volume V: UX & Delivery</h3>
-          <p>
-            Foundations of user experience, accessibility (WCAG, ARIA), and
-            deployment pipelines (Git, GitHub, CI/CD).
-          </p>
-        </article>
-      </section>
     </main>
 
     <!-- @block:

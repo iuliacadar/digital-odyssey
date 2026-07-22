@@ -213,15 +213,603 @@
       </ul>
     </nav>
 
-    <main class="main-container">
-      <section id="log-deck">
-        <header class="category-header">
-      <!-- @block:
-        This log page will be populated with chapter-specific content during
-        the active building phase. Currently it serves as a structural shell
-        with the navigation and footer systems in place.
+    <!-- @block: MAIN CONTENT — HTML EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map / table
+      of contents) and the log-content zone (the day-by-day journal entries).
+      The class "log-layout" applies a CSS Grid with two columns.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — HTML EXPEDITION MAP
+        The sidebar contains a navigation list of all days and sectors. It lets
+        the crew jump directly to any entry in the log.
       -->
+      <aside class="log-sidebar">
+        <nav class="sidebar-nav">
+          <a href="#top-deck" class="map-title-link">
+            <h4>HTML Expedition Map</h4>
+            <!-- @reason:
+              The map-title-link scrolls the page to #top-deck (the content header)
+              when clicked, acting as a "reset view" button.
+            -->
+          </a>
+
+          <ul>
+            <!-- WEEK 00: INITIATION -->
+            <li>
+              <a href="#html-day00" class="sidebar-link">
+                Day 00 &#9672; Intro
+              </a>
+            </li>
+
+            <!-- WEEK 01: THE HULL & THE SKELETON -->
+            <li class="week-label">
+              <a href="#html-sector-01" class="sidebar-link">S01</a>
+            </li>
+            <li>
+              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; The Boilerplate</a>
+            </li>
+            <li>
+              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Headings & Paragraphs</a>
+            </li>
+            <li>
+              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; Semantic HTML & Layout</a>
+            </li>
+            <li>
+              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Anchors, Absolute vs Relative Links</a>
+            </li>
+            <li>
+              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Unordered, Ordered & Description Lists</a>
+            </li>
+            <li>
+              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Special entities & Emojis in code</a>
+            </li>
+            <li>
+              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Navigation menus</a>
+            </li>
+
+            <!-- WEEK 02: VISUAL SENSORS & MEDIA -->
+            <li class="week-label">
+              <a href="#html-sector-02" class="sidebar-link">S02</a>
+            </li>
+            <li>
+              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; The &lt;img&gt; tag & alt attribute</a>
+            </li>
+            <li>
+              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; The &lt;picture&gt; element & srcset atribute</a>
+            </li>
+            <li>
+              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; The &lt;audio&gt; element & formats</a>
+            </li>
+            <li>
+              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; The &lt;video&gt; element & subtitles with &lt;track&gt;</a>
+            </li>
+            <li>
+              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; The &lt;iframe&gt; elemnt & embedding maps/videos</a>
+            </li>
+            <li>
+              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; The &lt;figure&gt; & &lt;figcaption&gt; elements</a>
+            </li>
+            <li>
+              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Review & Navigation Stress Test</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE
+        The right-side column where the actual journal entries appear.
+        This section scrolls independently from the sidebar.
+      -->
+      <section class="log-content">
+        <!-- @block: TOP HEADER -->
+        <header id="top-deck" class="category-header">
+          <h2>The Mercurial Sea of Structure</h2>
+          <p>Mapping the foundational skeleton of the digital void</p>
+          <!-- @theme:
+            "Mercurial Sea" frames HTML as a fluid, shape-shifting medium —
+            unpredictable but masterable by a sharp-minded captain.
+          -->
         </header>
+
+        <!-- ===== AIRLOCK (WEEK 00) ===== -->
+        <!-- @structure:
+          The sector-announcement div acts as a visual chapter divider,
+          marking the transition between major learning phases.
+        -->
+        <div id="html-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>Initiation</h2>
+        </div>
+
+        <!-- @block: DAY 00 — INTRO -->
+        <article id="html-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Mercurial Sea :: Initiation</span>
+          </h3>
+
+          <div>
+            <div class="log-text">
+              <p>
+                HTML reveals itself as a mercurial sea of encoded possibilities.
+                These shifting tides demand a sharp-minded captain to navigate the
+                vessel through the fog of syntax. Today, I am but a novice at the
+                helm, charting unknown currents. What constellations will tomorrow
+                bring ahead?
+              </p>
+            </div>
+
+            <!-- @block: MISSION STATUS INDICATOR -->
+            <div class="mission-status">
+              <p>Status: Initialized | Navigation: Manual</p>
+            </div>
+
+            <!-- @block: NOTE TERMINAL
+              Each log entry includes a textarea where the captain can extend
+              the record with personal observations. The Save button stores the
+              content via the saveNote() function in script.js.
+            -->
+            <div class="note-terminal">
+              <textarea
+                name="html-note-day00"
+                id="html-note-day00"
+                placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+              ></textarea>
+              <button onclick="saveNote('html-note-day00')">
+                Save Signal Extension
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 01: THE HULL & THE SKELETON ===== -->
+        <div id="html-sector-01" class="sector-announcement">
+          <span>Entering Sector 01</span>
+          <h2>The Hull & The Skeleton</h2>
+        </div>
+
+        <!-- @block: DAY 01 — THE BOILERPLATE -->
+        <article id="html-day01" class="log-entry">
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title">
+              The Steel Hull :: Boilerplate, Doctype, Meta Tags
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Every vessel needs a hull before it can face the sea. The
+              Boilerplate is our hull—the fundamental code that defines our
+              existence in the digital void.
+            </p>
+            <p>
+              Today's mission was to stabilize the <strong>Boilerplate</strong>.
+              Without these core directives, the browser (our navigation
+              computer) wouldn't know how to interpret the signals we send. I've
+              initialized the <code>&lt;!DOCTYPE html&gt;</code>, which acts as
+              our universal hailing frequency, announcing that we are operating
+              on modern HTML5 protocols.
+            </p>
+            <!-- @block: CODE DISPLAY — BOILERPLATE -->
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Digital Odyssey&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Mission content starts here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>
+              <strong>Captain's Observations:</strong> The
+              <code>&lt;head&gt;</code> section feels like the ship's
+              brain—unseen by the passenger but vital for processing metadata
+              and loading external systems (like our CSS thrusters). In
+              contrast, the <code>&lt;body&gt;</code> is the deck where all
+              visible action happens. One small anomaly encountered: forgetting
+              the <code>lang="en"</code> attribute can confuse global search
+              radars (SEO).
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Data Stream: Confirmed | Structure: Stable | Hull Integrity: 100%</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day01"
+              id="html-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 02 — HEADINGS & PARAGRAPHS -->
+        <article id="html-day02" class="log-entry">
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title">
+              Voice of the Vessel :: Headings & Paragraphs
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Today I explored the primary skeleton of the web. I've learned that
+              the header is not just a title, but a declaration of intent.
+            </p>
+            <pre><code>
+&lt;header&gt;
+  &lt;h1&gt;Digital Odyssey&lt;/h1&gt;
+  &lt;p&gt;Mission Start&lt;/p&gt;
+&lt;/header&gt;
+            </code></pre>
+            <p>The signal is now stable. Moving to the next frequency.</p>
+          </div>
+
+          <div class="mission-status">
+            <p>Data Stream: Confirmed | Structure: Stable</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day02"
+              id="html-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 03 — SEMANTIC HTML & LAYOUT -->
+        <article id="html-day03" class="log-entry">
+          <h3>
+            <span>Day 03</span>
+            <span class="meta-title">
+              Mapping the Deck :: Semantic HTML & Layout
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              To navigate the digital void, a captain must look beyond the generic
+              clusters of generic containers. Today's mission is the most vital:
+              we are mapping the structural soul of our vessel. By replacing
+              meaningless shells with Semantic Relays, we ensure that our signal
+              is not only seen but understood by every radar and beacon in the
+              network. We are building more than a ship; we are defining its
+              purpose.
+            </p>
+
+            <hr class="cosmic-divider" />
+
+            <!-- @block: SEMANTIC MODULE LIST
+              Each .semantic-module is a card that pairs an HTML tag name with
+              a cosmic metaphor. This helps anchor the abstract concept of
+              semantic elements to concrete spaceship imagery.
+            -->
+            <div class="semantic-module">
+              <code class="tag-name">&lt;html&gt;</code>
+              <span class="tag-meta">// The Vessel Boundary</span>
+              <p class="tag-description">
+                The outer hull that defines the absolute limits of our digital
+                existence. It encapsulates the entirety of our cosmic presence.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;head&gt;</code>
+              <span class="tag-meta">// The Hidden Intelligence</span>
+              <p class="tag-description">
+                The ship's hidden intelligence center. It processes invisible data
+                streams, coordinates external thrusters (CSS), and broadcasts our
+                identity to the star-charts (SEO).
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;body&gt;</code>
+              <span class="tag-meta">// The Living Quarters</span>
+              <p class="tag-description">
+                The physical expanse where the crew resides. Every visible
+                interaction and material manifestation occurs within these
+                reinforced walls.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;header&gt;</code>
+              <span class="tag-meta">// The Bridge</span>
+              <p class="tag-description">
+                The primary command deck. It houses the mission emblems and the
+                master instruments of orientation.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;nav&gt;</code>
+              <span class="tag-meta">// The Navigation Console</span>
+              <p class="tag-description">
+                A dedicated interface for star-mapping, allowing the crew to
+                teleport between the ship's various sectors.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;main&gt;</code>
+              <span class="tag-meta">// The Power Core</span>
+              <p class="tag-description">
+                The singular, non-replicable heart of the vessel. It generates the
+                primary energy for our mission's core data, ensuring that the
+                essence of our journey is contained within a single, unbreakable
+                field.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;section&gt;</code>
+              <span class="tag-meta">// The Deck</span>
+              <p class="tag-description">
+                A thematic partition of the ship's internal space, grouping
+                related experimental modules and data.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;article&gt;</code>
+              <span class="tag-meta">// The Data Pod</span>
+              <p class="tag-description">
+                A self-contained, independent capsule of information. It is
+                designed to be extracted and understood even if detached from the
+                main vessel.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;aside&gt;</code>
+              <span class="tag-meta">// The Auxiliary Radar</span>
+              <p class="tag-description">
+                A secondary terminal providing tangential insights or technical
+                footnotes that complement the main mission stream.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;footer&gt;</code>
+              <span class="tag-meta">// The Chronometer Log</span>
+              <p class="tag-description">
+                The ship's base station where we record the mission's final
+                coordinates, legal signatures, and time-stamps.
+              </p>
+            </div>
+
+            <hr class="cosmic-divider" />
+            <p>
+              The ship's architecture is no longer a chaotic cluster of generic
+              containers; it has gained a logical soul. We are navigating with
+              purpose through the structural void.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: Structure Integrity Validated | Semantic Relays: Online.</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day03"
+              id="html-note-day03"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day03')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 04 — ANCHORS & LINKS -->
+        <article id="html-day04" class="log-entry">
+          <h3>
+            <span>Day 04</span>
+            <span class="meta-title">
+              Signal Relays :: Anchors, Absolute vs Relative Links
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem ipsum</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day04"
+              id="html-note-day04"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day04')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 05 — LISTS -->
+        <article id="html-day05" class="log-entry">
+          <h3>
+            <span>Day 05</span>
+            <span class="meta-title">
+              The Archives :: Unordered, Ordered & Description Lists
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day05"
+              id="html-note-day05"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day05')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 06 — SPECIAL ENTITIES & EMOJIS -->
+        <article id="html-day06" class="log-entry">
+          <h3>
+            <span>Day 06</span>
+            <span class="meta-title">
+              Character Encoding :: Special entities & Emojis in code
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day06"
+              id="html-note-day06"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day06')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 07 — BREADCRUMBS & NAV MENUS -->
+        <article id="html-day07" class="log-entry">
+          <h3>
+            <span>Day 07</span>
+            <span class="meta-title">
+              The Navigator's Path :: Breadcrumbs & Navigation menus
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day07"
+              id="html-note-day07"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day07')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 02: VISUAL SENSORS & MEDIA ===== -->
+        <div id="html-sector-02" class="sector-announcement">
+          <span>Entering Sector 02</span>
+          <h2>Visual Sensors & Media</h2>
+        </div>
+
+        <!-- @block: DAY 08 — IMG TAG -->
+        <article id="html-day08" class="log-entry">
+          <h3>
+            <span>Day 08</span>
+            <span class="meta-title">
+              Optical Sensors :: The &lt;img&gt; tag & alt attribute
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day08"
+              id="html-note-day08"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day08')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 09 — PICTURE ELEMENT -->
+        <article id="html-day09" class="log-entry">
+          <h3>
+            <span>Day 09</span>
+            <span class="meta-title">
+              Responsive Vision :: The &lt;picture&gt; element and srcset
+              attribute
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day09"
+              id="html-note-day09"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day09')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
       </section>
     </main>
 

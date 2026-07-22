@@ -213,15 +213,238 @@
       </ul>
     </nav>
 
-    <main class="main-container">
-      <section id="log-deck">
-        <header class="category-header">
-      <!-- @block:
-        This log page will be populated with chapter-specific content during
-        the active building phase. Currently it serves as a structural shell
-        with the navigation and footer systems in place.
-      -->
+    <!-- @block: MAIN CONTENT — CSS EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map) and
+      the log-content zone. The class "log-layout" applies a CSS Grid for a
+      two-column terminal interface.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — CSS EXPEDITION MAP -->
+      <aside class="log-sidebar">
+        <nav class="sidebar-nav">
+          <a href="#top-deck" class="map-title-link">
+            <h4>CSS Expedition Map</h4>
+          </a>
+          <ul>
+            <li>
+              <a href="#css-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
+            </li>
+
+            <!-- WEEK 1 -->
+            <li class="week-label">
+              <a href="#css-sector-01" class="sidebar-link">S01</a>
+            </li>
+            <li><a href="#css-day01" class="sidebar-link">Day 01 &#9672;</a></li>
+            <li><a href="#css-day02" class="sidebar-link">Day 02 &#9672;</a></li>
+            <li><a href="#css-day03" class="sidebar-link">Day 03 &#9672;</a></li>
+            <li><a href="#css-day04" class="sidebar-link">Day 04 &#9672;</a></li>
+            <li><a href="#css-day05" class="sidebar-link">Day 05 &#9672;</a></li>
+            <li><a href="#css-day06" class="sidebar-link">Day 06 &#9672;</a></li>
+            <li><a href="#css-day07" class="sidebar-link">Day 06 &#9672;</a></li>
+
+            <!-- WEEK 2 -->
+            <li class="week-label">
+              <a href="#css-sector-02" class="sidebar-link">S02</a>
+            </li>
+            <li><a href="#css-day08" class="sidebar-link">Day 08 &#9672;</a></li>
+            <li><a href="#css-day09" class="sidebar-link">Day 09 &#9672;</a></li>
+            <li><a href="#css-day10" class="sidebar-link">Day 10 &#9672;</a></li>
+            <li><a href="#css-day11" class="sidebar-link">Day 11 &#9672;</a></li>
+            <li><a href="#css-day12" class="sidebar-link">Day 12 &#9672;</a></li>
+            <li><a href="#css-day13" class="sidebar-link">Day 13 &#9672;</a></li>
+            <li><a href="#css-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+
+            <!-- WEEK 3 -->
+            <li class="week-label">
+              <a href="#css-sector-03" class="sidebar-link">S03</a>
+            </li>
+            <li><a href="#css-day15" class="sidebar-link">Day 15 &#9672;</a></li>
+            <li><a href="#css-day16" class="sidebar-link">Day 16 &#9672;</a></li>
+            <li><a href="#css-day17" class="sidebar-link">Day 17 &#9672;</a></li>
+            <li><a href="#css-day18" class="sidebar-link">Day 18 &#9672;</a></li>
+            <li><a href="#css-day19" class="sidebar-link">Day 19 &#9672;</a></li>
+            <li><a href="#css-day20" class="sidebar-link">Day 20 &#9672;</a></li>
+            <li><a href="#css-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+
+            <!-- WEEK 4 -->
+            <li class="week-label">
+              <a href="#css-sector-04" class="sidebar-link">S04</a>
+            </li>
+            <li><a href="#css-day22" class="sidebar-link">Day 22 &#9672;</a></li>
+            <li><a href="#css-day23" class="sidebar-link">Day 23 &#9672;</a></li>
+            <li><a href="#css-day24" class="sidebar-link">Day 24 &#9672;</a></li>
+            <li><a href="#css-day25" class="sidebar-link">Day 25 &#9672;</a></li>
+            <li><a href="#css-day26" class="sidebar-link">Day 26 &#9672;</a></li>
+            <li><a href="#css-day27" class="sidebar-link">Day 27 &#9672;</a></li>
+            <li><a href="#css-day28" class="sidebar-link">Day 28 &#9672;</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE -->
+      <section class="log-content">
+        <header id="top-deck" class="category-header">
+          <h2>The Gravitational Fields of Aesthetic</h2>
+          <p>
+            Gazing into the visual energy, layout matrix, and stylistic vectors
+            of the void.
+          </p>
+          <!-- @theme:
+            "Gravitational Fields of Aesthetic" frames CSS as a physics
+            force that warps the raw HTML skeleton into a styled interface.
+          -->
         </header>
+
+        <!-- ===== AIRLOCK (WEEK 00) ===== -->
+        <div id="css-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>Initiation</h2>
+        </div>
+
+        <!-- @block: DAY 00 — INTRO -->
+        <article id="css-day00" class="log-entry">
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Mercurial Sea :: Initiation</span>
+          </h3>
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut omnis
+              similique eius laborum, alias labore minima id, assumenda
+              inventore facere odit corrupti, vitae quisquam itaque ex tempora
+              mollitia quaerat doloribus.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>Status: Lorem</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day00"
+              id="css-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 01: GALACTIC FOUNDATIONS ===== -->
+        <div id="css-sector-01" class="sector-announcement">
+          <span>Entering Sector 01</span>
+          <h2>Galactic Foundations</h2>
+        </div>
+
+        <!-- @block: DAY 01 — CASCADING MATRIX & SELECTORS -->
+        <article id="css-day01" class="log-entry">
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title">
+              Stylistic Gravity :: The Cascading Matrix & Selectors
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Today the visual transmission started. Cascading Style Sheets
+              operate like a gravitational grid layered directly on top of the
+              physical HTML skeleton. Understanding specificity weights and how
+              rules cascade from root elements down to individual child nodes is
+              crucial to prevent layout collisions during the voyage.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>STATUS: INITIALIZING_CSS_CORE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day01"
+              id="css-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 02 — BOX MODEL -->
+        <article id="css-day02" class="log-entry">
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title">
+              Geometric Boundaries :: Box Model Matrix
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Every element in the FrontEndScape is encapsulated within a
+              mechanical box. Manipulating paddings, rigid borders, and external
+              margins determines the physical volume an element occupies on the
+              terminal screen, preventing capsule collision on smaller
+              responsive viewports.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>STATUS: SCANNING_BOUNDARIES // EXTRACTION: COMPLETE</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day02"
+              id="css-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 02: ADVANCED GRIDS & FLEXBOX ===== -->
+        <div id="css-sector-02" class="sector-announcement">
+          <span>Entering Sector 02</span>
+          <h2>Advanced Grids & Flexbox</h2>
+        </div>
+
+        <!-- @block: DAY 08 — FLEXBOX -->
+        <article id="css-day08" class="log-entry">
+          <h3>
+            <span>Day 08</span>
+            <span class="meta-title">
+              Quantum Alignment :: Flexbox Core Mechanics
+            </span>
+          </h3>
+
+          <div class="log-text">
+            <p>
+              Deploying the Flexbox Engine allows the interface to manipulate
+              items along a single axis dynamically. Forcing child elements to
+              stand in rows, centering their physical forms axially, or
+              stretching them into rigid columns resolves the responsive layout
+              gaps observed during deep-space operations.
+            </p>
+          </div>
+
+          <div class="mission-status">
+            <p>STATUS: ALIGNING_FLEX_AXIS // STABILITY: MAXIMUM</p>
+          </div>
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day08"
+              id="css-note-day08"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day08')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
       </section>
     </main>
 

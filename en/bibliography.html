@@ -206,73 +206,185 @@
     -->
   </head>
 
-  <body>
-    <!-- @block:
-      The <body> contains the entire bibliography page.
-      I list the references, resources, and readings that shaped this project.
+  <body class="module-view">
+    <!-- @reason:
+      The class "module-view" applies the secondary-page visual theme:
+      narrower content width, CRT scanline overlay, and a slightly darker
+      background to distinguish this data archive from the main command deck.
     -->
 
-    <!-- @block: NAVBAR — reused component from the mothership -->
+    <!-- @block: ARCHIVE NAVBAR
+      The top HUD console for the bibliography page. The logo identifies this
+      as the "Archives" section, and the navigation offers a single command:
+      return to the command deck (index page).
+    -->
     <nav class="navbar">
-      <div class="logo"><a href="./index.html">Digital Odyssey</a></div>
-      <!-- @reason:
-        The logo links back to the index page, letting the crew return to the main deck.
-      -->
+      <!-- @block: ARCHIVE IDENTITY -->
+      <div class="logo">Digital Odyssey / Archives</div>
+
+      <!-- @block: NAVIGATION COMMANDS -->
       <ul class="nav-links">
-        <li><a href="./index.html#frontend-scape">FrontEnd</a></li>
-        <li><a href="./index.html#database-void">DataBase</a></li>
+        <li>
+          <a href="index.html" class="return-btn"
+            ><!-- @reason:
+              The .return-btn class gives this link a distinct visual style
+              (amber-gold colour, left-arrow prefix) to indicate it is a
+              navigation escape hatch rather than a section anchor.
+            -->← Return to Command Deck</a
+          >
+        </li>
       </ul>
     </nav>
 
-    <!-- @block: MAIN CONTENT — BIBLIOGRAPHY DECK -->
+    <!-- @block: MAIN CONTENT — EXTERNAL KNOWLEDGE ARCHIVES
+      The <main> element wraps the three resource sections. Each section
+      contains a data-grid table that lists the source name, its URL,
+      and the current mission status (In Progress, Active, Locked).
+    -->
     <main class="main-container">
-      <section id="bibliography-deck">
-        <header class="category-header">
-          <h2>Star Charts — Bibliography</h2>
-          <p>A curated collection of references that guide this vessel through the digital cosmos.</p>
-        </header>
+      <!-- @block: SECTION HEADER -->
+      <header class="category-header">
+        <h2>External Knowledge Archives</h2>
+        <!-- @concept:
+          The heading frames the bibliography as a "signal archive" — a
+          collection of transmissions received from the external web-sphere
+          that guide the vessel's journey.
+        -->
+        <p>A categorized index of all signals received from the Web-Sphere.</p>
+      </header>
 
-        <article class="log-entry">
-          <h3>Web Standards & HTML</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN HTML Documentation</a></li>
-            <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">WHATWG HTML Living Standard</a></li>
-          </ul>
-        </article>
+      <!-- ===== SECTION I: HTML & CSS ===== -->
+      <section id="html-resources" class="log-entry">
+        <h3>I. Front-End Core (HTML & CSS)</h3>
+        <!-- @structure:
+          The log-entry class applies a consistent card style with a subtle
+          left-border accent and amber terminal header.
+        -->
 
-        <article class="log-entry">
-          <h3>CSS & Design Systems</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN CSS Documentation</a></li>
-            <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener noreferrer">CSS Grid Layout Guide</a></li>
-          </ul>
-        </article>
+        <!-- @block: DATA-GRID TABLE
+          The .data-grid class styles the table with a monospace font, border
+          collapse, and a dark background with neon-green border lines to
+          evoke a Solaris-style mission control readout.
+        -->
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th>Source Name</th>
+              <th>Frequency (URL)</th>
+              <th>Mission Status</th>
+            </tr>
+            <!-- @reason:
+              The table header labels each column: resource name, link, and
+              progress status. This three-column layout is reused across all
+              sections for consistency.
+            -->
+          </thead>
+          <tbody>
+            <!-- @block: freeCodeCamp -->
+            <tr>
+              <td>freeCodeCamp</td>
+              <td>
+                <a
+                  href="https://freecodecamp.org"
+                  target="_blank"
+                  rel="noopener"
+                  >Access Link</a
+                >
+                <!-- @reason:
+                  target="_blank" opens the link in a new tab; rel="noopener"
+                  prevents the new page from accessing the window object via
+                  window.opener (a security best practice for external links).
+                -->
+              </td>
+              <td>In Progress</td>
+            </tr>
+            <!-- @block: MDN Web Docs -->
+            <tr>
+              <td>MDN Web Docs</td>
+              <td>
+                <a href="https://mozilla.org" target="_blank" rel="noopener"
+                  >Reference Only</a
+                >
+              </td>
+              <td>Active</td>
+              <!-- @reason:
+                "Active" means the resource is continuously consulted as a
+                reference, as opposed to "In Progress" (currently working
+                through it) or "Locked" (planned but not yet started).
+              -->
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <article class="log-entry">
-          <h3>JavaScript & Interactivity</h3>
-          <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN JavaScript Guide</a></li>
-            <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info</a></li>
-          </ul>
-        </article>
+      <!-- ===== SECTION II: SQL ===== -->
+      <section id="sql-resources" class="log-entry">
+        <h3>II. Data Logic (SQL)</h3>
 
-        <article class="log-entry">
-          <h3>Backend & Databases</h3>
-          <ul>
-            <li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer">PostgreSQL Documentation</a></li>
-            <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB Documentation</a></li>
-            <li><a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">Node.js Documentation</a></li>
-          </ul>
-        </article>
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th>Source Name</th>
+              <th>Frequency (URL)</th>
+              <th>Mission Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- @block: GeeksforGeeks SQL -->
+            <tr>
+              <td>GeeksforGeeks SQL</td>
+              <td>
+                <a
+                  href="https://geeksforgeeks.org"
+                  target="_blank"
+                  rel="noopener"
+                  >Access Link</a
+                >
+              </td>
+              <td>Locked (Pending)</td>
+              <!-- @theme:
+                "Locked (Pending)" renders in amber-gold colour via the
+                .future-log class, indicating a topic scheduled for future
+                exploration.
+              -->
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <article class="log-entry">
-          <h3>UX & Accessibility</h3>
-          <ul>
-            <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2 Specification</a></li>
-            <li><a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer">ARIA Authoring Practices Guide</a></li>
-          </ul>
-        </article>
+      <!-- ===== SECTION III: JAVASCRIPT ===== -->
+      <section id="js-resources" class="log-entry future-log">
+        <h3>III. Script Interactivity (JavaScript)</h3>
+        <!-- @reason:
+          The .future-log class dims the entire section (greyscale amber tone)
+          to indicate that JavaScript resources are planned but not yet
+          actively studied. The section structure is pre-built for when the
+          expedition reaches this volume.
+        -->
+
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th>Source Name</th>
+              <th>Frequency (URL)</th>
+              <th>Mission Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JavaScript.info</td>
+              <td>
+                <!-- @path:
+                  The href is set to "#" (placeholder) because the JS section
+                  is not yet active. When the JavaScript expedition begins,
+                  this will be replaced with the actual URL.
+                -->
+                <a href="#" class="archive-link">Locked Signal</a>
+              </td>
+              <td>Locked (Pending)</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 
