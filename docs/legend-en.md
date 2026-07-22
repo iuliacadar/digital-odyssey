@@ -18,10 +18,11 @@ This legend establishes a shared vocabulary for comments across the whole projec
 - I keep the meaning of each tag consistent across all files.
 
 ## HTML
-- `@block:` explains a structural HTML block, such as `<head>`, `<main>`, or `<section>`.
+- `@block:` explains a structural HTML block, such as `<head>`, `<main>`, `<section>`, or `<footer>`.
 - `@path:` explains a linked file path, such as `./favicon.svg`, `./style.css`, or `./script.js`.
 - `@meta:` explains a metadata item, such as `charset`, `viewport`, `description`, or `theme-color`.
 - `@structure:` explains the role of an element in the document architecture.
+- `@theme:` explains the color, atmosphere, or visual identity role of an element, class, or attribute in HTML context.
 - `@concept:` explains the symbolic or narrative meaning of a structural or content choice.
 
 ## CSS

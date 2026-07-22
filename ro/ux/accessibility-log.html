@@ -216,22 +216,37 @@
       </section>
     </main>
 
+        <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
+      Footerul servește ca punte de telemetrie a navei. Marchează finalul fiecărei
+      pagini și afișează sectorul orbital curent, coordonatele spațio-temporale,
+      o legătură către hărțile stelare (bibliografie) și semnătura căpitanului.
+    -->
     <footer class="footer">
+      <!-- @structure: EXTERNAL COMMUNICATIONS LINK -->
       <div class="external-comms">
-        <a href="bibliography.html" target="_blank" class="archive-link">
+        <a
+          href="bibliography.html"
+          target="_blank"
+          class="archive-link"
+        >
           <span class="pulse-dot"></span>
           Hărți Stelare — Bibliografie
         </a>
       </div>
+
+      <!-- @structure: TELEMETRY DATA STREAM — SECTOR IDENTIFICATION -->
       <p>
-        SYS_ORBIT: UX_EXPEDITION // STATUS:
+        SYS_ORBIT: UX_EXPEDITION
+        // STATUS:
         <span class="telemetry-active">ONLINE</span>
       </p>
 
+      <!-- @structure: TELEMETRY DATA STREAM — SPATIOTEMPORAL COORDINATES -->
       <p>
         COORDINATES: 46.7712° N, 23.6236° E // SYSTEM_TIME: 2026.07.22
       </p>
 
+      <!-- @structure: COPYRIGHT AND VESSEL SIGNATURE -->
       <p class="copyright">
         &copy; 2026 | Digital Odyssey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>

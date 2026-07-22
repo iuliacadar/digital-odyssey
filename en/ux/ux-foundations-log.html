@@ -216,25 +216,85 @@
       </section>
     </main>
 
+        <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
+      The footer serves as the vessel's telemetry deck. It marks the end of every page
+      and displays the current sector orbit, spatiotemporal coordinates,
+      a link to the star charts (bibliography), and the captain's signature.
+    -->
     <footer class="footer">
+      <!-- @structure: EXTERNAL COMMUNICATIONS LINK
+        This block houses the portal to the bibliography page.
+        It functions as the ship's outbound communication channel —
+        a beacon that guides the crew to the reference archives.
+      -->
       <div class="external-comms">
-        <a href="bibliography.html" target="_blank" class="archive-link">
+        <!-- @path:
+          I link to the bibliography page. The href points to bibliography.html
+          in the same language directory. For log pages in subdirectories, the
+          relative path adjusts (e.g., ../bibliography.html).
+        -->
+        <a
+          href="bibliography.html"
+          target="_blank"
+          class="archive-link"
+        >
+          <!-- @structure:
+            .pulse-dot is a 6px circular element with a solar-mint green background.
+            A CSS keyframe animation (dot-pulse) scales it from 1x to 2.5x and fades
+            it out, simulating an active radar beacon or communication indicator.
+          -->
           <span class="pulse-dot"></span>
+          <!-- @reason:
+            I use target="_blank" so the bibliography opens in a new browser tab.
+            This lets the crew consult references without leaving the current page
+            or losing their scroll position.
+          -->
           Star Charts — Bibliography
         </a>
       </div>
+
+      <!-- @structure: TELEMETRY DATA STREAM — SECTOR IDENTIFICATION
+        SYS_ORBIT identifies the current chapter or module.
+        It changes per page type: COMMAND_DECK for index pages,
+        FRONTEND_EXPEDITION for frontend logs, BACKEND_EXPEDITION for backend, etc.
+      -->
       <p>
-        SYS_ORBIT: UX_EXPEDITION // STATUS:
+        SYS_ORBIT: UX_EXPEDITION
+        // STATUS:
         <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          .telemetry-active uses solar-mint green (#a7f3d0) with a neon
+          text-shadow glow, signaling an active and operational system —
+          inspired by 1970s NASA terminal displays.
+        -->
       </p>
 
+      <!-- @structure: TELEMETRY DATA STREAM — SPATIOTEMPORAL COORDINATES
+        Anchors the digital project in real physical space and time.
+        Prevents the project from feeling like pure abstraction —
+        this ship has a real-world launch site.
+      -->
       <p>
         COORDINATES: 46.7712° N, 23.6236° E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          The geographic coordinates (46.7712° N, 23.6236° E) point to
+          Cluj-Napoca, Romania — the captain's location. SYSTEM_TIME records
+          the date of the latest update to this footer.
+        -->
       </p>
 
+      <!-- @structure: COPYRIGHT AND VESSEL SIGNATURE
+        The final line declares authorship and intellectual ownership.
+        It is styled as a signature frequency — the captain's mark on every page.
+      -->
       <p class="copyright">
         &copy; 2026 | Digital Odyssey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          .vessel-sig uses nebula-pink (#ff007f) with an incandescent text-shadow
+          glow. This magenta signature color is the captain's identifier across
+          all decks — a neon autograph in the digital void.
+        -->
       </p>
     </footer>
 

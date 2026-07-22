@@ -18,10 +18,11 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 - Păstrez aceeași semnificație pentru aceeași etichetă în toate fișierele.
 
 ## HTML
-- `@block:` explică un bloc structural HTML, de exemplu `<head>`, `<main>` sau `<section>`.
+- `@block:` explică un bloc structural HTML, de exemplu `<head>`, `<main>`, `<section>` sau `<footer>`.
 - `@path:` explică o cale către un fișier legat, de exemplu `./favicon.svg`, `./style.css` sau `./script.js`.
 - `@meta:` explică o informație de tip metadata, cum ar fi `charset`, `viewport`, `description` sau `theme-color`.
 - `@structure:` explică rolul unui element în arhitectura documentului.
+- `@theme:` explică rolul cromatic, atmosferic sau de identitate vizuală al unui element, clase sau atribut în context HTML.
 - `@concept:` explică semnificația simbolică sau narativă a unei alegeri de structură sau conținut.
 
 ## CSS
