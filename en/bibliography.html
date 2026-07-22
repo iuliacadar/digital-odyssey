@@ -267,25 +267,35 @@
       </section>
     </main>
 
-          <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
-      The footer serves as the vessel's telemetry deck. For the bibliography page,
-      the external communications link is omitted because this page IS the reference
-      archive itself — there is no need to navigate outward.
+              <!-- @block:
+      I open the footer block here. This is the closing section of every page
+      in the project. On the bibliography page, I omit the external communications
+      link because this page itself is the reference archive — there is no need
+      to navigate outward.
     -->
     <footer class="footer">
-      <!-- @structure: TELEMETRY DATA STREAM — SECTOR IDENTIFICATION -->
+      <!-- @structure:
+        I write the first telemetry data line. It tells the reader which sector
+        or chapter they are currently viewing.
+      -->
       <p>
         SYS_ORBIT: CENTRAL_BIBLIOGRAPHY
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
       </p>
 
-      <!-- @structure: TELEMETRY DATA STREAM — SPATIOTEMPORAL COORDINATES -->
+      <!-- @structure:
+        I write the second telemetry data line. It anchors the project in real
+        physical space and time.
+      -->
       <p>
-        COORDINATES: 46.7712° N, 23.6236° E // SYSTEM_TIME: 2026.07.22
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
       </p>
 
-      <!-- @structure: COPYRIGHT AND VESSEL SIGNATURE -->
+      <!-- @structure:
+        I write the final line of the footer. It declares who created and owns
+        this project.
+      -->
       <p class="copyright">
         &copy; 2026 | Digital Odyssey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>

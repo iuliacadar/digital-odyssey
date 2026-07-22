@@ -424,22 +424,24 @@
       </section>
     </main>
 
-        <!-- @block: FOOTER TERMINAL — MISSION COORDINATES
-      The footer serves as the vessel's telemetry deck. It marks the end of every page
-      and displays the current sector orbit, spatiotemporal coordinates,
-      a link to the star charts (bibliography), and the captain's signature.
+            <!-- @block:
+      I open the footer block here. This is the closing section of every page
+      in the project. I place inside it the telemetry data stream: the current
+      sector orbit, the spatiotemporal coordinates, a link to the bibliography,
+      and the captain's signature.
     -->
     <footer class="footer">
-      <!-- @structure: EXTERNAL COMMUNICATIONS LINK
-        This block houses the portal to the bibliography page.
-        It functions as the ship's outbound communication channel —
-        a beacon that guides the crew to the reference archives.
+      <!-- @structure:
+        I create a container for the external communications link. It houses
+        the portal to the bibliography page, styled as a navigational beacon
+        that guides the reader to the reference archives.
       -->
       <div class="external-comms">
         <!-- @path:
-          I link to the bibliography page. The href points to bibliography.html
-          in the same language directory. For log pages in subdirectories, the
-          relative path adjusts (e.g., ../bibliography.html).
+          I set the href to "bibliography.html", which points to the bibliography
+          page. Because this file is in the same folder as the bibliography,
+          I use the filename directly. For log pages inside subfolders like
+          frontend/, I would write "../bibliography.html" to go up one level.
         -->
         <a
           href="bibliography.html"
@@ -447,61 +449,68 @@
           class="archive-link"
         >
           <!-- @structure:
-            .pulse-dot is a 6px circular element with a solar-mint green background.
-            A CSS keyframe animation (dot-pulse) scales it from 1x to 2.5x and fades
-            it out, simulating an active radar beacon or communication indicator.
+            I insert a small circular indicator before the link text.
+            The .pulse-dot class styles it as a 6px green dot. A CSS keyframe
+            animation (dot-pulse) makes it scale up and fade out repeatedly,
+            like an active radar beacon or communication signal light.
           -->
           <span class="pulse-dot"></span>
           <!-- @reason:
-            I use target="_blank" so the bibliography opens in a new browser tab.
-            This lets the crew consult references without leaving the current page
-            or losing their scroll position.
+            I add target="_blank" to the anchor element. This tells the browser
+            to open the bibliography page in a new tab instead of navigating
+            away from the current page. The reader can consult the references
+            without losing their scroll position or current context.
           -->
           Star Charts — Bibliography
         </a>
       </div>
 
-      <!-- @structure: TELEMETRY DATA STREAM — SECTOR IDENTIFICATION
-        SYS_ORBIT identifies the current chapter or module.
-        It changes per page type: COMMAND_DECK for index pages,
-        FRONTEND_EXPEDITION for frontend logs, BACKEND_EXPEDITION for backend, etc.
+      <!-- @structure:
+        I write the first telemetry data line. It tells the reader which sector
+        or chapter they are currently viewing. SYS_ORBIT changes per page:
+        index pages say COMMAND_DECK, frontend logs say FRONTEND_EXPEDITION,
+        backend pages say BACKEND_EXPEDITION, and so on for each chapter.
       -->
       <p>
         SYS_ORBIT: COMMAND_DECK
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
         <!-- @theme:
-          .telemetry-active uses solar-mint green (#a7f3d0) with a neon
-          text-shadow glow, signaling an active and operational system —
-          inspired by 1970s NASA terminal displays.
+          I wrap the word ONLINE in a <span> with the class .telemetry-active.
+          This class applies the solar-mint green color (#a7f3d0) and adds a
+          neon text-shadow glow effect. The green phosphor color mimics the
+          look of active status indicators on 1970s NASA mission control terminals.
         -->
       </p>
 
-      <!-- @structure: TELEMETRY DATA STREAM — SPATIOTEMPORAL COORDINATES
-        Anchors the digital project in real physical space and time.
-        Prevents the project from feeling like pure abstraction —
-        this ship has a real-world launch site.
+      <!-- @structure:
+        I write the second telemetry data line. It anchors the project in real
+        physical space and time. The coordinates point to the captain's location,
+        and the date marks when this footer was last updated.
       -->
       <p>
-        COORDINATES: 46.7712° N, 23.6236° E // SYSTEM_TIME: 2026.07.22
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:
-          The geographic coordinates (46.7712° N, 23.6236° E) point to
-          Cluj-Napoca, Romania — the captain's location. SYSTEM_TIME records
-          the date of the latest update to this footer.
+          I include geographic coordinates and a system timestamp.
+          The numbers 46.7712° N, 23.6236° E are the latitude and longitude of
+          Cluj-Napoca, Romania — the place where this project is being built.
+          SYSTEM_TIME records the date of the latest footer update.
         -->
       </p>
 
-      <!-- @structure: COPYRIGHT AND VESSEL SIGNATURE
-        The final line declares authorship and intellectual ownership.
-        It is styled as a signature frequency — the captain's mark on every page.
+      <!-- @structure:
+        I write the final line of the footer. It declares who created and owns
+        this project. The copyright symbol followed by the year and the captain's
+        name marks the intellectual ownership of the content.
       -->
       <p class="copyright">
         &copy; 2026 | Digital Odyssey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
         <!-- @theme:
-          .vessel-sig uses nebula-pink (#ff007f) with an incandescent text-shadow
-          glow. This magenta signature color is the captain's identifier across
-          all decks — a neon autograph in the digital void.
+          I wrap the captain's name in a <span> with the class .vessel-sig.
+          This class applies the nebula-pink color (#ff007f) with an incandescent
+          text-shadow glow. The magenta signature acts as the captain's unique
+          identifier across all decks of the ship.
         -->
       </p>
     </footer>
