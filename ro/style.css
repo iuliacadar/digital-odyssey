@@ -754,21 +754,25 @@ a.reactor-portal:focus-visible {
 .footer-links a {
   font-family: var(--font-main);
   font-size: 0.7rem;
-  color: var(--stardust);
+  color: var(--solar-mint);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border: 1px solid var(--solar-mint);
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: var(--solar-mint);
-  text-shadow: 0 0 12px rgba(167, 243, 208, 0.6);
+  background: var(--solar-mint);
+  color: var(--space-dark);
+  box-shadow: 0 0 20px var(--solar-mint);
 }
 
 .lang-toggle-active {
-  color: var(--solar-mint) !important;
-  text-shadow: 0 0 6px rgba(167, 243, 208, 0.5) !important;
+  background: var(--solar-mint) !important;
+  color: var(--space-dark) !important;
+  box-shadow: 0 0 12px rgba(167, 243, 208, 0.5) !important;
   font-weight: 700;
 }
 
