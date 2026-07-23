@@ -2655,7 +2655,7 @@ pre::-webkit-scrollbar-thumb {
 /* --- 1. MACRO ROOT ENVIRONMENT CONTAINER (The Blueprint Frame Shield) --- */
 .blueprint-container {
   max-width: 1300px; /* Establishes an expansive structural ceiling cap to prevent layout distortion */
-  margin: 60px auto; /* Moderate 60px vertical isolation padding layer with automated side horizontal centering */
+  margin: 40px auto; /* Moderate 40px vertical isolation padding layer with automated side horizontal centering */
   padding: 20px; /* Internal safety visual buffer cushion protecting terminal grid boundaries */
   font-family: monospace; /* Enforces rigid mechanical fixed-width typography matching framework blueprints */
 }
@@ -2664,7 +2664,7 @@ pre::-webkit-scrollbar-thumb {
 .terminal-split {
   display: flex; /* Activates the flexible container engine to align panels side-by-side */
   gap: 30px; /* Drives a strict 30px spatial separation buffer separating data structures */
-  margin-top: 40px; /* Defensive upper air gap protective cushion beneath master header scopes */
+  margin-top: 20px; /* Compact upper air gap beneath master header scopes */
 }
 
 /* INDIVIDUAL PANEL ARCHITECTURE UNITS (The Interface Component Cells) */
@@ -2779,7 +2779,7 @@ pre::-webkit-scrollbar-thumb {
   color: #e2e8f0 !important; /* Bright high-visibility text shade projecting sharp letter definitions */
   font-size: 0.85rem !important; /* Calibrated font footprint tailored for layout instructions inside panels */
   line-height: 1.6 !important; /* Optimizes visual flow separating consecutive narrative phrasing lines */
-  margin-bottom: 25px !important; /* Secure cushion gap isolating demo text blocks from descending components */
+  margin-bottom: 15px !important; /* Cushion gap isolating demo text blocks from descending components */
 }
 
 /* --- 5. ASYMMETRIC MICRO-SCALING REACTOR ENCLOSURE --- */
@@ -2792,7 +2792,7 @@ pre::-webkit-scrollbar-thumb {
   display: flex !important; /* Activates Flexbox container system forcing inner components steady */
   justify-content: center !important; /* Geometrically centers the downscaled reactor on the horizontal viewport axis */
   align-items: center !important; /* Centers the downscaled reactor vertically within the fixed wrapper frame */
-  margin: -20px 0 !important; /* Negative horizontal boundary manipulation loop handling internal alignment leaks */
+  margin: -40px 0 !important; /* Negative margin lifts the reactor upward to keep 3D faces within viewport */
   /* MASTER BLUEPRINT REPAIR: 
       Forces the rendering engine to preserve the Z-axis depth matrix across scaling! 
       This single line completely prevents the 3D Icosahedron from flattening into a single triangle. */
