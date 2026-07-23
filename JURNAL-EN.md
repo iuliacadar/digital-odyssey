@@ -592,3 +592,132 @@ In the current stage, validation helps me track:
 Later, this area can become a separate sector or daylog, dedicated to automated validation, linting, and quality checks. For now, it remains a manual note — but one that keeps the project aligned with its own rigour.
 
 ---
+
+# DAY 10 — Assisted Development, Content Migration, and Structural Refinements
+
+This day brings together several distinct threads of work that shaped the project in its most active transformation phase: the transition from working alone to collaborating with a specialised AI agent, the migration of content from the mother project, the systematic resolution of CSS and HTML warnings, the global rebranding of the project identity, and the establishment of two distinct navigation models for index pages versus secondary pages.
+
+## 1. Working with an AI Agent
+
+At this stage, I began developing the `D::0dy55ey` project with the assistance of a specialised AI coding agent named **opencode**, configured as a terminal-based interactive assistant. This agent does not replace my own decisions, but extends my capacity to implement them: it reads files, proposes code changes, applies modifications across multiple files simultaneously, and explains technical decisions through the same tag-based commenting system (`@block`, `@reason`, `@warning`, `@theme`) defined in the project's documentation legend.
+
+The agent works as a collaborative instrument. I issue instructions in natural language — covering file migration, style fixes, bulk replacements, and structural decisions — and the agent executes them in a verifiable and transparent manner. It does not work autonomously, but within the boundaries I set, always reflecting my editorial and architectural control. The agent's main advantages are speed in bulk operations (such as editing the same pattern across 50+ files), consistency in applying the same rule across all pages, and the ability to review the entire codebase at once to detect inconsistencies.
+
+Working in this way allowed me to focus on architectural decisions and content quality, while the agent handled mechanical repetition, file synchronisation, and systematic verification. The interaction model is similar to pair programming, but with an asymmetrical distribution of responsibilities: I decide what and why; the agent implements how, and flags when something does not fit the expected pattern.
+
+## 2. Generating the `<footer>` Template
+
+I generated a unified `<footer>` template for the entire `digital-odyssey` project. The footer functions as a telemetry data stream and appears at the bottom of every page. Its structure is the same across all documents, with only the sector name (SYS_ORBIT) changing per page to reflect the current chapter or module.
+
+The footer contains three telemetry lines:
+
+- **SYS_ORBIT**: identifies the current sector or chapter the reader is navigating (e.g., `COMMAND_DECK` for the index, `FRONTEND_EXPEDITION` for frontend logs, `BACKEND_SECTOR` for backend pages, etc.).
+- **COORDINATES**: the geographic coordinates of the project's physical origin (Cluj-Napoca, Romania) and the current system timestamp.
+- **Copyright line**: the project name `D::0dy55ey` and the captain's signature, `Iulia-Alexandra Cadar`.
+
+On certain pages — such as the bibliography — the footer also includes an external communications link (styled as a `.pulse-dot` beacon) that opens the bibliography in a new tab.
+
+Each footer element is annotated with didactic comments using the tag system from `docs/legend-en.md`, explaining the role of the status indicator, the `.telemetry-active` class, the `.vessel-sig` signature, and the geographic coordinates.
+
+## 3. Importing Code Blocks from the Mother Project and Adding Didactic Comments
+
+I imported the body content from `Manual_project` (the mother project) into the `digital-odyssey` pages that already existed in the original structure. The imported pages include:
+
+- `index.html` — the command deck and main navigation hub.
+- `bibliography.html` — the curated reference archive, structured as `<table class="data-grid">` entries.
+- `recursive-blueprint.html` — the self-referencing terminal with a split-screen layout.
+- All chapter log pages: `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log`, and `accessibility-log`.
+
+Each imported block was immediately annotated with didactic HTML comments using the tag system from `docs/legend-en.md`. Every `<section>`, `<article>`, `<p>`, `<ul>`, `<table>`, and structural element received an appropriate tag — `@block` for logical zones, `@reason` for motivation, `@structure` for document architecture, `@concept` for narrative meaning, and `@theme` for atmospheric choices.
+
+For the `ro/` folder, I noted that all explanatory comments in HTML files must be translated from English to Romanian. At this stage, the English comments mirror the structure of the English pages, but the Romanian folder requires a full translation pass so that the commenting system remains didactically coherent in both languages. The same applies to `script.js` and `style.css`: both files were imported from the mother project and now need refinement, translation of comments into Romanian for the `ro/` versions, and full annotation according to the legend tags from `docs/`.
+
+## 4. Resolving CSS and HTML Errors and Warnings
+
+Using the PROBLEMS panel in VS Code, I identified and fixed 13 compatibility and validity warnings in `en/style.css`. Each fix was applied with an understanding of why the warning appeared and what the standard-compliant solution is.
+
+### 4.1 `backdrop-filter` — 8 occurrences
+
+**Problem**: The `backdrop-filter` CSS property is a Frosted Glass effect that applies a graphical filter to the area behind an element. While supported in modern browsers, it requires the `-webkit-backdrop-filter` vendor prefix for Safari and older WebKit-based browsers. VS Code flags the unprefixed version as potentially unsupported on some platforms.
+
+**Fix**: I added `-webkit-backdrop-filter` immediately before each `backdrop-filter` declaration. The prefixed version tells Safari to apply the filter, while the unprefixed version covers Chrome, Firefox, and Edge. This is a standard defensive CSS technique.
+
+### 4.2 `text-size-adjust` — 1 occurrence
+
+**Problem**: The `text-size-adjust` property controls how the browser inflates text on mobile screens. The property requires vendor prefixes for broad browser support (`-webkit-text-size-adjust`, `-ms-text-size-adjust`, `-moz-text-size-adjust`). Using only the unprefixed declaration triggers a compatibility warning.
+
+**Fix**: I removed the bare `text-size-adjust` declaration and re-added it as commented-out code with a full explanation of all three vendor prefixes, their roles, and the fact that the viewport `<meta>` tag already covers most mobile inflation scenarios. This keeps the code as a teaching reference without leaving an active warning.
+
+### 4.3 `text-justify` — 1 occurrence
+
+**Problem**: The `text-justify` property defines how justified text alignment is handled. While supported in modern browsers, VS Code flags it as a compatibility concern in certain rendering contexts.
+
+**Fix**: I replaced the active declaration with a comment that explains the property and keeps the intent visible in the code without triggering a warning.
+
+### 4.4 `-webkit-overflow-scrolling` — 1 occurrence
+
+**Problem**: The `-webkit-overflow-scrolling` property is a non-standard, legacy iOS property that controlled momentum-based scrolling in overflow containers. Apple deprecated it in iOS 13 in favour of the standard `-webkit-overflow-scrolling: auto` behaviour. Keeping it in the code triggers both a deprecation warning and a compatibility flag.
+
+**Fix**: I removed the declaration entirely. Modern iOS devices handle momentum scrolling natively without this property.
+
+### 4.5 `scrollbar-width` — 2 occurrences
+
+**Problem**: The `scrollbar-width` property (part of the CSS Scrollbars specification) allows control over the thickness of scrollbars. While supported in Firefox, it is not yet supported in Chrome or Safari. VS Code flags it as a compatibility issue.
+
+**Fix**: I wrapped each `scrollbar-width` declaration in a `@supports (scrollbar-width: thin)` block. This ensures Firefox applies the thin scrollbar, while Chrome and Safari ignore the rule without error. This is the standard progressive enhancement pattern.
+
+### 4.6 `meta[name=theme-color]` — 2 false positives
+
+**Problem**: VS Code showed two warnings for `theme-color` in the Open Graph metadata section. Upon investigation, these were stale warnings: the actual `<meta name="theme-color">` tags had already been removed from the HTML files. The warnings remained in VS Code's PROBLEMS panel only because it had not refreshed its linting state.
+
+**Fix**: I verified that no `<meta name="theme-color">` tags remain in any HTML file. The project uses `manifest.json` to declare `theme_color` for Firefox, and the Open Graph `og:background_color` for social previews. The VS Code warnings cleared after a Reload Window command.
+
+## 5. Rebranding from "Digital Odyssey" to `D::0dy55ey`
+
+I replaced the name and titles across the entire project from the original working title "Digital Odyssey" to the customised `D::0dy55ey`. This was not a cosmetic change, but a deliberate decision with several arguments behind it.
+
+### Why the name needed to change
+
+The original name "Digital Odyssey" was a descriptive placeholder — it accurately described the project's theme (a journey through the digital landscape) but lacked distinctiveness. For a project that functions as both a portfolio piece and a personal archive, a unique identifier is important. `D::0dy55ey` transforms the descriptive title into a signature mark.
+
+### The leetspeak choice
+
+The form `D::0dy55ey` uses leetspeak (also called "1337") substitutions: `0` for `o` and `5` for `s`, giving "0dy55ey" instead of "Odyssey". The `D::` prefix echoes the C++ scope resolution operator (`::`), giving the name a programming-language flavour. The double colon also visually separates the initial `D` (for "Digital") from the rest, creating a logo-like glyph.
+
+### Arguments for the replacement
+
+- **Visual identity**: `D::0dy55ey` works as a compact, technical signature. It is immediately recognisable, fits in a favicon, a header, or a copyright line, and it is distinct from any other project name.
+- **Brand separation**: The repository name `digital-odyssey` describes the project externally on GitHub; `D::0dy55ey` is the internal, narrative identity. This separation between the technical repository name and the conceptual project name is deliberate and useful.
+- **Cosmic navigation metaphor**: The name `D::0dy55ey` fits the project's retro-futurist, telemetry-driven atmosphere better than the plain descriptive original. It looks like a spacecraft call sign or a system identifier on a HUD console.
+- **Narrative coherence**: The rebranding aligns the visual language with the conceptual framing. The project already uses terms such as "Command Deck", "Astrogation Charter", "HUD", and "telemetry"; the name `D::0dy55ey` is consistent with this lexicon.
+- **Memorability**: A distinctive, slightly unusual name is easier to remember and to search for than a generic descriptive one.
+
+The replacement was applied across all 63 files (HTML, CSS, and Markdown) ensuring zero remaining instances of the old title in visible text. The GitHub repository name `digital-odyssey` was kept unchanged as the technical transport layer.
+
+## 6. Two Navigation Models: Index Nav vs. Secondary Page Nav
+
+I established two distinct navigation patterns for the project, each serving a different structural role.
+
+### The `index.html` navigation model
+
+The index page is the Command Deck — the mother ship's main bridge. Its navigation serves as a hub that connects to all volumes of the project. The logo is a hyperlink pointing to the index page itself (a standard convention for site headers), and the navigation links point to anchor sections on the same page (`#frontend-scape`, `#database-void`, and so on). This model is designed for **orientation and discovery**: the reader sees all available sectors and can jump directly to any of them.
+
+The index nav structure is:
+
+- A linked logo (`<a href="index.html">D::0dy55ey</a>`) that confirms the current location.
+- A list of section anchors (`#frontend-scape`, `#database-void`, `#backend-sector`, `#ux-lab`, `#delivery-deck`, `#data-bridge`) that scroll the page to each volume.
+
+### The secondary page navigation model
+
+All other pages — bibliography, transmission, recursive-blueprint, and every chapter log — follow a different model. These pages are satellite modules, not the main hub. Their navigation is designed for **focus and return**: the reader should know exactly where they are and how to get back to the command deck.
+
+The secondary nav structure is:
+
+- A static logo (`D::0dy55ey / Section Name`) that is not hyperlinked. This tells the crew their current location without offering to navigate away from the section they are reading. The section name changes per page: "Archives" for bibliography, "HTML Log" for the HTML journal, and so on.
+- A single navigation link with a left arrow (`←`) and the text "Return to Command Deck" (EN) or "← Înapoi la puntea de comandă" (RO), pointing to `index.html` (or `../index.html` for pages in subdirectories).
+
+The two-model approach solves a specific problem: if every page had the same full link list, the reader would be tempted to jump between sections without finishing the current one. The secondary model encourages linear reading (finish the current chapter, then return to the hub) while still providing a quick escape hatch.
+
+All 52 non-index pages were updated to this standardised pattern, with the appropriate language variant (English for `en/` pages, Romanian for `ro/` pages). Explanatory comments with tags from the legend were added for each line of code in the nav block, using the correct language for each folder.
+
+---

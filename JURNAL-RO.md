@@ -591,3 +591,132 @@ Am adăugat o notă despre validarea în frontend ca parte a disciplinei de cons
 Mai târziu, această zonă poate deveni un sector sau un daylog separat, dedicat validării automate, linting-ului și verificărilor de calitate. Deocamdată, rămâne o notă manuală — dar una care menține proiectul aliniat la propria sa rigoare.
 
 ---
+
+# DAY 10 — Dezvoltare asistată, migrare de conținut și rafinări structurale
+
+Această zi reunește mai multe fire de lucru distincte care au modelat proiectul în cea mai activă fază de transformare: trecerea de la lucrul individual la colaborarea cu un agent AI specializat, migrarea conținutului din proiectul-mamă, rezolvarea sistematică a avertismentelor CSS și HTML, rebranduirea globală a identității proiectului și stabilirea a două modele distincte de navigare pentru paginile index față de paginile secundare.
+
+## 1. Lucrul cu un agent AI
+
+În această etapă, am început să dezvolt proiectul `D::0dy55ey` cu asistența unui agent AI specializat pentru codare, numit **opencode**, configurat ca asistent interactiv în terminal. Acest agent nu înlocuiește propriile mele decizii, ci extinde capacitatea de a le implementa: citește fișiere, propune modificări de cod, aplică schimbări în multiple fișiere simultan și explică deciziile tehnice prin același sistem de comentarii cu etichete (`@block`, `@reason`, `@warning`, `@theme`) definit în legenda de documentație a proiectului.
+
+Agentul funcționează ca un instrument de colaborare. Eu emit instrucțiuni în limbaj natural — referitoare la migrarea fișierelor, corectarea stilurilor, înlocuiri în masă și decizii structurale — iar agentul le execută într-un mod verificabil și transparent. Nu lucrează autonom, ci în limitele pe care i le stabilesc, reflectând întotdeauna controlul meu editorial și arhitectural. Principalele avantaje ale agentului sunt viteza în operațiuni în masă (de exemplu, editarea aceluiași model în peste 50 de fișiere), consistența în aplicarea aceleiași reguli în toate paginile și capacitatea de a revizui întreaga bază de cod simultan pentru a detecta inconsistențe.
+
+Acest mod de lucru mi-a permis să mă concentrez pe deciziile arhitecturale și pe calitatea conținutului, în timp ce agentul s-a ocupat de repetiția mecanică, sincronizarea fișierelor și verificarea sistematică. Modelul de interacțiune este similar cu pair programming, dar cu o distribuție asimetrică a responsabilităților: eu decid ce și de ce; agentul implementează cum și semnalează atunci când ceva nu se potrivește cu modelul așteptat.
+
+## 2. Generarea template-ului `<footer>`
+
+Am generat un template unificat de `<footer>` pentru întregul proiect `digital-odyssey`. Footerul funcționează ca un flux de date de telemetrie și apare în partea de jos a fiecărei pagini. Structura sa este aceeași în toate documentele, singurul element care se schimbă este numele sectorului (SYS_ORBIT), care reflectă capitolul sau modulul curent.
+
+Footerul conține trei linii de telemetrie:
+
+- **SYS_ORBIT**: identifică sectorul sau capitolul curent pe care îl navighează cititorul (de exemplu, `COMMAND_DECK` pentru index, `FRONTEND_EXPEDITION` pentru jurnalele frontend, `BACKEND_SECTOR` pentru paginile backend etc.).
+- **COORDINATES**: coordonatele geografice ale originii fizice a proiectului (Cluj-Napoca, România) și timestamp-ul curent al sistemului.
+- **Linia de copyright**: numele proiectului `D::0dy55ey` și semnătura căpitanului, `Iulia-Alexandra Cadar`.
+
+Pe anumite pagini — cum ar fi bibliografia — footerul include și un link de comunicații externe (stilizat cu un beacon `.pulse-dot`) care deschide bibliografia într-un tab nou.
+
+Fiecare element al footerului este adnotat cu comentarii didactice folosind sistemul de etichete din `docs/legend-ro.md`, explicând rolul indicatorului de status, clasa `.telemetry-active`, semnătura `.vessel-sig` și coordonatele geografice.
+
+## 3. Importarea blocurilor de cod din proiectul-mamă și adăugarea comentariilor didactice
+
+Am importat conținutul din `Manual_project` (proiectul-mamă) în paginile `digital-odyssey` care existau deja în structura originală. Paginile importate includ:
+
+- `index.html` — puntea de comandă și hub-ul principal de navigare.
+- `bibliography.html` — arhiva curatedă de referințe, structurată ca intrări `<table class="data-grid">`.
+- `recursive-blueprint.html` — terminalul auto-referențial cu layout split-screen.
+- Toate paginile de jurnal de capitol: `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log` și `accessibility-log`.
+
+Fiecare bloc importat a fost imediat adnotat cu comentarii HTML didactice folosind sistemul de etichete din `docs/legend-en.md`. Fiecare `<section>`, `<article>`, `<p>`, `<ul>`, `<table>` și element structural a primit o etichetă adecvată — `@block` pentru zone logice, `@reason` pentru motivație, `@structure` pentru arhitectura documentului, `@concept` pentru sens narativ și `@theme` pentru alegeri atmosferice.
+
+Pentru folderul `ro/`, am notat că toate comentariile explicative din fișierele HTML trebuie traduse din engleză în română. În această etapă, comentariile în engleză oglindesc structura paginilor englezești, dar folderul românesc necesită un pas complet de traducere pentru ca sistemul de comentarii să rămână coerent didactic în ambele limbi. Același lucru se aplică pentru `script.js` și `style.css`: ambele fișiere au fost importate din proiectul-mamă și acum necesită rafinare, traducerea comentariilor în limba română pentru versiunile din `ro/` și adnotarea completă conform etichetelor din `docs/`.
+
+## 4. Rezolvarea erorilor și avertismentelor CSS și HTML
+
+Folosind panoul PROBLEMS din VS Code, am identificat și corectat 13 avertismente de compatibilitate și validitate în `en/style.css`. Fiecare corectură a fost aplicată cu înțelegerea a de ce a apărut avertismentul și care este soluția conform standardelor.
+
+### 4.1 `backdrop-filter` — 8 apariții
+
+**Problemă**: Proprietatea CSS `backdrop-filter` este un efect de sticlă mată care aplică un filtru grafic zonei din spatele unui element. Deși este suportată în browserele moderne, necesită prefixul vendor `-webkit-backdrop-filter` pentru Safari și browsere WebKit mai vechi. VS Code semnalează versiunea neprefixată ca fiind potențial nesuportată pe unele platforme.
+
+**Soluție**: Am adăugat `-webkit-backdrop-filter` imediat înaintea fiecărei declarații `backdrop-filter`. Versiunea prefixată îi spune Safari să aplice filtrul, în timp ce versiunea neprefixată acoperă Chrome, Firefox și Edge. Aceasta este o tehnică standard de CSS defensiv.
+
+### 4.2 `text-size-adjust` — 1 apariție
+
+**Problemă**: Proprietatea `text-size-adjust` controlează modul în care browserul inflaționează textul pe ecranele mobile. Proprietatea necesită prefixe vendor pentru suport larg în browsere (`-webkit-text-size-adjust`, `-ms-text-size-adjust`, `-moz-text-size-adjust`). Folosirea doar a declarației neprefixate declanșează un avertisment de compatibilitate.
+
+**Soluție**: Am eliminat declarația simplă `text-size-adjust` și am re-adăugat-o ca cod comentat, cu o explicație completă a tuturor celor trei prefixe vendor, a rolurilor lor și a faptului că meta-tagul `<meta name="viewport">` acoperă deja majoritatea scenariilor de inflație pe mobil. Astfel, codul rămâne ca referință didactică fără a lăsa un avertisment activ.
+
+### 4.3 `text-justify` — 1 apariție
+
+**Problemă**: Proprietatea `text-justify` definește modul în care este gestionată alinierea textului justifies. Deși este suportată în browserele moderne, VS Code o semnalează ca problemă de compatibilitate în anumite contexte de randare.
+
+**Soluție**: Am înlocuit declarația activă cu un comentariu care explică proprietatea și păstrează intenția vizibilă în cod, fără a declanșa un avertisment.
+
+### 4.4 `-webkit-overflow-scrolling` — 1 apariție
+
+**Problemă**: Proprietatea `-webkit-overflow-scrolling` este o proprietate non-standard, moștenită din iOS, care controla scroll-ul cu inerție în containerele overflow. Apple a depreciat-o în iOS 13 în favoarea comportamentului standard `-webkit-overflow-scrolling: auto`. Păstrarea ei în cod declanșează atât un avertisment de depreciere, cât și unul de compatibilitate.
+
+**Soluție**: Am eliminat declarația complet. Dispozitivele iOS moderne gestionează scroll-ul cu inerție nativ, fără această proprietate.
+
+### 4.5 `scrollbar-width` — 2 apariții
+
+**Problemă**: Proprietatea `scrollbar-width` (parte a specificației CSS Scrollbars) permite controlul grosimii barelor de scroll. Deși este suportată în Firefox, nu este încă suportată în Chrome sau Safari. VS Code o semnalează ca problemă de compatibilitate.
+
+**Soluție**: Am înfășurat fiecare declarație `scrollbar-width` într-un bloc `@supports (scrollbar-width: thin)`. Astfel, Firefox aplică bara subțire de scroll, iar Chrome și Safari ignoră regula fără eroare. Acesta este modelul standard de progressive enhancement.
+
+### 4.6 `meta[name=theme-color]` — 2 falsuri pozitive
+
+**Problemă**: VS Code afișa două avertismente pentru `theme-color` în secțiunea de metadate Open Graph. După investigare, acestea erau avertismente învechite: tagurile `<meta name="theme-color">` fuseseră deja eliminate din fișierele HTML. Avertismentele rămăseseră în panoul PROBLEMS doar pentru că VS Code nu își reîmprospătase starea de linting.
+
+**Soluție**: Am verificat că niciun `<meta name="theme-color">` nu mai există în niciun fișier HTML. Proiectul folosește `manifest.json` pentru a declara `theme_color` pentru Firefox și `og:background_color` pentru previzualizările sociale. Avertismentele VS Code s-au stins după o comandă Reload Window.
+
+## 5. Rebranduirea de la "Digital Odyssey" la `D::0dy55ey`
+
+Am înlocuit numele și titlurile din întregul proiect, de la titlul de lucru original "Digital Odyssey" la varianta personalizată `D::0dy55ey`. Aceasta nu a fost o schimbare cosmetică, ci o decizie deliberată, susținută de mai multe argumente.
+
+### De ce numele trebuia schimbat
+
+Numele original "Digital Odyssey" era un placeholder descriptiv — descria cu acuratețe tema proiectului (o călătorie prin peisajul digital), dar îi lipsea caracterul distinctiv. Pentru un proiect care funcționează atât ca piesă de portofoliu, cât și ca arhivă personală, un identificator unic este important. `D::0dy55ey` transformă titlul descriptiv într-o marcă-semnătură.
+
+### Alegerea leetspeak
+
+Forma `D::0dy55ey` folosește substituții leetspeak (numit și "1337"): `0` pentru `o` și `5` pentru `s`, rezultând "0dy55ey" în loc de "Odyssey". Prefixul `D::` face ecou operatorului de rezoluție de scop din C++ (`::`), dând numelui o aromă de limbaj de programare. Dublul punct separă și vizual litera `D` (pentru "Digital") de restul, creând un simbol asemănător unui logo.
+
+### Argumente pentru înlocuire
+
+- **Identitate vizuală**: `D::0dy55ey` funcționează ca o semnătură tehnică și compactă. Este imediat recognoscibil, se potrivește într-un favicon, într-un antet sau într-o linie de copyright și este distinct de orice alt nume de proiect.
+- **Separare de brand**: Numele repository-ului `digital-odyssey` descrie proiectul extern pe GitHub; `D::0dy55ey` este identitatea internă, narativă. Această separare între numele tehnic al repository-ului și numele conceptual al proiectului este deliberată și utilă.
+- **Metafora navigației cosmice**: Numele `D::0dy55ey` se potrivește mai bine atmosferei retro-futuriste, orientate pe telemetrie a proiectului decât originalul descriptiv simplu. Arată ca un indicativ de navă spațială sau un identificator de sistem pe o consolă HUD.
+- **Coeziune narativă**: Rebranduirea aliniază limbajul vizual cu cadrul conceptual. Proiectul folosește deja termeni precum "Command Deck", "Astrogation Charter", "HUD" și "telemetry"; numele `D::0dy55ey` este consistent cu acest lexic.
+- **Memorabilitate**: Un nume distinctiv, ușor neobișnuit, este mai ușor de reținut și de căutat decât unul descriptiv generic.
+
+Înlocuirea a fost aplicată în toate cele 63 de fișiere (HTML, CSS și Markdown), asigurând zero instanțe rămase ale vechiului titlu în textul vizibil. Numele repository-ului GitHub `digital-odyssey` a fost păstrat neschimbat ca strat tehnic de transport.
+
+## 6. Două modele de navigare: Nav-ul index vs. Nav-ul paginilor secundare
+
+Am stabilit două modele distincte de navigare pentru proiect, fiecare având un rol structural diferit.
+
+### Modelul de navigare al paginii `index.html`
+
+Pagina index este Command Deck — puntea principală a navei-mamă. Navigarea sa servește ca un hub care conectează toate volumele proiectului. Logo-ul este un hyperlink care trimite la pagina index însăși (o convenție standard pentru antetele de site), iar linkurile de navigare trimit la secțiuni ancora pe aceeași pagină (`#frontend-scape`, `#database-void` etc.). Acest model este gândit pentru **orientare și descoperire**: cititorul vede toate sectoarele disponibile și poate sări direct la oricare dintre ele.
+
+Structura nav-ului index este:
+
+- Un logo legat (`<a href="index.html">D::0dy55ey</a>`) care confirmă locația curentă.
+- O listă de ancore de secțiune (`#frontend-scape`, `#database-void`, `#backend-sector`, `#ux-lab`, `#delivery-deck`, `#data-bridge`) care derulează pagina la fiecare volum.
+
+### Modelul de navigare al paginilor secundare
+
+Toate celelalte pagini — bibliografia, transmission, recursive-blueprint și fiecare jurnal de capitol — urmează un model diferit. Aceste pagini sunt module satelit, nu hub-ul principal. Navigarea lor este gândită pentru **focus și întoarcere**: cititorul trebuie să știe exact unde se află și cum să revină la puntea de comandă.
+
+Structura nav-ului secundar este:
+
+- Un logo static (`D::0dy55ey / Numele Secțiunii`) care nu este hyperlink. Acesta îi spune echipajului locația curentă fără a oferi posibilitatea de a naviga departe de secțiunea pe care o citesc. Numele secțiunii se schimbă per pagină: "Arhive" pentru bibliografie, "Jurnal HTML" pentru jurnalul HTML etc.
+- Un singur link de navigare cu o săgeată stânga (`←`) și textul "Înapoi la puntea de comandă" (RO) sau "← Return to Command Deck" (EN), care trimite la `index.html` (sau `../index.html` pentru paginile din subdirectoare).
+
+Abordarea cu două modele rezolvă o problemă specifică: dacă fiecare pagină ar avea aceeași listă completă de linkuri, cititorul ar fi tentat să sară între secțiuni fără să o termine pe cea curentă. Modelul secundar încurajează lectura lineară (termină capitolul curent, apoi întoarce-te la hub), oferind în același timp o cale rapidă de ieșire.
+
+Toate cele 52 de pagini non-index au fost actualizate la acest model standardizat, cu varianta lingvistică adecvată (engleză pentru paginile din `en/`, română pentru paginile din `ro/`). Comentarii explicative cu etichete din legendă au fost adăugate pentru fiecare linie de cod din blocul nav, folosind limba corectă pentru fiecare folder.
+
+---
