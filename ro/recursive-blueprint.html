@@ -207,11 +207,28 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="logo"><a href="./index.html">D::0dy55ey</a></div>
+        <nav class="navbar">
+      <!-- @block: IDENTITATEA TERMINALULUI
+        Blocul logo afișează indicativul navei și numele secțiunii curente.
+        Este text static (nu este link) deoarece această pagină este ea însăși
+        o stație a navei; echipajul își citește aici locația.
+      -->
+      <div class="logo">D::0dy55ey / Schiță Recursivă</div>
+
+      <!-- @block: COMENZI DE NAVIGAȚIE
+        Lista nav-links conține acțiunile principale de navigare.
+        Pe paginile secundare, se oferă o singură comandă: întoarcerea la punte.
+      -->
       <ul class="nav-links">
-        <li><a href="./index.html#frontend-scape">FrontEnd</a></li>
-        <li><a href="./index.html#database-void">Baze de Date</a></li>
+        <li>
+          <a href="index.html"
+            ><!-- @reason:
+              Simbolul săgeată stânga (←) funcționează ca un indiciu vizual
+              de întoarcere. "Înapoi la puntea de comandă" face legătura cu
+              index.html, puntea principală a navei-mamă.
+            -->← Înapoi la puntea de comandă</a
+          >
+        </li>
       </ul>
     </nav>
 

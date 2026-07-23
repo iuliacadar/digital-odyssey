@@ -206,10 +206,28 @@
     -->
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo"><a href="../index.html">D::0dy55ey</a></div>
+        <nav class="navbar">
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station
+        on the ship; the crew reads their location here.
+      -->
+      <div class="logo">D::0dy55ey / Angular Log</div>
+
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On secondary pages, only one command is offered: return to the bridge.
+      -->
       <ul class="nav-links">
-        <li><a href="../index.html">Command Deck</a></li>
+        <li>
+          <a href="../index.html"
+            ><!-- @reason:
+              The left-arrow symbol (←) acts as a visual back-direction cue.
+              "Return to Command Deck" links to index.html, the mothership's
+              main bridge.
+            -->← Return to Command Deck</a
+          >
+        </li>
       </ul>
     </nav>
 
