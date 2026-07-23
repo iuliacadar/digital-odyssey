@@ -234,7 +234,7 @@
 
       <!-- @block: HUD TELEPORT CONSOLE BUTTON
         Same HUD toggle as the index page — gives the recursive page its own
-        navigation console without needing the "Return to Command Deck" link.
+        navigation console alongside the Return to Command Deck link.
         @concept:
           The recursive page is an autonomous vessel within the fleet. It has
           the same navigation system as the mothership, reinforcing its status
@@ -243,6 +243,22 @@
       <button class="hud-toggle" aria-label="Toggle navigation menu">
         Command Deck <span class="hud-arrow">▾</span>
       </button>
+
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On secondary pages, only one command is offered: return to the bridge.
+      -->
+      <ul class="nav-links">
+        <li>
+          <a href="index.html"
+            ><!-- @reason:
+              The left-arrow symbol (←) acts as a visual back-direction cue.
+              "Return to Command Deck" links to index.html, the mothership's
+              main bridge.
+            -->← Return to Command Deck</a
+          >
+        </li>
+      </ul>
 
       <!-- @block: HOLOGRAPHIC NAVIGATION OVERLAY
         Identical panel to the index page — all 6 volumes with sub-log links.
