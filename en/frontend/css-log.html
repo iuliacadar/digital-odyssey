@@ -464,6 +464,56 @@
           </div>
         </article>
       </section>
+      <!-- @structure: COSMIC DIVIDER — visual laser incision between major sections -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: DAY 10 — REPARATIONS LOG -->
+      <article id="day10-reparations" class="log-entry">
+        <h3>
+          <span>Day 10</span>
+          <span class="meta-title">Reparations Log :: Console Repairs &amp; UI Calibrations</span>
+        </h3>
+
+        <div class="log-text">
+          <h4>1. Reactor &amp; Mini-Reactor Landing Calibration</h4>
+          <p>
+            Fixed the 3D icosahedron and mini-reactor bottom faces overflowing past the
+            viewport on initial page load. Reduced excessive margins on
+            <code>.armillary-reactor-core</code> and <code>.blueprint-container</code>,
+            and removed <code>overflow: hidden</code> on the hero container so the
+            geodesic cores remain fully visible when landing from the portal link.
+          </p>
+
+          <h4>2. Unified Hover Glow &amp; Spin Acceleration</h4>
+          <p>
+            Standardised the electric glow intensity and hover acceleration across both
+            the index-page icosahedron and the recursive-page mini-reactor. Both cores
+            now share identical <code>lightning-glow-fusion</code> keyframes and a
+            <code>3s</code> hover spin duration.
+          </p>
+
+          <h4>3. Footer Link Panel — Bibliography, Manifesto &amp; Language Toggle</h4>
+          <p>
+            Replaced the single bibliography link with a unified 3-button footer panel
+            across all 50+ pages: Star Charts (per-chapter bibliography link), The
+            Astrogation Charter (manifesto), and the EN/RO language toggle. Links are
+            styled as archive-link buttons with green dashed borders, pulse-dot beacons,
+            and full-green hover glow.
+          </p>
+
+          <h4>4. Opaque Full-Screen HUD Console</h4>
+          <p>
+            Made the Command Deck overlay fully opaque (<code>rgb(10, 11, 30)</code>)
+            and expanded it to cover the entire viewport below the navbar
+            (<code>calc(100vh - 60px)</code>). Eliminated hero-content bleed-through
+            and gave the HUD a solid mission-control presence.
+          </p>
+        </div>
+
+        <div class="mission-status">
+          <p>Status: All systems nominal // UI uniformity patch applied fleet-wide</p>
+        </div>
+      </article>
     </main>
 
             <!-- @block:
