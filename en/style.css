@@ -2655,7 +2655,7 @@ pre::-webkit-scrollbar-thumb {
 /* --- 1. MACRO ROOT ENVIRONMENT CONTAINER (The Blueprint Frame Shield) --- */
 .blueprint-container {
   max-width: 1300px; /* Establishes an expansive structural ceiling cap to prevent layout distortion */
-  margin: 100px auto; /* Massive 100px vertical isolation padding layer with automated side horizontal centering */
+  margin: 60px auto; /* Moderate 60px vertical isolation padding layer with automated side horizontal centering */
   padding: 20px; /* Internal safety visual buffer cushion protecting terminal grid boundaries */
   font-family: monospace; /* Enforces rigid mechanical fixed-width typography matching framework blueprints */
 }
