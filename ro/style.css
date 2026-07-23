@@ -546,28 +546,17 @@ hr {
    and turns it into a clickable link to recursive-blueprint.html.
    No visual changes — it inherits dimensions from the sphere inside. */
 a.reactor-portal {
-  position: absolute;             /* Remove from flex flow so the sphere stays at its original position */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+  display: inline-block;          /* Shrink-wrap the sphere so it becomes a flex item */
+  position: relative;             /* Establish containing block for the absolute faces inside */
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   outline: none;
-  z-index: 1;
-  pointer-events: none;           /* Let clicks pass through the full-area wrapper */
 }
 
 a.reactor-portal:hover,
 a.reactor-portal:focus-visible {
   outline: none;
-}
-
-/* Only the sphere itself captures the click — titles and empty space pass through */
-a.reactor-portal .quantum-plasma-sphere {
-  pointer-events: auto;
 }
 
 /* --- THE ANIMATED ARROW (Boot-Sequence Chevron) --- */
@@ -2402,14 +2391,19 @@ pre::-webkit-scrollbar-thumb {
 
 /* --- 2. THE ROTATING SPATIAL CORE GRIDS (The Volumetric Core Icosahedron) --- */
 .quantum-plasma-sphere {
-  position: absolute !important; /* Floats untethered at the absolute geometric center point coordinates of the engine */
-  width: 460px !important; /* Spectacular dominant diameter volume profile embracing technical log labels */
-  height: 460px !important; /* Strictly matches horizontal boundaries to lock in perfect circle parameters */
-  z-index: 1; /* Baseline layout depth stratum behind descending translucent HUD text bands */
-  transform-style: preserve-3d !important; /* Forces the 20 triangular faces to rotate tridimensionally on the Z matrix */
+  position: relative !important;   /* In-flow inside the <a> wrapper so flex centering works in armillary core */
+  width: 460px !important;
+  height: 460px !important;
+  z-index: 1;
+  transform-style: preserve-3d !important;
 
-  /* CORE PROPULSION ENGAGEMENT: Sustains nominal core velocity looping infinitely along the Y axis vector */
   animation: spin-geodesic-core 25s infinite linear !important;
+}
+
+/* Override for the recursive page: the sphere inside .recursive-reactor-wrapper stays absolute
+   because the wrapper uses flex centering for its own layout */
+.recursive-reactor-wrapper .quantum-plasma-sphere {
+  position: absolute !important;
 }
 
 /* Glossy glass mesh infrastructure mapping the 20 triangular layout polygons */
