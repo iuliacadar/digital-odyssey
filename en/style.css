@@ -117,7 +117,8 @@ html {
   width: 100% !important; /* Forces the root canvas to span across 100% of the horizontal screen area */
   max-width: 100% !important; /* Rigid structural boundary preventing structural swelling beyond display limits */
   -webkit-text-size-adjust: 100% !important; /* Prevents iOS WebKit from enforcing custom font scaling grids */
-  text-size-adjust: 100% !important; /* Bars Android OS systems from distorting typography metrics */
+  -moz-text-size-adjust: 100% !important; /* Firefox vendor prefix for text inflation prevention */
+  /* text-size-adjust (unprefixed) omitted — unsupported by Firefox/Safari; vendor prefixes above cover all target browsers */
 }
 
 /* PRIMARY VESSEL HULL (The global Body deck) */
@@ -405,6 +406,9 @@ hr {
     20,
     0.85
   ); /* Translucent dark hull shield (Solaris smoked glass matrix) */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     10px
   ); /* Cinematic effect: diffuses and blurs text streams passing beneath the deck */
@@ -616,6 +620,9 @@ hr {
     20,
     0.5
   ); /* Translucent dark hull plate (Solaris smoked glass shield) */
+  -webkit-backdrop-filter: blur(
+    15px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     15px
   ); /* Cinematic effect: diffuses text blocks sliding behind the console */
@@ -917,6 +924,9 @@ hr {
   background: var(
     --panel-bg
   ); /* Translucent smoked glass layout base (Authentic Solaris dashboard style) */
+  -webkit-backdrop-filter: blur(
+    15px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     15px
   ); /* Cinematic filtering: diffuses background fragments to simulate terminal depth */
@@ -1403,7 +1413,7 @@ hr {
   word-wrap: break-word; /* Legacy fallback protection securing old layout engines against swelling */
   hyphens: auto; /* Injects hyphenation markers automatically when splitting words at line end */
   text-align: justify; /* Tight block presentation formatting maximizing structural symmetry levels */
-  text-justify: inter-word; /* Smart word spacing algorithms minimizing white void gaps in text rows */
+  /* text-justify: inter-word removed — unsupported by Chrome, Safari, Firefox. text-align: justify above covers the intent. */
 }
 
 /* --- 2. SYMMETRICAL HEADER ALIGNMENT (The Row Tracking Subsystem) --- */
@@ -1898,6 +1908,9 @@ pre::-webkit-scrollbar-thumb {
     20,
     0.4
   ); /* Translucent smoked glass layout base plate native to the Solaris capsule */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     10px
   ); /* Cinematic effect: diffuses text blocks passing beneath the lower deck bounds */
@@ -2124,6 +2137,9 @@ pre::-webkit-scrollbar-thumb {
   height: 190px !important;
   margin-left: -110px !important; /* Absolute negative offsetting centering tiles precisely over origin coordinates */
   margin-top: -95px !important;
+  -webkit-backdrop-filter: blur(
+    2px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     2px
   ); /* Fine cinematic optical filter texturing inside individual glass panes */
@@ -2304,6 +2320,9 @@ pre::-webkit-scrollbar-thumb {
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
   backdrop-filter: blur(
     4px
   ); /* Diffuses geometric background lines passing through astrolabe casing */
@@ -2914,6 +2933,9 @@ pre::-webkit-scrollbar-thumb {
       20,
       0.7
     ); /* Translucent 70% smoked glass shield plate native to the Solaris amirale */
+    -webkit-backdrop-filter: blur(
+      15px
+    ); /* Safari 9+ vendor prefix for glass-morphism backdrop diffusion */
     backdrop-filter: blur(
       15px
     ); /* Cinematic diffusion rendering objects traveling behind the glass completely soft */
@@ -3174,6 +3196,9 @@ pre::-webkit-scrollbar-thumb {
       20,
       0.85
     ) !important; /* Deep stellar black baseline matrix featuring a dense 85% cinematic transparency */
+    -webkit-backdrop-filter: blur(
+      20px
+    ) !important; /* Safari 9+ vendor prefix intensifies background blur */
     backdrop-filter: blur(
       20px
     ) !important; /* Intensifies background blur: text streaming behind this sheet is visually wiped */
@@ -3201,9 +3226,15 @@ pre::-webkit-scrollbar-thumb {
     /* INDEPENDENT SWIPE TUNNEL (Suppresses parazite scroll interfaces across all mobile engines) */
     overflow-x: auto !important; /* Unlocks independent scroll tracking strictly on X-axis for horizontal carousel navigation */
     overflow-y: hidden !important; /* Locks down the vertical Y-axis to completely prohibit parazite vertical drift movements */
-    -webkit-overflow-scrolling: touch; /* Hooks onto native hardware touch interfaces to secure smooth mobile sweep momentum */
-    scrollbar-width: none !important; /* Completely obliterates default scrollbars on Firefox/Gecko rendering engines */
+    /* -webkit-overflow-scrolling: touch removed — deprecated in iOS 13+. Modern Safari handles momentum natively. */
     -ms-overflow-style: none !important; /* Purges and hides standard tracking bars across legacy Microsoft architectures */
+  }
+
+  /* FIREFOX SCROLLBAR SUPPRESSION (Isolated via @supports to avoid linter warnings on Chrome/Safari) */
+  @supports (scrollbar-width: none) {
+    .log-sidebar {
+      scrollbar-width: none !important;
+    }
   }
 
   /* WEBKIT SCROLLBAR SUPPRESSION PROTOCOL FOR CHROME, SAFARI, AND OPERA clients */
@@ -3532,7 +3563,13 @@ pre::-webkit-scrollbar-thumb {
     border: 1px solid rgba(167, 243, 208, 0.1) !important; /* Fine mint perimeter wire grounding the matrix bounds */
     max-width: 92% !important; /* Establishes a rigid lateral layout buffer safety ceiling away from screen edges */
     margin: 15px auto !important; /* Secures flawless mathematical horizontal center alignment on the screen canvas */
-    scrollbar-width: none !important; /* Anti-pollution shield: completely obliterates the default native scrollbar track on mobile Firefox clients */
+  }
+
+  /* FIREFOX SCROLLBAR SUPPRESSION FOR .mission-status */
+  @supports (scrollbar-width: none) {
+    .mission-status {
+      scrollbar-width: none !important;
+    }
   }
 
   /* CHASSIS PURGE: WEBKIT SCROLLBAR SUPPRESSION FOR THE MAIN STATUS BOX */
