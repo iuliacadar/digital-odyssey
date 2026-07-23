@@ -520,15 +520,16 @@ hr {
 /* --- HUD TOGGLE BUTTON (The Console Activation Switch) --- */
 .hud-toggle {
   background: none;
-  border: 1px solid var(--stardust);
-  color: var(--stardust);
+  border: 1px dashed rgba(167, 243, 208, 0.2);
+  color: rgba(167, 243, 208, 0.4);
   font-family: var(--font-main);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 6px 14px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 3px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -536,9 +537,10 @@ hr {
 }
 
 .hud-toggle:hover {
-  color: var(--nebula-pink);
-  border-color: var(--nebula-pink);
-  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+  color: var(--solar-mint);
+  background: rgba(167, 243, 208, 0.05);
+  border-color: var(--solar-mint);
+  text-shadow: 0 0 5px var(--solar-mint);
 }
 
 /* --- ICOSAHEDRON PORTAL LINK (The Reactor Easter Egg) --- */
