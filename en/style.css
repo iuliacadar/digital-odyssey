@@ -116,9 +116,7 @@ html {
   overflow-x: hidden !important;
   width: 100% !important; /* Forces the root canvas to span across 100% of the horizontal screen area */
   max-width: 100% !important; /* Rigid structural boundary preventing structural swelling beyond display limits */
-  -webkit-text-size-adjust: 100% !important; /* Prevents iOS Safari from enforcing custom font scaling grids */
-  -moz-text-size-adjust: 100% !important; /* Prevents Firefox from inflating text on mobile viewports */
-  text-size-adjust: 100% !important; /* Prevents Chrome/Edge/Samsung Internet from auto-inflating text */
+  /* text-size-adjust removed across all vendor prefixes — viewport meta tag handles mobile text inflation */
 }
 
 /* PRIMARY VESSEL HULL (The global Body deck) */
