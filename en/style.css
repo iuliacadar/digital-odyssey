@@ -584,13 +584,7 @@ a.reactor-portal:focus-visible {
 }
 
 .hud-open .navbar-spacer {
-  height: calc(60px + 70vh);
-}
-
-@media screen and (max-width: 768px) {
-  .hud-open .navbar-spacer {
-    height: 100vh;
-  }
+  height: 100vh;
 }
 
 /* --- HOLOGRAPHIC OVERLAY CONTAINER --- */
@@ -603,19 +597,11 @@ a.reactor-portal:focus-visible {
   overflow: hidden;
   z-index: 999;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(10, 11, 30, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgb(10, 11, 30);
 }
 
 .hud-open .hud-overlay {
-  height: 70vh;
-}
-
-@media screen and (max-width: 768px) {
-  .hud-open .hud-overlay {
-    height: calc(100vh - 60px);
-  }
+  height: calc(100vh - 60px);
 }
 
 /* --- THE GLASS PANEL (Inner navigation surface) --- */
