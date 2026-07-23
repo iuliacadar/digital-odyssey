@@ -116,7 +116,21 @@ html {
   overflow-x: hidden !important;
   width: 100% !important; /* Forces the root canvas to span across 100% of the horizontal screen area */
   max-width: 100% !important; /* Rigid structural boundary preventing structural swelling beyond display limits */
-  /* text-size-adjust removed across all vendor prefixes — viewport meta tag handles mobile text inflation */
+  /* ===== TEXT SIZE ADJUST (commented out — see backlog item 004) ===== */
+  /* Purpose: prevents mobile browsers from auto-inflating text when a page is zoomed or rotated.
+     Each browser vendor uses its own property name for this behavior:
+       - Safari (iOS/macOS)     →  -webkit-text-size-adjust
+       - Firefox (Android)      →  -moz-text-size-adjust
+       - Chrome / Edge / Samsung →  text-size-adjust (unprefixed)
+
+     Why commented out: the <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     tag in the <head> of every HTML file already prevents text inflation on modern mobile browsers.
+     BUT if actual mobile testing shows text scaling issues (e.g. after landscape rotation on iOS,
+     or after pinch-zoom on Android), uncomment the three lines below to restore the safeguard.
+  */
+  /* -webkit-text-size-adjust: 100% !important; /* Safari-only: stops iOS from inflating text on rotation */
+  /* -moz-text-size-adjust: 100% !important;    /* Firefox-only: stops Android Firefox from inflating text */
+  /* text-size-adjust: 100% !important;          /* Chrome/Edge/Samsung: unprefixed standard property */
 }
 
 /* PRIMARY VESSEL HULL (The global Body deck) */
