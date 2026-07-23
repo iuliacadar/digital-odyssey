@@ -508,6 +508,250 @@ hr {
   padding: 0; /* Resets interior padding matrices to absolute zero structural state */
 }
 
+/* ==========================================================================
+    SUB-MODULE 05.4: HOLOGRAPHIC HUD CONSOLE OVERLAY
+      
+   SUMMARY: This sub-module implements the slide-down glassmorphism navigation
+   panel that replaces the old 2-link nav-lists on index and recursive pages.
+   It provides a toggleable overlay with staggered boot-sequence animation,
+   CRT scanline texture, and full-screen mobile adaptation.
+   ========================================================================== */
+
+/* --- HUD TOGGLE BUTTON (The Console Activation Switch) --- */
+.hud-toggle {
+  background: none;
+  border: 1px solid var(--stardust);
+  color: var(--stardust);
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.hud-toggle:hover {
+  color: var(--nebula-pink);
+  border-color: var(--nebula-pink);
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+}
+
+/* --- ICOSAHEDRON PORTAL LINK (The Reactor Easter Egg) --- */
+/* The .reactor-portal wraps the quantum-plasma-sphere on the index page
+   and turns it into a clickable link to recursive-blueprint.html.
+   No visual changes — it inherits dimensions from the sphere inside. */
+a.reactor-portal {
+  display: inline-block;          /* Shrink-wrap the sphere */
+  text-decoration: none;          /* No underline on the invisible link */
+  color: inherit;                 /* Don't introduce a new text colour */
+  cursor: pointer;                /* Show pointer on hover — the only hint */
+  outline: none;                  /* No focus ring (the sphere is the visual) */
+}
+
+a.reactor-portal:hover,
+a.reactor-portal:focus-visible {
+  outline: none;                  /* Keep it clean on hover/focus */
+}
+
+/* --- THE ANIMATED ARROW (Boot-Sequence Chevron) --- */
+.hud-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hud-open .hud-arrow {
+  transform: rotate(180deg);
+}
+
+/* --- HOLOGRAPHIC OVERLAY CONTAINER --- */
+.hud-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  z-index: 999;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(10, 11, 30, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hud-open .hud-overlay {
+  height: 70vh;
+}
+
+@media screen and (max-width: 768px) {
+  .hud-open .hud-overlay {
+    height: calc(100vh - 60px);
+  }
+}
+
+/* --- THE GLASS PANEL (Inner navigation surface) --- */
+.hud-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .hud-panel {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hud-panel {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+/* --- EACH VOLUME CARD INSIDE THE HUD --- */
+.hud-volume {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: hudBoot 0.5s ease forwards;
+  padding: 12px;
+  border-left: 2px solid var(--nebula-pink);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.hud-volume:nth-child(1) { animation-delay: 0.05s; }
+.hud-volume:nth-child(2) { animation-delay: 0.10s; }
+.hud-volume:nth-child(3) { animation-delay: 0.15s; }
+.hud-volume:nth-child(4) { animation-delay: 0.20s; }
+.hud-volume:nth-child(5) { animation-delay: 0.25s; }
+.hud-volume:nth-child(6) { animation-delay: 0.30s; }
+
+@keyframes hudBoot {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- VOLUME TITLE --- */
+.hud-volume-title {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--nebula-pink);
+  margin: 0 0 8px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- LOG LINK LIST INSIDE EACH VOLUME --- */
+.hud-log-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.hud-log-links a {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  color: var(--stardust);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.hud-log-links a:hover {
+  color: var(--solar-mint);
+  text-shadow: 0 0 6px rgba(167, 243, 208, 0.3);
+}
+
+.hud-log-links a::after {
+  content: " ";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--solar-mint);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hud-log-links a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+    SUB-MODULE 05.5: FOOTER SECONDARY COMMAND CONSOLE
+      
+   SUMMARY: The footer expands from a single bibliography link to a full
+   ship-systems panel with transmission/manifesto link and language toggle.
+   ========================================================================== */
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a {
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  color: var(--stardust);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--nebula-pink);
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+}
+
+.lang-toggle-active {
+  color: var(--solar-mint) !important;
+  text-shadow: 0 0 6px rgba(167, 243, 208, 0.5) !important;
+  font-weight: 700;
+}
+
+.lang-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+}
+
 /* --- INDIVIDUAL OUTBOUND NAVIGATION (The HUD Terminals) --- */
 .nav-links a {
   font-family: var(

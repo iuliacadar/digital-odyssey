@@ -213,44 +213,160 @@
       main content sections, footer, and the script that activates interactive behaviors.
     -->
 
-    <!-- @block: PRIMARY NAVIGATION CONSOLE -->
+    <!-- @block: CONSOLA PRINCIPALĂ DE NAVIGAȚIE -->
     <nav class="navbar">
+      <!-- @block: LOGO-UL IDENTITĂȚII NAVEI -->
       <div class="logo"><a href="#hero-core-portal">D::0dy55ey</a></div>
-      <ul class="nav-links">
-        <li><a href="#frontend-scape">FrontEnd</a></li>
-        <li><a href="#database-void">Baze de Date</a></li>
-      </ul>
+      <!-- @structure:
+        .logo ancora brandul navei în colțul stânga-sus.
+        Linkul <a> țintește ancora hero, oferind echipajului un buton rapid de resetare.
+      -->
+
+      <!-- @block: BUTONUL CONSOLEI HUD DE TELEPORTARE
+        Un buton de comutare care deschide overlay-ul holografic al volumelor.
+        Înlocuiește vechea listă inline de linkuri pentru a păstra navbar-ul curat și
+        optimizat pentru mobil.
+      -->
+      <button class="hud-toggle" aria-label="Deschide meniul de navigare">
+        <!-- @reason:
+          "Puntea de Comandă" este eticheta HUD — invită echipajul să deschidă
+          consola principală de navigare a navei. Săgeata ▾ se animă la ▴ când
+          panoul este deschis.
+        -->
+        Puntea de Comandă <span class="hud-arrow">▾</span>
+      </button>
+
+      <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC
+        Un panou glisant cu efect glassmorphism care afișează toate cele 6 volume
+        ale proiectului cu linkurile lor de jurnal. Fiecare volum apare cu o
+        întârziere eșalonată (vezi CSS .hud-volume:nth-child delays).
+        Overlay-ul acoperă 70vh pe desktop și ecranul complet pe mobil.
+      -->
+      <div class="hud-overlay">
+        <div class="hud-panel">
+          <!-- @block: VOLUMUL FRONTEND -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Peisajul Frontend</h3>
+            <ul class="hud-log-links">
+              <li><a href="./frontend/html-log.html">Jurnal HTML</a></li>
+              <li><a href="./frontend/css-log.html">Jurnal CSS</a></li>
+              <li><a href="./frontend/javascript-log.html">Jurnal JavaScript</a></li>
+              <li><a href="./frontend/react-log.html">Jurnal React</a></li>
+              <li><a href="./frontend/angular-log.html">Jurnal Angular</a></li>
+            </ul>
+          </div>
+
+          <!-- @block: VOLUMUL BAZELOR DE DATE -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
+            <ul class="hud-log-links">
+              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
+              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
+            </ul>
+          </div>
+
+          <!-- @block: VOLUMUL BACKEND -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Sectorul Backend</h3>
+            <ul class="hud-log-links">
+              <li><a href="./backend/backend-core-log.html">Jurnal Nucleu</a></li>
+              <li><a href="./backend/api-log.html">Jurnal API</a></li>
+              <li><a href="./backend/auth-security-log.html">Jurnal Autentificare &amp; Securitate</a></li>
+              <li><a href="./backend/backend-architecture-log.html">Jurnal Arhitectură</a></li>
+              <li><a href="./backend/backend-language-log.html">Jurnal Limbaje</a></li>
+              <li><a href="./backend/middlware-log.html">Jurnal Middleware</a></li>
+              <li><a href="./backend/testing-log.html">Jurnal Testare</a></li>
+              <li><a href="./backend/documentation-log.html">Jurnal Documentație</a></li>
+              <li><a href="./backend/performance-log.html">Jurnal Performanță</a></li>
+              <li><a href="./backend/deployment-log.html">Jurnal Deployment</a></li>
+            </ul>
+          </div>
+
+          <!-- @block: VOLUMUL PUNTE DE DATE -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Puntea de Date</h3>
+            <ul class="hud-log-links">
+              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
+            </ul>
+          </div>
+
+          <!-- @block: VOLUMUL UX -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Laborator UX</h3>
+            <ul class="hud-log-links">
+              <li><a href="./ux/ux-foundations-log.html">Jurnal Fundamente UX</a></li>
+              <li><a href="./ux/accessibility-log.html">Jurnal Accesibilitate</a></li>
+            </ul>
+          </div>
+
+          <!-- @block: VOLUMUL LIVRARE -->
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Puntea de Livrare</h3>
+            <ul class="hud-log-links">
+              <li><a href="./delivery/git-log.html">Jurnal Git</a></li>
+              <li><a href="./delivery/github-log.html">Jurnal GitHub</a></li>
+              <li><a href="./delivery/deployment-pipeline-log.html">Jurnal Pipeline</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
+    <!-- @concept:
+      Navbar-ul are acum două stări: restrâns (doar logo + buton de comutare) și
+      expandat (overlay-ul holografic cu toate cele 6 volume). Astfel, puntea de
+      comandă rămâne curată, iar fiecare sector este accesibil într-o singură atingere.
+    -->
 
     <!-- @block: HERO PORTAL — THE ARMILLARY REACTOR CORE -->
     <header class="hero">
       <div id="hero-core-portal" class="armillary-reactor-core">
-        <div class="quantum-plasma-sphere">
-          <!-- TOP TIER -->
-          <div class="face face-t1"></div>
-          <div class="face face-t2"></div>
-          <div class="face face-t3"></div>
-          <div class="face face-t4"></div>
-          <div class="face face-t5"></div>
-          <!-- UPPER MID TIER -->
-          <div class="face face-u1"></div>
-          <div class="face face-u2"></div>
-          <div class="face face-u3"></div>
-          <div class="face face-u4"></div>
-          <div class="face face-u5"></div>
-          <!-- LOWER MID TIER -->
-          <div class="face face-l1"></div>
-          <div class="face face-l2"></div>
-          <div class="face face-l3"></div>
-          <div class="face face-l4"></div>
-          <div class="face face-l5"></div>
-          <!-- BOTTOM TIER -->
-          <div class="face face-b1"></div>
-          <div class="face face-b2"></div>
-          <div class="face face-b3"></div>
-          <div class="face face-b4"></div>
-          <div class="face face-b5"></div>
-        </div>
+        <!-- @block: SFERA DE PLASMĂ CUANTICĂ — PORTALUL ICOSAEDRU
+          Un poliedru 3D cu multiple fațete construit din 20 de elemente individuale.
+          Fiecare față este un <div> stilizat prin transformări CSS pentru a forma
+          o formă geodezică. Întreaga sferă este înfășurată într-un tag <a> care
+          duce la pagina de blueprint recursiv — un ou de Paște ascuns pentru
+          echipajul curios.
+          @concept:
+            Click pe icosaedru este un act narativ: nu navighezi către o pagină,
+            ci deschizi un hublou spre sala motoarelor navei. Pagina recursive este
+            singurul modul care arată codul sursă real al proiectului — nucleul
+            intim. Doar cei suficient de curioși să atingă reactorul care pulsează
+            îl vor găsi.
+        -->
+        <a href="recursive-blueprint.html" class="reactor-portal">
+          <div class="quantum-plasma-sphere">
+            <!-- TOP TIER -->
+            <div class="face face-t1"></div>
+            <div class="face face-t2"></div>
+            <div class="face face-t3"></div>
+            <div class="face face-t4"></div>
+            <div class="face face-t5"></div>
+            <!-- UPPER MID TIER -->
+            <div class="face face-u1"></div>
+            <div class="face face-u2"></div>
+            <div class="face face-u3"></div>
+            <div class="face face-u4"></div>
+            <div class="face face-u5"></div>
+            <!-- LOWER MID TIER -->
+            <div class="face face-l1"></div>
+            <div class="face face-l2"></div>
+            <div class="face face-l3"></div>
+            <div class="face face-l4"></div>
+            <div class="face face-l5"></div>
+            <!-- BOTTOM TIER -->
+            <div class="face face-b1"></div>
+            <div class="face face-b2"></div>
+            <div class="face face-b3"></div>
+            <div class="face face-b4"></div>
+            <div class="face face-b5"></div>
+          </div>
+        </a>
+        <!-- @concept:
+          Poliedrul cu 20 de fețe reprezintă un astrolab geodezic — un instrument
+          cosmic de navigație. Fiecare față este un nod în matricea de învățare.
+          Prin înfășurarea sa într-un link portal, instrumentul devine și un prag:
+          echipajul nu apasă un buton, ci urmează zumzetul reactorului.
+        -->
 
         <div class="armillary-band-container macro-wrapper">
           <div class="astrolabe-metal-arc macro-arc"></div>
@@ -349,20 +465,41 @@
       o legătură către bibliografie și semnătura căpitanului.
     -->
     <footer class="footer">
-      <!-- @structure:
-        Creez un container pentru linkul de comunicație externă. Adăpostește
-        portalul către pagina de bibliografie, stilizat ca un far de navigație.
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDĂ
+        Footerul se extinde dincolo de un singur link de bibliografie într-un
+        panou complet al sistemelor navei. Acum adăpostește Hărțile Stelare
+        (bibliografie), Carta de Astro-navigație (transmisia/manifestul) și
+        comutatorul de limbă între versiunile română și engleză ale proiectului.
+        @concept:
+          Footerul este stația de navigație auxiliară a navei — mai puțin
+          proeminentă decât overlay-ul HUD, dar esențială pentru sistemele care
+          nu aparțin unui volum specific: manifestul fondator, arhiva de
+          referință și comutatorul de limbă.
       -->
-      <div class="external-comms">
-        <a
-          href="bibliography.html"
-          target="_blank"
-          class="archive-link"
-        >
+      <ul class="footer-links">
+        <!-- @path: Pagina de bibliografie -->
+        <li>
           <span class="pulse-dot"></span>
-          Hărți Stelare — Bibliografie
-        </a>
-      </div>
+          <a href="bibliography.html" target="_blank">Hărți Stelare — Bibliografie</a>
+        </li>
+        <!-- @path: Pagina de transmisie / Cartă de Astro-navigație -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="transmission.html">Carta de Astro-navigație — Manifest</a>
+        </li>
+        <!-- @bridge: Comutator de limbă între RO și EN -->
+        <li>
+          <!-- @reason:
+            Comutatorul de limbă permite echipajului să alterneze între versiunile
+            română și engleză ale proiectului. Limba curentă este marcată cu clasa
+            .lang-toggle-active (evidențiere verde fosfor). Bara verticală (|)
+            separă vizual cele două opțiuni.
+          -->
+          <a href="../ro/index.html" class="lang-toggle-active">RO</a>
+          <span class="lang-sep">|</span>
+          <a href="../en/index.html">EN</a>
+        </li>
+      </ul>
 
       <!-- @structure:
         Scriu prima linie de telemetrie. Îi spune cititorului în ce sector

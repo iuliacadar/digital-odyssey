@@ -719,4 +719,38 @@ Abordarea cu două modele rezolvă o problemă specifică: dacă fiecare pagină
 
 Toate cele 52 de pagini non-index au fost actualizate la acest model standardizat, cu varianta lingvistică adecvată (engleză pentru paginile din `en/`, română pentru paginile din `ro/`). Comentarii explicative cu etichete din legendă au fost adăugate pentru fiecare linie de cod din blocul nav, folosind limba corectă pentru fiecare folder.
 
+## 7. Navigare HUD dropdown, Portalul Icosaedrului și Expansiunea Footerului
+
+În această iterație am înlocuit navigarea inline cu două linkuri de pe paginile index cu un panou derulant holografic HUD, am transformat reactorul icosaedric într-un portal ascuns către pagina de blueprint recursiv, am extins footerul într-o consolă secundară de comandă și am înlocuit navigarea paginii recursive de la un link „Înapoi la puntea de comandă" la același buton HUD.
+
+### 7.1 Panoul derulant HUD
+
+Pagina index avea anterior două linkuri de navigare (săgeți sus/jos pentru ancore de derulare). Le-am înlocuit cu un singur buton `Puntea de Comandă` (RO) / `Command Deck` (EN) care comută un panou glassmorphism ce conține toate cele șase volume. Panoul folosește aceeași structură `.hud-overlay` / `.hud-panel` deja definită în CSS, cu fade-in eșalonat per `.hud-volume` pentru un efect de dezvăluire secvențială. JavaScript (`MECANISMUL 7` în `script.js`) gestionează trei moduri de interacțiune: comutare la click (butonul comută clasa `.active`), închidere la click în afara panoului și închidere la tasta Escape. O clauză de gardă (`if (!hudToggle) return`) asigură că scriptul nu generează erori pe paginile care nu au butonul `.hud-toggle`.
+
+Acest design menține bara de navigare curată pe mobil (doar logo-ul și butonul HUD sunt vizibile), oferind în același timp echipajului acces la toate cele șase volume dintr-o singură atingere.
+
+### 7.2 Portalul icosaedrului (Easter egg ascuns)
+
+Div-ul `quantum-plasma-sphere` de pe pagina index este acum înfășurat într-un element `<a href="recursive-blueprint.html" class="reactor-portal">`. Acest link este intenționat nedescoperibil din interfață — nu are etichetă vizibilă, culoare de link sau subliniere. Singura modalitate de a ajunge la pagina de blueprint recursiv este dând click pe icosaedru. Astfel, reactorul 3D devine un Easter egg ascuns: un dispozitiv secret de teleportare încorporat în secțiunea de inginerie a Punții de Comandă.
+
+Pe pagina de blueprint recursiv, mini-reactorul este similar înfășurat în `<a href="index.html" class="reactor-portal">`, creând o buclă închisă: index → recursiv → index. Echipajul se poate teleporta înapoi la nava-mamă prin reactorul-vierme.
+
+Footerul nu conține un link către pagina de blueprint recursiv. Aceasta este o decizie deliberată: puntea recursivă nu este o destinație obișnuită — este un sector ascuns, accesibil doar prin reactor.
+
+### 7.3 Expansiunea footerului
+
+Footerul conține acum un `<ul class="footer-links">` cu trei elemente: linkul către bibliografie (cu beacon `pulse-dot`), linkul către transmisie/manifest (de asemenea cu `pulse-dot`) și un comutator de limbă între `EN` și `RO` cu `.lang-toggle-active` evidențiind limba curentă și `.lang-sep` pentru separatorul vertical. Structura footerului de pe index a fost copiată și pe paginile de blueprint recursiv, păstrând sistemele de navigare consistente în întreaga flotă.
+
+### 7.4 Înlocuirea navigării paginii recursive
+
+Pagina de blueprint recursiv avea anterior un nav secundar standard cu un logo static și un link ancoră `← Înapoi la puntea de comandă`. Am înlocuit acest lucru cu același buton HUD și același panou derulant folosit pe paginile index. Logo-ul static `D::0dy55ey / Schiță Recursivă` este păstrat (nu este hyperlink), dar navigarea este acum panoul glassmorphism. Acest lucru întărește conceptul paginii recursive ca navă autonomă în cadrul flotei — are propriul HUD, propria consolă de comandă și poate naviga către orice sector fără a trece prin puntea navei-mamă.
+
+### 7.5 Intrare BACKLOG 005
+
+Am adăugat intrarea 005 atât în `BACKLOG-EN.md`, cât și în `BACKLOG-RO.md`, documentând întregul domeniu al acestei iterații: implementarea HUD dropdown, crearea portalului icosaedric, expansiunea footerului, definițiile volumelor, deciziile de design (fără link în footer către recursiv, buclă închisă, clauze de gardă), fișierele afectate (10 fișiere) și condițiile de finalizare. Statusul este setat la „In progress" pentru a permite rafinări viitoare.
+
+### 7.6 Disciplina lingvistică în comentarii
+
+Fiecare fișier urmează limba folderului: fișierele din `en/` au comentarii în engleză cu etichete EN (`@block`, `@reason`, `@structure`, `@concept`, `@theme`), fișierele din `ro/` au comentarii în română cu etichete RO. Fișierele CSS și JS folosesc comentarii în limba română conform convenției stabilite anterior (proiectul își are originea la un dezvoltator român).
+
 ---

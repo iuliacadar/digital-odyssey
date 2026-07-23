@@ -353,3 +353,37 @@ document.addEventListener("DOMContentLoaded", () => {
 // 6. [APPLICATION INTERACTIVITY]: Sistem de notițe persistente per articol.
 //    Folosirea LocalStorage pentru a permite utilizatorilor să adauge și să salveze
 //    extensii de jurnal direct din interfață.
+
+//  ==========================================================================
+//     MECANISMUL 7: HUD CONSOLE TOGGLE (Deschidere / Închidere Overlay)
+//     Controlează panoul holografic glisant cu toate cele 6 volume.
+//  ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".hud-toggle");
+  const navbar = document.querySelector(".navbar");
+
+  if (!toggleBtn || !navbar) return; // Ieșire sigură dacă elementele nu există (pagină fără HUD)
+
+  // Alternare clasă .hud-open pe navbar la click pe buton
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevenim propagarea pentru a nu declanșa închiderea imediată
+    navbar.classList.toggle("hud-open");
+  });
+
+  // Închidere HUD la click în afara panoului
+  document.addEventListener("click", (e) => {
+    if (navbar.classList.contains("hud-open")) {
+      const isClickInside = navbar.contains(e.target);
+      if (!isClickInside) {
+        navbar.classList.remove("hud-open");
+      }
+    }
+  });
+
+  // Închidere HUD la tasta Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navbar.classList.contains("hud-open")) {
+      navbar.classList.remove("hud-open");
+    }
+  });
+});

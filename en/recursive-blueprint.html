@@ -224,21 +224,88 @@
       terminal rather than a general deck.
     -->
     <nav class="navbar">
-      <!-- @block: TERMINAL IDENTITY -->
+      <!-- @block: TERMINAL IDENTITY
+        Unlike the index page, this logo is static (not a hyperlink) because
+        the recursive blueprint is a self-piloted explorer — the crew already
+        knows they are in the engine room. The miniature reactor serves as
+        the return portal instead.
+      -->
       <div class="logo">D::0dy55ey / Recursive Blueprint</div>
 
-      <!-- @block: NAVIGATION COMMANDS -->
-      <ul class="nav-links">
-        <li>
-          <a href="index.html"
-            ><!-- @reason:
-              The left-arrow symbol (←) acts as a visual back-direction cue.
-              "Return to Command Deck" links to index.html, the mothership's
-              main bridge.
-            -->← Return to Command Deck</a
-          >
-        </li>
-      </ul>
+      <!-- @block: HUD TELEPORT CONSOLE BUTTON
+        Same HUD toggle as the index page — gives the recursive page its own
+        navigation console without needing the "Return to Command Deck" link.
+        @concept:
+          The recursive page is an autonomous vessel within the fleet. It has
+          the same navigation system as the mothership, reinforcing its status
+          as a self-piloted explorer, not a mere appendix.
+      -->
+      <button class="hud-toggle" aria-label="Toggle navigation menu">
+        Command Deck <span class="hud-arrow">▾</span>
+      </button>
+
+      <!-- @block: HOLOGRAPHIC NAVIGATION OVERLAY
+        Identical panel to the index page — all 6 volumes with sub-log links.
+        The recursive page uses the same HUD so the crew never feels lost:
+        they can teleport to any sector directly from the engine room.
+      -->
+      <div class="hud-overlay">
+        <div class="hud-panel">
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Frontend Landscape</h3>
+            <ul class="hud-log-links">
+              <li><a href="./frontend/html-log.html">HTML Log</a></li>
+              <li><a href="./frontend/css-log.html">CSS Log</a></li>
+              <li><a href="./frontend/javascript-log.html">JavaScript Log</a></li>
+              <li><a href="./frontend/react-log.html">React Log</a></li>
+              <li><a href="./frontend/angular-log.html">Angular Log</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Database Void</h3>
+            <ul class="hud-log-links">
+              <li><a href="./database/sql-log.html">SQL Log</a></li>
+              <li><a href="./database/nosql-log.html">NoSQL Log</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Backend Sector</h3>
+            <ul class="hud-log-links">
+              <li><a href="./backend/backend-core-log.html">Core Log</a></li>
+              <li><a href="./backend/api-log.html">API Log</a></li>
+              <li><a href="./backend/auth-security-log.html">Auth &amp; Security Log</a></li>
+              <li><a href="./backend/backend-architecture-log.html">Architecture Log</a></li>
+              <li><a href="./backend/backend-language-log.html">Languages Log</a></li>
+              <li><a href="./backend/middlware-log.html">Middleware Log</a></li>
+              <li><a href="./backend/testing-log.html">Testing Log</a></li>
+              <li><a href="./backend/documentation-log.html">Documentation Log</a></li>
+              <li><a href="./backend/performance-log.html">Performance Log</a></li>
+              <li><a href="./backend/deployment-log.html">Deployment Log</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Data Bridge</h3>
+            <ul class="hud-log-links">
+              <li><a href="./data-bridge/json-log.html">JSON Log</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">UX Lab</h3>
+            <ul class="hud-log-links">
+              <li><a href="./ux/ux-foundations-log.html">UX Foundations Log</a></li>
+              <li><a href="./ux/accessibility-log.html">Accessibility Log</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Delivery Deck</h3>
+            <ul class="hud-log-links">
+              <li><a href="./delivery/git-log.html">Git Log</a></li>
+              <li><a href="./delivery/github-log.html">GitHub Log</a></li>
+              <li><a href="./delivery/deployment-pipeline-log.html">Pipeline Log</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- @block: MAIN RECURSIVE ENGINE
@@ -300,24 +367,34 @@
             engine" that powers the page's recursive self-documentation.
           -->
 
-          <!-- @block: COMPACT 3D REACTOR
+          <!-- @block: COMPACT 3D REACTOR — RETURN PORTAL
             Unlike the 20-face polyhedron on the index page, this miniature
             uses a subset of 5 top-tier faces (t1–t5) to keep the visual
             footprint small while preserving the geodesic astrolabe motif.
+            The entire reactor is wrapped in a link back to index.html.
+            @concept:
+              The mini-reactor is the return portal from the engine room to
+              the command deck. Together with the icosahedron on the index
+              page, they form a closed loop: click the heart on the bridge
+              → enter the engine room; click the engine miniature → return
+              to the bridge. A recursive dialogue between the ship and its
+              own reflection.
           -->
-          <div class="recursive-reactor-wrapper">
-            <!-- @structure:
-              .recursive-reactor-wrapper centres the sphere and applies a
-              slow CSS rotation animation that simulates a 3D spin.
-            -->
-            <div class="quantum-plasma-sphere">
-              <div class="face face-t1"></div>
-              <div class="face face-t2"></div>
-              <div class="face face-t3"></div>
-              <div class="face face-t4"></div>
-              <div class="face face-t5"></div>
+          <a href="index.html" class="reactor-portal">
+            <div class="recursive-reactor-wrapper">
+              <!-- @structure:
+                .recursive-reactor-wrapper centres the sphere and applies a
+                slow CSS rotation animation that simulates a 3D spin.
+              -->
+              <div class="quantum-plasma-sphere">
+                <div class="face face-t1"></div>
+                <div class="face face-t2"></div>
+                <div class="face face-t3"></div>
+                <div class="face face-t4"></div>
+                <div class="face face-t5"></div>
+              </div>
             </div>
-          </div>
+          </a>
 
           <div class="mission-status">
             <p>Status: Operational | Source Link: script.js | Cache: Flushed</p>
@@ -379,35 +456,26 @@
       and the captain's signature.
     -->
     <footer class="footer">
-      <!-- @structure:
-        I create a container for the external communications link. It houses
-        the portal to the bibliography page, styled as a navigational beacon
-        that guides the reader to the reference archives.
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        Consistent with the index page footer — bibliography, transmission,
+        and language toggle. The recursive page uses the same footer so the
+        crew always finds ship systems in the same place.
       -->
-      <div class="external-comms">
-        <!-- @path:
-          I set the href to "bibliography.html", which points to the bibliography
-          page. Because this file is in the same folder as the bibliography,
-          I use the filename directly. For log pages inside subfolders like
-          frontend/, I would write "../bibliography.html" to go up one level.
-        -->
-        <a href="bibliography.html" target="_blank" class="archive-link">
-          <!-- @structure:
-            I insert a small circular indicator before the link text.
-            The .pulse-dot class styles it as a 6px green dot. A CSS keyframe
-            animation (dot-pulse) makes it scale up and fade out repeatedly,
-            like an active radar beacon or communication signal light.
-          -->
+      <ul class="footer-links">
+        <li>
           <span class="pulse-dot"></span>
-          <!-- @reason:
-            I add target="_blank" to the anchor element. This tells the browser
-            to open the bibliography page in a new tab instead of navigating
-            away from the current page. The reader can consult the references
-            without losing their scroll position or current context.
-          -->
-          Star Charts — Bibliography
-        </a>
-      </div>
+          <a href="bibliography.html" target="_blank">Star Charts — Bibliography</a>
+        </li>
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="transmission.html">The Astrogation Charter — Manifesto</a>
+        </li>
+        <li>
+          <a href="../en/index.html" class="lang-toggle-active">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../ro/index.html">RO</a>
+        </li>
+      </ul>
 
       <!-- @structure:
         I write the first telemetry data line. It tells the reader which sector

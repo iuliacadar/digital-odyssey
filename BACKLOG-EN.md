@@ -165,6 +165,42 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ---
 
+### 005 — Holographic HUD Console navigation for index + icosahedron portal
+
+**Title:** Holographic HUD Console navigation, icosahedron portal, and footer expansion
+
+**Description:** Replace the simple 2-link navbar on index pages with a slide-down glassmorphism HUD overlay containing all 6 volumes (Frontend, Database, Backend, Data Bridge, UX, Delivery). Add transmission.html link and EN/RO language toggle to the footer. Link the index icosahedron reactor to recursive-blueprint.html (hidden portal). Swap recursive page nav from "Return to Command Deck" to the HUD button, and link its mini-reactor back to index.html. Add JS toggle and CSS staggered boot-sequence animations.
+
+**Status:** In progress
+**Priority:** High
+**Phase:** DAY 10 — structural navigation architecture
+
+**Why now:** The index currently only links 2 volumes (Frontend, Database) but the project now has 6. The navbar must remain clean on mobile, so a toggleable HUD overlay solves both the space problem and the retro-futurist atmosphere. The icosahedron portal reinforces the recursive page's special status as a hidden, self-piloted module.
+
+**Affected files:** `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `en/style.css`, `ro/style.css`, `en/script.js`, `ro/script.js`, `JURNAL-EN.md`, `JURNAL-RO.md`
+
+**Steps:**
+- add HUD overlay HTML to index nav with all 6 volumes + their log links
+- add CSS: glassmorphism panel, staggered keyframe animation, mobile full-screen
+- add JS: toggle button, close on outside click / Escape key
+- expand footer: transmission link, EN ↔ RO language toggle
+- wrap icosahedron on index → recursive-blueprint.html
+- swap recursive page nav to HUD button; wrap mini-reactor → index.html
+- mirror all changes in ro/ with Romanian comments
+- add DAY 10 §7 to journals explaining the philosophy
+
+**Completion conditions:**
+- HUD overlay opens/closes smoothly with staggered entrance animation
+- All 6 volumes are listed with their sub-logs
+- Footer contains transmission + language toggle
+- Clicking icosahedron on index navigates to recursive page
+- Clicking mini-reactor on recursive page navigates back to index
+- Recursive page nav uses HUD button, not "Return to Command Deck"
+- All comments are in the correct language per folder
+- ro/ versions mirror en/ structurally
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

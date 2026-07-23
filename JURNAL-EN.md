@@ -720,4 +720,38 @@ The two-model approach solves a specific problem: if every page had the same ful
 
 All 52 non-index pages were updated to this standardised pattern, with the appropriate language variant (English for `en/` pages, Romanian for `ro/` pages). Explanatory comments with tags from the legend were added for each line of code in the nav block, using the correct language for each folder.
 
+## 7. HUD Dropdown Navigation, Icosahedron Portal, and Footer Expansion
+
+In this iteration I replaced the inline two-link navigation on the index pages with a holographic HUD dropdown overlay, turned the icosahedron reactor into a hidden portal to the recursive blueprint page, expanded the footer into a secondary command console, and swapped the recursive page nav from a "Return to Command Deck" link to the same HUD button.
+
+### 7.1 The HUD dropdown overlay
+
+The index page previously had two navigation links (arrow-down anchor scroll buttons). I replaced them with a single `Command Deck` (EN) / `Puntea de Comandă` (RO) button that toggles a glassmorphism slide-down panel containing all six volumes. The panel uses the same `.hud-overlay` / `.hud-panel` structure already defined in the CSS, with staggered CSS fade-in per `.hud-volume` for a sequential reveal effect. JavaScript (`MECANISMUL 7` in `script.js`) handles three interaction modes: click toggle (the button itself toggles the `.active` class), close on outside click (clicking outside the `.hud-panel` closes the overlay), and close on Escape key. A guard clause (`if (!hudToggle) return`) ensures the script does not error on pages that lack the `.hud-toggle` button.
+
+This design keeps the navbar clean on mobile (only the logo and the HUD button visible), while giving the crew access to all six volumes in a single tap.
+
+### 7.2 The icosahedron portal (hidden Easter egg)
+
+The `quantum-plasma-sphere` div on the index page is now wrapped in a `<a href="recursive-blueprint.html" class="reactor-portal">` element. This link is intentionally undiscoverable from the UI — there is no visible label, no link colour, no underline. The only way to reach the recursive blueprint page is by clicking the icosahedron. This turns the 3D reactor into a hidden Easter egg: a secret teleportation device embedded in the Command Deck's engineering section.
+
+On the recursive blueprint page, the mini-reactor is similarly wrapped in `<a href="index.html" class="reactor-portal">`, creating a closed loop: index → recursive → index. The crew can teleport back to the mother ship through the wormhole reactor.
+
+The footer does not contain a link to the recursive blueprint page. This is deliberate: the recursive deck is not a regular destination — it is a hidden sector accessible only through the reactor.
+
+### 7.3 Footer expansion
+
+The footer now contains a `<ul class="footer-links">` with three items: the bibliography link (with `pulse-dot` beacon), the transmission/manifesto link (also with `pulse-dot`), and a language toggle between `EN` and `RO` with `.lang-toggle-active` highlighting the current language and `.lang-sep` for the vertical separator. The index footer structure was copied to the recursive blueprint pages as well, keeping the navigation systems consistent across the fleet.
+
+### 7.4 Recursive page navigation swap
+
+The recursive blueprint page previously had a standard secondary nav with a static logo and a `← Return to Command Deck` anchor link. I replaced this with the same HUD button and overlay used on the index pages. The static logo `D::0dy55ey / Recursive Blueprint` is preserved (not hyperlinked), but the navigation is now the glassmorphism panel. This reinforces the concept of the recursive page as an autonomous vessel within the fleet — it has its own HUD, its own command console, and can navigate to any sector without going through the mother ship's bridge.
+
+### 7.5 BACKLOG entry 005
+
+I added entry 005 to both `BACKLOG-EN.md` and `BACKLOG-RO.md`, documenting the full scope of this iteration: HUD dropdown implementation, icosahedron portal creation, footer expansion, volume definitions, design decisions (no footer link to recursive, closed loop, guard clauses), affected files (10 files), and completion conditions. The status is set to "In progress" to allow for future refinements.
+
+### 7.6 Language discipline across comments
+
+Every file follows the folder's language: `en/` files have English comments with EN tags (`@block`, `@reason`, `@structure`, `@concept`, `@theme`), `ro/` files have Romanian comments with RO tags. CSS and JS files use Romanian comments per the convention established earlier (the project originates from a Romanian developer).
+
 ---

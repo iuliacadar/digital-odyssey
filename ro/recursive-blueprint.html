@@ -209,27 +209,88 @@
   <body>
         <nav class="navbar">
       <!-- @block: IDENTITATEA TERMINALULUI
-        Blocul logo afișează indicativul navei și numele secțiunii curente.
-        Este text static (nu este link) deoarece această pagină este ea însăși
-        o stație a navei; echipajul își citește aici locația.
+        Spre deosebire de pagina index, acest logo este static (nu este hyperlink)
+        deoarece blueprintul recursiv este un explorator auto-pilotat — echipajul
+        știe deja că se află în sala motoarelor. Reactorul miniatural servește
+        drept portal de întoarcere.
       -->
       <div class="logo">D::0dy55ey / Schiță Recursivă</div>
 
-      <!-- @block: COMENZI DE NAVIGAȚIE
-        Lista nav-links conține acțiunile principale de navigare.
-        Pe paginile secundare, se oferă o singură comandă: întoarcerea la punte.
+      <!-- @block: BUTONUL CONSOLEI HUD DE TELEPORTARE
+        Același buton HUD ca pe pagina index — oferă paginii recursive propria
+        consolă de navigație fără a necesita linkul "Înapoi la puntea de comandă".
+        @concept:
+          Pagina recursive este o navă autonomă în cadrul flotei. Are același
+          sistem de navigație ca nava-mamă, întărindu-și statutul de explorator
+          auto-pilotat, nu de simplă anexă.
       -->
-      <ul class="nav-links">
-        <li>
-          <a href="index.html"
-            ><!-- @reason:
-              Simbolul săgeată stânga (←) funcționează ca un indiciu vizual
-              de întoarcere. "Înapoi la puntea de comandă" face legătura cu
-              index.html, puntea principală a navei-mamă.
-            -->← Înapoi la puntea de comandă</a
-          >
-        </li>
-      </ul>
+      <button class="hud-toggle" aria-label="Deschide meniul de navigare">
+        Puntea de Comandă <span class="hud-arrow">▾</span>
+      </button>
+
+      <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC
+        Același panou ca pe pagina index — toate cele 6 volume cu linkurile
+        de jurnal. Pagina recursive folosește același HUD pentru ca echipajul
+        să nu se simtă niciodată pierdut: poate telegorta în orice sector
+        direct din sala motoarelor.
+      -->
+      <div class="hud-overlay">
+        <div class="hud-panel">
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Peisajul Frontend</h3>
+            <ul class="hud-log-links">
+              <li><a href="./frontend/html-log.html">Jurnal HTML</a></li>
+              <li><a href="./frontend/css-log.html">Jurnal CSS</a></li>
+              <li><a href="./frontend/javascript-log.html">Jurnal JavaScript</a></li>
+              <li><a href="./frontend/react-log.html">Jurnal React</a></li>
+              <li><a href="./frontend/angular-log.html">Jurnal Angular</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
+            <ul class="hud-log-links">
+              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
+              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Sectorul Backend</h3>
+            <ul class="hud-log-links">
+              <li><a href="./backend/backend-core-log.html">Jurnal Nucleu</a></li>
+              <li><a href="./backend/api-log.html">Jurnal API</a></li>
+              <li><a href="./backend/auth-security-log.html">Jurnal Autentificare &amp; Securitate</a></li>
+              <li><a href="./backend/backend-architecture-log.html">Jurnal Arhitectură</a></li>
+              <li><a href="./backend/backend-language-log.html">Jurnal Limbaje</a></li>
+              <li><a href="./backend/middlware-log.html">Jurnal Middleware</a></li>
+              <li><a href="./backend/testing-log.html">Jurnal Testare</a></li>
+              <li><a href="./backend/documentation-log.html">Jurnal Documentație</a></li>
+              <li><a href="./backend/performance-log.html">Jurnal Performanță</a></li>
+              <li><a href="./backend/deployment-log.html">Jurnal Deployment</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Puntea de Date</h3>
+            <ul class="hud-log-links">
+              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Laborator UX</h3>
+            <ul class="hud-log-links">
+              <li><a href="./ux/ux-foundations-log.html">Jurnal Fundamente UX</a></li>
+              <li><a href="./ux/accessibility-log.html">Jurnal Accesibilitate</a></li>
+            </ul>
+          </div>
+          <div class="hud-volume">
+            <h3 class="hud-volume-title">Puntea de Livrare</h3>
+            <ul class="hud-log-links">
+              <li><a href="./delivery/git-log.html">Jurnal Git</a></li>
+              <li><a href="./delivery/github-log.html">Jurnal GitHub</a></li>
+              <li><a href="./delivery/deployment-pipeline-log.html">Jurnal Pipeline</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <header class="hero">
@@ -284,20 +345,26 @@
       o legătură către bibliografie și semnătura căpitanului.
     -->
     <footer class="footer">
-      <!-- @structure:
-        Creez un container pentru linkul de comunicație externă. Adăpostește
-        portalul către pagina de bibliografie, stilizat ca un far de navigație.
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDĂ
+        Conform cu footerul paginii index — bibliografie, transmisie și
+        comutator de limbă. Pagina recursive folosește același footer pentru
+        ca echipajul să găsească întotdeauna sistemele navei în același loc.
       -->
-      <div class="external-comms">
-        <a
-          href="bibliography.html"
-          target="_blank"
-          class="archive-link"
-        >
+      <ul class="footer-links">
+        <li>
           <span class="pulse-dot"></span>
-          Hărți Stelare — Bibliografie
-        </a>
-      </div>
+          <a href="bibliography.html" target="_blank">Hărți Stelare — Bibliografie</a>
+        </li>
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="transmission.html">Carta de Astro-navigație — Manifest</a>
+        </li>
+        <li>
+          <a href="../ro/index.html" class="lang-toggle-active">RO</a>
+          <span class="lang-sep">|</span>
+          <a href="../en/index.html">EN</a>
+        </li>
+      </ul>
 
       <!-- @structure:
         Scriu prima linie de telemetrie. Îi spune cititorului în ce sector
