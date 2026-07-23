@@ -546,16 +546,28 @@ hr {
    and turns it into a clickable link to recursive-blueprint.html.
    No visual changes — it inherits dimensions from the sphere inside. */
 a.reactor-portal {
-  display: inline-block;          /* Shrink-wrap the sphere */
-  text-decoration: none;          /* No underline on the invisible link */
-  color: inherit;                 /* Don't introduce a new text colour */
-  cursor: pointer;                /* Show pointer on hover — the only hint */
-  outline: none;                  /* No focus ring (the sphere is the visual) */
+  position: absolute;             /* Remove from flex flow so the sphere stays at its original position */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+  pointer-events: none;           /* Let clicks pass through the full-area wrapper */
 }
 
 a.reactor-portal:hover,
 a.reactor-portal:focus-visible {
-  outline: none;                  /* Keep it clean on hover/focus */
+  outline: none;
+}
+
+/* Only the sphere itself captures the click — titles and empty space pass through */
+a.reactor-portal .quantum-plasma-sphere {
+  pointer-events: auto;
 }
 
 /* --- THE ANIMATED ARROW (Boot-Sequence Chevron) --- */
@@ -568,10 +580,26 @@ a.reactor-portal:focus-visible {
   transform: rotate(180deg);
 }
 
+/* --- SPACER THAT PUSHES CONTENT BELOW THE OVERLAY --- */
+.navbar-spacer {
+  height: 60px;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hud-open .navbar-spacer {
+  height: calc(60px + 70vh);
+}
+
+@media screen and (max-width: 768px) {
+  .hud-open .navbar-spacer {
+    height: 100vh;
+  }
+}
+
 /* --- HOLOGRAPHIC OVERLAY CONTAINER --- */
 .hud-overlay {
-  position: fixed;
-  top: 60px;
+  position: absolute;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 0;
@@ -737,8 +765,8 @@ a.reactor-portal:focus-visible {
 }
 
 .footer-links a:hover {
-  color: var(--nebula-pink);
-  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+  color: var(--solar-mint);
+  text-shadow: 0 0 12px rgba(167, 243, 208, 0.6);
 }
 
 .lang-toggle-active {
@@ -2770,6 +2798,7 @@ pre::-webkit-scrollbar-thumb {
 
 /* --- 5. ASYMMETRIC MICRO-SCALING REACTOR ENCLOSURE --- */
 .recursive-reactor-wrapper {
+  position: relative;            /* Establish containing block for the absolute sphere inside */
   transform: scale(
     0.55
   ) !important; /* COMPRESSION MATRIX: Downscales the entire interior module by exactly 55% */
