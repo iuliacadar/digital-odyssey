@@ -1038,7 +1038,6 @@ a.reactor-portal:focus-visible {
   align-items: center !important; /* Standardizes horizontal centering across all internal nodes */
   text-align: center; /* Enforces absolute text block centering for narrative elements */
   box-sizing: border-box; /* Forces padding variables into width math, halting structural fractures */
-  overflow: hidden; /* Clean mechanical clip slicing away erratic decorative overflows */
 }
 
 /* --- 2. MAIN CONVERSION PORTAL LINK (The Cyberpunk CTA Button) --- */
@@ -2366,8 +2365,8 @@ pre::-webkit-scrollbar-thumb {
   flex-direction: column !important; /* Stacks parallel telemetry data bands directly beneath each other */
   align-items: center !important; /* Geometrically locks core sphere and labels on the horizontal midline axis */
   justify-content: center !important; /* Centers the entire technical module vertically within the hero section */
-  margin-top: 140px !important; /* Displaces reactor core downwards to intercept fixed navbar overlapping loops */
-  margin-bottom: 140px !important; /* Symmetrical structural air gap isolating core layout from category grid bounds */
+  margin-top: 60px !important; /* Displaces reactor core downwards to intercept fixed navbar overlapping loops */
+  margin-bottom: 60px !important; /* Symmetrical structural air gap isolating core layout from category grid bounds */
   width: 100% !important; /* Spans across full available width without compiling horizontal layout fractures */
   height: 540px !important; /* Dominant, rigid vertical structural height depth footprint */
   background: transparent !important; /* Preserves underlying global CRT screen background texture fill maps */
