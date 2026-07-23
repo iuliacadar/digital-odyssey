@@ -2513,13 +2513,12 @@ pre::-webkit-scrollbar-thumb {
 
 /* ---- 4. HERO SECTION // KINETIC REACTION OVERLOAD MATRIX (GPU Shielded Maps) --- */
 
-/* --- A. STABLE ROTATION CONTROLLER (Structural synchronization across both decks) ---
-    This dual compound selector locks macro containers on both index and recursive viewports.
-    It forces a rigid 20-second threshold for a full 3D rotation cycle during mouse proximity,
-    permanently suppressing layout acceleration spikes and preventing parallel GPU overloads. */
-.armillary-reactor-core:hover .quantum-plasma-sphere,
-.recursive-reactor-wrapper:hover .quantum-plasma-sphere {
-  animation-duration: 20s !important;
+/* --- A. HOVER OVERDRIVE — BOTH REACTORS SURGE ON CONTACT ---
+    The index icosahedron and the recursive mini-reactor both accelerate
+    to a 3-second rotation cycle on hover, creating an electric surge
+    effect that makes the geodesic cores feel unstable and reactive. */
+.armillary-reactor-core:hover .quantum-plasma-sphere {
+  animation-duration: 3s !important;
 }
 
 /* --- B. LASER INJECTION PIPELINE FOR THE MAIN COMMAND DECK (index.html) ---
