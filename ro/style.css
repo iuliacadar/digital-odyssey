@@ -559,6 +559,14 @@ a.reactor-portal:focus-visible {
   outline: none;
 }
 
+/* Recursive page: center the mini-reactor inside its panel section */
+.panel > a.reactor-portal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 /* --- THE ANIMATED ARROW (Boot-Sequence Chevron) --- */
 .hud-arrow {
   display: inline-block;
@@ -1129,17 +1137,13 @@ a.reactor-portal:focus-visible {
     0 0 10px rgba(255, 0, 127, 0.45),
     -1px -1px 0px #000 !important;
 
-  margin: 0 !important; /* Obliterates native browser vertical cushions to secure alignment control */
-  white-space: nowrap !important; /* CRUCIAL UX SHIELD: Strictly prohibits erratic vertical word stacking during generation */
-  display: inline-block; /* Forces block behavior allowing precise max-width manipulation loops */
-  overflow: hidden; /* Obliterates trailing letters until the typing engine moves the layout boundaries */
-  max-width: 0; /* Dormant initial state: title starts completely sealed at zero horizontal space */
-  border-right: 2px solid #ffffff !important; /* The physical mechanical cursor wire ticking on screen */
+  margin: 0 !important;
+  white-space: nowrap !important;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 0;
 
-  /* ASYNCHRONOUS TYPING ENGINE: Triggers horizontal deployment loop spanning exactly 3 seconds */
-  animation:
-    typing-modular 3s steps(35, end) forwards,
-    blink 0.75s step-end infinite;
+  animation: typing-modular 3s steps(35, end) forwards;
 }
 
 /* --- 5. SECONDARY DIAGNOSTIC TELEMETRY (The Sub-Title Script Terminal) --- */
@@ -1149,17 +1153,13 @@ a.reactor-portal:focus-visible {
   letter-spacing: 1px; /* Subtle spacing tracking layout stabilizing structural phrasing */
   color: #a4b3c6 !important; /* Muted technical gray spectrum protecting screens from observation fatigue */
   text-shadow: 0 0 6px var(--solar-mint); /* Projects a localized low-voltage green phosphor aura around characters */
-  margin: 0 !important; /* Absolute flush of default margins protecting module constraints */
-  white-space: nowrap !important; /* Scut Absolut: Strictly bars text from breaking horizontally during print loops */
-  display: inline-block; /* Secures alignment context necessary for custom animation step sequences */
-  overflow: hidden; /* Hides upcoming characters until the step engine expands width arrays */
-  max-width: 0; /* Dormant initial state: sub-title begins completely collapsed in space void */
-  border-right: 1.5px solid #a4b3c6 !important; /* Low-priority micro cursor wire signaling background processing */
+  margin: 0 !important;
+  white-space: nowrap !important;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 0;
 
-  /* SEQUENTIAL TIMING DELAY: Waits exactly 3 seconds for the master title to deploy before initiating typing */
-  animation:
-    typing-modular 4s steps(55, end) 3s forwards,
-    blink 0.75s step-end infinite;
+  animation: typing-modular 4s steps(55, end) 3s forwards;
 }
 
 /* ==========================================================================
@@ -2400,12 +2400,6 @@ pre::-webkit-scrollbar-thumb {
   animation: spin-geodesic-core 25s infinite linear !important;
 }
 
-/* Override for the recursive page: the sphere inside .recursive-reactor-wrapper stays absolute
-   because the wrapper uses flex centering for its own layout */
-.recursive-reactor-wrapper .quantum-plasma-sphere {
-  position: absolute !important;
-}
-
 /* Glossy glass mesh infrastructure mapping the 20 triangular layout polygons */
 .quantum-plasma-sphere .face {
   position: absolute !important; /* Concentrically groups all structural tiles around the shared geometric zero node */
@@ -2550,24 +2544,32 @@ pre::-webkit-scrollbar-thumb {
 }
 
 /* --- C. CASCADING PRIORITY OVERRIDE FOR THE SPLIT-SCREEN ARENA (recursive-blueprint.html) ---
-    Implements identical geometry, color, and hardware acceleration passes across the split-screen mesh.
-    By binding the rule directly to the native `.recursive-reactor-wrapper`, it scales the cascade weight
-    to smash priority overrides and enforce absolute 1:1 symmetrical layout alignment across frames. */
+    Same pink glutonous glow as the command deck, but with an extra voltage surge:
+    box-shadow spikes for an electric-discharge effect on the mini-reactor faces.
+    The rotation also speeds up (3s) instead of slowing down, making the
+    recursive reactor feel more unstable and energetic when examined closely. */
 .recursive-reactor-wrapper:hover .face {
   border-color: var(
     --nebula-pink
-  ) !important; /* Shifts baseline wires to the high-visibility pink alert spectrum */
+  ) !important;
   border-bottom-color: var(
     --nebula-pink
-  ) !important; /* Ignites lower wire segments of upward triangles without reflow steps */
+  ) !important;
   border-top-color: var(
     --nebula-pink
-  ) !important; /* Ignites upper wire segments of inverted triangles to retain sharp vertices */
-  border-style: solid !important; /* Locks framework lines into continuous solid arrays, barring graphical splitting */
-  opacity: 0.95 !important; /* Escalates elements opacity parameters up to a heavy 95% glass plate look */
-  animation: lightning-glow-fusion 1.8s infinite alternate ease-in-out !important; /* Binds the low-power 1.8s fluid plasma pulse loop */
-  will-change:
-    transform, opacity; /* GPU SHIELD: Detaches 3D geometry onto a dedicated uncompressed hardware layer in VRAM */
+  ) !important;
+  border-style: solid !important;
+  opacity: 0.95 !important;
+  animation: lightning-glow-fusion 1.8s infinite alternate ease-in-out !important;
+  box-shadow:
+    0 0 20px rgba(255, 0, 127, 0.6),
+    inset 0 0 15px rgba(255, 0, 127, 0.3) !important;
+  will-change: transform, opacity;
+}
+
+/* Speed up the mini-reactor rotation on hover for an electric-discharge feel */
+.recursive-reactor-wrapper:hover .quantum-plasma-sphere {
+  animation-duration: 3s !important;
 }
 
 /* --- 5. EQUATORIAL HUD LAYER ARRAYS (The Centered Elliptical Astrolabe Bands) --- */
@@ -2805,27 +2807,6 @@ pre::-webkit-scrollbar-thumb {
       Forces the rendering engine to preserve the Z-axis depth matrix across scaling! 
       This single line completely prevents the 3D Icosahedron from flattening into a single triangle. */
   transform-style: preserve-3d !important;
-}
-
-/* --- 6. RECURSIVE PORTAL HOVER CHARGES (Mini-Reactor Voltage Overload) --- */
-
-/* Deploys the lightning strobe and phosphor glows exclusively over individual faces */
-.recursive-reactor-wrapper:hover .quantum-plasma-sphere .face {
-  background: rgba(
-    167,
-    243,
-    208,
-    0.2
-  ) !important; /* Core plates shift variable channels to absorb 20% active green phosphor */
-  border-color: var(
-    --solar-mint
-  ) !important; /* Boundary perimeter wires switch instantly into uncompressed green radiation */
-  box-shadow: 0 0 15px rgba(167, 243, 208, 0.4) !important; /* Projects a localized micro green fluorescent neon glow corona */
-
-  /* NATIVE LIGHTNING KEYFRAME ENGINE:
-      The 3D core preserves its majestic, slow horizontal spin from Module 07, 
-      while distinguished face stencils strobe violently at a 3.5s pacing loop, running a perfect hora! */
-  animation: lightning-glow-fusion 3.5s infinite alternate ease-in-out !important;
 }
 
 /* --- 7. MACRO RESPONSIVE LAYOUT BARRIERS FOR DESKTOP HULLS --- */
