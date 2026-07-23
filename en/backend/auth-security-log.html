@@ -250,47 +250,42 @@
       and the captain's signature.
     -->
     <footer class="footer">
-      <!-- @structure:
-        I create a container for the external communications link. It houses
-        the portal to the bibliography page, styled as a navigational beacon
-        that guides the reader to the reference archives.
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        The footer expands beyond a single bibliography link into a full
+        ship-systems panel. It now houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission/manifesto), and the language
+        toggle between the English and Romanian versions of the project.
+        @concept:
+          The footer is the ship's auxiliary navigation station - less
+          prominent than the HUD overlay, but essential for systems that
+          do not belong to a specific volume: the founding manifesto, the
+          reference archive, and the language switch.
       -->
-      <div class="external-comms">
-        <!-- @path:
-          I set the href to "bibliography.html", which points to the bibliography
-          page. Because this file is in the same folder as the bibliography,
-          I use the filename directly. For log pages inside subfolders like
-          frontend/, I would write "../bibliography.html" to go up one level.
-        -->
-        <a
-          href="bibliography.html"
-          target="_blank"
-          class="archive-link"
-        >
-          <!-- @structure:
-            I insert a small circular indicator before the link text.
-            The .pulse-dot class styles it as a 6px green dot. A CSS keyframe
-            animation (dot-pulse) makes it scale up and fade out repeatedly,
-            like an active radar beacon or communication signal light.
-          -->
+      <ul class="footer-links">
+        <!-- @path: Bibliography page -->
+        <li>
           <span class="pulse-dot"></span>
+          <a href="../bibliography.html" target="_blank">Star Charts — Auth &amp; Security Log</a>
+        </li>
+        <!-- @path: Transmission / Astrogation Charter page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="../transmission.html">The Astrogation Charter - Manifesto</a>
+        </li>
+        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <li>
           <!-- @reason:
-            I add target="_blank" to the anchor element. This tells the browser
-            to open the bibliography page in a new tab instead of navigating
-            away from the current page. The reader can consult the references
-            without losing their scroll position or current context.
+            The language toggle lets the crew switch between the English and
+            Romanian versions of the project. The current language is marked
+            with the .lang-toggle-active class (phosphor green highlight).
+            The separator pipe (|) visually divides the two options.
           -->
-          Star Charts — Bibliography
-        </a>
-      </div>
-
-      <!-- @structure:
-        I write the first telemetry data line. It tells the reader which sector
-        or chapter they are currently viewing. SYS_ORBIT changes per page:
-        index pages say COMMAND_DECK, frontend logs say FRONTEND_EXPEDITION,
-        backend pages say BACKEND_EXPEDITION, and so on for each chapter.
-      -->
-      <p>
+          <a href="../../en/index.html" class="lang-toggle-active">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../../ro/index.html" class="">RO</a>
+        </li>
+      </ul>
+<p>
         SYS_ORBIT: BACKEND_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>

@@ -250,26 +250,42 @@
       o legătură către bibliografie și semnătura căpitanului.
     -->
     <footer class="footer">
-      <!-- @structure:
-        Creez un container pentru linkul de comunicație externă. Adăpostește
-        portalul către pagina de bibliografie, stilizat ca un far de navigație.
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        The footer expands beyond a single bibliography link into a full
+        ship-systems panel. It now houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission/manifesto), and the language
+        toggle between the English and Romanian versions of the project.
+        @concept:
+          The footer is the ship's auxiliary navigation station - less
+          prominent than the HUD overlay, but essential for systems that
+          do not belong to a specific volume: the founding manifesto, the
+          reference archive, and the language switch.
       -->
-      <div class="external-comms">
-        <a
-          href="bibliography.html"
-          target="_blank"
-          class="archive-link"
-        >
+      <ul class="footer-links">
+        <!-- @path: Bibliography page -->
+        <li>
           <span class="pulse-dot"></span>
-          Hărți Stelare — Bibliografie
-        </a>
-      </div>
-
-      <!-- @structure:
-        Scriu prima linie de telemetrie. Îi spune cititorului în ce sector
-        sau capitol se află în acest moment.
-      -->
-      <p>
+          <a href="../bibliography.html" target="_blank">Hărți Stelare — Jurnal Performanță</a>
+        </li>
+        <!-- @path: Transmission / Astrogation Charter page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="../transmission.html">The Astrogation Charter - Manifesto</a>
+        </li>
+        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <li>
+          <!-- @reason:
+            The language toggle lets the crew switch between the English and
+            Romanian versions of the project. The current language is marked
+            with the .lang-toggle-active class (phosphor green highlight).
+            The separator pipe (|) visually divides the two options.
+          -->
+          <a href="../../en/index.html" class="lang-toggle-active">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../../ro/index.html" class="">RO</a>
+        </li>
+      </ul>
+<p>
         SYS_ORBIT: BACKEND_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
