@@ -143,6 +143,28 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 ---
 
+### 004 — Verificare text-size-adjust pe dispozitive mobile la lansare
+
+**Titlu:** Verificare text-size-adjust pe dispozitive mobile la lansare
+
+**Descriere:** Testare pe dispozitive reale (iOS Safari, Chrome Android, Firefox Android) pentru a confirma că eliminarea declarațiilor `-webkit-text-size-adjust`, `-moz-text-size-adjust` și `text-size-adjust` nu afectează redarea textului. Dacă apar probleme de scalare sau inflație a textului, se restaurează declarațiile.
+
+**Status:** Propus
+**Prioritate:** Low
+**Fază:** La lansare / prima sesiune de testare mobilă
+
+**De ce mai târziu:** Declarațiile au fost eliminate pentru a suprima avertismentele linter-ului VS Code. Meta tag-ul viewport ar trebui să gestioneze inflația textului, dar testarea reală pe mobil este necesară pentru confirmare. Prioritate scăzută deoarece impactul este cosmetic și nu afectează utilizatorii de desktop.
+
+**Fișiere afectate:** `en/style.css`, `ro/style.css`
+
+**Condiții de implementare:**
+- testare pe iOS Safari (iPhone/iPad) — verificare dimensiune text după rotația ecranului;
+- testare pe Chrome Android — verificare dimensiune text la zoom;
+- testare pe Firefox Android — verificare dimensiune text la zoom;
+- dacă apar probleme, se restaurează `-webkit-text-size-adjust: 100%` (Safari), `-moz-text-size-adjust: 100%` (Firefox) și `text-size-adjust: 100%` (Chrome/Edge/Samsung).
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.

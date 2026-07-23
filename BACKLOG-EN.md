@@ -143,6 +143,28 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - the section remains short, clear, and aligned with the backlog style;
 - `.hintrc` is documented or excluded in a justified way.
 
+### 004 — Verify text-size-adjust on mobile devices at launch
+
+**Title:** Verify text-size-adjust on mobile devices at launch
+
+**Description:** Check if removing `-webkit-text-size-adjust`, `-moz-text-size-adjust`, and `text-size-adjust` declarations affects text rendering on real mobile devices (iOS Safari, Chrome Android, Firefox Android). If text inflation or scaling issues appear on any device, restore the declarations.
+
+**Status:** Proposed
+**Priority:** Low
+**Phase:** At launch / first mobile testing round
+
+**Why later:** The declarations were removed to eliminate VS Code linter warnings. The viewport meta tag should handle text inflation, but actual mobile testing is needed to confirm. Low priority because the impact is cosmetic and does not affect desktop users.
+
+**Affected files:** `en/style.css`, `ro/style.css`
+
+**Implementation conditions:**
+- test on iOS Safari (iPhone/iPad) — check text size after landscape rotation;
+- test on Chrome Android — check text size on zoom;
+- test on Firefox Android — check text size on zoom;
+- if any issue appears, restore `-webkit-text-size-adjust: 100%` (Safari), `-moz-text-size-adjust: 100%` (Firefox), and `text-size-adjust: 100%` (Chrome/Edge/Samsung).
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.
