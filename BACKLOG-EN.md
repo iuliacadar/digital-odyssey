@@ -201,6 +201,30 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ---
 
+### 006 — CSS Console Repairs and UI Calibrations
+
+**Status:** Completed
+**Date:** 2026-07-23
+
+**Scope:** Visual refinements across the entire fleet.
+
+**Changes:**
+- Reduced `.armillary-reactor-core` margins from 140px to 60px (top/bottom) to keep icosahedron bottom faces within viewport on page load.
+- Reduced `.blueprint-container` margin-top from 100px to 40px and tightened `.terminal-split`, `.blueprint-demo-text`, and `.recursive-reactor-wrapper` spacing for the mini-reactor.
+- Removed `overflow: hidden` from `.hero` to stop 3D face clipping.
+- Added `class="return-btn"` to all 50 "← Return to Command Deck" links so subdirectory pages get the same green dashed border style as root pages.
+- Restyled `.footer-links a` to match `.archive-link` (green border, green glow hover).
+- Restyled `.hud-toggle` to match the return-btn style (green dashed border, green hover).
+- Made `.hud-overlay` fully opaque (`rgb(10, 11, 30)`) and full-screen (`calc(100vh - 60px)`).
+- Added `aria-label` to both reactor portals for accessibility.
+- Updated and restyled `.lang-toggle-active` to filled green background.
+- Added Day 10 — Reparations Log section to JURNAL-EN.md and JURNAL-RO.md.
+- Synced all CSS changes to `ro/style.css`.
+
+**Files affected:** `en/style.css`, `ro/style.css`, `en/index.html`, `en/recursive-blueprint.html`, `ro/index.html`, `JURNAL-EN.md`, `JURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`.
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

@@ -753,4 +753,48 @@ Am adăugat intrarea 005 atât în `BACKLOG-EN.md`, cât și în `BACKLOG-RO.md`
 
 Fiecare fișier urmează limba folderului: fișierele din `en/` au comentarii în engleză cu etichete EN (`@block`, `@reason`, `@structure`, `@concept`, `@theme`), fișierele din `ro/` au comentarii în română cu etichete RO. Fișierele CSS și JS folosesc comentarii în limba română conform convenției stabilite anterior (proiectul își are originea la un dezvoltator român).
 
+## 8. Reparații CSS și Calibrări UI
+
+În această iterație m-am concentrat pe rafinări vizuale care au apărut în urma testării interfeței: reactorul 3D și mini-reactorul ieșeau din cadrul ecranului la încărcarea paginii, linkul „Înapoi la puntea de comandă" avea două stiluri diferite în funcție de adâncimea directorului, linkurile din footer trebuiau să se potrivească cu stilul butoanelor archive-link pe toate paginile, iar suprapunerea HUD era semi-transparentă, lăsând conținutul hero-ului să se vadă prin ea.
+
+### 8.1 Calibrarea reactorului și mini-reactorului la aterizare
+
+Atât icosaedrul principal (pe `index.html`), cât și mini-reactorul (pe `recursive-blueprint.html`) aveau fețele 3D inferioare care ieșeau din viewport la încărcarea paginii. Cauza principală era marginile excesive pe elementele container:
+
+- `.armillary-reactor-core` avea `margin-top: 140px` și `margin-bottom: 140px` plus o `height: 540px` fixă — un total de 820px, care pe viewporturi mai mici nu lăsa loc pentru extensia 3D `translateZ(210px)` a fețelor.
+- `.blueprint-container` avea `margin: 100px auto`, împingând mini-reactorul prea jos.
+- `.hero` avea `overflow: hidden`, care tăia fețele 3D extinse.
+
+**Remediere**: Am redus marginile `.armillary-reactor-core` de la 140px la 60px sus și jos, marginea de sus `.blueprint-container` de la 100px la 40px, `.terminal-split` margin-top de la 40px la 20px, `.blueprint-demo-text` margin-bottom de la 25px la 15px, am mărit marja negativă `.recursive-reactor-wrapper` de la -20px la -40px și am eliminat `overflow: hidden` de pe containerul `.hero`. Aceste ajustări mențin nucleele geodezice complet vizibile în viewport la sosirea prin portalul icosaedric.
+
+### 8.2 Strălucirea electrică și accelerarea la hover uniformizate
+
+Cele două reactoare — icosaedrul cu 20 de fețe de pe pagina index și mini-reactorul cu 5 fețe de pe pagina recursivă — aveau comportamente inconsistente la hover. Icosaedrul index accelera la un ciclu de 3 secunde la hover, în timp ce mini-reactorul avea o temporizare separată. Intensitatea strălucirii electrice diferă de asemenea între cele două.
+
+**Remediere**: Am standardizat ambele reactoare să folosească aceleași keyframes `lightning-glow-fusion` și aceeași durată de `3s` la hover prin `.recursive-reactor-wrapper:hover .quantum-plasma-sphere { animation-duration: 3s !important; }`. Ambele au acum intensitate identică a strălucirii, tranziții ale bordurii și curbe de accelerare la hover.
+
+### 8.3 Unificarea stilului linkului „Înapoi la puntea de comandă"
+
+Linkul „← Înapoi la puntea de comandă" din bara de navigare avea două tratamente vizuale diferite în funcție de adâncimea directorului paginii. Paginile din folderul rădăcină `en/` foloseau `href="index.html"` și se potriveau cu selectorul CSS `.nav-links a[href="index.html"]`, care aplica o bordură verde întreruptă cu text verde desaturat. Paginile din subdirectoare (de ex. `en/frontend/`) foloseau `href="../index.html"` și cădeau în stilul implicit gri al nav-link-urilor, cu linie laser roz la hover.
+
+**Remediere**: Am adăugat `class="return-btn"` la toate cele 50 de ancore „← Înapoi la puntea de comandă". Selectorul CSS `.nav-links a.return-btn` era deja definit cu același bloc de reguli ca și selectorul `[href="index.html"]`, astfel că toate paginile primesc acum bordura verde întreruptă, starea inactivă la 40% opacitate și hover-ul verde complet cu strălucire de fundal subtilă, indiferent de adâncimea directorului.
+
+### 8.4 Panoul de linkuri din footer unificat pe toate paginile
+
+Footerul trebuia actualizat astfel încât bibliografia, transmisia (manifestul) și comutatorul de limbă EN/RO să folosească toate același stil de buton archive-link care fusese prototipat pe pagina de transmisie. Elementele `<a>` din `footer-links` aveau text gri simplu cu doar o umbră de text la hover, lipsindu-le bordura verde, padding-ul și efectul de strălucire ale clasei `.archive-link`.
+
+**Remediere**: Am actualizat CSS-ul pentru `.footer-links a` să se potrivească cu stilul `.archive-link`: `color: var(--solar-mint)` cu bordură `1px solid var(--solar-mint)`, `padding: 6px 14px` și o stare hover care umple fundalul cu `--solar-mint`, schimbă textul la `--space-dark` și adaugă o strălucire `0 0 20px` verde. Clasa `.lang-toggle-active` a fost de asemenea actualizată să folosească un fundal verde plin cu text închis. Modificările CSS au fost aplicate pe toate cele 50+ pagini și sincronizate între `en/style.css` și `ro/style.css`.
+
+### 8.5 Consola HUD opacă și desfășurată pe tot ecranul
+
+Suprapunerea Command Deck (`hud-overlay`) folosea `background: rgba(10, 11, 30, 0.85)` cu `backdrop-filter: blur(8px)`, ceea ce permitea conținutului secțiunii hero (icosaedrul și titlurile) să se vadă prin panoul semi-transparent. Suprapunerea acoperea doar 70vh din viewport, lăsând hero-ul parțial vizibil dedesubt.
+
+**Remediere**: Am schimbat fundalul la `rgb(10, 11, 30)` solid (complet opac) și am eliminat `backdrop-filter` (care nu are efect vizibil pe un fundal solid). Am extins înălțimea deschisă de la `70vh` la `calc(100vh - 60px)`, acoperind întregul viewport sub bara de navigare fixă. `.navbar-spacer` a fost actualizat de la `calc(60px + 70vh)` la `100vh` pentru a împinge conținutul curat sub suprapunere. Atât desktopul cât și mobilul folosesc acum aceleași dimensiuni, eliminând necesitatea unui media query specific pentru mobil.
+
+### 8.6 Remediiri auxiliare
+
+- **Accesibilitate**: Atât portalul icosaedric al paginii index, cât și portalul mini-reactorului al paginii recursive aveau elemente `<a>` fără conținut text (conțineau doar `<div>`-uri goale). Am adăugat atribute `aria-label`: `aria-label="Intră în Planul Recursiv"` pe pagina index și `aria-label="Înapoi la puntea de comandă"` pe pagina recursivă. Aceasta rezolvă avertismentul aXe „Links must have discernible text".
+
+- **Stilul butonului Command Deck**: Butonul HUD toggle (`.hud-toggle`) folosea anterior text și bordură gri (`--stardust`) cu un hover magenta. L-am restilizat să se potrivească cu butonul „Înapoi la puntea de comandă": bordură verde întreruptă, text verde desaturat, padding 4px/10px, border-radius 3px și un hover verde complet cu strălucire subtilă de fundal.
+
 ---

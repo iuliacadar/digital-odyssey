@@ -754,4 +754,48 @@ I added entry 005 to both `BACKLOG-EN.md` and `BACKLOG-RO.md`, documenting the f
 
 Every file follows the folder's language: `en/` files have English comments with EN tags (`@block`, `@reason`, `@structure`, `@concept`, `@theme`), `ro/` files have Romanian comments with RO tags. CSS and JS files use Romanian comments per the convention established earlier (the project originates from a Romanian developer).
 
+## 8. CSS Console Repairs and UI Calibrations
+
+In this iteration I focused on visual refinements that emerged from testing the interface: the 3D reactor and mini-reactor were overflowing past the viewport on page load, the "Return to Command Deck" link had two different styles depending on whether the page was in a root directory or a subfolder, the footer links needed to match the archive-link button style across all pages, and the HUD overlay was semi-transparent, letting hero content bleed through.
+
+### 8.1 Reactor and mini-reactor landing calibration
+
+Both the main icosahedron (on `index.html`) and the mini-reactor (on `recursive-blueprint.html`) had their bottom 3D faces extending past the visible viewport when landing on the page. The root cause was excessive margins on the container elements:
+
+- `.armillary-reactor-core` had `margin-top: 140px` and `margin-bottom: 140px` plus a fixed `height: 540px` — a total vertical footprint of 820px, which on smaller viewports left no room for the 3D `translateZ(210px)` face extension.
+- `.blueprint-container` had `margin: 100px auto`, pushing the mini-reactor too far down.
+- `.hero` had `overflow: hidden`, which clipped the 3D-extended faces.
+
+**Fix**: I reduced `.armillary-reactor-core` margins from 140px to 60px top and bottom, reduced `.blueprint-container` top margin from 100px to 40px, tightened `.terminal-split` margin-top from 40px to 20px, reduced `.blueprint-demo-text` margin-bottom from 25px to 15px, increased the `.recursive-reactor-wrapper` negative margin from -20px to -40px, and removed `overflow: hidden` from the `.hero` container. These adjustments kept the geodesic cores fully visible within the viewport when arriving through the icosahedron portal link.
+
+### 8.2 Unified hover glow and spin acceleration
+
+The two reactors — the 20-face icosahedron on the index page and the 5-face mini-reactor on the recursive page — had inconsistent hover behaviour. The index icosahedron accelerated to a 3-second spin cycle on hover, while the mini-reactor had a separate timing. The electric glow intensity also differed between the two.
+
+**Fix**: I standardised both reactors to use the same `lightning-glow-fusion` keyframes and the same `3s` hover spin duration via `.recursive-reactor-wrapper:hover .quantum-plasma-sphere { animation-duration: 3s !important; }`. Both now share identical glow intensity, border transitions, and hover acceleration curves.
+
+### 8.3 Unifying the "Return to Command Deck" link style
+
+The "← Return to Command Deck" link in the navbar had two different visual treatments depending on the page's directory depth. Pages in the root `en/` folder used `href="index.html"` and matched the CSS selector `.nav-links a[href="index.html"]`, which applied a green dashed border with desaturated green text. Pages in subdirectories (e.g. `en/frontend/`) used `href="../index.html"` and fell back to the default grey nav-link style with a pink underline laser on hover.
+
+**Fix**: I added `class="return-btn"` to all 50 "← Return to Command Deck" anchor tags. The CSS selector `.nav-links a.return-btn` was already defined with the same rule block as the `[href="index.html"]` selector, so all pages now receive the green dashed border, 40% opacity idle state, and full-green hover with subtle background shimmer regardless of their directory depth.
+
+### 8.4 Footer link panel unified across all pages
+
+The footer needed to be updated so that the bibliography, transmission (manifesto), and EN/RO language toggle all used the same archive-link button style that had been prototyped on the transmission page. The `footer-links` `<a>` elements had plain grey text with only a text-shadow on hover, lacking the green border, padding, and glow effect of the `.archive-link` class.
+
+**Fix**: I updated the CSS for `.footer-links a` to match the `.archive-link` style: `color: var(--solar-mint)` with a `1px solid var(--solar-mint)` border, `padding: 6px 14px`, and a hover state that fills the background with `--solar-mint`, swaps text to `--space-dark`, and adds a `0 0 20px` green box-shadow glow. The `.lang-toggle-active` class was also updated to use a filled green background with dark text. The CSS changes were applied to all 50+ pages and synced between `en/style.css` and `ro/style.css`.
+
+### 8.5 Opaque full-screen HUD console
+
+The Command Deck overlay (`hud-overlay`) used `background: rgba(10, 11, 30, 0.85)` with `backdrop-filter: blur(8px)`, which allowed the hero section's icosahedron and titles to bleed through the semi-transparent panel. The overlay also only covered 70vh of the viewport, leaving the hero partially visible underneath.
+
+**Fix**: I changed the background to solid `rgb(10, 11, 30)` (fully opaque) and removed the `backdrop-filter` (which has no visible effect against a solid background). I expanded the open height from `70vh` to `calc(100vh - 60px)`, covering the entire viewport below the fixed navbar. The `.navbar-spacer` was updated from `calc(60px + 70vh)` to `100vh` to push content cleanly below the overlay. Both desktop and mobile now use the same dimensions, removing the need for the mobile-specific media query.
+
+### 8.6 Auxiliary fixes
+
+- **Accessibility**: Both the index page's icosahedron portal and the recursive page's mini-reactor portal had `<a>` elements with no text content (they contained only empty `<div>` faces). I added `aria-label` attributes: `aria-label="Enter the Recursive Blueprint"` on the index page and `aria-label="Return to Command Deck"` on the recursive page (with Romanian equivalents for `ro/index.html`). This resolves the aXe "Links must have discernible text" warning.
+
+- **Command Deck button style**: The HUD toggle button (`.hud-toggle`) previously used grey (`--stardust`) text and border with a magenta hover. I restyled it to match the "Return to Command Deck" button: green dashed border, desaturated green text, 4px/10px padding, 3px border-radius, and a full-green hover with subtle background shimmer.
+
 ---
