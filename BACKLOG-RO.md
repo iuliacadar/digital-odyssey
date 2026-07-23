@@ -1,4 +1,4 @@
-# Digital Odyssey — BACKLOG-RO.md
+# D::0dy55ey — BACKLOG-RO.md
 
 Acest document centralizează ideile, funcționalitățile amânate, refactorizările și datoria tehnică a proiectului. Comentariile inline din cod rămân utile pentru context local, dar backlog-ul funcționează ca registru principal al lucrurilor planificate pentru implementare ulterioară.
 

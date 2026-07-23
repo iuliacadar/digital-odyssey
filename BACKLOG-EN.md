@@ -1,4 +1,4 @@
-# Digital Odyssey — BACKLOG-EN.md
+# D::0dy55ey — BACKLOG-EN.md
 
 This document centralizes ideas, postponed features, refactors, and technical debt for the project. Inline code comments remain useful for local context, but the backlog acts as the main register for items planned for later implementation.
 

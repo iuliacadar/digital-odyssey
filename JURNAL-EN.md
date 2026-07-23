@@ -1,10 +1,10 @@
 # DAY 00 — Inspiration Baseline
 
-This section establishes the starting point of the `Digital Odyssey` project by referring back to `Manual_project`, the parent concept that inspired the current direction. The goal is not only to record a source of inspiration, but also to clarify how the original idea was transformed into a version that is more coherent, more explicit, and better prepared for public presentation.
+This section establishes the starting point of the `D::0dy55ey` project by referring back to `Manual_project`, the parent concept that inspired the current direction. The goal is not only to record a source of inspiration, but also to clarify how the original idea was transformed into a version that is more coherent, more explicit, and better prepared for public presentation.
 
-`Digital Odyssey` preserves the atmospheric core of the source, but reorganizes it into a more rigorous architecture. In this transformation, I aimed to combine semantic stability, technical discipline, and visual expression into a single system. The project therefore emerges as a bilingual platform for learning, documentation, and portfolio use, built on a retro-futurist science-fiction identity and on the idea of self-documenting code.
+`D::0dy55ey` preserves the atmospheric core of the source, but reorganizes it into a more rigorous architecture. In this transformation, I aimed to combine semantic stability, technical discipline, and visual expression into a single system. The project therefore emerges as a bilingual platform for learning, documentation, and portfolio use, built on a retro-futurist science-fiction identity and on the idea of self-documenting code.
 
-Compared with the parent project, the new project expands the architecture into more volumes and a more layered internal hierarchy. In addition to the `Frontend Landscape` and `Database Void` volumes present in the original project, `Digital Odyssey` adds new volumes dedicated to the JSON data bridge, backend, UX, and deployment. This expansion changes not only the amount of content, but also the way the learning path is organized.
+Compared with the parent project, the new project expands the architecture into more volumes and a more layered internal hierarchy. In addition to the `Frontend Landscape` and `Database Void` volumes present in the original project, `D::0dy55ey` adds new volumes dedicated to the JSON data bridge, backend, UX, and deployment. This expansion changes not only the amount of content, but also the way the learning path is organized.
 
 The new volumes are designed to continue the project’s didactic logic and extend it into areas that were only suggested before. The `JSON Data Bridge` volume works as a bridge between the front end and data systems, the `Backend Core` volume introduces server-side logic, the `UX Lab` volume strengthens the user experience, and the `Deployment` volume treats delivery and publication as an integral part of the architecture.
 
@@ -20,7 +20,7 @@ What the source represents:
 - A technical base on which the new version is built.
 - A didactic reference for how knowledge is organized and transmitted.
 
-What `Digital Odyssey` adds:
+What `D::0dy55ey` adds:
 
 - A clearer and more scalable architecture.
 - A coherent bilingual presentation.
@@ -38,7 +38,7 @@ The bilingual strategy was already present in Manual_project through separate `s
 
 The current stage of the project is that of an interactive technical journal and documentation platform, with a clear intention to grow into a public-facing form. The materials show that the project does not aim only to display the final result, but also to expose the process, iteration, and structural decisions. That gives it both pedagogical value and portfolio value.
 
-The name `Digital Odyssey` points toward cosmic navigation, cockpit systems, telemetry, and digital exploration. The visual atmosphere is built around references such as `Solaris`, CRT screens, translucent HUD layers, and neon accents, integrated into a technical narrative language. Here, the interface is not just a presentation layer, but also a tool for orientation and meaning.
+The name `D::0dy55ey` points toward cosmic navigation, cockpit systems, telemetry, and digital exploration. The visual atmosphere is built around references such as `Solaris`, CRT screens, translucent HUD layers, and neon accents, integrated into a technical narrative language. Here, the interface is not just a presentation layer, but also a tool for orientation and meaning.
 
 The documented structure points to a modular architecture with a main page and satellite pages, including `index.html`, `recursive-blueprint.html`, `bibliography.html`, global and localized CSS files, plus `script.js` for interactive logic. The presence of `style-ro.css` and `style-en.css` confirms a controlled localization strategy rather than a superficial translation.
 
@@ -58,7 +58,7 @@ The existing materials also describe stages of experimentation with 3D structure
 
 The project is already conceived as a bilingual system, with a clear intention to provide content and organization in both Romanian and English. The existence of localized files and parallel journals shows that bilingualism is structural, not decorative.
 
-At this point, the project already has a strong internal documentation layer, including implementation summaries, a technical glossary, bibliography, and journal entries that record decisions, bug fixes, optimizations, and future steps. All of this shows that `Digital Odyssey` is not only an interface, but also a process archive and a pedagogical instrument.
+At this point, the project already has a strong internal documentation layer, including implementation summaries, a technical glossary, bibliography, and journal entries that record decisions, bug fixes, optimizations, and future steps. All of this shows that `D::0dy55ey` is not only an interface, but also a process archive and a pedagogical instrument.
 
 Based on the current stage, the next natural steps are:
 
@@ -72,7 +72,7 @@ Based on the current stage, the next natural steps are:
 
 # DAY 01 — Prolegomena
 
-This entry establishes the conceptual frame of the `Digital Odyssey` project and marks the transition from `Manual_project` to the refined, bilingual, portfolio-oriented version. It is not just a starting note, but a statement of intent: the project must function at once as a technical system, a didactic object, and a presentation form with its own identity.
+This entry establishes the conceptual frame of the `D::0dy55ey` project and marks the transition from `Manual_project` to the refined, bilingual, portfolio-oriented version. It is not just a starting note, but a statement of intent: the project must function at once as a technical system, a didactic object, and a presentation form with its own identity.
 
 The project rests on three main pillars, which reflect both my academic formation and my learning goals. The first is the **technical pillar**, built on computer science, logic, mathematics, web architecture, and implementation discipline — the craft of writing code that works, that is clean, and that follows standards. The second is the **didactic pillar**, focused on pedagogy, learning theory, and the clear transfer of knowledge — the craft of making code explainable from within, so that anyone who reads the source files can also learn from them. The third is the **narrative pillar**, grounded in humanistic culture, literary atmosphere, artistic imagination, and attention to form and meaning — the craft of turning a technical interface into a space that tells a story.
 
@@ -80,7 +80,7 @@ My background in philosophy and my master's degree in American literature — wi
 
 Within the project architecture, `index.html` remains the central page, the equivalent of the command deck. The rest of the pages — logs, blueprint, bibliography, and manifesto — are organized modularly without breaking the clarity of the whole. The manifesto is kept separate from the README, and the bilingual journal functions as a living archive of the process rather than a simple commit list.
 
-The narrative identity of the project relies on metaphors of cosmic navigation, the command room, telemetry, and self-documentation. `Digital Odyssey` preserves the cinematic atmosphere and cultural references of the parent project, but integrates them into a cleaner, more coherent, and more scalable structure. At the center of that identity is the idea that the interface can be both a learning tool and a space for cultural resonance.
+The narrative identity of the project relies on metaphors of cosmic navigation, the command room, telemetry, and self-documentation. `D::0dy55ey` preserves the cinematic atmosphere and cultural references of the parent project, but integrates them into a cleaner, more coherent, and more scalable structure. At the center of that identity is the idea that the interface can be both a learning tool and a space for cultural resonance.
 
 I initialized the project by clearly separating Romanian and English content into the `ro/` and `en/` folders. This choice is not about convenience, but about structural discipline: each language has its own pages, its own style, and its own favicon, so the experience remains coherent within each version. Instead of a universal solution, I preferred a clean and predictable split.
 
@@ -90,7 +90,7 @@ Inside each language folder, I keep one `index.html`, `style.css`, `script.js`, 
 
 The first commits were meant to establish this initial structure. I preferred small, clear commits, each one reflecting a logical stage: repository initialization, bilingual documentation, journal architecture, and stabilization of the project’s first form. The Git history should remain readable, not merely cumulative.
 
-I chose the form `D::0dy55ey` as the visual logo and name because it works as a signature rather than just a title. I wanted a form that points immediately to `Digital Odyssey`, but also feels technical, compact, and memorable. `D::0dy55ey` serves as a brand mark, logo, and visual tag, and it can easily become a header element, a favicon motif, or a branding piece.
+I chose the form `D::0dy55ey` as the visual logo and name because it works as a signature rather than just a title. I wanted a form that points immediately to `D::0dy55ey`, but also feels technical, compact, and memorable. `D::0dy55ey` serves as a brand mark, logo, and visual tag, and it can easily become a header element, a favicon motif, or a branding piece.
 
 This choice also separates the conceptual name from the project’s visual identity. Still, any public name must be checked carefully before wider use, in order to avoid collisions, confusion, or readability issues. For now, `D::0dy55ey` remains an artistic and technical identity choice, but one that must be handled carefully when published.
 
@@ -107,7 +107,7 @@ Based on this day, the next natural steps are:
 
 # DAY 02 — First Implementations
 
-At this stage I moved from the conceptual frame to the actual work on the `Digital Odyssey` project. After defining the inspiration baseline and the prolegomena, this day was devoted to the first implementations that give practical shape to the project’s architecture, navigation, and internal logic.
+At this stage I moved from the conceptual frame to the actual work on the `D::0dy55ey` project. After defining the inspiration baseline and the prolegomena, this day was devoted to the first implementations that give practical shape to the project’s architecture, navigation, and internal logic.
 
 One of the most important things clarified here was the autonomy hierarchy of the pages. `index.html` remains the command center of the mother ship, the point from which the entire project is piloted. From there, I coordinate the log pages, bibliography, manifesto, documentation, and the other appendices. They are independent modules in function, but they remain connected to the central control of the fleet because they belong to the same editorial and technical architecture.
 
@@ -344,7 +344,7 @@ Sets a suggested color for the browser interface, especially on mobile. It can t
 
 ### How I use `<head>` in the project
 
-In `Digital Odyssey`, I treat `<head>` as a control and identity layer. Here I define the language, title, description, local files, and shared resources so that each page starts from a clear and predictable base. For bilingual pages, I mainly change the title and meta description, while the rest of the structure stays stable.
+In `D::0dy55ey`, I treat `<head>` as a control and identity layer. Here I define the language, title, description, local files, and shared resources so that each page starts from a clear and predictable base. For bilingual pages, I mainly change the title and meta description, while the rest of the structure stays stable.
 
 ---
 
@@ -372,7 +372,7 @@ The same logic applies to meta descriptions and titles: each page should reflect
 
 ## How I use `<head>`
 
-In `Digital Odyssey`, I treat `<head>` as a control and identity layer. Here I define the language, title, description, local files, and shared resources so that each page starts from a clear and predictable base. For bilingual pages, I mainly change the title and meta description, while the rest of the structure stays stable.
+In `D::0dy55ey`, I treat `<head>` as a control and identity layer. Here I define the language, title, description, local files, and shared resources so that each page starts from a clear and predictable base. For bilingual pages, I mainly change the title and meta description, while the rest of the structure stays stable.
 
 ---
 
@@ -420,7 +420,7 @@ Using the correct terms helps keep the workflow precise and professional. “Upl
 
 I reviewed the full structure of the volumes, and in its current form it is coherent from a didactic point of view. The chapter division does not follow the same logic in every volume, but that difference is justified: each domain has its own learning structure, and the project architecture should reflect that rather than forcing artificial uniformity.
 
-In `Digital Odyssey`, the frontend volume is organized around foundational languages because the learning path there is linear and easy to follow: first structure, then style, then behavior. The database volume is split between `sql` and `nosql` because the difference between those paradigms is conceptual and methodological, not merely technical. The backend volume, by contrast, follows a different logic and should be read through system components, flows, and responsibilities rather than as a simple list of languages.
+In `D::0dy55ey`, the frontend volume is organized around foundational languages because the learning path there is linear and easy to follow: first structure, then style, then behavior. The database volume is split between `sql` and `nosql` because the difference between those paradigms is conceptual and methodological, not merely technical. The backend volume, by contrast, follows a different logic and should be read through system components, flows, and responsibilities rather than as a simple list of languages.
 
 ## Frontend
 
@@ -544,6 +544,7 @@ This uniformity means that the entire project now shares a predictable starting 
 I fixed a clear rule for the relative paths used inside each HTML file. In a project with many nested folders — such as `en/frontend/html-log.html` or `ro/backend/api-log.html` — maintaining correct paths is essential for the page to find its resources.
 
 The rule is simple but important:
+
 - Pages placed directly inside the language folder (`en/` or `ro/`) — such as `bibliography.html`, `recursive-blueprint.html`, and `transmission.html` — use `./` to reference `style.css`, `favicon.svg`, and `script.js`, because the resources are in the same folder.
 - Pages placed one level deeper, inside a chapter folder such as `frontend/`, `backend/`, `database/`, `data-bridge/`, `ux/`, or `delivery/` — use `../` to go up one level and reach the language folder where the resources live.
 
@@ -582,6 +583,7 @@ For this reason, in the project's `<head>` template, `meta charset` is placed im
 I added a note about frontend validation as part of the project's construction discipline. Validation is not a bureaucratic check, but a technical step that verifies the consistency of HTML structure, CSS syntax, accessibility attributes, and the technical elements that affect compatibility and best practices.
 
 In the current stage, validation helps me track:
+
 - whether every HTML page respects the same semantic template;
 - whether the `<head>` elements are correctly ordered and complete;
 - whether the relative paths point to existing resources;
@@ -590,5 +592,3 @@ In the current stage, validation helps me track:
 Later, this area can become a separate sector or daylog, dedicated to automated validation, linting, and quality checks. For now, it remains a manual note — but one that keeps the project aligned with its own rigour.
 
 ---
-
-

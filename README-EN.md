@@ -1,14 +1,14 @@
-# Digital Odyssey
+# D::0dy55ey
 
 > A bilingual interface-journal mapping code, structure, and recursive learning through a cinematic web system.
 
 Romanian version: [README-RO.md](./README-RO.md)
 
-RO: *Digital Odyssey* este un portofoliu bilingv, experimental, construit la intersecția dintre documentație tehnică, jurnal de învățare și design de interfață cinematic.
+RO: *D::0dy55ey* este un portofoliu bilingv, experimental, construit la intersecția dintre documentație tehnică, jurnal de învățare și design de interfață cinematic.
 
 ## Overview
 
-Digital Odyssey is a bilingual edutainment portfolio and documentation platform built on three pillars: **technical** (clean, standards-compliant code), **pedagogical** (self-documenting explanations and structured learning paths), and **narrative** (a cinematic cosmic-navigation metaphor that turns the interface into a storytelling space).  
+D::0dy55ey is a bilingual edutainment portfolio and documentation platform built on three pillars: **technical** (clean, standards-compliant code), **pedagogical** (self-documenting explanations and structured learning paths), and **narrative** (a cinematic cosmic-navigation metaphor that turns the interface into a storytelling space).  
 
 It brings together frontend study, visual systems, semantic architecture, backend fundamentals, databases, UX principles, and recursive thinking inside a single navigable project space.
 
@@ -122,7 +122,7 @@ Then open the English or Romanian entry point locally with a development server 
 
 ## Status
 
-Digital Odyssey is currently in an active building and refactoring phase.  
+D::0dy55ey is currently in an active building and refactoring phase.  
 The repository is being shaped as a long-form bilingual system that merges portfolio logic, technical documentation, and experimental interface design.
 
 The Captain behind this console began charting the digital cosmos a few orbits ago and intends to keep exploring for many more. This project is both the vessel and the voyage — a living star chart of a learning journey that has no fixed destination, only horizons.

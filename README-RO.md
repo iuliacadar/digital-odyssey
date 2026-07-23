@@ -1,4 +1,4 @@
-# Digital Odyssey
+# D::0dy55ey
 
 > Un jurnal-interfață bilingv care cartografiază codul, structura și învățarea recursivă printr-un sistem web cinematic.
 
@@ -6,7 +6,7 @@ English version: [README.md](./README.md)
 
 ## Prezentare generală
 
-Digital Odyssey este un portofoliu bilingv de tip edutainment și o platformă de documentare, construit pe trei piloni: **tehnic** (cod curat, conform standardelor), **pedagogic** (explicații auto-documentate și trasee structurate de învățare) și **narativ** (o metaforă cinematică de navigație cosmică ce transformă interfața într-un spațiu de povestire).
+D::0dy55ey este un portofoliu bilingv de tip edutainment și o platformă de documentare, construit pe trei piloni: **tehnic** (cod curat, conform standardelor), **pedagogic** (explicații auto-documentate și trasee structurate de învățare) și **narativ** (o metaforă cinematică de navigație cosmică ce transformă interfața într-un spațiu de povestire).
 
 Reunește studiul frontend-ului, sistemele vizuale, arhitectura semantică, fundamentele backend, bazele de date, principiile UX și gândirea recursivă într-un singur spațiu de proiect navigabil.
 
@@ -120,7 +120,7 @@ Apoi deschide punctul de intrare în engleză sau română local, cu un server d
 
 ## Status
 
-Digital Odyssey se află în prezent într-o etapă activă de construcție și refactorizare.  
+D::0dy55ey se află în prezent într-o etapă activă de construcție și refactorizare.  
 Repository-ul este modelat ca un sistem bilingv de lungă durată, care îmbină logica de portofoliu, documentația tehnică și designul experimental de interfață.
 
 Căpitanul din spatele acestei console a început să cartografieze cosmosul digital acum câteva orbite și intenționează să continue explorarea pentru multe altele. Acest proiect este atât nava, cât și călătoria — o hartă stelară vie a unui drum de învățare care nu are o destinație fixă, ci doar orizonturi.
