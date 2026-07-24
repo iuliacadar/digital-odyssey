@@ -1153,6 +1153,34 @@ a.reactor-portal:focus-visible {
   animation: typing-modular 4s steps(55, end) 3s forwards;
 }
 
+/* --- 5. CHARTER HEADER (Astrogation Charter / Manifesto Page) --- */
+.charter-header {
+  text-align: center !important;
+  padding: 50px 20px 40px !important;
+  margin: 0 auto 40px auto !important;
+  border-top: 2px double var(--starlight-blue) !important;
+  border-bottom: 2px double var(--starlight-blue) !important;
+  max-width: 800px !important;
+}
+.charter-title {
+  font-family: var(--font-main) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 4px !important;
+  margin: 0 0 12px 0 !important;
+}
+.charter-subtitle {
+  font-family: var(--font-main) !important;
+  font-size: 0.8rem !important;
+  color: var(--starlight-blue) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  margin: 0 !important;
+  opacity: 0.8 !important;
+}
+
 /* ==========================================================================
     MODULE 07: GRID ASSEMBLY & KINETIC MODULES (THE VOLUME PANEL)
       

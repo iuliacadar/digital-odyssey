@@ -213,7 +213,13 @@
     -->
   </head>
 
-  <body>
+  <body class="module-view">
+    <!-- @reason:
+      The class "module-view" applies the secondary-page visual theme:
+      narrower content width, CRT scanline overlay, and a slightly darker
+      background to distinguish this data archive from the main command deck.
+    -->
+
     <!-- @block:
       The <body> of The Astrogation Charter lays down the founding protocols,
       mission coordinates, and navigational principles of this D::0dy55ey.
@@ -244,18 +250,19 @@
       </ul>
     </nav>
 
-    <!-- @block: CHARTER HEADER -->
-    <header class="hero">
-      <div id="charter-core" class="armillary-reactor-core">
-        <div class="armillary-band-container macro-wrapper">
-          <h1 class="stenciled-metal-text">The Astrogation Charter</h1>
-        </div>
-        <div class="armillary-band-container micro-wrapper">
-          <p class="stenciled-metal-text-sub">
-            Founding coordinates of the D::0dy55ey
-          </p>
-        </div>
-      </div>
+    <!-- @block: CHARTER HEADER
+      A ceremonial header distinct from both the index page's full-screen hero
+      and the log pages' category-header. The double starlight-blue border and
+      centred title evoke a treaty or founding document — the ship's constitution.
+      @theme:
+        Starlight blue (--starlight-blue) is used here for the borders and
+        subtitle. It evokes navigation beacons and astrofixes, fitting the
+        "Astrogation Charter" theme, while staying distinct from pink (index),
+        amber (recursive/annex), and green (log pages).
+    -->
+    <header class="charter-header">
+      <h1 class="charter-title">✦ The Astrogation Charter ✦</h1>
+      <p class="charter-subtitle">Founding coordinates of the D::0dy55ey</p>
     </header>
 
     <!-- @block: MANIFESTO CONTENT

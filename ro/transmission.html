@@ -206,7 +206,7 @@
     -->
   </head>
 
-  <body>
+  <body class="module-view">
         <nav class="navbar">
       <!-- @block: IDENTITATEA TERMINALULUI
         Blocul logo afișează indicativul navei și numele secțiunii curente.
@@ -232,15 +232,20 @@
       </ul>
     </nav>
 
-    <header class="hero">
-      <div id="charter-core" class="armillary-reactor-core">
-        <div class="armillary-band-container macro-wrapper">
-          <h1 class="stenciled-metal-text">Carta de Astro-navigație</h1>
-        </div>
-        <div class="armillary-band-container micro-wrapper">
-          <p class="stenciled-metal-text-sub">Coordonatele fondatoare ale Odiseei Digitale</p>
-        </div>
-      </div>
+    <!-- @block: ANTETUL CARTEI
+      Un antet ceremonial, distinct atât de hero-ul pe tot ecranul al paginii
+      index, cât și de category-header al paginilor de log. Bordura dublă
+      starlight-blue și titlul centrat evocă un tratat sau un document
+      fondator — constituția navei.
+      @theme:
+        Starlight blue (--starlight-blue) este folosit aici pentru borduri
+        și subtitlu. Evocă balizele de navigație și astrofixele, potrivindu-se
+        temei "Cartei de Astro-navigație", rămânând în același timp distinct
+        de roz (index), chihlimbar (recursiv/anexă) și verde (pagini de log).
+    -->
+    <header class="charter-header">
+      <h1 class="charter-title">✦ Carta de Astro-navigație ✦</h1>
+      <p class="charter-subtitle">Coordonatele fondatoare ale D::0dy55ey</p>
     </header>
 
     <main class="main-container">
