@@ -1153,6 +1153,50 @@ a.reactor-portal:focus-visible {
   animation: typing-modular 4s steps(55, end) 3s forwards;
 }
 
+/* --- 5. HOLOGRAPHIC CRYSTAL (Manifesto / Message Vessel) --- */
+.hologram-crystal {
+  position: relative;
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 780px;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(167, 243, 208, 0.04) 0%,
+      rgba(255, 0, 127, 0.02) 25%,
+      rgba(0, 210, 255, 0.04) 50%,
+      rgba(255, 179, 0, 0.02) 75%,
+      rgba(167, 243, 208, 0.04) 100%
+    );
+  background-size: 400% 400%;
+  animation:
+    hologram-shift 12s ease infinite,
+    crystal-float 6s ease-in-out infinite;
+
+  box-shadow:
+    0 -2px 20px rgba(167, 243, 208, 0.08),
+    0 2px 20px rgba(255, 0, 127, 0.06),
+    -2px 0 20px rgba(0, 210, 255, 0.06),
+    2px 0 20px rgba(255, 179, 0, 0.06),
+    -2px -2px 30px rgba(167, 243, 208, 0.04),
+    2px 2px 30px rgba(255, 0, 127, 0.04);
+
+  border: 1px solid rgba(167, 243, 208, 0.08);
+}
+
+@keyframes hologram-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes crystal-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 /* ==========================================================================
     MODULE 07: GRID ASSEMBLY & KINETIC MODULES (THE VOLUME PANEL)
       
