@@ -2829,6 +2829,16 @@ pre::-webkit-scrollbar-thumb {
   margin: 10px 0 !important; /* Uniform vertical cushions protecting layout boundaries from crashing */
 }
 
+.blueprint-master-subtitle {
+  color: var(--amber-glow) !important;
+  font-family: var(--font-main) !important;
+  font-size: 1rem !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 15px 0 !important;
+  opacity: 0.8 !important;
+}
+
 .blueprint-master-description {
   color: #a4b3c6 !important; /* Muted technical gray spectrum protecting screens from observation fatigue */
   line-height: 1.6; /* Precise vertical flow layout separating consecutive narrative script lines */
