@@ -885,3 +885,60 @@ The journal files `JURNAL-EN.md` and `JURNAL-RO.md` have been renamed to `JOURNA
 - `JURNAL-RO.md` → `JOURNAL-RO.md` (renamed).
 
 ---
+
+# DAY 12 — Recursive Blueprint Finalisation: The Autognostic Engine
+
+This day completes the recursive blueprint page (`en/recursive-blueprint.html` and `ro/recursive-blueprint.html`), bringing it to its final form with a fully functional file-selector console, a philosophical creative recast, and full Romanian mirroring.
+
+## 1. Optimisations to the Recursive Page
+
+- **HUD volume order fixed** — Reordered to match index: Frontend → Data Bridge → Backend → Database → UX → Delivery.
+- **New scrollable file selector console** — Replaced the 4 static, broken tabs with a horizontally scrollable/swipeable console listing all 30 files grouped by 7 volume labels (ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY). Uses the HUD swipe mechanism: `overflow-x: auto`, hidden scrollbar, momentum scrolling on mobile.
+- **Tab switching now works** — MECANISMUL 08 rewritten: uses event delegation on `.source-selector-tabs`, reads `data-path` from the clicked `.tab-btn`, fetches the file via Fetch API, and injects source into the code inspector. Mobile auto-centers the active tab horizontally.
+- **Body class fixed** — Changed `module-view` → `blueprint-layout`, which activates the existing `.blueprint-layout` CSS selectors.
+- **CSS added** — `.source-selector-tabs` (scrollable flex container), `.tab-btn` (phosphor green caps, hover glow, active-tab highlight), `.volume-label` (amber uppercase labels). Mobile media query updated for compact sizing.
+- **Subtitle CSS added** — `.blueprint-master-subtitle` (amber glow, uppercase, letter-spacing 3px).
+- **RO version fully rewritten** — `ro/recursive-blueprint.html` was completely outdated. Now matches EN structure with all text/comments translated to Romanian. RO stylesheet synced.
+
+## 2. Creative Recast: H1, Subtitle, Description, Left Panel
+
+All variants considered before settling on the final versions are preserved here as a creative appendix.
+
+### H1 candidates considered
+
+All candidates were deemed equally strong, with **"The Autognostic Engine"** ultimately selected for its precision and distinctiveness.
+
+1. **The Ship That Reads Its Own Blueprints** — narrative, immediately evocative, frames the page as a living vessel.
+2. **The Autognostic Engine** — coined from *autognosis* (self-knowledge); technical, philosophical, unique.
+3. **The Recursive Abyss: Log of the Self-Examining Vessel** — dramatic, deep, suggests infinite descent into self-reference.
+4. **The Mirror of the Deep** — poetic, minimal, implies reflection without end.
+
+### Subtitle
+
+**Final:** *A Closed Circuit Between Creator and Creation*
+
+### Description paragraph (final)
+
+> This is the vessel's confessional — a closed-circuit terminal where the ship interrogates its own source code in real time. Every file in the D::0dy55ey fleet, from the command deck's `index.html` to the engine room's deployment logs, is subject to examination here. The console below operates as a recursive dialogue between creator and creation: the code that builds the ship, displayed on the ship itself, for the crew to read, question, and understand. There is no hidden layer. What scrolls across the starboard pane is the vessel's raw neural archive — thirty files of logic, poetry, and structure, exposed to the light of its own phosphor screen. The ship reads itself aloud so that you may learn not just what it does, but what it is.
+
+### Left panel paragraph — Option A (poetic, oceanic)
+
+> This is no dead text. The **Recursive Grid** is a living archive — each file a cabin in the ship's memory, each function a logged order from the captain's hand. In the starboard pane, the source scrolls past like a depth charge sonar, while the geodesic core behind it spins in blind obedience, driven by the very inscriptions it cannot read. The code does not merely describe the vessel: it *is* the vessel, tangled in a loop of self-surveillance from which nothing escapes — not even the silence between the brackets.
+
+### Left panel paragraph — Option B (cinematic, engine-room)
+
+> What you are looking at is the ship's neural cortex stripped bare. The **Recursive Grid** is not a metaphor: it is the literal architecture of this vessel's consciousness, laid out in green phosphor on a black screen. On the right, the source code scrolls like a continuous depth charge — each line a synaptic pulse. On the left, the geodesic core, that blind five-faced engine, rotates in the dark, executing decrees written before the first commit. Code is not dead matter here. Code is the ship's breath, and this terminal is the stethoscope pressed against its chest.
+
+### Left panel paragraph — Final (blend of A's poetry + B's sharpness)
+
+> This is no dead text. The **Recursive Grid** is the ship's neural cortex stripped bare — not a metaphor, but the literal architecture of this vessel's consciousness, laid out in green phosphor on a black screen. In the starboard pane, the source scrolls past like a continuous depth charge, each line a synaptic pulse. On the left, the geodesic core rotates in blind obedience, a five-faced god executing decrees written before the first commit. Code is not the blueprint of the vessel. Code is the vessel itself, tangled in a loop of self-surveillance from which nothing escapes — not even the silence between the brackets. And this terminal is where it watches itself watch itself, down to the last semicolon.
+
+## Files affected
+
+- `en/recursive-blueprint.html` — new H1, subtitle, description paragraph, left panel text; scrollable file-selector console with 30 tabs; active Fetch-based code inspector.
+- `en/style.css` — added `.source-selector-tabs`, `.tab-btn`, `.active-tab`, `.volume-label`, `.blueprint-master-subtitle` rules; mobile compact sizing.
+- `en/script.js` — MECANISMUL 08 rewritten for event delegation and `data-path` file loading.
+- `ro/recursive-blueprint.html` — full rewrite matching EN structure, translated to Romanian.
+- `ro/style.css` — same CSS changes with Romanian comments.
+
+---
