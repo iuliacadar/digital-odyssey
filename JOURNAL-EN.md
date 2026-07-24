@@ -955,3 +955,53 @@ All candidates were deemed equally strong, with **"The Autognostic Engine"** ult
 - `ro/style.css` — same CSS changes with Romanian comments.
 
 ---
+
+# DAY 13 — The Astrogation Charter: Manifesto Page Finalisation
+
+This day polishes the transmission.html page (The Astrogation Charter) to the same standard as the index and recursive blueprint pages: full pedagogical commenting, a custom visual container, and a live typewriter mechanism that writes the manifesto in real time.
+
+## 1. Finishing the Manifesto Page: Title Style Decisions
+
+The page originally used the index page's full `.hero` class with a 3D icosahedron (`armillary-reactor-core`) — a 100vh theatrical display that visually competed with both the index and the recursive page.
+
+**The evolution of the header:**
+1. **First attempt** — `.charter-header` with a double starlight-blue border, white title, blue subtitle. Introduced a new colour (starlight-blue) not used elsewhere in the project. The captain rightly rejected it: "no colours salad."
+2. **Second attempt** — Simplified to a minimalist header with pink title and gray subtitle, no borders. But making it *identical* to bibliography's `category-header` felt unimpressive — the manifesto is the philosophical heart of the project, not a reference list.
+3. **Final decision** — Keep the `category-header` structure and colours (pink `h2`, stardust subtitle) but add `✦` glyphs on each side of the title as the only differentiator. This whispers "this page is special" without breaking the palette or introducing a new colour. h1 remains reserved exclusively for the two flagship pages (index and recursive blueprint).
+
+## 2. The Cosmic Glass Cylinder — A Message in a Bottle
+
+The initial concept was a literal glass bottle (CSS shape with neck, cork, and body). The captain challenged this, asking instead for something "holographic and with a myriad of faces" — far more fitting for D::0dy55ey's cosmic aesthetic.
+
+**The hologram-crystal evolved through these design choices:**
+- **Shape**: Pill/capsule form (`border-radius: 40px`) suggesting a vertical cylinder
+- **Glass body**: A `radial-gradient` with a dark core (`rgba(10, 11, 20, 0.92)`) and faintly glowing edges in solar-mint green, fading into an amber top and pink bottom via `linear-gradient(180deg)`
+- **Rims**: Amber top border (cap) and pink bottom border (base) — the only two structural colours touching the vessel
+- **Reflection stripe**: A `::before` pseudo-element drawn as a thin vertical gradient stripe on the left side, simulating light refracting through curved glass
+- **Float animation**: `crystal-float` bobs the cylinder up and down by 7px on a 6s cycle, as if adrift in a cosmic ocean
+- **Inner shadow**: `inset 0 0 80px rgba(0, 0, 0, 0.3)` creates depth, suggesting a thick glass wall
+
+No icosahedron, no 3D faces, no clip-path — just a pure glass tube containing the message. The "myriad of faces" is implied by the shifting gradient and the multi-coloured glow at different angles.
+
+## 3. MECANISMUL 09: The Cosmic Typewriter
+
+A JavaScript mechanism (MECANISMUL 09) types the manifesto text character by character inside the glass cylinder, simulating a live deep-space transmission being received in real time.
+
+**Key design decisions:**
+
+**3a. Auto-scroll** — After each character is written, `cursor.scrollIntoView({ block: "nearest" })` keeps the transmission visible. The reader does not need to scroll manually; the page follows the text as it unfolds. This reinforces the idea of a live feed arriving without human intervention.
+
+**3b. Cursor dismissal** — When the last character of the last paragraph is written, `typeNextChar` is called one final time. It detects `paraIdx >= lines.length`, sets a 3-second timeout, then adds the `cursor-hidden` class to the blinking cursor. The cursor blinks for ~3.5 seconds after the final character (500ms paragraph pause + 3000ms dismiss timer), then fades out — as if the carrier signal dropped after the transmission completed.
+
+**3c. Comments vanish from the live DOM** — The pedagogical comments (`@concept`, `@reason`, `@theme`, `@structure`) placed between manifesto paragraphs are present in the HTML source code for a novice to study. But when `container.innerHTML = ""` executes at the start of MECANISMUL 09, all child nodes — including HTML comments — are removed from the live DOM. This is intentional and philosophical: the comments serve their purpose during the typing, and once the mechanism completes, they vanish. As the captain said: *"The dolphins or the falling stars are not awaiting for you to see them. You must await for them with your gaze fixed in the vastity."* The transmission is live — you pay attention as it happens. We show everything in the harshness of real passing time. This is a teaching philosophy: the novice must keep their gaze fixed, not expect the page to wait for them.
+
+## Files affected
+
+- `en/transmission.html` — replaced `.hero` + 3D icosahedron with `.category-header` (pink h2 + glyphs) and `.hologram-crystal` cylinder containing the poetic manifesto; full pedagogical comments on every block.
+- `en/style.css` — added `.hologram-crystal` (glass cylinder with radial gradient, amber/pink rims, reflection stripe, float animation), `.typewriter-output` paragraph styling, `.typing-cursor` (blinking green line), `.cursor-hidden` class, `@keyframes crystal-float`.
+- `en/script.js` — added MECANISMUL 09 (character-by-character typewriter with auto-scroll and timed cursor dismiss).
+- `ro/transmission.html` — full rewrite matching EN: poetic manifesto in Romanian, all comments translated, hologram-crystal container, same structure.
+- `ro/script.js` — added MECANISMUL 09 for the Romanian transmission.
+- `ro/style.css` — same `.hologram-crystal` and `.typing-cursor` CSS.
+
+---

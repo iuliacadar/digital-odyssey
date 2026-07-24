@@ -959,3 +959,55 @@ Toţi candidaţii au fost consideraţi la fel de puternici, **"Motorul Autognost
 - `ro/style.css` — aceleaşi modificări CSS cu comentarii în română.
 
 ---
+
+# ZIUA 13 — Carta de Astro-navigaţie: Finalizarea Paginii cu Manifest
+
+Această zi aduce pagina transmission.html (Carta de Astro-navigaţie) la acelaşi standard ca pagina index şi pagina blueprinului recursiv: comentarii pedagogice complete, un container vizual personalizat şi un mecanism de maşină de scris live care scrie manifestul în timp real.
+
+## 1. Finisarea titlului paginii: Decizii de stil
+
+Pagina folosea iniţial clasa `.hero` a paginii index, cu un icosaedru 3D (`armillary-reactor-core`) — un display teatral de 100vh care concura vizual atât cu indexul, cât şi cu pagina recursivă.
+
+**Evoluţia header-ului:**
+1. **Prima încercare** — `.charter-header` cu bordură dublă albastru-stelar, titlu alb, subtitlu albastru. A introdus o culoare nouă (albastru-stelar) nefolosită nicăieri altundeva în proiect. Căpitanul a respins-o categoric: "no colours salad."
+2. **A doua încercare** — Simplificat la un header minimalist cu titlu roz şi subtitlu gri, fără borduri. Dar a-l face *identic* cu `category-header` al bibliografiei părea nepotrivit — manifestul este inima filozofică a proiectului, nu o listă de referinţe.
+3. **Decizia finală** — Păstrăm structura `category-header` şi culorile (h2 roz, subtitlu stardust) dar adăugăm glife `✦` de fiecare parte a titlului ca unic element diferenţiator. Acest lucru şopteşte "această pagină este specială" fără a încălca paleta şi fără a introduce o culoare nouă. h1 rămâne rezervat exclusiv paginilor flagship (index şi blueprintul recursiv).
+
+## 2. Cilindrul Cosmic de Sticlă — Un Mesaj în Sticlă
+
+Conceptul iniţial era o sticlă literală (formă CSS cu gât, dop şi corp). Căpitanul a contestat această abordare, cerând în schimb ceva "holografic şi cu o mie de feţe" — mult mai potrivit pentru estetica cosmică D::0dy55ey.
+
+**Hologram-crystal a evoluat prin următoarele decizii de design:**
+- **Formă**: Capsulă/pastilă (`border-radius: 40px`) sugestivă pentru un cilindru vertical
+- **Corpul de sticlă**: Un `radial-gradient` cu nucleu întunecat (`rgba(10, 11, 20, 0.92)`) şi margini slab luminescente în verde solar-mint, decolorându-se într-un chihlimbar sus şi roz jos prin `linear-gradient(180deg)`
+- **Ramă**: Bordură sus chihlimbar (capac) şi jos roz (bază) — singurele două culori structurale care ating vasul
+- **Stria de reflexie**: Un pseudo-element `::before` desenat ca o stria verticală subţire pe gradient pe partea stângă, simulând lumina refractată prin sticla curbată
+- **Animaţia de plutire**: `crystal-float` balansează cilindrul în sus şi în jos cu 7px pe un ciclu de 6s, ca şi cum ar fi la deriva într-un ocean cosmic
+- **Umbră interioară**: `inset 0 0 80px rgba(0, 0, 0, 0.3)` creează profunzime, sugerând un perete gros de sticlă
+
+Nici icosaedru, nici feţe 3D, nici clip-path — doar un tub de sticlă pur care conţine mesajul. "Mii de feţe" este sugerată de gradientul variabil şi de strălucirea multicoloră la diferite unghiuri.
+
+## 3. MECANISMUL 09: Maşina de Scris Cosmică
+
+Un mecanism JavaScript (MECANISMUL 09) scrie textul manifestului caracter cu caracter în interiorul cilindrului de sticlă, simulând o transmisiune cosmică recepţionată live.
+
+**Decizii cheie de design:**
+
+**3a. Auto-scroll** — După fiecare caracter scris, `cursor.scrollIntoView({ block: "nearest" })` menţine transmisiunea vizibilă. Cititorul nu trebuie să deruleze manual; pagina urmăreşte textul pe măsură ce se dezvăluie. Aceasta întăreşte ideea unui flux live care soseşte fără intervenţie umană.
+
+**3b. Disparţia cursorului** — Când ultimul caracter al ultimului paragraf este scris, `typeNextChar` este apelat o ultimă dată. Detectează `paraIdx >= lines.length`, setează un timeout de 3 secunde, apoi adaugă clasa `cursor-hidden` cursorului intermitent. Cursorul clipeşte aproximativ 3.5 secunde după ultimul caracter (pauză de 500ms între paragrafe + 3000ms timer de închidere), apoi dispare — ca şi cum semnalul purtător s-ar fi pierdut după ce transmisiunea s-a încheiat.
+
+**3c. Comentariile dispar din DOM-ul live** — Comentariile pedagogice (`@concept`, `@reason`, `@theme`, `@structure`) plasate între paragrafele manifestului sunt prezente în codul sursă HTML pentru ca un novice să le studieze. Dar când `container.innerHTML = ""` se execută la începutul MECANISMULUI 09, toate nodurile copil — inclusiv comentariile HTML — sunt eliminate din DOM-ul live. Acest lucru este intenţionat şi filozofic: comentariile îşi servesc scopul în timpul tastării, iar odată ce mecanismul se încheie, ele dispar. După cum a spus căpitanul: *"Delfinii nu sar din ocean ca să-i vezi tu, nici stelele nu-ţi cad în palmă. Ci tu să le aştepţi, cu ochii ţintă în nemărginire, şi numai atunci se vor ivi."* Transmisiunea este live — fii atent pe măsură ce se întâmplă. Totul se arată în asprimea clipei neiertătoare — pe măsură ce trece, fără să te aştepte. Aceasta este o filozofie de predare: novicele trebuie să-şi ţină privirea fixată, nu să se aştepte ca pagina să-l aştepte pe el.
+
+**3d. Paşa suplimentară pentru cursor** — A fost necesară o corecţie: după ultimul caracter al ultimului paragraf, `typeNextChar` nu era apelat din nou, astfel încât cursorul continua să clipească la infinit. Remediul: la sfârşitul fiecărui paragraf, dacă `paraIdx >= lines.length`, se forţează un ultim `setTimeout(typeNextChar, 500)` pentru a declanşa verificarea de finalizare, care porneşte timerul de 3 secunde pentru stingerea cursorului. Fără această linie, cursorul ar fi clipit la nesfârşit.
+
+## Fişiere afectate
+
+- `en/transmission.html` — înlocuit `.hero` + icosaedru 3D cu `.category-header` (h2 roz + glife) şi `.hologram-crystal` cilindru care conţine manifestul poetic; comentarii pedagogice complete pe fiecare bloc.
+- `en/style.css` — adăugat `.hologram-crystal` (cilindru de sticlă cu gradient radial, ramă chihlimbar/roz, stria de reflexie, animaţie de plutire), stilizare paragrafe `.typewriter-output`, `.typing-cursor` (linie verde intermitentă), clasa `.cursor-hidden`, `@keyframes crystal-float`.
+- `en/script.js` — adăugat MECANISMUL 09 (maşină de scris caracter cu caracter cu auto-scroll şi dispariţie temporizată a cursorului).
+- `ro/transmission.html` — rescriere completă corespunzând EN: manifest poetic în română, toate comentariile traduse, container hologram-crystal, aceeaşi structură.
+- `ro/script.js` — adăugat MECANISMUL 09 pentru transmisiunea în română.
+- `ro/style.css` — acelaşi CSS `.hologram-crystal` şi `.typing-cursor`.
+
+---
