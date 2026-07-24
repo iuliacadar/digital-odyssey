@@ -387,3 +387,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//  ==========================================================================
+//     MECANISMUL 09: COSMIC TYPEWRITER — Carta de Astro-navigație
+//     Scrie textul manifestului caracter cu caracter în interiorul cilindrului
+//     de sticlă cosmic, ca și cum mesajul ar fi recepționat live.
+//     Se activează doar pe pagina de transmisie (.manifesto-entry prezent).
+//  ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".manifesto-entry");
+  if (!container) return;
+
+  const paragraphs = container.querySelectorAll("p");
+  if (!paragraphs.length) return;
+
+  const lines = Array.from(paragraphs).map((p) => ({
+    text: p.textContent,
+    isSignoff: p.classList.contains("manifesto-signoff"),
+  }));
+
+  container.innerHTML = "";
+
+  const output = document.createElement("div");
+  output.className = "typewriter-output";
+  container.appendChild(output);
+
+  const cursor = document.createElement("span");
+  cursor.className = "typing-cursor";
+  container.appendChild(cursor);
+
+  let paraIdx = 0;
+  let charIdx = 0;
+  let currentP = null;
+
+  function randomDelay() {
+    return Math.floor(Math.random() * 35 + 15);
+  }
+
+  function typeNextChar() {
+    if (paraIdx >= lines.length) {
+      setTimeout(() => {
+        cursor.classList.add("cursor-hidden");
+      }, 3000);
+      return;
+    }
+
+    if (!currentP) {
+      currentP = document.createElement("p");
+      if (lines[paraIdx].isSignoff) {
+        currentP.className = "manifesto-signoff";
+      }
+      output.appendChild(currentP);
+    }
+
+    const text = lines[paraIdx].text;
+
+    if (charIdx < text.length) {
+      currentP.textContent += text[charIdx];
+      charIdx++;
+      cursor.scrollIntoView({ block: "nearest" });
+      setTimeout(typeNextChar, randomDelay());
+    } else {
+      paraIdx++;
+      charIdx = 0;
+      currentP = null;
+      if (paraIdx < lines.length) {
+        const pause = lines[paraIdx].isSignoff ? 1200 : 500;
+        setTimeout(typeNextChar, pause);
+      } else {
+        setTimeout(typeNextChar, 500);
+      }
+    }
+  }
+
+  setTimeout(typeNextChar, 1000);
+});

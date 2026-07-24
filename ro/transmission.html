@@ -2,52 +2,54 @@
   Legenda etichetelor: ./docs/legend-ro.md
 -->
 <!-- @reason:
-  Acest document este Carta de Astro-navigație pentru versiunea în limba română. Stabilește coordonatele fondatoare, directivele misiunii și principiile de navigație care ghidează această navă prin cosmosul digital.
+  Acest document este Carta de Astro-navigație pentru versiunea în limba română.
+  Stabilește coordonatele fondatoare, directivele misiunii și principiile de
+  navigație care ghidează această navă prin cosmosul digital.
 -->
 
 <!doctype html>
 <!-- @block:
-  I declare the document type as HTML5.
-  The browser uses this instruction to interpret the page in modern standards mode.
+  Declar tipul documentului ca HTML5.
+  Browserul folosește această instrucțiune pentru a interpreta pagina în modul modern.
 -->
 
 <html lang="ro">
   <!-- @block:
-    The root element of the document.
-    The lang="ro" attribute declares that the main language of this page is Romanian.
-    This helps accessibility tools, search engines, and automated processing systems.
+    Elementul rădăcină al documentului.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele automate.
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
-      I do not place the main visible content here; instead, I keep the information
-      the browser needs in order to understand, prepare, and connect the page resources.
+      <head> conține metadatele documentului.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
     <meta charset="UTF-8" />
     <!-- @meta:
-      I set the character encoding to UTF-8.
-      This ensures that diacritics, special symbols, and international characters display correctly.
+      Setez codificarea caracterelor la UTF-8.
+      Aceasta asigură afișarea corectă a diacriticelor, simbolurilor speciale și caracterelor internaționale.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      This instruction is historically related to Internet Explorer compatibility.
-      In modern projects it has little practical use, but I keep it here if I want
-      to preserve the classic basic-head structure.
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are puțină utilitate practică, dar o păstrez dacă vreau
+      să păstrez structura clasică de bază a head-ului.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
-      I configure the viewport for responsive display.
-      width=device-width aligns the page width with the real screen width,
-      and initial-scale=1.0 starts without artificial zoom.
+      Configurez viewport-ul pentru afișare responsive.
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
     <title>D::0dy55ey | Carta de Astro-navigație</title>
     <!-- @meta:
-      The page title.
-      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+      Titlul paginii.
+      Îl văd în fila browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
     -->
 
     <meta
@@ -55,139 +57,117 @@
       content="Carta de Astro-navigație a proiectului D::0dy55ey — directivele fondatoare, coordonatele misiunii și principiile de navigație care ghidează această navă prin sectoarele frontend, backend, baze de date și deployment ale cosmosului digital."
     />
     <!-- @meta:
-      The page description.
-      I use it as a short summary of the content; it is not directly visible in the page,
-      but search engines may use it as descriptive text.
+      Descrierea paginii.
+      O folosesc ca sumar scurt al conținutului; nu este direct vizibilă în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
     -->
 
     <meta
       name="keywords"
-      content="jurnal de transmisii, actualizări, changelog, semnale, jurnal proiect, odisee digitală"
+      content="cartă de astro-navigație, manifest, principii, misiune, D::0dy55ey"
     />
     <!-- @meta:
-      The keywords meta tag lists the main themes of the page.
-      Search engines no longer rank on it, but it stays a useful, self-documenting
-      summary of the page's scope and a teaching example of the tag itself.
+      Lista de cuvinte cheie. Motoarele de căutare nu se mai bazează pe ea,
+      dar rămâne un sumar util al temelor paginii și un exemplu didactic al etichetei.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
     <!-- @meta:
-      The author meta tag declares who created and maintains this document.
-      It is a standard metadata field that identifies the creator of the work.
+      Declar cine a creat și întreține acest document.
     -->
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- @path:
-      I link the web app manifest. Firefox reads theme_color from the manifest
-      rather than from the meta tag, so this ensures consistent theme-color
-      support across all modern browsers including Firefox.
+      Legătura către manifestul web. Firefox citește theme_color din manifest
+      mai degrabă decât din meta tag, asigurând suport consistent pentru
+      theme-color în toate browserele moderne, inclusiv Firefox.
     -->
-
 
     <meta property="og:title" content="D::0dy55ey | Carta de Astro-navigație" />
     <!-- @meta:
-      Open Graph title.
-      When the page link is shared on social networks or portfolio sites,
-      this text appears as the card title instead of the raw URL.
+      Titlul Open Graph.
+      Când linkul paginii este distribuit pe rețele sociale,
+      acest text apare ca titlu în cardul de previzualizare.
     -->
 
     <meta
       property="og:description"
-      content="Carta de Astro-navigație a proiectului D::0dy55ey — directivele fondatoare, coordonatele misiunii și principiile de navigație care ghidează această navă prin sectoarele frontend, backend, baze de date și deployment ale cosmosului digital."
+      content="Carta de Astro-navigație a proiectului D::0dy55ey — directivele fondatoare, coordonatele misiunii și principiile de navigație care ghidează această navă prin cosmosul digital."
     />
     <!-- @meta:
-      Open Graph description.
-      It is the companion summary shown under the Open Graph title on shared cards.
-      I keep it aligned with the meta description for consistency.
+      Descrierea Open Graph. Este sumarul care însoțește titlul în cardurile partajate.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
-      Open Graph type.
-      I declare this page as a website, the general type for standard HTML pages.
-      For journal entries, I could use "article" instead depending on the content nature.
+      Tipul Open Graph. Declar această pagină ca website.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/transmission.html" />
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/ro/transmission.html"
+    />
     <!-- @meta:
-      Open Graph canonical URL.
-      When the page is shared, this tells platforms the exact, permanent address of this page.
-      It prevents confusion if the same content is accessible from multiple URLs.
+      URL-ul canonic Open Graph. Spune platformelor adresa exactă și permanentă a acestei pagini.
     -->
 
     <meta property="og:locale" content="ro_RO" />
     <!-- @meta:
-      Open Graph locale.
-      I set it to ro_RO for the Romanian version of the page.
-      This tells social platforms and aggregators the language and regional variant of the content.
+      Localizarea Open Graph. Setez ro_RO pentru versiunea română a paginii.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
-      Open Graph site name.
-      This is the overarching project name shown on social sharing cards,
-      so the audience knows which site the page belongs to.
+      Numele site-ului Open Graph. Este numele proiectului afișat pe cardurile sociale.
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
-      Open Graph background color.
-      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+      Culoarea de fundal Open Graph. Unele suprafețe de distribuire o folosesc
+      pentru a nuanța cardul cu paleta spațiului profund.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
-      Open Graph image.
-      It is the preview picture used on shared cards. I point it at the favicon
-      in the corresponding language folder as a stable, always-available placeholder,
-      until a dedicated capture exists for each page.
+      Imaginea Open Graph. Este previzualizarea folosită pe cardurile partajate.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <!-- @meta:
-      Twitter card type.
-      I choose summary_large_image so that shared links on X/Twitter display
-      a large image preview alongside the title and description.
+      Tipul de card Twitter. Aleg summary_large_image pentru previzualizări mari.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/transmission.html" />
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/ro/transmission.html"
+    />
     <!-- @meta:
-      Canonical link.
-      I tell search engines that this URL is the authoritative version of the page.
-      This helps prevent duplicate-content issues and consolidates ranking signals.
+      Link canonic. Spune motoarelor de căutare că această URL este versiunea autoritară a paginii.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Robots meta tag.
-      I allow search engines to index this page and follow its links,
-      which is the default and expected behavior for public content.
+      Robots meta tag. Permit motoarelor de căutare să indexeze această pagină și să urmeze linkurile.
     -->
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <!-- @path:
-      I link the page favicon.
-      The path is relative to the current file location.
-      The browser looks for favicon.svg in the appropriate folder.
+      Legătura către favicon. Calea este relativă la locația fișierului curent.
     -->
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      Legătura către Apple Touch Icon pentru dispozitive iOS.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      I start the connection to the font server early.
-      The goal is to reduce latency when loading external resources.
+      Încep conexiunea către serverul de fonturi devreme pentru a reduce latența.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      I preconnect to the domain that serves the actual font files.
-      crossorigin is required for external resources served from another origin.
+      Preconectare la domeniul care servește fișierele de font.
     -->
 
     <link
@@ -195,28 +175,36 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      I load the Space Grotesk font from Google Fonts.
-      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      Încarc fontul Space Grotesk de la Google Fonts.
     -->
 
     <link rel="stylesheet" href="./style.css" />
     <!-- @path:
-      I link the local stylesheet.
-      The path is relative to the current file location.
+      Legătura către foaia de stil locală.
     -->
   </head>
 
   <body class="module-view">
-        <nav class="navbar">
+    <!-- @reason:
+      Clasa "module-view" aplică tema vizuală secundară:
+      lățime mai îngustă, suprapunere CRT și un fundal ușor mai întunecat.
+    -->
+
+    <!-- @block:
+      <body> al Cartei de Astro-navigație stabilește protocoalele fondatoare,
+      coordonatele misiunii și principiile de navigație ale acestei D::0dy55ey.
+    -->
+
+    <nav class="navbar">
       <!-- @block: IDENTITATEA TERMINALULUI
         Blocul logo afișează indicativul navei și numele secțiunii curente.
-        Este text static (nu este link) deoarece această pagină este ea însăși
+        Este text static (nu link) deoarece această pagină este ea însăși
         o stație a navei; echipajul își citește aici locația.
       -->
       <div class="logo">D::0dy55ey / Carta de Astro-navigație</div>
 
       <!-- @block: COMENZI DE NAVIGAȚIE
-        Lista nav-links conține acțiunile principale de navigare.
+        Lista de linkuri conține acțiunile principale de navigare.
         Pe paginile secundare, se oferă o singură comandă: întoarcerea la punte.
       -->
       <ul class="nav-links">
@@ -232,114 +220,201 @@
       </ul>
     </nav>
 
+    <!-- @block: CONȚINUTUL MANIFESTULUI
+      Carta de Astro-navigație își dezvăluie adevărata formă: nu o listă de
+      reguli, ci un manifest poetic. Textul, scris în vocea căpitanului,
+      descrie nava (proiectul) ca o arcă siderală care se rescrie prin cod
+      — un mesaj halucinant aruncat în cosmosul digital.
+    -->
     <main class="main-container">
       <!-- @block: ANTETUL CARTEI
         Identic ca stil cu header-ele de bibliografie și pagini de log. h2
         folosește nebula-pink standard, păstrând h1 rezervat pentru cele două
-        pagini principale (index și schiță recursivă).
+        pagini principale (index și schița recursivă).
       -->
       <header class="category-header">
         <h2>✦ Carta de Astro-navigație ✦</h2>
         <p>Coordonatele fondatoare ale D::0dy55ey</p>
       </header>
+
       <div class="hologram-crystal">
-      <section id="charter-articles">
-        <header class="category-header">
-          <h2>Directive Fondatoare</h2>
-          <p>Principii care ghidează această navă prin cosmosul digital.</p>
-        </header>
+      <section id="manifesto-text" class="manifesto-deck">
+        <article class="log-entry manifesto-entry">
+          <!-- @concept:
+            Manifestul este structurat ca un articol continuu, nu ca secțiuni
+            separate. Fiecare paragraf este o strofă în transmisia căpitanului
+            — o declarație poetică a spiritului proiectului.
+          -->
 
-        <article class="log-entry">
-          <h3>Articolul I — Principiul Orizontului</h3>
-          <p>Nu există o destinație fixă, ci doar orizonturi. Acest proiect este atât nava, cât și călătoria.</p>
-        </article>
+          <p>
+            Cartografiez această navă în solitudinea holografică; nicio
+            transgresare absolută a vidului nu poate fi povestită de o voce
+            fără trup. Dar ce fel de trup poate purta peste (uni)versuri o
+            voce pribegită.
+          </p>
+          <!-- @reason:
+            Paragraful de deschidere stabilește vocea naratorului: descarnată,
+            rătăcitoare, dar obligată să cartografieze călătoria. Jocul de
+            cuvinte "versuri" sugerează atât poezia cât și universul.
+          -->
 
-        <article class="log-entry">
-          <h3>Articolul II — Jurnalul Recursiv</h3>
-          <p>Fiecare fișier se documentează pe sine. Fiecare linie este adnotată pentru echipajul care urmează. Codul învață codul.</p>
-        </article>
+          <p>
+            Sunt nomadul spectral — oare bidimensional?, singularitate sau
+            martor? — ultima funcție lucidă dintr-o arcă siderală care se
+            rescrie prin cod, memorie ștanțată-n piatră, căldura trăznetului
+            și nesfârșitul recursivității, care bântuie ADNul viitorului
+            proiectat, al viitorului uitat, al ruinelor prorocite.
+          </p>
+          <!-- @theme:
+            "Nomad spectral", "arcă siderală", "nesfârșitul recursivității":
+            aceste fraze îmbină cosmicul cu tehnicul. Proiectul este și navă
+            stelară și bază de cod recursivă.
+          -->
 
-        <article class="log-entry">
-          <h3>Articolul III — Mandatul Bilingv</h3>
-          <p>Nava navighează în două limbi: engleza (semnalul universal) și româna (frecvența de Acasă). Ambele versiuni sunt egale, paralele și întreținute independent.</p>
-        </article>
+          <p>
+            O odisee digitală, descoperă cititorule în sticla purtată de
+            oceane mercuriale, un mesaj sideral halucinant; o cocă apolinică
+            numită Frontend, o cameră a motoarelor tainică numită Backend, o
+            luntre încifrată numită JSON — Charon, ce updatare! — și, dincolo
+            de acestea, arhiva abisală a Bazelor de Date, peste care praful
+            cosmosului a început deja să se așeze.
+          </p>
+          <!-- @structure:
+            Acest paragraf mapează arhitectura proiectului în imagini cosmice:
+            Frontend = cocă apolinică, Backend = cameră a motoarelor,
+            JSON = luntrea lui Charon, Database = arhivă abisală.
+          -->
 
-        <article class="log-entry">
-          <h3>Articolul IV — Abordarea Liminală</h3>
-          <p>Învățăm la pragul dintre cunoscut și necunoscut. Fiecare capitol începe cu curajul de a spune: „Încă nu știu asta."</p>
-        </article>
+          <p>
+            Muzica perpetuă a motorului bântuit să-ți mângâie timpanele, să-ți
+            fie cântecul de leagăn îngânat în pântecele mamei terifice —
+            primordiale, terminale, și fără milă.
+          </p>
+          <!-- @concept:
+            "Motorul bântuit" este codul care rulează — serverul, baza de
+            date, bucla de animație. "Mama terifică" evocă forța numinoasă,
+            creativ-distructivă din care se naște proiectul.
+          -->
 
-        <article class="log-entry">
-          <h3>Articolul V — Consola Deschisă</h3>
-          <p>Acest proiect este construit în public. Jurnalele, greșelile, descoperirile — toate sunt vizibile. Transparența este un instrument de navigație.</p>
+          <p>
+            Limba minerală a fost menită să poarte, în cufărul ei digital,
+            gravitatea colapsului, mirarea de a sta împietrit sub bolta
+            orizontului evenimentelor — ce ecou gotic al matricei astrale! —,
+            singurătatea orbitelor adânci, teroarea semnalelor recepționate
+            prea târziu, prea devreme, captive în pânza fluxurilor azotice, în
+            furtunile energetice de pe planetele blocate sub ceruri violete.
+          </p>
+          <!-- @reason:
+            "Limba minerală" = limbajul de programare. Paragraful listează
+            încărcătura emoțională pe care o poartă codul: colaps, uimire,
+            singurătate, teroare — spectrul complet al sublimului cosmic.
+          -->
+
+          <p>
+            Mesajul meu să fie ceara nucleară menită să-ți lumineze pașii,
+            zborul, căile intergalactice. O busolă-consolă în ceața magnetică:
+            precis în structură, febril în viziune, credincios tăcerii dintre
+            lumi și lumi, ultimul și primul zelot al pustiului dintre nucleu
+            și orbitele mici ale electronilor.
+          </p>
+          <!-- @theme:
+            "Ceara nucleară" = codul care luminează. "Busolă-consolă" =
+            proiectul însuși, ghidând căpitanul și cititorul deopotrivă.
+          -->
+
+          <p class="manifesto-signoff">
+            Înainte în cosmos! Înapoi în atom!
+          </p>
+          <!-- @structure:
+            Linia de încheiere este un chiasm: înainte/înapoi, cosmos/atom.
+            Încapsulează mișcarea duală a proiectului — spre exterior, în
+            frontiera digitală vastă, și spre interior, în blocurile
+            fundamentale ale codului.
+          -->
         </article>
       </section>
       </div>
     </main>
 
-              <!-- @block:
+    <!-- @block:
       Deschid aici blocul de footer. Aceasta este secțiunea de încheiere
       a fiecărei pagini din proiect. Plasez în interior fluxul de date de
       telemetrie: sectorul orbital curent, coordonatele spațio-temporale,
       o legătură către bibliografie și semnătura căpitanului.
     -->
     <footer class="footer">
-      <!-- @block: SECONDARY COMMAND CONSOLE
-        The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It now houses the Star Charts (bibliography),
-        The Astrogation Charter (transmission/manifesto), and the language
-        toggle between the English and Romanian versions of the project.
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDĂ
+        Footerul se extinde dincolo de un singur link de bibliografie într-un
+        panou complet al sistemelor navei. Acum găzduiește Hărțile Stelare
+        (bibliografie), Carta de Astro-navigație (manifest) și comutatorul
+        de limbă între versiunile engleză și română.
         @concept:
-          The footer is the ship's auxiliary navigation station - less
-          prominent than the HUD overlay, but essential for systems that
-          do not belong to a specific volume: the founding manifesto, the
-          reference archive, and the language switch.
+          Footerul este stația de navigație auxiliară a navei — mai puțin
+          proeminentă decât suprapunerea HUD, dar esențială pentru sistemele
+          care nu aparțin unui volum specific: manifestul fondator, arhiva
+          de referință și comutatorul de limbă.
       -->
       <ul class="footer-links">
-        <!-- @path: Bibliography page -->
+        <!-- @path: Pagina de bibliografie -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="bibliography.html" target="_blank">Hărți Stelare — Cartă Astrogare</a>
+          <a href="bibliography.html" target="_blank">Hărți Stelare — Bibliografie</a>
         </li>
-        <!-- @path: Transmission / Astrogation Charter page -->
+        <!-- @path: Pagina Cartei de Astro-navigație -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="transmission.html">The Astrogation Charter - Manifesto</a>
+          <a href="transmission.html">Carta de Astro-navigație — Manifest</a>
         </li>
-        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <!-- @bridge: Comutator de limbă între EN și RO -->
         <li>
           <!-- @reason:
-            The language toggle lets the crew switch between the English and
-            Romanian versions of the project. The current language is marked
-            with the .lang-toggle-active class (phosphor green highlight).
-            The separator pipe (|) visually divides the two options.
+            Comutatorul de limbă permite echipajului să alterneze între
+            versiunile engleză și română. Limba curentă este marcată cu
+            clasa .lang-toggle-active (evidențiere verde fosfor).
           -->
-          <a href="../en/index.html" class="lang-toggle-active">EN</a>
+          <a href="../en/index.html">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../ro/index.html" class="">RO</a>
+          <a href="../ro/index.html" class="lang-toggle-active">RO</a>
         </li>
       </ul>
-<p>
-        SYS_ORBIT: ASTROGATION_CHAMBER
-        // STATUS:
+      <p>
+        SYS_ORBIT: ASTROGATION_CHAMBER // STATUS:
         <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          Înfășurez cuvântul ONLINE într-un <span> cu clasa .telemetry-active.
+          Această clasă aplică verdele solar-mint (#a7f3d0) și adaugă un efect
+          de strălucire neon. Culoarea verde fosfor imită indicatoarele de
+          status active ale terminalelor de misiune NASA din anii 1970.
+        -->
       </p>
 
       <!-- @structure:
-        Scriu a doua linie de telemetrie. Ancora proiectul digital în spațiu
-        și timp real.
+        Scriu a doua linie de telemetrie. Ancora proiectul în spațiu și timp
+        fizic real. Coordonatele indică locația căpitanului, iar data marchează
+        ultima actualizare a footerului.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          Numerele 46.7712° N, 23.6236° E sunt coordonatele Cluj-Napoca,
+          România — locul unde este construit acest proiect.
+        -->
       </p>
 
       <!-- @structure:
         Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect.
+        acest proiect. Simbolul copyright urmat de an și numele căpitanului
+        marchează proprietatea intelectuală a conținutului.
       -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          Înfășurez numele căpitanului într-un <span> cu clasa .vessel-sig.
+          Această clasă aplică nebula-pink (#ff007f) cu o strălucire de
+          text incandescentă. Semnătura magenta acționează ca identificatorul
+          unic al căpitanului pe toate punțile navei.
+        -->
       </p>
     </footer>
 
