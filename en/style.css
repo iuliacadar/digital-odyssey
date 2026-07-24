@@ -1158,27 +1158,23 @@ a.reactor-portal:focus-visible {
   text-align: center !important;
   padding: 50px 20px 40px !important;
   margin: 0 auto 40px auto !important;
-  border-top: 2px double var(--starlight-blue) !important;
-  border-bottom: 2px double var(--starlight-blue) !important;
   max-width: 800px !important;
 }
 .charter-title {
   font-family: var(--font-main) !important;
   font-size: 1.4rem !important;
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: var(--nebula-pink) !important;
   text-transform: uppercase !important;
   letter-spacing: 4px !important;
   margin: 0 0 12px 0 !important;
 }
 .charter-subtitle {
   font-family: var(--font-main) !important;
-  font-size: 0.8rem !important;
-  color: var(--starlight-blue) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 3px !important;
+  font-size: 0.85rem !important;
+  color: var(--stardust) !important;
+  letter-spacing: 1px !important;
   margin: 0 !important;
-  opacity: 0.8 !important;
 }
 
 /* ==========================================================================
