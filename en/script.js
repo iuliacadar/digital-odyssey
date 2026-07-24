@@ -508,6 +508,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Pause between paragraphs so the reader can breathe
         const pause = lines[paraIdx].isSignoff ? 1200 : 500;
         setTimeout(typeNextChar, pause);
+      } else {
+        // Last paragraph finished — call one more time to trigger completion
+        setTimeout(typeNextChar, 500);
       }
     }
   }
