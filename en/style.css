@@ -2155,6 +2155,67 @@ pre::-webkit-scrollbar-thumb {
   ); /* Perimeter vertical lane wire loads active uncompressed amber voltage instantly */
 }
 
+/* --- 5. BRIDGE VOLUME CAPSULE (The Interstitial Amber Crossing) --- */
+/* @theme:
+  The .bridge-volume class is applied to sections that act as transitional
+  annex volumes — spanning the conceptual gap between two major sectors.
+  It uses the amber warning spectrum (--amber-glow) and a subtle shake
+  animation on hover, suggesting the tremor of a bridge when crossed.
+  This is NOT a .future-log chapter; it is a full-volume annex treatment.
+*/
+.bridge-volume {
+  position: relative;
+  padding: 30px 25px;
+  margin: 30px 0;
+  border: 1px dashed var(--amber-glow);
+  border-radius: 6px;
+  background: rgba(255, 179, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bridge-volume:hover {
+  background: rgba(255, 179, 0, 0.06);
+  box-shadow:
+    inset 0 0 30px rgba(255, 179, 0, 0.06),
+    0 0 25px rgba(255, 179, 0, 0.08);
+  animation: bridge-shake 0.4s ease-in-out;
+}
+
+.bridge-volume .category-header h2 {
+  color: var(--amber-glow);
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
+  transition: text-shadow 0.3s ease;
+}
+
+.bridge-volume:hover .category-header h2 {
+  text-shadow:
+    0 0 15px rgba(255, 179, 0, 0.6),
+    0 0 30px rgba(255, 179, 0, 0.3);
+}
+
+.bridge-volume .category-header p {
+  color: rgba(255, 179, 0, 0.7);
+}
+
+.bridge-volume .archive-link {
+  border-color: var(--amber-glow);
+  color: var(--amber-glow);
+}
+
+.bridge-volume .archive-link:hover {
+  background: var(--amber-glow);
+  color: var(--space-dark);
+  box-shadow: 0 0 20px var(--amber-glow);
+}
+
+@keyframes bridge-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
 /* ==========================================================================
     MODULE 11: FOOTER TERMINAL // MISSION COORDINATES (ULTRA-MINIMALIST VIEW)
       
@@ -3889,6 +3950,11 @@ pre::-webkit-scrollbar-thumb {
     height: 260px !important;
   }
 
+  /* Expands the container band from 90% to 100% width on narrow viewports so the full subtitle text fits in one line */
+  .armillary-band-container {
+    width: 100% !important; /* Full horizontal span override for mobile to prevent subtitle text clipping at 90% */
+  }
+
   /* Repositions the twin parallel bands exactly at the midpoint of the scaled 260px geometry (Preserving final overrides) */
   .macro-wrapper {
     top: 120px !important; /* Final executed gold coordinate: drops macro tracking band onto local geometric midpoint */
@@ -3937,7 +4003,7 @@ high-contrast text tracking entirely immune to layout clipping leaks. */
 
   /* DISCRETE SUBTITLE FINE OVERRIDE TRACE (Flawless optical subordination matrix) */
   .stenciled-metal-text-sub {
-    font-size: 11px !important; /* Rigid structural layout safety ceiling threshold applied to prevent vertical breaks */
+    font-size: 9px !important; /* Compressed ceiling for iOS monospace rendering — fits 56-char subtitle within 375px container */
     letter-spacing: 0px !important; /* Fine technical telemetry character spacing arrangements locked along rows */
     display: inline-block !important;
     white-space: nowrap !important;
@@ -4004,5 +4070,39 @@ high-contrast text tracking entirely immune to layout clipping leaks. */
     padding: 6px 10px !important; /* Symmetrical internal rectangular cushion envelopes optimized for fingers touch target interface variables */
     font-size: 0.7rem !important; /* Compressed technical typographic footprint guaranteeing alphanumeric strings stay locked without layout clipping */
     text-align: center !important; /* Coordinates absolute character block centering inside parent interactive capsule buttons hulls (HTML, SQL, NOTES) */
+  }
+
+  /* --- ZONE SUMMARY D: NAV & FOOTER MOBILE REFINEMENTS ---
+    Shrinks the HUD toggle button, return-btn links, and footer link capsules
+    for small screens so they feel delicate rather than chunky.
+  */
+  .hud-toggle {
+    font-size: 0.6rem !important;
+    padding: 3px 8px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .footer-links {
+    gap: 10px 15px !important;
+  }
+
+  .footer-links a {
+    font-size: 0.55rem !important;
+    padding: 4px 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .nav-links a.return-btn,
+  .nav-links a[href="index.html"] {
+    font-size: 0.6rem !important;
+    padding: 3px 8px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .footer p,
+  .footer .copyright {
+    font-size: 0.6rem !important;
+    letter-spacing: 1.5px !important;
+    margin: 5px 0 !important;
   }
 } /* @section: Mobile Layout - End of Media Query */

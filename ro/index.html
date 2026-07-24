@@ -2,7 +2,7 @@
   Legenda etichetelor: ./docs/legend-ro.md
 -->
 <!-- @reason:
-  Acest document este pagina principală în limba română a proiectului meu.
+  Acest document este versiunea în limba română a paginii principale a proiectului.
 -->
 
 <!doctype html>
@@ -15,59 +15,59 @@
   <!-- @block:
     Elementul rădăcină al documentului.
     Atributul lang="ro" declară că limba principală a acestei pagini este româna.
-    Asta ajută accesibilitatea, motoarele de căutare și instrumentele de procesare automată.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele de procesare automată.
   -->
   <head>
     <!-- @block:
       <head> conține metadatele documentului.
-      Aici nu pun conținutul principal al paginii, ci informațiile de care browserul
-      are nevoie pentru a înțelege, a pregăți și a lega resursele paginii.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
     <meta charset="UTF-8" />
     <!-- @meta:
       Setez codarea caracterelor la UTF-8.
-      Astfel, diacriticele, simbolurile speciale și caracterele internaționale sunt afișate corect.
+      Aceasta asigură afișarea corectă a diacriticelor, simbolurilor speciale și caracterelor internaționale.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      Această instrucțiune este istoric legată de compatibilitatea cu Internet Explorer.
-      În proiectele moderne are o utilitate redusă, dar o păstrez aici dacă vreau să mențin
-      structura clasică a unui head de bază.
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are o utilitate practică redusă, dar o păstrez aici dacă vreau
+      să păstrez structura clasică a unui head de bază.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
       Configurez viewport-ul pentru afișare responsive.
-      width=device-width aliniază lățimea paginii la lățimea reală a ecranului,
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
       iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
-    <title>D::0dy55ey | Cartografierea Frontierelor Digitale</title>
+    <title>D::0dy55ey | Semnale din Adâncul Digital</title>
     <!-- @meta:
       Titlul paginii.
-      Îl văd în tab-ul browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
+      Îl văd în fila browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
     -->
 
     <meta
       name="description"
-      content="Un jurnal bilingv de navigație liminală prin oceanele logice al codului. O explorare cosmică, temerară și terifică a arhitecturilor frontend și backend, a bazelor de date și a implementării."
+      content="Transmisii full stack din adâncul digital. Un jurnal bilingv de explorare a codului între horror cosmic și retro-futurism — frontend, backend, baze de date, DevOps și vidurile dintre ele."
     />
     <!-- @meta:
-      Meta-descrierea paginii.
-      O folosesc ca rezumat scurt al conținutului; nu este conținut vizibil direct în pagină,
-      dar poate fi folosită de motoarele de căutare ca text descriptiv.
+      Descrierea paginii.
+      O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
     -->
 
     <meta
       name="keywords"
-      content="odisee digitală, frontend, html, css, javascript, sql, nosql, backend, json, ux, deployment, jurnal de învățare, portofoliu"
+      content="D::0dy55ey, frontend, html, css, javascript, sql, nosql, backend, json, ux, deployment, jurnal de învățare, portofoliu"
     />
     <!-- @meta:
-      Meta-tagul keywords listează temele principale ale proiectului.
-      Motoarele de căutare nu se mai bazează pe el pentru poziționare, dar rămâne
-      un rezumat util, auto-documentat, al scopului paginii și un exemplu didactic al tagului.
+      Meta-tagul keywords enumeră temele principale ale proiectului.
+      Motoarele de căutare nu se mai bazează pe el pentru clasare, dar rămâne un
+      rezumat util, auto-documentat, al domeniului paginii și un exemplu didactic al tagului în sine.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
@@ -78,13 +78,16 @@
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- @path:
-      I link the web app manifest. Firefox reads theme_color from the manifest
-      rather than from the meta tag, so this ensures consistent theme-color
-      support across all modern browsers including Firefox.
+      Leg fișierul manifest al aplicației web. Firefox citește theme_color din manifest
+      mai degrabă decât din meta tag, deci acest lucru asigură suport consecvent pentru
+      theme-color în toate browserele moderne, inclusiv Firefox.
     -->
 
 
-    <meta property="og:title" content="D::0dy55ey | Cartografierea Frontierelor Digitale" />
+    <meta
+      property="og:title"
+      content="D::0dy55ey | Semnale din Adâncul Digital"
+    />
     <!-- @meta:
       Titlul Open Graph.
       Când linkul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
@@ -93,7 +96,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal bilingv de navigație liminală prin oceanele logice al codului. O explorare cosmică, temerară și terifică a arhitecturilor frontend și backend, a bazelor de date și a implementării."
+      content="Transmisii full stack din adâncul digital. Un jurnal bilingv de explorare a codului între horror cosmic și retro-futurism — frontend, backend, baze de date, DevOps și vidurile dintre ele."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -103,44 +106,47 @@
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
       Culoarea de fundal Open Graph.
-      Unele suprafețe de distribuire o folosesc pentru a colora cardul cu paleta
-      deep-space a proiectului.
+      Unele suprafețe de distribuire o folosesc pentru a colora cardul de previzualizare
+      cu paleta deep-space a proiectului.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
       Imaginea Open Graph.
-      Este previzualizarea folosită pe cardurile distribuite. O îndrept spre faviconul
-      local ca pe un placeholder stabil, mereu disponibil, până există o captură dedicată.
+      Este imaginea de previzualizare folosită pe cardurile distribuite. O îndrept spre faviconul
+      local ca pe un placeholder stabil, mereu disponibil, până când există o captură dedicată.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
       Tipul Open Graph.
-      Declar această pagină ca website, tipul general pentru paginile HTML standard.
-      Pentru intrările de jurnal, aș putea folosi "article" — dar aici "website" se
-      potrivește rolului de portofoliu și hub al acestei pagini index.
+      Declar această pagină ca website, care este tipul general pentru paginile HTML standard.
+      Pentru intrările de jurnal, aș putea folosi "article" — dar aici "website" se potrivește
+      rolului de portofoliu și hub al acestei pagini index.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/index.html" />
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/ro/index.html"
+    />
     <!-- @meta:
       URL-ul canonic Open Graph.
-      Când pagina este distribuită, aceasta le spune platformelor adresa exactă și permanentă.
-      Previnde confuzia dacă același conținut este accesibil de la mai multe URL-uri.
+      Când pagina este distribuită, acest lucru le spune platformelor adresa exactă și permanentă a acestei pagini.
+      Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
     -->
 
     <meta property="og:locale" content="ro_RO" />
     <!-- @meta:
       Localizarea Open Graph.
       Setez ro_RO pentru versiunea în limba română a paginii.
-      Astfel, platformele sociale și agregatoarele știu limba și varianta regională a conținutului.
+      Acest lucru le spune platformelor sociale și agregatoarelor limba și varianta regională a conținutului.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
       Numele site-ului Open Graph.
       Acesta este numele general al proiectului afișat pe cardurile de distribuire socială,
-      astfel încât publicul să știe din ce site face parte pagina.
+      astfel încât publicul să știe cărui site îi aparține pagina.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -150,44 +156,48 @@
       o previzualizare mare a imaginii alături de titlu și descriere.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/index.html" />
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/ro/index.html"
+    />
     <!-- @meta:
       Link canonic.
       Spun motoarelor de căutare că această URL este versiunea autoritară a paginii.
-      Ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de clasare.
+      Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de clasare.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Eticheta robots.
+      Meta-tagul Robots.
       Permit motoarelor de căutare să indexeze această pagină și să urmeze linkurile sale,
       ceea ce este comportamentul implicit și dorit pentru conținutul public.
     -->
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <!-- @path:
-      Leagă faviconul paginii.
+      Leg faviconul paginii.
       ./ înseamnă "folderul curent", deci browserul caută favicon.svg în același folder
-      unde se află acest index.html.
+      în care se află acest fișier index.html.
     -->
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      Leg Apple Touch Icon pentru dispozitive iOS.
+      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată
+      pe ecranul de pornire sau afișată ca aplicație web. Reutilizez același favicon.svg
+      ca sursă a pictogramei.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      Inițiez din timp conexiunea către serverul de fonturi.
-      Scopul este să reduc întârzierea la încărcarea resurselor externe.
+      Încep conexiunea către serverul de fonturi din timp.
+      Scopul este de a reduce latența la încărcarea resurselor externe.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      Preconectez și domeniul de unde vor veni fișierele efective ale fonturilor.
-      crossorigin este necesar pentru resurse externe servite de pe alt origin.
+      Mă preconnectez la domeniul care servește fișierele efective ale fonturilor.
+      crossorigin este necesar pentru resursele externe servite de pe o altă origine.
     -->
 
     <link
@@ -195,25 +205,30 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      Încarc fontul Space Grotesk din Google Fonts.
-      display=swap cere browserului să afișeze temporar un font de rezervă până când fontul final se încarcă.
+      Încarc fontul Space Grotesk de la Google Fonts.
+      display=swap îi spune browserului să folosească temporar un font de rezervă
+      până când fontul final se încarcă.
     -->
 
     <link rel="stylesheet" href="./style.css" />
     <!-- @path:
-      Leg foaia de stil locală a versiunii românești.
-      Pentru că acest fișier index.html este în folderul ro/, browserul caută style.css tot în ro/.
+      Leg foaia de stil locală pentru versiunea română.
+      Deoarece acest fișier index.html se află în folderul ro/, browserul caută style.css în ro/.
     -->
   </head>
 
   <body>
     <!-- @block:
-      The <body> contains all visible content rendered by the browser.
-      I place here the structural layout of the page: navigation, hero portal,
-      main content sections, footer, and the script that activates interactive behaviors.
+      <body> conține tot conținutul vizibil redat de browser.
+      Plasez aici structura paginii: navigația, portalul hero,
+      secțiunile de conținut principal, footerul și scriptul care activează
+      comportamentele interactive.
     -->
 
-    <!-- @block: CONSOLA PRINCIPALĂ DE NAVIGAȚIE -->
+    <!-- @block: CONSOLA PRINCIPALĂ DE NAVIGAȚIE
+      Acesta este cockpitul HUD fix de sus, care rămâne ancorat de tavanul viewport-ului.
+      Adăpostește logo-ul navei (partea stângă) și linkurile meniului de teleportare (partea dreaptă).
+    -->
     <nav class="navbar">
       <!-- @block: LOGO-UL IDENTITĂȚII NAVEI -->
       <div class="logo"><a href="#hero-core-portal">D::0dy55ey</a></div>
@@ -224,8 +239,8 @@
 
       <!-- @block: BUTONUL CONSOLEI HUD DE TELEPORTARE
         Un buton de comutare care deschide overlay-ul holografic al volumelor.
-        Înlocuiește vechea listă inline de linkuri pentru a păstra navbar-ul curat și
-        optimizat pentru mobil.
+        Înlocuiește vechea listă inline de linkuri pentru a păstra navbar-ul curat
+        și optimizat pentru mobil.
       -->
       <button class="hud-toggle" aria-label="Deschide meniul de navigare">
         <!-- @reason:
@@ -239,12 +254,12 @@
       <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC
         Un panou glisant cu efect glassmorphism care afișează toate cele 6 volume
         ale proiectului cu linkurile lor de jurnal. Fiecare volum apare cu o
-        întârziere eșalonată (vezi CSS .hud-volume:nth-child delays).
+        întârziere eșalonată de pornire (vezi CSS .hud-volume:nth-child delays).
         Overlay-ul acoperă 70vh pe desktop și ecranul complet pe mobil.
       -->
       <div class="hud-overlay">
         <div class="hud-panel">
-          <!-- @block: VOLUMUL FRONTEND -->
+          <!-- @block: VOLUMUL PEISAJUL FRONTEND -->
           <div class="hud-volume">
             <h3 class="hud-volume-title">Peisajul Frontend</h3>
             <ul class="hud-log-links">
@@ -256,16 +271,15 @@
             </ul>
           </div>
 
-          <!-- @block: VOLUMUL BAZELOR DE DATE -->
+          <!-- @block: VOLUMUL PUNTE DE DATE -->
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
+            <h3 class="hud-volume-title">Puntea de Date</h3>
             <ul class="hud-log-links">
-              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
-              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
+              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
             </ul>
           </div>
 
-          <!-- @block: VOLUMUL BACKEND -->
+          <!-- @block: VOLUMUL SECTORUL BACKEND -->
           <div class="hud-volume">
             <h3 class="hud-volume-title">Sectorul Backend</h3>
             <ul class="hud-log-links">
@@ -282,15 +296,16 @@
             </ul>
           </div>
 
-          <!-- @block: VOLUMUL PUNTE DE DATE -->
+          <!-- @block: VOLUMUL VIDUL BAZELOR DE DATE -->
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Puntea de Date</h3>
+            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
             <ul class="hud-log-links">
-              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
+              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
+              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
             </ul>
           </div>
 
-          <!-- @block: VOLUMUL UX -->
+          <!-- @block: VOLUMUL LABORATOR UX -->
           <div class="hud-volume">
             <h3 class="hud-volume-title">Laborator UX</h3>
             <ul class="hud-log-links">
@@ -299,7 +314,7 @@
             </ul>
           </div>
 
-          <!-- @block: VOLUMUL LIVRARE -->
+          <!-- @block: VOLUMUL PUNTE DE LIVRARE -->
           <div class="hud-volume">
             <h3 class="hud-volume-title">Puntea de Livrare</h3>
             <ul class="hud-log-links">
@@ -319,11 +334,16 @@
     <div class="navbar-spacer"></div>
     <!-- @concept:
       Navbar-ul are acum două stări: restrâns (doar logo + buton de comutare) și
-      expandat (overlay-ul holografic cu toate cele 6 volume). Astfel, puntea de
-      comandă rămâne curată, iar fiecare sector este accesibil într-o singură atingere.
+      expandat (overlay-ul holografic cu toate cele 6 volume). Acest lucru menține
+      puntea de comandă curată, făcând în același timp fiecare sector accesibil
+      într-o singură atingere.
     -->
 
-    <!-- @block: HERO PORTAL — THE ARMILLARY REACTOR CORE -->
+    <!-- @block: PORTALUL HERO — NUCLEUL REACTORULUI ARMILLAR
+      Aceasta este principala matrice de întâmpinare a navei-mamă.
+      Ocupă 100% din înălțimea viewport-ului și proiectează poliedrul
+      cuantic 3D împreună cu titlul și subtitlul misiunii.
+    -->
     <header class="hero">
       <div id="hero-core-portal" class="armillary-reactor-core">
         <!-- @block: SFERA DE PLASMĂ CUANTICĂ — PORTALUL ICOSAEDRU
@@ -341,6 +361,11 @@
         -->
         <a href="recursive-blueprint.html" class="reactor-portal" aria-label="Intră în Planul Recursiv">
           <div class="quantum-plasma-sphere">
+            <!-- @structure:
+              Fețe de nivel superior (t1–t5), fețe medii-superioare (u1–u5),
+              fețe medii-inferioare (l1–l5), fețe de nivel inferior (b1–b5).
+              Fiecare <div> este rotit și poziționat în spațiul 3D prin CSS.
+            -->
             <!-- TOP TIER -->
             <div class="face face-t1"></div>
             <div class="face face-t2"></div>
@@ -371,29 +396,54 @@
           Poliedrul cu 20 de fețe reprezintă un astrolab geodezic — un instrument
           cosmic de navigație. Fiecare față este un nod în matricea de învățare.
           Prin înfășurarea sa într-un link portal, instrumentul devine și un prag:
-          echipajul nu apasă un buton, ci urmează zumzetul reactorului.
+          echipajul nu apasă un buton, ci urmează zumzetul.
         -->
 
         <div class="armillary-band-container macro-wrapper">
           <div class="astrolabe-metal-arc macro-arc"></div>
-          <h1 class="stenciled-metal-text">Jurnal de Bord: Orizontul Codului</h1>
+          <h1 class="stenciled-metal-text">Din Adâncul Digital</h1>
+          <!-- @reason:
+            Clasa stenciled-metal-text declanșează o animație de tastare prin CSS
+            keyframes: titlul se tastează literă cu literă pe parcursul a 3 secunde.
+          -->
         </div>
 
         <div class="armillary-band-container micro-wrapper">
           <div class="astrolabe-metal-arc micro-arc"></div>
           <p class="stenciled-metal-text-sub">
-            Cartografierea călătoriei către {front}end.
+            Transmisii Full Stack de la Nava Cosmică D::0dy55ey
           </p>
+          <!-- @reason:
+            Subtitlul urmează titlul principal cu o întârziere de 3 secunde.
+            Se tastează pe parcursul a 4 secunde într-un font monospace.
+          -->
         </div>
       </div>
     </header>
+    <!-- @theme:
+      Portalul hero folosește un gradient radial deep-space, un overlay CRT scanline
+      și accente neon magenta/verde pentru a evoca o estetică de cockpit SF din anii 1970.
+    -->
 
-    <!-- @block: MAIN CONTENT CONTAINER -->
+    <!-- @block: CONTAINERUL DE CONȚINUT PRINCIPAL -->
     <main class="main-container">
-      <!-- @block: FRONTEND LANDSCAPE SECTION -->
+      <!-- @reason:
+        Elementul <main> înfășoară secțiunile de conținut principal.
+        Este puntea centrală de date unde rezidă toate capitolele și intrările de jurnal.
+      -->
+
+      <!-- @block: SECȚIUNEA PEISAJUL FRONTEND -->
       <section id="frontend-scape">
+        <!-- @structure:
+          Fiecare <section> cu un id servește ca țintă de ancoră pentru navbar.
+          Id-ul secțiunii se potrivește cu href-ul din meniul de navigare.
+        -->
         <header class="category-header">
           <h2>Peisajul Frontend</h2>
+          <!-- @theme:
+            h2 folosește nebula-pink (#ff007f) cu o animație de pulsare neon
+            pentru a semnala începutul unui sector major de conținut.
+          -->
           <p>Cartografierea interfeței dintre utilizator și vidul digital.</p>
         </header>
 
@@ -404,6 +454,11 @@
             nostru digital — scheletul de care atârnă toate stilurile și comportamentele.
           </p>
           <a href="./frontend/html-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Fiecare articol face legătura către o pagină de jurnal dedicată
+            din subdirectorul frontend/. Clasa archive-link stilizează linkul
+            ca pe un buton CTA cu hover verde fosfor.
+          -->
         </article>
 
         <article id="css" class="log-entry">
@@ -413,6 +468,11 @@
             culoare, layout, animație și atmosfera emoțională a interfeței.
           </p>
           <a href="./frontend/css-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Urmez aceeași structură <article> pentru fiecare tehnologie.
+            Atributul id se potrivește cu subiectul (css), iar archive-linkul
+            indică jurnalul detaliat din folderul frontend/.
+          -->
         </article>
 
         <article id="javascript" class="log-entry">
@@ -423,6 +483,11 @@
           </p>
           <a href="./frontend/javascript-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
           <div class="js-annex">
+            <!-- @block: ANEXA FRAMEWORK-URILOR JS
+              Sub-jurnale pentru explorări specifice framework-urilor.
+              Acestea sunt marcate ca future-log pentru conținutul planificat
+              dar încă nescris.
+            -->
             <h4>Anexă: Expansiune Framework-uri JS</h4>
             <div id="react" class="sub-log future-log">
               <h5>React.js</h5>
@@ -438,13 +503,147 @@
         </article>
       </section>
 
+      <!-- @structure: DIVIZOR COSMIC — incizie laser vizuală între secțiunile majore -->
+      <hr class="cosmic-divider" />
+      <!-- @reason:
+        Elementul <hr> creează o pauză tematică. În acest proiect este stilizat
+        ca o linie laser neon-pink cu gradient radial care se estompează la margini.
+      -->
+
+      <!-- @block: SECȚIUNEA PUNTE DE DATE — VOLUMUL ANCORĂ
+        @theme:
+          Puntea de Date este un volum anexă interstițial — traversează
+          prăpastia conceptuală dintre Peisajul Frontend și Sectorul Backend,
+          transportând JSON ca monedă universală de date între UI și server.
+          Spre deosebire de sectoarele majore, această secțiune folosește
+          stilizare amber-glow cu o animație subtilă de scuturare la hover,
+          sugerând tremurul unui pod atunci când îl traversezi.
+      -->
+      <section id="data-bridge" class="bridge-volume">
+        <header class="category-header">
+          <h2>Puntea de Date</h2>
+          <p>Traversarea prăpastiei dintre înregistrări structurate și formate lizibile pentru om.</p>
+        </header>
+
+        <article id="json" class="log-entry">
+          <h3>JavaScript Object Notation (JSON)</h3>
+          <p>Moneda universală de date a web-ului — ușoară, independentă de limbaj și dialectul standard pentru comunicarea API pe frontiera digitală.</p>
+          <a href="./data-bridge/json-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Acesta este singurul articol din secțiunea bridge-volume.
+            Urmează același model log-entry ca volumele principale, dar
+            moștenește stilizarea amber de la secțiunea părinte.
+            Linkul indică subdirectorul data-bridge/.
+          -->
+        </article>
+      </section>
+
+      <!-- @structure: DIVIZOR COSMIC
+        @reason:
+          <hr> creează o pauză tematică între secțiunile majore.
+          Îl folosesc aici pentru a separa anexa Puntea de Date de
+          Sectorul Backend de mai jos, menținând conținutul organizat vizual.
+      -->
       <hr class="cosmic-divider" />
 
-      <!-- @block: DATABASE VOID SECTION -->
+      <!-- @block: SECȚIUNEA SECTORUL BACKEND -->
+      <section id="backend-sector">
+        <header class="category-header">
+          <h2>Sectorul Backend</h2>
+          <p>Ingineria mașinăriei din partea serverului care alimentează cosmosul digital.</p>
+        </header>
+
+        <article id="backend-core" class="log-entry">
+          <h3>Nucleu Backend</h3>
+          <p>Sistemul nervos central al logicii serverului — medii de execuție, gestionarea cererilor și arhitectura fundamentală a serviciilor backend.</p>
+          <a href="./backend/backend-core-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Fiecare <article> din secțiunea backend țintește o pagină de jurnal
+            din subdirectorul backend/. Atributul id se potrivește cu subiectul și
+            ar putea fi folosit pentru navigarea prin ancoră. Clasa archive-link
+            stilizează linkul ca pe un buton CTA cu bordură verde.
+          -->
+        </article>
+
+        <article id="api" class="log-entry">
+          <h3>Jurnal API</h3>
+          <p>Protocoalele de comunicare ale navei digitale — endpoint-uri RESTful, modele cerere-răspuns și contracte de schimb de date.</p>
+          <a href="./backend/api-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Repet același model <article> pentru fiecare subiect backend.
+            Această consistență ajută cititorul să prezică structura și
+            să găsească rapid ceea ce caută.
+          -->
+        </article>
+
+        <article id="auth-security" class="log-entry">
+          <h3>Autentificare &amp; Securitate</h3>
+          <p>Protocoalele de izolare — strategii de autentificare, straturi de autorizare și măsuri defensive împotriva amenințărilor cosmice.</p>
+          <a href="./backend/auth-security-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Același model: id, h3, p, archive-link. Clasa .archive-link
+            este definită în style.css — o reutilizez în toate secțiunile
+            pentru ca limbajul vizual să rămână consecvent.
+          -->
+        </article>
+
+        <article id="architecture" class="log-entry">
+          <h3>Arhitectură</h3>
+          <p>Planurile structurale — modele de design, topologia sistemului și principiile care împiedică nava să se prăbușească sub propria complexitate.</p>
+          <a href="./backend/backend-architecture-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Fiecare articol din această secțiune este structural identic.
+            Singura variabilă este id-ul, textul h3, descrierea p
+            și calea href. Această predictibilitate face codul ușor
+            de scanat și întreținut.
+          -->
+        </article>
+
+        <article id="languages" class="log-entry">
+          <h3>Limbaje</h3>
+          <p>Limbile mașinii — limbaje compilate și interpretate, sisteme de tipuri și puterea expresivă a codului server.</p>
+          <a href="./backend/backend-language-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="middleware" class="log-entry">
+          <h3>Middleware</h3>
+          <p>Stratul interstițial — pipeline-uri de cereri, interceptoare și liantul care conectează sisteme disparate într-un întreg coerent.</p>
+          <a href="./backend/middlware-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="testing" class="log-entry">
+          <h3>Testare</h3>
+          <p>Astrolabul asigurării calității — teste unitare, teste de integrare și disciplina de a verifica că fiecare sistem funcționează conform intenției.</p>
+          <a href="./backend/testing-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="documentation" class="log-entry">
+          <h3>Documentație</h3>
+          <p>Jurnalul de bord al navei — documentație API, adnotări inline și arta de a face vizibil invizibilul pentru viitorii membri ai echipajului.</p>
+          <a href="./backend/documentation-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="performance" class="log-entry">
+          <h3>Performanță</h3>
+          <p>Puntea de optimizare — profiling, caching, load balancing și căutarea eternă pentru o latență mai mică și un randament mai mare.</p>
+          <a href="./backend/performance-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="deployment" class="log-entry">
+          <h3>Deployment</h3>
+          <p>Secvența de lansare — pipeline-uri CI/CD, containerizare, configurarea mediului și pasul final de la dezvoltare la orbita de producție.</p>
+          <a href="./backend/deployment-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+      </section>
+
+      <!-- @structure: DIVIZOR COSMIC — incizie laser vizuală între secțiunile majore -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: SECȚIUNEA VIDUL BAZELOR DE DATE -->
       <section id="database-void">
         <header class="category-header">
           <h2>Vidul Bazelor de Date</h2>
-          <p>Explorând memoria profundă a cosmosului.</p>
+          <p>Pătrunzând în memoria profundă a cosmosului.</p>
         </header>
 
         <article id="sql" class="log-entry">
@@ -453,18 +652,105 @@
           <div class="mission-status">
             <p>Stare: Expediție începută (30 Days of SQL Challenge).</p>
           </div>
-          <a href="../database/sql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <a href="./database/sql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Div-ul .mission-status arată progresul curent pe acest subiect.
+            Folosește o animație de tastare care se re-activează prin
+            IntersectionObserver de fiecare dată când elementul intră în
+            viewport (definit în script.js). Linkul urmează același model:
+            ./database/ + subiect + -log.html.
+          -->
         </article>
 
         <article id="nosql" class="log-entry future-log">
           <h3>Not only SQL (NoSQL)</h3>
           <p>Arhivele nebuloase — document stores, perechi cheie-valoare și design de schemă flexibil.</p>
-          <a href="../database/nosql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <a href="./database/nosql-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Acest articol folosește class="future-log", care aplică stilizare
+            amber cu un filtru grayscale și o animație de glisare la dreapta
+            la hover. Clasa semnalează că conținutul este planificat dar
+            încă nescris.
+          -->
+        </article>
+      </section>
+
+      <!-- @structure: DIVIZOR COSMIC
+        @reason:
+          Fiecare <hr> creează o pauză tematică între secțiunile majore de conținut.
+          În CSS, .cosmic-divider este stilizat ca o linie laser neon-pink
+          cu gradient radial care se estompează la margini — o incizie vizuală în pagină.
+      -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: SECȚIUNEA LABORATOR UX -->
+      <section id="ux-lab">
+        <header class="category-header">
+          <h2>Laborator UX</h2>
+          <p>Proiectarea interfeței dintre intuiția umană și logica mașinii.</p>
+        </header>
+
+        <article id="ux-foundations" class="log-entry">
+          <h3>Fundamente UX</h3>
+          <p>Principiile experienței utilizatorului — euristici de uzabilitate, design de interacțiune și arta de a construi interfețe care se simt naturale.</p>
+          <a href="./ux/ux-foundations-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Secțiunea Laborator UX urmează același model log-entry văzut în
+            fiecare volum. Id-ul și href-ul folosesc denumirea kebab-case
+            (ux-foundations, ./ux/ux-foundations-log.html), o convenție
+            folosită în întregul proiect pentru căi de fișiere și ancore.
+          -->
+        </article>
+
+        <article id="accessibility" class="log-entry">
+          <h3>Accesibilitate</h3>
+          <p>Mandatul de design incluziv — cititoare de ecran, navigare cu tastatura, rapoarte de contrast și asigurarea că niciun membru al echipajului nu este lăsat în urmă.</p>
+          <a href="./ux/accessibility-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+      </section>
+
+      <!-- @structure: DIVIZOR COSMIC
+        @reason:
+          O altă pauză tematică înaintea volumului final. Utilizarea consecventă
+          a <hr> cu .cosmic-divider menține ritmul vizual al paginii
+          previzibil pentru cititor.
+      -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: SECȚIUNEA PUNTE DE LIVRARE -->
+      <section id="delivery-deck">
+        <header class="category-header">
+          <h2>Puntea de Livrare</h2>
+          <p>Zona de lansare — controlul versiunilor, colaborarea și pipeline-ul care propulsează codul de la stația de lucru la orbită.</p>
+        </header>
+
+        <article id="git" class="log-entry">
+          <h3>Git</h3>
+          <p>Motorul cronologiei — strategii de branching, arheologia commit-urilor și sistemul de control distribuit al versiunilor care urmărește fiecare schimbare din jurnalul navei.</p>
+          <a href="./delivery/git-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+          <!-- @reason:
+            Puntea de Livrare încheie conținutul principal. Fiecare articol
+            de aici face legătura către o pagină din folderul delivery/.
+            Modelul este identic cu toate celelalte volume — doar subdirectorul
+            se schimbă.
+          -->
+        </article>
+
+        <article id="github" class="log-entry">
+          <h3>GitHub</h3>
+          <p>Docul orbital — pull request-uri, issue-uri, acțiuni și platforma colaborativă care găzduiește codul sursă al proiectului în cloud.</p>
+          <a href="./delivery/github-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <article id="deployment-pipeline" class="log-entry">
+          <h3>Pipeline de Deployment</h3>
+          <p>Secvența automată de lansare — integrare continuă, testare automată și pipeline-ul care transformă commit-urile în versiuni live.</p>
+          <a href="./delivery/deployment-pipeline-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
         </article>
       </section>
     </main>
 
-              <!-- @block:
+    <!-- @block:
       Deschid aici blocul de footer. Aceasta este secțiunea de încheiere
       a fiecărei pagini din proiect. Plasez în interior fluxul de date de
       telemetrie: sectorul orbital curent, coordonatele spațio-temporale,
@@ -485,8 +771,21 @@
       <ul class="footer-links">
         <!-- @path: Pagina de bibliografie -->
         <li>
+          <!-- @theme:
+            <span class="pulse-dot"> gol este un element pur decorativ.
+            În CSS este stilizat ca un punct mic strălucitor cu o animație
+            de pulsare (un keyframe care scalează opacitatea de la 0.4 la 1 și înapoi).
+            Acționează ca un far în fața fiecărui link din footer.
+          -->
           <span class="pulse-dot"></span>
           <a href="bibliography.html" target="_blank">Hărți Stelare — Bibliografie</a>
+          <!-- @reason:
+            Atributul target="_blank" deschide linkul într-o filă nouă de browser.
+            Acest lucru este util pentru resurse externe, astfel încât echipajul
+            să nu navigheze departe de puntea de comandă. Pentru securitate,
+            luați în considerare adăugarea rel="noopener noreferrer" pentru a
+            împiedica pagina deschisă să acceseze fereastra originală prin window.opener.
+          -->
         </li>
         <!-- @path: Pagina de transmisie / Cartă de Astro-navigație -->
         <li>
@@ -508,33 +807,63 @@
       </ul>
 
       <!-- @structure:
-        Scriu prima linie de telemetrie. Îi spune cititorului în ce sector
-        sau capitol se află în acest moment.
+        Scriu prima linie de date de telemetrie. Îi spune cititorului în ce sector
+        sau capitol se află în acest moment. SYS_ORBIT se schimbă per pagină:
+        paginile index spun COMMAND_DECK, jurnalele frontend spun FRONTEND_EXPEDITION,
+        paginile backend spun BACKEND_EXPEDITION și așa mai departe pentru fiecare capitol.
       -->
       <p>
         SYS_ORBIT: COMMAND_DECK
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          Învelesc cuvântul ONLINE într-un <span> cu clasa .telemetry-active.
+          Această clasă aplică culoarea verde solar-mint (#a7f3d0) și adaugă
+          un efect de strălucire neon text-shadow. Culoarea fosfor verde imită
+          aspectul indicatoarelor de stare active de pe terminalele de control
+          ale misiunilor NASA din anii 1970.
+        -->
       </p>
 
       <!-- @structure:
-        Scriu a doua linie de telemetrie. Ancora proiectul digital în spațiu
-        și timp real.
+        Scriu a doua linie de telemetrie. Ancora proiectul în spațiu fizic real
+        și timp. Coordonatele indică locația căpitanului, iar data marchează
+        momentul ultimei actualizări a footerului.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          Includ coordonate geografice și un timestamp al sistemului.
+          Numerele 46.7712° N, 23.6236° E sunt latitudinea și longitudinea
+          Cluj-Napoca, România — locul unde se construiește acest proiect.
+          SYSTEM_TIME înregistrează data ultimei actualizări a footerului.
+        -->
       </p>
 
       <!-- @structure:
         Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect.
+        acest proiect. Simbolul copyright urmat de an și numele căpitanului
+        marchează dreptul de proprietate intelectuală asupra conținutului.
       -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          Învelesc numele căpitanului într-un <span> cu clasa .vessel-sig.
+          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
+          incandescentă text-shadow. Semnătura magenta acționează ca
+          identificatorul unic al căpitanului pe toate punțile navei.
+        -->
       </p>
     </footer>
 
+    <!-- @block:
+      Încarc fișierul JavaScript la sfârșitul <body>-ului.
+      Plasarea scriptului aici înseamnă că browserul parsează tot HTML-ul și CSS-ul
+      înainte de a descărca și executa JavaScript-ul. Acest lucru previne
+      blocarea redării și asigură că elementele DOM există când scriptul rulează.
+      Calea ./ se rezolvă în folderul ro/, la fel ca index.html.
+    -->
     <script src="./script.js"></script>
   </body>
 </html>

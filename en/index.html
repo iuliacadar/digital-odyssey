@@ -46,7 +46,7 @@
       and initial-scale=1.0 starts without artificial zoom.
     -->
 
-    <title>D::0dy55ey | Charting Digital Frontiers</title>
+    <title>D::0dy55ey | Signals from the Digital Deep</title>
     <!-- @meta:
       The page title.
       I see it in the browser tab, in bookmarks, and sometimes in search engine results.
@@ -54,7 +54,7 @@
 
     <meta
       name="description"
-      content="A bilingual journal of liminal navigation through the logical oceans of code. A cosmic, daring, and eerie exploration of frontend and backend architectures, databases, and implementation."
+      content="Full stack transmissions from the digital deep. A bilingual journal of cosmic horror and retro-futurist code exploration — frontend, backend, databases, DevOps, and the voids between."
     />
     <!-- @meta:
       The page description.
@@ -88,7 +88,7 @@
 
     <meta
       property="og:title"
-      content="D::0dy55ey | Charting Digital Frontiers"
+      content="D::0dy55ey | Signals from the Digital Deep"
     />
     <!-- @meta:
       Open Graph title.
@@ -98,7 +98,7 @@
 
     <meta
       property="og:description"
-      content="A bilingual journal of liminal navigation through the logical oceans of code. A cosmic, daring, and eerie exploration of frontend and backend architectures, databases, and implementation."
+      content="Full stack transmissions from the digital deep. A bilingual journal of cosmic horror and retro-futurist code exploration — frontend, backend, databases, DevOps, and the voids between."
     />
     <!-- @meta:
       Open Graph description.
@@ -267,12 +267,11 @@
             </ul>
           </div>
 
-          <!-- @block: DATABASE VOID VOLUME -->
+          <!-- @block: DATA BRIDGE VOLUME -->
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Database Void</h3>
+            <h3 class="hud-volume-title">Data Bridge</h3>
             <ul class="hud-log-links">
-              <li><a href="./database/sql-log.html">SQL Log</a></li>
-              <li><a href="./database/nosql-log.html">NoSQL Log</a></li>
+              <li><a href="./data-bridge/json-log.html">JSON Log</a></li>
             </ul>
           </div>
 
@@ -293,11 +292,12 @@
             </ul>
           </div>
 
-          <!-- @block: DATA BRIDGE VOLUME -->
+          <!-- @block: DATABASE VOID VOLUME -->
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Data Bridge</h3>
+            <h3 class="hud-volume-title">Database Void</h3>
             <ul class="hud-log-links">
-              <li><a href="./data-bridge/json-log.html">JSON Log</a></li>
+              <li><a href="./database/sql-log.html">SQL Log</a></li>
+              <li><a href="./database/nosql-log.html">NoSQL Log</a></li>
             </ul>
           </div>
 
@@ -395,7 +395,7 @@
 
         <div class="armillary-band-container macro-wrapper">
           <div class="astrolabe-metal-arc macro-arc"></div>
-          <h1 class="stenciled-metal-text">Mission Log: The Code Horizon</h1>
+          <h1 class="stenciled-metal-text">From the Digital Deep</h1>
           <!-- @reason:
             The stenciled-metal-text class triggers a typing animation via CSS
             keyframes: the title types itself letter by letter over 3 seconds.
@@ -405,7 +405,7 @@
         <div class="armillary-band-container micro-wrapper">
           <div class="astrolabe-metal-arc micro-arc"></div>
           <p class="stenciled-metal-text-sub">
-            Mapping the journey to the {front}end.
+            Full Stack Transmissions from the Cosmic Ship D::0dy55ey
           </p>
           <!-- @reason:
             The sub-title follows the master title with a 3-second delay.
@@ -461,6 +461,11 @@
             color, layout, animation, and the emotional atmosphere of the interface.
           </p>
           <a href="./frontend/css-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            I follow the same <article> structure for each technology.
+            The id attribute matches the topic (css), and the archive-link
+            points to the detailed log in the frontend/ folder.
+          -->
         </article>
 
         <article id="javascript" class="log-entry">
@@ -497,6 +502,136 @@
         as a radial-gradient neon-pink laser line that fades at the edges.
       -->
 
+      <!-- @block: DATA BRIDGE SECTION — THE ANCHOR VOLUME
+        @theme:
+          The Data Bridge is an interstitial annex volume — it spans the
+          conceptual chasm between the Frontend Landscape and the Backend Sector,
+          carrying JSON as the universal data currency between the UI and the server.
+          Unlike the major sectors, this section uses amber-glow styling with
+          a subtle shake animation on hover, suggesting the tremor of a bridge
+          when you cross it.
+      -->
+      <section id="data-bridge" class="bridge-volume">
+        <header class="category-header">
+          <h2>The Data Bridge</h2>
+          <p>Crossing the chasm between structured records and human-readable formats.</p>
+        </header>
+
+        <article id="json" class="log-entry">
+          <h3>JavaScript Object Notation (JSON)</h3>
+          <p>The universal data currency of the web — lightweight, language-agnostic, and the standard dialect for API communication across the digital frontier.</p>
+          <a href="./data-bridge/json-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            This is the only article inside the bridge-volume section.
+            It follows the same log-entry pattern as the main volumes but
+            inherits amber styling from its parent section.
+            The link points to the data-bridge/ subdirectory.
+          -->
+        </article>
+      </section>
+
+      <!-- @structure: COSMIC DIVIDER
+        @reason:
+          <hr> creates a thematic break between major sections.
+          I use it here to separate the Data Bridge annex from the
+          Backend Sector below, keeping the content visually organized.
+      -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: BACKEND SECTOR SECTION -->
+      <section id="backend-sector">
+        <header class="category-header">
+          <h2>The Backend Sector</h2>
+          <p>Engineering the server-side machinery that powers the digital cosmos.</p>
+        </header>
+
+        <article id="backend-core" class="log-entry">
+          <h3>Backend Core</h3>
+          <p>The central nervous system of server-side logic — runtime environments, request handling, and the fundamental architecture of backend services.</p>
+          <a href="./backend/backend-core-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            Each <article> in the backend section targets a log page inside
+            the backend/ subdirectory. The id attribute matches the topic and
+            could be used for anchor navigation. The archive-link class
+            styles the link as a green-bordered CTA button.
+          -->
+        </article>
+
+        <article id="api" class="log-entry">
+          <h3>API Log</h3>
+          <p>The communication protocols of the digital vessel — RESTful endpoints, request-response patterns, and data exchange contracts.</p>
+          <a href="./backend/api-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            I repeat the same <article> pattern for every backend topic.
+            This consistency helps a reader predict the structure and
+            find what they need quickly.
+          -->
+        </article>
+
+        <article id="auth-security" class="log-entry">
+          <h3>Auth &amp; Security</h3>
+          <p>The lockdown protocols — authentication strategies, authorization layers, and defensive measures against cosmic threats.</p>
+          <a href="./backend/auth-security-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            Same pattern: id, h3, p, archive-link. The .archive-link class
+            is defined in style.css — I reuse it across all sections so the
+            visual language stays consistent.
+          -->
+        </article>
+
+        <article id="architecture" class="log-entry">
+          <h3>Architecture</h3>
+          <p>The structural blueprints — design patterns, system topology, and the principles that keep the vessel from collapsing under its own complexity.</p>
+          <a href="./backend/backend-architecture-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            Each article in this section is structurally identical.
+            The only variable is the id, the h3 text, the p description,
+            and the href path. This predictability makes the code easy
+            to scan and maintain.
+          -->
+        </article>
+
+        <article id="languages" class="log-entry">
+          <h3>Languages</h3>
+          <p>The tongues of the machine — compiled and interpreted languages, type systems, and the expressive power of server-side code.</p>
+          <a href="./backend/backend-language-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="middleware" class="log-entry">
+          <h3>Middleware</h3>
+          <p>The interstitial layer — request pipelines, interceptors, and the glue that connects disparate systems into a coherent whole.</p>
+          <a href="./backend/middlware-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="testing" class="log-entry">
+          <h3>Testing</h3>
+          <p>The quality assurance astrolabe — unit tests, integration tests, and the discipline of verifying that every system functions as intended.</p>
+          <a href="./backend/testing-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="documentation" class="log-entry">
+          <h3>Documentation</h3>
+          <p>The ship's logbook — API docs, inline annotations, and the art of making the invisible visible to future crew members.</p>
+          <a href="./backend/documentation-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="performance" class="log-entry">
+          <h3>Performance</h3>
+          <p>The optimization deck — profiling, caching, load balancing, and the eternal quest for lower latency and higher throughput.</p>
+          <a href="./backend/performance-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="deployment" class="log-entry">
+          <h3>Deployment</h3>
+          <p>The launch sequence — CI/CD pipelines, containerization, environment configuration, and the final step from development to production orbit.</p>
+          <a href="./backend/deployment-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+      </section>
+      </section>
+
+      <!-- @structure: COSMIC DIVIDER — visual laser incision between major sections -->
+      <hr class="cosmic-divider" />
+
       <!-- @block: DATABASE VOID SECTION -->
       <section id="database-void">
         <header class="category-header">
@@ -509,18 +644,98 @@
           <p>The language of order — relational databases, tables, queries, and the discipline of structured data.</p>
           <div class="mission-status">
             <p>Status: Expedition started (30 Days of SQL Challenge).</p>
-            <!-- @reason:
-              .mission-status uses a typing animation that re-triggers via IntersectionObserver
-              every time the element scrolls into view.
-            -->
           </div>
-          <a href="../database/sql-log.html" class="archive-link">Access Detailed Log</a>
+          <a href="./database/sql-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            The .mission-status div shows the current progress on this topic.
+            It uses a typing animation that re-triggers via IntersectionObserver
+            every time it scrolls into view (defined in script.js).
+            The link follows the same pattern: ./database/ + topic + -log.html.
+          -->
         </article>
 
         <article id="nosql" class="log-entry future-log">
           <h3>Not only SQL (NoSQL)</h3>
           <p>The nebulous archives — document stores, key-value pairs, and flexible schema design.</p>
-          <a href="../database/nosql-log.html" class="archive-link">Access Detailed Log</a>
+          <a href="./database/nosql-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            This article uses class="future-log", which applies amber styling
+            with a grayscale filter and a slide-right hover animation.
+            The class signals that the content is planned but not yet written.
+          -->
+        </article>
+      </section>
+
+      <!-- @structure: COSMIC DIVIDER
+        @reason:
+          Each <hr> creates a thematic break between major content sections.
+          In CSS, .cosmic-divider is styled as a radial-gradient neon-pink
+          laser line that fades at the edges — a visual incision in the page.
+      -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: UX LAB SECTION -->
+      <section id="ux-lab">
+        <header class="category-header">
+          <h2>The UX Lab</h2>
+          <p>Designing the interface between human intuition and machine logic.</p>
+        </header>
+
+        <article id="ux-foundations" class="log-entry">
+          <h3>UX Foundations</h3>
+          <p>The principles of user experience — usability heuristics, interaction design, and the craft of building interfaces that feel natural.</p>
+          <a href="./ux/ux-foundations-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            The UX Lab section follows the same log-entry pattern seen in
+            every other volume. The id and href use kebab-case naming
+            (ux-foundations, ./ux/ux-foundations-log.html), a convention
+            used throughout the project for file paths and anchors.
+          -->
+        </article>
+
+        <article id="accessibility" class="log-entry">
+          <h3>Accessibility</h3>
+          <p>The inclusive design mandate — screen readers, keyboard navigation, contrast ratios, and ensuring no crew member is left behind.</p>
+          <a href="./ux/accessibility-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+      </section>
+
+      <!-- @structure: COSMIC DIVIDER
+        @reason:
+          Another thematic break before the final volume. The consistent
+          use of <hr> with .cosmic-divider keeps the visual rhythm of
+          the page predictable for the reader.
+      -->
+      <hr class="cosmic-divider" />
+
+      <!-- @block: DELIVERY DECK SECTION -->
+      <section id="delivery-deck">
+        <header class="category-header">
+          <h2>The Delivery Deck</h2>
+          <p>The launch bay — version control, collaboration, and the pipeline that propels code from workstation to orbit.</p>
+        </header>
+
+        <article id="git" class="log-entry">
+          <h3>Git</h3>
+          <p>The timeline engine — branching strategies, commit archaeology, and the distributed version control system that tracks every change in the vessel's log.</p>
+          <a href="./delivery/git-log.html" class="archive-link">Access Detailed Log</a>
+          <!-- @reason:
+            The Delivery Deck concludes the main content. Each article here
+            links to a page inside the delivery/ folder. The pattern is
+            identical to all other volumes — only the subdirectory changes.
+          -->
+        </article>
+
+        <article id="github" class="log-entry">
+          <h3>GitHub</h3>
+          <p>The orbital dock — pull requests, issues, actions, and the collaborative platform that hosts the project's source code in the cloud.</p>
+          <a href="./delivery/github-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <article id="deployment-pipeline" class="log-entry">
+          <h3>Deployment Pipeline</h3>
+          <p>The automated launch sequence — continuous integration, automated testing, and the pipeline that turns commits into live deployments.</p>
+          <a href="./delivery/deployment-pipeline-log.html" class="archive-link">Access Detailed Log</a>
         </article>
       </section>
     </main>
@@ -546,8 +761,21 @@
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
         <li>
+          <!-- @theme:
+            The empty <span class="pulse-dot"> is a purely decorative element.
+            In CSS it is styled as a small glowing dot with a pulsing animation
+            (a keyframe that scales opacity from 0.4 to 1 and back).
+            It acts as a beacon in front of each footer link.
+          -->
           <span class="pulse-dot"></span>
           <a href="bibliography.html" target="_blank">Star Charts — Bibliography</a>
+          <!-- @reason:
+            The target="_blank" attribute opens the link in a new browser tab.
+            This is useful for external resources so the crew does not navigate
+            away from the command deck. For security, consider adding
+            rel="noopener noreferrer" to prevent the opened page from accessing
+            the original window via window.opener.
+          -->
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
@@ -618,6 +846,13 @@
       </p>
     </footer>
 
+    <!-- @block:
+      I load the JavaScript file at the end of the <body>.
+      Placing the script here means the browser parses all HTML and CSS
+      before downloading and executing the JavaScript. This prevents
+      render-blocking and ensures DOM elements exist when the script runs.
+      The ./ path resolves to the en/ folder, same as index.html.
+    -->
     <script src="./script.js"></script>
   </body>
 </html>
