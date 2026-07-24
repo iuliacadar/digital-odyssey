@@ -798,3 +798,89 @@ Suprapunerea Command Deck (`hud-overlay`) folosea `background: rgba(10, 11, 30, 
 - **Stilul butonului Command Deck**: Butonul HUD toggle (`.hud-toggle`) folosea anterior text și bordură gri (`--stardust`) cu un hover magenta. L-am restilizat să se potrivească cu butonul „Înapoi la puntea de comandă": bordură verde întreruptă, text verde desaturat, padding 4px/10px, border-radius 3px și un hover verde complet cu strălucire subtilă de fundal.
 
 ---
+
+# DAY 11 — Restructurare index, anexă Data Bridge, comentarii pedagogice și finalizare branding
+
+Această zi finalizează restructurarea finală a ambelor pagini `en/index.html` și `ro/index.html` și marchează momentul în care cele două pagini principale ale proiectului ajung la forma lor finală completă, cu toate cele șase volume documentate, Data Bridge poziționat ca volum anexă distinct și noua identitate de brand fixată.
+
+## 1. Structura cu șase volume
+
+Am extins atât `en/index.html`, cât și `ro/index.html` de la schița originală cu două volume (Frontend + Database) la arhitectura completă cu șase volume definită în DAY 08:
+
+- **Frontend** (`frontend-scape`) — primul volum, care acoperă HTML, CSS, JavaScript, React și Angular.
+- **Data Bridge** (`data-bridge`) — volumul anexă, poziționat al doilea în ordinea de construcție, care acoperă JSON.
+- **Backend** (`backend-sector`) — al treilea volum, care acoperă logica de bază, API, autentificare, arhitectură, limbaje, middleware, testare, documentare, performanță și deployment.
+- **Database** (`database-void`) — al patrulea volum, care acoperă SQL și NoSQL.
+- **UX** (`ux-lab`) — al cincilea volum, care acoperă accesibilitatea și fundațiile UX.
+- **Delivery** (`delivery-deck`) — al șaselea și ultimul volum, care acoperă pipeline-ul de deployment, Git și GitHub.
+
+Ordinea naturală de construcție în `index.html` urmează: Frontend → Data Bridge (JSON) → Backend → Database → UX → Delivery. Această progresie mută cititorul de la construcția vizibilă (frontend), prin stratul de interschimb de date (bridge), în logica de server (backend), apoi persistare (database), experiență (UX) și în final publicare (delivery).
+
+## 2. Data Bridge ca volum anexă
+
+Data Bridge este tratat ca un **volum anexă distinct** (nu un capitol anexă în cadrul altui volum). Are propria sa `<section>` în HTML, propriul său `<h2>` și propria sa intrare în panoul de navigare HUD, poziționat între Frontend și Backend în ordinea de construcție.
+
+Vizual, secțiunea Data Bridge folosește noua clasă CSS `.bridge-volume`, care aplică:
+- O bordură întreruptă de culoarea chihlimbarului (`#FFBF00`) cu lățime de `4px`, înlocuind bordura cian standard folosită de celelalte volume.
+- Un `box-shadow` cu strălucire chihlimbarie (`0 0 30px rgba(255, 191, 0, 0.4)`).
+- O animație personalizată `@keyframes bridge-shake` care creează o vibrație subtilă, intermitentă (translație de 1–2px pe axele X și Y cu întârzieri de 50–100ms), diferențiind secțiunea punții de volumele stabile din jur.
+
+Atât `en/style.css`, cât și `ro/style.css` au primit aceleași reguli `.bridge-volume`, cu comentarii traduse în română în versiunea `ro/`.
+
+## 3. Comentarii pedagogice pe fiecare bloc
+
+Am adăugat comentarii pedagogice complete (folosind etichetele `@block`, `@meta`, `@reason`, `@path`, `@warning`, `@bridge` și `@theme` din `docs/legend-ro.md`) la fiecare bloc structural din ambele fișiere `en/index.html` și `ro/index.html`. Fiecare element `<head>`, fiecare link `<nav>`, fiecare linie de text din hero, fiecare `<article>` de volum, fiecare titlu `<h2>`/`<h3>`, fiecare element de footer, tagul `<script>`, separatoarele `<hr>`, beacon-ele `.pulse-dot` și fiecare atribut `target="_blank"` are acum un comentariu didactic însoțitor care explică rolul său.
+
+Pentru versiunea română, toate comentariile au fost traduse în română și folosesc etichetele din `docs/legend-ro.md`. Fișierul `ro/index.html` a crescut de la ~540 de linii la 871 de linii, egalând versiunea engleză în structură și profunzime.
+
+## 4. Noua identitate de brand
+
+Am înlocuit titlurile anterioare (`Charting Digital Frontiers` în EN, `Cartografierea Frontierelor Digitale` în RO) cu noua identitate.
+
+**Versiunea engleză:**
+- `<title>`: `D::0dy55ey | Signals from the Digital Deep`
+- `<h1>`: `From the Digital Deep`
+- Subtitlu: `Full Stack Transmissions from the Cosmic Ship D::0dy55ey`
+
+**Versiunea română:**
+- `<title>`: `D::0dy55ey | Semnale din Adâncul Digital`
+- `<h1>`: `Din Adâncul Digital`
+- Subtitlu: `Transmisii Full Stack de la Nava Cosmică D::0dy55ey`
+
+Noul branding este mai evocator, aliniind metafora navigației cosmice a proiectului cu un ton poetic și explorator. Suprapunerea HUD, metadatele OG și căile canonice au fost de asemenea actualizate pentru a se potrivi.
+
+## 5. Rafinări UI pentru mobil
+
+Am recalibrat CSS-ul pentru ambele fișiere `en/style.css` și `ro/style.css` pentru a îmbunătăți lizibilitatea pe ecrane mici:
+
+- **Fontul subtitlului**: redus la `9px` pe mobil pentru a se încadra în lățimea viewport-ului.
+- **`.armillary-band-container`**: setat la `width: 100%` pentru a preveni overflow-ul orizontal.
+- **`.hud-toggle`**: padding și dimensiune font reduse pentru o potrivire mai strânsă în navbar.
+- **`.footer-links a`**: padding și dimensiune font reduse.
+- **`.return-btn`**: spațiere îngustată.
+- **`.footer p`**: dimensiune font redusă pentru a preveni întoarcerea textului pe ecrane înguste.
+
+## 6. Clonare și traducere în română
+
+Fișierul `ro/index.html` nu a fost construit separat; a fost clonat din `en/index.html` și apoi:
+- Tot textul vizibil a fost tradus în română (titluri, descrieri, etichete de navigare, text de footer, nume de volume HUD).
+- Toate comentariile pedagogice au fost traduse în română.
+- `lang="ro"` a fost setat pe elementul `<html>`.
+- `og:locale="ro_RO"` a fost setat pentru previzualizări sociale românești.
+- Toate URL-urile canonice și Open Graph indică spre căile `/ro/`.
+- Comutatorul de limbă din footer indică spre căile corecte pentru versiunile EN și RO.
+
+## 7. Redenumirea fișierelor jurnal
+
+Fișierele de jurnal `JURNAL-EN.md` și `JURNAL-RO.md` au fost redenumite în `JOURNAL-EN.md` și `JOURNAL-RO.md`. Această schimbare folosește convenția de denumire în engleză în mod consecvent în întregul proiect, potrivindu-se cu conținutul jurnalelor în limba engleză și cu orientarea internațională a proiectului. Toate referințele interne la vechile nume de fișiere au fost actualizate în fișierele README, documentele BACKLOG și orice alte fișiere care menționau numele anterioare.
+
+## Fișiere afectate
+
+- `en/index.html` — extins la 6 volume, anexă Data Bridge, branding nou, comentarii pedagogice complete (858 de linii).
+- `ro/index.html` — clonat din EN, tradus în română, structură echivalentă (871 de linii).
+- `en/style.css` — adăugate reguli `.bridge-volume`, rafinări mobile.
+- `ro/style.css` — aceleași modificări CSS cu comentarii în română.
+- `JURNAL-EN.md` → `JOURNAL-EN.md` (redenumit).
+- `JURNAL-RO.md` → `JOURNAL-RO.md` (redenumit).
+
+---

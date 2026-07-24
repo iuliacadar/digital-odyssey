@@ -177,7 +177,7 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 **Why now:** The index currently only links 2 volumes (Frontend, Database) but the project now has 6. The navbar must remain clean on mobile, so a toggleable HUD overlay solves both the space problem and the retro-futurist atmosphere. The icosahedron portal reinforces the recursive page's special status as a hidden, self-piloted module.
 
-**Affected files:** `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `en/style.css`, `ro/style.css`, `en/script.js`, `ro/script.js`, `JURNAL-EN.md`, `JURNAL-RO.md`
+**Affected files:** `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `en/style.css`, `ro/style.css`, `en/script.js`, `ro/script.js`, `JOURNAL-EN.md`, `JOURNAL-RO.md`
 
 **Steps:**
 - add HUD overlay HTML to index nav with all 6 volumes + their log links
@@ -218,10 +218,32 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - Made `.hud-overlay` fully opaque (`rgb(10, 11, 30)`) and full-screen (`calc(100vh - 60px)`).
 - Added `aria-label` to both reactor portals for accessibility.
 - Updated and restyled `.lang-toggle-active` to filled green background.
-- Added Day 10 — Reparations Log section to JURNAL-EN.md and JURNAL-RO.md.
+- Added Day 10 — Reparations Log section to JOURNAL-EN.md and JOURNAL-RO.md.
 - Synced all CSS changes to `ro/style.css`.
 
-**Files affected:** `en/style.css`, `ro/style.css`, `en/index.html`, `en/recursive-blueprint.html`, `ro/index.html`, `JURNAL-EN.md`, `JURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`.
+**Files affected:** `en/style.css`, `ro/style.css`, `en/index.html`, `en/recursive-blueprint.html`, `ro/index.html`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`.
+
+---
+
+### 007 — Index Restructuring, Data Bridge Annex, Pedagogical Comments, and Branding Finalisation
+
+**Status:** Completed
+**Date:** 2026-07-24
+
+**Scope:** Final restructuring of EN/RO index pages, Data Bridge as annex volume, new branding, journal rename.
+
+**Changes:**
+- Expanded `en/index.html` and `ro/index.html` from 2 to 6 volumes in build order.
+- Added `bridge-volume` section with `.bridge-volume` CSS class (amber dashed border, glow, bridge-shake animation).
+- Added comprehensive pedagogical comments (`@block`, `@meta`, `@reason`, `@path`, `@warning`, `@bridge`, `@theme`) to every block in both index files.
+- Updated branding: EN `"Signals from the Digital Deep" / "From the Digital Deep"`, RO `"Semnale din Adâncul Digital" / "Din Adâncul Digital"`.
+- Mobile UI refinements: subtitle 9px, `.armillary-band-container` 100%, tighter `.hud-toggle`, `.footer-links a`, `.return-btn`, `.footer p`.
+- Translated and cloned EN structure → RO with Romanian comments.
+- Renamed `JURNAL-EN.md` → `JOURNAL-EN.md` and `JURNAL-RO.md` → `JOURNAL-RO.md`.
+- Updated all README and BACKLOG references to the renamed journal files.
+- Added DAY 11 entries to both journals and both backlogs.
+
+**Files affected:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
 
 ---
 

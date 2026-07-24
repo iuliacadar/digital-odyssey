@@ -34,8 +34,8 @@ DIGITAL-ODYSSEY/
 ├── README.md                          # Punct de intrare principal (EN)
 ├── README-EN.md                       # Versiunea engleză a acestui README
 ├── README-RO.md                       # Versiunea română a acestui README
-├── JURNAL-EN.md                       # Jurnal de învățare bilingv (engleză)
-├── JURNAL-RO.md                       # Jurnal de învățare bilingv (română)
+├── JOURNAL-EN.md                       # Jurnal de învățare bilingv (engleză)
+├── JOURNAL-RO.md                       # Jurnal de învățare bilingv (română)
 ├── docs/
 │   ├── legend-en.md                   # Legendă etichete comentarii (engleză)
 │   └── legend-ro.md                   # Legendă etichete comentarii (română)

@@ -42,8 +42,8 @@ DIGITAL-ODYSSEY/
 ├── README.md                          # Main entry (RO/EN bridge)
 ├── README-EN.md                       # English version of this README
 ├── README-RO.md                       # Romanian version of this README
-├── JURNAL-EN.md                       # Bilingual learning journal (English)
-├── JURNAL-RO.md                       # Bilingual learning journal (Romanian)
+├── JOURNAL-EN.md                       # Bilingual learning journal (English)
+├── JOURNAL-RO.md                       # Bilingual learning journal (Romanian)
 ├── docs/
 │   ├── legend-en.md                   # Comment tag legend (English)
 │   └── legend-ro.md                   # Comment tag legend (Romanian)

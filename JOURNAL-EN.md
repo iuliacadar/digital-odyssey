@@ -799,3 +799,89 @@ The Command Deck overlay (`hud-overlay`) used `background: rgba(10, 11, 30, 0.85
 - **Command Deck button style**: The HUD toggle button (`.hud-toggle`) previously used grey (`--stardust`) text and border with a magenta hover. I restyled it to match the "Return to Command Deck" button: green dashed border, desaturated green text, 4px/10px padding, 3px border-radius, and a full-green hover with subtle background shimmer.
 
 ---
+
+# DAY 11 — Index Restructuring, Data Bridge Annex, Pedagogical Comments, and Branding Finalisation
+
+This day completes the final restructuring of both `en/index.html` and `ro/index.html` and marks the moment when the project's two main pages reach their full, final form with all six volumes documented, the Data Bridge positioned as a distinct annex volume, and the new brand identity locked in.
+
+## 1. Six-Volume Structure
+
+I expanded both `en/index.html` and `ro/index.html` from the original two-volume sketch (Frontend + Database) to the complete six-volume architecture defined in DAY 08:
+
+- **Frontend** (`frontend-scape`) — the first volume, covering HTML, CSS, JavaScript, React, and Angular.
+- **Data Bridge** (`data-bridge`) — the annex volume, positioned second in build order, covering JSON.
+- **Backend** (`backend-sector`) — the third volume, covering core logic, API, auth, architecture, languages, middleware, testing, documentation, performance, and deployment.
+- **Database** (`database-void`) — the fourth volume, covering SQL and NoSQL.
+- **UX** (`ux-lab`) — the fifth volume, covering accessibility and UX foundations.
+- **Delivery** (`delivery-deck`) — the sixth and final volume, covering deployment pipeline, Git, and GitHub.
+
+The natural build sequence in `index.html` follows: Frontend → Data Bridge (JSON) → Backend → Database → UX → Delivery. This progression moves the reader from visible construction (frontend), through the data interchange layer (bridge), into server logic (backend), then persistence (database), experience (UX), and finally publication (delivery).
+
+## 2. Data Bridge as an Annex Volume
+
+The Data Bridge is treated as a **distinct annex volume** (not an annex chapter within another volume). It has its own `<section>` in the HTML, its own `<h2>` heading, and its own entry in the HUD navigation panel, positioned between Frontend and Backend in the build order.
+
+Visually, the Data Bridge section uses the new `.bridge-volume` CSS class, which applies:
+- An amber (`#FFBF00`) dashed border with `4px` width, replacing the standard cyan border used by other volumes.
+- A `box-shadow` with amber glow (`0 0 30px rgba(255, 191, 0, 0.4)`).
+- A custom `@keyframes bridge-shake` animation that creates a subtle, intermittent vibration (1–2px translation on X and Y axes with 50–100ms delays), distinguishing the bridge section from the stable volumes around it.
+
+Both `en/style.css` and `ro/style.css` received the same `.bridge-volume` rules, with comments translated to Romanian in the `ro/` version.
+
+## 3. Pedagogical Comments on Every Block
+
+I added comprehensive pedagogical comments (using the `@block`, `@meta`, `@reason`, `@path`, `@warning`, `@bridge`, and `@theme` tags from `docs/legend-en.md`) to every structural block in both `en/index.html` and `ro/index.html`. Every `<head>` element, every `<nav>` link, every hero text line, every volume `<article>`, every `<h2>`/`<h3>` heading, every footer element, the `<script>` tag, the `<hr>` dividers, the `.pulse-dot` beacons, and every `target="_blank"` attribute now has an accompanying didactic comment explaining its role.
+
+For the Romanian version, all comments were translated into Romanian and use the tag labels from `docs/legend-ro.md`. The `ro/index.html` file grew from ~540 lines to 871 lines, matching the English version in structure and depth.
+
+## 4. New Brand Identity
+
+I replaced the previous titles (`Charting Digital Frontiers` in EN, `Cartografierea Frontierelor Digitale` in RO) with the new identity.
+
+**English version:**
+- `<title>`: `D::0dy55ey | Signals from the Digital Deep`
+- `<h1>`: `From the Digital Deep`
+- Subtitle: `Full Stack Transmissions from the Cosmic Ship D::0dy55ey`
+
+**Romanian version:**
+- `<title>`: `D::0dy55ey | Semnale din Adâncul Digital`
+- `<h1>`: `Din Adâncul Digital`
+- Subtitle: `Transmisii Full Stack de la Nava Cosmică D::0dy55ey`
+
+The new branding is more evocative, aligning the project's cosmic navigation metaphor with a poetic, exploratory tone. The HUD overlay, OG metadata, and canonical paths were also updated to match.
+
+## 5. Mobile UI Refinements
+
+I recalibrated the CSS for both `en/style.css` and `ro/style.css` to improve readability on small screens:
+
+- **Subtitle font**: reduced to `9px` on mobile to fit within viewport width.
+- **`.armillary-band-container`**: set to `width: 100%` to prevent horizontal overflow.
+- **`.hud-toggle`**: reduced padding and font size for a tighter fit in the navbar.
+- **`.footer-links a`**: shrunk padding and font size.
+- **`.return-btn`**: tightened spacing.
+- **`.footer p`**: reduced font size to prevent text wrapping on narrow screens.
+
+## 6. Clone and Translate to Romanian
+
+The `ro/index.html` was not built separately; it was cloned from `en/index.html` and then:
+- All visible text was translated to Romanian (headings, descriptions, navigation labels, footer text, HUD volume names).
+- All pedagogical comments were translated to Romanian.
+- `lang="ro"` was set on the `<html>` element.
+- `og:locale="ro_RO"` was set for Romanian social previews.
+- All canonical URLs and Open Graph URLs point to `/ro/` paths.
+- The language toggle in the footer points to the correct paths for EN and RO versions.
+
+## 7. Journal Files Renamed
+
+The journal files `JURNAL-EN.md` and `JURNAL-RO.md` have been renamed to `JOURNAL-EN.md` and `JOURNAL-RO.md` respectively. This change uses the English naming convention consistently across the project, matching the English-language journal content and the project's international orientation. All internal references to the old filenames have been updated in README files, BACKLOG documents, and any other files that referenced the previous names.
+
+## Files affected
+
+- `en/index.html` — expanded to 6 volumes, Data Bridge annex, new branding, full pedagogical comments (858 lines).
+- `ro/index.html` — cloned from EN, translated to Romanian, matching structure (871 lines).
+- `en/style.css` — added `.bridge-volume` rules, mobile refinements.
+- `ro/style.css` — same CSS changes with Romanian comments.
+- `JURNAL-EN.md` → `JOURNAL-EN.md` (renamed).
+- `JURNAL-RO.md` → `JOURNAL-RO.md` (renamed).
+
+---
