@@ -900,7 +900,20 @@ This day completes the recursive blueprint page (`en/recursive-blueprint.html` a
 - **Subtitle CSS added** — `.blueprint-master-subtitle` (amber glow, uppercase, letter-spacing 3px).
 - **RO version fully rewritten** — `ro/recursive-blueprint.html` was completely outdated. Now matches EN structure with all text/comments translated to Romanian. RO stylesheet synced.
 
-## 2. Creative Recast: H1, Subtitle, Description, Left Panel
+## 2. Colour Palette: Autonomy vs. Affiliation
+
+The recursive page establishes its own colour identity while remaining visibly part of the D::0dy55ey fleet. The rationale is as follows:
+
+- **H1 + subtitle** → white + amber (instead of the index's white + neon green). Amber evokes old phosphor terminals, diagnostic readouts, and the introspection of a closed-circuit engine. It signals that this page is a distinct territory — the engine room, not the command deck.
+- **HUD h3 volume titles** → amber (overridden from the index's pink). On the index, pink titles make sense against the command deck's outward-facing, expansive tone. On the recursive page, the entire HUD interior shifts to amber so that no colour from the index palette leaks in: the page maintains a single self-consistent palette from titles through navigation.
+- **Source tabs and log-page links** → keep their phosphor green. The green is native to the recursive page's terminal/console aesthetic and does not belong to the index's palette — it coexists harmoniously with amber.
+- **`<code>index.html</code>` in the description paragraph** → overridden from pink (the global `p code` rule) to phosphor green. Code elements in the recursive page now match the green of the file-selector tabs and code inspector, reinforcing the console identity.
+- **Pink logo (h1 in navbar)** → retained. The pink logo is the fleet tether: it marks the page as a D::0dy55ey vessel despite its declared autonomy. The captain's name in the footer is also pink, creating a visual bracket (pink at entry, pink at exit) that frames the page as belonging to the fleet.
+- **Footer author name** → pink (unchanged from `span.vessel-sig`), serving as the closing bracket of the fleet affiliation.
+
+In summary: the recursive page governs itself with an **amber + green** internal palette for all navigation, code, and content text, while the **pink logo and captain's signature** remain as the sole index-colour elements — visual tethers that say *this is still D::0dy55ey* without disturbing the page's internal design autonomy.
+
+## 3. Creative Recast: H1, Subtitle, Description, Left Panel
 
 All variants considered before settling on the final versions are preserved here as a creative appendix.
 

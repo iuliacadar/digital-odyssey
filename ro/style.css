@@ -2983,6 +2983,15 @@ pre::-webkit-scrollbar-thumb {
   user-select: none !important;
 }
 
+/* --- 11. SUPRAscrieri AUTONOME ALE PALETEI DE CULORI (Identitatea Schiţei Recursive) --- */
+.blueprint-layout .hud-volume-title {
+  color: var(--amber-glow) !important;
+  border-bottom-color: rgba(255, 179, 0, 0.2) !important;
+}
+.blueprint-layout p code {
+  color: var(--solar-mint) !important;
+}
+
 /* ==========================================================================
     MODULE 00.1: KINETIC PROPULSION ENGINES & CENTRAL KEYFRAMES
       
