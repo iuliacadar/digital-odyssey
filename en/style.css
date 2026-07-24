@@ -2912,6 +2912,67 @@ pre::-webkit-scrollbar-thumb {
   max-width: 100% !important; /* Shields physical structural perimeter edges of the active panel boundary */
 }
 
+/* --- 10. SCROLLABLE FILE SELECTOR CONSOLE (Source Tabs for Recursive Blueprint) --- */
+.source-selector-tabs {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  background: rgba(10, 11, 30, 0.6) !important;
+  border: 1px solid rgba(167, 243, 208, 0.1) !important;
+  border-radius: 6px !important;
+  margin-bottom: 12px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  white-space: nowrap !important;
+}
+.source-selector-tabs::-webkit-scrollbar {
+  display: none !important;
+}
+
+.tab-btn {
+  flex: 0 0 auto !important;
+  background: transparent !important;
+  border: 1px solid rgba(167, 243, 208, 0.2) !important;
+  color: var(--solar-mint) !important;
+  padding: 5px 12px !important;
+  font-size: 0.75rem !important;
+  font-family: "Courier New", monospace !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  opacity: 0.65 !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.tab-btn:hover {
+  opacity: 1 !important;
+  border-color: var(--solar-mint) !important;
+  box-shadow: 0 0 8px rgba(167, 243, 208, 0.2) !important;
+}
+.tab-btn.active-tab {
+  opacity: 1 !important;
+  border-color: var(--solar-mint) !important;
+  color: #ffffff !important;
+  background: rgba(167, 243, 208, 0.1) !important;
+  box-shadow: 0 0 12px rgba(167, 243, 208, 0.25) !important;
+}
+
+.volume-label {
+  flex: 0 0 auto !important;
+  color: var(--amber-glow) !important;
+  font-size: 0.6rem !important;
+  font-family: var(--font-main) !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  padding: 0 4px !important;
+  opacity: 0.7 !important;
+  flex-shrink: 0 !important;
+  user-select: none !important;
+}
+
 /* ==========================================================================
     MODULE 00.1: KINETIC PROPULSION ENGINES & CENTRAL KEYFRAMES
       
@@ -4060,16 +4121,19 @@ high-contrast text tracking entirely immune to layout clipping leaks. */
 
   /* INTERACTIVE TAB MENU HUD HUD COMPONENT FLUIDIZATION */
   .source-selector-tabs {
-    flex-wrap: wrap !important; /* Allows consecutive .html and .sql capsule buttons to shift onto a secondary row if viewports drop to hard 320px metrics */
-    gap: 6px !important; /* Tight horizontal and vertical buffer air gap layout of exactly 6px isolating navigation links pastilles */
-    width: 100% !important; /* Spans full horizontal limits to capture entire horizontal capacity of the internal panel canvas layout */
+    gap: 5px !important;
+    padding: 6px 10px !important;
   }
 
   .tab-btn {
-    flex: 1 1 auto !important; /* Tab button navigation blocks become fully elastic, sharing horizontal screen width symmetrically and evenly */
-    padding: 6px 10px !important; /* Symmetrical internal rectangular cushion envelopes optimized for fingers touch target interface variables */
-    font-size: 0.7rem !important; /* Compressed technical typographic footprint guaranteeing alphanumeric strings stay locked without layout clipping */
-    text-align: center !important; /* Coordinates absolute character block centering inside parent interactive capsule buttons hulls (HTML, SQL, NOTES) */
+    padding: 5px 8px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .volume-label {
+    font-size: 0.5rem !important;
+    letter-spacing: 1px !important;
+    padding: 0 2px !important;
   }
 
   /* --- ZONE SUMMARY D: NAV & FOOTER MOBILE REFINEMENTS ---

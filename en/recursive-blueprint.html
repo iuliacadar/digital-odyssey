@@ -211,11 +211,13 @@
     -->
   </head>
 
-  <body class="module-view">
+  <body class="blueprint-layout">
     <!-- @reason:
-      The class "module-view" applies a distinct visual subset for secondary
-      pages: narrower content width, CRT screen overlay, and a slightly darker
-      background compared to the hero-focused index layout.
+      The class "blueprint-layout" applies a distinct visual subset for the
+      recursive blueprint page: narrower content width, CRT screen overlay,
+      and a slightly darker background compared to the hero-focused index layout.
+      It also activates the .blueprint-layout CSS selectors for the mission-status
+      panel and the recursive code inspector.
     -->
 
     <!-- @block: COCKPIT NAVIGATION BAR
@@ -262,10 +264,9 @@
             </ul>
           </div>
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Database Void</h3>
+            <h3 class="hud-volume-title">Data Bridge</h3>
             <ul class="hud-log-links">
-              <li><a href="./database/sql-log.html">SQL Log</a></li>
-              <li><a href="./database/nosql-log.html">NoSQL Log</a></li>
+              <li><a href="./data-bridge/json-log.html">JSON Log</a></li>
             </ul>
           </div>
           <div class="hud-volume">
@@ -284,9 +285,10 @@
             </ul>
           </div>
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Data Bridge</h3>
+            <h3 class="hud-volume-title">Database Void</h3>
             <ul class="hud-log-links">
-              <li><a href="./data-bridge/json-log.html">JSON Log</a></li>
+              <li><a href="./database/sql-log.html">SQL Log</a></li>
+              <li><a href="./database/nosql-log.html">NoSQL Log</a></li>
             </ul>
           </div>
           <div class="hud-volume">
@@ -414,27 +416,71 @@
 
         <!-- ===== RIGHT PANEL: LIVE SOURCE STREAM ===== -->
         <section class="panel">
-          <h3 class="panel-title">Raw Source Stream: script.js</h3>
+          <h3 class="panel-title">Raw Source Stream</h3>
 
-          <!-- @block: FILE SELECTOR TABS
-            Each button carries a data-file attribute that JavaScript reads
-            via the Fetch API to determine which project file to retrieve
-            and display in the code inspector below.
+          <!-- @block: FILE SELECTOR CONSOLE
+            A horizontally scrollable console listing all 30 project files
+            grouped by volume. Each button carries a data-path attribute
+            that JavaScript reads via the Fetch API to retrieve and display
+            the source code. The first tab (recursive-blueprint.html) is
+            active by default.
+            @reason:
+              The horizontal scroll (overflow-x: auto) on the container
+              keeps the console compact while giving access to every file
+              in the project. On mobile, natural touch-swipe momentum
+              replaces the need for a dropdown or nested menu.
           -->
           <div class="source-selector-tabs">
-            <button class="tab-btn active-tab" data-file="script.js">
-              script.js
-            </button>
-            <!-- @reason:
-              The first tab is active by default. Class "active-tab" applies
-              bright phosphor-green styling to indicate the currently selected
-              source file.
-            -->
-            <button class="tab-btn" data-file="style.css">style.css</button>
-            <button class="tab-btn" data-file="index.html">index.html</button>
-            <button class="tab-btn" data-file="html-log.html">
-              html-log.html
-            </button>
+            <!-- ROOT -->
+            <span class="volume-label">ROOT</span>
+            <button class="tab-btn active-tab" data-path="recursive-blueprint.html">recursive-blueprint.html</button>
+            <button class="tab-btn" data-path="index.html">index.html</button>
+            <button class="tab-btn" data-path="style.css">style.css</button>
+            <button class="tab-btn" data-path="script.js">script.js</button>
+            <button class="tab-btn" data-path="favicon.svg">favicon.svg</button>
+            <button class="tab-btn" data-path="bibliography.html">bibliography.html</button>
+            <button class="tab-btn" data-path="transmission.html">transmission.html</button>
+
+            <!-- FRONTEND -->
+            <span class="volume-label">FRONTEND</span>
+            <button class="tab-btn" data-path="frontend/html-log.html">html-log.html</button>
+            <button class="tab-btn" data-path="frontend/css-log.html">css-log.html</button>
+            <button class="tab-btn" data-path="frontend/javascript-log.html">javascript-log.html</button>
+            <button class="tab-btn" data-path="frontend/react-log.html">react-log.html</button>
+            <button class="tab-btn" data-path="frontend/angular-log.html">angular-log.html</button>
+
+            <!-- DATA BRIDGE -->
+            <span class="volume-label">DATA BRIDGE</span>
+            <button class="tab-btn" data-path="data-bridge/json-log.html">json-log.html</button>
+
+            <!-- BACKEND -->
+            <span class="volume-label">BACKEND</span>
+            <button class="tab-btn" data-path="backend/backend-core-log.html">backend-core-log.html</button>
+            <button class="tab-btn" data-path="backend/api-log.html">api-log.html</button>
+            <button class="tab-btn" data-path="backend/auth-security-log.html">auth-security-log.html</button>
+            <button class="tab-btn" data-path="backend/backend-architecture-log.html">backend-architecture-log.html</button>
+            <button class="tab-btn" data-path="backend/backend-language-log.html">backend-language-log.html</button>
+            <button class="tab-btn" data-path="backend/middlware-log.html">middlware-log.html</button>
+            <button class="tab-btn" data-path="backend/testing-log.html">testing-log.html</button>
+            <button class="tab-btn" data-path="backend/documentation-log.html">documentation-log.html</button>
+            <button class="tab-btn" data-path="backend/performance-log.html">performance-log.html</button>
+            <button class="tab-btn" data-path="backend/deployment-log.html">deployment-log.html</button>
+
+            <!-- DATABASE -->
+            <span class="volume-label">DATABASE</span>
+            <button class="tab-btn" data-path="database/sql-log.html">sql-log.html</button>
+            <button class="tab-btn" data-path="database/nosql-log.html">nosql-log.html</button>
+
+            <!-- UX -->
+            <span class="volume-label">UX</span>
+            <button class="tab-btn" data-path="ux/ux-foundations-log.html">ux-foundations-log.html</button>
+            <button class="tab-btn" data-path="ux/accessibility-log.html">accessibility-log.html</button>
+
+            <!-- DELIVERY -->
+            <span class="volume-label">DELIVERY</span>
+            <button class="tab-btn" data-path="delivery/git-log.html">git-log.html</button>
+            <button class="tab-btn" data-path="delivery/github-log.html">github-log.html</button>
+            <button class="tab-btn" data-path="delivery/deployment-pipeline-log.html">deployment-pipeline-log.html</button>
           </div>
 
           <!-- @block: CODE INSPECTOR TERMINAL

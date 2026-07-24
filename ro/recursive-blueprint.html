@@ -2,52 +2,54 @@
   Legenda etichetelor: ./docs/legend-ro.md
 -->
 <!-- @reason:
-  Acest document este pagina de schiță recursivă pentru versiunea în limba română. Mapază propria arhitectură a proiectului, arătând cum se relaționează modulele, limbile și nivelurile de documentație.
+  Acest document este pagina de schiță recursivă pentru versiunea în limba română.
+  Comentariile din acest fișier urmează aceeași legendă de etichete ca restul proiectului,
+  pentru ca structura să rămână consecventă și ușor de citit.
 -->
 
 <!doctype html>
 <!-- @block:
-  I declare the document type as HTML5.
-  The browser uses this instruction to interpret the page in modern standards mode.
+  Declar tipul documentului ca HTML5.
+  Browserul folosește această instrucțiune pentru a interpreta pagina în modul modern.
 -->
 
 <html lang="ro">
   <!-- @block:
-    The root element of the document.
-    The lang="ro" attribute declares that the main language of this page is Romanian.
-    This helps accessibility tools, search engines, and automated processing systems.
+    Elementul rădăcină al documentului.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele automate.
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
-      I do not place the main visible content here; instead, I keep the information
-      the browser needs in order to understand, prepare, and connect the page resources.
+      <head> conține metadatele documentului.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
     <meta charset="UTF-8" />
     <!-- @meta:
-      I set the character encoding to UTF-8.
-      This ensures that diacritics, special symbols, and international characters display correctly.
+      Setez codarea caracterelor la UTF-8.
+      Aceasta asigură că diacriticele, simbolurile speciale și caracterele internaționale se afișează corect.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      This instruction is historically related to Internet Explorer compatibility.
-      In modern projects it has little practical use, but I keep it here if I want
-      to preserve the classic basic-head structure.
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are puțină utilitate practică, dar o păstrez aici pentru a
+      păstra structura clasică de bază a head-ului.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
-      I configure the viewport for responsive display.
-      width=device-width aligns the page width with the real screen width,
-      and initial-scale=1.0 starts without artificial zoom.
+      Configurez viewport-ul pentru afișare responsive.
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
     <title>D::0dy55ey | Schiță Recursivă</title>
     <!-- @meta:
-      The page title.
-      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+      Titlul paginii.
+      Îl văd în tab-ul browserului, în marcaje și uneori în rezultatele motoarelor de căutare.
     -->
 
     <meta
@@ -55,40 +57,39 @@
       content="Schița recursivă a proiectului D::0dy55ey — o hartă auto-referențială a structurii, logicii și arhitecturii sale în evoluție, prin toate modulele și limbile."
     />
     <!-- @meta:
-      The page description.
-      I use it as a short summary of the content; it is not directly visible in the page,
-      but search engines may use it as descriptive text.
+      Descrierea paginii.
+      O folosesc ca rezumat scurt al conținutului; nu este vizibilă direct în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
     -->
 
     <meta
       name="keywords"
-      content="schiță recursivă, hartă proiect, arhitectură, auto-documentare, structură proiect, sistem design, odisee digitală"
+      content="schiță recursivă, hartă proiect, arhitectură, auto-documentare, structură proiect, sistem design, D::0dy55ey"
     />
     <!-- @meta:
-      The keywords meta tag lists the main themes of the page.
-      Search engines no longer rank on it, but it stays a useful, self-documenting
-      summary of the page's scope and a teaching example of the tag itself.
+      Meta-tagul keywords listează temele principale ale paginii.
+      Motoarele de căutare nu se mai bazează pe el, dar rămâne un rezumat util
+      și auto-documentat al domeniului paginii.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
     <!-- @meta:
-      The author meta tag declares who created and maintains this document.
-      It is a standard metadata field that identifies the creator of the work.
+      Meta-tagul author declară cine a creat și menține acest document.
+      Este un câmp standard de metadate care identifică creatorul lucrării.
     -->
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- @path:
-      I link the web app manifest. Firefox reads theme_color from the manifest
-      rather than from the meta tag, so this ensures consistent theme-color
-      support across all modern browsers including Firefox.
+      Leg manifestul web. Firefox citește theme_color din manifest
+      mai degrabă decât din meta-tag, așa că aceasta asigură suport consecvent
+      pentru theme-color în toate browserele moderne, inclusiv Firefox.
     -->
-
 
     <meta property="og:title" content="D::0dy55ey | Schiță Recursivă" />
     <!-- @meta:
-      Open Graph title.
-      When the page link is shared on social networks or portfolio sites,
-      this text appears as the card title instead of the raw URL.
+      Titlu Open Graph.
+      Când linkul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
+      acest text apare ca titlu al cardului în locul URL-ului brut.
     -->
 
     <meta
@@ -96,98 +97,99 @@
       content="Schița recursivă a proiectului D::0dy55ey — o hartă auto-referențială a structurii, logicii și arhitecturii sale în evoluție, prin toate modulele și limbile."
     />
     <!-- @meta:
-      Open Graph description.
-      It is the companion summary shown under the Open Graph title on shared cards.
-      I keep it aligned with the meta description for consistency.
+      Descriere Open Graph.
+      Este descrierea însoțitoare afișată sub titlul Open Graph pe cardurile partajate.
+      O păstrez aliniată cu meta description pentru consistență.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
-      Open Graph type.
-      I declare this page as a website, the general type for standard HTML pages.
-      For journal entries, I could use "article" instead depending on the content nature.
+      Tip Open Graph.
+      Declar această pagină ca website, tipul general pentru paginile HTML standard.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/recursive-blueprint.html" />
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/ro/recursive-blueprint.html"
+    />
     <!-- @meta:
-      Open Graph canonical URL.
-      When the page is shared, this tells platforms the exact, permanent address of this page.
-      It prevents confusion if the same content is accessible from multiple URLs.
+      URL canonic Open Graph.
+      Când pagina este distribuită, acesta spune platformelor adresa exactă și permanentă.
+      Previne confuzia dacă același conținut este accesibil de la multiple URL-uri.
     -->
 
     <meta property="og:locale" content="ro_RO" />
     <!-- @meta:
-      Open Graph locale.
-      I set it to ro_RO for the Romanian version of the page.
-      This tells social platforms and aggregators the language and regional variant of the content.
+      Localizare Open Graph.
+      O setez la ro_RO pentru versiunea în limba română a paginii.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
-      Open Graph site name.
-      This is the overarching project name shown on social sharing cards,
-      so the audience knows which site the page belongs to.
+      Numele site-ului Open Graph.
+      Acesta este numele proiectului afișat pe cardurile de partajare socială.
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
-      Open Graph background color.
-      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+      Culoarea de fundal Open Graph.
+      Unele suprafețe de partajare o folosesc pentru a colora cardul de previzualizare
+      cu paleta deep-space a proiectului.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
-      Open Graph image.
-      It is the preview picture used on shared cards. I point it at the favicon
-      in the corresponding language folder as a stable, always-available placeholder,
-      until a dedicated capture exists for each page.
+      Imagine Open Graph.
+      Este imaginea de previzualizare folosită pe cardurile partajate. Indică spre favicon
+      ca substituent stabil până când va exista o captură dedicată pentru această pagină.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <!-- @meta:
-      Twitter card type.
-      I choose summary_large_image so that shared links on X/Twitter display
-      a large image preview alongside the title and description.
+      Tip card Twitter.
+      Aleg summary_large_image pentru ca linkurile partajate pe X/Twitter să afișeze
+      o previzualizare mare de imagine lângă titlu și descriere.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/recursive-blueprint.html" />
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/ro/recursive-blueprint.html"
+    />
     <!-- @meta:
-      Canonical link.
-      I tell search engines that this URL is the authoritative version of the page.
-      This helps prevent duplicate-content issues and consolidates ranking signals.
+      Link canonic.
+      Îi spun motoarelor de căutare că acest URL este versiunea autoritară a paginii.
+      Ajută la prevenirea problemelor de conținut duplicat.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Robots meta tag.
-      I allow search engines to index this page and follow its links,
-      which is the default and expected behavior for public content.
+      Meta-tag robots.
+      Permit motoarelor de căutare să indexeze această pagină și să urmeze linkurile sale.
     -->
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <!-- @path:
-      I link the page favicon.
-      The path is relative to the current file location.
-      The browser looks for favicon.svg in the appropriate folder.
+      Leg favicon-ul paginii.
+      Calea este relativă la locația fișierului curent.
     -->
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      Leg Apple Touch Icon pentru dispozitive iOS.
+      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată
+      pe ecranul de pornire.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      I start the connection to the font server early.
-      The goal is to reduce latency when loading external resources.
+      Încep conexiunea la serverul de fonturi devreme.
+      Scopul este reducerea latenței la încărcarea resurselor externe.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      I preconnect to the domain that serves the actual font files.
-      crossorigin is required for external resources served from another origin.
+      Mă pre-conectez la domeniul care servește fișierele de font propriu-zise.
+      crossorigin este necesar pentru resurse externe servite de pe altă origine.
     -->
 
     <link
@@ -195,24 +197,37 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      I load the Space Grotesk font from Google Fonts.
-      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      Încărc fontul Space Grotesk de la Google Fonts.
+      display=swap îi spune browserului să folosească temporar un font de rezervă
+      până când fontul final se încarcă.
     -->
 
     <link rel="stylesheet" href="./style.css" />
     <!-- @path:
-      I link the local stylesheet.
-      The path is relative to the current file location.
+      Leg foaia de stil locală.
+      Calea este relativă la locația fișierului curent.
     -->
   </head>
 
-  <body>
-        <nav class="navbar">
+  <body class="blueprint-layout">
+    <!-- @reason:
+      Clasa "blueprint-layout" aplică un subset vizual distinct pentru pagina
+      de blueprint recursiv: lățime mai îngustă a conținutului, suprapunere CRT
+      și un fundal ușor mai închis comparativ cu layout-ul index focusat pe hero.
+      De asemenea, activează selectoarele CSS .blueprint-layout pentru panoul
+      mission-status și inspectorul de cod recursiv.
+    -->
+
+    <!-- @block: BARA DE NAVIGARE COCKPIT
+      Consola HUD de sus. Pe blueprintul recursiv logo-ul este text static
+      (fără hyperlink) deoarece această pagină funcționează ca un terminal
+      specializat de inginerie, nu ca o punte generală.
+    -->
+    <nav class="navbar">
       <!-- @block: IDENTITATEA TERMINALULUI
-        Spre deosebire de pagina index, acest logo este static (nu este hyperlink)
-        deoarece blueprintul recursiv este un explorator auto-pilotat — echipajul
-        știe deja că se află în sala motoarelor. Reactorul miniatural servește
-        drept portal de întoarcere.
+        Spre deosebire de pagina index, acest logo este static (nu hyperlink) pentru că
+        blueprintul recursiv este un explorator auto-pilotat — echipajul știe deja că se
+        află în sala motoarelor. Reactorul miniatural servește drept portal de întoarcere.
       -->
       <div class="logo">D::0dy55ey / Schiță Recursivă</div>
 
@@ -231,7 +246,7 @@
       <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC
         Același panou ca pe pagina index — toate cele 6 volume cu linkurile
         de jurnal. Pagina recursive folosește același HUD pentru ca echipajul
-        să nu se simtă niciodată pierdut: poate telegorta în orice sector
+        să nu se simtă niciodată pierdut: poate teletransporta în orice sector
         direct din sala motoarelor.
       -->
       <div class="hud-overlay">
@@ -247,10 +262,9 @@
             </ul>
           </div>
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
+            <h3 class="hud-volume-title">Puntea de Date</h3>
             <ul class="hud-log-links">
-              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
-              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
+              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
             </ul>
           </div>
           <div class="hud-volume">
@@ -269,9 +283,10 @@
             </ul>
           </div>
           <div class="hud-volume">
-            <h3 class="hud-volume-title">Puntea de Date</h3>
+            <h3 class="hud-volume-title">Vidul Bazelor de Date</h3>
             <ul class="hud-log-links">
-              <li><a href="./data-bridge/json-log.html">Jurnal JSON</a></li>
+              <li><a href="./database/sql-log.html">Jurnal SQL</a></li>
+              <li><a href="./database/nosql-log.html">Jurnal NoSQL</a></li>
             </ul>
           </div>
           <div class="hud-volume">
@@ -299,52 +314,189 @@
     -->
     <div class="navbar-spacer"></div>
 
-    <header class="hero">
-      <div id="blueprint-core" class="armillary-reactor-core">
-        <div class="armillary-band-container macro-wrapper">
-          <h1 class="stenciled-metal-text">Blueprint Recursiv</h1>
-        </div>
-        <div class="armillary-band-container micro-wrapper">
-          <p class="stenciled-metal-text-sub">O hartă a hărții — nava văzându-se pe sine</p>
-        </div>
+    <!-- @block: MOTORUL RECURSIV PRINCIPAL
+      Folosește "blueprint-container" în loc de "main-container" pentru a activa
+      layout-ul terminal-split cu două coloane care diferențiază această pagină
+      de intrările standard de jurnal.
+    -->
+    <main class="blueprint-container">
+      <header class="section-header">
+        <!-- @block: ANTETUL TERMINALULUI -->
+        <h1 class="blueprint-master-title">Schita Magistrală Recursivă</h1>
+        <!-- @theme:
+          .blueprint-master-title se redă într-un font monospace mare, cu culoare
+          fosfor verde-ambre, emulând un afișaj de schemă inginerească vintage.
+        -->
+
+        <p class="blueprint-master-description">
+          Această consolă operează în constrângerea absolută a unei bucle închise
+          auto-documentate. Grila automată de dedesubt execută o interogare asincronă
+          a matricei centrale a navei, scoțând la suprafață din adâncuri decretele
+          logice și comentariile ascunse criptate în <code>script.js</code>.
+        </p>
+        <!-- @concept:
+          Descrierea încadrează pagina ca o "buclă închisă" — citește și afișează
+          propriile fișiere sursă. "Recursiv" se referă la această proprietate
+          auto-referențială: codul se documentează pe sine.
+        -->
+      </header>
+
+      <!-- @structure: PANOURILE TERMINALULUI DUAL
+        .terminal-split folosește CSS Grid (sau Flexbox) pentru a crea două coloane egale.
+        Panoul stânga arată o miniatură hardware (reactor 3D); panoul dreapta afișează
+        codul sursă în timp real, preluat din fișierele proiectului.
+      -->
+      <div class="terminal-split">
+        <!-- ===== PANOUL STÂNGA: MINIATURA HARDWARE ===== -->
+        <section class="panel">
+          <h3 class="panel-title">Miniatură Hardware Activă</h3>
+          <!-- @theme:
+            .panel-title folosește același stil monospace verde-ambre ca titlul
+            principal, dar la o dimensiune mai mică, păstrând ierarhia estetică
+            de terminal.
+          -->
+
+          <p class="blueprint-demo-text">
+            În simetria rece a acestei <strong>Grile Recursive</strong>,
+            codul nu este nici materie moartă, nici o fantomă rătăcind în
+            jurnale de piatră. În panoul tribord, poți cartografia telemetriile
+            mașinico-didactice precise ale celor șapte mecanisme primare —
+            chiar și în timp ce nucleul geodezic de fundal, acel motor orb și
+            rotitor al vidului, pulsează, împins înainte de decretul necruțător
+            al acestor inscripții.
+          </p>
+          <!-- @concept:
+            Acest paragraf stabilește premisa tematică: codul este viu,
+            grila se vede pe sine, iar reactorul este un "motor orb și rotitor"
+            care alimentează auto-documentarea recursivă a paginii.
+          -->
+
+          <!-- @block: REACTOR 3D COMPACT — PORTAL DE ÎNTOARCERE
+            Spre deosebire de poliedrul cu 20 de fețe de pe pagina index, această
+            miniatură folosește un subset de 5 fețe superioare (t1–t5) pentru a
+            păstra amprenta vizuală mică, păstrând în același timp motivul
+            astrolabului geodezic. Întregul reactor este înfășurat într-un link
+            înapoi către index.html.
+            @concept:
+              Mini-reactorul este portalul de întoarcere din sala motoarelor la
+              puntea de comandă. Împreună cu icosaedrul de pe pagina index, ele
+              formează o buclă închisă: click pe inima de pe punte → intră în
+              sala motoarelor; click pe miniatura motorului → întoarce-te la
+              punte. Un dialog recursiv între navă și propria ei reflecție.
+          -->
+          <a href="index.html" class="reactor-portal" aria-label="Înapoi la puntea de comandă">
+            <div class="recursive-reactor-wrapper">
+              <!-- @structure:
+                .recursive-reactor-wrapper centrează sfera și aplică o animație
+                CSS lentă de rotație care simulează o rotire 3D.
+              -->
+              <div class="quantum-plasma-sphere">
+                <div class="face face-t1"></div>
+                <div class="face face-t2"></div>
+                <div class="face face-t3"></div>
+                <div class="face face-t4"></div>
+                <div class="face face-t5"></div>
+              </div>
+            </div>
+          </a>
+
+          <div class="mission-status">
+            <p>Status: Operațional | Sursă: script.js | Cache: Golit</p>
+          </div>
+          <!-- @structure:
+            .mission-status afișează o linie de telemetrie care raportează că
+            motorul recursiv este operațional și indică script.js ca sursă activă.
+          -->
+        </section>
+
+        <!-- ===== PANOUL DREAPTA: FLUXUL DE COD ÎN TIMP REAL ===== -->
+        <section class="panel">
+          <h3 class="panel-title">Fluxul Brut al Codului Sursă</h3>
+
+          <!-- @block: CONSOLA DE SELECȚIE FIȘIERE
+            O consolă derulantă orizontal care listează toate cele 30 de fișiere
+            ale proiectului grupate pe volume. Fiecare buton poartă un atribut
+            data-path pe care JavaScript îl citește prin Fetch API pentru a
+            prelua și afișa codul sursă. Primul tab (recursive-blueprint.html)
+            este activ implicit.
+            @reason:
+              Derularea orizontală (overflow-x: auto) pe container menține
+              consola compactă oferind în același timp acces la fiecare fișier
+              al proiectului. Pe mobil, glisarea tactilă naturală cu moment
+              înlocuiește necesitatea unui dropdown sau meniu imbricat.
+          -->
+          <div class="source-selector-tabs">
+            <!-- ROOT -->
+            <span class="volume-label">RĂDĂCINĂ</span>
+            <button class="tab-btn active-tab" data-path="recursive-blueprint.html">recursive-blueprint.html</button>
+            <button class="tab-btn" data-path="index.html">index.html</button>
+            <button class="tab-btn" data-path="style.css">style.css</button>
+            <button class="tab-btn" data-path="script.js">script.js</button>
+            <button class="tab-btn" data-path="favicon.svg">favicon.svg</button>
+            <button class="tab-btn" data-path="bibliography.html">bibliography.html</button>
+            <button class="tab-btn" data-path="transmission.html">transmission.html</button>
+
+            <!-- FRONTEND -->
+            <span class="volume-label">FRONTEND</span>
+            <button class="tab-btn" data-path="frontend/html-log.html">html-log.html</button>
+            <button class="tab-btn" data-path="frontend/css-log.html">css-log.html</button>
+            <button class="tab-btn" data-path="frontend/javascript-log.html">javascript-log.html</button>
+            <button class="tab-btn" data-path="frontend/react-log.html">react-log.html</button>
+            <button class="tab-btn" data-path="frontend/angular-log.html">angular-log.html</button>
+
+            <!-- DATA BRIDGE -->
+            <span class="volume-label">PUNTE DE DATE</span>
+            <button class="tab-btn" data-path="data-bridge/json-log.html">json-log.html</button>
+
+            <!-- BACKEND -->
+            <span class="volume-label">BACKEND</span>
+            <button class="tab-btn" data-path="backend/backend-core-log.html">backend-core-log.html</button>
+            <button class="tab-btn" data-path="backend/api-log.html">api-log.html</button>
+            <button class="tab-btn" data-path="backend/auth-security-log.html">auth-security-log.html</button>
+            <button class="tab-btn" data-path="backend/backend-architecture-log.html">backend-architecture-log.html</button>
+            <button class="tab-btn" data-path="backend/backend-language-log.html">backend-language-log.html</button>
+            <button class="tab-btn" data-path="backend/middlware-log.html">middlware-log.html</button>
+            <button class="tab-btn" data-path="backend/testing-log.html">testing-log.html</button>
+            <button class="tab-btn" data-path="backend/documentation-log.html">documentation-log.html</button>
+            <button class="tab-btn" data-path="backend/performance-log.html">performance-log.html</button>
+            <button class="tab-btn" data-path="backend/deployment-log.html">deployment-log.html</button>
+
+            <!-- DATABASE -->
+            <span class="volume-label">BAZE DE DATE</span>
+            <button class="tab-btn" data-path="database/sql-log.html">sql-log.html</button>
+            <button class="tab-btn" data-path="database/nosql-log.html">nosql-log.html</button>
+
+            <!-- UX -->
+            <span class="volume-label">UX</span>
+            <button class="tab-btn" data-path="ux/ux-foundations-log.html">ux-foundations-log.html</button>
+            <button class="tab-btn" data-path="ux/accessibility-log.html">accessibility-log.html</button>
+
+            <!-- LIVRARE -->
+            <span class="volume-label">LIVRARE</span>
+            <button class="tab-btn" data-path="delivery/git-log.html">git-log.html</button>
+            <button class="tab-btn" data-path="delivery/github-log.html">github-log.html</button>
+            <button class="tab-btn" data-path="delivery/deployment-pipeline-log.html">deployment-pipeline-log.html</button>
+          </div>
+
+          <!-- @block: INSPECTORUL DE COD AL TERMINALULUI
+            Elementul <pre> păstrează spațiile albe și întreruperile de linie,
+            fiind containerul ideal pentru codul sursă brut. JavaScript injectează
+            conținutul fișierului preluat ca text în innerHTML al acestui element.
+          -->
+          <pre
+            id="script-stream-target"
+            class="code-inspector-screen"
+          >Se conectează la fișierele nucleu... Inițializare preluare pachet script.js...</pre>
+          <!-- @theme:
+            .code-inspector-screen simulează un terminal CRT verde-pe-negru cu
+            o animație subtilă de scanline și un cursor de text clipeitor.
+            Textul placeholder apare în timp ce JavaScript preia codul sursă.
+          -->
+        </section>
       </div>
-    </header>
-
-    <main class="main-container">
-      <section id="blueprint-deck">
-        <header class="category-header">
-          <h2>Arhitectura Sistemului</h2>
-          <p>Cum este construită nava, strat cu strat.</p>
-        </header>
-
-        <article class="log-entry">
-          <h3>Volumul I: Frontend</h3>
-          <p>HTML (structură semantică), CSS (stilizare cinematică), JavaScript (interactivitate) și explorări de framework-uri (React, Angular).</p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volumul II: Backend</h3>
-          <p>Arhitectură de bază, design API, autentificare, middleware, testare, performanță, documentație, deployment.</p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volumul III: Baze de Date</h3>
-          <p>Paradigme relaționale (SQL) și non-relaționale (NoSQL) — memoria profundă a cosmosului.</p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volumul IV: Puntea de Date</h3>
-          <p>JSON ca format universal de schimb de date între frontend, backend și straturile de stocare.</p>
-        </article>
-
-        <article class="log-entry">
-          <h3>Volumul V: UX și Livrare</h3>
-          <p>Fundamentele experienței utilizatorului, accesibilitate (WCAG, ARIA) și pipeline-uri de deployment (Git, GitHub, CI/CD).</p>
-        </article>
-      </section>
     </main>
 
-              <!-- @block:
+    <!-- @block:
       Deschid aici blocul de footer. Aceasta este secțiunea de încheiere
       a fiecărei pagini din proiect. Plasez în interior fluxul de date de
       telemetrie: sectorul orbital curent, coordonatele spațio-temporale,
@@ -374,29 +526,49 @@
 
       <!-- @structure:
         Scriu prima linie de telemetrie. Îi spune cititorului în ce sector
-        sau capitol se află în acest moment.
+        sau capitol se află în acest moment. Paginile index spun COMMAND_DECK,
+        paginile frontend spun FRONTEND_EXPEDITION, și așa mai departe.
       -->
       <p>
-        SYS_ORBIT: BLUEPRINT_DECK
-        // STATUS:
+        SYS_ORBIT: BLUEPRINT_DECK // STATUS:
         <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          Înfășor cuvântul ONLINE într-un <span> cu clasa .telemetry-active.
+          Această clasă aplică culoarea verde solar-mint (#a7f3d0) și un efect
+          de strălucire neon text-shadow. Culoarea fosfor verde imită aspectul
+          indicatoarelor de status active de pe terminalele NASA din anii 1970.
+        -->
       </p>
 
       <!-- @structure:
         Scriu a doua linie de telemetrie. Ancora proiectul digital în spațiu
-        și timp real.
+        și timp real. Coordonatele indică locația căpitanului, iar data
+        marchează ultima actualizare a footerului.
       -->
       <p>
-        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.24
+        <!-- @reason:
+          Includ coordonate geografice și un timestamp de sistem.
+          Numerele 46.7712° N, 23.6236° E sunt latitudinea și longitudinea
+          orașului Cluj-Napoca, România — locul unde este construit acest proiect.
+          SYSTEM_TIME înregistrează data ultimei actualizări a footerului.
+        -->
       </p>
 
       <!-- @structure:
         Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect.
+        acest proiect. Simbolul copyright urmat de an și numele căpitanului
+        marchează proprietatea intelectuală a conținutului.
       -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          Înfășor numele căpitanului într-un <span> cu clasa .vessel-sig.
+          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
+          incandescentă text-shadow. Semnătura magenta acționează ca
+          identificator unic al căpitanului pe toate punțile navei.
+        -->
       </p>
     </footer>
 

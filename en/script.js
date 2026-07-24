@@ -296,31 +296,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //        ==========================================================================
 //        MECANISMUL 08: RECURSIVE SOURCE INTEGRATION (MECANISMUL EXCLUSIV AL PAGINII)
-//        Execută o cerere asincronă internă (Fetch) către script.js, îi extrage textul
-//        brut cu tot cu comentariile românești și îl plantează curat în pre.
+//        Citește data-path de pe butoanele .tab-btn, face fetch asincron către
+//        fișierul cerut și injectează codul sursă brut în .code-inspector-screen.
+//        Include auto-centrare pe mobil (HUD swipe) când se schimbă tabul activ.
 //        ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   const scriptTarget = document.getElementById("script-stream-target");
+  const tabContainer = document.querySelector(".source-selector-tabs");
 
-  if (scriptTarget) {
-    // Lansăm scanarea de tip Fetch către fișierul tău de control
-    fetch("script.js")
+  if (!scriptTarget || !tabContainer) return;
+
+  // Funcție care încarcă un fișier după cale relativă
+  function loadSourceFile(filePath) {
+    scriptTarget.textContent = "Loading...";
+    scriptTarget.style.color = "";
+
+    fetch(filePath)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
-            "Transmisie întreruptă. Fișierul script.js nu a fost detectat în radare.",
+            `Fișierul "${filePath}" nu a fost detectat în radare. (${response.status})`,
           );
         }
-        return response.text(); // Conversia bufferului în text brut curat
+        return response.text();
       })
       .then((rawCode) => {
-        // Injectăm textul direct în ecranul inspectorului
         scriptTarget.textContent = rawCode;
       })
       .catch((error) => {
         scriptTarget.textContent = `[CRITICAL ERROR]: ${error.message}`;
-        scriptTarget.style.color = "var(--nebula-pink)"; // Alertă vizuală roz în caz de avarie
+        scriptTarget.style.color = "var(--nebula-pink)";
       });
+  }
+
+  // Click handler pe toate butoanele .tab-btn
+  tabContainer.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab-btn");
+    if (!btn) return;
+
+    // Dezactivează tabul anterior
+    tabContainer.querySelectorAll(".tab-btn").forEach((b) => {
+      b.classList.remove("active-tab");
+    });
+    btn.classList.add("active-tab");
+
+    // Încarcă fișierul
+    const filePath = btn.getAttribute("data-path");
+    if (filePath) {
+      loadSourceFile(filePath);
+    }
+
+    // Auto-centrare pe mobil (HUD swipe)
+    if (window.innerWidth <= 768) {
+      const btnLeft = btn.offsetLeft;
+      const btnWidth = btn.offsetWidth;
+      const containerWidth = tabContainer.offsetWidth;
+      const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2;
+      tabContainer.scrollTo({
+        left: targetScroll,
+        behavior: "smooth",
+      });
+    }
+  });
+
+  // Încarcă fișierul implicit (primul .tab-btn.active-tab)
+  const defaultTab = tabContainer.querySelector(".tab-btn.active-tab");
+  if (defaultTab) {
+    const defaultPath = defaultTab.getAttribute("data-path");
+    if (defaultPath) {
+      loadSourceFile(defaultPath);
+    }
   }
 });
 
