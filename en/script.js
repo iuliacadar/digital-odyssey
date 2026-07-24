@@ -432,3 +432,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//  ==========================================================================
+//     MECANISMUL 09: COSMIC TYPEWRITER — Astrogation Charter auto-typing
+//     Types the manifesto text one character at a time inside the glass
+//     cylinder, as if the message is being received live from deep space.
+//     Only activates on the transmission page (.manifesto-entry present).
+//  ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".manifesto-entry");
+  if (!container) return;
+
+  const paragraphs = container.querySelectorAll("p");
+  if (!paragraphs.length) return;
+
+  // Archive: store each paragraph's text and whether it is the sign-off line
+  const lines = Array.from(paragraphs).map((p) => ({
+    text: p.textContent,
+    isSignoff: p.classList.contains("manifesto-signoff"),
+  }));
+
+  // Clear the container — the JS will re-type everything
+  container.innerHTML = "";
+
+  // Create output wrapper for typed paragraphs
+  const output = document.createElement("div");
+  output.className = "typewriter-output";
+  container.appendChild(output);
+
+  // Blinking cursor that trails the last typed character
+  const cursor = document.createElement("span");
+  cursor.className = "typing-cursor";
+  container.appendChild(cursor);
+
+  let paraIdx = 0;
+  let charIdx = 0;
+  let currentP = null;
+
+  function randomDelay() {
+    return Math.floor(Math.random() * 35 + 15); // 15–50ms per character
+  }
+
+  function typeNextChar() {
+    if (paraIdx >= lines.length) return; // Finished
+
+    // Create a new <p> when starting a paragraph
+    if (!currentP) {
+      currentP = document.createElement("p");
+      if (lines[paraIdx].isSignoff) {
+        currentP.className = "manifesto-signoff";
+      }
+      output.appendChild(currentP);
+    }
+
+    const text = lines[paraIdx].text;
+
+    if (charIdx < text.length) {
+      currentP.textContent += text[charIdx];
+      charIdx++;
+      setTimeout(typeNextChar, randomDelay());
+    } else {
+      // Paragraph done — move to next
+      paraIdx++;
+      charIdx = 0;
+      currentP = null;
+      if (paraIdx < lines.length) {
+        // Pause between paragraphs so the reader can breathe
+        const pause = lines[paraIdx].isSignoff ? 1200 : 500;
+        setTimeout(typeNextChar, pause);
+      }
+    }
+  }
+
+  // Brief silence before the transmission begins
+  setTimeout(typeNextChar, 1000);
+});
