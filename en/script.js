@@ -496,6 +496,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (charIdx < text.length) {
       currentP.textContent += text[charIdx];
       charIdx++;
+      // Follow the transmission — keep the cursor visible as text is written
+      cursor.scrollIntoView({ block: "nearest" });
       setTimeout(typeNextChar, randomDelay());
     } else {
       // Paragraph done — move to next
