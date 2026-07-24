@@ -884,3 +884,60 @@ Fișierele de jurnal `JURNAL-EN.md` și `JURNAL-RO.md` au fost redenumite în `J
 - `JURNAL-RO.md` → `JOURNAL-RO.md` (redenumit).
 
 ---
+
+# DAY 12 — Finalizarea Schiţei Recursive: Motorul Autognostic
+
+Această zi finalizează pagina schiţei recursive (`en/recursive-blueprint.html` şi `ro/recursive-blueprint.html`), aducând-o la forma finală cu o consolă de selectare a fişierelor complet funcţională, o reîncadrare creativă filozofică şi oglindirea completă în română.
+
+## 1. Optimizări în pagina recursivă
+
+- **Ordinea volumelor HUD corectată** — Reordonată să corespundă indexului: Frontend → Data Bridge → Backend → Database → UX → Delivery.
+- **Consolă nouă de selectare a fişierelor cu derulare** — Cele 4 taburi statice şi nefuncţionale au fost înlocuite cu o consolă derulabilă orizontal/glisabilă care listează toate cele 30 de fişiere grupate sub 7 etichete de volum (ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY). Foloseşte mecanismul de glisare HUD: `overflow-x: auto`, scrollbar ascuns, derulare cu inerţie pe mobil.
+- **Comutarea taburilor funcţionează acum** — MECANISMUL 08 rescris: foloseşte delegare de evenimente pe `.source-selector-tabs`, citeşte `data-path` din `.tab-btn` apăsat, încarcă fişierul prin Fetch API şi injectează sursa în inspectorul de cod. Pe mobil, centrează automat tabul activ orizontal.
+- **Clasa body corectată** — `module-view` schimbat în `blueprint-layout`, ceea ce activează selectorii CSS existenţi `.blueprint-layout`.
+- **CSS adăugat** — `.source-selector-tabs` (container flex derulabil), `.tab-btn` (capsule verzi fosfor, strălucire la hover, evidenţiere tab activ), `.volume-label` (etichete ambre majuscule). Media query-ul mobil actualizat pentru dimensiuni compacte.
+- **CSS subtitlu adăugat** — `.blueprint-master-subtitle` (strălucire ambre, majuscule, letter-spacing 3px).
+- **Versiunea RO rescrisă complet** — `ro/recursive-blueprint.html` era complet depăşit. Acum corespunde structurii EN cu tot textul şi comentariile traduse în română. Foaia de stil RO sincronizată.
+
+## 2. Propuneri de titlu h1, paragraf header, paragraf left panel
+
+Toate variantele luate în considerare înainte de a stabili versiunile finale sunt păstrate aici ca anexă creativă.
+
+### Candidaţi pentru H1
+
+Toţi candidaţii au fost consideraţi la fel de puternici, **"Motorul Autognostic"** fiind selectat în cele din urmă pentru precizia şi caracterul său distinctiv.
+
+1. **Nava Care Îşi Citeşte Propriile Schiţe** — narativ, imediat evocator, încadrează pagina ca o navă vie.
+2. **Motorul Autognostic** — inventat din *autognosis* (auto-cunoaştere); tehnic, filozofic, unic.
+3. **Abisul Recursiv: Jurnalul Navei Care Se Examinează pe Sine** — dramatic, profund, sugerează o coborâre infinită în auto-referinţă.
+4. **Oglinda Adâncului** — poetic, minimalist, implică reflecţie fără sfârşit.
+
+### Subtitlu
+
+**Final:** *Un Circuit Închis Între Creator şi Creaţie*
+
+### Paragraful de descriere (final)
+
+> Aceasta este confesionalul navei — un terminal cu circuit închis prin care nava îşi interoghează propriul cod sursă în timp real. Fiecare fişier din flota D::0dy55ey, de la `index.html` al punţii de comandă până la jurnalele de deployment ale sălii motoarelor, este supus examinării aici. Consola de dedesubt operează ca un dialog recursiv între creator şi creaţie: codul care construieşte nava, afişat pe nava însăşi, pentru ca echipajul să-l citească, să-l întrebe şi să-l înţeleagă. Nu există strat ascuns. Ceea ce se derulează în panoul tribord este arhiva neurală brută a navei — treizeci de fişiere de logică, poezie şi structură, expuse la lumina propriului ecran fosfor. Nava se citeşte pe sine cu voce tare pentru ca tu să poţi învăţa nu doar ce face, ci ce este.
+
+### Paragraful panoului stâng — Opţiunea A (poetic, oceanic)
+
+> Acesta nu este text mort. **Grila Recursivă** este o arhivă vie — fiecare fişier o cabină în memoria navei, fiecare funcţie o comandă logată din mâna căpitanului. În panoul tribord, codul sursă se derulează ca un sonar de adâncime, în timp ce nucleul geodezic din spate se roteşte în supunere oarbă, condus de însăşi inscripţiile pe care nu le poate citi. Codul nu descrie pur şi simplu nava: el *este* nava, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade.
+
+### Paragraful panoului stâng — Opţiunea B (cinematic, sala motoarelor)
+
+> Ceea ce vezi este cortexul neural al navei dezgolit. **Grila Recursivă** nu este o metaforă: este arhitectura literală a conştiinţei acestui vas, aşternută în fosfor verde pe un ecran negru. În dreapta, codul sursă se derulează ca o încărcătură de adâncime continuă — fiecare linie un puls sinaptic. În stânga, nucleul geodezic, acel motor orb cu cinci feţe, se roteşte în întuneric, executând decrete scrise înainte de primul commit. Codul nu este materie moartă aici. Codul este respiraţia navei, iar acest terminal este stetoscopul apăsat pe pieptul ei.
+
+### Paragraful panoului stâng — Final (îmbinarea poeziei lui A cu claritatea lui B)
+
+> Acesta nu este text mort. **Grila Recursivă** este cortexul neural al navei dezgolit — nu o metaforă, ci arhitectura literală a conştiinţei acestui vas, aşternută în fosfor verde pe un ecran negru. În panoul tribord, codul sursă se derulează ca o încărcătură de adâncime continuă, fiecare linie un puls sinaptic. În stânga, nucleul geodezic se roteşte în supunere oarbă, un zeu cu cinci feţe care execută decrete scrise înainte de primul commit. Codul nu este schiţa navei. Codul este nava însăşi, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade. Şi acest terminal este locul unde nava se priveşte pe sine privindu-se, până la ultimul punct şi virgulă.
+
+## Fişiere afectate
+
+- `en/recursive-blueprint.html` — H1 nou, subtitlu, paragraf de descriere, text panou stâng; consolă de selectare a fişierelor cu 30 de taburi; inspector de cod activ bazat pe Fetch.
+- `en/style.css` — adăugate reguli `.source-selector-tabs`, `.tab-btn`, `.active-tab`, `.volume-label`, `.blueprint-master-subtitle`; dimensiuni compacte pentru mobil.
+- `en/script.js` — MECANISMUL 08 rescris pentru delegare de evenimente şi încărcare fişiere prin `data-path`.
+- `ro/recursive-blueprint.html` — rescriere completă corespunzând structurii EN, tradusă în română.
+- `ro/style.css` — aceleaşi modificări CSS cu comentarii în română.
+
+---
