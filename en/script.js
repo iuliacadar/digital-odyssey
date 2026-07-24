@@ -474,7 +474,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function typeNextChar() {
-    if (paraIdx >= lines.length) return; // Finished
+    if (paraIdx >= lines.length) {
+      // Transmission complete — dismiss cursor after 3 seconds
+      setTimeout(() => {
+        cursor.classList.add("cursor-hidden");
+      }, 3000);
+      return;
+    }
 
     // Create a new <p> when starting a paragraph
     if (!currentP) {

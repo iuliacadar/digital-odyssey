@@ -1238,6 +1238,10 @@ a.reactor-portal:focus-visible {
   animation: typewriter-blink 0.7s step-end infinite;
 }
 
+.typing-cursor.cursor-hidden {
+  opacity: 0 !important;
+}
+
 @keyframes typewriter-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }

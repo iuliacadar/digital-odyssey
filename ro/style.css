@@ -1153,6 +1153,23 @@ a.reactor-portal:focus-visible {
   animation: typing-modular 4s steps(55, end) 3s forwards;
 }
 
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--solar-mint);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: typewriter-blink 0.7s step-end infinite;
+}
+.typing-cursor.cursor-hidden {
+  opacity: 0 !important;
+}
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* --- 5. CILINDRUL COSMIC DE STICLĂ (Carta de Astro-navigație / Vasul Mesajului) --- */
 .hologram-crystal {
   position: relative;
