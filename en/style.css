@@ -2984,6 +2984,9 @@ pre::-webkit-scrollbar-thumb {
 }
 
 /* --- 11. AUTONOMOUS COLOR PALETTE OVERRIDES (Recursive Blueprint Identity) --- */
+.blueprint-layout .hud-volume {
+  border-left-color: var(--amber-glow) !important;
+}
 .blueprint-layout .hud-volume-title {
   color: var(--amber-glow) !important;
   border-bottom-color: rgba(255, 179, 0, 0.2) !important;
