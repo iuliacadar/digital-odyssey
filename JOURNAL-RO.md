@@ -960,9 +960,9 @@ Toţi candidaţii au fost consideraţi la fel de puternici, **"Motorul Autognost
 
 ---
 
-# ZIUA 13 — Carta de Astro-navigaţie: Finalizarea Paginii cu Manifest
+# ZIUA 13 — Carta de Astronavigaţie: Finalizarea Paginii cu Manifest
 
-Această zi aduce pagina transmission.html (Carta de Astro-navigaţie) la acelaşi standard ca pagina index şi pagina blueprinului recursiv: comentarii pedagogice complete, un container vizual personalizat şi un mecanism de maşină de scris live care scrie manifestul în timp real.
+Această zi aduce pagina transmission.html (Carta de Astronavigaţie) la acelaşi standard ca pagina index şi pagina blueprinului recursiv: comentarii pedagogice complete, un container vizual personalizat şi un mecanism de maşină de scris live care scrie manifestul în timp real.
 
 ## 1. Finisarea titlului paginii: Decizii de stil
 

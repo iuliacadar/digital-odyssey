@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //  ==========================================================================
-//     MECANISMUL 09: COSMIC TYPEWRITER — Carta de Astro-navigație
+//     MECANISMUL 09: COSMIC TYPEWRITER — Carta de Astronavigație
 //     Scrie textul manifestului caracter cu caracter în interiorul cilindrului
 //     de sticlă cosmic, ca și cum mesajul ar fi recepționat live.
 //     Se activează doar pe pagina de transmisie (.manifesto-entry prezent).
