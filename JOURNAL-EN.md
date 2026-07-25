@@ -232,6 +232,8 @@ This day establishes the conventions for writing commit messages and then the te
 - `improve`: a general improvement when no other tag fits well.
 - `wip`: work in progress, used temporarily.
 - `snapshot`: a checkpoint or safety backup, used before a major refactor or sweep.
+- `i18n`: internationalisation or localisation work (translating pages, cloning RO/EN versions).
+- `content`: adding or rewriting prose content (manifesto text, pedagogical annotations, creative copy).
 
 ## Style notes
 

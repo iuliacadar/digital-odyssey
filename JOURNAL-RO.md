@@ -232,6 +232,8 @@ Această zi fixează convențiile de scriere a mesajelor de commit și apoi tras
 - `improve`: îmbunătățire generală, folosită când nu se potrivește altă etichetă.
 - `wip`: lucru în desfășurare, folosit temporar.
 - `snapshot`: un punct de control sau o copie de siguranță, folosit înaintea unei restructurări majore.
+- `i18n`: internaționalizare sau localizare (traducerea paginilor, clonare versiuni RO/EN).
+- `content`: adăugare sau rescriere de conținut (text manifest, adnotări pedagogice, copie creativă).
 
 ## Observații de stil
 
