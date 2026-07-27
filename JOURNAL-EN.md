@@ -1030,6 +1030,67 @@ I pushed both to `main` and watched the remote repository reflect the changes. T
   
   The JavaScript layer explains itself from within — nine mechanisms, each with its own pedagogical apparatus, cross-referenced to the legend. The CSS layer is an open textbook — thirty-one modules, one thousand six hundred twelve annotations, every property explained in context. The legend documents are complete — every tag documented, every annotation accounted for. The browser warnings are silent.
   
-  The ship is not finished. But tonight, with the terminal clean and the log committed, I closed the laptop and sat in the dark for a moment, listening. The fans were quiet. The frame counter was steady. And somewhere in the code, the typewriter cursor was still blinking.
-  
-  ---
+The ship is not finished. But tonight, with the terminal clean and the log committed, I closed the laptop and sat in the dark for a moment, listening. The fans were quiet. The frame counter was steady. And somewhere in the code, the typewriter cursor was still blinking.
+
+---
+
+# DAY 17 — The Pre-Launch Signal: Weather Report and the Root URL Question
+
+## A correction to the timeline
+
+Before the day's work began, I reviewed the journal at the request of a watchful navigator. The English journal had DAY 15 wedged between DAY 6 and DAY 7 — a transcription error from the rapid chronicling of the previous sessions. DAY 15, "The Star Charts Are Reborn, and Every Link Knows Its Sector", belonged after DAY 14, not between the early GitHub workflow days. I moved it, verified the sequence (00–16, monotonic), and committed the fix. The Romanian journal was in correct order already — a small structural repair, but the kind that matters when the log is the ship's memory.
+
+## The weather report
+
+I ran a full launch readiness assessment on the fleet. The result was sobering but honest: **Red**.
+
+### Green (production-ready)
+- `en/index.html`, `ro/index.html` — full metadata, teaching comments, responsive, linked to all six volumes
+- `en/bibliography.html`, `ro/bibliography.html` — complete reference archive across all six sectors
+- `en/transmission.html`, `ro/transmission.html` — the Astrogation Charter, fully written
+- `en/recursive-blueprint.html`, `ro/recursive-blueprint.html` — the self-reading ship
+- All relative links resolve correctly across both languages
+- Pure static site — no server, no build step, no CORS issues
+
+### Red (blockers)
+- **18 of 22 log pages per language are empty structural shells** — nav and footer exist, body is blank. A visitor clicking through from the index lands on a white page.
+- **4 log pages use Lorem Ipsum** — html-log, css-log, javascript-log, sql-log have section headers but filler text in the body.
+- **Missing `rel="noopener noreferrer"`** on some `target="_blank"` links (a security and performance issue).
+
+### Amber (should fix)
+- No GitHub Pages deployment configuration (no `.github/workflows/` or Settings toggle)
+- 3 empty JSON files in `shared/data/`
+
+## The root URL question
+
+One detail in the assessment sparked discussion: the project has no root `index.html`. GitHub Pages, configured to serve from the repository root, returns a 404 at `https://iuliacadar.github.io/digital-odyssey/` — the bare dock address.
+
+The canonical URLs in the project's own metadata already point to `.../digital-odyssey/en/index.html`. The `en/` subfolder is the true entry point. Three approaches were documented in the backlog:
+
+1. **Set Pages source to `/en`** — clean root behaviour, but shifts the RO site to a sub-path.
+2. **Create a root `404.html` that redirects** — pragmatic, uses the error-handling mechanism as a navigation device.
+3. **Accept the bare root as 404** — simplest match for the current architecture. Visitors bookmark `.../digital-odyssey/en/`, and that is the canonical address.
+
+No decision was made tonight. The choice is deferred to the launch window, when the other blockers (empty logs, lorem ipsum, noopener) are resolved. The backlog carries the three options with their trade-offs, so the decision will be made with full context.
+
+## The backlog, reorganised
+
+I reviewed both BACKLOG-EN.md and BACKLOG-RO.md against the actual state of the project. Several items had drifted:
+
+- **Item 002 (metadata for all pages)** — marked "In progress" but actually complete: every log page, even the empty shells, has a full `<head>` with title, meta description, theme-color, and favicon. Moved to Implemented.
+- **Item 005 (Holographic HUD Console)** — marked "In progress" but implemented across all files: the HUD overlay, the icosahedron portal linking index ↔ recursive page, the transmission link and language toggle in the footer. The "Return to Command Deck" link remains alongside the HUD as an explicit navigation aid — a design choice, not an incomplete task. Moved to Implemented.
+- **Items 006 and 007** — already marked "Completed" but sitting under "Active backlog" instead of "Implemented". Moved to the correct section.
+- **Duplicates** — Item 001 and Item 002 both had duplicated entries (two copies of each in the file). Deduplicated.
+- **Item 008 (launch preparation)** — added with a checklist covering noopener, empty log pages, lorem ipsum, deploy config, and the root URL options.
+
+## The commit log
+
+```
+fd47f83 docs: fix DAY 15 order in EN journal (was between DAY 6 and DAY 7), fix RO grammar
+2bc23a7 docs: reorganize backlogs — deduplicate 001/002, move done items to Implemented, add item 008
+a28aded docs: remove root index.html step from backlog item 008 per user direction
+```
+
+The ship is not ready to launch. But the pre-flight checklist exists now, written in its own hand, with honest weather and deferred decisions. The next cycle — when it comes — will have a clear target.
+
+---

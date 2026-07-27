@@ -1043,3 +1043,64 @@ Stratul JavaScript se explică din interior — nouă mecanisme, fiecare cu prop
 Nava nu e terminată. Dar în seara asta, cu terminalul curat și commit-ul înregistrat, am închis laptopul și am stat o clipă în întuneric, ascultând. Ventilatoarele erau liniștite. Contorul de cadre era stabil. Și undeva în cod, cursorul mașinii de scris clipea încă.
 
 ---
+
+# ZIUA 17 — Semnalul de pre-lansare: Raportul meteorologic și problema URL-ului rădăcină
+
+## O corecție a cronologiei
+
+Înainte de lucrul zilei, am revizuit jurnalul la cererea unui navigator vigilent. Jurnalul englez avea ZIUA 15 încastrată între ZIUA 6 și ZIUA 7 — o eroare de transcriere din cronicizarea rapidă a sesiunilor anterioare. ZIUA 15, „Arhivele Adâncului: Hărțile Renăscute și Fiecare Link care Știe Unde Să Te Ducă", aparținea după ZIUA 14, nu între zilele timpurii de GitHub. Am mutat-o, am verificat secvența (00–16, monoton) și am comis corecția. Jurnalul românesc era deja în ordinea corectă — o reparație structurală mică, dar din acelea care contează când jurnalul este memoria navei.
+
+## Raportul meteorologic
+
+Am rulat o evaluare completă a stării de lansare pentru întreaga flotă. Rezultatul a fost sobru, dar onest: **Roșu**.
+
+### Verde (gata de producție)
+- `en/index.html`, `ro/index.html` — metadate complete, comentarii pedagogice, responsive, legate la toate cele șase volume
+- `en/bibliography.html`, `ro/bibliography.html` — arhivă de referință completă pentru toate cele șase sectoare
+- `en/transmission.html`, `ro/transmission.html` — Carta de Astronavigație, scrisă integral
+- `en/recursive-blueprint.html`, `ro/recursive-blueprint.html` — nava care se citește pe sine
+- Toate linkurile relative se rezolvă corect în ambele limbi
+- Site static pur — fără server, fără pas de build, fără probleme CORS
+
+### Roșu (blocaje)
+- **18 din 22 de pagini de jurnal per limbă sunt shell-uri structurale goale** — navigare și footer există, corpul este gol. Un vizitator care face click din index ajunge pe o pagină albă.
+- **4 pagini de jurnal folosesc Lorem Ipsum** — html-log, css-log, javascript-log, sql-log au antete de secțiune dar text de umplutură în corp.
+- **Lipsă `rel="noopener noreferrer"`** pe unele linkuri `target="_blank"` (problemă de securitate și performanță).
+
+### Portocaliu (de rezolvat)
+- Nicio configurație de deploy GitHub Pages (nici `.github/workflows/`, nici Settings toggle)
+- 3 fișiere JSON goale în `shared/data/`
+
+## Problema URL-ului rădăcină
+
+Un detaliu din evaluare a stârnit discuții: proiectul nu are un `index.html` rădăcină. GitHub Pages, configurat să servească din rădăcina repository-ului, returnează 404 la `https://iuliacadar.github.io/digital-odyssey/` — adresa docului gol.
+
+URL-urile canonice din metadatele proiectului însuși indică deja `.../digital-odyssey/en/index.html`. Subdosarul `en/` este adevăratul punct de intrare. Trei abordări au fost documentate în backlog:
+
+1. **Sursa Pages setată la `/en`** — comportament curat la rădăcină, dar mută site-ul RO într-un sub-path.
+2. **Un `404.html` rădăcină care redirecționează** — pragmatic, folosește mecanismul de eroare ca dispozitiv de navigare.
+3. **Acceptarea rădăcinii goale ca 404** — cea mai simplă potrivire pentru arhitectura actuală. Vizitatorii salvează în bookmarks `.../digital-odyssey/en/`, iar aceasta este adresa canonică.
+
+Nicio decizie nu a fost luată în seara asta. Alegerea este amânată până la fereastra de lansare, când celelalte blocaje (jurnale goale, lorem ipsum, noopener) vor fi rezolvate. Backlog-ul poartă cele trei opțiuni cu compromisurile lor, astfel încât decizia va fi luată cu context complet.
+
+## Backlog-ul, reorganizat
+
+Am verificat ambele fișiere — BACKLOG-EN.md și BACKLOG-RO.md — împotriva stării reale a proiectului. Mai multe item-uri derivaseră:
+
+- **Item 002 (metadate pentru toate paginile)** — marcat „În lucru" dar de fapt complet: fiecare pagină de jurnal, chiar și shell-urile goale, are un `<head>` complet cu titlu, meta descriere, theme-color și favicon. Mutat la Implementat.
+- **Item 005 (Consolă HUD Holografică)** — marcat „În lucru" dar implementat în toate fișierele: overlay HUD, portalul icosaedru care leagă index ↔ pagină recursivă, linkul transmission și comutatorul de limbă în footer. Linkul „Înapoi la puntea de comandă" rămâne alături de HUD ca ajutor explicit de navigare — o decizie de design, nu o sarcină neterminată. Mutat la Implementat.
+- **Item-urile 006 și 007** — deja marcate „Completat" dar aflate sub „Backlog activ" în loc de „Implementat". Mutate la secțiunea corectă.
+- **Duplicate** — Item-ul 001 și Item-ul 002 aveau amândouă intrări duplicate (două copii ale fiecăruia în fișier). Deduplicate.
+- **Item 008 (pregătire lansare)** — adăugat cu o listă de verificare care acoperă noopener, pagini de jurnal goale, lorem ipsum, configurare deploy și opțiunile pentru URL-ul rădăcină.
+
+## Jurnalul de commit-uri
+
+```
+fd47f83 docs: fix DAY 15 order in EN journal (was between DAY 6 and DAY 7), fix RO grammar
+2bc23a7 docs: reorganize backlogs — deduplicate 001/002, move done items to Implemented, add item 008
+a28aded docs: remove root index.html step from backlog item 008 per user direction
+```
+
+Nava nu e gata de lansare. Dar lista de verificare pre-zbor există acum, scrisă de propria ei mână, cu vreme onestă și decizii amânate. Următorul ciclu — când va veni — va avea o țintă clară.
+
+---

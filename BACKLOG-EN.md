@@ -112,9 +112,23 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 **Why now:** The main pages (index, bibliography, transmission, recursive-blueprint) are production-ready, but 40+ empty/lorem log pages, and missing `rel="noopener noreferrer"` on some `target="_blank"` links prevent public deployment.
 
-**Affected files:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
+**Root URL options (no root `index.html`):**
+
+The project has no root `index.html` — Pages serves `en/` and `ro/` as sibling subfolder sites. Three approaches to handle the bare root:
+
+| # | Approach | Visitor at `https://.../digital-odyssey/` sees | Trade-off |
+|---|---|---|---|
+| 1 | Set Pages source to `/en` in repo Settings | EN index served at root URL | RO becomes `.../digital-odyssey/ro/`; canonical URLs change |
+| 2 | Create a root `404.html` that redirects to `/en/index.html` | Automatically redirected to EN index | Uses 404 mechanism as redirect — pragmatic but not "clean" |
+| 3 | Accept bare root as 404, document `en/` as canonical | 404 at root — visitors use `.../digital-odyssey/en/` directly | Cleanest for existing code; requires users to know the `/en/` path |
+
+At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point to `.../digital-odyssey/en/index.html`. Option 3 is the simplest match for the current architecture, but the choice is deferred to launch.
+
+**Affected files:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`, `404.html` (only for option 2)
 
 **Steps:**
+- decide on root URL approach (option 1, 2, or 3);
+- implement the chosen approach;
 - add `rel="noopener noreferrer"` to all `target="_blank"` links across all HTML files;
 - fill or remove the 18 empty structural-shell log pages per language (or add a "🚧 Under Construction" banner);
 - replace Lorem Ipsum text in `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` with real content;

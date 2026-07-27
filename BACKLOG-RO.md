@@ -112,9 +112,23 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 **De ce acum:** Paginile principale (index, bibliografie, transmisiune, blueprinte recursiv) sunt gata de producție, dar peste 40 de pagini de jurnal goale/cu Lorem Ipsum și lipsa `rel="noopener noreferrer"` pe unele linkuri `target="_blank"` împiedică lansarea publică.
 
-**Fișiere afectate:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
+**Opțiuni pentru rădăcina URL (fără `index.html` rădăcină):**
+
+Proiectul nu are un `index.html` rădăcină — Pages servește `en/` și `ro/` ca subdirectoare surori. Trei abordări pentru rădăcina dezbrăcată:
+
+| # | Abordare | Vizitatorul la `https://.../digital-odyssey/` vede | Compromis |
+|---|---|---|---|
+| 1 | Sursa Pages setată la `/en` în Settings repo | Indexul EN servit la URL-ul rădăcină | RO devine `.../digital-odyssey/ro/`; URL-urile canonice se schimbă |
+| 2 | Un `404.html` rădăcină care redirecționează către `/en/index.html` | Redirecționat automat la indexul EN | Folosește mecanismul 404 ca redirect — pragmatic, dar nu „curat" |
+| 3 | Acceptarea rădăcinii goale ca 404, documentarea `en/` ca adresă canonică | 404 la rădăcină — vizitatorii folosesc `.../digital-odyssey/en/` direct | Cel mai curat pentru codul existent; utilizatorii trebuie să știe calea `/en/` |
+
+La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical]` indică `.../digital-odyssey/en/index.html`. Opțiunea 3 este cea mai simplă și potrivită pentru arhitectura actuală, dar alegerea este amânată până la lansare.
+
+**Fișiere afectate:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`, `404.html` (doar pentru opțiunea 2)
 
 **Pași:**
+- deciderea abordării pentru rădăcina URL (opțiunea 1, 2 sau 3);
+- implementarea abordării alese;
 - adăugarea `rel="noopener noreferrer"` la toate linkurile `target="_blank"` din toate fișierele HTML;
 - completarea sau eliminarea celor 18 pagini de jurnal goale per limbă (sau adăugarea unui banner „🚧 În construcție");
 - înlocuirea textului Lorem Ipsum din `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` cu conținut real;
