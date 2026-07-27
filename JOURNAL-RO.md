@@ -928,3 +928,56 @@ Am forţat-pus (`force-push`) istoricul pe `main`, după ce am creat o ramură t
 - `JOURNAL-EN.md`, `JOURNAL-RO.md` — ZIUA 14 adăugată, ZIUA 04 extinsă
 
 ---
+
+# ZIUA 15 — Arhivele Adâncului: Hărţile Renăscute şi Fiecare Link care Ştie Unde Să Te Ducă
+
+## Vechea arhivă, demontată
+
+Bibliografia pe care o adusesem din Manual_project era o fantomă. Avea trei secţiuni — HTML/CSS, SQL, JavaScript — şi scheletul unei a patra care nu se umpluse niciodată. Servise un proiect de nouă pagini, nu cincizeci şi patru. Pentru `D::0dy55ey`, nu era o arhivă de referinţă; era un locţiitor pe care îl ocolisem de săptămâni, ştiind că nu va supravieţui expansiunii.
+
+În noaptea asta, am demontat-o complet şi am construit **Arhivele Adâncului** în locul ei.
+
+## Şase volume, şase ancore
+
+Noul `bibliography.html` este o hartă directă a arhitecturii navei. Fiecare dintre cele şase volume are acum:
+
+- O secţiune dedicată cu propria ancoră ID (`#frontend-refs`, `#data-bridge-refs`, `#backend-refs`, `#database-refs`, `#ux-refs`, `#delivery-refs`)
+- Un tabel `data-grid` cu trei coloane: numele sursei, frecvenţa (URL) şi statusul misiunii
+- O legendă a semnalelor în partea de jos, care decodifică cele trei lumini de status — Activ (verde), În Progres (chihlimbariu), Blocat (auriu)
+
+Secţiunea Frontend Core poartă zece resurse — MDN pe toate cele trei tehnologii, două piste de certificare freeCodeCamp, JavaScript.info, CSS-Tricks, W3Schools, React, Angular. Backend Sector este subîmpărţit pe clustere tematice — Runtime-uri de Bază, Framework-uri API, Autentificare & Securitate, Middleware, Testare, Performanţă, Deploy — fiecare introdus de o etichetă `colspan="3"` pe care am explicat-o într-un bloc pedagogic, pentru ca un novice care vede `colspan="3"` prima dată să nu fie nevoit să ghicească ce înseamnă.
+
+## Pedagogia ca arhitectură
+
+Am scris blocuri `@pedagogy` de-a lungul întregii pagini — nu ca ornament, ci ca instinct didactic al navei făcut vizibil. Primul element `<table>` din proiect poartă acum un ghid care explică `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` şi `colspan` înainte ca cititorul să întâlnească vreun rând de date. Primul tag `<a>` din tabel explică `href`, `target="_blank"` şi `rel="noopener"` — nu doar ce fac, ci de ce contează şi de ce modelul se repetă pe fiecare link extern.
+
+Fiecare resursă majoră a primit o notă `@pedagogy` care spune cititorului ce este: MDN este dicţionarul autoritar, freeCodeCamp este o platformă interactivă bazată pe provocări, JavaScript.info este un tutorial de citit şi înţeles, React este o bibliotecă de componente care necesită fundaţii solide de JavaScript înainte de a fi abordată. Secţiunea de legendă include un ghid complet pentru `<dl>` — listele de descriere, structura lor în trei părţi şi de ce sunt corecte semantic pentru perechi termen-definiţie.
+
+Am adăugat un ghid de entităţi HTML în footer: `&deg;`, `&copy;`, `&amp;`, `&lt;`, `&gt;`, `&nbsp;` — ce este fiecare, de ce există şi cum le decodifică browserul. Un novice frontend care citeşte această pagină de sus până jos ar trebui să iasă înţelegând nu doar ce referinţe există, ci cum funcţionează web-ul însuşi.
+
+## Nava soră românească
+
+Versiunea română a urmat imediat — nu o traducere a paginii engleze, ci o construcţie paralelă. Fiecare comentariu, fiecare bloc `@pedagogy`, fiecare descriere de resursă redată în română cu aceeaşi grijă. `Arhivele Adâncului — Referinţe Cartografiate` stă faţă în faţă cu `Deep Space Archives — Cartographed References` de-a lungul comutatorului de limbă, imagini în oglindă ale aceleiaşi hărţi de navigaţie.
+
+## Marea legare
+
+După ce arhivele au fost reconstruite, fiecare footer din flotă trebuia să ştie încotro să îndrepte. Paginile principale — `index.html`, `transmission.html`, `recursive-blueprint.html` — poartă acum titlul complet: `Deep Space Archives — Cartographed References` în engleză, `Arhivele Adâncului — Referinţe Cartografiate` în română.
+
+Pentru paginile de jurnal, am avut nevoie de o atingere mai fină. Fiecare dintre cele 48 de fişiere de jurnal — 24 engleze, 24 române — trimitea anterior la `bibliography.html` cu un subtitlu generic precum `Star Charts — HTML Log` sau `Hărţi Stelare — Jurnal SQL`. Am înlocuit fiecare, unul câte unul, cu un link direct către secţiunea volumului său: o pagină de jurnal frontend indică acum `bibliography.html#frontend-refs` cu subtitlul `Deep Space Archives — Frontend Core`. Un jurnal backend indică `#backend-refs` cu `Deep Space Archives — Backend Sector`. Navigaţia nu mai este generică — ştie din ce sector a venit cititorul şi îl aterizează exact în tabelul potrivit.
+
+Numele vechi `Star Charts`, moştenit din Manual_project, nu mai apare acum nicăieri în linkurile de footer. Singura apariţie rămasă este în interiorul `bibliography.html` însuşi, unde comentariul de deschidere spune "Acest document este pagina Hărţi Stelare — Referinţe Cartografiate" — o auto-identificare, nu un indicator de navigaţie.
+
+## Commit
+
+Două commituri au închis noaptea:
+
+```
+8c345ea content: expand bibliography to Deep Space Archives — Cartographed References across all 6 volumes (EN/RO)
+e737102 docs: update bibliography footer links across all 54 HTML pages (EN/RO)
+```
+
+Eticheta `content:` — una dintre cele două pe care le adăugasem în ZIUA 14 — poartă acum prima ei încărcătură completă: bibliografia însăşi, scrisă nu ca o listă, ci ca un instrument didactic. Eticheta `docs:` a purtat actualizarea linkurilor: 54 de pagini, fiecare indicând acum spre sectorul ei propriu din arhivă.
+
+Am făcut push pe `main` şi am privit repository-ul remote reflectând schimbările. Biblioteca de referinţă a navei nu mai e un perete împrumutat de pe o navă mai veche. E o punte de navigaţie construită special, cartografiată pe fiecare coridor al `D::0dy55ey`, cu adnotări pedagogice pentru fiecare nit şi fiecare circuit.
+
+---
