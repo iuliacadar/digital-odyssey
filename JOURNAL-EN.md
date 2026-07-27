@@ -479,59 +479,6 @@ The same logic extends to meta descriptions and titles. Each page reflects its l
 In `D::0dy55ey`, I treat `<head>` as a control and identity layer. Language, title, description, local files, shared resources — every page launches from the same predictable base. For bilingual pages, I change only the title and meta description; the rest of the structure stays stable, a single template speaking two dialects.
 ---
 
-# DAY 15 — The Star Charts Are Reborn, and Every Link Knows Its Sector
-
-## The old archive, dismantled
-
-The bibliography that came with us from Manual_project was a ghost. It had three sections — HTML/CSS, SQL, JavaScript — and the skeleton of a fourth that had never filled. It served a project of nine pages, not fifty-four. For `D::0dy55ey` it was not a reference archive; it was a placeholder that I had circled around for weeks, knowing it would not survive the expansion.
-
-Tonight I dismantled it completely and built the **Deep Space Archives** in its place.
-
-## Six volumes, six anchors
-
-The new `bibliography.html` is a direct map of the ship's architecture. Each of the six volumes now has:
-
-- A dedicated section with its own ID anchor (`#frontend-refs`, `#data-bridge-refs`, `#backend-refs`, `#database-refs`, `#ux-refs`, `#delivery-refs`)
-- A `data-grid` table with three columns: source name, frequency (URL), and mission status
-- A signal legend at the bottom that decodes the three status lights — Active (green), In Progress (amber), Locked (gold)
-
-The Frontend Core section alone carries ten resources — MDN across all three technologies, freeCodeCamp's two certification tracks, JavaScript.info, CSS-Tricks, W3Schools, React, Angular. The Backend Sector is subdivided into thematic clusters — Core Runtimes, API Frameworks, Auth & Security, Middleware, Testing, Performance, Deployment — each introduced by a `colspan="3"` cluster-label that I explained with a full pedagogy block, because a novice seeing `colspan="3"` for the first time should not have to guess what it means.
-
-## Pedagogy as architecture
-
-I wrote `@pedagogy` blocks throughout the page — not as decoration, but as the ship's teaching instinct made visible. The first `<table>` element in the project now carries a primer that explains `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`, and `colspan` before the reader encounters any data. The first `<a>` tag in the table explains `href`, `target="_blank"`, and `rel="noopener"` — not just what they do, but why they matter and why the pattern repeats on every external link.
-
-Every major resource got a `@pedagogy` note that tells the reader what it is: MDN is the authoritative dictionary, freeCodeCamp is an interactive challenge-based platform, JavaScript.info is a read-and-understand tutorial, React is a component library that requires solid JavaScript foundations first. The legend section at the bottom includes a full `<dl>` primer — description lists, their three-part structure, and why they are semantically correct for term-definition pairs.
-
-I added an HTML entities primer in the footer: `&deg;`, `&copy;`, `&amp;`, `&lt;`, `&gt;`, `&nbsp;` — what each one is, why they exist, and how the browser decodes them. A frontend neophyte reading this page from top to bottom should emerge understanding not just what references exist, but how the web itself works.
-
-## The Romanian sister ship
-
-The Romanian version followed immediately — not a translation of the English page, but a parallel construction. Every comment, every `@pedagogy` block, every resource description rendered in Romanian with the same care. `Arhivele Adâncului — Referințe Cartografiate` faces `Deep Space Archives — Cartographed References` across the language toggle, mirror images of the same navigational chart.
-
-## The great linking
-
-With the archives rebuilt, every footer in the fleet needed to know where to point. The main pages — `index.html`, `transmission.html`, `recursive-blueprint.html` — now carry the full title: `Deep Space Archives — Cartographed References` in English, `Arhivele Adâncului — Referințe Cartografiate` in Romanian.
-
-The log pages required a finer touch. Each of the 48 log files — 24 English, 24 Romanian — previously linked to `bibliography.html` with a generic subtitle like `Star Charts — HTML Log` or `Hărți Stelare — Jurnal SQL`. I replaced every single one with a direct anchor link to its volume's section: a frontend log page now points to `bibliography.html#frontend-refs` with the subtitle `Deep Space Archives — Frontend Core`. A backend log points to `#backend-refs` with `Deep Space Archives — Backend Sector`. The navigation is no longer generic — it knows which sector the reader came from and lands them in exactly the right table.
-
-The old `Star Charts` name, inherited from Manual_project, now appears nowhere in the footer links. The only remaining occurrence is inside `bibliography.html` itself, where the opening comment says "This document is the Star Charts — Cartographed References page" — a self-identification, not a navigational signpost.
-
-## Commit
-
-Two commits closed the night:
-
-```
-8c345ea content: expand bibliography to Deep Space Archives — Cartographed References across all 6 volumes (EN/RO)
-e737102 docs: update bibliography footer links across all 54 HTML pages (EN/RO)
-```
-
-The `content:` tag — one of the two I added in DAY 14 — now carries its first full payload: the bibliography itself, written not as a list but as a teaching instrument. The `docs:` tag carried the linking update: 54 pages, each one now pointing to its proper sector of the archive.
-
-I pushed both to `main` and watched the remote repository reflect the changes. The ship's reference library is no longer a borrowed bulkhead from an older vessel. It is a purpose-built navigation deck, mapped to every corridor of `D::0dy55ey`, with pedagogical annotations for every rivet and every circuit.
-
----
-
 # DAY 07 — GitHub Workflow for Uploading Files
 
 This day documents the workflow I use to upload files to GitHub, using the correct Git terminology. In practice, I do not say only that I uploaded the files, but more precisely that I **added them to the repository, committed them, and pushed them to GitHub**.
@@ -971,7 +918,60 @@ With the full list settled, I rewrote 18 past commits that lacked tags using `gi
   I created a temporary `pre-rewrite-backup` branch as a safety net, then force-pushed the rewritten history to `main`. The backup branch was subsequently deleted. The ship's log is clean again — every commit speaks the same language, every message carries its proper tag, and the past is as readable as the present.
   
   ---
-  
+
+# DAY 15 — The Star Charts Are Reborn, and Every Link Knows Its Sector
+
+## The old archive, dismantled
+
+The bibliography that came with us from Manual_project was a ghost. It had three sections — HTML/CSS, SQL, JavaScript — and the skeleton of a fourth that had never filled. It served a project of nine pages, not fifty-four. For `D::0dy55ey` it was not a reference archive; it was a placeholder that I had circled around for weeks, knowing it would not survive the expansion.
+
+Tonight I dismantled it completely and built the **Deep Space Archives** in its place.
+
+## Six volumes, six anchors
+
+The new `bibliography.html` is a direct map of the ship's architecture. Each of the six volumes now has:
+
+- A dedicated section with its own ID anchor (`#frontend-refs`, `#data-bridge-refs`, `#backend-refs`, `#database-refs`, `#ux-refs`, `#delivery-refs`)
+- A `data-grid` table with three columns: source name, frequency (URL), and mission status
+- A signal legend at the bottom that decodes the three status lights — Active (green), In Progress (amber), Locked (gold)
+
+The Frontend Core section alone carries ten resources — MDN across all three technologies, freeCodeCamp's two certification tracks, JavaScript.info, CSS-Tricks, W3Schools, React, Angular. The Backend Sector is subdivided into thematic clusters — Core Runtimes, API Frameworks, Auth & Security, Middleware, Testing, Performance, Deployment — each introduced by a `colspan="3"` cluster-label that I explained with a full pedagogy block, because a novice seeing `colspan="3"` for the first time should not have to guess what it means.
+
+## Pedagogy as architecture
+
+I wrote `@pedagogy` blocks throughout the page — not as decoration, but as the ship's teaching instinct made visible. The first `<table>` element in the project now carries a primer that explains `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`, and `colspan` before the reader encounters any data. The first `<a>` tag in the table explains `href`, `target="_blank"`, and `rel="noopener"` — not just what they do, but why they matter and why the pattern repeats on every external link.
+
+Every major resource got a `@pedagogy` note that tells the reader what it is: MDN is the authoritative dictionary, freeCodeCamp is an interactive challenge-based platform, JavaScript.info is a read-and-understand tutorial, React is a component library that requires solid JavaScript foundations first. The legend section at the bottom includes a full `<dl>` primer — description lists, their three-part structure, and why they are semantically correct for term-definition pairs.
+
+I added an HTML entities primer in the footer: `&deg;`, `&copy;`, `&amp;`, `&lt;`, `&gt;`, `&nbsp;` — what each one is, why they exist, and how the browser decodes them. A frontend neophyte reading this page from top to bottom should emerge understanding not just what references exist, but how the web itself works.
+
+## The Romanian sister ship
+
+The Romanian version followed immediately — not a translation of the English page, but a parallel construction. Every comment, every `@pedagogy` block, every resource description rendered in Romanian with the same care. `Arhivele Adâncului — Referințe Cartografiate` faces `Deep Space Archives — Cartographed References` across the language toggle, mirror images of the same navigational chart.
+
+## The great linking
+
+With the archives rebuilt, every footer in the fleet needed to know where to point. The main pages — `index.html`, `transmission.html`, `recursive-blueprint.html` — now carry the full title: `Deep Space Archives — Cartographed References` in English, `Arhivele Adâncului — Referințe Cartografiate` in Romanian.
+
+The log pages required a finer touch. Each of the 48 log files — 24 English, 24 Romanian — previously linked to `bibliography.html` with a generic subtitle like `Star Charts — HTML Log` or `Hărți Stelare — Jurnal SQL`. I replaced every single one with a direct anchor link to its volume's section: a frontend log page now points to `bibliography.html#frontend-refs` with the subtitle `Deep Space Archives — Frontend Core`. A backend log points to `#backend-refs` with `Deep Space Archives — Backend Sector`. The navigation is no longer generic — it knows which sector the reader came from and lands them in exactly the right table.
+
+The old `Star Charts` name, inherited from Manual_project, now appears nowhere in the footer links. The only remaining occurrence is inside `bibliography.html` itself, where the opening comment says "This document is the Star Charts — Cartographed References page" — a self-identification, not a navigational signpost.
+
+## Commit
+
+Two commits closed the night:
+
+```
+8c345ea content: expand bibliography to Deep Space Archives — Cartographed References across all 6 volumes (EN/RO)
+e737102 docs: update bibliography footer links across all 54 HTML pages (EN/RO)
+```
+
+The `content:` tag — one of the two I added in DAY 14 — now carries its first full payload: the bibliography itself, written not as a list but as a teaching instrument. The `docs:` tag carried the linking update: 54 pages, each one now pointing to its proper sector of the archive.
+
+I pushed both to `main` and watched the remote repository reflect the changes. The ship's reference library is no longer a borrowed bulkhead from an older vessel. It is a purpose-built navigation deck, mapped to every corridor of `D::0dy55ey`, with pedagogical annotations for every rivet and every circuit.
+
+---
+
   # DAY 16 — The Ship Learns a New Tongue: Thirty-One Modules, Nine Mechanisms, and the Legend Made Whole
   
   The fifteenth day had been about archives and links — the bibliographic nervous system of the fleet. Today was about the ship's own voice. Two files carry the pulse of `D::0dy55ey`: the script that watches and responds, and the stylesheet that gives it form and atmosphere. Both received the full pedagogical treatment today.

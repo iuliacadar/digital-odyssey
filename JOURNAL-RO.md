@@ -988,7 +988,7 @@ Ziua cincisprezece fusese despre arhive și linkuri — sistemul nervos bibliogr
 
 ## Stratul JavaScript: de la șase la nouă mecanisme
 
-Vechiul script.js servise bine încă din Manual_project — șase mecanisme coordonate care guvernau interactivitatea cockpitului. Dar nava crescuse de atunci. Pagini noi cereau comportamente noi: încărcătorul de sursă pentru pagina Blueprint Recursiv, mașina de scris cosmică pentru pagina Transmisiunii, o animație de cursor care avea nevoie de propriul ciclu de curățare după terminarea tastării.
+Vechiul script.js servise bine încă din Manual_project — șase mecanisme coordonate care guvernau interactivitatea cockpitului. Dar nava a crescut de atunci. Pagini noi cereau comportamente noi: încărcătorul de sursă pentru pagina Blueprint Recursiv, mașina de scris cosmică pentru pagina Transmisiunii, o animație de cursor care avea nevoie de propriul ciclu de curățare după terminarea tastării.
 
 Am rescris ambele fișiere — `en/script.js` și `ro/script.js` — de la zero, păstrând cele șase mecanisme originale și adăugând trei noi:
 
