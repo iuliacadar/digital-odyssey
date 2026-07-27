@@ -68,6 +68,114 @@ Pe baza stadiului actual, pașii firești sunt:
 - organizarea manifestului și a jurnalelor bilingve într-o schemă predictibilă.
 - migrarea controlată a atmosferei și stilului din proiectul anterior către noua arhitectură.
 
+### Manual Project — Dosarul de Dezvoltare (Aprilie–Iunie 2026)
+
+Proiectul-mamă a fost construit în cinci faze distincte, fiecare lăsându-și amprenta asupra arhitecturii și identității `D::0dy55ey`:
+
+**Faza 1: Coca de Oțel (28–30 Aprilie 2026)** — Arhitectură HTML inițială cu două volume (*Frontend Landscape* și *Database Void*), ierarhie strictă de titluri h1→h5, paletă CSS retro-futuristă (solar-mint, nebula-pink, amber-warning, space-dark), scanline-uri CRT, navbar glassmorphism, layout Dual-Isolate-Scroll, Intersection Observer API și primele mecanisme JavaScript (navbar inteligent, urmărire secțiuni active, re-declanșare animație de typing).
+
+**Faza 2: Expansiune Modulară (5–20 Mai 2026)** — CSS refactorizat în 11 module auto-documentate cu comentarii inline ce transformă foaia de stil într-un manual live. Separare bilingvă: `style-en.css` și `style-ro.css`. Matricea sferică duală 3D (inele concentrice pe axe încrucișate). Interceptare anti-deplasare a ancorelor. Auto-centrare radar pe desktop.
+
+**Faza 3: Blueprint-ul Recursiv & Criza GPU (20 Mai–11 Iunie 2026)** — `recursive-blueprint.html`: un terminal split-screen care preia și afișează dinamic codul sursă live. Un icosaedru cu 20 de fețe construit cu CSS `clip-path` pur și coordonate sferice 3D. Blocaj GPU critic cauzat de triunghiuri vectoriale suprapuse plus `filter: drop-shadow()`, ducând la înghețarea browserului și throttling termic pe CPU. Rezolvat prin înlocuirea filtrelor de blur cu metrici `inset`/`box-shadow` și injectarea de `will-change: transform, opacity`, forțând straturi GPU dedicate de compozitare și stabilizând la 60 FPS.
+
+**Faza 4: Motorul cu 6 Mecanisme (26–29 Mai 2026, paralel cu Faza 3)** — Șase mecanisme JavaScript coordonate documentate în `script.js`: Scutul de Vizibilitate al Cockpitului, Cuplarea Accesibilității Logurilor, Motorul de Re-declanșare a Terminalului, Radarul de Tracking pe Desktop, Motorul Anti-Deplasare pe Desktop și Auto-Scroll HUD Mobil. Ulterior extins cu MECANISMUL-07 (căutare/filtrare).
+
+**Faza 5: Stabilizare & Viraj Bilingv (Iunie 2026)** — Arhitectură bilingvă completă formalizată, curriculum HTML de 45 de zile mapat, `bibliography.html` cu grile de date, `sql-log.html` planificat. Calitate cod: validare W3C, curățare trailing slash, eliminare cod mort. Proiectul s-a stabilizat și a devenit fundația pentru `D::0dy55ey`.
+
+### Referințe Culturale & Inspirații
+
+Identitatea vizuală și conceptuală atât a Manual_project, cât și a `D::0dy55ey` se hrănește dintr-o rețea deliberat largă de surse culturale. Fiecare intrare este urmată de o notă despre cum a modelat stilul proiectului și de referința completă. Această listă este deschisă și va fi extinsă pe măsură ce apar noi referințe.
+
+**Literatură:**
+
+- **Stanisław Lem — *Solaris* (1961)**
+  *Influență:* Romanul oferă tonul contemplativ, filozofic care pătrunde interfața. De la Lem am adoptat ideea că necunoscutul nu este un dușman de cucerit, ci o prezență de contemplat — interfața oglindește aceasta prin faptul că nu se dezvăluie niciodată complet, păstrând adâncime dincolo de glassmorphism și măștile CRT. Oceanul din Solaris este modelul pentru „vidul" care înconjoară fiecare panou.
+  *Sursă:* Lem, Stanisław. *Solaris*. Varșovia: Wydawnictwo MON, 1961. Traducere în engleză: Walker, 1970.
+
+- **Joseph Conrad — *Inima Întunericului* (1899)**
+  *Influență:* Călătoria pe fluviu într-un spațiu necunoscut, moral ambiguu este scheletul narativ al interfeței. Utilizatorul este Marlow, navigând prin volume de cod către un nucleu de înțelegere mereu amânat. HUD-ul cockpitului, fundalurile void-black și luminile amber de avertizare codifică tensiunea acestei coborâri.
+  *Sursă:* Conrad, Joseph. *Heart of Darkness*. Serializat în *Blackwood's Magazine*, 1899. Prima ediție carte: *Youth: A Narrative; and Two Other Stories*. Londra: Blackwood, 1902.
+
+- **Joseph Conrad — *Nostromo* (1904)**
+  *Influență:* Atmosfera industrial-maritimă a cockpitului — coca de oțel, cartierele echipajului, nava de lucru care nu este elegantă ci funcțională — derivă direct din portretul lui Conrad al muncii, argintului și corupției într-un port sud-american fictiv. Numele în sine evocă o lume a cargo, datoriei și greutății morale.
+  *Sursă:* Conrad, Joseph. *Nostromo: A Tale of the Seaboard*. Londra: Harper & Bros, 1904.
+
+- **Herman Melville — *Moby-Dick* (1851)**
+  *Influență:* Căutarea obsesivă a unei entități eluzive, copleșitoare se mapează pe însuși traseul de învățare. Fiecare intrare de jurnal este un jurnal de balenieră — o înregistrare a urmăririi, eșecului și rarisimei perspective. Liniile cosmice despărțitoare din interfață sunt orizontul oceanului între o goană și următoarea.
+  *Sursă:* Melville, Herman. *Moby-Dick; or, The Whale*. New York: Harper & Brothers, 1851.
+
+- **Edgar Allan Poe — povestiri și poeme (1830–1840)**
+  *Influență:* Poe m-a învățat că atmosfera nu este decor ci sens. Groaza de a fi îngropat de viu, claustrofobia minții întoarse spre interior — acestea se traduc în containerele strânse de scroll, pulsul cursorului de neon și senzația că interfața este un spațiu limitat din care datele ies ca o bătaie de inimă dintr-o criptă.
+  *Sursă:* Poe, Edgar Allan. *The Complete Tales and Poems*. New York: Modern Library, 1938 (compilație).
+
+- **H. P. Lovecraft — weird tales (1917–1937)**
+  *Influență:* Groaza cosmică a lui Lovecraft — realizarea că umanitatea nu este centrală în univers — a modelat refuzul proiectului de a folosi un design vesel, plat. Vastitatea vidului, geometriile non-umane ale icosaedrului, indiferența luminilor amber de alarmă: toate împrumută din estetica lui a scalei și tăcerii.
+  *Sursă:* Lovecraft, H. P. *The Weird Tales*. Providence, RI: Wandering Star Press, 1997 (variorum definitiv).
+
+- **William Hope Hodgson — *Casa de pe Hotar* (1908) și *Țara Nopții* (1912)**
+  *Influență:* Aceasta este o referință profund formativă. Viziunea lui Hodgson asupra structurilor antice, ciclopiene, plutind într-un cosmos care nu este nici ostil nici prietenos ci pur și simplu *vast* și *vechi* este cea mai puternică influență literară asupra imaginației arhitecturale a proiectului. Pagina recursive-blueprint, reactorul armilar, senzația că baza de cod este o ruină pe care o explorezi — toate vin de la Hodgson. Călătoria din *Țara Nopții* printr-o întuneric etern către o piramidă îndepărtată de lumină este blueprint-ul emoțional al fiecărei acțiuni de scroll pe această interfață.
+  *Sursă:* Hodgson, William Hope. *The House on the Borderland*. Londra: Chapman and Hall, 1908. *The Night Land*. Londra: Eveleigh Nash, 1912.
+
+**Cinema:**
+
+- **Andrei Tarkovsky — *Solaris* (1972)**
+  *Influență:* Referința cinematografică principală. Planurile lungi, meditative ale lui Tarkovsky, folosirea apei și vegetației ca contrapunct organic la tehnologia rece, și refuzul său de a explica extraterestrul — toate acestea m-au învățat că o interfață poate fi *lentă*, că poate susține tăcerea, și că cel mai puternic design lasă întrebări deschise. Paleta cromatică (verde desaturat, negru profund, alb sepia) este o traducere directă a peliculei sale.
+  *Sursă:* *Solaris*. Regia: Andrei Tarkovsky. Mosfilm, 1972. Bazat pe romanul lui Stanisław Lem.
+
+- **Ridley Scott — *Alien* (1979)**
+  *Influență:* Nostromo nu este o navă spațială elegantă; este o navă de lucru cu nituri, abur și coridoare murdare. Acea estetică a *hardware-ului industrial funcțional* — terminalele CRT, butoanele tip întrerupător, luminile amber de alarmă — este limbajul vizual al cockpitului. Extraterestrul însuși nu este niciodată complet văzut, la fel cum baza de cod nu se dezvăluie niciodată complet; operează la marginea vederii, dincolo de sticlă și scanline-uri.
+  *Sursă:* *Alien*. Regia: Ridley Scott. 20th Century Fox, 1979.
+
+- ***Alien* ca adaptare conradiană**
+  *Influență:* Numele navei *Nostromo* este luat direct din romanul lui Conrad, iar structura filmului — un echipaj care călătorește într-un vid necunoscut, confruntându-se cu o forță care reflectă propria lor lăcomie și teamă — este un ecou nerecunoscut al *Inimii Întunericului*. Această referință literar-cinematografică stratificată m-a învățat că un singur artefact (o navă spațială, o culoare, un font) poate purta greutatea mai multor tradiții culturale simultan.
+  *Sursă:* Linia de numire este confirmată de Ted Billy, "A Curious Case of Influence: Nostromo and Alien(s)", *Conradiana*, Vol. 21, No. 2, 1989, pp. 147–157. Articolul Wikipedia pentru *Nostromo* (romanul lui Conrad) documentează numirea navei spațiale și referința *Sulaco* din *Aliens* (1986), stabilind linia directă Conrad-to-Alien.
+
+**Muzică:**
+
+- **Oxiplegatz (1993–?)**
+  *Influență:* Acest proiect suedez de metal avangardist (format de Alf Svensson, fost în At the Gates) creează muzică simfonică cu tematică science-fiction, versuri despre explorarea spațiului, contact extraterestru și izolare cosmică. Albumul *Sidereal Journey* și coperta sa — cu îmbinarea dintre mecanica cerească și texturile metalice industriale — a informat direct direcția vizuală a proiectului: frumusețea rece a spațiului profund redată prin rugozitatea mașinăriei grele. Temele lirice ale trupei ("battle of species", "abandon earth", "first contact") au devenit template-uri narative pentru conceptul de explorare-ca-confruntare al interfeței.
+  *Sursă:* Oxiplegatz. *Fairytales* (1994), *Worlds and Worlds* (1996), *Sidereal Journey* (1998). Encyclopaedia Metallum (Metal Archives): https://www.metal-archives.com/bands/Oxiplegatz/7750 . Gen: Symphonic/Avant-garde Black Metal. Teme: Science fiction, Spațiul cosmic, Fantasy.
+
+- **Cryo Chamber (YouTube / Bandcamp, fondat 2011)**
+  *Influență:* Cryo Chamber este un label de dark ambient condus de Simon Heath (Atrium Carceri), specializat în peisaje sonore cinematografice, atmosferice care evocă „spații ambientale, narațiuni de anvergură și călătorii sonore către alte lumi". Dronurile vaste, lente ale albumelor precum *Hastur* (un tribut Lovecraft colaborativ) sau *Exo* de Tineidae au modelat direct registrul emoțional al proiectului: rece, răbdător și imens. Am lucrat adesea la interfață ascultând cataloagele lor, iar senzația de a pluti printr-un spațiu întunecat, străvechi — nici ostil, nici primitor — a migrat direct în design.
+  *Sursă:* Cryo Chamber. Canal YouTube (https://www.youtube.com/@cryochamberlabel) cu 426K abonați. Pagina Bandcamp (https://cryochamber.bandcamp.com). După cum a descris Heath într-un interviu cu Bandcamp Daily: „Eram mai interesat de spații ambientale, narațiuni de anvergură și călătorii sonore către alte lumi" (https://daily.bandcamp.com/label-profile/cryo-chamber-dark-ambient-guide, 2020).
+
+**Design & Arte Vizuale:**
+
+- **Sfere armilare renascentiste (sec. XV–XVII)**
+  *Influență:* Sfera armilară — un model mecanic al sferei cerești făcut din inele metalice imbricate — este prototipul structural direct pentru header-ul reactorului icosaedric (clasa `.armillary-reactor-core` în codul sursă). Ca și un astronom renascentist, utilizatorul stă în centrul unui univers mecanic ale cărui inele cartografiază mișcarea corpurilor invizibile. Icosaedrul cu 20 de fețe nu este un moft decorativ; este un instrument de calcul pentru orientare, exact cum era sfera armilară pentru navigația cerească. Interacțiunea de hover — în care sfera accelerează și fețele se luminează — simulează activarea unui instrument cognitiv.
+  *Sursă:* Referință istorică generală. Sfera armilară este documentată în colecții de instrumente științifice precum Museo Galileo din Florența și Oxford Museum of the History of Science. Pentru aplicarea specifică în design web și denumirea clasei `.armillary-reactor-core`, vezi codul sursă Manual_project (JURNAL.md, rândurile 3095–3123 și modulul `style.css` pentru `.armillary-reactor-core`).
+
+- **Monitoare CRT / terminale hardware din anii 1970**
+  *Influență:* Scanline-urile (`body::before` cu background raster dual), strălucirea verde fosforic a blocurilor de cod, animația de pâlpâire catodică (`crt-flicker`) și efectul de ecran CRT bombat (`inset box-shadow` pe containerele terminalului) recreează experiența de a sta în fața unui monitor militar industrial din anii 1970. Aceasta nu este nostalgie de dragul nostalgiei: CRT-ul impune o *limită materială* asupra digitalului — interfața recunoaște că este făcută din sticlă, fosfor și fascicule de electroni. Ea refuză imaterialitatea curată a designului plat modern.
+  *Sursă:* Implementare originală documentată în `style.css` al Manual_project (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, selectorul `body::before`) și `JURNAL.md` rândurile 822–826, 5481. Efectul face referire la terminale autentice din anii 1970 precum VT100 și IBM 3270.
+
+- **Space Age / Retro-futurism (1950–1970)**
+  *Influență:* Fontul geometric (Space Grotesk), butoanele în formă de capsulă, etichetele tehnice ștanțate și folosirea culorilor amber și mint ca indicatori de stare aparțin limbajului vizual al Epocii Spațiale — perioada în care viitorul era imaginat ca o mașină curată, rațională, geometrică. Proiectul respinge ironia postmodernă în favoarea acestui futurism *sincer*: crede că o interfață poate fi atât funcțională, cât și aspirațională.
+  *Sursă:* Activele de design sunt originale (fontul Space Grotesk de Florian Karsten, disponibil prin Google Fonts). Limbajul vizual face referire la NASA Graphics Standards Manual (1976, de Richard Danne și Bruce Blackburn) și la tradiția mai largă Mid-Century Modern / arhitectură Googie.
+
+- **Cyberpunk (1980–prezent)**
+  *Influență:* Culorile neon-pink și magenta, fundalurile întunecate cu accente luminoase, senzația că interfața este o „consolă piratată într-un sistem mai mare" — toate sunt gesturi cyberpunk. Dar proiectul folosește deliberat *gramatica vizuală* a cyberpunk-ului fără narațiunea sa distopică: aici, cockpitul de neon este un spațiu de învățare și explorare, nu de supraveghere corporatistă.
+  *Sursă:* Estetica cyberpunk este extrasă din mișcarea mai largă (William Gibson — *Neuromancer*, 1984; Ridley Scott — *Blade Runner*, 1982; manga *Akira* de Katsuhiro Otomo, 1988). Aplicarea specifică în modulele CSS ale acestui proiect este documentată în `JURNAL.md` (MODULE 07 și MODULE 08: "The Cyberpunk Category Card").
+
+- **Glassmorphism (tendință UI din anii 2020)**
+  *Influență:* Panourile translucide de sticlă mată (`backdrop-filter: blur` pe barele de navigare, cardurile de categorii și footer) simulează materiale fizice de cockpit — acrilic, sticlă fumurie, policarbonat. Aceasta nu este o tendință pur decorativă: creează o adâncime stratificată care oglindește stratificarea conceptuală a proiectului însuși (interfață / cod / comentariu).
+  *Sursă:* Implementare originală în `style.css` al Manual_project (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). Tendința UI mai largă a fost documentată pe platforme de design precum Dribbble și UX Collective (circa 2020–2021), dar proiectul o aplică într-un context strict industrial-1970, nu modern-elegant.
+
+- **HUD (Heads-Up Display) — adaptat din aviație**
+  *Influență:* Bara de navigare sticky, sidebar-ul persistent cu urmărirea stării active, mesajele de status de tip telemetrie (ex: "SYS_STATUS: READY_TO_WRITE //") — toate simulează experiența de a pilota o navă. Interfața este proiectată nu pentru lectură pasivă ci pentru *navigare activă* prin spațiul informațional. Metafora HUD a fost adaptată din heads-up display-urile aviatice, unde datele critice de zbor sunt proiectate pe câmpul vizual al pilotului pentru ca acesta să nu trebuiască niciodată să își ia privirea de la lumea exterioară.
+  *Sursă:* Concept original documentat în `JURNAL.md` rândul 35: „Concept de design preluat din aviație, implementat în Digital Odyssey prin elemente de interfață «lipicioase» (position: sticky)."
+
+**Filozofie & Pedagogie:**
+
+- **Edutainment (auto-documentare recursivă)**
+  *Influență:* Ideea că baza de cod ar trebui să fie propriul său manual — că fiecare modul CSS, fiecare mecanism JavaScript, fiecare structură HTML ar trebui să se explice din interior — este nucleul pedagogic al proiectului. Pagina `recursive-blueprint.html` duce aceasta la concluzia sa logică: preia și afișează propriul cod sursă al proiectului, transformând browserul într-o mașină de predare auto-referențială. Studentul nu citește un fișier de documentare separat; el citește codul care *randează în acest moment pagina pe care o folosește*.
+  *Sursă:* Conceptul de „edutainment recursiv" este original acestui proiect și este pe deplin articulat în `JURNAL.md` rândurile 722–725 și în meta-descrierea `recursive-blueprint.html`. Termenul „Edutainment" însuși datează din mișcarea de software educațional din anii 1970 (de ex., The Oregon Trail, 1971).
+
+- **Filozofia spațiului narativ (formație academică)**
+  *Influență:* Masteratul meu în literatură americană — cu accent pe weird tales și filozofia spațiului narativ — nu este separat de acest proiect; este încorporat în arhitectura sa. Interfața este proiectată ca un *spațiu narativ navigabil*: fiecare scroll dezvăluie un nou capitol, fiecare hover activează un nou strat de sens, fiecare click teleportează utilizatorul într-un alt sector al poveștii. Proiectul tratează codul ca text literar, iar browserul ca instrument de lectură. Această convingere — că tehnologia și umanioarele aparțin aceleiași conversații — este cea mai profundă influență structurală asupra întregului proiect.
+  *Sursă:* Formație academică, Universitatea din București, Facultatea de Limbi și Literaturi Străine, Master în Literatură Americană (teză despre weird tales și spațiul narativ). Această formație este citată în DAY 01 al ambelor jurnale.
+
 ---
 
 # DAY 01 — Prolegomena

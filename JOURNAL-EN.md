@@ -68,6 +68,114 @@ Based on the current stage, the next natural steps are:
 - organizing the manifesto and bilingual journals into a predictable scheme.
 - carefully migrating atmosphere and style from the previous project into the new architecture.
 
+### Manual Project — Working Trail (April–June 2026)
+
+The parent project was built across five distinct phases, each of which left its mark on the architecture and identity of `D::0dy55ey`:
+
+**Phase 1: The Steel Hull (28–30 April 2026)** — Initial HTML architecture with two volumes (*Frontend Landscape* and *Database Void*), strict heading hierarchy h1→h5, retro-futurist CSS palette (solar-mint, nebula-pink, amber-warning, space-dark), CRT scanlines, glassmorphism navbar, Dual-Isolate-Scroll layout, Intersection Observer API, and the first JavaScript mechanisms (smart navbar hide/show, active-state tracking, typing-animation retrigger).
+
+**Phase 2: Modular Expansion (5–20 May 2026)** — CSS refactored into 11 self-documenting modules with inline commentary turning the stylesheet into a live manual. Bilingual split: `style-en.css` and `style-ro.css`. The 3D dual spherical matrix (concentric dashed rings on crossed axes). Anti-displacement anchor interception. Desktop radar auto-centering.
+
+**Phase 3: The Recursive Blueprint & GPU Crisis (20 May–11 June 2026)** — `recursive-blueprint.html`: a split-screen terminal that fetches and displays live source code. A 20-face icosahedron built with pure CSS `clip-path` and spherical 3D coordinates. Critical GPU bottleneck from overlapping vector triangles plus `filter: drop-shadow()` caused browser freezing and CPU thermal throttling. Solved by replacing blur filters with `inset`/`box-shadow` metrics and injecting `will-change: transform, opacity`, forcing GPU compositing layers and stabilising at 60 FPS.
+
+**Phase 4: The 6-Mechanism Engine (26–29 May 2026, parallel to Phase 3)** — Six coordinated JavaScript mechanisms documented in `script.js`: Cockpit Visibility Shield, Log Accessibility Coupling, Terminal Re-Trigger Engine, Desktop Radar Tracking, Anti-Displacement Desktop Engine, and Auto-Scroll HUD Mobile. Later extended with MECANISMUL-07 (search/filter).
+
+**Phase 5: Stabilisation & Bilingual Turn (June 2026)** — Full bilingual architecture formalised, 45-day HTML curriculum mapped, `bibliography.html` with data grids, `sql-log.html` planned. Code quality: W3C validation, trailing slash cleanup, dead code removal. The project stabilised and became the foundation for `D::0dy55ey`.
+
+### Cultural References & Inspirations
+
+The visual and conceptual identity of both Manual_project and `D::0dy55ey` draws from a deliberately wide network of cultural sources. Below each entry is a brief note on how it shaped the project's style, followed by the source reference. This list is open and will be extended as new references emerge.
+
+**Literature:**
+
+- **Stanisław Lem — *Solaris* (1961)**
+  *Influence:* The novel provides the contemplative, philosophical tone that pervades the interface. From Lem I adopted the idea that the unknown is not an enemy to be conquered but a presence to be contemplated — the interface mirrors this by never fully revealing itself, always holding depth behind glassmorphism and CRT masks. The ocean of Solaris is the model for the "void" that surrounds every panel.
+  *Source:* Lem, Stanisław. *Solaris*. Warsaw: Wydawnictwo MON, 1961. English translation: Walker, 1970.
+
+- **Joseph Conrad — *Heart of Darkness* (1899)**
+  *Influence:* The journey upriver into an unknown, morally ambiguous space is the narrative skeleton of the interface. The user is Marlow, navigating through volumes of code toward an ever-receding core of understanding. The cockpit HUD, the void-black backgrounds, and the amber warning glows all encode the tension of this descent.
+  *Source:* Conrad, Joseph. *Heart of Darkness*. Serialised in *Blackwood's Magazine*, 1899. First book edition: *Youth: A Narrative; and Two Other Stories*. London: Blackwood, 1902.
+
+- **Joseph Conrad — *Nostromo* (1904)**
+  *Influence:* The industrial-maritime atmosphere of the cockpit — the steel hull, the crew quarters, the working vessel that is not sleek but functional — draws directly from Conrad's portrait of labour, silver, and corruption in a fictional South American port. The name itself (which I use for the mother ship *Nostromo* in *Alien*) evokes a world of cargo, duty, and moral weight.
+  *Source:* Conrad, Joseph. *Nostromo: A Tale of the Seaboard*. London: Harper & Bros, 1904.
+
+- **Herman Melville — *Moby-Dick* (1851)**
+  *Influence:* The obsessive quest for an elusive, overwhelming entity maps onto the learning journey itself. Each log entry is a whaling journal — a record of pursuit, failure, and rare insight. The cosmic divider lines in the interface are the ocean horizon between one chase and the next.
+  *Source:* Melville, Herman. *Moby-Dick; or, The Whale*. New York: Harper & Brothers, 1851.
+
+- **Edgar Allan Poe — tales and poems (1830s–1840s)**
+  *Influence:* Poe taught me that atmosphere is not decoration but meaning. The dread of being buried alive, the claustrophobia of the mind turned inward — these translate into the tight scroll containers, the pulse of the neon cursor, and the feeling that the interface is a confined space from which data emerges like a heartbeat from a crypt.
+  *Source:* Poe, Edgar Allan. *The Complete Tales and Poems*. New York: Modern Library, 1938 (compilation).
+
+- **H. P. Lovecraft — weird tales (1917–1937)**
+  *Influence:* Lovecraft's cosmic horror — the realisation that humanity is not central to the universe — shaped the project's refusal of cheerful, flat design. The vastness of the void, the non-human geometries of the icosahedron, the indifference of the amber alert lights: all borrow from his aesthetic of scale and silence.
+  *Source:* Lovecraft, H. P. *The Weird Tales*. Providence, RI: Wandering Star Press, 1997 (definitive variorum).
+
+- **William Hope Hodgson — *The House on the Borderland* (1908) and *The Night Land* (1912)**
+  *Influence:* This is a deeply formative reference. Hodgson's vision of ancient, cyclopean structures adrift in a cosmos that is neither hostile nor friendly but simply *vast* and *old* is the single strongest literary influence on the project's architectural imagination. The recursive-blueprint page, the armillary reactor, the sense that the codebase is a ruin one explores — all of it comes from Hodgson. The *Night Land*'s journey through an eternal darkness toward a distant pyramid of light is the emotional blueprint of every scroll action on this interface.
+  *Source:* Hodgson, William Hope. *The House on the Borderland*. London: Chapman and Hall, 1908. *The Night Land*. London: Eveleigh Nash, 1912.
+
+**Cinema:**
+
+- **Andrei Tarkovsky — *Solaris* (1972)**
+  *Influence:* The primary cinematic reference. Tarkovsky's long, meditative shots, his use of water and vegetation as organic counterpoints to cold technology, and his refusal to explain the alien — all of this taught me that an interface can be *slow*, that it can hold silence, and that the most powerful design leaves questions open. The colour palette (desaturated greens, deep blacks, sepia whites) is a direct translation of his film stock.
+  *Source:* *Solaris*. Directed by Andrei Tarkovsky. Mosfilm, 1972. Based on the novel by Stanisław Lem.
+
+- **Ridley Scott — *Alien* (1979)**
+  *Influence:* The Nostromo is not a sleek starship; it is a working vessel with rivets, steam, and grimy corridors. That aesthetic of *functional industrial hardware* — the CRT terminals, the toggle-switch buttons, the amber alert lights — is the visual language of the cockpit. The alien itself is never fully seen, just as the codebase never fully reveals itself; it operates at the edge of vision, behind glass and scanlines.
+  *Source:* *Alien*. Directed by Ridley Scott. 20th Century Fox, 1979.
+
+- ***Alien* as a Conradian adaptation**
+  *Influence:* The ship's name *Nostromo* is taken directly from Conrad's novel, and the film's structure — a crew travelling into an unknown void, confronting a force that reflects their own greed and fear — is an unacknowledged echo of *Heart of Darkness*. This layered literary-cinematic reference taught me that a single artefact (a spaceship, a colour, a font) can carry the weight of multiple cultural traditions at once.
+  *Source:* The naming lineage is confirmed by Ted Billy, "A Curious Case of Influence: Nostromo and Alien(s)", *Conradiana*, Vol. 21, No. 2, 1989, pp. 147–157. The Wikipedia entry for *Nostromo* (Conrad's novel) documents the spaceship naming and the *Sulaco* reference in *Aliens* (1986), establishing the direct Conrad-to-Alien lineage.
+
+**Music:**
+
+- **Oxiplegatz (1993–?)**
+  *Influence:* This Swedish avant-garde metal project (formed by Alf Svensson, formerly of At the Gates) creates symphonic, science-fiction-themed music with lyrics about space exploration, alien contact, and cosmic isolation. The album *Sidereal Journey* and its cover artwork — with its blend of celestial mechanics and metallic, industrial textures — directly informed the project's visual direction: the cold beauty of deep space rendered through the grit of heavy machinery. The band's lyrical themes ("battle of species", "abandon earth", "first contact") became narrative templates for the interface's concept of exploration-as-confrontation.
+  *Source:* Oxiplegatz. *Fairytales* (1994), *Worlds and Worlds* (1996), *Sidereal Journey* (1998). Encyclopaedia Metallum (Metal Archives): https://www.metal-archives.com/bands/Oxiplegatz/7750 . Genre: Symphonic/Avant-garde Black Metal. Themes: Science fiction, Outer space, Fantasy.
+
+- **Cryo Chamber (YouTube / Bandcamp, founded 2011)**
+  *Influence:* Cryo Chamber is a dark ambient label run by Simon Heath (Atrium Carceri), specialising in cinematic, atmospheric soundscapes that evoke "environmental spaces, far-reaching narratives and sonic journeys to other worlds". The slow, vast drones of releases like *Hastur* (a collaborative Lovecraft tribute) or *Exo* by Tineidae directly shaped the emotional register of the project: cold, patient, and immense. I often worked on the interface while listening to their catalogues, and the feeling of floating through a dark, ancient space — neither hostile nor welcoming — migrated directly into the design.
+  *Source:* Cryo Chamber. YouTube channel (https://www.youtube.com/@cryochamberlabel) with 426K subscribers. Bandcamp page (https://cryochamber.bandcamp.com). As described by Heath in an interview with Bandcamp Daily: "I was more interested in environmental spaces, far-reaching narratives and sonic journeys to other worlds" (https://daily.bandcamp.com/label-profile/cryo-chamber-dark-ambient-guide, 2020).
+
+**Design & Visual Arts:**
+
+- **Renaissance armillary spheres (15th–17th centuries)**
+  *Influence:* The armillary sphere — a mechanical model of the celestial sphere made of nested metal rings — is the direct structural prototype for the icosahedral reactor header (class `.armillary-reactor-core` in the source code). Like a Renaissance astronomer, the user stands at the centre of a mechanical universe whose rings chart the motion of invisible bodies. The 20-face icosahedron is not a decorative gimmick; it is a computational tool for orientation, exactly as the armillary sphere was for celestial navigation. The hover interaction — where the sphere accelerates and the faces glow — simulates the activation of a cognitive instrument.
+  *Source:* General historical reference. The armillary sphere is documented in scientific instrument collections such as the Museo Galileo in Florence and the Oxford Museum of the History of Science. For the specific application to web design and the naming of the `.armillary-reactor-core` class, see the Manual_project source code (JURNAL.md, lines 3095–3123 and the `style.css` module for `.armillary-reactor-core`).
+
+- **CRT monitors / 1970s hardware terminals**
+  *Influence:* The scanlines (`body::before` with dual-raster background), the phosphor green glow of code blocks, the cathode-ray flicker animation (`crt-flicker`), and the bombé CRT screen effect (`inset box-shadow` on terminal containers) all recreate the experience of sitting in front of an industrial military monitor from the 1970s. This is not nostalgia for its own sake: the CRT imposes a *material limit* on the digital — the interface admits that it is made of glass, phosphor, and electron beams. It refuses the clean immateriality of modern flat design.
+  *Source:* Original implementation documented in Manual_project's `style.css` (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, `body::before` selector) and `JURNAL.md` lines 822–826, 5481. The effect references authentic 1970s terminals such as the VT100 and IBM 3270.
+
+- **Space Age / Retro-futurism (1950s–1970s)**
+  *Influence:* The geometric typeface (Space Grotesk), the capsule-shaped buttons, the stencilled technical labels, and the use of amber and mint-green as status indicators all belong to the visual language of the Space Age — the period when the future was imagined as a clean, rational, geometric machine. The project rejects postmodern irony in favour of this *earnest* futurism: it believes that an interface can be both functional and aspirational.
+  *Source:* The design assets are original (Space Grotesk font by Florian Karsten, available via Google Fonts). The visual language references the NASA Graphics Standards Manual (1976, by Richard Danne and Bruce Blackburn) and the broader Mid-Century Modern / Googie architecture tradition.
+
+- **Cyberpunk (1980s–present)**
+  *Influence:* The neon-pink and magenta accent colours, the dark backgrounds with glowing highlights, the sense of the interface as a "console hacked into a larger system" — all of these are cyberpunk gestures. But the project deliberately uses cyberpunk's *visual grammar* without its dystopian narrative: here, the neon cockpit is a space of learning and exploration, not corporate surveillance.
+  *Source:* The cyberpunk aesthetic is drawn from the broader movement (William Gibson's *Neuromancer*, 1984; Ridley Scott's *Blade Runner*, 1982; the manga *Akira* by Katsuhiro Otomo, 1988). The specific application in this project's CSS modules is documented in `JURNAL.md` (MODULE 07 and MODULE 08: "The Cyberpunk Category Card").
+
+- **Glassmorphism (2020s UI trend)**
+  *Influence:* The translucent frosted-glass panels (`backdrop-filter: blur` on navigation bars, category cards, and footer) simulate physical cockpit materials — acrylic, smoked glass, polycarbonate. This is not a purely decorative trend: it creates a layered depth that mirrors the conceptual layering of the project itself (interface / code / commentary).
+  *Source:* Original implementation in Manual_project's `style.css` (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). The broader UI trend has been documented on design platforms such as Dribbble and UX Collective (circa 2020–2021), but the project applies it within a strictly 1970s-industrial, not modern-sleek, context.
+
+- **HUD (Heads-Up Display) — adapted from aviation**
+  *Influence:* The sticky navigation bar, the persistent sidebar with active-state tracking, the telemetry-style status messages (e.g., "SYS_STATUS: READY_TO_WRITE //") — all of these simulate the experience of piloting a vessel. The interface is designed not for passive reading but for *active navigation* through information space. The HUD metaphor was adapted from aviation heads-up displays, where critical flight data is projected onto the pilot's forward view so they never have to look away from the outside world.
+  *Source:* Original concept documented in `JURNAL.md` line 35: "Concept de design preluat din aviație, implementat în Digital Odyssey prin elemente de interfață «lipicioase» (position: sticky)."
+
+**Philosophy & Pedagogy:**
+
+- **Edutainment (recursive self-documentation)**
+  *Influence:* The idea that the codebase should be its own manual — that every CSS module, every JavaScript mechanism, every HTML structure should explain itself from within — is the pedagogical core of the project. The `recursive-blueprint.html` page takes this to its logical conclusion: it fetches and displays the project's own source code, turning the browser into a self-referential teaching machine. The student does not read a separate documentation file; they read the code that is *currently rendering the page they are using*.
+  *Source:* The concept of "recursive edutainment" is original to this project and is fully articulated in `JURNAL.md` lines 722–725 and in the `recursive-blueprint.html` meta-description. The term "Edutainment" itself dates to the 1970s educational software movement (e.g., The Oregon Trail, 1971).
+
+- **Philosophy of narrative space (academic background)**
+  *Influence:* My master's degree in American literature — with a focus on weird tales and the philosophy of narrative space — is not separate from this project; it is embedded in its architecture. The interface is designed as a *navigable narrative space*: each scroll reveals a new chapter, each hover activates a new layer of meaning, each click teleports the user to a different sector of the story. The project treats code as a literary text, and the browser as a reading instrument. This conviction — that technology and the humanities belong in the same conversation — is the deepest structural influence on the entire project.
+  *Source:* Academic formation, University of Bucharest, Faculty of Foreign Languages and Literatures, MA in American Literature (thesis on weird tales and narrative space). This background is cited in DAY 01 of both journals.
+
 ---
 
 # DAY 01 — Prolegomena
