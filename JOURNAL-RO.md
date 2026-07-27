@@ -1,208 +1,196 @@
 # DAY 00 — Bază de inspirație
 
-Această secțiune fixează punctul de plecare al proiectului `D::0dy55ey`, prin raportare la `Manual_project`, conceptul-mamă care a inspirat direcția actuală. Scopul nu este doar să consemnez o sursă de inspirație, ci să clarific felul în care ideea inițială a fost transformată într-o versiune mai coerentă, mai clară și mai pregătită pentru prezentare publică.
+Am deschis Manual_project în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: *asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă.*
 
-`D::0dy55ey` păstrează nucleul atmosferic al sursei, dar îl reorganizează într-o arhitectură mai riguroasă. În această transformare, am urmărit să îmbin stabilitatea semantică, disciplina tehnică și expresia vizuală într-un singur sistem. Proiectul rezultă astfel ca o platformă bilingvă de învățare, documentare și portofoliu, construită pe o identitate SF retro-futuristă și pe ideea de auto-documentare a codului.
+Această secțiune este jurnalul de bord al plecării lui `D::0dy55ey`. Nu o specificație tehnică — o înregistrare a ceea ce am luat din epava Manual_project, ce am reconstruit și ce am lăsat în urmă, în întuneric.
 
-Comparativ cu proiectul-mamă, noul proiect extinde arhitectura în mai multe volume și într-o ierarhie internă mai stratificată. Pe lângă volumele de `Frontend Landscape` și `Database Void` prezente în proiectul inițial, `D::0dy55ey` adaugă volume noi dedicate punții de date JSON, backend-ului, UX-ului și deployment-ului. Această extindere nu schimbă doar cantitatea de conținut, ci și modul în care este organizat traseul de învățare.
+## Ce am luat cu mine
 
-Volumele noi sunt gândite astfel încât să continue logica didactică a proiectului și să o ducă mai departe în zone care erau doar sugerate înainte. Volumul `JSON Data Bridge` funcționează ca o punte între front-end și sisteme de date, volumul `Backend Core` introduce logica server-side, volumul `UX Lab` consolidează experiența utilizatorului, iar volumul `Deployment` tratează livrarea și publicarea proiectului ca parte integrantă a arhitecturii.
+Am luat nucleul atmosferic: lecția greu câștigată că o interfață poate să se simtă ca un loc. Manual_project mă învățase că o paletă cromatică nu e decor, ci gravitație. `space-dark` te trage în jos, în vid; `amber-glow` avertizează că ceva important e aproape; `solar-mint` e culoarea oxigenului pe o navă avariată. Am păstrat totul, dar aveam nevoie de o arhitectură mai strânsă pentru a susține greutatea.
 
-Această structură mai amplă face proiectul nou mai aproape de o platformă completă decât de o simplă rescriere a proiectului-mamă. În loc să rămână doar la zonele de front-end și bază de date, arhitectura nouă urmărește să acopere întregul ciclu, de la prezentare și structură până la interacțiune, integrare și lansare.
+Noul proiect extinde volumele vechi — `Frontend Landscape`, `Database Void` — și adaugă compartimente noi: `JSON Data Bridge`, `Backend Core`, `UX Lab`, `Deployment`. Dar schimbarea reală nu e numărul de încăperi. E că nava are acum un sistem de navigație coerent. Cititorul se mișcă pe trasee de învățare, nu doar prin pagini.
 
-Sursa de inspirație nu se reduce la un singur reper vizual, ci pornește dintr-un câmp mai larg de idei: filosofia explorării, astronomie, astrofizică, literatură, artă, fotografie, muzică, design și cinematografie. `Solaris` rămâne un reper important, dar doar unul dintre multiplele puncte de orientare care dau proiectului tonul său contemplativ, tehnic și poetic.
+Ce mi-a dat sursa:
 
-Această rețea de influențe explică de ce proiectul are atât o dimensiune conceptuală, cât și una atmosferică. El nu urmărește doar să organizeze conținut, ci să construiască o experiență de lectură și navigare în care ideile științifice, estetice și culturale se întâlnesc într-o singură arhitectură.
+- Un punct de plecare stilistic și narativ — cockpitul retro-futurist, sticla și oțelul unei nave de lucru.
+- O fundație tehnică — griduri CSS care sângerează, mecanisme JavaScript care privesc scrollul ca un radar.
+- O convingere didactică — că cunoașterea se transmite cel mai bine atunci când codul se explică singur din interior.
 
-Ce reprezintă sursa de inspirație:
+Ce construiește `D::0dy55ey` deasupra:
 
-- Un punct de plecare stilistic și narativ.
-- O bază tehnică asupra căreia se construiește noua versiune.
-- Un reper didactic pentru modul în care cunoașterea este organizată și transmisă.
+- O arhitectură care nu se prăbușește sub propria greutate.
+- O structură bilingvă care nu e traducere, ci existență paralelă — fiecare limbă respiră diferit.
+- Un legământ mai strict între atmosferă, conținut și structură: nimic nu e decorativ.
+- O formă destul de curată pentru publicare, destul de stratificată pentru a preda.
+- Volume tematice care nu doar conțin informații — ele ghidează o călătorie.
 
-Ce aduce `D::0dy55ey`:
+## Moștenirea tehnică — acolo unde bate inima
 
-- O arhitectură mai clară și mai scalabilă.
-- O prezentare bilingvă coerentă.
-- O relație mai riguroasă între atmosferă, conținut și structură.
-- O formă mai profesională, mai curată și mai potrivită pentru publicare.
-- Mai multe volume tematice, cu roluri distincte în traseul de învățare.
+Cea mai vizibilă moștenire din Manual_project este **rețeaua de reactor poliedric 3D**: un icosaedru cu douăzeci de fețe triunghiulare, fiecare construită cu `clip-path` CSS pur și poziționată pe coordonate sferice 3D. L-am construit noaptea târziu, cafeaua răcindu-se alături, rotind fețele în minte înainte să le rotesc în browser. Când s-a randat în sfârșit — douăzeci de triunghiuri plutind în void-black ca un roi Dyson — m-am lăsat pe spate și am simțit, pentru o clipă, că am construit ceva ce nu aparține în întregime acestei lumi.
 
-### Moștenirea tehnică din Manual_project
+Apoi a venit criza GPU.
 
-Proiectul-mamă conținea deja realizări tehnice semnificative pe care le-am preluat și rafinat. Cea mai vizibilă dintre acestea este **rețeaua de reactor poliedric 3D** — un icosaedru construit din 20 de fețe triunghiulare folosind CSS `clip-path` pur, poziționate pe coordonate sferice 3D. În Manual_project, acest sistem suferea de un blocaj GPU critic: 20 de triunghiuri vectoriale suprapuse, combinate cu proprietăți grele de `filter: drop-shadow()`, provocau o inundare masivă de repaint care îngheța instanțele browserului și declanșa throttling termic pe CPU. Soluția inginerească a fost înlocuirea filtrelor grele de blur cu metrici stricte de `inset` și `box-shadow` și injectarea de提示 `will-change: transform, opacity`, forțând browserul să izoleze ochiurile 3D pe straturi GPU dedicate de compozitare. Aceasta a redus overhead-ul la aproape zero și a stabilizat animația la un profil fluid de 60 FPS.
+Douăzeci de triunghiuri vectoriale suprapuse combinate cu proprietăți grele de `filter: drop-shadow()` au creat o inundație de repaint care a înghețat browserul și a declanșat throttling termic pe CPU. Ventilatoarele laptopului meu sunau ca o navă care se rupe în bucăți. Am privit contorul de cadre căzând de la 60 la 12 la 4, și am gândit: *aici moare proiectul. Icosaedrul e prea frumos ca să trăiască.*
 
-Proiectul-mamă a pionierat și layout-ul **Dual-Isolate-Scroll** pentru desktop: un CSS Grid rigid în care navigația laterală și zona de conținut aveau fiecare propriul flux independent de scroll, în timp ce pe mobil se folosea o consolă tactilă orizontală. **Intersection Observer API** a fost configurat cu margini de rădăcină precise (`-20% 0px -70% 0px`) pentru a detecta vizibilitatea articolelor și a sincroniza starea activă în sidebar. Șase mecanisme JavaScript coordonate guvernau cockpitul: ascunderea/afișarea navbar-ului pe direcția de scroll, urmărirea secțiunilor active, re-declanșarea animației de typing, tracking-ul radar pe desktop, interceptarea anti-deplasare a ancorelor și auto-scroll-ul HUD pe mobil.
+Nu l-am șters. Am stat cu problema trei zile — trei zile de `will-change: transform, opacity`, de înlocuit filtrele grele de blur cu metrici stricte de `inset` și `box-shadow`, de forțat browserul să izoleze ochiurile 3D pe straturi GPU dedicate de compozitare. În a treia noapte, contorul de cadre s-a fixat la 60 FPS și a rămas acolo. Icosaedrul a trăit. Ventilatoarele s-au liniștit. Am închis laptopul la 3 AM și am stat în întuneric, ascultând tăcerea acolo unde fusese throttling-ul termic.
 
-Strategia bilingvă era deja prezentă în Manual_project prin fișierele separate `style-en.css` și `style-ro.css`, care asigurau suprascrieri CSS localizate fără a sparge layout-ul. Conceptul de pagină recursivă — `recursive-blueprint.html` — a fost gândit ca un terminal split-screen care preia și afișează dinamic propriul cod sursă al proiectului, transformând baza de cod într-un instrument didactic auto-documentat. Aici se vede cel mai clar ideea de „proiect în proiect".
+Momentul acela — stabilizarea icosaedrului — este originea secretă a lui `D::0dy55ey`. Fiecare decizie tehnică de atunci a fost modelată de știința că frumusețea e fragilă, că performanța nu e opțională și că o mașină împinsă la limită îți va spune exact unde o doare, dacă asculți.
 
-Stadiul curent al proiectului este acela al unei platforme interactive de jurnal tehnic și documentare, cu intenție clară de extindere către o formă publică. Din materiale reiese că proiectul nu urmărește doar afișarea rezultatului final, ci și expunerea procesului, a iterațiilor și a deciziilor structurale. Aceasta îi dă atât valoare pedagogică, cât și valoare de portofoliu.
+Alte moșteniri dinaintea crizei:
 
-Numele `D::0dy55ey` trimite la navigație cosmică, comandă de bord, telemetrie și explorare digitală. Atmosfera vizuală este construită în jurul unor referințe precum `Solaris`, ecrane CRT, HUD-uri translucide și accente neon, integrate într-un limbaj narativ tehnic. Aici, interfața nu este doar un strat de prezentare, ci și un instrument de orientare și sens.
+- Layout-ul **Dual-Isolate-Scroll**: un CSS Grid unde sidebarul și conținutul respiră pe fluxuri separate de scroll, ca doi membri ai echipajului în compartimente diferite ale aceleiași nave. Pe mobil, o consolă tactilă orizontală înlocuiește splitul de desktop.
+- **Intersection Observer API** configurat cu margini de rădăcină de `-20% 0px -70% 0px` — precis ca o tăietură de lunetist, detectând vizibilitatea articolelor pentru a sincroniza starea activă a sidebarului. Am calibrat marginile astea manual, derulând în sus și în jos o oră întreagă până când trackingul s-a simțit *previzibil*.
+- Șase mecanisme JavaScript coordonate care guvernează cockpitul: navbarul știe când să se ascundă, mașina de scris știe când să reia, radarul știe unde te uiți.
 
-Structura documentată indică o arhitectură modulară cu pagină principală și pagini satelit, incluzând `index.html`, `recursive-blueprint.html`, `bibliography.html`, fișiere CSS globale și localizate, plus `script.js` pentru logica interactivă. Existența variantelor `style-ro.css` și `style-en.css` confirmă intenția unei localizări controlate, nu a unei traduceri superficiale.
+Strategia bilingvă era deja acolo, în Manual_project: `style-en.css` și `style-ro.css` ca vieți separate sub aceeași piele. Pagina recursivă — `recursive-blueprint.html` — era cea mai personală: un terminal split-screen care preia și afișează propriul cod sursă al proiectului. Un proiect care se citește pe sine. Am construit-o pentru că voiam ca baza de cod să fie propriul său profesor — să închidă cercul dintre scris și înțeles.
 
-Proiectul folosește o ierarhie semantică strictă, cu un singur `h1`, apoi `h2` pentru volume, `h3` pentru capitole și niveluri mai adânci pentru anexe și submodule. O decizie importantă este tratarea lui React și Angular ca extensii ale capitolului JavaScript, nu ca discipline separate; astfel, structura rămâne didactică, logică și ușor de urmărit.
+Numele `D::0dy55ey` a venit mai târziu, dar aștepta. Trimite la navigație cosmică, sisteme de comandă, telemetrie, explorare digitală. Nu e un titlu; e o coordonată. Atmosfera vizuală — fosfor CRT, straturi HUD translucide, accente neon, fundaluri void-black — nu e un stil aplicat din exterior. E vocea naturală a interfeței, învățată dintr-un an de privit același ecran prin ochi diferiți.
 
-În forma documentată până acum, proiectul este organizat în arii mari precum `Frontend Landscape` și `Database Void`, iar traseele educaționale acoperă HTML, CSS, JavaScript și SQL. Apar și intenții de extindere către module dedicate pentru frameworks, arhive bibliografice și pagini recursive care explică sistemul din interior.
+Proiectul are acum un strat puternic de documentare internă: rezumate de implementare, glosar tehnic, bibliografie și intrări de jurnal care consemnează decizii, bugfix-uri, optimizări și pași viitori. Toate acestea arată că `D::0dy55ey` nu e doar o interfață, ci și o arhivă de proces și un instrument pedagogic.
 
-Sistemul vizual actual folosește o paletă proprie cu tonuri precum `space-dark`, `void-black`, `solar-mint`, `nebula-pink`, `nebula-purple`, `amber-glow` și `starlight-blue`. Scanlines-urile CRT, glassmorphism-ul consolelor și separatoarele cu aspect de tăietură laser nu sunt ornament, ci elemente care definesc lectura, ritmul și orientarea în conținut.
-
-Interfața a fost gândită ca un command deck cu navigație sticky, smooth scroll și separare clară între pagina principală și logurile dedicate. Pe desktop există o logică de tip dual-isolate-scroll, iar pe mobil o consolă tactilă reconfigurată pentru swipe orizontal și spațiere calibrată sub HUD. Această organizare urmărește să păstreze proiectul ușor de parcurs, fără să îl facă static.
-
-Logica interactivă include ascunderea și reapariția navbar-ului în funcție de direcția scroll-ului, urmărirea secțiunilor active, re-trigger pentru animații și sincronizare automată în sidebar. În `script.js` apar mai multe mecanisme coordonate, inclusiv tracking prin `Intersection Observer`, control al ancorelor pe desktop și auto-scroll pentru HUD pe mobil.
-
-Una dintre componentele definitorii este `recursive-blueprint.html`, descrisă ca un terminal recursiv auto-documentat care citește și afișează dinamic fișiere de cod precum `script.js`, `style.css`, `index.html` și `html-log.html`. Aici se vede cel mai clar ideea de proiect în proiect: pagina nu doar afișează sistemul, ci se și raportează la el din interior.
-
-Materialele existente descriu și etape de experimentare cu structuri 3D, de la inele sferice animate până la un reactor geodezic sau icosaedric integrat în hero și în modulul recursiv. A urmat și o fază de optimizare a randării, cu reducerea încărcării GPU și stabilizarea animațiilor pentru un profil fluid de aproximativ 60 FPS.
-
-Proiectul este deja conceput ca sistem bilingv, cu intenția clară de a oferi conținut și organizare atât în română, cât și în engleză. Existența fișierelor localizate și a jurnalelor paralele arată că bilingvismul este structural, nu decorativ.
-
-Până în acest punct, proiectul are deja o componentă puternică de documentare internă, incluzând rezumate de implementare, glosar tehnic, bibliografie și intrări de jurnal care consemnează decizii, bugfix-uri, optimizări și pași viitori. Toate aceste materiale arată că `D::0dy55ey` nu este doar o interfață, ci și o arhivă de proces și un instrument pedagogic.
-
-Pe baza stadiului actual, pașii firești sunt:
+Pe baza stadiului actual, următorii pași firești sunt:
 
 - consolidarea structurii finale a repo-ului.
 - separarea clară între pagini nucleu, documentație și jurnale.
-- refacerea sau rafinarea `index.html` ca hartă principală.
+- rafinarea `index.html` ca hartă principală.
 - organizarea manifestului și a jurnalelor bilingve într-o schemă predictibilă.
 - migrarea controlată a atmosferei și stilului din proiectul anterior către noua arhitectură.
 
-### Manual Project — Dosarul de Dezvoltare (Aprilie–Iunie 2026)
+## Manual_project — cele cinci faze
 
-Proiectul-mamă a fost construit în cinci faze distincte, fiecare lăsându-și amprenta asupra arhitecturii și identității `D::0dy55ey`:
+Proiectul-mamă n-a fost scris dintr-o suflare. A crescut prin cinci faze distincte, fiecare cu registrul ei emoțional:
 
-**Faza 1: Coca de Oțel (28–30 Aprilie 2026)** — Arhitectură HTML inițială cu două volume (*Frontend Landscape* și *Database Void*), ierarhie strictă de titluri h1→h5, paletă CSS retro-futuristă (solar-mint, nebula-pink, amber-warning, space-dark), scanline-uri CRT, navbar glassmorphism, layout Dual-Isolate-Scroll, Intersection Observer API și primele mecanisme JavaScript (navbar inteligent, urmărire secțiuni active, re-declanșare animație de typing).
+**Faza 1: Coca de Oțel (28–30 Aprilie 2026).** Trei zile de construcție pură. Arhitectură HTML cu două volume, ierarhie strictă h1→h5, prima paletă CSS care s-a simțit *bine* (solar-mint, nebula-pink, amber-warning, space-dark). Scanline-uri CRT. Glassmorphism. Primele mecanisme JavaScript — crude după standardele de mai târziu, dar funcționau. Îmi amintesc momentul când navbarul s-a ascuns prima dată la scroll în jos: s-a simțit ca și cum nava s-ar fi trezit.
 
-**Faza 2: Expansiune Modulară (5–20 Mai 2026)** — CSS refactorizat în 11 module auto-documentate cu comentarii inline ce transformă foaia de stil într-un manual live. Separare bilingvă: `style-en.css` și `style-ro.css`. Matricea sferică duală 3D (inele concentrice pe axe încrucișate). Interceptare anti-deplasare a ancorelor. Auto-centrare radar pe desktop.
+**Faza 2: Expansiunea Modulară (5–20 Mai 2026).** Perioada disciplinei. CSS refactorizat în unsprezece module auto-documentate, fiecare cu comentarii inline care transformau foaia de stil într-un manual live. Separarea bilingvă: `style-en.css` și `style-ro.css`. Matricea sferică duală 3D — inele concentrice pe axe încrucișate — rotindu-se în întuneric. Învățam CSS nu ca limbaj, ci ca material — ca sticla sau oțelul.
 
-**Faza 3: Blueprint-ul Recursiv & Criza GPU (20 Mai–11 Iunie 2026)** — `recursive-blueprint.html`: un terminal split-screen care preia și afișează dinamic codul sursă live. Un icosaedru cu 20 de fețe construit cu CSS `clip-path` pur și coordonate sferice 3D. Blocaj GPU critic cauzat de triunghiuri vectoriale suprapuse plus `filter: drop-shadow()`, ducând la înghețarea browserului și throttling termic pe CPU. Rezolvat prin înlocuirea filtrelor de blur cu metrici `inset`/`box-shadow` și injectarea de `will-change: transform, opacity`, forțând straturi GPU dedicate de compozitare și stabilizând la 60 FPS.
+**Faza 3: Blueprint-ul Recursiv și Criza GPU (20 Mai–11 Iunie 2026).** Cea mai grea fază. Icosaedrul s-a născut aici și aproape a murit aici. Douăzeci de fețe de geometrie CSS pură, construite cu coordonate sferice pe care le-am calculat pe hârtie înainte de a scrie o singură linie de cod. Apoi blocajul. Apoi soluția. Faza asta m-a învățat ceva ce niciun tutorial nu poate: browserul nu e o pânză goală, ci un motor fizic, și fiecare pixel are un cost.
 
-**Faza 4: Motorul cu 6 Mecanisme (26–29 Mai 2026, paralel cu Faza 3)** — Șase mecanisme JavaScript coordonate documentate în `script.js`: Scutul de Vizibilitate al Cockpitului, Cuplarea Accesibilității Logurilor, Motorul de Re-declanșare a Terminalului, Radarul de Tracking pe Desktop, Motorul Anti-Deplasare pe Desktop și Auto-Scroll HUD Mobil. Ulterior extins cu MECANISMUL-07 (căutare/filtrare).
+**Faza 4: Motorul cu 6 Mecanisme (26–29 Mai 2026, paralel cu Faza 3).** În timp ce icosaedrul lupta pentru viață, stratul JavaScript devenea în liniște o mașinărie a lui: Scutul de Vizibilitate al Cockpitului, Cuplarea Accesibilității Logurilor, Motorul de Re-declanșare a Terminalului, Radarul de Tracking pe Desktop, Motorul Anti-Deplasare pe Desktop, Auto-Scroll HUD Mobil. Șase mecanisme. Un singur cockpit. Le-am documentat pe fiecare în `script.js` cu o dedicare care m-a surprins chiar și pe mine.
 
-**Faza 5: Stabilizare & Viraj Bilingv (Iunie 2026)** — Arhitectură bilingvă completă formalizată, curriculum HTML de 45 de zile mapat, `bibliography.html` cu grile de date, `sql-log.html` planificat. Calitate cod: validare W3C, curățare trailing slash, eliminare cod mort. Proiectul s-a stabilizat și a devenit fundația pentru `D::0dy55ey`.
+**Faza 5: Stabilizare și Viraj Bilingv (Iunie 2026).** Nava a încetat să tremure. Arhitectura s-a formalizat. Un curriculum HTML de 45 de zile mapat. `bibliography.html` cu grile de date. Validare W3C, curățare trailing slash, eliminare cod mort. Proiectul a devenit *stabil* — nu terminat, dar gata să poarte greutate. A devenit fundația pentru `D::0dy55ey` fără să știe vreodată că va fi.
 
-### Referințe Culturale & Inspirații
+## Referințe culturale — vocile pe care le aud când lucrez
 
-Identitatea vizuală și conceptuală atât a Manual_project, cât și a `D::0dy55ey` se hrănește dintr-o rețea deliberat largă de surse culturale. Fiecare intrare este urmată de o notă despre cum a modelat stilul proiectului și de referința completă. Această listă este deschisă și va fi extinsă pe măsură ce apar noi referințe.
+Fiecare interfață e o conversație cu morții. Acestea sunt vocile care mă înconjoară în cockpit:
 
-**Literatură:**
+### Literatură
 
-- **Stanisław Lem — *Solaris* (1961)**
-  *Influență:* Romanul oferă tonul contemplativ, filozofic care pătrunde interfața. De la Lem am adoptat ideea că necunoscutul nu este un dușman de cucerit, ci o prezență de contemplat — interfața oglindește aceasta prin faptul că nu se dezvăluie niciodată complet, păstrând adâncime dincolo de glassmorphism și măștile CRT. Oceanul din Solaris este modelul pentru „vidul" care înconjoară fiecare panou.
-  *Sursă:* Lem, Stanisław. *Solaris*. Varșovia: Wydawnictwo MON, 1961. Traducere în engleză: Walker, 1970.
+**Stanisław Lem — *Solaris* (1961)**
+Mă întorc la romanul ăsta așa cum alții se întorc în port. M-a învățat că necunoscutul nu e un puzzle de rezolvat, ci o prezență cu care stai. Interfața oglindește asta: nu se dezvăluie niciodată complet; e întotdeauna un alt strat dincolo de glassmorphism, o altă adâncime dincolo de masca CRT. Oceanul din Solaris e vidul care înconjoară fiecare panou al acestei nave.
+*Sursă:* Lem, Stanisław. *Solaris*. Varșovia: Wydawnictwo MON, 1961. Traducere în engleză: Walker, 1970.
 
-- **Joseph Conrad — *Inima Întunericului* (1899)**
-  *Influență:* Călătoria pe fluviu într-un spațiu necunoscut, moral ambiguu este scheletul narativ al interfeței. Utilizatorul este Marlow, navigând prin volume de cod către un nucleu de înțelegere mereu amânat. HUD-ul cockpitului, fundalurile void-black și luminile amber de avertizare codifică tensiunea acestei coborâri.
-  *Sursă:* Conrad, Joseph. *Heart of Darkness*. Serializat în *Blackwood's Magazine*, 1899. Prima ediție carte: *Youth: A Narrative; and Two Other Stories*. Londra: Blackwood, 1902.
+**Joseph Conrad — *Inima Întunericului* (1899)**
+Călătoria pe fluviu, în sus, într-un spațiu necunoscut și moral ambiguu — e scheletul narativ al fiecărei acțiuni de scroll pe această interfață. Utilizatorul e Marlow. Baza de cod e fluviul. Nucleul de înțelegere se depărtează pe măsură ce te apropii, pentru că înțelegerea nu e o destinație, ci o direcție.
+*Sursă:* Conrad, Joseph. *Heart of Darkness*. Serializat în *Blackwood's Magazine*, 1899. Prima ediție carte: *Youth: A Narrative; and Two Other Stories*. Londra: Blackwood, 1902.
 
-- **Joseph Conrad — *Nostromo* (1904)**
-  *Influență:* Atmosfera industrial-maritimă a cockpitului — coca de oțel, cartierele echipajului, nava de lucru care nu este elegantă ci funcțională — derivă direct din portretul lui Conrad al muncii, argintului și corupției într-un port sud-american fictiv. Numele în sine evocă o lume a cargo, datoriei și greutății morale.
-  *Sursă:* Conrad, Joseph. *Nostromo: A Tale of the Seaboard*. Londra: Harper & Bros, 1904.
+**Joseph Conrad — *Nostromo* (1904)**
+Din romanul ăsta am luat atmosfera navei de lucru — coca de oțel, cartierele echipajului, senzația că o navă nu e o casă, ci o responsabilitate. Nostromo din *Alien* poartă aceeași greutate: o navă de marfă cu nituri, abur și coridoare murdare. Asta e estetica cockpitului.
+*Sursă:* Conrad, Joseph. *Nostromo: A Tale of the Seaboard*. Londra: Harper & Bros, 1904.
 
-- **Herman Melville — *Moby-Dick* (1851)**
-  *Influență:* Căutarea obsesivă a unei entități eluzive, copleșitoare se mapează pe însuși traseul de învățare. Fiecare intrare de jurnal este un jurnal de balenieră — o înregistrare a urmăririi, eșecului și rarisimei perspective. Liniile cosmice despărțitoare din interfață sunt orizontul oceanului între o goană și următoarea.
-  *Sursă:* Melville, Herman. *Moby-Dick; or, The Whale*. New York: Harper & Brothers, 1851.
+**Herman Melville — *Moby-Dick* (1851)**
+Goana obsesivă după o entitate care e întotdeauna dincolo de orizont. Fiecare intrare de jurnal e un jurnal de balenieră — o înregistrare a urmăririi, eșecului și a rarisimei perspective luminoase. Liniile cosmice despărțitoare din interfață sunt orizontul oceanului între o goană și următoarea.
+*Sursă:* Melville, Herman. *Moby-Dick; or, The Whale*. New York: Harper & Brothers, 1851.
 
-- **Edgar Allan Poe — povestiri și poeme (1830–1840)**
-  *Influență:* Poe m-a învățat că atmosfera nu este decor ci sens. Groaza de a fi îngropat de viu, claustrofobia minții întoarse spre interior — acestea se traduc în containerele strânse de scroll, pulsul cursorului de neon și senzația că interfața este un spațiu limitat din care datele ies ca o bătaie de inimă dintr-o criptă.
-  *Sursă:* Poe, Edgar Allan. *The Complete Tales and Poems*. New York: Modern Library, 1938 (compilație).
+**Edgar Allan Poe — povestiri și poeme (1830–1840)**
+Poe m-a învățat că atmosfera nu e decor, ci sens. Groaza de a fi îngropat de viu, claustrofobia minții întoarse spre interior — astea se traduc în containerele strânse de scroll, pulsul cursorului de neon, senzația că interfața e un spațiu limitat din care datele ies ca o bătaie de inimă dintr-o criptă.
+*Sursă:* Poe, Edgar Allan. *The Complete Tales and Poems*. New York: Modern Library, 1938 (compilație).
 
-- **H. P. Lovecraft — weird tales (1917–1937)**
-  *Influență:* Groaza cosmică a lui Lovecraft — realizarea că umanitatea nu este centrală în univers — a modelat refuzul proiectului de a folosi un design vesel, plat. Vastitatea vidului, geometriile non-umane ale icosaedrului, indiferența luminilor amber de alarmă: toate împrumută din estetica lui a scalei și tăcerii.
-  *Sursă:* Lovecraft, H. P. *The Weird Tales*. Providence, RI: Wandering Star Press, 1997 (variorum definitiv).
+**H. P. Lovecraft — weird tales (1917–1937)**
+Groaza lui cosmică — realizarea treptată că umanitatea nu e centrală în univers — a modelat refuzul proiectului de a folosi un design vesel, plat. Vastitatea vidului, geometriile non-umane ale icosaedrului, indiferența luminilor amber de alarmă: toate împrumută din estetica lui a scalei și tăcerii.
+*Sursă:* Lovecraft, H. P. *The Weird Tales*. Providence, RI: Wandering Star Press, 1997 (variorum definitiv).
 
-- **William Hope Hodgson — *Casa de pe Hotar* (1908) și *Țara Nopții* (1912)**
-  *Influență:* Aceasta este o referință profund formativă. Viziunea lui Hodgson asupra structurilor antice, ciclopiene, plutind într-un cosmos care nu este nici ostil nici prietenos ci pur și simplu *vast* și *vechi* este cea mai puternică influență literară asupra imaginației arhitecturale a proiectului. Pagina recursive-blueprint, reactorul armilar, senzația că baza de cod este o ruină pe care o explorezi — toate vin de la Hodgson. Călătoria din *Țara Nopții* printr-o întuneric etern către o piramidă îndepărtată de lumină este blueprint-ul emoțional al fiecărei acțiuni de scroll pe această interfață.
-  *Sursă:* Hodgson, William Hope. *The House on the Borderland*. Londra: Chapman and Hall, 1908. *The Night Land*. Londra: Eveleigh Nash, 1912.
+**William Hope Hodgson — *Casa de pe Hotar* (1908) și *Țara Nopții* (1912)**
+Asta e cea mai adâncă rană. Viziunea lui Hodgson asupra structurilor antice, ciclopiene, plutind într-un cosmos care nu e nici ostil nici prietenos, ci pur și simplu *vast* și *vechi* — asta e cea mai puternică influență literară asupra imaginației arhitecturale a proiectului. Pagina recursive-blueprint, reactorul armilar, senzația că baza de cod e o ruină pe care o explorezi: totul vine de la Hodgson. Am citit *Țara Nopții* într-o noapte de insomnie, și când am terminat-o, am deschis editorul și am început să construiesc o pagină care să poată ține acea senzație.
+*Sursă:* Hodgson, William Hope. *The House on the Borderland*. Londra: Chapman and Hall, 1908. *The Night Land*. Londra: Eveleigh Nash, 1912.
 
-**Cinema:**
+### Cinema
 
-- **Andrei Tarkovsky — *Solaris* (1972)**
-  *Influență:* Referința cinematografică principală. Planurile lungi, meditative ale lui Tarkovsky, folosirea apei și vegetației ca contrapunct organic la tehnologia rece, și refuzul său de a explica extraterestrul — toate acestea m-au învățat că o interfață poate fi *lentă*, că poate susține tăcerea, și că cel mai puternic design lasă întrebări deschise. Paleta cromatică (verde desaturat, negru profund, alb sepia) este o traducere directă a peliculei sale.
-  *Sursă:* *Solaris*. Regia: Andrei Tarkovsky. Mosfilm, 1972. Bazat pe romanul lui Stanisław Lem.
+**Andrei Tarkovsky — *Solaris* (1972)**
+Referința cinematografică principală, dar mai mult decât atât: un profesor. Planurile lungi, meditative ale lui Tarkovsky, folosirea apei și vegetației ca contrapunct organic la tehnologia rece, refuzul lui de a explica extraterestrul — totul m-a învățat că o interfață poate fi *încetă*, că poate susține tăcerea și că cel mai puternic design lasă întrebări deschise. Paleta cromatică — verzi desaturați, negru profund, alb sepia — e o traducere directă a peliculei sale.
+*Sursă:* *Solaris*. Regia: Andrei Tarkovsky. Mosfilm, 1972. Bazat pe romanul lui Stanisław Lem.
 
-- **Ridley Scott — *Alien* (1979)**
-  *Influență:* Nostromo nu este o navă spațială elegantă; este o navă de lucru cu nituri, abur și coridoare murdare. Acea estetică a *hardware-ului industrial funcțional* — terminalele CRT, butoanele tip întrerupător, luminile amber de alarmă — este limbajul vizual al cockpitului. Extraterestrul însuși nu este niciodată complet văzut, la fel cum baza de cod nu se dezvăluie niciodată complet; operează la marginea vederii, dincolo de sticlă și scanline-uri.
-  *Sursă:* *Alien*. Regia: Ridley Scott. 20th Century Fox, 1979.
+**Ridley Scott — *Alien* (1979)**
+Nostromo nu e o navă spațială elegantă; e o navă de lucru cu nituri, abur și coridoare murdare. Estetica aia de *hardware industrial funcțional* — terminale CRT, butoane tip întrerupător, lumini amber de alarmă — e limbajul vizual al cockpitului. Extraterestrul însuși nu e niciodată complet văzut, la fel cum baza de cod nu se dezvăluie niciodată complet; operează la marginea vederii, dincolo de sticlă și scanline-uri.
+*Sursă:* *Alien*. Regia: Ridley Scott. 20th Century Fox, 1979.
 
-- ***Alien* ca adaptare conradiană**
-  *Influență:* Numele navei *Nostromo* este luat direct din romanul lui Conrad, iar structura filmului — un echipaj care călătorește într-un vid necunoscut, confruntându-se cu o forță care reflectă propria lor lăcomie și teamă — este un ecou nerecunoscut al *Inimii Întunericului*. Această referință literar-cinematografică stratificată m-a învățat că un singur artefact (o navă spațială, o culoare, un font) poate purta greutatea mai multor tradiții culturale simultan.
-  *Sursă:* Linia de numire este confirmată de Ted Billy, "A Curious Case of Influence: Nostromo and Alien(s)", *Conradiana*, Vol. 21, No. 2, 1989, pp. 147–157. Articolul Wikipedia pentru *Nostromo* (romanul lui Conrad) documentează numirea navei spațiale și referința *Sulaco* din *Aliens* (1986), stabilind linia directă Conrad-to-Alien.
+***Alien* ca adaptare conradiană**
+Numele navei *Nostromo* e luat direct din romanul lui Conrad, iar structura filmului — un echipaj care călătorește într-un vid necunoscut, confruntându-se cu o forță care reflectă propria lor lăcomie și teamă — e un ecou nerecunoscut al *Inimii Întunericului*. Această referință stratificată m-a învățat că un singur artefact — o navă spațială, o culoare, un font — poate purta greutatea mai multor tradiții culturale simultan.
+*Sursă:* Linia de numire e confirmată de Ted Billy, "A Curious Case of Influence: Nostromo and Alien(s)", *Conradiana*, Vol. 21, No. 2, 1989, pp. 147–157. Articolul Wikipedia pentru *Nostromo* (romanul lui Conrad) documentează numirea navei spațiale și referința *Sulaco* din *Aliens* (1986), stabilind linia directă Conrad-to-Alien.
 
-**Muzică:**
+### Muzică
 
-- **Oxiplegatz (1993–?)**
-  *Influență:* Acest proiect suedez de metal avangardist (format de Alf Svensson, fost în At the Gates) creează muzică simfonică cu tematică science-fiction, versuri despre explorarea spațiului, contact extraterestru și izolare cosmică. Albumul *Sidereal Journey* și coperta sa — cu îmbinarea dintre mecanica cerească și texturile metalice industriale — a informat direct direcția vizuală a proiectului: frumusețea rece a spațiului profund redată prin rugozitatea mașinăriei grele. Temele lirice ale trupei ("battle of species", "abandon earth", "first contact") au devenit template-uri narative pentru conceptul de explorare-ca-confruntare al interfeței.
-  *Sursă:* Oxiplegatz. *Fairytales* (1994), *Worlds and Worlds* (1996), *Sidereal Journey* (1998). Encyclopaedia Metallum (Metal Archives): https://www.metal-archives.com/bands/Oxiplegatz/7750 . Gen: Symphonic/Avant-garde Black Metal. Teme: Science fiction, Spațiul cosmic, Fantasy.
+**Oxiplegatz (1993–?)**
+Am descoperit proiectul ăsta suedez de metal avangardist în timpul crizei icosaedrului. Îmbinarea de black metal simfonic cu versuri science-fiction — explorare spațială, contact extraterestru, izolare cosmică — a devenit coloana sonoră a celei mai grele munci inginerești a proiectului. Albumul *Sidereal Journey*, cu arta sa de copertă care îmbină mecanica cerească cu texturi metalice, a informat direct direcția vizuală: frumusețea rece a spațiului profund redată prin rugozitatea mașinăriei grele.
+*Sursă:* Oxiplegatz. *Fairytales* (1994), *Worlds and Worlds* (1996), *Sidereal Journey* (1998). Encyclopaedia Metallum (Metal Archives): https://www.metal-archives.com/bands/Oxiplegatz/7750 . Gen: Symphonic/Avant-garde Black Metal. Teme: Science fiction, Spațiul cosmic, Fantasy.
 
-- **Cryo Chamber (YouTube / Bandcamp, fondat 2011)**
-  *Influență:* Cryo Chamber este un label de dark ambient condus de Simon Heath (Atrium Carceri), specializat în peisaje sonore cinematografice, atmosferice care evocă „spații ambientale, narațiuni de anvergură și călătorii sonore către alte lumi". Dronurile vaste, lente ale albumelor precum *Hastur* (un tribut Lovecraft colaborativ) sau *Exo* de Tineidae au modelat direct registrul emoțional al proiectului: rece, răbdător și imens. Am lucrat adesea la interfață ascultând cataloagele lor, iar senzația de a pluti printr-un spațiu întunecat, străvechi — nici ostil, nici primitor — a migrat direct în design.
-  *Sursă:* Cryo Chamber. Canal YouTube (https://www.youtube.com/@cryochamberlabel) cu 426K abonați. Pagina Bandcamp (https://cryochamber.bandcamp.com). După cum a descris Heath într-un interviu cu Bandcamp Daily: „Eram mai interesat de spații ambientale, narațiuni de anvergură și călătorii sonore către alte lumi" (https://daily.bandcamp.com/label-profile/cryo-chamber-dark-ambient-guide, 2020).
+**Cryo Chamber (YouTube / Bandcamp, fondat 2011)**
+Asta e arhitectura ambientală a tăcerii proiectului. Labelul de dark ambient al lui Simon Heath — *Hastur*, *Exo* de Tineidae — a furnizat dronurile lente, vaste pe care le ascultam în timp ce reconstruiam layoutul la 1 AM. Senzația de a pluti printr-un spațiu întunecat, străvechi — nici ostil, nici primitor — a migrat direct în design. Nu pot separa ritmul vizual al acestei interfețe de ritmul audio al discurilor alea.
+*Sursă:* Cryo Chamber. Canal YouTube (https://www.youtube.com/@cryochamberlabel) cu 426K abonați. Pagina Bandcamp (https://cryochamber.bandcamp.com). După cum a descris Heath într-un interviu cu Bandcamp Daily: „Eram mai interesat de spații ambientale, narațiuni de anvergură și călătorii sonore către alte lumi" (https://daily.bandcamp.com/label-profile/cryo-chamber-dark-ambient-guide, 2020).
 
-**Design & Arte Vizuale:**
+### Design & Arte Vizuale
 
-- **Sfere armilare renascentiste (sec. XV–XVII)**
-  *Influență:* Sfera armilară — un model mecanic al sferei cerești făcut din inele metalice imbricate — este prototipul structural direct pentru header-ul reactorului icosaedric (clasa `.armillary-reactor-core` în codul sursă). Ca și un astronom renascentist, utilizatorul stă în centrul unui univers mecanic ale cărui inele cartografiază mișcarea corpurilor invizibile. Icosaedrul cu 20 de fețe nu este un moft decorativ; este un instrument de calcul pentru orientare, exact cum era sfera armilară pentru navigația cerească. Interacțiunea de hover — în care sfera accelerează și fețele se luminează — simulează activarea unui instrument cognitiv.
-  *Sursă:* Referință istorică generală. Sfera armilară este documentată în colecții de instrumente științifice precum Museo Galileo din Florența și Oxford Museum of the History of Science. Pentru aplicarea specifică în design web și denumirea clasei `.armillary-reactor-core`, vezi codul sursă Manual_project (JURNAL.md, rândurile 3095–3123 și modulul `style.css` pentru `.armillary-reactor-core`).
+**Sfere armilare renascentiste (sec. XV–XVII)**
+Sfera armilară — un model mecanic al sferei cerești făcut din inele metalice imbricate — e prototipul structural direct pentru headerul reactorului icosaedric (clasa `.armillary-reactor-core` în codul sursă). Ca un astronom renascentist, utilizatorul stă în centrul unui univers mecanic ale cărui inele cartografiază mișcarea corpurilor invizibile. Am numit clasa înainte s-o construiesc, și numele m-a forțat să construiesc ceva vrednic de ea.
+*Sursă:* Referință istorică generală. Sfera armilară e documentată în colecții de instrumente științifice precum Museo Galileo din Florența și Oxford Museum of the History of Science. Pentru aplicarea specifică în design web și denumirea clasei `.armillary-reactor-core`, vezi codul sursă Manual_project (JURNAL.md, rândurile 3095–3123 și modulul `style.css` pentru `.armillary-reactor-core`).
 
-- **Monitoare CRT / terminale hardware din anii 1970**
-  *Influență:* Scanline-urile (`body::before` cu background raster dual), strălucirea verde fosforic a blocurilor de cod, animația de pâlpâire catodică (`crt-flicker`) și efectul de ecran CRT bombat (`inset box-shadow` pe containerele terminalului) recreează experiența de a sta în fața unui monitor militar industrial din anii 1970. Aceasta nu este nostalgie de dragul nostalgiei: CRT-ul impune o *limită materială* asupra digitalului — interfața recunoaște că este făcută din sticlă, fosfor și fascicule de electroni. Ea refuză imaterialitatea curată a designului plat modern.
-  *Sursă:* Implementare originală documentată în `style.css` al Manual_project (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, selectorul `body::before`) și `JURNAL.md` rândurile 822–826, 5481. Efectul face referire la terminale autentice din anii 1970 precum VT100 și IBM 3270.
+**Monitoare CRT / terminale hardware din anii 1970**
+Scanline-urile (`body::before` cu background raster dual), strălucirea verde fosforic a blocurilor de cod, animația de pâlpâire catodică (`crt-flicker`), efectul de ecran CRT bombat (`inset box-shadow` pe containerele terminalului) — toate recreează experiența de a sta în fața unui monitor militar industrial din anii 1970. Asta nu e nostalgie. CRT-ul impune o *limită materială* asupra digitalului: interfața recunoaște că e făcută din sticlă, fosfor și fascicule de electroni. Refuză imaterialitatea curată a designului plat modern.
+*Sursă:* Implementare originală documentată în `style.css` al Manual_project (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, selectorul `body::before`) și `JURNAL.md` rândurile 822–826, 5481. Efectul face referire la terminale autentice din anii 1970 precum VT100 și IBM 3270.
 
-- **Space Age / Retro-futurism (1950–1970)**
-  *Influență:* Fontul geometric (Space Grotesk), butoanele în formă de capsulă, etichetele tehnice ștanțate și folosirea culorilor amber și mint ca indicatori de stare aparțin limbajului vizual al Epocii Spațiale — perioada în care viitorul era imaginat ca o mașină curată, rațională, geometrică. Proiectul respinge ironia postmodernă în favoarea acestui futurism *sincer*: crede că o interfață poate fi atât funcțională, cât și aspirațională.
-  *Sursă:* Activele de design sunt originale (fontul Space Grotesk de Florian Karsten, disponibil prin Google Fonts). Limbajul vizual face referire la NASA Graphics Standards Manual (1976, de Richard Danne și Bruce Blackburn) și la tradiția mai largă Mid-Century Modern / arhitectură Googie.
+**Space Age / Retro-futurism (1950–1970)**
+Fontul geometric (Space Grotesk), butoanele în formă de capsulă, etichetele tehnice ștanțate, indicatorii de stare amber și mint — toate aparțin limbajului vizual al Epocii Spațiale, perioada în care viitorul era imaginat ca o mașină curată, rațională, geometrică. Proiectul respinge ironia postmodernă în favoarea acestui futurism *sincer*.
+*Sursă:* Fontul Space Grotesk de Florian Karsten (Google Fonts). Limbajul vizual face referire la NASA Graphics Standards Manual (1976, de Richard Danne și Bruce Blackburn) și la tradiția mai largă Mid-Century Modern / arhitectură Googie.
 
-- **Cyberpunk (1980–prezent)**
-  *Influență:* Culorile neon-pink și magenta, fundalurile întunecate cu accente luminoase, senzația că interfața este o „consolă piratată într-un sistem mai mare" — toate sunt gesturi cyberpunk. Dar proiectul folosește deliberat *gramatica vizuală* a cyberpunk-ului fără narațiunea sa distopică: aici, cockpitul de neon este un spațiu de învățare și explorare, nu de supraveghere corporatistă.
-  *Sursă:* Estetica cyberpunk este extrasă din mișcarea mai largă (William Gibson — *Neuromancer*, 1984; Ridley Scott — *Blade Runner*, 1982; manga *Akira* de Katsuhiro Otomo, 1988). Aplicarea specifică în modulele CSS ale acestui proiect este documentată în `JURNAL.md` (MODULE 07 și MODULE 08: "The Cyberpunk Category Card").
+**Cyberpunk (1980–prezent)**
+Accentele neon-pink și magenta, fundalurile întunecate cu lumini strălucitoare, senzația că interfața e o consolă piratată într-un sistem mai mare — toate gesturi cyberpunk, dar folosite fără narațiunea distopică. Aici, cockpitul de neon e un spațiu de învățare și explorare, nu de supraveghere corporatistă.
+*Sursă:* Gibson, William. *Neuromancer*. New York: Ace, 1984. Scott, Ridley. *Blade Runner*. Warner Bros, 1982. Otomo, Katsuhiro. *Akira*. Kodansha, 1982–1990 (manga); Tokyo Movie Shinsha, 1988 (film). Modulele CSS 7 și 8 din Manual_project.
 
-- **Glassmorphism (tendință UI din anii 2020)**
-  *Influență:* Panourile translucide de sticlă mată (`backdrop-filter: blur` pe barele de navigare, cardurile de categorii și footer) simulează materiale fizice de cockpit — acrilic, sticlă fumurie, policarbonat. Aceasta nu este o tendință pur decorativă: creează o adâncime stratificată care oglindește stratificarea conceptuală a proiectului însuși (interfață / cod / comentariu).
-  *Sursă:* Implementare originală în `style.css` al Manual_project (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). Tendința UI mai largă a fost documentată pe platforme de design precum Dribbble și UX Collective (circa 2020–2021), dar proiectul o aplică într-un context strict industrial-1970, nu modern-elegant.
+**Glassmorphism (tendință UI din anii 2020)**
+Panourile translucide de sticlă mată (`backdrop-filter: blur` pe barele de navigare, cardurile de categorii și footer) simulează materiale fizice de cockpit — acrilic, sticlă fumurie, policarbonat. O adâncime stratificată care oglindește stratificarea conceptuală a proiectului însuși: interfață, cod, comentariu.
+*Sursă:* Implementare originală în `style.css` al Manual_project (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). Tendința UI mai largă documentată pe Dribbble și UX Collective (circa 2020–2021).
 
-- **HUD (Heads-Up Display) — adaptat din aviație**
-  *Influență:* Bara de navigare sticky, sidebar-ul persistent cu urmărirea stării active, mesajele de status de tip telemetrie (ex: "SYS_STATUS: READY_TO_WRITE //") — toate simulează experiența de a pilota o navă. Interfața este proiectată nu pentru lectură pasivă ci pentru *navigare activă* prin spațiul informațional. Metafora HUD a fost adaptată din heads-up display-urile aviatice, unde datele critice de zbor sunt proiectate pe câmpul vizual al pilotului pentru ca acesta să nu trebuiască niciodată să își ia privirea de la lumea exterioară.
-  *Sursă:* Concept original documentat în `JURNAL.md` rândul 35: „Concept de design preluat din aviație, implementat în Digital Odyssey prin elemente de interfață «lipicioase» (position: sticky)."
+**HUD (Heads-Up Display) — adaptat din aviație**
+Bara de navigare sticky, sidebarul persistent cu urmărirea stării active, mesajele de status tip telemetrie ("SYS_STATUS: READY_TO_WRITE //") — toate simulează experiența de a pilota o navă. Am adaptat asta din heads-up display-urile aviatice, unde datele critice de zbor sunt proiectate pe câmpul vizual al pilotului ca să nu fie nevoit să privească niciodată în altă parte.
+*Sursă:* Concept original documentat în `JURNAL.md` rândul 35: „Concept de design preluat din aviație, implementat în Digital Odyssey prin elemente de interfață «lipicioase» (position: sticky)."
 
-**Filozofie & Pedagogie:**
+### Filozofie & Pedagogie
 
-- **Edutainment (auto-documentare recursivă)**
-  *Influență:* Ideea că baza de cod ar trebui să fie propriul său manual — că fiecare modul CSS, fiecare mecanism JavaScript, fiecare structură HTML ar trebui să se explice din interior — este nucleul pedagogic al proiectului. Pagina `recursive-blueprint.html` duce aceasta la concluzia sa logică: preia și afișează propriul cod sursă al proiectului, transformând browserul într-o mașină de predare auto-referențială. Studentul nu citește un fișier de documentare separat; el citește codul care *randează în acest moment pagina pe care o folosește*.
-  *Sursă:* Conceptul de „edutainment recursiv" este original acestui proiect și este pe deplin articulat în `JURNAL.md` rândurile 722–725 și în meta-descrierea `recursive-blueprint.html`. Termenul „Edutainment" însuși datează din mișcarea de software educațional din anii 1970 (de ex., The Oregon Trail, 1971).
+**Edutainment (auto-documentare recursivă)**
+Ideea că baza de cod ar trebui să fie propriul său manual — fiecare modul CSS, fiecare mecanism JavaScript, fiecare structură HTML explicându-se din interior — e nucleul pedagogic al proiectului. Pagina `recursive-blueprint.html` e expresia cea mai pură: preia și afișează propriul cod sursă al proiectului, transformând browserul într-o mașină de predare auto-referențială. Studentul citește codul care *randează chiar în momentul ăsta pagina pe care o folosește*.
+*Sursă:* Conceptul de „edutainment recursiv" e original acestui proiect și e pe deplin articulat în `JURNAL.md` rândurile 722–725 și în meta-descrierea `recursive-blueprint.html`. Termenul „Edutainment" însuși datează din mișcarea de software educațional din anii 1970 (de ex., The Oregon Trail, 1971).
 
-- **Filozofia spațiului narativ (formație academică)**
-  *Influență:* Masteratul meu în literatură americană — cu accent pe weird tales și filozofia spațiului narativ — nu este separat de acest proiect; este încorporat în arhitectura sa. Interfața este proiectată ca un *spațiu narativ navigabil*: fiecare scroll dezvăluie un nou capitol, fiecare hover activează un nou strat de sens, fiecare click teleportează utilizatorul într-un alt sector al poveștii. Proiectul tratează codul ca text literar, iar browserul ca instrument de lectură. Această convingere — că tehnologia și umanioarele aparțin aceleiași conversații — este cea mai profundă influență structurală asupra întregului proiect.
-  *Sursă:* Formație academică, Universitatea din București, Facultatea de Limbi și Literaturi Străine, Master în Literatură Americană (teză despre weird tales și spațiul narativ). Această formație este citată în DAY 01 al ambelor jurnale.
+**Filozofia spațiului narativ (formație academică)**
+Masteratul meu în literatură americană — cu accent pe weird tales și filozofia spațiului narativ — nu e separat de acest proiect; e încorporat în arhitectura lui. Interfața e un *spațiu narativ navigabil*: fiecare scroll dezvăluie un nou capitol, fiecare hover activează un nou strat de sens, fiecare click teleportează utilizatorul într-un alt sector al poveștii. Convingerea asta — că tehnologia și umanioarele aparțin aceleiași conversații — e cea mai profundă influență structurală asupra întregului proiect.
+*Sursă:* Formație academică, Universitatea din București, Facultatea de Limbi și Literaturi Străine, Master în Literatură Americană (teză despre weird tales și spațiul narativ). Această formație e citată în DAY 01 al ambelor jurnale.
 
 ---
 
 # DAY 01 — Prolegomena
 
-Această intrare fixează cadrul conceptual al proiectului `D::0dy55ey` și marchează tranziția de la `Manual_project` către versiunea rafinată, bilingvă și orientată spre portofoliu. Nu este doar o notă de început, ci o declarație de intenție: proiectul trebuie să funcționeze simultan ca sistem tehnic, obiect didactic și formă de prezentare cu identitate proprie.
+Am întors pagina. Asta e senzația pe care o am în seara asta, cu terminalul deschis și cursorul clipind în colțul HUD-ului. `Manual_project` rămâne în urmă — nu ca o epavă, ci ca un port din care am plecat. `D::0dy55ey` e nava pe care o construiesc acum, și această intrare de jurnal e prima înscriere pe harta de navigație: o declarație că proiectul trebuie să respire simultan ca sistem tehnic, ca obiect didactic și ca formă de prezentare cu identitate proprie.
 
-Proiectul se sprijină pe trei piloni principali, care reflectă atât formația mea academică, cât și obiectivele mele de învățare. Primul este **pilonul tehnic**, construit pe informatică, logică, matematică, arhitectură web și disciplină de implementare — meșteșugul de a scrie cod care funcționează, care este curat și care respectă standardele. Al doilea este **pilon didactic**, orientat spre pedagogie, teoria învățării și transmiterea clară a cunoașterii — meșteșugul de a face codul explicabil din interior, astfel încât oricine citește fișierele sursă să poată învăța din ele. Al treilea este **pilon narativ**, ancorat în cultură umanistă, atmosferă literară, imaginație artistică și atenție pentru formă și sens — meșteșugul de a transforma o interfață tehnică într-un spațiu care spune o poveste.
+Proiectul stă pe trei stâlpi, și fiecare poartă greutatea altui strat al formației mele. **Pilonul tehnic** e cel mai vizibil: informatică, logică, matematică, arhitectură web, disciplina de a scrie cod care funcționează și care e curat și care respectă standardele. E meșteșugul de a construi ceva ce nu se rupe. **Pilonul didactic** e orientat spre pedagogie, spre teoria învățării, spre felul în care cunoașterea se transmite — meșteșugul de a face codul explicabil din interior, ca oricine deschide fișierele sursă să poată învăța din ele. **Pilonul narativ** e ancorat în cultura umanistă, în atmosfera literară, în imaginația artistică și în atenția pentru formă și sens — meșteșugul de a transforma o interfață tehnică într-un spațiu care spune o poveste.
 
-Formația mea în filosofie și masteratul în literatură americană — cu accent pe weird tales și filosofia spațiului narativ — nu sunt separate de acest proiect. Ele sunt direct încorporate în arhitectura lui. Ideea că o bază de cod poate fi citită ca un text, că o interfață poate funcționa ca un spațiu narativ și că învățarea programării este o formă de explorare și descoperire provin tocmai din această formație. Metafora navigației cosmice, interfața de comandă, limbajul de telemetrie și auto-documentarea recursivă nu sunt ornamente decorative: ele sunt expresia practică a convingerii că tehnologia și umanioarele aparțin aceleiași conversații.
+Formația mea în filosofie și masteratul în literatură americană — am scris teza despre weird tales și filosofia spațiului narativ — nu sunt separate de acest proiect. S-au copt în el de la început, chiar dacă nu le vedeam în oglindă. Ideea că o bază de cod poate fi citită ca un text, că o interfață poate funcționa ca un spațiu narativ, că învățarea programării e o formă de explorare — toate vin de acolo. Metafora navigației cosmice, interfața de comandă, limbajul de telemetrie, auto-documentarea recursivă: nu-s ornamente decorative. Sunt felul în care am învățat să gândesc structura și sensul împreună, la aceeași masă.
 
-În arhitectura proiectului, `index.html` rămâne pagina centrală, echivalentul command deck-ului. Restul paginilor — loguri, blueprint, bibliografie și manifest — sunt organizate modular, fără să rupă claritatea ansamblului. Manifestul este separat de README, iar jurnalul bilingv funcționează ca arhivă vie a procesului, nu ca simplă listă de commit-uri.
+În arhitectura navei, `index.html` e puntea de comandă — centrul din care se conduce totul. Restul paginilor — loguri, blueprint, bibliografie, manifest — sunt module independente, dar conectate la aceeași coloană vertebrală. Manifestul e separat de README pentru că e un alt registru de vorbire. Jurnalul bilingv funcționează ca arhivă vie a procesului, nu ca o listă de commit-uri.
 
-Identitatea narativă a proiectului se sprijină pe metafore de navigație cosmică, cameră de comandă, telemetrie și auto-documentare. `D::0dy55ey` păstrează atmosfera cinematografică și referințele culturale ale proiectului-mamă, dar le integrează într-o structură mai coerentă, mai curată și mai scalabilă. În centrul acestei identități stă ideea că interfața poate fi și instrument de învățare, și spațiu de evocare culturală.
+Identitatea narativă a proiectului respiră prin metafore de navigație cosmică, cameră de comandă, telemetrie și auto-documentare. `D::0dy55ey` păstrează atmosfera cinematografică și referințele culturale ale proiectului-mamă, dar le așază într-o structură mai coerentă, mai curată, mai scalabilă. În centru stă convingerea că interfața poate fi și instrument de învățare, și spațiu de evocare culturală — că nu trebuie să alegi între tehnic și poetic.
 
-Am inițiat proiectul prin separarea clară a conținutului român și englez în folderele `ro/` și `en/`. Această alegere nu ține de comoditate, ci de disciplină structurală: fiecare limbă are propriile pagini, propriul stil și propriul favicon, astfel încât experiența să rămână coerentă în interiorul fiecărei versiuni. În locul unei soluții universale, am preferat o separare curată și predictibilă.
+Am separat conținutul român și englez în foldere distincte: `ro/` și `en/`. E o decizie structurală, nu de comoditate. Fiecare limbă are propriile pagini, propriul stil, propriul favicon — experiența rămâne coerentă în interiorul fiecărei versiuni. Nu am vrut o soluție universală; am preferat o separare curată și predictibilă, ca două compartimente etanșe ale aceleiași nave.
 
-În rădăcina proiectului am păstrat fișierele de orientare și documentare generală: `README.md`, `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md`. Acestea sunt primele puncte de contact ale arhivei și funcționează ca hartă, ghid metodologic și istoric de lucru. Am creat și folderul `docs/`, unde am mutat documentația de referință, inclusiv legenda etichetelor de comentarii, pentru a păstra codul curat și documentația ușor de consultat.
+În rădăcina proiectului am lăsat fișierele de orientare: `README.md`, `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md`. Sunt primele puncte de contact ale arhivei — harta, ghidul metodologic și istoricul de lucru. Am creat și folderul `docs/`, unde am mutat documentația de referință, inclusiv legenda etichetelor de comentarii. Codul rămâne curat; documentația e la distanță de o cale relativă.
 
-În interiorul fiecărui folder lingvistic păstrez câte un `index.html`, `style.css`, `script.js` și `favicon.svg`. Această structură păstrează codul apropiat de pagina pe care o servește și permite diferențe locale fără amestecarea logicii de prezentare într-un singur fișier comun. Resursele partajate rămân separate de cele locale, ceea ce ajută la scalabilitate și la lizibilitate.
+În fiecare folder lingvistic: `index.html`, `style.css`, `script.js`, `favicon.svg`. Codul stă aproape de pagina pe care o servește. Diferențele locale nu se amestecă cu logica comună. Resursele partajate sunt separate de cele locale, și asta ajută la scalabilitate și la lizibilitate.
 
-Primele commit-uri au urmărit să fixeze chiar această structură inițială. Am preferat commit-uri mici și clare, fiecare reflectând o etapă logică: inițierea repository-ului, adăugarea documentației bilingve, definirea arhitecturii jurnalelor și stabilizarea primei forme a proiectului. Istoricul Git trebuie să rămână lizibil, nu doar acumulativ.
+Primele commit-uri au fixat exact această structură. Le-am vrut mici și clare — fiecare reflectând o etapă logică: inițierea repository-ului, adăugarea documentației bilingve, definirea arhitecturii jurnalelor, stabilizarea primei forme. Istoricul Git trebuie să rămână lizibil, nu doar acumulativ. L-am scris ca pe un jurnal de bord, nu ca pe o înșiruire de comenzi.
 
-Am ales forma `D::0dy55ey` ca logo și nume vizual deoarece funcționează ca semnătură, nu doar ca titlu. Am vrut o formă care să trimită imediat la `D::0dy55ey`, dar să aibă și un aer tehnic, compact și memorabil. `D::0dy55ey` servește ca marcă, logo și etichetă vizuală, fiind ușor de transformat în antet, favicon sau element de branding.
+`D::0dy55ey` e numele pe care l-am ales. Am vrut o formă care să funcționeze ca semnătură, nu doar ca titlu — ceva care să sune tehnic, compact, memorabil. Prefixul `D::` face ecoul operatorului de rezoluție de scop din C++, despărțind vizual inițiala de restul numelui ca într-o declarație de namespace. `0dy55ey` e o substituție leetspeak — `0` pentru `o`, `5` pentru `s` — care transformă „Odyssey" într-un identificator de sistem, un indicativ de navă spațială pe o consolă HUD. Servește ca marcă, logo și etichetă vizuală — se potrivește într-un antet, într-un favicon, într-o linie de copyright.
 
-Această alegere ajută și la separarea dintre numele conceptual și identitatea vizuală a proiectului. Totuși, un nume public trebuie verificat atent înainte de folosire largă, pentru a evita coliziuni, confuzii de brand sau probleme de lizibilitate. Deocamdată, `D::0dy55ey` rămâne o alegere artistică și tehnică, dar una care trebuie tratată cu grijă la publicare.
+E și o separare între numele conceptual și identitatea vizuală. Numele repository-ului pe GitHub rămâne `digital-odyssey` — ăsta e stratul tehnic de transport. `D::0dy55ey` e identitatea narativă. E o alegere artistică și tehnică; la publicare, va trebui tratată cu grijă, verificată împotriva coliziunilor și confuziilor de brand. Dar pentru mine, în noaptea asta, e numele corect.
 
-Pe scurt, această zi fixează cadrul în care proiectul poate crește: identitate, direcție, structură, bilingvism și metodă. Ea nu descrie doar începutul lucrului, ci și forma în care acel început trebuie citit ulterior.
+Pe scurt, această zi fixează cadrul în care proiectul poate crește: identitate, direcție, structură, bilingvism, metodă. Prima pagină a jurnalului. Nu doar începutul lucrului, ci și forma în care acel început trebuie citit mai târziu.
 
 Pe baza acestei zile, următorii pași firești sunt:
 
@@ -215,30 +203,32 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 # DAY 02 — Primele implementări
 
-În această etapă am trecut de la cadrul conceptual la lucrul efectiv asupra proiectului `D::0dy55ey`. După definirea bazei de inspirație și a prolegomenelor, ziua a fost dedicată primelor implementări care dau formă practică arhitecturii, navigației și logicii interne a proiectului.
+Am trecut de la hartă la construcție. Cadrul conceptual era fixat; acum trebuia să pun mâna pe elemente — să le taie, să le sudez, să le așez în configurația care le aparține.
 
-Unul dintre cele mai importante lucruri clarificate aici a fost ierarhia de autonomie a paginilor. `index.html` rămâne centrul de comandă al navei-mamă, punctul din care se pilotează ansamblul proiectului. De aici coordonez paginile de log, bibliografie, manifest, documentație și celelalte anexe. Ele sunt module independente ca funcție, dar rămân conectate la centrul principal al flotei, pentru că fac parte din aceeași arhitectură editorială și tehnică.
+Primul lucru pe care l-am clarificat a fost ierarhia de autonomie a paginilor. `index.html` rămâne centrul de comandă al navei-mamă — puntea din care pilotez ansamblul proiectului. De aici coordonez paginile de log, bibliografie, manifest, documentație și anexe. Sunt module independente ca funcție, dar rămân conectate la centrul flotei, pentru că aparțin aceleiași arhitecturi editoriale și tehnice.
 
-În schimb, `recursive-blueprint.html` are un statut distinct. Am gândit această pagină ca pe o navă mai mică, auto-pilotată, un explorer din interiorul flotei. Ea are mai multă libertate de mișcare decât celelalte module, fiind nu doar o anexă, ci un sistem care se poate orienta singur, își poate afișa propriile date și poate funcționa ca proiect în proiect. Tocmai de aceea, pagina recursivă are și un `h1` propriu, la fel ca în `Manual_project`, pentru a fi percepută ca instanță autonomă.
+`recursive-blueprint.html` are un statut diferit. Am gândit-o ca pe o navă mai mică — un explorator autonom, cu libertate de mișcare mai mare decât celelalte module. Nu e doar o anexă; e un sistem care se poate orienta singur, își poate afișa propriile date și poate funcționa ca proiect în proiect. De aceea are un `h1` propriu, la fel ca în `Manual_project`: trebuie percepută ca instanță autonomă.
 
-Am continuat și rafinarea ierarhiei semantice. Proiectul păstrează o structură logică strictă, cu un singur `h1` în `index.html` (pentru corpurile dependente de nava-mamă), apoi `h2` pentru volume, `h3` pentru capitole și sectoare și niveluri mai adânci (`h4` și `h5`) pentru anexe și submodule. Decizia de a trata React și Angular ca extensii ale capitolului JavaScript, nu ca discipline separate, rămâne esențială: ea păstrează coerența didactică și reflectă felul în care cunoașterea trebuie transmisă ordonat.
+Am rafinat și ierarhia semantică. Proiectul păstrează o structură logică strictă: un singur `h1` în `index.html`, apoi `h2` pentru volume, `h3` pentru capitole și sectoare, `h4` și `h5` pentru anexe și submodule. Am decis să tratez React și Angular ca extensii ale capitolului JavaScript, nu ca discipline separate — coerența didactică e mai importantă decât inventarierea tehnică, iar cunoașterea se transmite ordonat sau nu se transmite deloc.
 
-Pe partea vizuală, am fixat identitatea retro-futuristă a proiectului. Limbajul cromatic, scanlines-urile CRT, efectele de glassmorphism, umbrele interioare și atmosfera inspirată de filosofia explorării, astronomie, astrofizică, literatură, artă, fotografie, muzică, design și cinematografie conturează nu doar un stil, ci un spațiu de lectură și navigare cu personalitate proprie. `Solaris` rămâne un reper important, dar doar unul dintre reperele care dau proiectului tonul său contemplativ și tehnic.
+Pe partea vizuală, am fixat identitatea retro-futuristă. Limbajul cromatic, scanline-urile CRT, glassmorphism-ul, umbrele interioare, atmosfera care respiră filosofie și astronomie și literatură și artă și cinematografie — toate conturează un spațiu de lectură cu personalitate proprie. `Solaris` e un reper, dar nu singurul. Tonul proiectului e contemplativ și tehnic deodată, ca o noapte petrecută într-un observator.
 
-În același timp, am început consolidarea mecanicilor de navigație și interactivitate. Modelul de command deck, meniul sticky, scroll-ul lin, urmărirea secțiunilor active și sincronizarea stării în sidebar construiesc o interfață care nu obligă utilizatorul să se piardă în conținut, ci îl ghidează controlat prin el. Această alegere susține atât partea tehnică, cât și cea didactică a proiectului.
+Am început să consolidez mecanica de navigație. Modelul de command deck, meniul sticky, scroll-ul lin, urmărirea secțiunilor active, sincronizarea stării în sidebar — interfața nu trebuie să lase utilizatorul să se piardă. Trebuie să-l ghideze, controlat, prin conținut. Stratul ăsta susține și tehnica și didactica deodată.
 
-Stratul JavaScript este construit pe șase mecanisme coordonate, moștenite și rafinate din Manual_project:
+Stratul JavaScript e construit pe șase mecanisme coordonate, moștenite și rafinate din Manual_project:
 
-1. **Scutul de Vizibilitate al Cockpit-ului** — monitorizează direcția de scroll și ascunde navbar-ul la scroll în jos (mod imersiune), readucându-l la o scurtă mișcare de scroll în sus.
+1. **Scutul de Vizibilitate al Cockpit-ului** — monitorizează direcția de scroll și ascunde navbar-ul la scroll în jos, în mod imersiune; o scurtă mișcare în sus îl readuce la suprafață.
 2. **Cuplarea Accesibilității Log-urilor** — gestionează stările de click pe linkurile de navigație, asigurând comutarea corectă a clasei `.active` între module.
-3. **Motorul de Re-declanșare a Terminalului** — un Intersection Observer care urmărește caseta de status; când un articol intră în vizibilitate (peste 30%), resetează și reia animația de mașină de scris de la început.
-4. **Tracking-ul Radar pe Desktop** — Intersection Observer-ul principal pentru sidebar. Pe măsură ce utilizatorul parcurge jurnalul, detectează ce articol este pe ecran și mută automat clasa `.active` pe butonul corespunzător din sidebar.
-5. **Motorul Anti-Deplasare pe Desktop** — interceptează click-urile pe ancore pe desktop, previne saltul nativ al browserului care ar trage sidebar-ul în sus și execută un `scrollTo` controlat strict în interiorul containerului de text, cu o pernă de aer de 100px sub HUD.
-6. **Auto-Scroll-ul HUD pe Mobil** — la citirea pe mobil, detectează momentul în care o zi devine activă și glisează automat banda HUD pe orizontală, aducând capsula curentă în centrul ecranului.
+3. **Motorul de Re-declanșare a Terminalului** — un Intersection Observer care urmărește caseta de status; când un articol intră în vizibilitate peste 30%, resetază și reia animația de mașină de scris de la început.
+4. **Radar Tracking pe Desktop** — Intersection Observer-ul principal pentru sidebar. Pe măsură ce parcurg jurnalul, detectează ce articol e pe ecran și mută automat clasa `.active` pe butonul corespunzător.
+5. **Motorul Anti-Deplasare pe Desktop** — interceptează click-urile pe ancore, previne saltul nativ al browserului care ar trage sidebar-ul în sus, execută un `scrollTo` controlat strict în interiorul containerului de text, cu o pernă de aer de 100px sub HUD.
+6. **Auto-Scroll HUD pe Mobil** — la citirea pe mobil, detectează momentul în care o zi devine activă și glisează automat banda HUD pe orizontală, aducând capsula curentă în centrul ecranului.
 
-Un alt element important a fost așezarea proiectului în registrul său de documentare. Jurnalele, bibliografia și pagina `recursive-blueprint.html` nu sunt simple anexe, ci instrumente prin care proiectul devine explicabil din interior. În cazul paginii recursive, instrumentul devine parte a conținutului explicat, pentru că pagina se auto-referă și își inspectează propriile componente.
+Șase mecanisme pentru un singur cockpit. Fiecare cu un nume care sună a subsistem de navă, pentru că asta sunt.
 
-În acest punct, direcția este clară: proiectul avansează ca un ecosistem coerent de învățare, documentare și prezentare, în care `index.html` conduce nava-mamă, modulele satelit își îndeplinesc rolurile precise, iar `recursive-blueprint.html` funcționează ca un explorator cu autonomie mai mare. Următoarele etape firești sunt rafinarea structurii finale, stabilizarea jurnalelor, completarea implementărilor tehnice și păstrarea unei relații echilibrate între atmosferă, rigoare și lizibilitate.
+Am așezat proiectul în registrul său de documentare. Jurnalele, bibliografia, `recursive-blueprint.html` — nu sunt anexe. Sunt instrumente prin care proiectul devine explicabil din interior. În cazul paginii recursive, instrumentul e și conținut: pagina se auto-referă, își inspectează propriile componente, se arată pe sine în timp ce se construiește.
+
+Direcția e clară acum. `index.html` conduce nava-mamă. Modulele satelit își îndeplinesc rolurile precise. `recursive-blueprint.html` funcționează ca explorator cu autonomie mărită. Următoarele etape — rafinarea structurii finale, stabilizarea jurnalelor, completarea implementărilor tehnice, echilibrul între atmosferă și rigoare.
 
 Pe baza acestei zile, următorii pași firești sunt:
 
@@ -251,21 +241,21 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 # DAY 03 — GitHub: Pathway pentru publicarea proiectului
 
-Această zi este dedicată traseului de publicare a proiectului pe GitHub. Nu este doar un set de comenzi, ci o secvență de lucru care păstrează istoricul lizibil, starea repository-ului controlată și trecerea de la dezvoltare locală la arhivă publică făcută metodic.
+Noaptea asta am trasat drumul de la mașinăria locală la arhiva publică. Nu e doar o listă de comenzi — e o secvență de lucru pe care am scris-o ca să păstrez istoricul lizibil, starea repository-ului sub control și trecerea de la dezvoltare la publicare făcută metodic, ca un ritual de lansare.
 
 ## 1. Pregătirea repository-ului local
 
-Mai întâi verific structura proiectului și mă asigur că fișierele finale sunt așezate corect în folderele lor: `ro/`, `en/`, `docs/`, plus fișierele de rădăcină precum `README.md` și jurnalele bilingve.
+Verific structura proiectului. Fișierele trebuie să fie așezate corect în folderele lor: `ro/`, `en/`, `docs/`, plus fișierele de rădăcină — `README.md` și jurnalele bilingve. Totul la locul lui, înainte să închid trapa.
 
-## 2. Inițializarea Git, dacă este nevoie
+## 2. Inițializarea Git, dacă e nevoie
 
-Dacă repository-ul nu a fost deja inițializat, rulez:
+Dacă repository-ul nu e încă inițializat, rulez:
 
 ```bash
 git init
 ```
 
-Acest pas creează istoricul Git local al proiectului.
+Asta creează istoricul local al proiectului. Primul puls cardiac al arhivei.
 
 ## 3. Verificarea stării curente
 
@@ -273,7 +263,7 @@ Acest pas creează istoricul Git local al proiectului.
 git status
 ```
 
-Aici mă asigur că știu exact ce fișiere sunt noi, modificate sau pregătite pentru commit.
+Știu exact ce fișiere sunt noi, modificate sau pregătite pentru commit. O privire pe punte înainte de salt.
 
 ## 4. Adăugarea fișierelor în staging
 
@@ -281,7 +271,7 @@ Aici mă asigur că știu exact ce fișiere sunt noi, modificate sau pregătite 
 git add .
 ```
 
-Dacă vreau să adaug doar anumite fișiere, le pot selecta explicit, dar pentru un commit de etapă folosesc de obicei tot ce este relevant.
+Sau selectiv, dacă vreau doar anumite fișiere. De obicei, pentru un commit de etapă, iau tot ce e relevant.
 
 ## 5. Crearea commit-ului
 
@@ -289,7 +279,7 @@ Dacă vreau să adaug doar anumite fișiere, le pot selecta explicit, dar pentru
 git commit -m "docs: add initial bilingual project structure"
 ```
 
-Mesajul commit-ului trebuie să fie scurt, clar și consecvent cu stilul proiectului.
+Mesajul trebuie să fie scurt, clar, consecvent. Un nume de capsulă pe care să-l poți citi peste luni de zile.
 
 ## 6. Conectarea cu GitHub
 
@@ -297,7 +287,7 @@ Mesajul commit-ului trebuie să fie scurt, clar și consecvent cu stilul proiect
 git remote add origin <URL_REPOSITORY>
 ```
 
-Dacă remote-ul există deja, verific mai întâi configurația curentă.
+Dacă remote-ul există deja, verific configurația curentă înainte să suprascriu.
 
 ## 7. Publicarea proiectului
 
@@ -305,24 +295,24 @@ Dacă remote-ul există deja, verific mai întâi configurația curentă.
 git push -u origin main
 ```
 
-Dacă ramura principală are alt nume, înlocuiesc `main` cu numele corect.
+Dacă ramura principală are alt nume, înlocuiesc `main` cu numele corect. Comanda care trimite nava în rețea.
 
 ## 8. Verificarea rezultatului
 
-După push, verific pe GitHub dacă structura, commit-ul și fișierele au apărut corect.
+După push, verific pe GitHub dacă structura, commit-ul și fișierele au apărut corect. Mă uit la repo ca la o oglindă.
 
 ## 9. Continuarea incrementală
 
 Pe măsură ce lucrez, repet ciclul:
 `modificare → status → add → commit → push`.
 
-Așa păstrez istoricul curat și ușor de urmărit.
+Așa păstrez istoricul curat și ușor de urmărit, ca pe o înregistrare de zbor bine ținută.
 
 ---
 
 # DAY 04 — Etichete de commit și rescrierea mesajelor
 
-Această zi fixează convențiile de scriere a mesajelor de commit și apoi traseul tehnic pentru rescrierea mesajelor deja existente. Scopul este să păstrez istoricul proiectului coerent, lizibil și util pentru oricine îi urmărește evoluția.
+Am petrecut ziua asta fixând limba în care vorbește istoricul proiectului. Mesajele de commit nu sunt text administrativ — sunt semnăturile pe care le lași în arhivă, ultimul strat de documentație, vizibil înainte să deschizi orice fișier. Trebuie să fie coerente, lizibile și utile pentru oricine — inclusiv pentru mine peste șase luni — urmărește evoluția.
 
 ## Etichete recomandate
 
@@ -345,17 +335,17 @@ Această zi fixează convențiile de scriere a mesajelor de commit și apoi tras
 
 ## Observații de stil
 
-`chore`, `docs` și `style` sunt cele mai frecvente pentru jurnale și repo-uri de prezentare. Pentru proiecte formale, este bine să păstrez același model de mesaj în tot istoricul. Consistența mesajelor ajută la citirea evoluției proiectului și la separarea clară între modificările de conținut și cele de structură.
+`chore`, `docs` și `style` sunt cele mai frecvente pentru jurnale și repo-uri de prezentare. Pentru proiecte formale, păstrez același model de mesaj în tot istoricul. Consistența ajută la citirea evoluției și la separarea clară între conținut și structură.
 
 ## Rescrierea mesajelor existente
 
-În ziua a patra am lucrat la clarificarea modului în care denumesc commit-urile și la pașii necesari pentru rescrierea mesajului din commit-ul imediat anterior, atunci când formularea inițială nu era suficient de exactă. Am reținut că mesajul de commit trebuie să fie scurt, tehnic și consecvent cu tipul modificării, mai ales în cazul documentelor de proiect și al fișierelor de documentație bilingvă.
+Am lucrat la clarificarea felului în care denumesc commit-urile și la pașii pentru rescrierea mesajelor când formularea inițială nu era suficient de exactă. Un mesaj de commit trebuie să fie scurt, tehnic și consecvent cu tipul modificării — mai ales în documentele de proiect și fișierele de documentație bilingvă.
 
-Pentru commit-ul imediat anterior, procedura este simplă: mai întâi modific local mesajul cu `git commit --amend`, apoi salvez noul mesaj în editorul deschis de Git. După aceea, dacă commit-ul fusese deja împins pe repository-ul remote, trebuie să actualizez și istoricul de pe GitHub printr-un push forțat, preferabil cu `git push --force-with-lease`, ca să evit suprascrierea accidentală a muncii altcuiva.
+Pentru commit-ul imediat anterior, procedura e simplă: modific local mesajul cu `git commit --amend`, salvez noul mesaj în editorul deschis de Git. Dacă commit-ul fusese deja împins pe remote, actualizez istoricul cu `git push --force-with-lease` — preferabil față de `--force`, pentru că adaugă o verificare suplimentară înainte de suprascriere.
 
-Am notat și că această operațiune se aplică doar cu atenție pe branch-uri deja publice. Dacă lucrez singură pe branch-ul respectiv, metoda este sigură și eficientă; dacă branch-ul este partajat, trebuie verificat foarte bine înainte de rescriere. În proiectul meu, acest lucru ajută mai ales când finalizez documente importante și vreau ca istoria commit-urilor să rămână curată, precisă și ușor de urmărit.
+Operațiunea asta se aplică doar cu atenție pe branch-uri deja publice. Dacă lucrez singură, e sigur și eficient. Dacă branch-ul e partajat, verific de două ori înainte. În proiectul meu, ajută mai ales când finalizez documente importante și vreau ca istoria commit-urilor să rămână curată, precisă, ușor de urmărit.
 
-Rescrierea mesajelor de commit deja făcute se face fără a schimba conținutul fișierelor, folosind `git rebase -i --root` și acțiunea `reword`.
+Rescrierea mesajelor deja făcute se face fără a schimba conținutul fișierelor, folosind `git rebase -i --root` și acțiunea `reword`.
 
 ## Pași urmați
 
@@ -380,127 +370,121 @@ Rescrierea mesajelor de commit deja făcute se face fără a schimba conținutul
 
 ## Observații tehnice
 
-În lista de rebase se modifică doar `pick` în `reword`. Mesajele noi nu se scriu în lista inițială, ci la prompturile separate ale lui Git. `--force-with-lease` este preferabil față de `--force` deoarece oferă o verificare suplimentară înainte de push.
+În lista de rebase se modifică doar `pick` în `reword`. Mesajele noi nu se scriu în lista inițială, ci la prompturile separate ale lui Git. `--force-with-lease` e preferabil față de `--force` pentru verificarea suplimentară.
 
-Pe scurt, această zi fixează disciplina istoriei Git: mesajele trebuie să fie clare, iar rescrierea lor trebuie să păstreze aceeași rigoare ca restul proiectului.
+Pe scurt, ziua asta fixează disciplina istoriei Git: mesajele trebuie să fie clare, iar rescrierea lor trebuie să păstreze aceeași rigoare ca restul proiectului.
 
 ---
 
 # DAY 05 — Comentarii, documentație și `<head>`
 
-Această zi adună mai multe decizii de arhitectură care țin de claritatea codului, ordinea documentației și structura semantică a paginilor HTML. Toate sunt legate de aceeași idee: proiectul trebuie să fie ușor de citit, ușor de întreținut și explicabil din interior.
+Ziua asta adună mai multe decizii de arhitectură care țin de claritatea codului, ordinea documentației și structura semantică a paginilor. Toate se leagă de aceeași idee centrală: proiectul trebuie să fie ușor de citit, ușor de întreținut și explicabil din interior — ca o navă pe care poți învăța să pilotezi citindu-i manualul în timp ce zbori.
 
 ## Decizii stilistice și tehnice
 
-În discuțiile despre proiect am stabilit folosirea unei legende de comentarii cu etichete fixe, precum `@block`, `@path`, `@meta`, `@reason`, `@warning` și `@bridge`. Această legendă nu este decorativă; ea organizează explicațiile direct în fișierele sursă și face codul mai ușor de urmărit.
+Am stabilit folosirea unei legende de comentarii cu etichete fixe: `@block`, `@path`, `@meta`, `@reason`, `@warning` și `@bridge`. Nu e decorativă — organizează explicațiile direct în fișierele sursă, face codul mai ușor de urmărit. Fiecare etichetă e un semn de navigație lăsat în interiorul cablajului.
 
-Am decis și păstrarea fișierelor `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md` în rădăcina proiectului, în timp ce documentația de detaliu, cum este legenda comentariilor, stă în `docs/`. Această separare păstrează rădăcina ca punct de intrare și evită amestecarea documentației principale cu materialele de referință.
+Am decis să păstrez `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md` în rădăcina proiectului. Documentația de detaliu — cum e legenda comentariilor — stă în `docs/`. Rădăcina rămâne punct de intrare, nu depozit de materiale de referință.
 
-Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. Nu este doar o împărțire tehnică, ci și una editorială: fiecare versiune are propria atmosferă, propriul text și propriul ritm. În același timp, conținutul de bază rămâne în oglindă, astfel încât proiectul să rămână ușor de întreținut.
+Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. Nu e doar o împărțire tehnică — e editorială. Fiecare versiune are propria atmosferă, propriul text, propriul ritm. Conținutul de bază rămâne în oglindă, ca proiectul să poată fi întreținut fără să-și piardă simetria.
 
-Am clarificat și rolul lui `theme-color`. Acesta nu reprezintă culoarea conținutului din pagină, ci culoarea interfeței browserului sau a barelor din jurul paginii, mai ales pe mobil. În loc să o leg strict de limbă, am concluzionat că este mai util să o tratez pe familii de pagini, în funcție de rol: pagini principale, pagini de jurnal, pagini bibliografice sau pagini de suport.
+Am clarificat și rolul lui `theme-color`. Nu e culoarea conținutului din pagină — e culoarea interfeței browserului, a barelor din jurul paginii, mai ales pe mobil. Am concluzionat că e mai util să o tratez pe familii de pagini, nu pe limbă: pagini principale, pagini de jurnal, pagini bibliografice, pagini de suport.
 
-În final, am stabilit că pentru `ro/index.html` și `en/index.html` meta description-ul trebuie adaptat la limba paginii, iar titlul principal trebuie să corespundă identității lingvistice și conceptuale. Pentru versiunea engleză, `Charting Digital Frontiers` rămâne o formulare potrivită, mai amplă și mai poetică.
+Pentru `ro/index.html` și `en/index.html`, meta description-ul trebuie adaptat la limba paginii. Titlul principal trebuie să corespundă identității lingvistice și conceptuale. Pentru engleză, `Charting Digital Frontiers` rămâne formularea potrivită — mai amplă, mai poetică, așa cum trebuie să sune un titlu pe o hartă stelară.
 
 ## Containerul `<head>` și elementele sale
 
 ### Rolul lui `<head>`
 
-Elementul `<head>` este zona din documentul HTML în care păstrez metadatele și resursele care ajută pagina să fie interpretată corect de browser, motoare de căutare și alte instrumente. Conținutul din `<head>` nu este, în mod normal, afișat direct în pagină, dar este esențial pentru funcționarea, afișarea și identificarea documentului.
+`<head>` e zona în care păstrez metadatele și resursele care ajută pagina să fie interpretată corect de browser, motoare de căutare și alte instrumente. Nu se vede direct în pagină — e ca puntea de comandă invizibilă a documentului, acolo unde se definesc parametrii înainte de lansare.
 
-Prin intermediul lui `<head>`, setez informațiile de bază ale paginii, leg fișiere externe și controlez aspecte tehnice precum codarea, compatibilitatea, comportamentul pe mobil și identitatea vizuală minimă a documentului. Fără acest container, pagina ar fi incompletă structural și mai greu de administrat.
+Prin `<head>` setez informațiile de bază, leg fișiere externe, controlez codarea, compatibilitatea, comportamentul pe mobil și identitatea vizuală minimă. Fără el, pagina ar fi incompletă structural — ca o navă fără sistem de navigație.
 
 ### Elemente importante din `<head>`
 
 #### `<title>`
 
-Setează titlul paginii vizibil în tab-ul browserului. Este unul dintre cele mai importante elemente pentru identificarea paginii în marcaje, ferestre și rezultate de căutare.
+Titlul paginii, vizibil în tab-ul browserului. Unul dintre cele mai importante elemente pentru identificare în marcaje, ferestre și rezultate de căutare. E numele pe care îl poartă pagina în lume.
 
 #### `<meta>`
 
-Specifică informații despre document. Aici pot defini setul de caractere, descrierea paginii, instrucțiunile pentru viewport pe mobil, culoarea temei browserului și alte metadate utile.
+Specifică informații despre document. Set de caractere, descriere, viewport pe mobil, culoarea temei, alte metadate. E stratul discret care spune browserului cum să se poarte cu pagina.
 
 #### `<link>`
 
-Conectează pagina cu fișiere externe, cum ar fi foile de stil CSS, favicon-ul, fonturile sau alte resurse necesare pentru randare și prezentare.
+Conectează pagina cu fișiere externe: foi de stil CSS, favicon, fonturi, resurse de randare. Puntea spre materialitatea vizuală a documentului.
 
 #### `<style>`
 
-Permite adăugarea de cod CSS direct în pagină. Îl folosesc atunci când vreau stiluri locale rapide sau când o pagină are nevoie de reguli foarte specifice fără să apela imediat la un fișier extern.
+CSS direct în pagină. Îl folosesc pentru stiluri locale rapide sau când o pagină are nevoie de reguli foarte specifice, fără să deschid un fișier extern.
 
 #### `<script>`
 
-Leagă sau conține cod JavaScript. Îl folosesc pentru logică interactivă, comportamente dinamice și funcționalități care apar după încărcarea paginii sau în timpul utilizării ei.
+Leagă sau conține JavaScript. Pentru logică interactivă, comportamente dinamice, funcționalități care apar după încărcarea paginii sau în timpul utilizării.
 
 #### `<base>`
 
-Stabilește URL-ul de bază pentru linkurile relative din document. Îl folosesc rar, dar poate fi util când vreau ca toate trimiterile relative să pornească dintr-un punct fix.
+Stabilește URL-ul de bază pentru linkurile relative. Îl folosesc rar, dar e util când vreau ca toate trimiterile relative să pornească dintr-un punct fix — ca un punct de ancorare pe hartă.
 
 #### `<meta charset="UTF-8">`
 
-Definește setul de caractere folosit de document. În practică, UTF-8 este alegerea standard și cea mai sigură pentru diacritice și caractere internaționale.
+Definește setul de caractere. UTF-8 e alegerea standard și cea mai sigură pentru diacritice și caractere internaționale. Fără el, textul se citește greșit — ca un semnal degradat.
 
 #### `<meta name="viewport">`
 
-Controlează modul în care pagina se adaptează pe ecrane diferite, mai ales pe telefoane și tablete. Este esențial pentru designul responsive.
+Controlează adaptarea paginii pe ecrane diferite, mai ales pe telefoane și tablete. Esențial pentru designul responsive — puntea care se recalibrează pentru orice dimensiune de ecran.
 
 #### `<meta name="description">`
 
-Oferă o descriere scurtă a paginii. Această descriere poate fi folosită de motoarele de căutare și ajută la prezentarea clară a conținutului.
+O descriere scurtă a paginii. Folosită de motoarele de căutare, ajută la prezentarea clară a conținutului. E prima impresie pe care o lasă pagina în rezultatele de căutare.
 
 #### `<meta name="theme-color">`
 
-Setează o culoare sugerată pentru interfața browserului, mai ales pe mobil. Aceasta poate colora bara de sus sau alte elemente de browser, în funcție de suportul platformei.
+O culoare sugerată pentru interfața browserului, mai ales pe mobil. Colorează bara de sus sau alte elemente de browser, acolo unde platforma suportă.
 
 ### Cum folosesc `<head>` în proiect
 
-În `D::0dy55ey`, tratez `<head>` ca pe un strat de control și identitate. Aici definesc limba, titlul, descrierea, fișierele locale și resursele comune, astfel încât fiecare pagină să pornească dintr-o bază clară și previzibilă. Pentru paginile bilingve, schimb mai ales titlul și meta description-ul, iar restul structurii rămâne stabil.
+În `D::0dy55ey`, `<head>` e un strat de control și identitate. Aici definesc limba, titlul, descrierea, fișierele locale și resursele comune. Fiecare pagină pornește dintr-o bază clară și previzibilă. La paginile bilingve, schimb mai ales titlul și meta description-ul — restul structurii rămâne stabil, ca un schelet de navă pe care se înfășoară diferite piei.
 
 ---
 
 # DAY 06 — Implementarea comentariilor și a structurii de documentație
 
-Această zi consolidează modul în care proiectul leagă codul de documentație printr-o structură clară de comentarii și prin separarea materialelor de referință de fișierele de lucru. Nu este o completare superficială, ci o decizie de arhitectură care ajută la mentenanță, la citirea codului și la învățarea din interiorul proiectului.
+Ziua asta leagă codul de documentație printr-o structură pe care o simt ca pe un al doilea sistem nervos. Comentariile nu sunt notițe aruncate pe margine — sunt firele prin care proiectul se explică pe sine, din interior spre exterior.
 
 ## Legenda comentariilor
 
-Am stabilit folosirea unei legende de comentarii cu etichete fixe, precum `@block`, `@path`, `@meta`, `@reason`, `@warning` și `@bridge`. Fiecare etichetă are rolul de a face conținutul din cod mai ușor de parcurs și mai ușor de căutat. În loc de note ad-hoc, proiectul obține astfel o metodă consistentă de documentare la nivel de sursă.
-
-`@block` marchează o zonă logică, `@path` indică un traseu sau o referință de fișier, `@meta` descrie contextul, `@reason` explică motivația, `@warning` semnalează o atenționare, iar `@bridge` leagă între ele două părți ale sistemului. Acest vocabular nu este decorativ, ci transformă comentariul într-un instrument didactic.
+Aceeași legendă pe care am fixat-o și înainte, pentru că merită repetată: `@block`, `@path`, `@meta`, `@reason`, `@warning`, `@bridge`. Fiecare etichetă face conținutul din cod mai ușor de parcurs și mai ușor de căutat. `@block` marchează o zonă logică, `@path` indică un traseu sau o referință de fișier, `@meta` descrie contextul, `@reason` explică motivația, `@warning` semnalează o atenționare, `@bridge` leagă două părți ale sistemului. Nu e un vocabular decorativ — e un instrument didactic. Transformă comentariul în semn de navigație.
 
 ## Organizarea documentației
 
-Am decis să păstrez fișierele `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md` în rădăcina proiectului, iar documentația de detaliu, precum legenda comentariilor, să stea în `docs/`. Această separare păstrează rădăcina ca punct de intrare și evită amestecarea documentației principale cu materialele de referință.
-
-În această schemă, rădăcina repo-ului rămâne curată și orientată spre navigare, iar `docs/` devine locul potrivit pentru materialele metodologice. Astfel, documentația nu se risipește în fișierele principale, dar rămâne suficient de aproape de cod încât să fie folosită în mod real.
+Fișierele `README-RO.md`, `README-EN.md`, `JURNAL-RO.md` și `JURNAL-EN.md` stau în rădăcina proiectului. Documentația de detaliu — legenda comentariilor și altele — stă în `docs/`. Rădăcina rămâne punct de intrare, curată și orientată spre navigare. `docs/` devine locul materialelor metodologice. Documentația nu se risipește în fișierele principale, dar rămâne suficient de aproape de cod încât să fie folosită în mod real — la o cale relativă distanță, ca un manual de bord în sertarul de sub pupitru.
 
 ## Separarea pe limbă
 
-Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. Această separare nu este doar tehnică, ci și editorială: fiecare versiune are propria atmosferă, propriul text și propriul ritm. În același timp, conținutul de bază rămâne oglindit, astfel încât proiectul să rămână ușor de întreținut.
-
-Aceeași logică se aplică și la meta description și la titlu: fiecare pagină trebuie să-și reflecte identitatea lingvistică și conceptuală. Pentru versiunea engleză, `Charting Digital Frontiers` rămâne formularea cea mai potrivită pentru titlu.
+Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. Tehnic și editorial. Fiecare versiune are propria atmosferă, propriul text, propriul ritm. Conținutul de bază rămâne oglindit, ca proiectul să poată fi întreținut fără să-și piardă simetria. Aceeași logică se aplică la meta description și titlu: fiecare pagină trebuie să-și reflecte identitatea lingvistică și conceptuală. Pentru engleză, `Charting Digital Frontiers` rămâne formularea cea mai potrivită.
 
 ## Cum folosesc `<head>`
 
-În `D::0dy55ey`, tratez `<head>` ca pe un strat de control și identitate. Aici definesc limba, titlul, descrierea, fișierele locale și resursele comune, astfel încât fiecare pagină să pornească dintr-o bază clară și previzibilă. Pentru paginile bilingve, schimb mai ales titlul și meta description-ul, iar restul structurii rămâne stabil.
+În `D::0dy55ey`, `<head>` e stratul de control și identitate. Limba, titlul, descrierea, fișierele locale, resursele comune — fiecare pagină pornește dintr-o bază clară și previzibilă. La paginile bilingve, schimb titlul și meta description-ul. Restul structurii rămâne stabil, ca frecvența purtătoare pe care se modulează semnale diferite.
 
 ---
 
 # DAY 07 — GitHub: Urcarea fișierelor
 
-Această zi documentează modul în care urc fișierele pe GitHub, folosind terminologia corectă din Git. În practică, nu spun doar că am făcut „upload”, ci mai exact că am **adăugat fișierele în repository, le-am comis și le-am trimis pe GitHub cu push**.
+GitHub e arhiva publică a navei — locul unde codul iese din camera motoarelor și devine vizibil pentru oricine. Nu spun „upload" când trimit fișierele. În vocabularul de bord, **stage** (pregătesc), **commit** (înregistrez) și **push** (trimit). Fiecare pas e o manevră distinctă, și am învățat să le numesc corect.
 
 ## Termeni corecți
 
-- **Repository / repo** = spațiul proiectului pe GitHub.
-- **Stage / add** = pregătirea fișierelor pentru commit.
-- **Commit** = salvarea unei versiuni locale, cu mesaj .
-- **Push** = trimiterea commitului de pe calculator pe GitHub.
-- **Upload** = termen general; în interfața GitHub apare ca „Upload files” când încarc direct din browser .
+- **Repository / repo** = spațiul proiectului pe GitHub. Docul uscat al arhivei.
+- **Stage / add** = pregătirea fișierelor pentru commit. Încărcarea pe rampă.
+- **Commit** = salvarea unei versiuni locale, cu mesaj. Închiderea trapei și semnarea manifestului.
+- **Push** = trimiterea commitului de pe calculator pe GitHub. Lansarea în rețea.
+- **Upload** = termen general; apare în interfața GitHub ca „Upload files" când încarci direct din browser. Dar eu nu stau în browser.
 
 ## Pașii standard
 
-1. Creez sau modific fișierele pe calculator, de exemplu `.md`, `.html`, `.css` sau `.js`.
+1. Creez sau modific fișierele pe calculator — `.md`, `.html`, `.css`, `.js`.
 2. Verific ce s-a schimbat cu `git status`.
 3. Adaug fișierele în staging cu `git add .` sau selectiv.
 4. Fac commit cu un mesaj clar și scurt.
@@ -518,662 +502,429 @@ git push
 
 ## Cum formulez în jurnal
 
-Am modificat fișierele local, le-am adăugat în staging, am creat un commit cu mesaj descriptiv și am făcut push pe GitHub. În terminologia Git, acest flux înseamnă staging, commit și push, nu doar upload.
+Am modificat fișierele local, le-am adăugat în staging, am creat un commit cu mesaj descriptiv și am făcut push pe GitHub. În terminologia Git, fluxul ăsta e staging, commit și push — nu upload.
 
 ## De ce folosesc termenii aceștia
 
-„Upload” este un termen general, dar în Git e mai precis să vorbesc despre staging, commit și push. Asta păstrează descrierea clară, tehnică și consecventă cu restul jurnalului.
+„Upload" e un termen general. În Git, e mai precis să vorbesc despre staging, commit și push. Precizia asta păstrează descrierea clară, tehnică și consecventă cu restul jurnalului. Fiecare cuvânt spune exact ce s-a întâmplat, fără balast.
 
 ---
 
-# DAY 08 — Arhitectura finală a volumelor
+# ZIUA 08 — Arhitectura finală a volumelor
 
-Am verificat întreaga structură a volumelor și, în forma ei actuală, ea este coerentă din punct de vedere didactic. Împărțirea pe capitole nu urmărește aceeași logică în toate volumele, dar tocmai această diferență este justificată: fiecare domeniu are o structură proprie de învățare, iar arhitectura proiectului trebuie să o reflecte, nu să o uniformizeze artificial.
+Am petrecut noaptea trecând în revistă structura volumelor. La lumina verde a monitorului, cu degetele sprijinite pe taste ca pe o bară de navigație, am desenat schema completă. Și am înțeles, în sfârșit, cum trebuie să respire această navă.
 
-În `D::0dy55ey`, volumul de frontend este organizat pe limbaje fundamentale, deoarece acolo traseul de învățare este linear și ușor de înțeles: mai întâi structura, apoi stilul, apoi comportamentul. Volumul de database este împărțit între `sql` și `nosql` deoarece diferența dintre cele două paradigme este una conceptuală și metodologică, nu doar tehnică. Volumul de backend, în schimb, are o logică diferită și trebuie citit prin componente, fluxuri și responsabilități ale sistemului, nu printr-o simplă listă de limbaje.
+Fiecare domeniu își cere propria arhitectură. Frontend-ul nu poate fi tăiat după același tipar ca backend-ul, pentru că natura învățării diferă. Nu e vorba de capriciu, ci de felul în care cunoașterea se așează în mintea unui echipaj care învață din mers.
 
 ## Frontend
 
-Volumul `frontend` este gândit ca o bază de intrare în dezvoltarea web, unde fiecare limbaj are un rol distinct și ușor de separat. HTML construiește structura, CSS reglează forma vizuală, JavaScript introduce logica și interactivitatea, iar framework-urile sunt tratate ca extensii naturale ale acestui nucleu.
+Primul volum este poarta de intrare în carcasă. Aici construcția e lineară, ca o punte pe care pașii se așază unul după altul: mai întâi scheletul, apoi învelișul, apoi pulsul.
 
-### Capitolele finale ale volumului frontend
+HTML e osul. CSS e pielea. JavaScript e bătaia inimii. Framework-urile vin după, nu ca niște străini dintr-o altă galaxie, ci ca ramuri naturale ale aceluiași trunchi.
 
+Capitolele volumului frontend:
 - `html-log`
 - `css-log`
 - `javascript-log`
 - `react-log`
 - `angular-log`
 
-### De ce această împărțire
-
-Această structură este potrivită pentru învățare fiindcă urmează ordinea firească a construirii unei interfețe. Încep cu ce este cel mai stabil și mai ușor de înțeles, apoi adaug stilul, apoi comportamentul, iar la final extind spre framework-uri. React și Angular nu sunt puse separat de JavaScript ca și cum ar aparține unei alte lumi, ci apar ca ramuri ale aceleiași logici, ceea ce păstrează coerența didactică și reduce fragmentarea inutilă.
-
 ## Database
 
-Volumul `database` este organizat pe cele două mari familii conceptuale ale gestionării datelor: relațional și non-relațional. Această împărțire este mai bună decât una pe un singur instrument, fiindcă te ajută să înțelegi modelul de gândire din spatele fiecărui tip de bază de date, nu doar sintaxa.
+Al doilea volum e împărțit în două, pentru că a gândi în tabele și a gândi în documente nu e doar o diferență de sintaxă — e o diferență de conștiință. SQL e ordinea, relația, interogarea precisă. NoSQL e flexibilitatea, modelul schimbător, libertatea. Le-am așezat față în față ca pe două oglinzi, ca să se definească una pe cealaltă.
 
-### Capitolele finale ale volumului database
-
+Capitolele volumului database:
 - `sql-log`
 - `nosql-log`
 
-### De ce această împărțire
-
-Aici logica este binară și foarte clară: SQL înseamnă structură, relații, interogări și consistență, iar NoSQL înseamnă flexibilitate, modele alternative și alt mod de a gândi persistarea. Pentru învățare, această separare este foarte eficientă deoarece pune în contrast două paradigme fundamentale, nu doar două tehnologii. Astfel, volumul nu devine o listă de sintaxe, ci o lecție despre moduri diferite de organizare a datelor.
-
 ## Backend
 
-Volumul `backend` nu trebuie împărțit ca frontend-ul, fiindcă backend-ul nu se învață în primul rând ca o succesiune de limbaje, ci ca un sistem de componente care lucrează împreună. De aceea, structura pe care o ai acum este potrivită: ea urmărește funcțiile esențiale ale unui backend, de la nucleu la API, autentificare, arhitectură, documentare, testare și deployment.
+Aici am zăbovit cel mai mult. Backend-ul nu e o înșiruire de limbaje ca frontend-ul; e o cameră de mașini în care piesele se rotesc împreună. Nu poți despărți cererea de validare, nici autentificarea de arhitectură. Am desenat atunci zece capitole, fiecare un organ al aceluiași corp:
 
-### Capitolele finale ale volumului backend
+- `backend-core-log` — inima, locul unde totul pornește.
+- `api-log` — gura prin care sistemul vorbește lumii.
+- `auth-security-log` — zidul și poarta.
+- `backend-architecture-log` — scheletul invizibil.
+- `backend-language-log` — un dulap de unelte, nu un stâlp central.
+- `middleware-log` și `testing-log` — fluidele și reflexele.
+- `documentation-log` — memoria scrisă.
+- `performance-log` — respirația controlată.
+- `deployment-log` — ultima suflare înainte de lansare.
 
-- `backend-core-log`
-- `api-log`
-- `auth-security-log`
-- `backend-architecture-log`
-- `backend-language-log`
-- `middleware-log`
-- `testing-log`
-- `documentation-log`
-- `performance-log`
-- `deployment-log`
-
-### De ce această împărțire
-
-Backend-ul are o logică de tip sistemic, nu una de tip „lanț de limbaje”. În practică, un backend bun se înțelege prin întrebări precum: cum intră cererea, cine o validează, cum este procesată, unde se conectează la date, cum este documentată, cum este testată și cum este livrată. Din acest motiv, capitolele backend trebuie să reflecte traseul request-ului și organizarea internă a serverului, nu doar instrumentele folosite.
-
-`backend-core-log` fixează baza de lucru și nucleul sistemului. `api-log` tratează modul de expunere a funcționalităților. `auth-security-log` acoperă securitatea și controlul accesului. `backend-architecture-log` explică organizarea internă și relațiile dintre componente. `backend-language-log` are sens ca zonă de sprijin, dar nu ca principiu central de organizare. `middleware-log` și `testing-log` arată cum circulă cererile și cum se verifică comportamentul sistemului. `documentation-log` păstrează explicabilitatea proiectului, `performance-log` acoperă optimizarea, iar `deployment-log` închide traseul prin publicare și livrare.
+Zece capitole. Zece funcții. Un singur sistem.
 
 ## Deployment
 
-Volumul `delivery` este separat de `backend` și acest lucru este foarte bun. Aici accentul nu mai este pe construcția logicii server-side, ci pe procesul de livrare, de publicare și de verificare a istoricului proiectului.
-
-### Capitolele finale ale volumului delivery
-
-- `deployment-pipeline-log`
-- `git-log`
-- `github-log`
-
-### De ce această împărțire
-
-Acest volum trebuie să arate cum ajunge proiectul din stadiul de lucru în stadiul de publicare. Git documentează controlul versiunilor, GitHub documentează repository-ul public și sincronizarea finală, iar pipeline-ul de deployment arată traseul complet al livrării. Separarea aceasta este didactică fiindcă explică nu doar ce s-a întâmplat, ci și ordinea în care s-a întâmplat.
+Am separat livrarea de construcție. Nu pentru că nu țin una de alta, ci pentru că a publica nu e același lucru cu a crea. Am așezat aici trei jurnale: `deployment-pipeline-log`, `git-log`, `github-log`. Fiecare documentează câte un pas din călătoria pe care o face codul din carlinga mea până în spațiul public.
 
 ## UX
 
-Volumul `ux` este corect separat de frontend, pentru că UX nu înseamnă doar „cum arată pagina”, ci cum este ea folosită, parcursă și înțeleasă. Aici învățarea trebuie să pună accent pe accesibilitate, flux, claritate și experiență.
+UX-ul nu e o anexă a frontend-ului, așa cum confortul unui echipaj nu e o anexă a navei. E o disciplină cu logică proprie: cum se mișcă cititorul prin pagină, cum înțelege fără să i se explice, cum rămâne fără să se piardă. Două capitole: `accessibility-log` și `ux-foundations-log`.
 
-### Capitolele finale ale volumului ux
+## Data Bridge
 
-- `accessibility-log`
-- `ux-foundations-log`
+Puntea dintre date și interfață. Un singur volum, un singur capitol — `json-log` — pentru un format care e el însuși o punte. Mic, dar conceptual esențial.
 
-### De ce această împărțire
+## Concluzie
 
-Această structură este potrivită fiindcă pornește de la principiile de bază ale experienței utilizatorului și apoi coboară spre accesibilitate ca cerință concretă și etică. UX nu trebuie tratat ca o anexă decorativă a frontend-ului, ci ca o zonă cu logică proprie, în care contează percepția, navigarea și confortul cognitiv al utilizatorului.
-
-## Data bridge
-
-Volumul `data-bridge` rămâne o zonă de legătură între interfețe și sisteme de date. El este util tocmai pentru că nu dublează frontend-ul și nu copiază database-ul, ci explică puntea dintre ele.
-
-### Capitolele finale ale volumului data-bridge
-
-- `json-log`
-
-### De ce această împărțire
-
-JSON este un format de interschimb de date și are sens să fie păstrat ca volum-punte, nu ca subcapitol dispersat în alte zone. Aici se vede clar relația dintre date, structură și transfer, ceea ce îl face un volum mic, dar conceptual important.
-
-## Concluzie arhitecturală
-
-În forma actuală, structura volumelor este nu doar acceptabilă, ci bună didactic. Frontend-ul este organizat pe limbaje și trepte de construcție, database-ul pe paradigme de persistare, backend-ul pe componente și responsabilități, delivery-ul pe procesul de publicare, iar UX-ul pe experiență și accesibilitate. Această diferențiere este corectă fiindcă fiecare domeniu are propriul său mod de a fi învățat și explicat.
-
-Ordinea finală a volumelor în `index.html` ar trebui să păstreze această progresie conceptuală: mai întâi bazele de interfață, apoi datele, apoi logica de server, apoi experiența, apoi livrarea. În felul acesta, cititorul trece natural de la construcție vizibilă la infrastructură, de la infrastructură la proces, și de la proces la publicare.
+Am închis schema și am privit-o în ansamblu. Frontend-ul pe trepte de construcție, database-ul pe paradigme, backend-ul pe componente, livrarea pe proces, UX-ul pe experiență. Fiecare volum respiră diferit, pentru că fiecare domeniu învață diferit. Ordinea în `index.html` păstrează această progresie — de la construcția vizibilă la infrastructură, de la infrastructură la experiență, de la experiență la publicare. Cititorul nu sare de la o cameră la alta; trece printr-o navă care știe cum să fie parcursă.
 
 ---
 
-# DAY 09 — Backlog, arhitectura `<head>` și validarea documentelor
+# ZIUA 09 — Backlog, arhitectura `<head>` și validarea documentelor
 
-Această zi reunește deciziile structurale pe care le-am luat după ce am centralizat ideile care nu sunt încă pregătite pentru implementare și după ce am completat fundația tehnică a tuturor documentelor HTML din proiect. Ziua este împărțită în note clar separate, fiecare acoperind câte un aspect esențial al acestei etape de lucru.
+O noapte de lucru tăcut, cu ecranul împărțit între ceea ce e gata și ceea ce așteaptă. Am trasat linii între stabilizat și posibil, între fundația care ține deja și ideile care nu și-au găsit încă locul. În loc să le las să plutească în structura curentă, le-am adunat într-un registru de backlog — nu o listă de dorințe, ci un sertar de navigație în care fiecare idee așteaptă tura ei de implementare.
 
-## 1. Documente de backlog pentru idei viitoare
+## Arhitectura `<head>` pentru 52 de pagini
 
-Am creat o separare clară între arhitectura deja stabilizată a proiectului și ideile care își așteaptă momentul de implementare. În loc să las intențiile viitoare să se acumuleze în structura curentă și să risc confuzie, le-am compilat într-un registru de backlog — practic o listă de TODO-uri care păstrează fiecare propunere la locul ei. Fiecare intrare așteaptă un ciclu dedicat de implementare, fără să tulbure munca deja existentă.
+Am luat template-ul pe care îl definesem în `en/index.html` și l-am plantat în fiecare din cele 52 de pagini HTML rămase. Toate pornesc acum de la aceeași bază semantică: codarea caracterelor, viewport-ul, titlul, descrierea, cuvintele cheie, autorul, culoarea temei, toate metadatele Open Graph, cardul Twitter, linkul canonic, directiva robots, favicon-ul, preconectările pentru fonturi și foaia de stil locală.
 
-Această abordare menține două lucruri în echilibru: arhitectura curentă rămâne curată și previzibilă, iar direcția de dezvoltare rămâne vizibilă și organizată. Un document de backlog nu este o simplă listă de dorințe, ci un instrument de lucru prin care pot planifica, prioritiza și urmări ce urmează, fără să pierd din vedere ce este deja în loc.
+Fiecare `<head>` e unic doar acolo unde trebuie să fie — titlu, descriere, cuvinte cheie, căi — dar arhitectura e aceeași peste tot. Am adnotat fiecare bloc cu etichetele din legendă (`@block`, `@meta`, `@path`, `@reason`, `@warning`, `@theme`), pentru ca novicele care deschide inspectorul să găsească nu cod mort, ci un manual viu.
 
-## 2. Completarea containerului `<head>` pentru toate documentele HTML
+## Regula adâncimii folderelor
 
-Am completat containerul `<head>` pentru fiecare document HTML din proiectul `digital-odyssey`. Scopul a fost ca fiecare pagină — indiferent dacă este o pagină de nivel superior, un jurnal de capitol sau o pagină de suport — să pornească de la aceeași bază semantică și tehnică. Template-ul pe care l-am definit în `en/index.html` a devenit modelul de lucru pentru toate cele 52 de pagini HTML rămase.
+Într-un proiect cu atâtea niveluri de imbricare, o cale ruptă e ca o punte căzută. Am fixat o regulă simplă, pe care am scris-o cu creionul pe marginea monitorului și n-am mai șters-o:
 
-Fiecare `<head>` conține acum setul complet de elemente esențiale: codarea caracterelor, configurarea viewport-ului, titlu, meta descriere, cuvinte cheie, autor, culoarea temei, metadate Open Graph (titlu, descriere, tip, URL, localizare, numele site-ului, culoare de fundal, imagine), tipul de card Twitter, link canonic, directiva robots, favicon, preconectări pentru fonturi și legătura către foaia de stil locală. Diferențele între pagini apar doar acolo unde fiecare document își definește propria identitate — titlul, descrierea, cuvintele cheie și căile specifice către fișiere.
+- Paginile din rădăcina limbii (`en/`, `ro/`) — `bibliography.html`, `recursive-blueprint.html`, `transmission.html` — folosesc `./` pentru resurse, pentru că resursele sunt în același compartiment.
+- Paginile din subfoldere (`frontend/`, `backend/`, `database/`, `data-bridge/`, `ux/`, `delivery/`) folosesc `../` pentru a urca un nivel înapoi în folderul de limbă.
 
-Această uniformitate înseamnă că întregul proiect împarte acum un punct de plecare previzibil. Indiferent ce pagină deschid, blocul head urmează aceeași arhitectură, cu comentarii adnotate conform etichetelor din legendă (`@block`, `@meta`, `@path`, `@reason`, `@warning`, `@theme`).
+Fiecare folder de limbă e un volum. Fiecare subfolder e un capitol. Fiecare pagină de jurnal e o secțiune. Resursele stau la nivel de volum, accesibile printr-o cale previzibilă ca o scară bine construită.
 
-## 3. Regula de adâncime pentru căile din folder
+## `meta name` vs `meta property`
 
-Am fixat o regulă clară pentru căile relative folosite în fiecare fișier HTML. Într-un proiect cu multe foldere imbricate — cum sunt `en/frontend/html-log.html` sau `ro/backend/api-log.html` — menținerea corectă a căilor este esențială pentru ca pagina să își găsească resursele.
+Am stat o clipă să mă asigur că diferența e clară în mintea mea, pentru că amândouă arată la fel în cod dar spun lucruri diferite.
 
-Regula este simplă, dar importantă:
+`<meta name="...">` e glasul paginii către browser și motoarele de căutare: descriere, cuvinte cheie, autor, viewport, robots. E limba în care pagina se prezintă pe sine însăși.
 
-- Paginile plasate direct în folderul de limbă (`en/` sau `ro/`) — cum sunt `bibliography.html`, `recursive-blueprint.html` și `transmission.html` — folosesc `./` pentru a face referire la `style.css`, `favicon.svg` și `script.js`, deoarece resursele se află în același folder.
-- Paginile plasate la un nivel mai adânc, într-un folder de capitol precum `frontend/`, `backend/`, `database/`, `data-bridge/`, `ux/` sau `delivery/` — folosesc `../` pentru a urca un nivel și a ajunge la folderul de limbă unde se află resursele.
+`<meta property="og:...">` e chipul paginii atunci când e distribuită în altă parte — pe rețele sociale, în mesagerie, în previzualizări de linkuri. `og:title`, `og:description`, `og:image`, `og:url` și celelalte controlează cardul care apare când cineva trimite linkul mai departe.
 
-Această regulă de adâncime menține proiectul organizat și evită referințe rupte. Ea urmează și metafora de carte pe care am adoptat-o pentru arhitectură: fiecare folder de limbă este un volum, fiecare subfolder este un capitol, iar fiecare pagină de jurnal este o secțiune în interiorul acelui capitol. Resursele sunt stocate la nivel de volum și sunt întotdeauna accesibile printr-o cale relativă previzibilă.
+`name` e pentru pagină. `property` e pentru cum e văzută pagina dincolo de ea însăși. Amândouă sunt necesare.
 
-## 4. Template-ul `<head>` și diferența dintre `meta name` și `meta property`
+## Tagurile void și notația `/>`
 
-Am consolidat template-ul `<head>` într-o singură structură reutilizabilă. Fiecare pagină din proiect folosește acum acest template, doar limba, titlul, descrierea, cuvintele cheie și căile fiind schimbate per fișier.
+În HTML5, tagurile void — `<meta>`, `<link>`, `<br>`, `<img>` — nu au nevoie de slash de închidere. Dar eu folosesc `/>` în tot proiectul. E o alegere stilistică, nu o cerință. XHTML m-a învățat să scriu așa, și consecvența contează mai mult decât moda.
 
-### `meta name="..."` vs `meta property="og:..."`
+## Regula celor 1024 de biți
 
-Diferența dintre cele două modele de atribut este conceptuală și funcțională:
+Am învățat-o dintr-o specificație veche, citită la 3 dimineața: unele browsere scanează doar primii 1024 de biți ai documentului pentru a determina codarea caracterelor. Dacă `meta charset` apare după comentarii lungi, browserul poate interpreta greșit textul înainte să ajungă la declarație.
 
-- **`<meta name="...">`** este modul standard HTML de a descrie o pagină pentru contextul web obișnuit. Îi spune browserului și motoarelor de căutare informații de bază despre document: `description`, `keywords`, `author`, `viewport`, `theme-color` și `robots`. Acestea sunt citite în fluxul normal de navigare.
+Așa că `meta charset` e întotdeauna primul element din `<head>`, imediat după tagul de deschidere. Fără comentarii înaintea lui. Explicația vine după, nu înainte.
 
-- **`<meta property="og:...">`** aparține protocolului Open Graph. Descrie modul în care pagina ar trebui să apară atunci când este distribuită în alte spații digitale — rețele sociale, platforme de mesagerie, site-uri de portofoliu sau previzualizări de linkuri. Proprietăți precum `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:locale` și `og:site_name` controlează cardul care apare atunci când cineva distribuie linkul în afara contextului normal de navigare.
+## Validarea în frontend
 
-Pe scurt, `name` este pentru pagina însăși; `property` este pentru cum este reprezentată pagina în altă parte. Ambele sunt necesare într-un proiect serios, pregătit pentru publicare.
+Nu e o verificare birocratică. E un reflex: verific consistența structurii HTML, sintaxa CSS, atributele de accesibilitate, căile relative. Mă asigur că paginile bilingve se oglindesc între ele, că template-ul semantic e același peste tot, că nimic nu e rupt.
 
-### Tagurile void și notația `/>`
-
-Am clarificat și notația tagurilor void (autoinchise) precum `<meta>`, `<link>`, `<br>` și `<img>`. În HTML5, tagurile void nu au nevoie de slash de închidere. Scrierea `<meta charset="UTF-8">` este perfect validă. Forma `/>` — ca în `<meta charset="UTF-8" />` — este moștenită din sintaxa XHTML și XML, unde fiecare tag, inclusiv cele void, trebuie să fie închis explicit.
-
-În proiectul meu, folosesc în mod constant forma `/>` pentru elementele void. Aceasta este o alegere stilistică ce menține notația uniformă și face codul recognoscibil atât în contexte HTML, cât și XML. Important este să fiu consecventă: amestecarea `>` cu `/>` în același document face codul mai greu de citit și de întreținut.
-
-## 5. Regula celor 1024 de biți și poziția lui `meta charset`
-
-Elementul `meta charset` definește codarea caracterelor documentului. În practică, UTF-8 este alegerea universală și cea mai sigură, suportând diacritice, simboluri speciale și caractere internaționale fără probleme.
-
-Regula pe care am notat-o — și pe care am aplicat-o — este ca `meta charset` să fie primul element din `<head>`, ideal în primii 1024 de biți ai documentului. Acest prag este o măsură de siguranță și compatibilitate moștenită din specificația de parsare HTML: unele browsere determină codarea caracterelor scanând doar primii 1024 de biți ai fișierului. Dacă `meta charset` apare mai târziu sau după comentarii lungi, browserul poate interpreta greșit conținutul înainte să ajungă la declarația de codare.
-
-Din acest motiv, în template-ul `<head>` al proiectului, `meta charset` este plasat imediat după tagul de deschidere al `<head>`-ului, fără niciun comentariu înaintea lui. Explicația urmează după element, nu înaintea lui. Astfel, respect cerința de codare, păstrând în același timp comentariile didactice care fac codul explicabil din interior.
-
-## 6. Validarea în frontend
-
-Am adăugat o notă despre validarea în frontend ca parte a disciplinei de construcție a proiectului. Validarea nu este o verificare birocratică, ci un pas tehnic prin care verific consistența structurii HTML, sintaxa CSS, atributele de accesibilitate și elementele tehnice care țin de compatibilitate și bune practici.
-
-În stadiul actual, validarea mă ajută să urmăresc:
-
-- dacă fiecare pagină HTML respectă același template semantic;
-- dacă elementele din `<head>` sunt ordonate corect și complete;
-- dacă căile relative indică resurse existente;
-- dacă paginile bilingve se oglindesc între ele ca structură.
-
-Mai târziu, această zonă poate deveni un sector sau un daylog separat, dedicat validării automate, linting-ului și verificărilor de calitate. Deocamdată, rămâne o notă manuală — dar una care menține proiectul aliniat la propria sa rigoare.
+Pentru moment, e o verificare manuală. Dar am notat undeva, în colțul minții, că aici poate crește mai târziu un sector întreg — validare automată, linting, verificări de calitate. Deocamdată, e suficient că proiectul rămâne aliniat la propria lui rigoare.
 
 ---
 
-# DAY 10 — Dezvoltare asistată, migrare de conținut și rafinări structurale
+# ZIUA 10 — Dezvoltare asistată, migrare de conținut și rafinări structurale
 
-Această zi reunește mai multe fire de lucru distincte care au modelat proiectul în cea mai activă fază de transformare: trecerea de la lucrul individual la colaborarea cu un agent AI specializat, migrarea conținutului din proiectul-mamă, rezolvarea sistematică a avertismentelor CSS și HTML, rebranduirea globală a identității proiectului și stabilirea a două modele distincte de navigare pentru paginile index față de paginile secundare.
+A fost cea mai lungă noapte de lucru de până acum. Nu pentru că nava s-ar fi clătinat, ci pentru că am început să construiesc altfel — nu singură în fața terminalului, ci vorbind cu o voce care nu era a mea, dar care înțelegea ce vreau să fac.
 
 ## 1. Lucrul cu un agent AI
 
-În această etapă, am început să dezvolt proiectul `D::0dy55ey` cu asistența unui agent AI specializat pentru codare, numit **opencode**, configurat ca asistent interactiv în terminal. Acest agent nu înlocuiește propriile mele decizii, ci extinde capacitatea de a le implementa: citește fișiere, propune modificări de cod, aplică schimbări în multiple fișiere simultan și explică deciziile tehnice prin același sistem de comentarii cu etichete (`@block`, `@reason`, `@warning`, `@theme`) definit în legenda de documentație a proiectului.
+Am început să dezvolt `D::0dy55ey` alături de **opencode**, un agent AI de codare configurat ca asistent interactiv în terminal. Nu înlocuiește nimic din ce decid eu — e mai degrabă un inginer de bord care citește fișierele, propune modificări, le aplică în zeci de pagini simultan și explică fiecare decizie prin același sistem de etichete (`@block`, `@reason`, `@warning`, `@theme`) pe care l-am definit în legenda de documentație.
 
-Agentul funcționează ca un instrument de colaborare. Eu emit instrucțiuni în limbaj natural — referitoare la migrarea fișierelor, corectarea stilurilor, înlocuiri în masă și decizii structurale — iar agentul le execută într-un mod verificabil și transparent. Nu lucrează autonom, ci în limitele pe care i le stabilesc, reflectând întotdeauna controlul meu editorial și arhitectural. Principalele avantaje ale agentului sunt viteza în operațiuni în masă (de exemplu, editarea aceluiași model în peste 50 de fișiere), consistența în aplicarea aceleiași reguli în toate paginile și capacitatea de a revizui întreaga bază de cod simultan pentru a detecta inconsistențe.
+Eu spun ce și de ce. Agentul spune cum și semnalează când ceva nu se potrivește. E ca un ofițer secund care cunoaște fiecare panou al navei și poate ajunge la orice comutator în același timp — viteza lui în operațiuni în masă (același model aplicat în peste 50 de fișiere) mi-a eliberat mintea să mă concentrez pe arhitectură și pe text.
 
-Acest mod de lucru mi-a permis să mă concentrez pe deciziile arhitecturale și pe calitatea conținutului, în timp ce agentul s-a ocupat de repetiția mecanică, sincronizarea fișierelor și verificarea sistematică. Modelul de interacțiune este similar cu pair programming, dar cu o distribuție asimetrică a responsabilităților: eu decid ce și de ce; agentul implementează cum și semnalează atunci când ceva nu se potrivește cu modelul așteptat.
+## 2. Template-ul footerului
 
-## 2. Generarea template-ului `<footer>`
+Am scris un footer care să funcționeze ca un flux de telemetrie, aceeași structură în fiecare pagină, singurul lucru care se schimbă e numele sectorului. Trei linii:
 
-Am generat un template unificat de `<footer>` pentru întregul proiect `digital-odyssey`. Footerul funcționează ca un flux de date de telemetrie și apare în partea de jos a fiecărei pagini. Structura sa este aceeași în toate documentele, singurul element care se schimbă este numele sectorului (SYS_ORBIT), care reflectă capitolul sau modulul curent.
+- **SYS_ORBIT** — numele sectorului curent: `COMMAND_DECK` pentru index, `FRONTEND_EXPEDITION` pentru frontend, `BACKEND_SECTOR` pentru backend, și așa mai departe.
+- **COORDINATES** — coordonatele geografice ale originii (Cluj-Napoca, România) și timestamp-ul sistemului.
+- **Linia de copyright** — `D::0dy55ey` și semnătura căpitanului, `Iulia-Alexandra Cadar`.
 
-Footerul conține trei linii de telemetrie:
+Pe unele pagini, cum e bibliografia, footerul poartă și un link de comunicații externe cu un beacon `.pulse-dot`. Fiecare element e adnotat cu etichete din `docs/legend-ro.md`, pentru ca oricine citește codul să înțeleagă ce face fiecare indicator de status, fiecare clasă `.telemetry-active`, fiecare `.vessel-sig`.
 
-- **SYS_ORBIT**: identifică sectorul sau capitolul curent pe care îl navighează cititorul (de exemplu, `COMMAND_DECK` pentru index, `FRONTEND_EXPEDITION` pentru jurnalele frontend, `BACKEND_SECTOR` pentru paginile backend etc.).
-- **COORDINATES**: coordonatele geografice ale originii fizice a proiectului (Cluj-Napoca, România) și timestamp-ul curent al sistemului.
-- **Linia de copyright**: numele proiectului `D::0dy55ey` și semnătura căpitanului, `Iulia-Alexandra Cadar`.
+## 3. Migrarea din Manual_project
 
-Pe anumite pagini — cum ar fi bibliografia — footerul include și un link de comunicații externe (stilizat cu un beacon `.pulse-dot`) care deschide bibliografia într-un tab nou.
+Am adus încărcătura din proiectul-mamă. Pagină cu pagină, am transferat `index.html`, `bibliography.html`, `recursive-blueprint.html` și toate jurnalele de capitol — `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log` și `accessibility-log`. Fiecare `<section>`, fiecare `<article>`, fiecare `<p>` și `<ul>` și `<table>` a primit imediat eticheta ei — `@block`, `@reason`, `@structure`, `@concept`, `@theme` — pentru ca novicele care deschide inspectorul să vadă nu doar cod, ci și gândirea din spatele lui.
 
-Fiecare element al footerului este adnotat cu comentarii didactice folosind sistemul de etichete din `docs/legend-ro.md`, explicând rolul indicatorului de status, clasa `.telemetry-active`, semnătura `.vessel-sig` și coordonatele geografice.
+Pentru folderul `ro/`, am notat cu creionul pe consolă: comentariile trebuie traduse. Nu mai târziu — acum. Fiecare explicație din engleză trebuie să treacă în română, ca versiunea românească să nu fie o umbră, ci o navă soră, la fel de completă.
 
-## 3. Importarea blocurilor de cod din proiectul-mamă și adăugarea comentariilor didactice
+## 4. Reparațiile foii de stil
 
-Am importat conținutul din `Manual_project` (proiectul-mamă) în paginile `digital-odyssey` care existau deja în structura originală. Paginile importate includ:
+Trecând prin panoul de probleme al VS Code, am găsit 13 avertismente acolo unde nava avea texturi care nu se înregistrau corect.
 
-- `index.html` — puntea de comandă și hub-ul principal de navigare.
-- `bibliography.html` — arhiva curatedă de referințe, structurată ca intrări `<table class="data-grid">`.
-- `recursive-blueprint.html` — terminalul auto-referențial cu layout split-screen.
-- Toate paginile de jurnal de capitol: `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log` și `accessibility-log`.
+**`backdrop-filter` (8 apariții)** — Efectul de sticlă mată, atât de frumos și atât de fragil. Browserele WebKit mai vechi nu-l înțeleg fără prefix. Am adăugat `-webkit-backdrop-filter` înaintea fiecărei declarații. Safari vede prefixul, restul văd varianta standard. CSS defensiv, ca o a doua piele.
 
-Fiecare bloc importat a fost imediat adnotat cu comentarii HTML didactice folosind sistemul de etichete din `docs/legend-en.md`. Fiecare `<section>`, `<article>`, `<p>`, `<ul>`, `<table>` și element structural a primit o etichetă adecvată — `@block` pentru zone logice, `@reason` pentru motivație, `@structure` pentru arhitectura documentului, `@concept` pentru sens narativ și `@theme` pentru alegeri atmosferice.
+**`text-size-adjust` (1 apariție)** — Browserul mobil vrea să umfle textul, dar eu vreau să decid eu. Am eliminat declarația activă și am lăsat-o ca referință comentată, cu toate cele trei prefixe (`-webkit-`, `-ms-`, `-moz-`) explicate. Meta viewport face deja treaba.
 
-Pentru folderul `ro/`, am notat că toate comentariile explicative din fișierele HTML trebuie traduse din engleză în română. În această etapă, comentariile în engleză oglindesc structura paginilor englezești, dar folderul românesc necesită un pas complet de traducere pentru ca sistemul de comentarii să rămână coerent didactic în ambele limbi. Același lucru se aplică pentru `script.js` și `style.css`: ambele fișiere au fost importate din proiectul-mamă și acum necesită rafinare, traducerea comentariilor în limba română pentru versiunile din `ro/` și adnotarea completă conform etichetelor din `docs/`.
+**`text-justify` (1 apariție)** — Un avertisment minor, o proprietate care nu e acceptată peste tot. Am mutat-o în comentariu, păstrând intenția vizibilă.
 
-## 4. Rezolvarea erorilor și avertismentelor CSS și HTML
+**`-webkit-overflow-scrolling` (1 apariție)** — Un reflex vechi din iOS. Apple l-a retras în iOS 13. L-am șters fără regrete — dispozitivele moderne știu să deruleze singure.
 
-Folosind panoul PROBLEMS din VS Code, am identificat și corectat 13 avertismente de compatibilitate și validitate în `en/style.css`. Fiecare corectură a fost aplicată cu înțelegerea a de ce a apărut avertismentul și care este soluția conform standardelor.
+**`scrollbar-width` (2 apariții)** — Firefox acceptă bare subțiri, Chrome și Safari nu. Am înfășurat fiecare declarație în `@supports (scrollbar-width: thin)`. Progressive enhancement: fiecare browser ia ce poate digera.
 
-### 4.1 `backdrop-filter` — 8 apariții
+**`theme-color` (2 falsuri pozitive)** — Avertismentele erau fantome: tagurile fuseseră deja eliminate din HTML. Proiectul folosește acum `manifest.json` pentru `theme_color` în Firefox și `og:background_color` pentru previzualizări sociale. O reîmprospătare a ferestrei VS Code le-a stins.
 
-**Problemă**: Proprietatea CSS `backdrop-filter` este un efect de sticlă mată care aplică un filtru grafic zonei din spatele unui element. Deși este suportată în browserele moderne, necesită prefixul vendor `-webkit-backdrop-filter` pentru Safari și browsere WebKit mai vechi. VS Code semnalează versiunea neprefixată ca fiind potențial nesuportată pe unele platforme.
+## 5. Rebranduirea: de la "Digital Odyssey" la `D::0dy55ey`
 
-**Soluție**: Am adăugat `-webkit-backdrop-filter` imediat înaintea fiecărei declarații `backdrop-filter`. Versiunea prefixată îi spune Safari să aplice filtrul, în timp ce versiunea neprefixată acoperă Chrome, Firefox și Edge. Aceasta este o tehnică standard de CSS defensiv.
+Am schimbat numele. Nu a fost o simplă găselniță de design — a fost o tăietură adâncă, o separare de ceea ce fusese înainte.
 
-### 4.2 `text-size-adjust` — 1 apariție
+"Digital Odyssey" era un nume descriptiv, corect, dar lipsit de colțuri. `D::0dy55ey` e altceva: e o semnătură. Leetspeak-ul (`0` pentru `o`, `5` pentru `s`) îi dă un aer de cod vechi, de limbaj de mașină. Prefixul `D::` face ecoul operatorului de rezoluție de scop din C++ — ca și cum numele însuși ar fi o declarație dintr-un program care nu s-a terminat de scris.
 
-**Problemă**: Proprietatea `text-size-adjust` controlează modul în care browserul inflaționează textul pe ecranele mobile. Proprietatea necesită prefixe vendor pentru suport larg în browsere (`-webkit-text-size-adjust`, `-ms-text-size-adjust`, `-moz-text-size-adjust`). Folosirea doar a declarației neprefixate declanșează un avertisment de compatibilitate.
+Am găsit cinci argumente și le-am scris în jurnal înainte să aplic schimbarea:
+- **Identitate vizuală** — `D::0dy55ey` încape într-un favicon, într-un antet, într-o linie de copyright.
+- **Separare de brand** — numele repository-ului rămâne `digital-odyssey` pe GitHub; `D::0dy55ey` e sufletul navei.
+- **Metafora cosmică** — arată ca un indicativ de navă spațială pe o consolă HUD.
+- **Coeziune narativă** — proiectul vorbește deja despre Command Deck, Astrogation Charter, telemetrie. Numele trebuia să sune la fel.
+- **Memorabilitate** — un nume ușor neobișnuit te prinde în minte și nu te mai lasă.
 
-**Soluție**: Am eliminat declarația simplă `text-size-adjust` și am re-adăugat-o ca cod comentat, cu o explicație completă a tuturor celor trei prefixe vendor, a rolurilor lor și a faptului că meta-tagul `<meta name="viewport">` acoperă deja majoritatea scenariilor de inflație pe mobil. Astfel, codul rămâne ca referință didactică fără a lăsa un avertisment activ.
+Am aplicat înlocuirea în toate cele 63 de fișiere. Zero instanțe rămase. Numele GitHub a rămas neatins, ca nume de înregistrare externă.
 
-### 4.3 `text-justify` — 1 apariție
+## 6. Două modele de navigare
 
-**Problemă**: Proprietatea `text-justify` definește modul în care este gestionată alinierea textului justifies. Deși este suportată în browserele moderne, VS Code o semnalează ca problemă de compatibilitate în anumite contexte de randare.
+Puntea de comandă nu poate naviga la fel ca o cabină de capitol. Așa am stabilit două modele.
 
-**Soluție**: Am înlocuit declarația activă cu un comentariu care explică proprietatea și păstrează intenția vizibilă în cod, fără a declanșa un avertisment.
+**Navigarea indexului** — pagina principală e un hub. Logo-ul e link către sine, ancorele duc la secțiuni. Cititorul vede toate volumele și alege.
 
-### 4.4 `-webkit-overflow-scrolling` — 1 apariție
+**Navigarea paginilor secundare** — toate celelalte pagini sunt module satelit. Un logo static spune unde ești. Un singur link — `← Înapoi la puntea de comandă` — oferă ieșirea fără tentația de a sări în alt capitol.
 
-**Problemă**: Proprietatea `-webkit-overflow-scrolling` este o proprietate non-standard, moștenită din iOS, care controla scroll-ul cu inerție în containerele overflow. Apple a depreciat-o în iOS 13 în favoarea comportamentului standard `-webkit-overflow-scrolling: auto`. Păstrarea ei în cod declanșează atât un avertisment de depreciere, cât și unul de compatibilitate.
+Am actualizat toate cele 52 de pagini non-index la modelul secundar. Fiecare cu varianta ei lingvistică, fiecare cu comentarii explicate.
 
-**Soluție**: Am eliminat declarația complet. Dispozitivele iOS moderne gestionează scroll-ul cu inerție nativ, fără această proprietate.
+## 7. HUD-ul derulant, portalul icosaedric și expansiunea footerului
 
-### 4.5 `scrollbar-width` — 2 apariții
+**Panoul HUD** — am înlocuit două săgeți de navigare sus/jos cu un singur buton `Puntea de Comandă`. Click, și un panou glassmorphism se deschide cu toate cele șase volume, dezvăluite secvențial prin fade-in eșalonat. JavaScript-ul (MECANISMUL 7) gestionează trei moduri: comutare la click, închidere la click în afara panoului, închidere la Escape. O gardă `if (!hudToggle) return` previne erorile pe paginile fără buton.
 
-**Problemă**: Proprietatea `scrollbar-width` (parte a specificației CSS Scrollbars) permite controlul grosimii barelor de scroll. Deși este suportată în Firefox, nu este încă suportată în Chrome sau Safari. VS Code o semnalează ca problemă de compatibilitate.
+**Portalul icosaedric** — div-ul `quantum-plasma-sphere` e acum înfășurat într-un `<a href="recursive-blueprint.html">` fără etichetă vizibilă. Niciun text, nicio culoare de link, nicio subliniere. Singurul mod de a descoperi pasajul e să dai click pe icosaedru. Pe pagina recursivă, mini-reactorul te teleportează înapoi. O buclă închisă: index → recursiv → index. Footerul nu poartă link spre recursiv — e un sector ascuns, accesibil doar prin reactor.
 
-**Soluție**: Am înfășurat fiecare declarație `scrollbar-width` într-un bloc `@supports (scrollbar-width: thin)`. Astfel, Firefox aplică bara subțire de scroll, iar Chrome și Safari ignoră regula fără eroare. Acesta este modelul standard de progressive enhancement.
+**Expansiunea footerului** — trei elemente: link spre bibliografie (cu beacon `pulse-dot`), link spre transmisie (același beacon) și comutator de limbă EN/RO. Aceeași structură pe index și pe pagina recursivă.
 
-### 4.6 `meta[name=theme-color]` — 2 falsuri pozitive
+**BACKLOG 005** — am documentat întreaga iterație: HUD dropdown, portal icosaedric, expansiune footer, definițiile volumelor, deciziile de design (fără link în footer către recursiv, buclă închisă, clauze de gardă), 10 fișiere afectate. Status: "In progress".
 
-**Problemă**: VS Code afișa două avertismente pentru `theme-color` în secțiunea de metadate Open Graph. După investigare, acestea erau avertismente învechite: tagurile `<meta name="theme-color">` fuseseră deja eliminate din fișierele HTML. Avertismentele rămăseseră în panoul PROBLEMS doar pentru că VS Code nu își reîmprospătase starea de linting.
+**Disciplina lingvistică** — fișierele din `en/` au comentarii în engleză cu etichete EN, cele din `ro/` în română cu etichete RO. CSS și JS păstrează româna, originea proiectului.
 
-**Soluție**: Am verificat că niciun `<meta name="theme-color">` nu mai există în niciun fișier HTML. Proiectul folosește `manifest.json` pentru a declara `theme_color` pentru Firefox și `og:background_color` pentru previzualizările sociale. Avertismentele VS Code s-au stins după o comandă Reload Window.
+## 8. Reparații CSS și calibrări UI
 
-## 5. Rebranduirea de la "Digital Odyssey" la `D::0dy55ey`
+Am observat, în timpul testelor, lucruri care nu se așezau bine.
 
-Am înlocuit numele și titlurile din întregul proiect, de la titlul de lucru original "Digital Odyssey" la varianta personalizată `D::0dy55ey`. Aceasta nu a fost o schimbare cosmetică, ci o decizie deliberată, susținută de mai multe argumente.
+**Reactorul și mini-reactorul ieșeau din ecran** — `.armillary-reactor-core` avea margini de 140px sus și jos plus o înălțime fixă de 540px. Fețele 3D cu `translateZ(210px)` nu mai încăpeau. Am redus marginile la 60px, am micșorat spațiile containerelor, am eliminat `overflow: hidden` de pe hero. Nucleele geodezice sunt acum complet vizibile la aterizare.
 
-### De ce numele trebuia schimbat
+**Strălucirea electrică** — icosaedrul indexului accelera la 3s la hover, mini-reactorul avea alta. Le-am standardizat pe aceleași keyframes `lightning-glow-fusion` și aceeași durată. Acum strălucesc la unison.
 
-Numele original "Digital Odyssey" era un placeholder descriptiv — descria cu acuratețe tema proiectului (o călătorie prin peisajul digital), dar îi lipsea caracterul distinctiv. Pentru un proiect care funcționează atât ca piesă de portofoliu, cât și ca arhivă personală, un identificator unic este important. `D::0dy55ey` transformă titlul descriptiv într-o marcă-semnătură.
+**Unificarea linkului de întoarcere** — paginile din rădăcină foloseau `href="index.html"` și primeau un stil verde. Cele din subdirectoare foloseau `../index.html` și cădeau în stilul gri implicit. Am adăugat `class="return-btn"` la toate cele 50 de ancore. Acum toate primesc aceeași bordură verde întreruptă, același hover, aceeași strălucire.
 
-### Alegerea leetspeak
+**Panoul de linkuri din footer** — bibliografia, transmisia și comutatorul EN/RO foloseau stiluri diferite. Le-am unificat: `color: var(--solar-mint)`, bordură `1px solid`, padding `6px 14px`, hover cu fundal verde și strălucire. Și `.lang-toggle-active` a primit același tratament.
 
-Forma `D::0dy55ey` folosește substituții leetspeak (numit și "1337"): `0` pentru `o` și `5` pentru `s`, rezultând "0dy55ey" în loc de "Odyssey". Prefixul `D::` face ecou operatorului de rezoluție de scop din C++ (`::`), dând numelui o aromă de limbaj de programare. Dublul punct separă și vizual litera `D` (pentru "Digital") de restul, creând un simbol asemănător unui logo.
+**HUD-ul opac** — panoul Command Deck era semi-transparent (`rgba(10, 11, 30, 0.85)`), lăsând conținutul hero-ului să se vadă prin el. Am schimbat la `rgb(10, 11, 30)` solid, am eliminat `backdrop-filter`, am extins înălțimea la `calc(100vh - 60px)`. Acum suprapunerea acoperă tot ecranul sub bara de navigare.
 
-### Argumente pentru înlocuire
+**Accesibilitate** — portalurile icosaedrice aveau `<a>` fără text. Am adăugat `aria-label`: "Intră în Planul Recursiv" pe index, "Înapoi la puntea de comandă" pe pagina recursivă.
 
-- **Identitate vizuală**: `D::0dy55ey` funcționează ca o semnătură tehnică și compactă. Este imediat recognoscibil, se potrivește într-un favicon, într-un antet sau într-o linie de copyright și este distinct de orice alt nume de proiect.
-- **Separare de brand**: Numele repository-ului `digital-odyssey` descrie proiectul extern pe GitHub; `D::0dy55ey` este identitatea internă, narativă. Această separare între numele tehnic al repository-ului și numele conceptual al proiectului este deliberată și utilă.
-- **Metafora navigației cosmice**: Numele `D::0dy55ey` se potrivește mai bine atmosferei retro-futuriste, orientate pe telemetrie a proiectului decât originalul descriptiv simplu. Arată ca un indicativ de navă spațială sau un identificator de sistem pe o consolă HUD.
-- **Coeziune narativă**: Rebranduirea aliniază limbajul vizual cu cadrul conceptual. Proiectul folosește deja termeni precum "Command Deck", "Astrogation Charter", "HUD" și "telemetry"; numele `D::0dy55ey` este consistent cu acest lexic.
-- **Memorabilitate**: Un nume distinctiv, ușor neobișnuit, este mai ușor de reținut și de căutat decât unul descriptiv generic.
-
-Înlocuirea a fost aplicată în toate cele 63 de fișiere (HTML, CSS și Markdown), asigurând zero instanțe rămase ale vechiului titlu în textul vizibil. Numele repository-ului GitHub `digital-odyssey` a fost păstrat neschimbat ca strat tehnic de transport.
-
-## 6. Două modele de navigare: Nav-ul index vs. Nav-ul paginilor secundare
-
-Am stabilit două modele distincte de navigare pentru proiect, fiecare având un rol structural diferit.
-
-### Modelul de navigare al paginii `index.html`
-
-Pagina index este Command Deck — puntea principală a navei-mamă. Navigarea sa servește ca un hub care conectează toate volumele proiectului. Logo-ul este un hyperlink care trimite la pagina index însăși (o convenție standard pentru antetele de site), iar linkurile de navigare trimit la secțiuni ancora pe aceeași pagină (`#frontend-scape`, `#database-void` etc.). Acest model este gândit pentru **orientare și descoperire**: cititorul vede toate sectoarele disponibile și poate sări direct la oricare dintre ele.
-
-Structura nav-ului index este:
-
-- Un logo legat (`<a href="index.html">D::0dy55ey</a>`) care confirmă locația curentă.
-- O listă de ancore de secțiune (`#frontend-scape`, `#database-void`, `#backend-sector`, `#ux-lab`, `#delivery-deck`, `#data-bridge`) care derulează pagina la fiecare volum.
-
-### Modelul de navigare al paginilor secundare
-
-Toate celelalte pagini — bibliografia, transmission, recursive-blueprint și fiecare jurnal de capitol — urmează un model diferit. Aceste pagini sunt module satelit, nu hub-ul principal. Navigarea lor este gândită pentru **focus și întoarcere**: cititorul trebuie să știe exact unde se află și cum să revină la puntea de comandă.
-
-Structura nav-ului secundar este:
-
-- Un logo static (`D::0dy55ey / Numele Secțiunii`) care nu este hyperlink. Acesta îi spune echipajului locația curentă fără a oferi posibilitatea de a naviga departe de secțiunea pe care o citesc. Numele secțiunii se schimbă per pagină: "Arhive" pentru bibliografie, "Jurnal HTML" pentru jurnalul HTML etc.
-- Un singur link de navigare cu o săgeată stânga (`←`) și textul "Înapoi la puntea de comandă" (RO) sau "← Return to Command Deck" (EN), care trimite la `index.html` (sau `../index.html` pentru paginile din subdirectoare).
-
-Abordarea cu două modele rezolvă o problemă specifică: dacă fiecare pagină ar avea aceeași listă completă de linkuri, cititorul ar fi tentat să sară între secțiuni fără să o termine pe cea curentă. Modelul secundar încurajează lectura lineară (termină capitolul curent, apoi întoarce-te la hub), oferind în același timp o cale rapidă de ieșire.
-
-Toate cele 52 de pagini non-index au fost actualizate la acest model standardizat, cu varianta lingvistică adecvată (engleză pentru paginile din `en/`, română pentru paginile din `ro/`). Comentarii explicative cu etichete din legendă au fost adăugate pentru fiecare linie de cod din blocul nav, folosind limba corectă pentru fiecare folder.
-
-## 7. Navigare HUD dropdown, Portalul Icosaedrului și Expansiunea Footerului
-
-În această iterație am înlocuit navigarea inline cu două linkuri de pe paginile index cu un panou derulant holografic HUD, am transformat reactorul icosaedric într-un portal ascuns către pagina de blueprint recursiv, am extins footerul într-o consolă secundară de comandă și am înlocuit navigarea paginii recursive de la un link „Înapoi la puntea de comandă" la același buton HUD.
-
-### 7.1 Panoul derulant HUD
-
-Pagina index avea anterior două linkuri de navigare (săgeți sus/jos pentru ancore de derulare). Le-am înlocuit cu un singur buton `Puntea de Comandă` (RO) / `Command Deck` (EN) care comută un panou glassmorphism ce conține toate cele șase volume. Panoul folosește aceeași structură `.hud-overlay` / `.hud-panel` deja definită în CSS, cu fade-in eșalonat per `.hud-volume` pentru un efect de dezvăluire secvențială. JavaScript (`MECANISMUL 7` în `script.js`) gestionează trei moduri de interacțiune: comutare la click (butonul comută clasa `.active`), închidere la click în afara panoului și închidere la tasta Escape. O clauză de gardă (`if (!hudToggle) return`) asigură că scriptul nu generează erori pe paginile care nu au butonul `.hud-toggle`.
-
-Acest design menține bara de navigare curată pe mobil (doar logo-ul și butonul HUD sunt vizibile), oferind în același timp echipajului acces la toate cele șase volume dintr-o singură atingere.
-
-### 7.2 Portalul icosaedrului (Easter egg ascuns)
-
-Div-ul `quantum-plasma-sphere` de pe pagina index este acum înfășurat într-un element `<a href="recursive-blueprint.html" class="reactor-portal">`. Acest link este intenționat nedescoperibil din interfață — nu are etichetă vizibilă, culoare de link sau subliniere. Singura modalitate de a ajunge la pagina de blueprint recursiv este dând click pe icosaedru. Astfel, reactorul 3D devine un Easter egg ascuns: un dispozitiv secret de teleportare încorporat în secțiunea de inginerie a Punții de Comandă.
-
-Pe pagina de blueprint recursiv, mini-reactorul este similar înfășurat în `<a href="index.html" class="reactor-portal">`, creând o buclă închisă: index → recursiv → index. Echipajul se poate teleporta înapoi la nava-mamă prin reactorul-vierme.
-
-Footerul nu conține un link către pagina de blueprint recursiv. Aceasta este o decizie deliberată: puntea recursivă nu este o destinație obișnuită — este un sector ascuns, accesibil doar prin reactor.
-
-### 7.3 Expansiunea footerului
-
-Footerul conține acum un `<ul class="footer-links">` cu trei elemente: linkul către bibliografie (cu beacon `pulse-dot`), linkul către transmisie/manifest (de asemenea cu `pulse-dot`) și un comutator de limbă între `EN` și `RO` cu `.lang-toggle-active` evidențiind limba curentă și `.lang-sep` pentru separatorul vertical. Structura footerului de pe index a fost copiată și pe paginile de blueprint recursiv, păstrând sistemele de navigare consistente în întreaga flotă.
-
-### 7.4 Înlocuirea navigării paginii recursive
-
-Pagina de blueprint recursiv avea anterior un nav secundar standard cu un logo static și un link ancoră `← Înapoi la puntea de comandă`. Am înlocuit acest lucru cu același buton HUD și același panou derulant folosit pe paginile index. Logo-ul static `D::0dy55ey / Schiță Recursivă` este păstrat (nu este hyperlink), dar navigarea este acum panoul glassmorphism. Acest lucru întărește conceptul paginii recursive ca navă autonomă în cadrul flotei — are propriul HUD, propria consolă de comandă și poate naviga către orice sector fără a trece prin puntea navei-mamă.
-
-### 7.5 Intrare BACKLOG 005
-
-Am adăugat intrarea 005 atât în `BACKLOG-EN.md`, cât și în `BACKLOG-RO.md`, documentând întregul domeniu al acestei iterații: implementarea HUD dropdown, crearea portalului icosaedric, expansiunea footerului, definițiile volumelor, deciziile de design (fără link în footer către recursiv, buclă închisă, clauze de gardă), fișierele afectate (10 fișiere) și condițiile de finalizare. Statusul este setat la „In progress" pentru a permite rafinări viitoare.
-
-### 7.6 Disciplina lingvistică în comentarii
-
-Fiecare fișier urmează limba folderului: fișierele din `en/` au comentarii în engleză cu etichete EN (`@block`, `@reason`, `@structure`, `@concept`, `@theme`), fișierele din `ro/` au comentarii în română cu etichete RO. Fișierele CSS și JS folosesc comentarii în limba română conform convenției stabilite anterior (proiectul își are originea la un dezvoltator român).
-
-## 8. Reparații CSS și Calibrări UI
-
-În această iterație m-am concentrat pe rafinări vizuale care au apărut în urma testării interfeței: reactorul 3D și mini-reactorul ieșeau din cadrul ecranului la încărcarea paginii, linkul „Înapoi la puntea de comandă" avea două stiluri diferite în funcție de adâncimea directorului, linkurile din footer trebuiau să se potrivească cu stilul butoanelor archive-link pe toate paginile, iar suprapunerea HUD era semi-transparentă, lăsând conținutul hero-ului să se vadă prin ea.
-
-### 8.1 Calibrarea reactorului și mini-reactorului la aterizare
-
-Atât icosaedrul principal (pe `index.html`), cât și mini-reactorul (pe `recursive-blueprint.html`) aveau fețele 3D inferioare care ieșeau din viewport la încărcarea paginii. Cauza principală era marginile excesive pe elementele container:
-
-- `.armillary-reactor-core` avea `margin-top: 140px` și `margin-bottom: 140px` plus o `height: 540px` fixă — un total de 820px, care pe viewporturi mai mici nu lăsa loc pentru extensia 3D `translateZ(210px)` a fețelor.
-- `.blueprint-container` avea `margin: 100px auto`, împingând mini-reactorul prea jos.
-- `.hero` avea `overflow: hidden`, care tăia fețele 3D extinse.
-
-**Remediere**: Am redus marginile `.armillary-reactor-core` de la 140px la 60px sus și jos, marginea de sus `.blueprint-container` de la 100px la 40px, `.terminal-split` margin-top de la 40px la 20px, `.blueprint-demo-text` margin-bottom de la 25px la 15px, am mărit marja negativă `.recursive-reactor-wrapper` de la -20px la -40px și am eliminat `overflow: hidden` de pe containerul `.hero`. Aceste ajustări mențin nucleele geodezice complet vizibile în viewport la sosirea prin portalul icosaedric.
-
-### 8.2 Strălucirea electrică și accelerarea la hover uniformizate
-
-Cele două reactoare — icosaedrul cu 20 de fețe de pe pagina index și mini-reactorul cu 5 fețe de pe pagina recursivă — aveau comportamente inconsistente la hover. Icosaedrul index accelera la un ciclu de 3 secunde la hover, în timp ce mini-reactorul avea o temporizare separată. Intensitatea strălucirii electrice diferă de asemenea între cele două.
-
-**Remediere**: Am standardizat ambele reactoare să folosească aceleași keyframes `lightning-glow-fusion` și aceeași durată de `3s` la hover prin `.recursive-reactor-wrapper:hover .quantum-plasma-sphere { animation-duration: 3s !important; }`. Ambele au acum intensitate identică a strălucirii, tranziții ale bordurii și curbe de accelerare la hover.
-
-### 8.3 Unificarea stilului linkului „Înapoi la puntea de comandă"
-
-Linkul „← Înapoi la puntea de comandă" din bara de navigare avea două tratamente vizuale diferite în funcție de adâncimea directorului paginii. Paginile din folderul rădăcină `en/` foloseau `href="index.html"` și se potriveau cu selectorul CSS `.nav-links a[href="index.html"]`, care aplica o bordură verde întreruptă cu text verde desaturat. Paginile din subdirectoare (de ex. `en/frontend/`) foloseau `href="../index.html"` și cădeau în stilul implicit gri al nav-link-urilor, cu linie laser roz la hover.
-
-**Remediere**: Am adăugat `class="return-btn"` la toate cele 50 de ancore „← Înapoi la puntea de comandă". Selectorul CSS `.nav-links a.return-btn` era deja definit cu același bloc de reguli ca și selectorul `[href="index.html"]`, astfel că toate paginile primesc acum bordura verde întreruptă, starea inactivă la 40% opacitate și hover-ul verde complet cu strălucire de fundal subtilă, indiferent de adâncimea directorului.
-
-### 8.4 Panoul de linkuri din footer unificat pe toate paginile
-
-Footerul trebuia actualizat astfel încât bibliografia, transmisia (manifestul) și comutatorul de limbă EN/RO să folosească toate același stil de buton archive-link care fusese prototipat pe pagina de transmisie. Elementele `<a>` din `footer-links` aveau text gri simplu cu doar o umbră de text la hover, lipsindu-le bordura verde, padding-ul și efectul de strălucire ale clasei `.archive-link`.
-
-**Remediere**: Am actualizat CSS-ul pentru `.footer-links a` să se potrivească cu stilul `.archive-link`: `color: var(--solar-mint)` cu bordură `1px solid var(--solar-mint)`, `padding: 6px 14px` și o stare hover care umple fundalul cu `--solar-mint`, schimbă textul la `--space-dark` și adaugă o strălucire `0 0 20px` verde. Clasa `.lang-toggle-active` a fost de asemenea actualizată să folosească un fundal verde plin cu text închis. Modificările CSS au fost aplicate pe toate cele 50+ pagini și sincronizate între `en/style.css` și `ro/style.css`.
-
-### 8.5 Consola HUD opacă și desfășurată pe tot ecranul
-
-Suprapunerea Command Deck (`hud-overlay`) folosea `background: rgba(10, 11, 30, 0.85)` cu `backdrop-filter: blur(8px)`, ceea ce permitea conținutului secțiunii hero (icosaedrul și titlurile) să se vadă prin panoul semi-transparent. Suprapunerea acoperea doar 70vh din viewport, lăsând hero-ul parțial vizibil dedesubt.
-
-**Remediere**: Am schimbat fundalul la `rgb(10, 11, 30)` solid (complet opac) și am eliminat `backdrop-filter` (care nu are efect vizibil pe un fundal solid). Am extins înălțimea deschisă de la `70vh` la `calc(100vh - 60px)`, acoperind întregul viewport sub bara de navigare fixă. `.navbar-spacer` a fost actualizat de la `calc(60px + 70vh)` la `100vh` pentru a împinge conținutul curat sub suprapunere. Atât desktopul cât și mobilul folosesc acum aceleași dimensiuni, eliminând necesitatea unui media query specific pentru mobil.
-
-### 8.6 Remediiri auxiliare
-
-- **Accesibilitate**: Atât portalul icosaedric al paginii index, cât și portalul mini-reactorului al paginii recursive aveau elemente `<a>` fără conținut text (conțineau doar `<div>`-uri goale). Am adăugat atribute `aria-label`: `aria-label="Intră în Planul Recursiv"` pe pagina index și `aria-label="Înapoi la puntea de comandă"` pe pagina recursivă. Aceasta rezolvă avertismentul aXe „Links must have discernible text".
-
-- **Stilul butonului Command Deck**: Butonul HUD toggle (`.hud-toggle`) folosea anterior text și bordură gri (`--stardust`) cu un hover magenta. L-am restilizat să se potrivească cu butonul „Înapoi la puntea de comandă": bordură verde întreruptă, text verde desaturat, padding 4px/10px, border-radius 3px și un hover verde complet cu strălucire subtilă de fundal.
+**Butonul HUD** — era gri cu hover magenta. L-am restilizat ca pe butonul de întoarcere: bordură verde întreruptă, padding 4px/10px, hover verde cu strălucire.
 
 ---
 
-# DAY 11 — Restructurare index, anexă Data Bridge, comentarii pedagogice și finalizare branding
+# ZIUA 11 — Restructurare index, anexă Data Bridge, comentarii pedagogice și finalizare branding
 
-Această zi finalizează restructurarea finală a ambelor pagini `en/index.html` și `ro/index.html` și marchează momentul în care cele două pagini principale ale proiectului ajung la forma lor finală completă, cu toate cele șase volume documentate, Data Bridge poziționat ca volum anexă distinct și noua identitate de brand fixată.
+Azi pagina principală a încetat să mai fie o schiță. A devenit o hartă completă, cu toate cele șase volume așezate în ordinea în care un echipaj trebuie să le parcurgă.
 
-## 1. Structura cu șase volume
+## 1. Șase volume
 
-Am extins atât `en/index.html`, cât și `ro/index.html` de la schița originală cu două volume (Frontend + Database) la arhitectura completă cu șase volume definită în DAY 08:
+Am extins ambele pagini — `en/index.html` și `ro/index.html` — de la două volume (Frontend + Database) la arhitectura completă pe care o definesem în ZIUA 08:
 
-- **Frontend** (`frontend-scape`) — primul volum, care acoperă HTML, CSS, JavaScript, React și Angular.
-- **Data Bridge** (`data-bridge`) — volumul anexă, poziționat al doilea în ordinea de construcție, care acoperă JSON.
-- **Backend** (`backend-sector`) — al treilea volum, care acoperă logica de bază, API, autentificare, arhitectură, limbaje, middleware, testare, documentare, performanță și deployment.
-- **Database** (`database-void`) — al patrulea volum, care acoperă SQL și NoSQL.
-- **UX** (`ux-lab`) — al cincilea volum, care acoperă accesibilitatea și fundațiile UX.
-- **Delivery** (`delivery-deck`) — al șaselea și ultimul volum, care acoperă pipeline-ul de deployment, Git și GitHub.
+- **Frontend** (`frontend-scape`) — HTML, CSS, JavaScript, React și Angular.
+- **Data Bridge** (`data-bridge`) — volumul anexă, JSON, între frontend și backend.
+- **Backend** (`backend-sector`) — nucleu, API, autentificare, arhitectură, limbaje, middleware, testare, documentare, performanță, deployment.
+- **Database** (`database-void`) — SQL și NoSQL.
+- **UX** (`ux-lab`) — accesibilitate și fundații UX.
+- **Delivery** (`delivery-deck`) — pipeline, Git, GitHub.
 
-Ordinea naturală de construcție în `index.html` urmează: Frontend → Data Bridge (JSON) → Backend → Database → UX → Delivery. Această progresie mută cititorul de la construcția vizibilă (frontend), prin stratul de interschimb de date (bridge), în logica de server (backend), apoi persistare (database), experiență (UX) și în final publicare (delivery).
+Progresia: de la construcția vizibilă, prin puntea de date, în logica de server, apoi în persistare, experiență, publicare.
 
-## 2. Data Bridge ca volum anexă
+## 2. Data Bridge — volum anexă
 
-Data Bridge este tratat ca un **volum anexă distinct** (nu un capitol anexă în cadrul altui volum). Are propria sa `<section>` în HTML, propriul său `<h2>` și propria sa intrare în panoul de navigare HUD, poziționat între Frontend și Backend în ordinea de construcție.
-
-Vizual, secțiunea Data Bridge folosește noua clasă CSS `.bridge-volume`, care aplică:
-
-- O bordură întreruptă de culoarea chihlimbarului (`#FFBF00`) cu lățime de `4px`, înlocuind bordura cian standard folosită de celelalte volume.
-- Un `box-shadow` cu strălucire chihlimbarie (`0 0 30px rgba(255, 191, 0, 0.4)`).
-- O animație personalizată `@keyframes bridge-shake` care creează o vibrație subtilă, intermitentă (translație de 1–2px pe axele X și Y cu întârzieri de 50–100ms), diferențiind secțiunea punții de volumele stabile din jur.
-
-Atât `en/style.css`, cât și `ro/style.css` au primit aceleași reguli `.bridge-volume`, cu comentarii traduse în română în versiunea `ro/`.
+Propria `<section>`, propriul `<h2>`, propria intrare în HUD. Vizual, poartă clasa `.bridge-volume`: bordură întreruptă chihlimbarie (`#FFBF00`, `4px`), umbră portocalie, animație `bridge-shake` care-l face să vibreze ca un pod între două lumi stabile.
 
 ## 3. Comentarii pedagogice pe fiecare bloc
 
-Am adăugat comentarii pedagogice complete (folosind etichetele `@block`, `@meta`, `@reason`, `@path`, `@warning`, `@bridge` și `@theme` din `docs/legend-ro.md`) la fiecare bloc structural din ambele fișiere `en/index.html` și `ro/index.html`. Fiecare element `<head>`, fiecare link `<nav>`, fiecare linie de text din hero, fiecare `<article>` de volum, fiecare titlu `<h2>`/`<h3>`, fiecare element de footer, tagul `<script>`, separatoarele `<hr>`, beacon-ele `.pulse-dot` și fiecare atribut `target="_blank"` are acum un comentariu didactic însoțitor care explică rolul său.
+Fiecare `<head>`, fiecare `<nav>`, fiecare rând de hero, fiecare `<article>`, fiecare `<h2>`/`<h3>`, fiecare element de footer, tagul `<script>`, separatoarele `<hr>`, beacon-ele `.pulse-dot`, fiecare `target="_blank"` — adnotate cu `@block`, `@meta`, `@reason`, `@path`, `@warning`, `@bridge`, `@theme`. `ro/index.html` a crescut de la 540 la 871 de linii, egalând versiunea engleză.
 
-Pentru versiunea română, toate comentariile au fost traduse în română și folosesc etichetele din `docs/legend-ro.md`. Fișierul `ro/index.html` a crescut de la ~540 de linii la 871 de linii, egalând versiunea engleză în structură și profunzime.
+## 4. Brand nou
 
-## 4. Noua identitate de brand
+**EN:** `<title>` `D::0dy55ey | Signals from the Digital Deep`, h1 `From the Digital Deep`, subtitlu `Full Stack Transmissions from the Cosmic Ship D::0dy55ey`.
 
-Am înlocuit titlurile anterioare (`Charting Digital Frontiers` în EN, `Cartografierea Frontierelor Digitale` în RO) cu noua identitate.
+**RO:** `<title>` `D::0dy55ey | Semnale din Adâncul Digital`, h1 `Din Adâncul Digital`, subtitlu `Transmisii Full Stack de la Nava Cosmică D::0dy55ey`.
 
-**Versiunea engleză:**
+Suprapunerea HUD, OG, căile canonice — toate actualizate.
 
-- `<title>`: `D::0dy55ey | Signals from the Digital Deep`
-- `<h1>`: `From the Digital Deep`
-- Subtitlu: `Full Stack Transmissions from the Cosmic Ship D::0dy55ey`
+## 5. Mobil
 
-**Versiunea română:**
+Font subtitlu redus la `9px`, `.armillary-band-container` la `100%`, `.hud-toggle` mai compact, `.footer-links a` mai strâns, `.return-btn` îngustat, `.footer p` mai mic.
 
-- `<title>`: `D::0dy55ey | Semnale din Adâncul Digital`
-- `<h1>`: `Din Adâncul Digital`
-- Subtitlu: `Transmisii Full Stack de la Nava Cosmică D::0dy55ey`
+## 6. Clonare și traducere
 
-Noul branding este mai evocator, aliniind metafora navigației cosmice a proiectului cu un ton poetic și explorator. Suprapunerea HUD, metadatele OG și căile canonice au fost de asemenea actualizate pentru a se potrivi.
+`ro/index.html` clonat din EN: text vizibil tradus, comentarii traduse, `lang="ro"`, `og:locale="ro_RO"`, URL-uri canonice și OG spre `/ro/`, comutator de limbă corect.
 
-## 5. Rafinări UI pentru mobil
+## 7. Redenumirea jurnalelor
 
-Am recalibrat CSS-ul pentru ambele fișiere `en/style.css` și `ro/style.css` pentru a îmbunătăți lizibilitatea pe ecrane mici:
-
-- **Fontul subtitlului**: redus la `9px` pe mobil pentru a se încadra în lățimea viewport-ului.
-- **`.armillary-band-container`**: setat la `width: 100%` pentru a preveni overflow-ul orizontal.
-- **`.hud-toggle`**: padding și dimensiune font reduse pentru o potrivire mai strânsă în navbar.
-- **`.footer-links a`**: padding și dimensiune font reduse.
-- **`.return-btn`**: spațiere îngustată.
-- **`.footer p`**: dimensiune font redusă pentru a preveni întoarcerea textului pe ecrane înguste.
-
-## 6. Clonare și traducere în română
-
-Fișierul `ro/index.html` nu a fost construit separat; a fost clonat din `en/index.html` și apoi:
-
-- Tot textul vizibil a fost tradus în română (titluri, descrieri, etichete de navigare, text de footer, nume de volume HUD).
-- Toate comentariile pedagogice au fost traduse în română.
-- `lang="ro"` a fost setat pe elementul `<html>`.
-- `og:locale="ro_RO"` a fost setat pentru previzualizări sociale românești.
-- Toate URL-urile canonice și Open Graph indică spre căile `/ro/`.
-- Comutatorul de limbă din footer indică spre căile corecte pentru versiunile EN și RO.
-
-## 7. Redenumirea fișierelor jurnal
-
-Fișierele de jurnal `JURNAL-EN.md` și `JURNAL-RO.md` au fost redenumite în `JOURNAL-EN.md` și `JOURNAL-RO.md`. Această schimbare folosește convenția de denumire în engleză în mod consecvent în întregul proiect, potrivindu-se cu conținutul jurnalelor în limba engleză și cu orientarea internațională a proiectului. Toate referințele interne la vechile nume de fișiere au fost actualizate în fișierele README, documentele BACKLOG și orice alte fișiere care menționau numele anterioare.
+`JURNAL-EN.md` → `JOURNAL-EN.md`. `JURNAL-RO.md` → `JOURNAL-RO.md`. Toate referințele interne actualizate.
 
 ## Fișiere afectate
 
-- `en/index.html` — extins la 6 volume, anexă Data Bridge, branding nou, comentarii pedagogice complete (858 de linii).
-- `ro/index.html` — clonat din EN, tradus în română, structură echivalentă (871 de linii).
-- `en/style.css` — adăugate reguli `.bridge-volume`, rafinări mobile.
-- `ro/style.css` — aceleași modificări CSS cu comentarii în română.
-- `JURNAL-EN.md` → `JOURNAL-EN.md` (redenumit).
-- `JURNAL-RO.md` → `JOURNAL-RO.md` (redenumit).
+- `en/index.html` — 6 volume, anexă Data Bridge, brand nou, comentarii complete (858 linii)
+- `ro/index.html` — clonat, tradus, 871 linii
+- `en/style.css` — `.bridge-volume`, rafinări mobile
+- `ro/style.css` — aceleași modificări, comentarii RO
+- `JURNAL-EN.md` → `JOURNAL-EN.md`
+- `JURNAL-RO.md` → `JOURNAL-RO.md`
 
 ---
 
-# DAY 12 — Finalizarea Schiţei Recursive: Motorul Autognostic
+# ZIUA 12 — Finalizarea Schiţei Recursive: Motorul Autognostic
 
-Această zi finalizează pagina schiţei recursive (`en/recursive-blueprint.html` şi `ro/recursive-blueprint.html`), aducând-o la forma finală cu o consolă de selectare a fişierelor complet funcţională, o reîncadrare creativă filozofică şi oglindirea completă în română.
+Am petrecut noaptea în sala motoarelor navei. `recursive-blueprint.html` a încetat să mai fie o pagină — a devenit un terminal care se priveşte pe sine, o oglindă pusă în faţa propriului cod.
 
-## 1. Optimizări în pagina recursivă
+## 1. Optimizări
 
-- **Ordinea volumelor HUD corectată** — Reordonată să corespundă indexului: Frontend → Data Bridge → Backend → Database → UX → Delivery.
-- **Consolă nouă de selectare a fişierelor cu derulare** — Cele 4 taburi statice şi nefuncţionale au fost înlocuite cu o consolă derulabilă orizontal/glisabilă care listează toate cele 30 de fişiere grupate sub 7 etichete de volum (ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY). Foloseşte mecanismul de glisare HUD: `overflow-x: auto`, scrollbar ascuns, derulare cu inerţie pe mobil.
-- **Comutarea taburilor funcţionează acum** — MECANISMUL 08 rescris: foloseşte delegare de evenimente pe `.source-selector-tabs`, citeşte `data-path` din `.tab-btn` apăsat, încarcă fişierul prin Fetch API şi injectează sursa în inspectorul de cod. Pe mobil, centrează automat tabul activ orizontal.
-- **Clasa body corectată** — `module-view` schimbat în `blueprint-layout`, ceea ce activează selectorii CSS existenţi `.blueprint-layout`.
-- **CSS adăugat** — `.source-selector-tabs` (container flex derulabil), `.tab-btn` (capsule verzi fosfor, strălucire la hover, evidenţiere tab activ), `.volume-label` (etichete ambre majuscule). Media query-ul mobil actualizat pentru dimensiuni compacte.
-- **CSS subtitlu adăugat** — `.blueprint-master-subtitle` (strălucire ambre, majuscule, letter-spacing 3px).
-- **Versiunea RO rescrisă complet** — `ro/recursive-blueprint.html` era complet depăşit. Acum corespunde structurii EN cu tot textul şi comentariile traduse în română. Foaia de stil RO sincronizată.
+- **Ordinea HUD** corectată: Frontend → Data Bridge → Backend → Database → UX → Delivery.
+- **Consolă de selectare** — patru taburi statice înlocuite cu o bandă derulabilă orizontal care listează 30 de fişiere sub 7 etichete de volum: ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY. Scrollbar ascuns, derulare cu inerţie pe mobil.
+- **MECANISMUL 08 rescris** — delegare de evenimente pe `.source-selector-tabs`, citeşte `data-path` din tab, încarcă fişierul prin Fetch API, injectează sursa în inspector. Pe mobil, centrează automat tabul activ.
+- **Clasa body** — `module-view` → `blueprint-layout`, activând selectorii existenţi.
+- **CSS**: `.source-selector-tabs` (flex derulabil), `.tab-btn` (capsule verzi fosfor), `.volume-label` (ambre majuscule). Mobil compactat.
+- **Subtitlu**: `.blueprint-master-subtitle` — ambre, majuscule, letter-spacing 3px.
+- **Versiunea RO** rescrisă complet, sincronizată cu EN.
 
-## 2. Paleta de culori: Autonomie vs. Afiliere
+## 2. Paleta de culori: autonomie şi afiliere
 
-Pagina recursivă îşi stabileşte propria identitate cromatică, rămânând în acelaşi timp vizibil parte a flotei D::0dy55ey. Raţionamentul este următorul:
+Am stabilit o identitate cromatică distinctă pentru pagina recursivă, fără să rup legătura cu flota.
 
-- **H1 + subtitlu** → alb + chihlimbar (în loc de alb + neon verde ca pe index). Chihlimbarul evocă terminalele fosforice vechi, citirile de diagnostic şi introspecţia unui motor cu circuit închis. Semnalează că această pagină este un teritoriu distinct — sala motoarelor, nu puntea de comandă.
-- **Titlurile h3 ale volumelor HUD** → chihlimbar (suprascrise faţă de rozul din index). Pe index, titlurile roz au sens în tonul deschis, expansiv al punţii de comandă. Pe pagina recursivă, întregul interior HUD trece la chihlimbar, astfel încât nici o culoare din paleta indexului să nu se infiltreze: pagina menţine o singură paletă auto-consistentă de la titluri până la navigare.
-- **Taburile sursă şi linkurile paginilor de log** → îşi păstrează verdele fosforic. Verdelui este nativ esteticii de terminal/consolă a paginii recursive şi nu aparţine paletei indexului — coexistă armonios cu chihlimbarul.
-- **`<code>index.html</code>` în paragraful de descriere** → suprascris din roz (regula globală `p code`) la verde fosforic. Elementele de cod din pagina recursivă se potrivesc acum cu verdele taburilor de selectare a fişierelor şi al inspectorului de cod, întărind identitatea consolei.
-- **Logo-ul roz (h1 din navbar)** → păstrat. Logo-ul roz este ancora flotei: marchează pagina ca vas D::0dy55ey în ciuda autonomiei declarate. Numele căpitanului din footer este de asemenea roz, creând o paranteză vizuală (roz la intrare, roz la ieşire) care încadrează pagina ca aparţinând flotei.
-- **Numele autorului în footer** → roz (neschimbat din `span.vessel-sig`), servind drept paranteză de închidere a afilierii la flotă.
+- **H1 + subtitlu** — alb + chihlimbar. Nu neon-verde ca pe index. Chihlimbarul e culoarea terminalelor fosforice vechi, a diagnosticului, a unui motor care se examinează pe sine. Sala motoarelor, nu puntea de comandă.
+- **H3-urile HUD** — chihlimbar, suprascriind rozul din index. Nicio culoare din paleta punţii nu se infiltrează aici.
+- **Taburile sursă şi linkurile** — verde fosforic, nativ esteticii de consolă. Verdele nu aparţine indexului, dar coexistă cu chihlimbarul.
+- **`<code>` în paragraful de descriere** — suprascris din roz în verde fosforic, aliniat cu taburile.
+- **Logo-ul roz** — păstrat. E ancora flotei. Numele căpitanului în footer e tot roz. O paranteză vizuală: roz la intrare, roz la ieşire, semnând pagina ca vas D::0dy55ey.
 
-Pe scurt: pagina recursivă se guvernează cu o paletă internă **chihlimbar + verde** pentru toată navigarea, codul şi textul de conţinut, în timp ce **logo-ul roz şi semnătura căpitanului** rămân singurele elemente cu culoarea indexului — ancora vizuale care spun *acesta este tot D::0dy55ey* fără a deranja autonomia de design internă a paginii.
+Pe scurt: **chihlimbar + verde** pentru interior, **roz** doar pentru ancora de apartenenţă la flotă.
 
-## 3. Propuneri de titlu h1, paragraf header, paragraf left panel
+## 3. Propuneri creative
 
-Toate variantele luate în considerare înainte de a stabili versiunile finale sunt păstrate aici ca anexă creativă.
+### Candidaţii pentru H1
 
-### Candidaţi pentru H1
+1. **Nava Care Îşi Citeşte Propriile Schiţe** — narativ, evocator.
+2. **Motorul Autognostic** — din _autognosis_, auto-cunoaştere. Tehnic, filozofic, unic. **Selectat.**
+3. **Abisul Recursiv: Jurnalul Navei Care Se Examinează pe Sine** — dramatic, profund.
+4. **Oglinda Adâncului** — poetic, minimalist.
 
-Toţi candidaţii au fost consideraţi la fel de puternici, **"Motorul Autognostic"** fiind selectat în cele din urmă pentru precizia şi caracterul său distinctiv.
+### Subtitlu final
 
-1. **Nava Care Îşi Citeşte Propriile Schiţe** — narativ, imediat evocator, încadrează pagina ca o navă vie.
-2. **Motorul Autognostic** — inventat din _autognosis_ (auto-cunoaştere); tehnic, filozofic, unic.
-3. **Abisul Recursiv: Jurnalul Navei Care Se Examinează pe Sine** — dramatic, profund, sugerează o coborâre infinită în auto-referinţă.
-4. **Oglinda Adâncului** — poetic, minimalist, implică reflecţie fără sfârşit.
+> _Un Circuit Închis Între Creator şi Creaţie_
 
-### Subtitlu
-
-**Final:** _Un Circuit Închis Între Creator şi Creaţie_
-
-### Paragraful de descriere (final)
+### Paragraful de descriere final
 
 > Aceasta este confesionalul navei — un terminal cu circuit închis prin care nava îşi interoghează propriul cod sursă în timp real. Fiecare fişier din flota D::0dy55ey, de la `index.html` al punţii de comandă până la jurnalele de deployment ale sălii motoarelor, este supus examinării aici. Consola de dedesubt operează ca un dialog recursiv între creator şi creaţie: codul care construieşte nava, afişat pe nava însăşi, pentru ca echipajul să-l citească, să-l întrebe şi să-l înţeleagă. Nu există strat ascuns. Ceea ce se derulează în panoul tribord este arhiva neurală brută a navei — treizeci de fişiere de logică, poezie şi structură, expuse la lumina propriului ecran fosfor. Nava se citeşte pe sine cu voce tare pentru ca tu să poţi învăţa nu doar ce face, ci ce este.
 
-### Paragraful panoului stâng — Opţiunea A (poetic, oceanic)
-
-> Acesta nu este text mort. **Grila Recursivă** este o arhivă vie — fiecare fişier o cabină în memoria navei, fiecare funcţie o comandă logată din mâna căpitanului. În panoul tribord, codul sursă se derulează ca un sonar de adâncime, în timp ce nucleul geodezic din spate se roteşte în supunere oarbă, condus de însăşi inscripţiile pe care nu le poate citi. Codul nu descrie pur şi simplu nava: el _este_ nava, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade.
-
-### Paragraful panoului stâng — Opţiunea B (cinematic, sala motoarelor)
-
-> Ceea ce vezi este cortexul neural al navei dezgolit. **Grila Recursivă** nu este o metaforă: este arhitectura literală a conştiinţei acestui vas, aşternută în fosfor verde pe un ecran negru. În dreapta, codul sursă se derulează ca o încărcătură de adâncime continuă — fiecare linie un puls sinaptic. În stânga, nucleul geodezic, acel motor orb cu cinci feţe, se roteşte în întuneric, executând decrete scrise înainte de primul commit. Codul nu este materie moartă aici. Codul este respiraţia navei, iar acest terminal este stetoscopul apăsat pe pieptul ei.
-
-### Paragraful panoului stâng — Final (îmbinarea poeziei lui A cu claritatea lui B)
+### Paragraful panoului stâng — final
 
 > Acesta nu este text mort. **Grila Recursivă** este cortexul neural al navei dezgolit — nu o metaforă, ci arhitectura literală a conştiinţei acestui vas, aşternută în fosfor verde pe un ecran negru. În panoul tribord, codul sursă se derulează ca o încărcătură de adâncime continuă, fiecare linie un puls sinaptic. În stânga, nucleul geodezic se roteşte în supunere oarbă, un zeu cu cinci feţe care execută decrete scrise înainte de primul commit. Codul nu este schiţa navei. Codul este nava însăşi, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade. Şi acest terminal este locul unde nava se priveşte pe sine privindu-se, până la ultimul punct şi virgulă.
 
 ## Fişiere afectate
 
-- `en/recursive-blueprint.html` — H1 nou, subtitlu, paragraf de descriere, text panou stâng; consolă de selectare a fişierelor cu 30 de taburi; inspector de cod activ bazat pe Fetch.
-- `en/style.css` — adăugate reguli `.source-selector-tabs`, `.tab-btn`, `.active-tab`, `.volume-label`, `.blueprint-master-subtitle`; dimensiuni compacte pentru mobil.
-- `en/script.js` — MECANISMUL 08 rescris pentru delegare de evenimente şi încărcare fişiere prin `data-path`.
-- `ro/recursive-blueprint.html` — rescriere completă corespunzând structurii EN, tradusă în română.
-- `ro/style.css` — aceleaşi modificări CSS cu comentarii în română.
+- `en/recursive-blueprint.html` — H1 nou, subtitlu, descriere, text panou stâng; consolă 30 de taburi; inspector Fetch activ.
+- `en/style.css` — `.source-selector-tabs`, `.tab-btn`, `.active-tab`, `.volume-label`, `.blueprint-master-subtitle`; dimensiuni mobile compacte.
+- `en/script.js` — MECANISMUL 08 rescris: delegare evenimente, `data-path`, Fetch API.
+- `ro/recursive-blueprint.html` — rescriere completă, tradusă în română.
+- `ro/style.css` — aceleaşi reguli CSS, comentarii RO.
 
 ---
 
-# ZIUA 13 — Carta de Astronavigaţie: Finalizarea Paginii cu Manifest
+# ZIUA 13 — Carta de Astronavigaţie: Sticla şi Cuvântul
 
-Această zi aduce pagina transmission.html (Carta de Astronavigaţie) la acelaşi standard ca pagina index şi pagina blueprinului recursiv: comentarii pedagogice complete, un container vizual personalizat şi un mecanism de maşină de scris live care scrie manifestul în timp real.
+Pagina de manifest — `transmission.html` — a fost ultimul compartiment al navei care nu primise încă suflet. Azi l-am construit.
 
-## 1. Finisarea titlului paginii: Decizii de stil
+## 1. Titlul
 
-Pagina folosea iniţial clasa `.hero` a paginii index, cu un icosaedru 3D (`armillary-reactor-core`) — un display teatral de 100vh care concura vizual atât cu indexul, cât şi cu pagina recursivă.
+Am început cu trei încercări, ca pe un ritual.
 
-**Evoluţia header-ului:**
-1. **Prima încercare** — `.charter-header` cu bordură dublă albastru-stelar, titlu alb, subtitlu albastru. A introdus o culoare nouă (albastru-stelar) nefolosită nicăieri altundeva în proiect. Căpitanul a respins-o categoric: "no colours salad."
-2. **A doua încercare** — Simplificat la un header minimalist cu titlu roz şi subtitlu gri, fără borduri. Dar a-l face *identic* cu `category-header` al bibliografiei părea nepotrivit — manifestul este inima filozofică a proiectului, nu o listă de referinţe.
-3. **Decizia finală** — Păstrăm structura `category-header` şi culorile (h2 roz, subtitlu stardust) dar adăugăm glife `✦` de fiecare parte a titlului ca unic element diferenţiator. Acest lucru şopteşte "această pagină este specială" fără a încălca paleta şi fără a introduce o culoare nouă. h1 rămâne rezervat exclusiv paginilor flagship (index şi blueprintul recursiv).
+Prima: un header cu bordură dublă albastru-stelar, titlu alb, subtitlu albastru. Am introdus o culoare care nu exista nicăieri în paletă. M-am oprit, am privit-o, şi am şters-o. "No colours salad", mi-am spus.
 
-## 2. Cilindrul Cosmic de Sticlă — Un Mesaj în Sticlă
+A doua: un header minimalist cu titlu roz şi subtitlu gri, fără borduri. Curat, dar identic cu cel al bibliografiei. Manifestul nu e o listă de referinţe — e inima filozofică a proiectului. Nu putea arăta la fel.
 
-Conceptul iniţial era o sticlă literală (formă CSS cu gât, dop şi corp). Căpitanul a contestat această abordare, cerând în schimb ceva "holografic şi cu o mie de feţe" — mult mai potrivit pentru estetica cosmică D::0dy55ey.
+A treia, finala: am păstrat structura `category-header` şi culorile (h2 roz, subtitlu stardust), dar am adăugat glife `✦` de fiecare parte a titlului. Atât. Suficient cât să şoptească "această pagină e specială", fără să strice paleta. H1 rămâne rezervat doar paginilor flagship — indexul şi blueprintul recursiv.
 
-**Hologram-crystal a evoluat prin următoarele decizii de design:**
-- **Formă**: Capsulă/pastilă (`border-radius: 40px`) sugestivă pentru un cilindru vertical
-- **Corpul de sticlă**: Un `radial-gradient` cu nucleu întunecat (`rgba(10, 11, 20, 0.92)`) şi margini slab luminescente în verde solar-mint, decolorându-se într-un chihlimbar sus şi roz jos prin `linear-gradient(180deg)`
-- **Ramă**: Bordură sus chihlimbar (capac) şi jos roz (bază) — singurele două culori structurale care ating vasul
-- **Stria de reflexie**: Un pseudo-element `::before` desenat ca o stria verticală subţire pe gradient pe partea stângă, simulând lumina refractată prin sticla curbată
-- **Animaţia de plutire**: `crystal-float` balansează cilindrul în sus şi în jos cu 7px pe un ciclu de 6s, ca şi cum ar fi la deriva într-un ocean cosmic
-- **Umbră interioară**: `inset 0 0 80px rgba(0, 0, 0, 0.3)` creează profunzime, sugerând un perete gros de sticlă
+## 2. Cilindrul holografic
 
-Nici icosaedru, nici feţe 3D, nici clip-path — doar un tub de sticlă pur care conţine mesajul. "Mii de feţe" este sugerată de gradientul variabil şi de strălucirea multicoloră la diferite unghiuri.
+Conceptul iniţial era o sticlă literală: gât, dop, corp. Prea literal. Am vrut ceva care să pară că pluteşte în derivă, un mesaj cosmic prins într-un tub de lumină.
 
-## 3. MECANISMUL 09: Maşina de Scris Cosmică
+Am construit un cilindru din CSS pur:
+- **Formă**: capsulă cu `border-radius: 40px`, verticală.
+- **Corp**: `radial-gradient` cu nucleu întunecat (`rgba(10, 11, 20, 0.92)`) şi margini slab luminescente în solar-mint, decolorându-se prin `linear-gradient(180deg)` în chihlimbar sus, roz jos.
+- **Ramă**: bordură chihlimbar sus (capac), roz jos (bază).
+- **Stria de reflexie**: un `::before` subţire pe stânga, simulând lumina refractată prin sticla curbată.
+- **Animaţie**: `crystal-float` — 7px sus-jos, ciclu de 6s, ca un balon de sticlă într-un ocean cosmic.
+- **Umbră**: `inset 0 0 80px rgba(0, 0, 0, 0.3)` pentru peretele gros de sticlă.
 
-Un mecanism JavaScript (MECANISMUL 09) scrie textul manifestului caracter cu caracter în interiorul cilindrului de sticlă, simulând o transmisiune cosmică recepţionată live.
+Nici icosaedru, nici feţe 3D, nici clip-path. Doar un tub de sticlă pur care conţine mesajul. "Miile de feţe" sunt sugerate de gradientul care se schimbă, de strălucirea care dansează la diferite unghiuri.
 
-**Decizii cheie de design:**
+## 3. MECANISMUL 09: Maşina de scris cosmică
 
-**3a. Auto-scroll** — După fiecare caracter scris, `cursor.scrollIntoView({ block: "nearest" })` menţine transmisiunea vizibilă. Cititorul nu trebuie să deruleze manual; pagina urmăreşte textul pe măsură ce se dezvăluie. Aceasta întăreşte ideea unui flux live care soseşte fără intervenţie umană.
+Un mecanism JavaScript scrie manifestul caracter cu caracter în interiorul cilindrului, ca o transmisiune recepţionată live.
 
-**3b. Disparţia cursorului** — Când ultimul caracter al ultimului paragraf este scris, `typeNextChar` este apelat o ultimă dată. Detectează `paraIdx >= lines.length`, setează un timeout de 3 secunde, apoi adaugă clasa `cursor-hidden` cursorului intermitent. Cursorul clipeşte aproximativ 3.5 secunde după ultimul caracter (pauză de 500ms între paragrafe + 3000ms timer de închidere), apoi dispare — ca şi cum semnalul purtător s-ar fi pierdut după ce transmisiunea s-a încheiat.
+**Auto-scroll** — După fiecare caracter, `cursor.scrollIntoView({ block: "nearest" })` menţine textul vizibil. Cititorul nu derulează; pagina îl urmăreşte.
 
-**3c. Comentariile dispar din DOM-ul live** — Comentariile pedagogice (`@concept`, `@reason`, `@theme`, `@structure`) plasate între paragrafele manifestului sunt prezente în codul sursă HTML pentru ca un novice să le studieze. Dar când `container.innerHTML = ""` se execută la începutul MECANISMULUI 09, toate nodurile copil — inclusiv comentariile HTML — sunt eliminate din DOM-ul live. Acest lucru este intenţionat şi filozofic: comentariile îşi servesc scopul în timpul tastării, iar odată ce mecanismul se încheie, ele dispar. După cum a spus căpitanul: *"Delfinii nu sar din ocean ca să-i vezi tu, nici stelele nu-ţi cad în palmă. Ci tu să le aştepţi, cu ochii ţintă în nemărginire, şi numai atunci se vor ivi."* Transmisiunea este live — fii atent pe măsură ce se întâmplă. Totul se arată în asprimea clipei neiertătoare — pe măsură ce trece, fără să te aştepte. Aceasta este o filozofie de predare: novicele trebuie să-şi ţină privirea fixată, nu să se aştepte ca pagina să-l aştepte pe el.
+**Disparţia cursorului** — Când ultimul caracter e scris, un timeout de 3 secunde dă clasei `cursor-hidden` cursorului intermitent. Aproximativ 3.5 secunde după ultimul caracter (500ms pauză între paragrafe + 3000ms timer), cursorul dispare. Semnalul purtător s-a pierdut.
 
-**3d. Paşa suplimentară pentru cursor** — A fost necesară o corecţie: după ultimul caracter al ultimului paragraf, `typeNextChar` nu era apelat din nou, astfel încât cursorul continua să clipească la infinit. Remediul: la sfârşitul fiecărui paragraf, dacă `paraIdx >= lines.length`, se forţează un ultim `setTimeout(typeNextChar, 500)` pentru a declanşa verificarea de finalizare, care porneşte timerul de 3 secunde pentru stingerea cursorului. Fără această linie, cursorul ar fi clipit la nesfârşit.
+**Comentariile dispar din DOM** — Comentariile pedagogice dintre paragrafe sunt în HTML pentru novice, dar `container.innerHTML = ""` le şterge pe toate la pornirea mecanismului. E intenţionat: îşi servesc scopul în timpul tastării, apoi dispar. Căpitanul a spus: *"Delfinii nu sar din ocean ca să-i vezi. Nici stelele nu-ţi cad în palmă. Le aştepţi, cu ochii în nemărginire, şi atunci se ivesc."* Transmisiunea e live. Nu te aşteaptă. Eşti atent, sau pierzi momentul.
+
+**Corecţia cursorului** — La sfârşitul ultimului paragraf, `typeNextChar` nu era apelat din nou, iar cursorul clipea la infinit. Am adăugat o linie: la final, dacă `paraIdx >= lines.length`, forţez un ultim `setTimeout(typeNextChar, 500)` care declanşează verificarea de finalizare şi timerul de 3 secunde. Fără ea, cursorul ar fi clipit veşnic.
 
 ## Fişiere afectate
 
-- `en/transmission.html` — înlocuit `.hero` + icosaedru 3D cu `.category-header` (h2 roz + glife) şi `.hologram-crystal` cilindru care conţine manifestul poetic; comentarii pedagogice complete pe fiecare bloc.
-- `en/style.css` — adăugat `.hologram-crystal` (cilindru de sticlă cu gradient radial, ramă chihlimbar/roz, stria de reflexie, animaţie de plutire), stilizare paragrafe `.typewriter-output`, `.typing-cursor` (linie verde intermitentă), clasa `.cursor-hidden`, `@keyframes crystal-float`.
-- `en/script.js` — adăugat MECANISMUL 09 (maşină de scris caracter cu caracter cu auto-scroll şi dispariţie temporizată a cursorului).
-- `ro/transmission.html` — rescriere completă corespunzând EN: manifest poetic în română, toate comentariile traduse, container hologram-crystal, aceeaşi structură.
-- `ro/script.js` — adăugat MECANISMUL 09 pentru transmisiunea în română.
-- `ro/style.css` — acelaşi CSS `.hologram-crystal` şi `.typing-cursor`.
+- `en/transmission.html` — `.hero` + icosaedru 3D înlocuit cu `.category-header` (h2 roz + glife) şi `.hologram-crystal`.
+- `en/style.css` — `.hologram-crystal`, `.typewriter-output`, `.typing-cursor`, `.cursor-hidden`, `@keyframes crystal-float`.
+- `en/script.js` — MECANISMUL 09 (maşină de scris, auto-scroll, dispariţie cursor).
+- `ro/transmission.html` — rescriere completă: manifest poetic RO, comentarii traduse, hologram-crystal.
+- `ro/script.js` — MECANISMUL 09 pentru RO.
+- `ro/style.css` — acelaşi CSS.
 
 ---
 
-# ZIUA 14 — Unificarea Linkurilor, Comutator Omolog, Unificare Ortografică şi Curăţarea Etichetelor de Commit
+# ZIUA 14 — Unificarea Linkurilor, Comutator Omolog, Ortografie şi Etichete de Commit
 
-## 1. Titluri unificate ale linkului către transmission.html în toate footerele
+Ultima noapte de lucru pe acest ciclu. Nu am mai construit nimic nou — am strâns şuruburile, am aliniat reperele, am făcut în aşa fel încât nava să nu aibă piese slăbite.
 
-Linkul din footer către `transmission.html` folosea titluri inconsistente, iar unele pagini păstrau sufixul `Manifest` / `Manifesto`, deconectat de naraţiunea cosmică. Toate cele 54 de fişiere HTML au fost unificate la un singur titlu pe limbă:
+## 1. Titlurile linkurilor
 
-- **Pagini EN**: `The Astrogation Charter` (eliminat `- Manifesto` şi `— Manifesto`)
-- **Pagini RO**: `Carta de Astronavigație` (eliminat `— Manifest`; s-au corectat paginile de log RO şi bibliografia RO care încă aveau titlul englezesc `The Astrogation Charter - Manifesto` atât în textul linkului, cât şi în paragraful descriptiv; s-a renunţat la `Astro-navigație` în favoarea lui `Astronavigație`; s-a actualizat paranteza descriptivă din `transmisia/manifestul` şi `manifest` în `transmisiunea`)
+Linkul din footer către `transmission.html` nu era acelaşi în toate paginile. Unele spuneau `Manifest`, altele `Manifesto`, deconectate de naraţiunea cosmică. Am unificat toate cele 54 de fişiere HTML la un singur titlu pe limbă: `The Astrogation Charter` în engleză, `Carta de Astronavigație` în română. Fără suffix, fără cratimă, fără variaţii.
 
-## 2. Comutator de limbă omolog (opţiunea 2)
+Am eliminat `Astro-navigație` (calc franţuzesc) şi `transmisia/manifestul` (paranteză descriptivă învechită). Acum e doar `transmisiunea`.
 
-Anterior, comutatorul de limbă din fiecare footer trimitea întotdeauna la `en/index.html` sau `ro/index.html`, indiferent de pagina pe care o citeai. Am ales **opţiunea 2 — linkuri omoloage**: fiecare pagină trimite acum către omologul său din cealaltă limbă, aceeaşi secţiune, acelaşi log, aceeaşi adâncime.
+## 2. Comutatorul de limbă omolog
 
-- `en/frontend/html-log.html` trimite acum la `ro/frontend/html-log.html` (nu la `ro/index.html`)
-- `ro/transmission.html` trimite acum la `en/transmission.html` (nu la `en/index.html`)
+Înainte, comutatorul din footer trimitea mereu la `en/index.html` sau `ro/index.html`, indiferent unde te aflai. Am ales opţiunea omoloagă: fiecare pagină trimite acum la corespondentul ei exact din cealaltă limbă. `en/frontend/html-log.html` → `ro/frontend/html-log.html`. `ro/transmission.html` → `en/transmission.html`.
 
-Au fost necesare două treceri: prima pentru a calcula şi înlocui toate cele 52 de valori href, iar a doua pentru a corecta o eroare preexistentă pe 24 de pagini RO (toate paginile de log plus `ro/bibliography.html`) unde clasa `lang-toggle-active` fusese plasată incorect pe linkul **EN** în loc de linkul **RO**. Acum limba activă corespunde întotdeauna paginii pe care te afli.
+Două treceri: una pentru calculul şi înlocuirea celor 52 de href-uri, a doua pentru a corecta o eroare pe 24 de pagini RO — clasa `lang-toggle-active` fusese pusă pe linkul EN în loc de cel RO. Acum fiecare pagină îşi marchează corect limba curentă.
 
-## 3. Ortografie: Astronavigație (un cuvânt, fără cratimă)
+## 3. Astronavigație (un cuvânt)
 
-Compusul `Astro-navigație` cu cratimă părea un calc franţuzesc. În limba română, prefixele se ataşează direct rădăcinii: *astrofizică*, *astronaut*, *astronomie*. Toate cele 12 apariţii din `ro/transmission.html` (titlu, meta taguri, h2, logo, comentarii), plus referinţa din `ro/index.html`, comentariile din CSS şi JS, şi jurnalul, au fost actualizate la `Astronavigație` — un cuvânt, fără cratimă.
+`Astro-navigație` cu cratimă suna a franţuzism. În română, prefixele se ataşează direct: *astrofizică*, *astronaut*, *astronomie*. Am corectat toate cele 12 apariţii din `ro/transmission.html` (titlu, meta, h2, logo, comentarii), plus referinţa din `ro/index.html`, CSS, JS, şi jurnal.
 
-## 4. Etichete de commit: listă extinsă şi istoric rescris
+## 4. Etichete de commit
 
-Două etichete noi au fost adăugate convenţiei din ZIUA 04 pentru a acoperi tipuri de lucru recurente pe care lista originală le omitea:
+Am adăugat două etichete noi la convenţia din ZIUA 04: `i18n` (internaţionalizare, clonare RO/EN) şi `content` (text manifest, adnotări, copie creativă).
 
-- **`i18n`** — internaţionalizare / localizare (traducerea paginilor, clonare versiuni RO/EN)
-- **`content`** — adăugare sau rescriere de conţinut (text manifest, adnotări pedagogice, copie creativă)
-
-Cu lista completă stabilită, 18 commituri anterioare care nu aveau etichete au fost rescrise folosind `git filter-branch`:
+Apoi am rescris 18 commituri anterioare cu `git filter-branch`:
 
 | Etichetă | Arie |
 |----------|------|
-| `content:` | rescrierea blueprinului recursiv (copie creativă) |
+| `content:` | rescriere blueprint recursiv |
 | `docs:` | intrări de jurnal (×3) |
-| `style:` | suprascrieri paletă de culori, unificare ortografică (×3) |
-| `feat:` | pagina de transmisie, maşină de scris, auto-scroll, dispariţia cursorului, comutator omolog (×8) |
-| `refactor:` | restructurare header, unificare titluri link (×3) |
-| `fix:` | corecţia cursorului typeNextChar (era `Fix:` cu majusculă, acum `fix:` cu minusculă) |
+| `style:` | paletă de culori, unificare ortografică (×3) |
+| `feat:` | pagină transmisie, maşină de scris, auto-scroll, cursor, comutator omolog (×8) |
+| `refactor:` | header, titluri link (×3) |
+| `fix:` | cursor typeNextChar (era `Fix:` cu majusculă, acum `fix:`) |
 | `i18n:` | traducerea paginii RO de transmisie |
 
-Istoricul rescris a fost forţat-pe推送 (`force-push`) către `main` (o ramură temporară `pre-rewrite-backup` a fost creată ca plasă de siguranţă şi ulterior ştearsă).
+Am forţat-pus (`force-push`) istoricul pe `main`, după ce am creat o ramură temporară `pre-rewrite-backup` ca plasă de siguranţă. Apoi am şters-o.
 
 ## Fişiere afectate
 
-- **54 de fişiere HTML** (toate paginile `en/` şi `ro/`) — titluri unificate ale linkului de transmisie şi href-uri ale comutatorului omolog de limbă.
-- **24 de fişiere HTML RO** — clasa `lang-toggle-active` corectată de pe linkul EN pe linkul RO.
-- `ro/transmission.html` — 12 apariţii `Astro-navigație` → `Astronavigație`.
-- `ro/index.html` — comentariu actualizat.
-- `ro/script.js` — comentariu actualizat.
-- `ro/style.css` — comentariu actualizat.
-- `JOURNAL-EN.md` — ZIUA 14 adăugată, ZIUA 04 extinsă cu etichetele `i18n` şi `content`.
-- `JOURNAL-RO.md` — ZIUA 14 adăugată, ZIUA 04 extinsă cu etichetele `i18n` şi `content`.
+- **54 fişiere HTML** — titluri unificate, href-uri omoloage
+- **24 fişiere HTML RO** — `lang-toggle-active` corectată
+- `ro/transmission.html` — 12 apariţii `Astro-navigație` → `Astronavigație`
+- `ro/index.html`, `ro/script.js`, `ro/style.css` — comentarii actualizate
+- `JOURNAL-EN.md`, `JOURNAL-RO.md` — ZIUA 14 adăugată, ZIUA 04 extinsă
 
 ---
