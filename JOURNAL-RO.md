@@ -1013,3 +1013,59 @@ Un mecanism JavaScript (MECANISMUL 09) scrie textul manifestului caracter cu car
 - `ro/style.css` — acelaşi CSS `.hologram-crystal` şi `.typing-cursor`.
 
 ---
+
+# ZIUA 14 — Unificarea Linkurilor, Comutator Omolog, Unificare Ortografică şi Curăţarea Etichetelor de Commit
+
+## 1. Titluri unificate ale linkului către transmission.html în toate footerele
+
+Linkul din footer către `transmission.html` folosea titluri inconsistente, iar unele pagini păstrau sufixul `Manifest` / `Manifesto`, deconectat de naraţiunea cosmică. Toate cele 54 de fişiere HTML au fost unificate la un singur titlu pe limbă:
+
+- **Pagini EN**: `The Astrogation Charter` (eliminat `- Manifesto` şi `— Manifesto`)
+- **Pagini RO**: `Carta de Astronavigație` (eliminat `— Manifest`; s-au corectat paginile de log RO şi bibliografia RO care încă aveau titlul englezesc `The Astrogation Charter - Manifesto` atât în textul linkului, cât şi în paragraful descriptiv; s-a renunţat la `Astro-navigație` în favoarea lui `Astronavigație`; s-a actualizat paranteza descriptivă din `transmisia/manifestul` şi `manifest` în `transmisiunea`)
+
+## 2. Comutator de limbă omolog (opţiunea 2)
+
+Anterior, comutatorul de limbă din fiecare footer trimitea întotdeauna la `en/index.html` sau `ro/index.html`, indiferent de pagina pe care o citeai. Am ales **opţiunea 2 — linkuri omoloage**: fiecare pagină trimite acum către omologul său din cealaltă limbă, aceeaşi secţiune, acelaşi log, aceeaşi adâncime.
+
+- `en/frontend/html-log.html` trimite acum la `ro/frontend/html-log.html` (nu la `ro/index.html`)
+- `ro/transmission.html` trimite acum la `en/transmission.html` (nu la `en/index.html`)
+
+Au fost necesare două treceri: prima pentru a calcula şi înlocui toate cele 52 de valori href, iar a doua pentru a corecta o eroare preexistentă pe 24 de pagini RO (toate paginile de log plus `ro/bibliography.html`) unde clasa `lang-toggle-active` fusese plasată incorect pe linkul **EN** în loc de linkul **RO**. Acum limba activă corespunde întotdeauna paginii pe care te afli.
+
+## 3. Ortografie: Astronavigație (un cuvânt, fără cratimă)
+
+Compusul `Astro-navigație` cu cratimă părea un calc franţuzesc. În limba română, prefixele se ataşează direct rădăcinii: *astrofizică*, *astronaut*, *astronomie*. Toate cele 12 apariţii din `ro/transmission.html` (titlu, meta taguri, h2, logo, comentarii), plus referinţa din `ro/index.html`, comentariile din CSS şi JS, şi jurnalul, au fost actualizate la `Astronavigație` — un cuvânt, fără cratimă.
+
+## 4. Etichete de commit: listă extinsă şi istoric rescris
+
+Două etichete noi au fost adăugate convenţiei din ZIUA 04 pentru a acoperi tipuri de lucru recurente pe care lista originală le omitea:
+
+- **`i18n`** — internaţionalizare / localizare (traducerea paginilor, clonare versiuni RO/EN)
+- **`content`** — adăugare sau rescriere de conţinut (text manifest, adnotări pedagogice, copie creativă)
+
+Cu lista completă stabilită, 18 commituri anterioare care nu aveau etichete au fost rescrise folosind `git filter-branch`:
+
+| Etichetă | Arie |
+|----------|------|
+| `content:` | rescrierea blueprinului recursiv (copie creativă) |
+| `docs:` | intrări de jurnal (×3) |
+| `style:` | suprascrieri paletă de culori, unificare ortografică (×3) |
+| `feat:` | pagina de transmisie, maşină de scris, auto-scroll, dispariţia cursorului, comutator omolog (×8) |
+| `refactor:` | restructurare header, unificare titluri link (×3) |
+| `fix:` | corecţia cursorului typeNextChar (era `Fix:` cu majusculă, acum `fix:` cu minusculă) |
+| `i18n:` | traducerea paginii RO de transmisie |
+
+Istoricul rescris a fost forţat-pe推送 (`force-push`) către `main` (o ramură temporară `pre-rewrite-backup` a fost creată ca plasă de siguranţă şi ulterior ştearsă).
+
+## Fişiere afectate
+
+- **54 de fişiere HTML** (toate paginile `en/` şi `ro/`) — titluri unificate ale linkului de transmisie şi href-uri ale comutatorului omolog de limbă.
+- **24 de fişiere HTML RO** — clasa `lang-toggle-active` corectată de pe linkul EN pe linkul RO.
+- `ro/transmission.html` — 12 apariţii `Astro-navigație` → `Astronavigație`.
+- `ro/index.html` — comentariu actualizat.
+- `ro/script.js` — comentariu actualizat.
+- `ro/style.css` — comentariu actualizat.
+- `JOURNAL-EN.md` — ZIUA 14 adăugată, ZIUA 04 extinsă cu etichetele `i18n` şi `content`.
+- `JOURNAL-RO.md` — ZIUA 14 adăugată, ZIUA 04 extinsă cu etichetele `i18n` şi `content`.
+
+---

@@ -1007,3 +1007,59 @@ A JavaScript mechanism (MECANISMUL 09) types the manifesto text character by cha
 - `ro/style.css` — same `.hologram-crystal` and `.typing-cursor` CSS.
 
 ---
+
+# DAY 14 — Link Consolidation, Homologous Toggle, Spelling Unification, and Commit Tags Cleanup
+
+## 1. Unified transmission link titles across all footers
+
+The footer link to `transmission.html` used inconsistent titles depending on which page you were on and which depth it lived at. Some pages still carried the old `Manifesto` / `Manifest` suffix, which felt disconnected from the cosmic-journey narrative. All 54 HTML files were unified to a single title per language:
+
+- **EN pages**: `The Astrogation Charter` (removed `- Manifesto` and `— Manifesto`)
+- **RO pages**: `Carta de Astronavigație` (removed `— Manifest`; fixed RO log pages and RO bibliography that still had the English title `The Astrogation Charter - Manifesto` in both the link text and the description paragraph; renamed `Astro-navigație` → `Astronavigație`; updated the parenthetical descriptions from `transmisia/manifestul` and `manifest` to the consistent `transmisiunea`)
+
+## 2. Homologous language toggle (option 2)
+
+Previously, the language toggle in every footer always linked to `en/index.html` or `ro/index.html`, regardless of which page you were reading. This meant that switching languages always threw you back to the command bridge — useful but coarse. After discussing both approaches, we chose **option 2 — homologous linking**: each page now links to its counterpart in the other language at the same section, same log, same depth.
+
+- `en/frontend/html-log.html` now links to `ro/frontend/html-log.html` (not `ro/index.html`)
+- `ro/transmission.html` now links to `en/transmission.html` (not `en/index.html`)
+
+This required two passes: first to compute and replace all 52 href values (the 2 index pages already pointed to themselves correctly), and a second pass to fix a pre-existing bug on 24 RO pages (all log pages plus `ro/bibliography.html`) where the `lang-toggle-active` class was incorrectly placed on the **EN** link instead of the **RO** link. Now the active language always matches the page you are on.
+
+## 3. Spelling: Astronavigație (one word, no hyphen)
+
+The Romanian compound `Astro-navigație` used a hyphen that made it look like a French calque. In Romanian, prefixes bind directly to the root: *astrofizică*, *astronaut*, *astronomie*. All 12 occurrences in `ro/transmission.html` (title, meta tags, h2, logo, comments), plus the reference in `ro/index.html`, the CSS and JS comments, and the journal, were updated to `Astronavigație` — one word, no hyphen.
+
+## 4. Commit tags: list extended and history rewritten
+
+Two new tags were added to the DAY 04 convention to cover recurring work types that the original list missed:
+
+- **`i18n`** — internationalisation / localisation (translating pages, cloning RO/EN versions)
+- **`content`** — adding or rewriting prose content (manifesto text, pedagogical annotations, creative copy)
+
+With the full list settled, 18 past commits that lacked tags were rewritten using `git filter-branch`:
+
+| Tag | Scope |
+|-----|-------|
+| `content:` | recast of recursive blueprint (creative copy) |
+| `docs:` | journal entries (×3) |
+| `style:` | colour palette overrides, spelling unification (×3) |
+| `feat:` | transmission page, typewriter, auto-scroll, cursor fade, homologous toggle (×8) |
+| `refactor:` | header restructuring, link title unification (×3) |
+| `fix:` | typeNextChar cursor dismiss bug (was upper-case `Fix:`, now lower-case `fix:`) |
+| `i18n:` | RO transmission page translation |
+
+The rewritten history was force-pushed to `main` (a temporary `pre-rewrite-backup` branch was created as safety net and subsequently deleted).
+
+## Files affected
+
+- **54 HTML files** (all `en/` and `ro/` pages) — unified transmission link titles and homologous language toggle hrefs.
+- **24 RO HTML files** — `lang-toggle-active` class corrected from EN link to RO link.
+- `ro/transmission.html` — 12 occurrences of `Astro-navigație` → `Astronavigație`.
+- `ro/index.html` — comment reference updated.
+- `ro/script.js` — comment updated.
+- `ro/style.css` — comment updated.
+- `JOURNAL-EN.md` — DAY 14 appended, DAY 04 extended with `i18n` and `content` tags.
+- `JOURNAL-RO.md` — DAY 14 appended, DAY 04 extended with `i18n` and `content` tags.
+
+---
