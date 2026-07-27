@@ -45,71 +45,6 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 - modulele structurale principale sunt stabilizate;
 - contrastul este verificat pentru ambele teme;
 - `theme-color` poate deveni dual în `<head>`.
-**Titlu:** Sistem de temă: Zi Stelară / Noapte Profundă
-
-**Descriere:** Implementarea unui toggle light/dark pentru întregul proiect, pe baza unei matrici duale de variabile cromatice și de contrast.
-
-**Status:** Amânat
-**Prioritate:** Medium
-**Fază:** După transferul nucleului CSS
-
-**De ce mai târziu:** Tema actuală este dark-first, iar implementarea imediată ar dubla munca înainte de migrarea și curățarea modulelor de bază.
-
-**Fișiere afectate:** `ro/style.css`, `en/style.css`, `ro/index.html`, `en/index.html`
-
-**Condiții de implementare:**
-- variabilele de bază sunt transferate curat;
-- modulele structurale principale sunt stabilizate;
-- contrastul este verificat pentru ambele teme;
-- `theme-color` poate deveni dual în `<head>`.
-
----
-
-### 002 — Pagini recursive cu metadate complete
-
-**Titlu:** Metadate complete pentru paginile recursive
-
-**Descriere:** Completarea tuturor paginilor HTML cu titlu, meta-descriere, theme-color și favicon propriu, păstrând consistența între versiunile RO și EN.
-
-**Status:** În lucru
-**Prioritate:** High
-**Fază:** Implementare head-uri pentru toate paginile existente
-
-**De ce acum:** Este baza de identitate tehnică a proiectului și trebuie stabilită înainte de alte optimizări de conținut sau structură.
-
-**Fișiere afectate:** `ro/*.html`, `en/*.html`
-
-**Pași:**
-- unificarea structurii `<head>`;
-- completarea titlului specific fiecărei pagini;
-- scrierea meta-descrierii pe fiecare pagină;
-- setarea `theme-color` în acord cu paleta proiectului;
-- adăugarea favicon-ului corect pentru fiecare subproiect;
-- verificarea path-urilor relative pentru versiunile RO și EN.
-
-**Condiții de finalizare:**
-- toate paginile HTML existente au `<head>` complet;
-- versiunile RO și EN sunt coerente între ele;
-- `theme-color` este aplicat corect;
-- favicon-ul este încărcat fără erori;
-- structura este identică conceptual în ambele subproiecte.
-**Titlu:** Metadate complete pentru paginile recursive
-
-**Descriere:** Completarea tuturor paginilor HTML cu titlu, meta-descriere, theme-color și favicon propriu, păstrând consistența între versiunile RO și EN.
-
-**Status:** Planificat
-**Prioritate:** High
-**Fază:** În paralel cu transferul paginilor HTML
-
-**De ce există această idee:** Fiecare pagină trebuie să fie autonomă, lizibilă și coerentă în contextul proiectului bilingv.
-
-**Fișiere afectate:** `ro/*.html`, `en/*.html`
-
-**Pași:**
-- unificarea structurii `<head>`;
-- adaptarea path-urilor relative;
-- verificarea favicon-ului;
-- verificarea diferențelor de limbă.
 
 ---
 
@@ -165,45 +100,57 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 ---
 
-### 005 — Consolă de navigație HUD Holografică pentru index + portal icosaedru
+### 008 — Pregătire lansare: index rădăcină, securitate, conținut gol al jurnalelor
 
-**Titlu:** Consolă de navigație HUD holografică, portal icosaedru și extindere footer
+**Titlu:** Pregătire lansare — redirectare rădăcină, noopener, pagini de jurnal goale, configurare deploy
 
-**Descriere:** Înlocuirea navbar-ului simplu cu 2 linkuri de pe paginile index cu un overlay HUD glassmorphism glisant care conține toate cele 6 volume (Frontend, Database, Backend, Data Bridge, UX, Delivery). Adăugarea linkului transmission.html și a comutatorului RO/EN în footer. Legarea reactorului icosaedru de pe index către recursive-blueprint.html (portal ascuns). Schimbarea navigării paginii recursive de la "Înapoi la puntea de comandă" la butonul HUD și legarea mini-reactorului înapoi la index.html. Adăugare JS toggle și animații CSS de pornire eșalonată a sistemelor.
+**Descriere:** Rezolvarea celor trei blocaje roșii și a două probleme portocalii identificate în evaluarea stării de lansare înainte de publicare.
 
-**Status:** În lucru
+**Status:** Propus
 **Prioritate:** High
-**Fază:** DAY 10 — arhitectura structurală de navigație
+**Fază:** Pre-lansare
 
-**De ce acum:** Indexul leagă în prezent doar 2 volume (Frontend, Database), dar proiectul are acum 6. Navbar-ul trebuie să rămână curat pe mobil, așadar un overlay HUD comutabil rezolvă atât problema de spațiu, cât și atmosfera retro-futuristă. Portalul icosaedru întărește statutul special al paginii recursive ca modul ascuns, auto-pilotat.
+**De ce acum:** Paginile principale (index, bibliografie, transmisiune, blueprinte recursiv) sunt gata de producție, dar peste 40 de pagini de jurnal goale/cu Lorem Ipsum, lipsa unui `index.html` rădăcină și lipsa `rel="noopener noreferrer"` pe unele linkuri `target="_blank"` împiedică lansarea publică.
 
-**Fișiere afectate:** `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `en/style.css`, `ro/style.css`, `en/script.js`, `ro/script.js`, `JOURNAL-EN.md`, `JOURNAL-RO.md`
+**Fișiere afectate:** `index.html` rădăcină, `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
 
 **Pași:**
-- adăugare HTML overlay HUD în nav-ul index cu toate cele 6 volume + linkurile lor de jurnal
-- adăugare CSS: panou glassmorphism, animație cheie eșalonată, ecran complet pe mobil
-- adăugare JS: buton toggle, închidere la click în afară / tasta Escape
-- extindere footer: link transmission, comutator EN ↔ RO
-- înfășurare icosaedru pe index → recursive-blueprint.html
-- schimbare nav pagină recursive la buton HUD; înfășurare mini-reactor → index.html
-- oglindire în ro/ cu comentarii în limba română
-- adăugare DAY 10 §7 în jurnale explicând filozofia
+- crearea unui `index.html` rădăcină care redirecționează către `/en/index.html`;
+- adăugarea `rel="noopener noreferrer"` la toate linkurile `target="_blank"` din toate fișierele HTML;
+- completarea sau eliminarea celor 18 pagini de jurnal goale per limbă (sau adăugarea unui banner „🚧 În construcție");
+- înlocuirea textului Lorem Ipsum din `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` cu conținut real;
+- popularea sau eliminarea celor 3 fișiere JSON goale din `shared/data/`;
+- adăugarea unui workflow GitHub Actions de deploy (sau activarea Pages prin Settings);
+- opțional: adăugarea unui fișier `CNAME` pentru un domeniu personalizat.
 
 **Condiții de finalizare:**
-- Overlay HUD se deschide/închide lin cu animație eșalonată de intrare
-- Toate cele 6 volume sunt listate cu sub-jurnalele lor
-- Footerul conține transmission + comutator de limbă
-- Click pe icosaedru pe index navighează la pagina recursive
-- Click pe mini-reactor pe pagina recursive navighează înapoi la index
-- Nav-ul paginii recursive folosește butonul HUD, nu "Înapoi la puntea de comandă"
-- Toate comentariile sunt în limba corectă per folder
-- Versiunile ro/ oglindesc structural versiunile en/
+- `https://iuliacadar.github.io/digital-odyssey/` afișează conținut (nu 404);
+- niciun link `target="_blank"` nu este fără `rel="noopener noreferrer"`;
+- nicio pagină de jurnal nu arată un corp gol sau text placeholder fără un banner „În construcție";
+- deploy-ul este automatizat sau documentat cu o singură comandă.
+
+---
+
+## Implementat
+
+Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
+
+### 002 — Pagini recursive cu metadate complete
+
+**Data:** 2026-07-27
+**Notă:** Toate paginile HTML (principale + toate cele 22 de pagini de jurnal per limbă) au acum `<head>` complet — charset, viewport, titlu, meta descriere, theme-color, favicon — cu comentarii pedagogice adecvate limbii. Anotația `@meta:` documentează fiecare tag. RO oglindește EN structural. Cele două copii originale din backlog (una „În lucru", una „Planificat") au fost consolidate și mutate aici.
+
+---
+
+### 005 — Consolă de navigație HUD Holografică pentru index + portal icosaedru
+
+**Data:** 2026-07-27
+**Notă:** Implementat complet în ambele limbi. Overlay HUD cu toate cele 6 volume și linkuri către sub-jurnale, CSS glassmorphism cu animații eșalonate de pornire, JS toggle cu închidere la click în afară și tasta Escape. Portalul icosaedru leagă index → recursive-blueprint.html; mini-reactorul leagă înapoi la index. Footerul include linkul transmission și comutatorul EN/RO. „Înapoi la puntea de comandă" a fost păstrat alături de HUD ca ajutor explicit de navigare (decizie de design, nu incompletitudine).
 
 ---
 
 ### 006 — Reparații CSS și Calibrări UI
 
-**Status:** Completat
 **Data:** 2026-07-23
 
 **Domeniu:** Rafinări vizuale la nivelul întregii flote.
@@ -227,7 +174,6 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 ### 007 — Restructurare index, anexă Data Bridge, comentarii pedagogice și finalizare branding
 
-**Status:** Completat
 **Data:** 2026-07-24
 
 **Domeniu:** Restructurarea finală a paginilor index EN/RO, Data Bridge ca volum anexă, branding nou, redenumire jurnal.
@@ -246,10 +192,6 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 **Fișiere afectate:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
 
 ---
-
-## Implementat
-
-Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
 
 ### Exemplu
 

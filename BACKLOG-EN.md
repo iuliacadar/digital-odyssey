@@ -46,73 +46,6 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - contrast is verified for both themes;
 - `theme-color` can become dual inside `<head>`.
 
-**Title:** Theme system: Stellar Day / Deep Night
-
-**Description:** Implement a light/dark toggle for the entire project, based on a dual matrix of color and contrast variables.
-
-**Status:** Deferred
-**Priority:** Medium
-**Phase:** After CSS core transfer
-
-**Why later:** The current theme is dark-first, and immediate implementation would duplicate work before the migration and cleanup of the base modules.
-
-**Affected files:** `ro/style.css`, `en/style.css`, `ro/index.html`, `en/index.html`
-
-**Implementation conditions:**
-- core variables are cleanly transferred;
-- main structural modules are stabilized;
-- contrast is verified for both themes;
-- `theme-color` can become dual inside `<head>`.
-
----
-
-### 002 — Recursive pages with complete metadata
-
-**Title:** Complete metadata for recursive pages
-
-**Description:** Fill all HTML pages with title, meta description, theme-color, and a dedicated favicon, while keeping consistency between the RO and EN versions.
-
-**Status:** In progress
-**Priority:** High
-**Phase:** Head implementation for all existing pages
-
-**Why now:** This is the technical identity baseline of the project and should be established before other content or structural optimizations.
-
-**Affected files:** `ro/*.html`, `en/*.html`
-
-**Steps:**
-- unify the `<head>` structure;
-- complete the page-specific title;
-- write the meta description for each page;
-- set `theme-color` according to the project palette;
-- add the correct favicon for each subproject;
-- verify relative paths for the RO and EN versions.
-
-**Completion conditions:**
-- all existing HTML pages have a complete `<head>`;
-- RO and EN versions are consistent with each other;
-- `theme-color` is applied correctly;
-- favicon loads without errors;
-- the structure is conceptually identical in both subprojects.
-
-**Title:** Complete metadata for recursive pages
-
-**Description:** Add title, meta description, theme-color, and a dedicated favicon to every HTML page, keeping consistency between the RO and EN versions.
-
-**Status:** Planned
-**Priority:** High
-**Phase:** In parallel with HTML page transfer
-
-**Why this idea exists:** Every page should be autonomous, readable, and consistent within the bilingual project.
-
-**Affected files:** `ro/*.html`, `en/*.html`
-
-**Steps:**
-- unify the `<head>` structure;
-- adapt relative paths;
-- verify the favicon;
-- verify language-specific differences.
-
 ---
 
 ### 003 — Dedicated article/sector for frontend validation
@@ -143,6 +76,8 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - the section remains short, clear, and aligned with the backlog style;
 - `.hintrc` is documented or excluded in a justified way.
 
+---
+
 ### 004 — Verify text-size-adjust on mobile devices at launch
 
 **Title:** Verify text-size-adjust on mobile devices at launch
@@ -165,45 +100,57 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ---
 
-### 005 — Holographic HUD Console navigation for index + icosahedron portal
+### 008 — Launch preparation: root index, security, empty log content
 
-**Title:** Holographic HUD Console navigation, icosahedron portal, and footer expansion
+**Title:** Launch preparation — root redirect, noopener, empty log pages, deploy config
 
-**Description:** Replace the simple 2-link navbar on index pages with a slide-down glassmorphism HUD overlay containing all 6 volumes (Frontend, Database, Backend, Data Bridge, UX, Delivery). Add transmission.html link and EN/RO language toggle to the footer. Link the index icosahedron reactor to recursive-blueprint.html (hidden portal). Swap recursive page nav from "Return to Command Deck" to the HUD button, and link its mini-reactor back to index.html. Add JS toggle and CSS staggered boot-sequence animations.
+**Description:** Address the three red-blockers and two amber-issues identified in the launch readiness assessment before going live.
 
-**Status:** In progress
+**Status:** Proposed
 **Priority:** High
-**Phase:** DAY 10 — structural navigation architecture
+**Phase:** Pre-launch
 
-**Why now:** The index currently only links 2 volumes (Frontend, Database) but the project now has 6. The navbar must remain clean on mobile, so a toggleable HUD overlay solves both the space problem and the retro-futurist atmosphere. The icosahedron portal reinforces the recursive page's special status as a hidden, self-piloted module.
+**Why now:** The main pages (index, bibliography, transmission, recursive-blueprint) are production-ready, but 40+ empty/lorem log pages, a missing root `index.html`, and missing `rel="noopener noreferrer"` on some `target="_blank"` links prevent public deployment.
 
-**Affected files:** `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `en/style.css`, `ro/style.css`, `en/script.js`, `ro/script.js`, `JOURNAL-EN.md`, `JOURNAL-RO.md`
+**Affected files:** root `index.html`, `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
 
 **Steps:**
-- add HUD overlay HTML to index nav with all 6 volumes + their log links
-- add CSS: glassmorphism panel, staggered keyframe animation, mobile full-screen
-- add JS: toggle button, close on outside click / Escape key
-- expand footer: transmission link, EN ↔ RO language toggle
-- wrap icosahedron on index → recursive-blueprint.html
-- swap recursive page nav to HUD button; wrap mini-reactor → index.html
-- mirror all changes in ro/ with Romanian comments
-- add DAY 10 §7 to journals explaining the philosophy
+- create root `index.html` that redirects to `/en/index.html`;
+- add `rel="noopener noreferrer"` to all `target="_blank"` links across all HTML files;
+- fill or remove the 18 empty structural-shell log pages per language (or add a "🚧 Under Construction" banner);
+- replace Lorem Ipsum text in `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` with real content;
+- populate or remove the 3 empty JSON files in `shared/data/`;
+- add GitHub Actions deployment workflow (or enable Pages via repo Settings);
+- optional: add a `CNAME` file for a custom domain.
 
 **Completion conditions:**
-- HUD overlay opens/closes smoothly with staggered entrance animation
-- All 6 volumes are listed with their sub-logs
-- Footer contains transmission + language toggle
-- Clicking icosahedron on index navigates to recursive page
-- Clicking mini-reactor on recursive page navigates back to index
-- Recursive page nav uses HUD button, not "Return to Command Deck"
-- All comments are in the correct language per folder
-- ro/ versions mirror en/ structurally
+- `https://iuliacadar.github.io/digital-odyssey/` shows content (not 404);
+- no `target="_blank"` link lacks `rel="noopener noreferrer"`;
+- no log page shows an empty body or placeholder text without an "Under Construction" banner;
+- deployment is automated or documented with a single command.
+
+---
+
+## Implemented
+
+Move completed items here, keeping the date and a short note about what changed.
+
+### 002 — Recursive pages with complete metadata
+
+**Date:** 2026-07-27
+**Note:** All HTML pages (main pages + all 22 log pages per language) now have complete `<head>` — charset, viewport, title, meta description, theme-color, favicon — with language-appropriate pedagogical comments. The `@meta:` annotation documents each tag. RO mirrors EN structurally. The two original backlog copies (one "In progress", one "Planned") were consolidated and moved here.
+
+---
+
+### 005 — Holographic HUD Console navigation for index + icosahedron portal
+
+**Date:** 2026-07-27
+**Note:** Fully implemented across both languages. HUD overlay with all 6 volumes and sub-log links, glassmorphism CSS with staggered boot-sequence animations, JS toggle with outside-click and Escape key close. Icosahedron portal links index → recursive-blueprint.html; mini-reactor links back to index. Footer includes transmission link and EN/RO language toggle. "Return to Command Deck" retained alongside HUD as an explicit navigation aid (design choice, not incompleteness).
 
 ---
 
 ### 006 — CSS Console Repairs and UI Calibrations
 
-**Status:** Completed
 **Date:** 2026-07-23
 
 **Scope:** Visual refinements across the entire fleet.
@@ -227,7 +174,6 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ### 007 — Index Restructuring, Data Bridge Annex, Pedagogical Comments, and Branding Finalisation
 
-**Status:** Completed
 **Date:** 2026-07-24
 
 **Scope:** Final restructuring of EN/RO index pages, Data Bridge as annex volume, new branding, journal rename.
@@ -247,15 +193,9 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ---
 
-## Implemented
-
-Move completed items here, keeping the date and a short note about what changed.
-
 ### Example
 
 **ID:** 000
 **Title:** Example completed item
 **Date:** YYYY-MM-DD
 **Note:** Short summary of the implementation.
-
-
