@@ -34,10 +34,16 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 
 ## JS
 - `@block:` explică un bloc logic de comportament sau funcționalitate.
+- `@mechanism:` identifică un mecanism numerotat (MECANISM 01–09). Fiecare mecanism este o unitate de comportament autonomă care poate fi referită prin numărul ei în cod, CSS și jurnalul navei.
 - `@logic:` explică fluxul intern al unei funcții, condiții sau transformări.
 - `@event:` explică un eveniment ascultat sau declanșat, cum ar fi `click`, `submit`, `scroll` sau `DOMContentLoaded`.
 - `@state:` explică o stare a interfeței sau a datelor, de exemplu activ/inactiv, deschis/închis, încărcat/neîncărcat.
+- `@guard:` marchează o clauză de gardă — o ieșire timpurie care previne execuția codului atunci când premisele (cum ar fi elemente DOM lipsă sau dimensiune incorectă a viewport-ului) nu sunt îndeplinite.
 - `@bridge:` explică legătura dintre JavaScript și HTML, CSS sau alte fișiere de date.
+
+## Transversal (HTML, CSS, JS)
+- `@pedagogy:` explică un concept pentru un cititor începător — de ce există acest model, ce predă sau cum se leagă de cunoștințele fundamentale. Folosit în HTML, CSS și JS pentru o voce didactică consistentă.
+- `@todo:` marchează lucrări planificate sau incomplete, legând de backlog-ul navei.
 
 ## SVG și JSON
 - Pentru `SVG`, nu am neapărat nevoie de micro-legende separate dacă folosirea lui în proiect rămâne simplă și limitată.

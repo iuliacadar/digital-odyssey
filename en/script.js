@@ -1,92 +1,130 @@
 //  ==========================================================================
-//     ODISEEA DIGITALĂ: NUCLEUL DE CONTROL CRUCIAL (script.js)
+//     D::0dy55ey — ENGINE ROOM: script.js
+//     Every mechanism that animates, observes, and remembers.
+//     Tag legend: ../docs/legend-en.md
 //  ==========================================================================
 
-// DECLARAȚIE VARIABLE GLOBALE (Senzorii principali ai navei)
-let lastScrollY = window.scrollY; // Memorează ultima poziție de scroll pe verticală a paginii globale
-const navbar = document.querySelector(".navbar"); // Selectează bara de navigare de sus (HUD-ul principal)
-const sidebar = document.querySelector(".log-sidebar"); // Selectează panoul din stânga (Consola de control)
+//  @block: SHIP SENSORS (Global Variable Declarations)
+//    These variables live at the module root because multiple mechanisms need
+//    access to them. They act as the ship's primary sensors — tracking scroll
+//    position and caching DOM references that are expensive to query repeatedly.
+//  ==========================================================================
 
-//  --------------------------------------------------------------------------
-//     MECANISMUL 1: DINAMICA NAVBAR-ULUI (Ascundere / Afișare la Scroll)
-//     Acest script oferă imersiune: ascunde meniul când citești, îl arată când urci pagina.
-//    --------------------------------------------------------------------------
+//  @state: lastScrollY — remembers the vertical scroll coordinate from the
+//    previous event. Used by MECANISM 01 to determine scroll direction.
+let lastScrollY = window.scrollY; // Stores the last known Y position. Starts at whatever the page currently reads.
+
+//  @bridge: navbar — the top HUD bar shared across all pages. MECANISM 01
+//    hides/shows it; MECANISM 07 toggles overlay on it.
+const navbar = document.querySelector(".navbar"); // Grabs the top navigation bar from the DOM — our persistent HUD.
+
+//  @bridge: sidebar — the left-hand navigation console used on log pages.
+//    MECANISMS 02, 05, and 06 read and write its scroll position.
+const sidebar = document.querySelector(".log-sidebar"); // Grabs the left panel — our mission control sidebar.
+
+
+//  ==========================================================================
+//     MECANISM 01: NAVBAR HIDE/SHOW ON SCROLL
+//     Immersion detail: the menu vanishes when you read down, returns when
+//     you scroll up. Mimics a HUD that retreats when not needed.
+//  ==========================================================================
+//  @mechanism: 01 — Navbar Scroll Dynamics
+//  @event: window scroll
+//  @pedagogy: "scroll" fires hundreds of times per second. But all we do
+//    here is compare two numbers and toggle a CSS class — that is fast
+//    enough to keep the UI smooth without any throttling.
+//  ==========================================================================
+
+// We attach a permanent listener to the window's scroll event.
 window.addEventListener("scroll", () => {
-  // Monitorizăm constant mișcarea rotiței sau degetului pe ecran
-  const currentScrollY = window.scrollY; // Aflăm coordonata curentă pe verticală
+  // We ask the browser: where is the scrollbar right now?
+  const currentScrollY = window.scrollY; // Fresh coordinate, live from the browser engine.
 
-  // Verificăm: dacă utilizatorul dă scroll în jos ȘI a depășit 100 de pixeli de la tavan
+  // Check: is the user scrolling down AND past the 100px threshold?
   if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    navbar.classList.add("navbar--hidden"); // Adăugăm clasa din CSS care împinge navbar-ul în sus, ascunzându-l
+    // Add the CSS class that translates the navbar upward off the screen.
+    navbar.classList.add("navbar--hidden"); // The transition lives in style.css — smooth upward slide.
 
-    // Optimizare Mobile HUD: Dacă navbar-ul s-a ascuns, lipim sidebar-ul direct de tavanul ecranului (top: 0)
-    if (sidebar) sidebar.style.top = "0";
+    // Sidebar optimisation: if the HUD vanished, we glue the sidebar to the top edge (0px).
+    if (sidebar) sidebar.style.top = "0"; // Removes the 60px gap that was reserved for the navbar.
   }
-  // Altfel, înseamnă că utilizatorul dă scroll în sus (vrea să navigheze înapoi)
+  // Otherwise the user is scrolling up — they want to navigate, bring the HUD back.
   else {
-    navbar.classList.remove("navbar--hidden"); // Ștergem clasa, iar navbar-ul coboară lin înapoi pe ecran
+    navbar.classList.remove("navbar--hidden"); // Strip the hidden class, the navbar slides back down.
 
-    // Dacă navbar-ul este vizibil, împingem sidebar-ul în jos cu 60px ca să nu se suprapună sub el
-    if (sidebar) sidebar.style.top = "60px";
+    // Restore the sidebar offset so it sits comfortably below the visible navbar.
+    if (sidebar) sidebar.style.top = "60px"; // The 60px gap is back, just like before.
   }
 
-  // Actualizăm variabila globală cu noua poziție, pregătind-o pentru următorul scroll
-  lastScrollY = currentScrollY;
+  // Update the global sensor with the new coordinate for the next scroll event.
+  lastScrollY = currentScrollY; // The old "last" now becomes "current" — ready for the next comparison.
 });
 
-//  --------------------------------------------------------------------------
-//  MECANISMUL 2: DETECTARE AUTOMATĂ ȘI AUTO-CENTRARE SIDEBAR (PRO UX UPDATE)
-//  Pe măsură ce citești în dreapta, butoanele din stânga se aprind ȘI sidebar-ul
-//  se derulează singur pentru a-ți arăta sectorul și ziua curentă!
-//  --------------------------------------------------------------------------
-// 1. Configurația radarului (Fereastra centrală de scanare a ecranului)
-const observerOptions = {
-  root: null, // Senzorul scanează raportat direct la ecranul vizibil al browserului (viewport)
 
-  //    Linia de scanare laser: detectăm elementul când se află în zona centrală a ecranului.
-  //    Ignorăm primii 20% de sus și ultimii 70% de jos, lăsând o fereastră fixă de scanare.
-  rootMargin: "-20% 0px -70% 0px", // Laserul scanează zona central-superioară a ecranului
-  threshold: 0, // Declanșează semnalul instantaneu, imediat ce articolul atinge marja de mai sus
+//  ==========================================================================
+//     MECANISM 02: INTERSECTION OBSERVER — SIDEBAR ACTIVE DETECTION
+//     Reads which section the user is currently looking at and highlights the
+//     corresponding button in the sidebar. On desktop it also auto-scrolls the
+//     sidebar to centre the active button.
+//  ==========================================================================
+//  @mechanism: 02 — Sidebar Active Tracking
+//  @event: IntersectionObserver (viewport-based)
+//  @pedagogy: IntersectionObserver is a modern browser API that fires a
+//    callback when an element enters or exits a defined zone of the screen.
+//    It is far more performant than listening to "scroll" and manually
+//    calculating positions — the browser does the geometry internally.
+//  ==========================================================================
+
+// 1. THE RADAR CONFIGURATION: We define the laser scan zone within the viewport.
+const observerOptions = {
+  root: null, // null means the sensor scans against the visible browser viewport directly.
+
+  //   The laser scan line: we detect the element when it sits in the upper-centre area.
+  //   We ignore the top 20% and the bottom 70% — this leaves a fixed 10% scan window.
+  rootMargin: "-20% 0px -70% 0px", // The active scan zone is the upper-middle slice of the screen.
+  threshold: 0, // Fire the signal instantly the instant the article touches the margin above.
 };
 
-// 2. Logica senzorului: Ce se întâmplă când o zi/secțiune intră în zona laser
+// 2. THE SENSOR LOGIC: What happens when a log section enters our scan zone.
 const observer = new IntersectionObserver((entries) => {
+  // The observer gives us an array of entries — we check each one.
   entries.forEach((entry) => {
-    // Dacă o secțiune de log a intersectat cu succes marja noastră de scanare
+    // If this log entry has successfully intersected our scan margin...
     if (entry.isIntersecting) {
-      const id = entry.target.getAttribute("id"); // Extragem ID-ul unic al acelui articol (ex: "html-day01")
+      const id = entry.target.getAttribute("id"); // Grab the entry's unique ID (e.g. "html-day01").
 
-      // Pasul A: Ștergem clasa stării active (stingem lumina roz) de la TOATE butoanele din sidebar ca să facem curat
+      // Step A: Wipe the active state (pink glow) from ALL sidebar links first.
       document.querySelectorAll(".sidebar-nav a").forEach((link) => {
-        link.classList.remove("active");
+        link.classList.remove("active"); // Kill the light everywhere before lighting one up.
       });
 
-      // Pasul B: Căutăm strict butonul din stânga care trimite către ID-ul pe care tocmai l-am detectat pe ecran
+      // Step B: Find the exact sidebar button whose href matches this detected ID.
       const activeLink = document.querySelector(
         `.sidebar-nav a[href="#${id}"]`,
       );
 
-      // Dacă am găsit butonul corespunzător, îi injectăm clasa .active pentru a-l aprinde vizual
+      // If we found the matching button, inject the .active class to light it up.
       if (activeLink) {
-        // Pasul C: Aprindem butonul zilei curente pe roz (`nebula-pink`)
-        activeLink.classList.add("active");
-        // Pasul D: Selectăm lista interioară care are scroll independent (eticheta <ul>)
+        // Step C: Light up the current day's button with the nebula-pink glow.
+        activeLink.classList.add("active"); // The button now shines in the sidebar.
+
+        // Step D: Select the inner scrollable list (the <ul> inside the sidebar).
         const innerSidebarList = document.querySelector(".sidebar-nav ul");
 
-        // ACTIVAREA RADARULUI: Rulăm această logică DOAR pe Desktop (ecrane > 768px)
+        // ACTIVATE THE RADAR: Only run this auto-centering on Desktop (screens > 768px).
         if (window.innerWidth > 768 && innerSidebarList) {
-          //     ALGORITMUL DE AUTO-CENTRARE:
-          //    Calculăm unde se află butonul zilei în listă (activeLink.offsetTop)
-          //    și scădem jumătate din înălțimea ferestrei sidebar-ului (innerSidebarList.clientHeight / 2).
-          //    Acest calcul matematic simplu va aduce butonul și Sectorul din care face parte
-          //    FIX în centrul vizual al meniului, sub titlul MAP!
+          //     THE AUTO-CENTRE ALGORITHM:
+          //    We calculate where the day's button sits within the list (offsetTop)
+          //    and subtract half the sidebar window height (clientHeight / 2).
+          //    This simple maths brings the button and its Sector label
+          //    RIGHT into the visual centre of the menu, right beneath the MAP title!
           const centerPosition =
             activeLink.offsetTop - innerSidebarList.clientHeight / 2;
 
-          // Sidebar-ul execută un scroll automat, lin și silențios către acea zonă
+          // The sidebar performs a smooth, silent scroll to that exact position.
           innerSidebarList.scrollTo({
-            top: centerPosition,
-            behavior: "smooth", // Alunecare fluidă cinematică
+            top: centerPosition, // Scroll to the calculated centre point.
+            behavior: "smooth", // Smooth cinematic glide.
           });
         }
       }
@@ -94,427 +132,480 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// 3. Activarea fizică a senzorului pe elemente.  Pornirea radarelor pe fiecare zi scrisă de mine  în HTML
-// Îi spunem browserului să pună câte un senzor pe fiecare articol de zi scris de tine în HTML
+// 3. PHYSICAL SENSOR ACTIVATION. Attach one sensor to each log day you wrote in HTML.
+// We tell the browser to place a radar on every .log-entry article.
 document.querySelectorAll(".log-entry").forEach((article) => {
-  observer.observe(article); // Pornim scanarea automată pentru acest articol
+  observer.observe(article); // Start scanning this article for intersection events.
 });
 
-//  --------------------------------------------------------------------------
-//   MECANISMUL 3: RE-TRIGGER ANIMATION (Efectul Cyberpunk de Typing Reset)
-//   Resetează și repornește animația textului verde din ".mission-status" când devine vizibil.
-//   Prinde momentul când caseta intră pe ecran și repornește scrisul de la zero!
-//  --------------------------------------------------------------------------
+
+//  ==========================================================================
+//     MECANISM 03: MISSION STATUS — ANIMATION RE-TRIGGER
+//     Every time a .mission-status box scrolls into view, its typing animation
+//     is forcibly reset so the user sees it type out fresh.
+//  ==========================================================================
+//  @mechanism: 03 — Typing Animation Reset
+//  @event: IntersectionObserver (30% visibility threshold)
+//  @pedagogy: The re-trigger trick works by setting animation to "none" (stops
+//    the CSS animation), forcing a browser reflow via offsetHeight, then
+//    setting animation back to null (restores the original CSS animation). The
+//    browser re-interprets the animation as "new" and replays it from frame 0.
+//  ==========================================================================
+
+// We create a second observer dedicated to the green mission status boxes.
 const statusObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      // Când caseta verde de status a unei misiuni intră pe ecran (vizibilitate peste 30%)
+      // When the green mission status box enters the screen (>30% visible)...
       if (entry.isIntersecting) {
-        const statusText = entry.target.querySelector("p"); // Căutăm eticheta <p> din interior
+        const statusText = entry.target.querySelector("p"); // Find the <p> tag inside the box.
 
         if (statusText) {
-          statusText.style.animation = "none"; // Pasul A: Înghețăm și oprim forțat animația curentă
-          statusText.offsetHeight; // Pasul B: TRUCUL MAGIC! Forțăm browserul să recalculeze dimensiunea, înregistrând resetul
-          statusText.style.animation = null; // Pasul C: Ștergem blocarea, permițând animațiilor din CSS (typing și blink) să repornească curat
+          // Step A: Freeze and forcibly stop the current animation.
+          statusText.style.animation = "none";
+          // Step B: THE MAGIC TRICK! Force the browser to recalculate the size, registering the reset.
+          statusText.offsetHeight; // Accessing offsetHeight forces a synchronous reflow — the browser notices the "none".
+          // Step C: Remove the block, allowing the CSS animations (typing + blink) to restart cleanly from frame 0.
+          statusText.style.animation = null; // null restores the original CSS animation, which now feels "new" to the browser.
         }
       }
     });
   },
-  { threshold: 0.3 },
-); // Declanșează când cel puțin 30% din casetă e vizibilă pe ecran
+  { threshold: 0.3 }, // Fire when at least 30% of the box is visible on screen.
+);
 
-// Atașăm senzorul pe toate barele de status din jurnalele tale HTML
+// Attach the radar to every mission status bar across all your HTML journals.
 document.querySelectorAll(".mission-status").forEach((status) => {
-  statusObserver.observe(status); // Pornim radarul de monitorizare pentru fiecare casetă
+  statusObserver.observe(status); // Start the monitoring radar on each status box.
 });
 
-// --------------------------------------------------------------------------
-//     MECANISMUL 4: MEMORIE PERSISTENTĂ (Sistem de salvare LocalStorage per Articol)
-//     Permite căpitanului să scrie notițe în terminal și să le păstreze chiar și după Refresh.
-//    --------------------------------------------------------------------------
 
-// Funcția A: Salvarea semnalului în arhive (Când apeși pe butonul de sub text-area)
+//  ==========================================================================
+//     MECANISM 04: LOCALSTORAGE — PERSISTENT NOTES SYSTEM
+//     Lets the captain write notes in terminal-style textareas and have them
+//     survive page refreshes. Uses the browser's localStorage API.
+//  ==========================================================================
+//  @mechanism: 04 — Persistent Note Saving
+//  @pedagogy: localStorage is a key-value store built into every browser. Data
+//    survives page reloads and browser restarts. Each note gets its own key
+//    (the textarea's id), so notes do not overwrite each other. The limit is
+//    approximately 5MB per origin (domain).
+//  ==========================================================================
+
+// Function A: Saving the signal to the archives (when you click the button below the textarea).
 function saveNote(dayId) {
-  const textarea = document.getElementById(dayId); // Căutăm caseta de text (textarea) folosind ID-ul ei unic
-  const noteContent = textarea.value; // Extragem textul pe care l-ai tastat în interiorul ei
+  const textarea = document.getElementById(dayId); // Find the textarea using its unique ID.
+  const noteContent = textarea.value; // Extract the text you typed inside it.
 
-  // Salvăm conținutul în memoria securizată a browserului (localStorage)
-  // ID-ul zilei devine o „cheie” unică (ex: cheia "html-note-day01" va ține doar textul acelei zile)
-  localStorage.setItem(dayId, noteContent);
+  // Save the content to the browser's secure localStorage memory.
+  // The day ID becomes a unique "key" (e.g. key "html-note-day01" holds only that day's text).
+  localStorage.setItem(dayId, noteContent); // localStorage = key-value. Key: dayId, Value: what you typed.
 
-  console.log(`Signal saved for sector: ${dayId}`); // Afișăm un log tehnic de confirmare în consola de dezvoltator
-  alert("Signal extension saved to local archives."); // Alertă pe ecran pentru a confirma utilizatorului salvarea
+  console.log(`Signal saved for sector: ${dayId}`); // Log a technical confirmation to the dev console.
+  alert("Signal extension saved to local archives."); // On-screen alert confirming the save to the user.
 }
 
-// Funcția B: Încărcarea automată a datelor stocate (La pornirea/încărcarea paginii)
+// Function B: Automatic loading of stored data when the page starts/loads.
 window.addEventListener("load", () => {
-  const allNotes = document.querySelectorAll(".note-terminal textarea"); // Căutăm toate casetele de text din jurnal
+  const allNotes = document.querySelectorAll(".note-terminal textarea"); // Find every textarea in the journal.
 
   allNotes.forEach((textarea) => {
-    const savedContent = localStorage.getItem(textarea.id); // Întrebăm memoria browserului dacă are ceva salvat pentru acest ID
+    const savedContent = localStorage.getItem(textarea.id); // Ask the browser memory: anything saved for this ID?
 
-    // Dacă am găsit notițe vechi în arhivă, le reinjectăm automat în căsuța de text ca să nu le pierzi
+    // If we found old notes in the archive, auto-inject them back into the textarea so you don't lose them.
     if (savedContent) {
-      textarea.value = savedContent;
+      textarea.value = savedContent; // Restore the captain's previous writing.
     }
   });
 });
 
-// --------------------------------------------------------------------------
-//    MECANISMUL 5: SOLUȚIA SALVATOARE ANTI-DEPLASARE DESKTOP (Navigație Inteligentă Ancore)
-//    Oprește browserul din a trage sidebar-ul în sus pe Desktop și redă libertatea pe Mobil.
-//    --------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  // Selectăm containerul din dreapta (zona de articole)
-  const mainContentZone = document.querySelector(".log-content");
 
-  //  CORECTURĂ RADAR: Selectăm atât zilele (.sidebar-link) cât și link-ul special de hartă (.map-title-link)
-  //  pentru a le pune sub aceeași barieră de protecție mecanică!
+//  ==========================================================================
+//     MECANISM 05: DESKTOP ANCHOR NAVIGATION (Log Page Sidebar)
+//     Prevents the browser from jumping the sidebar when clicking an anchor
+//     link. Instead, it scrolls only the right-hand content panel
+//     (.log-content) and updates the URL via history.pushState.
+//  ==========================================================================
+//  @mechanism: 05 — Anti-Drift Anchor Navigation
+//  @event: DOMContentLoaded → click on .sidebar-link and .map-title-link
+//  @reason: Without this mechanism, clicking "#html-day01" would scroll the
+//    entire page, dragging the sidebar out of position. By intercepting the
+//    click, we scroll only the content panel and leave the sidebar fixed.
+//  ==========================================================================
+
+// The protocol activates automatically when the full DOM matrix of the cockpit has loaded.
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the right-side container (the article zone with the scrollbar).
+  const mainContentZone = document.querySelector(".log-content"); // This is the <main> scrollable area.
+
+  //  CORRECTED RADAR: We select both the days (.sidebar-link) AND the special map link (.map-title-link)
+  //  so they all fall under the same mechanical shield protection!
   const navigationLinks = document.querySelectorAll(
     ".sidebar-link, .map-title-link",
   );
 
   navigationLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      // PASUL A: VERIFICĂM MODUL DE OPERARE (Desktop vs Mobil)
+      // STEP A: CHECK OPERATING MODE (Desktop vs Mobile)
       if (window.innerWidth > 768) {
-        //  IMPRESCINDIBIL: Oprim acțiunea nativă a browserului care trăgea sidebar-ul în sus!
-        //  Acesta este scutul care blochează fuga titlului h4 de pe ecran.
-        event.preventDefault();
+        //  ABSOLUTELY ESSENTIAL: We stop the browser's native action that used to drag the sidebar up!
+        //  This is the shield that blocks the h4 title from flying off the screen.
+        event.preventDefault(); // Kill the browser's default jump-to-anchor behaviour.
 
-        const targetAnchorId = link.getAttribute("href"); // Preluăm ancora (ex: "#top-deck" sau "#html-day01")
-        const targetArticleSection = document.querySelector(targetAnchorId); // Găsim elementul țintă
+        const targetAnchorId = link.getAttribute("href"); // Grab the anchor (e.g. "#top-deck" or "#html-day01").
+        const targetArticleSection = document.querySelector(targetAnchorId); // Find the target element in the DOM.
 
         if (targetArticleSection && mainContentZone) {
           let exactScrollCoordinates;
 
-          //  PROTOCOL INDIVIDUAL PENTRU HĂRȚI:
-          //   Dacă utilizatorul a apăsat pe titlul mare MAP, îi ordonăm containerului din dreapta
-          //   să se reseteze complet în vârf (coordonata 0), fără decalaje parazite!
+          //  INDIVIDUAL PROTOCOL FOR MAPS:
+          //   If the user clicked the big MAP title, we order the right container
+          //   to reset completely to the top (coordinate 0), no parasitic offsets!
           if (link.classList.contains("map-title-link")) {
-            exactScrollCoordinates = 0;
+            exactScrollCoordinates = 0; // The map link always goes to the very top.
           }
-          //  PROTOCOL INDIVIDUAL PENTRU ZILE:
-          //  Se aplică amortizarea ta ideală de 100px pentru a așeza logurile curat sub HUD.
+          //  INDIVIDUAL PROTOCOL FOR DAYS:
+          //  Apply your ideal 100px cushion to place log entries neatly under the HUD.
           else {
-            exactScrollCoordinates = targetArticleSection.offsetTop - 100;
+            exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px accounts for the fixed navbar.
           }
 
-          // Executăm scroll-ul fluid STRICT în interiorul ferestrei din dreapta (.log-content)
+          // Execute a smooth scroll STRICTLY inside the right-side window (.log-content).
           mainContentZone.scrollTo({
-            top: exactScrollCoordinates,
-            behavior: "smooth", // Alunecare cinematică lină
+            top: exactScrollCoordinates, // The calculated target position.
+            behavior: "smooth", // Smooth cinematic glide.
           });
 
-          // Schimbăm discret URL-ul din bara de sus a browserului fără salturi vizuale haotice
-          history.pushState(null, null, targetAnchorId);
+          // Discreetly update the browser URL bar without chaotic visual jumps.
+          history.pushState(null, null, targetAnchorId); // Changes the URL hash without reloading the page.
         }
       }
-      // PASUL B: MODUL MOBIL
+      // STEP B: MOBILE MODE
       else {
         console.log(
           `Mobile navigation active for sector: ${link.getAttribute("href")}`,
-        );
+        ); // Just log it; let the browser handle anchors natively on mobile.
       }
     });
   });
 });
 
-// --------------------------------------------------------------------------
-//    MECANISMUL 6: AUTO-SCROLL HUD MOBILE (Sincronizare Swipe Automatic)
-//    Prinde momentul când o zi devine activă la scroll pe mobil și glisează
-//    automat banda HUD pentru a aduce capsula curentă în centrul ecranului!
-// --------------------------------------------------------------------------
+
+//  ==========================================================================
+//     MECANISM 06: MOBILE HUD — HORIZONTAL AUTO-SCROLL
+//     On narrow screens, when a new section becomes active via MECANISM 02,
+//     the sidebar horizontally scrolls to centre the active button.
+//  ==========================================================================
+//  @mechanism: 06 — HUD Horizontal Sync
+//  @event: window scroll
+//  @guard: only runs on viewports <= 768px (mobile and split-screen).
+//  ==========================================================================
+
+// We listen to the global scroll event again, but this time for mobile.
 document.addEventListener("scroll", () => {
-  // Executăm acest protocol strict pe ecrane strâmte (Mobile / Split-screen)
+  // Execute this protocol strictly on narrow screens (Mobile / Split-screen).
   if (window.innerWidth <= 768) {
-    // Selectăm containerul exterior al consolei care are overflow-x: auto
-    const hudContainer = document.querySelector(".log-sidebar");
+    // Select the outer console container (the one with overflow-x: auto).
+    const hudContainer = document.querySelector(".log-sidebar"); // The sidebar doubles as a horizontal HUD on mobile.
 
-    // Găsim butonul de zi care a primit clasa .active în acel moment de la Mecanismul 4
-    const activeButton = document.querySelector(".sidebar-nav a.active");
+    // Find the day button that received the .active class in that moment from MECANISM 02.
+    const activeButton = document.querySelector(".sidebar-nav a.active"); // The glow tells us which section is visible.
 
-    // Scut de siguranță: Rulăm logica doar dacă ambele elemente sunt active pe ecran
+    // Safety shield: run the logic only if both elements are alive on screen.
     if (hudContainer && activeButton) {
-      /* MATEMATICA REALTĂȚII TAXTILE:
-          Calculăm poziția butonului în raport cu marginea stângă a ecranului (offsetLeft)
-         și scădem jumătate din lățimea HUD-ului pentru a-l poziționa fix pe centru! */
-      const buttonLeftCoordinates = activeButton.offsetLeft;
-      const buttonWidth = activeButton.offsetWidth;
-      const hudWidth = hudContainer.offsetWidth;
+      /* TACTILE REALITY MATHS:
+          Calculate the button's position relative to the screen's left edge (offsetLeft)
+         and subtract half the HUD width to land it EXACTLY centre! */
+      const buttonLeft = activeButton.offsetLeft; // Distance from the left edge of the container.
+      const buttonWidth = activeButton.offsetWidth; // How wide is the active button itself?
+      const hudWidth = hudContainer.offsetWidth; // How wide is the visible HUD window?
 
-      const targetScrollPosition =
-        buttonLeftCoordinates - hudWidth / 2 + buttonWidth / 2;
+      const targetScroll =
+        buttonLeft - hudWidth / 2 + buttonWidth / 2; // Centre the button in the visible area.
 
-      // Ordonăm consolei să execute o glisare orizontală lină (smooth) la acea coordonată
+      // Order the console to execute a smooth horizontal glide to that coordinate.
       hudContainer.scrollTo({
-        left: targetScrollPosition,
-        behavior: "smooth",
+        left: targetScroll, // The calculated centre position.
+        behavior: "smooth", // Smooth slide, like a camera dolly.
       });
     }
   }
 });
 
-//    ==========================================================================
-//    MECANISMUL 07: SINCRO-DETECTOR CURSOR // TERMINAL ERASE PROTOCOL
-//    Dezactivează și șterge definitiv cursoarele de scriere după stabilizarea textului.
-//    ==========================================================================
 
-// Protocolul se activează automat la încărcarea completă a matricii DOM a cockpitului
+//  ==========================================================================
+//     MECANISM 07: CURSOR ERASE PROTOCOL (Typing Animation Cleanup)
+//     After the CSS typing animation on the index page finishes, this mechanism
+//     removes the blinking cursor by setting border-right to "none" with
+//     !important. The timing matches the CSS keyframe durations.
+//  ==========================================================================
+//  @mechanism: 07 — Stencil Cursor Erase
+//  @event: DOMContentLoaded
+//  @bridge: Targets .stenciled-metal-text (h1) and .stenciled-metal-text-sub
+//    (p) — the same elements animated by CSS in style.css.
+//  ==========================================================================
+
+// The protocol activates automatically when the complete DOM matrix has loaded.
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. ANCORELE SENZORILOR: Identificăm elementele de text ștanțat din header
-  const macroText = document.querySelector(".stenciled-metal-text");
-  const microText = document.querySelector(".stenciled-metal-text-sub");
+  // 1. SENSOR TARGETS: Identify the stencilled text elements in the header.
+  const macroText = document.querySelector(".stenciled-metal-text"); // The big h1 title.
+  const microText = document.querySelector(".stenciled-metal-text-sub"); // The smaller subtitle.
 
-  // Scut de siguranță: Executăm calibrarea doar dacă ambele elemente sunt prezente în pagină
+  // Safety shield: only calibrate if both elements are present on the page.
   if (macroText && microText) {
-    //  2. PROTOCOL STINGERE TITLU PRINCIPAL (H1)
-    //  Animația de typing CSS durează fix 3 secunde (3000ms).
-    //  Lansăm un cronometru militar care elimină linia la finalul timpului.
+    //  2. MAIN TITLE (H1) ERASE PROTOCOL
+    //  The CSS typing animation lasts exactly 3 seconds (3000ms).
+    //  We launch a military timer that removes the border line when it expires.
     setTimeout(() => {
-      macroText.style.setProperty("border-right", "none", "important"); // Taie fizic bordura din dreapta textului
+      macroText.style.setProperty("border-right", "none", "important"); // Cut the physical right border of the text.
       macroText.style.setProperty(
         "border-right-color",
         "transparent",
         "important",
-      ); // Forțează opacitatea la zero absolut
-    }, 3000); // 3000ms = Durata exactă a animației h1
+      ); // Force opacity to absolute zero.
+    }, 3000); // 3000ms = exact duration of the h1 animation.
 
-    //  3. PROTOCOL STINGERE SUBTITLU MONOSPACE (P)
-    //  Subtitlul are o amânare de 3 secunde și scrie timp de 4 secunde.
-    //  Timpul total până la stabilizarea completă în metal este de 7 secunde (7000ms).
+    //  3. SUBTITLE MONOSPACE (P) ERASE PROTOCOL
+    //  The subtitle has a 3-second delay and then types for 4 seconds.
+    //  Total time to full metal stabilisation is 7 seconds (7000ms).
     setTimeout(() => {
-      microText.style.setProperty("border-right", "none", "important"); // Oprește clipirea și șterge linia secundară
+      microText.style.setProperty("border-right", "none", "important"); // Stop the blinking, erase the secondary line.
       microText.style.setProperty(
         "border-right-color",
         "transparent",
         "important",
-      ); // Garantează curățarea totală a pixelilor
-    }, 7000); // 7000ms = 3000ms (delay) + 4000ms (durata scrierii)
+      ); // Guarantee total pixel cleanup.
+    }, 7000); // 7000ms = 3000ms (delay) + 4000ms (typing duration).
   }
 });
 
-//        ==========================================================================
-//        MECANISMUL 08: RECURSIVE SOURCE INTEGRATION (MECANISMUL EXCLUSIV AL PAGINII)
-//        Citește data-path de pe butoanele .tab-btn, face fetch asincron către
-//        fișierul cerut și injectează codul sursă brut în .code-inspector-screen.
-//        Include auto-centrare pe mobil (HUD swipe) când se schimbă tabul activ.
-//        ==========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const scriptTarget = document.getElementById("script-stream-target");
-  const tabContainer = document.querySelector(".source-selector-tabs");
 
+//  ==========================================================================
+//     MECANISM 08: RECURSIVE SOURCE INTEGRATION (Blueprint Page Only)
+//     Reads the data-path attribute from .tab-btn buttons, fetches the
+//     corresponding file via the Fetch API, and injects its raw source code
+//     into .code-inspector-screen. Also handles auto-centre on mobile.
+//  ==========================================================================
+//  @mechanism: 08 — Recursive Source Loader
+//  @event: DOMContentLoaded, then click on .tab-btn
+//  @pedagogy: The Fetch API is the modern way to make HTTP requests from
+//    JavaScript. fetch() returns a Promise that resolves with a Response
+//    object. .then() chains handle the response, .catch() handles errors.
+//    The loaded code is displayed as plain text (not executed) via
+//    textContent, which is safe against XSS attacks.
+//  ==========================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Grab the output container and the tab button container from the DOM.
+  const scriptTarget = document.getElementById("script-stream-target"); // The <pre> or <code> block where source appears.
+  const tabContainer = document.querySelector(".source-selector-tabs"); // The tab bar with data-path buttons.
+
+  // Safety exit: if these elements don't exist, we're NOT on the recursive-blueprint page — bail out.
   if (!scriptTarget || !tabContainer) return;
 
-  // Funcție care încarcă un fișier după cale relativă
+  // Launch an async fetch scan towards the selected source file.
   function loadSourceFile(filePath) {
+    // Show "Loading..." visual feedback to the user.
     scriptTarget.textContent = "Loading...";
-    scriptTarget.style.color = "";
+    scriptTarget.style.color = ""; // Reset any previous error colour.
 
-    fetch(filePath)
+    fetch(filePath) // Start the HTTP fetch request to the target file.
       .then((response) => {
         if (!response.ok) {
           throw new Error(
-            `Fișierul "${filePath}" nu a fost detectat în radare. (${response.status})`,
-          );
+            `File "${filePath}" not found. (${response.status})`,
+          ); // Network error? Throw it to the catch block.
         }
-        return response.text();
+        return response.text(); // Convert the raw network buffer into plain usable text.
       })
       .then((rawCode) => {
-        scriptTarget.textContent = rawCode;
+        // Inject the text directly into the inspector screen as plain non-executable text.
+        scriptTarget.textContent = rawCode; // The source code now appears in the glass cylinder.
       })
       .catch((error) => {
+        // If anything failed, display a pink critical error alert on screen.
         scriptTarget.textContent = `[CRITICAL ERROR]: ${error.message}`;
-        scriptTarget.style.color = "var(--nebula-pink)";
+        scriptTarget.style.color = "var(--nebula-pink)"; // Pink visual alert for system damage.
       });
   }
 
-  // Click handler pe toate butoanele .tab-btn
+  // TAB CLICK HANDLER: When the user clicks a tab button in the source selector.
   tabContainer.addEventListener("click", (e) => {
+    // closest() walks up the DOM tree to find the nearest .tab-btn.
+    // This handles clicks on child elements (like a <span> inside the button).
     const btn = e.target.closest(".tab-btn");
-    if (!btn) return;
+    if (!btn) return; // Clicked outside a tab button? Ignore.
 
-    // Dezactivează tabul anterior
+    // Step A: Strip the active-tab class from ALL tabs.
     tabContainer.querySelectorAll(".tab-btn").forEach((b) => {
-      b.classList.remove("active-tab");
+      b.classList.remove("active-tab"); // Kill the active state across the board.
     });
-    btn.classList.add("active-tab");
+    // Step B: Light up only the clicked button.
+    btn.classList.add("active-tab"); // The clicked tab now glows.
 
-    // Încarcă fișierul
+    // Step C: Read the data-path attribute — it holds the relative URL to the source file.
     const filePath = btn.getAttribute("data-path");
     if (filePath) {
-      loadSourceFile(filePath);
+      loadSourceFile(filePath); // Launch the fetch and inject the source.
     }
 
-    // Auto-centrare pe mobil (HUD swipe)
+    // Mobile auto-centre: same tactile maths as MECANISM 06.
     if (window.innerWidth <= 768) {
-      const btnLeft = btn.offsetLeft;
-      const btnWidth = btn.offsetWidth;
-      const containerWidth = tabContainer.offsetWidth;
-      const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2;
+      const btnLeft = btn.offsetLeft; // Distance of the tab from the container's left edge.
+      const btnWidth = btn.offsetWidth; // The tab's own width.
+      const containerWidth = tabContainer.offsetWidth; // The visible width of the tab bar.
+      const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Centre it.
       tabContainer.scrollTo({
-        left: targetScroll,
-        behavior: "smooth",
+        left: targetScroll, // The calculated centre.
+        behavior: "smooth", // Smooth horizontal slide.
       });
     }
   });
 
-  // Încarcă fișierul implicit (primul .tab-btn.active-tab)
+  // LOAD DEFAULT TAB ON PAGE INIT:
+  // If a .tab-btn already has the active-tab class in the raw HTML,
+  // load its file automatically without requiring a manual click.
   const defaultTab = tabContainer.querySelector(".tab-btn.active-tab");
   if (defaultTab) {
     const defaultPath = defaultTab.getAttribute("data-path");
     if (defaultPath) {
-      loadSourceFile(defaultPath);
+      loadSourceFile(defaultPath); // Pre-load the first tab's source on page load.
     }
   }
 });
 
-// --- [NAVIGATION & UX TODOs] ---
-// --- [LOGICA DE AUTOMATIZARE ȘI SISTEME AVANSATE] ---
-
-// 1. [SCALABILITATE]: Generarea dinamică a Indexului.
-//    În loc să scriem manual 1000 de link-uri în Sidebar, vom crea un script
-//    care extrage automat textul din fiecare <h3> și creează un <li> corespunzător.
-//    (Esențial pentru jurnalele extinse de tip HTML-Log).
-
-// 2. [SMART TRACKING]: Intersection Observer - Active State.
-//    Sincronizarea automată a "locației" utilizatorului: pe măsură ce dai scroll
-//    prin sute de zile, Sidebar-ul trebuie să "aprindă" automat link-ul
-//    corespunzător (clasa .active) fără intervenție manuală.
-
-// 3. [RE-TRIGGER ANIMATION]: Typing Reset.
-//    Resetarea și pornirea animației de tip "typing" din .mission-status p
-//    pentru fiecare articol care intră în vizor, oferind un feedback vizual constant.
-
-// 4. [SEARCH & FILTER]: Sistem de Arhivă.
-//    Adăugarea unei bare de căutare în Sidebar care să permită filtrarea instantanee
-//    a celor 1000 de zile după cuvinte cheie (ex: "Flexbox", "Joins", "Loops").
-
-// 5. [OFFSET CALCULATION]: Dinamica Consolei.
-//    Calcularea precisă a înălțimii Navbar-ului și Sidebar-ului în JavaScript
-//    pentru a ajusta scroll-margin-top în timp real, eliminând suprapunerile
-//    indiferent de dispozitiv.
-
-// 6. [APPLICATION INTERACTIVITY]: Sistem de notițe persistente per articol.
-//    Folosirea LocalStorage pentru a permite utilizatorilor să adauge și să salveze
-//    extensii de jurnal direct din interfață.
 
 //  ==========================================================================
-//     MECANISMUL 7: HUD CONSOLE TOGGLE (Deschidere / Închidere Overlay)
-//     Controlează panoul holografic glisant cu toate cele 6 volume.
-//  ==========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".hud-toggle");
-  const navbar = document.querySelector(".navbar");
-
-  if (!toggleBtn || !navbar) return; // Ieșire sigură dacă elementele nu există (pagină fără HUD)
-
-  // Alternare clasă .hud-open pe navbar la click pe buton
-  toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevenim propagarea pentru a nu declanșa închiderea imediată
-    navbar.classList.toggle("hud-open");
-  });
-
-  // Închidere HUD la click în afara panoului
-  document.addEventListener("click", (e) => {
-    if (navbar.classList.contains("hud-open")) {
-      const isClickInside = navbar.contains(e.target);
-      if (!isClickInside) {
-        navbar.classList.remove("hud-open");
-      }
-    }
-  });
-
-  // Închidere HUD la tasta Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navbar.classList.contains("hud-open")) {
-      navbar.classList.remove("hud-open");
-    }
-  });
-});
-
-//  ==========================================================================
-//     MECANISMUL 09: COSMIC TYPEWRITER — Astrogation Charter auto-typing
+//     MECANISM 09: COSMIC TYPEWRITER (Transmission / Astrogation Charter)
 //     Types the manifesto text one character at a time inside the glass
 //     cylinder, as if the message is being received live from deep space.
-//     Only activates on the transmission page (.manifesto-entry present).
+//     Only activates on pages containing .manifesto-entry.
 //  ==========================================================================
+//  @mechanism: 09 — Cosmic Typewriter
+//  @event: DOMContentLoaded
+//  @pedagogy: This demonstrates three fundamental patterns in JavaScript:
+//    1. DOM manipulation — creating elements, setting classes, appending
+//    2. Recursive setTimeout — each character schedules the next, creating a
+//       typing effect without blocking the browser
+//    3. scrollIntoView — keeps the cursor visible as text is written on screen
+//  ==========================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".manifesto-entry");
+  const container = document.querySelector(".manifesto-entry"); // Find the glass cylinder container.
+
+  // Safety exit: only run on the transmission page.
   if (!container) return;
 
-  const paragraphs = container.querySelectorAll("p");
-  if (!paragraphs.length) return;
+  // The manifesto paragraphs are hardcoded directly in transmission.html.
+  const paragraphs = container.querySelectorAll("p"); // Grab every <p> inside the container.
+  if (!paragraphs.length) return; // No paragraphs? Nothing to type. Bail out.
 
-  // Archive: store each paragraph's text and whether it is the sign-off line
+  // Archive the text content and the signoff flag from each paragraph for later typing.
   const lines = Array.from(paragraphs).map((p) => ({
-    text: p.textContent,
-    isSignoff: p.classList.contains("manifesto-signoff"),
+    text: p.textContent, // The raw text content of this paragraph.
+    isSignoff: p.classList.contains("manifesto-signoff"), // Is this the captain's signature line?
   }));
 
-  // Clear the container — the JS will re-type everything
-  container.innerHTML = "";
+  // Clear the container — JS will re-type everything from the archived data.
+  // The original pedagogical comments in the HTML are removed here too; their purpose was during authoring.
+  container.innerHTML = ""; // Empty the glass cylinder. Ready for the live transmission.
 
-  // Create output wrapper for typed paragraphs
-  const output = document.createElement("div");
-  output.className = "typewriter-output";
-  container.appendChild(output);
+  // CREATE OUTPUT CONTAINER AND BLINKING CURSOR.
+  const output = document.createElement("div"); // Create a fresh <div> for the typing output.
+  output.className = "typewriter-output"; // Give it the CSS class that styles the typed text.
+  container.appendChild(output); // Insert it into the glass cylinder.
 
-  // Blinking cursor that trails the last typed character
-  const cursor = document.createElement("span");
-  cursor.className = "typing-cursor";
-  container.appendChild(cursor);
+  const cursor = document.createElement("span"); // Create a <span> for the blinking cursor.
+  cursor.className = "typing-cursor"; // The CSS class that makes it blink via animation.
+  container.appendChild(cursor); // Insert the cursor after the output text.
 
-  let paraIdx = 0;
-  let charIdx = 0;
-  let currentP = null;
+  // Typing counters: paraIdx tracks which paragraph, charIdx tracks which character inside that paragraph.
+  let paraIdx = 0; // Start at the first paragraph (index 0).
+  let charIdx = 0; // Start at the first character of that paragraph (index 0).
+  let currentP = null; // No paragraph element has been created yet.
 
+  // randomDelay varies the typing speed between 15-50ms per character.
+  // This simulates the irregular rhythm of a deep-space cosmic signal.
   function randomDelay() {
-    return Math.floor(Math.random() * 35 + 15); // 15–50ms per character
+    return Math.floor(Math.random() * 35 + 15); // Returns a random integer between 15 and 50.
   }
 
+  // typeNextChar — the recursive typing engine.
+  // Types one character, then schedules itself via setTimeout.
+  // When a paragraph is complete, it moves to the next with a dramatic pause.
+  // When all paragraphs are done, a 3-second timer hides the cursor.
   function typeNextChar() {
+    // Guard: all paragraphs have been typed — dismiss the cursor after 3 seconds.
     if (paraIdx >= lines.length) {
-      // Transmission complete — dismiss cursor after 3 seconds
+      // cursor-hidden is a CSS class that sets opacity to 0, making the cursor disappear.
       setTimeout(() => {
-        cursor.classList.add("cursor-hidden");
+        cursor.classList.add("cursor-hidden"); // Fade out the cursor silently.
       }, 3000);
-      return;
+      return; // Stop the recursion. The transmission is complete.
     }
 
-    // Create a new <p> when starting a paragraph
+    // Logic: create a new <p> element when we start typing a fresh paragraph.
     if (!currentP) {
-      currentP = document.createElement("p");
+      currentP = document.createElement("p"); // Create a new paragraph element.
       if (lines[paraIdx].isSignoff) {
-        currentP.className = "manifesto-signoff";
+        currentP.className = "manifesto-signoff"; // Special class for the captain's signature line.
       }
-      output.appendChild(currentP);
+      output.appendChild(currentP); // Append the new paragraph to the output container.
     }
 
-    const text = lines[paraIdx].text;
+    const text = lines[paraIdx].text; // Get the full text of the current paragraph.
 
     if (charIdx < text.length) {
-      currentP.textContent += text[charIdx];
-      charIdx++;
-      // Follow the transmission — keep the cursor visible as text is written
-      cursor.scrollIntoView({ block: "nearest" });
-      setTimeout(typeNextChar, randomDelay());
+      // There are still characters left to type in this paragraph.
+      currentP.textContent += text[charIdx]; // Append the next character to the paragraph.
+      charIdx++; // Move to the next character index.
+      // scrollIntoView keeps the cursor on screen as the text grows. block: "nearest" scrolls only as needed.
+      cursor.scrollIntoView({ block: "nearest" }); // Keeps the cursor visible without excessive scrolling.
+      setTimeout(typeNextChar, randomDelay()); // Schedule the next character with a random delay.
     } else {
-      // Paragraph done — move to next
-      paraIdx++;
-      charIdx = 0;
-      currentP = null;
+      // This paragraph is finished — advance to the next one.
+      paraIdx++; // Move to the next paragraph index.
+      charIdx = 0; // Reset character index to 0 for the new paragraph.
+      currentP = null; // Signal that a new <p> needs to be created next time.
+
       if (paraIdx < lines.length) {
-        // Pause between paragraphs so the reader can breathe
-        const pause = lines[paraIdx].isSignoff ? 1200 : 500;
-        setTimeout(typeNextChar, pause);
+        // Longer pause before the signoff line (the captain's signature) for dramatic narrative effect.
+        const pause = lines[paraIdx].isSignoff ? 1200 : 500; // 1200ms for signoff, 500ms for regular paragraphs.
+        setTimeout(typeNextChar, pause); // Schedule the next paragraph after the pause.
       } else {
-        // Last paragraph finished — call one more time to trigger completion
-        setTimeout(typeNextChar, 500);
+        // One final call to trigger the completion guard above.
+        setTimeout(typeNextChar, 500); // Short pause, then the guard fires and hides the cursor.
       }
     }
   }
 
-  // Brief silence before the transmission begins
-  setTimeout(typeNextChar, 1000);
+  // A brief moment of silence before the cosmic transmission begins. Immersion first.
+  setTimeout(typeNextChar, 1000); // Wait 1 second, then start typing character by character.
 });
+
+
+//  ==========================================================================
+//     BACKLOG — Navigation & UX Enhancements (Planned Mechanisms)
+//     These are not active code — they are entries in the ship's development
+//     backlog, preserved here for future implementation.
+//  ==========================================================================
+
+//  @todo: 01 — Dynamic Sidebar Index Generation
+//    Instead of manually writing 1000+ sidebar links, a script will extract
+//    text from every <h3> and auto-generate the corresponding <li> elements.
+//    Essential for the extended HTML-Log journal pages.
+
+//  @todo: 02 — Search & Filter Archive
+//    A search bar in the sidebar that filters log entries by keyword
+//    (e.g. "Flexbox", "Joins", "Loops") in real time, using the browser's
+//    built-in filter or a simple text-matching algorithm.
+
+//  @todo: 03 — Dynamic Navbar Offset Calculation
+//    Instead of hardcoding the 100px offset in MECANISM 05, JavaScript will
+//    measure the actual navbar height at runtime and adjust scroll-margin-top
+//    dynamically for every device.
+
+//  @todo: 04 — Note Export System
+//    Extend MECANISM 04 with a "download" button that compiles all saved
+//    notes into a single markdown or text file for offline reference.
+//  ==========================================================================

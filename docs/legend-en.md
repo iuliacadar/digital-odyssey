@@ -33,11 +33,17 @@ This legend establishes a shared vocabulary for comments across the whole projec
 - `@component:` explains the visual function of a component, such as a button, card, header, or menu.
 
 ## JS
-- `@block:` explains a logical behavior or functionality block.
+- `@block:` explains a logical behaviour or functionality block.
+- `@mechanism:` identifies a numbered mechanism (MECANISM 01–09). Each mechanism is a self-contained unit of behaviour that can be referenced by its number across code, CSS, and the ship's journal.
 - `@logic:` explains the internal flow of a function, condition, or transformation.
 - `@event:` explains a listened-to or triggered event, such as `click`, `submit`, `scroll`, or `DOMContentLoaded`.
 - `@state:` explains a UI or data state, such as active/inactive, open/closed, or loaded/unloaded.
+- `@guard:` marks a guard clause — an early return that prevents code execution when prerequisites (such as missing DOM elements or incorrect viewport size) are not met.
 - `@bridge:` explains the connection between JavaScript and HTML, CSS, or other data files.
+
+## Cross-cutting (HTML, CSS, JS)
+- `@pedagogy:` explains a concept for a novice reader — why this pattern exists, what it teaches, or how it connects to foundational knowledge. Used across HTML, CSS, and JS for consistent didactic voice.
+- `@todo:` marks planned or incomplete work, linking to the ship's backlog.
 
 ## SVG and JSON
 - I do not necessarily need separate micro-legends for `SVG` if its use in the project stays simple and limited.
