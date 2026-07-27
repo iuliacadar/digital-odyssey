@@ -100,22 +100,21 @@ This document centralizes ideas, postponed features, refactors, and technical de
 
 ---
 
-### 008 — Launch preparation: root index, security, empty log content
+### 008 — Launch preparation: security, empty log content, deploy config
 
-**Title:** Launch preparation — root redirect, noopener, empty log pages, deploy config
+**Title:** Launch preparation — noopener, empty log pages, deploy config
 
-**Description:** Address the three red-blockers and two amber-issues identified in the launch readiness assessment before going live.
+**Description:** Address the blockers identified in the launch readiness assessment before going live. (GitHub Pages will serve `en/` as root; no root `index.html` needed.)
 
 **Status:** Proposed
 **Priority:** High
 **Phase:** Pre-launch
 
-**Why now:** The main pages (index, bibliography, transmission, recursive-blueprint) are production-ready, but 40+ empty/lorem log pages, a missing root `index.html`, and missing `rel="noopener noreferrer"` on some `target="_blank"` links prevent public deployment.
+**Why now:** The main pages (index, bibliography, transmission, recursive-blueprint) are production-ready, but 40+ empty/lorem log pages, and missing `rel="noopener noreferrer"` on some `target="_blank"` links prevent public deployment.
 
-**Affected files:** root `index.html`, `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
+**Affected files:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
 
 **Steps:**
-- create root `index.html` that redirects to `/en/index.html`;
 - add `rel="noopener noreferrer"` to all `target="_blank"` links across all HTML files;
 - fill or remove the 18 empty structural-shell log pages per language (or add a "🚧 Under Construction" banner);
 - replace Lorem Ipsum text in `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` with real content;
@@ -124,7 +123,7 @@ This document centralizes ideas, postponed features, refactors, and technical de
 - optional: add a `CNAME` file for a custom domain.
 
 **Completion conditions:**
-- `https://iuliacadar.github.io/digital-odyssey/` shows content (not 404);
+- `https://iuliacadar.github.io/digital-odyssey/en/` shows the EN index;
 - no `target="_blank"` link lacks `rel="noopener noreferrer"`;
 - no log page shows an empty body or placeholder text without an "Under Construction" banner;
 - deployment is automated or documented with a single command.

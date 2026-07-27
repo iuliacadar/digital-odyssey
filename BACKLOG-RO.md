@@ -100,22 +100,21 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 
 ---
 
-### 008 — Pregătire lansare: index rădăcină, securitate, conținut gol al jurnalelor
+### 008 — Pregătire lansare: securitate, conținut gol al jurnalelor, configurare deploy
 
-**Titlu:** Pregătire lansare — redirectare rădăcină, noopener, pagini de jurnal goale, configurare deploy
+**Titlu:** Pregătire lansare — noopener, pagini de jurnal goale, configurare deploy
 
-**Descriere:** Rezolvarea celor trei blocaje roșii și a două probleme portocalii identificate în evaluarea stării de lansare înainte de publicare.
+**Descriere:** Rezolvarea blocajelor identificate în evaluarea stării de lansare înainte de publicare. (GitHub Pages va servi `en/` ca rădăcină; nu e nevoie de un `index.html` rădăcină.)
 
 **Status:** Propus
 **Prioritate:** High
 **Fază:** Pre-lansare
 
-**De ce acum:** Paginile principale (index, bibliografie, transmisiune, blueprinte recursiv) sunt gata de producție, dar peste 40 de pagini de jurnal goale/cu Lorem Ipsum, lipsa unui `index.html` rădăcină și lipsa `rel="noopener noreferrer"` pe unele linkuri `target="_blank"` împiedică lansarea publică.
+**De ce acum:** Paginile principale (index, bibliografie, transmisiune, blueprinte recursiv) sunt gata de producție, dar peste 40 de pagini de jurnal goale/cu Lorem Ipsum și lipsa `rel="noopener noreferrer"` pe unele linkuri `target="_blank"` împiedică lansarea publică.
 
-**Fișiere afectate:** `index.html` rădăcină, `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
+**Fișiere afectate:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`
 
 **Pași:**
-- crearea unui `index.html` rădăcină care redirecționează către `/en/index.html`;
 - adăugarea `rel="noopener noreferrer"` la toate linkurile `target="_blank"` din toate fișierele HTML;
 - completarea sau eliminarea celor 18 pagini de jurnal goale per limbă (sau adăugarea unui banner „🚧 În construcție");
 - înlocuirea textului Lorem Ipsum din `html-log.html`, `css-log.html`, `javascript-log.html`, `sql-log.html` cu conținut real;
@@ -124,7 +123,7 @@ Acest document centralizează ideile, funcționalitățile amânate, refactoriz�
 - opțional: adăugarea unui fișier `CNAME` pentru un domeniu personalizat.
 
 **Condiții de finalizare:**
-- `https://iuliacadar.github.io/digital-odyssey/` afișează conținut (nu 404);
+- `https://iuliacadar.github.io/digital-odyssey/en/` afișează indexul EN;
 - niciun link `target="_blank"` nu este fără `rel="noopener noreferrer"`;
 - nicio pagină de jurnal nu arată un corp gol sau text placeholder fără un banner „În construcție";
 - deploy-ul este automatizat sau documentat cu o singură comandă.
