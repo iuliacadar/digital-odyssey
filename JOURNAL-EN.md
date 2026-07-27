@@ -965,9 +965,71 @@ With the full list settled, I rewrote 18 past commits that lacked tags using `gi
 | `style:` | colour palette overrides, spelling unification (×3) |
 | `feat:` | transmission page, typewriter, auto-scroll, cursor fade, homologous toggle (×8) |
 | `refactor:` | header restructuring, link title unification (×3) |
-| `fix:` | typeNextChar cursor dismiss bug (was upper-case `Fix:`, now lower-case `fix:`) |
-| `i18n:` | RO transmission page translation |
-
-I created a temporary `pre-rewrite-backup` branch as a safety net, then force-pushed the rewritten history to `main`. The backup branch was subsequently deleted. The ship's log is clean again — every commit speaks the same language, every message carries its proper tag, and the past is as readable as the present.
-
----
+  | `fix:` | typeNextChar cursor dismiss bug (was upper-case `Fix:`, now lower-case `fix:`) |
+  | `i18n:` | RO transmission page translation |
+  
+  I created a temporary `pre-rewrite-backup` branch as a safety net, then force-pushed the rewritten history to `main`. The backup branch was subsequently deleted. The ship's log is clean again — every commit speaks the same language, every message carries its proper tag, and the past is as readable as the present.
+  
+  ---
+  
+  # DAY 16 — The Ship Learns a New Tongue: Thirty-One Modules, Nine Mechanisms, and the Legend Made Whole
+  
+  The fifteenth day had been about archives and links — the bibliographic nervous system of the fleet. Today was about the ship's own voice. Two files carry the pulse of `D::0dy55ey`: the script that watches and responds, and the stylesheet that gives it form and atmosphere. Both received the full pedagogical treatment today.
+  
+  ## The JavaScript layer: from six mechanisms to nine
+  
+  The old script.js had served well since Manual_project — six coordinated mechanisms that governed the cockpit's interactivity. But the ship had grown since then. New pages demanded new behaviours: the Recursive Blueprint page's source loader, the Transmission page's cosmic typewriter, a cursor animation that needed its own cleanup cycle after the typing finished.
+  
+  I rewrote both `en/script.js` and `ro/script.js` from the ground up, preserving the six original mechanisms and adding three new ones:
+  
+  | Mechanism | Purpose |
+  |---|---|
+  | 01 | Navbar hide/show on scroll |
+  | 02 | IntersectionObserver sidebar active tracking |
+  | 03 | Mission status typing animation reset |
+  | 04 | localStorage persistent notes |
+  | 05 | Desktop anchor navigation (anti-drift) |
+  | 06 | Mobile HUD horizontal scroll sync |
+  | 07 | Cursor stencil cleanup after typing animation |
+  | 08 | Recursive source loader (Blueprint page) |
+  | 09 | Cosmic typewriter (manifesto page) |
+  
+  Each mechanism now carries the full annotation stack: `@mechanism:` at the header with its number and purpose, `@event:` for the DOM event it listens to, `@guard:` for early-return conditions, `@bridge:` for cross-file connections, and `@pedagogy:` blocks that explain not just what the code does, but why that pattern exists and what it teaches about JavaScript. The backlog at the bottom of each file lists planned improvements — dynamic sidebar generation, search/filter, dynamic navbar offset, note export — so a reader knows the ship is not finished, only in port.
+  
+  The Romanian version followed immediately — not a mechanical translation, but a parallel construction. Every `@pedagogy:` block, every line-by-line narrative comment, rendered in Romanian with the same care. The two scripts are not copies of each other; they are two voices speaking the same protocol.
+  
+  ## The CSS layer: thirty-one modules, tagged and explained
+  
+  The old `en/style.css` had a module structure inherited from Manual_project — fourteen numbered modules plus two utility modules for keyframes and media queries. The content was there, the structure was sound, but the pedagogical density was sparse. Module headers existed, but individual lines lacked explanations. `@tag` annotations did not exist — the tag system had not been invented when the file was first written.
+  
+  I restructured both CSS files into a 31-module architecture (30 numbered + 2 utility), each module governing exactly one component or concern, ordered by strict visual hierarchy: Foundation → Layout → Navigation → Components → Advanced/Experimental → Motion (Module 00.1) → Responsive (Module 00.2). Every module header carries `@module:` and `@sub-module:` tags. Every CSS property carries an inline `@tag:` comment — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — following the annotation legend.
+  
+  The pedagogical voice is deliberately repetitive. When a student sees `border: 1px solid var(--solar-mint)` explained for the fifth time, each occurrence is in a different visual context: the navbar, a card, a button, a table, a code block. The brain forms a distributed memory — not "border syntax" in isolation, but how a green laser wire behaves inside a navigation terminal versus inside a data cell. Contextual anchoring. The same principle the ship has always followed: repetition with variation, because that is how spoken language is learned.
+  
+  One thousand six hundred and twelve `@tag:` annotations were placed across the English stylesheet — five hundred and twenty of them hand-crafted with unique sci-fi phrasing, eight hundred and seventy generated from templates that vary their framing within each visual context. Every keyframe was moved to Module 00.1, centralised under `@group:` labels (A–G). Every media query was collected in Module 00.2, split into desktop protocol (A) and mobile mutation (B), with `@section:` and `@sub-section:` markers.
+  
+  ## The Romanian sister ship: translation at scale
+  
+  With the English stylesheet complete, I cloned it to `ro/style.css` and translated every structural header — `@module:`, `@sub-module:`, `@group:`, `@section:`, `@keyframe:` — into Romanian. Then the harder work began: translating 1,394 CSS property comments from English to Romanian while preserving the full richness of the originals.
+  
+  The first attempt at automated translation collapsed the file from 3,645 to 1,391 lines — a script bug that concatenated closing braces with selectors and comments. I restored the file from the English master copy and wrote a second, more careful translator. This one parsed each line independently, matched the exact CSS property and value, and produced a Romanian comment of equivalent richness. The sci-fi hand-crafted bodies — "Stable bold structural weight inherited from the legacy engine", "Phosphor-mint wavelength: steady data streams, radar grids, active HUD" — were individually mapped to Romanian equivalents. The template-generated bodies — "Vertical dimension — sets the element height to {v}. Determines the vertical screen real estate allocated to this component" — were pattern-translated with the same multi-sentence structure.
+  
+  Three hundred and nine kilobytes. Four thousand twenty-one lines. Zero corruption. Every property comment in Romanian.
+  
+  ## The legend, made complete
+  
+  With new tags spreading through the CSS files, I checked the legend documents in `docs/` against the actual annotations used across the entire project. Four tags were undocumented: `@module:` (32 occurrences), `@sub-module:` (266), `@keyframe:` (18), and `@manifest:` (1). A broader scan of all project files — HTML, CSS, JavaScript, SVG — revealed four more: `@group:` used in the CSS keyframes index and module sub-sections, `@section:` and `@sub-section:` in the media queries area, and `@cluster:` in the bibliography HTML pages.
+  
+  All eight were added to both `legend-en.md` and `legend-ro.md`, each with a definition in the appropriate language and section. The tag system is now complete: every annotation that appears in the codebase has an entry in the legend, and every entry in the legend corresponds to at least one real annotation in the source.
+  
+  ## Compatibility: the browser's own warnings
+  
+  VS Code had been reporting four warnings across the two CSS files — two about `user-select` missing the `-webkit-user-select` prefix for Safari support, and two about `scrollbar-width` used outside an `@supports` feature query (unsupported in Chrome before version 121, Safari, and Samsung Internet). I fixed both issues in both files: added the WebKit prefix to every `user-select` declaration, and wrapped every bare `scrollbar-width` in an `@supports (scrollbar-width: none)` block, consistent with the pattern already used elsewhere in the stylesheets. The warnings cleared.
+  
+  ## What the ship now carries
+  
+  The JavaScript layer explains itself from within — nine mechanisms, each with its own pedagogical apparatus, cross-referenced to the legend. The CSS layer is an open textbook — thirty-one modules, one thousand six hundred twelve annotations, every property explained in context. The legend documents are complete — every tag documented, every annotation accounted for. The browser warnings are silent.
+  
+  The ship is not finished. But tonight, with the terminal clean and the log committed, I closed the laptop and sat in the dark for a moment, listening. The fans were quiet. The frame counter was steady. And somewhere in the code, the typewriter cursor was still blinking.
+  
+  ---

@@ -981,3 +981,65 @@ Eticheta `content:` — una dintre cele două pe care le adăugasem în ZIUA 14 
 Am făcut push pe `main` şi am privit repository-ul remote reflectând schimbările. Biblioteca de referinţă a navei nu mai e un perete împrumutat de pe o navă mai veche. E o punte de navigaţie construită special, cartografiată pe fiecare coridor al `D::0dy55ey`, cu adnotări pedagogice pentru fiecare nit şi fiecare circuit.
 
 ---
+
+# ZIUA 16 — Nava Învață o Nouă Limbă: Treizeci și Unu de Module, Nouă Mecanisme și Legenda Făcută Întreagă
+
+Ziua cincisprezece fusese despre arhive și linkuri — sistemul nervos bibliografic al flotei. Astăzi a fost despre vocea însăși a navei. Două fișiere poartă pulsul lui `D::0dy55ey`: scriptul care privește și răspunde, și foaia de stil care îi dă formă și atmosferă. Ambele au primit astăzi tratamentul pedagogic complet.
+
+## Stratul JavaScript: de la șase la nouă mecanisme
+
+Vechiul script.js servise bine încă din Manual_project — șase mecanisme coordonate care guvernau interactivitatea cockpitului. Dar nava crescuse de atunci. Pagini noi cereau comportamente noi: încărcătorul de sursă pentru pagina Blueprint Recursiv, mașina de scris cosmică pentru pagina Transmisiunii, o animație de cursor care avea nevoie de propriul ciclu de curățare după terminarea tastării.
+
+Am rescris ambele fișiere — `en/script.js` și `ro/script.js` — de la zero, păstrând cele șase mecanisme originale și adăugând trei noi:
+
+| Mecanism | Scop |
+|---|---|
+| 01 | Ascunderea/afișarea navbarului la scroll |
+| 02 | Urmărirea activă a sidebarului cu IntersectionObserver |
+| 03 | Resetarea animației de tastare a statusului misiunii |
+| 04 | Note persistente în localStorage |
+| 05 | Navigare prin ancore pe desktop (anti-derivă) |
+| 06 | Sincronizare scroll orizontal HUD pe mobil |
+| 07 | Curățarea cursorului după animația de tastare |
+| 08 | Încărcătorul de sursă recursiv (pagina Blueprint) |
+| 09 | Mașina de scris cosmică (pagina manifestului) |
+
+Fiecare mecanism poartă acum stiva completă de adnotări: `@mechanism:` la antet cu numărul și scopul, `@event:` pentru evenimentul DOM pe care îl ascultă, `@guard:` pentru condițiile de ieșire timpurie, `@bridge:` pentru conexiunile între fișiere și `@pedagogy:` care explică nu doar ce face codul, ci de ce există acel model și ce predă despre JavaScript. Lista de îmbunătățiri planificate de la sfârșitul fiecărui fișier — generare dinamică a sidebarului, căutare/filtrare, offset dinamic al navbarului, export de note — arată cititorului că nava nu e terminată, ci doar în port.
+
+Versiunea română a urmat imediat — nu o traducere mecanică, ci o construcție paralelă. Fiecare bloc `@pedagogy:`, fiecare comentariu narativ linie-cu-linie, redat în română cu aceeași grijă. Cele două scripturi nu sunt copii unul altuia; sunt două voci care vorbesc același protocol.
+
+## Stratul CSS: treizeci și unu de module, etichetate și explicate
+
+Vechiul `en/style.css` avea o structură modulară moștenită din Manual_project — paisprezece module numerotate plus două module utilitare pentru keyframe-uri și media queries. Conținutul era acolo, structura era solidă, dar densitatea pedagogică era redusă. Antetele de module existau, dar liniile individuale nu aveau explicații. Adnotările `@tag:` nu existau — sistemul de etichete nu fusese inventat când fișierul fusese scris pentru prima dată.
+
+Am restructurat ambele fișiere CSS într-o arhitectură de 31 de module (30 numerotate + 2 utilitare), fiecare modul guvernând exact o componentă sau un concern, ordonate după ierarhia vizuală strictă: Fundație → Layout → Navigare → Componente → Avansat/Experimental → Mișcare (Modulul 00.1) → Responsive (Modulul 00.2). Fiecare antet de modul poartă etichetele `@module:` și `@sub-module:`. Fiecare proprietate CSS poartă un comentariu inline `@tag:` — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — urmând legenda de adnotări.
+
+Vocea pedagogică e deliberat repetitivă. Când un student vede `border: 1px solid var(--solar-mint)` explicat pentru a cincea oară, fiecare apariție e într-un context vizual diferit: navbarul, un card, un buton, un tabel, un bloc de cod. Creierul formează o memorie distribuită — nu „sintaxa de border" în izolare, ci cum se comportă un fir laser verde în interiorul unui terminal de navigație față de interiorul unei celule de date. Ancorare contextuală. Același principiu pe care nava l-a urmat dintotdeauna: repetiție cu variație, pentru că așa se învață o limbă vorbită.
+
+O mie șase sute doisprezece adnotări `@tag:` au fost plasate în foaia de stil engleză — cinci sute douăzeci dintre ele scrise manual cu fraze sci-fi unice, opt sute șaptezeci generate din șabloane care își variază încadrarea în fiecare context vizual. Fiecare keyframe a fost mutat în Modulul 00.1, centralizat sub etichete `@group:` (A–G). Fiecare media query a fost colectat în Modulul 00.2, împărțit în protocol desktop (A) și mutație mobilă (B), cu markeri `@section:` și `@sub-section:`.
+
+## Nava soră română: traducere la scară
+
+Cu foaia de stil engleză completă, am clonat-o în `ro/style.css` și am tradus fiecare antet structural — `@module:`, `@sub-module:`, `@group:`, `@section:`, `@keyframe:` — în română. Apoi a început munca mai grea: traducerea a 1.394 de comentarii de proprietăți CSS din engleză în română, păstrând bogăția integrală a originalelor.
+
+Prima încercare de traducere automată a prăbușit fișierul de la 3.645 la 1.391 de linii — un bug de script care a concatenat acoladele de închidere cu selectori și comentarii. Am restaurat fișierul din copia-master engleză și am scris un al doilea traducător, mai atent. Acesta a analizat fiecare linie independent, a potrivit exact proprietatea și valoarea CSS și a produs un comentariu românesc de bogăție echivalentă. Corpurile sci-fi scrise manual — "Greutate structurală bold stabilă moștenită de la motorul moștenit", "Lungime de undă fosfor-mentă: fluxuri de date stabile, grile radar, HUD activ" — au fost mapate individual la echivalente românești. Corpurile generate din șabloane — "Dimensiune verticală — setează înălțimea elementului la {v}. Determină spațiul vertical alocat acestei componente pe ecran." — au fost traduse prin pattern cu aceeași structură multi-frază.
+
+Trei sute nouă kilobiți. Patru mii douăzeci și una de linii. Zero corupție. Fiecare comentariu de proprietate în română.
+
+## Legenda, făcută întreagă
+
+Odată cu răspândirea noilor etichete prin fișierele CSS, am verificat documentele de legendă din `docs/` împotriva adnotărilor reale folosite în întregul proiect. Patru etichete erau nedocumentate: `@module:` (32 de apariții), `@sub-module:` (266), `@keyframe:` (18) și `@manifest:` (1). O scanare mai largă a tuturor fișierelor proiectului — HTML, CSS, JavaScript, SVG — a dezvăluit încă patru: `@group:` folosit în indexul de keyframes CSS și sub-secțiunile modulelor, `@section:` și `@sub-section:` în zona de media queries și `@cluster:` în paginile HTML de bibliografie.
+
+Toate opt au fost adăugate în ambele fișiere — `legend-en.md` și `legend-ro.md` — fiecare cu o definiție în limba și secțiunea corespunzătoare. Sistemul de etichete e acum complet: fiecare adnotare care apare în baza de cod are o intrare în legendă și fiecare intrare din legendă corespunde unei adnotări reale din sursă.
+
+## Compatibilitatea: avertismentele browserului însuși
+
+VS Code raporta patru avertismente în cele două fișiere CSS — două despre `user-select` fără prefixul `-webkit-user-select` necesar pentru Safari și două despre `scrollbar-width` folosit în afara unui `@supports` (neacceptat în Chrome înainte de versiunea 121, Safari și Samsung Internet). Am rezolvat ambele probleme în ambele fișiere: am adăugat prefixul WebKit la fiecare declarație `user-select` și am înfășurat fiecare `scrollbar-width` descoperit într-un bloc `@supports (scrollbar-width: none)`, consecvent cu modelul deja folosit în alte părți ale foii de stil. Avertismentele s-au stins.
+
+## Ce poartă acum nava
+
+Stratul JavaScript se explică din interior — nouă mecanisme, fiecare cu propriul aparat pedagogic, cross-referențiate la legendă. Stratul CSS e un manual deschis — treizeci și unu de module, o mie șase sute doisprezece adnotări, fiecare proprietate explicată în contextul ei. Documentele de legendă sunt complete — fiecare etichetă documentată, fiecare adnotare contabilizată. Avertismentele browserului sunt tăcute.
+
+Nava nu e terminată. Dar în seara asta, cu terminalul curat și commit-ul înregistrat, am închis laptopul și am stat o clipă în întuneric, ascultând. Ventilatoarele erau liniștite. Contorul de cadre era stabil. Și undeva în cod, cursorul mașinii de scris clipea încă.
+
+---
