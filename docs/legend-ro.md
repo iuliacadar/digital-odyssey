@@ -26,6 +26,10 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 - `@concept:` explică semnificația simbolică sau narativă a unei alegeri de structură sau conținut.
 
 ## CSS
+- `@module:` definește numărul și numele modulului curent (ex. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Reprezintă reperul structural principal în arhitectura celor 31 de module.
+- `@sub-module:` definește numărul și numele sub-modulului curent dintr-un modul (ex. `@sub-module: 04.1 — Section Architecture`). Se plasează sub `@module:` părinte.
+- `@keyframe:` adnotează un bloc de animație `@keyframes` (ex. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Leagă animația de scopul său narativ.
+- `@manifest:` adnotare la nivel de fișier care identifică tipul și scopul documentului (folosit în blocul de deschidere al stylesheet-ului).
 - `@block:` explică o secțiune logică de stiluri, de exemplu reset, layout, componente sau responsive rules.
 - `@selector:` explică ce elemente țintește un selector CSS.
 - `@theme:` explică rolul cromatic, atmosferic sau identitar al unei reguli.

@@ -26,6 +26,10 @@ This legend establishes a shared vocabulary for comments across the whole projec
 - `@concept:` explains the symbolic or narrative meaning of a structural or content choice.
 
 ## CSS
+- `@module:` defines the current module number and name (e.g. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Acts as the primary structural landmark in the 31-module architecture.
+- `@sub-module:` defines the current sub-module number and name within a module (e.g. `@sub-module: 04.1 — Section Architecture`). Nests under the parent `@module:`.
+- `@keyframe:` annotates a `@keyframes` animation block (e.g. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Links the animation to its narrative purpose.
+- `@manifest:` file-level annotation identifying the document type and purpose (used in the opening block of the stylesheet).
 - `@block:` explains a logical styling section, such as reset, layout, components, or responsive rules.
 - `@selector:` explains which elements a CSS selector targets.
 - `@theme:` explains the color, atmosphere, or identity role of a rule.
