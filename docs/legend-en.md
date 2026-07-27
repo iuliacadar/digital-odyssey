@@ -24,12 +24,16 @@ This legend establishes a shared vocabulary for comments across the whole projec
 - `@structure:` explains the role of an element in the document architecture.
 - `@theme:` explains the color, atmosphere, or visual identity role of an element, class, or attribute in HTML context.
 - `@concept:` explains the symbolic or narrative meaning of a structural or content choice.
+- `@cluster:` groups a set of related entries under a thematic heading (used in bibliography pages, e.g. `@cluster: Core Runtimes`).
 
 ## CSS
 - `@module:` defines the current module number and name (e.g. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Acts as the primary structural landmark in the 31-module architecture.
 - `@sub-module:` defines the current sub-module number and name within a module (e.g. `@sub-module: 04.1 — Section Architecture`). Nests under the parent `@module:`.
 - `@keyframe:` annotates a `@keyframes` animation block (e.g. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Links the animation to its narrative purpose.
 - `@manifest:` file-level annotation identifying the document type and purpose (used in the opening block of the stylesheet).
+- `@group:` labels a logical cluster of related rules within a module, often with a letter code (e.g. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Also used to group `@keyframes` blocks into categories (A–G).
+- `@section:` marks a major division within the responsive / media queries area, identified by a numeric code (e.g. `@section: 00.2.A — Desktop Protocol`).
+- `@sub-section:` marks a sub-division within a `@section:`, identified by an alphanumeric code (e.g. `@sub-section: A1 — Global Parent Grid Container`). Nests under the parent `@section:`.
 - `@block:` explains a logical styling section, such as reset, layout, components, or responsive rules.
 - `@selector:` explains which elements a CSS selector targets.
 - `@theme:` explains the color, atmosphere, or identity role of a rule.

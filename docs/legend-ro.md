@@ -24,12 +24,16 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 - `@structure:` explică rolul unui element în arhitectura documentului.
 - `@theme:` explică rolul cromatic, atmosferic sau de identitate vizuală al unui element, clase sau atribut în context HTML.
 - `@concept:` explică semnificația simbolică sau narativă a unei alegeri de structură sau conținut.
+- `@cluster:` grupează un set de intrări conexe sub un titlu tematic (folosit în paginile de bibliografie, ex. `@cluster: Runtime-uri de Bază`).
 
 ## CSS
 - `@module:` definește numărul și numele modulului curent (ex. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Reprezintă reperul structural principal în arhitectura celor 31 de module.
 - `@sub-module:` definește numărul și numele sub-modulului curent dintr-un modul (ex. `@sub-module: 04.1 — Section Architecture`). Se plasează sub `@module:` părinte.
 - `@keyframe:` adnotează un bloc de animație `@keyframes` (ex. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Leagă animația de scopul său narativ.
 - `@manifest:` adnotare la nivel de fișier care identifică tipul și scopul documentului (folosit în blocul de deschidere al stylesheet-ului).
+- `@group:` etichetează un grup logic de reguli conexe într-un modul, adesea cu un cod literă (ex. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Folosit și pentru gruparea blocurilor `@keyframes` pe categorii (A–G).
+- `@section:` marchează o diviziune majoră în zona de responsive / media queries, identificată printr-un cod numeric (ex. `@section: 00.2.A — Desktop Protocol`).
+- `@sub-section:` marchează o sub-diviziune în cadrul unui `@section:`, identificată printr-un cod alfanumeric (ex. `@sub-section: A1 — Global Parent Grid Container`). Se plasează sub `@section:` părinte.
 - `@block:` explică o secțiune logică de stiluri, de exemplu reset, layout, componente sau responsive rules.
 - `@selector:` explică ce elemente țintește un selector CSS.
 - `@theme:` explică rolul cromatic, atmosferic sau identitar al unei reguli.
