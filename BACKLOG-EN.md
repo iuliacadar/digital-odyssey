@@ -172,7 +172,18 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 - sidebar links navigate to section anchors correctly;
 - mobile HUD swiping console works (MECANISM 06).
 
+## Implemented
+
 Move completed items here, keeping the date and a short note about what changed.
+
+### Example
+
+**ID:** 000
+**Title:** Example completed item
+**Date:** YYYY-MM-DD
+**Note:** Short summary of the implementation.
+
+---
 
 ### 002 — Recursive pages with complete metadata
 
@@ -229,12 +240,3 @@ Move completed items here, keeping the date and a short note about what changed.
 - Added DAY 11 entries to both journals and both backlogs.
 
 **Files affected:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
-
----
-
-### Example
-
-**ID:** 000
-**Title:** Example completed item
-**Date:** YYYY-MM-DD
-**Note:** Short summary of the implementation.

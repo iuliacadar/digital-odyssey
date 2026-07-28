@@ -172,7 +172,18 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 - linkurile din sidebar navighează corect la ancorele secțiunilor;
 - consola HUD mobilă glisantă funcționează (MECANISM 06).
 
+## Implementat
+
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
+
+### Exemplu
+
+**ID:** 000
+**Titlu:** Exemplu item finalizat
+**Data:** YYYY-MM-DD
+**Notă:** Scurt rezumat al implementării.
+
+---
 
 ### 002 — Pagini recursive cu metadate complete
 
@@ -229,12 +240,3 @@ Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a
 - Adăugate intrări DAY 11 în ambele jurnale și ambele backloaguri.
 
 **Fișiere afectate:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
-
----
-
-### Exemplu
-
-**ID:** 000
-**Titlu:** Exemplu item finalizat
-**Data:** YYYY-MM-DD
-**Notă:** Scurt rezumat al implementării.
