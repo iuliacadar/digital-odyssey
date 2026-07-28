@@ -3031,8 +3031,8 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: inline-block !important; /* @layout: Tip cutie — redează ca o cutie la nivel de bloc ocupând lățimea completă disponibilă. */
-  white-space: nowrap !important; /* @layout: Gestionare spații albe — controlează procesarea spațiilor albe și a întreruperilor de linie: nowrap !important. */
+  display: block !important; /* @layout: Tip cutie — redează ca o cutie la nivel de bloc ocupând lățimea completă disponibilă. */
+  white-space: normal !important; /* @layout: Gestionare spații albe — permite textului să se împartă pe mai multe linii în lățimea panoului. Previne overflow-ul orizontal care ar trunchia mesajul de status în layout-urile înguste. */
   width: auto !important; /* @layout: Dimensiune orizontală — setează lățimea elementului la auto !important. Controlează spațiul orizontal pe care acest nod îl ocupă în layout. */
   min-width: 0 !important; /* @layout: Setează min-width: 0 !important. Proprietate CSS care configurează aspectul și comportamentul acestui element. */
 }

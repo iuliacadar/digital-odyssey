@@ -3031,8 +3031,8 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: inline-block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
-  white-space: nowrap !important; /* @layout: Whitespace handling — controls processing of whitespace and line breaks: nowrap !important. */
+  display: block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
+  white-space: normal !important; /* @layout: Whitespace handling — allows text to wrap within the panel width. Prevents horizontal overflow that would clip the status message in narrow panel layouts. */
   width: auto !important; /* @layout: Horizontal footprint — sets the element width to auto !important. Controls how much horizontal space this node occupies within the layout flow. */
   min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. Guarantees a minimum presence in the layout even when content is minimal. */
 }
