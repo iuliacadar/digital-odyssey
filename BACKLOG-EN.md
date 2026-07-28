@@ -144,7 +144,33 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 ---
 
-## Implemented
+### 009 — Log page template: clone Manual_project structure into all log pages
+
+**Title:** Clone Manual_project log structure into all empty log pages
+
+**Description:** Populate all 18 empty structural-shell log pages per language with the sector/day structure already drawn in Manual_project's html-log, css-log, and sql-log pages. Each log page gets the sidebar navigation (desktop) / HUD swiping console (mobile), day-by-day or sector-by-sector article layout, mission-status blocks, and custom logo (already implemented). Volumes that need a different format (lab, seminar, practical) will be customised on demand when content requires it.
+
+**Status:** Proposed
+**Priority:** High
+**Phase:** Post-structural-shell-fill
+
+**Why now:** 18 of 22 log pages per language are empty shells (nav + footer only). The Manual_project import proved that the sector/day structure is reusable across all volumes. Filling the template now gives every log page a consistent skeleton, ready for content.
+
+**Design decision (DAY 17):** Not all volumes will use the same structure — backend architecture, deployment, and UX may need topic-based layouts rather than sequential days. The approach is: clone the day/sector template as the default, then customise per volume when content demands a different format. This avoids both (a) hand-crafting 36 empty pages from scratch and (b) forcing a one-size-fits-all template onto volumes that outgrow it.
+
+**Affected files:** All 18 empty log pages per language (EN + RO = 36 files), plus the 4 lorem-ipsum pages (html-log, css-log, javascript-log, sql-log) that will also adopt the same template structure.
+
+**Steps:**
+- extract the shared shell from Manual_project's log pages (sidebar + day-section pattern);
+- clone into all empty log pages in both languages;
+- verify sidebar navigation, mobile HUD, and mission-status blocks render;
+- maintain language-appropriate comments (EN → en/, RO → ro/).
+
+**Completion conditions:**
+- all log pages have a visible structural skeleton (sidebar, day sections, mission-status, logo);
+- no page shows a bare white body;
+- sidebar links navigate to section anchors correctly;
+- mobile HUD swiping console works (MECANISM 06).
 
 Move completed items here, keeping the date and a short note about what changed.
 

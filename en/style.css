@@ -3031,10 +3031,14 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: inline-block !important; /* @layout: Box type — renders as an inline-block box that shrink-wraps its content. Keeps the typing animation working correctly by preventing mid-animation line breaks. */
-  white-space: nowrap !important; /* @layout: Whitespace handling — forces the status text to stay on one line. The typing animation (max-width expansion) requires a single unwrapped line to reveal characters smoothly. */
-  width: auto !important; /* @layout: Horizontal footprint — sets the element width to auto !important. Controls how much horizontal space this node occupies within the layout flow. */
-  min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. Guarantees a minimum presence in the layout even when content is minimal. */
+  display: inline-block !important; /* @layout: Box type — renders as an inline-block box that shrink-wraps to content width. */
+  white-space: nowrap !important; /* @layout: Whitespace handling — keeps the status text on a single line. */
+  width: auto !important; /* @layout: Horizontal footprint — lets the paragraph size to its content rather than the parent container. */
+  min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. */
+  max-width: none !important; /* @layout: Maximum width override — removes the max-width cap from the base .mission-status p rule. The base typing animation (max-width:0→100%) is not needed for static status text in panels; this prevents the <p> from being clipped at the panel boundary. */
+  overflow: visible !important; /* @layout: Overflow override — replaces the base overflow:hidden (used by the typing animation reveal) with visible, so the full text content is rendered. The parent .mission-status container handles horizontal scrolling via overflow-x:auto. */
+  border-right: none !important; /* @theme: Border override — removes the blinking cursor border from the base .mission-status p rule. The cursor only makes sense with the typing animation, which is disabled here. */
+  animation: none !important; /* @theme: Animation override — disables the typing-modular/blink/hide-cursor animation stack. Panel status text is static and does not need a typewriter reveal. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {

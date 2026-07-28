@@ -3031,10 +3031,14 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: inline-block !important; /* @layout: Tip cutie — redează ca o cutie inline-block care se shrink-wrappe la conținut. Menține animația de tastare funcțională prin prevenirea întreruperilor de linie în timpul animației. */
-  white-space: nowrap !important; /* @layout: Gestionare spații albe — forțează textul de status să rămână pe o singură linie. Animația de tastare (expandare max-width) necesită o singură linie pentru a dezvălui caracterele lin. */
-  width: auto !important; /* @layout: Dimensiune orizontală — setează lățimea elementului la auto !important. Controlează spațiul orizontal pe care acest nod îl ocupă în layout. */
+  display: inline-block !important; /* @layout: Tip cutie — redează ca o cutie inline-block care se shrink-wrappe la lățimea conținutului. */
+  white-space: nowrap !important; /* @layout: Gestionare spații albe — menține textul de status pe o singură linie. */
+  width: auto !important; /* @layout: Dimensiune orizontală — lasă paragraful să se dimensioneze după conținut, nu după container. */
   min-width: 0 !important; /* @layout: Setează min-width: 0 !important. Proprietate CSS care configurează aspectul și comportamentul acestui element. */
+  max-width: none !important; /* @layout: Suprimare lățime maximă — elimină limita de max-width din regula de bază .mission-status p. Animația de tastare (max-width:0→100%) nu e necesară pentru textul static din panouri; previne tăierea <p>-ului la marginea panoului. */
+  overflow: visible !important; /* @layout: Suprimare decupare — înlocuiește overflow:hidden de bază (folosit de animația de tastare) cu visible, astfel încât textul complet este randat. Containerul .mission-status părinte gestionează derularea orizontală prin overflow-x:auto. */
+  border-right: none !important; /* @theme: Suprimare bordură — elimină bordura de cursor intermitent din regula de bază .mission-status p. Cursorul are sens doar cu animația de tastare, care este dezactivată aici. */
+  animation: none !important; /* @theme: Suprimare animație — dezactivează stiva de animații typing-modular/blink/hide-cursor. Textul de status din panouri este static și nu are nevoie de o dezvăluire tip mașină de scris. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {

@@ -144,7 +144,33 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 ---
 
-## Implementat
+### 009 — Șablon pagini de jurnal: clonează structura Manual_project în toate paginile de jurnal
+
+**Titlu:** Clonează structura de jurnal Manual_project în toate paginile de jurnal goale
+
+**Descriere:** Populează toate cele 18 pagini de jurnal goale per limbă cu structura de sector/zi deja desenată în html-log, css-log și sql-log din Manual_project. Fiecare pagină de jurnal primește navigarea laterală (desktop) / consola HUD glisantă (mobil), layout de articole pe zile sau sectoare, blocuri mission-status și logo personalizat (deja implementat). Volumele care au nevoie de un format diferit (laborator, seminar, practic) vor fi personalizate la cerere când conținutul o impune.
+
+**Status:** Propus
+**Prioritate:** High
+**Fază:** După popularea scheletelor structurale
+
+**De ce acum:** 18 din 22 de pagini de jurnal per limbă sunt shell-uri goale (doar navigare + footer). Importul din Manual_project a demonstrat că structura de sector/zi este reutilizabilă în toate volumele. Completarea șablonului acum oferă fiecărei pagini de jurnal un schelet consistent, gata pentru conținut.
+
+**Decizie de design (ZIUA 17):** Nu toate volumele vor folosi aceeași structură — arhitectura backend, deployment și UX pot necesita layout-uri bazate pe subiecte în loc de zile secvențiale. Abordarea este: clonează șablonul de zi/sector ca implicit, apoi personalizează per volum când conținutul cere un format diferit. Aceasta evită atât (a) crearea manuală a 36 de pagini goale de la zero, cât și (b) impunerea unui șablon universal pe volume care îl depășesc.
+
+**Fișiere afectate:** Toate cele 18 pagini de jurnal goale per limbă (EN + RO = 36 de fișiere), plus cele 4 pagini cu Lorem Ipsum (html-log, css-log, javascript-log, sql-log) care vor adopta aceeași structură de șablon.
+
+**Pași:**
+- extrage shell-ul partajat din paginile de jurnal Manual_project (sidebar + model secțiuni-zi);
+- clonează în toate paginile de jurnal goale din ambele limbi;
+- verifică navigarea laterală, HUD-ul mobil și blocurile mission-status;
+- menține comentariile în limba corectă (EN → en/, RO → ro/).
+
+**Condiții de finalizare:**
+- toate paginile de jurnal au un schelet structural vizibil (sidebar, secțiuni-zi, mission-status, logo);
+- nicio pagină nu arată un corp gol;
+- linkurile din sidebar navighează corect la ancorele secțiunilor;
+- consola HUD mobilă glisantă funcționează (MECANISM 06).
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
 
