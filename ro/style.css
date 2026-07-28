@@ -3035,10 +3035,12 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   white-space: nowrap !important; /* @layout: Gestionare spații albe — menține textul de status pe o singură linie. */
   width: auto !important; /* @layout: Dimensiune orizontală — lasă paragraful să se dimensioneze după conținut, nu după container. */
   min-width: 0 !important; /* @layout: Setează min-width: 0 !important. Proprietate CSS care configurează aspectul și comportamentul acestui element. */
-  max-width: none !important; /* @layout: Suprimare lățime maximă — elimină limita de max-width din regula de bază .mission-status p. Animația de tastare (max-width:0→100%) nu e necesară pentru textul static din panouri; previne tăierea <p>-ului la marginea panoului. */
-  overflow: visible !important; /* @layout: Suprimare decupare — înlocuiește overflow:hidden de bază (folosit de animația de tastare) cu visible, astfel încât textul complet este randat. Containerul .mission-status părinte gestionează derularea orizontală prin overflow-x:auto. */
-  border-right: none !important; /* @theme: Suprimare bordură — elimină bordura de cursor intermitent din regula de bază .mission-status p. Cursorul are sens doar cu animația de tastare, care este dezactivată aici. */
-  animation: none !important; /* @theme: Suprimare animație — dezactivează stiva de animații typing-modular/blink/hide-cursor. Textul de status din panouri este static și nu are nevoie de o dezvăluire tip mașină de scris. */
+  overflow: hidden !important; /* @layout: Control depășire — păstrează overflow:hidden de bază pentru ca animația de tastare să poată dezvălui caracterele progresiv. Fără aceasta, tot textul ar fi vizibil de la început. */
+  border-right: 2px solid var(--solar-mint); /* @theme: Cursor intermitent — linia de cursor fosforescent, reprodusă aici pentru ca stiva de animații (mai jos) să o poată pulsa prin keyframe-ul blink. */
+  animation:
+    typing-modular-panel 3.5s steps(40, end) forwards,
+    blink 0.75s step-end infinite,
+    hide-cursor 0s linear 3.5s forwards; /* @theme: Stivă de animații — folosește keyframe-ul pentru ecran lat (limită 3000px) în locul limitei de 100%, astfel încât textul de status este complet dezvăluit fără a fi tăiat la marginea panoului. După 3.5s cursorul este ascuns. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
@@ -3272,6 +3274,21 @@ strobe ticking (blink), and triggers the definitive post-typing border purge
   }
   to {
     max-width: 100%; /* @layout: Limită de lățime — constrânge lățimea maximă la 100%. Protejează layout-ul de întinderea excesivă pe ecrane late. */
+  }
+}
+
+/* @keyframe: B1b — EXPANSIUNE TIPAR PANOU (Variantă ecran lat)
+   Același mecanism de dezvăluire a caracterelor ca B1, dar se termină la
+   3000px fix în loc de 100%, deoarece într-un panou îngust 100% decupează
+   textul pe o singură linie. Limita mare de pixeli asigură că toate
+   caracterele sunt complet dezvăluite indiferent de lățimea panoului, iar
+   overflow:hidden pe element menține dezvăluirea progresivă caracter cu caracter. */
+@keyframes typing-modular-panel {
+  from {
+    max-width: 0; /* @layout: Limită de lățime — începe complet ascuns, așteptând desfășurarea. */
+  }
+  to {
+    max-width: 3000px; /* @layout: Limită de lățime — se extinde la 3000px, mult peste orice text de status, astfel încât toate caracterele sunt dezvăluite fără tăiere la marginea panoului. */
   }
 }
 

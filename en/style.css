@@ -3034,11 +3034,13 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   display: inline-block !important; /* @layout: Box type — renders as an inline-block box that shrink-wraps to content width. */
   white-space: nowrap !important; /* @layout: Whitespace handling — keeps the status text on a single line. */
   width: auto !important; /* @layout: Horizontal footprint — lets the paragraph size to its content rather than the parent container. */
-  min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. */
-  max-width: none !important; /* @layout: Maximum width override — removes the max-width cap from the base .mission-status p rule. The base typing animation (max-width:0→100%) is not needed for static status text in panels; this prevents the <p> from being clipped at the panel boundary. */
-  overflow: visible !important; /* @layout: Overflow override — replaces the base overflow:hidden (used by the typing animation reveal) with visible, so the full text content is rendered. The parent .mission-status container handles horizontal scrolling via overflow-x:auto. */
-  border-right: none !important; /* @theme: Border override — removes the blinking cursor border from the base .mission-status p rule. The cursor only makes sense with the typing animation, which is disabled here. */
-  animation: none !important; /* @theme: Animation override — disables the typing-modular/blink/hide-cursor animation stack. Panel status text is static and does not need a typewriter reveal. */
+  min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. Guarantees a minimum presence in the layout even when content is minimal. */
+  overflow: hidden !important; /* @layout: Overflow control — keeps the base overflow:hidden so the typing animation can reveal characters progressively. Without this, all text would be visible from the start. */
+  border-right: 2px solid var(--solar-mint); /* @theme: Blinking cursor — the physical glowing phosphor cursor line, reproduced here so the animation stack (below) can pulse it via the blink keyframe. */
+  animation:
+    typing-modular-panel 3.5s steps(40, end) forwards,
+    blink 0.75s step-end infinite,
+    hide-cursor 0s linear 3.5s forwards; /* @theme: Typing animation stack — uses the wide-viewport keyframe (3000px cap) instead of the base 100% cap, so the status text is fully revealed without being clipped at the panel boundary. After 3.5s the cursor is hidden. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
@@ -3272,6 +3274,21 @@ strobe ticking (blink), and triggers the definitive post-typing border purge
   }
   to {
     max-width: 100%; /* @layout: Maximum width constraint — caps expansion at 100%. Prevents the element from exceeding this limit, preserving layout integrity. */
+  }
+}
+
+/* @keyframe: B1b — PANEL TYPEWRITER EXPANSION (Wide-viewport variant)
+   Same character-reveal mechanic as B1 but ends at a fixed 3000px instead of
+   100%, because inside a narrow panel 100% clips text that wraps to one line.
+   The large pixel cap ensures all characters are fully revealed regardless
+   of panel width, while overflow:hidden on the element keeps the typing
+   reveal working character by character. */
+@keyframes typing-modular-panel {
+  from {
+    max-width: 0; /* @layout: Maximum width constraint — starts fully hidden, waiting for deployment. */
+  }
+  to {
+    max-width: 3000px; /* @layout: Maximum width constraint — expands to 3000px, well beyond any status text length, so all characters are revealed without panel-boundary clipping. */
   }
 }
 
