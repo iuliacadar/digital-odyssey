@@ -3033,14 +3033,14 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 .blueprint-layout .mission-status p {
   display: inline-block !important; /* @layout: Tip cutie — redează ca o cutie inline-block care se shrink-wrappe la lățimea conținutului. */
   white-space: nowrap !important; /* @layout: Gestionare spații albe — menține textul de status pe o singură linie. */
-  width: auto !important; /* @layout: Dimensiune orizontală — lasă paragraful să se dimensioneze după conținut, nu după container. */
+  width: max-content !important; /* @layout: Dimensiune orizontală — se potrivește cu regula de bază .mission-status p, astfel încât paragraful să fie cât de lat cât conținutul său text. Fără aceasta, width:auto ar constrânge <p>-ul la lățimea panoului și ar tăia textul după animație. */
   min-width: 0 !important; /* @layout: Setează min-width: 0 !important. Proprietate CSS care configurează aspectul și comportamentul acestui element. */
   overflow: hidden !important; /* @layout: Control depășire — păstrează overflow:hidden de bază pentru ca animația de tastare să poată dezvălui caracterele progresiv. Fără aceasta, tot textul ar fi vizibil de la început. */
   border-right: 2px solid var(--solar-mint); /* @theme: Cursor intermitent — linia de cursor fosforescent, reprodusă aici pentru ca stiva de animații (mai jos) să o poată pulsa prin keyframe-ul blink. */
   animation:
     typing-modular-panel 3.5s steps(40, end) forwards,
     blink 0.75s step-end infinite,
-    hide-cursor 0s linear 3.5s forwards; /* @theme: Stivă de animații — folosește keyframe-ul pentru ecran lat (limită 3000px) în locul limitei de 100%, astfel încât textul de status este complet dezvăluit fără a fi tăiat la marginea panoului. După 3.5s cursorul este ascuns. */
+    hide-cursor 0s linear 3.5s forwards; /* @theme: Stivă de animații — folosește keyframe-ul de panou (0→100% în 39 de trepte, apoi 3000px în treapta 40) pentru viteză de tastare identică cu paginile de jurnal, iar saltul târziu la 3000px previne tăierea post-animație. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
@@ -3277,18 +3277,23 @@ strobe ticking (blink), and triggers the definitive post-typing border purge
   }
 }
 
-/* @keyframe: B1b — EXPANSIUNE TIPAR PANOU (Variantă ecran lat)
-   Același mecanism de dezvăluire a caracterelor ca B1, dar se termină la
-   3000px fix în loc de 100%, deoarece într-un panou îngust 100% decupează
-   textul pe o singură linie. Limita mare de pixeli asigură că toate
-   caracterele sunt complet dezvăluite indiferent de lățimea panoului, iar
-   overflow:hidden pe element menține dezvăluirea progresivă caracter cu caracter. */
+/* @keyframe: B1b — EXPANSIUNE TIPAR PANOU (Variantă panou îngust)
+   Același mecanism de dezvăluire ca B1 pentru primele 39 de trepte
+   (0→100%), apoi sare la 3000px în treapta finală. Astfel viteza de
+   tastare este identică cu animația de bază (fiecare treaptă avansează
+   max-width cu ~2.5% din lățimea părintelui), iar saltul la 3000px
+   previne tăierea textului după animație în panouri înguste — <p>-ul
+   sare la lățimea completă a textului după ce ultimul caracter e deja
+   dezvăluit. */
 @keyframes typing-modular-panel {
-  from {
+  0% {
     max-width: 0; /* @layout: Limită de lățime — începe complet ascuns, așteptând desfășurarea. */
   }
-  to {
-    max-width: 3000px; /* @layout: Limită de lățime — se extinde la 3000px, mult peste orice text de status, astfel încât toate caracterele sunt dezvăluite fără tăiere la marginea panoului. */
+  99% {
+    max-width: 100%; /* @layout: Limită de lățime — se potrivește cu viteza keyframe-ului de bază pentru 39 din 40 de trepte. Fiecare treaptă avansează max-width cu ~2.5% din lățimea părintelui, identic cu ritmul de tastare al paginilor de jurnal. */
+  }
+  100% {
+    max-width: 3000px; /* @layout: Limită de lățime — ultima treaptă sare la 3000px, mult peste orice text de status, astfel încât mesajul complet rămâne vizibil după terminarea animației fără a fi tăiat la marginea panoului. Saltul este invizibil deoarece toate caracterele sunt deja dezvăluite la 100%. */
   }
 }
 

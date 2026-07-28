@@ -3033,14 +3033,14 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 .blueprint-layout .mission-status p {
   display: inline-block !important; /* @layout: Box type — renders as an inline-block box that shrink-wraps to content width. */
   white-space: nowrap !important; /* @layout: Whitespace handling — keeps the status text on a single line. */
-  width: auto !important; /* @layout: Horizontal footprint — lets the paragraph size to its content rather than the parent container. */
+  width: max-content !important; /* @layout: Horizontal footprint — matches the base .mission-status p rule so the paragraph is as wide as its text content. Without this, width:auto would constrain the <p> to the panel width and clip the text after the animation. */
   min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. Guarantees a minimum presence in the layout even when content is minimal. */
   overflow: hidden !important; /* @layout: Overflow control — keeps the base overflow:hidden so the typing animation can reveal characters progressively. Without this, all text would be visible from the start. */
   border-right: 2px solid var(--solar-mint); /* @theme: Blinking cursor — the physical glowing phosphor cursor line, reproduced here so the animation stack (below) can pulse it via the blink keyframe. */
   animation:
     typing-modular-panel 3.5s steps(40, end) forwards,
     blink 0.75s step-end infinite,
-    hide-cursor 0s linear 3.5s forwards; /* @theme: Typing animation stack — uses the wide-viewport keyframe (3000px cap) instead of the base 100% cap, so the status text is fully revealed without being clipped at the panel boundary. After 3.5s the cursor is hidden. */
+    hide-cursor 0s linear 3.5s forwards; /* @theme: Typing animation stack — uses the panel keyframe (0→100% in 39 steps, then 3000px at step 40) for identical typing speed as the log pages, while the late 3000px jump prevents post-animation clipping. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
@@ -3277,18 +3277,22 @@ strobe ticking (blink), and triggers the definitive post-typing border purge
   }
 }
 
-/* @keyframe: B1b — PANEL TYPEWRITER EXPANSION (Wide-viewport variant)
-   Same character-reveal mechanic as B1 but ends at a fixed 3000px instead of
-   100%, because inside a narrow panel 100% clips text that wraps to one line.
-   The large pixel cap ensures all characters are fully revealed regardless
-   of panel width, while overflow:hidden on the element keeps the typing
-   reveal working character by character. */
+/* @keyframe: B1b — PANEL TYPEWRITER EXPANSION (Narrow-viewport variant)
+   Same character-reveal mechanic as B1 for the first 39 steps (0→100%),
+   then jumps to 3000px on the final step. This gives the identical typing
+   speed as the base animation (each step advances max-width by ~2.5% of
+   parent width), while the late 3000px jump prevents post-animation
+   clipping inside narrow panels — the <p> snaps to full text width
+   after the last character is already revealed. */
 @keyframes typing-modular-panel {
-  from {
+  0% {
     max-width: 0; /* @layout: Maximum width constraint — starts fully hidden, waiting for deployment. */
   }
-  to {
-    max-width: 3000px; /* @layout: Maximum width constraint — expands to 3000px, well beyond any status text length, so all characters are revealed without panel-boundary clipping. */
+  99% {
+    max-width: 100%; /* @layout: Maximum width constraint — matches base keyframe speed for 39 of 40 steps. Each step advances max-width by ~2.5% of parent width, identical to the log page typing rhythm. */
+  }
+  100% {
+    max-width: 3000px; /* @layout: Maximum width constraint — final step jumps to 3000px, well beyond any status text, so the full message stays visible after the animation ends without being clipped at the panel boundary. This jump is invisible because all characters are already revealed at 100%. */
   }
 }
 
