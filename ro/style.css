@@ -3045,7 +3045,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 .panel .mission-status,
 .blueprint-layout .mission-status {
   display: block !important; /* @layout: Tip cutie — redează ca o cutie la nivel de bloc ocupând lățimea completă disponibilă. */
-  overflow-x: auto !important; /* @layout: Depășire orizontală — adaugă o bară de derulare orizontală când textul depășește lățimea panoului. Spre deosebire de hidden, păstrează mesajul complet de status accesibil prin derulare, păstrând estetica terminalului teletype. */
+  overflow-x: hidden !important; /* @layout: Depășire orizontală — decupează overflow-ul orizontal pentru a ascunde orice text care depășește lățimea panoului. Animația de tastare (expandare max-width) dezvăluie textul în limitele panoului, deci nu apare nicio tăiere în funcționarea normală. Urâta și primitiva bară de derulare este alungată din cockpitul futuristic. */
   max-width: 100% !important; /* @layout: Limită de lățime — constrânge lățimea maximă la 100% !important. Protejează layout-ul de întinderea excesivă pe ecrane late. */
 }
 

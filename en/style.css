@@ -3045,7 +3045,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 .panel .mission-status,
 .blueprint-layout .mission-status {
   display: block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
-  overflow-x: auto !important; /* @layout: Overflow control — adds a horizontal scrollbar when text overflows the panel width. Unlike hidden, this keeps the full status message accessible via scroll, preserving the teletype terminal aesthetic. */
+  overflow-x: hidden !important; /* @layout: Overflow control — clips horizontal overflow to hide any text that exceeds the panel width. The typing animation (max-width expansion) reveals text within the panel boundaries, so no clipping occurs during normal operation. The ugly primitive scrollbar is banished from the futuristic cockpit. */
   max-width: 100% !important; /* @layout: Maximum width constraint — caps expansion at 100% !important. Prevents the element from exceeding this limit, preserving layout integrity. */
 }
 
