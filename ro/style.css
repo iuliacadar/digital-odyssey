@@ -3031,15 +3031,15 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: block !important; /* @layout: Tip cutie — redează ca o cutie la nivel de bloc ocupând lățimea completă disponibilă. */
-  white-space: normal !important; /* @layout: Gestionare spații albe — permite textului să se împartă pe mai multe linii în lățimea panoului. Previne overflow-ul orizontal care ar trunchia mesajul de status în layout-urile înguste. */
+  display: inline-block !important; /* @layout: Tip cutie — redează ca o cutie inline-block care se shrink-wrappe la conținut. Menține animația de tastare funcțională prin prevenirea întreruperilor de linie în timpul animației. */
+  white-space: nowrap !important; /* @layout: Gestionare spații albe — forțează textul de status să rămână pe o singură linie. Animația de tastare (expandare max-width) necesită o singură linie pentru a dezvălui caracterele lin. */
   width: auto !important; /* @layout: Dimensiune orizontală — setează lățimea elementului la auto !important. Controlează spațiul orizontal pe care acest nod îl ocupă în layout. */
   min-width: 0 !important; /* @layout: Setează min-width: 0 !important. Proprietate CSS care configurează aspectul și comportamentul acestui element. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
   display: block !important; /* @layout: Tip cutie — redează ca o cutie la nivel de bloc ocupând lățimea completă disponibilă. */
-  overflow-x: hidden !important; /* @layout: Depășire orizontală — controlează derularea pe axa X: hidden !important. */
+  overflow-x: auto !important; /* @layout: Depășire orizontală — adaugă o bară de derulare orizontală când textul depășește lățimea panoului. Spre deosebire de hidden, păstrează mesajul complet de status accesibil prin derulare, păstrând estetica terminalului teletype. */
   max-width: 100% !important; /* @layout: Limită de lățime — constrânge lățimea maximă la 100% !important. Protejează layout-ul de întinderea excesivă pe ecrane late. */
 }
 

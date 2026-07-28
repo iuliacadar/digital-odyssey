@@ -340,6 +340,56 @@ document.addEventListener("scroll", () => {
 
 
 //  ==========================================================================
+//     MECANISM 06.5: COMUTATOR CONSOLĂ HUD TELEPORT
+//     Butonul "Puntea de Comandă" deschide/închide suprapunerea holografică
+//     a volumelor. Clasa CSS .hud-open pe .navbar declanșează animația
+//     slide-down. Click în afara suprapunerii sau tasta Escape o închide.
+//  ==========================================================================
+//  @mechanism: 06.5 — Comutare Consolă HUD
+//  @event: click pe .hud-toggle, click în afara .hud-overlay, tasta Escape
+//  @pedagogy: Comutarea unei clase CSS prin classList.toggle este cea mai
+//    simplă și performantă metodă de a arăta/ascunde elemente UI. Fără
+//    comutare display:none, fără calcule de înălțime — lasă tranzițiile CSS
+//    să gestioneze animația. Listenerele de click în afara și Escape
+//    acționează ca eliberări de siguranță, asigurând că suprapunerea nu
+//    blochează niciodată utilizatorul.
+//  ==========================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".hud-toggle"); // Butonul "Puntea de Comandă".
+  const navBar = document.querySelector(".navbar"); // Bara de navigare care primește .hud-open.
+  const overlay = document.querySelector(".hud-overlay"); // Panoul glisant.
+
+  // Ieșire de siguranță: dacă lipsește vreun element, nu suntem pe o pagină cu HUD.
+  if (!toggleBtn || !navBar || !overlay) return;
+
+  // Comută clasa .hud-open pe navbar la click pe buton.
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Previne ca click-ul să ajungă la listener-ul de document de mai jos.
+    navBar.classList.toggle("hud-open"); // CSS-ul gestionează animația de înălțime.
+  });
+
+  // Închide suprapunerea la click în afara ei.
+  document.addEventListener("click", (e) => {
+    if (
+      navBar.classList.contains("hud-open") &&
+      !overlay.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      navBar.classList.remove("hud-open"); // Închide panoul HUD.
+    }
+  });
+
+  // Închide suprapunerea la apăsarea tastei Escape.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navBar.classList.contains("hud-open")) {
+      navBar.classList.remove("hud-open"); // Eliberare de urgență: Escape închide panoul.
+    }
+  });
+});
+
+
+//  ==========================================================================
 //     MECANISM 07: PROTOCOL DE ȘTERGERE CURSOR (Curățare Animație Typing)
 //     După ce animația CSS de typing de pe index se termină, acest mecanism
 //     elimină cursorul intermitent setând border-right la "none" cu

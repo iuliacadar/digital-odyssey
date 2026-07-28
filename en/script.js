@@ -334,6 +334,56 @@ document.addEventListener("scroll", () => {
 
 
 //  ==========================================================================
+//     MECANISM 06.5: HUD TELEPORT CONSOLE TOGGLE
+//     The "Command Deck" button opens/closes the holographic volume overlay.
+//     The CSS class .hud-open on the .navbar triggers the slide-down animation.
+//     Clicking outside the overlay or pressing Escape closes it.
+//  ==========================================================================
+//  @mechanism: 06.5 — HUD Console Toggle
+//  @event: click on .hud-toggle, click outside .hud-overlay, Escape key
+//  @pedagogy: Toggling a CSS class via classList.toggle is the simplest
+//    and most performant way to show/hide UI elements. No display:none
+//    switching, no height calculations — just let CSS transitions handle
+//    the animation. The outside-click and Escape listeners act as safety
+//    releases, ensuring the overlay never traps the user.
+//  ==========================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".hud-toggle"); // The "Command Deck" button.
+  const navBar = document.querySelector(".navbar"); // The parent navbar that receives .hud-open.
+  const overlay = document.querySelector(".hud-overlay"); // The slide-down panel.
+
+  // Safety exit: if any element is missing, we're on a page without the HUD — bail out.
+  if (!toggleBtn || !navBar || !overlay) return;
+
+  // Toggle the .hud-open class on the navbar when the button is clicked.
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent the click from reaching the document listener below.
+    navBar.classList.toggle("hud-open"); // CSS handles the height animation.
+  });
+
+  // Close the overlay when clicking outside of it.
+  document.addEventListener("click", (e) => {
+    // If the overlay is open and the click is outside both the overlay and the toggle button...
+    if (
+      navBar.classList.contains("hud-open") &&
+      !overlay.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      navBar.classList.remove("hud-open"); // Close the HUD panel.
+    }
+  });
+
+  // Close the overlay when the Escape key is pressed.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navBar.classList.contains("hud-open")) {
+      navBar.classList.remove("hud-open"); // Emergency release: Escape shuts the panel.
+    }
+  });
+});
+
+
+//  ==========================================================================
 //     MECANISM 07: CURSOR ERASE PROTOCOL (Typing Animation Cleanup)
 //     After the CSS typing animation on the index page finishes, this mechanism
 //     removes the blinking cursor by setting border-right to "none" with

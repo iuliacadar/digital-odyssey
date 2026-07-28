@@ -3031,15 +3031,15 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 
 .panel .mission-status p,
 .blueprint-layout .mission-status p {
-  display: block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
-  white-space: normal !important; /* @layout: Whitespace handling — allows text to wrap within the panel width. Prevents horizontal overflow that would clip the status message in narrow panel layouts. */
+  display: inline-block !important; /* @layout: Box type — renders as an inline-block box that shrink-wraps its content. Keeps the typing animation working correctly by preventing mid-animation line breaks. */
+  white-space: nowrap !important; /* @layout: Whitespace handling — forces the status text to stay on one line. The typing animation (max-width expansion) requires a single unwrapped line to reveal characters smoothly. */
   width: auto !important; /* @layout: Horizontal footprint — sets the element width to auto !important. Controls how much horizontal space this node occupies within the layout flow. */
   min-width: 0 !important; /* @layout: Minimum width floor — ensures the element never shrinks below 0 !important. Guarantees a minimum presence in the layout even when content is minimal. */
 }
 .panel .mission-status,
 .blueprint-layout .mission-status {
   display: block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
-  overflow-x: hidden !important; /* @layout: Overflow control — clips or scrolls content on horizontal axis: hidden !important. */
+  overflow-x: auto !important; /* @layout: Overflow control — adds a horizontal scrollbar when text overflows the panel width. Unlike hidden, this keeps the full status message accessible via scroll, preserving the teletype terminal aesthetic. */
   max-width: 100% !important; /* @layout: Maximum width constraint — caps expansion at 100% !important. Prevents the element from exceeding this limit, preserving layout integrity. */
 }
 
