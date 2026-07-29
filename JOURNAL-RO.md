@@ -1104,3 +1104,139 @@ a28aded docs: remove root index.html step from backlog item 008 per user directi
 Nava nu e gata de lansare. Dar lista de verificare pre-zbor există acum, scrisă de propria ei mână, cu vreme onestă și decizii amânate. Următorul ciclu — când va veni — va avea o țintă clară.
 
 ---
+
+# ZIUA 18 — Cele Douăzeci de Pagini: Generare, Reparații și Manualul de Câmp Semantic
+
+Raportul meteorologic din ZIUA 17 fusese onest și sobru. Optsprezece din douăzeci și două de pagini de jurnal per limbă erau carene structurale goale — navigare și footer existau, dar corpul era gol. Alte patru foloseau Lorem Ipsum. Starea roșie se uitase la mine din pagină și stătusem cu ea două zile, nu pentru că nu știam ce să fac, ci pentru că amploarea muncii cerea un plan.
+
+Douăzeci de pagini. Fiecare trebuia să aibă o structură cronică completă de 29 de zile: bară laterală cu hartă expediție și linkuri de sectoare, antet de categorie cu titlu tematic, anunț sector-00, douăzeci și nouă de intrări articol cu blocuri misiune-status, terminale de notițe cu textarea și buton de salvare, comentarii didactice @tag pe fiecare bloc. Fișierul `css-log.html` devenise șablonul maestru în săptămâna precedentă — opt sute unsprezece linii de HTML adnotat care călauzeau un novice prin fiecare element, fiecare atribut, fiecare decizie semantică. Acum structura lui trebuia să se propage în întreaga flotă.
+
+## Scriptul de generare
+
+Scrisesem `generate-pages.ps1` mai devreme — un script PowerShell care citea un set de date și producea pagini de jurnal din șablonul maestru. Prima execuție a eșuat: o eroare de sintaxă here-string în zona de instrucțiuni RET, unde o paranteză închisă fusese consumată de string înainte ca parserul să ajungă la ea. Am reparat citarea, am re-rulat, iar scriptul a produs paginile — șaptesprezece jurnale backend, delivery și UX, plus trei jurnale frontend (JavaScript, Angular, React) care fuseseră cerute mai devreme dar nu fuseseră create niciodată. Douăzeci de pagini, fiecare între 68.000 și 72.000 de octeți. Secțiunea de jurnale a navei crescuse de la patru compartimente locuite la douăzeci și patru.
+
+Dar primul lot avea defecte. Cerusem scriptului să genereze o versiune separată a logicii de regenerare, dar nu returnase niciun rezultat — o eroare tăcută în pipeline-ul sub-agentului. Am rescris întreaga generare ca un singur script autonom, denumit `regenerate-all.ps1`, încorporând setul complet de date — douăzeci de intrări, fiecare cu propriul titlu, prefix, nume de sectoare, subtitluri de săptămâni și temă de culoare — direct în corpul scriptului. A doua execuție a reușit: toate cele douăzeci de pagini, structural identice cu șablonul maestru, fiecare purtând propria identitate tematică.
+
+## Trei reparații
+
+Trei probleme au ieșit la suprafață în timpul revizuirii care a urmat.
+
+**Prima** — fragmentele de comentarii vizibile — a fost cea mai subtilă și cea mai instructivă. În interiorul comentariilor didactice `<!-- ... -->`, șablonul original folosise notația `<tag>` și `</tag>` pentru a se referi la elemente HTML în engleză: „The `<head>` contains the document metadata." Un browser, întâlnind comentariul `<!-- The <head> contains... -->`, nu redă textul comentariului — dar parserul din unele instrumente pedagogice și ochiul uman care citește sursa văd parantezele unghiulare ca fragmente parțiale de tag HTML. Reparația a fost chirurgicală, dar globală: fiecare `<tag>` și `</tag>` din `<!-- ... -->` a devenit `[tag]` și `[/tag]`. În toate cele douăzeci și trei de fișiere HTML, inclusiv cele trei pagini de referință. Schimbarea era invizibilă în browser. În sursă, făcea comentariile didactice curate și neambigue.
+
+**A doua** — cutia note-terminal — era o nepotrivire structurală. Paginile regenerate moșteniseră un note-terminal bazat pe `<fieldset>` dintr-un strat de șablon mai vechi, în timp ce `css-log.html` maestru folosea `<div class="note-terminal">` cu un `<textarea>` și un buton de salvare. Versiunea cu fieldset nu avea conexiunea de stocare persistentă și consistența vizuală a restului flotei. Am înlocuit fiecare instanță — douăzeci de pagini, fiecare cu douăzeci și nouă de terminale de notițe — cu structura div-based corespunzătoare, conectată la același mecanism `saveNote()` pe care îl foloseau paginile de referință. Notele persistau acum. Vizualul era uniform. Reparația era invizibilă pentru cititor, dar cablajul intern al navei era acum consistent.
+
+**A treia** — titlurile h4 — era o derivă a convenției de denumire. Paginile regenerate abreviau titlurile hărții expediției: „CSS EXP MAP" în bara laterală. Șablonul maestru folosea „CSS Expedition Map" — o etichetă completă, lizibilă, pe care un novice o putea parsa fără să ghicească ce înseamnă „EXP". Am schimbat toate cele douăzeci de titluri ale hărții laterale la modelul complet „Expedition Map": „Hartă Expediție API", „Hartă Expediție JavaScript", „Hartă Expediție Middleware". Bara laterală citea acum ca o consolă de navă, nu ca o listă de verificare prescurtată.
+
+## Manualul de câmp semantic
+
+Cu paginile reparate și șabloanele standardizate, am făcut un pas înapoi și m-am uitat la sistemul de adnotări al proiectului. Patruzeci de elemente HTML unice erau folosite în întreaga bază de cod — de la `<a>` la `<ul>`, cu opriri la `<aside>`, `<article>`, `<textarea>` și `<thead>`. Fiecare avea un rol semantic definit de specificația HTML. Fiecare avea o semnificație narativă în metafora navei. Dar nu exista un singur document care să le listeze pe toate.
+
+Am creat `docs/semantic-field-manual-en.md`. Două sute patruzeci și nouă de linii. Patruzeci de intrări, fiecare cu trei câmpuri: rol HTML, în navă, unde se folosește. Fiecare element care apare în orice pagină a proiectului — nu doar paginile de jurnal, ci și indexul, bibliografia, blueprint-ul recursiv, transmisia — documentat într-un format consistent pe care un student îl poate citi ca glosar sau ca referință. Eticheta `@bridge`, care fusese rară și aplicată inconsecvent în întreaga flotă, avea acum o țintă: fiecare fișier HTML englez a primit o adnotare `@bridge` de închidere care puncta către manual, iar fiecare fișier românesc a primit una care puncta către viitorul său echivalent românesc. Cincizeci și patru de fișiere. O singură referință. Nava putea acum, din orice pagină, să spună cititorului unde să găsească indexul tehnic complet.
+
+## Confirmarea utilizatorului
+
+Când a venit revizuirea, utilizatorul s-a uitat la fiecare reparație — comentariile curate, terminalele uniforme, titlurile lizibile — și a confirmat fiecare. „Fixed," au spus, de trei ori. Munca a fost acceptată. Nava nu era încă gata de lansare, dar cele optsprezece carene goale nu mai erau goale. Douăzeci și patru de pagini de jurnal, fiecare cu douăzeci și nouă de zile de structură, adnotări și aparat pedagogic, stăteau gata pentru conținutul narativ care avea să urmeze.
+
+## Jurnalul de commit-uri
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+```
+
+---
+
+# ZIUA 19 — Flota Românească: Bara Laterală, Traducerea și Manualul Bilingv
+
+Nava vorbise engleza de la început. Flota soră românească — `ro/` — fusese clonată și tradusă în timpul ZILEI 11, dar numai paginile non-jurnal: indexul, bibliografia, blueprint-ul recursiv, transmisia. Paginile de jurnal din `ro/` erau încă vechii scheleți de doisprezece kiloocteți din Manual_project — un navbar, un footer, un titlu și nimic mai mult. Cele douăzeci de pagini de jurnal engleze perfecționate, fiecare cu douăzeci și nouă de zile de conținut și șase sute de linii de comentarii didactice, nu aveau niciun omolog românesc.
+
+Asta s-a schimbat astăzi.
+
+## Corecția barei laterale
+
+Înainte de a începe traducerea, a ieșit la suprafață un detaliu mic. Paginile engleze regenerate moșteniseră etichete personalizate pentru Ziua 00 din datele de generare — „Endpoint Zero :: Initiation", „The Vault Door :: Initiation", „The Engine Room :: Initiation" — fiecare unic pentru pagina sa. Utilizatorul voia să fie simplificate la o singură etichetă uniformă: „Day 00 &#9672; Intro", identică cu șablonul maestru. Etichetele personalizate aveau să revină mai târziu când conținutul narativ urma să fie scris; pentru acum, bara laterală trebuia să fie consistentă.
+
+Douăzeci de fișiere. O singură regex. `Day 00 &#9672; [orice]</a>` a devenit `Day 00 &#9672; Intro</a>`. Bara laterală era acum uniformă în întreaga flotă engleză.
+
+## Traducerea: douăzeci de pagini de jurnal
+
+Am copiat fiecare fișier englez perfecționat peste omologul său românesc — douăzeci de fișiere, fiecare suprascriind vechiul schelet de doisprezece kiloocteți cu noua cronică de șaizeci și opt de kiloocteți — și am început traducerea. Regula era deja stabilită în ZIUA 11: textul specific conținutului (titluri, descrieri, etichete de navigare, meta tag-uri, etichete h4, logo, linkuri din footer) devine românește; comentariile didactice `@tag` care explică concepte HTML rămân în engleză, pentru că ele predau limbajul web-ului.
+
+Munca a fost sistematică, nu literară. Am construit un tabel de traducere — un hashtable PowerShell care mapa fiecare pagină engleză la titlul, descrierea, cuvintele-cheie, eticheta h4 și sumarul @reason românești. Scriptul a iterat peste fiecare fișier și a înlocuit:
+
+- `lang="en"` → `lang="ro"`
+- `<title>` — "API Log" → "Jurnal API"
+- `meta description` — sumarul englez de șase rânduri → un sumar românesc echivalent
+- `meta keywords` — cuvinte-cheie tematice în română
+- `og:title` și `og:description` — potrivite cu meta tag-urile
+- `<h4>` — "API Expedition Map" → "Hartă Expediție API"
+- Logo — "D::0dy55ey / API Log" → "D::0dy55ey / Jurnal API"
+- Comentariul atributului lang — text englez → text românesc
+
+Trei probleme au necesitat corecție manuală după prima trecere. Textul @reason își pierduse prefixul — citea „designul și consumul API-urilor..." fără intro-ul „Acest document este un jurnal structurat de învățare pentru..." — pentru că regex-ul potrivise granița greșită. Comentariul lang din blocul `@block:` spunea încă „English" chiar și după ce atributul fusese schimbat la `lang="ro"`. Titlurile h4 nu fuseseră înlocuite pentru că paginile generate foloseau un tag `<h4>` simplu, fără atributul `class="category-title"` pe care regex-ul îl aștepta. Am reparat toate trei într-o a doua trecere: am restaurat prefixul @reason, am corectat comentariul lang la „Atributul lang='ro' declară că limba principală a acestei pagini este româna." și am vizat selectorul `<h4>` direct.
+
+## Manualul de câmp semantic românesc
+
+Manualul englez exista. Cel românesc trebuia acum să aibă propriul său. Am tradus fiecare intrare — patruzeci de elemente HTML, fiecare cu rolul său semantic, semnificația narativă și locurile de utilizare — în română. Numele elementelor au rămas în engleză (sunt termeni la nivel de cod), dar tot restul — explicațiile, mapările metaforei navei, notele de utilizare — a fost redat în română. Structura documentului oglindea exact originalul englez: aceleași secțiuni, aceeași ordine, aceeași densitate pedagogică.
+
+`docs/semantic-field-manual-ro.md`. Două sute patruzeci și nouă de linii. O referință românească completă pe care un student o poate citi alături de versiunea engleză, sau independent.
+
+## Podul, redirecționat
+
+Odată creat manualul românesc, fiecare referință `@bridge` din dosarul `ro/` care puncta la `semantic-field-manual-en.md` trebuia redirecționată la `semantic-field-manual-ro.md`. Douăzeci de pagini de jurnal fuseseră acoperite de scriptul de traducere. Cele trei pagini de referință (css-log, html-log, sql-log) și cele patru pagini non-jurnal (index, bibliografie, blueprint recursiv, transmisie) — șapte fișiere în total — încă punctau la manualul englez. Am reparat toate șapte într-o singură trecere. Fiecare fișier HTML românesc referenția acum manualul românesc.
+
+## Jurnalul de commit-uri
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+```
+
+---
+
+# ZIUA 20 — Ultimele Detalii: Paginile de Referință, Spațiul pe Mobil și Deontologia Muncii
+
+Trei capete libere rămăseseră din zilele precedente. Unul era o lacună în traducere. Unul era o problemă de înghesuire CSS pe mobil. Unul era absența unui document care fusese cerut implicit încă de la prima sesiune colaborativă: o înregistrare scrisă a modului în care este construită nava.
+
+## Cele trei pagini de referință
+
+Bariera de traducere a ZILEI 19 acoperise cele douăzeci de pagini de jurnal regenerate — cele produse de scriptul de generare. Nu acoperise cele trei pagini de referință originale: `css-log.html`, `html-log.html` și `sql-log.html`. Acestea erau șabloanele maestru — paginile care fuseseră lucrate manual și perfecționate în engleză înainte ca scriptul de generare să ruleze vreodată. Omoloagele lor românești erau încă vechii scheleți de doisprezece kiloocteți.
+
+Am copiat fiecare fișier englez perfecționat peste fratele său românesc — trei fișiere, fiecare căpătând structura completă de 29 de zile — și am aplicat același model de traducere folosit pe celelalte douăzeci. Textele @reason au necesitat îngrijire specială de această dată: le generasem programatic din câmpurile de descriere, iar gramatica românească produsese construcții ca „pentru CSS-ului" — o coliziune genitivă pe care niciun vorbitor nativ nu ar accepta-o. Am rescris toate cele trei blocuri @reason manual:
+
+- CSS: „Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului."
+- HTML: „...pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup."
+- SQL: „...pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale."
+
+Flota românească era acum completă: douăzeci și trei de pagini de jurnal, patru pagini non-jurnal, fiecare fișier purtând structura cronică completă de 29 de zile, cu text specific conținutului tradus și aparatul didactic original `@tag`.
+
+## Reparația spațiului pe mobil
+
+Pe viewport-urile mobile — sub 768 de pixeli — antetul categoriei și cutia de anunț sector 00 se împingeau una împotriva celeilalte fără niciun spațiu vizibil. Utilizatorul a descris-o drept „crowded" și avea dreptate.
+
+Am trasat cauza până la o singură regulă CSS în blocul `@media (max-width: 768px)`. `.sector-announcement` moștenise un `margin-top: -30px !important` de la o calibrare anterioară — o margine negativă care trăgea poarta violetă a ecluzei în sus cu treizeci de pixeli, anulând `padding-bottom: 30px` a `.category-header`. Rezultatul matematic era zero. Rezultatul vizual era două elemente lipite una de alta.
+
+Reparația a fost o ștergere de o singură linie: `margin-top: -30px !important;` eliminată din blocul `.sector-announcement` din sub-secțiunea B3 a breakpoint-ului de 768px. Distanța s-a întors la treizeci de pixeli curați. Scroll-margin-ul (`scroll-margin-top: 120px`) — care controlează unde aterizează browserul când se face click pe un link din bara laterală — a rămas neatins. Navigarea HUD, salturile de linkuri fragment, urmărirea activă a barei laterale: niciunul nu depindea de acea margine negativă. Reparația a fost locală, minimă și sigură.
+
+## Deontologia muncii
+
+De-a lungul zilelor de colaborare, utilizatorul și cu mine dezvoltaserăm un set de principii interne — convenții nescrise despre cum este construit, comentat, structurat și comis proiectul. Arhitectura dual-limbă. Fluxul de lucru engleză-întâi. Standardul de comentare cuprinzătoare. Disciplina structurii modulare CSS. Sistemul de adnotări `@tag`. Formatul mesajelor de commit. Existau în înțelegerea comună dintre noi, dar nicăieri pe disk.
+
+Am creat `docs/work-deontology.md` — opt reguli, ordonate de la cea mai fundamentală (arhitectura dual-limbă) la cea mai specifică (ecosistemul de documentație). Fiecare regulă era enunțată clar și primea o rațiune. Tabelul de adnotări `@tag` lista toate cele nouă tag-uri cu scopurile lor pedagogice. Disciplina CSS explica cum să găsești indexul corect al modulului și să plasezi reguli noi în sub-secțiunea potrivită. Convenția de commit specifica formatul `type(scope): message` cu exemple.
+
+Versiunea românească a urmat imediat: `docs/work-deontology-ro.md`, o traducere completă a tuturor celor opt reguli, păstrând structura și vocea pedagogică.
+
+Dar prima versiune avea o eroare. În regula 5, sistemul de adnotări `@tag`, scrisesem că tag-urile sunt scrise „în interiorul comentariilor HTML." Utilizatorul a prins-o: adnotările `@tag` apar și în fișiere CSS (`/* ... */`) și în fișiere JavaScript (`// ...`), fiecare folosind sintaxa nativă de comentarii. Am corectat ambele fișiere — englez și românesc — extinzând regula să acopere toate cele trei tipuri de fișiere de cod. Eroarea era minoră, dar principiul pe care îl atingea — acuratețea în documentație — nu era.
+
+## Jurnalul de commit-uri
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+3560fef fix(css): remove negative margin on .sector-announcement at 768px breakpoint; fix(ro): clone+translate reference log pages
+61cd338 docs: add work-deontology.md and work-deontology-ro.md — internal work principles
+e5472c6 docs: correct @tag annotation rule — tags appear in HTML, CSS, JS with native comment syntax
+```
+
+Nava nu mai are item-uri de stare roșie rămase în compartimentul de jurnale. Fiecare pagină de jurnal din ambele limbi poartă structura completă de 29 de zile. Manualele de câmp semantic — englez și românesc — stau în dosarul docs, cross-referențiate din fiecare pagină. Deontologia muncii înregistrează cum este construit vasul, pentru ca viitorii membri ai echipajului și navigatorii automatizați să poată construi în aceeași direcție. Și pe mobil, între antetul categoriei și anunțul de sector, există acum spațiu de respirat.
+
+Lista de verificare pre-zbor nu este completă. Dar vremea e mai bună decât era acum trei zile.
+
+---

@@ -1094,3 +1094,139 @@ a28aded docs: remove root index.html step from backlog item 008 per user directi
 The ship is not ready to launch. But the pre-flight checklist exists now, written in its own hand, with honest weather and deferred decisions. The next cycle — when it comes — will have a clear target.
 
 ---
+
+# DAY 18 — The Twenty Pages: Generation, Repair, and the Semantic Field Manual
+
+The weather report from DAY 17 had been honest and sobering. Eighteen of twenty-two log pages per language were empty structural shells — nav and footer existed, but the body was blank. Four more used Lorem Ipsum. The red status had stared back at me from the page, and I had sat with it for two days, not because I did not know what to do, but because the scale of the work demanded a plan.
+
+Twenty pages. Each needed a full 29-day chronicle structure: sidebar with expedition map and sector links, category header with thematic title, sector-00 announcement, twenty-nine article entries with mission-status blocks, note-terminals with textarea and save button, didactic @tag comments on every block. The css-log.html had become the master template during the previous week — eight hundred and eleven lines of annotated HTML that walked a novice through every element, every attribute, every semantic decision. Now its structure had to propagate across the entire fleet.
+
+## The generation script
+
+I had written `generate-pages.ps1` earlier — a PowerShell script that read a data set and produced log pages from the master template. The first run failed: a here-string syntax error in the RET instruction area, where a closing parenthesis had been consumed by the string before the parser reached it. I fixed the quoting, re-ran, and the script produced the pages — seventeen backend, delivery, and UX logs plus three frontend logs (JavaScript, Angular, React) that had been requested earlier but never created. Twenty pages, each between 68,000 and 72,000 bytes. The ship's log section had grown from four inhabited compartments to twenty-four.
+
+But the first batch had flaws. I had asked the script to generate a separate version of the regeneration logic, but it returned no output — a silent failure in the sub-agent pipeline. I rewrote the entire generation as a single self-contained script named `regenerate-all.ps1`, embedding the full page data set — twenty entries, each with its own title, prefix, sector names, week subtitles, and colour theme — directly in the script body. The second run succeeded: all twenty pages, structurally identical to the master template, each carrying its own thematic identity.
+
+## Three repairs
+
+Three issues surfaced during the review that followed.
+
+**The first** — visible comment fragments — was the subtlest and the most instructive. Inside the didactic `<!-- ... -->` comments, the original template had used `<tag>` and `</tag>` notation to refer to HTML elements in plain English: "The `<head>` contains the document metadata." A browser, encountering the comment `<!-- The <head> contains... -->`, does not render the comment text — but the parser inside some pedagogical tools and the human eye reading the source see the angle brackets as partial HTML tags. The fix was surgical but global: every `<tag>` and `</tag>` inside `<!-- ... -->` became `[tag]` and `[/tag]`. Across all twenty-three HTML files, including the three reference pages. The change was invisible in the browser. In the source, it made the didactic comments clean and unambiguous.
+
+**The second** — the note-terminal box — was a structural mismatch. The regenerated pages had inherited a `<fieldset>`-based note-terminal from an older template layer, while the master `css-log.html` used `<div class="note-terminal">` with a `<textarea>` and a save button. The fieldset version lacked the persistent-storage wiring and the visual consistency of the rest of the fleet. I replaced every instance — twenty pages, each with twenty-nine note-terminals — with the matching div-based structure, connected to the same `saveNote()` mechanism that the reference pages used. The notes now persisted. The visual was uniform. The repair was invisible to the reader, but the ship's internal wiring was now consistent.
+
+**The third** — the h4 titles — was a naming convention drift. The regenerated pages had abbreviated the expedition map titles: "CSS EXP MAP" in the sidebar. The master template used "CSS Expedition Map" — a full, readable label that a novice could parse without guessing what "EXP" meant. I changed all twenty sidebar map titles to the full "Expedition Map" pattern: "API Expedition Map", "JavaScript Expedition Map", "Middleware Expedition Map". The sidebar now read like a ship's console, not a flight-abbreviated checklist.
+
+## The semantic field manual
+
+With the pages repaired and the templates standardized, I stepped back and looked at the project's annotation system. Forty unique HTML elements were used across the codebase — from `<a>` to `<ul>`, with stops at `<aside>`, `<article>`, `<textarea>`, and `<thead>`. Each had a semantic role defined by the HTML specification. Each had a narrative meaning in the ship metaphor. But there was no single document that listed them all.
+
+I created `docs/semantic-field-manual-en.md`. Two hundred and forty-nine lines. Forty entries, each with three fields: HTML role, in the ship, where used. Every element that appears in any page of the project — not just the log pages, but the index, the bibliography, the recursive blueprint, the transmission — documented in a consistent format that a student could read as a glossary or a reference. The `@bridge` tag, which had been sparse and inconsistently applied across the fleet, now had a target: every English HTML file gained a closing `@bridge` annotation pointing to the manual, and every Romanian file gained one pointing to its future Romanian counterpart. Fifty-four files. One reference. The ship could now, from any page, tell the reader where to find the full technical index.
+
+## The user's confirmation
+
+When the review came, the user looked at each repair — the clean comments, the uniform note-terminals, the readable h4 titles — and confirmed each one. "Fixed," they said, three times. The work was accepted. The ship was not yet ready to launch, but the eighteen empty shells were no longer empty. Twenty-four log pages, each with twenty-nine days of structure, annotations, and pedagogical apparatus, stood ready for the narrative content that would follow.
+
+## The commit log
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+```
+
+---
+
+# DAY 19 — The Romanian Fleet: Sidebar, Translation, and the Bilingual Manual
+
+The ship had spoken English from the start. The Romanian sister fleet — `ro/` — had been cloned and translated during DAY 11, but only the non-log pages: the index, the bibliography, the recursive blueprint, the transmission. The log pages in `ro/` were still the old twelve-kilobyte skeletons from Manual_project — a navbar, a footer, a title, and nothing more. The twenty perfected English log pages, each with twenty-nine days of content and six hundred lines of didactic comments, had no Romanian counterpart.
+
+That changed today.
+
+## The sidebar correction
+
+Before the translation began, a small detail surfaced. The regenerated English pages had inherited custom Day 00 sidebar labels from the generation data — "Endpoint Zero :: Initiation", "The Vault Door :: Initiation", "The Engine Room :: Initiation" — each unique to its page. The user wanted them simplified to a single uniform label: "Day 00 &#9672; Intro", matching the master template exactly. The custom labels would return later when the narrative content was written; for now, the sidebar needed to be consistent.
+
+Twenty files. One regex. `Day 00 &#9672; [anything]</a>` became `Day 00 &#9672; Intro</a>`. The sidebar was now uniform across the entire English fleet.
+
+## The translation: twenty log pages
+
+I copied each perfected English file over its Romanian counterpart — twenty files, each overwriting the old twelve-kilobyte skeleton with the new sixty-eight-kilobyte chronicle — and began the translation. The rule was already established in DAY 11: content-specific text (titles, descriptions, navigation labels, meta tags, h4 map labels, the logo, the footer links) becomes Romanian; the `@tag` didactic comments that explain HTML concepts remain in English, because they teach the language of the web.
+
+The work was systematic rather than literary. I built a translation table — a PowerShell hashtable mapping each English page to its Romanian title, description, keywords, h4 map label, and @reason summary. The script iterated over each file and replaced:
+
+- `lang="en"` → `lang="ro"`
+- `<title>` — "API Log" → "Jurnal API"
+- `meta description` — the six-line English summary → an equivalent Romanian summary
+- `meta keywords` — thematic keywords in Romanian
+- `og:title` and `og:description` — matched to the meta tags
+- `<h4>` — "API Expedition Map" → "Hartă Expediție API"
+- The logo — "D::0dy55ey / API Log" → "D::0dy55ey / Jurnal API"
+- The lang attribute comment — English → Romanian text
+
+Three issues needed manual correction after the first pass. The @reason text had lost its prefix — it read "designul și consumul API-urilor..." without the introductory "Acest document este un jurnal structurat de învățare pentru..." — because the regex had matched the wrong boundary. The lang comment in the `@block:` block still said "English" even after the attribute had been changed to `lang="ro"`. The h4 titles had not been replaced because the generated pages used a plain `<h4>` tag without the `class="category-title"` attribute that the regex expected. I fixed all three in a second pass: restored the @reason prefix, corrected the lang comment to "Atributul lang='ro' declară că limba principală a acestei pagini este româna.", and targeted the bare `<h4>` selector directly.
+
+## The Romanian semantic field manual
+
+The English manual existed. The Romanian now needed its own. I translated every entry — forty HTML elements, each with its semantic role, narrative meaning, and usage locations — into Romanian. The element names stayed in English (they are code-level terms), but everything else — the explanations, the ship-metaphor mappings, the usage notes — was rendered in Romanian. The document structure mirrored the English original exactly: same sections, same order, same pedagogical density.
+
+`docs/semantic-field-manual-ro.md`. Two hundred and forty-nine lines. A complete Romanian reference that a student could read alongside the English version, or independently.
+
+## The bridge, redirected
+
+With the Romanian manual created, every `@bridge` reference in the `ro/` folder that pointed to `semantic-field-manual-en.md` needed to redirect to `semantic-field-manual-ro.md`. Twenty log pages had been covered by the translation script. The three reference pages (css-log, html-log, sql-log) and the four non-log pages (index, bibliography, recursive-blueprint, transmission) — seven files in total — still pointed to the English manual. I fixed all seven in a single pass. Every Romanian HTML file now referenced the Romanian manual.
+
+## The commit log
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+```
+
+---
+
+# DAY 20 — The Last Details: Reference Pages, Mobile Spacing, and the Work Deontology
+
+Three loose ends remained from the previous days. One was a gap in the translation. One was a CSS crowding issue on mobile. One was the absence of a document that had been implicitly requested since the project's first collaborative session: a written record of how the ship is built.
+
+## The three reference pages
+
+The translation sweep of DAY 19 had covered the twenty regenerated log pages — the ones produced by the generation script. It had not covered the three original reference pages: `css-log.html`, `html-log.html`, and `sql-log.html`. These were the master templates — the pages that had been hand-crafted and perfected in English before the generation script ever ran. Their Romanian counterparts were still the old twelve-kilobyte skeletons.
+
+I copied each perfected English file over its Romanian sibling — three files, each gaining the full 29-day structure — and applied the same translation pattern used on the other twenty. The @reason texts needed special care this time: I had generated them programmatically from the description fields, and the Romanian grammar had produced constructions like "pentru CSS-ului" — a genitive collision that no native speaker would accept. I rewrote all three @reason blocks by hand:
+
+- CSS: "Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului."
+- HTML: "...pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup."
+- SQL: "...pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale."
+
+The Romanian fleet was now complete: twenty-three log pages, four non-log pages, every file carrying the full 29-day chronicle structure with translated content-specific text and the original didactic @tag apparatus.
+
+## The mobile spacing repair
+
+On mobile viewports — below 768 pixels — the category header and the sector 00 announcement box had been pressing against each other with no visible gap. The user described it as "crowded," and they were right.
+
+I traced the cause to a single CSS rule in the `@media (max-width: 768px)` block. The `.sector-announcement` had inherited a `margin-top: -30px !important` from an earlier calibration — a negative margin that pulled the purple airlock gate upward by thirty pixels, cancelling the `.category-header`'s `padding-bottom: 30px`. The mathematical result was zero. The visual result was two elements glued together.
+
+The fix was a one-line deletion: `margin-top: -30px !important;` removed from the `.sector-announcement` block inside the B3 sub-section of the 768px breakpoint. The gap returned to a clean thirty pixels. The scroll-margin (`scroll-margin-top: 120px`) — which controls where the browser lands when a sidebar link is clicked — was untouched. The HUD navigation, the fragment-link jumps, the sidebar active tracking: none of them depended on that negative margin. The repair was local, minimal, and safe.
+
+## The work deontology
+
+Throughout the days of collaboration, the user and I had developed a set of internal principles — unwritten conventions about how the project is built, commented, structured, and committed. The dual-language architecture. The English-first creation workflow. The comprehensive commenting standard. The CSS module structure discipline. The `@tag` annotation system. The commit message format. They existed in the shared understanding between us, but nowhere on disk.
+
+I created `docs/work-deontology.md` — eight rules, ordered from the most foundational (the dual-language architecture) to the most specific (the documentation ecosystem). Each rule was stated clearly and given a rationale. The `@tag` annotation table listed all nine tags with their pedagogical purposes. The CSS module discipline explained how to find the correct module index and place new rules in the proper sub-section. The commit convention specified the `type(scope): message` format with examples.
+
+The Romanian version followed immediately: `docs/work-deontology-ro.md`, a full translation of all eight rules, preserving the structure and pedagogical voice.
+
+But the first version had an error. In rule 5, the `@tag` annotation system, I had written that tags are written "inside HTML comments." The user caught it: `@tag` annotations appear in CSS files (`/* ... */`) and JavaScript files (`// ...`) too, each using its native comment syntax. I corrected both the English and Romanian files, expanding the rule to cover all three code file types. The error was minor, but the principle it touched — accuracy in documentation — was not.
+
+## The commit log
+
+```
+c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
+3560fef fix(css): remove negative margin on .sector-announcement at 768px breakpoint; fix(ro): clone+translate reference log pages
+61cd338 docs: add work-deontology.md and work-deontology-ro.md — internal work principles
+e5472c6 docs: correct @tag annotation rule — tags appear in HTML, CSS, JS with native comment syntax
+```
+
+The ship has no red status items left in the log compartment. Every log page in both languages carries the full 29-day structure. The semantic field manuals — English and Romanian — sit in the docs folder, cross-referenced from every page. The work deontology records how the vessel is built, so that future crew members and automated navigators alike can build in the same direction. And on mobile, between the category header and the sector announcement, there is now space to breathe.
+
+The pre-flight checklist is not complete. But the weather is better than it was three days ago.
+
+---
