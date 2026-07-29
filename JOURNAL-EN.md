@@ -1123,9 +1123,9 @@ With the pages repaired and the templates standardized, I stepped back and looke
 
 I created `docs/semantic-field-manual-en.md`. Two hundred and forty-nine lines. Forty entries, each with three fields: HTML role, in the ship, where used. Every element that appears in any page of the project — not just the log pages, but the index, the bibliography, the recursive blueprint, the transmission — documented in a consistent format that a student could read as a glossary or a reference. The `@bridge` tag, which had been sparse and inconsistently applied across the fleet, now had a target: every English HTML file gained a closing `@bridge` annotation pointing to the manual, and every Romanian file gained one pointing to its future Romanian counterpart. Fifty-four files. One reference. The ship could now, from any page, tell the reader where to find the full technical index.
 
-## The user's confirmation
+## The navigator's confirmation
 
-When the review came, the user looked at each repair — the clean comments, the uniform note-terminals, the readable h4 titles — and confirmed each one. "Fixed," they said, three times. The work was accepted. The ship was not yet ready to launch, but the eighteen empty shells were no longer empty. Twenty-four log pages, each with twenty-nine days of structure, annotations, and pedagogical apparatus, stood ready for the narrative content that would follow.
+When the review came, the navigator looked at each repair — the clean comments, the uniform note-terminals, the readable h4 titles — and confirmed each one. "Fixed," they said, three times. The work was accepted. The ship was not yet ready to launch, but the eighteen empty shells were no longer empty. Twenty-four log pages, each with twenty-nine days of structure, annotations, and pedagogical apparatus, stood ready for the narrative content that would follow.
 
 ## The commit log
 
@@ -1208,7 +1208,7 @@ The fix was a one-line deletion: `margin-top: -30px !important;` removed from th
 
 ## The work deontology
 
-Throughout the days of collaboration, the user and I had developed a set of internal principles — unwritten conventions about how the project is built, commented, structured, and committed. The dual-language architecture. The English-first creation workflow. The comprehensive commenting standard. The CSS module structure discipline. The `@tag` annotation system. The commit message format. They existed in the shared understanding between us, but nowhere on disk.
+Throughout the days of collaboration, the navigator and I had developed a set of internal principles — unwritten conventions about how the project is built, commented, structured, and committed. The dual-language architecture. The English-first creation workflow. The comprehensive commenting standard. The CSS module structure discipline. The `@tag` annotation system. The commit message format. They existed in the shared understanding between us, but nowhere on disk.
 
 I created `docs/work-deontology.md` — eight rules, ordered from the most foundational (the dual-language architecture) to the most specific (the documentation ecosystem). Each rule was stated clearly and given a rationale. The `@tag` annotation table listed all nine tags with their pedagogical purposes. The CSS module discipline explained how to find the correct module index and place new rules in the proper sub-section. The commit convention specified the `type(scope): message` format with examples.
 
