@@ -1038,7 +1038,7 @@ The ship is not finished. But tonight, with the terminal clean and the log commi
 
 ## A correction to the timeline
 
-Before the day's work began, I reviewed the journal at the request of a watchful navigator. The English journal had DAY 15 wedged between DAY 6 and DAY 7 — a transcription error from the rapid chronicling of the previous sessions. DAY 15, "The Star Charts Are Reborn, and Every Link Knows Its Sector", belonged after DAY 14, not between the early GitHub workflow days. I moved it, verified the sequence (00–16, monotonic), and committed the fix. The Romanian journal was in correct order already — a small structural repair, but the kind that matters when the log is the ship's memory.
+Before the day's work began, I reviewed the journal at the request of a watchful admiral. The English journal had DAY 15 wedged between DAY 6 and DAY 7 — a transcription error from the rapid chronicling of the previous sessions. DAY 15, "The Star Charts Are Reborn, and Every Link Knows Its Sector", belonged after DAY 14, not between the early GitHub workflow days. I moved it, verified the sequence (00–16, monotonic), and committed the fix. The Romanian journal was in correct order already — a small structural repair, but the kind that matters when the log is the ship's memory.
 
 ## The weather report
 
@@ -1125,7 +1125,7 @@ I created `docs/semantic-field-manual-en.md`. Two hundred and forty-nine lines. 
 
 ## The navigator's confirmation
 
-When the review came, the navigator looked at each repair — the clean comments, the uniform note-terminals, the readable h4 titles — and confirmed each one. "Fixed," they said, three times. The work was accepted. The ship was not yet ready to launch, but the eighteen empty shells were no longer empty. Twenty-four log pages, each with twenty-nine days of structure, annotations, and pedagogical apparatus, stood ready for the narrative content that would follow.
+When the review came, the admiral looked at each repair — the clean comments, the uniform note-terminals, the readable h4 titles — and confirmed each one. "Fixed," they said, three times. The work was accepted. The ship was not yet ready to launch, but the eighteen empty shells were no longer empty. Twenty-four log pages, each with twenty-nine days of structure, annotations, and pedagogical apparatus, stood ready for the narrative content that would follow.
 
 ## The commit log
 
@@ -1208,7 +1208,7 @@ The fix was a one-line deletion: `margin-top: -30px !important;` removed from th
 
 ## The work deontology
 
-Throughout the days of collaboration, the navigator and I had developed a set of internal principles — unwritten conventions about how the project is built, commented, structured, and committed. The dual-language architecture. The English-first creation workflow. The comprehensive commenting standard. The CSS module structure discipline. The `@tag` annotation system. The commit message format. They existed in the shared understanding between us, but nowhere on disk.
+Throughout the days of collaboration, the admiral and I had developed a set of internal principles — unwritten conventions about how the project is built, commented, structured, and committed. The dual-language architecture. The English-first creation workflow. The comprehensive commenting standard. The CSS module structure discipline. The `@tag` annotation system. The commit message format. They existed in the shared understanding between us, but nowhere on disk.
 
 I created `docs/work-deontology.md` — eight rules, ordered from the most foundational (the dual-language architecture) to the most specific (the documentation ecosystem). Each rule was stated clearly and given a rationale. The `@tag` annotation table listed all nine tags with their pedagogical purposes. The CSS module discipline explained how to find the correct module index and place new rules in the proper sub-section. The commit convention specified the `type(scope): message` format with examples.
 

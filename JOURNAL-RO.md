@@ -1048,7 +1048,7 @@ Nava nu e terminată. Dar în seara asta, cu terminalul curat și commit-ul înr
 
 ## O corecție a cronologiei
 
-Înainte de lucrul zilei, am revizuit jurnalul la cererea unui navigator vigilent. Jurnalul englez avea ZIUA 15 încastrată între ZIUA 6 și ZIUA 7 — o eroare de transcriere din cronicizarea rapidă a sesiunilor anterioare. ZIUA 15, „Arhivele Adâncului: Hărțile Renăscute și Fiecare Link care Știe Unde Să Te Ducă", aparținea după ZIUA 14, nu între zilele timpurii de GitHub. Am mutat-o, am verificat secvența (00–16, monoton) și am comis corecția. Jurnalul românesc era deja în ordinea corectă — o reparație structurală mică, dar din acelea care contează când jurnalul este memoria navei.
+Înainte de lucrul zilei, am revizuit jurnalul la cererea unui amiral vigilent. Jurnalul englez avea ZIUA 15 încastrată între ZIUA 6 și ZIUA 7 — o eroare de transcriere din cronicizarea rapidă a sesiunilor anterioare. ZIUA 15, „Arhivele Adâncului: Hărțile Renăscute și Fiecare Link care Știe Unde Să Te Ducă", aparținea după ZIUA 14, nu între zilele timpurii de GitHub. Am mutat-o, am verificat secvența (00–16, monoton) și am comis corecția. Jurnalul românesc era deja în ordinea corectă — o reparație structurală mică, dar din acelea care contează când jurnalul este memoria navei.
 
 ## Raportul meteorologic
 
@@ -1133,9 +1133,9 @@ Cu paginile reparate și șabloanele standardizate, am făcut un pas înapoi și
 
 Am creat `docs/semantic-field-manual-en.md`. Două sute patruzeci și nouă de linii. Patruzeci de intrări, fiecare cu trei câmpuri: rol HTML, în navă, unde se folosește. Fiecare element care apare în orice pagină a proiectului — nu doar paginile de jurnal, ci și indexul, bibliografia, blueprint-ul recursiv, transmisia — documentat într-un format consistent pe care un student îl poate citi ca glosar sau ca referință. Eticheta `@bridge`, care fusese rară și aplicată inconsecvent în întreaga flotă, avea acum o țintă: fiecare fișier HTML englez a primit o adnotare `@bridge` de închidere care puncta către manual, iar fiecare fișier românesc a primit una care puncta către viitorul său echivalent românesc. Cincizeci și patru de fișiere. O singură referință. Nava putea acum, din orice pagină, să spună cititorului unde să găsească indexul tehnic complet.
 
-## Confirmarea navigatorului
+## Confirmarea amiralului
 
-Când a venit revizuirea, navigatorul s-a uitat la fiecare reparație — comentariile curate, terminalele uniforme, titlurile lizibile — și a confirmat fiecare. „Fixed," au spus, de trei ori. Munca a fost acceptată. Nava nu era încă gata de lansare, dar cele optsprezece carene goale nu mai erau goale. Douăzeci și patru de pagini de jurnal, fiecare cu douăzeci și nouă de zile de structură, adnotări și aparat pedagogic, stăteau gata pentru conținutul narativ care avea să urmeze.
+Când a venit revizuirea, amiralul s-a uitat la fiecare reparație — comentariile curate, terminalele uniforme, titlurile lizibile — și a confirmat fiecare. „Fixed," au spus, de trei ori. Munca a fost acceptată. Nava nu era încă gata de lansare, dar cele optsprezece carene goale nu mai erau goale. Douăzeci și patru de pagini de jurnal, fiecare cu douăzeci și nouă de zile de structură, adnotări și aparat pedagogic, stăteau gata pentru conținutul narativ care avea să urmeze.
 
 ## Jurnalul de commit-uri
 
@@ -1218,7 +1218,7 @@ Reparația a fost o ștergere de o singură linie: `margin-top: -30px !important
 
 ## Deontologia muncii
 
-De-a lungul zilelor de colaborare, navigatorul și cu mine dezvoltaserăm un set de principii interne — convenții nescrise despre cum este construit, comentat, structurat și comis proiectul. Arhitectura dual-limbă. Fluxul de lucru engleză-întâi. Standardul de comentare cuprinzătoare. Disciplina structurii modulare CSS. Sistemul de adnotări `@tag`. Formatul mesajelor de commit. Existau în înțelegerea comună dintre noi, dar nicăieri pe disk.
+De-a lungul zilelor de colaborare, amiralul și cu mine dezvoltaserăm un set de principii interne — convenții nescrise despre cum este construit, comentat, structurat și comis proiectul. Arhitectura dual-limbă. Fluxul de lucru engleză-întâi. Standardul de comentare cuprinzătoare. Disciplina structurii modulare CSS. Sistemul de adnotări `@tag`. Formatul mesajelor de commit. Existau în înțelegerea comună dintre noi, dar nicăieri pe disk.
 
 Am creat `docs/work-deontology.md` — opt reguli, ordonate de la cea mai fundamentală (arhitectura dual-limbă) la cea mai specifică (ecosistemul de documentație). Fiecare regulă era enunțată clar și primea o rațiune. Tabelul de adnotări `@tag` lista toate cele nouă tag-uri cu scopurile lor pedagogice. Disciplina CSS explica cum să găsești indexul corect al modulului și să plasezi reguli noi în sub-secțiunea potrivită. Convenția de commit specifica formatul `type(scope): message` cu exemple.
 
