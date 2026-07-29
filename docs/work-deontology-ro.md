@@ -39,7 +39,11 @@ Toate comentariile didactice folosesc un sistem structurat de tag-uri definit î
 | `@warning` | Semnalizează cod fragil, particularități de browser sau capcane ne-evidente |
 | `@concept` | Detaliază o idee mai largă care traversează mai multe blocuri |
 
-Fiecare `@tag` trebuie urmat de două puncte și o explicație clară și autonomă. Tag-urile sunt scrise în interiorul comentariilor HTML (`<!-- @tag: ... -->`).
+Fiecare `@tag` trebuie urmat de două puncte și o explicație clară și autonomă. Tag-urile apar în toate tipurile de fișiere de cod, fiecare folosind sintaxa nativă de comentarii:
+
+- HTML: `<!-- @tag: ... -->`
+- CSS: `/* @tag: ... */`
+- JavaScript: `// @tag: ...`
 
 ## 6. Disciplina Structurii Modulare CSS
 

@@ -39,7 +39,11 @@ All didactic comments use a structured tag system defined in the legend files (`
 | `@warning` | Flags brittle code, browser quirks, or non-obvious pitfalls |
 | `@concept` | Expands on a broader idea that spans multiple blocks |
 
-Every `@tag` must be followed by a colon and a clear, self-contained explanation. Tags are written inside HTML comments (`<!-- @tag: ... -->`).
+Every `@tag` must be followed by a colon and a clear, self-contained explanation. Tags appear in all code file types, each using its native comment syntax:
+
+- HTML: `<!-- @tag: ... -->`
+- CSS: `/* @tag: ... */`
+- JavaScript: `// @tag: ...`
 
 ## 6. CSS Module Structure Discipline
 
