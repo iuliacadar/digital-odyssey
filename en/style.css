@@ -3883,7 +3883,6 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .sector-announcement {
     scroll-margin-top: 120px !important; /* @line: Sets scroll-margin-top to 120px !important. This declaration configures the corresponding CSS property for this element. */
-    margin-top: -30px !important; /* @layout: External upper edge spacing — overrides inherited margin on this specific side. */
     padding-top: 40px !important; /* @layout: Internal upper cushion — adjusts spacing on this specific side between the element boundary and its child content. */
     margin-bottom: 80px !important; /* @layout: External lower edge spacing — overrides inherited margin on this specific side. */
   }

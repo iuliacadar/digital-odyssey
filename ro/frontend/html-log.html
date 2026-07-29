@@ -1,8 +1,8 @@
 <!-- @bridge:
-  Legenda etichetelor: ./docs/legend-ro.md
+  Tags legend: ./docs/legend-ro.md
 -->
 <!-- @reason:
-  Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează studiul structurii semantice, modelelor de markup accesibil și arhitecturii documentelor.
+  Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
 -->
 
 <!doctype html>
@@ -14,12 +14,12 @@
 <html lang="ro">
   <!-- @block:
     The root element of the document.
-    The lang="ro" attribute declares that the main language of this page is Romanian.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
     This helps accessibility tools, search engines, and automated processing systems.
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
+      The [head] contains the document metadata.
       I do not place the main visible content here; instead, I keep the information
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
@@ -52,7 +52,7 @@
 
     <meta
       name="description"
-      content="Un jurnal structurat care documentează studiul HTML-ului semantic, arhitecturii documentelor, markup-ului accesibil și modelelor de conținut structurat în dezvoltarea frontend."
+      content="Un jurnal structurat care documentează explorarea HTML-ului — elemente semantice, structură de document, formulare, accesibilitate și bune practici de markup."
     />
     <!-- @meta:
       The page description.
@@ -62,7 +62,7 @@
 
     <meta
       name="keywords"
-      content="html, html semantic, arhitectură documente, markup accesibil, conținut structurat, frontend, standarde web, odisee digitală"
+      content="html, elemente semantice, structură, formulare, accesibilitate, markup, frontend, odisee digitală"
     />
     <!-- @meta:
       The keywords meta tag lists the main themes of the page.
@@ -84,7 +84,7 @@
     -->
 
 
-    <meta property="og:title" content="D::0dy55ey | Jurnal HTML" />
+    <meta property="og:title" content="D::0dy55ey | HTML Log" />
     <!-- @meta:
       Open Graph title.
       When the page link is shared on social networks or portfolio sites,
@@ -93,7 +93,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează studiul HTML-ului semantic, arhitecturii documentelor, markup-ului accesibil și modelelor de conținut structurat în dezvoltarea frontend."
+      content="A structured log documenting the study of semantic HTML, document architecture, accessible markup, and structured content patterns in frontend development."
     />
     <!-- @meta:
       Open Graph description.
@@ -108,17 +108,17 @@
       For journal entries, I could use "article" instead depending on the content nature.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/frontend/html-log.html" />
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/frontend/html-log.html" />
     <!-- @meta:
       Open Graph canonical URL.
       When the page is shared, this tells platforms the exact, permanent address of this page.
       It prevents confusion if the same content is accessible from multiple URLs.
     -->
 
-    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:locale" content="en_US" />
     <!-- @meta:
       Open Graph locale.
-      I set it to ro_RO for the Romanian version of the page.
+      I set it to en_US for the English version of the page.
       This tells social platforms and aggregators the language and regional variant of the content.
     -->
 
@@ -150,7 +150,7 @@
       a large image preview alongside the title and description.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/frontend/html-log.html" />
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/frontend/html-log.html" />
     <!-- @meta:
       Canonical link.
       I tell search engines that this URL is the authoritative version of the page.
@@ -180,14 +180,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      I start the connection to the font server early.
-      The goal is to reduce latency when loading external resources.
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      I preconnect to the domain that serves the actual font files.
-      crossorigin is required for external resources served from another origin.
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
     -->
 
     <link
@@ -195,8 +193,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      I load the Space Grotesk font from Google Fonts.
-      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
     -->
 
     <link rel="stylesheet" href="../style.css" />
@@ -205,113 +202,1017 @@
       The path is relative to the current file location.
     -->
   </head>
+  <!-- @block: BODY — THE VISIBLE DECK
+    The [body] element is where every visible element of the page lives.
+    Everything the traveller sees — the navigation bar, the sidebar map,
+    the journal entries, the footer telemetry — is a child of this single
+    container. In the ship metaphor, the body is the main habitable deck
+    of the vessel: the space where the crew walks, reads, and interacts
+    with the ship's systems.
+    @structure:
+      The [body] is the direct child of [html]. It has no special default
+      styling by itself, but in this project it inherits the deep-space
+      background (#0a0b1e) and the Space Grotesk font from style.css.
+  -->
   <body>
-        <nav class="navbar">
-      <!-- @block: IDENTITATEA TERMINALULUI
-        Blocul logo afișează indicativul navei și numele secțiunii curente.
-        Este text static (nu este link) deoarece această pagină este ea însăși
-        o stație a navei; echipajul își citește aici locația.
+    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
+      The [nav] element semantically marks this section as the ship's
+      primary navigation interface. Wrapping the navbar in [nav] tells
+      browsers, screen readers, and search engines: "this block contains
+      the main controls for moving between the vessel's decks."
+      @structure:
+        The navbar uses flexbox (via the .navbar class) to display the
+        vessel logo on the left and the navigation command list on the
+        right, keeping the helm compact and always visible at the top.
+    -->
+    <nav class="navbar">
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station
+        on the ship; the crew reads their location here.
       -->
       <div class="logo">D::0dy55ey / Jurnal HTML</div>
 
-      <!-- @block: COMENZI DE NAVIGAȚIE
-        Lista nav-links conține acțiunile principale de navigare.
-        Pe paginile secundare, se oferă o singură comandă: întoarcerea la punte.
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On secondary pages, only one command is offered: return to the bridge.
       -->
       <ul class="nav-links">
         <li>
           <a href="../index.html" class="return-btn"
             ><!-- @reason:
-              Simbolul săgeată stânga (←) funcționează ca un indiciu vizual
-              de întoarcere. "Înapoi la puntea de comandă" face legătura cu
-              index.html, puntea principală a navei-mamă.
-            -->← Înapoi la puntea de comandă</a
+              Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+            -->← Return to Command Deck</a
           >
         </li>
       </ul>
     </nav>
 
-    <main class="main-container">
-      <section id="log-deck">
-        <header class="category-header">
-      <!-- @block:
-        Această pagină de jurnal va fi populată cu conținut specific
-        capitolului în faza activă de construcție. Momentan servește ca
-        un shell structural cu sistemele de navigație și footer deja instalate.
+    <!-- @block: MAIN CONTENT — HTML EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map / table
+      of contents) and the log-content zone (the day-by-day journal entries).
+      The class "log-layout" applies a CSS Grid with two columns.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — HTML EXPEDITION MAP
+        The sidebar is wrapped in an [aside] element — a semantic HTML5
+        tag that marks content as tangentially related to the main page.
+        In the ship metaphor, the sidebar is the navigator's console:
+        a secondary station that holds the expedition map rather than
+        the primary log content.
+        @concept:
+          The [aside] element is one of several semantic tags introduced
+          in HTML5. Like [nav], [header], [footer], and [article], it
+          gives meaning to the container instead of using a generic [div].
+          This helps screen readers announce the sidebar's role and
+          helps search engines understand the page structure.
       -->
+      <aside class="log-sidebar">
+        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
+          This [nav] inside the [aside] is the secondary navigation
+          system. While the top navbar returns the crew to the bridge,
+          this sidebar nav lets them jump directly to any day entry
+          within the current expedition log.
+          @structure:
+            The .sidebar-nav class applies a compact, scrollable list
+            layout distinct from the main navbar. The map-title-link
+            at the top scrolls the view back to the main header when
+            clicked.
+        -->
+        <nav class="sidebar-nav">
+          <a href="#top-deck" class="map-title-link">
+            <h4>Hartă Expediție HTML</h4>
+            <!-- @reason:
+              Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+            -->
+          </a>
+
+          <!-- @block: SIDEBAR LINK LIST
+            The [ul] (unordered list) holds every expedition day link.
+            Each [li] (list item) contains an [a] (anchor) that points
+            to a specific day's [article] via its id attribute — this
+            is called a "fragment link" because the # symbol tells the
+            browser to scroll to the element with that id.
+            @reason:
+              Fragment links (href="#html-day01") create a table of
+              contents that lets the crew teleport directly to any
+              entry without scrolling through the entire log.
+          -->
+          <ul>
+            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
+            <li>
+              <a href="#html-day00" class="sidebar-link">
+                Day 00 &#9672; Intro
+              </a>
+            </li>
+
+            <!-- @block: WEEK 01 — THE HULL & THE SKELETON
+              The first full week covers core HTML mechanics: boilerplate,
+              headings, semantic structure, links, lists, and navigation.
+              @theme:
+                The diamond symbol (&#9672;) next to each day number
+                acts as a bullet marker — a tiny visual cue that helps
+                the eye scan down the list quickly.
+            -->
+            <li class="week-label">
+              <a href="#html-sector-01" class="sidebar-link">S01</a>
+            </li>
+            <li>
+              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; The Boilerplate</a>
+            </li>
+            <li>
+              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Headings & Paragraphs</a>
+            </li>
+            <li>
+              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; Semantic HTML & Layout</a>
+            </li>
+            <li>
+              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Anchors, Absolute vs Relative Links</a>
+            </li>
+            <li>
+              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Unordered, Ordered & Description Lists</a>
+            </li>
+            <li>
+              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Special entities & Emojis in code</a>
+            </li>
+            <li>
+              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Navigation menus</a>
+            </li>
+
+            <!-- @block: WEEK 02 — VISUAL SENSORS & MEDIA
+              The second week shifts from structural HTML to embedded
+              media: images, audio, video, iframes, and figures.
+            -->
+            <li class="week-label">
+              <a href="#html-sector-02" class="sidebar-link">S02</a>
+            </li>
+            <li>
+              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; The &lt;img&gt; tag & alt attribute</a>
+            </li>
+            <li>
+              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; The &lt;picture&gt; element & srcset atribute</a>
+            </li>
+            <li>
+              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; The &lt;audio&gt; element & formats</a>
+            </li>
+            <li>
+              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; The &lt;video&gt; element & subtitles with &lt;track&gt;</a>
+            </li>
+            <li>
+              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; The &lt;iframe&gt; elemnt & embedding maps/videos</a>
+            </li>
+            <li>
+              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; The &lt;figure&gt; & &lt;figcaption&gt; elements</a>
+            </li>
+            <li>
+              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Review & Navigation Stress Test</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE
+        The [section] element is a semantic container that groups related
+        content under a common theme. Here it wraps the entire expedition
+        log — the header, sector announcements, and day articles. Unlike
+        [article] (which holds self-contained entries), [section] groups
+        them into a coherent chapter.
+        @structure:
+          The .log-content class works together with .log-sidebar inside
+          the .log-layout grid. The sidebar occupies the left column
+          (about 250px), and .log-content fills the remaining space on
+          the right, creating the classic two-panel terminal interface.
+      -->
+      <section class="log-content">
+        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
+          The [header] element inside the log content acts as the
+          chapter title card. While the [header] in a document usually
+          contains navigation or introductory content, here it is a
+          simple banner that sets the thematic tone for the log.
+          @theme:
+            The .category-header class applies a bottom border glow
+            effect and centers the title text, visually marking this
+            as the start of a new expedition chapter.
+        -->
+        <header id="top-deck" class="category-header">
+          <h2>The Mercurial Sea of Structure</h2>
+          <p>Mapping the foundational skeleton of the digital void</p>
+          <!-- @theme:
+            "Mercurial Sea" frames HTML as a fluid, shape-shifting medium —
+            unpredictable but masterable by a sharp-minded captain.
+          -->
         </header>
+
+        <!-- ===== AIRLOCK (WEEK 00) ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — AIRLOCK / INITIATION
+          The sector-announcement div acts as a visual chapter divider,
+          marking the transition between major learning phases. The
+          "ENTER AIRLOCK" label tells the crew they are crossing into
+          a new cluster of days.
+          @concept:
+            The airlock metaphor frames each sector as a sealed compartment
+            that the crew must intentionally enter.
+        -->
+        <div id="html-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>Initiation</h2>
+        </div>
+
+        <!-- @block: DAY 00 — THE MERCURIAL SEA :: INITIATION
+          The first day entry establishes the log-entry pattern: a numbered
+          title, a narrative paragraph, a mission-status telemetry readout,
+          and a note-terminal for annotations.
+          @theme:
+            "Mercurial Sea" frames HTML as a fluid, shape-shifting medium —
+            unpredictable but masterable by a sharp-minded captain.
+        -->
+        <article id="html-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Mercurial Sea :: Initiation</span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              HTML reveals itself as a mercurial sea of encoded possibilities.
+              These shifting tides demand a sharp-minded captain to navigate the
+              vessel through the fog of syntax. Today, I am but a novice at the
+              helm, charting unknown currents. What constellations will tomorrow
+              bring ahead?
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: Initialized | Navigation: Manual</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day00') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day00"
+              id="html-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 01: THE HULL & THE SKELETON ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — THE HULL & THE SKELETON
+          The first operational sector after the airlock. This sector covers
+          the core HTML mechanics: boilerplate, headings, semantic structure,
+          links, lists, and navigation patterns.
+          @theme:
+            "The Hull & The Skeleton" presents HTML as the rigid structural
+            frame of the ship — the bones upon which all style and behaviour
+            layers are mounted.
+        -->
+        <div id="html-sector-01" class="sector-announcement">
+          <span>Entering Sector 01</span>
+          <h2>The Hull & The Skeleton</h2>
+        </div>
+
+        <!-- @block: DAY 01 — THE STEEL HULL :: BOILERPLATE, DOCTYPE, META TAGS
+          The first real content lesson. The narrative introduces the HTML
+          boilerplate as the "steel hull" of the vessel — the minimal
+          structural code every HTML document requires.
+          @concept:
+            The <!DOCTYPE html> declaration is presented as a "hailing
+            frequency" that tells the browser which HTML version to use.
+            The [head] is the "ship's brain" — invisible but essential.
+        -->
+        <article id="html-day01" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title">
+              The Steel Hull :: Boilerplate, Doctype, Meta Tags
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Every vessel needs a hull before it can face the sea. The
+              Boilerplate is our hull—the fundamental code that defines our
+              existence in the digital void.
+            </p>
+            <p>
+              Today's mission was to stabilize the <strong>Boilerplate</strong>.
+              Without these core directives, the browser (our navigation
+              computer) wouldn't know how to interpret the signals we send. I've
+              initialized the <code>&lt;!DOCTYPE html&gt;</code>, which acts as
+              our universal hailing frequency, announcing that we are operating
+              on modern HTML5 protocols.
+            </p>
+            <!-- @block: CODE DISPLAY — BOILERPLATE
+              The [pre][code] block displays the minimal HTML boilerplate.
+              Using [pre] preserves whitespace and line breaks, while [code]
+              semantically marks the content as computer code.
+            -->
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ro"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;D::0dy55ey&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Mission content starts here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>
+              <strong>Captain's Observations:</strong> The
+              <code>&lt;head&gt;</code> section feels like the ship's
+              brain—unseen by the passenger but vital for processing metadata
+              and loading external systems (like our CSS thrusters). In
+              contrast, the <code>&lt;body&gt;</code> is the deck where all
+              visible action happens. One small anomaly encountered: forgetting
+              the <code>lang="ro"</code> attribute can confuse global search
+              radars (SEO).
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Data Stream: Confirmed | Structure: Stable | Hull Integrity: 100%</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day01') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day01"
+              id="html-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 02 — HEADINGS & PARAGRAPHS
+          Covers the [h1]-[h6] heading hierarchy and the [p] element as the
+          vessel's "voice" — the primary textual communication channel.
+          @concept:
+            Headings establish a document outline. Skipping levels (h1 to h3
+            without h2) breaks the semantic structure and confuses assistive
+            technologies.
+        -->
+        <article id="html-day02" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title">
+              Voice of the Vessel :: Headings & Paragraphs
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Today I explored the primary skeleton of the web. I've learned that
+              the header is not just a title, but a declaration of intent.
+            </p>
+            <pre><code>
+&lt;header&gt;
+  &lt;h1&gt;D::0dy55ey&lt;/h1&gt;
+  &lt;p&gt;Mission Start&lt;/p&gt;
+&lt;/header&gt;
+            </code></pre>
+            <p>The signal is now stable. Moving to the next frequency.</p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Data Stream: Confirmed | Structure: Stable</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day02') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day02"
+              id="html-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 03 — MAPPING THE DECK :: SEMANTIC HTML & LAYOUT
+          The most substantive day in Sector 01. Introduces semantic HTML5
+          elements ([header], [nav], [main], [article], [section], [aside],
+          [footer]) as ship-deck metaphors.
+          @concept:
+            Semantic HTML is presented as "replacing meaningless shells
+            with Semantic Relays" — every tag communicates meaning to
+            browsers, search engines, and assistive technologies.
+        -->
+        <article id="html-day03" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 03</span>
+            <span class="meta-title">
+              Mapping the Deck :: Semantic HTML & Layout
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              To navigate the digital void, a captain must look beyond the generic
+              clusters of generic containers. Today's mission is the most vital:
+              we are mapping the structural soul of our vessel. By replacing
+              meaningless shells with Semantic Relays, we ensure that our signal
+              is not only seen but understood by every radar and beacon in the
+              network. We are building more than a ship; we are defining its
+              purpose.
+            </p>
+
+            <hr class="cosmic-divider" />
+
+            <!-- @block: SEMANTIC MODULE LIST
+              Each .semantic-module is a card that pairs an HTML tag name with
+              a cosmic metaphor. This helps anchor the abstract concept of
+              semantic elements to concrete spaceship imagery.
+              @structure:
+                The .semantic-module cards are laid out vertically using the
+                log-text's default block flow. Each card contains three parts:
+                .tag-name (the HTML element), .tag-meta (the metaphor), and
+                .tag-description (the explanation).
+            -->
+            <div class="semantic-module">
+              <code class="tag-name">&lt;html&gt;</code>
+              <span class="tag-meta">// The Vessel Boundary</span>
+              <p class="tag-description">
+                The outer hull that defines the absolute limits of our digital
+                existence. It encapsulates the entirety of our cosmic presence.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;head&gt;</code>
+              <span class="tag-meta">// The Hidden Intelligence</span>
+              <p class="tag-description">
+                The ship's hidden intelligence center. It processes invisible data
+                streams, coordinates external thrusters (CSS), and broadcasts our
+                identity to the star-charts (SEO).
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;body&gt;</code>
+              <span class="tag-meta">// The Living Quarters</span>
+              <p class="tag-description">
+                The physical expanse where the crew resides. Every visible
+                interaction and material manifestation occurs within these
+                reinforced walls.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;header&gt;</code>
+              <span class="tag-meta">// The Bridge</span>
+              <p class="tag-description">
+                The primary command deck. It houses the mission emblems and the
+                master instruments of orientation.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;nav&gt;</code>
+              <span class="tag-meta">// The Navigation Console</span>
+              <p class="tag-description">
+                A dedicated interface for star-mapping, allowing the crew to
+                teleport between the ship's various sectors.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;main&gt;</code>
+              <span class="tag-meta">// The Power Core</span>
+              <p class="tag-description">
+                The singular, non-replicable heart of the vessel. It generates the
+                primary energy for our mission's core data, ensuring that the
+                essence of our journey is contained within a single, unbreakable
+                field.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;section&gt;</code>
+              <span class="tag-meta">// The Deck</span>
+              <p class="tag-description">
+                A thematic partition of the ship's internal space, grouping
+                related experimental modules and data.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;article&gt;</code>
+              <span class="tag-meta">// The Data Pod</span>
+              <p class="tag-description">
+                A self-contained, independent capsule of information. It is
+                designed to be extracted and understood even if detached from the
+                main vessel.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;aside&gt;</code>
+              <span class="tag-meta">// The Auxiliary Radar</span>
+              <p class="tag-description">
+                A secondary terminal providing tangential insights or technical
+                footnotes that complement the main mission stream.
+              </p>
+            </div>
+            <div class="semantic-module">
+              <code class="tag-name">&lt;footer&gt;</code>
+              <span class="tag-meta">// The Chronometer Log</span>
+              <p class="tag-description">
+                The ship's base station where we record the mission's final
+                coordinates, legal signatures, and time-stamps.
+              </p>
+            </div>
+
+            <hr class="cosmic-divider" />
+            <p>
+              The ship's architecture is no longer a chaotic cluster of generic
+              containers; it has gained a logical soul. We are navigating with
+              purpose through the structural void.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: Structure Integrity Validated | Semantic Relays: Online.</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day03') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day03"
+              id="html-note-day03"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day03')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 04 — SIGNAL RELAYS :: ANCHORS, ABSOLUTE VS RELATIVE LINKS
+          Introduces the [a] element as a "signal relay" that connects the
+          vessel to other locations in the digital cosmos.
+          @concept:
+            Absolute URLs (full https://path) are presented as "interstellar
+            beacons" pointing to external systems; relative URLs are
+            "intra-ship corridors" between local pages.
+        -->
+        <article id="html-day04" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 04</span>
+            <span class="meta-title">
+              Signal Relays :: Anchors, Absolute vs Relative Links
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem ipsum</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day04') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day04"
+              id="html-note-day04"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day04')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 05 — THE ARCHIVES :: UNORDERED, ORDERED & DESCRIPTION LISTS
+          Covers the three HTML list types: [ul] (unordered), [ol] (ordered),
+          and [dl] (description list). Lists are framed as "archival records"
+          that organize the ship's data inventory.
+          @concept:
+            [ul] is for items without inherent order (cargo manifest),
+            [ol] for sequenced steps (launch checklist),
+            [dl] for term-definition pairs (technical glossary).
+        -->
+        <article id="html-day05" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 05</span>
+            <span class="meta-title">
+              The Archives :: Unordered, Ordered & Description Lists
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day05') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day05"
+              id="html-note-day05"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day05')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 06 — CHARACTER ENCODING :: SPECIAL ENTITIES & EMOJIS IN CODE
+          Explores HTML character entities (&amp;, &lt;, &gt;, &nbsp;, etc.)
+          and emoji rendering. Framed as the "ship's communication encoding"
+          — ensuring symbols are transmitted without corruption.
+          @concept:
+            Character entities prevent the browser from misinterpreting
+            reserved characters (&lt; as a tag opener vs. literal text).
+        -->
+        <article id="html-day06" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 06</span>
+            <span class="meta-title">
+              Character Encoding :: Special entities & Emojis in code
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day06') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day06"
+              id="html-note-day06"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day06')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 07 — THE NAVIGATOR'S PATH :: BREADCRUMBS & NAVIGATION MENUS
+          Covers breadcrumb trails and [nav] menu patterns as the ship's
+          "navigational instruments" — guiding the crew through the vessel's
+          various decks and sectors.
+          @concept:
+            Breadcrumbs provide spatial orientation within the site hierarchy.
+            [nav] semantically marks the primary navigation block for
+            screen readers and search engines.
+        -->
+        <article id="html-day07" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 07</span>
+            <span class="meta-title">
+              The Navigator's Path :: Breadcrumbs & Navigation menus
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day07') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day07"
+              id="html-note-day07"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day07')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 02: VISUAL SENSORS & MEDIA ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — VISUAL SENSORS & MEDIA
+          The second sector shifts from structural HTML to embedded media:
+          images, audio, video, iframes, and figure/figcaption.
+          @theme:
+            "Visual Sensors & Media" frames media elements as the ship's
+            external sensing apparatus — cameras, microphones, and
+            communication relays.
+        -->
+        <div id="html-sector-02" class="sector-announcement">
+          <span>Entering Sector 02</span>
+          <h2>Visual Sensors & Media</h2>
+        </div>
+
+        <!-- @block: DAY 08 — OPTICAL SENSORS :: THE [img] TAG & ALT ATTRIBUTE
+          Introduces the [img] element as an "optical sensor" that captures
+          and displays visual data from the void. The alt attribute is
+          presented as the emergency text beacon when the sensor fails.
+          @concept:
+            The alt attribute serves dual purpose: accessibility (screen
+            readers announce it) and resilience (shown when the image
+            fails to load).
+        -->
+        <article id="html-day08" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 08</span>
+            <span class="meta-title">
+              Optical Sensors :: The &lt;img&gt; tag & alt attribute
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day08') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day08"
+              id="html-note-day08"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day08')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 09 — RESPONSIVE VISION :: THE [picture] ELEMENT & SRCSET ATTRIBUTE
+          Covers the [picture] element and srcset attribute as adaptive
+          "vision filters" that serve different image resolutions based
+          on the viewer's screen size and pixel density.
+          @concept:
+            srcset allows the browser to choose the optimal image source
+            from a set of candidates, improving load time and visual
+            quality across devices.
+        -->
+        <article id="html-day09" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 09</span>
+            <span class="meta-title">
+              Responsive Vision :: The &lt;picture&gt; element and srcset
+              attribute
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              similique tempore minima numquam. Sint distinctio atque corporis
+              minima debitis dolor, animi assumenda, nesciunt at illo inventore
+              architecto expedita hic numquam.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>Status: lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('html-note-day09') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="html-note-day09"
+              id="html-note-day09"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('html-note-day09')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+      <!-- @structure:
+        [/section] closes the log-content zone. Everything above it —
+        from the category-header through the last day article — belongs
+        to this one section.
+      -->
       </section>
+    <!-- @structure:
+      [/main] closes the main-container. The [main] element wraps the
+      primary content of the page — in this case, the sidebar and the
+      log-content columns. There should be only one [main] per page.
+    -->
     </main>
 
-            <!-- @block:
-      Deschid aici blocul de footer. Aceasta este secțiunea de încheiere
-      a fiecărei pagini din proiect. Plasez în interior fluxul de date de
-      telemetrie: sectorul orbital curent, coordonatele spațio-temporale,
-      o legătură către bibliografie și semnătura căpitanului.
+    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
+      The [footer] element marks the closing section of the page. In
+      the ship metaphor, the footer is the aft station — less visible
+      than the helm, but holding critical systems: the star charts,
+      the transmission log, the language switch, and the captain's
+      signature.
+      @structure:
+        The .footer class applies a dark, bordered container at the
+        bottom of the viewport. It uses a column layout for the links
+        and telemetry data, keeping everything compact and readable.
     -->
     <footer class="footer">
       <!-- @block: SECONDARY COMMAND CONSOLE
         The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It now houses the Star Charts (bibliography),
-        Carta de Astronavigație (transmisiunea), and the language
-        toggle between the English and Romanian versions of the project.
+        ship-systems panel. It houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission), and the language toggle
+        between the English and Romanian versions of the project.
         @concept:
-          The footer is the ship's auxiliary navigation station - less
+          The footer is the ship's auxiliary navigation station — less
           prominent than the HUD overlay, but essential for systems that
           do not belong to a specific volume: the founding manifesto, the
           reference archive, and the language switch.
+      -->
+      <!-- @block: FOOTER LINKS LIST
+        The [ul] here groups three [li] items: the bibliography link,
+        the transmission page, and the language toggle. Using a list
+        is semantically correct because these are a collection of
+        related navigation destinations.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#frontend-refs" target="_blank">Arhivele Adâncului — Frontend Core</a>
+          <a href="../bibliography.html#frontend-refs" target="_blank">Deep Space Archives — Frontend Core</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../transmission.html">Carta de Astronavigație</a>
+          <a href="../transmission.html">The Astrogation Charter</a>
         </li>
         <!-- @bridge: Language toggle between EN and RO subprojects -->
         <li>
           <!-- @reason:
-            The language toggle lets the crew switch between the English and
-            Romanian versions of the project. The current language is marked
-            with the .lang-toggle-active class (phosphor green highlight).
-            The separator pipe (|) visually divides the two options.
+            Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
           -->
-          <a href="../../en/frontend/html-log.html" class="">EN</a>
+          <a href="../../en/frontend/html-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/frontend/html-log.html" class="lang-toggle-active">RO</a>
+          <a href="../../ro/frontend/html-log.html" class="">RO</a>
         </li>
       </ul>
-<p>
+      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
+        The first telemetry line declares which expedition sector the
+        vessel is currently orbiting (FRONTEND_EXPEDITION) and the
+        system status (ONLINE). The CSS typing animation reveals this
+        text character by character when the page loads, simulating
+        a vintage mission control display.
+        @theme:
+          The ONLINE status is wrapped in a [span]
+          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
+          This phosphor-green aesthetic directly references 1970s NASA
+          control terminals, where green monochrome displays scrolled
+          telemetry data in real time.
+      -->
+      <p>
         SYS_ORBIT: FRONTEND_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
       </p>
 
       <!-- @structure:
-        Scriu a doua linie de telemetrie. Ancora proiectul digital în spațiu
-        și timp real.
+        I write the second telemetry data line. It anchors the project in real
+        physical space and time. The coordinates point to the captain's location,
+        and the date marks when this footer was last updated.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+        -->
       </p>
 
       <!-- @structure:
-        Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect.
+        I write the final line of the footer. It declares who created and owns
+        this project. The copyright symbol followed by the year and the captain's
+        name marks the intellectual ownership of the content.
       -->
       <p class="copyright">
-        &copy; 2026 | D::0dy55ey de
+        &copy; 2026 | D::0dy55ey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          I wrap the captain's name in a [span] with the class .vessel-sig.
+          This class applies the nebula-pink color (#ff007f) with an incandescent
+          text-shadow glow. The magenta signature acts as the captain's unique
+          identifier across all decks of the ship.
+        -->
       </p>
     </footer>
 
+    <!-- @block: JAVASCRIPT LOADER
+      The [script] tag loads the ship's control systems — a single
+      JavaScript file (script.js) that lives one directory above this
+      page. This file contains all the interactive mechanisms:
+      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
+      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
+      and the sidebar search filter.
+      @path:
+        The src="../script.js" attribute tells the browser to fetch
+        en/script.js relative to this page's location
+        (en/frontend/html-log.html → en/script.js).
+      @reason:
+        Placing the [script] tag just before [/body] (rather than in
+        [head]) ensures the HTML content loads and renders before the
+        JavaScript executes. This is called "deferred loading" and it
+        prevents the script from blocking the visual rendering of the
+        page.
+    -->
     <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] closes the visible deck. Everything inside the [body] —
+    navbar, sidebar, log entries, footer — is now finished rendering.
+    The browser stops painting the page here.
+  -->
   </body>
-  <!-- @bridge:
+  <!-- @structure:
+    [/html] closes the root element. The document is complete. The
+    browser has finished constructing the DOM (Document Object Model)
+    and the page is fully loaded. What the traveller sees now is the
+    result of the HTML structure combined with the CSS styles from
+    style.css and the interactive behaviour from script.js.
+    @bridge:
       For the full technical index of HTML tags used in this project,
       see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
   -->

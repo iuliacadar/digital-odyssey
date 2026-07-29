@@ -1,8 +1,8 @@
 <!-- @bridge:
-  Legenda etichetelor: ./docs/legend-ro.md
+  Tags legend: ./docs/legend-ro.md
 -->
 <!-- @reason:
-  Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic.
+  Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
 -->
 
 <!doctype html>
@@ -14,12 +14,12 @@
 <html lang="ro">
   <!-- @block:
     The root element of the document.
-    The lang="ro" attribute declares that the main language of this page is Romanian.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
     This helps accessibility tools, search engines, and automated processing systems.
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
+      The [head] contains the document metadata.
       I do not place the main visible content here; instead, I keep the information
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
@@ -84,7 +84,7 @@
     -->
 
 
-    <meta property="og:title" content="D::0dy55ey | Jurnal CSS" />
+    <meta property="og:title" content="D::0dy55ey | CSS Log" />
     <!-- @meta:
       Open Graph title.
       When the page link is shared on social networks or portfolio sites,
@@ -93,7 +93,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS-ului — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="A structured log documenting the exploration of CSS — layout systems, responsive design, animations, cinematic styling, and visual design patterns."
     />
     <!-- @meta:
       Open Graph description.
@@ -108,17 +108,17 @@
       For journal entries, I could use "article" instead depending on the content nature.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/frontend/css-log.html" />
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/frontend/css-log.html" />
     <!-- @meta:
       Open Graph canonical URL.
       When the page is shared, this tells platforms the exact, permanent address of this page.
       It prevents confusion if the same content is accessible from multiple URLs.
     -->
 
-    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:locale" content="en_US" />
     <!-- @meta:
       Open Graph locale.
-      I set it to ro_RO for the Romanian version of the page.
+      I set it to en_US for the English version of the page.
       This tells social platforms and aggregators the language and regional variant of the content.
     -->
 
@@ -150,7 +150,7 @@
       a large image preview alongside the title and description.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/frontend/css-log.html" />
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/frontend/css-log.html" />
     <!-- @meta:
       Canonical link.
       I tell search engines that this URL is the authoritative version of the page.
@@ -180,14 +180,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      I start the connection to the font server early.
-      The goal is to reduce latency when loading external resources.
+      Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      I preconnect to the domain that serves the actual font files.
-      crossorigin is required for external resources served from another origin.
+      Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
     -->
 
     <link
@@ -195,8 +193,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      I load the Space Grotesk font from Google Fonts.
-      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
     -->
 
     <link rel="stylesheet" href="../style.css" />
@@ -205,113 +202,598 @@
       The path is relative to the current file location.
     -->
   </head>
+  <!-- @block: BODY — THE VISIBLE DECK
+    The [body] element is where every visible element of the page lives.
+    Everything the traveller sees — the navigation bar, the sidebar map,
+    the journal entries, the footer telemetry — is a child of this single
+    container. In the ship metaphor, the body is the main habitable deck
+    of the vessel: the space where the crew walks, reads, and interacts
+    with the ship's systems.
+    @structure:
+      The [body] is the direct child of [html]. It has no special default
+      styling by itself, but in this project it inherits the deep-space
+      background (#0a0b1e) and the Space Grotesk font from style.css.
+  -->
   <body>
+    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
+      The [nav] element semantically marks this section as the ship's
+      primary navigation interface. Wrapping the navbar in [nav] tells
+      browsers, screen readers, and search engines: "this block contains
+      the main controls for moving between the vessel's decks."
+      @structure:
+        The navbar uses flexbox (via the .navbar class) to display the
+        vessel logo on the left and the navigation command list on the
+        right, keeping the helm compact and always visible at the top.
+    -->
         <nav class="navbar">
-      <!-- @block: IDENTITATEA TERMINALULUI
-        Blocul logo afișează indicativul navei și numele secțiunii curente.
-        Este text static (nu este link) deoarece această pagină este ea însăși
-        o stație a navei; echipajul își citește aici locația.
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station
+        on the ship; the crew reads their location here.
       -->
       <div class="logo">D::0dy55ey / Jurnal CSS</div>
 
-      <!-- @block: COMENZI DE NAVIGAȚIE
-        Lista nav-links conține acțiunile principale de navigare.
-        Pe paginile secundare, se oferă o singură comandă: întoarcerea la punte.
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On secondary pages, only one command is offered: return to the bridge.
       -->
       <ul class="nav-links">
         <li>
           <a href="../index.html" class="return-btn"
             ><!-- @reason:
-              Simbolul săgeată stânga (←) funcționează ca un indiciu vizual
-              de întoarcere. "Înapoi la puntea de comandă" face legătura cu
-              index.html, puntea principală a navei-mamă.
-            -->← Înapoi la puntea de comandă</a
+              Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
+            -->← Return to Command Deck</a
           >
         </li>
       </ul>
     </nav>
 
-    <main class="main-container">
-      <section id="log-deck">
-        <header class="category-header">
-      <!-- @block:
-        Această pagină de jurnal va fi populată cu conținut specific
-        capitolului în faza activă de construcție. Momentan servește ca
-        un shell structural cu sistemele de navigație și footer deja instalate.
+    <!-- @block: MAIN CONTENT — CSS EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map) and
+      the log-content zone. The class "log-layout" applies a CSS Grid for a
+      two-column terminal interface.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — CSS EXPEDITION MAP
+        The sidebar is wrapped in an [aside] element — a semantic HTML5
+        tag that marks content as tangentially related to the main page.
+        In the ship metaphor, the sidebar is the navigator's console:
+        a secondary station that holds the expedition map rather than
+        the primary log content.
+        @concept:
+          The [aside] element is one of several semantic tags introduced
+          in HTML5. Like [nav], [header], [footer], and [article], it
+          gives meaning to the container instead of using a generic [div].
+          This helps screen readers announce the sidebar's role and
+          helps search engines understand the page structure.
       -->
+      <aside class="log-sidebar">
+        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
+          This [nav] inside the [aside] is the secondary navigation
+          system. While the top navbar returns the crew to the bridge,
+          this sidebar nav lets them jump directly to any day entry
+          within the current expedition log.
+          @structure:
+            The .sidebar-nav class applies a compact, scrollable list
+            layout distinct from the main navbar. The map-title-link
+            at the top scrolls the view back to the main header when
+            clicked.
+        -->
+        <nav class="sidebar-nav">
+          <a href="#top-deck" class="map-title-link">
+            <h4>Hartă Expediție CSS</h4>
+          </a>
+          <!-- @block: SIDEBAR LINK LIST
+            The [ul] (unordered list) holds every expedition day link.
+            Each [li] (list item) contains an [a] (anchor) that points
+            to a specific day's [article] via its id attribute — this
+            is called a "fragment link" because the # symbol tells the
+            browser to scroll to the element with that id.
+            @reason:
+              Fragment links (href="#css-day01") create a table of
+              contents that lets the crew teleport directly to any
+              entry without scrolling through the entire log.
+          -->
+          <ul>
+            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
+            <li>
+              <a href="#css-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
+            </li>
+
+            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
+              The first full week covers core CSS mechanics: selectors,
+              specificity, the box model, and layout fundamentals.
+              @theme:
+                The diamond symbol (&#9672;) next to each day number
+                acts as a bullet marker — a tiny visual cue that helps
+                the eye scan down the list quickly.
+            -->
+            <li class="week-label">
+              <a href="#css-sector-01" class="sidebar-link">S01</a>
+            </li>
+            <li><a href="#css-day01" class="sidebar-link">Day 01 &#9672;</a></li>
+            <li><a href="#css-day02" class="sidebar-link">Day 02 &#9672;</a></li>
+            <li><a href="#css-day03" class="sidebar-link">Day 03 &#9672;</a></li>
+            <li><a href="#css-day04" class="sidebar-link">Day 04 &#9672;</a></li>
+            <li><a href="#css-day05" class="sidebar-link">Day 05 &#9672;</a></li>
+            <li><a href="#css-day06" class="sidebar-link">Day 06 &#9672;</a></li>
+            <li><a href="#css-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+
+            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
+              The second week transitions from basic layout to modern
+              CSS layout engines: Flexbox and CSS Grid.
+            -->
+            <li class="week-label">
+              <a href="#css-sector-02" class="sidebar-link">S02</a>
+            </li>
+            <li><a href="#css-day08" class="sidebar-link">Day 08 &#9672;</a></li>
+            <li><a href="#css-day09" class="sidebar-link">Day 09 &#9672;</a></li>
+            <li><a href="#css-day10" class="sidebar-link">Day 10 &#9672;</a></li>
+            <li><a href="#css-day11" class="sidebar-link">Day 11 &#9672;</a></li>
+            <li><a href="#css-day12" class="sidebar-link">Day 12 &#9672;</a></li>
+            <li><a href="#css-day13" class="sidebar-link">Day 13 &#9672;</a></li>
+            <li><a href="#css-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+
+            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
+              The third week introduces responsive design principles,
+              media queries, transitions, and keyframe animations.
+            -->
+            <li class="week-label">
+              <a href="#css-sector-03" class="sidebar-link">S03</a>
+            </li>
+            <li><a href="#css-day15" class="sidebar-link">Day 15 &#9672;</a></li>
+            <li><a href="#css-day16" class="sidebar-link">Day 16 &#9672;</a></li>
+            <li><a href="#css-day17" class="sidebar-link">Day 17 &#9672;</a></li>
+            <li><a href="#css-day18" class="sidebar-link">Day 18 &#9672;</a></li>
+            <li><a href="#css-day19" class="sidebar-link">Day 19 &#9672;</a></li>
+            <li><a href="#css-day20" class="sidebar-link">Day 20 &#9672;</a></li>
+            <li><a href="#css-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+
+            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
+              The final week covers advanced selectors, custom
+              properties, blend modes, filters, and the cinematic
+              visual language that defines this project's aesthetic.
+            -->
+            <li class="week-label">
+              <a href="#css-sector-04" class="sidebar-link">S04</a>
+            </li>
+            <li><a href="#css-day22" class="sidebar-link">Day 22 &#9672;</a></li>
+            <li><a href="#css-day23" class="sidebar-link">Day 23 &#9672;</a></li>
+            <li><a href="#css-day24" class="sidebar-link">Day 24 &#9672;</a></li>
+            <li><a href="#css-day25" class="sidebar-link">Day 25 &#9672;</a></li>
+            <li><a href="#css-day26" class="sidebar-link">Day 26 &#9672;</a></li>
+            <li><a href="#css-day27" class="sidebar-link">Day 27 &#9672;</a></li>
+            <li><a href="#css-day28" class="sidebar-link">Day 28 &#9672;</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE
+        The [section] element is a semantic container that groups related
+        content under a common theme. Here it wraps the entire expedition
+        log — the header, sector announcements, and day articles. Unlike
+        [article] (which holds self-contained entries), [section] groups
+        them into a coherent chapter.
+        @structure:
+          The .log-content class works together with .log-sidebar inside
+          the .log-layout grid. The sidebar occupies the left column
+          (about 250px), and .log-content fills the remaining space on
+          the right, creating the classic two-panel terminal interface.
+      -->
+      <section class="log-content">
+        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
+          The [header] element inside the log content acts as the
+          chapter title card. While the [header] in a document usually
+          contains navigation or introductory content, here it is a
+          simple banner that sets the thematic tone for the log.
+          @theme:
+            The .category-header class applies a bottom border glow
+            effect and centers the title text, visually marking this
+            as the start of a new expedition chapter.
+        -->
+        <header id="top-deck" class="category-header">
+          <h2>The Gravitational Fields of Aesthetic</h2>
+          <p>
+            Gazing into the visual energy, layout matrix, and stylistic vectors
+            of the void.
+          </p>
+          <!-- @theme:
+            "Gravitational Fields of Aesthetic" frames CSS as a physics
+            force that warps the raw HTML skeleton into a styled interface.
+          -->
         </header>
+
+        <!-- ===== AIRLOCK (WEEK 00) ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — AIRLOCK / INITIATION
+          Each sector opens with a .sector-announcement that acts as a
+          dimensional gateway. The ENTER AIRLOCK label signals the reader
+          is crossing into a new cluster of days. The h2 names the sector theme.
+          @concept:
+            The airlock metaphor frames each sector as a sealed compartment
+            that the crew must intentionally enter — a ritual transition
+            between knowledge domains.
+        -->
+        <div id="css-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>Initiation</h2>
+        </div>
+
+        <!-- @block: DAY 00 — THE MERCURIAL SEA :: INITIATION
+          The first day entry. This article establishes the log-entry pattern
+          that repeats across all days: a numbered title, a narrative paragraph
+          explaining the day's concept, a mission-status telemetry readout,
+          and a note-terminal for the captain's personal annotations.
+          @theme:
+            The .meta-title span uses a phosphor-green colour to distinguish
+            the thematic subtitle from the day number, creating a visual
+            hierarchy that guides the eye from the index (Day NN) to the
+            concept (The Mercurial Sea).
+        -->
+        <article id="css-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Mercurial Sea :: Initiation</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut omnis
+              similique eius laborum, alias labore minima id, assumenda
+              inventore facere odit corrupti, vitae quisquam itaque ex tempora
+              mollitia quaerat doloribus.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            The .mission-status box displays a real-time telemetry readout
+            using the same phosphor-green monospace style as the cockpit HUD.
+            The CSS typing animation reveals the status text character by
+            character on page load.
+          -->
+          <div class="mission-status">
+            <p>Status: Lorem</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            The .note-terminal provides a persistent textarea where the
+            captain can record personal observations. The Save button calls
+            the saveNote() function from script.js (MECANISM 04), which
+            stores the content in localStorage.
+            @bridge:
+              The saveNote() function is defined in en/script.js under
+              MECANISM 04 — Persistent Notes Terminal. It uses the
+              textarea's id as the localStorage key.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day00"
+              id="css-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 01: GALACTIC FOUNDATIONS ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — GALACTIC FOUNDATIONS
+          The first operational sector after the airlock. This sector covers
+          the core CSS mechanics — specificity, selectors, the box model,
+          and layout fundamentals — that every frontier engineer must master.
+          @theme:
+            The "Entering Sector 01" label uses uppercase monospace text to
+            mimic a spaceship's sector-entry announcement over the intercom.
+        -->
+        <div id="css-sector-01" class="sector-announcement">
+          <span>Entering Sector 01</span>
+          <h2>Galactic Foundations</h2>
+        </div>
+
+        <!-- @block: DAY 01 — CASCADING MATRIX & SELECTORS
+          The first real content day. The narrative introduces CSS as a
+          "gravitational grid" — a force-like layer that sits atop the
+          HTML skeleton and controls how elements appear.
+          @concept:
+            Specificity is introduced as a "gravity well": inline > ID >
+            class > element. Understanding this hierarchy is the first
+            survival skill for any CSS engineer.
+        -->
+        <article id="css-day01" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title">
+              Stylistic Gravity :: The Cascading Matrix & Selectors
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Today the visual transmission started. Cascading Style Sheets
+              operate like a gravitational grid layered directly on top of the
+              physical HTML skeleton. Understanding specificity weights and how
+              rules cascade from root elements down to individual child nodes is
+              crucial to prevent layout collisions during the voyage.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: INITIALIZING_CSS_CORE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('css-note-day01') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day01"
+              id="css-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- @block: DAY 02 — BOX MODEL
+          The second day covers the CSS Box Model — the foundational layout
+          concept that governs how every element's dimensions are calculated.
+          @concept:
+            The box model (content → padding → border → margin) is presented
+            as a set of "mechanical layers" surrounding each element. Mastering
+            these layers is essential for responsive design without overflow.
+        -->
+        <article id="css-day02" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title">
+              Geometric Boundaries :: Box Model Matrix
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Every element in the FrontEndScape is encapsulated within a
+              mechanical box. Manipulating paddings, rigid borders, and external
+              margins determines the physical volume an element occupies on the
+              terminal screen, preventing capsule collision on smaller
+              responsive viewports.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SCANNING_BOUNDARIES // EXTRACTION: COMPLETE</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('css-note-day02') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day02"
+              id="css-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+
+        <!-- ===== SECTOR 02: ADVANCED GRIDS & FLEXBOX ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — ADVANCED GRIDS & FLEXBOX
+          The second sector advances from foundational CSS to modern layout
+          engines: Flexbox and Grid. These modules represent the quantum leap
+          from table-based layouts to responsive, axis-aligned systems.
+          @theme:
+            The "Entering Sector 02" label signals progression — the crew
+            has passed through the foundational sector and now enters
+            intermediate-level territory.
+        -->
+        <div id="css-sector-02" class="sector-announcement">
+          <span>Entering Sector 02</span>
+          <h2>Advanced Grids & Flexbox</h2>
+        </div>
+
+        <!-- @block: DAY 08 — FLEXBOX
+          Flexbox is introduced as a "quantum alignment engine" — a
+          single-axis layout mode that distributes space and aligns content
+          dynamically without the rigid constraints of float-based layouts.
+          @concept:
+            Flexbox operates on the main/cross axis paradigm. Justify-content
+            controls the main axis, align-items controls the cross axis.
+            This is the first major departure from the block layout model.
+        -->
+        <article id="css-day08" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 08</span>
+            <span class="meta-title">
+              Quantum Alignment :: Flexbox Core Mechanics
+            </span>
+          </h3>
+
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Deploying the Flexbox Engine allows the interface to manipulate
+              items along a single axis dynamically. Forcing child elements to
+              stand in rows, centering their physical forms axially, or
+              stretching them into rigid columns resolves the responsive layout
+              gaps observed during deep-space operations.
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: ALIGNING_FLEX_AXIS // STABILITY: MAXIMUM</p>
+          </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('css-note-day08') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="css-note-day08"
+              id="css-note-day08"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('css-note-day08')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>
+      <!-- @structure:
+        [/section] closes the log-content zone. Everything above it —
+        from the category-header through the last day article — belongs
+        to this one section.
+      -->
       </section>
+    <!-- @structure:
+      [/main] closes the main-container. The [main] element wraps the
+      primary content of the page — in this case, the sidebar and the
+      log-content columns. There should be only one [main] per page.
+    -->
     </main>
 
-            <!-- @block:
-      Deschid aici blocul de footer. Aceasta este secțiunea de încheiere
-      a fiecărei pagini din proiect. Plasez în interior fluxul de date de
-      telemetrie: sectorul orbital curent, coordonatele spațio-temporale,
-      o legătură către bibliografie și semnătura căpitanului.
+    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
+      The [footer] element marks the closing section of the page. In
+      the ship metaphor, the footer is the aft station — less visible
+      than the helm, but holding critical systems: the star charts,
+      the transmission log, the language switch, and the captain's
+      signature.
+      @structure:
+        The .footer class applies a dark, bordered container at the
+        bottom of the viewport. It uses a column layout for the links
+        and telemetry data, keeping everything compact and readable.
     -->
     <footer class="footer">
       <!-- @block: SECONDARY COMMAND CONSOLE
         The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It now houses the Star Charts (bibliography),
-        Carta de Astronavigație (transmisiunea), and the language
-        toggle between the English and Romanian versions of the project.
+        ship-systems panel. It houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission), and the language toggle
+        between the English and Romanian versions of the project.
         @concept:
-          The footer is the ship's auxiliary navigation station - less
+          The footer is the ship's auxiliary navigation station — less
           prominent than the HUD overlay, but essential for systems that
           do not belong to a specific volume: the founding manifesto, the
           reference archive, and the language switch.
+      -->
+      <!-- @block: FOOTER LINKS LIST
+        The [ul] here groups three [li] items: the bibliography link,
+        the transmission page, and the language toggle. Using a list
+        is semantically correct because these are a collection of
+        related navigation destinations.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#frontend-refs" target="_blank">Arhivele Adâncului — Frontend Core</a>
+          <a href="../bibliography.html#frontend-refs" target="_blank">Deep Space Archives — Frontend Core</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../transmission.html">Carta de Astronavigație</a>
+          <a href="../transmission.html">The Astrogation Charter</a>
         </li>
         <!-- @bridge: Language toggle between EN and RO subprojects -->
         <li>
           <!-- @reason:
-            The language toggle lets the crew switch between the English and
-            Romanian versions of the project. The current language is marked
-            with the .lang-toggle-active class (phosphor green highlight).
-            The separator pipe (|) visually divides the two options.
+            Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
           -->
-          <a href="../../en/frontend/css-log.html" class="">EN</a>
+          <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/frontend/css-log.html" class="lang-toggle-active">RO</a>
+          <a href="../../ro/frontend/css-log.html" class="">RO</a>
         </li>
       </ul>
-<p>
+      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
+        The first telemetry line declares which expedition sector the
+        vessel is currently orbiting (FRONTEND_EXPEDITION) and the
+        system status (ONLINE). The CSS typing animation reveals this
+        text character by character when the page loads, simulating
+        a vintage mission control display.
+        @theme:
+          The ONLINE status is wrapped in a [span]
+          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
+          This phosphor-green aesthetic directly references 1970s NASA
+          control terminals, where green monochrome displays scrolled
+          telemetry data in real time.
+      -->
+      <p>
         SYS_ORBIT: FRONTEND_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
       </p>
 
       <!-- @structure:
-        Scriu a doua linie de telemetrie. Ancora proiectul digital în spațiu
-        și timp real.
+        I write the second telemetry data line. It anchors the project in real
+        physical space and time. The coordinates point to the captain's location,
+        and the date marks when this footer was last updated.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
+        -->
       </p>
 
       <!-- @structure:
-        Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect.
+        I write the final line of the footer. It declares who created and owns
+        this project. The copyright symbol followed by the year and the captain's
+        name marks the intellectual ownership of the content.
       -->
       <p class="copyright">
-        &copy; 2026 | D::0dy55ey de
+        &copy; 2026 | D::0dy55ey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          I wrap the captain's name in a [span] with the class .vessel-sig.
+          This class applies the nebula-pink color (#ff007f) with an incandescent
+          text-shadow glow. The magenta signature acts as the captain's unique
+          identifier across all decks of the ship.
+        -->
       </p>
     </footer>
 
+    <!-- @block: JAVASCRIPT LOADER
+      The [script] tag loads the ship's control systems — a single
+      JavaScript file (script.js) that lives one directory above this
+      page. This file contains all the interactive mechanisms:
+      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
+      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
+      and the sidebar search filter.
+      @path:
+        The src="../script.js" attribute tells the browser to fetch
+        en/script.js relative to this page's location
+        (en/frontend/css-log.html → en/script.js).
+      @reason:
+        Placing the [script] tag just before [/body] (rather than in
+        [head]) ensures the HTML content loads and renders before the
+        JavaScript executes. This is called "deferred loading" and it
+        prevents the script from blocking the visual rendering of the
+        page.
+    -->
     <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] closes the visible deck. Everything inside the [body] —
+    navbar, sidebar, log entries, footer — is now finished rendering.
+    The browser stops painting the page here.
+  -->
   </body>
-  <!-- @bridge:
+  <!-- @structure:
+    [/html] closes the root element. The document is complete. The
+    browser has finished constructing the DOM (Document Object Model)
+    and the page is fully loaded. What the traveller sees now is the
+    result of the HTML structure combined with the CSS styles from
+    style.css and the interactive behaviour from script.js.
+    @bridge:
       For the full technical index of HTML tags used in this project,
       see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
   -->
