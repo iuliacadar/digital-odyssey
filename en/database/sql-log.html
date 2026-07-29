@@ -19,7 +19,7 @@
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
+      The [head] contains the document metadata.
       I do not place the main visible content here; instead, I keep the information
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
@@ -205,8 +205,30 @@
       The path is relative to the current file location.
     -->
   </head>
+  <!-- @block: BODY — THE VISIBLE DECK
+    The [body] element is where every visible element of the page lives.
+    Everything the traveller sees — the navigation bar, the sidebar map,
+    the journal entries, the footer telemetry — is a child of this single
+    container. In the ship metaphor, the body is the main habitable deck
+    of the vessel: the space where the crew walks, reads, and interacts
+    with the ship's systems.
+    @structure:
+      The [body] is the direct child of [html]. It has no special default
+      styling by itself, but in this project it inherits the deep-space
+      background (#0a0b1e) and the Space Grotesk font from style.css.
+  -->
   <body>
-        <nav class="navbar">
+    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
+      The [nav] element semantically marks this section as the ship's
+      primary navigation interface. Wrapping the navbar in [nav] tells
+      browsers, screen readers, and search engines: "this block contains
+      the main controls for moving between the vessel's decks."
+      @structure:
+        The navbar uses flexbox (via the .navbar class) to display the
+        vessel logo on the left and the navigation command list on the
+        right, keeping the helm compact and always visible at the top.
+    -->
+    <nav class="navbar">
       <!-- @block: TERMINAL IDENTITY
         The logo block displays the vessel callsign and the current section name.
         It is static text (not a link) because this page is itself a station
@@ -237,16 +259,50 @@
       "log-layout" applies a CSS Grid with two columns.
     -->
     <main class="main-container log-layout">
-      <!-- @block: SIDEBAR — SQL EXPEDITION MAP -->
+      <!-- @block: SIDEBAR — SQL EXPEDITION MAP
+        The sidebar is wrapped in an [aside] element — a semantic HTML5
+        tag that marks content as tangentially related to the main page.
+        In the ship metaphor, the sidebar is the navigator's console:
+        a secondary station that holds the expedition map rather than
+        the primary log content.
+        @concept:
+          The [aside] element is one of several semantic tags introduced
+          in HTML5. Like [nav], [header], [footer], and [article], it
+          gives meaning to the container instead of using a generic [div].
+          This helps screen readers announce the sidebar's role and
+          helps search engines understand the page structure.
+      -->
       <aside class="log-sidebar">
+        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
+          This [nav] inside the [aside] is the secondary navigation
+          system. While the top navbar returns the crew to the bridge,
+          this sidebar nav lets them jump directly to any day entry
+          within the current expedition log.
+          @structure:
+            The .sidebar-nav class applies a compact, scrollable list
+            layout distinct from the main navbar. The map-title-link
+            at the top scrolls the view back to the main header when
+            clicked.
+        -->
         <nav class="sidebar-nav">
           <a href="#top-deck" class="map-title-link">
             <h4>SQL Expedition Map</h4>
           </a>
+          <!-- @block: SIDEBAR LINK LIST
+            The [ul] (unordered list) holds every expedition day link.
+            Each [li] (list item) contains an [a] (anchor) that points
+            to a specific day's [article] via its id attribute — this
+            is called a "fragment link" because the # symbol tells the
+            browser to scroll to the element with that id.
+            @reason:
+              Fragment links (href="#sql-day01") create a table of
+              contents that lets the crew teleport directly to any
+              entry without scrolling through the entire log.
+          -->
           <ul>
             <li><a href="#sql-day00">Day 00 &#9672; Intro</a></li>
 
-            <!-- WEEK 1 -->
+            <!-- @block: WEEK 01 — SECTOR 01: FOUNDATIONS OF THE RELATIONAL VOID -->
             <li class="week-label">
               <a href="#sql-sector-01" class="sidebar-link">S01</a>
             </li>
@@ -258,7 +314,7 @@
             <li><a href="#sql-day06" class="sidebar-link">Day 06 &#9672;</a></li>
             <li><a href="#sql-day07" class="sidebar-link">Day 07 &#9672;</a></li>
 
-            <!-- WEEK 2 -->
+            <!-- @block: WEEK 02 — SECTOR 02: SCHEMA DESIGN & RELATIONSHIPS -->
             <li class="week-label">
               <a href="#sql-sector-02" class="sidebar-link">S02</a>
             </li>
@@ -270,7 +326,7 @@
             <li><a href="#sql-day13" class="sidebar-link">Day 13 &#9672;</a></li>
             <li><a href="#sql-day14" class="sidebar-link">Day 14 &#9672;</a></li>
 
-            <!-- WEEK 3 -->
+            <!-- @block: WEEK 03 — SECTOR 03: ADVANCED QUERY PATTERNS -->
             <li class="week-label">
               <a href="#sql-sector-03" class="sidebar-link">S03</a>
             </li>
@@ -282,7 +338,7 @@
             <li><a href="#sql-day20" class="sidebar-link">Day 20 &#9672;</a></li>
             <li><a href="#sql-day21" class="sidebar-link">Day 21 &#9672;</a></li>
 
-            <!-- WEEK 4 -->
+            <!-- @block: WEEK 04 — SECTOR 04 -->
             <li class="week-label">
               <a href="#sql-sector-04" class="sidebar-link">S04</a>
             </li>
@@ -294,7 +350,7 @@
             <li><a href="#sql-day27" class="sidebar-link">Day 27 &#9672;</a></li>
             <li><a href="#sql-day28" class="sidebar-link">Day 28 &#9672;</a></li>
 
-            <!-- WEEK 5 -->
+            <!-- @block: WEEK 05 — SECTOR 05 -->
             <li class="week-label">
               <a href="#sql-sector-05" class="sidebar-link">S05</a>
             </li>
@@ -304,8 +360,29 @@
         </nav>
       </aside>
 
-      <!-- @block: LOG CONTENT ZONE -->
+      <!-- @block: LOG CONTENT ZONE
+        The [section] element is a semantic container that groups related
+        content under a common theme. Here it wraps the entire expedition
+        log — the header, sector announcements, and day articles. Unlike
+        [article] (which holds self-contained entries), [section] groups
+        them into a coherent chapter.
+        @structure:
+          The .log-content class works together with .log-sidebar inside
+          the .log-layout grid. The sidebar occupies the left column
+          (about 250px), and .log-content fills the remaining space on
+          the right, creating the classic two-panel terminal interface.
+      -->
       <section class="log-content">
+        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
+          The [header] element inside the log content acts as the
+          chapter title card. While the [header] in a document usually
+          contains navigation or introductory content, here it is a
+          simple banner that sets the thematic tone for the log.
+          @theme:
+            The .category-header class applies a bottom border glow
+            effect and centers the title text, visually marking this
+            as the start of a new expedition chapter.
+        -->
         <header id="top-deck" class="category-header">
           <h2>The Deep Archives: Memory of the Void</h2>
           <p>Exploring the relational void — SQL queries, schemas, and data modeling.</p>
@@ -317,18 +394,35 @@
         </header>
 
         <!-- ===== AIRLOCK (WEEK 00) ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — AIRLOCK / INITIATION
+          Each sector opens with a .sector-announcement that acts as a
+          dimensional gateway into a new cluster of days.
+          @concept:
+            The airlock metaphor frames each sector as a sealed compartment
+            that the crew must intentionally enter.
+        -->
         <div id="sql-sector-00" class="sector-announcement">
           <span>ENTER AIRLOCK</span>
           <h2>Initiation</h2>
         </div>
 
-        <!-- @block: DAY 00 — INTRO -->
+        <!-- @block: DAY 00 — THE DEEP ARCHIVES :: INITIATION
+          The first day entry establishes the log-entry pattern for the
+          SQL track: a numbered title, a narrative paragraph, a
+          mission-status telemetry readout, and a note-terminal.
+          @theme:
+            "The Deep Archives" frames the database as an abyssal storage
+            layer where data is archived in the silent darkness of the
+            digital cosmos.
+        -->
         <article id="sql-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 00</span>
             <span class="meta-title">The Deep Archives :: Initiation</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -338,9 +432,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day00') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day00"
@@ -354,18 +453,36 @@
         </article>
 
         <!-- ===== SECTOR 01 ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — FOUNDATIONS OF THE RELATIONAL VOID
+          The first operational sector covers the core SQL mechanics: tables,
+          columns, data types, SELECT queries, filtering, sorting, joins,
+          and subqueries.
+          @theme:
+            "Foundations of the Relational Void" presents the database as
+            a cosmic archive where every piece of data has its place.
+        -->
         <div id="sql-sector-01" class="sector-announcement">
           <span>Entering Sector 01</span>
           <h2>Foundations of the Relational Void</h2>
         </div>
 
-        <!-- @block: DAY 01 -->
+        <!-- @block: DAY 01 — TABLES & COLUMNS :: THE ARCHIVAL SHELVES
+          Introduces the CREATE TABLE statement and column definitions as
+          the "archival shelves" that organize data into structured rows
+          and columns.
+          @concept:
+            A table is a collection of related data organized into rows
+            (records) and columns (fields). Each column has a name and
+            a data type that constrains what values it can hold.
+        -->
         <article id="sql-day01" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 01</span>
             <span class="meta-title">Tables & Columns :: The Archival Shelves</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -375,9 +492,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day01') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day01"
@@ -390,13 +512,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 02 -->
+        <!-- @block: DAY 02 — DATA TYPES :: THE MOLECULAR STRUCTURE
+          Covers SQL data types (INT, VARCHAR, DATE, BOOLEAN, etc.) as the
+          "molecular structure" that defines what kind of matter each
+          column can contain.
+          @concept:
+            Choosing the correct data type is essential for data integrity,
+            storage efficiency, and query performance.
+        -->
         <article id="sql-day02" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 02</span>
             <span class="meta-title">Data Types :: The Molecular Structure</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -406,9 +537,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day02') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day02"
@@ -421,13 +557,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 03 -->
+        <!-- @block: DAY 03 — SELECT QUERIES :: THE RETRIEVAL SIGNAL
+          Introduces the SELECT statement as the primary "retrieval signal"
+          — the command that pulls data from the archival shelves.
+          @concept:
+            SELECT column FROM table WHERE condition is the fundamental
+            read pattern. The * wildcard selects all columns but should
+            be used sparingly in production.
+        -->
         <article id="sql-day03" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 03</span>
             <span class="meta-title">SELECT Queries :: The Retrieval Signal</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -437,9 +582,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day03') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day03"
@@ -452,13 +602,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 04 -->
+        <!-- @block: DAY 04 — WHERE CLAUSE :: THE FILTERING LENS
+          Covers the WHERE clause as the "filtering lens" that narrows
+          query results to only the records matching specific conditions.
+          @concept:
+            WHERE supports comparison operators (=, <>, >, <, LIKE, IN,
+            BETWEEN) and logical operators (AND, OR, NOT) for compound
+            filter conditions.
+        -->
         <article id="sql-day04" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 04</span>
             <span class="meta-title">WHERE Clause :: The Filtering Lens</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -468,9 +627,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day04') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day04"
@@ -483,13 +647,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 05 -->
+        <!-- @block: DAY 05 — ORDER BY & GROUP BY :: SORTING THE ARCHIVE
+          Covers the ORDER BY clause for sorting results and the GROUP BY
+          clause for aggregating records into summary rows.
+          @concept:
+            ORDER BY sorts ascending (ASC) or descending (DESC). GROUP BY
+            is typically paired with aggregate functions (COUNT, SUM, AVG,
+            MAX, MIN) to produce grouped summaries.
+        -->
         <article id="sql-day05" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 05</span>
             <span class="meta-title">ORDER BY & GROUP BY :: Sorting the Archive</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -499,9 +672,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day05') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day05"
@@ -514,13 +692,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 06 -->
+        <!-- @block: DAY 06 — JOINS :: THE BRIDGE BETWEEN ARCHIVES
+          Introduces JOIN operations (INNER, LEFT, RIGHT, FULL) as the
+          "bridges" that connect related data across multiple tables.
+          @concept:
+            JOINs combine rows from two or more tables based on a related
+            column between them. INNER JOIN returns matching rows only;
+            LEFT JOIN returns all rows from the left table plus matches.
+        -->
         <article id="sql-day06" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 06</span>
             <span class="meta-title">JOINs :: The Bridge Between Archives</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -530,9 +717,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day06') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day06"
@@ -545,13 +737,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 07 -->
+        <!-- @block: DAY 07 — SUBQUERIES :: QUERIES WITHIN QUERIES
+          Covers subqueries — queries nested inside other queries — as
+          "queries within queries" that allow multi-step data retrieval.
+          @concept:
+            Subqueries can appear in SELECT, FROM, or WHERE clauses.
+            Correlated subqueries reference the outer query and execute
+            once per row, which affects performance on large datasets.
+        -->
         <article id="sql-day07" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 07</span>
             <span class="meta-title">Subqueries :: Queries Within Queries</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -561,9 +762,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day07') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day07"
@@ -577,18 +783,35 @@
         </article>
 
         <!-- ===== SECTOR 02 ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — SCHEMA DESIGN & RELATIONSHIPS
+          The second sector advances from basic queries to database schema
+          design: primary keys, foreign keys, indexes, normalization,
+          ACID properties, and transactions.
+          @theme:
+            "Schema Design & Relationships" presents the database structure
+            as the architectural blueprint of the ship's data systems.
+        -->
         <div id="sql-sector-02" class="sector-announcement">
           <span>Entering Sector 02</span>
           <h2>Schema Design & Relationships</h2>
         </div>
 
-        <!-- @block: DAY 08 -->
+        <!-- @block: DAY 08 — PRIMARY KEYS :: THE UNIQUE IDENTIFIER
+          Introduces PRIMARY KEY constraints as the "unique identifier"
+          that distinguishes each row in a table.
+          @concept:
+            A primary key must contain unique, non-null values. A table
+            can have only one primary key, which may consist of single
+            or multiple columns (composite key).
+        -->
         <article id="sql-day08" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 08</span>
             <span class="meta-title">Primary Keys :: The Unique Identifier</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -598,9 +821,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day08') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day08"
@@ -613,13 +841,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 09 -->
+        <!-- @block: DAY 09 — FOREIGN KEYS :: THE RELATIONAL TETHER
+          Covers FOREIGN KEY constraints as the "relational tether" that
+          links tables together and enforces referential integrity.
+          @concept:
+            A foreign key in one table points to a primary key in another
+            table, creating a parent-child relationship. ON DELETE CASCADE
+            propagates deletions automatically.
+        -->
         <article id="sql-day09" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 09</span>
             <span class="meta-title">Foreign Keys :: The Relational Tether</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -629,9 +866,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status:lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day09') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day09"
@@ -644,13 +886,23 @@
           </div>
         </article>
 
-        <!-- @block: DAY 10 -->
+        <!-- @block: DAY 10 — INDEXES :: THE SEARCH ACCELERATOR
+          Introduces database indexes as "search accelerators" that speed
+          up data retrieval at the cost of additional storage and slower
+          writes.
+          @concept:
+            Indexes are lookup tables that the database engine uses to
+            find rows without scanning the entire table. They are most
+            effective on columns used in WHERE, JOIN, and ORDER BY.
+        -->
         <article id="sql-day10" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 10</span>
             <span class="meta-title">Indexes :: The Search Accelerator</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -660,9 +912,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: Lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day10') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day10"
@@ -675,13 +932,23 @@
           </div>
         </article>
 
-        <!-- @block: DAY 11 -->
+        <!-- @block: DAY 11 — NORMALIZATION :: ELIMINATING REDUNDANCY
+          Covers database normalization (1NF, 2NF, 3NF) as the process
+          of eliminating data redundancy and ensuring dependencies make
+          sense.
+          @concept:
+            Normalization reduces data duplication and improves integrity
+            by splitting large tables into smaller, related tables. Each
+            normal form addresses a specific type of redundancy.
+        -->
         <article id="sql-day11" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 11</span>
             <span class="meta-title">Normalization :: Eliminating Redundancy</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -691,9 +958,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: ipsum</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day11') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day11"
@@ -706,13 +978,23 @@
           </div>
         </article>
 
-        <!-- @block: DAY 12 -->
+        <!-- @block: DAY 12 — ACID PROPERTIES :: THE INTEGRITY COVENANT
+          Introduces ACID (Atomicity, Consistency, Isolation, Durability)
+          as the "integrity covenant" that guarantees reliable database
+          transactions.
+          @concept:
+            ACID ensures that database transactions are processed reliably.
+            Atomicity means "all or nothing" — a transaction either
+            completes fully or has no effect.
+        -->
         <article id="sql-day12" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 12</span>
             <span class="meta-title">ACID Properties :: The Integrity Covenant</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -722,9 +1004,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status:lorem ipsum</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day12') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day12"
@@ -737,13 +1024,23 @@
           </div>
         </article>
 
-        <!-- @block: DAY 13 -->
+        <!-- @block: DAY 13 — TRANSACTIONS :: THE ATOMIC OPERATION
+          Covers SQL transactions (BEGIN, COMMIT, ROLLBACK) as "atomic
+          operations" that group multiple statements into a single unit
+          of work.
+          @concept:
+            Transactions protect data integrity by ensuring that either
+            all statements succeed (COMMIT) or none take effect (ROLLBACK),
+            preventing partial updates.
+        -->
         <article id="sql-day13" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 13</span>
             <span class="meta-title">Transactions :: The Atomic Operation</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -753,9 +1050,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem ipsum</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day13') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day13"
@@ -768,13 +1070,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 14 -->
+        <!-- @block: DAY 14 — REVIEW :: RELATIONAL FOUNDATIONS
+          A review day that consolidates the relational foundations covered
+          in Sectors 01 and 02: tables, queries, joins, keys, and schema
+          design.
+          @theme:
+            The review entry serves as a "system diagnostic" — checking
+            that all previously installed knowledge modules are operational.
+        -->
         <article id="sql-day14" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 14</span>
             <span class="meta-title">Review :: Relational Foundations</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -784,9 +1095,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day14') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day14"
@@ -800,18 +1116,35 @@
         </article>
 
         <!-- ===== SECTOR 03 ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — ADVANCED QUERY PATTERNS
+          The third sector covers advanced SQL: window functions, CTEs,
+          and complex query patterns beyond the basics.
+          @theme:
+            "Advanced Query Patterns" signals that the crew is now
+            ready for sophisticated data analysis techniques.
+        -->
         <div id="sql-sector-03" class="sector-announcement">
           <span>Entering Sector 03</span>
           <h2>Advanced Query Patterns</h2>
         </div>
 
-        <!-- @block: DAY 15 -->
+        <!-- @block: DAY 15 — WINDOW FUNCTIONS :: THE ANALYTIC LENS
+          Introduces window functions (ROW_NUMBER, RANK, SUM OVER) as
+          the "analytic lens" that performs calculations across a set
+          of rows related to the current row.
+          @concept:
+            Unlike GROUP BY which collapses rows, window functions
+            retain individual rows while computing aggregate values
+            across a defined window (PARTITION BY, ORDER BY).
+        -->
         <article id="sql-day15" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 15</span>
             <span class="meta-title">Window Functions :: The Analytic Lens</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -821,9 +1154,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day15') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day15"
@@ -836,13 +1174,22 @@
           </div>
         </article>
 
-        <!-- @block: DAY 16 -->
+        <!-- @block: DAY 16 — CTES :: THE NAMED SUBQUERY
+          Covers Common Table Expressions (WITH clause) as "named subqueries"
+          that improve query readability and enable recursive queries.
+          @concept:
+            CTEs are temporary result sets that you can reference within
+            a SELECT, INSERT, UPDATE, or DELETE. They simplify complex
+            queries by breaking them into named, reusable steps.
+        -->
         <article id="sql-day16" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 16</span>
             <span class="meta-title">CTEs :: The Named Subquery</span>
           </h3>
 
+          <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -852,9 +1199,14 @@
             </p>
           </div>
 
+          <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
+          <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('sql-note-day16') is handled by MECANISM 04
+            in en/script.js — Persistent Notes Terminal via localStorage.
+          -->
           <div class="note-terminal">
             <textarea
               name="sql-note-day16"
@@ -867,25 +1219,41 @@
           </div>
         </article>
       </section>
+    <!-- @structure:
+      [/main] closes the main-container. The [main] element wraps the
+      primary content of the page — in this case, the sidebar and the
+      log-content columns. There should be only one [main] per page.
+    -->
     </main>
 
-            <!-- @block:
-      I open the footer block here. This is the closing section of every page
-      in the project. I place inside it the telemetry data stream: the current
-      sector orbit, the spatiotemporal coordinates, a link to the bibliography,
-      and the captain's signature.
+    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
+      The [footer] element marks the closing section of the page. In
+      the ship metaphor, the footer is the aft station — less visible
+      than the helm, but holding critical systems: the star charts,
+      the transmission log, the language switch, and the captain's
+      signature.
+      @structure:
+        The .footer class applies a dark, bordered container at the
+        bottom of the viewport. It uses a column layout for the links
+        and telemetry data, keeping everything compact and readable.
     -->
     <footer class="footer">
       <!-- @block: SECONDARY COMMAND CONSOLE
         The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It now houses the Star Charts (bibliography),
-        The Astrogation Charter (transmission), and the language
-        toggle between the English and Romanian versions of the project.
+        ship-systems panel. It houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission), and the language toggle
+        between the English and Romanian versions of the project.
         @concept:
-          The footer is the ship's auxiliary navigation station - less
+          The footer is the ship's auxiliary navigation station — less
           prominent than the HUD overlay, but essential for systems that
           do not belong to a specific volume: the founding manifesto, the
           reference archive, and the language switch.
+      -->
+      <!-- @block: FOOTER LINKS LIST
+        The [ul] here groups three [li] items: the bibliography link,
+        the transmission page, and the language toggle. Using a list
+        is semantically correct because these are a collection of
+        related navigation destinations.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
@@ -911,16 +1279,23 @@
           <a href="../../ro/database/sql-log.html" class="">RO</a>
         </li>
       </ul>
-<p>
+      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
+        The first telemetry line declares which expedition sector the
+        vessel is currently orbiting (DATABASE_EXPEDITION) and the
+        system status (ONLINE). The CSS typing animation reveals this
+        text character by character when the page loads, simulating
+        a vintage mission control display.
+        @theme:
+          The ONLINE status is wrapped in a [span]
+          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
+          This phosphor-green aesthetic directly references 1970s NASA
+          control terminals, where green monochrome displays scrolled
+          telemetry data in real time.
+      -->
+      <p>
         SYS_ORBIT: DATABASE_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
-        <!-- @theme:
-          I wrap the word ONLINE in a <span> with the class .telemetry-active.
-          This class applies the solar-mint green color (#a7f3d0) and adds a
-          neon text-shadow glow effect. The green phosphor color mimics the
-          look of active status indicators on 1970s NASA mission control terminals.
-        -->
       </p>
 
       <!-- @structure:
@@ -947,7 +1322,7 @@
         &copy; 2026 | D::0dy55ey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
         <!-- @theme:
-          I wrap the captain's name in a <span> with the class .vessel-sig.
+          I wrap the captain's name in a [span] with the class .vessel-sig.
           This class applies the nebula-pink color (#ff007f) with an incandescent
           text-shadow glow. The magenta signature acts as the captain's unique
           identifier across all decks of the ship.
@@ -955,6 +1330,39 @@
       </p>
     </footer>
 
+    <!-- @block: JAVASCRIPT LOADER
+      The [script] tag loads the ship's control systems — a single
+      JavaScript file (script.js) that lives one directory above this
+      page. This file contains all the interactive mechanisms:
+      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
+      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
+      and the sidebar search filter.
+      @path:
+        The src="../script.js" attribute tells the browser to fetch
+        en/script.js relative to this page's location
+        (en/database/sql-log.html → en/script.js).
+      @reason:
+        Placing the [script] tag just before [/body] (rather than in
+        [head]) ensures the HTML content loads and renders before the
+        JavaScript executes. This is called "deferred loading" and it
+        prevents the script from blocking the visual rendering of the
+        page.
+    -->
     <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] closes the visible deck. Everything inside the [body] —
+    navbar, sidebar, log entries, footer — is now finished rendering.
+    The browser stops painting the page here.
+  -->
   </body>
+  <!-- @structure:
+    [/html] closes the root element. The document is complete. The
+    browser has finished constructing the DOM (Document Object Model)
+    and the page is fully loaded. What the traveller sees now is the
+    result of the HTML structure combined with the CSS styles from
+    style.css and the interactive behaviour from script.js.
+    @bridge:
+      For the full technical index of HTML tags used in this project,
+      see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
+  -->
 </html>

@@ -2,7 +2,7 @@
   Tags legend: ./docs/legend-en.md
 -->
 <!-- @reason:
-  This document is a structured learning log for middleware. It records the study of pipeline design, request processing, error handling, and middleware patterns.
+  This document is a structured learning log for Middleware. It records the study of middleware patterns and implementation.
 -->
 
 <!doctype html>
@@ -19,7 +19,7 @@
   -->
   <head>
     <!-- @block:
-      The <head> contains the document metadata.
+      The [head] contains the document metadata.
       I do not place the main visible content here; instead, I keep the information
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
@@ -52,7 +52,7 @@
 
     <meta
       name="description"
-      content="A structured log documenting middleware patterns — request processing, error handling, logging, authentication middleware, and pipeline design."
+      content="A structured log documenting the exploration of CSS — layout systems, responsive design, animations, cinematic styling, and visual design patterns."
     />
     <!-- @meta:
       The page description.
@@ -62,7 +62,7 @@
 
     <meta
       name="keywords"
-      content="middleware, request processing, error handling, pipeline, logging, authentication, backend, D::0dy55ey"
+      content="css, layout, responsive design, animations, cinematic styling, grid, flexbox, frontend, D::0dy55ey"
     />
     <!-- @meta:
       The keywords meta tag lists the main themes of the page.
@@ -93,7 +93,7 @@
 
     <meta
       property="og:description"
-      content="A structured log documenting middleware patterns — request processing, error handling, logging, authentication middleware, and pipeline design."
+      content="A structured log documenting the exploration of CSS — layout systems, responsive design, animations, cinematic styling, and visual design patterns."
     />
     <!-- @meta:
       Open Graph description.
@@ -108,7 +108,7 @@
       For journal entries, I could use "article" instead depending on the content nature.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/backend/middlware-log.html" />
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/frontend/css-log.html" />
     <!-- @meta:
       Open Graph canonical URL.
       When the page is shared, this tells platforms the exact, permanent address of this page.
@@ -150,7 +150,7 @@
       a large image preview alongside the title and description.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/backend/middlware-log.html" />
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/frontend/css-log.html" />
     <!-- @meta:
       Canonical link.
       I tell search engines that this URL is the authoritative version of the page.
@@ -205,7 +205,29 @@
       The path is relative to the current file location.
     -->
   </head>
+  <!-- @block: BODY — THE VISIBLE DECK
+    The [body] element is where every visible element of the page lives.
+    Everything the traveller sees — the navigation bar, the sidebar map,
+    the journal entries, the footer telemetry — is a child of this single
+    container. In the ship metaphor, the body is the main habitable deck
+    of the vessel: the space where the crew walks, reads, and interacts
+    with the ship's systems.
+    @structure:
+      The [body] is the direct child of [html]. It has no special default
+      styling by itself, but in this project it inherits the deep-space
+      background (#0a0b1e) and the Space Grotesk font from style.css.
+  -->
   <body>
+    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
+      The [nav] element semantically marks this section as the ship's
+      primary navigation interface. Wrapping the navbar in [nav] tells
+      browsers, screen readers, and search engines: "this block contains
+      the main controls for moving between the vessel's decks."
+      @structure:
+        The navbar uses flexbox (via the .navbar class) to display the
+        vessel logo on the left and the navigation command list on the
+        right, keeping the helm compact and always visible at the top.
+    -->
         <nav class="navbar">
       <!-- @block: TERMINAL IDENTITY
         The logo block displays the vessel callsign and the current section name.
@@ -231,41 +253,1168 @@
       </ul>
     </nav>
 
-    <main class="main-container">
-      <section id="log-deck">
-        <header class="category-header">
-      <!-- @block:
-        This log page will be populated with chapter-specific content during
-        the active building phase. Currently it serves as a structural shell
-        with the navigation and footer systems in place.
+    <!-- @block: MAIN CONTENT — CSS EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map) and
+      the log-content zone. The class "log-layout" applies a CSS Grid for a
+      two-column terminal interface.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — CSS EXPEDITION MAP
+        The sidebar is wrapped in an [aside] element — a semantic HTML5
+        tag that marks content as tangentially related to the main page.
+        In the ship metaphor, the sidebar is the navigator's console:
+        a secondary station that holds the expedition map rather than
+        the primary log content.
+        @concept:
+          The [aside] element is one of several semantic tags introduced
+          in HTML5. Like [nav], [header], [footer], and [article], it
+          gives meaning to the container instead of using a generic [div].
+          This helps screen readers announce the sidebar's role and
+          helps search engines understand the page structure.
       -->
-        </header>
-      </section>
+      <aside class="log-sidebar">
+        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
+          This [nav] inside the [aside] is the secondary navigation
+          system. While the top navbar returns the crew to the bridge,
+          this sidebar nav lets them jump directly to any day entry
+          within the current expedition log.
+          @structure:
+            The .sidebar-nav class applies a compact, scrollable list
+            layout distinct from the main navbar. The map-title-link
+            at the top scrolls the view back to the main header when
+            clicked.
+        -->
+        <nav class="sidebar-nav">
+          <a href="#top-deck" class="map-title-link">
+            <h4>Middleware Expedition Map</h4>
+          </a>
+          <!-- @block: SIDEBAR LINK LIST
+            The [ul] (unordered list) holds every expedition day link.
+            Each [li] (list item) contains an [a] (anchor) that points
+            to a specific day's [article] via its id attribute — this
+            is called a "fragment link" because the # symbol tells the
+            browser to scroll to the element with that id.
+            @reason:
+              Fragment links (href="#middlware-day01") create a table of
+              contents that lets the crew teleport directly to any
+              entry without scrolling through the entire log.
+          -->
+          <ul>
+            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
+            <li>
+              <a href="#middlware-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
+            </li>
+
+            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
+              The first full week covers core CSS mechanics: selectors,
+              specificity, the box model, and layout fundamentals.
+              @theme:
+                The diamond symbol (&#9672;) next to each day number
+                acts as a bullet marker — a tiny visual cue that helps
+                the eye scan down the list quickly.
+            -->
+            <li class="week-label">
+              <a href="#middlware-sector-01" class="sidebar-link">S01</a>
+            </li>
+            <li><a href="#middlware-day01" class="sidebar-link">Day 01 &#9672;</a></li>
+            <li><a href="#middlware-day02" class="sidebar-link">Day 02 &#9672;</a></li>
+            <li><a href="#middlware-day03" class="sidebar-link">Day 03 &#9672;</a></li>
+            <li><a href="#middlware-day04" class="sidebar-link">Day 04 &#9672;</a></li>
+            <li><a href="#middlware-day05" class="sidebar-link">Day 05 &#9672;</a></li>
+            <li><a href="#middlware-day06" class="sidebar-link">Day 06 &#9672;</a></li>
+            <li><a href="#middlware-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+
+            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
+              The second week transitions from basic layout to modern
+              CSS layout engines: Flexbox and CSS Grid.
+            -->
+            <li class="week-label">
+              <a href="#middlware-sector-02" class="sidebar-link">S02</a>
+            </li>
+            <li><a href="#middlware-day08" class="sidebar-link">Day 08 &#9672;</a></li>
+            <li><a href="#middlware-day09" class="sidebar-link">Day 09 &#9672;</a></li>
+            <li><a href="#middlware-day10" class="sidebar-link">Day 10 &#9672;</a></li>
+            <li><a href="#middlware-day11" class="sidebar-link">Day 11 &#9672;</a></li>
+            <li><a href="#middlware-day12" class="sidebar-link">Day 12 &#9672;</a></li>
+            <li><a href="#middlware-day13" class="sidebar-link">Day 13 &#9672;</a></li>
+            <li><a href="#middlware-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+
+            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
+              The third week introduces responsive design principles,
+              media queries, transitions, and keyframe animations.
+            -->
+            <li class="week-label">
+              <a href="#middlware-sector-03" class="sidebar-link">S03</a>
+            </li>
+            <li><a href="#middlware-day15" class="sidebar-link">Day 15 &#9672;</a></li>
+            <li><a href="#middlware-day16" class="sidebar-link">Day 16 &#9672;</a></li>
+            <li><a href="#middlware-day17" class="sidebar-link">Day 17 &#9672;</a></li>
+            <li><a href="#middlware-day18" class="sidebar-link">Day 18 &#9672;</a></li>
+            <li><a href="#middlware-day19" class="sidebar-link">Day 19 &#9672;</a></li>
+            <li><a href="#middlware-day20" class="sidebar-link">Day 20 &#9672;</a></li>
+            <li><a href="#middlware-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+
+            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
+              The final week covers advanced selectors, custom
+              properties, blend modes, filters, and the cinematic
+              visual language that defines this project's aesthetic.
+            -->
+            <li class="week-label">
+              <a href="#middlware-sector-04" class="sidebar-link">S04</a>
+            </li>
+            <li><a href="#middlware-day22" class="sidebar-link">Day 22 &#9672;</a></li>
+            <li><a href="#middlware-day23" class="sidebar-link">Day 23 &#9672;</a></li>
+            <li><a href="#middlware-day24" class="sidebar-link">Day 24 &#9672;</a></li>
+            <li><a href="#middlware-day25" class="sidebar-link">Day 25 &#9672;</a></li>
+            <li><a href="#middlware-day26" class="sidebar-link">Day 26 &#9672;</a></li>
+            <li><a href="#middlware-day27" class="sidebar-link">Day 27 &#9672;</a></li>
+            <li><a href="#middlware-day28" class="sidebar-link">Day 28 &#9672;</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE
+        The [section] element is a semantic container that groups related
+        content under a common theme. Here it wraps the entire expedition
+        log — the header, sector announcements, and day articles. Unlike
+        [article] (which holds self-contained entries), [section] groups
+        them into a coherent chapter.
+        @structure:
+          The .log-content class works together with .log-sidebar inside
+          the .log-layout grid. The sidebar occupies the left column
+          (about 250px), and .log-content fills the remaining space on
+          the right, creating the classic two-panel terminal interface.
+      -->
+      <section class="log-content">        <!-- @block: CATEGORY HEADER - THE EXPEDITION TITLE -->
+        <header id="top-deck" class="category-header">
+          <h2>The Middleware Expedition</h2>
+          <p>
+            Charting the principles, patterns, and practices of Middleware.
+          </p>
+        </header>        <!-- ===== SECTOR 00: The Pipeline ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — The Pipeline -->
+        <div id="middlware-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>The Pipeline</h2>
+        </div>        <!-- @block: DAY 00 — The Pipeline :: Initiation -->
+        <article id="middlware-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Pipeline :: Initiation</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: INITIALIZING_MIDDLEWARE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day00') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day00"
+              id="middlware-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- ===== SECTOR 01: Middleware Fundamentals ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Middleware Fundamentals -->
+        <div id="middlware-sector-01" class="sector-announcement">
+          <span>Entering Sector 1</span>
+          <h2>Middleware Fundamentals</h2>
+        </div>        <!-- @block: DAY 01 — What is Middleware :: Pipeline Pattern -->
+        <article id="middlware-day01" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title"> What is Middleware :: Pipeline Pattern</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day01') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day01"
+              id="middlware-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 02 — Express Middleware :: Next Function -->
+        <article id="middlware-day02" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title"> Express Middleware :: Next Function</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day02') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day02"
+              id="middlware-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 03 — Built-in Middleware :: Static & JSON -->
+        <article id="middlware-day03" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 03</span>
+            <span class="meta-title"> Built-in Middleware :: Static & JSON</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day03') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day03"
+              id="middlware-note-day03"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day03')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 04 — Third-Party Middleware :: Morgan & Helmet -->
+        <article id="middlware-day04" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 04</span>
+            <span class="meta-title"> Third-Party Middleware :: Morgan & Helmet</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day04') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day04"
+              id="middlware-note-day04"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day04')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 05 — Error-Handling Middleware :: Centralized Errors -->
+        <article id="middlware-day05" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 05</span>
+            <span class="meta-title"> Error-Handling Middleware :: Centralized Errors</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day05') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day05"
+              id="middlware-note-day05"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day05')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 06 — Middleware Order :: Execution Sequence -->
+        <article id="middlware-day06" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 06</span>
+            <span class="meta-title"> Middleware Order :: Execution Sequence</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day06') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day06"
+              id="middlware-note-day06"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day06')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 07 — Review :: Middleware Fundamentals -->
+        <article id="middlware-day07" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 07</span>
+            <span class="meta-title"> Review :: Middleware Fundamentals</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day07') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day07"
+              id="middlware-note-day07"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day07')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- ===== SECTOR 02: Custom Middleware ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Custom Middleware -->
+        <div id="middlware-sector-02" class="sector-announcement">
+          <span>Entering Sector 2</span>
+          <h2>Custom Middleware</h2>
+        </div>        <!-- @block: DAY 08 — Logging Middleware :: Custom Logger -->
+        <article id="middlware-day08" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 08</span>
+            <span class="meta-title"> Logging Middleware :: Custom Logger</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day08') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day08"
+              id="middlware-note-day08"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day08')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 09 — Auth Middleware :: Token Verification -->
+        <article id="middlware-day09" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 09</span>
+            <span class="meta-title"> Auth Middleware :: Token Verification</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day09') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day09"
+              id="middlware-note-day09"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day09')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 10 — Rate Limiting Middleware :: Throttling -->
+        <article id="middlware-day10" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 10</span>
+            <span class="meta-title"> Rate Limiting Middleware :: Throttling</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day10') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day10"
+              id="middlware-note-day10"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day10')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 11 — Validation Middleware :: Input Checking -->
+        <article id="middlware-day11" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 11</span>
+            <span class="meta-title"> Validation Middleware :: Input Checking</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day11') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day11"
+              id="middlware-note-day11"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day11')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 12 — CORS Middleware :: Cross-Origin Requests -->
+        <article id="middlware-day12" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 12</span>
+            <span class="meta-title"> CORS Middleware :: Cross-Origin Requests</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day12') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day12"
+              id="middlware-note-day12"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day12')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 13 — Cache Middleware :: Response Caching -->
+        <article id="middlware-day13" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 13</span>
+            <span class="meta-title"> Cache Middleware :: Response Caching</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day13') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day13"
+              id="middlware-note-day13"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day13')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 14 — Review :: Custom Middleware -->
+        <article id="middlware-day14" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 14</span>
+            <span class="meta-title"> Review :: Custom Middleware</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day14') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day14"
+              id="middlware-note-day14"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day14')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- ===== SECTOR 03: Advanced Middleware Patterns ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Advanced Middleware Patterns -->
+        <div id="middlware-sector-03" class="sector-announcement">
+          <span>Entering Sector 3</span>
+          <h2>Advanced Middleware Patterns</h2>
+        </div>        <!-- @block: DAY 15 — Async Middleware :: Promise Handling -->
+        <article id="middlware-day15" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 15</span>
+            <span class="meta-title"> Async Middleware :: Promise Handling</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day15') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day15"
+              id="middlware-note-day15"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day15')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 16 — Conditional Middleware :: Route-Specific -->
+        <article id="middlware-day16" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 16</span>
+            <span class="meta-title"> Conditional Middleware :: Route-Specific</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day16') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day16"
+              id="middlware-note-day16"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day16')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 17 — Middleware Composition :: Chaining -->
+        <article id="middlware-day17" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 17</span>
+            <span class="meta-title"> Middleware Composition :: Chaining</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day17') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day17"
+              id="middlware-note-day17"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day17')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 18 — Sub-Stack Middleware :: Router-Level -->
+        <article id="middlware-day18" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 18</span>
+            <span class="meta-title"> Sub-Stack Middleware :: Router-Level</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day18') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day18"
+              id="middlware-note-day18"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day18')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 19 — Error Recovery :: Graceful Degradation -->
+        <article id="middlware-day19" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 19</span>
+            <span class="meta-title"> Error Recovery :: Graceful Degradation</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day19') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day19"
+              id="middlware-note-day19"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day19')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 20 — Performance Middleware :: Timing -->
+        <article id="middlware-day20" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 20</span>
+            <span class="meta-title"> Performance Middleware :: Timing</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day20') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day20"
+              id="middlware-note-day20"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day20')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 21 — Review :: Advanced Patterns -->
+        <article id="middlware-day21" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 21</span>
+            <span class="meta-title"> Review :: Advanced Patterns</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day21') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day21"
+              id="middlware-note-day21"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day21')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- ===== SECTOR 04: Middleware in Production ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Middleware in Production -->
+        <div id="middlware-sector-04" class="sector-announcement">
+          <span>Entering Sector 4</span>
+          <h2>Middleware in Production</h2>
+        </div>        <!-- @block: DAY 22 — Middleware Testing :: Unit & Integration -->
+        <article id="middlware-day22" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 22</span>
+            <span class="meta-title"> Middleware Testing :: Unit & Integration</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day22') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day22"
+              id="middlware-note-day22"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day22')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 23 — Monitoring Middleware :: Metrics -->
+        <article id="middlware-day23" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 23</span>
+            <span class="meta-title"> Monitoring Middleware :: Metrics</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day23') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day23"
+              id="middlware-note-day23"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day23')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 24 — Security Middleware :: Best Practices -->
+        <article id="middlware-day24" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 24</span>
+            <span class="meta-title"> Security Middleware :: Best Practices</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day24') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day24"
+              id="middlware-note-day24"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day24')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 25 — Middleware in Microservices :: Distributed -->
+        <article id="middlware-day25" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 25</span>
+            <span class="meta-title"> Middleware in Microservices :: Distributed</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day25') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day25"
+              id="middlware-note-day25"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day25')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 26 — Custom Frameworks :: Building Your Own -->
+        <article id="middlware-day26" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 26</span>
+            <span class="meta-title"> Custom Frameworks :: Building Your Own</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day26') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day26"
+              id="middlware-note-day26"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day26')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 27 — Middleware Anti-Patterns :: Common Mistakes -->
+        <article id="middlware-day27" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 27</span>
+            <span class="meta-title"> Middleware Anti-Patterns :: Common Mistakes</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day27') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day27"
+              id="middlware-note-day27"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day27')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article>        <!-- @block: DAY 28 — Review :: Middleware Production -->
+        <article id="middlware-day28" class="log-entry">
+          <!-- @block: ENTRY HEADER -->
+          <h3>
+            <span>Day 28</span>
+            <span class="meta-title"> Review :: Middleware Production</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+                    <!-- @block: NOTE TERMINAL
+            @bridge: saveNote('middlware-note-day28') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="middlware-note-day28"
+              id="middlware-note-day28"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('middlware-note-day28')">
+              Save Signal Extension
+            </button>
+          </div>
+        </article></section>
+    <!-- @structure:
+      [/main] closes the main-container. The [main] element wraps the
+      primary content of the page — in this case, the sidebar and the
+      log-content columns. There should be only one [main] per page.
+    -->
     </main>
 
-            <!-- @block:
-      I open the footer block here. This is the closing section of every page
-      in the project. I place inside it the telemetry data stream: the current
-      sector orbit, the spatiotemporal coordinates, a link to the bibliography,
-      and the captain's signature.
+    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
+      The [footer] element marks the closing section of the page. In
+      the ship metaphor, the footer is the aft station — less visible
+      than the helm, but holding critical systems: the star charts,
+      the transmission log, the language switch, and the captain's
+      signature.
+      @structure:
+        The .footer class applies a dark, bordered container at the
+        bottom of the viewport. It uses a column layout for the links
+        and telemetry data, keeping everything compact and readable.
     -->
     <footer class="footer">
       <!-- @block: SECONDARY COMMAND CONSOLE
         The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It now houses the Star Charts (bibliography),
-        The Astrogation Charter (transmission), and the language
-        toggle between the English and Romanian versions of the project.
+        ship-systems panel. It houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission), and the language toggle
+        between the English and Romanian versions of the project.
         @concept:
-          The footer is the ship's auxiliary navigation station - less
+          The footer is the ship's auxiliary navigation station — less
           prominent than the HUD overlay, but essential for systems that
           do not belong to a specific volume: the founding manifesto, the
           reference archive, and the language switch.
+      -->
+      <!-- @block: FOOTER LINKS LIST
+        The [ul] here groups three [li] items: the bibliography link,
+        the transmission page, and the language toggle. Using a list
+        is semantically correct because these are a collection of
+        related navigation destinations.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#backend-refs" target="_blank">Deep Space Archives — Backend Sector</a>
+          <a href="../bibliography.html#frontend-refs" target="_blank">Deep Space Archives — Frontend Core</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
@@ -280,21 +1429,28 @@
             with the .lang-toggle-active class (phosphor green highlight).
             The separator pipe (|) visually divides the two options.
           -->
-          <a href="../../en/backend/middlware-log.html" class="lang-toggle-active">EN</a>
+          <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/backend/middlware-log.html" class="">RO</a>
+          <a href="../../ro/frontend/css-log.html" class="">RO</a>
         </li>
       </ul>
-<p>
-        SYS_ORBIT: BACKEND_EXPEDITION
+      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
+        The first telemetry line declares which expedition sector the
+        vessel is currently orbiting (FRONTEND_EXPEDITION) and the
+        system status (ONLINE). The CSS typing animation reveals this
+        text character by character when the page loads, simulating
+        a vintage mission control display.
+        @theme:
+          The ONLINE status is wrapped in a [span]
+          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
+          This phosphor-green aesthetic directly references 1970s NASA
+          control terminals, where green monochrome displays scrolled
+          telemetry data in real time.
+      -->
+      <p>
+        SYS_ORBIT: FRONTEND_EXPEDITION
         // STATUS:
         <span class="telemetry-active">ONLINE</span>
-        <!-- @theme:
-          I wrap the word ONLINE in a <span> with the class .telemetry-active.
-          This class applies the solar-mint green color (#a7f3d0) and adds a
-          neon text-shadow glow effect. The green phosphor color mimics the
-          look of active status indicators on 1970s NASA mission control terminals.
-        -->
       </p>
 
       <!-- @structure:
@@ -321,7 +1477,7 @@
         &copy; 2026 | D::0dy55ey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
         <!-- @theme:
-          I wrap the captain's name in a <span> with the class .vessel-sig.
+          I wrap the captain's name in a [span] with the class .vessel-sig.
           This class applies the nebula-pink color (#ff007f) with an incandescent
           text-shadow glow. The magenta signature acts as the captain's unique
           identifier across all decks of the ship.
@@ -329,6 +1485,39 @@
       </p>
     </footer>
 
+    <!-- @block: JAVASCRIPT LOADER
+      The [script] tag loads the ship's control systems — a single
+      JavaScript file (script.js) that lives one directory above this
+      page. This file contains all the interactive mechanisms:
+      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
+      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
+      and the sidebar search filter.
+      @path:
+        The src="../script.js" attribute tells the browser to fetch
+        en/script.js relative to this page's location
+        (this page's directory → en/script.js).
+      @reason:
+        Placing the script tag just before /body (rather than in
+        head) ensures the HTML content loads and renders before the
+        JavaScript executes. This is called deferred loading and it
+        prevents the script from blocking the visual rendering of the
+        page.
+    -->
     <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] closes the visible deck. Everything inside the [body] —
+    navbar, sidebar, log entries, footer — is now finished rendering.
+    The browser stops painting the page here.
+  -->
   </body>
+  <!-- @structure:
+    [/html] closes the root element. The document is complete. The
+    browser has finished constructing the DOM (Document Object Model)
+    and the page is fully loaded. What the traveller sees now is the
+    result of the HTML structure combined with the CSS styles from
+    style.css and the interactive behaviour from script.js.
+    @bridge:
+      For the full technical index of HTML tags used in this project,
+      see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
+  -->
 </html>
