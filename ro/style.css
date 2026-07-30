@@ -3884,7 +3884,6 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .sector-announcement {
     scroll-margin-top: 120px !important; /* @line: Setează scroll-margin-top la 120px !important. Această declarație configurează proprietatea CSS corespunzătoare pentru acest element. */
-    margin-top: -30px !important; /* @layout: Spațiere externă margine superioară — suprascrie marginea moștenită pe această latură specifică. */
     padding-top: 40px !important; /* @layout: Padding sus — setează spațierea internă superioară la 40px !important. */
     margin-bottom: 80px !important; /* @layout: Margine jos — setează spațierea externă inferioară la 80px !important. */
   }
