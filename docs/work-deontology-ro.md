@@ -70,7 +70,7 @@ Exemple:
 
 Corpul commit-ului poate conține detalii sub formă de bullet-point. Tipul/scope-ul trebuie să reflecte cu acuratețe conținutul real — de exemplu, `docs:` pentru fișierele din `docs/`, `fix(en):` pentru corecturi în paginile engleze, `feat(ro):` pentru adăugiri în română.
 
-**Disciplina scopului**: Preferați commit-uri separate pe scop, în locul unui singur commit "global". Un novice care citește `git log --oneline` ar trebui să vadă instantaneu ce zonă a atins o modificare — `fix(html)`, `docs(journals)`, `docs(deontology)` — fără a deschide fiecare mesaj de commit. Un commit global `fix(all)` este mai rapid de scris, dar îngroapă urma. Acest proiect prețuiește vigilența în fața grabei grase.
+**Disciplina scopului**: Preferați commit-uri separate pe scop, în locul unui singur commit "global". Un novice care citește `git log --oneline` ar trebui să vadă instantaneu ce zonă a atins o modificare — `fix(html)`, `docs(journals)`, `docs(deontology)` — fără a deschide fiecare mesaj de commit. Un commit global `fix(all)` este mai rapid de scris, dar îngroapă urma. Acest proiect prețuiește vigilența în fața grabei.
 
 ## 8. Ecosistemul de Documentație
 

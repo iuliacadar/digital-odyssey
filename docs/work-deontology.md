@@ -70,7 +70,7 @@ Examples:
 
 The commit body may contain bullet-point details. The type/scope must accurately reflect the actual content — e.g., `docs:` for files in `docs/`, `fix(en):` for English page fixes, `feat(ro):` for Romanian additions.
 
-**Scope discipline**: Prefer separate commits per scope over a single "global" commit. A novice reading `git log --oneline` should instantly see which area a change touched — `fix(html)`, `docs(journals)`, `docs(deontology)` — without opening each commit message. A global `fix(all)` is faster to write but buries the trace. This project values vigilance over bulky hurry.
+**Scope discipline**: Prefer separate commits per scope over a single "global" commit. A novice reading `git log --oneline` should instantly see which area a change touched — `fix(html)`, `docs(journals)`, `docs(deontology)` — without opening each commit message. A global `fix(all)` is faster to write but buries the trace. This project values vigilance over haste.
 
 ## 8. Documentation Ecosystem
 
