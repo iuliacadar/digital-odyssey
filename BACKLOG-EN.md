@@ -172,6 +172,32 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 - sidebar links navigate to section anchors correctly;
 - mobile HUD swiping console works (MECANISM 06).
 
+### 010 — Customize meta-description and meta-keywords per log page
+
+**Title:** Customize meta-description and meta-keywords per log page
+
+**Description:** All generated log pages currently have CSS-themed `meta description` and `meta keywords` copy-pasted from the css-log template (e.g., "A structured log documenting the exploration of CSS..."). These must be rewritten to accurately reflect each page's actual educational content. Fix during content writing — when DAY 01 of a log page is filled, update its description and keywords at the same time.
+
+**Status:** Planned
+**Priority:** Medium
+**Phase:** Content creation (concurrent with each log page's first content pass)
+
+**Why not now:** Descriptions and keywords must match the actual content of the page. Writing accurate descriptions before content exists would mean rewriting them later. Doing both together is the efficient approach.
+
+**Affected files:** All 23 log pages in both languages (46 files) — generated pages + the 3 manual pages (css-log, html-log, sql-log) which already have topic-appropriate descriptions and are excluded.
+
+**Steps:**
+- When writing DAY 01 content for a log page, update `<meta name="description">` to reflect the page's actual subject
+- Update `<meta name="keywords">` with topic-relevant terms
+- Ensure `og:description` stays aligned with `meta description`
+- Sync changes to the RO mirror page
+
+**Completion conditions:**
+- Every log page has a unique, accurate meta description and keyword set
+- No page retains the CSS-themed placeholder text
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

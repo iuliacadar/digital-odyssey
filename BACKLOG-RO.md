@@ -172,6 +172,32 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 - linkurile din sidebar navighează corect la ancorele secțiunilor;
 - consola HUD mobilă glisantă funcționează (MECANISM 06).
 
+### 010 — Personalizare meta-description și meta-keywords per pagină de jurnal
+
+**Titlu:** Personalizare meta-description și meta-keywords per pagină de jurnal
+
+**Descriere:** Toate paginile de jurnal generate au în prezent `meta description` și `meta keywords` cu tematică CSS, copiate din șablonul css-log (de exemplu, "A structured log documenting the exploration of CSS..."). Acestea trebuie rescrise pentru a reflecta cu acuratețe conținutul educațional real al fiecărei pagini. Se vor corecta în timpul scrierii conținutului — când ZIUA 01 a unei pagini de jurnal este completată, se actualizează simultan descrierea și cuvintele cheie.
+
+**Status:** Planificat
+**Prioritate:** Medium
+**Fază:** Crearea conținutului (concomitent cu primul pasaj de conținut al fiecărei pagini de jurnal)
+
+**De ce nu acum:** Descrierile și cuvintele cheie trebuie să se potrivească cu conținutul real al paginii. Scrierea unor descrieri corecte înainte ca conținutul să existe ar însemna rescrierea lor mai târziu. Eficient este să le facem pe amândouă împreună.
+
+**Fișiere afectate:** Toate cele 23 de pagini de jurnal în ambele limbi (46 de fișiere) — paginile generate + cele 3 pagini manuale (css-log, html-log, sql-log) care au deja descrieri adecvate subiectului și sunt excluse.
+
+**Pași:**
+- La scrierea conținutului ZIUA 01 pentru o pagină de jurnal, actualizează `<meta name="description">` pentru a reflecta subiectul real al paginii
+- Actualizează `<meta name="keywords">` cu termeni relevanți subiectului
+- Asigură-te că `og:description` rămâne aliniat cu `meta description`
+- Sincronizează modificările în pagina oglindă RO
+
+**Condiții de finalizare:**
+- Fiecare pagină de jurnal are o meta descriere și un set de cuvinte cheie unice și corecte
+- Nicio pagină nu păstrează textul placeholder cu tematică CSS
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
