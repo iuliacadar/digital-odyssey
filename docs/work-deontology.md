@@ -83,6 +83,15 @@ The project maintains several document types, each serving a distinct purpose:
 
 Each document answers a different question: *What is this?*, *What happened?*, *What does this tag mean?*, and *How do we work?*.
 
+## 9. DAY 22 — The Longest Wednesday (Permanent Construction Log)
+
+DAY 22 is an unending day within the D::0dy55ey narrative. It does not progress the story — it accumulates all structural, architectural, and audit work that does not constitute a new narrative phase. Any future construction log entry (bug fixes, refactors, bulk operations, tool-choice justification, file inventory updates) appends to DAY 22 rather than creating a new day. This prevents journal bloat while maintaining complete traceability.
+
+When deciding where to log work:
+- **New narrative or learning phase** → a new DAY number (e.g., DAY 23 for content creation)
+- **Structural work, audit, or repair** → append to DAY 22
+- **Reuse of an already-documented tool/method** → no DAY 22 entry needed. Only the *introduction* of a tool (rationale, syntax, why it was chosen) belongs in DAY 22. Subsequent uses are routine operations, not new knowledge.
+
 ---
 
 *These principles are living — they evolve as the project grows. Update this file when a new convention becomes permanent.*
