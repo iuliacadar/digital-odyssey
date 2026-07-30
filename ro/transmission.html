@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<!-- @bridge:
-  Legenda etichetelor: ./docs/legend-ro.md
--->
-<!-- @reason:
-  Acest document este Carta de Astronavigație pentru versiunea în limba română.
-  Stabilește coordonatele fondatoare, directivele misiunii și principiile de
-  navigație care ghidează această navă prin cosmosul digital.
--->
 <!-- @block:
-  Declar tipul documentului ca HTML5.
-  Browserul folosește această instrucțiune pentru a interpreta pagina în modul modern.
+  <!DOCTYPE html> trebuie s? fie primul token al fiec?rui document
+  HTML, înaintea oric?rui con?inut sau comentariu, conform
+  specifica?iei. Activeaz? modul standard de randare.
 -->
 
 <html lang="ro">
@@ -25,8 +18,12 @@
       de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
-    <meta charset="UTF-8" />
+            <meta charset="UTF-8" />
     <!-- @meta:
+      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
+      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
+      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
+      ?i textul se va afi?a gre?it.
       Setez codificarea caracterelor la UTF-8.
       Aceasta asigură afișarea corectă a diacriticelor, simbolurilor speciale și caracterelor internaționale.
     -->
@@ -424,3 +421,13 @@
       see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
   -->
 </html>
+
+<!-- @bridge:
+  Legenda etichetelor: ./docs/legend-ro.md
+-->
+
+<!-- @reason:
+  Acest document este Carta de Astronavigație pentru versiunea în limba română.
+  Stabilește coordonatele fondatoare, directivele misiunii și principiile de
+  navigație care ghidează această navă prin cosmosul digital.
+-->

@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<!-- @bridge:
-  Tags legend: ./docs/legend-en.md
--->
-<!-- @reason:
-  This document is a structured learning log for JSON. It records the study of JSON data format and interchange.
--->
 <!-- @block:
-  I declare the document type as HTML5.
-  The browser uses this instruction to interpret the page in modern standards mode.
+  <!DOCTYPE html> must be the first token of every HTML document,
+  before any content or comments, per the HTML spec. It activates
+  standards mode (predictable rendering) over quirks mode.
 -->
 
 <html lang="en">
@@ -23,10 +18,15 @@
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
 
-    <meta charset="UTF-8" />
+            <meta charset="UTF-8" />
     <!-- @meta:
       I set the character encoding to UTF-8.
       This ensures that diacritics, special symbols, and international characters display correctly.
+
+      <meta charset="UTF-8" /> must be within the first 1024 bytes so
+      browsers detect UTF-8 before full parsing. If undetected, the
+      browser may fall back to a different encoding (e.g. Windows-1252),
+      breaking text.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -1520,3 +1520,11 @@
       see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
   -->
 </html>
+
+<!-- @bridge:
+  Tags legend: ./docs/legend-en.md
+-->
+
+<!-- @reason:
+  This document is a structured learning log for JSON. It records the study of JSON data format and interchange.
+-->

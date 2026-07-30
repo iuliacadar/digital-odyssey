@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<!-- @bridge:
-  Tags legend: ./docs/legend-ro.md
--->
-<!-- @reason:
-  Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
--->
 <!-- @block:
-  I declare the document type as HTML5.
-  The browser uses this instruction to interpret the page in modern standards mode.
+  <!DOCTYPE html> trebuie s? fie primul token al fiec?rui document
+  HTML, înaintea oric?rui con?inut sau comentariu, conform
+  specifica?iei. Activeaz? modul standard de randare.
 -->
 
 <html lang="ro">
@@ -23,10 +18,15 @@
       the browser needs in order to understand, prepare, and connect the page resources.
     -->
 
-    <meta charset="UTF-8" />
+            <meta charset="UTF-8" />
     <!-- @meta:
       I set the character encoding to UTF-8.
       This ensures that diacritics, special symbols, and international characters display correctly.
+
+      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
+      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
+      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
+      ?i textul se va afi?a gre?it.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -797,3 +797,11 @@
       see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
   -->
 </html>
+
+<!-- @bridge:
+  Tags legend: ./docs/legend-ro.md
+-->
+
+<!-- @reason:
+  Acest document este un jurnal structurat de învățare pentru CSS. Înregistrează explorarea sistemelor de layout, tehnicilor de design responsive, animațiilor și limbajului vizual cinematografic al proiectului.
+-->
