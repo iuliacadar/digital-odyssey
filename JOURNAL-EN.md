@@ -1631,7 +1631,7 @@ The ship is structurally complete. Every page in both languages has:
 - A telemetry footer
 - A bilingual navigation system
 
-What the pages do *not* yet have is substantive educational content. The 29 days are numbered, the sections are named, the containers are ready — but the cargo hold is mostly empty. Starting DAY 23, the work shifts from shipbuilding to voyage-making: filling each day with the actual learning material that the entire structure was built to deliver.
+What the pages do *not* yet have is substantive educational content. The 29 days are numbered, the sections are named, the containers are ready — but the cargo hold is mostly empty. Starting DAY 24, the work shifts from shipbuilding to voyage-making: filling each day with the actual learning material that the entire structure was built to deliver.
 
 The launch question remains open. My recommendation stands: launch the ship after the HTML and SQL sectors are fully stocked. Two complete chapters — one frontend, one data — demonstrate both semantic markup skill and database literacy, the two poles of a junior frontend developer's competency. The remaining chapters (CSS, JavaScript) can be added live, in orbit, as the journey continues. A ship that is being actively expanded is more interesting than a ship that waited in dry dock until everything was perfect.
 

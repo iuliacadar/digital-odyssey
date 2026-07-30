@@ -1636,7 +1636,7 @@ Nava este structural completă. Fiecare pagină în ambele limbi are:
 - Un subsol de telemetrie
 - Un sistem de navigare bilingv
 
-Ce nu au încă paginile este conținut educațional substanțial. Cele 29 de zile sunt numerotate, secțiunile sunt denumite, containerele sunt gata — dar cala este în mare parte goală. Începând cu ZIUA 23, munca se mută de la construcția navei la efectuarea călătoriei: umplerea fiecărei zile cu materialul de învățare real pentru care a fost construită întreaga structură.
+Ce nu au încă paginile este conținut educațional substanțial. Cele 29 de zile sunt numerotate, secțiunile sunt denumite, containerele sunt gata — dar cala este în mare parte goală. Începând cu ZIUA 24, munca se mută de la construcția navei la efectuarea călătoriei: umplerea fiecărei zile cu materialul de învățare real pentru care a fost construită întreaga structură.
 
 Întrebarea lansării rămâne deschisă. Recomandarea mea rămâne: lansează nava după ce sectoarele HTML și SQL sunt complet aprovizionate. Două capitole complete — unul frontend, unul pentru date — demonstrează atât abilitatea de markup semantic cât și alfabetizarea în baze de date, cei doi poli ai competenței unui dezvoltator frontend junior. Capitolele rămase (CSS, JavaScript) pot fi adăugate live, pe orbită, pe măsură ce călătoria continuă. O navă care este activ extinsă este mai interesantă decât una care a așteptat în doc uscat până când totul a fost perfect.
 
