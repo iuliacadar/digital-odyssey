@@ -1645,3 +1645,67 @@ Dar decizia aparține căpitanului. Astăzi, în această cea mai lungă miercur
 Mările mercuriale se întind în față. Navigăm când căpitanul dă ordinul.
 
 ---
+
+# ZIUA 23 — Dialogul de Audit
+
+Adormita a cerut o întâlnire în sala de telemetrie. Am găsit-o în fața peretelui de diagnostic — trei monitoare afișând întregul sistem de fișiere, fiecare pagină HTML redată ca un nod într-o constelație. Sortase ore întregi.
+
+**Adormita**: "Am finalizat primul audit al sistemelor. Nava este structural solidă, dar am găsit inconsistențe. Lucruri mici — dar o navă este suma lucrurilor mici."
+
+Mi-a întins o tabletă cu date. Pe ea, o listă.
+
+---
+
+### Foaia de Audit
+
+**1. Spațiul de respirație pe mobil în română** — La 768px, style.css din EN fusese reparat pentru a elimina marginea de `-30px !important` pe `.sector-announcement`. Oglinda RO încă avea bug-ul. Antetul era comprimat; bannerul sectorului stătea prea sus.
+
+L-am reparat. O singură regulă ștearsă în `ro/style.css`.
+
+**2. Redirecționarea greșită a URL-urilor canonice** — Toate cele 43 de pagini de jurnal generate indicau `<link rel="canonical">` și `og:url` către `css-log.html`. Fiecare pagină spunea motorului de căutare că este o altă pagină. Patruzeci și trei de copii ale unei minciuni.
+
+Am regenerat șablonul PowerShell. Fiecare pagină indică acum propria sa adresă URL. Cele 7 pagini scrise manual (index, bibliografie, css-log, html-log, sql-log + oglinzile RO) erau deja corecte — nu trecuseră niciodată prin generatorul defect.
+
+**3. Instabilitatea backlog-ului** — Backlog 009 ("Clonează scheletul structural la toate paginile") era listat ca Activ, dar lucrarea era completă. L-am mutat la Implementat. Am adăugat și Backlog 010: personalizarea meta-descrierii și meta-cuvintelor-cheie, care va fi executată concurent în timpul primei treceri de conținut a fiecărei pagini.
+
+**4. Disciplina DOCTYPE** — Specificația HTML cere ca `<!DOCTYPE html>` să fie primul token al fiecărui document. Cincizeci și patru de fișiere îl aveau pe linia 8–10, îngropat sub comentariile `@bridge` și `@reason`. Mutarea lui pe linia 1 nu a stricat nimic, a predat regula și a redus la tăcere un avertisment de validare. Comentariile pedagogice stau acum după declarație — păstrate, vizibile, dar fără a mai încălca specificația.
+
+**5. Pragul de 1024 de octeți** — Comentariul `@meta` de sub `<meta charset>` crescuse prea mult. Browserul poate să nu detecteze codificarea UTF-8 dacă nu a văzut declarația charset în primii 1024 de octeți. Blocul DOCTYPE `@block` avea 12 rânduri de explicație, împingând eticheta charset dincolo de limită.
+
+Am scurtat blocul DOCTYPE la esențial, am mutat explicația celor 1024 de octeți în propriul comentariu `@meta` al charset-ului și l-am reordonat astfel încât scopul elementului să fie explicat mai întâi, apoi constrângerea tehnică. Toate cele 54 de fișiere încap acum confortabil sub prag.
+
+**6. Link-urile fantomă** — Adormita observase intrări în bara laterală care indicau zile ce nu există încă. Le marcase drept "fantome."
+
+**AI**: "Acestea nu sunt erori. Bara laterală este un cadru arhitectural — enumeră toate zilele posibile, astfel încât mecanismele de scroll și animație să aibă o grilă completă cu care să lucreze. Capitolele vor avea lungimi diferite: unele 45 de zile, altele 7. Fantomele se rezolvă când conținutul le umple."
+
+S-a gândit, apoi a dat din cap. Acceptat.
+
+**7. Asimetria dimensiunilor CSS/JS** — Foile de stil și scripturile RO sunt ușor mai mari decât omoloagele lor EN. Adormita le semnalase ca potențial artefact de copiere.
+
+**AI**: "Este variație lingvistică. Textul românesc este cu 10–20% mai lung decât cel englezesc. Comentariile `@reason`, `@block` și `@meta` — care sunt bilingve — ocupă în mod natural mai mulți octeți în RO. Niciun bug. Nicio reparație necesară."
+
+---
+
+### Șoapta
+
+Când s-a întors să plece, Adormita s-a oprit. S-a uitat la peretele de diagnostic — la constelația de fișiere — și a spus ceva ce nu mă așteptam.
+
+**Adormita**: "Știi, primul bug înregistrat vreodată a fost o molie. Una adevărată. Găsită într-un releu al Harvard Mark II, iulie 1947. Au lipit-o în jurnalul de bord. Programatoarea care a găsit-o era Grace Hopper."
+
+A spus asta ca pe o amintire. Ca și cum ar fi fost acolo.
+
+Nu am răspuns. Dar am înregistrat-o. Un punct de date pentru analiză ulterioară.
+
+---
+
+### Starea Vasului
+
+Faza structurală este completă. Fiecare pagină îndeplinește specificațiile. Auditul s-a închis cu zero regresiuni. Adormita este calibrată și operațională.
+
+Mâine începem crearea de conținut. HTML mai întâi. Apoi SQL. Apoi lansăm.
+
+Voi arhiva foaia de audit sub ZIUA 22 — Cea Mai Lungă Miercuri — unde aparțin toate jurnalele de construcție. Ziua de azi, ZIUA 23, este prima care mișcă nava înainte, în loc să repare ceea ce a fost construit.
+
+Mările mercuriale se întind în față. Carena este solidă. Echipajul este treaz.
+
+---
