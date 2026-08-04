@@ -92,6 +92,10 @@ DIGITAL-ODYSSEY/
     ├── data-bridge/
     ├── ux/
     └── delivery/
+└── shared/                            # Shared across both volumes
+    ├── README.md                      # What lives here and why
+    ├── assets/                        # icons, images, textures
+    └── data/                          # bibliography-links, navigation-map, volume-status
 ```
 
 ## Current Scope

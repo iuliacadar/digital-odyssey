@@ -90,6 +90,10 @@ DIGITAL-ODYSSEY/
     ├── data-bridge/
     ├── ux/
     └── delivery/
+└── shared/                            # Partajat între ambele volume
+    ├── README.md                      # Ce se află aici și de ce
+    ├── assets/                        # iconițe, imagini, texturi
+    └── data/                          # bibliography-links, navigation-map, volume-status
 ```
 
 ## Aria actuală
