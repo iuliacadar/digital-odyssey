@@ -15,7 +15,6 @@ docs/notes/
 ├── README.md          <- this file, the room's signpost
 ├── _template-source-notes.md
 ├── html/              <- HTML chapter
-│   ├── README.md
 │   ├── khan-academy-intro-html-css.md
 │   └── ... (one file per source, as they are consulted)
 ├── css/               <- CSS chapter
@@ -30,7 +29,7 @@ docs/notes/
 └── delivery/          <- Deployment / Git / GitHub chapter
 ```
 
-Every chapter folder has its own `README.md` describing what it holds.
+The table below is the chapter index; the folders hold only note sheets.
 
 Rules of the sheet:
 
