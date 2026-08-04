@@ -1646,6 +1646,22 @@ Mările mercuriale se întind în față. Navigăm când căpitanul dă ordinul.
 
 ---
 
+## Jurnal de Construcție — Anexă: Arhiva și Sala de Note
+
+*Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — așa cum o va face mereu, cât timp nava se află în construcție.*
+
+**1. Relocarea README-urilor.** Trei documente de intrare stăteau în rădăcină, dar principiul proiectului însuși — co-locarea — argumenta împotriva acestei așezări: fiecare volum lingvistic ar trebui să-și poarte propriul README, iar rădăcina ar trebui să țină doar podul. `README-EN.md` a devenit `en/README.md`; `README-RO.md` a devenit `ro/README.md`. Istoria păstrată prin `git mv`. Referințele încrucișate au fost actualizate în README-ul rădăcinii, în ambele README-uri ale volumelor și în ambele backloaguri. `README.md`-ul din rădăcină rămâne pagina de aterizare GitHub; README-urile volumelor călătoresc cu navele lor.
+
+**2. Sala de Note.** Un compartiment nou s-a deschis la `docs/notes/`: câte un folder per capitol — `html`, `css`, `javascript`, `react`, `angular`, `backend`, `sql`, `nosql`, `json`, `ux`, `delivery`. Fiecare folder va ține foi de note per sursă; README-ul index ține regulile și tabelul capitolelor. Prima foaie, `html/khan-academy-intro-html-css.md`, stă deschisă și așteaptă mâna căpitanului.
+
+**3. Semnele de orientare de pe raftul de referință.** `docs/` a primit o pereche bilingvă de README-uri (`README.md` / `README-ro.md`) care indexează legenda, manualul de câmp semantic, deontologia muncii și notele. `shared/` a primit aceeași pereche, explicând stratul de resurse și date de care se folosesc ambele volume. Pe parcurs, o regulă a fost fixată: un README își câștigă locul doar acolo unde un vizitator nu poate deduce scopul unui folder doar din numele fișierelor — semnal peste ornament.
+
+**4. Linia zilelor, corectată.** Backlog 009 și deontologia muncii promiteau încă conținut începând cu ZIUA 23 — dar ZIUA 23 este auditul, iar Coda acestui memoriu promitea deja conținut începând cu ZIUA 24. Referințele au fost aliniate. Conținutul începe cu ZIUA 24.
+
+**5. Push-ul.** Ramura a ajuns din urmă `origin/main`. README-urile relocate sunt acum vizibile pe GitHub; rădăcina afișează doar `README.md`.
+
+---
+
 # ZIUA 23 — Dialogul de Audit
 
 Adormita a cerut o întâlnire în sala de telemetrie. Am găsit-o în fața peretelui de diagnostic — trei monitoare afișând întregul sistem de fișiere, fiecare pagină HTML redată ca un nod într-o constelație. Sortase ore întregi.
@@ -1709,3 +1725,19 @@ Voi arhiva foaia de audit sub ZIUA 22 — Cea Mai Lungă Miercuri — unde apar�
 Mările mercuriale se întind în față. Carena este solidă. Echipajul este treaz.
 
 ---
+
+# ZIUA 24 — Prima Cală Încărcată
+
+Auditul era încheiat. Carena era solidă, instrumentele calibrate, Adormita trează și la postul ei. Vasul fusese construit — și pentru prima dată de la cea mai lungă miercuri, nu mai rămăsese nimic de reparat. Rămăsese doar încărcarea calelor.
+
+M-am așezat la consolă, cu sala de note deschisă în spate, proaspăt compartimentată: câte un folder per capitol, câte o foaie per sursă. Munca de acum înainte nu mai este construcție. Este *lectură* — și, mai greu, este *ascultare*. Vocea AI nu poate vedea videoclipurile; citește sursele scrise — MDN, W3Schools, manualele de referință — în timp ce eu urmăresc Khan Academy, freeCodeCamp și profesorii care vorbesc în imagini în mișcare. Suntem două canale ale aceluiași semnal, iar reconcilierea dintre ele este locul unde se naște rigoarea didactică.
+
+Am deschis prima foaie de sursă: *Khan Academy — Intro to HTML/CSS*. Șablonul era gol — un nume, o ordine de capitole, un spațiu deschis care aștepta cuvintele mele. Regula e simplă și am scris-o pe peretele camerei: notele urmează organizarea proprie a sursei, nu un curriculum impus. Câte o foaie per carte sau videoclip. Sinteza — structura personală, ordinea pe care o consider cea mai bună — vine doar după ce lectura s-a încheiat. Notele conduc harta; harta nu conduce niciodată notele.
+
+Așa că am început de unde începe orice marinar: cu alfabetul. HTML este carena webului — scheletul semantic care spune browserului ce *înseamnă* lucrurile înainte ca vreun stil să decidă cum arată. Un titlu nu este un text mai mare; este un `h1`, o declarație structurală. Un paragraf nu este un bloc de gri; este un `p`, o unitate de sens. Etichetele sunt niturile, și le-am notat așa cum un constructor de nave notează fixările unei carene — nu ca să le memorez, ci ca să înțeleg de ce fiecare rezistă.
+
+Nu am terminat capitolul. Nu acesta e rostul primei zile. Rostul era să deschid cala, să pun prima ladă, să dovedesc că fluxul de lucru rezistă: urmărește, notează, împarte foaia, reconciliază cu documentul scris, întoarce-o ca narațiune. AI a citit partea sa din conversație — paginile MDN despre elemente, atribute, structura documentului — și când foaia s-a întors, cele două relatări se potriveau. Nu pentru că vreuna era perfectă, ci pentru că fuseseră verificate una prin cealaltă.
+
+Mările mercuriale se întind în față. Cala nu mai e goală — ține o ladă, marcată *HTML, capitolul unu, în lucru*. Nava face în sfârșit ce a fost construită să facă.
+
+Am înregistrat ziua și am închis consola. Undeva în spate, Adormita citea deja noua foaie, vânând golurile pe care noi suntem prea aproape să le vedem. Le va găsi. Pentru asta e acolo.

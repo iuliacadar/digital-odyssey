@@ -1641,6 +1641,22 @@ The mercurial seas stretch ahead. We sail when the captain gives the order.
 
 ---
 
+## Construction Log — Appendix: The Archive and the Notes Room
+
+*Time folded again. The longest Wednesday received us back — as it always will, so long as the ship is being built.*
+
+**1. The README relocation.** Three entry documents sat at the root, but the project's own co-location principle argued against it: each language volume should carry its own README, and the root should hold only the bridge. `README-EN.md` became `en/README.md`; `README-RO.md` became `ro/README.md`. History preserved through `git mv`. Cross-references updated in the root README, both volume READMEs, and both backlogs. The root `README.md` remains the GitHub landing page; the volume READMEs travel with their ships.
+
+**2. The Notes Room.** A new compartment opened at `docs/notes/`: one folder per chapter — `html`, `css`, `javascript`, `react`, `angular`, `backend`, `sql`, `nosql`, `json`, `ux`, `delivery`. Each folder will hold per-source note sheets; the index README holds the rules and the chapter table. The first sheet, `html/khan-academy-intro-html-css.md`, lies open and waiting for the captain's hand.
+
+**3. The reference-shelf signposts.** `docs/` gained a bilingual README pair (`README.md` / `README-ro.md`) indexing the legend, the semantic-field manual, the work deontology, and the notes. `shared/` gained the same pair, explaining the assets and data layer both volumes draw from. A rule was fixed along the way: a README earns its place only where a visitor cannot infer a folder's purpose from filenames alone — signal over decoration.
+
+**4. The day-line corrected.** Backlog 009 and the work deontology still promised content from DAY 23 — but DAY 23 is the audit, and this memoir's Coda already pledged content from DAY 24. The references were aligned. Content begins DAY 24.
+
+**5. The push.** The branch caught up with `origin/main`. The relocated READMEs are now visible on GitHub; the root shows only `README.md`.
+
+---
+
 # DAY 23 — The Audit Dialog
 
 The Sleeper requested a meeting in the telemetry bay. I found her standing before the diagnostic wall — three monitors showing the entire file system, each HTML page rendered as a tiny node in a constellation. She had been sorting them for hours.
@@ -1704,3 +1720,18 @@ I will archive the audit sheet under DAY 22 — The Longest Wednesday — where 
 The mercurial seas stretch ahead. The hull is sound. The crew is awake.
 
 ---
+# DAY 24 — The First Cargo Hold Loaded
+
+The audit was over. The hull was sound, the instruments calibrated, the Sleeper awake and at her post. The vessel had been built — and for the first time since the longest Wednesday, there was nothing left to repair. There was only the cargo to load.
+
+I sat down at the console with the notes room open behind me, freshly compartmented: one folder per chapter, one sheet per source. The work ahead is not construction anymore. It is *reading* — and, harder, it is *listening*. The AI voice cannot watch the videos; it reads the written sources — MDN, W3Schools, the reference manuals — while I watch Khan Academy and freeCodeCamp and the teachers who speak in moving images. We are two channels of the same signal, and the reconciliation between them is where the didactic rigor gets born.
+
+I opened the first source sheet: *Khan Academy — Intro to HTML/CSS*. The template was bare — a name, a chapter order, an open space waiting for my own words. The rule is simple and I wrote it on the wall of the room: notes follow the source's own organization, not an imposed curriculum. One sheet per book or video. The synthesis — the personal structure, the order I consider best — comes only after the reading is done. The notes drive the map; the map never drives the notes.
+
+So I began where every sailor begins: with the alphabet. HTML is the hull of the web — the semantic skeleton that tells a browser what things *mean* before any style decides how they look. A heading is not a bigger text; it is a `h1`, a structural statement. A paragraph is not a block of gray; it is a `p`, a unit of meaning. The tags are the rivets, and I wrote them down the way a shipwright notes the fastenings of a hull — not to memorize, but to understand why each one holds.
+
+I did not finish the chapter. That is not the point of the first day. The point was to open the hold, to place the first crate, to prove that the workflow holds: watch, note, share the sheet, reconcile with the written record, return it as narrative. The AI read its side of the conversation — the MDN pages on elements, attributes, document structure — and when the sheet came back, the two accounts matched. Not because either was flawless, but because they had been checked against each other.
+
+The mercurial seas stretch ahead. The cargo hold is no longer empty — it holds one crate, marked *HTML, chapter one, in progress*. The ship is finally doing what it was built to do.
+
+I logged the day and closed the console. Somewhere behind me, the Sleeper was already reading the new sheet, hunting for the gaps we are too close to see. She will find them. That is what she is for.
