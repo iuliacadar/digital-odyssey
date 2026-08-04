@@ -2,7 +2,7 @@
 
 > A bilingual interface-journal mapping code, structure, and recursive learning through a cinematic web system.
 
-Romanian version: [README-RO.md](./README-RO.md)
+Romanian version: [`ro/README.md`](./ro/README.md)
 
 RO: *D::0dy55ey* este un portofoliu bilingv, experimental, construit la intersecția dintre documentație tehnică, jurnal de învățare și design de interfață cinematic.
 
@@ -40,15 +40,14 @@ Its visual language draws from command consoles, HUD structures, recursive bluep
 ```text
 DIGITAL-ODYSSEY/
 ├── README.md                          # Main entry (RO/EN bridge)
-├── README-EN.md                       # English version of this README
-├── README-RO.md                       # Romanian version of this README
 ├── JOURNAL-EN.md                       # Bilingual learning journal (English)
 ├── JOURNAL-RO.md                       # Bilingual learning journal (Romanian)
 ├── docs/
 │   ├── legend-en.md                   # Comment tag legend (English)
-│   └── legend-ro.md                   # Comment tag legend (Romanian)
+│   ├── legend-ro.md                   # Comment tag legend (Romanian)
+│   └── notes/                         # Captain's working notes (per-source sheets)
 ├── en/                                # English volume
-│   ├── index.html                     # Command deck — main navigation hub
+│   ├── README.md                      # English volume readme
 │   ├── bibliography.html              # References and resources
 │   ├── recursive-blueprint.html       # Self-documenting code explorer
 │   ├── transmission.html              # Project manifesto / signal log
@@ -85,6 +84,7 @@ DIGITAL-ODYSSEY/
 │       ├── git-log.html
 │       └── github-log.html
 └── ro/                                # Romanian volume (mirrors en/)
+    ├── README.md                      # Romanian volume readme
     ├── index.html
     ├── bibliography.html
     ├── recursive-blueprint.html

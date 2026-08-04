@@ -2,7 +2,7 @@
 
 > Un jurnal-interfață bilingv care cartografiază codul, structura și învățarea recursivă printr-un sistem web cinematic.
 
-English version: [README.md](./README.md)
+English version: [README.md](../README.md) · Engleză: [`en/README.md`](../en/README.md)
 
 ## Prezentare generală
 
@@ -32,15 +32,14 @@ Limbajul său vizual se inspiră din console de comandă, structuri HUD, bluepri
 ```text
 DIGITAL-ODYSSEY/
 ├── README.md                          # Punct de intrare principal (EN)
-├── README-EN.md                       # Versiunea engleză a acestui README
-├── README-RO.md                       # Versiunea română a acestui README
 ├── JOURNAL-EN.md                       # Jurnal de învățare bilingv (engleză)
 ├── JOURNAL-RO.md                       # Jurnal de învățare bilingv (română)
 ├── docs/
 │   ├── legend-en.md                   # Legendă etichete comentarii (engleză)
-│   └── legend-ro.md                   # Legendă etichete comentarii (română)
+│   ├── legend-ro.md                   # Legendă etichete comentarii (română)
+│   └── notes/                         # Notele de lucru ale căpitanului (foi per sursă)
 ├── en/                                # Volumul englez
-│   ├── index.html                     # Command deck — hub principal de navigație
+│   ├── README.md                      # README-ul volumului englez
 │   ├── bibliography.html              # Referințe și resurse
 │   ├── recursive-blueprint.html       # Explorer de cod auto-documentat
 │   ├── transmission.html              # Manifestul proiectului / jurnal de semnale
@@ -77,6 +76,7 @@ DIGITAL-ODYSSEY/
 │       ├── git-log.html
 │       └── github-log.html
 └── ro/                                # Volumul român (oglindă pentru en/)
+    ├── README.md                      # README-ul volumului român
     ├── index.html
     ├── bibliography.html
     ├── recursive-blueprint.html

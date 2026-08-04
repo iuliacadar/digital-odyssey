@@ -246,4 +246,4 @@ Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a
 - Actualizate toate referințele din README și BACKLOG la noile nume de fișiere.
 - Adăugate intrări DAY 11 în ambele jurnale și ambele backloaguri.
 
-**Fișiere afectate:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
+**Fișiere afectate:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `en/README.md`, `ro/README.md`.

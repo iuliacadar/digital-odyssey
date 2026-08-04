@@ -255,4 +255,4 @@ Move completed items here, keeping the date and a short note about what changed.
 - Updated all README and BACKLOG references to the renamed journal files.
 - Added DAY 11 entries to both journals and both backlogs.
 
-**Files affected:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `README-EN.md`, `README-RO.md`.
+**Files affected:** `en/index.html`, `ro/index.html`, `en/style.css`, `ro/style.css`, `JOURNAL-EN.md`, `JOURNAL-RO.md`, `BACKLOG-EN.md`, `BACKLOG-RO.md`, `README.md`, `en/README.md`, `ro/README.md`.
