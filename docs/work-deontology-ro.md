@@ -90,7 +90,7 @@ Fiecare document răspunde la o întrebare diferită: *Ce este aceasta?*, *Ce s-
 ZIUA 22 este o zi nesfârșită în narațiunea D::0dy55ey. Nu avansează povestea — acumulează toată munca structurală, arhitecturală și de audit care nu constituie o nouă fază narativă. Orice viitoare intrare în jurnalul de construcție (reparații de bug-uri, refactorări, operațiuni în masă, justificări ale alegerii instrumentelor, actualizări ale inventarului de fișiere) se adaugă la ZIUA 22, în loc să creeze o nouă zi. Aceasta previne umflarea jurnalului, păstrând în același timp trasabilitatea completă.
 
 Când decideți unde să înregistrați munca:
-- **Fază narativă sau de învățare nouă** → un număr nou de ZI (de exemplu, ZIUA 23 pentru crearea de conținut)
+- **Fază narativă sau de învățare nouă** → un număr nou de ZI (de exemplu, ZIUA 24 pentru crearea de conținut)
 - **Lucrări structurale, audit sau reparații** → adăugați la ZIUA 22
 - **Reutilizarea unui instrument/metodă deja documentat(ă)** → nu este necesară o intrare în ZIUA 22. Doar *introducerea* unui instrument (rațiune, sintaxă, de ce a fost ales) aparține ZIUA 22. Utilizările ulterioare sunt operațiuni de rutină, nu cunoștințe noi.
 

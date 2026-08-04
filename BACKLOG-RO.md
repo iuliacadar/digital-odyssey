@@ -195,7 +195,7 @@ Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a
 ### 009 — Șablon pagini de jurnal: clonează structura Manual_project în toate paginile de jurnal
 
 **Data:** 2026-07-30 (ZIUA 22)
-**Notă:** Toate cele 54 de fișiere HTML (27 EN + 27 RO) au acum scheletul structural complet de 29 de zile (sidebar, secțiuni-zi, mission-status, footer) prin scripturi de generare a șabloanelor. Clonarea structurală este completă. Cele 3 pagini scrise manual (html-log, css-log, sql-log) au încă număr incomplet de zile și linkuri fantomă în sidebar — acestea vor fi completate în timpul creării conținutului începând cu ZIUA 23. Cele 18 shell-uri goale originale per limbă nu mai există; fiecare pagină are un cadru vizibil și navigabil.
+**Notă:** Toate cele 54 de fișiere HTML (27 EN + 27 RO) au acum scheletul structural complet de 29 de zile (sidebar, secțiuni-zi, mission-status, footer) prin scripturi de generare a șabloanelor. Clonarea structurală este completă. Cele 3 pagini scrise manual (html-log, css-log, sql-log) au încă număr incomplet de zile și linkuri fantomă în sidebar — acestea vor fi completate în timpul creării conținutului începând cu ZIUA 24. Cele 18 shell-uri goale originale per limbă nu mai există; fiecare pagină are un cadru vizibil și navigabil.
 
 ---
 

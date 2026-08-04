@@ -197,7 +197,7 @@ Move completed items here, keeping the date and a short note about what changed.
 ### 009 — Log page template: clone Manual_project structure into all log pages
 
 **Date:** 2026-07-30 (DAY 22)
-**Note:** All 54 HTML files (27 EN + 27 RO) now have the complete 29-day structural skeleton (sidebar, day sections, mission-status, footer) via template generation scripts. The structural clone is complete. The 3 manually-written pages (html-log, css-log, sql-log) still have incomplete day counts and ghost sidebar links — these will be filled during content creation starting DAY 23. The original 18 empty shells per language no longer exist; every page has a visible, navigable framework.
+**Note:** All 54 HTML files (27 EN + 27 RO) now have the complete 29-day structural skeleton (sidebar, day sections, mission-status, footer) via template generation scripts. The structural clone is complete. The 3 manually-written pages (html-log, css-log, sql-log) still have incomplete day counts and ghost sidebar links — these will be filled during content creation starting DAY 24. The original 18 empty shells per language no longer exist; every page has a visible, navigable framework.
 
 ---
 
