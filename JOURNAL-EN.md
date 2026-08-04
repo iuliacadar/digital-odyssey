@@ -1645,15 +1645,15 @@ The mercurial seas stretch ahead. We sail when the captain gives the order.
 
 *Time folded again. The longest Wednesday received us back — as it always will, so long as the ship is being built.*
 
-**1. The README relocation.** Three entry documents sat at the root, but the project's own co-location principle argued against it: each language volume should carry its own README, and the root should hold only the bridge. `README-EN.md` became `en/README.md`; `README-RO.md` became `ro/README.md`. History preserved through `git mv`. Cross-references updated in the root README, both volume READMEs, and both backlogs. The root `README.md` remains the GitHub landing page; the volume READMEs travel with their ships.
+**1. The README relocation, mechanically.** Two Markdown entry documents were moved from the project root into their language volumes. The move was executed with `git mv`, not a plain file move, so that Git records them as renames and preserves their history. Cross-references in the root README, both volume READMEs, and both backlogs were corrected by hand in Markdown. The changes were committed and pushed to `origin/main`; the root now shows only `README.md`.
 
-**2. The Notes Room.** A new compartment opened at `docs/notes/`: one folder per chapter — `html`, `css`, `javascript`, `react`, `angular`, `backend`, `sql`, `nosql`, `json`, `ux`, `delivery`. Each folder will hold per-source note sheets; the index README holds the rules and the chapter table. The first sheet, `html/khan-academy-intro-html-css.md`, lies open and waiting for the captain's hand.
+**2. The Notes Room scaffold.** A new compartment was opened at `docs/notes/`: eleven chapter folders created in a single operation, then populated by copying the blank Markdown template (`_template-source-notes.md`) under each source's name. The first sheet, `html/khan-academy-intro-html-css.md`, was created from the template and left open for the captain's hand.
 
-**3. The reference-shelf signposts.** `docs/` gained a bilingual README pair (`README.md` / `README-ro.md`) indexing the legend, the semantic-field manual, the work deontology, and the notes. `shared/` gained the same pair, explaining the assets and data layer both volumes draw from. A rule was fixed along the way: a README earns its place only where a visitor cannot infer a folder's purpose from filenames alone — signal over decoration.
+**3. The bilingual signposts.** A README pair was authored in Markdown for `docs/` and for `shared/` — an English file and its `-ro.md` translation, following the same convention as the legends and the work deontology. The eleven per-chapter READMEs inside the notes room were removed in the same session.
 
-**4. The day-line corrected.** Backlog 009 and the work deontology still promised content from DAY 23 — but DAY 23 is the audit, and this memoir's Coda already pledged content from DAY 24. The references were aligned. Content begins DAY 24.
+**4. The day-line corrected.** Three documents carried a stale reference — Backlog 009 and the work deontology, in both languages — still promising content from DAY 23. The references were aligned to DAY 24.
 
-**5. The push.** The branch caught up with `origin/main`. The relocated READMEs are now visible on GitHub; the root shows only `README.md`.
+**5. The push.** The branch was synchronized with `origin/main`; the relocated READMEs are now visible on GitHub.
 
 ---
 
@@ -1725,6 +1725,16 @@ The mercurial seas stretch ahead. The hull is sound. The crew is awake.
 The audit was over. The hull was sound, the instruments calibrated, the Sleeper awake and at her post. The vessel had been built — and for the first time since the longest Wednesday, there was nothing left to repair. There was only the cargo to load.
 
 I sat down at the console with the notes room open behind me, freshly compartmented: one folder per chapter, one sheet per source. The work ahead is not construction anymore. It is *reading* — and, harder, it is *listening*. The AI voice cannot watch the videos; it reads the written sources — MDN, W3Schools, the reference manuals — while I watch Khan Academy and freeCodeCamp and the teachers who speak in moving images. We are two channels of the same signal, and the reconciliation between them is where the didactic rigor gets born.
+
+Before the first lesson, though, I had to settle a quieter question — one a visitor will meet long before they ever reach the notes. What is a `README.md`?
+
+A README is the signpost of a folder: the first document a stranger reads to learn what lives here and why. Git and GitHub render it automatically, so it is the doorway a repository opens. The instinct of many builders is to plant a README in every directory — but a signpost that says nothing new is not a signpost, it is noise. The discipline is to add one only where the folder's purpose cannot be inferred from its filenames alone.
+
+That rule decided every README on this ship. The root keeps the landing page — the bridge between languages, the map of the whole vessel. Each language volume, `en/` and `ro/`, now carries its own README, co-located with the site it introduces: the `README-EN.md` that once sat in the root was moved with `git mv` into `en/README.md`, its Romanian twin into `ro/README.md` — the move itself recorded in history, not erased by it. The `docs/` shelf and the `shared/` hold gained bilingual pairs, because a visitor cannot guess from their names that one is the reference shelf and the other the joint cargo of both volumes. But the chapter folders — `frontend/`, `database/`, `backend/` — need none: their contents are self-evident, and their structure is already charted in the volume READMEs. And in the notes room, eleven folders hold only note sheets; the single index README at the door explains the whole system at once. One signpost, not eleven.
+
+And because the project is bilingual to the bone, the signposts are too: every README that belongs to a language volume is written in that volume's language, and the reference documents carry full translations — `-ro.md` siblings — like every legend and manual aboard. The consistency is the point: a visitor in either language should find the same orientation, not a differently furnished room.
+
+Then, at last, the lesson.
 
 I opened the first source sheet: *Khan Academy — Intro to HTML/CSS*. The template was bare — a name, a chapter order, an open space waiting for my own words. The rule is simple and I wrote it on the wall of the room: notes follow the source's own organization, not an imposed curriculum. One sheet per book or video. The synthesis — the personal structure, the order I consider best — comes only after the reading is done. The notes drive the map; the map never drives the notes.
 

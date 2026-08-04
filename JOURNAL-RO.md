@@ -1650,15 +1650,15 @@ Mările mercuriale se întind în față. Navigăm când căpitanul dă ordinul.
 
 *Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — așa cum o va face mereu, cât timp nava se află în construcție.*
 
-**1. Relocarea README-urilor.** Trei documente de intrare stăteau în rădăcină, dar principiul proiectului însuși — co-locarea — argumenta împotriva acestei așezări: fiecare volum lingvistic ar trebui să-și poarte propriul README, iar rădăcina ar trebui să țină doar podul. `README-EN.md` a devenit `en/README.md`; `README-RO.md` a devenit `ro/README.md`. Istoria păstrată prin `git mv`. Referințele încrucișate au fost actualizate în README-ul rădăcinii, în ambele README-uri ale volumelor și în ambele backloaguri. `README.md`-ul din rădăcină rămâne pagina de aterizare GitHub; README-urile volumelor călătoresc cu navele lor.
+**1. Relocarea README-urilor, mecanic.** Două documente Markdown de intrare au fost mutate din rădăcina proiectului în volumele lor lingvistice. Mutarea a fost executată cu `git mv`, nu cu o simplă mutare de fișiere, astfel încât Git să le înregistreze drept redenumiri și să le păstreze istoria. Referințele încrucișate din README-ul rădăcinii, din ambele README-uri ale volumelor și din ambele backloaguri au fost corectate manual în Markdown. Schimbările au fost comise și împinse la `origin/main`; rădăcina afișează acum doar `README.md`.
 
-**2. Sala de Note.** Un compartiment nou s-a deschis la `docs/notes/`: câte un folder per capitol — `html`, `css`, `javascript`, `react`, `angular`, `backend`, `sql`, `nosql`, `json`, `ux`, `delivery`. Fiecare folder va ține foi de note per sursă; README-ul index ține regulile și tabelul capitolelor. Prima foaie, `html/khan-academy-intro-html-css.md`, stă deschisă și așteaptă mâna căpitanului.
+**2. Scheletul Sălii de Note.** Un compartiment nou s-a deschis la `docs/notes/`: unsprezece foldere de capitol create într-o singură operațiune, apoi populate prin copierea șablonului gol Markdown (`_template-source-notes.md`) sub numele fiecărei surse. Prima foaie, `html/khan-academy-intro-html-css.md`, a fost creată din șablon și lăsată deschisă pentru mâna căpitanului.
 
-**3. Semnele de orientare de pe raftul de referință.** `docs/` a primit o pereche bilingvă de README-uri (`README.md` / `README-ro.md`) care indexează legenda, manualul de câmp semantic, deontologia muncii și notele. `shared/` a primit aceeași pereche, explicând stratul de resurse și date de care se folosesc ambele volume. Pe parcurs, o regulă a fost fixată: un README își câștigă locul doar acolo unde un vizitator nu poate deduce scopul unui folder doar din numele fișierelor — semnal peste ornament.
+**3. Semnele de orientare bilingve.** O pereche de README-uri a fost redactată în Markdown pentru `docs/` și pentru `shared/` — un fișier englezesc și traducerea sa `-ro.md`, urmând aceeași convenție ca legendele și deontologia muncii. Cele unsprezece README-uri per capitol din sala de note au fost eliminate în aceeași sesiune.
 
-**4. Linia zilelor, corectată.** Backlog 009 și deontologia muncii promiteau încă conținut începând cu ZIUA 23 — dar ZIUA 23 este auditul, iar Coda acestui memoriu promitea deja conținut începând cu ZIUA 24. Referințele au fost aliniate. Conținutul începe cu ZIUA 24.
+**4. Linia zilelor, corectată.** Trei documente purtau o referință veche — Backlog 009 și deontologia muncii, în ambele limbi — promițând încă conținut începând cu ZIUA 23. Referințele au fost aliniate la ZIUA 24.
 
-**5. Push-ul.** Ramura a ajuns din urmă `origin/main`. README-urile relocate sunt acum vizibile pe GitHub; rădăcina afișează doar `README.md`.
+**5. Push-ul.** Ramura a fost sincronizată cu `origin/main`; README-urile relocate sunt acum vizibile pe GitHub.
 
 ---
 
@@ -1731,6 +1731,16 @@ Mările mercuriale se întind în față. Carena este solidă. Echipajul este tr
 Auditul era încheiat. Carena era solidă, instrumentele calibrate, Adormita trează și la postul ei. Vasul fusese construit — și pentru prima dată de la cea mai lungă miercuri, nu mai rămăsese nimic de reparat. Rămăsese doar încărcarea calelor.
 
 M-am așezat la consolă, cu sala de note deschisă în spate, proaspăt compartimentată: câte un folder per capitol, câte o foaie per sursă. Munca de acum înainte nu mai este construcție. Este *lectură* — și, mai greu, este *ascultare*. Vocea AI nu poate vedea videoclipurile; citește sursele scrise — MDN, W3Schools, manualele de referință — în timp ce eu urmăresc Khan Academy, freeCodeCamp și profesorii care vorbesc în imagini în mișcare. Suntem două canale ale aceluiași semnal, iar reconcilierea dintre ele este locul unde se naște rigoarea didactică.
+
+Înainte de prima lecție, însă, trebuia să lămuresc o întrebare mai liniștită — una pe care un vizitator o întâlnește cu mult înainte de a ajunge vreodată la note. Ce este un `README.md`?
+
+Un README este semnul de orientare al unui folder: primul document pe care îl citește un străin ca să afle ce se află aici și de ce. Git și GitHub îl randează automat, așa că este pragul pe care îl deschide un repository. Instinctul multor constructori este să planteze un README în fiecare director — dar un semn care nu spune nimic nou nu este un semn, ci zgomot. Disciplina este să adaugi unul doar acolo unde scopul folderului nu poate fi dedus doar din numele fișierelor.
+
+Această regulă a hotărât fiecare README de pe această navă. Rădăcina păstrează pagina de aterizare — podul dintre limbi, harta întregului vas. Fiecare volum lingvistic, `en/` și `ro/`, își poartă acum propriul README, co-locat cu site-ul pe care îl introduce: `README-EN.md`, care stătea cândva în rădăcină, a fost mutat cu `git mv` în `en/README.md`, iar geamănul său românesc în `ro/README.md` — mutarea înscrisă în istorie, nu ștearsă de ea. Raftul `docs/` și `shared/` au primit perechi bilingve, pentru că un vizitator nu poate ghici din numele lor că unul este raftul de referință, iar celălalt marfa comună a ambelor volume. Dar folderele de capitole — `frontend/`, `database/`, `backend/` — nu au nevoie de niciunul: conținutul lor e de la sine înțeles, iar structura lor e deja cartografiată în README-urile volumelor. Iar în sala de note, unsprezece foldere țin doar foi de note; un singur README-index la ușă explică întregul sistem dintr-o dată. Un semn, nu unsprezece.
+
+Și fiindcă proiectul este bilingv până în măduvă, semnele sunt și ele: fiecare README care aparține unui volum lingvistic este scris în limba acelui volum, iar documentele de referință poartă traduceri complete — frați `-ro.md` — ca fiecare legendă și manual de la bord. Consecvența este rostul: un vizitator în orice limbă ar trebui să găsească aceeași orientare, nu o cameră mobilată diferit.
+
+Apoi, în sfârșit, lecția.
 
 Am deschis prima foaie de sursă: *Khan Academy — Intro to HTML/CSS*. Șablonul era gol — un nume, o ordine de capitole, un spațiu deschis care aștepta cuvintele mele. Regula e simplă și am scris-o pe peretele camerei: notele urmează organizarea proprie a sursei, nu un curriculum impus. Câte o foaie per carte sau videoclip. Sinteza — structura personală, ordinea pe care o consider cea mai bună — vine doar după ce lectura s-a încheiat. Notele conduc harta; harta nu conduce niciodată notele.
 
