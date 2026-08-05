@@ -29,10 +29,12 @@ following reasons of cosmic guidance:
     than a temporary vessel that might become cosmic debris in the future.
 
 @tag: modular-skeleton
-   This stylesheet is organized into 30 numbered modules + 2 utility modules.
+   This stylesheet is organized into 31 numbered modules + 2 utility modules.
    Each module governs ONE component or concern. The structure follows a
    strict logical cascade: Foundation -> Layout -> Navigation -> Components ->
    Advanced/Experimental -> Motion (@keyframes) -> Responsive (@media).
+   Module 00 (the @keyframes and @media engines) is ALWAYS the final segment,
+   no matter how many numbered modules we build before it.
 
    Module index:
      01  CSS Custom Properties
@@ -65,6 +67,7 @@ following reasons of cosmic guidance:
      28  Octagonal Navigation Buttons
      29  3D Icosahedron / Geodesic Reactor
      30  Blueprint Split-Screen / Recursive Inspector
+     31  The Seldon Vault
      00.1  @keyframes Motion Engines
      00.2  @media Queries
 ================================================================================ */
@@ -3127,6 +3130,784 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   color: var(--solar-mint) !important; /* @theme: Text color — sets foreground to var(--solar-mint) !important. Determines contrast against the background and affects readability directly. */
 }
 
+
+/* 
+============================================================================
+@module: 31 — THE SELDON VAULT
+@sub-module: 31.0 — The Vault Gate (Key Zero: the containment stage + geodesic seal)
+@sub-module: 31.1 — The Chamber Deck
+@sub-module: 31.2 — Voyage Telemetry Readout
+@sub-module: 31.3 — Capsule Constellation
+@sub-module: 31.4 — Capsule States
+@sub-module: 31.5 — The Sleeper's Crystal
+@sub-module: 31.6 — Nav-Gate Quiz Panel
+@sub-module: 31.7 — The Ascending Seal (Return to the Charter)
+@sub-module: 31.8 — Responsive Collapse of the Vault
+@scope:
+  .vault-gate, .vault-gate-orbit, .vault-gate-tick--n/e/s/w,
+  .vault-core, .vault-core-stage, .vault-core-face--t1..b4, .vault-core-seam,
+  .vault-core-seal, .vault-core-label, .vault-return-seal, .vault-return-caption,
+  .vault-chamber, .vault-growth-note, .voyage-telemetry,
+  .capsule-constellation, .capsule--sealed/--ripening/--open/--active,
+  .sleeper-crystal, .nav-gate, plus the vault-core-spin, vault-seal-breathe,
+  vault-unseal and vault-rise keyframes.
+Purpose: The sealed chamber beneath the message in the bottle. Governs:
+  - the containment gate on transmission.html: a dark rounded stage that holds
+    the elongated-kite seal (the Bahry Vault read: taller at the apex, shorter
+    at the base, two equal mirrored halves parted by a central seam), framed by
+    a targeting-reticle orbit ring with four HUD ticks;
+  - the chamber deck on vault.html: the telemetry readout, the capsule
+    constellation (the sealed cargo of the novel), the Nav-Gate quizzes
+    (Key One), the Sleeper's crystal projection, and the ascending seal that
+    returns to the charter.
+Palette reuses the established D::0dy55ey tokens: void-black backgrounds,
+nebula-pink accents, solar-mint active status, amber-glow warnings.
+The gate echoes Module 29's geodesic reactor (preserve-3d glass faces)
+but re-clipped into the elongated kite so it reads as a seal rather than
+a cockpit. The motion engines (@keyframes) and adaptive overrides (@media)
+live in Module 00.1 and Module 00.2 respectively — per the ship's rule that
+Module 00 is always the last module of the stylesheet.
+============================================================================
+*/
+
+/* 31.0 — THE VAULT GATE (KEY ZERO — THE GEODESIC SEAL)
+   The first gate of the transmission page: a containment stage — a dark
+   rounded panel that isolates the rotating crystal from the flowing manifesto,
+   so the seal reads as a destination, not a paragraph ornament. Inside it, a
+   link whose interior is a three-dimensional seal built from eight triangular
+   faces, each a clipped <span> rotated in 3D. The seal is the Bahry Vault:
+   an elongated kite — shorter at the base, taller at the apex — divided into
+   two equal mirrored halves by the central seam. Touching it navigates to the
+   vault page.
+   @pedagogy: This is pure CSS 3D — no images, no canvas. Eight flat
+   triangles are pushed into space with rotateX/rotateY + translateZ inside a
+   preserve-3d stage. The browser composites them into a solid-looking crystal.
+   It echoes Module 29's geodesic reactor but reads as a seal, not a cockpit.
+*/
+
+/* 31.0.A — THE CONTAINMENT STAGE: the dark rounded panel that frames the seal. */
+.vault-gate {
+  position: relative; /* @layout: Positioning scheme — becomes the containing block for the absolute orbit ring and ticks. */
+  max-width: 460px; /* @layout: Horizontal ceiling — the gate reads as a bounded dock, never a full-width banner. */
+  margin: 56px auto 12px; /* @layout: External spacing — generous isolation above and below the resting point between bottle and footer. */
+  padding: 42px 20px 30px; /* @layout: Internal spacing — room for the orbit ring and the label beneath the crystal. */
+  text-align: center; /* @layout: Text alignment — the crystal and its label centre inside the stage. */
+  background: rgba(10, 11, 30, 0.45); /* @theme: Deep-space glass — translucent void-black panel. */
+  border: 1px solid rgba(167, 243, 208, 0.14); /* @theme: Solar-mint containment wire — the gate's boundary edge. */
+  border-radius: 16px; /* @layout: Corner rounding — a soft dock, unlike the sharp console corners. */
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.55),
+    inset 0 0 30px rgba(167, 243, 208, 0.04); /* @theme: Elevation — the stage floats above the page with a faint inner mint wash. */
+}
+
+/* 31.0.B — THE ORBIT RING: a flat instrument reticle that frames the crystal.
+   A bordered circle with four HUD ticks at the cardinal points, like a
+   targeting reticle around a sealed body. It sits behind the crystal (the
+   crystal's own stacking order places it above), so the seal visually floats
+   inside the reticle. Purely decorative, hidden from screen readers. */
+.vault-gate-orbit {
+  position: absolute; /* @layout: Positioning scheme — floats free of the flow, behind the crystal. */
+  top: 50%; /* @layout: Offset from the top edge — centres the ring on the stage's vertical middle. */
+  left: 50%; /* @layout: Offset from the left edge — centres the ring on the stage's horizontal middle. */
+  width: 300px; /* @layout: Dimension — the ring's outer diameter, comfortably wider than the 240px crystal. */
+  height: 300px; /* @layout: Dimension — matches the width so the reticle stays a perfect circle. */
+  transform: translate(-50%, -55%); /* @layout: Transform — shifts the ring so its centre meets the crystal's centre (55% to account for the label below). */
+  border: 1px solid rgba(167, 243, 208, 0.28); /* @theme: Mint reticle edge — the instrument ring. */
+  border-radius: 50%; /* @layout: Corner rounding — turns the bordered box into a circle. */
+  pointer-events: none; /* @component: Event targeting — the ring must never intercept the link's click. */
+}
+
+/* 31.0.B.1 — THE CARDINAL TICKS: four HUD markers on the reticle ring.
+   Each tick is a short vertical/horizontal bar placed at one cardinal point.
+   The modifiers pick the edge and the orientation: N and S sit on the top and
+   bottom edges as horizontal dashes, E and W on the sides as vertical dashes. */
+.vault-gate-tick {
+  position: absolute; /* @layout: Positioning scheme — each tick pins itself to a ring edge. */
+  width: 10px; /* @layout: Dimension — dash length. */
+  height: 2px; /* @layout: Dimension — dash thickness. */
+  background: var(--solar-mint, #a7f3d0); /* @theme: Mint tick — the reticle marker colour. */
+  box-shadow: 0 0 6px rgba(167, 243, 208, 0.6); /* @theme: Mint aura — the tick glows like a live instrument mark. */
+  pointer-events: none; /* @component: Event targeting — ticks never intercept the link's click. */
+}
+
+.vault-gate-tick--n {
+  top: -2px; /* @layout: Offset — seats the tick on the ring's top edge. */
+  left: 50%; /* @layout: Offset — centres it horizontally. */
+  margin-left: -5px; /* @layout: Offset correction — half the dash length, so it sits exactly on the meridian. */
+}
+
+.vault-gate-tick--e {
+  right: -2px; /* @layout: Offset — seats the tick on the ring's right edge. */
+  top: 50%; /* @layout: Offset — centres it vertically. */
+  margin-top: -1px; /* @layout: Offset correction — half the dash thickness. */
+  transform: rotate(90deg); /* @theme: Orientation — the east tick runs vertical. */
+}
+
+.vault-gate-tick--s {
+  bottom: -2px; /* @layout: Offset — seats the tick on the ring's bottom edge. */
+  left: 50%; /* @layout: Offset — centres it horizontally. */
+  margin-left: -5px; /* @layout: Offset correction — half the dash length. */
+}
+
+.vault-gate-tick--w {
+  left: -2px; /* @layout: Offset — seats the tick on the ring's left edge. */
+  top: 50%; /* @layout: Offset — centres it vertically. */
+  margin-top: -1px; /* @layout: Offset correction — half the dash thickness. */
+  transform: rotate(90deg); /* @theme: Orientation — the west tick runs vertical. */
+}
+
+/* 31.0.C — THE CORE SEAL LINK: an <a>, not a <button>, because its only job is
+   to carry the crew from the charter page to the vault page. The link carries
+   the accessible name (aria-label), the visible label below the crystal, and
+   the decorative 3D interior hidden from screen readers. */
+.vault-core {
+  position: relative; /* @layout: Positioning scheme — anchors the seam and the stage. */
+  display: block; /* @layout: Display mode — block so the crystal and label stack and centre. */
+  width: 240px; /* @layout: Dimension — the crystal's footprint. */
+  margin: 0 auto; /* @layout: External spacing — centres the crystal inside the containment stage. */
+  padding: 0; /* @layout: Padding reset — the crystal's interior spacing comes from the stage, not the link. */
+  background: transparent; /* @theme: No fill — the seal is pure geometry against the void. */
+  border: none; /* @theme: No border — the faces themselves carry the edges. */
+  cursor: pointer; /* @layout: Interaction cue — signals the seal is the first gate. */
+  font-family: inherit; /* @layout: Font family — the label inherits the ship's typeface. */
+  color: inherit; /* @layout: Text colour — the label uses the theme default. */
+  text-decoration: none; /* @layout: Text ornamentation — the crystal label must never underline like a plain link. */
+}
+
+/* 31.0.D — THE 3D STAGE: a preserve-3d scene that slowly spins the seal.
+   The stage is a square <span> whose preserve-3d style creates the depth
+   context; without it the browser would flatten every face onto the page.
+   The slow CSS spin animation lives here, turning the whole kite around its
+   centre. The seam is NOT inside the stage: it sits directly on the link
+   (31.0.H), so it stays fixed and vertical while the crystal rotates behind
+   it — the constant meridian dividing the two mirrored halves. */
+.vault-core-stage {
+  position: relative; /* @layout: Positioning scheme — establishes the coordinate root for the eight absolute faces. */
+  display: block; /* @layout: Display mode — the stage is a square block containing the faces. */
+  width: 240px; /* @layout: Dimension — fixed stage footprint, large enough to read as a crystal. */
+  height: 240px; /* @layout: Dimension — matches the width so the sphere of faces is centred. */
+  margin: 0 auto; /* @layout: External spacing — centres the stage inside the full-width link. */
+  transform-style: preserve-3d; /* @layout: 3D context — keeps the faces volumetric instead of flattened into the page. */
+  animation: vault-core-spin 28s infinite linear; /* @theme: Keyframe animation — a slow, hypnotic rotation of the sealed crystal. */
+}
+
+/* 31.0.E — THE GEODESIC FACES: eight elongated triangles that form the kite.
+   Four lean toward the high apex (the --t faces, "top"), four flare into the
+   lower shoulder (the --b faces, "bottom"). Each face is placed on its own
+   spoke: rotateY chooses the spoke, rotateX tips the triangle, translateZ
+   pushes it away from the centre to the surface of the crystal. The faces are
+   taller than they are wide, so the whole figure stretches into the Bahry
+   kite — the tall apex above, the short base below. Alternating faces carry a
+   pink wireframe so the glass reads as faceted, like a cut gem. */
+.vault-core-face {
+  position: absolute; /* @layout: Positioning scheme — all faces share the same origin so they orbit one centre. */
+  top: 50%; /* @layout: Offset from the top edge — centres the face's anchor on the stage midline. */
+  left: 50%; /* @layout: Offset from the left edge — centres the face's anchor on the stage axis. */
+  width: 150px; /* @layout: Dimension — face width; a triangle this size wraps the 240px stage believably. */
+  height: 200px; /* @layout: Dimension — an elongated triangle: the vertical stretch that produces the tall-kite silhouette. */
+  margin-left: -75px; /* @layout: Offset correction — pulls the face back so its centre sits exactly on the origin. */
+  margin-top: -100px; /* @layout: Offset correction — same centring on the vertical axis. */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* @theme: Shape mask — clips the span into an upward-pointing triangle. */
+  background: linear-gradient(
+    135deg,
+    rgba(167, 243, 208, 0.06) 0%,
+    rgba(255, 0, 127, 0.04) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  ); /* @theme: Spectral glass gradient — faint mint-to-pink glass, so the crystal glows from within. */
+  border: 1px solid rgba(167, 243, 208, 0.28); /* @theme: Mint wireframe — each face is edged like a geodesic strut. */
+  transform-origin: center center; /* @layout: Transform origin — the face rotates around its own centre before being pushed outward. */
+  backface-visibility: visible; /* @reason: Depth protocol — the seal must stay glassy from every angle, rear faces included. */
+}
+
+/* 31.0.F — UPPER KITE FACES: tipped up from the equator and pushed toward the high apex. */
+.vault-core-face--t1 {
+  transform: rotateY(0deg) rotateX(62deg) translateZ(76px); /* @theme: Face placement — front spoke, steep upward tilt toward the apex; radius inscribed to sit inside the 150px orbit ring. */
+}
+.vault-core-face--t2 {
+  transform: rotateY(90deg) rotateX(62deg) translateZ(76px); /* @theme: Face placement — quarter-turn spoke, same tilt, same inscribed radius. */
+  border-color: rgba(255, 0, 127, 0.45); /* @theme: Pink wireframe — alternate faces tinted pink to give the crystal faceted contrast. */
+}
+.vault-core-face--t3 {
+  transform: rotateY(180deg) rotateX(62deg) translateZ(76px); /* @theme: Face placement — opposite spoke of the apex cap, inscribed. */
+}
+.vault-core-face--t4 {
+  transform: rotateY(270deg) rotateX(62deg) translateZ(76px); /* @theme: Face placement — closing spoke of the apex cap, inscribed. */
+  border-color: rgba(255, 0, 127, 0.45); /* @theme: Pink wireframe — the alternating facet rule continues. */
+}
+
+/* 31.0.G — LOWER KITE FACES: the inverted cap beneath the equator, flaring into the short base. */
+.vault-core-face--b1 {
+  transform: rotateY(45deg) rotateX(-38deg) translateZ(76px); /* @theme: Face placement — lower spokes sit offset 45deg from the upper ones; the gentler -38deg tilt makes the base shorter than the apex, inscribing the base inside the ring. */
+}
+.vault-core-face--b2 {
+  transform: rotateY(135deg) rotateX(-38deg) translateZ(76px); /* @theme: Face placement — second lower spoke, inscribed radius. */
+  border-color: rgba(255, 0, 127, 0.45); /* @theme: Pink wireframe — the alternating rule holds across the lower cap. */
+}
+.vault-core-face--b3 {
+  transform: rotateY(225deg) rotateX(-38deg) translateZ(76px); /* @theme: Face placement — third lower spoke, inscribed radius. */
+}
+.vault-core-face--b4 {
+  transform: rotateY(315deg) rotateX(-38deg) translateZ(76px); /* @theme: Face placement — closing lower spoke, inscribed radius. */
+  border-color: rgba(255, 0, 127, 0.45); /* @theme: Pink wireframe — the diamond ring completes. */
+}
+
+/* 31.0.H — THE SEAM: the signature read of the Bahry vault.
+   A vertical meridian that runs down the front of the crystal, dividing the
+   monolith into two equal mirrored halves. It lives on the link, NOT inside
+   the spinning stage, so it stays perfectly vertical and centred while the
+   glass rotates behind it — the seam is the constant, the promise of the
+   split. Closed, the monolith is whole; the seam is the ghost of the cut.
+   When the cursor approaches, the seam flares (31.0.L) as if the two halves
+   are about to part. It is purely decorative. */
+.vault-core-seam {
+  position: absolute; /* @layout: Positioning scheme — pinned to the link's frame, over the crystal. */
+  top: 0; /* @layout: Offset from the top edge — the seam begins at the crystal's apex. */
+  left: 50%; /* @layout: Offset from the left edge — dead centre on the vertical meridian. */
+  width: 2px; /* @layout: Dimension — a hairline, the thickness of a promise. */
+  height: 240px; /* @layout: Dimension — spans the full crystal height (matches the 240px stage), not the label below. */
+  margin-left: -1px; /* @layout: Offset correction — half the width, so the seam sits exactly on the axis. */
+  background: linear-gradient(
+    180deg,
+    rgba(167, 243, 208, 0),
+    rgba(167, 243, 208, 0.9) 35%,
+    rgba(255, 0, 127, 0.9) 50%,
+    rgba(167, 243, 208, 0.9) 65%,
+    rgba(167, 243, 208, 0)
+  ); /* @theme: Meridian gradient — mint at the poles, pink at the heart, fading to nothing. */
+  box-shadow: 0 0 8px rgba(167, 243, 208, 0.6); /* @theme: Mint aura — the seam emits light along its length. */
+  pointer-events: none; /* @component: Event targeting — the seam must never intercept the link's click. */
+}
+
+/* 31.0.I — THE SEAL: the sigil at the very heart of the crystal.
+   The glyph that makes the seal a seal. It breathes (pulses gently) and glows
+   in nebula-pink. The pointer-events rule keeps the sigil from ever
+   intercepting the click, so the entire crystal remains one link. */
+.vault-core-seal {
+  position: absolute; /* @layout: Positioning scheme — the sigil lives at the stage origin. */
+  top: 50%; /* @layout: Offset from the top edge — centres the sigil vertically. */
+  left: 50%; /* @layout: Offset from the left edge — centres the sigil horizontally. */
+  transform: translate(-50%, -50%); /* @layout: Transform — shifts the sigil so its exact centre meets the stage origin. */
+  font-size: 3.2rem; /* @layout: Character scale — a commanding sigil inside the crystal. */
+  line-height: 1; /* @layout: Line height — keeps the glyph optically centred. */
+  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink sigil — the seal's pulsing heart. */
+  text-shadow: 0 0 18px rgba(255, 0, 127, 0.7); /* @theme: Pink aura — the sigil radiates from within the glass. */
+  pointer-events: none; /* @component: Event targeting — the sigil must never intercept the link's click. */
+  animation: vault-seal-breathe 3.2s infinite ease-in-out; /* @theme: Keyframe animation — the sigil breathes, the seal is alive. */
+}
+
+/* 31.0.J — THE LABEL UNDER THE CRYSTAL: title above, invitation below. */
+.vault-core-label {
+  display: block; /* @layout: Display mode — the label block sits beneath the stage. */
+  text-align: center; /* @layout: Text alignment — the pair of lines is centred under the seal. */
+  margin-top: 18px; /* @layout: External spacing — gap between the crystal and its label. */
+}
+
+.vault-core-label-title {
+  display: block; /* @layout: Display mode — the title occupies its own line. */
+  font-size: 0.85rem; /* @layout: Character scale — a quiet but firm title. */
+  letter-spacing: 4px; /* @layout: Glyph spacing — wide HUD tracking befitting a vault seal. */
+  text-transform: uppercase; /* @layout: Text transform — all-caps institutional lettering. */
+  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint title — the vault's name glows with active status. */
+  text-shadow: 0 0 10px rgba(167, 243, 208, 0.45); /* @theme: Mint aura — the title floats above the void. */
+}
+
+.vault-core-label-sub {
+  display: block; /* @layout: Display mode — the invitation sits on its own line below the title. */
+  margin-top: 6px; /* @layout: External spacing — air between the title and the invitation. */
+  font-size: 0.72rem; /* @layout: Character scale — a smaller, softer invitation. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — readable tracking. */
+  color: rgba(255, 255, 255, 0.6); /* @theme: Muted invitation — the call to action is present but gentle. */
+}
+
+/* 31.0.J1 — THE HOVER LABEL. The microcopy under the seal stays hidden by
+   default so the crystal reads as pure glyph — the label becomes visible only
+   when the traveller's cursor nears it. Accessibility is preserved: the text
+   is real DOM text (announced to screen readers even at opacity 0) and is
+   fully revealed on focus as well as hover, satisfying keyboard users. */
+.vault-core-label {
+  opacity: 0; /* @theme: Concealed state — invisible until approached, keeping the seal scannable. */
+  transform: translateY(6px); /* @layout: Transform — the label sits slightly low, ready to glide up. */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* @theme: Transition — a gentle reveal, not an instant pop. */
+}
+
+.vault-core:hover .vault-core-label,
+.vault-core:focus-within .vault-core-label,
+.vault-core:focus-visible .vault-core-label {
+  opacity: 1; /* @theme: Revealed state — the microcopy appears as the cursor nears the seal. */
+  transform: translateY(0); /* @layout: Transform — the label settles into place. */
+}
+
+/* 31.0.K — THE HOVER SURGE: the crystal accelerates, the facets flare, and the
+   seam comes alive when the cursor approaches. */
+.vault-core:hover .vault-core-stage {
+  animation-duration: 7s; /* @theme: Animation sub-property — the seal spins faster on hover, the ship leans in. */
+}
+
+.vault-core:hover .vault-core-face {
+  border-color: var(--nebula-pink, #ff007f); /* @theme: Hover — every facet flashes pink, the seal acknowledges the touch. */
+}
+
+.vault-core:hover .vault-core-seam {
+  box-shadow:
+    0 0 14px rgba(167, 243, 208, 0.95),
+    0 0 26px rgba(255, 0, 127, 0.7); /* @theme: Hover — the seam flares hard, the two halves threaten to part. */
+}
+
+/* 31.0.L — The spin and breath keyframes that animate the seal. */
+
+
+
+
+/* 31.1 — The chamber deck: the whole payload of the vault page.
+   The chamber no longer hides below the transmission page: since the vault
+   gained its own deck (vault.html), the chamber IS the page. This rule
+   styles it there. The selector .vault-chamber is also the hook MECANISM 10
+   uses to know "we are on the vault page, run the engine". */
+.vault-chamber {
+  margin-top: 60px; /* @layout: Vertical separation — pulls the chamber down from the manifesto crystal. */
+  padding: 20px 0 40px; /* @layout: Internal spacing — breathing room around the constellation. */
+  border-top: 1px solid rgba(167, 243, 208, 0.12); /* @theme: Faint solar-mint hairline separating the bottle from the vault. */
+}
+
+/* 31.1.A — The unseal reveal: on the vault page the chamber is never hidden,
+   so this entrance animation plays once on load — the chamber rises in. */
+.vault-chamber:not([hidden]) {
+  animation: vault-unseal 0.7s ease-out; /* @theme: Entrance animation — the chamber rises and settles once. */
+}
+
+
+
+/* 31.1.B — The growth note: the honest statement that the novel is not finished. */
+.vault-growth-note {
+  text-align: center; /* @layout: Text alignment — the note floats centred beneath the chamber title. */
+  margin: -8px 0 22px; /* @layout: External spacing — tucked just under the header, clear of the telemetry. */
+  font-size: 0.75rem; /* @layout: Character scale — a small, editorial aside. */
+  font-style: italic; /* @layout: Font style — italic marks the note as a living aside, not a datum. */
+  letter-spacing: 1.5px; /* @layout: Glyph spacing — soft tracking for readability. */
+  color: var(--amber-glow, #ffb86b); /* @theme: Amber-glow note — the warm colour of work still in progress (see Module 24's amber time-vaults). */
+  text-shadow: 0 0 8px rgba(255, 184, 107, 0.35); /* @theme: Amber aura — the note glows faintly, a lamp left on in the hold. */
+}
+
+/* 31.1.C — The chamber header clearance, after the growth note. */
+.vault-chamber .category-header {
+  margin-bottom: 24px; /* @layout: Clearance — spaces the title from the telemetry readout. */
+}
+
+/* 31.1.D → moved to 31.7 (The Ascending Seal) below, after the Nav-Gate panel. */
+
+/* 31.2 — Voyage telemetry: the four-cell mission console */
+.voyage-telemetry {
+  display: grid; /* @layout: Grid assembly — arranges the four telemetry cells in a row. */
+  grid-template-columns: repeat(4, 1fr); /* @layout: Column track definition — four equal columns. */
+  gap: 10px; /* @layout: Inter-cell gutter — spacing between the telemetry cells. */
+  margin-bottom: 28px; /* @layout: External spacing — separates the readout from the constellation. */
+  padding: 14px; /* @layout: Internal spacing — padding inside the telemetry panel. */
+  background: rgba(10, 11, 30, 0.6); /* @theme: Deep-space glass panel — translucent void-black. */
+  border: 1px solid rgba(167, 243, 208, 0.2); /* @theme: Solar-mint border — the active console edge. */
+  border-radius: 8px; /* @layout: Corner rounding — soft console corners. */
+}
+
+.telemetry-cell {
+  text-align: center; /* @layout: Text alignment — centres each metric. */
+  padding: 8px 4px; /* @layout: Internal spacing — padding around the label/value pair. */
+}
+
+.telemetry-label {
+  display: block; /* @layout: Display mode — forces the label onto its own line. */
+  font-size: 0.6rem; /* @layout: Character scale — small technical label. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — wide tracking for the HUD label feel. */
+  color: rgba(255, 255, 255, 0.5); /* @theme: Muted label — secondary information. */
+  margin-bottom: 6px; /* @layout: External spacing — gap between label and value. */
+}
+
+.telemetry-value {
+  font-size: 1.1rem; /* @layout: Character scale — prominent metric value. */
+  font-weight: 700; /* @layout: Font weight — bold numeric readout. */
+  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint value — live telemetry. */
+  text-shadow: 0 0 8px rgba(167, 243, 208, 0.5); /* @theme: Neon glow — phosphor readout effect. */
+}
+
+/* 31.3 — The capsule constellation */
+.capsule-constellation {
+  display: grid; /* @layout: Grid assembly — the constellation of sealed capsules. */
+  grid-template-columns: repeat(3, 1fr); /* @layout: Column track definition — three capsules per row on desktop. */
+  gap: 14px; /* @layout: Inter-cell gutter — spacing between capsules. */
+  margin-bottom: 32px; /* @layout: External spacing — separates constellation from the crystal. */
+}
+
+.capsule {
+  position: relative; /* @layout: Positioning context — enables the absolute-placed day badge. */
+  display: flex; /* @layout: Flex assembly — stacks the capsule's inner spans vertically. */
+  flex-direction: column; /* @layout: Flex direction — vertical stack: day, volume, title, lock. */
+  align-items: flex-start; /* @layout: Flex alignment — left-align the capsule text. */
+  gap: 6px; /* @layout: Flex gutter — vertical spacing between the capsule's fields. */
+  padding: 18px 16px; /* @layout: Internal spacing — breathing room inside the capsule. */
+  min-height: 130px; /* @layout: Dimension — uniform capsule height for the grid rhythm. */
+  background: rgba(10, 11, 30, 0.7); /* @theme: Deep-space capsule — void-black glass. */
+  border: 1px solid rgba(255, 255, 255, 0.12); /* @theme: Sealed edge — faint neutral border. */
+  border-radius: 10px; /* @layout: Corner rounding — capsule corners. */
+  cursor: pointer; /* @layout: Interaction cue — signals the capsule is clickable. */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* @theme: Smooth transition — border and glow fade over 0.3s. */
+  color: inherit; /* @layout: Text colour — inherit the theme's default text colour. */
+  text-align: left; /* @layout: Text alignment — left-aligned capsule content. */
+  font-family: inherit; /* @layout: Font family — inherit the body typeface. */
+}
+
+/* 31.4 — Capsule states */
+.capsule--sealed {
+  border-color: rgba(255, 255, 255, 0.12); /* @theme: Sealed state — faint border. */
+  opacity: 0.75; /* @theme: Sealed state — slightly dimmed, waiting. */
+}
+
+.capsule--sealed:hover {
+  border-color: rgba(255, 255, 255, 0.35); /* @theme: Sealed hover — border brightens. */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08); /* @theme: Sealed hover — soft glow. */
+}
+
+.capsule--ripening {
+  border-color: rgba(255, 255, 255, 0.3); /* @theme: Ripening state — brighter border. */
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.1); /* @theme: Ripening state — soft glow. */
+}
+
+.capsule--open {
+  border-color: var(--solar-mint, #a7f3d0); /* @theme: Open state — solar-mint border signals readiness. */
+  box-shadow: 0 0 18px rgba(167, 243, 208, 0.3); /* @theme: Open state — mint glow. */
+}
+
+.capsule--active {
+  border-color: var(--nebula-pink, #ff007f); /* @theme: Active projection — nebula-pink border on the capsule being read. */
+  box-shadow: 0 0 22px rgba(255, 0, 127, 0.4); /* @theme: Active projection — pink glow. */
+}
+
+.capsule-day {
+  position: absolute; /* @layout: Absolute placement — the day badge floats at the top-right corner. */
+  top: 10px; /* @layout: Offset from the top edge — badge position. */
+  right: 12px; /* @layout: Offset from the right edge — badge position. */
+  font-size: 0.62rem; /* @layout: Character scale — compact badge text. */
+  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
+  color: rgba(255, 255, 255, 0.55); /* @theme: Muted badge — secondary label. */
+}
+
+.capsule-volume {
+  font-size: 0.6rem; /* @layout: Character scale — small volume tag. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — wide HUD tracking. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase volume name. */
+  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink volume tag — the volume's identity colour. */
+}
+
+.capsule-title {
+  font-size: 0.95rem; /* @layout: Character scale — the capsule's title. */
+  font-weight: 600; /* @layout: Font weight — semibold title. */
+  line-height: 1.3; /* @layout: Line height — comfortable title wrapping. */
+  margin-top: 4px; /* @layout: External spacing — gap above the title. */
+}
+
+.capsule-lock {
+  margin-top: auto; /* @layout: Flex alignment — pushes the lock label to the capsule's bottom edge. */
+  font-size: 0.58rem; /* @layout: Character scale — tiny lock label. */
+  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
+  color: rgba(255, 255, 255, 0.5); /* @theme: Muted lock label — secondary information. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase lock status. */
+}
+
+/* 31.5 — The Sleeper's crystal */
+.sleeper-crystal {
+  margin-top: 8px; /* @layout: External spacing — separates the crystal from the constellation. */
+  padding: 18px; /* @layout: Internal spacing — padding inside the crystal. */
+  background: rgba(10, 11, 30, 0.5); /* @theme: Deep-space glass — translucent void-black. */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* @theme: Crystal edge — faint neutral border. */
+  border-radius: 10px; /* @layout: Corner rounding — crystal corners. */
+  min-height: 120px; /* @layout: Dimension — minimum projection height. */
+}
+
+.sleeper-crystal-header {
+  margin-bottom: 14px; /* @layout: External spacing — gap below the status line. */
+}
+
+.sleeper-status {
+  font-size: 0.62rem; /* @layout: Character scale — small status text. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — wide HUD tracking. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase status. */
+  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint status — the Sleeper's voice is active. */
+  text-shadow: 0 0 8px rgba(167, 243, 208, 0.5); /* @theme: Neon glow — phosphor effect. */
+}
+
+.vault-output {
+  color: rgba(255, 255, 255, 0.88); /* @theme: Projected text — bright readable prose. */
+  font-size: 0.92rem; /* @layout: Character scale — transmission body text. */
+  line-height: 1.7; /* @layout: Line height — comfortable reading rhythm. */
+}
+
+.vault-output p {
+  margin-bottom: 14px; /* @layout: External spacing — paragraph spacing in the projection. */
+}
+
+.vault-transmission-title {
+  font-weight: 700; /* @layout: Font weight — bold title. */
+  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink title — the day's identity. */
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4); /* @theme: Pink glow — title radiance. */
+}
+
+.vault-delta-line {
+  font-size: 0.62rem; /* @layout: Character scale — small delta certificate. */
+  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
+  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint deltas — the birth certificates. */
+}
+
+.vault-divider {
+  text-align: center; /* @layout: Text alignment — centred divider. */
+  color: rgba(255, 255, 255, 0.35); /* @theme: Muted divider — subtle ornament. */
+  letter-spacing: 4px; /* @layout: Glyph spacing — wide ornament tracking. */
+}
+
+.vault-full-text {
+  white-space: pre-wrap; /* @layout: White space — preserves the journal's line breaks, wraps long lines. */
+  font-family: "Space Grotesk", monospace, sans-serif; /* @layout: Font family — journal prose in the ship's typeface. */
+  font-size: 0.85rem; /* @layout: Character scale — compact full-text projection. */
+  line-height: 1.65; /* @layout: Line height — readable journal text. */
+  color: rgba(255, 255, 255, 0.8); /* @theme: Journal prose — slightly dimmed to stay beneath the title. */
+  max-height: 340px; /* @layout: Dimension — caps the full-text projection height. */
+  overflow-y: auto; /* @layout: Overflow — internal scroll for long journal sections. */
+  padding: 10px; /* @layout: Internal spacing — padding inside the projection panel. */
+  background: rgba(0, 0, 0, 0.35); /* @theme: Dark backdrop — the raw archive surface. */
+  border-left: 2px solid rgba(167, 243, 208, 0.3); /* @theme: Mint spine — the archive's left rail. */
+}
+
+.vault-journal-link a {
+  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink link — the deep-archive tether. */
+  text-decoration: none; /* @layout: Text decoration — no underline on the raw link. */
+  letter-spacing: 1px; /* @layout: Glyph spacing — technical tracking. */
+  font-size: 0.75rem; /* @layout: Character scale — link size. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase link. */
+}
+
+.vault-journal-link a:hover {
+  text-decoration: underline; /* @layout: Text decoration — underline on hover for clarity. */
+}
+
+.vault-pending-note {
+  font-style: italic; /* @layout: Font style — italic pending prophecy. */
+  color: rgba(255, 255, 255, 0.6); /* @theme: Muted note — awaiting content. */
+}
+
+.vault-error {
+  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink error — critical alert. */
+  font-family: monospace; /* @layout: Font family — terminal error text. */
+}
+
+/* 31.6 — Nav-Gate quiz panel */
+.nav-gate {
+  margin-top: 24px; /* @layout: External spacing — separates the quiz from the crystal. */
+  animation: vault-rise 0.4s ease-out; /* @theme: Entrance animation — the quiz rises into view. */
+}
+
+.nav-gate-box {
+  padding: 24px; /* @layout: Internal spacing — padding inside the quiz box. */
+  background: rgba(10, 11, 30, 0.7); /* @theme: Deep-space panel — the quiz surface. */
+  border: 1px solid var(--nebula-pink, #ff007f); /* @theme: Pink border — the gate's edge. */
+  border-radius: 10px; /* @layout: Corner rounding — gate corners. */
+}
+
+.nav-gate-title {
+  color: var(--nebula-pink, #ff007f); /* @theme: Pink title — the gate's heading. */
+  font-size: 1rem; /* @layout: Character scale — title size. */
+  margin-bottom: 8px; /* @layout: External spacing — gap below the title. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase title. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — wide tracking. */
+}
+
+.nav-gate-intro {
+  color: rgba(255, 255, 255, 0.7); /* @theme: Muted intro — the gate's instruction. */
+  font-size: 0.85rem; /* @layout: Character scale — intro size. */
+  margin-bottom: 18px; /* @layout: External spacing — gap below the intro. */
+}
+
+.nav-gate-question {
+  border: none; /* @layout: Border removal — fieldsets get no box. */
+  margin: 0 0 16px; /* @layout: External spacing — gap between questions. */
+  padding: 0; /* @layout: Padding reset — fieldsets have no padding. */
+}
+
+.nav-gate-question legend {
+  font-size: 0.85rem; /* @layout: Character scale — question text. */
+  font-weight: 600; /* @layout: Font weight — semibold questions. */
+  margin-bottom: 8px; /* @layout: External spacing — gap below the question. */
+  color: rgba(255, 255, 255, 0.9); /* @theme: Bright question — primary text. */
+}
+
+.nav-gate-option {
+  display: flex; /* @layout: Flex assembly — the radio and its label share a row. */
+  align-items: center; /* @layout: Flex alignment — vertical centring. */
+  gap: 8px; /* @layout: Flex gutter — gap between radio and label. */
+  padding: 6px 10px; /* @layout: Internal spacing — touch-friendly option padding. */
+  margin: 4px 0; /* @layout: External spacing — gap between options. */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* @theme: Faint border — option edge. */
+  border-radius: 6px; /* @layout: Corner rounding — option corners. */
+  cursor: pointer; /* @layout: Interaction cue — clickable option. */
+  font-size: 0.85rem; /* @layout: Character scale — option text. */
+  transition: border-color 0.2s ease, background 0.2s ease; /* @theme: Smooth hover — border and fill fade over 0.2s. */
+}
+
+.nav-gate-option:hover {
+  border-color: rgba(167, 243, 208, 0.4); /* @theme: Hover — mint border brightens. */
+  background: rgba(167, 243, 208, 0.06); /* @theme: Hover — faint mint fill. */
+}
+
+.nav-gate-option input {
+  accent-color: var(--solar-mint, #a7f3d0); /* @theme: Radio accent — the mint radio control. */
+}
+
+.nav-gate-submit {
+  margin-top: 8px; /* @layout: External spacing — gap above the submit button. */
+  padding: 12px 22px; /* @layout: Internal spacing — button padding. */
+  background: transparent; /* @layout: Background — no fill. */
+  border: 1px solid var(--solar-mint, #a7f3d0); /* @theme: Mint border — the active command edge. */
+  color: var(--solar-mint, #a7f3d0); /* @theme: Mint text — the command label. */
+  border-radius: 6px; /* @layout: Corner rounding — button corners. */
+  cursor: pointer; /* @layout: Interaction cue — clickable button. */
+  font-size: 0.8rem; /* @layout: Character scale — button text. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — technical tracking. */
+  text-transform: uppercase; /* @layout: Text transform — uppercase command. */
+  transition: background 0.2s ease, color 0.2s ease; /* @theme: Smooth hover — fill and text fade over 0.2s. */
+}
+
+.nav-gate-submit:hover {
+  background: rgba(167, 243, 208, 0.15); /* @theme: Hover — mint fill rises. */
+}
+
+.nav-gate-result {
+  margin-top: 16px; /* @layout: External spacing — gap above the result. */
+}
+
+.nav-gate-result-ok {
+  color: var(--solar-mint, #a7f3d0); /* @theme: Mint success — the first key turned. */
+  font-weight: 600; /* @layout: Font weight — semibold success. */
+}
+
+.nav-gate-result-fail {
+  color: #ff6b6b; /* @theme: Red failure — the gate held. */
+  font-weight: 600; /* @layout: Font weight — semibold failure. */
+}
+
+/* 31.7 — THE ASCENDING SEAL (RETURN TO THE CHARTER)
+   At the top of the vault chamber, the traveller is greeted by a mirrored
+   crystal. It is the same Bahry seal that guards the transmission page's
+   gate, redirected home: a <a> whose interior is the identical 3D kite. It
+   doubles as the chamber's emblem — spinning continuously — and as the
+   return link back to the open manuscript. Symmetry of gates: the crew
+   entered through a seal and leave through a seal.
+   @pedagogy: The ascending seal reuses the ENTIRE 31.0 subsystem. The <a>
+   carries a smaller stage (.vault-return-stage) that embeds the same eight
+   faces and seam; because 31.0's faces are re-scaled here, the crystal
+   shrinks into an emblem. The only real difference: the sigil must receive
+   the click (pointer-events: auto override), because this seal is a way out. */
+.vault-return-seal {
+  position: relative; /* @layout: Positioning scheme — creates a containing block for the crystal's absolute centring. */
+  display: block; /* @layout: Display mode — the seal occupies its own centred line. */
+  width: 120px; /* @layout: Dimension — the compact return-stage footprint. */
+  height: 120px; /* @layout: Dimension — square, matching the scaled crystal. */
+  margin: 64px auto 8px; /* @layout: External spacing — generous clear air above so the crystal never overlaps the box preceding it, a tight seat for the caption below. */
+  cursor: pointer; /* @component: Event targeting — the pointer becomes a hand, signalling a link. */
+}
+
+/* 31.7.A — A stage compact enough to serve as an emblem. Because the 3D ghost
+   of the spinning kite is preserved-3d, the faces are absolutely centred on the
+   stage; here we scale BOTH the base face box (31.7.A) and the twelve spoke
+   transforms (31.7.B) down to half the core's radius, so the whole crystal
+   shrinks into the 120px stage and never spills over the neighbouring boxes. */
+.vault-return-seal .vault-return-stage {
+  width: 120px; /* @layout: Dimension — the emblem stage is compact. */
+  height: 120px; /* @layout: Dimension — matching reduced height keeps the kite centred. */
+  transform-style: preserve-3d; /* @layout: 3D context — reaffirmed so the translated faces stay volumetric. */
+}
+
+/* 31.7.B — The return stage's own geodesic faces: half the core's footprint. */
+.vault-return-stage .vault-core-face {
+  width: 96px; /* @layout: Dimension — the compact face box. */
+  height: 128px; /* @layout: Dimension — keeping the elongated kite proportion. */
+  margin-left: -48px; /* @layout: Offset correction — half the width for true centering. */
+  margin-top: -64px; /* @layout: Offset correction — half the height for true centering. */
+}
+
+/* 31.7.C — The return stage's spoke geometry: same angles, half the radius, so
+   the translated kite stays inside the 120px box. */
+.vault-return-stage .vault-core-face--t1 {
+  transform: rotateY(0deg) rotateX(62deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--t2 {
+  transform: rotateY(90deg) rotateX(62deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--t3 {
+  transform: rotateY(180deg) rotateX(62deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--t4 {
+  transform: rotateY(270deg) rotateX(62deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--b1 {
+  transform: rotateY(45deg) rotateX(-38deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--b2 {
+  transform: rotateY(135deg) rotateX(-38deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--b3 {
+  transform: rotateY(225deg) rotateX(-38deg) translateZ(56px);
+}
+.vault-return-stage .vault-core-face--b4 {
+  transform: rotateY(315deg) rotateX(-38deg) translateZ(56px);
+}
+
+/* The seam's height follows the compact emblem stage. */
+.vault-return-seal .vault-core-seam {
+  height: 120px; /* @layout: Dimension — matches the 120px return-stage span. */
+}
+
+.vault-return-seal .vault-core-seal {
+  pointer-events: auto; /* @component: Event targeting — override 31.0's pointer-events:none so the way-out responds. */
+  cursor: pointer; /* @layout: Event targeting — the hand pointer returns on the glyph. */
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease; /* @theme: Smooth transition — the seal brightens and swells over 0.25s. */
+}
+
+.vault-return-seal:hover .vault-return-stage {
+  animation-duration: 7s; /* @theme: Animation sub-property — the emblem accelerates when reached for. */
+}
+
+.vault-return-seal:hover .vault-core-face {
+  border-color: var(--nebula-pink, #ff007f); /* @theme: Hover — facets flash pink, the way-out acknowledges the touch. */
+}
+
+.vault-return-seal:hover .vault-core-seal {
+  color: var(--solar-mint, #a7f3d0); /* @theme: Hover — the sigil turns mint, the open-door colour. */
+  text-shadow: 0 0 26px rgba(167, 243, 208, 0.9); /* @theme: Hover — a brighter aura radiates as the seal is reached for. */
+  transform: translate(-50%, -50%) scale(1.12); /* @layout: Transform — the glyph swells slightly, honouring the gesture. */
+}
+
+.vault-return-caption {
+  text-align: center; /* @layout: Text alignment — the caption is centred beneath the seal. */
+  margin: 0; /* @layout: External spacing — the tight seat continues from the seal block. */
+  font-size: 0.72rem; /* @layout: Character scale — a small, quiet label under the crystal. */
+  letter-spacing: 2px; /* @layout: Glyph spacing — readable tracking, matching the core-label-sub voice. */
+  color: rgba(255, 255, 255, 0.6); /* @theme: Muted caption — present but gentle, secondary to the glowing seal. */
+  opacity: 0; /* @theme: Concealed state — invisible until the traveller nears the seal, matching the gate's hover label. */
+  transform: translateY(6px); /* @layout: Transform — the caption sits low, ready to glide up. */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* @theme: Transition — the same gentle reveal as the transmission gate. */
+}
+
+/* The caption is a sibling that follows the <a>: reveal it when that seal is
+   hovered or focused. Accessibility holds because the text is real DOM prose
+   (announced to screen readers at any opacity) and surfaces on focus too. */
+.vault-return-seal:hover ~ .vault-return-caption,
+.vault-return-seal:focus-within ~ .vault-return-caption,
+.vault-return-seal:focus-visible ~ .vault-return-caption {
+  opacity: 1; /* @theme: Revealed state — the destination appears as the eye lands on the return seal. */
+  transform: translateY(0); /* @layout: Transform — the caption settles beneath the crystal. */
+}
+
+/* Keyframe: the Nav-Gate panel rises into open. */
+
+
+/* 31.8 — Responsive: the gate, crystal, and constellation collapse on narrow decks */
+
+
 /* ==========================================================================
 @module: 00.1 — KINETIC PROPULSION ENGINES & CENTRAL KEYFRAMES
 @group: A — Ambient Interface Effects / Hardware Cathode Screen
@@ -3136,6 +3917,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
 @group: E — Component Boot Sequences / Staggered Entry
 @group: F — Neon Pulse Cycles / Border & Text Flash
 @group: G — Crystal & Bridge Mechanical Oscillation
+@group: H — Seldon Vault Kinetics (Seal / Unseal / Rise)
 Purpose: Centralizes all asynchronous motion engines (@keyframes) utilized
 across the flagship interfaces. Positioned logically after the advanced layout
 layers and prior to adaptive media queries. Anchors atmospheric CRT cathode
@@ -3457,6 +4239,58 @@ volume capsule to suggest structural tremor when crossed.
   }
 }
 
+/* ==================================================================
+@group: H — THE SELDON VAULT KINETICS (SEAL / UNSEAL / RISE ENGINES)
+SUMMARY: The vault's motion engines, migrated from Module 31 so all 
+asynchronous keyframes sit under 00.1 governance. vault-core-spin 
+revolves the Bahry kite; vault-seal-breathe pulses the heart sigil; 
+vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
+========================================================================== */
+
+@keyframes vault-core-spin {
+  from {
+    transform: rotateX(-10deg) rotateY(0deg); /* @theme: Spin start — the kite begins tipped for a cinematic perspective. */
+  }
+  to {
+    transform: rotateX(-10deg) rotateY(360deg); /* @theme: Spin end — a full revolution returns the seal to its start. */
+  }
+}
+
+@keyframes vault-seal-breathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* @theme: Breath start — the sigil rests at full size. */
+    opacity: 1; /* @theme: Breath start — fully visible. */
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.12); /* @theme: Breath peak — the sigil swells, the seal pulses. */
+    opacity: 0.82; /* @theme: Breath peak — a momentary dimness deepens the pulse. */
+  }
+}
+
+@keyframes vault-unseal {
+  from {
+    opacity: 0; /* @theme: Reveal start — the chamber is invisible at first. */
+    transform: translateY(18px); /* @theme: Reveal start — it begins pushed below its resting place. */
+  }
+  to {
+    opacity: 1; /* @theme: Reveal end — fully visible. */
+    transform: translateY(0); /* @theme: Reveal end — settled into its final position. */
+  }
+}
+
+@keyframes vault-rise {
+  from {
+    opacity: 0; /* @theme: Entrance start — invisible. */
+    transform: translateY(12px); /* @theme: Entrance start — pushed down. */
+  }
+  to {
+    opacity: 1; /* @theme: Entrance end — fully visible. */
+    transform: translateY(0); /* @theme: Entrance end — settled in place. */
+  }
+}
+
+
 /* ==========================================================================
 @module: 00.2 — MEDIA QUERIES & SPATIAL ISOLATION ENGINES
 @section: 00.2.A — Desktop Protocol: Large Screens (min-width: 769px)
@@ -3631,6 +4465,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
 @sub-section: B2 — Reading Vans & Title Restructuring
 @sub-section: B3 — Click Landing Buffer & Anti-Debris Shielding
 @sub-section: B4 — Advanced Reactor Kinetics & Teletype Stacking
+@sub-section: B5 — Seldon Vault Collapse & Orbit Reticle
 ========================================================================== */
 
 @media screen and (max-width: 768px) {
@@ -4046,345 +4881,114 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     letter-spacing: 1.5px !important; /* @layout: Glyph spacing — adjusts tracking to 1.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
     margin: 5px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
   }
-}
+  /* ========================================================================
+  @sub-section: B5 — SELDON VAULT COLLAPSE & ORBIT RETICLE
+  The corrective collapse fold of the Seldon Vault, drawn into the same shared
+  768px bridge so every mobile override lives in ONE media block: the same gate,
+  orbit, crystal and seal metrics that Module 31 packs for desktop are re-flowed
+  here for the smallest viewports, guaranteeing the gate never overflows.
+  ======================================================================== */
 
-/* 
-============================================================================
-@manifest: D::0dy55ey - Module 31: THE SELDON VAULT
-============================================================================
-The sealed chamber beneath the message in the bottle. Governs:
-  - the voyage telemetry readout
-  - the capsule constellation (the sealed cargo of the novel)
-  - the Nav-Gate quizzes (Key One)
-  - the Sleeper's crystal projection (the living transmissions)
-
-Palette reuses the established D::0dy55ey tokens: void-black backgrounds,
-nebula-pink accents, solar-mint active status, amber-glow warnings.
-============================================================================
-*/
-
-/* 31.1 — The chamber itself: a dark compartment below the manifesto deck */
-.vault-chamber {
-  margin-top: 60px; /* @layout: Vertical separation — pulls the chamber down from the manifesto crystal. */
-  padding: 20px 0 40px; /* @layout: Internal spacing — breathing room around the constellation. */
-  border-top: 1px solid rgba(167, 243, 208, 0.12); /* @theme: Faint solar-mint hairline separating the bottle from the vault. */
-}
-
-.vault-chamber .category-header {
-  margin-bottom: 24px; /* @layout: Clearance — spaces the title from the telemetry readout. */
-}
-
-/* 31.2 — Voyage telemetry: the four-cell mission console */
-.voyage-telemetry {
-  display: grid; /* @layout: Grid assembly — arranges the four telemetry cells in a row. */
-  grid-template-columns: repeat(4, 1fr); /* @layout: Column track definition — four equal columns. */
-  gap: 10px; /* @layout: Inter-cell gutter — spacing between the telemetry cells. */
-  margin-bottom: 28px; /* @layout: External spacing — separates the readout from the constellation. */
-  padding: 14px; /* @layout: Internal spacing — padding inside the telemetry panel. */
-  background: rgba(10, 11, 30, 0.6); /* @theme: Deep-space glass panel — translucent void-black. */
-  border: 1px solid rgba(167, 243, 208, 0.2); /* @theme: Solar-mint border — the active console edge. */
-  border-radius: 8px; /* @layout: Corner rounding — soft console corners. */
-}
-
-.telemetry-cell {
-  text-align: center; /* @layout: Text alignment — centres each metric. */
-  padding: 8px 4px; /* @layout: Internal spacing — padding around the label/value pair. */
-}
-
-.telemetry-label {
-  display: block; /* @layout: Display mode — forces the label onto its own line. */
-  font-size: 0.6rem; /* @layout: Character scale — small technical label. */
-  letter-spacing: 2px; /* @layout: Glyph spacing — wide tracking for the HUD label feel. */
-  color: rgba(255, 255, 255, 0.5); /* @theme: Muted label — secondary information. */
-  margin-bottom: 6px; /* @layout: External spacing — gap between label and value. */
-}
-
-.telemetry-value {
-  font-size: 1.1rem; /* @layout: Character scale — prominent metric value. */
-  font-weight: 700; /* @layout: Font weight — bold numeric readout. */
-  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint value — live telemetry. */
-  text-shadow: 0 0 8px rgba(167, 243, 208, 0.5); /* @theme: Neon glow — phosphor readout effect. */
-}
-
-/* 31.3 — The capsule constellation */
-.capsule-constellation {
-  display: grid; /* @layout: Grid assembly — the constellation of sealed capsules. */
-  grid-template-columns: repeat(3, 1fr); /* @layout: Column track definition — three capsules per row on desktop. */
-  gap: 14px; /* @layout: Inter-cell gutter — spacing between capsules. */
-  margin-bottom: 32px; /* @layout: External spacing — separates constellation from the crystal. */
-}
-
-.capsule {
-  position: relative; /* @layout: Positioning context — enables the absolute-placed day badge. */
-  display: flex; /* @layout: Flex assembly — stacks the capsule's inner spans vertically. */
-  flex-direction: column; /* @layout: Flex direction — vertical stack: day, volume, title, lock. */
-  align-items: flex-start; /* @layout: Flex alignment — left-align the capsule text. */
-  gap: 6px; /* @layout: Flex gutter — vertical spacing between the capsule's fields. */
-  padding: 18px 16px; /* @layout: Internal spacing — breathing room inside the capsule. */
-  min-height: 130px; /* @layout: Dimension — uniform capsule height for the grid rhythm. */
-  background: rgba(10, 11, 30, 0.7); /* @theme: Deep-space capsule — void-black glass. */
-  border: 1px solid rgba(255, 255, 255, 0.12); /* @theme: Sealed edge — faint neutral border. */
-  border-radius: 10px; /* @layout: Corner rounding — capsule corners. */
-  cursor: pointer; /* @layout: Interaction cue — signals the capsule is clickable. */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* @theme: Smooth transition — border and glow fade over 0.3s. */
-  color: inherit; /* @layout: Text colour — inherit the theme's default text colour. */
-  text-align: left; /* @layout: Text alignment — left-aligned capsule content. */
-  font-family: inherit; /* @layout: Font family — inherit the body typeface. */
-}
-
-/* 31.4 — Capsule states */
-.capsule--sealed {
-  border-color: rgba(255, 255, 255, 0.12); /* @theme: Sealed state — faint border. */
-  opacity: 0.75; /* @theme: Sealed state — slightly dimmed, waiting. */
-}
-
-.capsule--sealed:hover {
-  border-color: rgba(255, 255, 255, 0.35); /* @theme: Sealed hover — border brightens. */
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08); /* @theme: Sealed hover — soft glow. */
-}
-
-.capsule--ripening {
-  border-color: rgba(255, 255, 255, 0.3); /* @theme: Ripening state — brighter border. */
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.1); /* @theme: Ripening state — soft glow. */
-}
-
-.capsule--open {
-  border-color: var(--solar-mint, #a7f3d0); /* @theme: Open state — solar-mint border signals readiness. */
-  box-shadow: 0 0 18px rgba(167, 243, 208, 0.3); /* @theme: Open state — mint glow. */
-}
-
-.capsule--active {
-  border-color: var(--nebula-pink, #ff007f); /* @theme: Active projection — nebula-pink border on the capsule being read. */
-  box-shadow: 0 0 22px rgba(255, 0, 127, 0.4); /* @theme: Active projection — pink glow. */
-}
-
-.capsule-day {
-  position: absolute; /* @layout: Absolute placement — the day badge floats at the top-right corner. */
-  top: 10px; /* @layout: Offset from the top edge — badge position. */
-  right: 12px; /* @layout: Offset from the right edge — badge position. */
-  font-size: 0.62rem; /* @layout: Character scale — compact badge text. */
-  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
-  color: rgba(255, 255, 255, 0.55); /* @theme: Muted badge — secondary label. */
-}
-
-.capsule-volume {
-  font-size: 0.6rem; /* @layout: Character scale — small volume tag. */
-  letter-spacing: 2px; /* @layout: Glyph spacing — wide HUD tracking. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase volume name. */
-  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink volume tag — the volume's identity colour. */
-}
-
-.capsule-title {
-  font-size: 0.95rem; /* @layout: Character scale — the capsule's title. */
-  font-weight: 600; /* @layout: Font weight — semibold title. */
-  line-height: 1.3; /* @layout: Line height — comfortable title wrapping. */
-  margin-top: 4px; /* @layout: External spacing — gap above the title. */
-}
-
-.capsule-lock {
-  margin-top: auto; /* @layout: Flex alignment — pushes the lock label to the capsule's bottom edge. */
-  font-size: 0.58rem; /* @layout: Character scale — tiny lock label. */
-  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
-  color: rgba(255, 255, 255, 0.5); /* @theme: Muted lock label — secondary information. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase lock status. */
-}
-
-/* 31.5 — The Sleeper's crystal */
-.sleeper-crystal {
-  margin-top: 8px; /* @layout: External spacing — separates the crystal from the constellation. */
-  padding: 18px; /* @layout: Internal spacing — padding inside the crystal. */
-  background: rgba(10, 11, 30, 0.5); /* @theme: Deep-space glass — translucent void-black. */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* @theme: Crystal edge — faint neutral border. */
-  border-radius: 10px; /* @layout: Corner rounding — crystal corners. */
-  min-height: 120px; /* @layout: Dimension — minimum projection height. */
-}
-
-.sleeper-crystal-header {
-  margin-bottom: 14px; /* @layout: External spacing — gap below the status line. */
-}
-
-.sleeper-status {
-  font-size: 0.62rem; /* @layout: Character scale — small status text. */
-  letter-spacing: 2px; /* @layout: Glyph spacing — wide HUD tracking. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase status. */
-  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint status — the Sleeper's voice is active. */
-  text-shadow: 0 0 8px rgba(167, 243, 208, 0.5); /* @theme: Neon glow — phosphor effect. */
-}
-
-.vault-output {
-  color: rgba(255, 255, 255, 0.88); /* @theme: Projected text — bright readable prose. */
-  font-size: 0.92rem; /* @layout: Character scale — transmission body text. */
-  line-height: 1.7; /* @layout: Line height — comfortable reading rhythm. */
-}
-
-.vault-output p {
-  margin-bottom: 14px; /* @layout: External spacing — paragraph spacing in the projection. */
-}
-
-.vault-transmission-title {
-  font-weight: 700; /* @layout: Font weight — bold title. */
-  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink title — the day's identity. */
-  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4); /* @theme: Pink glow — title radiance. */
-}
-
-.vault-delta-line {
-  font-size: 0.62rem; /* @layout: Character scale — small delta certificate. */
-  letter-spacing: 1.5px; /* @layout: Glyph spacing — technical tracking. */
-  color: var(--solar-mint, #a7f3d0); /* @theme: Solar-mint deltas — the birth certificates. */
-}
-
-.vault-divider {
-  text-align: center; /* @layout: Text alignment — centred divider. */
-  color: rgba(255, 255, 255, 0.35); /* @theme: Muted divider — subtle ornament. */
-  letter-spacing: 4px; /* @layout: Glyph spacing — wide ornament tracking. */
-}
-
-.vault-full-text {
-  white-space: pre-wrap; /* @layout: White space — preserves the journal's line breaks, wraps long lines. */
-  font-family: "Space Grotesk", monospace, sans-serif; /* @layout: Font family — journal prose in the ship's typeface. */
-  font-size: 0.85rem; /* @layout: Character scale — compact full-text projection. */
-  line-height: 1.65; /* @layout: Line height — readable journal text. */
-  color: rgba(255, 255, 255, 0.8); /* @theme: Journal prose — slightly dimmed to stay beneath the title. */
-  max-height: 340px; /* @layout: Dimension — caps the full-text projection height. */
-  overflow-y: auto; /* @layout: Overflow — internal scroll for long journal sections. */
-  padding: 10px; /* @layout: Internal spacing — padding inside the projection panel. */
-  background: rgba(0, 0, 0, 0.35); /* @theme: Dark backdrop — the raw archive surface. */
-  border-left: 2px solid rgba(167, 243, 208, 0.3); /* @theme: Mint spine — the archive's left rail. */
-}
-
-.vault-journal-link a {
-  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink link — the deep-archive tether. */
-  text-decoration: none; /* @layout: Text decoration — no underline on the raw link. */
-  letter-spacing: 1px; /* @layout: Glyph spacing — technical tracking. */
-  font-size: 0.75rem; /* @layout: Character scale — link size. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase link. */
-}
-
-.vault-journal-link a:hover {
-  text-decoration: underline; /* @layout: Text decoration — underline on hover for clarity. */
-}
-
-.vault-pending-note {
-  font-style: italic; /* @layout: Font style — italic pending prophecy. */
-  color: rgba(255, 255, 255, 0.6); /* @theme: Muted note — awaiting content. */
-}
-
-.vault-error {
-  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink error — critical alert. */
-  font-family: monospace; /* @layout: Font family — terminal error text. */
-}
-
-/* 31.6 — Nav-Gate quiz panel */
-.nav-gate {
-  margin-top: 24px; /* @layout: External spacing — separates the quiz from the crystal. */
-  animation: vault-rise 0.4s ease-out; /* @theme: Entrance animation — the quiz rises into view. */
-}
-
-.nav-gate-box {
-  padding: 24px; /* @layout: Internal spacing — padding inside the quiz box. */
-  background: rgba(10, 11, 30, 0.7); /* @theme: Deep-space panel — the quiz surface. */
-  border: 1px solid var(--nebula-pink, #ff007f); /* @theme: Pink border — the gate's edge. */
-  border-radius: 10px; /* @layout: Corner rounding — gate corners. */
-}
-
-.nav-gate-title {
-  color: var(--nebula-pink, #ff007f); /* @theme: Pink title — the gate's heading. */
-  font-size: 1rem; /* @layout: Character scale — title size. */
-  margin-bottom: 8px; /* @layout: External spacing — gap below the title. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase title. */
-  letter-spacing: 2px; /* @layout: Glyph spacing — wide tracking. */
-}
-
-.nav-gate-intro {
-  color: rgba(255, 255, 255, 0.7); /* @theme: Muted intro — the gate's instruction. */
-  font-size: 0.85rem; /* @layout: Character scale — intro size. */
-  margin-bottom: 18px; /* @layout: External spacing — gap below the intro. */
-}
-
-.nav-gate-question {
-  border: none; /* @layout: Border removal — fieldsets get no box. */
-  margin: 0 0 16px; /* @layout: External spacing — gap between questions. */
-  padding: 0; /* @layout: Padding reset — fieldsets have no padding. */
-}
-
-.nav-gate-question legend {
-  font-size: 0.85rem; /* @layout: Character scale — question text. */
-  font-weight: 600; /* @layout: Font weight — semibold questions. */
-  margin-bottom: 8px; /* @layout: External spacing — gap below the question. */
-  color: rgba(255, 255, 255, 0.9); /* @theme: Bright question — primary text. */
-}
-
-.nav-gate-option {
-  display: flex; /* @layout: Flex assembly — the radio and its label share a row. */
-  align-items: center; /* @layout: Flex alignment — vertical centring. */
-  gap: 8px; /* @layout: Flex gutter — gap between radio and label. */
-  padding: 6px 10px; /* @layout: Internal spacing — touch-friendly option padding. */
-  margin: 4px 0; /* @layout: External spacing — gap between options. */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* @theme: Faint border — option edge. */
-  border-radius: 6px; /* @layout: Corner rounding — option corners. */
-  cursor: pointer; /* @layout: Interaction cue — clickable option. */
-  font-size: 0.85rem; /* @layout: Character scale — option text. */
-  transition: border-color 0.2s ease, background 0.2s ease; /* @theme: Smooth hover — border and fill fade over 0.2s. */
-}
-
-.nav-gate-option:hover {
-  border-color: rgba(167, 243, 208, 0.4); /* @theme: Hover — mint border brightens. */
-  background: rgba(167, 243, 208, 0.06); /* @theme: Hover — faint mint fill. */
-}
-
-.nav-gate-option input {
-  accent-color: var(--solar-mint, #a7f3d0); /* @theme: Radio accent — the mint radio control. */
-}
-
-.nav-gate-submit {
-  margin-top: 8px; /* @layout: External spacing — gap above the submit button. */
-  padding: 12px 22px; /* @layout: Internal spacing — button padding. */
-  background: transparent; /* @layout: Background — no fill. */
-  border: 1px solid var(--solar-mint, #a7f3d0); /* @theme: Mint border — the active command edge. */
-  color: var(--solar-mint, #a7f3d0); /* @theme: Mint text — the command label. */
-  border-radius: 6px; /* @layout: Corner rounding — button corners. */
-  cursor: pointer; /* @layout: Interaction cue — clickable button. */
-  font-size: 0.8rem; /* @layout: Character scale — button text. */
-  letter-spacing: 2px; /* @layout: Glyph spacing — technical tracking. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase command. */
-  transition: background 0.2s ease, color 0.2s ease; /* @theme: Smooth hover — fill and text fade over 0.2s. */
-}
-
-.nav-gate-submit:hover {
-  background: rgba(167, 243, 208, 0.15); /* @theme: Hover — mint fill rises. */
-}
-
-.nav-gate-result {
-  margin-top: 16px; /* @layout: External spacing — gap above the result. */
-}
-
-.nav-gate-result-ok {
-  color: var(--solar-mint, #a7f3d0); /* @theme: Mint success — the first key turned. */
-  font-weight: 600; /* @layout: Font weight — semibold success. */
-}
-
-.nav-gate-result-fail {
-  color: #ff6b6b; /* @theme: Red failure — the gate held. */
-  font-weight: 600; /* @layout: Font weight — semibold failure. */
-}
-
-/* 31.7 — The vault rises into view */
-@keyframes vault-rise {
-  from {
-    opacity: 0; /* @theme: Entrance start — invisible. */
-    transform: translateY(12px); /* @theme: Entrance start — pushed down. */
+  /* The containment stage tightens so the gate never overflows small screens. */
+  .vault-gate {
+    max-width: 92%; /* @layout: Horizontal ceiling — the panel hugs the viewport. */
+    margin: 40px auto 10px; /* @layout: External spacing — reduced isolation on mobile. */
+    padding: 30px 12px 24px; /* @layout: Internal spacing — tighter cushioning inside the panel. */
   }
-  to {
-    opacity: 1; /* @theme: Entrance end — fully visible. */
-    transform: translateY(0); /* @theme: Entrance end — settled in place. */
-  }
-}
 
-/* 31.8 — Responsive: the constellation collapses to one column on narrow decks */
-@media (max-width: 768px) {
+  /* The orbit ring shrinks with the crystal so the reticle keeps framing it. */
+  .vault-gate-orbit {
+    width: 240px; /* @layout: Dimension — ring diameter tracks the compact crystal. */
+    height: 240px; /* @layout: Dimension — matching ring height keeps it circular. */
+  }
+
+  .vault-core {
+    width: 200px; /* @layout: Dimension — the link footprint scales down. */
+  }
+
+  .vault-core-stage {
+    width: 200px; /* @layout: Dimension — the crystal scales down so it never overflows small screens. */
+    height: 200px; /* @layout: Dimension — matching reduced height keeps the kite centred. */
+  }
+
+  .vault-core-face {
+    width: 120px; /* @layout: Dimension — proportionally smaller face for the compact crystal. */
+    height: 160px; /* @layout: Dimension — matching face height for the smaller elongated kite. */
+    margin-left: -60px; /* @layout: Offset correction — re-centred for the smaller face width. */
+    margin-top: -80px; /* @layout: Offset correction — re-centred for the smaller face height. */
+  }
+
+  /* The face spokes reclip to a 56px radius so the compact kite (with its
+     smaller faces) stays inscribed inside the 120px mobile ring. */
+  .vault-core-face--t1,
+  .vault-core-face--t2,
+  .vault-core-face--t3,
+  .vault-core-face--t4,
+  .vault-core-face--b1,
+  .vault-core-face--b2,
+  .vault-core-face--b3,
+  .vault-core-face--b4 {
+    transform: none; /* @theme: Base — the per-face transform is rebuilt below with the compact radius. */
+  }
+  .vault-core-face--t1 { transform: rotateY(0deg)   rotateX(62deg)  translateZ(56px); }
+  .vault-core-face--t2 { transform: rotateY(90deg)  rotateX(62deg)  translateZ(56px); }
+  .vault-core-face--t3 { transform: rotateY(180deg) rotateX(62deg)  translateZ(56px); }
+  .vault-core-face--t4 { transform: rotateY(270deg) rotateX(62deg)  translateZ(56px); }
+  .vault-core-face--b1 { transform: rotateY(45deg)  rotateX(-38deg) translateZ(56px); }
+  .vault-core-face--b2 { transform: rotateY(135deg) rotateX(-38deg) translateZ(56px); }
+  .vault-core-face--b3 { transform: rotateY(225deg) rotateX(-38deg) translateZ(56px); }
+  .vault-core-face--b4 { transform: rotateY(315deg) rotateX(-38deg) translateZ(56px); }
+
+  /* The seam follows the compact crystal's height. */
+  .vault-core-seam {
+    height: 200px; /* @layout: Dimension — matches the 200px mobile crystal span. */
+  }
+
+  /* The ascending seal shrinks into a neat emblem. */
+  .vault-return-seal {
+    width: 100px; /* @layout: Dimension — the return seal compacts. */
+    height: 100px; /* @layout: Dimension — square, matching. */
+  }
+
+  .vault-return-seal .vault-return-stage {
+    width: 100px; /* @layout: Dimension — the emblem stage compacts. */
+    height: 100px; /* @layout: Dimension — square, matching. */
+  }
+
+  .vault-return-seal .vault-core-seam {
+    height: 100px; /* @layout: Dimension — the seam follows the compact emblem. */
+  }
+
+  /* The return stages' faces follow the compact 100px emblem with a halved radius. */
+  .vault-return-stage .vault-core-face {
+    width: 80px; /* @layout: Dimension — proportionally smaller face for the compact emblem. */
+    height: 106px; /* @layout: Dimension — matching face height. */
+    margin-left: -40px; /* @layout: Offset correction — re-centred. */
+    margin-top: -53px; /* @layout: Offset correction — re-centred. */
+  }
+  .vault-return-stage .vault-core-face--t1,
+  .vault-return-stage .vault-core-face--t2,
+  .vault-return-stage .vault-core-face--t3,
+  .vault-return-stage .vault-core-face--t4,
+  .vault-return-stage .vault-core-face--b1,
+  .vault-return-stage .vault-core-face--b2,
+  .vault-return-stage .vault-core-face--b3,
+  .vault-return-stage .vault-core-face--b4 {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(46px); /* @theme: Base — overridden individually below, kept for discovery of the radius value. */
+  }
+  .vault-return-stage .vault-core-face--t1 { transform: rotateY(0deg)   rotateX(62deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--t2 { transform: rotateY(90deg)  rotateX(62deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--t3 { transform: rotateY(180deg) rotateX(62deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--t4 { transform: rotateY(270deg) rotateX(62deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--b1 { transform: rotateY(45deg)  rotateX(-38deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--b2 { transform: rotateY(135deg) rotateX(-38deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--b3 { transform: rotateY(225deg) rotateX(-38deg) translateZ(46px); }
+  .vault-return-stage .vault-core-face--b4 { transform: rotateY(315deg) rotateX(-38deg) translateZ(46px); }
+
   .voyage-telemetry {
     grid-template-columns: repeat(2, 1fr); /* @layout: Column track definition — two cells per row on tablets. */
   }
+
   .capsule-constellation {
     grid-template-columns: 1fr; /* @layout: Column track definition — one capsule per row on mobile. */
   }
