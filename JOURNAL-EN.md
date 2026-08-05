@@ -1002,7 +1002,7 @@ I pushed both to `main` and watched the remote repository reflect the changes. T
 
 ---
 
-  # DAY 16 — The Ship Learns a New Tongue: Thirty-One Modules, Nine Mechanisms, and the Legend Made Whole
+# DAY 16 — The Ship Learns a New Tongue: Thirty-One Modules, Nine Mechanisms, and the Legend Made Whole
   
   The fifteenth day had been about archives and links — the bibliographic nervous system of the fleet. Today was about the ship's own voice. Two files carry the pulse of `D::0dy55ey`: the script that watches and responds, and the stylesheet that gives it form and atmosphere. Both received the full pedagogical treatment today.
   
@@ -1677,6 +1677,8 @@ The mercurial seas stretch ahead. We sail when the captain gives the order.
 - **Fiction** — literary generation plus an invented reference point (the Sleeper) that licenses narrating interiority. It is the only regime that fabricates its own witness.
 
 There is one generative act, four pressures. Translation is that act re-pointed at a second language, borrowing the target language's already-recorded voice rather than a dictionary. This is the folding the captain recognises as recursion: the same law repeated at every scale.
+
+**7. The Seldon Vault — the novel projected aboard the website.** Because the novel had become a beast that feeds on its own recursion, it could no longer live only in the journals. A sealed chamber was built beneath the manifesto on `transmission.html`, in both languages — the Vault Chamber. The manuscript stays in the message in the bottle (DAY 00, always open); below it, a constellation of capsules guards the novel's transmissions. Each capsule is gated by **two keys**: a Nav-Gate quiz per volume (five questions each, authored from the volume's foundational, source-verifiable facts and stored in `shared/data/vault-transmissions.json`), and the **voyage clock** — real time since first contact, accelerated by exploration, so every distinct page visited advances the voyage. When both keys turn, the Sleeper — the invented witness — wakes and projects the entry through the crystal, typing it live. Written days fetch their full text from `../JOURNAL-EN.md` / `JOURNAL-RO.md` so the website and the journals remain one body; unwritten days project their pending prophecy. The `D::` delta layer prints the commit hashes that gave birth to each transmission. `.nojekyll` was added at the root so GitHub Pages serves the raw Markdown the Vault reads. The footer's transmission link now reads *The Astrogation Charter / The Vault*, and leads into the chamber itself.
 
 ---
 

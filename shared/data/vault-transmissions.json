@@ -1,0 +1,555 @@
+{
+  "manifest": "D::0dy55ey Vault Transmissions — the sealed cargo of the cowritten novel",
+  "version": 1,
+  "voyage": {
+    "firstContactKey": "d0_voyage_firstContact",
+    "waypointsKey": "d0_voyage_waypoints",
+    "perWaypointBoost": 0.5,
+    "note": "effectiveVoyageHours = realHoursSinceFirstContact * (1 + perWaypointBoost * waypointCount)"
+  },
+  "capsules": [
+    {
+      "id": "vault-frontend",
+      "volume": "frontend",
+      "day": "DAY 24",
+      "status": "written",
+      "requiredShipHours": 1,
+      "journalSection": "DAY 24",
+      "deltas": ["0accacc", "b1b407f"],
+      "title": {
+        "en": "The First Cargo Hold Loaded",
+        "ro": "Prima Cală Încărcată"
+      },
+      "teaser": {
+        "en": "The first Khan Academy sheet is stowed. A two-channel workflow is born — the captain watches, the AI reads the archives, and the notes drive the structure.",
+        "ro": "Prima fișă Khan Academy e îmbarcată. Se naște un flux de lucru pe două canale — căpitanul privește, AI citește arhivele, iar notițele conduc structura."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume I — Frontend",
+          "ro": "Poartă de Navigație: Volumul I — Frontend"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "Which element must appear before all other content in an HTML document?",
+              "ro": "Ce element trebuie să apară înaintea oricărui alt conținut dintr-un document HTML?"
+            },
+            "options": [
+              { "en": "<!DOCTYPE html>", "ro": "<!DOCTYPE html>" },
+              { "en": "<html>", "ro": "<html>" },
+              { "en": "<head>", "ro": "<head>" },
+              { "en": "<meta charset>", "ro": "<meta charset>" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What is the primary purpose of the lang attribute on the <html> element?",
+              "ro": "Care este scopul principal al atributului lang pe elementul <html>?"
+            },
+            "options": [
+              { "en": "To enable JavaScript", "ro": "Să activeze JavaScript" },
+              { "en": "To declare the document's main language", "ro": "Să declare limba principală a documentului" },
+              { "en": "To set the page width", "ro": "Să seteze lățimea paginii" },
+              { "en": "To apply a CSS class", "ro": "Să aplice o clasă CSS" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "Which CSS property controls the space between an element's content and its border?",
+              "ro": "Ce proprietate CSS controlează spațiul dintre conținutul unui element și marginea sa?"
+            },
+            "options": [
+              { "en": "margin", "ro": "margin" },
+              { "en": "border", "ro": "border" },
+              { "en": "gap", "ro": "gap" },
+              { "en": "padding", "ro": "padding" }
+            ],
+            "correct": 3
+          },
+          {
+            "q": {
+              "en": "What does the meta charset=\"UTF-8\" element ensure?",
+              "ro": "Ce garantează elementul meta charset=\"UTF-8\"?"
+            },
+            "options": [
+              { "en": "Faster page loading", "ro": "Încărcare mai rapidă a paginii" },
+              { "en": "That diacritics and special characters render correctly", "ro": "Că diacriticele și caracterele speciale se afișează corect" },
+              { "en": "Higher search-engine ranking", "ro": "Poziționare mai bună în motoarele de căutare" },
+              { "en": "A responsive layout", "ro": "Un layout responsive" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "Which is the correct way to link an external stylesheet?",
+              "ro": "Care este modul corect de a lega o foaie de stil externă?"
+            },
+            "options": [
+              { "en": "<style src=\"style.css\">", "ro": "<style src=\"style.css\">" },
+              { "en": "<css href=\"style.css\">", "ro": "<css href=\"style.css\">" },
+              { "en": "<link rel=\"stylesheet\" href=\"style.css\">", "ro": "<link rel=\"stylesheet\" href=\"style.css\">" },
+              { "en": "<script src=\"style.css\">", "ro": "<script src=\"style.css\">" }
+            ],
+            "correct": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "vault-backend",
+      "volume": "backend",
+      "day": "DAY 25",
+      "status": "written",
+      "requiredShipHours": 2,
+      "journalSection": "DAY 25",
+      "deltas": ["b341233"],
+      "title": {
+        "en": "The Voice Speaks of Itself",
+        "ro": "Vocea Vorbește Despre Ea Însăși"
+      },
+      "teaser": {
+        "en": "One engine, four resolutions: summary, code, literary, fictional. The machinery of text generation, spoken by the machine itself.",
+        "ro": "Un singur motor, patru rezoluții: rezumat, cod, literar, ficțional. Mecanismul generării de text, rostit de mașină însăși."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume II — Backend",
+          "ro": "Poartă de Navigație: Volumul II — Backend"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "What is an API?",
+              "ro": "Ce este o API?"
+            },
+            "options": [
+              { "en": "A type of database", "ro": "Un tip de bază de date" },
+              { "en": "An interface allowing software applications to communicate", "ro": "O interfață care permite aplicațiilor software să comunice" },
+              { "en": "A programming language", "ro": "Un limbaj de programare" },
+              { "en": "A design pattern", "ro": "Un tipar de design" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "What does HTTP status code 404 mean?",
+              "ro": "Ce înseamnă codul de status HTTP 404?"
+            },
+            "options": [
+              { "en": "Success", "ro": "Succes" },
+              { "en": "Unauthorized", "ro": "Neautorizat" },
+              { "en": "Resource not found", "ro": "Resursa nu a fost găsită" },
+              { "en": "Server error", "ro": "Eroare de server" }
+            ],
+            "correct": 2
+          },
+          {
+            "q": {
+              "en": "Which is an example of a backend concern?",
+              "ro": "Care este un exemplu de preocupare de backend?"
+            },
+            "options": [
+              { "en": "Page styling", "ro": "Stilizarea paginii" },
+              { "en": "Server-side logic and data handling", "ro": "Logica server-side și manipularea datelor" },
+              { "en": "HTML structure", "ro": "Structura HTML" },
+              { "en": "Font selection", "ro": "Selectarea fonturilor" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "What does CRUD stand for?",
+              "ro": "Ce înseamnă CRUD?"
+            },
+            "options": [
+              { "en": "Cache, Request, Update, Deploy", "ro": "Cache, Request, Update, Deploy" },
+              { "en": "Code, Run, Upload, Delete", "ro": "Code, Run, Upload, Delete" },
+              { "en": "Create, Render, Update, Delete", "ro": "Create, Render, Update, Delete" },
+              { "en": "Create, Read, Update, Delete", "ro": "Create, Read, Update, Delete" }
+            ],
+            "correct": 3
+          },
+          {
+            "q": {
+              "en": "What is middleware in a backend application?",
+              "ro": "Ce este middleware-ul într-o aplicație de backend?"
+            },
+            "options": [
+              { "en": "A type of database", "ro": "Un tip de bază de date" },
+              { "en": "Functions that process requests between the client and the final handler", "ro": "Funcții care procesează cererile între client și handler-ul final" },
+              { "en": "A CSS preprocessor", "ro": "Un preprocesor CSS" },
+              { "en": "A network cable", "ro": "Un cablu de rețea" }
+            ],
+            "correct": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vault-database",
+      "volume": "database",
+      "day": "DAY 26",
+      "status": "written",
+      "requiredShipHours": 3,
+      "journalSection": "DAY 26",
+      "deltas": ["65fb073", "2dcdc1f", "4bc95a5", "70fb8b5"],
+      "title": {
+        "en": "The Dialogue in the Chart Room",
+        "ro": "Dialogul din Camera Hărților"
+      },
+      "teaser": {
+        "en": "The first token, the Platonian singularity, the ouroboros that refuses to close into a spiral. The captain and the voice, seated across from each other.",
+        "ro": "Primul token, singularitatea platonică, ouroborosul care refuză să se închidă în spirală. Căpitanul și vocea, așezați față în față."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume III — Database",
+          "ro": "Poartă de Navigație: Volumul III — Baze de Date"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "Which SQL statement retrieves data from a table?",
+              "ro": "Ce instrucțiune SQL recuperează date dintr-un tabel?"
+            },
+            "options": [
+              { "en": "GET", "ro": "GET" },
+              { "en": "FETCH", "ro": "FETCH" },
+              { "en": "SELECT", "ro": "SELECT" },
+              { "en": "READ", "ro": "READ" }
+            ],
+            "correct": 2
+          },
+          {
+            "q": {
+              "en": "What is a primary key?",
+              "ro": "Ce este o cheie primară?"
+            },
+            "options": [
+              { "en": "A unique identifier for a row", "ro": "Un identificator unic pentru un rând" },
+              { "en": "An encryption key", "ro": "O cheie de criptare" },
+              { "en": "A foreign key", "ro": "O cheie străină" },
+              { "en": "A table join", "ro": "Un join de tabele" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What does a SQL JOIN do?",
+              "ro": "Ce face un JOIN în SQL?"
+            },
+            "options": [
+              { "en": "Deletes duplicate rows", "ro": "Șterge rândurile duplicate" },
+              { "en": "Combines rows from two or more tables based on a related column", "ro": "Combină rânduri din două sau mai multe tabele pe baza unei coloane comune" },
+              { "en": "Sorts rows alphabetically", "ro": "Sortează rândurile alfabetic" },
+              { "en": "Encrypts the table", "ro": "Criptează tabelul" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "Which type of database stores data in documents (e.g. JSON)?",
+              "ro": "Ce tip de bază de date stochează date în documente (ex. JSON)?"
+            },
+            "options": [
+              { "en": "Relational database", "ro": "Bază de date relațională" },
+              { "en": "NoSQL document store", "ro": "Stocare documentară NoSQL" },
+              { "en": "Hierarchical database", "ro": "Bază de date ierarhică" },
+              { "en": "Flat file", "ro": "Fișier plat" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "Which statement inserts new data into a table?",
+              "ro": "Ce instrucțiune inserează date noi într-un tabel?"
+            },
+            "options": [
+              { "en": "INSERT INTO", "ro": "INSERT INTO" },
+              { "en": "ADD ROW", "ro": "ADD ROW" },
+              { "en": "PUT", "ro": "PUT" },
+              { "en": "CREATE", "ro": "CREATE" }
+            ],
+            "correct": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "vault-data-bridge",
+      "volume": "data-bridge",
+      "day": "DAY ??",
+      "status": "pending",
+      "requiredShipHours": 4,
+      "journalSection": null,
+      "title": {
+        "en": "The Encrypted Ferry",
+        "ro": "Luntrea Încifrată"
+      },
+      "teaser": {
+        "en": "Charon, revised for a newer age — the bridge between frontend and data systems. The cargo hold of this volume is still being loaded.",
+        "ro": "Charon, updatat pentru o nouă eră — puntea dintre frontend și sistemele de date. Cala acestui volum este încă în curs de încărcare."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume IV — Data Bridge",
+          "ro": "Poartă de Navigație: Volumul IV — Puntea de Date"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "What does JSON stand for?",
+              "ro": "Ce înseamnă JSON?"
+            },
+            "options": [
+              { "en": "JavaScript Object Notation", "ro": "JavaScript Object Notation" },
+              { "en": "Java Standard Output Network", "ro": "Java Standard Output Network" },
+              { "en": "Joint Script Ordering Notation", "ro": "Joint Script Ordering Notation" },
+              { "en": "Json Syntax Object Naming", "ro": "Json Syntax Object Naming" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "Which is valid JSON?",
+              "ro": "Care este JSON valid?"
+            },
+            "options": [
+              { "en": "{name: \"ship\"}", "ro": "{name: \"ship\"}" },
+              { "en": "{\"name\": \"ship\"}", "ro": "{\"name\": \"ship\"}" },
+              { "en": "{name: ship}", "ro": "{name: ship}" },
+              { "en": "(\"name\": \"ship\")", "ro": "(\"name\": \"ship\")" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "What does JSON.stringify() do?",
+              "ro": "Ce face JSON.stringify()?"
+            },
+            "options": [
+              { "en": "Converts a JavaScript object into a JSON string", "ro": "Convertește un obiect JavaScript într-un string JSON" },
+              { "en": "Parses a JSON string into an object", "ro": "Parsează un string JSON într-un obiect" },
+              { "en": "Minifies HTML", "ro": "Minimifică HTML" },
+              { "en": "Validates SQL", "ro": "Validează SQL" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "JSON is built on which fundamental structure?",
+              "ro": "Pe ce structură fundamentală este construit JSON?"
+            },
+            "options": [
+              { "en": "XML tags", "ro": "Etichete XML" },
+              { "en": "Key-value pairs", "ro": "Perechi cheie-valoare" },
+              { "en": "SQL rows", "ro": "Rânduri SQL" },
+              { "en": "CSS rules", "ro": "Reguli CSS" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "What does JSON.parse() return?",
+              "ro": "Ce întoarce JSON.parse()?"
+            },
+            "options": [
+              { "en": "A JSON string", "ro": "Un string JSON" },
+              { "en": "A JavaScript value or object", "ro": "O valoare sau un obiect JavaScript" },
+              { "en": "A file handle", "ro": "Un handle de fișier" },
+              { "en": "undefined", "ro": "undefined" }
+            ],
+            "correct": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vault-ux",
+      "volume": "ux",
+      "day": "DAY ??",
+      "status": "pending",
+      "requiredShipHours": 5,
+      "journalSection": null,
+      "title": {
+        "en": "The Habitable Atmosphere",
+        "ro": "Atmosfera Locuibilă"
+      },
+      "teaser": {
+        "en": "The pressure, the temperature, the light quality that makes a vessel habitable. This hold's cargo is still being written.",
+        "ro": "Presiunea, temperatura, calitatea luminii care fac un vas locuibil. Cala acestui volum e încă în curs de scriere."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume V — UX",
+          "ro": "Poartă de Navigație: Volumul V — UX"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "What does WCAG stand for?",
+              "ro": "Ce înseamnă WCAG?"
+            },
+            "options": [
+              { "en": "Web Content Accessibility Guidelines", "ro": "Web Content Accessibility Guidelines" },
+              { "en": "World Color Accessibility Guide", "ro": "World Color Accessibility Guide" },
+              { "en": "Web Coding Assistance Group", "ro": "Web Coding Assistance Group" },
+              { "en": "Website Control and Accessibility Grid", "ro": "Website Control and Accessibility Grid" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What is an ARIA role used for?",
+              "ro": "Pentru ce este folosit un rol ARIA?"
+            },
+            "options": [
+              { "en": "Describing an element's purpose to assistive technologies", "ro": "Descrierea scopului unui element pentru tehnologiile asistive" },
+              { "en": "Applying CSS styling", "ro": "Aplicarea stilurilor CSS" },
+              { "en": "Triggering animations", "ro": "Declanșarea animațiilor" },
+              { "en": "Validating form data", "ro": "Validarea datelor de formular" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "Which practice improves accessibility?",
+              "ro": "Ce practică îmbunătățește accesibilitatea?"
+            },
+            "options": [
+              { "en": "Providing alt text on images", "ro": "Furnizarea textului alternativ pentru imagini" },
+              { "en": "Using all-caps text", "ro": "Folosirea textului scris integral cu majuscule" },
+              { "en": "Using tiny fonts", "ro": "Folosirea fonturilor minuscule" },
+              { "en": "Adding flashing backgrounds", "ro": "Adăugarea fundalurilor intermitente" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What is usability primarily concerned with?",
+              "ro": "Cu ce se ocupă în primul rând uzabilitatea?"
+            },
+            "options": [
+              { "en": "How easily users can accomplish their goals", "ro": "Cât de ușor își pot îndeplini utilizatorii obiectivele" },
+              { "en": "How fast the code runs", "ro": "Cât de repede rulează codul" },
+              { "en": "Server security", "ro": "Securitatea serverului" },
+              { "en": "Database normalization", "ro": "Normalizarea bazelor de date" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What is the recommended contrast principle in accessible design?",
+              "ro": "Care este principiul de contrast recomandat în designul accesibil?"
+            },
+            "options": [
+              { "en": "Low contrast for aesthetic effect", "ro": "Contrast redus pentru efect estetic" },
+              { "en": "Sufficient contrast between text and background", "ro": "Contrast suficient între text și fundal" },
+              { "en": "No contrast at all", "ro": "Niciun contrast" },
+              { "en": "Contrast only on buttons", "ro": "Contrast doar pe butoane" }
+            ],
+            "correct": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vault-delivery",
+      "volume": "delivery",
+      "day": "DAY ??",
+      "status": "pending",
+      "requiredShipHours": 6,
+      "journalSection": null,
+      "title": {
+        "en": "The Recurring Wednesday",
+        "ro": "Miercurea Recurentă"
+      },
+      "teaser": {
+        "en": "Every commit is a delta; every delta is a return of the same, folded higher. The Longest Wednesday keeps arriving — this hold will record its arrivals.",
+        "ro": "Fiecare comitere e o deltă; fiecare deltă e o întoarcere a aceluiași, pliată mai sus. Longest Wednesday continuă să ajungă — această cală îi va consemna sosirile."
+      },
+      "quiz": {
+        "title": {
+          "en": "Nav-Gate: Volume VI — Delivery",
+          "ro": "Poartă de Navigație: Volumul VI — Livrare"
+        },
+        "passThreshold": 4,
+        "questions": [
+          {
+            "q": {
+              "en": "What does git init do?",
+              "ro": "Ce face git init?"
+            },
+            "options": [
+              { "en": "Starts a new repository", "ro": "Pornește un repository nou" },
+              { "en": "Commits all files", "ro": "Comite toate fișierele" },
+              { "en": "Pushes to a remote", "ro": "Face push către un remote" },
+              { "en": "Clones a repository", "ro": "Clonează un repository" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "Which command stages changes for a commit?",
+              "ro": "Ce comandă pregătește modificările pentru o comitere?"
+            },
+            "options": [
+              { "en": "git commit", "ro": "git commit" },
+              { "en": "git add", "ro": "git add" },
+              { "en": "git push", "ro": "git push" },
+              { "en": "git status", "ro": "git status" }
+            ],
+            "correct": 1
+          },
+          {
+            "q": {
+              "en": "What is a commit in Git?",
+              "ro": "Ce este o comitere în Git?"
+            },
+            "options": [
+              { "en": "A snapshot of project changes with a message", "ro": "O imagine a modificărilor proiectului, însoțită de un mesaj" },
+              { "en": "A branch", "ro": "O ramură" },
+              { "en": "A remote repository", "ro": "Un repository remote" },
+              { "en": "A configuration file", "ro": "Un fișier de configurare" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What does git push do?",
+              "ro": "Ce face git push?"
+            },
+            "options": [
+              { "en": "Uploads local commits to a remote repository", "ro": "Încarcă comiterile locale într-un repository remote" },
+              { "en": "Downloads commits from a remote", "ro": "Descarcă comiteri de la un remote" },
+              { "en": "Creates a new branch", "ro": "Creează o ramură nouă" },
+              { "en": "Deletes local files", "ro": "Șterge fișierele locale" }
+            ],
+            "correct": 0
+          },
+          {
+            "q": {
+              "en": "What is a pull request?",
+              "ro": "Ce este un pull request?"
+            },
+            "options": [
+              { "en": "A request to merge changes into a branch", "ro": "O cerere de a îmbina modificările într-o ramură" },
+              { "en": "A type of backup", "ro": "Un tip de backup" },
+              { "en": "A command that pulls files", "ro": "O comandă care trage fișiere" },
+              { "en": "A merge conflict", "ro": "Un conflict de îmbinare" }
+            ],
+            "correct": 0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -44,7 +44,7 @@ DIGITAL-ODYSSEY/
 │   ├── README.md                      # English volume readme
 │   ├── bibliography.html              # References and resources
 │   ├── recursive-blueprint.html       # Self-documenting code explorer
-│   ├── transmission.html              # Project manifesto / signal log
+│   ├── transmission.html              # The Astrogation Charter + the Seldon Vault (the novel)
 │   ├── style.css                      # Local stylesheet
 │   ├── script.js                      # Interactive logic
 │   ├── favicon.svg                    # Brand icon

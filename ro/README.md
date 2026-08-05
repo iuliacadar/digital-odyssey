@@ -80,7 +80,7 @@ DIGITAL-ODYSSEY/
     ├── index.html
     ├── bibliography.html
     ├── recursive-blueprint.html
-    ├── transmission.html
+    ├── transmission.html              # Carta de Astronavigație + Seiful lui Seldon (romanul)
     ├── style.css
     ├── script.js
     ├── favicon.svg

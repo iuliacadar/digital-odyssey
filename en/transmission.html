@@ -371,6 +371,80 @@
         </article>
       </section>
       </div>
+
+    <!-- @block: THE VAULT CHAMBER
+      Below the founding manifesto (the message in the bottle — DAY 00, always
+      open) lies the sealed constellation: the capsules of the cowritten novel.
+      Each capsule guards one transmission of D::0dy55ey — Delta writing, or
+      how to write through differences. A capsule opens only when BOTH keys
+      turn: the Nav-Gate quiz for its volume passed, and the ship's voyage
+      clock ripened. The clock is accelerated by exploration: every sector you
+      visit advances the voyage.
+    -->
+    <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+      <header class="category-header">
+        <h2>✦ The Vault ✦</h2>
+        <p>Sealed transmissions of the cowritten novel</p>
+      </header>
+
+      <!-- @block: VOYAGE TELEMETRY
+        Displays the ship's voyage clock: how many waypoints have been stamped
+        (sectors visited) and the effective ship-hours that have ripened since
+        first contact. Exploration accelerates the clock.
+      -->
+      <div class="voyage-telemetry">
+        <div class="telemetry-cell">
+          <span class="telemetry-label">FIRST CONTACT</span>
+          <span class="telemetry-value" id="vault-first-contact">—</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">WAYPOINTS</span>
+          <span class="telemetry-value" id="vault-waypoints">0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">SHIP-HOURS</span>
+          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">UNLOCKED</span>
+          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
+        </div>
+      </div>
+
+      <!-- @block: CAPSULE CONSTELLATION
+        Rendered by MECANISM 10 from shared/data/vault-transmissions.json.
+        Each volume becomes a sealed capsule in the constellation.
+      -->
+      <div class="capsule-constellation" id="capsule-constellation">
+        <!-- Capsules are injected here by the vault engine. -->
+      </div>
+
+      <!-- @block: THE SLEEPER'S CRYSTAL
+        The central projection surface. When a capsule is earned and opened,
+        the Sleeper — the invented witness, the permission to narrate — wakes
+        and types the transmission into this crystal.
+      -->
+      <div class="sleeper-crystal" id="sleeper-crystal">
+        <div class="sleeper-crystal-header">
+          <span class="sleeper-status" id="sleeper-status">THE SLEEPER SLEEPS</span>
+        </div>
+        <div class="typewriter-output vault-output" id="vault-output"></div>
+        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
+      </div>
+
+      <!-- @block: NAV-GATE QUIZ PANEL
+        Appears when the traveller requests to open a capsule. Passing the
+        volume's quiz stamps the waypoint and grants Key One.
+      -->
+      <div class="nav-gate" id="nav-gate" hidden>
+        <div class="nav-gate-box">
+          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
+          <p class="nav-gate-intro" id="nav-gate-intro"></p>
+          <form class="nav-gate-form" id="nav-gate-form"></form>
+          <div class="nav-gate-result" id="nav-gate-result"></div>
+        </div>
+      </div>
+    </section>
     </main>
 
     <!-- @block:
@@ -400,7 +474,7 @@
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="transmission.html">The Astrogation Charter</a>
+          <a href="transmission.html#vault-chamber">The Astrogation Charter / The Vault</a>
         </li>
         <!-- @bridge: Language toggle between EN and RO subprojects -->
         <li>

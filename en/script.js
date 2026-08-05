@@ -635,6 +635,482 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //  ==========================================================================
+//     MECANISM 10: THE SELDON VAULT
+//     Runs on every page. Stamps the voyage log (first contact + waypoints),
+//     and when the traveller reaches the Vault Chamber (transmission.html),
+//     it renders the capsule constellation, governs the Nav-Gate quizzes,
+//     runs the voyage clock, and projects the novel's transmissions through
+//     the Sleeper's crystal.
+//     @pedagogy: This mechanism demonstrates five real JavaScript patterns:
+//       1. localStorage as a persistent cross-page state store (the voyage log)
+//       2. the Fetch API for loading JSON and raw markdown (no libraries)
+//       3. template literal rendering into the DOM (constellation capsules)
+//       4. the FormData API + event delegation for the quizzes
+//       5. a recursive setTimeout typing engine (the Sleeper's voice)
+//  ==========================================================================
+
+//  @block: 10-A — VOYAGE LOG (runs on every page of the ship)
+//  The moment a traveller loads ANY page, the voyage begins.
+//  ==========================================================================
+(function stampVoyageLog() {
+  const FIRST_KEY = "d0_voyage_firstContact";
+  const WAYPOINTS_KEY = "d0_voyage_waypoints";
+
+  //  First contact: the instant the traveller first stepped aboard.
+  if (!localStorage.getItem(FIRST_KEY)) {
+    localStorage.setItem(FIRST_KEY, String(Date.now())); // Stored in milliseconds.
+  }
+
+  //  Waypoint stamping: derive the volume + page from the current URL.
+  //  Example: /digital-odyssey/en/frontend/html-log.html -> frontend/html-log
+  const path = window.location.pathname.replace(/\/$/, "");
+  const match = path.match(
+    /\/(frontend|backend|database|data-bridge|ux|delivery)\/([^/]+?)\.html$/,
+  );
+  let currentWaypoint = null;
+
+  if (match) {
+    currentWaypoint = `${match[1]}/${match[2]}`; // e.g. "frontend/html-log"
+  } else {
+    //  Flagship pages also count as waypoints (index, transmission, etc.).
+    const page = path.split("/").pop();
+    if (page && page.endsWith(".html")) currentWaypoint = page;
+  }
+
+  if (currentWaypoint) {
+    //  Load the existing waypoint array (or start fresh).
+    let waypoints = [];
+    try {
+      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+    } catch {
+      waypoints = [];
+    }
+    //  Add only pages never visited before — each distinct visit is one boost.
+    if (!waypoints.includes(currentWaypoint)) {
+      waypoints.push(currentWaypoint);
+      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints));
+    }
+  }
+})();
+
+
+//  @block: 10-B — VAULT CHAMBER (only activates on the transmission page)
+//  ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const chamber = document.querySelector(".vault-chamber");
+  if (!chamber) return; // Not the transmission page — leave the vault asleep.
+
+  const lang = (document.documentElement.lang || "en").toLowerCase();
+  const FIRST_KEY = "d0_voyage_firstContact";
+  const WAYPOINTS_KEY = "d0_voyage_waypoints";
+  const PASS_PREFIX = "d0_vault_pass_";
+
+  const constellation = document.getElementById("capsule-constellation");
+  const firstContactEl = document.getElementById("vault-first-contact");
+  const waypointsEl = document.getElementById("vault-waypoints");
+  const shipHoursEl = document.getElementById("vault-ship-hours");
+  const unlockedEl = document.getElementById("vault-unlocked");
+  const sleeperStatus = document.getElementById("sleeper-status");
+  const vaultOutput = document.getElementById("vault-output");
+  const vaultCursor = document.getElementById("vault-cursor");
+  const navGate = document.getElementById("nav-gate");
+  const navGateTitle = document.getElementById("nav-gate-title");
+  const navGateIntro = document.getElementById("nav-gate-intro");
+  const navGateForm = document.getElementById("nav-gate-form");
+  const navGateResult = document.getElementById("nav-gate-result");
+
+  //  The raw journal is fetched live so the website and GitHub stay one body.
+  const JOURNAL_PATH = `../JOURNAL-${lang === "ro" ? "RO" : "EN"}.md`;
+
+  let vaultData = null;   // The parsed vault-transmissions.json
+  let activeCapsule = null; // The capsule currently open in the Nav-Gate
+
+  //  ---------------------------------------------------------------
+  //  LOAD THE VAULT MANIFEST
+  //  ---------------------------------------------------------------
+  fetch("../shared/data/vault-transmissions.json")
+    .then((response) => {
+      if (!response.ok) throw new Error(`Vault manifest not found (${response.status}).`);
+      return response.json();
+    })
+    .then((data) => {
+      vaultData = data;
+      renderConstellation(data.capsules);
+      refreshTelemetry();
+      setInterval(refreshTelemetry, 30000); // The clock ticks every 30 seconds.
+    })
+    .catch((error) => {
+      constellation.innerHTML =
+        `<p class="vault-error">[VAULT ERROR]: ${error.message}</p>`;
+    });
+
+  //  ---------------------------------------------------------------
+  //  VOYAGE CLOCK
+  //  ---------------------------------------------------------------
+  function readVoyageState() {
+    const firstContact = Number(localStorage.getItem(FIRST_KEY)) || Date.now();
+    let waypoints = [];
+    try {
+      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+    } catch {
+      waypoints = [];
+    }
+    //  effectiveVoyageHours = realHours * (1 + boost * waypointCount)
+    const realHours = (Date.now() - firstContact) / 3600000;
+    const boost = (vaultData && vaultData.voyage.perWaypointBoost) || 0.5;
+    const shipHours = realHours * (1 + boost * waypoints.length);
+    return { firstContact, waypoints, realHours, shipHours };
+  }
+
+  function refreshTelemetry() {
+    const state = readVoyageState();
+    firstContactEl.textContent = new Date(state.firstContact).toLocaleDateString(lang, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+    waypointsEl.textContent = String(state.waypoints.length);
+    shipHoursEl.textContent = state.shipHours.toFixed(1);
+
+    if (vaultData) {
+      const total = vaultData.capsules.length;
+      const unlocked = vaultData.capsules.filter((c) => isUnlocked(c)).length;
+      unlockedEl.textContent = `${unlocked} / ${total}`;
+    }
+  }
+
+  //  ---------------------------------------------------------------
+  //  KEY STATE: quiz passed AND voyage clock ripened
+  //  ---------------------------------------------------------------
+  function quizPassed(capsule) {
+    return localStorage.getItem(PASS_PREFIX + capsule.volume) === "1";
+  }
+
+  function clockRipened(capsule) {
+    return readVoyageState().shipHours >= capsule.requiredShipHours;
+  }
+
+  function isUnlocked(capsule) {
+    return quizPassed(capsule) && clockRipened(capsule);
+  }
+
+  //  ---------------------------------------------------------------
+  //  CAPSULE CONSTELLATION RENDERER
+  //  ---------------------------------------------------------------
+  //  The click listener is attached ONCE, outside the renderer, so that
+  //  re-rendering the constellation never stacks duplicate handlers.
+  constellation.addEventListener("click", (event) => {
+    const btn = event.target.closest(".capsule");
+    if (!btn) return;
+    const cap = vaultData.capsules.find((c) => c.id === btn.dataset.capsule);
+    if (cap) handleCapsuleClick(cap, btn);
+  });
+
+  function renderConstellation(capsules) {
+    constellation.innerHTML = capsules
+      .map((cap) => {
+        const passed = quizPassed(cap);
+        const ripened = clockRipened(cap);
+        const state = isUnlocked(cap)
+          ? "open"
+          : passed
+            ? "ripening"
+            : "sealed";
+        const lockLabel =
+          !passed && !ripened
+            ? `${lang === "ro" ? "CHEIE DUALĂ: test + timp" : "DUAL KEY: quiz + time"}`
+            : !passed
+              ? `${lang === "ro" ? "TEST NECESAR" : "QUIZ REQUIRED"}`
+              : `${lang === "ro" ? "SE COACE (timp)" : "RIPENING (time)"}`;
+        const title = cap.title[lang] || cap.title.en;
+
+        return `
+        <button class="capsule capsule--${state}" data-capsule="${cap.id}" type="button">
+          <span class="capsule-day">${cap.day}</span>
+          <span class="capsule-volume">${cap.volume}</span>
+          <span class="capsule-title">${title}</span>
+          <span class="capsule-lock">${lockLabel}</span>
+        </button>`;
+      })
+      .join("");
+  }
+
+  function handleCapsuleClick(cap, btn) {
+    const passed = quizPassed(cap);
+    const ripened = clockRipened(cap);
+
+    //  Case 1: already unlocked — project the transmission directly.
+    if (passed && ripened) {
+      projectTransmission(cap);
+      return;
+    }
+
+    //  Case 2: quiz not yet passed — open the Nav-Gate.
+    if (!passed) {
+      openNavGate(cap);
+      return;
+    }
+
+    //  Case 3: quiz passed, clock still ripening — explain the wait.
+    if (!ripened) {
+      const need = cap.requiredShipHours - readVoyageState().shipHours;
+      setSleeperStatus(
+        lang === "ro"
+          ? `CAPSULA SE COACE — încă ${need.toFixed(1)} ore-navă până se deschide. Explorează nava ca s-o accelerezi.`
+          : `CAPSULE STILL RIPENING — ${need.toFixed(1)} more ship-hours until it opens. Explore the ship to accelerate.`,
+      );
+    }
+  }
+
+  //  ---------------------------------------------------------------
+  //  NAV-GATE QUIZ
+  //  ---------------------------------------------------------------
+  function openNavGate(cap) {
+    activeCapsule = cap;
+    const q = cap.quiz;
+    navGateTitle.textContent = q.title[lang] || q.title.en;
+    navGateIntro.textContent =
+      lang === "ro"
+        ? `Dovedește că ai străbătut volumul ${cap.volume}. Treci de testul cu cel puțin ${q.passThreshold} din ${q.questions.length} răspunsuri corecte, iar cheia întâi a capsulei se va întoarce.`
+        : `Prove you have traversed the ${cap.volume} volume. Answer at least ${q.passThreshold} of ${q.questions.length} correctly to turn the first key of this capsule.`;
+    navGateResult.innerHTML = "";
+
+    //  Render the quiz questions as radio groups.
+    navGateForm.innerHTML = q.questions
+      .map((question, qIndex) => {
+        const options = question.options
+          .map(
+            (opt, oIndex) => `
+              <label class="nav-gate-option">
+                <input type="radio" name="q${qIndex}" value="${oIndex}" required />
+                <span>${opt[lang] || opt.en}</span>
+              </label>`,
+          )
+          .join("");
+        return `
+          <fieldset class="nav-gate-question">
+            <legend>${question.q[lang] || question.q.en}</legend>
+            ${options}
+          </fieldset>`;
+      })
+      .join("");
+
+    //  Submit button.
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.className = "nav-gate-submit";
+    submit.textContent = lang === "ro" ? "DESCUIE CAPSULA" : "UNSEAL THE CAPSULE";
+    navGateForm.appendChild(submit);
+
+    navGate.hidden = false;
+    navGate.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  navGateForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!activeCapsule) return;
+
+    const formData = new FormData(navGateForm);
+    const answers = activeCapsule.quiz.questions.map((_, qIndex) =>
+      formData.get(`q${qIndex}`),
+    );
+
+    //  Score against the correct answer indices.
+    const score = activeCapsule.quiz.questions.reduce((acc, q, idx) => {
+      return acc + (Number(answers[idx]) === q.correct ? 1 : 0);
+    }, 0);
+
+    const threshold = activeCapsule.quiz.passThreshold;
+    const passed = score >= threshold;
+
+    if (passed) {
+      //  The first key turns: the volume's waypoint is permanently stamped.
+      localStorage.setItem(PASS_PREFIX + activeCapsule.volume, "1");
+      navGateResult.innerHTML =
+        `<p class="nav-gate-result-ok">${
+          lang === "ro"
+            ? `CHEIE ÎNTOARSĂ — ${score}/${answers.length} corecte. Capsula a primit cheia întâi.`
+            : `FIRST KEY TURNED — ${score}/${answers.length} correct. The capsule has received its first key.`
+        }</p>`;
+      renderConstellation(vaultData.capsules);
+      refreshTelemetry();
+    } else {
+      navGateResult.innerHTML =
+        `<p class="nav-gate-result-fail">${
+          lang === "ro"
+            ? `NU AI TRECUT — ${score}/${answers.length}. Ai nevoie de cel puțin ${threshold}. Reîncearcă după o nouă traversare.`
+            : `NOT PASSED — ${score}/${answers.length}. You need at least ${threshold}. Retry after another traversal.`
+        }</p>`;
+    }
+  });
+
+  //  ---------------------------------------------------------------
+  //  THE SLEEPER'S CRYSTAL — projection engine
+  //  ---------------------------------------------------------------
+  function setSleeperStatus(text) {
+    sleeperStatus.textContent = text;
+  }
+
+  function projectTransmission(cap) {
+    //  Mark the capsule as opened so it keeps its lit state visually.
+    constellation
+      .querySelectorAll(".capsule")
+      .forEach((b) => b.classList.remove("capsule--active"));
+    const activeBtn = constellation.querySelector(
+      `[data-capsule="${cap.id}"]`,
+    );
+    if (activeBtn) activeBtn.classList.add("capsule--active");
+
+    setSleeperStatus(
+      lang === "ro"
+        ? "ADORMITA SE TREZEȘTE — TRANSMISIE RECEPȚIONATĂ"
+        : "THE SLEEPER WAKES — TRANSMISSION RECEIVED",
+    );
+    vaultOutput.innerHTML = "";
+
+    //  The projection begins with the title line, then the teaser signal.
+    const title = cap.title[lang] || cap.title.en;
+    const teaser = cap.teaser[lang] || cap.teaser.en;
+
+    const header = document.createElement("p");
+    header.className = "vault-transmission-title";
+    header.textContent = `${cap.day} — ${title}`;
+    vaultOutput.appendChild(header);
+
+    const signal = document.createElement("p");
+    vaultOutput.appendChild(signal);
+
+    //  Delta layer: the commit hashes that gave birth to this transmission.
+    if (cap.deltas && cap.deltas.length) {
+      const delta = document.createElement("p");
+      delta.className = "vault-delta-line";
+      delta.textContent = `TRANSMISSION DELTA${cap.deltas.length > 1 ? "S" : ""}: ${cap.deltas.join(" · ")}`;
+      vaultOutput.appendChild(delta);
+    }
+
+    //  If the day is unwritten, the Sleeper speaks the pending prophecy only.
+    if (cap.status === "pending") {
+      typeSignal(signal, teaser, () => {
+        const pending = document.createElement("p");
+        pending.className = "vault-pending-note";
+        pending.textContent =
+          lang === "ro"
+            ? "Această cală e încă în curs de încărcare. Căpitanul scrie — întoarce-te când nava a avansat."
+            : "This cargo hold is still being loaded. The captain is writing — return when the ship has advanced.";
+        vaultOutput.appendChild(pending);
+      });
+      return;
+    }
+
+    //  Written days: type the teaser, then fetch the live journal section.
+    typeSignal(signal, teaser, () => {
+      fetchJournalSection(cap, (fullText) => {
+        const divider = document.createElement("p");
+        divider.className = "vault-divider";
+        divider.textContent = "— · — · —";
+        vaultOutput.appendChild(divider);
+
+        const full = document.createElement("pre");
+        full.className = "vault-full-text";
+        full.textContent = fullText;
+        vaultOutput.appendChild(full);
+
+        const link = document.createElement("p");
+        link.className = "vault-journal-link";
+        const a = document.createElement("a");
+        a.href = JOURNAL_PATH;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent =
+          lang === "ro"
+            ? "DESCHIDE JURNALUL COMPLET (GitHub)"
+            : "OPEN THE FULL JOURNAL (GitHub)";
+        link.appendChild(a);
+        vaultOutput.appendChild(link);
+      });
+    });
+  }
+
+  //  A recursive typing engine — the Sleeper's voice, character by character.
+  function typeSignal(element, text, onDone) {
+    let idx = 0;
+    vaultCursor.style.display = "inline";
+    vaultOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    function typeNext() {
+      if (idx < text.length) {
+        element.textContent += text[idx];
+        idx++;
+        vaultCursor.scrollIntoView({ block: "nearest" });
+        //  Random 8–20ms delays emulate an irregular deep-space signal.
+        setTimeout(typeNext, Math.floor(Math.random() * 12 + 8));
+      } else {
+        vaultCursor.style.display = "none";
+        if (onDone) onDone();
+      }
+    }
+    typeNext();
+  }
+
+  //  Fetches the raw journal and slices out the requested DAY section.
+  //  Progressive enhancement: if the fetch fails (offline / file://), the
+  //  teaser already received stands alone — the vault never breaks.
+  function fetchJournalSection(cap, onSuccess) {
+    if (!cap.journalSection) return;
+
+    fetch(JOURNAL_PATH)
+      .then((response) => {
+        if (!response.ok) throw new Error("Journal unavailable.");
+        return response.text();
+      })
+      .then((markdown) => {
+        const day = cap.journalSection; // e.g. "DAY 24"
+        //  The Romanian journal spells the day "ZIUA", the English one "DAY".
+        const dayWord = lang === "ro" ? "ZIUA" : "DAY";
+        const dayNumber = (day.match(/\d+/) || [""])[0];
+        if (!dayNumber) throw new Error("Section without a number.");
+        const sectionHeader = `${dayWord} ${dayNumber}`;
+        //  Match the section header at the start of a line.
+        const headerPattern = new RegExp(
+          `^#{1,3}\\s+${sectionHeader.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+          "m",
+        );
+        const startMatch = markdown.match(headerPattern);
+        if (!startMatch) throw new Error(`Section ${sectionHeader} not found.`);
+        const startIdx = startMatch.index;
+
+        //  Find the next section header after it (a new DAY / ZIUA).
+        const nextMatch = markdown
+          .slice(startIdx + sectionHeader.length)
+          .match(/^#{1,3}\s+(DAY|ZIUA)\s+\d+[:\s—]/m);
+        const endIdx = nextMatch
+          ? startIdx + sectionHeader.length + nextMatch.index
+          : markdown.length;
+
+        //  Strip markdown syntax to project readable prose.
+        let section = markdown.slice(startIdx, endIdx);
+        section = section
+          .replace(/^\s*#+\s*/gm, "")   // remove heading markers
+          .replace(/\*\*([^*]+)\*\*/g, "$1") // bold
+          .replace(/\*([^*]+)\*/g, "$1")     // italics
+          .replace(/^---\s*$/gm, "")          // horizontal rules
+          .replace(/`([^`]+)`/g, "$1")        // inline code
+          .trim();
+
+        onSuccess(section);
+      })
+      .catch(() => {
+        //  Silent fallback: the teaser already typed remains the projection.
+        setSleeperStatus(
+          lang === "ro"
+            ? "SIGNAL PARȚIAL — arhiva e în afara razei; teaserul rămâne."
+            : "PARTIAL SIGNAL — the archive is out of range; the teaser stands.",
+        );
+      });
+  }
+});
+
+//  ==========================================================================
 //     BACKLOG — Navigation & UX Enhancements (Planned Mechanisms)
 //     These are not active code — they are entries in the ship's development
 //     backlog, preserved here for future implementation.

@@ -19,7 +19,8 @@ shared/
 └── data/                            # Date structurate partajate, citite de JS
     ├── bibliography-links.json      # Lista de referințe partajată (index ↔ bibliografie)
     ├── navigation-map.json          # Harta site-ului / structura de navigație partajată
-    └── volume-status.json           # Statusul de completare / progres per volum
+    ├── volume-status.json           # Statusul de completare / progres per volum
+    └── vault-transmissions.json     # Seiful lui Seldon: capsulele romanului + testele Nav-Gate
 ```
 
 ## Convenții

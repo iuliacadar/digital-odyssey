@@ -18,7 +18,8 @@ shared/
 └── data/                          # Machine-readable shared data, read by JS
     ├── bibliography-links.json    # Shared reference list (index ↔ bibliography)
     ├── navigation-map.json        # Site map / nav structure shared across volumes
-    └── volume-status.json         # Completion / progress status per volume
+    ├── volume-status.json         # Completion / progress status per volume
+    └── vault-transmissions.json   # The Seldon Vault: novel capsules + Nav-Gate quizzes
 ```
 
 ## Conventions

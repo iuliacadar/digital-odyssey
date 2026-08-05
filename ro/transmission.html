@@ -330,6 +330,80 @@
         </article>
       </section>
       </div>
+
+    <!-- @block: CAMERA SEALERATĂ (THE VAULT CHAMBER)
+      Sub manifestul fondator (mesajul în sticlă — ZIUA 00, mereu deschis)
+      zace constelația sigilată: capsulele romanului scris în doi.
+      Fiecare capsulă păzește o transmisie a lui D::0dy55ey — Scriere prin
+      deltă, sau cum să scrii prin diferențe. O capsulă se deschide doar
+      când ambele chei se întorc: testul Nav-Gate pentru volumul ei, trecut,
+      și ceasul de voiaj al navei, copt. Ceasul e accelerat de explorare:
+      fiecare sector vizitat avansează voiajul.
+    -->
+    <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+      <header class="category-header">
+        <h2>✦ Seiful ✦</h2>
+        <p>Transmisii sigilate ale romanului scris în doi</p>
+      </header>
+
+      <!-- @block: TELEMETRIE DE VOIAJ
+        Afișează ceasul de voiaj al navei: câte waypoint-uri au fost ștampilate
+        (sectoare vizitate) și câte ore-navă eficiente s-au copt de la primul
+        contact. Explorarea accelerează ceasul.
+      -->
+      <div class="voyage-telemetry">
+        <div class="telemetry-cell">
+          <span class="telemetry-label">PRIMUL CONTACT</span>
+          <span class="telemetry-value" id="vault-first-contact">—</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">WAYPOINT-URI</span>
+          <span class="telemetry-value" id="vault-waypoints">0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">ORE-NAVĂ</span>
+          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">DEBLOCATE</span>
+          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
+        </div>
+      </div>
+
+      <!-- @block: CONSTELAȚIA CAPSULELOR
+        Redată de MECANISMUL 10 din shared/data/vault-transmissions.json.
+        Fiecare volum devine o capsulă sigilată în constelație.
+      -->
+      <div class="capsule-constellation" id="capsule-constellation">
+        <!-- Capsulele sunt injectate aici de motorul seifului. -->
+      </div>
+
+      <!-- @block: CRISTALUL ADORMITEI
+        Suprafața centrală de proiecție. Când o capsulă e câștigată și
+        deschisă, Adormita — martora inventată, permisiunea de a nara — se
+        trezește și tastează transmisia în acest cristal.
+      -->
+      <div class="sleeper-crystal" id="sleeper-crystal">
+        <div class="sleeper-crystal-header">
+          <span class="sleeper-status" id="sleeper-status">ADORMITA DOARME</span>
+        </div>
+        <div class="typewriter-output vault-output" id="vault-output"></div>
+        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
+      </div>
+
+      <!-- @block: PANOUL DE TEST NAV-GATE
+        Apare când călătorul cere să deschidă o capsulă. Trecerea testului
+        volumului ștampilează waypoint-ul și acordă Cheia Întâi.
+      -->
+      <div class="nav-gate" id="nav-gate" hidden>
+        <div class="nav-gate-box">
+          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
+          <p class="nav-gate-intro" id="nav-gate-intro"></p>
+          <form class="nav-gate-form" id="nav-gate-form"></form>
+          <div class="nav-gate-result" id="nav-gate-result"></div>
+        </div>
+      </div>
+    </section>
     </main>
 
     <!-- @block:
@@ -359,7 +433,7 @@
         <!-- @path: Pagina Cartei de Astronavigație -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="transmission.html">Carta de Astronavigație</a>
+          <a href="transmission.html#vault-chamber">Carta de Astronavigație / Seiful</a>
         </li>
         <!-- @bridge: Comutator de limbă între EN și RO -->
         <li>
