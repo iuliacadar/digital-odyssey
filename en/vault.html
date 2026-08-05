@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!-- @block:
+  <!DOCTYPE html> must be the first token of every HTML document,
+  before any content or comments, per the HTML spec. It activates
+  standards mode (predictable rendering) over quirks mode.
+-->
+
+<html lang="en">
+  <!-- @block:
+    The root element of the document.
+    The lang="en" attribute declares that the main language of this page is English.
+    This helps accessibility tools, search engines, and automated processing systems.
+  -->
+  <head>
+    <!-- @block:
+      The <head> contains the document metadata.
+      I do not place the main visible content here; instead, I keep the information
+      the browser needs in order to understand, prepare, and connect the page resources.
+    -->
+            <meta charset="UTF-8" />
+    <!-- @meta:
+      I set the character encoding to UTF-8.
+      This ensures that diacritics, special symbols, and international characters display correctly.
+      <meta charset="UTF-8" /> must be within the first 1024 bytes so browsers detect it early.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      This instruction is historically related to Internet Explorer compatibility.
+      In modern projects it has little practical use, but I keep it to preserve the classic basic-head structure.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      I configure the viewport for responsive display.
+      width=device-width aligns the page width with the real screen width,
+      and initial-scale=1.0 starts without artificial zoom.
+    -->
+
+    <title>D::0dy55ey | The Seldon Vault</title>
+    <!-- @meta:
+      The page title.
+      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+    -->
+
+    <meta
+      name="description"
+      content="The Seldon Vault of D::0dy55ey — the sealed cargo of the cowritten novel. Unlock each volume's transmission by turning two keys: the Nav-Gate quiz and the ripened voyage clock."
+    />
+    <!-- @meta:
+      The page description.
+      I use it as a short summary of the content; search engines may use it as descriptive text.
+    -->
+
+    <meta
+      name="keywords"
+      content="vault, novel, transmissions, sealed, cargo, quiz, voyage, D::0dy55ey"
+    />
+    <!-- @meta:
+      The keywords meta tag lists the main themes of the page.
+      Search engines no longer rank on it, but it stays a useful, self-documenting
+      summary of the page's scope and a teaching example of the tag itself.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      The author meta tag declares who created and maintains this document.
+    -->
+
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- @path:
+      I link the web app manifest. Firefox reads theme_color from the manifest
+      rather than from the meta tag, so this ensures consistent theme-color support.
+    -->
+
+    <meta property="og:title" content="D::0dy55ey | The Seldon Vault" />
+    <!-- @meta:
+      Open Graph title shown on social sharing cards.
+    -->
+
+    <meta
+      property="og:description"
+      content="The Seldon Vault of D::0dy55ey — the sealed cargo of the cowritten novel. Unlock each transmission by turning two keys: the Nav-Gate quiz and the ripened voyage clock."
+    />
+    <!-- @meta:
+      Open Graph description, the companion summary under the title on shared cards.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Open Graph type. I declare this page as a website, the general type for standard HTML pages.
+    -->
+
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/en/vault.html"
+    />
+    <!-- @meta:
+      Open Graph canonical URL — the exact, permanent address of this page when shared.
+    -->
+
+    <meta property="og:locale" content="en_US" />
+    <!-- @meta:
+      Open Graph locale, set to en_US for the English version of the page.
+    -->
+
+    <meta property="og:site_name" content="D::0dy55ey" />
+    <!-- @meta:
+      Open Graph site name — the overarching project name shown on social sharing cards.
+    -->
+
+    <meta property="og:background_color" content="#0a0b1e" />
+    <!-- @theme:
+      Open Graph background color, tinting sharing cards with the deep-space palette.
+    -->
+
+    <meta property="og:image" content="./favicon.svg" />
+    <!-- @path:
+      Open Graph image — the preview picture on shared cards; the language-file favicon as a stable placeholder.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Twitter card type; summary_large_image shows a large preview on X/Twitter.
+    -->
+
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/en/vault.html"
+    />
+    <!-- @meta:
+      Canonical link to the authoritative URL of this page, preventing duplicate-content issues.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Robots meta tag; I allow indexing and link-following, the default for public content.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <!-- @path:
+      I link the page favicon; the path is relative to the current file location.
+    -->
+
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <!-- @path:
+      The Apple Touch Icon for iOS home-screen and web-app use; the same SVG as source.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      I start the connection to the font server early to reduce latency.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      I preconnect to the domain that serves the actual font files; crossorigin is required for the other origin.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      I load the Space Grotesk font; display=swap uses a fallback font until the final one loads.
+    -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- @path:
+      I link the local stylesheet; the path is relative to the current file location.
+    -->
+  </head>
+
+  <body class="module-view">
+    <!-- @reason:
+      The class "module-view" applies the secondary-page visual theme: narrower content
+      width, CRT scanline overlay, and a darker background to distinguish this vault
+      from the main command deck.
+    -->
+
+    <!-- @block:
+      The <body> of The Seldon Vault is the chamber of the cowritten novel — the sealed
+      deck the crew reaches after touching the 3D core on the Astrogation Charter page.
+    -->
+
+    <nav class="navbar">
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station on the ship.
+      -->
+      <div class="logo">D::0dy55ey / The Seldon Vault</div>
+
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On this page, one command is offered: return to the bridge (the command deck).
+      -->
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" class="return-btn"
+            ><!-- @reason:
+              The left-arrow symbol (←) is a visual back-direction cue.
+              "Return to Command Deck" links to index.html, the mothership's main bridge.
+            -->← Return to Command Deck</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- @block: VAULT CHAMBER CONTENT
+      This is the whole payload of the page: the chamber where the novelist cargo
+      is guarded. The Astrogation Charter (the message in the bottle, DAY 00) lives
+      on transmission.html; here stands only the vault. This separation mirrors the
+      double-gate: the free reading first, then the deliberate descent into the sealed hold.
+    -->
+    <main class="main-container">
+      <!-- @block: THE VAULT CHAMBER
+        The whole payload of the vault page. On the departure deck (transmission.html)
+        this chamber was hidden behind the 3D core; here, on the vault's own page, it
+        is the destination itself and stands always open. The .vault-chamber class is
+        the selector MECANISM 10 uses to know "we are on the vault page, run the engine".
+        @pedagogy:
+          Because the page IS the chamber, the seam of this content is the load itself:
+          the original deliberate-click gate (Key Zero of the very first design) is
+          replaced by the deliberate navigation that brought the traveller here.
+      -->
+      <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+        <!-- @block: CHAMBER HEADER
+          Same header idiom as other pages. The h2 keeps the nebula-pink accent while h1
+          stays reserved for the two flagship pages (index and recursive blueprint).
+        -->
+        <header class="category-header">
+          <h2>✦ The Seldon Vault ✦</h2>
+          <p>Sealed transmissions of the cowritten novel</p>
+        </header>
+
+      <!-- @block: NOVEL GROWTH NOTE
+        The novel is not finished — the leviathan still grows. This note, filled by
+        MECANISM 10 from the manifest's novel meta, tells the traveller how many days
+        are sealed and promises a new capsule will light up when the captain writes more.
+        @concept:
+          A work that acknowledges its own incompleteness is a living archive, not a
+          monument. The note keeps the vault honest: it is a cargo hold still being loaded.
+        @bridge:
+          The text is injected from shared/data/vault-transmissions.json by script.js,
+          so the count always matches the journal without editing this page.
+      -->
+      <p class="vault-growth-note" id="vault-growth-note"></p>
+
+      <!-- @block: VOYAGE TELEMETRY
+        Displays the ship's voyage clock: how many waypoints have been stamped
+        (sectors visited) and the effective ship-hours that have ripened since first
+        contact. Exploration accelerates the clock. This is Key Two of the vault.
+        @structure:
+          The container is a <div class="voyage-telemetry"> that Module 31 lays out
+          as a responsive grid of four cells. Each cell is a <div class="telemetry-cell">
+          holding two <span> children: the uppercase label (static, written by hand)
+          and the value (filled live by MECANISM 10 through the element id).
+        @bridge:
+          The four value ids — vault-first-contact, vault-waypoints, vault-ship-hours,
+          vault-unlocked — are exactly the ids script.js queries to write the clock
+          into the page. None of these ids may be renamed without touching the script.
+      -->
+      <div class="voyage-telemetry">
+        <!-- @line: FIRST CONTACT CELL
+          The timestamp of the traveller's first touch of the seal, stamped from the
+          browser's local time. Shown as a dash until the engine has a value.
+        -->
+        <div class="telemetry-cell">
+          <span class="telemetry-label">FIRST CONTACT</span>
+          <span class="telemetry-value" id="vault-first-contact">—</span>
+        </div>
+        <!-- @line: WAYPOINTS CELL
+          The count of stamped waypoints — every earned capsule adds one. This is the
+          denominator of the voyage: the sectors of the ship the crew has actually visited.
+        -->
+        <div class="telemetry-cell">
+          <span class="telemetry-label">WAYPOINTS</span>
+          <span class="telemetry-value" id="vault-waypoints">0</span>
+        </div>
+        <!-- @line: SHIP-HOURS CELL
+          The effective ship-hours that have ripened: elapsed time since first contact,
+          accelerated by waypoints stamped (one bonus hour per waypoint). Rendered with
+          one decimal place by the engine.
+        -->
+        <div class="telemetry-cell">
+          <span class="telemetry-label">SHIP-HOURS</span>
+          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
+        </div>
+        <!-- @line: UNLOCKED CELL
+          The capsule ledger, written as "earned / total". The engine composes the
+          fraction from the manifest: how many capsules the traveller has opened out
+          of the volumes sealed aboard.
+        -->
+        <div class="telemetry-cell">
+          <span class="telemetry-label">UNLOCKED</span>
+          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
+        </div>
+      </div>
+
+      <!-- @block: CAPSULE CONSTELLATION
+        The novel's chapters made tangible: each sealed volume becomes a capsule.
+        The capsules are NOT written here by hand — the whole constellation is
+        rendered by MECANISM 10 from shared/data/vault-transmissions.json, so the
+        site and the repository of the novel stay one body.
+        @concept:
+          Six holds, one per volume of the ship. Sealed capsules wait in faint glass;
+          opened capsules glow in solar-mint. The constellation is the geography of
+          the writing — the traveller sees, at a glance, which sectors of the novel
+          have been earned.
+        @structure:
+          The container is a <div class="capsule-constellation" id="capsule-constellation">.
+          It is empty at rest: the engine appends one <button class="vault-capsule"
+          data-capsule="..."> per volume, each button a small rounded glass cell with a
+          volume number and a lock glyph. The data-capsule attribute must equal the
+          capsule's id in the JSON — that is the key the engine uses to match a click
+          to a volume (event delegation on this container, so even dynamically injected
+          capsules route correctly).
+        @bridge:
+          The id is required by script.js as the injection target and the delegation
+          root. If the constellation container is removed or renamed, the engine
+          falls back to the quiet status (SLEEPER SLEEPS) and no capsules render.
+      -->
+      <div class="capsule-constellation" id="capsule-constellation">
+        <!-- @line: INJECTION POINT
+          The constellation starts empty; the engine inserts the capsule buttons here
+          on load. Keeping it empty in the markup avoids duplicating the manifest and
+          guarantees the capsules can never drift out of sync with the JSON.
+        -->
+      </div>
+
+      <!-- @block: THE SLEEPER'S CRYSTAL
+        The central projection surface. When a capsule is earned and opened, the
+        Sleeper — the invented witness, the permission to narrate — wakes and types
+        the transmission into this crystal, line by line, as if reading it aloud.
+        @concept:
+          The Sleeper is the novel's own conscience: a witness who reads what was
+          written and speaks it back. The crystal is where the archive becomes a
+          voice. Projections type out live from the raw journal so the website and
+          GitHub remain one body.
+        @structure:
+          Three children, stacked vertically by Module 31:
+            1. .sleeper-crystal-header — a thin bar holding the status span;
+            2. .typewriter-output (vault-output) — the scrollable console where the
+               typed text accumulates;
+            3. .typing-cursor (vault-cursor) — the blinking caret, absolutely
+               positioned at the typing point by the engine.
+          The status span carries one of three engine-written states: SLEEPER SLEEPS
+          (idle), THE SLEEPER DREAMS (a projection is typing), and THE SLEEPER SPEAKS
+          (the transmission is complete and readable).
+        @bridge:
+          All three ids — sleeper-status, vault-output, vault-cursor — are written by
+          script.js. The .typewriter-output and .typing-cursor classes also reuse the
+          generic typewriter machinery of MECANISM 07, so the vault projection is the
+          same mechanism as the home-page manifesto, just retuned.
+      -->
+      <div class="sleeper-crystal" id="sleeper-crystal">
+        <!-- @line: CRYSTAL HEADER
+          The thin status bar at the top of the crystal. The class .sleeper-crystal-header
+          styles the bar in Module 31; the span inside is the live status line.
+        -->
+        <div class="sleeper-crystal-header">
+          <!-- @line: SLEEPER STATUS
+            The witness's state of awareness, rewritten by the engine as the projection
+            begins and ends. The resting text (SLEEPER SLEEPS) is the fallback a reader
+            sees if the engine never runs.
+          -->
+          <span class="sleeper-status" id="sleeper-status">THE SLEEPER SLEEPS</span>
+        </div>
+        <!-- @line: TYPEWRITER OUTPUT
+          The console surface where the raw journal's text is typed out. Two classes
+          compose one element: .typewriter-output (the generic teletype surface) and
+          .vault-output (the vault's own margins, height, and scroll rules).
+        -->
+        <div class="typewriter-output vault-output" id="vault-output"></div>
+        <!-- @line: TYPING CURSOR
+          The blinking caret that trails the typing. The .typing-cursor class brings
+          the blink animation; .vault-cursor overrides its color and glow for the vault.
+        -->
+        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
+      </div>
+
+      <!-- @block: NAV-GATE QUIZ PANEL
+        Appears when the traveller requests to open a capsule. Passing the volume's
+        quiz stamps the waypoint and grants Key One of the capsule (the ripened
+        voyage clock is Key Two).
+        @structure:
+          A two-layer shell:
+            1. <div class="nav-gate" id="nav-gate"> — the outer overlay that dims
+               and centers the panel over the page. It carries the hidden attribute,
+               so it is inert until the engine removes hidden (MECANISM 10 toggles it
+               when a capsule is requested). It also owns the id script.js toggles.
+            2. <div class="nav-gate-box"> — the physical card: title, instruction,
+               injected form, and result area.
+          Inside the card, four children:
+            - .nav-gate-title — the heading of the quiz;
+            - .nav-gate-intro — a sentence the engine writes per volume (the Nav-Gate
+              riddle that frames the questions);
+            - .nav-gate-form — the quiz <form>, injected entirely by MECANISM 10
+              (question list + submit button), so the questions live only in the JSON;
+            - .nav-gate-result — where the engine announces success (Key One granted)
+              or failure (the gate denies passage).
+        @bridge:
+          The ids nav-gate, nav-gate-title, nav-gate-intro, nav-gate-form,
+          nav-gate-result are the exact anchors script.js reads and writes. The
+          form is injected (not hand-written) so a wrong answer or a renamed quiz
+          can never contradict the manifest.
+      -->
+      <div class="nav-gate" id="nav-gate" hidden>
+        <div class="nav-gate-box">
+          <!-- @line: NAV-GATE TITLE
+            The heading of the gate. Its text is static ("Nav-Gate"); the engine
+            reads the id only to keep a stable handle.
+          -->
+          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
+          <!-- @line: NAV-GATE INTRO
+            The per-volume riddle line, written by the engine from the manifest when
+            the gate opens. Empty at rest.
+          -->
+          <p class="nav-gate-intro" id="nav-gate-intro"></p>
+          <!-- @line: NAV-GATE FORM
+            The quiz body: the engine injects the questions and the submit button.
+            The form submits its answer through the engine's handler, which checks
+            it against the manifest's key and either opens the capsule or denies it.
+          -->
+          <form class="nav-gate-form" id="nav-gate-form"></form>
+          <!-- @line: NAV-GATE RESULT
+            The verdict area: Key One granted (the waypoint is stamped, the capsule
+            unlocks) or the gate refuses. The engine writes this area, then lets the
+            projection begin.
+          -->
+          <div class="nav-gate-result" id="nav-gate-result"></div>
+        </div>
+      </div>
+
+      <!-- @block: RETURN TO THE CHARTER — THE ASCENDING SEAL
+        A quiet, deliberate way back to the open manuscript. Where the 3D core on
+        the charter page descended into the vault, this seal ascends again. It keeps
+        the two decks connected without crowding either page.
+        @concept:
+          Symmetry of gates: the crew entered through a seal, and they leave through
+          a seal. The two decks are two faces of one door — entering the vault and
+          returning to the open charter are the same gesture, reversed. Here, at the
+          top of the chamber, the seal doubles as the chamber's emblem: it spins
+          continuously, the same Bahry crystal that guards the charter page.
+        @pedagogy:
+          This seal is the SAME three-dimensional crystal as the core on
+          transmission.html — eight clipped triangles re-angled into the elongated
+          kite of the Bahry vault, two mirrored halves parted by the central seam.
+          Reusing the identical markup (with mirrored classes) teaches that one
+          visual language can carry two meanings: a door in, and a door out. The
+          crystal is wrapped in an <a> element, so the pretty seal is a real
+          navigation link; the caption beneath names the destination in plain words.
+        @structure:
+          The <a> link carries two interior layers:
+            1. the stage (.vault-core-stage) — the decorative 3D scene, hidden from
+               screen readers, holding the eight faces, the seam, and the sigil;
+            2. the caption is NOT inside the link: it is a sibling <p> beneath,
+               so assistive technology reads the aria-label (a clean sentence) and
+               never stumbles over the geometry.
+      -->
+      <a
+        href="transmission.html"
+        class="vault-return-seal"
+        aria-label="Return to The Astrogation Charter"
+      >
+        <!-- @block: THE RETURN STAGE
+          The same three-dimensional scene as the core on the charter page, scaled
+          down by Module 31 and spun continuously. The stage creates the depth
+          context (preserve-3d); every face below is a child of this stage and
+          lives inside its coordinate space. Purely decorative, hidden from screen
+          readers.
+        -->
+        <span class="vault-core-stage vault-return-stage" aria-hidden="true">
+          <!-- @block: THE GEODESIC FACES
+            The identical eight triangles of the core: four upper spokes (--t) lean
+            into the high apex, four lower spokes (--b) flare into the wide shoulder,
+            together tracing the Bahry kite. Alternating faces carry the pink
+            wireframe. Each face is a flat <span>; the three transforms (rotateY
+            for the spoke, rotateX for the tilt, translateZ for the radius) place it
+            on the surface of the crystal.
+          -->
+          <!-- @line: Upper spoke front (apex side). -->
+          <span class="vault-core-face vault-core-face--t1"></span>
+          <!-- @line: Upper spoke rotated 90 degrees. -->
+          <span class="vault-core-face vault-core-face--t2"></span>
+          <!-- @line: Upper spoke opposite the front. -->
+          <span class="vault-core-face vault-core-face--t3"></span>
+          <!-- @line: Upper spoke rotated 270 degrees. -->
+          <span class="vault-core-face vault-core-face--t4"></span>
+          <!-- @line: Lower spoke front (shoulder side), interlocked with the uppers. -->
+          <span class="vault-core-face vault-core-face--b1"></span>
+          <!-- @line: Lower spoke rotated 135 degrees. -->
+          <span class="vault-core-face vault-core-face--b2"></span>
+          <!-- @line: Lower spoke opposite the front-bottom. -->
+          <span class="vault-core-face vault-core-face--b3"></span>
+          <!-- @line: Closing lower spoke. -->
+          <span class="vault-core-face vault-core-face--b4"></span>
+
+          <!-- @block: THE SIGIL
+            The star glyph at the heart of the crystal — the seal's signature.
+            pointer-events: none (Module 31) keeps the click on the link itself.
+          -->
+          <span class="vault-core-seal" aria-hidden="true">✦</span>
+        </span>
+
+        <!-- @block: THE SEAM
+          The same meridian as the gate's crystal, repeated here: a vertical
+          hairline dividing the two equal mirrored halves. Like on the charter
+          page, it lives OUTSIDE the spinning stage, so it stays vertical and
+          centred while the crystal rotates behind it.
+        -->
+        <span class="vault-core-seam" aria-hidden="true"></span>
+      </a>
+      <!-- @line: RETURN CAPTION
+        The plain-word destination of the seal. It lives outside the <a> so the
+        accessible name of the link stays the short, clean sentence from the
+        aria-label above, and the caption remains visible prose under the crystal.
+      -->
+      <p class="vault-return-caption">Return to The Astrogation Charter</p>
+      </section>
+    </main>
+
+    <!-- @block: FOOTER
+      The closing section of every page in the project. It carries the telemetry data
+      stream, a link to the bibliography, and the captain's signature — consistent
+      across all decks, including the vault.
+    -->
+    <footer class="footer">
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        The footer is the ship's auxiliary navigation station — less prominent than the
+        HUD overlay, but essential for systems that do not belong to a specific volume:
+        the bibliography archive and the language switch. The vault itself is reached
+        through the 3D core on the charter page, so it is not listed here.
+        @concept:
+          Keeping the vault out of the footer preserves the double-gate fiction: the
+          only way in is the deliberate touch of the seal.
+      -->
+      <ul class="footer-links">
+        <!-- @path: Bibliography page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="bibliography.html" target="_blank">Deep Space Archives — Cartographed References</a>
+        </li>
+        <!-- @path: Transmission / Astrogation Charter page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="transmission.html">The Astrogation Charter</a>
+        </li>
+        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <li>
+          <!-- @reason:
+            The language toggle lets the crew switch between the English and Romanian
+            versions. The current language is marked with .lang-toggle-active.
+          -->
+          <a href="../en/vault.html" class="lang-toggle-active">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../ro/vault.html" class="">RO</a>
+        </li>
+      </ul>
+      <p>
+        SYS_ORBIT: SELDON_VAULT // STATUS:
+        <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          The word ONLINE in a <span> with class .telemetry-active gets the solar-mint
+          color and a neon glow — a 1970s NASA mission-control look for the active status.
+        -->
+      </p>
+
+      <!-- @structure:
+        The second telemetry line anchors the project in real physical space and time.
+      -->
+      <p>
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          The coordinates point to Cluj-Napoca, Romania — where this project is built.
+          SYSTEM_TIME records the date of the latest footer update.
+        -->
+      </p>
+
+      <!-- @structure:
+        The final line declares who created and owns this project.
+      -->
+      <p class="copyright">
+        &copy; 2026 | D::0dy55ey by
+        <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          The captain's name in a <span> with class .vessel-sig gets the nebula-pink
+          color and an incandescent glow — the captain's unique identifier across all decks.
+        -->
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  <!-- @bridge:
+      For the full technical index of HTML tags used in this project,
+      see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
+  -->
+</html>
+
+<!-- @bridge:
+  Tags legend: ./docs/legend-en.md
+-->
+
+<!-- @reason:
+  This document is the Seldon Vault for the English version. It is reached by touching
+  the 3D core on The Astrogation Charter page (transmission.html). Within it, the
+  traveller turns two keys per capsule — the Nav-Gate quiz and the ripened voyage
+  clock — to project the novel's sealed transmissions through the Sleeper's crystal.
+-->

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- @block:
+  <!DOCTYPE html> must be the first token of every HTML document,
+  before any content or comments, per the HTML spec. It activates
+  standards mode (predictable rendering) over quirks mode.
+-->
+
+<html lang="ro">
+  <!-- @block:
+    The root element of the document.
+    The lang="ro" attribute declares that the main language of this page is Romanian.
+    This helps accessibility tools, search engines, and automated processing systems.
+  -->
+  <head>
+    <!-- @block:
+      The <head> contains the document metadata.
+      I do not place the main visible content here; instead, I keep the information
+      the browser needs in order to understand, prepare, and connect the page resources.
+    -->
+            <meta charset="UTF-8" />
+    <!-- @meta:
+      I set the character encoding to UTF-8.
+      This ensures that diacritics, special symbols, and international characters display correctly.
+      <meta charset="UTF-8" /> must be within the first 1024 bytes so browsers detect it early.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      This instruction is historically related to Internet Explorer compatibility.
+      In modern projects it has little practical use, but I keep it to preserve the classic basic-head structure.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      I configure the viewport for responsive display.
+      width=device-width aligns the page width with the real screen width,
+      and initial-scale=1.0 starts without artificial zoom.
+    -->
+
+    <title>D::0dy55ey | Seiful lui Seldon</title>
+    <!-- @meta:
+      The page title.
+      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+    -->
+
+    <meta
+      name="description"
+      content="Seiful lui Seldon din D::0dy55ey — încărcătura sigilată a romanului scris în doi. Deblochează transmisia fiecărui volum întorcând două chei: testul Nav-Gate și ceasul de voiaj copt."
+    />
+    <!-- @meta:
+      The page description.
+      I use it as a short summary of the content; search engines may use it as descriptive text.
+    -->
+
+    <meta
+      name="keywords"
+      content="seif, roman, transmisii, sigilate, încărcătură, test, voiaj, D::0dy55ey"
+    />
+    <!-- @meta:
+      The keywords meta tag lists the main themes of the page.
+      Search engines no longer rank on it, but it stays a useful, self-documenting
+      summary of the page's scope and a teaching example of the tag itself.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      The author meta tag declares who created and maintains this document.
+    -->
+
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- @path:
+      I link the web app manifest. Firefox reads theme_color from the manifest
+      rather than from the meta tag, so this ensures consistent theme-color support.
+    -->
+
+    <meta property="og:title" content="D::0dy55ey | Seiful lui Seldon" />
+    <!-- @meta:
+      Open Graph title shown on social sharing cards.
+    -->
+
+    <meta
+      property="og:description"
+      content="Seiful lui Seldon din D::0dy55ey — încărcătura sigilată a romanului scris în doi. Deblochează transmisia fiecărui volum întorcând două chei: testul Nav-Gate și ceasul de voiaj copt."
+    />
+    <!-- @meta:
+      Open Graph description, the companion summary under the title on shared cards.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Open Graph type. I declare this page as a website, the general type for standard HTML pages.
+    -->
+
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/ro/vault.html"
+    />
+    <!-- @meta:
+      Open Graph canonical URL — the exact, permanent address of this page when shared.
+    -->
+
+    <meta property="og:locale" content="ro_RO" />
+    <!-- @meta:
+      Open Graph locale, set to ro_RO for the Romanian version of the page.
+    -->
+
+    <meta property="og:site_name" content="D::0dy55ey" />
+    <!-- @meta:
+      Open Graph site name — the overarching project name shown on social sharing cards.
+    -->
+
+    <meta property="og:background_color" content="#0a0b1e" />
+    <!-- @theme:
+      Open Graph background color, tinting sharing cards with the deep-space palette.
+    -->
+
+    <meta property="og:image" content="./favicon.svg" />
+    <!-- @path:
+      Open Graph image — the preview picture on shared cards; the language-file favicon as a stable placeholder.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Twitter card type; summary_large_image shows a large preview on X/Twitter.
+    -->
+
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/ro/vault.html"
+    />
+    <!-- @meta:
+      Canonical link to the authoritative URL of this page, preventing duplicate-content issues.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Robots meta tag; I allow indexing and link-following, the default for public content.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <!-- @path:
+      I link the page favicon; the path is relative to the current file location.
+    -->
+
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <!-- @path:
+      The Apple Touch Icon for iOS home-screen and web-app use; the same SVG as source.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      I start the connection to the font server early to reduce latency.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      I preconnect to the domain that serves the actual font files; crossorigin is required for the other origin.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      I load the Space Grotesk font; display=swap uses a fallback font until the final one loads.
+    -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- @path:
+      I link the local stylesheet; the path is relative to the current file location.
+    -->
+  </head>
+
+  <body class="module-view">
+    <!-- @reason:
+      The class "module-view" applies the secondary-page visual theme: narrower content
+      width, CRT scanline overlay, and a darker background to distinguish this vault
+      from the main command deck.
+    -->
+
+    <!-- @block:
+      The <body> of Seiful lui Seldon is the chamber of the cowritten novel — the sealed
+      deck the crew reaches after touching the 3D core on the Astrogation Charter page.
+    -->
+
+    <nav class="navbar">
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station on the ship.
+      -->
+      <div class="logo">D::0dy55ey / Seiful lui Seldon</div>
+
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On this page, one command is offered: return to the bridge (the command deck).
+      -->
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" class="return-btn"
+            ><!-- @reason:
+              The left-arrow symbol (←) is a visual back-direction cue.
+              "Înapoi la puntea de comandă" links to index.html, the mothership's main bridge.
+            -->← Înapoi la puntea de comandă</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- @block: VAULT CHAMBER CONTENT
+      This is the whole payload of the page: the chamber where the novelist cargo
+      is guarded. The Astrogation Charter (the message in the bottle, DAY 00) lives
+      on transmission.html; here stands only the vault. This separation mirrors the
+      double-gate: the free reading first, then the deliberate descent into the sealed hold.
+    -->
+    <main class="main-container">
+      <!-- @block: THE VAULT CHAMBER
+        The whole payload of the vault page. On the departure deck (transmission.html)
+        this chamber was hidden behind the 3D core; here, on the vault's own page, it
+        is the destination itself and stands always open. The .vault-chamber class is
+        the selector MECANISM 10 uses to know "we are on the vault page, run the engine".
+        @pedagogy:
+          Because the page IS the chamber, the seam of this content is the load itself:
+          the original deliberate-click gate (Key Zero of the very first design) is
+          replaced by the deliberate navigation that brought the traveller here.
+      -->
+      <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+        <!-- @block: CHAMBER HEADER
+          Same header idiom as other pages. The h2 keeps the nebula-pink accent while h1
+          stays reserved for the two flagship pages (index and recursive blueprint).
+        -->
+        <header class="category-header">
+          <h2>✦ Seiful lui Seldon ✦</h2>
+          <p>Transmisii sigilate ale romanului scris în doi</p>
+        </header>
+
+      <!-- @block: NOVEL GROWTH NOTE
+        The novel is not finished — the leviathan still grows. This note, filled by
+        MECANISM 10 from the manifest's novel meta, tells the traveller how many days
+        are sealed and promises a new capsule will light up when the captain writes more.
+        @concept:
+          A work that acknowledges its own incompleteness is a living archive, not a
+          monument. The note keeps the vault honest: it is a cargo hold still being loaded.
+        @bridge:
+          The text is injected from shared/data/vault-transmissions.json by script.js,
+          so the count always matches the journal without editing this page.
+      -->
+      <p class="vault-growth-note" id="vault-growth-note"></p>
+
+      <!-- @block: VOYAGE TELEMETRY
+        Displays the ship's voyage clock: how many waypoints have been stamped
+        (sectors visited) and the effective ship-hours that have ripened since first
+        contact. Exploration accelerates the clock. This is Key Two of the vault.
+        @structure:
+          Four telemetry cells, each holding a label and a value. The values are
+          filled in live by MECANISM 10. The grid is styled in Module 31.
+      -->
+      <div class="voyage-telemetry">
+        <div class="telemetry-cell">
+          <span class="telemetry-label">PRIMUL CONTACT</span>
+          <span class="telemetry-value" id="vault-first-contact">—</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">WAYPOINT-URI</span>
+          <span class="telemetry-value" id="vault-waypoints">0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">ORE-NAVĂ</span>
+          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
+        </div>
+        <div class="telemetry-cell">
+          <span class="telemetry-label">DEBLOCATE</span>
+          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
+        </div>
+      </div>
+
+      <!-- @block: CAPSULE CONSTELLATION
+        Rendered by MECANISM 10 from shared/data/vault-transmissions.json.
+        Each volume becomes a sealed capsule in the constellation.
+        @concept:
+          The capsules are the novel's chapters made tangible: six holds, one per
+          volume of the ship. Sealed capsules wait in faint glass; opened capsules
+          glow in solar-mint. The constellation is the geography of the writing.
+        @bridge:
+          Each capsule button carries a data-capsule attribute that matches the
+          capsule id in the JSON; script.js uses event delegation to route clicks.
+      -->
+      <div class="capsule-constellation" id="capsule-constellation">
+        <!-- Capsules are injected here by the vault engine. -->
+      </div>
+
+      <!-- @block: THE SLEEPER'S CRYSTAL
+        The central projection surface. When a capsule is earned and opened,
+        the Sleeper — the invented witness, the permission to narrate — wakes
+        and types the transmission into this crystal.
+        @concept:
+          The Sleeper is the novel's own conscience: a witness who reads what was
+          written and speaks it back. The crystal is where the archive becomes a
+          voice. Projections type out live from the raw journal, so the website
+          and GitHub remain one body.
+        @structure:
+          The crystal exposes a status line, a scrollable output for the typed
+          text, and a blinking cursor. The auto-typing engine is in script.js.
+      -->
+      <div class="sleeper-crystal" id="sleeper-crystal">
+        <div class="sleeper-crystal-header">
+          <span class="sleeper-status" id="sleeper-status">ADORMITA DOARME</span>
+        </div>
+        <div class="typewriter-output vault-output" id="vault-output"></div>
+        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
+      </div>
+
+      <!-- @block: NAV-GATE QUIZ PANEL
+        Appears when the traveller requests to open a capsule. Passing the volume's
+        quiz stamps the waypoint and grants Key One (the first key of the capsule;
+        the ripened voyage clock is the second key).
+        @structure:
+          This panel is a sibling of the Sleeper's crystal, hidden until a capsule
+          is clicked. It holds the Nav-Gate title, an instruction line, the quiz
+          <form> (injected by MECANISM 10), and the result area where the first
+          key is announced.
+      -->
+      <div class="nav-gate" id="nav-gate" hidden>
+        <div class="nav-gate-box">
+          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
+          <p class="nav-gate-intro" id="nav-gate-intro"></p>
+          <form class="nav-gate-form" id="nav-gate-form"></form>
+          <div class="nav-gate-result" id="nav-gate-result"></div>
+        </div>
+      </div>
+
+      <!-- @block: ÎNTOARCEREA LA CARTA
+        O cale tăcută și deliberată înapoi la manuscrisul deschis. Unde nucleul 3D de
+        pe pagina cărții coborâse în seif, acest link urcă din nou. Menține cele două
+        punți conectate fără să aglomereze niciuna. Pentru că acest seif își folosește
+        sigiliul 3D ca intrare, ieșirea o oglindește: același cristal Bahry care
+        păzește pagina cărții, transformat în link de întoarcere.
+        @concept:
+          Simetria porților: echipajul a intrat printr-un sigiliu și iese printr-un
+          sigiliu. Cele două punți sunt două fețe ale aceleiași uși — a intra în seif
+          și a te întoarce la cartea deschisă sunt același gest, inversat. Aici, în
+          vârful camerei, sigiliul e și emblema ei: se rotește continuu.
+        @pedagogy:
+          Acest sigiliu este EXACT cristalul tridimensional de pe transmission.html —
+          opt triunghiuri tăiate, re-înclinate în zmeul îngust al seifului Bahry, două
+          jumătăți în oglindă despărțite de cumpăna centrală. Reutilizând același
+          markup (cu clase în oglindă) se învață că un singur limbaj vizual poate
+          purta două sensuri: o ușă spre interior și o ușă spre exterior.
+        @structure:
+          Linkul <a> poartă două straturi interioare:
+            1. scena (.vault-core-stage) — scena 3D decorativă, ascunsă cititorilor
+               de ecran, care ține cele opt fețe, cumpăna și sigiliul;
+            2. sub-linia NU e înăuntru linkului: e un <p> frate sub cristal, ca
+               tehnologia asistivă să citească aria-label (o propoziție curată) și
+               să nu se împiedice niciodată de geometrie.
+      -->
+      <a
+        href="transmission.html"
+        class="vault-return-seal"
+        aria-label="Înapoi la Carta de Astronavigație"
+      >
+        <!-- @block: SCENA DE ÎNTOARCERE
+          Aceeași scenă tridimensională ca nucleul de pe pagina cărții, redusă de
+          Modulul 31 și rotită continuu. Scena creează contextul de adâncime
+          (preserve-3d); fiecare față de mai jos e copilul acestei scene și trăiește
+          în spațiul ei de coordonate. Pur decorativ, ascuns cititorilor de ecran.
+        -->
+        <span class="vault-core-stage vault-return-stage" aria-hidden="true">
+          <!-- @block: FEȚELE GEODESICE
+            Identicele opt triunghiuri ale nucleului: patru raze superioare (--t) se
+            înclină spre vârful înalt, patru raze inferioare (--b) se lăresc spre
+            umărul larg, trasând împreună zmeul Bahry. Fețele alternante poartă
+            conturul roz. Fiecare față e un <span> plat; cele trei transformări
+            (rotateY pentru rază, rotateX pentru unghi, translateZ pentru rază) o
+            plasează pe suprafața cristalului.
+          -->
+          <!-- @line: Rază superioară față (latură vârf). -->
+          <span class="vault-core-face vault-core-face--t1"></span>
+          <!-- @line: Rază superioară rotită cu 90 de grade. -->
+          <span class="vault-core-face vault-core-face--t2"></span>
+          <!-- @line: Rază superioară opusă faței. -->
+          <span class="vault-core-face vault-core-face--t3"></span>
+          <!-- @line: Rază superioară rotită cu 270 de grade. -->
+          <span class="vault-core-face vault-core-face--t4"></span>
+          <!-- @line: Rază inferioară față (latură umăr), interblocată cu cele superioare. -->
+          <span class="vault-core-face vault-core-face--b1"></span>
+          <!-- @line: Rază inferioară rotită cu 135 de grade. -->
+          <span class="vault-core-face vault-core-face--b2"></span>
+          <!-- @line: Rază inferioară opusă față-jos. -->
+          <span class="vault-core-face vault-core-face--b3"></span>
+          <!-- @line: Rază inferioară de închidere. -->
+          <span class="vault-core-face vault-core-face--b4"></span>
+
+          <!-- @block: SIGILIUL
+            Gliful stea la inima cristalului — semnătura sigiliului. pointer-events: none
+            (Modulul 31) ține clicul pe linkul însuși.
+          -->
+          <span class="vault-core-seal" aria-hidden="true">✦</span>
+        </span>
+
+        <!-- @block: CUMPĂNA
+          Același meridian ca al cristalului porții, repetat aici: o linie verticală de
+          păr care împarte cele două jumătăți egale în oglindă. Ca pe pagina cărții,
+          trăiește ÎN AFARA scenei rotative, așa că rămâne verticală și centrată în
+          timp ce cristalul se rotește în spatele ei.
+        -->
+        <span class="vault-core-seam" aria-hidden="true"></span>
+      </a>
+      <!-- @line: SUBLINIA DE ÎNTOARCERE
+        Destinația în cuvinte simple a sigiliului. Trăiește în afara <a>-ului, ca
+        numele accesibil al linkului să rămână propoziția scurtă și curată din
+        aria-label, iar sub-linia să fie proză vizibilă sub cristal.
+      -->
+      <p class="vault-return-caption">Înapoi la Carta de Astronavigație</p>
+      </section>
+    </main>
+
+    <!-- @block: FOOTER
+      The closing section of every page in the project. It carries the telemetry data
+      stream, a link to the bibliography, and the captain's signature — consistent
+      across all decks, including the vault.
+    -->
+    <footer class="footer">
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        The footer is the ship's auxiliary navigation station — less prominent than the
+        HUD overlay, but essential for systems that do not belong to a specific volume:
+        the bibliography archive and the language switch. The vault itself is reached
+        through the 3D core on the charter page, so it is not listed here.
+        @concept:
+          Keeping the vault out of the footer preserves the double-gate fiction: the
+          only way in is the deliberate touch of the seal.
+      -->
+      <ul class="footer-links">
+        <!-- @path: Bibliography page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="bibliography.html" target="_blank">Arhivele Adâncului — Referințe Cartografiate</a>
+        </li>
+        <!-- @path: Transmission / Astrogation Charter page -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="transmission.html">Carta de Astronavigație</a>
+        </li>
+        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <li>
+          <!-- @reason:
+            The language toggle lets the crew switch between the English and Romanian
+            versions. The current language is marked with .lang-toggle-active.
+          -->
+          <a href="../en/vault.html" class="">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../ro/vault.html" class="lang-toggle-active">RO</a>
+        </li>
+      </ul>
+      <p>
+        SYS_ORBIT: SELDON_VAULT // STATUS:
+        <span class="telemetry-active">ONLINE</span>
+        <!-- @theme:
+          The word ONLINE in a <span> with class .telemetry-active gets the solar-mint
+          color and a neon glow — a 1970s NASA mission-control look for the active status.
+        -->
+      </p>
+
+      <!-- @structure:
+        The second telemetry line anchors the project in real physical space and time.
+      -->
+      <p>
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          The coordinates point to Cluj-Napoca, Romania — where this project is built.
+          SYSTEM_TIME records the date of the latest footer update.
+        -->
+      </p>
+
+      <!-- @structure:
+        The final line declares who created and owns this project.
+      -->
+      <p class="copyright">
+        &copy; 2026 | D::0dy55ey de
+        <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          The captain's name in a <span> with class .vessel-sig gets the nebula-pink
+          color and an incandescent glow — the captain's unique identifier across all decks.
+        -->
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  <!-- @bridge:
+      For the full technical index of HTML tags used in this project,
+      see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
+  -->
+</html>
+
+<!-- @bridge:
+  Tags legend: ./docs/legend-ro.md
+-->
+
+<!-- @reason:
+  This document is Seiful lui Seldon for the Romanian version. It is reached by touching
+  the 3D core on The Astrogation Charter page (transmission.html). Within it, the
+  traveller turns two keys per capsule — the Nav-Gate quiz and the ripened voyage
+  clock — to project the novel's sealed transmissions through the Sleeper's crystal.
+-->
