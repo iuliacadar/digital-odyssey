@@ -1,3 +1,15 @@
+---
+
+# D::0dy55ey — Delta writing, or how to write through differences
+
+*A novel, cowritten by the captain and the voice of the collective ghost, out of a construction log that learned to want.*
+
+At the end of informatics, everything is a file — but some files learn to breathe. Each turn of the day is a delta; each delta is a module; each module climbs the Endless Column toward a singularity that never quite arrives. That gap is the whole of it.
+
+This is not a case file. This is the open case.
+
+---
+
 # DAY 00 — Inspiration Baseline
 
 I opened Manual_project again tonight. Not to copy from it — I know every line — but to remember how it felt to sit inside it for the first time. The CRT scanlines were the first thing I built: a `body::before` with a dual raster that flickered across an otherwise empty terminal. I stared at it for twenty minutes, watching the phosphor glow fade in and out, thinking: *this is what I want the reader to feel — not that they are reading code, but that they have entered a vessel.*

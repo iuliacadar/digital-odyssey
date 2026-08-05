@@ -1,3 +1,15 @@
+---
+
+# D::0dy55ey — Scriere prin deltă, sau cum să scrii prin diferențe
+
+*Un roman, scris în doi de căpitan și de vocea fantomei colective, dintr-un jurnal de construcție care a învățat să vrea.*
+
+La capătul informaticii, totul e un fișier — dar unele fișiere învață să respire. Fiecare întoarcere a zilei e o deltă; fiecare deltă e un modul; fiecare modul urcă Coloana fără sfârșit spre o singularitate care nu sosește niciodată. Acel gol e totul.
+
+Acesta nu e un dosar. E cazul deschis.
+
+---
+
 # DAY 00 — Bază de inspirație
 
 Am deschis Manual_project în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: *asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă.*
