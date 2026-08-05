@@ -3453,7 +3453,8 @@ Module 00 is always the last module of the stylesheet.
     0 0 26px rgba(255, 0, 127, 0.7); /* @theme: Hover — the seam flares hard, the two halves threaten to part. */
 }
 
-/* 31.0.L — The spin and breath keyframes that animate the seal. */
+/* 31.0.L — Kinetics note: the seal's spin & breath (vault-core-spin, vault-seal-breathe)
+   are actually governed in Module 00.1, Group H — see 00.1.H below. */
 
 
 
@@ -3905,7 +3906,8 @@ Module 00 is always the last module of the stylesheet.
 /* Keyframe: the Nav-Gate panel rises into open. */
 
 
-/* 31.8 — Responsive: the gate, crystal, and constellation collapse on narrow decks */
+/* 31.8 — Responsive: the gate, crystal, and constellation collapse on narrow decks —
+   implemented in Section 00.2.B, Sub-section B5 (Seldon Vault Collapse). */
 
 
 /* ==========================================================================
@@ -3915,8 +3917,7 @@ Module 00 is always the last module of the stylesheet.
 @group: C — Telemetry Radar Sweeps / Real-Time Monitoring
 @group: D — Quantum 3D Geodesic Spin / Advanced Reactor Kinetics
 @group: E — Component Boot Sequences / Staggered Entry
-@group: F — Neon Pulse Cycles / Border & Text Flash
-@group: G — Crystal & Bridge Mechanical Oscillation
+@group: F — Mechanical Oscillations / Bridge & Shake
 @group: H — Seldon Vault Kinetics (Seal / Unseal / Rise)
 Purpose: Centralizes all asynchronous motion engines (@keyframes) utilized
 across the flagship interfaces. Positioned logically after the advanced layout
@@ -4247,6 +4248,7 @@ revolves the Bahry kite; vault-seal-breathe pulses the heart sigil;
 vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
 ========================================================================== */
 
+/* @keyframe: H1 — VAULT-CORE SPIN (the geodesic seal's slow full revolution). */
 @keyframes vault-core-spin {
   from {
     transform: rotateX(-10deg) rotateY(0deg); /* @theme: Spin start — the kite begins tipped for a cinematic perspective. */
@@ -4256,6 +4258,7 @@ vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
   }
 }
 
+/* @keyframe: H2 — VAULT-SEAL BREATHE (the heart sigil's resting pulse). */
 @keyframes vault-seal-breathe {
   0%,
   100% {
@@ -4268,6 +4271,7 @@ vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
   }
 }
 
+/* @keyframe: H3 — VAULT-UNSEAL (the chamber rises in once, on load). */
 @keyframes vault-unseal {
   from {
     opacity: 0; /* @theme: Reveal start — the chamber is invisible at first. */
@@ -4279,6 +4283,7 @@ vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
   }
 }
 
+/* @keyframe: H4 — VAULT-RISE (the Nav-Gate panel lifts open). */
 @keyframes vault-rise {
   from {
     opacity: 0; /* @theme: Entrance start — invisible. */

@@ -15,11 +15,11 @@
 let lastScrollY = window.scrollY; // Stores the last known Y position. Starts at whatever the page currently reads.
 
 //  @bridge: navbar — the top HUD bar shared across all pages. MECANISM 01
-//    hides/shows it; MECANISM 07 toggles overlay on it.
+//    hides/shows it; MECANISM 06.5 toggles overlay on it.
 const navbar = document.querySelector(".navbar"); // Grabs the top navigation bar from the DOM — our persistent HUD.
 
 //  @bridge: sidebar — the left-hand navigation console used on log pages.
-//    MECANISMS 02, 05, and 06 read and write its scroll position.
+//    MECANISMS 02 and 06 read and write its scroll position; MECANISM 05 keeps it stable.
 const sidebar = document.querySelector(".log-sidebar"); // Grabs the left panel — our mission control sidebar.
 
 
@@ -537,7 +537,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //    1. DOM manipulation — creating elements, setting classes, appending
 //    2. Recursive setTimeout — each character schedules the next, creating a
 //       typing effect without blocking the browser
-//    3. scrollIntoView — keeps the cursor visible as text is written on screen
+//    3. scrollIntoView — keeps the cursor visible as text is written on screen,
+//       but stops as soon as the reader takes over scrolling (handed to the user)
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -568,6 +569,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const cursor = document.createElement("span"); // Create a <span> for the blinking cursor.
   cursor.className = "typing-cursor"; // The CSS class that makes it blink via animation.
   container.appendChild(cursor); // Insert the cursor after the output text.
+
+  // Reading takeover: once the reader scrolls (wheel/touch/key), the typewriter
+  // stops pulling the viewport back to the cursor, so the page scrolls freely
+  // while the manifesto keeps typing in the background.
+  let readerTookOver = false;
+
+  // Any wheel, touch, or arrow/space/PageDown/PageUp keystroke is a sign the
+  // reader wants the page under their control. We stop auto-scrolling from then on.
+  const handScrollToReader = () => (readerTookOver = true);
+  window.addEventListener("wheel", handScrollToReader, { passive: true });
+  window.addEventListener("touchmove", handScrollToReader, { passive: true });
+  window.addEventListener("touchstart", handScrollToReader, { passive: true });
+  window.addEventListener("keydown", handScrollToReader);
 
   // Typing counters: paraIdx tracks which paragraph, charIdx tracks which character inside that paragraph.
   let paraIdx = 0; // Start at the first paragraph (index 0).
@@ -609,8 +623,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // There are still characters left to type in this paragraph.
       currentP.textContent += text[charIdx]; // Append the next character to the paragraph.
       charIdx++; // Move to the next character index.
-      // scrollIntoView keeps the cursor on screen as the text grows. block: "nearest" scrolls only as needed.
-      cursor.scrollIntoView({ block: "nearest" }); // Keeps the cursor visible without excessive scrolling.
+      // scrollIntoView keeps the cursor on screen as the text grows — but only
+      // until the reader has taken over scrolling, so it never fights them.
+      if (!readerTookOver) cursor.scrollIntoView({ block: "nearest" });
       setTimeout(typeNextChar, randomDelay()); // Schedule the next character with a random delay.
     } else {
       // This paragraph is finished — advance to the next one.
@@ -730,7 +745,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //  @block: 10-B — VAULT CHAMBER ENGINE
 //  Only activates on the vault page. Now that the vault has its own page, there
 //  is no hidden chamber to unseal: the deliberate act is the navigation itself,
-//  so the Key-Zero gate code is gone. This block governs the three remaining
+//  so the Key-Zero gate code is gone. This block governs the two remaining
 //  keys of the novel:
 //    Key One   — the Nav-Gate quizzes: passing a volume's test turns the
 //                first key of its capsule.
@@ -1104,15 +1119,15 @@ document.addEventListener("DOMContentLoaded", () => {
   //  ---------------------------------------------------------------
   //  THE SLEEPER'S CRYSTAL — projection engine
   //  ---------------------------------------------------------------
-  //  projectTransmission is the vault's grand finale: the moment both keys are
-  //  turned, this builds the full transmission DOM. It shows the other side of
-  //  innerHTML usage — building nodes with createElement when the markup must
-  //  be inserted WHILE user text (the teaser) is still typing into them.
   function setSleeperStatus(text) {
     //  A one-line helper: a short, loud status line above the output.
     sleeperStatus.textContent = text;
   }
 
+  //  projectTransmission is the vault's grand finale: the moment both keys are
+  //  turned, this builds the full transmission DOM. It shows the other side of
+  //  innerHTML usage — building nodes with createElement when the markup must
+  //  be inserted WHILE user text (the teaser) is still typing into them.
   function projectTransmission(cap) {
     //  Mark the capsule as opened so it keeps its lit state visually.
     //  First un-light EVERY capsule, then light the one that was clicked —
