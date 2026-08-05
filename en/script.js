@@ -637,74 +637,152 @@ document.addEventListener("DOMContentLoaded", () => {
 //  ==========================================================================
 //     MECANISM 10: THE SELDON VAULT
 //     Runs on every page. Stamps the voyage log (first contact + waypoints),
-//     and when the traveller reaches the Vault Chamber (transmission.html),
-//     it renders the capsule constellation, governs the Nav-Gate quizzes,
-//     runs the voyage clock, and projects the novel's transmissions through
-//     the Sleeper's crystal.
-//     @pedagogy: This mechanism demonstrates five real JavaScript patterns:
+//     and when the traveller reaches the Vault page (vault.html), it governs
+//     the two remaining keys of the novel:
+//       Key One   — the Nav-Gate quizzes: passing a volume's test turns the
+//                   first key of its capsule.
+//       Key Two   — the voyage clock: real time since first contact,
+//                   accelerated by exploration, ripens the second key.
+//     When both keys turn, the Sleeper projects the novel's transmission
+//     through the crystal.
+//     @pedagogy: This mechanism demonstrates seven real JavaScript patterns:
 //       1. localStorage as a persistent cross-page state store (the voyage log)
 //       2. the Fetch API for loading JSON and raw markdown (no libraries)
 //       3. template literal rendering into the DOM (constellation capsules)
 //       4. the FormData API + event delegation for the quizzes
 //       5. a recursive setTimeout typing engine (the Sleeper's voice)
+//       6. the hidden attribute to keep the Nav-Gate quiz hidden until a
+//          capsule is chosen (a deliberate reveal, accessibility-first)
+//       7. the page itself as the gate: navigation replaced the click-unseal
+//          that the old single-page design used for the chamber
 //  ==========================================================================
 
 //  @block: 10-A — VOYAGE LOG (runs on every page of the ship)
 //  The moment a traveller loads ANY page, the voyage begins.
+//  @pedagogy: This is an IIFE (Immediately Invoked Function Expression) — the
+//    function runs once, at the exact instant the script loads, and never needs
+//    to be called again. Its only job is to write two facts into localStorage,
+//    the browser's persistent key–value store that survives page reloads:
+//    1. the moment of first contact (when the traveller first set foot aboard)
+//    2. the growing list of distinct pages ("waypoints") visited since then
+//    Because localStorage is a string-only store, numbers must be converted to
+//    strings (String()) and arrays must be serialised with JSON.stringify().
 //  ==========================================================================
 (function stampVoyageLog() {
+  //  Hard-coded storage keys. Keeping them in named constants means the same
+  //  string is guaranteed in every file — one typo in a bare literal would
+  //  silently create a second, empty slot. MECANISM 10-B reads the exact same
+  //  keys, so both blocks agree on what to call the voyage's two facts.
   const FIRST_KEY = "d0_voyage_firstContact";
   const WAYPOINTS_KEY = "d0_voyage_waypoints";
 
+  //  ---------------------------------------------------------------
+  //  MARK FIRST CONTACT
+  //  ---------------------------------------------------------------
   //  First contact: the instant the traveller first stepped aboard.
   if (!localStorage.getItem(FIRST_KEY)) {
+    //  Only stamp it if no timestamp exists yet — the maiden visit wins and is
+    //  never overwritten, so the "age of the voyage" stays stable across visits.
     localStorage.setItem(FIRST_KEY, String(Date.now())); // Stored in milliseconds.
   }
 
+  //  ---------------------------------------------------------------
+  //  DERIVE THE CURRENT WAYPOINT FROM THE URL
+  //  ---------------------------------------------------------------
   //  Waypoint stamping: derive the volume + page from the current URL.
   //  Example: /digital-odyssey/en/frontend/html-log.html -> frontend/html-log
-  const path = window.location.pathname.replace(/\/$/, "");
+  const path = window.location.pathname.replace(/\/$/, ""); // Strip any trailing slash first, so the regex starts clean.
   const match = path.match(
     /\/(frontend|backend|database|data-bridge|ux|delivery)\/([^/]+?)\.html$/,
   );
-  let currentWaypoint = null;
+  let currentWaypoint = null; // Holds the readable name for this page, or null if the page isn't a waypoint.
 
   if (match) {
+    //  match[1] = the volume ("frontend"), match[2] = the page ("html-log").
+    //  Storing them as one slash-joined string gives a readable, unique ID.
     currentWaypoint = `${match[1]}/${match[2]}`; // e.g. "frontend/html-log"
   } else {
     //  Flagship pages also count as waypoints (index, transmission, etc.).
-    const page = path.split("/").pop();
+    const page = path.split("/").pop(); // Take the last URL segment (the page name).
     if (page && page.endsWith(".html")) currentWaypoint = page;
   }
 
+  //  ---------------------------------------------------------------
+  //  STAMP THE WAYPOINT (ONLY ONCE PER DISTINCT PAGE)
+  //  ---------------------------------------------------------------
   if (currentWaypoint) {
     //  Load the existing waypoint array (or start fresh).
     let waypoints = [];
     try {
       waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
     } catch {
-      waypoints = [];
+      waypoints = []; // Corrupted or empty JSON? Fall back to a clean array.
     }
     //  Add only pages never visited before — each distinct visit is one boost.
     if (!waypoints.includes(currentWaypoint)) {
       waypoints.push(currentWaypoint);
-      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints));
+      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serialise to a string before storing.
     }
   }
-})();
+})(); // The IIFE bracket: the whole block has already executed by this line.
 
 
-//  @block: 10-B — VAULT CHAMBER (only activates on the transmission page)
+//  @block: 10-B — VAULT CHAMBER ENGINE
+//  Only activates on the vault page. Now that the vault has its own page, there
+//  is no hidden chamber to unseal: the deliberate act is the navigation itself,
+//  so the Key-Zero gate code is gone. This block governs the three remaining
+//  keys of the novel:
+//    Key One   — the Nav-Gate quizzes: passing a volume's test turns the
+//                first key of its capsule.
+//    Key Two   — the voyage clock: real time since first contact,
+//                accelerated by exploration, ripens the second key.
+//  When both keys turn, the Sleeper projects the novel's transmission
+//  through the crystal.
+//  @pedagogy: This is the ship's largest single mechanism. Read it slowly, top to
+//    bottom — every function is a discrete teaching unit:
+//      1.  The opening line selects the page context (a safety exit that keeps
+//          the whole engine asleep on non-vault pages).
+//      2.  A set of constants and DOM references, bound once so every later
+//          function shares the SAME readable name for each on-screen element.
+//      3.  Fetching the JSON manifest, then the voyage-clock maths and the
+//          game-logic predicates that decide what the traveller may unlock.
+//      4.  The constellation renderer (a template-literal builder over an array).
+//      5.  The Nav-Gate quiz (FormData + radio groups, scored, rewarded).
+//      6.  The Sleeper's crystal (a scripted transmission + recursive typeSignal).
+//      7.  The journal fetch (slices DAY packages out of raw markdown).
+//    These are the same tools a beginner meets in the first month of JavaScript:
+//    DOM queries, addEventListener, array.map / .join / .filter / .includes,
+//    template literals, JSON, fetch/then, and recursive setTimeout. Not one
+//    line relies on a third-party library — every behaviour is built by hand.
 //  ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
+  //  The chamber <div> is the landmark that proves we are ON the vault page.
+  //  If it is missing, we are on some content page — exit immediately so the
+  //  whole engine (and every DOM binding below) stays asleep.
   const chamber = document.querySelector(".vault-chamber");
-  if (!chamber) return; // Not the transmission page — leave the vault asleep.
+  if (!chamber) return; // Not the vault page — leave the engine asleep.
 
+  //  ---------------------------------------------------------------
+  //  LANGUAGE + STORAGE KEYS
+  //  ---------------------------------------------------------------
+  //  First, the language: JavaScript reads the <html lang="ro"> attribute set
+  //  in the page's head. Every user-facing string below is chosen at runtime
+  //  between the Romanian (ro) and English (en) variants using this one value.
   const lang = (document.documentElement.lang || "en").toLowerCase();
+  //  The three storage keys mirror MECANISM 10-A (the voyage's two keys) plus
+  //  this block's own per-volume "quiz passed" flags. PASS_PREFIX is completed
+  //  later: "d0_vault_pass_" + the volume (e.g. frontend) identifies one capsule.
   const FIRST_KEY = "d0_voyage_firstContact";
   const WAYPOINTS_KEY = "d0_voyage_waypoints";
   const PASS_PREFIX = "d0_vault_pass_";
 
+  //  ---------------------------------------------------------------
+  //  DOM REFERENCES — bound ONCE, reused by every function below.
+  //  ---------------------------------------------------------------
+  //  Each getElementById call performs a search of the whole page. Binding the
+  //  result to a const means the search happens exactly once, and the rest of
+  //  the engine talks to these elements by a short, readable name.
+  const growthNote = document.getElementById("vault-growth-note");
   const constellation = document.getElementById("capsule-constellation");
   const firstContactEl = document.getElementById("vault-first-contact");
   const waypointsEl = document.getElementById("vault-waypoints");
@@ -720,26 +798,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const navGateResult = document.getElementById("nav-gate-result");
 
   //  The raw journal is fetched live so the website and GitHub stay one body.
+  //  JOURNAL_PATH resolves to ../JOURNAL-EN.md or ../JOURNAL-RO.md — the very
+  //  markdown file the GitHub repository hosts. The vault never duplicates the
+  //  novel: it reads the captain's real book at the moment the page runs.
   const JOURNAL_PATH = `../JOURNAL-${lang === "ro" ? "RO" : "EN"}.md`;
 
+  //  Two shared "working memory" slots for the whole block:
   let vaultData = null;   // The parsed vault-transmissions.json
   let activeCapsule = null; // The capsule currently open in the Nav-Gate
 
   //  ---------------------------------------------------------------
   //  LOAD THE VAULT MANIFEST
   //  ---------------------------------------------------------------
+  //  fetch() returns a Promise. The .then() chain unpacks the response in two
+  //  stages: first check the HTTP status, then parse the body as JSON.
   fetch("../shared/data/vault-transmissions.json")
     .then((response) => {
       if (!response.ok) throw new Error(`Vault manifest not found (${response.status}).`);
       return response.json();
     })
     .then((data) => {
+      //  Store the parsed manifest in the shared variable so every later
+      //  function can reach capsules, voyage, and novel data without re-fetching.
       vaultData = data;
+      //  Kick off the two things that need the data: draw the capsule buttons
+      //  and show the telemetry, then keep the voyage clock ticking.
       renderConstellation(data.capsules);
       refreshTelemetry();
       setInterval(refreshTelemetry, 30000); // The clock ticks every 30 seconds.
+
+      //  The growth note: the manifest's novel meta tells the traveller how
+      //  many days are sealed and promises the constellation keeps growing.
+      if (growthNote && data.novel) {
+        growthNote.textContent =
+          (lang === "ro"
+            ? data.novel.growthNote?.ro
+            : data.novel.growthNote?.en) ||
+          (lang === "ro"
+            ? "Romanul crește — zilele sigilate se tot adună."
+            : "The novel is growing — the sealed days keep mounting.");
+      }
     })
     .catch((error) => {
+      //  Offline, wrong path, or a corrupt file? Show a pink error in the
+      //  chamber rather than leaving the traveller staring at a silent box.
       constellation.innerHTML =
         `<p class="vault-error">[VAULT ERROR]: ${error.message}</p>`;
     });
@@ -747,50 +849,68 @@ document.addEventListener("DOMContentLoaded", () => {
   //  ---------------------------------------------------------------
   //  VOYAGE CLOCK
   //  ---------------------------------------------------------------
+  //  This is the "Key Two" maths. The traveller does not simply wait for the
+  //  clock: they can explore the ship (accumulate waypoints) to accelerate it.
+  //  readVoyageState() reads the two localStorage facts written by MECANISM 10-A
+  //  and computes a single number: the effective ship-hours that have elapsed.
   function readVoyageState() {
+    //  First contact, stored as a millisecond timestamp; fall back to "now" if
+    //  it is missing, so the voyage has a starting point on its very first run.
     const firstContact = Number(localStorage.getItem(FIRST_KEY)) || Date.now();
     let waypoints = [];
     try {
       waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
     } catch {
-      waypoints = [];
+      waypoints = []; // Corrupted array? Treat the voyage as just starting.
     }
     //  effectiveVoyageHours = realHours * (1 + boost * waypointCount)
-    const realHours = (Date.now() - firstContact) / 3600000;
-    const boost = (vaultData && vaultData.voyage.perWaypointBoost) || 0.5;
-    const shipHours = realHours * (1 + boost * waypoints.length);
-    return { firstContact, waypoints, realHours, shipHours };
+    const realHours = (Date.now() - firstContact) / 3600000; // Milliseconds -> hours (1 hour = 3,600,000 ms).
+    const boost = (vaultData && vaultData.voyage.perWaypointBoost) || 0.5; // Each waypoint multiplies progress.
+    const shipHours = realHours * (1 + boost * waypoints.length); // The accelerated total.
+    return { firstContact, waypoints, realHours, shipHours }; // One object, four facts.
   }
 
+  //  Writes the four telemetry cells on the vault page: the date of first
+  //  contact, how many waypoints are stamped, the current ship-hours, and the
+  //  unlocked/total count. Called on load and on the 30-second tick.
   function refreshTelemetry() {
-    const state = readVoyageState();
-    firstContactEl.textContent = new Date(state.firstContact).toLocaleDateString(lang, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
+    const state = readVoyageState(); // Grab the freshly computed clock.
+    firstContactEl.textContent = new Date(state.firstContact).toLocaleDateString(lang, { // Format the timestamp nicely...
+      year: "numeric",          // ...full year,
+      month: "short",           // short month name,
+      day: "numeric",           // and numeric day
     });
-    waypointsEl.textContent = String(state.waypoints.length);
-    shipHoursEl.textContent = state.shipHours.toFixed(1);
+    waypointsEl.textContent = String(state.waypoints.length); // Waypoint tally.
+    shipHoursEl.textContent = state.shipHours.toFixed(1); // One decimal place.
 
     if (vaultData) {
-      const total = vaultData.capsules.length;
-      const unlocked = vaultData.capsules.filter((c) => isUnlocked(c)).length;
-      unlockedEl.textContent = `${unlocked} / ${total}`;
+      const total = vaultData.capsules.length; // Number of capsules on the manifest.
+      const unlocked = vaultData.capsules.filter((c) => isUnlocked(c)).length; // How many have BOTH keys.
+      unlockedEl.textContent = `${unlocked} / ${total}`; // e.g. "1 / 6".
     }
   }
 
   //  ---------------------------------------------------------------
   //  KEY STATE: quiz passed AND voyage clock ripened
   //  ---------------------------------------------------------------
+  //  The next three tiny functions are "predicates" — they each answer ONE
+  //  yes/no question about a capsule. Keeping them separate lets the rest of
+  //  the code ask clear questions ("has this quiz been passed?") without caring
+  //  HOW the answer is stored.
   function quizPassed(capsule) {
+    //  Read the flag keyed by volume: "d0_vault_pass_frontend" === "1" means the
+    //  traveller cleared that volume's Nav-Gate. String "1" stands for true.
     return localStorage.getItem(PASS_PREFIX + capsule.volume) === "1";
   }
 
   function clockRipened(capsule) {
+    //  Key Two ripens when the accelerated ship-hours reach the capsule's quota.
     return readVoyageState().shipHours >= capsule.requiredShipHours;
   }
 
   function isUnlocked(capsule) {
+    //  A capsule is truly open ONLY when both keys turn at once. && (AND) means
+    //  a quiz pass without time, or time without a quiz, still reads as locked.
     return quizPassed(capsule) && clockRipened(capsule);
   }
 
@@ -798,32 +918,44 @@ document.addEventListener("DOMContentLoaded", () => {
   //  CAPSULE CONSTELLATION RENDERER
   //  ---------------------------------------------------------------
   //  The click listener is attached ONCE, outside the renderer, so that
-  //  re-rendering the constellation never stacks duplicate handlers.
+  //  re-rendering the constellation never stacks duplicate handlers. This is the
+  //  "event delegation" pattern: instead of giving every capsule its own
+  //  listener (which would break the instant we re-render the list), ONE
+  //  listener lives on the container and inspects whatever was clicked.
   constellation.addEventListener("click", (event) => {
-    const btn = event.target.closest(".capsule");
-    if (!btn) return;
-    const cap = vaultData.capsules.find((c) => c.id === btn.dataset.capsule);
-    if (cap) handleCapsuleClick(cap, btn);
+    const btn = event.target.closest(".capsule"); // Walk up from the click to find the capsule button.
+    if (!btn) return; // Clicked somewhere outside a capsule? Ignore.
+    const cap = vaultData.capsules.find((c) => c.id === btn.dataset.capsule); // Match the data attribute to a manifest capsule.
+    if (cap) handleCapsuleClick(cap, btn); // Found! Send it to the main router.
   });
 
+  //  Builds the capsule buttons as a single HTML string from the manifest array.
+  //  This shows three core array methods used in one breath:
+  //    .map()     convert every capsule -> one button string
+  //    .join("")  glue all the button strings together with nothing between them
+  //  innerHTML receives the finished string all at once. State is a string:
+  //  "sealed", "ripening", or "open".
   function renderConstellation(capsules) {
     constellation.innerHTML = capsules
       .map((cap) => {
-        const passed = quizPassed(cap);
-        const ripened = clockRipened(cap);
-        const state = isUnlocked(cap)
-          ? "open"
+        const passed = quizPassed(cap); // Has the quiz flag been stamped?
+        const ripened = clockRipened(cap); // Is the voyage clock mature enough?
+        const state = isUnlocked(cap) // Decide the visual state...
+          ? "open"        // ...both keys: fully unlocked.
           : passed
-            ? "ripening"
-            : "sealed";
-        const lockLabel =
+            ? "ripening"  // quiz done, time still short.
+            : "sealed";   // otherwise: locked.
+        const lockLabel = // Human-readable lock text, matching the state.
           !passed && !ripened
             ? `${lang === "ro" ? "CHEIE DUALĂ: test + timp" : "DUAL KEY: quiz + time"}`
             : !passed
               ? `${lang === "ro" ? "TEST NECESAR" : "QUIZ REQUIRED"}`
               : `${lang === "ro" ? "SE COACE (timp)" : "RIPENING (time)"}`;
-        const title = cap.title[lang] || cap.title.en;
+        const title = cap.title[lang] || cap.title.en; // Pick the language's title.
 
+        //  Template literal: a real HTML button built with ${} placeholders.
+        //  data-capsule stashes the capsule id so the click handler above can
+        //  find it; type="button" stops the button from submitting any form.
         return `
         <button class="capsule capsule--${state}" data-capsule="${cap.id}" type="button">
           <span class="capsule-day">${cap.day}</span>
@@ -832,28 +964,30 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="capsule-lock">${lockLabel}</span>
         </button>`;
       })
-      .join("");
+      .join(""); // Concatenate every button string into ONE innerHTML payload.
   }
 
+  //  The central router for a capsule click. It reads the two keys and chooses
+  //  one of three behaviour paths — this is a clean if/else decision ladder.
   function handleCapsuleClick(cap, btn) {
-    const passed = quizPassed(cap);
-    const ripened = clockRipened(cap);
+    const passed = quizPassed(cap); // Snapshot Key One (quiz).
+    const ripened = clockRipened(cap); // Snapshot Key Two (time).
 
     //  Case 1: already unlocked — project the transmission directly.
     if (passed && ripened) {
-      projectTransmission(cap);
+      projectTransmission(cap); // Both keys turned: wake the Sleeper now.
       return;
     }
 
     //  Case 2: quiz not yet passed — open the Nav-Gate.
     if (!passed) {
-      openNavGate(cap);
+      openNavGate(cap); // First key still missing: give the test.
       return;
     }
 
     //  Case 3: quiz passed, clock still ripening — explain the wait.
     if (!ripened) {
-      const need = cap.requiredShipHours - readVoyageState().shipHours;
+      const need = cap.requiredShipHours - readVoyageState().shipHours; // How many ship-hours remain.
       setSleeperStatus(
         lang === "ro"
           ? `CAPSULA SE COACE — încă ${need.toFixed(1)} ore-navă până se deschide. Explorează nava ca s-o accelerezi.`
@@ -876,6 +1010,11 @@ document.addEventListener("DOMContentLoaded", () => {
     navGateResult.innerHTML = "";
 
     //  Render the quiz questions as radio groups.
+    //  One .map() over the questions produces the initial HTML; inside it, the
+    //  options get their OWN .map() so each radio is built from its own object.
+    //  name="q${qIndex}" groups the radios of one question together — the
+    //  browser enforces "only one radio per name group" for free. Each answer's
+    //  whitespace is held raw inside a template literal, then all are join("")ed.
     navGateForm.innerHTML = q.questions
       .map((question, qIndex) => {
         const options = question.options
@@ -895,33 +1034,48 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    //  Submit button.
+    //  Submit button — built with createElement so we control its type and
+    //  label, then appended to the form as a real node (no re-parsing needed).
     const submit = document.createElement("button");
     submit.type = "submit";
     submit.className = "nav-gate-submit";
     submit.textContent = lang === "ro" ? "DESCUIE CAPSULA" : "UNSEAL THE CAPSULE";
     navGateForm.appendChild(submit);
 
+    //  Reveal the panel and glide the viewport to it.
     navGate.hidden = false;
     navGate.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
+  //  ---------------------------------------------------------------
+  //  SUBMIT — score the quiz, decide the key
+  //  ---------------------------------------------------------------
+  //  Event delegation again, but for "submit" (fired when the form's submit
+  //  button is clicked OR Enter is pressed). event.preventDefault() stops the
+  //  browser's native GET-resubmit so the page never reloads and the result
+  //  can be drawn live in place.
   navGateForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!activeCapsule) return;
+    event.preventDefault(); // Stop the native page reload.
+    if (!activeCapsule) return; // No capsule in context? Nothing to score.
 
+    //  FormData is the browser's own tool for reading form controls. .get()
+    //  returns the chosen radio's value ("" for radio) by that group's name —
+    //  giving us the selected answer index for every question at once.
     const formData = new FormData(navGateForm);
     const answers = activeCapsule.quiz.questions.map((_, qIndex) =>
-      formData.get(`q${qIndex}`),
+      formData.get(`q${qIndex}`), // The index the traveller chose.
     );
 
-    //  Score against the correct answer indices.
+    //  Score: .reduce() walks every question, accumulating 1 for each correct
+    //  answer. Number(string) turns the radio value into an integer so we can
+    //  compare it to q.correct with ===. compare === q.correct ? 1 : 0 becomes
+    //  the accumulator's adder (ternary inside a reduce — a beginner pattern).
     const score = activeCapsule.quiz.questions.reduce((acc, q, idx) => {
       return acc + (Number(answers[idx]) === q.correct ? 1 : 0);
     }, 0);
 
-    const threshold = activeCapsule.quiz.passThreshold;
-    const passed = score >= threshold;
+    const threshold = activeCapsule.quiz.passThreshold; // Needed correct answers.
+    const passed = score >= threshold; // The whole quiz's binary verdict.
 
     if (passed) {
       //  The first key turns: the volume's waypoint is permanently stamped.
@@ -932,9 +1086,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ? `CHEIE ÎNTOARSĂ — ${score}/${answers.length} corecte. Capsula a primit cheia întâi.`
             : `FIRST KEY TURNED — ${score}/${answers.length} correct. The capsule has received its first key.`
         }</p>`;
+      //  The constellation and telemetry are re-rendered so the "ripening"
+      //  state and the unlocked tally reflect the freshly-turned key.
       renderConstellation(vaultData.capsules);
       refreshTelemetry();
     } else {
+      //  Below threshold: no key, and clear feedback on what to do next.
       navGateResult.innerHTML =
         `<p class="nav-gate-result-fail">${
           lang === "ro"
@@ -947,38 +1104,47 @@ document.addEventListener("DOMContentLoaded", () => {
   //  ---------------------------------------------------------------
   //  THE SLEEPER'S CRYSTAL — projection engine
   //  ---------------------------------------------------------------
+  //  projectTransmission is the vault's grand finale: the moment both keys are
+  //  turned, this builds the full transmission DOM. It shows the other side of
+  //  innerHTML usage — building nodes with createElement when the markup must
+  //  be inserted WHILE user text (the teaser) is still typing into them.
   function setSleeperStatus(text) {
+    //  A one-line helper: a short, loud status line above the output.
     sleeperStatus.textContent = text;
   }
 
   function projectTransmission(cap) {
     //  Mark the capsule as opened so it keeps its lit state visually.
+    //  First un-light EVERY capsule, then light the one that was clicked —
+    //  querySelectorAll + forEach walks all of them, remove/add the class.
     constellation
       .querySelectorAll(".capsule")
       .forEach((b) => b.classList.remove("capsule--active"));
     const activeBtn = constellation.querySelector(
-      `[data-capsule="${cap.id}"]`,
+      `[data-capsule="${cap.id}"]`, // Template literal again, this time as a CSS selector.
     );
     if (activeBtn) activeBtn.classList.add("capsule--active");
 
+    //  Wake the Sleeper: a banner status line in the current language.
     setSleeperStatus(
       lang === "ro"
         ? "ADORMITA SE TREZEȘTE — TRANSMISIE RECEPȚIONATĂ"
         : "THE SLEEPER WAKES — TRANSMISSION RECEIVED",
     );
-    vaultOutput.innerHTML = "";
+    vaultOutput.innerHTML = ""; // Clear any previous transmission first.
 
     //  The projection begins with the title line, then the teaser signal.
+    //  Pick the language-appropriate strings from the manifest capsule.
     const title = cap.title[lang] || cap.title.en;
     const teaser = cap.teaser[lang] || cap.teaser.en;
 
     const header = document.createElement("p");
     header.className = "vault-transmission-title";
-    header.textContent = `${cap.day} — ${title}`;
+    header.textContent = `${cap.day} — ${title}`; // e.g. "DAY 12 — The Joins".
     vaultOutput.appendChild(header);
 
     const signal = document.createElement("p");
-    vaultOutput.appendChild(signal);
+    vaultOutput.appendChild(signal); // This <p> is where typeSignal writes, one char at a time.
 
     //  Delta layer: the commit hashes that gave birth to this transmission.
     if (cap.deltas && cap.deltas.length) {
@@ -989,6 +1155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //  If the day is unwritten, the Sleeper speaks the pending prophecy only.
+    //  cap.status === "pending" marks still-sealed days in the manifest.
     if (cap.status === "pending") {
       typeSignal(signal, teaser, () => {
         const pending = document.createElement("p");
@@ -999,28 +1166,32 @@ document.addEventListener("DOMContentLoaded", () => {
             : "This cargo hold is still being loaded. The captain is writing — return when the ship has advanced.";
         vaultOutput.appendChild(pending);
       });
-      return;
+      return; // Stop here: there is no journal text to fetch for a pending day.
     }
 
     //  Written days: type the teaser, then fetch the live journal section.
+    //  The projection is sequential — typeSignal runs the fetch only AFTER the
+    //  teaser finishes (its onDone callback), so the traveller hears the teaser
+    //  first and the full day second.
     typeSignal(signal, teaser, () => {
-      fetchJournalSection(cap, (fullText) => {
+      fetchJournalPackage(cap, (fullText) => {
         const divider = document.createElement("p");
         divider.className = "vault-divider";
-        divider.textContent = "— · — · —";
+        divider.textContent = "— · — · —"; // A motif splitting teaser from prose.
         vaultOutput.appendChild(divider);
 
         const full = document.createElement("pre");
         full.className = "vault-full-text";
-        full.textContent = fullText;
+        full.textContent = fullText; // The stripped DAY-section markdown, verbatim.
         vaultOutput.appendChild(full);
 
+        //  A real link to the captain's journal on GitHub, opened in a new tab.
         const link = document.createElement("p");
         link.className = "vault-journal-link";
         const a = document.createElement("a");
         a.href = JOURNAL_PATH;
-        a.target = "_blank";
-        a.rel = "noopener";
+        a.target = "_blank"; // New tab ...
+        a.rel = "noopener"; // ... without giving the new page a back-reference.
         a.textContent =
           lang === "ro"
             ? "DESCHIDE JURNALUL COMPLET (GitHub)"
@@ -1031,73 +1202,112 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //  A recursive typing engine — the Sleeper's voice, character by character.
+  //  ---------------------------------------------------------------
+  //  THE SLEEPER'S VOICE — a recursive typing engine
+  //  ---------------------------------------------------------------
+  //  The signature takes the element to write into, the text to reveal, and an
+  //  onDone callback run when the whole string has been typed. This is a lesson
+  //  in recursion + a closure: typeNext schedules ITSELF with setTimeout until
+  //  idx reaches the end — the closure keeps remembering idx between ticks.
   function typeSignal(element, text, onDone) {
-    let idx = 0;
-    vaultCursor.style.display = "inline";
+    let idx = 0; // The cursor position inside the string (our shared counter).
+    vaultCursor.style.display = "inline"; // Show the blinking block caret.
     vaultOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
     function typeNext() {
       if (idx < text.length) {
-        element.textContent += text[idx];
-        idx++;
-        vaultCursor.scrollIntoView({ block: "nearest" });
+        element.textContent += text[idx]; // Append one character to the element.
+        idx++; // Advance the shared counter.
+        vaultCursor.scrollIntoView({ block: "nearest" }); // Chase the caret.
         //  Random 8–20ms delays emulate an irregular deep-space signal.
         setTimeout(typeNext, Math.floor(Math.random() * 12 + 8));
       } else {
+        //  Done typing: hide the caret and call the caller's continuation.
         vaultCursor.style.display = "none";
         if (onDone) onDone();
       }
     }
-    typeNext();
+    typeNext(); // Kick off the very first tick.
   }
 
-  //  Fetches the raw journal and slices out the requested DAY section.
+  //  ---------------------------------------------------------------
+  //  JOURNAL — slice DAY packages out of the live markdown
+  //  ---------------------------------------------------------------
+  //  Fetches the raw journal and slices out the package of DAY sections the
+  //  capsule unlocks (cap.days, e.g. ["DAY 00", ..., "DAY 21"]). Each DAY is
+  //  sliced, markdown is stripped, and the sections are joined with a divider
+  //  so the whole package types out as one transmission.
   //  Progressive enhancement: if the fetch fails (offline / file://), the
   //  teaser already received stands alone — the vault never breaks.
-  function fetchJournalSection(cap, onSuccess) {
-    if (!cap.journalSection) return;
+  function extractDaySection(markdown, dayWord, dayNumber) {
+    //  What is being hunted, e.g. "DAY 12". Interpolated from the capsule's day
+    //  list, so the same function serves every volume.
+    const sectionHeader = `${dayWord} ${dayNumber}`;
+    //  A RegExp built at runtime. We escape special characters in the header
+    //  first (replace with \$&) so "DAY 12" cannot be misread as a pattern.
+    //  ^#{1,3} = 1..3 leading hashes (a markdown heading), then the header,
+    //  then \b (a word boundary) so "DAY 12" never matches inside "DAY 123".
+    const headerPattern = new RegExp(
+      `^#{1,3}\\s+${sectionHeader.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+      "m", // The "m" flag lets ^ match line starts across the whole file.
+    );
+    const startMatch = markdown.match(headerPattern);
+    if (!startMatch) throw new Error(`Section ${sectionHeader} not found.`);
+    const startIdx = startMatch.index; // Character offset of the heading start.
+
+    //  Find the next section header after it (a new DAY / ZIUA for any volume).
+    //  .slice() crops the string right after this heading, so the search starts
+    //  cleanly past the current day; +sectionHeader.length skips the heading.
+    const nextMatch = markdown
+      .slice(startIdx + sectionHeader.length)
+      .match(/^#{1,3}\s+(DAY|ZIUA)\s+\d+[:\s—]/m);
+    const endIdx = nextMatch
+      ? startIdx + sectionHeader.length + nextMatch.index // Stop at next day.
+      : markdown.length; // No next day: the section runs to the file's end.
+
+    //  Strip markdown syntax to type readable prose. Each .replace is ONE
+    //  translation rule, run left to right on the slice.
+    let section = markdown.slice(startIdx, endIdx);
+    section = section
+      .replace(/^\s*#+\s*/gm, "")   // remove heading markers (a leading # ...)
+      .replace(/\*\*([^*]+)\*\*/g, "$1") // bold: **word** -> word
+      .replace(/\*([^*]+)\*/g, "$1")     // italics: *word* -> word
+      .replace(/^---\s*$/gm, "")          // horizontal rules (a lone divider)
+      .replace(/`([^`]+)`/g, "$1")        // inline code: `code` -> code
+      .trim(); // Drop leading/trailing blank lines around the section.
+    return section; // The readable DAY text, ready for the <pre>.
+  }
+
+  //  Ties the package together: resolves each day number, slices ALL its DAY
+  //  sections, and — only if at least one landed — calls onSuccess with the
+  //  sections joined by a blank line. Days handed to it come straight from the
+  //  capsule's manifest (cap.days).
+  function fetchJournalPackage(cap, onSuccess) {
+    const days = cap.days || [];
+    if (!days.length) return; // No package assigned yet — teaser stands.
 
     fetch(JOURNAL_PATH)
       .then((response) => {
         if (!response.ok) throw new Error("Journal unavailable.");
-        return response.text();
+        return response.text(); // We want raw markdown, not JSON.
       })
       .then((markdown) => {
-        const day = cap.journalSection; // e.g. "DAY 24"
         //  The Romanian journal spells the day "ZIUA", the English one "DAY".
         const dayWord = lang === "ro" ? "ZIUA" : "DAY";
-        const dayNumber = (day.match(/\d+/) || [""])[0];
-        if (!dayNumber) throw new Error("Section without a number.");
-        const sectionHeader = `${dayWord} ${dayNumber}`;
-        //  Match the section header at the start of a line.
-        const headerPattern = new RegExp(
-          `^#{1,3}\\s+${sectionHeader.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
-          "m",
-        );
-        const startMatch = markdown.match(headerPattern);
-        if (!startMatch) throw new Error(`Section ${sectionHeader} not found.`);
-        const startIdx = startMatch.index;
-
-        //  Find the next section header after it (a new DAY / ZIUA).
-        const nextMatch = markdown
-          .slice(startIdx + sectionHeader.length)
-          .match(/^#{1,3}\s+(DAY|ZIUA)\s+\d+[:\s—]/m);
-        const endIdx = nextMatch
-          ? startIdx + sectionHeader.length + nextMatch.index
-          : markdown.length;
-
-        //  Strip markdown syntax to project readable prose.
-        let section = markdown.slice(startIdx, endIdx);
-        section = section
-          .replace(/^\s*#+\s*/gm, "")   // remove heading markers
-          .replace(/\*\*([^*]+)\*\*/g, "$1") // bold
-          .replace(/\*([^*]+)\*/g, "$1")     // italics
-          .replace(/^---\s*$/gm, "")          // horizontal rules
-          .replace(/`([^`]+)`/g, "$1")        // inline code
-          .trim();
-
-        onSuccess(section);
+        //  Resolve each day number, then slice every section in the package.
+        const sections = [];
+        for (const day of days) {
+          //  Pull the first digits out of "DAY 12" -> "12".
+          const dayNumber = (day.match(/\d+/) || [""])[0];
+          if (!dayNumber) continue; // No digits after all? Skip this entry.
+          try {
+            sections.push(extractDaySection(markdown, dayWord, dayNumber));
+          } catch {
+            //  A missing day breaks nothing: later or earlier days still land.
+          }
+        }
+        if (!sections.length) throw new Error("No sections projected.");
+        onSuccess(sections.join("\n\n")); // Hand over the whole package.
       })
       .catch(() => {
         //  Silent fallback: the teaser already typed remains the projection.
