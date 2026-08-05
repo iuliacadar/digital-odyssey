@@ -331,79 +331,142 @@
       </section>
       </div>
 
-    <!-- @block: CAMERA SEALERATĂ (THE VAULT CHAMBER)
-      Sub manifestul fondator (mesajul în sticlă — ZIUA 00, mereu deschis)
-      zace constelația sigilată: capsulele romanului scris în doi.
-      Fiecare capsulă păzește o transmisie a lui D::0dy55ey — Scriere prin
-      deltă, sau cum să scrii prin diferențe. O capsulă se deschide doar
-      când ambele chei se întorc: testul Nav-Gate pentru volumul ei, trecut,
-      și ceasul de voiaj al navei, copt. Ceasul e accelerat de explorare:
-      fiecare sector vizitat avansează voiajul.
+<!-- @block: NUCLEUL SEIFULUI (CHEIA ZERO — SIGILIUL GEODESIC)
+      Carta de Astronavigație ține mesajul din sticlă — ZIUA 00, mereu
+      deschisă, liber de citit. Seiful e o altă punte a navei: o cală
+      sigilată unde e păzit romanul scris în doi. Ca să ajungă acolo,
+      călătorul trebuie mai întâi să facă actul deliberat de a atinge
+      sigiliul. Acest element ESTE acel sigiliu: un cristal tridimensional
+      în rotație, construit în întregime în CSS. Este un element <a> (link),
+      nu un <button>, pentru că singura lui sarcină e să ducă echipajul de
+      pe pagina cărții la pagina seifului — primul cec al dublului control.
+      Al doilea cec așteaptă pe vault.html, unde fiecare capsulă cere
+      cele două chei ale ei: testul Nav-Gate și ceasul de voiaj copt.
+      @concept:
+        Sigiliul este permisiunea de a coborî. Cititul manifestului e liber;
+        intrarea în povestea scrierii cere un act deliberat — exact delta
+        dintre a crea și a ști că creezi, pe care romanul însuși se sprijină.
+        Rotația 3D nu e decor: un sigiliu care se întoarce e un sigiliu viu,
+        răbdător, care păzește.
+      @structure:
+        Linkul poartă href-ul către pagina seifului, un nume accesibil prin
+        aria-label (eticheta vizibilă de sub cristal îl numește și ea), și un
+        interior decorativ (scena) ascuns cititorilor de ecran cu
+        aria-hidden="true" — tehnologia asistivă anunță textul cu sens, nu
+        geometria.
+      @pedagogy:
+        Cristalul în rotație e CSS 3D pur — fără imagini, fără canvas, fără
+        SVG. Opt <span>-uri plate sunt tăiate în triunghiuri cu clip-path,
+        apoi rotite pe axele X și Y și împinse spre exterior pe axa Z cu
+        translateZ, toate într-o scenă al cărei transform-style: preserve-3d
+        le menține volumetrice. Browserul compune cele opt triunghiuri
+        într-un octaedru aparent solid, exact cum Reactorul Geodezic al
+        Modulului 29 construiește sfera cu douăzeci de fețe. Fiecare față
+        de mai jos e unul dintre acele triunghiuri.
     -->
-    <section id="vault-chamber" class="vault-chamber" aria-live="polite">
-      <header class="category-header">
-        <h2>✦ Seiful ✦</h2>
-        <p>Transmisii sigilate ale romanului scris în doi</p>
-      </header>
-
-      <!-- @block: TELEMETRIE DE VOIAJ
-        Afișează ceasul de voiaj al navei: câte waypoint-uri au fost ștampilate
-        (sectoare vizitate) și câte ore-navă eficiente s-au copt de la primul
-        contact. Explorarea accelerează ceasul.
+    <section class="vault-gate" aria-labelledby="vault-core-label-title">
+      <!-- @block: INELUL DE ORBITĂ
+        Un inel instrument plat care încadrează cristalul în rotație. Este un
+        cerc cu contur și patru repere HUD la punctele cardinale (N, E, S, V),
+        ca o reticula de ochire în jurul unui corp sigilat. Dă cristalului o
+        expunere limitată — scena de contenție a designului. Acest element e
+        pur decorativ, deci e ascuns cititorilor de ecran.
+        @structure:
+          Inelul e un singur <div>; cele patru repere sunt <span>-uri copil
+          plasate de CSS pe marginile de sus, dreapta, jos și stânga ale
+          inelului. Inelul stă în spatele cristalului (nucleul e poziționat
+          deasupra), așa că cristalul plutește vizual în interiorul reticulei.
       -->
-      <div class="voyage-telemetry">
-        <div class="telemetry-cell">
-          <span class="telemetry-label">PRIMUL CONTACT</span>
-          <span class="telemetry-value" id="vault-first-contact">—</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">WAYPOINT-URI</span>
-          <span class="telemetry-value" id="vault-waypoints">0</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">ORE-NAVĂ</span>
-          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">DEBLOCATE</span>
-          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
-        </div>
+      <div class="vault-gate-orbit" aria-hidden="true">
+        <!-- @line: Reper N — punctul cardinal de sus al reticulei de ochire. -->
+        <span class="vault-gate-tick vault-gate-tick--n"></span>
+        <!-- @line: Reper E — punctul cardinal din dreapta al reticulei. -->
+        <span class="vault-gate-tick vault-gate-tick--e"></span>
+        <!-- @line: Reper S — punctul cardinal de jos al reticulei. -->
+        <span class="vault-gate-tick vault-gate-tick--s"></span>
+        <!-- @line: Reper V — punctul cardinal din stânga al reticulei. -->
+        <span class="vault-gate-tick vault-gate-tick--w"></span>
       </div>
 
-      <!-- @block: CONSTELAȚIA CAPSULELOR
-        Redată de MECANISMUL 10 din shared/data/vault-transmissions.json.
-        Fiecare volum devine o capsulă sigilată în constelație.
+    <a
+      href="vault.html"
+      class="vault-core"
+      id="vault-core"
+      aria-label="Deschide Seiful lui Seldon — încărcătura sigilată a romanului"
+    >
+      <!-- @block: SCENA NUCLEULUI
+        Scena este spațiul tridimensional. Este un <span> pătrat al cărui stil
+        preserve-3d creează contextul de adâncime; fără el, browserul ar
+        netezi fiecare față pe pagină. Animația lentă de rotație CSS trăiește
+        aici, întorcând tot octaedrul în jurul centrului. Acest element este
+        pur decorativ, deci e ascuns cititorilor de ecran.
       -->
-      <div class="capsule-constellation" id="capsule-constellation">
-        <!-- Capsulele sunt injectate aici de motorul seifului. -->
-      </div>
+      <span class="vault-core-stage" aria-hidden="true">
+        <!-- @block: FEȚELE GEODESICE
+          Opt triunghiuri formează octaedrul: patru spre polul de sus (fețele
+          --t, "top") și patru spre polul de jos (fețele --b, "bottom").
+          Fiecare față e plasată pe propria rază: rotația Y alege raza,
+          rotația X înclină triunghiul în sus sau în jos, iar translateZ îl
+          împinge din centru spre suprafața cristalului. Fețele alternante
+          poartă un contur roz, ca sticla să pară fațetată, ca o piatră tăiată.
+        -->
+        <!-- @line: Fața t1 — prima rază superioară (față). -->
+        <span class="vault-core-face vault-core-face--t1"></span>
+        <!-- @line: Fața t2 — raza superioară rotită cu 90 de grade la dreapta. -->
+        <span class="vault-core-face vault-core-face--t2"></span>
+        <!-- @line: Fața t3 — raza superioară opusă celei din față. -->
+        <span class="vault-core-face vault-core-face--t3"></span>
+        <!-- @line: Fața t4 — raza superioară rotită cu 270 de grade. -->
+        <span class="vault-core-face vault-core-face--t4"></span>
+        <!-- @line: Fața b1 — prima rază inferioară, decalată ca vârfurile să se împreuneze ca un inel. -->
+        <span class="vault-core-face vault-core-face--b1"></span>
+        <!-- @line: Fața b2 — raza inferioară rotită cu 135 de grade. -->
+        <span class="vault-core-face vault-core-face--b2"></span>
+        <!-- @line: Fața b3 — raza inferioară opusă față-jos. -->
+        <span class="vault-core-face vault-core-face--b3"></span>
+        <!-- @line: Fața b4 — raza inferioară de închidere. -->
+        <span class="vault-core-face vault-core-face--b4"></span>
 
-      <!-- @block: CRISTALUL ADORMITEI
-        Suprafața centrală de proiecție. Când o capsulă e câștigată și
-        deschisă, Adormita — martora inventată, permisiunea de a nara — se
-        trezește și tastează transmisia în acest cristal.
-      -->
-      <div class="sleeper-crystal" id="sleeper-crystal">
-        <div class="sleeper-crystal-header">
-          <span class="sleeper-status" id="sleeper-status">ADORMITA DOARME</span>
-        </div>
-        <div class="typewriter-output vault-output" id="vault-output"></div>
-        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
-      </div>
+        <!-- @block: SIGILIUL
+          În inima cristalului plutește sigiliul — gliful care face sigiliul
+          sigiliu. El respiră (pulsează încet) și strălucește în nebula-pink,
+          culoarea semnăturii căpitanului pe toată nava. Regula pointer-events
+          e setată în CSS: sigiliul nu trebuie să intercepteze niciodată
+          clicul, ca întregul cristal să rămână un singur link.
+        -->
+        <span class="vault-core-seal">✦</span>
+      </span>
 
-      <!-- @block: PANOUL DE TEST NAV-GATE
-        Apare când călătorul cere să deschidă o capsulă. Trecerea testului
-        volumului ștampilează waypoint-ul și acordă Cheia Întâi.
+      <!-- @block: CUMPĂNA
+        Sema neutră a seifului Bahry: o linie verticală de păr care coboară
+        de-a lungul meridianului cristalului, împărțindu-l în două jumătăți
+        egale în oglindă. Închis, monolitul e întreg — cumpăna e fantoma
+        despărțirii, promisiunea că sigiliul ține ceva înăuntru. Când cursorul
+        se apropie, cumpăna se aprinde (stilizată în Modulul 31) ca și cum
+        cele două jumătăți ar fi pe punctul de a se despărți. E pur decorativ.
+        @structure:
+          Cumpăna trăiește ÎN AFARA scenei rotative, ca un copil direct al
+          linkului. E deliberat: scena rotește cristalul, dar cumpăna trebuie
+          să rămână perfect verticală și centrată în orice moment — meridianul
+          constant peste care trec cele două jumătăți în oglindă.
       -->
-      <div class="nav-gate" id="nav-gate" hidden>
-        <div class="nav-gate-box">
-          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
-          <p class="nav-gate-intro" id="nav-gate-intro"></p>
-          <form class="nav-gate-form" id="nav-gate-form"></form>
-          <div class="nav-gate-result" id="nav-gate-result"></div>
-        </div>
-      </div>
+      <span class="vault-core-seam" aria-hidden="true"></span>
+
+      <!-- @block: ETICHETA NUCLEULUI
+        Sub cristal, două rânduri de text dau sigiliului numele și invitația.
+        Titlul e litera instituțională a seifului în solar-mint; sub-linia e
+        chemarea la acțiune care spune echipajului exact ce face atingerea
+        sigiliului. Titlul poartă și id-ul cu care <section>-ul care-l conține
+        se etichetează singur (aria-labelledby), așa că întreaga poartă e
+        anunțată de numele seifului.
+      -->
+      <span class="vault-core-label">
+        <span class="vault-core-label-title" id="vault-core-label-title">Seiful lui Seldon</span>
+        <span class="vault-core-label-sub">Intră în cala seifului</span>
+      </span>
+    </a>
     </section>
+
     </main>
 
     <!-- @block:
@@ -433,7 +496,7 @@
         <!-- @path: Pagina Cartei de Astronavigație -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="transmission.html#vault-chamber">Carta de Astronavigație / Seiful</a>
+          <a href="transmission.html">Carta de Astronavigație</a>
         </li>
         <!-- @bridge: Comutator de limbă între EN și RO -->
         <li>

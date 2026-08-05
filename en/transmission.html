@@ -372,79 +372,156 @@
       </section>
       </div>
 
-    <!-- @block: THE VAULT CHAMBER
-      Below the founding manifesto (the message in the bottle — DAY 00, always
-      open) lies the sealed constellation: the capsules of the cowritten novel.
-      Each capsule guards one transmission of D::0dy55ey — Delta writing, or
-      how to write through differences. A capsule opens only when BOTH keys
-      turn: the Nav-Gate quiz for its volume passed, and the ship's voyage
-      clock ripened. The clock is accelerated by exploration: every sector you
-      visit advances the voyage.
+    <!-- @block: THE VAULT GATE — CONTAINMENT STAGE (KEY ZERO — THE GEODESIC SEAL)
+      The Astrogation Charter holds the message in the bottle — DAY 00, always
+      open, free to read. The vault is a different deck of the ship: a sealed
+      cargo hold where the cowritten novel is guarded. To reach it, the
+      traveller must first perform the deliberate act of touching the seal.
+      This gate is the threshold that holds that seal.
+      @concept:
+        The gate is a bounded display — a dark rounded containment stage that
+        isolates the rotating crystal from the flowing manifesto text, so the
+        seal reads as a destination, not as a paragraph ornament. It sits as a
+        resting point between the charter and the footer: the reader finishes
+        the bottle, pauses at the threshold, and chooses to descend. The
+        geometry is the Bahry vault — an elongated kite, shorter at the base,
+        taller at the apex, divided into two equal mirrored halves by a central
+        seam (see the .vault-core-seam element below). Closed, it is one solid
+        monolith; the seam is the promise of the split, and it flares when the
+        cursor approaches.
+      @structure:
+        The gate is a <section> whose only child is the core <a> link. Around
+        the link, an orbit ring (.vault-gate-orbit) with four HUD ticks frames
+        the crystal like a targeting reticle — pure decoration, hidden from
+        screen readers (aria-hidden="true"). The link itself carries the href
+        to the vault page, an accessible name via aria-label (the visible label
+        below also names it), and a decorative 3D interior hidden from
+        assistive technology so they announce the meaning, not the geometry.
+      @pedagogy:
+        This crystal is pure CSS 3D — no images, no canvas, no SVG. Eight flat
+        <span> elements are clipped into triangles with clip-path, then rotated
+        on the X and Y axes and pushed outward on the Z axis with translateZ,
+        all inside a stage whose transform-style: preserve-3d keeps them
+        volumetric. In Module 31 these faces are re-angled so the octahedron
+        stretches into the elongated kite of the Bahry vault: four faces tip
+        toward a high apex, four flare into a lower shoulder, and a seam runs
+        down the vertical meridian dividing the monolith in two equal halves.
+        The browser composites the eight triangles into the solid-looking seal.
+        The orbit ring reuses the same 3D grammar as a flat instrument: a
+        bordered circle with four ticks at the cardinal points.
     -->
-    <section id="vault-chamber" class="vault-chamber" aria-live="polite">
-      <header class="category-header">
-        <h2>✦ The Vault ✦</h2>
-        <p>Sealed transmissions of the cowritten novel</p>
-      </header>
-
-      <!-- @block: VOYAGE TELEMETRY
-        Displays the ship's voyage clock: how many waypoints have been stamped
-        (sectors visited) and the effective ship-hours that have ripened since
-        first contact. Exploration accelerates the clock.
+    <section class="vault-gate" aria-labelledby="vault-core-label-title">
+      <!-- @block: THE ORBIT RING
+        A flat instrument ring that frames the rotating crystal. It is a
+        bordered circle with four HUD ticks at the cardinal points (N, E, S, W),
+        like a targeting reticle around a sealed body. It gives the crystal a
+        bounded display — the containment stage of the design. This element is
+        purely decorative, so it is hidden from screen readers.
+        @structure:
+          The ring is a single <div>; the four ticks are <span> children placed
+          by CSS at the ring's top, right, bottom, and left edges. The ring sits
+          behind the crystal (the core is positioned above it), so the crystal
+          visually floats inside the reticle.
       -->
-      <div class="voyage-telemetry">
-        <div class="telemetry-cell">
-          <span class="telemetry-label">FIRST CONTACT</span>
-          <span class="telemetry-value" id="vault-first-contact">—</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">WAYPOINTS</span>
-          <span class="telemetry-value" id="vault-waypoints">0</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">SHIP-HOURS</span>
-          <span class="telemetry-value" id="vault-ship-hours">0.0</span>
-        </div>
-        <div class="telemetry-cell">
-          <span class="telemetry-label">UNLOCKED</span>
-          <span class="telemetry-value" id="vault-unlocked">0 / 0</span>
-        </div>
+      <div class="vault-gate-orbit" aria-hidden="true">
+        <!-- @line: Tick N — the top cardinal point of the targeting reticle. -->
+        <span class="vault-gate-tick vault-gate-tick--n"></span>
+        <!-- @line: Tick E — the right cardinal point of the reticle. -->
+        <span class="vault-gate-tick vault-gate-tick--e"></span>
+        <!-- @line: Tick S — the bottom cardinal point of the reticle. -->
+        <span class="vault-gate-tick vault-gate-tick--s"></span>
+        <!-- @line: Tick W — the left cardinal point of the reticle. -->
+        <span class="vault-gate-tick vault-gate-tick--w"></span>
       </div>
 
-      <!-- @block: CAPSULE CONSTELLATION
-        Rendered by MECANISM 10 from shared/data/vault-transmissions.json.
-        Each volume becomes a sealed capsule in the constellation.
+      <!-- @block: THE CORE SEAL LINK
+        The element IS the seal: a rotating three-dimensional crystal built
+        entirely in CSS, and simultaneously a real navigation link. It is an
+        <a>, not a <button>, because its only job is to carry the crew from the
+        charter page to the vault page — the first check of the double-gate.
+        The second check awaits on vault.html, where every capsule asks for its
+        two keys: the Nav-Gate quiz and the ripened voyage clock.
       -->
-      <div class="capsule-constellation" id="capsule-constellation">
-        <!-- Capsules are injected here by the vault engine. -->
-      </div>
+      <a
+        href="vault.html"
+        class="vault-core"
+        id="vault-core"
+        aria-label="Open the Seldon Vault — the sealed cargo of the novel"
+      >
+        <!-- @block: THE CORE STAGE
+          The stage is the three-dimensional scene. It is a square <span> whose
+          preserve-3d style creates the depth context; without it, the browser
+          would flatten every face onto the page. The slow CSS spin animation
+          lives here, turning the whole kite around its centre. This element is
+          purely decorative, so it is hidden from screen readers.
+        -->
+        <span class="vault-core-stage" aria-hidden="true">
+          <!-- @block: THE GEODESIC FACES
+            Eight triangles form the elongated kite: four point toward the
+            high apex (the --t faces, "top") and four flare into the lower
+            shoulder (the --b faces, "bottom"). Each face is placed on its own
+            spoke: the Y rotation chooses the spoke, the X rotation tips the
+            triangle up or down, and translateZ pushes it away from the centre
+            to the surface of the crystal. Alternating faces carry a pink
+            wireframe so the glass reads as faceted, like a cut gem.
+          -->
+          <!-- @line: Face t1 — the first upper spoke (front), toward the apex. -->
+          <span class="vault-core-face vault-core-face--t1"></span>
+          <!-- @line: Face t2 — the upper spoke rotated 90 degrees to the right. -->
+          <span class="vault-core-face vault-core-face--t2"></span>
+          <!-- @line: Face t3 — the upper spoke opposite the front. -->
+          <span class="vault-core-face vault-core-face--t3"></span>
+          <!-- @line: Face t4 — the upper spoke rotated 270 degrees. -->
+          <span class="vault-core-face vault-core-face--t4"></span>
+          <!-- @line: Face b1 — the first lower spoke, offset so the shoulders interlock. -->
+          <span class="vault-core-face vault-core-face--b1"></span>
+          <!-- @line: Face b2 — the lower spoke rotated 135 degrees. -->
+          <span class="vault-core-face vault-core-face--b2"></span>
+          <!-- @line: Face b3 — the lower spoke opposite the front-bottom. -->
+          <span class="vault-core-face vault-core-face--b3"></span>
+          <!-- @line: Face b4 — the closing lower spoke. -->
+          <span class="vault-core-face vault-core-face--b4"></span>
 
-      <!-- @block: THE SLEEPER'S CRYSTAL
-        The central projection surface. When a capsule is earned and opened,
-        the Sleeper — the invented witness, the permission to narrate — wakes
-        and types the transmission into this crystal.
-      -->
-      <div class="sleeper-crystal" id="sleeper-crystal">
-        <div class="sleeper-crystal-header">
-          <span class="sleeper-status" id="sleeper-status">THE SLEEPER SLEEPS</span>
-        </div>
-        <div class="typewriter-output vault-output" id="vault-output"></div>
-        <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
-      </div>
+          <!-- @block: THE SEAL
+            At the very heart of the crystal floats the sigil — the glyph that
+            makes the seal a seal. It breathes (pulses gently) and glows in
+            nebula-pink, the colour of the captain's signature across the whole
+            ship. The pointer-events rule is set in CSS: the sigil must never
+            intercept the click, so the entire crystal remains one link.
+          -->
+          <span class="vault-core-seal">✦</span>
+        </span>
 
-      <!-- @block: NAV-GATE QUIZ PANEL
-        Appears when the traveller requests to open a capsule. Passing the
-        volume's quiz stamps the waypoint and grants Key One.
-      -->
-      <div class="nav-gate" id="nav-gate" hidden>
-        <div class="nav-gate-box">
-          <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
-          <p class="nav-gate-intro" id="nav-gate-intro"></p>
-          <form class="nav-gate-form" id="nav-gate-form"></form>
-          <div class="nav-gate-result" id="nav-gate-result"></div>
-        </div>
-      </div>
+        <!-- @block: THE SEAM
+          The signature read of the Bahry vault: a vertical hairline that runs
+          down the meridian of the crystal, dividing it into two equal mirrored
+          halves. Closed, the monolith is whole — the seam is the ghost of the
+          split, the promise that the seal holds something inside. When the
+          cursor approaches, the seam flares (styled in Module 31) as if the
+          two halves are about to part. It is purely decorative.
+          @structure:
+            The seam lives OUTSIDE the spinning stage, as a direct child of the
+            link. This is deliberate: the stage rotates the crystal, but the
+            seam must remain perfectly vertical and centred at all times — the
+            constant meridian over which the two mirrored halves pass.
+        -->
+        <span class="vault-core-seam" aria-hidden="true"></span>
+
+        <!-- @block: THE VAULT CORE LABEL
+          Beneath the crystal, two lines of text give the seal its name and its
+          invitation. The title is the vault's institutional lettering in
+          solar-mint; the sub-line is the call to action that tells the crew
+          exactly what touching the seal does. The title also carries the id
+          that the containing <section> labels itself with (aria-labelledby),
+          so the whole gate is announced by the vault's name.
+        -->
+        <span class="vault-core-label">
+          <span class="vault-core-label-title" id="vault-core-label-title">The Seldon Vault</span>
+          <span class="vault-core-label-sub">Enter the sealed hold</span>
+        </span>
+      </a>
     </section>
+
     </main>
 
     <!-- @block:
@@ -474,7 +551,7 @@
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="transmission.html#vault-chamber">The Astrogation Charter / The Vault</a>
+          <a href="transmission.html">The Astrogation Charter</a>
         </li>
         <!-- @bridge: Language toggle between EN and RO subprojects -->
         <li>
