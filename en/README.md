@@ -44,7 +44,8 @@ DIGITAL-ODYSSEY/
 │   ├── README.md                      # English volume readme
 │   ├── bibliography.html              # References and resources
 │   ├── recursive-blueprint.html       # Self-documenting code explorer
-│   ├── transmission.html              # The Astrogation Charter + the Seldon Vault (the novel)
+│   ├── transmission.html              # The Astrogation Charter (message in the bottle, DAY 00)
+│   ├── vault.html                     # The Seldon Vault — the novel's sealed chamber
 │   ├── style.css                      # Local stylesheet
 │   ├── script.js                      # Interactive logic
 │   ├── favicon.svg                    # Brand icon
@@ -83,6 +84,7 @@ DIGITAL-ODYSSEY/
     ├── bibliography.html
     ├── recursive-blueprint.html
     ├── transmission.html
+    ├── vault.html
     ├── style.css
     ├── script.js
     ├── favicon.svg

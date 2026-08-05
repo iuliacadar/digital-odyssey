@@ -42,7 +42,7 @@ This legend establishes a shared vocabulary for comments across the whole projec
 
 ## JS
 - `@block:` explains a logical behaviour or functionality block.
-- `@mechanism:` identifies a numbered mechanism (MECANISM 01–09). Each mechanism is a self-contained unit of behaviour that can be referenced by its number across code, CSS, and the ship's journal.
+- `@mechanism:` identifies a numbered mechanism (MECANISM 01–10). Each mechanism is a self-contained unit of behaviour that can be referenced by its number across code, CSS, and the ship's journal.
 - `@logic:` explains the internal flow of a function, condition, or transformation.
 - `@event:` explains a listened-to or triggered event, such as `click`, `submit`, `scroll`, or `DOMContentLoaded`.
 - `@state:` explains a UI or data state, such as active/inactive, open/closed, or loaded/unloaded.

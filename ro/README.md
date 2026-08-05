@@ -43,6 +43,7 @@ DIGITAL-ODYSSEY/
 │   ├── bibliography.html              # Referințe și resurse
 │   ├── recursive-blueprint.html       # Explorer de cod auto-documentat
 │   ├── transmission.html              # Manifestul proiectului / jurnal de semnale
+│   ├── vault.html                     # Seiful lui Seldon — camera sigilată a romanului
 │   ├── style.css                      # Foaie de stil locală
 │   ├── script.js                      # Logică interactivă
 │   ├── favicon.svg                    # Iconiță de brand
@@ -80,7 +81,8 @@ DIGITAL-ODYSSEY/
     ├── index.html
     ├── bibliography.html
     ├── recursive-blueprint.html
-    ├── transmission.html              # Carta de Astronavigație + Seiful lui Seldon (romanul)
+    ├── transmission.html              # Carta de Astronavigație (mesajul din sticlă, ZIUA 00)
+    ├── vault.html                     # Seiful lui Seldon — camera sigilată a romanului
     ├── style.css
     ├── script.js
     ├── favicon.svg

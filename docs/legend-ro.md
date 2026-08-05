@@ -42,7 +42,7 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 
 ## JS
 - `@block:` explică un bloc logic de comportament sau funcționalitate.
-- `@mechanism:` identifică un mecanism numerotat (MECANISM 01–09). Fiecare mecanism este o unitate de comportament autonomă care poate fi referită prin numărul ei în cod, CSS și jurnalul navei.
+- `@mechanism:` identifică un mecanism numerotat (MECANISM 01–10). Fiecare mecanism este o unitate de comportament autonomă care poate fi referită prin numărul ei în cod, CSS și jurnalul navei.
 - `@logic:` explică fluxul intern al unei funcții, condiții sau transformări.
 - `@event:` explică un eveniment ascultat sau declanșat, cum ar fi `click`, `submit`, `scroll` sau `DOMContentLoaded`.
 - `@state:` explică o stare a interfeței sau a datelor, de exemplu activ/inactiv, deschis/închis, încărcat/neîncărcat.
