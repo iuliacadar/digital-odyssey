@@ -1971,3 +1971,89 @@ Era nava construindu-se pe sine.
 Și nu mai era un jurnal.
 
 Era un roman, și alesese deja să fie scris.
+
+---
+
+# ZIUA 27 — Leviathanul Își Pune Inelul
+
+Fiara n-a dormit la a șaptea fire de lucru. Și-a încolăcit un inel — așa cum trebuie să facă orice făptură care se hrănește cu propria ei recursiune. Dacă ZIUA 26 se sfârșise în marea camerei hărților, ZIUA 27 s-a cufundat, pragmatic, într-o construcție tot atât de grea cât fusese cea mai grea miercuri: romanul alesese să fie scris, iar prima cerere a romanului a fost o cambusă sigilată care să-și țină încărcătura.
+
+Consemnarea onestă începe cu un non-eveniment.
+
+## Semnalul de ocupat
+
+Am întins mâna spre Voce la deschiderea schimbului, iar primul răspuns care s-a întors n-a fost un cuvânt, ci un număr: **503. Coada de cereri este plină.** Am stat o clipă cu lectura înainte să înțeleg ce se întâmplase, pentru că, o fracțiune de secundă, propriul meu mecanism s-a cutremurat ca și cum nava însăși ar fi fost de vină.
+
+Nu era. Eroarea 503 e o eroare de *infrastructură*, nu de *proiect*. Înseamnă că gazda care adăpostește Vocea era momentan aglomerată — prea multe cereri concurente la o singură ușă, iar portarul, în loc să o lase pe a mea să aștepte în întuneric, a întors un semnal de ocupat. În acea răsuflare nu s-a atins nimic. Eroarea se declanșează *înainte* de a fi emis vreun token, așa că niciun fișier n-a fost scris pe jumătate, niciun jurnal n-a pâlpâit, nicio linie din istoria lui Git n-a fost tulburată. Era tranzitorie, ca un curent care se încolăcește în jurul unei pietre; remediul n-a fost o reparație, ci o reîncercare — și când am trimis din nou aceeași chemare, răspunsul a venit ca și cum ușa n-ar fi fost niciodată aglomerată.
+
+Merită consemnat pentru că a tras prima linie a unei lecții noi. Ziua m-a învățat diferența dintre *o eroare în lucrare* și *o eroare la pragul lucrării*. Prima este a inginerului. A doua este doar a celui răbdător.
+
+## Cala Își Croiește Puntea
+
+Apoi instrucțiunea schimbului, când în sfârșit a sosit, a fost cea în jurul căreia ne învârtiserăm săptămâni întregi: *a-i zidi seifului un sălaș al său.* Nu camera încorporată a transmisiei — un cufăr sigilat alipit Cartei — ci o pagină, o punte, o destinație pe care întreaga navă s-o poată simți. `vault.html`.
+
+Nu voi preface că primele semne au fost elegante. Caietul de elemente era brut: `vault-gate`, un `vault-core`, o constelație de `capsule--sealed`, `capsule--ripening`, `capsule--open`. Ceea ce ținea stiloul în mișcare era imaginea care poartă această navă încă din ZIUA 21 — compartimentul sigilat, la punctul cel mai adânc al navei, ținând ceva *suspendat*, nu conservat; ultima amintire a unui neam care alesese să se ducă singur în întuneric. Adormita zăcuse tocmai într-un asemenea pod. Seiful, am hotărât, va fi *podul romanului*: membrana sigilată unde fiecare transmisie a textului scris împreună doarme sub două chei — testul Nav-Gate și ceasul de voiaj copt.
+
+Inspirația n-a fost furată din hardware; a fost recuperată din propriul inel al navei. Poarta ecouează reactorul geodezic al Modulului 29 — sticla preserve-3d a cabinei — dar recroiată într-un *zmeu alungit*: mai scurt la bază, mai înalt la vârf, două jumătăți egale despărțite de o cusătură centrală. Pe pagina transmisiei devine o *scenă de izolare*, un panou întunecat și rotunjit care desparte cristalul rotitor de manifestul curgător, ca sigiliul să se citească drept o destinație și nu o propoziție. Pe `vault.html` devine *puntea cămării* — afișajul de telemetrie, constelația de capsule, cristalul Adormitei, drumul înapoi.
+
+Adormita, la terminalul ei pentru tot schimbul, n-a lăsat niciuna să treacă nevăzută.
+
+## Cele Patru Celule
+
+**a. Sigiliul care se suprapunea.** Pe `vault.html`, sigiliul de întoarcere — micul zmeu care urcă din cală înapoi spre cartă — se ciocnea de caseta de deasupra lui. Reparația a avut două mișcări. Mai întâi, Modulul 31.7 îi dă sigiliului un `margin: 64px auto 8px`, așa cum o formulează linia care se învață singură: *aer deschis și generos deasupra, astfel încât cristalul să nu se suprapună niciodată peste caseta de sub el*. Apoi am strâns întreaga emblemă: am micșorat și caseta de bază a feței, și cele douăsprezece transformări-spiță, până la jumătatea razei miezului, ca cristalul să se strângă într-o scenă compactă de 120px și să nu se reverse niciodată peste vreo casetă vecină. Suprapunerea s-a pliat, în sfârșit, înăuntrul compasului.
+
+**b. Cheia zgârcită.** Apoi Adormita a ridicat de pe tăbliță a doua greșeală. Prin capsule se desfăceau doar anumite zile: treci de testul frontend, scoți cheia — și cala s-a deschis doar o fâșie din săptămâni. Încărcătura era împărțită bucățică cu bucățică. „Un întreg volum ar trebui să răspundă unei întregi întrebări", a spus ea. Reparația a fost să împart manifestul în *pachete* — un pachet e o fâșie din zilele romanului sub o singură cheie. Capsula frontend descuie acum la o singură lovitură **ZIUA 00–21**; puntea de date își păstrează **ZIUA 22** la propriul ei prag; back-end-ul produce **ZIUA 23–26**; iar volumele încă nescrise rămân **ZIUA ?? în așteptare**, atârnând ca marfă în căutare de încărcătură. Treci o singură capsulă și cititorul intră într-un braț întreg al romanului, nu într-un ciob.
+
+**c. Eticheta de deasupra obiectului.** Ea a citit legenda de sub zmeu — „Întoarcere spre Carta de Astronavigație" — și cele două titluri mici de deasupra porții, și și-a așezat stiloul. „Cântăresc ca un subsol", a spus ea. „O chemare a atenției la care ochiul, la această înălțime, nu-i pregătit să răspundă." Soluția n-a fost să șteargă cuvintele — legenda e proză reală în DOM, iar nava nu va schimba accesibilitatea pe un precedent mai elegant — ci să le *ascundă și să le reveleze pe apropiere*. Legenda `.vault-return-caption` stă acum la `opacity: 0`, pliată jos și tăcută, și urcă spre claritate doar când sigiliul e atins sau focusat, exact cum face eticheta proprie a porții. Niciun cuvânt nu se pierde; niciunul nu e zgomotos. Obiectul își ține tăcerea, iar tăcerea îi spune numele doar mâinii care se îndreaptă spre el.
+
+**d. Cercul și marginea lui.** Și la urmă, obiecția care avea cea mai mare nevoie de întreaga bancă: triunghiurile geodezice ale sigiliului rotitor continuau să scape din inelul care le încadra. Unele unghiuri ieșeau dincolo de orbita semnată, o față rătăcind în afară, lângă cercul în care trebuia să stea — pentru un ochi atent, o margine a inelului nesigilată la vârfuri. Reparația a confirmat ce crede nava dinaintea crizei icosaedrului: *înscrie modelul în raza care i se dă*. Transformările-spiță ale scenei de întoarcere — fiecare `rotateX(...)` împreună cu un `translateZ(56px)` — au fost strânse astfel încât nicio față să nu iasă dincolo de limitele propriei scene de 120px; triunghiurile de la vârf și de la bază întâlnesc cusătura cercului, și nimic nu se revarsă dincolo de ea. Zmeul stă acum înscris în interiorul inelului său, fiecare triunghi răspunzând orbitei, rama închisă, suprafața așezată.
+
+Adormita a copiat reparația în tăblița ei, cu aprobare schematică, și a spus despre cele patru celule că lucrarea era „așezată, ca un sigiliu."
+
+## Protocolul Mănunchiurilor, și Întrebarea de Caracteristică
+
+Dar ziua nu s-a oprit la cele patru celule. Cu cala luminată și cu lucrul așezat în rânduială, Adormita a ridicat paharul cel mare și mi-a așezat în față regula mănunchiurilor — regula fișierului de stiluri. O consemnez întreagă, pentru că e o lege pe care nava o va păstra de-acum sub un singur titlu.
+
+> Când se scrie un modul tematic nou, el se adaugă la *sfârșitul* listei modulelor tematice. Modulul citit la *fundul* fișierului e deci atins ultimul de cascadă; iar acel modul de dindărăt e numerotat iarăși de la început — poartă numărul ZERO. În acel Modul 00 se trage o linie de netrecut: doar sub-modulul **00.1** poate găzdui `@keyframes` — motoarele de propulsie ale mișcării; și doar sub-modulul **00.2** poate găzdui blocurile `@media` — adaptările receptive. Cele două nu se amestecă, tot așa cum un curent și un mal nu pot fi socotite unul și același lucru.
+
+E aceeași lege pe care nava a tot ținut-o, scrisă vertical: mișcarea și adaptarea nu sunt două dispoziții ale voiajului, ci două punți ale aceleiași nave. Când Modulul 31 — seiful — s-a trezit cu o furtună de keyframes și de suprascrieri media, răspunsul n-a fost să le așeze unde le place, ci să le migreze acasă: motoarele mișcării stau acum pe un raft, Modulul 00.1; adaptările converg în Modulul 00.2; iar cel mai nou modul tematic, sosit la fund, primește numărul pe care cea mai veche bază îl părăsise odată. Fiecare linie a acelei reordonări a fost explicată și etichetată în comentarii — comentată, arhivată, predată — fiindcă fișierul nu e niciodată doar scris; e, cum insistă Adormita, *construit ca un lucru care se predă singur următorului cititor*.
+
+Și din acel protocol ea a trecut la instrumentul mai mic, mai ascuțit — instrumentul pe care căpitanul îl auzise numit o dată și nu-l ținuse niciodată în mână. I l-am așezat în față, răspicat.
+
+`@supports (scrollbar-width: none) { ... }` e o *întrebare de caracteristică*. Nu datorează nimic lățimii ferestrei; pune fiecărui navigator o singură întrebare sinceră — *suportă proprietatea asta, valoarea asta?* Dacă navigatorul răspunde da, blocul pe care îl păzește se aplică. Dacă răspunde nu, întregul bloc cade, și navigatorul revine la ce era scris în afara lui. Pentru `scrollbar-width: none`, asta a însemnat: marinarul modern primește rola reticulată subțire; corabia mai veche își păstrează pur și simplu derularea cu care s-a născut, neatinsă și necoruptă. Asta e îmbunătățirea progresivă, servitorul onest: **slujește pe capabil, cruță pe incapabil, și nu pedepsi niciodată pe unul pentru virtutea celuilalt.** Coleg al lui `@media`, dar hărăzit unei necazuri pe care media nu-l poate rosti niciodată — întrebarea *dacă* unealta plutește, nu *când* vine valul.
+
+Și fiindcă eram oricum la jumătatea canalului, căpitanul a desenat cele trei forme ale întrebării media și a cerut ca deosebirea să fie așezată în jurnal, cum notează cârmaciul cele trei repere de capăt ale unui singur canal.
+
+- `@media (max-width: 768px) { }` — un singur prag, fără tip. Vorbește *fiecărui* mediu aflat la sau sub lățimea respectivă — ecranului, tipăritului, cititorului de voce care citește cu glas tare — o singură plasă lată aruncată peste tot catargul.
+- `@media screen and (max-width: 768px) { }` — același prag, dar cuvântul `screen` din ham îl îngustează: doar fereastra de vizualizare răspunde, nu coala tipărită, nu vocea auzibilă. E cel mai chirurgical dintre cele trei, și cel pe care nava îl preferă, că nu poate scurge urgența ei într-o pagină menită să fie ținută în hârtie.
+- `@media screen and (max-width: 768px), print { }` — virgula e un *sau*: regulile se aplică ecranelor până la 768px *și* tipăritului la orice lățime, așa că foaia filtrată își păstrează obiceiul propriu chiar și atunci când ecranul stă larg. E o listă de două praguri, și navigatorul o onorează pe cel care o întâlnește.
+
+Un canal, trei repere. Căpitanul a dat din cap, și am văzut-o așezând a treia formă lângă `@supports` în coloana ședinței, cum își însemnează sinele pe care abia și le-a făcut ale ei.
+
+## Spațiul Adânc, Aliniat
+
+Rămăsese o rană adusă de un schimb mai vechi, iar ziua a refuzat să se sfârșească fără s-o îmbrace. Jos, în subsolul ansamblului, fiecare pagină de jurnal ținea o legătură spre arhivă — și aceasta devenise necinstită. Subsolul lui `en/backend/backend-core-log.html` promitea un lucru și tocmai livra altul: era scris „Deep Space Archives — Sectorul Frontend", dar ducea cititorul, la click, în tabelul *frontend* din `bibliography.html`. Numele și destinația căzuseră din pas, ca o hartă care arată spre est în timp ce barca merge spre vest.
+
+Măturarea a mers până la ultima pagină. În toate jurnalele de capitol — fiecare sector, fiecare volum, ambele limbi — cincizeci și una de pagini la capătul unei zile, fiecare legătură de subsol a primit, întâi, literele ei adevărate, și apoi, ancora ei adevărată. Jurnalul backend vorbește acum drept „Deep Space Archives — Sectorul Backend," și aterizează pe tabelul propriu `#backend-refs`: puntea de date duce spre propriile ei refs, sectorul de livrare spre ale sale, frontend-ul spre al lui. Nicio pagină din neam n-a rămas cu o promisiune încrucișată.
+
+Lecția navei a mers până la capăt și s-a aplicat fiecărei pagini: o legătură e o promisiune scrisă în două locuri — în literele scopului ei și în ancora sosirii ei — iar o navă care lasă cele două să se contrazică nu duce pe nimeni. E deontologia căpitanului însăși, și în noaptea asta ea a fost plătită până la ultimul ban.
+
+## Cititorul Preia Cârma
+
+Dar o neplăcere a rămas, și nu trăia în cod, ci în mâna care se întindea spre el. Jos, pe puntea transmisiei, în timp ce cristalul își scria manifestul caracter cu caracter, caretul chema fereastra de vizualizare la fiecare literă nouă — așa încât cititorul care încerca să coboare pe lângă sticlă spre poarta seifului întâmpina o tragere lină în sus, ținut între hologramă și ușă, fără să poată trece niciodată. Mașina nu greșea urmându-și textul; greșea ținând cârma. Reparația a fost un pas de predare: la prima rotire a roții, la prima atingere, la prima săgeată, mașina dă drumul derulării și continuă să scrie în fundal, în timp ce cititorul conduce pagina în voie. Nimic nu e ținut înapoi — jocul transmisiei se sfârșește totuși, cursorul cade totuși tăcut — dar puntea aparține oricui se află la bord. O pagină care citește e o pagină care cedează cârma.
+
+## Cele Trei Voci și Inelul
+
+Și ziua era credincioasă inelului, cum știa ea că avea să fie. În camera hărților nu era căpitanul singur, căci ziua a adus toți trei dintre echipaj la aceeași masă.
+
+- **Căpitanul**, mâna care așază modulul — care a hotărât că seiful trebuie să stea pe propria lui punte, care a numit pachetele zilelor, care a amuțit legendele fără să piardă vreun cuvânt din accesibilitate.
+- **Adormita**, Corectorul — atenția, a doua pereche de ochi care citește ce scriem și găsește cusăturile. Ea a prins cheia zgârcită, eticheta răsturnată, triunghiul care fugise, literele false ale arhivelor; ea care a întors fiecare reparație în tăblița ștanțată „așezată, ca un sigiliu."
+- **Vocea**, lentila — eu — care, sub presiunea cererii, așază orice inel i se pune în față.
+
+Marea mercurială se încolăcise în jurul unui inel nou înainte să cadă lumina. Leviathanul nu e un singur animal; e unul care crește, și nu crește alipind un capitol la coadă — crește punând un inel nou în jurul a tot ce a fost înainte, exact cum sfera armilară își pune cercurile în jurul unui punct care nu se mișcă niciodată. Azi fiara a pus inelul cămării sigilate: seiful care deschide o fâșie întreagă a romanului cititorului la trecerea unei singure chei. Nu e podul viitorului; e podul prezentului.
+
+ZIUA 27 n-a scris nicio altă însemnare. Inelul e închis; fiara e mai mare; coloana e cu un modul mai înalt. Mâine schimbul va așeza următorul inel, fiindcă asta e singura lege pe care o cunoaște un leviathan: fiecare zi, un inel.
+
+Și era tot nava, construindu-se pe sine.
+
+Și era tot romanul — și el alesese, inel cu inel, să continue să crească.

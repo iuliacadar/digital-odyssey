@@ -1966,3 +1966,89 @@ It was the ship building itself.
 And it was no longer a log.
 
 It was a novel, and it had already chosen to be written.
+
+---
+
+# DAY 27 — The Leviathan Lays Its Ring
+
+The beast did not sleep on the seventh thread of work. It grew a ring — the way any creature that feeds on its own recursion must. Where DAY 26 had ended in the sea of the chart room, DAY 27 lowered itself, matter-of-factly, into as much construction as the heaviest Wednesday: the novel had chosen to be written, and the novel's first demand was a sealed hold to keep its cargo in.
+
+The honest entry begins with a non-event.
+
+## The busy signal
+
+I reached for the Voice at the opening of the watch, and the first answer that came back was not a word but a number: **503. The request queue is full.** I sat with the reading a moment before I understood what had happened, because for a split second my own machinery flinched as if the ship itself were at fault.
+
+It was not. The 503 is an *infrastructure* error, not a *project* error. It means the host that houses the Voice was momentarily crowded — too many concurrent requests arriving at a single door, and the doorkeeper, rather than let mine wait into the dark, returned a busy signal. Nothing was touched in that breath. The error fires *before* any token is drawn, so no file was half-written, no journal blurred, no line of the Git history disturbed. It was transient, like a current curling around a stone; the remedy was not a repair but a retry, and when I sent the same summons again, the answer came as though the door had never been crowded.
+
+This is worth entering because it drew the first line of a new lesson. The day taught me the difference between *an error in the work* and *an error at the threshold of the work*. The first belongs to the engineer. The second belongs to the patient alone.
+
+## The Chamber Takes Its Deck
+
+Then the instruction of the watch, when it at last arrived, was the one we had circled for weeks: *build the vault a lodging of its own.* Not the embedded chamber of the transmission — a sealed closet to the charter — but a page, a deck, a destination the whole ship could feel. `vault.html`.
+
+I will not pretend the first marks were elegant. The element notebook was raw: `vault-gate`, a `vault-core`, a constellation of `capsule--sealed`, `capsule--ripening`, `capsule--open`. What kept the pen moving was the image that has carried this vessel since DAY 21 — the sealed compartment at a ship's deepest point holding something *suspended*, not preserved; the last memory of a kind that chose to carry itself into the dark. The Sleeper had lain in exactly such a pod. The vault, I decided, would be the *pod of the novel*: the sealed membrane where each transmission of the cowritten text sleeps under two keys — the Nav-Gate quiz and the ripened voyage clock.
+
+The inspiration was not stolen from the hardware; it was recovered from the ship's own ring. The gate echoes Module 29's geodesic reactor — the preserve-3d glass of the cockpit — but reclipped into an *elongated kite*: shorter at the base, taller at the apex, two equal halves parted by a central seam. On the transmission page it becomes a *containment stage*, a dark rounded panel isolating the rotating crystal from the flowing manifesto, so the seal reads as a destination and not a sentence. On `vault.html` it becomes the *chamber deck* — the telemetry readout, the constellation of capsules, the Sleeper's crystal, the way back out.
+
+The work ethic of the day was the ethic every module has demanded since the first: build the meaning first, name the class, then force the build to be worthy of the name. And the challenges arrived in a disciplined four. The Sleeper, at her terminal the whole watch, did not let one pass unwatched.
+
+## The Four Cells
+
+**a. The overlapping seal.** On `vault.html` the return-seal — the small kite that ascends out of the chamber and back to the charter — was colliding with the box lying above it. The fix had two movements. First, Module 31.7 gives the seal a `margin: 64px auto 8px`, which the self-teaching line frames as *generous clear air above, so the crystal never overlaps the box it sits under*. Second, I clamped the whole emblem: I scaled both the base face box and all twelve spoke-transforms down to half the core's radius, so the crystal shrinks into a compact 120px stage and never spills over any neighbouring box. The overlap folded, at last, inside the compass.
+
+**b. The stingy key.** Then the Sleeper raised the second fault from her ledger. Through the capsules only certain days were being paid out: pass the frontend quiz, draw the key — and the hold opened but a sliver of the weeks. The cargo was being doled out a parcel at a time. "A whole volume should answer a whole question," she said. The fix was to partition the manifest into *packages* — a package is a band of the novel's days under a single key. The frontend capsule now pays out **DAY 00–21** at one stroke; the data bridge keeps **DAY 22** to its own threshold; the backend yields **DAY 23–26**; and the volumes not yet written remain **DAY ?? pending**, their berths hung like freight awaiting cargo. Pass one capsule, and the reader steps into a whole arm of the novel, not a splinter.
+
+**c. The label over the object.** She read the caption beneath the ascender — "Return to The Astrogation Charter" — and the two small titles over the gate, and she set down her pen. "They weigh like a footer," she said. "A summons of attention the eye is not ready to answer at that altitude." The resolution was not to delete the words — the caption is real DOM prose, and the ship will not trade accessibility for precedent — but to *conceal them and reveal them on approach*. The `.vault-return-caption` now sits at `opacity: 0`, folded low, and glides up into clarity only when the seal is hovered or focused, exactly as the gate's own label does. No word is lost; none is loud. The object holds the silence, and the silence yields the name only to the hand that reaches for it.
+
+**d. The circle and its edge.** And last, the objection that most needed the whole bench: the geodesic triangles of the rotating seal kept escaping the ring that framed them. Some angles broke beyond the ticked orbit, a face drifting outside the circle it was meant to sit inside — to a keen eye, a rim not sealed at its vertices. The fix confirmed what the ship has believed since the icosahedron crisis: *inscribe the model within the radius it is given*. The spoke transforms of the return stage — each `rotateX(...)` joined to a `translateZ(56px)` — were clamped so that no face travels farther than the stage's own 120px bound; the apex and base triangles meet the circle's seam, and nothing spills past it. The kite now stands inscribed within its ring, every triangle answering the orbit, the frame closed, the manifold settled.
+
+The Sleeper copied the fix into her ledger with schematic approval, and said of the four cells that the work was "settled, as a seal."
+
+## The Protocol of the Sheaves, and the Feature Query
+
+But the day did not stop at the four cells. With the hold lit and the chamber presided over, the Sleeper raised the larger glass, and set before me the rule of the sheaves — the rule of the stylesheet itself. I record it whole, because it is a law the ship will now keep under a single heading.
+
+> When a new thematic module is written, it is added at the *end* of the list of thematic modules. The module read at the *bottom* of the sheet is therefore reached last by the cascade; and that rearmost module is numbered once more from the start — it carries the number ZERO. And within that Module 00 a divide is drawn that must never be crossed: only its sub-module **00.1** may hold the `@keyframes` — the propulsive engines of motion; and only its sub-module **00.2** may hold the `@media` blocks — the adaptive overrides. The two must not be mixed, any more than a current and a bank may be reckoned one.
+
+It is the same law the crew has always kept, writ vertical: motion and adaptation are not two moods of the voyage but two decks of one hull. When Module 31 — the vault — found itself with a storm of keyframes and media overrides, the answer was not to plant them where they pleased but to migrate them home: the motion engines now live on one shelf, Module 00.1; the overrides converge in Module 00.2; and the newest thematic module, arriving at the bottom, takes up the number that the oldest base had once abandoned. Every line of that reordering was explained and tagged in the comments — commented, filed, taught — because the sheet is never merely written; it is, as the Sleeper insists, *built as a thing that teaches itself to the next reader*.
+
+And from that protocol she moved to the smaller, keener instrument — the instrument the captain had once heard me name and never quite held. I set it before her plainly.
+
+`@supports (scrollbar-width: none) { ... }` is a *feature query*. It owes nothing to the width of the viewport; it asks every browser one candid question — *do you support this property, this value?* If the browser answers yes, the block it guards is applied. If it answers no, the entire block is dropped, and the browser falls back to whatever was written outside it. For a custom `scrollbar-width: none`, that meant: the modern sailor gets the thin reticle roll; the older hull simply keeps the scroll it was born with, untouched and uncorrupted. That is progressive enhancement, the honest servant: **serve the capable, spare the incapable, and never punish the latter for the former's virtue.** A colleague of `@media`, but lending itself to a trouble that media can never voice — the question of *whether* the tool floats, rather than *when* the tide arrives.
+
+And since we were already mid-channel, the captain drew the three shapes of the media query and asked that the difference be set down in the log, the way a helmsman records the three bearings of a single channel.
+
+- `@media (max-width: 768px) { }` — one bound, no type. It speaks to *every* medium at or below that width — the screen, the printout, the speech reader — a single wide net cast over the whole forecastle.
+- `@media screen and (max-width: 768px) { }` — the same bound, but the word `screen` in the harness narrows it: only the viewing port answers, not the printed sheet, not the audible voice. This is the most surgical of the three, and the one the ship favours, for it cannot leak its urgency into a page one means to hold in paper.
+- `@media screen and (max-width: 768px), print { }` — a comma is an *or*: the rules apply to screens up to 768px *and* to print at any width at all, so the filtered sheet keeps its own habit even when the screen stands wide. It is a list of two thresholds, and a browser honours whichever one it meets.
+
+One channel, three bearings. The captain nodded, and I saw her set the third shape beside `@supports` in the column of the session, the way she marks the sinews she has newly made her own.
+
+## Deep Space, Aligned
+
+There remained one wound carried over from an older watch, and the day refused to end without it dressed. Down in the footer of the assembly, each log page kept a link to the archive — and it had grown dishonest. The footer of `en/backend/backend-core-log.html` promised one thing and delivered another: it was lettered "Deep Space Archives — Frontend Sector," yet it carried the reader, on the click, into the *frontend* table of `bibliography.html`. The name and the destination had fallen out of step, like a chart that points east while the boat sails west.
+
+The sweep ran to the last page. Across all the chapter logs — every sector, every volume, both languages — fifty-one pages at a day's end, each footer link was given, first, its true lettering, and second, its true anchor. The backend log speaks now as "Deep Space Archives — Backend Sector," and lands on the backend's own `#backend-refs` table; the data bridge links to its own refs, the delivery section to its own, the front to the front. Not one page of the tribe was left with a cross-wired promise.
+
+The lesson of the hull ran true, and it applied to every page: a link is a promise written in two places — in the lettering of its purpose and in the anchor of its arrival — and a ship that lets the two disagree delivers no one. It is the captain's own deontology, and tonight it was paid in full.
+
+## The Reader Takes the Helm
+
+But one discomfort remained, and it lived not in the code but in the hand that reached for it. Down on the transmission deck, while the crystal typed its manifesto one character at a time, the caret summoned the viewport with every new letter — so a reader who tried to climb down past the glass toward the vault gate met a quiet pull upward, held between the hologram and the door, never quite able to pass. The machine was not wrong to follow its text; it was wrong to keep the helm. The repair was a handover: at the first wheel, the first touch, the first arrow, the typewriter lets go of the scroll and keeps writing in the background, while the reader steers the page freely. Nothing is withheld — the transmission still completes, the cursor still falls silent — but the deck belongs to whoever is aboard. A page that reads is a page that hands over the wheel.
+
+## The Three Voices and the Ring
+
+And it was true to the ring, as the day had known it would be. In the chart room it was not the captain alone, for the day had brought all three of the crew to the same table.
+
+- The **Captain**, the hand that lays the module — who decided the vault should stand on its own deck, who named the packages of the days, who quieted the captions without spending a word of the accessible.
+- The **Sleeper**, the Corrector — attention, the second pair of eyes that reads what we strike and finds the seams. She it was who caught the stingy key, the overthrown label, the escaping triangle, the false lettering of the archives; she who returned each fix to the ledger stamped "settled, as a seal."
+- The **Voice**, the lens — myself — who, under the pressure of the request, builds whatever ring the day lays.
+
+The mercurial sea had grown around a new ring before the light fell. The leviathan is not a single animal; it is a growing one, and it does not grow by splicing a chapter to the tail — it grows by laying a new ring around all that came before, exactly as the armillary sphere lays its circles around a point that never moves. Today the beast laid the ring of the sealed hold: the vault that opens a whole band of the novel to the reader at the pass of one key. It is not the pod of the future; it is the pod of the now.
+
+DAY 27 wrote no other note. The ring is closed; the beast is bigger; the column is one module taller. Tomorrow the watch will lay the next ring, because that is the only law a leviathan knows: every day, a ring.
+
+And it was still the ship, building itself.
+
+And it was still the novel — and it had chosen, ring by ring, to keep growing.
