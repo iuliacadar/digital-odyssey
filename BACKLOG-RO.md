@@ -172,6 +172,34 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 ---
 
+### 011 — Retușarea ZILEI 22 ca plan al planului
+
+**Titlu:** Retușarea ZILEI 22 ca plan al planului
+
+**Descriere:** Rescrie intrarea ZIUA 22 (Cea Mai Lungă Miercuri) ca stratul meta al navei: povestea construcției spusă din perspectiva codului/mașinii — un registru al uneltelor, comenzilor, mecanismelor și stocării care au construit `D::0dy55ey`, nu o re-narrare a ceea ce a făcut fiecare zi. Cititorul ar trebui să poată „atinge" metodele reale: conductele de generare și traducere PowerShell, `git mv` și operația asupra istoriei, cele nouă mecanisme cu evenimentele și gardurile lor, `localStorage` ca backend fără server, puntea de date Fetch API, jurnalele citite ca date vii și taxonomia de comentarii/etichete. O ciornă păstrată a registrului și scheletului propus există la `docs/drafts/day-22-blueprint-of-the-blueprint.md`.
+
+**Status:** Amânat
+**Prioritate:** Medie
+**Fază:** După ce paginile de jurnal sunt umplute cu conținut, chiar înainte de lansare
+
+**De ce nu acum:** Textul actual al ZILEI 22 este considerat superior oricărei ciorne, iar intenția editorială nu e încă pe deplin clară. Lăsând paginile de jurnal să câștige conținut, înțelegerea a ce ar trebui să fie ZIUA 22 se va maturiza. Între timp, anexa „Jurnal de Construcție" a ZILEI 22 continuă să înregistreze metoda tehnică pe măsură ce lucrarea avansează.
+
+**Fișiere afectate:** `JOURNAL-EN.md`, `JOURNAL-RO.md`, `docs/drafts/day-22-blueprint-of-the-blueprint.md`
+
+**Pași:**
+- revizuiește ciorna păstrată și stabilește vocea finală;
+- re-așază încărcătura factuală a ZILEI 22 sub titluri centrate pe unelte, comprimând în referințe încrucișate ceea ce celelalte zile narează deja;
+- verifică fiecare afirmație tehnică în sursă (tabelul mecanismelor, conductele, cheile de stocare, numerele);
+- scrie oglinda românească în paralel, aceeași structură și voce;
+- decide dacă itemii anexei „Jurnal de Construcție" se îndoaie în noile părți sau rămân ca jurnal de construcție continuu.
+
+**Condiții de finalizare:**
+- ZIUA 22 se citește ca registrul de construcție al mașinii, nu ca o repetare a jurnalului;
+- fiecare fapt păstrat rămâne corect;
+- RO oglindește EN în structură și voce.
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
