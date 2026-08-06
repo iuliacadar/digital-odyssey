@@ -1342,7 +1342,7 @@ Each language uses its own comment syntax natively — no polyglot confusion. In
 
 If HTML is the hull, CSS is the atmospheric system — the pressure, the temperature, the light quality that makes the vessel habitable. A ship can float with bare metal walls, but no one wants to live in it. The visual identity of `D::0dy55ey` is not decoration; it is the difference between a warehouse and a world.
 
-The CSS lives in two files — `en/style.css` and `ro/style.css` — each **5000 lines** across **31 named modules** and **3 responsive breakpoints**. The module structure is surgical:
+The CSS lives in two files — `en/style.css` and `ro/style.css` — each **4049 lines** across **31 named modules** and **3 responsive breakpoints**. The module structure is surgical:
 
 ```
 00.0  Reset & Base
@@ -1584,7 +1584,7 @@ At the time of this writing, the project contains **81 files** across **11 file 
 | 54 | `.html` | HyperText Markup Language — the structural pages of the project |
 | 13 | `.md` | Markdown — journals, backlogs, readmes, documentation |
 | 3 | `.json` | JavaScript Object Notation — data files in shared/data/ |
-| 2 | `.css` | Cascading Style Sheets — the visual system (5000 lines each) |
+| 2 | `.css` | Cascading Style Sheets — the visual system (4049 lines each) |
 | 2 | `.js` | JavaScript — the behavior layer |
 | 2 | `.png` | Portable Network Graphics — favicon fallbacks |
 | 2 | `.svg` | Scalable Vector Graphics — favicons |

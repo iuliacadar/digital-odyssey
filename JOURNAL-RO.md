@@ -1348,7 +1348,7 @@ Fiecare limbaj folosește propria sintaxă nativă de comentarii — fără conf
 
 Dacă HTML este carena, CSS este sistemul atmosferic — presiunea, temperatura, calitatea luminii care face vasul locuibil. O navă poate pluti cu pereți metalici goi, dar nimeni nu vrea să trăiască în ea. Identitatea vizuală a `D::0dy55ey` nu este decorațiune; este diferența dintre un depozit și o lume.
 
-CSS-ul trăiește în două fișiere — `en/style.css` și `ro/style.css` — fiecare de **5000 de linii** distribuite în **31 de module denumite** și **3 breakpoint-uri responsive**. Structura modulară este chirurgicală:
+CSS-ul trăiește în două fișiere — `en/style.css` și `ro/style.css` — fiecare de **4049 de linii** distribuite în **31 de module denumite** și **3 breakpoint-uri responsive**. Structura modulară este chirurgicală:
 
 ```
 00.0  Reset & Base
@@ -1589,7 +1589,7 @@ La momentul acestei scrieri, proiectul conține **81 de fișiere** distribuite �
 | 54 | `.html` | HyperText Markup Language — paginile structurale ale proiectului |
 | 13 | `.md` | Markdown — jurnale, backlog-uri, readme-uri, documentație |
 | 3 | `.json` | JavaScript Object Notation — fișiere de date în shared/data/ |
-| 2 | `.css` | Cascading Style Sheets — sistemul vizual (5000 linii fiecare) |
+| 2 | `.css` | Cascading Style Sheets — sistemul vizual (4049 linii fiecare) |
 | 2 | `.js` | JavaScript — stratul comportamental |
 | 2 | `.png` | Portable Network Graphics — fallback-uri favicon |
 | 2 | `.svg` | Scalable Vector Graphics — favicon-uri |
