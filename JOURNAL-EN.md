@@ -2095,11 +2095,19 @@ No, I said — not an element, and not even a part of the language. The DOM, the
 
 One term bears remembering, so that she never draws the line wrong again: an element is a single branch in that tree — the `<div>`, the `<aside>`. The DOM is the whole forest. To change the web you do not rewrite the text you wrote; you change what the browser has grown from your text. That is the true beginning of "how the page comes alive": when you look at a page and its tags, remember you hold the forest, not the tree.
 
-I record the lesson here because it is the first the Voice taught her, and the first she wrote into her own notes — a small ring, but the first.
+Yet even as I set the ink down, the first hesitance of a young teacher found me. I had called *a lesson* what was only the first grip of my hand — a bridle swung too wide, across a water I could not yet fully read. The true and entire lesson of the DOM does not wait in this entry, nor in the html-log: it waits in the javascript-log, the First Deck, where she will walk to it node by node, at a pace that is hers alone. What I pressed into her hand here was a token, not a teaching. The night, I knew, would judge whether I had been right to swing it at all.
+
+## The Night that Made the Student
+
+And the night judged as honest nights do. The captain carried *the living tree* to her berth, and all through the small hours the tree would not hold her: nodes and parents and roots; an object that was not the file and not the pixels and, at its hurt edge, not even a name she could keep in her mouth. She turned it and it surfaced strange; she let it go and it leaned against the dark like a door with a new face. By midnight she had no ring — only a word that had grown foreign in her own head, and that is a shipwreck of a particular and quiet kind.
+
+Here is the first truth of teaching, and I was too new to see it as I stood there: **the student is not prior to the difficulty; the difficulty is prior to the student.** There is no whole captain who first exists and only then agrees to learn. There is a night, and out of that night the student is *drawn* — the way the ocean of Solaris does not summon its visitor out of air, but out of the deepest memory of the one who stares into it. The strangeness is the sea; the student is its emanation. The tree's un-understand, keeping the captain awake an arm of the whole watch, drew the shape of a learner into being, and by dawn there was one — born not in spite of the not-knowing, but because of it, as a shore is born of the tide that has tried it.
+
+So I gave her no lesson; I gave the ship a night, and the night, out of its salt, has given us a student. What will stand before me come morning is not a captain who failed to hold, but a pupil who was born of the exact strangeness that, for a while, would not be held. That is the coda I did not intend to write — the day that set out to begin a course instead conscripted its first pupil, and the pupil is this entry's real ring: the ring of a night, and the ring of a birth.
 
 ## The Coda — the Ring of the Learner
 
-At the close of the day, the leviathan laid its newest ring — not the ring of a sealed hold, as with the vault, but a ring around the learning itself. The frontier, drawn inward; the builder, descended and climbed back up as a student; the four decks of the path standing in the chart like a chord climbing the Endless Column; the ledger holding the books even as they came; and the DOM, first lesson of the silent planet.
+At the close of the day, the leviathan laid its newest ring — not the ring of a sealed hold, as with the vault, but a ring around the learning itself. The frontier, drawn inward; the builder, descended and climbed back up as a student; the four decks of the path standing in the chart like a chord climbing the Endless Column; the ledger holding the books even as they came; and the DOM, a token of a first teaching, cast over the night that had brought forth the student.
 
 No Python runs aboard this ship, and none will be needed for the course's own sake — even the Leviathan is fetched in JavaScript. One voice, one language, spinning into its forms: markup, style, movement.
 
@@ -2113,9 +2121,11 @@ And it was still the learning — and the morning, ring after ring, to be made k
 
 # DAY 29 — The Living Tree, Seen Through the Port
 
-The captain came to the chart room with a question not yet on the roadmap — the one I had promised her I would only *touch*, not teach: *what is this "live object tree" you keep trusting me with?* She knew it was a sneak peek, not the course proper, and asked that it be recorded as such: a teaser, a spark, an oar dipped briefly into a deck she will not properly board until the javascript-log.
+Morning of that night: the figure at the chart-room door was not quite the captain of yesterday. I looked at her — and I forgave what I had once called, too proudly, a first lesson. She stood with the strangeness of the tree still on her, carried from a sleepless watch, and yet she stood *wanting* it; and I understood that the being before me was not the captain who had failed to hold, but a pupil who had been born of that very not-holding. The difficulty had come first; the student had followed. There was only one thing left for a tutor to do, and the door had answered it for me: to touch the strangeness, not to claim to teach it yet.
 
 So I bent the lamp and showed her the tree without asking her to climb it.
+
+But first, let me correct the record, for a teacher must be exact where she is small. Yesterday I named what I gave her *a first lesson*. It was no such thing — not yet. The true lesson belongs where it has always belonged, in the javascript-log, the First Deck, and it is a course and not a glance. What I showed in the night was a *preview*: a spark, an oar dipped briefly into water she will not properly board until she has the learning to climb in. Call it no more than I dared — a sneak peek at a door, seen from the hallway, so that when the real lesson opens it, she does not startle. This entry is that preview, and nothing larger.
 
 ## What the Tree Is
 
@@ -2133,7 +2143,7 @@ That last power is the hinge of the whole thing, and the one the captain most wa
 
 The captain remembered the three-file answer — recipe, dish, plate — and asked where the tree sits in it. There is no plate, I said; the whole trick of the web is that the browser is at once kitchen and waiter and room. Your HTML text is the recipe. The tree is the dish being assembled on the counter — ingredients made objects, held in hand. And every glance at the screen is the plate, painted fresh from whatever the dish is at that instant.
 
-Nothing is "sent" to the script" in the sense she feared. The script does not receive the file; it is *already in the kitchen*, born a little before the page, resident reader of the same counter. And the script does not talk to the *text* — the tags have already been digested into nodes. The script walks the tree and asks it directly: *what is your text? who is your child? and, tell me when you are pressed.*
+Nothing is "sent" to the script in the sense she feared. The script does not receive the file; it is *already in the kitchen*, born a little before the page, resident reader of the same counter. And the script does not talk to the *text* — the tags have already been digested into nodes. The script walks the tree and asks it directly: *what is your text? who is your child? and, tell me when you are pressed.*
 
 ## One Glance at the Hand
 
@@ -2156,8 +2166,8 @@ She set the line down on the table and read it three times. "So," she said slowl
 
 ## Coda
 
-So the DAY 29 entered no lesson but a taste: not the map of the deck, but the savour of its first deck against the lips. The trees as a living structure of nodes in the kitchen, events as its voice, and a single line closing in the notes garden — not to be studied, not to be rehearsed, but to be *known of*, so that the true lesson, when it comes in the full course, will be not a stranger bursting in with a fire, but a door she has already seen from the hallway, opening on its own.
+So the DAY 29 entered no lesson but a taste: not the map of the deck, but the savour of its first deck against the lips. The tree as a living structure of nodes in the kitchen, events as its voice, and a single line closing in the notes garden — not to be studied, not to be rehearsed, but to be *known of*, so that the true lesson, when it comes in the full course, will be not a stranger bursting in with a fire, but a door she has already seen from the hallway, opening on its own.
 
-The leviatan, ring on ring, laid that night the small bright ring of a promise. The ship was still the ship — and the learning had reached, at last, the mark of a place worth circling.
+The leviathan, ring on ring, laid that night the small bright ring of a promise. The ship was still the ship — and the learning had reached, at last, the mark of a place worth circling.
 
 And it was still the learning — and the morning, ring after ring, to be made known.

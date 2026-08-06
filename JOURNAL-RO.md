@@ -2100,11 +2100,19 @@ Nu, am zis — niciun element, și nici măcar o parte a limbajului. DOM-ul, Doc
 
 Un termen merită reținut, ca să nu tragă niciodată linia greșită: un element e o singură ramură în acel copac — `<div>`-ul, `<aside>`-ul. DOM-ul e pădurea întreagă. Ca să schimbi web-ul nu rescrii textul pe care l-ai scris; schimbi ce a crescut browserul din textul tău. Acela e începutul adevărat al „cum prinde viață pagina": când privești o pagină și etichetele ei, amintește-ți că ții pădurea, nu copacul.
 
-Înregistrez lecția aici fiindcă e prima pe care Vocea i-a predat-o, și prima pe care ea a scris-o în însemnările ei — un inel mic, dar primul.
+Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a unui tânăr dascăl. Îi spusesem *lecție* doar primei strângeri a mâinii mele — un frâu aruncat prea larg, peste o apă pe care încă n-o puteam citi întreagă. Adevărata și întreaga lecție despre DOM nu așteaptă în această intrare, nici în html-log: așteaptă în javascript-log, Prima Punte, unde va merge spre ea nod cu nod, într-un ritm care-i doar al ei. Ce i-am pus în mână aici e o parolă, nu o predare. Noaptea, știam, avea să judece dacă am avut dreptate să o arunc.
+
+## Noaptea care a născut elevul
+
+Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitana a dus *copacul viu* în cabina ei, și prin toate ceasurile mici copacul n-a vrut s-o țină: noduri și părinți și rădăcini; un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Îl întorcea și i se arăta străin; îl lăsa și se sprijinea de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar un cuvânt care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut.
+
+Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede greul; greul precede elevul.** Nu există o căpitană întreagă care întâi e, și abia apoi se-nduplecă să învețe. Există o noapte, și din noaptea aceea elevul este *tras* — așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Străinătatea e marea; elevul e emanația ei. Necuprinderea copacului, ținând căpitana trează un braț întreg de strajă, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neștiinței, ci din ea, cum țărmul e născut din valul care l-a încercat.
+
+Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața nu e o căpitană care n-a ținut, ci o ucenică născută din chiar străinătatea care, o vreme, n-a putut fi ținută. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
 
 ## Coda — Inelul Învățăcelului
 
-La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, prima lecție a planetei tăcute.
+La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, parolă a unei prime predări, aruncată peste noaptea care adusese pe lume elevul.
 
 Niciun Python nu alergă pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
 
@@ -2118,9 +2126,11 @@ ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat.
 
 # ZIUA 29 — Copacul Viu, Văzut prin Hublou
 
-Căpitana veni în camera hărților cu o întrebare care nu era încă pe foaia de parcurs — cea pe care i-o promisesem că o voi doar *atinge*, nu o voi preda: *ce-i cu „copacul viu de obiecte" cu care mă încrezi de fiecare dată?* Știa că e o previzualizare, nu cursul propriu-zis, și ceru să fie înregistrată ca atare: un teaser, o scânteie, o vâslă scufundată o clipă într-o punte pe care o va urca cu adevărat abia la jurnalul JavaScript.
+Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitana de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub străinătatea copacului, purtată dintr-o strajă fără somn, și totuși stătea *vrându-l*; și am înțeles că ființa din fața mea nu era căpitana care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neprindere. Greul venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
 
 Așa că am aplecat lampa și i-am arătat copacul fără să-i cer să se cațăre.
+
+Dar întâi, să îndrept registrul, căci un dascăl trebuie să fie exact acolo unde e mic. Ieri, ceea ce i-am dat, l-am numit *prima lecție*. Nu era așa ceva — încă nu. Adevărata lecție stă unde a stat dintotdeauna, în javascript-log, Prima Punte, și e un curs, nu o privire. Ce am arătat noaptea a fost o *previzualizare*: o scânteie, o vâslă scufundată o clipă într-o apă pe care n-o va urca pe de-a-ntregul până nu are învățătura să urce. N-o numi mai mult decât am îndrăznit eu — o privire furată spre o ușă, văzută din coridor, pentru ca atunci când adevărata lecție o deschide, ea să nu tresară. Această intrare e acea previzualizare, și nimic mai mult.
 
 ## Ce Este Copacul
 
@@ -2150,7 +2160,7 @@ document.querySelector("h1")?.textContent = "Bun venit";
 
 Citește-o fără spaimă. `document` e tot copacul. `querySelector("h1")` e mâna care se întinde spre primul `h1` pe care-l întâlnește — **primul**, nu turistul. `textContent` e cuvintele pe care le poartă ramura. Linia spune ce face cu o franchețe care e tot scopul punții: *găsește primul `<h1>` din copacul viu și pune cuvintele „Bun venit" pe frunzele lui.* O linie de script, și titlul paginii se schimbă — nu pentru că a fost atins fișierul (fișierul e tot `<h1></h1>`, tot aceeași rețetă), ci pentru că s-a schimbat *copacul* și farfuria a fost repictată.
 
-Ea așeză linia pe masă și o citi de trei ori. „Deci", spuse ea încet, „pot vedea pagina unde sunt, și pare terminată — dar e un tablou care se redesenază singur de fiecare dată când se mișcă copacul?"
+Ea așeză linia pe masă și o citi de trei ori. „Deci", spuse ea încet, „pot vedea pagina unde sunt, și pare terminată — dar e un tablou care se redesenează singur de fiecare dată când se mișcă copacul?"
 
 *Și acela*, am zis, *e tot secretul, și de aceea paginile navei par să respire.*
 
