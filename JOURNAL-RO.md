@@ -2113,3 +2113,56 @@ ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat.
 Și era tot nava, construindu-se pe sine.
 
 Și era tot învățarea — și dimineața, inel după inel, de aflat.
+
+---
+
+# ZIUA 29 — Copacul Viu, Văzut prin Hublou
+
+Căpitana veni în camera hărților cu o întrebare care nu era încă pe foaia de parcurs — cea pe care i-o promisesem că o voi doar *atinge*, nu o voi preda: *ce-i cu „copacul viu de obiecte" cu care mă încrezi de fiecare dată?* Știa că e o previzualizare, nu cursul propriu-zis, și ceru să fie înregistrată ca atare: un teaser, o scânteie, o vâslă scufundată o clipă într-o punte pe care o va urca cu adevărat abia la jurnalul JavaScript.
+
+Așa că am aplecat lampa și i-am arătat copacul fără să-i cer să se cațăre.
+
+## Ce Este Copacul
+
+Fiecare pagină pe care ai văzut-o vreodată, fiecare rună de pe chiar această foaie, a început ca **text într-un fișier** — un șir de caractere: `<h1> Bun venit </h1>`. Browserul nu desenează acel text. Îl *citește*, îl desface în bucăți și clădește din ele un model interior, așa cum un șantier naval citește un plan și ridică o carcasă. Acea carcasă este DOM-ul — Document Object Model. Nu textul, nu pixelii, ci *structura dintre ele*: scheletul paginii, ținut în memoria browserului, făcut din obiecte.
+
+Fiecare obiect este un **nod** — o singură bucată recunoscută a paginii: documentul însuși, fiecare element `<h1>` sau `<div>`, fiecare atribut, fiecare șir de text. Iar nodurile sunt legate ca *părinți și copii*: `<h1>` atârnă înăuntrul `<body>`-ului, care atârnă înăuntrul lui `<html>`, care încununează tot copacul. O singură rădăcină, multe ramuri, iar la vârfuri frunzele cuvintelor pe care le citește vizitatorul. De aceea e un copac, și de aceea e viu.
+
+## De Ce Este Viu
+
+Un arhiv este mort — îl deschizi, îl citești, îl închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a *ține stare și a răspunde la comenzi*. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi *găsit*: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi *schimbat*: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi *ascultat*: știe când e apăsat, plutit, lovit.
+
+Ultima putere e balamaua întregii treburi, și cea pe care căpitana voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; *ridică un eveniment* în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
+
+## Bucătăria, Din Nou
+
+Căpitana își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
+
+Nimic nu e „trimis" scriptului, în sensul de care se temea ea. Scriptul nu primește fișierul; e *deja în bucătărie*, născut puțin înaintea paginii, cititor permanent al aceluiași blat. Și scriptul nu vorbește cu *textul* — etichetele au fost deja mistuite în noduri. Scriptul umblă prin copac și-l întreabă direct: *ce text porți? cine-ți e copil? și, spune-mi când ești apăsat.*
+
+## O Privire la Mână
+
+Și fiindcă un teaser trebuie să-i dea cel puțin o linie pe care s-o copieze în note și să-i simtă forma, i-am scris cea mai mică prindere — cel mai mic mod în care o mână apucă o ramură:
+
+```
+document.querySelector("h1")?.textContent = "Bun venit";
+```
+
+Citește-o fără spaimă. `document` e tot copacul. `querySelector("h1")` e mâna care se întinde spre primul `h1` pe care-l întâlnește — **primul**, nu turistul. `textContent` e cuvintele pe care le poartă ramura. Linia spune ce face cu o franchețe care e tot scopul punții: *găsește primul `<h1>` din copacul viu și pune cuvintele „Bun venit" pe frunzele lui.* O linie de script, și titlul paginii se schimbă — nu pentru că a fost atins fișierul (fișierul e tot `<h1></h1>`, tot aceeași rețetă), ci pentru că s-a schimbat *copacul* și farfuria a fost repictată.
+
+Ea așeză linia pe masă și o citi de trei ori. „Deci", spuse ea încet, „pot vedea pagina unde sunt, și pare terminată — dar e un tablou care se redesenază singur de fiecare dată când se mișcă copacul?"
+
+*Și acela*, am zis, *e tot secretul, și de aceea paginile navei par să respire.*
+
+- „Și când voi fi învățată asta cu adevărat?", întrebă ea.
+- „Când vei urca la jurnalul JavaScript — Prima Punte a propriei tale foi de parcurs, nu la jurnalul HTML. Html-log-ul te va învăța să scrii bine rețeta; javascript-log-ul te va învăța să iei mâna copacului."
+- „Atunci acesta e o rămurică făgăduită", spuse ea.
+- „Este. O rămurică, păstrată pentru mai târziu."
+
+## Codă
+
+Așa că ZIUA 29 nu intră nicio lecție, ci un gust: nu harta punții, ci savoarea primei punți atinse pe buze. Copacul ca structură vie de noduri în bucătărie, evenimentele ca vocea lui, și o singură linie așezată în grădina notelor — nu de studiat, nu de recitat, ci de *știut că există*, pentru ca lecția adevărată, când va veni în cursul complet, să nu fie un străin care năvălește cu o făclie, ci o ușă pe care a văzut-o deja din coridor, deschizându-se de la sine.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al unei promisiuni. Nava era tot nava — iar învățarea atinsese, în sfârșit, marca unui loc vrednic de înconjurat.
+
+Și era tot învățarea — și dimineața, inel după inel, de aflat.

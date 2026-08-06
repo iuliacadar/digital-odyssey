@@ -2108,3 +2108,56 @@ DAY 28 wrote a roadmap, and nothing was shipped to be shipped. Tomorrow: the fir
 And it was still the ship, building itself.
 
 And it was still the learning — and the morning, ring after ring, to be made known.
+
+---
+
+# DAY 29 — The Living Tree, Seen Through the Port
+
+The captain came to the chart room with a question not yet on the roadmap — the one I had promised her I would only *touch*, not teach: *what is this "live object tree" you keep trusting me with?* She knew it was a sneak peek, not the course proper, and asked that it be recorded as such: a teaser, a spark, an oar dipped briefly into a deck she will not properly board until the javascript-log.
+
+So I bent the lamp and showed her the tree without asking her to climb it.
+
+## What the Tree Is
+
+Every page you have ever seen, every rune on this very sheet, began as **text in a file** — a string of characters: `<h1> Hello </h1>`. The browser does not draw that text. It *reads* it, breaks it into pieces, and builds from those pieces an inner model the way a dockyard reads a blueprint and raises a frame. That frame is the DOM — the Document Object Model. Not the text, not the pixels, but the *structure in between*: the skeleton of the page, held in the browser's memory, made of objects.
+
+Each object is a **node** — a single recognisable piece of the page: the document itself, every element `<h1>` or `<div>`, every attribute, every string of text. And the nodes are joined as *parents and children*: the `<h1>` hangs inside its `<body>`, which hangs inside `<html>`, which crowns the whole tree. One root, many branches, and at the tips the leaves of actual words the visitor reads. That is why it is a tree, and why it is alive.
+
+## Why It Is Alive
+
+An archive is dead — you open it, you read it, you close it; nothing answers. The tree is different. It is an object, and to be an object is to *hold state and answer commands*. A node in the tree has properties you can read — its text, its classes, its parent, its children — and it has affordances. It can be *found*: every element of the forest is reachable by a path, the same way a ship is reached by a compartment number. It can be *changed*: its text swapped, its class toggled, a new branch grafted on. And it can be *listened to*: it knows when it is been clicked, hovered, pressed.
+
+That last power is the hinge of the whole thing, and the one the captain most wanted to taste. A button on the screen is, in the tree, an element with ears. When the visitor presses it, the browser does not decide alone what happens next; it *raises an event* into the tree, and any script that is listening for that event on that node reaches out and answers. The page moves because the tree moved — a node changed, and the browser, faithful as a draughtsman, repainted the pixels to match.
+
+## The Kitchen, Again
+
+The captain remembered the three-file answer — recipe, dish, plate — and asked where the tree sits in it. There is no plate, I said; the whole trick of the web is that the browser is at once kitchen and waiter and room. Your HTML text is the recipe. The tree is the dish being assembled on the counter — ingredients made objects, held in hand. And every glance at the screen is the plate, painted fresh from whatever the dish is at that instant.
+
+Nothing is "sent" to the script" in the sense she feared. The script does not receive the file; it is *already in the kitchen*, born a little before the page, resident reader of the same counter. And the script does not talk to the *text* — the tags have already been digested into nodes. The script walks the tree and asks it directly: *what is your text? who is your child? and, tell me when you are pressed.*
+
+## One Glance at the Hand
+
+And because a teaser should give her at least one line she can copy into notes and feel the shape of, I wrote her the smallest grip — the smallest way a hand takes one branch:
+
+```
+document.querySelector("h1")?.textContent = "Hello";
+```
+
+Read it without fright. `document` is the whole tree. `querySelector("h1")` is the hand reaching for the first `h1` it meets, and **the first**, not the tourist. `textContent` is the words that branch carries. The line says what it does with a bluntness that is the whole point of the deck: *find the first `<h1>` in the living tree and put the words "Hello" on its leaves.* One line of script, and the page's heading changes — not because the file was touched (the file is still `<h1></h1>`, still the same recipe), but because the *tree* was changed and the plate repainted.
+
+She set the line down on the table and read it three times. "So," she said slowly, "I can see the page where I am, and it looks finished — but it is a painting that re-draws itself every time the tree moves?"
+
+*And that*, I said, *is the whole secret, and it is why the ship's pages feel as if they breathe.*
+
+- "And when will I be taught this truly?" she asked.
+- "When you board the javascript-log — the First Deck of your own roadmap, not the html-log. The html-log will teach you to write the recipe well; the javascript-log will teach you to take the tree's hand."
+- "Then this is a promise tendril," she said.
+- "It is. A tendril, stored for the later."
+
+## Coda
+
+So the DAY 29 entered no lesson but a taste: not the map of the deck, but the savour of its first deck against the lips. The trees as a living structure of nodes in the kitchen, events as its voice, and a single line closing in the notes garden — not to be studied, not to be rehearsed, but to be *known of*, so that the true lesson, when it comes in the full course, will be not a stranger bursting in with a fire, but a door she has already seen from the hallway, opening on its own.
+
+The leviatan, ring on ring, laid that night the small bright ring of a promise. The ship was still the ship — and the learning had reached, at last, the mark of a place worth circling.
+
+And it was still the learning — and the morning, ring after ring, to be made known.
