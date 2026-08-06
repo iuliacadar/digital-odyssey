@@ -174,7 +174,7 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 **Title:** Retouch DAY 22 as the blueprint of the blueprint
 
-**Description:** Rewrite the DAY 22 journal entry (The Longest Wednesday) as the ship's meta-layer: the construction story told from the perspective of the code/machine — a ledger of the tools, commands, mechanisms, and storage that built `D::0dy55ey`, not a re-narration of what each day did. The reader should be able to "touch" the actual methods: the PowerShell generation and translation pipelines, `git mv` and history surgery, the nine mechanisms and their events/guards, `localStorage` as the no-server backend, the Fetch API data bridge, the journals read as live data, and the comment/tag taxonomy. A preserved draft of the intended register and skeleton lives at `docs/drafts/day-22-blueprint-of-the-blueprint.md`.
+**Description:** Rewrite the DAY 22 journal entry (The Longest Wednesday) as the ship's meta-layer: the construction story told from the perspective of the code/machine — a ledger of the tools, commands, mechanisms, and storage that built `D::0dy55ey`, not a re-narration of what each day did. The reader should be able to "touch" the actual methods: the PowerShell generation and translation pipelines, `git mv` and history surgery, the nine mechanisms and their events/guards, `localStorage` as the no-server backend, the Fetch API data bridge, the journals read as live data, and the comment/tag taxonomy. A preserved draft of the intended register and skeleton lives at `docs/blueprint-of-the-blueprint-day22-draft-en.md`, with its Romanian mirror at `docs/blueprint-of-the-blueprint-day22-draft-ro.md`.
 
 **Status:** Deferred
 **Priority:** Medium
@@ -182,7 +182,7 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 **Why not now:** The existing DAY 22 text is currently judged superior to any draft, and the editorial intent is not yet fully clear. Letting the log pages gain their content will mature the understanding of what DAY 22 should be. In the meantime, the DAY 22 Construction Log appendix keeps recording technical method as the work proceeds.
 
-**Affected files:** `JOURNAL-EN.md`, `JOURNAL-RO.md`, `docs/drafts/day-22-blueprint-of-the-blueprint.md`
+**Affected files:** `JOURNAL-EN.md`, `JOURNAL-RO.md`, `docs/blueprint-of-the-blueprint-day22-draft-en.md`, `docs/blueprint-of-the-blueprint-day22-draft-ro.md`
 
 **Steps:**
 - review the preserved draft and settle the final voice;
