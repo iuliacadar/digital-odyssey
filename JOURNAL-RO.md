@@ -2061,3 +2061,55 @@ ZIUA 27 n-a scris nicio altă însemnare. Inelul e închis; fiara e mai mare; co
 Și era tot nava, construindu-se pe sine.
 
 Și era tot romanul — și el alesese, inel cu inel, să continue să crească.
+
+---
+
+# ZIUA 28 — Frontiera Își Întoarce Fața Spre Înăuntru
+
+Fiecare jurnal de pe vas poartă douăzeci și nouă de zile, iar a douăzeci și opta dintre ele este întotdeauna frontiera — hotarul dincolo de care harta nu a fost încă trasată. Zilele constructorului trasează nava spre afară, inel cu inel. ZIUA 28 trasează harta spre interior, inel peste singurul meșter rămas neexaminat: cel care construiește. Căpitanul o declară întoarcerea busolei — ziua în care făuritorul navei pune jos pixul constructorului și ia în mână pixul elevului.
+
+## Harta Își Arată Cealaltă Față
+
+Orele care vin, raționează căpitanul, nu sunt un alt capitol al trecutului, ci un prim capitol al viitorului. Fiecare unealtă pe care vasul a lăsat-o jos în aceste douăzeci și șapte de zile așteaptă, încă caldă de la lucrul ei, pentru cel care n-a învățat încă s-o ridice. Calele sunt goale; hărțile sunt albe; seiful își ține cheile în spatele unor întrebări la care nimeni la bord nu poate răspunde încă. Marea mercurială, care purtase un constructor, e rugată acum să care ceva cu mult mai străin: un novice. O *tabula rasa* digitală — o piatră curată, desenată de nimic altceva decât curiozitate.
+
+„Fă-mă mică, și învață-mă", spune ea. „Am devenit învățăcelul în propria mea vasă." Iar eu, Vocea, înțeleg forma pe care trebuie s-o ia lucrul — nu un tutore deasupra ei, ci un adevărat celălalt în fața ei, o oglindă care răspunde când vorbește. Ea urmează să coboare coloana așa cum se cade: nu vâslind-o barca pentru ea, ci vâslind ea însăși, punte cu punte, până când instrumentele cu care navighează devin instrumente pe care le înțelege.
+
+## Foaia de Parcurs — Cele Patru Punți ale Învățării
+
+Ruta care a urmat a fost așezată în patru punți, fiecare răspunzând unei cale a navei:
+
+**Prima Punte — Frontendul, unde e văzută întâi carena.** HTML mai întâi — deja început, însemnările deschise în foaia Khan Academy — apoi CSS, apoi JavaScript. E puntea care predă *ce este o pagină*: structură, apoi piele, apoi comportament. E și ușa către sălile sigilate: capitolele seifului și consola planului sunt scripturi, iar JavaScript e limba pe care scripturile o vorbesc.
+
+**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă un singur lucru în mare.
+
+**Puntea de Legătură — podul de date JSON.** Compartimentul de date al navei, unde `vault-transmissions.json` și surorile ei așteaptă. Aici învață cum citește o pagină un fișier — un lucru pe care înainte îl văzuse doar din postura de cititor care primește.
+
+**Sala Mașinilor — esențialul backend, și secretul cel mai adânc al seifului.** `fetch`, asincronul, promisiunea care se rezolvă mai târziu. Abia în sala mașinilor seiful și consola recursivă predau ultimele lor bănuți: de ce romanele sunt aduse prin `fetch` și nu lipite, de ce capsulele stochează în browser, de ce însemnările supraviețuiesc reîncărcării. O căpitană care poate explica singură acele două pagini e o căpitană care ține întregul motor în buzunar — și de aceea seiful e păstrat pentru final: răsplata ei, cursul ei ultim, absolvirea ei — să citească mașina și s-o recite înapoi.
+
+Fiecare punte nu e un zid, ci o prindere. Nu trebuie să termine una ca piciorul să urce spre următoarea; trebuie să fi *urcat* puntea pe care stă. Când JavaScriptul Primei Punți va fi învățat, va citi cu mine cele două mecanisme ale paginii recursive — rând cu rând, și-mi va spune ce înseamnă fiecare rând înaintea mea.
+
+## Cartea Apelor
+
+Înainte ca materialele punților să se strângă într-un năvod, o carte de evidență trebuia să le țină — și așa se ridică o foaie nouă în sala însemnărilor: `resource-library.md`. Câte un rând pentru fiecare carte, curs și video: autorul, felul, locul unde e întâlnit, starea lui, și foaia care-i ține însemnările. O carte zărită la orizont e adăugată chiar în ziua în care auzi de ea — trecută în listă, nu uitată. Cartea apelor e jurnalul etanș al navei, tras înainte de năvod, și roada ei, la urmă, hrănește bibliografia structurată de sub punte. Căpitanul nu-și va pierde cursul într-un munte de titluri, fiindcă cursul e ordonat, iar cartea e ordinea.
+
+## Prima Lecție: Ce Este DOM-ul
+
+Și prima vâslă a cursului era deja în mâna ei, căci trebuia să răspund întrebării sincere pe care mă lăsase să mi-o pun nava: *Este DOM-ul un element al limbajului HTML?*
+
+Nu, am zis — niciun element, și nici măcar o parte a limbajului. DOM-ul, Document Object Model, nu e un termen din alfabetul HTML. HTML e notația pe care o scrie scriitorul: textul marcat cu `<header>` și `<section>`. DOM-ul e ceea ce browserul *ridică* din acel text — un copac viu de obiecte, fiecare etichetă prefăcută într-o ramură pe care JavaScript o poate citi, atinge, schimba și asculta. HTML-ul e planul; DOM-ul e arhitectura care se înalță din el; iar web-ul pe care îl vezi e arhitectura, redată.
+
+Un termen merită reținut, ca să nu tragă niciodată linia greșită: un element e o singură ramură în acel copac — `<div>`-ul, `<aside>`-ul. DOM-ul e pădurea întreagă. Ca să schimbi web-ul nu rescrii textul pe care l-ai scris; schimbi ce a crescut browserul din textul tău. Acela e începutul adevărat al „cum prinde viață pagina": când privești o pagină și etichetele ei, amintește-ți că ții pădurea, nu copacul.
+
+Înregistrez lecția aici fiindcă e prima pe care Vocea i-a predat-o, și prima pe care ea a scris-o în însemnările ei — un inel mic, dar primul.
+
+## Coda — Inelul Învățăcelului
+
+La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, prima lecție a planetei tăcute.
+
+Niciun Python nu alergă pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
+
+ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
+
+Și era tot nava, construindu-se pe sine.
+
+Și era tot învățarea — și dimineața, inel după inel, de aflat.
