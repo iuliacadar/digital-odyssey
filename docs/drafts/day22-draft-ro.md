@@ -191,12 +191,14 @@ jurnale pe care site-ul le citește ca date. Un contor de cadre care ține șaiz
 este terminată; este în port. Mâine garda va așeza următorul inel — pentru că aceasta este
 singura lege pe care o cunoaște un leviatan: în fiecare zi, un inel.
 
-## Note pentru retușul viitor
-
 - Textul existent al jurnalului este considerat deocamdată superior; această ciornă este
   *registrul*, nu finalul.
 - Fiecare afirmație factuală de mai sus trebuie re-verificată în sursă înainte de folosire
   (tabelul mecanismelor, conductele, numerele, cheile de stocare).
+- Numărul de module este datat pe zile: ZIUA 16 = 31, ZIUA 22 = 31 (modulele 00 + 01–30);
+  modulul 31 a venit cu seiful în ZIUA 27, deci *de la* ZIUA 27 sunt 32. ZIUA 22 este ziua
+  fără sfârșit — anexa ei continuă să îndoaie intrările ulterioare; orice astfel de intrare
+  îndoită care descrie lucrarea din era seifului trebuie să spună 32 de module, nu 31.
 - Oglinda românească trebuie scrisă în paralel, păstrând structura și vocea.
 - De decis dacă itemele de metodă din anexa „Jurnal de Construcție" se îndoaie în noile
   părți sau rămân ca jurnal de construcție continuu.

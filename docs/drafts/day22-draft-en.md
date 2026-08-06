@@ -198,12 +198,14 @@ site reads as data. One frame counter that holds sixty. The ship is not
 finished; it is in port. Tomorrow the watch will lay the next ring — because
 that is the only law a leviathan knows: every day, a ring.
 
-## Notes for the future retouch
-
 - The existing journal text is currently judged superior; this draft is the
   *register*, not the final.
 - Every factual claim above must be re-verified against the source before use
   (mechanisms table, pipelines, counts, storage keys).
+- Module count is dated per day: DAY 16 = 31, DAY 22 = 31 (modules 00 + 01–30);
+  module 31 arrived with the vault in DAY 27, so *since* DAY 27 there are 32. DAY
+  22 is the neverending day — its appendix keeps folding later entries in; any
+  such folded entry describing vault-era work must say 32 modules, not 31.
 - The Romanian mirror must be written in parallel, preserving structure and
   voice.
 - Decide whether the Construction Log appendix method items fold into the new
