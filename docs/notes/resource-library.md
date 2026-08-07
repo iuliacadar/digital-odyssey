@@ -82,7 +82,8 @@ be consulted — on the learning path. One row per source. The rule of the ledge
 
 | Resource | Author / Channel | Kind | Where | Status | Notes sheet |
 |---|---|---|---|---|---|
-| _awaiting entries_ | | | | | |
+| *Pro Git* | Scott Chacon & Ben Straub | Book | git-scm.com/book | queued | — |
+| *Git Pocket Guide* | Richard E. Silverman (O'Reilly, 2013) | Book | O'Reilly | queued | — |
 
 ---
 
