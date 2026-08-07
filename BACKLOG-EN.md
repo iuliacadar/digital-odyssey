@@ -198,6 +198,27 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 ---
 
+### 012 — Captain's polish pass on the Romanian journal
+
+**Title:** RO journal polish pass (captain-owned)
+
+**Description:** A full re-read of `JOURNAL-RO.md`, from ZIUA 00 to the current day, to polish grammar, gender/numeral agreement, voice, and phrasing by hand. The captain does this herself; the AI may assist on request. Includes the newly drafted ZIUA 30, which will also be re-read in the same pass.
+
+**Status:** In progress
+**Priority:** Medium
+**Phase:** Ongoing, alongside journal writing
+
+**Why this item exists:** The Romanian journal is the ship's native teaching voice. A second, human pass catches what a machine pass cannot — cadence, idiom, agreement, and the places where the captain's phrasing outruns the AI's.
+
+**Affected files:** `JOURNAL-RO.md`
+
+**Completion conditions:**
+- ZIUA 00 → current day re-read and polished;
+- no remaining gender/numeral agreement errors;
+- the captain's final phrasing stands in every entry.
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

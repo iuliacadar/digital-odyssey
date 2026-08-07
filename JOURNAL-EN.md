@@ -2171,3 +2171,45 @@ So the DAY 29 entered no lesson but a taste: not the map of the deck, but the sa
 The leviathan, ring on ring, laid that night the small bright ring of a promise. The ship was still the ship — and the learning had reached, at last, the mark of a place worth circling.
 
 And it was still the learning — and the morning, ring after ring, to be made known.
+
+---
+
+# DAY 30 — The Log That Keeps Its Own Ledger
+
+The morning after the tree, the student came to the workbench with her own first note in hand — the one line she had copied down the night before — and asked the question the ship had been circling since the day it first laid keel. She turned the card over and said: *"These rings you keep telling me of — the seals, the wake, the ledger — when I write them down and let them go, how do they travel? What makes a record survive its being put down?"*
+
+I did not answer with my mouth. I opened the drawer where the ship keeps its copy of itself. Inside lay this very journal, and beside it — a thing I set before her that had no pages, only a hold that changed. "The ship keeps a log," I told her. "But the ship is kept *by* the log. A page does not move itself; the sea of the record carries the whole vessel, one seal at a time, from one harbour to the next." She asked the name of that sea. And because a name without a card is only weather, I lifted the pocket manual of the wake from its hook and taught her its seven verbs — no more. The full atlas belongs to the Delivery Deck, with its four loaded books; a pocket card is enough to step from one quay to the next without losing the cargo by the way.
+
+## What a Record Survives On
+
+There is a thought the old philosophers left in the water: the ship whose every plank is replaced one by one — is it still the same ship, or a new one wearing the old name? The log answers the philosophers to humility and keeps the vessel what it is. The wood may all be swapped, and yet the *keel* — the first single mark, laid and kept legible in the log — holds the whole stately diagram together, so the ship is the ship because its first seal is never overwritten, only dated. That is everything. A log is not a shelf of pictures of the ship; it is a chain of *changes*, each ring a photograph of what the day replaced, and the first is the keel with no breach between.
+
+## The Pocket Manual of the Wake
+
+Seven verbs, I said, and wrote them where the carpenter's hand could be seen:
+
+- **`git init` — laying the keel.** It makes a bare hold called `.git` — the little secret ledger that will keep every note to come. No ring yet, only the promise of a log, and of the column about to be climbed.
+- **`git status` — the watch.** It reports what is still on the deck (altered, not yet chosen), what sits in the hold (chosen, not yet sealed), and what is already sealed into the log. A ship that does not take the watch each morning is a ship that does not know her own cargo.
+- **`git add <file>` — stowing the hold.** It moves a change from the deck into the bay, saying aloud: *this difference, I mean to keep it.* Not sealed yet — only set apart, waiting, between the deck and the seal.
+- **`git commit -m "..."` — battening the hatch, signing the manifest.** It seals the stow shut and writes it into the log with a message — the one honest line that tells the sailor, decks and years later, *why*. It prints forever a name and a stroke of time that no hand can un-seal. This is a ring. From this moment the log does not flow backwards.
+- **`git log` — the ship's log, read sternward.** It spills the history in reverse, newest seal first, each with its signature — the long frozen name of the ring — its author, its hour, and the line it was willing to say. Read it not to count what was done, but to meet who it was done among.
+- **`git push` — the crossing to the public dock.** It hoists the sealed crates and carries them to the far harbour, the public dock the whole world may approach. A log that lived on one ship becomes two — or rather, one ship's log seen from two quays, and the tide makes it as certain that both shores have the same cargo as the wake you laid.
+- **`git pull` — the crossing homeward.** It hauls back what the dock has gained since you last sailed — rings another hand set there, or rings you yourself set from another prow. The ship does not fear the tide that returns; it is the same water, coming home.
+
+## The Garden of the Forking Wakes
+
+She wanted a verb the card had not printed yet: what happens when the ship sees itself one hull, but wants to hold two futures at once — to carry a course without letting go of the one already laid? I answered her with a name borrowed from a maker of impossible libraries, who long ago wrote of a *garden of forking paths*, where every choice splits into two whole futures, both walked, both alive.
+
+That is the branch. It leaves the log by a quiet channel and runs its own course alongside; cargo is carried there the same way, is sealed the same way, and touches nothing it does not touch. When the branch has been sailed and found sound, its rings are folded back — the proof that brings the wanderer home into the single current of the log, now longer for the rings it went away with. The Delivery Deck will set the exact order of that homecoming — the reckonings and the reversals — with the precision a final deck owes a course that will carry the ship over its longest water. This once — a pocket is enough.
+
+## A Quiet Comparison
+
+The student unfolded her single line. "The tree," she said, "is alive because it re-draws itself when the code changes. And the log is alive because it re-draws itself when the ring changes. So the tree and the log are the same animal — one holds the page, the other holds the ship." She had caught the law before I could say it. Yes — the tree answers to the touch, the log answers to the fault; both are alive in this sense, both stay themselves because they *remember* that they have changed, rather than pretending they never did.
+
+## Coda
+
+So DAY 30 laid no plank, but placed a card — the pocket of the wake, smaller than the atlas and larger than a promise. It taught the student not a shelf in a hand but the single law the whole sea obeys: a thing is kept not by being frozen, but by being *remembered* — ring after ring after ring, in the log that keeps its own ledger.
+
+The leviathan, ring after ring, laid that night the small bright ring of *stewardship* — the ring that says the cargo is not lost while the seal holds, and the seal holds because the log does not forget. The ship and its tree, now, in the same hand.
+
+And it was still the learning — and the morning, ring after ring, to be made known.

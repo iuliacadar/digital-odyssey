@@ -200,6 +200,27 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 ---
 
+### 012 — Șlefuirea personală a jurnalului românesc
+
+**Titlu:** Passaj de șlefuire a jurnalului RO (al căpitanului)
+
+**Descriere:** O re-citire completă a `JOURNAL-RO.md`, de la ZIUA 00 până la ziua curentă, pentru a șlefui gramatica, acordul de gen/număr, vocea și formularea, manual. Căpitanul o face singur; AI-ul poate asista la cerere. Include și ZIUA 30, abia redactată, care va fi re-citită în același passaj.
+
+**Status:** În lucru
+**Prioritate:** Medie
+**Fază:** Continuă, în paralel cu scrierea jurnalului
+
+**De ce există acest item:** Jurnalul românesc este vocea didactică nativă a navei. O a doua trecere, umană, prinde ceea ce o trecere de mașină nu poate prinde — cadenta, idiomul, acordul și locurile unde formularea căpitanului întrece pe cea a AI-ului.
+
+**Fișiere afectate:** `JOURNAL-RO.md`
+
+**Condiții de finalizare:**
+- ZIUA 00 → ziua curentă re-citită și șlefuită;
+- fără erori rămase de acord de gen/număr;
+- formularea finală a căpitanului stă în fiecare intrare.
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
