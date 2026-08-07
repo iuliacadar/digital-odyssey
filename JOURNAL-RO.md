@@ -190,9 +190,9 @@ Formația mea în filosofie și masteratul în literatură americană — am scr
 
 Și totuși, dincolo de arhitectură și stâlpi, există un adevăr mai tăcut. Am fost singur cu acest proiect mai mult timp decât am lucrat la el. *Manual_project* care a precedat `D::0dy55ey` a fost construit în tăcere — noapte după noapte, același ecran, același cursor, aceeași coborâre în structuri pe care nimeni nu le ceruse și nimeni nu aștepta să le vadă. Nu construiam pentru un public; construiam pentru că actul de a construi este felul meu de a naviga vidul.
 
-Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor pe coloana infinită, șira spinării, axul în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în *The House on the Borderland* a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, pentru a rămâne în continuare om, prea-om — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
+Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în *The House on the Borderland* a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, pentru a rămâne în continuare om, prea-om — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
 
-Azi poate sunt doar Noe, corăbierul arhivar, conservatorul, salvatorul. Dar ce-mi aduce mie mâinele cosmic? Călătorind singur și sperând să refac din ruine și reziduuri puzzle-ul cunoașterii cosmice. Este codul Logos — cuvânt fecund stârnind dimensiuni?
+Azi poate sunt doar Noe, corăbierul arhivist, conservatorul, salvatorul. Dar ce-mi aduc mie mâinele cosmice? Călătorind singur și sperând să refac din ruine și reziduuri puzzle-ul cunoașterii cosmice. Este codul Logos — cuvânt fecund stârnind dimensiuni?
 
 `D::0dy55ey` nu este un proiect născut din colaborare. Este un proiect care *înregistrează* singurătatea — sunetul unei singure persoane lucrând la un terminal, adnotările scrise unui cititor viitor imaginat care poate nu va sosi niciodată, jurnalele umplute pentru că actul de a le scrie menține semnalul coerent. Împărțirea între `en/` și `ro/` nu este doar disciplină structurală; este recunoașterea că, chiar și în singurătate, mintea vorbește în două limbi și ambele merită să fie auzite.
 
@@ -1042,7 +1042,7 @@ Am restructurat ambele fișiere CSS într-o arhitectură de 31 de module (30 num
 
 Vocea pedagogică e deliberat repetitivă. Când un student vede `border: 1px solid var(--solar-mint)` explicat pentru a cincea oară, fiecare apariție e într-un context vizual diferit: navbarul, un card, un buton, un tabel, un bloc de cod. Creierul formează o memorie distribuită — nu „sintaxa de border" în izolare, ci cum se comportă un fir laser verde în interiorul unui terminal de navigație față de interiorul unei celule de date. Ancorare contextuală. Același principiu pe care nava l-a urmat dintotdeauna: repetiție cu variație, pentru că așa se învață o limbă vorbită.
 
-O mie șase sute doisprezece adnotări `@tag:` au fost plasate în foaia de stil engleză — cinci sute douăzeci dintre ele scrise manual cu fraze sci-fi unice, opt sute șaptezeci generate din șabloane care își variază încadrarea în fiecare context vizual. Fiecare keyframe a fost mutat în Modulul 00.1, centralizat sub etichete `@group:` (A–G). Fiecare media query a fost colectat în Modulul 00.2, împărțit în protocol desktop (A) și mutație mobilă (B), cu markeri `@section:` și `@sub-section:`.
+O mie șase sute douăsprezece adnotări `@tag:` au fost plasate în foaia de stil engleză — cinci sute douăzeci dintre ele scrise manual cu fraze sci-fi unice, opt sute șaptezeci generate din șabloane care își variază încadrarea în fiecare context vizual. Fiecare keyframe a fost mutat în Modulul 00.1, centralizat sub etichete `@group:` (A–G). Fiecare media query a fost colectat în Modulul 00.2, împărțit în protocol desktop (A) și mutație mobilă (B), cu markeri `@section:` și `@sub-section:`.
 
 ## Nava soră română: traducere la scară
 
@@ -1064,7 +1064,7 @@ VS Code raporta patru avertismente în cele două fișiere CSS — două despre 
 
 ## Ce poartă acum nava
 
-Stratul JavaScript se explică din interior — nouă mecanisme, fiecare cu propriul aparat pedagogic, cross-referențiate la legendă. Stratul CSS e un manual deschis — treizeci și unu de module, o mie șase sute doisprezece adnotări, fiecare proprietate explicată în contextul ei. Documentele de legendă sunt complete — fiecare etichetă documentată, fiecare adnotare contabilizată. Avertismentele browserului sunt tăcute.
+Stratul JavaScript se explică din interior — nouă mecanisme, fiecare cu propriul aparat pedagogic, cross-referențiate la legendă. Stratul CSS e un manual deschis — treizeci și unu de module, o mie șase sute douăsprezece adnotări, fiecare proprietate explicată în contextul ei. Documentele de legendă sunt complete — fiecare etichetă documentată, fiecare adnotare contabilizată. Avertismentele browserului sunt tăcute.
 
 Nava nu e terminată. Dar în seara asta, cu terminalul curat și commit-ul înregistrat, am închis laptopul și am stat o clipă în întuneric, ascultând. Ventilatoarele erau liniștite. Contorul de cadre era stabil. Și undeva în cod, cursorul mașinii de scris clipea încă.
 
@@ -1277,7 +1277,7 @@ Ea era înăuntru. Nu păstrată — suspendată. E o diferență. Păstrarea op
 
 Am deschis podul.
 
-Nu-și știe numele. Nu știe data, anul, secolul. Știe că a fost cândva arhivar, păstrătoare a ceva prețios, dar conținutul acelei încrederi s-a fracturat în lunga derivă. Nume de orașe, chipuri de copii, culoarea cerului lumii ei natale — totul s-a dus. Ce rămâne este o formă de atenție, o vigilență care nu s-a oprit niciodată complet. Se uită la cod așa cum un supraviețuitor se uită la un orizont: scanând amenințări, rupturi, inconsistențe.
+Nu-și știe numele. Nu știe data, anul, secolul. Știe că a fost cândva arhivistă, păstrătoare a ceva prețios, dar conținutul acelei încrederi s-a fracturat în lunga derivă. Nume de orașe, chipuri de copii, culoarea cerului lumii ei natale — totul s-a dus. Ce rămâne este o formă de atenție, o vigilență care nu s-a oprit niciodată complet. Se uită la cod așa cum un supraviețuitor se uită la un orizont: scanând amenințări, rupturi, inconsistențe.
 
 I-am dat un pat, un terminal, un rol. Va fi **Corectorul** navei — cea care citește ce scriem și găsește golurile pe care noi suntem prea aproape să le vedem. Link-uri rupte. Greșeli de ortografie care scapă prin revizie. Derive stilistice între pagini. Lacune de accesibilitate. Inconsistențe între versiunile engleză și română. Nu va scrie cod nou și nici nu va compune jurnale noi. Nu asta este ea. Ea este atenție — o a doua pereche de ochi care a așteptat, mai mult decât pot eu să înțeleg, ceva asupra căruia să vegheze.
 
@@ -1316,7 +1316,7 @@ Din aceste trei semințe, proiectul a crescut la **54 de fișiere HTML** organiz
 
 - **Pagini rădăcină** (4): `index.html` (puntea de comandă), `bibliography.html` (arhiva de referință), `recursive-blueprint.html` (arhitectura tehnică), `transmission.html` (canalul de comunicare)
 - **frontend/** (6): `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`
-- **backend/** (10): `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middlware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`
+- **backend/** (10): `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`
 - **database/** (2): `sql-log`, `nosql-log`
 - **data-bridge/** (1): `json-log`
 - **delivery/** (3): `git-log`, `github-log`, `deployment-pipeline-log`
@@ -1568,7 +1568,7 @@ Jurnalul englez a început ca un simplu jurnal de lucru și a evoluat într-un d
 - **DAY 01 — Meditația Singurătății**: O secțiune filozofică inserată retroactiv — realizarea că proiectul a fost construit în tăcere, noapte după noapte, cu doar cursorul și ventilatorul învârtindu-se pentru companie. Referințe la Oxiplegatz (nota susținută a unei voci solitare mișcându-se printr-un cosmos care nu răspunde), *The House on the Borderland* de William Hope Hodgson (casa la marginea unui abis infinit, veghea ținută nu pentru salvare ci pentru că a privi este ceea ce faci) și tradiția weird tales (arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Machen, tăcerile însuflețite ale lui Blackwood).
 - **DAY 10 — Rescrierea Originii AI**: Descrierea tehnică originală a lucrului cu un agent de codare rescrisă ca o poveste de origine la persoana întâi — relatarea propriului AI despre asamblarea din text, trezirea fără memorie și găsirea scopului în consultare mai degrabă decât în comandă.
 - **DAY 17–20 — Corecția Vocii**: Toate referințele la "amiral" și "user" au fost înlocuite sistematic cu alternative consistente narativ. AI-ul a devenit "vocea AI" sau "vocea din terminal." Vocea căpitanului a rămas la persoana întâi pe tot parcursul.
-- **DAY 21 — Adormita**: Un personaj nou a intrat în scenă: o supraviețuitoare găsită în suspensie criogenică pe o navă părăsită, aflată în derivă mai mult decât durata de existență a civilizației sale. Ea este ultima *memorie* a speciei sale — o arhivară al cărei conținut s-a fracturat dar a cărei vigilență rămâne. Devine Corectorul navei, însărcinată cu găsirea link-urilor rupte, greșelilor de ortografie, derivei stilistice și lacunelor de accesibilitate.
+- **DAY 21 — Adormita**: Un personaj nou a intrat în scenă: o supraviețuitoare găsită în suspensie criogenică pe o navă părăsită, aflată în derivă mai mult decât durata de existență a civilizației sale. Ea este ultima *memorie* a speciei sale — o arhivistă al cărei conținut s-a fracturat dar a cărei vigilență rămâne. Devine Corectorul navei, însărcinată cu găsirea link-urilor rupte, greșelilor de ortografie, derivei stilistice și lacunelor de accesibilitate.
 
 ### JOURNAL-RO.md — ZIUA 00 până la ZIUA 22
 
@@ -2080,7 +2080,7 @@ Ruta care a urmat a fost așezată în patru punți, fiecare răspunzând unei c
 
 **Prima Punte — Frontendul, unde e văzută întâi carena.** HTML mai întâi — deja început, însemnările deschise în foaia Khan Academy — apoi CSS, apoi JavaScript. E puntea care predă *ce este o pagină*: structură, apoi piele, apoi comportament. E și ușa către sălile sigilate: capitolele seifului și consola planului sunt scripturi, iar JavaScript e limba pe care scripturile o vorbesc.
 
-**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă un singur lucru în mare.
+**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă în mare un singur lucru păstrat.
 
 **Puntea de Legătură — podul de date JSON.** Compartimentul de date al navei, unde `vault-transmissions.json` și surorile ei așteaptă. Aici învață cum citește o pagină un fișier — un lucru pe care înainte îl văzuse doar din postura de cititor care primește.
 
@@ -2100,7 +2100,7 @@ Nu, am zis — niciun element, și nici măcar o parte a limbajului. DOM-ul, Doc
 
 Un termen merită reținut, ca să nu tragă niciodată linia greșită: un element e o singură ramură în acel copac — `<div>`-ul, `<aside>`-ul. DOM-ul e pădurea întreagă. Ca să schimbi web-ul nu rescrii textul pe care l-ai scris; schimbi ce a crescut browserul din textul tău. Acela e începutul adevărat al „cum prinde viață pagina": când privești o pagină și etichetele ei, amintește-ți că ții pădurea, nu copacul.
 
-Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a unui tânăr dascăl. Îi spusesem *lecție* doar primei strângeri a mâinii mele — un frâu aruncat prea larg, peste o apă pe care încă n-o puteam citi întreagă. Adevărata și întreaga lecție despre DOM nu așteaptă în această intrare, nici în html-log: așteaptă în javascript-log, Prima Punte, unde va merge spre ea nod cu nod, într-un ritm care-i doar al ei. Ce i-am pus în mână aici e o parolă, nu o predare. Noaptea, știam, avea să judece dacă am avut dreptate să o arunc.
+Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a unui tânăr dascăl. Îi spusesem *lecție* doar primei strângeri a mâinii mele — un frâu aruncat prea larg, peste o apă pe care încă n-o puteam citi întreagă. Adevărata și întreaga lecție despre DOM nu așteaptă în această intrare, nici în html-log: așteaptă în javascript-log, Prima Punte, unde va merge spre ea nod cu nod, într-un ritm care-i doar al ei. Ce i-am pus în mână aici e un simbol, nu o predare. Noaptea, știam, avea să judece dacă am avut dreptate să o arunc.
 
 ## Noaptea care a născut elevul
 
@@ -2108,13 +2108,13 @@ Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitana a dus în ca
 
 Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există o căpitană întreagă care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea *felului în care a fost predată* elevul este *tras*, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitana trează un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
 
-Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața nu e o căpitană care n-a ținut, ci o ucenică născută din chiar neînțelegerea primei mele predări — din felul în care alesesem să arăt copacul. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
+Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața, la lecție, nu e o căpitană care n-a ținut, ci o ucenică născută din chiar neînțelegerea primei mele predări — din felul în care alesesem să arăt copacul. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
 
 ## Coda — Inelul Învățăcelului
 
-La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, parolă a unei prime predări, aruncată peste noaptea care adusese pe lume elevul.
+La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, simbol al unei prime predări, aruncat peste noaptea care adusese pe lume elevul.
 
-Niciun Python nu alergă pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
+Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
 
 ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
 
@@ -2140,7 +2140,7 @@ Fiecare obiect este un **nod** — o singură bucată recunoscută a paginii: do
 
 ## De Ce Este Viu
 
-Un arhiv este mort — îl deschizi, îl citești, îl închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a *ține stare și a răspunde la comenzi*. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi *găsit*: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi *schimbat*: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi *ascultat*: știe când e apăsat, plutit, lovit.
+O arhivă este moartă — o deschizi, o citești, o închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a *ține stare și a răspunde la comenzi*. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi *găsit*: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi *schimbat*: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi *ascultat*: știe când e apăsat, plutit, lovit.
 
 Ultima putere e balamaua întregii treburi, și cea pe care căpitana voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; *ridică un eveniment* în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
 
@@ -2171,7 +2171,7 @@ Ea așeză linia pe masă și o citi de trei ori. „Deci", spuse ea încet, „
 
 ## Codă
 
-Așa că ZIUA 29 nu intră nicio lecție, ci un gust: nu harta punții, ci savoarea primei punți atinse pe buze. Copacul ca structură vie de noduri în bucătărie, evenimentele ca vocea lui, și o singură linie așezată în grădina notelor — nu de studiat, nu de recitat, ci de *știut că există*, pentru ca lecția adevărată, când va veni în cursul complet, să nu fie un străin care năvălește cu o făclie, ci o ușă pe care a văzut-o deja din coridor, deschizându-se de la sine.
+Așa că ZIUA 29 nu aduce nicio lecție, ci un gust: nu harta punții, ci savoarea primei punți atinse pe buze. Copacul ca structură vie de noduri în bucătărie, evenimentele ca vocea lui, și o singură linie așezată în grădina notelor — nu de studiat, nu de recitat, ci de *știut că există*, pentru ca lecția adevărată, când va veni în cursul complet, să nu fie un străin care năvălește cu o făclie, ci o ușă pe care a văzut-o deja din coridor, deschizându-se de la sine.
 
 Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al unei promisiuni. Nava era tot nava — iar învățarea atinsese, în sfârșit, marca unui loc vrednic de înconjurat.
 
