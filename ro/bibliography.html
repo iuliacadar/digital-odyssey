@@ -1,193 +1,179 @@
 <!DOCTYPE html>
 <!-- @block:
-  <!DOCTYPE html> trebuie s? fie primul token al fiec?rui document
-  HTML, înaintea oric?rui con?inut sau comentariu, conform
-  specifica?iei. Activeaz? modul standard de randare.
+  <!DOCTYPE html> trebuie să fie primul token al fiecărui document HTML,
+  înaintea oricărui conținut sau comentariu, conform specificației.
+  Activează modul standard de randare, care oferă un comportament
+  predictibil al browserului, în locul modului quirk.
 -->
 
 <html lang="ro">
   <!-- @block:
     Elementul rădăcină al documentului.
-    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
-    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele de procesare automată.
+    Atributul lang="ro" declară că limba principală a acestei pagini este
+    româna. Automatizele de accesibilitate, motoarele de căutare și sistemele
+    de procesare automată citesc acest atribut.
+
+    Mașina de desenat pagina (bibliography.js) citește exact această
+    valoare: dacă găsește "ro", afișează cuvintele în română; dacă găsește
+    "en", afișează în engleză. Un singur motor servește ambele versiuni —
+    exact ca o singură sursă ce adăpostește datele.
   -->
   <head>
     <!-- @block:
-      <head> conține metadatele documentului.
-      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
-      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
+      <head> conține metadatele documentului. Aici nu plasez conținutul
+      principal vizibil, ci informațiile de care browserul are nevoie
+      pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
-            <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <!-- @meta:
-      Setez codarea caracterelor la UTF-8.
-      Aceasta asigură afișarea corectă a diacriticelor, simbolurilor speciale și caracterelor internaționale.
+      Setez codarea caracterelor la UTF-8. Aceasta asigură afișarea corectă
+      a diacriticelor și a caracterelor internaționale.
 
-      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
-      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
-      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
-      ?i textul se va afi?a gre?it.
+      Meta-tagul <meta charset="UTF-8" /> trebuie să fie în primii 1024 de
+      octeți, ca browserul să-l detecteze înainte de parsare. Dacă nu îl
+      găsește, poate folosi o codificare implicită greșită, iar textul se
+      va afișa incorect.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
-      În proiectele moderne are o utilitate practică redusă, dar o păstrez aici dacă vreau
-      să păstrez structura clasică a unui head de bază.
+      Instrucțiune legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are o utilitate practică redusă, dar o păstrez
+      pentru a păstra structura clasică a head-ului de bază.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
       Configurez viewport-ul pentru afișare responsive.
-      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
-      iar initial-scale=1.0 pornește fără zoom artificial.
+      width=device-width aliniază lățimea paginii cu lățimea reală a
+      ecranului, iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
     <title>D::0dy55ey | Arhivele Adâncului</title>
     <!-- @meta:
-      Titlul paginii.
-      Îl văd în fila browserului, în bookmark-uri și uneori în rezultatele motoarelor de căutare.
+      Titlul paginii. Îl văd în fila browserului, în bookmark-uri și,
+      uneori, în rezultatele motoarelor de căutare.
     -->
 
     <meta
       name="description"
-      content="Arhivele Adâncului — Referințe Cartografiate. Un catalog indexat complet al tuturor resurselor externe, referințelor și semnalelor din Web-Sferă care ghidează vasul D::0dy55ey prin toate cele șase volume: Frontend Core, Data Bridge, Backend Sector, Database Void, UX Lab și Delivery Deck."
+      content="Arhivele Adâncului — Referințe Cartografiate. Un catalog viu al tuturor semnalelor din Web-Sferă, citit la rulare din indexul JSON partajat."
     />
     <!-- @meta:
-      Descrierea paginii.
-      O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
-      dar motoarele de căutare o pot folosi ca text descriptiv.
+      Descrierea paginii. O folosesc ca rezumat scurt al conținutului;
+      nu este direct vizibilă, dar motoarele de căutare o pot folosi ca
+      text descriptiv.
     -->
 
     <meta
       name="keywords"
-      content="bibliografie, referințe, resurse web, frontend, backend, bază de date, ux, devops, livrare, CI/CD, D::0dy55ey, odisee digitală"
+      content="bibliografie, referințe, resurse web, frontend, backend, bază de date, ux, devops, livrare, JSON, fetch, D::0dy55ey, odisee digitală"
     />
     <!-- @meta:
-      Meta-tagul keywords enumeră temele principale ale proiectului.
-      Motoarele de căutare nu se mai bazează pe el pentru clasare, dar rămâne un
-      rezumat util, auto-documentat, al domeniului paginii și un exemplu didactic al tagului în sine.
+      Meta-tagul keywords enumeră temele principale. Motoarele de căutare
+      nu se mai bazează pe el pentru clasare, dar rămâne un rezumat util
+      și auto-documentat al domeniului paginii.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
     <!-- @meta:
       Meta-tagul author declară cine a creat și întreține acest document.
-      Este un câmp standard de metadate care identifică creatorul operei.
     -->
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- @path:
-      Legătura către manifestul aplicației web. Firefox citește theme_color din manifest
-      mai degrabă decât din meta-tag, așadar aceasta asigură suport consistent pentru
-      theme-color în toate browserele moderne, inclusiv Firefox.
+      Legătura către manifestul aplicației web. Firefox citește theme_color
+      din manifest și nu din meta-tag; de aceea această legătură asigură
+      consistența theme-color în toate browserele moderne.
     -->
-
 
     <meta property="og:title" content="D::0dy55ey | Arhivele Adâncului" />
     <!-- @meta:
-      Titlu Open Graph.
-      Când linkul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
-      acest text apare ca titlu al cardului, în locul URL-ului brut.
+      Titlu Open Graph. Când pagina este distribuită, acest text apare ca
+      titlu al cardului, în locul URL-ului brut.
     -->
 
     <meta
       property="og:description"
-      content="Arhivele Adâncului — Referințe Cartografiate. Un catalog indexat complet al tuturor resurselor externe, referințelor și semnalelor din Web-Sferă care ghidează vasul D::0dy55ey prin toate cele șase volume."
+      content="Arhivele Adâncului — Referințe Cartografiate. Un catalog interactiv al tuturor semnalelor din Web-Sferă, cusut, la rulare, din indexul JSON partajat."
     />
     <!-- @meta:
-      Descriere Open Graph.
-      Este rezumatul însoțitor afișat sub titlul Open Graph pe cardurile distribuite.
-      O păstrez aliniată cu meta descrierea pentru consistență.
+      Descrierea Open Graph. Este rezumatul însoțitor afișat sub titlul
+      Open Graph pe card-urile distribuite.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
-      Tip Open Graph.
-      Declar această pagină ca website, tipul general pentru pagini HTML standard.
-      Pentru intrări de jurnal, aș putea folosi "article" în funcție de natura conținutului.
+      Tip Open Graph. Declar pagina ca website, tipul general pentru
+      pagini HTML standard.
     -->
 
-    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/bibliography.html" />
+    <meta
+      property="og:url"
+      content="https://iuliacadar.github.io/digital-odyssey/ro/bibliography.html"
+    />
     <!-- @meta:
-      URL canonic Open Graph.
-      Când pagina este distribuită, acest lucru spune platformelor adresa exactă și permanentă a acestei pagini.
-      Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
+      URL canonic Open Graph: adresa exactă și permanentă a paginii.
     -->
 
     <meta property="og:locale" content="ro_RO" />
     <!-- @meta:
-      Localizare Open Graph.
-      o setez la ro_RO pentru versiunea în limba română a paginii.
-      Acest lucru spune platformelor sociale și agregatoarelor limba și varianta regională a conținutului.
+      Localizare Open Graph: ro_RO pentru versiunea română a paginii.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
-      Numele site-ului Open Graph.
-      Acesta este numele general al proiectului afișat pe cardurile de distribuire socială,
-      astfel încât publicul să știe cărei pagini îi aparține site-ul.
+      Numele site-ului Open Graph: numele general al proiectului.
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
       Culoarea de fundal Open Graph.
-      Unele suprafețe de distribuire o folosesc pentru a nuanța cardul de previzualizare
-      cu paleta de spațiu adânc a proiectului.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
-      Imagine Open Graph.
-      Este imaginea de previzualizare folosită pe cardurile distribuite. O îndrept către favicon
-      din folderul de limbă corespunzător ca substituent stabil, mereu disponibil,
-      până când există o captură dedicată pentru fiecare pagină.
+      Imagine Open Graph: favicon-ul din folderul de limbă, ca substituent
+      stabil până când vor exista imagini dedicate.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <!-- @meta:
-      Tip card Twitter.
-      Aleg summary_large_image pentru ca linkurile distribuite pe X/Twitter să afișeze
-      o previzualizare mare de imagine împreună cu titlul și descrierea.
+      Tipul card-ului pe X/Twitter.
     -->
 
-    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/bibliography.html" />
+    <link
+      rel="canonical"
+      href="https://iuliacadar.github.io/digital-odyssey/ro/bibliography.html"
+    />
     <!-- @meta:
-      Link canonic.
-      Spun motoarelor de căutare că acest URL este versiunea autoritară a paginii.
-      Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de clasare.
+      Link-ul canonic: versiunea autoritativă a paginii pentru căutare.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Meta-tag robots.
-      Permit motoarelor de căutare să indexeze această pagină și să urmeze linkurile sale,
-      ceea ce este comportamentul implicit și așteptat pentru conținut public.
+      Meta-tag robots: permit motoarelor de căutare să indexeze pagina.
     -->
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <!-- @path:
-      Legătura către favicon-ul paginii.
-      Calea este relativă la locația fișierului curent.
-      Browserul caută favicon.svg în folderul corespunzător.
+      Favicon-ul paginii.
     -->
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      Legătura către Apple Touch Icon pentru dispozitive iOS.
-      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată pe ecranul de pornire
-      sau afișată ca aplicație web. Reutilizez același favicon.svg ca sursă a pictogramei.
+      Pictograma pentru iOS.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      Încep conexiunea la serverul de fonturi devreme.
-      Scopul este de a reduce latența la încărcarea resurselor externe.
+      Reduc latența conectării devreme la serverul de fonturi.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      Mă preconnectez la domeniul care servește fișierele de font propriu-zise.
-      crossorigin este necesar pentru resursele externe servite de pe o altă origine.
+      Preconexiunea la domeniul fișierelor de font propriu-zise.
     -->
 
     <link
@@ -195,109 +181,101 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      Încarc fontul Space Grotesk de la Google Fonts.
-      display=swap spune browserului să folosească un font de rezervă temporar până când se încarcă fontul final.
+      Încarc Space Grotesk de la Google Fonts.
     -->
 
     <link rel="stylesheet" href="./style.css" />
     <!-- @path:
-      Legătura către foaia de stil locală.
-      Calea este relativă la locația fișierului curent.
+      Foaia de stil locală.
     -->
   </head>
 
   <body class="module-view">
     <!-- @reason:
       Clasa "module-view" aplică tema vizuală de pagină secundară:
-      lățime mai îngustă a conținutului, suprapunere CRT scanline și un fundal
-      ușor mai întunecat pentru a distinge această arhivă de date de puntea principală de comandă.
+      lățime mai îngustă a conținutului, suprapunere CRT scanline și un
+      fundal ușor mai întunecat — pentru a distinge această arhivă de puntea
+      principală de comandă.
     -->
 
-    <!-- @block: BARA DE NAVIGARE A ARHIVELOR
-      Consola HUD de sus pentru pagina de bibliografie. Logo-ul identifică aceasta
-      ca secțiunea "Arhivele Adâncului", iar navigația oferă o singură comandă:
-      întoarcerea la puntea de comandă (pagina index).
+    <!-- @block: BARA DE NAVIGARE A ARHIVEI
+      Consola HUD de sus a paginii de bibliografie.
     -->
     <nav class="navbar">
-      <!-- @block: IDENTITATEA TERMINALULUI
-        Blocul logo afișează indicativul vasului și numele secțiunii curente.
-        Este text static (nu un link) deoarece această pagină este ea însăși o stație
-        a navei; echipajul își citește locația aici.
-      -->
       <div class="logo">D::0dy55ey / Arhivele Adâncului</div>
 
-      <!-- @block: COMENZI DE NAVIGAȚIE
-        Lista nav-links conține acțiunile principale de navigație.
-        Pe paginile secundare, este oferită o singură comandă: întoarcerea la punte.
-      -->
       <ul class="nav-links">
         <li>
           <a href="index.html" class="return-btn"
-            ><!-- @reason:
-              Simbolul săgeții stânga (←) acționează ca un indiciu vizual de întoarcere.
-              "Înapoi la Puntea de Comandă" trimite la index.html, puntea principală a navei-mamă.
-            -->← Înapoi la Puntea de Comandă</a
+            >← Înapoi la Puntea de Comandă</a
           >
         </li>
       </ul>
     </nav>
 
     <!-- @block: CONȚINUT PRINCIPAL — ARHIVELE ADÂNCULUI
-      Elementul <main> înfășoară cele șase secțiuni de resurse. Fiecare secțiune
-      corespunde unui volum al arhitecturii D::0dy55ey. Fiecare secțiune conține
-      un tabel data-grid care listează numele sursei, URL-ul său și statusul
-      curent al misiunii (In Progress, Active, Locked).
-      @concept:
-        Aceasta este arhiva centrală de navigație a navei. Fiecare semnal din
-        Web-Sferă pe care căpitanul l-a consultat, îl consultă sau plănuiește
-        să îl consulte este cartografiat aici — organizat pe sectoare, astfel
-        încât echipajul să poată găsi referințele relevante din orice pagină
-        de jurnal prin linkuri ancora.
+      <main> înfășoară cele șase secțiuni de resurse plus o secțiune de
+      închidere „meta“. Fiecare secțiune corespunde unui volum al
+      arhitecturii D::0dy55ey. Fiecare conține un tabel data-grid — dar
+      rândurile nu se mai scriu cu mâna în fișier. HTML-ul ține scheletul
+      (<table>, <thead>, etichetele de coloană), iar <tbody> GOL este
+      umplut de mașina partajată (bibliography.js) care citește indexul JSON.
     -->
     <main class="main-container">
-      <!-- @block: ANTETUL ARHIVELOR -->
       <header class="category-header">
         <h2>Arhivele Adâncului — Referințe Cartografiate</h2>
-        <!-- @concept:
-          Titlul încadrează bibliografia ca pe o hartă de navigație — nu o listă
-          seacă de URL-uri, ci o hartă stelară vie a fiecărui semnal care ghidează
-          vasul prin vidul digital. "Referințe Cartografiate" face ecou limbajului
-          cartografilor cerești din secolul al XVII-lea care au mapat ceruri neexplorate.
-        -->
-        <p>Un catalog complet indexat al tuturor semnalelor primite din Web-Sferă, organizat pe sectoare de volum.</p>
+        <p>
+          Catalogul complet indexat al tuturor semnalelor primite din Web-Sferă,
+          organizat pe sectoare de volum. Rândurile de mai jos nu sunt scrise de
+          mână — sunt cusute la fliecare vizită de mașina JSON.
+        </p>
       </header>
 
+      <!-- @pedagogy: DE LA CUSUTUL CU MÂNA LA MAȘINA DE CUSUT
+           Lecția paginii, spusă o dată, sus:
+
+           Înainte, fiecare rând din tabele era scris cu mâna, direct în
+           fișierul HTML, un <tr> după altul:
+
+             <tr>
+               <td>MDN Web Docs — HTML</td>
+               <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                      target="_blank" rel="noopener">Doar Referință</a></td>
+               <td>Activ</td>
+             </tr>
+
+           Acum pagina are DOUĂ feluri de țesătură:
+
+           1. cea FIXă — nu se schimbă: <table>, <thead> cu <th>, titlurile,
+              legenda. Acestea rămân scrise aici, manual, pentru că sunt oasele.
+           2. cea CARE CURGE — conținutul <tbody>-urilor. Nu se mai scrie aici;
+               mașina bibliography.js ia fișierul comun
+               shared/data/bibliography-links.json și creează fiecare <tr>
+               la rulare, în browserul vizitatorului.
+           → vezi ../shared/js/bibliography.js pentru fiecare detaliu.
+
+           În inspectorul de elemente (DevTools), vei vedea <tbody>-ul prinzând
+           viață: rânduri pe care nimeni nu le-a tastat în fișier.
+      -->
+
       <!-- ================================================================
-           SEC�IUNEA I: FRONTEND CORE
-           Ancoră: #frontend-refs
+           SECȚIUNEA I: FRONTEND CORE
+           Ancore: #frontend-refs
            ================================================================ -->
       <section id="frontend-refs" class="log-entry">
-        <!-- @structure:
-          Fiecare secțiune folosește un ID care se potrivește cu ancora volumului său.
-          Paginile de jurnal care aparțin acestui volum (de ex. html-log.html, css-log.html)
-          pot trimite direct la această ancoră din footer-ul lor:
-            🛰️ Referințe Astrogare → Sectorul Frontend Core
-        -->
         <h3>I. Frontend Core</h3>
-        <!-- @reason:
-          Secțiunea I acoperă tehnologiile fundamentale ale stratului vizibil pentru utilizator:
-          HTML pentru structură, CSS pentru stil, JavaScript pentru comportament
-          și framework-urile React/Angular pentru arhitectură bazată pe componenete.
-        -->
 
-        <!-- @pedagogy: PRIMER TABEL HTML
-          Acesta este primul meu element <table> din proiect. Structura este:
-            <table>       → containerul întregii grile
-            <thead>       → grupul de rânduri de antet (etichetează fiecare coloană)
-            <tbody>       → grupul de rânduri de corp (toate rândurile de date)
-            <tr>          → un singur rând (table row)
-            <th>          → o celulă de antet (îngroșată, centrată implicit)
-            <td>          → o celulă de date (greutate normală, aliniată stânga)
-            colspan="3"   → face o celulă să se întindă pe 3 coloane (folosit mai
-                            târziu pentru sub-anteturile cluster-label)
-          Folosesc clase precum "data-grid" pentru stilizare; clasa nu schimbă
-          modul în care browserul redă tabelul implicit — doar se agață de
-          reguli CSS care transformă aspectul vizual.
+        <!-- @pedagogy: ANATOMIA TABELULUI — încă scrisă manual, corect
+          Un <table> se alcătuiește din containere și etichete:
+            <table>     → containerul întregului
+            <thead>     → grupul de antet (etichetele coloanelor)
+            <tr>        → un rând (creat astăzi de JS, nu tastat)
+            <th>        → o etichetă de hologramă (îngroșată implicit)
+            <td>        → o celulă de date (creată de JS din JSON)
+            <colspan>   → o celulă care depășește mai multe coloane (mașina
+                          îl folosește la rândurile de separare între tipuri)
+          <tbody data-shelf="frontend"> → grup de date. GOL DE INTENȚIE:
+          este cadrul pe care mașina îl va umple.
         -->
         <table class="data-grid">
           <thead>
@@ -306,197 +284,22 @@
               <th>Frecvență (URL)</th>
               <th>Statusul Misiunii</th>
             </tr>
-            <!-- @reason:
-              Antetul tabelului etichetează fiecare coloană: numele resursei, linkul și
-              statusul de progres. Acest format cu trei coloane este reutilizat în toate
-              secțiunile pentru consistență.
-            -->
           </thead>
-          <tbody>
-            <!-- @block: MDN Web Docs — HTML
-              @pedagogy: CE ESTE MDN?
-                MDN (Mozilla Developer Network) este cea mai autoritară sursă de
-                documentație pentru tehnologiile web deschise — HTML, CSS,
-                JavaScript și altele. Este întreținut de Mozilla și comunitatea web.
-                Când am o îndoială despre cum funcționează un tag, o proprietate sau
-                o API, MDN este primul loc unde verific. îl marchez ca
-                "Doar Referință" pentru că nu este un curs pe care îl parcurg —
-                este un dicționar pe care îl consult zilnic.
+          <tbody data-shelf="frontend">
+            <!-- @reason:
+              Un <tbody> gol. Atributul data-shelf="frontend" spune mașinii
+              ce categorie de intrări să scrie în acest cadru. După încășcare,
+              inspectorul va arăt rânduri care nu există în fișier.
             -->
-            <tr>
-              <td>MDN Web Docs — HTML</td>
-              <td>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">Doar Referință</a>
-                <!-- @pedagogy: TAGUL <a> (ANCORĂ / HIPERLINK)
-                  Elementul <a> creează un hyperlink pe care se poate da click.
-                  href="..." determină unde duce linkul.
-                  Textul dintre <a> și </a> este ceea ce utilizatorul vede și pe ce dă click.
-                  Scriu "Doar Referință" aici în locul URL-ului complet pentru că
-                  antetul coloanei spune deja "Frecvență (URL)" — utilizatorul
-                  știe că este un link.
-                  @reason:
-                    target="_blank" deschide linkul într-o filă nouă de browser, pentru ca
-                    echipajul să nu navigheze departe de Arhivele Adâncului.
-                    rel="noopener" este o precauție de securitate: fără el, pagina de
-                    destinație ar putea accesa fereastra paginii sursă prin
-                    window.opener și ar putea redirecționa către un site malițios.
-                    Repet acest model pe fiecare link extern din tabel.
-                -->
-              </td>
-              <td>Activ</td>
-              <!-- @reason:
-                "Activ" înseamnă că resursa este consultată continuu ca
-                referință, spre deosebire de "În Progres" (lucrez în mod activ
-                prin ea) sau "Blocat" (planificată dar neîncepută încă).
-              -->
-            </tr>
-            <!-- @block: MDN Web Docs — CSS -->
-            <tr>
-              <td>MDN Web Docs — CSS</td>
-              <td>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: MDN Web Docs — JavaScript -->
-            <tr>
-              <td>MDN Web Docs — JavaScript</td>
-              <td>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: freeCodeCamp — Responsive Web Design
-              @pedagogy: CE ESTE freeCodeCamp?
-                freeCodeCamp este o platformă de învățare interactivă, gratuită.
-                Citești o lecție scurtă, apoi scrii cod în browser pentru a rezolva
-                o provocare. Certificarea Responsive Web Design predă HTML
-                și CSS de la zero absolut — este punctul meu de plecare pentru
-                volumul Frontend Core.
-            -->
-            <tr>
-              <td>freeCodeCamp — Responsive Web Design</td>
-              <td>
-                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>În Progres</td>
-              <!-- @reason:
-                "În Progres" semnalează că această resursă este în curs de
-                parcurs ca parte a unui curriculum sau tutorial activ.
-              -->
-            </tr>
-            <!-- @block: freeCodeCamp — JavaScript Algorithms
-              @pedagogy:
-                A doua pistă freeCodeCamp se concentrează pe JavaScript: variabile,
-                bucle, funcții, array-uri, obiecte și gândire algoritmică.
-                îl marchez "Blocat" pentru că îl voi începe doar după ce termin
-                certificarea Responsive Web Design — câte o expediție la un moment dat.
-            -->
-            <tr>
-              <td>freeCodeCamp — JavaScript Algorithms &amp; Data Structures</td>
-              <td>
-                <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-              <!-- @reason:
-                "Blocat" înseamnă că resursa este programată pentru explorare viitoare
-                dar nu a fost încă începută. Se redă în chihlimbar-auriu prin
-                stilizarea .future-log când tr-ul părinte poartă clasa.
-              -->
-            </tr>
-            <!-- @block: JavaScript.info
-              @pedagogy: CE ESTE JavaScript.info?
-                JavaScript.info este un tutorial modern și aprofundat pentru JavaScript.
-                Acoperă de la bază (variabile, tipuri de date) până la subiecte
-                avansate (promisiuni, async/await, closure-uri, module).
-                Spre deosebire de freeCodeCamp care este bazat pe provocări, acesta
-                este de tip citește-și-înțelege — lucrez prin el în propriul ritm.
-            -->
-            <tr>
-              <td>JavaScript.info</td>
-              <td>
-                <a href="https://javascript.info/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>În Progres</td>
-            </tr>
-            <!-- @block: CSS-Tricks
-              @pedagogy: CE ESTE CSS-Tricks?
-                CSS-Tricks este un blog și un almanah de lungă durată dedicat CSS-ului.
-                Secțiunea sa "Almanac" este un index căutabil al fiecărei proprietăți CSS
-                cu exemple, note de suport în browsere și sfaturi practice.
-                îl marchez "Activ" pentru că îl consult regulat împreună cu MDN.
-                &amp; din textul afișat este o entitate HTML — vezi legenda
-                din footer pentru o explicație a entităților.
-            -->
-            <tr>
-              <td>CSS-Tricks (Almanac &amp; Guides)</td>
-              <td>
-                <a href="https://css-tricks.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: W3Schools
-              @pedagogy: CE ESTE W3Schools?
-                W3Schools este unul dintre cele mai vechi site-uri de referință pentru
-                dezvoltare web. Oferă explicații simple, prietenoase pentru începători,
-                cu editoare "încearcă singur". Unii developeri îl critică pentru că este
-                incomplet sau învechit, dar este util ca o primă privire rapidă asupra
-                unui subiect. Verific încrucișat orice lucru important împotriva MDN.
-            -->
-            <tr>
-              <td>W3Schools</td>
-              <td>
-                <a href="https://www.w3schools.com/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: Documentația React
-              @pedagogy: CE ESTE REACT?
-                React este o bibliotecă JavaScript pentru construirea de interfețe
-                utilizator folosind componente reutilizabile. Este întreținută de Meta (Facebook).
-                react.dev este documentația oficială. îl marchez "Blocat"
-                pentru că am nevoie de fundații solide de JavaScript înainte să pot
-                învăța React — nu se construiește pe nisip.
-            -->
-            <tr>
-              <td>Documentația React</td>
-              <td>
-                <a href="https://react.dev/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @block: Documentația Angular
-              @pedagogy: CE ESTE ANGULAR?
-                Angular este un framework TypeScript la scară completă pentru construirea
-                de aplicații web. Este întreținut de Google. Spre deosebire de React (doar o
-                bibliotecă), Angular oferă o soluție completă: rutare, formulare,
-                client HTTP, injecție de dependențe. îl marchez "Blocat" — este o
-                expediție viitoare după ce stăpânesc React.
-            -->
-            <tr>
-              <td>Documentația Angular</td>
-              <td>
-                <a href="https://angular.dev/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
           </tbody>
         </table>
       </section>
 
       <!-- ================================================================
            SECȚIUNEA II: DATA BRIDGE
-           Ancoră: #data-bridge-refs
+           Andocare: #data-bridge-refs
            ================================================================ -->
       <section id="data-bridge-refs" class="log-entry">
-        <!-- @structure:
-          Secțiunea Data Bridge face tranziția între volumele de frontend și backend.
-          Cataloghează resurse despre JSON, design API și formate de transfer de date —
-          moneda universală care circulă între straturi.
-          @theme:
-            Această secțiune folosește tonuri de accent chihlimbariu moștenite din contextul
-            său părinte (clasa bridge-volume) pentru a se distinge de secțiunile standard.
-        -->
         <h3>II. Data Bridge</h3>
 
         <table class="data-grid">
@@ -507,75 +310,21 @@
               <th>Statusul Misiunii</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: JSON.org -->
-            <tr>
-              <td>JSON.org</td>
-              <td>
-                <a href="https://www.json.org/json-en.html" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: MDN — Working with JSON -->
-            <tr>
-              <td>MDN Web Docs — Lucrul cu JSON</td>
-              <td>
-                <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: JSON Schema -->
-            <tr>
-              <td>JSON Schema</td>
-              <td>
-                <a href="https://json-schema.org/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @block: RESTful API Guides -->
-            <tr>
-              <td>Tutorial REST API</td>
-              <td>
-                <a href="https://restapitutorial.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @block: Postman Learning Center -->
-            <tr>
-              <td>Centrul de Învățare Postman</td>
-              <td>
-                <a href="https://learning.postman.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @block: Swagger / OpenAPI -->
-            <tr>
-              <td>Swagger / Specificația OpenAPI</td>
-              <td>
-                <a href="https://swagger.io/resources/open-api/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
+          <tbody data-shelf="data-bridge">
+            <!-- @reason:
+              Cadrul pentru categoria "data-bridge" — aceeași mașină, aceeași
+              viață.
+            -->
           </tbody>
         </table>
       </section>
 
       <!-- ================================================================
            SECȚIUNEA III: BACKEND SECTOR
-           Ancoră: #backend-refs
+           Andocare: #backend-refs
            ================================================================ -->
       <section id="backend-refs" class="log-entry">
-        <!-- @structure:
-          Secțiunea III este cea mai mare — acoperă întregul strat server:
-          runtime-uri de bază, framework-uri API, autentificare, middleware,
-          testare, performanță și deploy. Fiecare sub-subiect este un cluster de resurse.
-        -->
         <h3>III. Backend Sector</h3>
-        <!-- @reason:
-          Backend Sector este subîmpărțit tematic dar locuiește într-un singur
-          tabel pentru scanabilitate. Fiecare cluster este introdus cu un comentariu
-          inline și separat prin grupări logice în rândurile tabelului.
-        -->
 
         <table class="data-grid">
           <thead>
@@ -585,161 +334,21 @@
               <th>Statusul Misiunii</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @cluster: Runtime-uri de Bază -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Runtime-uri de Bază —</td>
-              <!-- @reason:
-                Rândul cluster-label acționează ca un sub-antet în interiorul tabelului.
-                Folosesc colspan="3" pentru a face această singură celulă să se întindă
-                peste toate cele trei coloane (Numele Sursei, URL, Status). Fără colspan,
-                aș avea nevoie de trei elemente <td> separate — ceea ce nu are
-                sens pentru o linie de etichetă care nu are URL sau status.
-                Textul este stilizat diferit (chihlimbariu atenuat, centrat, small caps)
-                pentru a separa vizual grupurile de resurse din interiorul tabelului.
-                @pedagogy: colspan
-                  colspan este un atribut HTML care spune unui <td> sau <th> să
-                  ocupe mai mult de o coloană. Valoarea este numărul de coloane
-                  peste care să se întindă. colspan="2" îmbină două coloane, colspan="3"
-                  îmbină trei și așa mai departe. Browserul ajustează automat
-                  aspectul coloanelor pentru a acomoda celula îmbinată.
-              -->
-            </tr>
-            <tr>
-              <td>Documentația Node.js</td>
-              <td>
-                <a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Manual Deno</td>
-              <td>
-                <a href="https://deno.land/manual" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Framework-uri API -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Framework-uri API —</td>
-            </tr>
-            <tr>
-              <td>Ghid Express.js</td>
-              <td>
-                <a href="https://expressjs.com/en/guide/routing.html" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Documentația FastAPI</td>
-              <td>
-                <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Autentificare & Securitate -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Autentificare &amp; Securitate —</td>
-            </tr>
-            <tr>
-              <td>OWASP Top Ten</td>
-              <td>
-                <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>JWT.io</td>
-              <td>
-                <a href="https://jwt.io/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Middleware -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Middleware —</td>
-            </tr>
-            <tr>
-              <td>Ghid Middleware Express</td>
-              <td>
-                <a href="https://expressjs.com/en/guide/using-middleware.html" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Testare -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Testare —</td>
-            </tr>
-            <tr>
-              <td>Documentația Jest</td>
-              <td>
-                <a href="https://jestjs.io/docs/getting-started" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Documentația Mocha</td>
-              <td>
-                <a href="https://mochajs.org/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Performanță -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Performanță —</td>
-            </tr>
-            <tr>
-              <td>WebPageTest</td>
-              <td>
-                <a href="https://www.webpagetest.org/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Lighthouse (Chrome DevTools)</td>
-              <td>
-                <a href="https://developer.chrome.com/docs/lighthouse/overview/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-
-            <!-- @cluster: Deploy -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Deploy —</td>
-            </tr>
-            <tr>
-              <td>Documentația Docker</td>
-              <td>
-                <a href="https://docs.docker.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Railway.app</td>
-              <td>
-                <a href="https://railway.app/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
+          <tbody data-shelf="backend-sector">
+            <!-- @reason:
+              Cadrul pentru "backend-sector". Mașina introduce și rânduri de
+              separare „— tip —“ cu colspan, învățându-ne in direct lecția
+              despre colspan.
+            -->
           </tbody>
         </table>
       </section>
 
       <!-- ================================================================
            SECȚIUNEA IV: DATABASE VOID
-           Ancoră: #database-refs
+           Andocare: #database-refs
            ================================================================ -->
       <section id="database-refs" class="log-entry">
-        <!-- @structure:
-          Secțiunea IV acoperă atât stocarea structurată (SQL) cât și cea nestructurată
-          (NoSQL). Este "vidul" pentru că datele, odată stocate, devin invizibile —
-          există în tăcerea adâncă a memoriei vasului.
-        -->
         <h3>IV. Database Void</h3>
 
         <table class="data-grid">
@@ -750,57 +359,19 @@
               <th>Statusul Misiunii</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @cluster: SQL -->
-            <tr>
-              <td colspan="3" class="cluster-label">— SQL —</td>
-            </tr>
-            <tr>
-              <td>Documentația PostgreSQL</td>
-              <td>
-                <a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>În Progres</td>
-            </tr>
-            <tr>
-              <td>Documentația MySQL</td>
-              <td>
-                <a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @cluster: NoSQL -->
-            <tr>
-              <td colspan="3" class="cluster-label">— NoSQL —</td>
-            </tr>
-            <tr>
-              <td>Documentația MongoDB</td>
-              <td>
-                <a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <tr>
-              <td>Documentația Redis</td>
-              <td>
-                <a href="https://redis.io/docs/latest/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
+          <tbody data-shelf="database-void">
+            <!-- @reason:
+              Cadrul pentru categoria "database-void".
+            -->
           </tbody>
         </table>
       </section>
 
       <!-- ================================================================
            SECȚIUNEA V: UX LAB
-           Ancoră: #ux-refs
+           Andocare: #ux-refs
            ================================================================ -->
       <section id="ux-refs" class="log-entry">
-        <!-- @structure:
-          Secțiunea V cataloghează referințe pentru designul experienței utilizatorului
-          și standarde de accesibilitate. Aceste resurse modelează modul în care interfețele
-          vasului sunt percepute și operate de echipaj.
-        -->
         <h3>V. UX Lab</h3>
 
         <table class="data-grid">
@@ -811,65 +382,19 @@
               <th>Statusul Misiunii</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: WCAG -->
-            <tr>
-              <td>WCAG 2.2 — Web Content Accessibility Guidelines</td>
-              <td>
-                <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-              <!-- @reason:
-                WCAG este marcat "Activ" pentru că este consultat continuu
-                în timpul dezvoltării pentru a asigura conformitatea cu accesibilitatea.
-              -->
-            </tr>
-            <!-- @block: ARIA -->
-            <tr>
-              <td>Practici de Autorare WAI-ARIA</td>
-              <td>
-                <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: Nielsen Norman Group -->
-            <tr>
-              <td>Nielsen Norman Group — Euristici UX</td>
-              <td>
-                <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: UX Foundations (Don Norman) -->
-            <tr>
-              <td>Don Norman — The Design of Everyday Things</td>
-              <td>
-                <a href="https://www.nngroup.com/books/design-everyday-things/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: Refactoring UI -->
-            <tr>
-              <td>Refactoring UI (Tailwind Labs)</td>
-              <td>
-                <a href="https://www.refactoringui.com/" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
+          <tbody data-shelf="ux-lab">
+            <!-- @reason:
+              Cadrul pentru categorie "ux-lab".
+            -->
           </tbody>
         </table>
       </section>
 
       <!-- ================================================================
            SECȚIUNEA VI: DELIVERY DECK
-           Ancoră: #delivery-refs
+           Andocare: #delivery-refs
            ================================================================ -->
       <section id="delivery-refs" class="log-entry">
-        <!-- @structure:
-          Secțiunea VI cataloghează resurse pentru controlul versiunilor, colaborare,
-          pipeline-uri CI/CD și automatizarea deploy-ului — sistemele care propelază
-          codul de la stația de lucru pe orbita de producție.
-        -->
         <h3>VI. Delivery Deck</h3>
 
         <table class="data-grid">
@@ -880,216 +405,108 @@
               <th>Statusul Misiunii</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: Documentația Git -->
-            <tr>
-              <td>Documentația Git</td>
-              <td>
-                <a href="https://git-scm.com/doc" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-              <!-- @reason:
-                Git este marcat "Activ" pentru că este folosit zilnic de-a lungul
-                ciclului de dezvoltare al proiectului.
-              -->
-            </tr>
-            <!-- @block: Documentația GitHub -->
-            <tr>
-              <td>Documentația GitHub</td>
-              <td>
-                <a href="https://docs.github.com/en" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: GitHub Actions -->
-            <tr>
-              <td>GitHub Actions — CI/CD</td>
-              <td>
-                <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Activ</td>
-            </tr>
-            <!-- @block: Pro Git Book -->
-            <tr>
-              <td>Pro Git Book (Scott Chacon &amp; Ben Straub)</td>
-              <td>
-                <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Link Acces</a>
-              </td>
-              <td>Blocat</td>
-            </tr>
-            <!-- @block: Conventional Commits -->
-            <tr>
-              <td>Specificația Conventional Commits</td>
-              <td>
-                <a href="https://www.conventionalcommits.org/" target="_blank" rel="noopener">Doar Referință</a>
-              </td>
-              <td>Activ</td>
-            </tr>
+          <tbody data-shelf="delivery-deck">
+            <!-- @reason:
+              Cadrul pentru categoria "delivery-deck". Dacă nu ar exista
+              intrări, mașina ar scrie un rând de „nu există semnale“.
+            -->
           </tbody>
         </table>
       </section>
 
-      <!-- @block: LEGENDA ARHIVELOR
-        O scurtă legendă care explică cei trei indicatori de status al misiunii.
-        Acest lucru ajută echipajul să interpreteze tabelele dintr-o privire.
+      <!-- ================================================================
+           SECȚIUNEA VII — Epilog: ALEGEREA URMĂTOAREI RUTEI
+           (categorie "meta")
+           ================================================================ -->
+      <section id="meta-refs" class="log-entry">
+        <h3>Epilog — Alegerea Următoarei Rute</h3>
+
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th>Numele Sursei</th>
+              <th>Frecvență (URL)</th>
+              <th>Statusul Misiunii</th>
+            </tr>
+          </thead>
+          <tbody data-shelf="meta">
+            <!-- @reason:
+              Răful "meta" — aceeași mașină, propria sa categorie.
+            -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- @block: LEGENDA SEMNALELOR
+        Codul comun dintre plisca și tabel: explicația celor trei statusuri
+        pe care mașina le așează în coloana „Statusul Misiunii”.
       -->
       <section id="archive-legend" class="log-entry">
         <h3>Legenda Semnalelor</h3>
-        <!-- @reason:
-          Legenda decodează cele trei badge-uri de status folosite în toate cele șase
-          tabele. Se află în partea de jos a paginii ca referință rapidă.
-        -->
-        <!-- @pedagogy: ELEMENTUL <dl> (LISTĂ DE DESCRIERE)
-          <dl> înseamnă "description list" (listă de descriere). Este o structură
-          în trei părți:
-            <dl>  → containerul listei
-            <dt>  → termenul definit (description term)
-            <dd>  → definiția propriu-zisă (description details)
-          Browserul indentează textul <dd> implicit. îl folosesc aici în loc de
-          un <table> sau <ul> pentru că conținutul este inerent o relație
-          termen-definiție — fiecare etichetă de status este un concept care
-          trebuie explicat. Aceasta este mai corectă semantic decât să falsific
-          cu un tabel pe două coloane sau o listă cu bulleti.
-        -->
         <dl class="status-legend">
-          <!-- @block: Activ -->
-          <dt><span class="telemetry-active">Activ</span></dt>
-          <dd>Referință consultată continuu — semnalul este fixat și în flux.</dd>
-          <!-- @block: În Progres -->
+          <dt><span class="status-active">Activ</span></dt>
+          <dd>
+            Referință consultată continuu — semnalul este fix și în flux.
+            (verde)
+          </dd>
           <dt><span class="status-in-progress">În Progres</span></dt>
-          <dd>În curs de parcurs — expediția se află în acest sector.</dd>
-          <!-- @block: Blocat -->
-          <dt><span class="status-locked">Blocat</span></dt>
-          <dd>Planificat dar neînceput încă — semnalul este cartografiat dar cursul nu este stabilit.</dd>
+          <dd>
+            Parcursă în prezent — expediția se află în acest sector.
+            (chihlimbar)
+          </dd>
+          <dt><span class="status-in-progress">În așteptare</span></dt>
+          <dd>
+            Planificat și cartografiat, dar neînceput: stă în coadă. Fiindcă
+            este în lucru, JSON-ul îi împrumută pentru această stare lumina
+            de chihlimbar a stării „În Progres”.
+          </dd>
         </dl>
-        <!-- @concept:
-          Cele trei stări oglindesc luminile de status navigaționale ale navei:
-          verde (activ / toate sistemele pornite), chihlimbariu (în progres / în curs),
-          și auriu (blocat / așteptând fereastra de plecare).
-        -->
       </section>
     </main>
 
-    <!-- @block:
-      Deschid blocul footer aici. Aceasta este secțiunea de închidere a fiecărei pagini
-      din proiect. Pe pagina de bibliografie, linkul Hărți Stelare este omis
-      pentru că această pagină este ea însăși arhiva de referință — nu este nevoie
-      să navighez în afară către ea însăși.
-    -->
+    <!-- @block: FOOTER — CONSOLA SECUNDARĂ -->
     <footer class="footer">
-      <!-- @block: CONSOLA SECUNDARĂ DE COMANDĂ
-        Footerul găzduiește Carta de Astrogare (transmission), comutatorul
-        de limbă între engleză și română și fluxul de telemetrie.
-        @concept:
-          Footerul este stația de navigație auxiliară a navei — mai puțin
-          proeminentă decât suprapunerea HUD, dar esențială pentru sistemele
-          care nu aparțin unui volum specific: manifestul fondator și
-          comutatorul de limbă.
-      -->
       <ul class="footer-links">
-        <!-- @path: Pagina de transmisie / Carta de Astrogare -->
         <li>
           <span class="pulse-dot"></span>
           <a href="transmission.html">Carta de Astrogare</a>
         </li>
-        <!-- @bridge: Comutator de limbă între subproiectele EN și RO -->
         <li>
-          <!-- @reason:
-            Comutatorul de limbă permite echipajului să comute între versiunile
-            engleză și română ale proiectului. Limba curentă este marcată
-            cu clasa .lang-toggle-active (evidențiere verde fosfor).
-            Bara despărțitoare (|) separă vizual cele două opțiuni.
-          -->
           <a href="../en/bibliography.html" class="">EN</a>
           <span class="lang-sep">|</span>
           <a href="../ro/bibliography.html" class="lang-toggle-active">RO</a>
         </li>
       </ul>
 
-      <!-- @structure:
-        Scriu prima linie de date de telemetrie. Spune cititorului în ce sector
-        se află în prezent.
-      -->
       <p>
-        SYS_ORBIT: ARHIVELE_ADÂNCULUI
-        // STATUS:
+        SYS_ORBIT: ARHIVELE_ADÂNCULUI // STATUS:
         <span class="telemetry-active">ONLINE</span>
-        <!-- @theme:
-          învelesc cuvântul ONLINE într-un <span> cu clasa .telemetry-active.
-          Această clasă aplică culoarea verde solar-mint (#a7f3d0) și adaugă
-          un efect de strălucire neon text-shadow. Culoarea verde fosfor imită
-          aspectul indicatoarelor de status active de pe terminalele de control
-          ale misiunilor NASA din anii 1970.
-        -->
       </p>
 
-      <!-- @structure:
-        Scriu a doua linie de date de telemetrie. Ancorează proiectul în spațiu
-        fizic real și timp. Coordonatele indică locația căpitanului, iar data
-        marchează când a fost actualizat ultima dată footerul.
-        @pedagogy: ENTITĂȚI HTML
-          în HTML, anumite caractere au semnificații speciale. Semnul mai-mic
-          (<) începe un tag, așa că nu îl poți scrie ca text brut. Entitățile
-          HTML sunt coduri care reprezintă aceste caractere în siguranță:
-            &deg;  →  °  (simbolul grade)
-            &copy; →  ©  (simbolul copyright)
-            &amp;  →  &  (ampersand — folosit în textul celulelor tabelului de mai sus)
-            &nbsp; →  spațiu fără întrerupere
-            &lt;   →  <  (mai mic decât)
-            &gt;   →  >  (mai mare decât)
-          Browserul decodifică acestea la redarea paginii — utilizatorul vede
-          °, ©, &, nu codul entității.
-      -->
+      <p>
+        MOTORUL_DE_CUSUT: bibliography.js // date:
+        <code>shared/data/bibliography-links.json</code>
+      </p>
+
       <p>
         COORDONATE: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.27
-        <!-- @reason:
-          includ coordonate geografice și un timestamp de sistem.
-          Numerele 46.7712° N, 23.6236° E sunt latitudinea și longitudinea
-          Cluj-Napoca, România — locul unde este construit acest proiect.
-          SYSTEM_TIME înregistrează data celei mai recente actualizări a footerului.
-        -->
       </p>
 
-      <!-- @structure:
-        Scriu ultima linie a footerului. Declară cine a creat și deține
-        acest proiect. Simbolul copyright (redat din entitatea &copy; —
-        vezi nota despre entitățile HTML de mai sus) urmat de an și numele
-        căpitanului marchează proprietatea intelectuală a conținutului.
-      -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
-        <!-- @theme:
-          învelesc numele căpitanului într-un <span> cu clasa .vessel-sig.
-          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
-          incandescentă text-shadow. Semnătura magenta acționează ca
-          identificatorul unic al căpitanului pe toate punțile navei.
-        -->
       </p>
     </footer>
 
     <!-- @block:
-      încarc fișierul JavaScript la sfârșitul elementului <body>.
-      Plasarea scriptului aici înseamnă că browserul parsează tot HTML și CSS
-      înainte de a descărca și executa JavaScript-ul. Acest lucru previne
-      blocarea redării și asigură că elementele DOM există când scriptul rulează.
-      Calea ./ se rezolvă în folderul ro/, la fel ca pagina de bibliografie.
+      Încarc două scripturi la înse sfârșitul <body>: mai întâi motorul
+      general (script.js), apoi mașina de cusut (bibliography.js), care
+      citește indexul JSON și pictează rândurile în fiecare <tbody>.
+      Calea ../shared/js/ arată că acest script este utilizat de ambele
+      versiuni — o singură sursă pentru cod, echivalentul datelor cu o
+      singură sursă de adevăr.
     -->
     <script src="./script.js"></script>
+    <script src="../shared/js/bibliography.js"></script>
   </body>
-  <!-- @bridge:
-      For the full technical index of HTML tags used in this project,
-      see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
-  -->
 </html>
-
-<!-- @bridge:
-  Legenda etichetelor: ./docs/legend-ro.md
--->
-
-<!-- @reason:
-  Acest document este pagina Hărți Stelare — Referințe Cartografiate pentru
-  versiunea în limba română a proiectului. Cataloghează fiecare resursă externă,
-  referință și semnal care ghidează călătoria vasului prin toate cele șase
-  volume ale arhitecturii D::0dy55ey.
--->

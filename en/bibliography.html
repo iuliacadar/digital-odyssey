@@ -10,6 +10,9 @@
     The root element of the document.
     The lang="en" attribute declares that the main language of this page is English.
     This helps accessibility tools, search engines, and automated processing systems.
+    @reason:
+      bibliography.js reads this value implicitly — the HTML says "en", the machine
+      says "en", and the language toggle tells the visitor where the twin lives.
   -->
   <head>
     <!-- @block:
@@ -51,7 +54,7 @@
 
     <meta
       name="description"
-      content="Deep Space Archives — Cartographed References. A fully indexed catalogue of all external resources, references, and signals from the Web-Sphere that guide the D::0dy55ey vessel across all six volumes: Frontend Core, Data Bridge, Backend Sector, Database Void, UX Lab, and Delivery Deck."
+      content="Deep Space Archives — Cartographed References. A live catalogue of all signals from the Web-Sphere, fetched at runtime from the shared JSON index."
     />
     <!-- @meta:
       The page description.
@@ -61,7 +64,7 @@
 
     <meta
       name="keywords"
-      content="bibliography, references, web resources, frontend, backend, database, ux, devops, delivery, CI/CD, D::0dy55ey, digital odyssey"
+      content="bibliography, references, web resources, frontend, backend, database, ux, devops, delivery, CI/CD, D::0dy55ey, digital odyssey, JSON, fetch"
     />
     <!-- @meta:
       The keywords meta tag lists the main themes of the page.
@@ -91,7 +94,7 @@
 
     <meta
       property="og:description"
-      content="Deep Space Archives — Cartographed References. A fully indexed catalogue of all external resources, references, and signals from the Web-Sphere that guide the D::0dy55ey vessel across all six volumes."
+      content="Deep Space Archives — Cartographed References. A live catalogue of every signal from the Web-Sphere, stitched at runtime from the shared JSON index."
     />
     <!-- @meta:
       Open Graph description.
@@ -158,7 +161,6 @@
     <!-- @meta:
       Canonical link.
       I tell search engines that this URL is the authoritative version of the page.
-      This helps prevent duplicate-content issues and consolidates ranking signals.
     -->
 
     <meta name="robots" content="index, follow" />
@@ -212,7 +214,7 @@
 
   <body class="module-view">
     <!-- @reason:
-      The class "module-view" applies the secondary-page visual theme:
+      The class module-view applies the secondary-page visual theme:
       narrower content width, CRT scanline overlay, and a slightly darker
       background to distinguish this data archive from the main command deck.
     -->
@@ -225,8 +227,8 @@
     <nav class="navbar">
       <!-- @block: TERMINAL IDENTITY
         The logo block displays the vessel callsign and the current section name.
-        It is static text (not a link) because this page is itself a station
-        on the ship; the crew reads their location here.
+        It is static text (not a link) because this page is itself part of the
+        ship; the crew reads their location here.
       -->
       <div class="logo">D::0dy55ey / Deep Space Archives</div>
 
@@ -248,15 +250,14 @@
     </nav>
 
     <!-- @block: MAIN CONTENT — DEEP SPACE ARCHIVES
-      The <main> element wraps the six resource sections. Each section
-      corresponds to one volume of the D::0dy55ey architecture. Each section
-      contains a data-grid table that lists the source name, its URL,
-      and the current mission status (In Progress, Active, Locked).
-      @concept:
-        This is the central navigation archive of the ship. Every signal from
-        the Web-Sphere that the captain has consulted, is consulting, or plans
-        to consult is charted here — organised by sector so the crew can find
-        the relevant references from any log page via anchor links.
+      The <main> element wraps the six resource sections plus a closing
+      "meta" appendix. Each section corresponds to one volume of the vessel.
+      Each section contains a data-grid table — but the rows are NOT typed
+      by hand any more. The HTML keeps the skeleton — <table>, <thead>,
+      the column labels, and an EMPTY <tbody data-shelf>. The rows are
+      born at runtime: a dedicated machine, bibliography.js, fetches the
+      shared JSON and stitches every <tr>. See the box below the header
+      for the full comparison.
     -->
     <main class="main-container">
       <!-- @block: ARCHIVES HEADER -->
@@ -271,9 +272,63 @@
         -->
         <p>
           A fully indexed catalogue of all signals received from the Web-Sphere,
-          organised by volume sector.
+          organised by volume sector. The rows below are not printed in this page —
+          they are stitched at runtime by the JSON engine.
         </p>
       </header>
+
+      <!-- @pedagogy: THE HAND-STITCHED VS THE STITCHING MACHINE
+        This is the lesson of the page, told once, up front:
+
+        Before this rebuild, every row of these tables was written by hand,
+        directly in the HTML file, one <tr> after another:
+
+          <tr>
+            <td>MDN Web Docs — HTML</td>
+            <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                   target="_blank" rel="noopener">Reference Only</a></td>
+            <td>Active</td>
+          </tr>
+
+        That built the page — and it also taught the anatomy of a table:
+        <tr> (the row), <td> (the data cell), <th> (the header cell), and
+        the <a> hyperlink with its three attributes. Now the page has TWO
+        kinds of fabric:
+
+        1. The FIXED fabric — things that are the same on every visit and
+           do not need data to exist: the <table>, the <thead> with its
+           <th> labels, the section titles, the legend. These are STILL
+           handwritten in this HTML, and that is correct — they are the
+           bones, they do not change.
+
+        2. The FLOWING fabric — the <tbody> content, hundreds of <tr>
+           rows that reflect the current state of the resource library.
+           These are NOT handwritten here in this page any more. A small
+           JavaScript engine (bibliography.js) fetches the shared JSON
+           file shared/data/bibliography-links.json and — at runtime, in
+           the visitor's browser — creates each <tr> with the same tags
+           the hand used to write.
+
+        So nothing is lost, and the lesson only deepens:
+          * the tags <table>, <thead>, <th>, <td>, <tr>, colspan,
+            <a rel="noopener"> are still taught — they are the nouns
+            — but now they are also taught as *built objects*: the
+            machine creates them with document.createElement().
+          * the page becomes a single source of truth: one JSON feeds
+            both the English and the Romanian page, so a resource added
+            to shared/data/bibliography-links.json appears in both languages
+            without ever being typed twice.
+
+        When you inspect the <tbody> below in the browser's dev-tools,
+        you will see rows that were NOT written by anyone in the file —
+        they were created by the machine the moment the page loaded.
+        That is the upgrade: a hand-stitched cloth is replaced by a
+        stitching machine that turns one ball of JSON into a living table.
+
+        The empty <tbody> you are about to see is intentional and brief
+        — it is the empty frame. The machine fills it in the time it
+        takes your eyes to travel from the <thead> to the first row.
+      -->
 
       <!-- ================================================================
            SECTION I: FRONTEND CORE
@@ -290,22 +345,24 @@
         <!-- @reason:
           Section I covers the foundational technologies of the user-facing
           layer: HTML for structure, CSS for style, JavaScript for behaviour,
-          and the React/Angular frameworks for component-based architecture.
+          and the React/Angular frameworks for component architecture.
         -->
 
-        <!-- @pedagogy: HTML TABLE PRIMER
-          This is my first <table> element in the project. The structure is:
-            <table>       → the entire grid container
-            <thead>       → the header row group (labels each column)
-            <tbody>       → the body row group (all data rows)
-            <tr>          → a single row (table row)
+        <!-- @pedagogy: THE TABLE PRIMER (still written by hand — and that is right)
+          A <table> is built from containers and labels, and this page keeps
+          the labels handwritten because they are fixed:
+            <table>       → the grid container
+            <thead>       → the header row group (labels the columns)
+            <tbody data-shelf="frontend"> → the row group. EMPTY on purpose:
+                            it is the frame the JSON machine will fill.
+            <tr>          → a table row (now created by JS, not typed)
             <th>          → a header cell (bold, centered by default)
-            <td>          → a data cell (regular weight, left-aligned)
-            colspan="3"   → makes a cell span across 3 columns (used later
-                            for the cluster-label sub-headers)
-          I use classes like "data-grid" for styling; the class does not
-          change how the browser renders the table by default — it just
-          hooks into CSS rules that transform the visual appearance.
+            <td>          → a data cell (created by JS from each JSON item)
+            colspan       → a cell spanning columns (the machine uses it
+                            to draw the kind-divider rows)
+          When you open DevTools you will SEE the <tbody> come alive: the
+          renderer inserts <tr><td>...</td></tr> pairs — the exact same
+          elements this primer used to hand-write.
         -->
         <table class="data-grid">
           <thead>
@@ -315,222 +372,19 @@
               <th>Mission Status</th>
             </tr>
             <!-- @reason:
-              The table header labels each column: resource name, link, and
-              progress status. This three-column layout is reused across all
-              sections for consistency.
+              The header row is fixed — it depends on the <thead>, after also
+              the JSON machines produce it. The three columns are the same
+              on every visit, so writing them here by hand is the honest trade.
             -->
           </thead>
-          <tbody>
-            <!-- @block: MDN Web Docs — HTML
-              @pedagogy: WHAT IS MDN?
-                MDN (Mozilla Developer Network) is the single most authoritative
-                documentation source for open web technologies — HTML, CSS,
-                JavaScript, and more. It is maintained by Mozilla and the web
-                community. When in doubt about how a tag, property, or API
-                works, MDN is the first place to check. I mark it as
-                "Reference Only" because it is not a course I work through —
-                it is a dictionary I consult daily.
+          <tbody data-shelf="frontend">
+            <!-- @reason:
+              This <tbody> is an empty frame. It announces to the machine
+              "frontend" (the data-shelf attribute), and the machine answers
+              by inserting one <tr> per source found under that category in
+              the shared JSON. Nothing to see here yet — and that is
+              precisely the point. Inspect it live in DevTools after load.
             -->
-            <tr>
-              <td>MDN Web Docs — HTML</td>
-              <td>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-                <!-- @pedagogy: THE <a> TAG (ANCHOR / HYPERLINK)
-                  The <a> element creates a clickable hyperlink.
-                  href="..." determines where the link goes.
-                  The text between <a> and </a> is what the user sees and clicks.
-                  I write "Reference Only" here instead of the full URL because
-                  the column heading already says "Frequency (URL)" — the user
-                  knows this is a link.
-                  @reason:
-                    target="_blank" opens the link in a new browser tab, so the
-                    crew does not navigate away from the Deep Space Archives.
-                    rel="noopener" is a security precaution: without it, the
-                    destination page could access the source page's window via
-                    window.opener and potentially redirect it to a malicious site.
-                    I repeat this pattern on every external link in the table.
-                -->
-              </td>
-              <td>Active</td>
-              <!-- @reason:
-                "Active" means the resource is continuously consulted as a
-                reference, as opposed to "In Progress" (currently working
-                through it) or "Locked" (planned but not yet started).
-              -->
-            </tr>
-            <!-- @block: MDN Web Docs — CSS -->
-            <tr>
-              <td>MDN Web Docs — CSS</td>
-              <td>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: MDN Web Docs — JavaScript -->
-            <tr>
-              <td>MDN Web Docs — JavaScript</td>
-              <td>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: freeCodeCamp — Responsive Web Design
-              @pedagogy: WHAT IS freeCodeCamp?
-                freeCodeCamp is a free, interactive learning platform. You read
-                a short lesson, then write code in the browser to solve a
-                challenge. The Responsive Web Design certification teaches HTML
-                and CSS from absolute zero — it is my starting point for the
-                Frontend Core volume.
-            -->
-            <tr>
-              <td>freeCodeCamp — Responsive Web Design</td>
-              <td>
-                <a
-                  href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>In Progress</td>
-              <!-- @reason:
-                "In Progress" signals that this resource is currently being
-                worked through as part of an active curriculum or tutorial.
-              -->
-            </tr>
-            <!-- @block: freeCodeCamp — JavaScript Algorithms
-              @pedagogy:
-                The second freeCodeCamp track focuses on JavaScript: variables,
-                loops, functions, arrays, objects, and algorithmic thinking.
-                I mark it "Locked" because I will start it only after I finish
-                the Responsive Web Design certification — one expedition at a time.
-            -->
-            <tr>
-              <td>
-                freeCodeCamp — JavaScript Algorithms &amp; Data Structures
-              </td>
-              <td>
-                <a
-                  href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-              <!-- @reason:
-                "Locked" means the resource is scheduled for future exploration
-                but has not yet been started. It renders in amber-gold via the
-                .future-log styling when the parent tr carries the class.
-              -->
-            </tr>
-            <!-- @block: JavaScript.info
-              @pedagogy: WHAT IS JavaScript.info?
-                JavaScript.info is a modern, in-depth tutorial for JavaScript.
-                It covers everything from basics (variables, data types) to
-                advanced topics (promises, async/await, closures, modules).
-                Unlike freeCodeCamp which is challenge-driven, this one is
-                read-and-understand — I work through it at my own pace.
-            -->
-            <tr>
-              <td>JavaScript.info</td>
-              <td>
-                <a
-                  href="https://javascript.info/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>In Progress</td>
-            </tr>
-            <!-- @block: CSS-Tricks
-              @pedagogy: WHAT IS CSS-Tricks?
-                CSS-Tricks is a long-running blog and almanac dedicated to CSS.
-                Its "Almanac" section is a searchable index of every CSS property
-                with examples, browser support notes, and practical tips.
-                I mark it "Active" because I consult it regularly alongside MDN.
-                The &amp; in the display text is an HTML entity — see the legend
-                in the footer for an explanation of entities.
-            -->
-            <tr>
-              <td>CSS-Tricks (Almanac &amp; Guides)</td>
-              <td>
-                <a href="https://css-tricks.com/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: W3Schools
-              @pedagogy: WHAT IS W3Schools?
-                W3Schools is one of the oldest web development reference sites.
-                It offers simple, beginner-friendly explanations with "Try it
-                Yourself" editors. Some developers criticise it for being
-                incomplete or outdated, but it is useful as a quick first look
-                at a topic. I cross-check anything important against MDN.
-            -->
-            <tr>
-              <td>W3Schools</td>
-              <td>
-                <a
-                  href="https://www.w3schools.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: React Documentation
-              @pedagogy: WHAT IS REACT?
-                React is a JavaScript library for building user interfaces
-                using reusable components. It is maintained by Meta (Facebook).
-                react.dev is the official documentation. I mark it "Locked"
-                because I need solid JavaScript foundations before I can learn
-                React — one does not build on sand.
-            -->
-            <tr>
-              <td>React Documentation</td>
-              <td>
-                <a href="https://react.dev/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @block: Angular Documentation
-              @pedagogy: WHAT IS ANGULAR?
-                Angular is a full-scale TypeScript framework for building web
-                applications. It is maintained by Google. Unlike React (just a
-                library), Angular provides a complete solution: routing, forms,
-                HTTP client, dependency injection. I mark it "Locked" — it is a
-                future expedition after I have mastered React.
-            -->
-            <tr>
-              <td>Angular Documentation</td>
-              <td>
-                <a href="https://angular.dev/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
           </tbody>
         </table>
       </section>
@@ -544,10 +398,6 @@
           The Data Bridge section transitions between the frontend and backend
           volumes. It catalogues resources about JSON, API design, and data
           transfer formats — the universal currency that flows between layers.
-          @theme:
-            This section uses amber-glow accent tones inherited from its parent
-            context (the bridge-volume class) to distinguish it from the
-            standard sections.
         -->
         <h3>II. Data Bridge</h3>
 
@@ -559,85 +409,11 @@
               <th>Mission Status</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: JSON.org -->
-            <tr>
-              <td>JSON.org</td>
-              <td>
-                <a
-                  href="https://www.json.org/json-en.html"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: MDN — Working with JSON -->
-            <tr>
-              <td>MDN Web Docs — Working with JSON</td>
-              <td>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: JSON Schema -->
-            <tr>
-              <td>JSON Schema</td>
-              <td>
-                <a
-                  href="https://json-schema.org/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @block: RESTful API Guides (RESTapitutorial) -->
-            <tr>
-              <td>REST API Tutorial</td>
-              <td>
-                <a
-                  href="https://restapitutorial.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @block: Postman Learning Center -->
-            <tr>
-              <td>Postman Learning Center</td>
-              <td>
-                <a
-                  href="https://learning.postman.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @block: Swagger / OpenAPI -->
-            <tr>
-              <td>Swagger / OpenAPI Specification</td>
-              <td>
-                <a
-                  href="https://swagger.io/resources/open-api/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
+          <tbody data-shelf="data-bridge">
+            <!-- @reason:
+              Same frame as Section I: the machine fills this shelf with the
+              JSON entries whose category is "data-bridge".
+            -->
           </tbody>
         </table>
       </section>
@@ -648,16 +424,14 @@
            ================================================================ -->
       <section id="backend-refs" class="log-entry">
         <!-- @structure:
-          Section III is the largest — it spans the entire server-side layer:
-          core runtimes, API frameworks, authentication, middleware, testing,
-          performance, and deployment. Each sub-topic is a cluster of resources.
+          Section III covers the entire server-side layer: core runtimes,
+          API frameworks, authentication, middleware, testing, performance,
+          and deployment. In the old handwritten build this was one giant
+          table with manual "— Core runtimes —" divider rows (colspan="3").
+          The machine restores the same dividers automatically by grouping
+          the JSON's `kind` field, as documented in bibliography.js.
         -->
         <h3>III. Backend Sector</h3>
-        <!-- @reason:
-          The Backend Sector is subdivided thematically but lives in a single
-          table for scannability. Each cluster is introduced with an inline
-          comment and separated by logical grouping within the table rows.
-        -->
 
         <table class="data-grid">
           <thead>
@@ -667,203 +441,11 @@
               <th>Mission Status</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @cluster: Core Runtimes -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Core Runtimes —</td>
-              <!-- @reason:
-                The cluster-label row acts as a sub-header within the table.
-                I use colspan="3" to make this single cell stretch across all
-                three columns (Source Name, URL, Status). Without colspan,
-                I would need three separate <td> elements — which makes no
-                sense for a label line that has no URL or status.
-                The text is styled differently (dim amber, centered, small
-                caps) to visually separate resource groups within the table.
-                @pedagogy: colspan
-                  colspan is an HTML attribute that tells a <td> or <th> to
-                  occupy more than one column. The value is the number of
-                  columns to span. colspan="2" merges two columns, colspan="3"
-                  merges three, and so on. The browser automatically adjusts
-                  the column layout to accommodate the merged cell.
-              -->
-            </tr>
-            <tr>
-              <td>Node.js Documentation</td>
-              <td>
-                <a
-                  href="https://nodejs.org/en/docs/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>Deno Manual</td>
-              <td>
-                <a
-                  href="https://deno.land/manual"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: API Frameworks -->
-            <tr>
-              <td colspan="3" class="cluster-label">— API Frameworks —</td>
-            </tr>
-            <tr>
-              <td>Express.js Guide</td>
-              <td>
-                <a
-                  href="https://expressjs.com/en/guide/routing.html"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>FastAPI Documentation</td>
-              <td>
-                <a
-                  href="https://fastapi.tiangolo.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: Auth & Security -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Auth &amp; Security —</td>
-            </tr>
-            <tr>
-              <td>OWASP Top Ten</td>
-              <td>
-                <a
-                  href="https://owasp.org/www-project-top-ten/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>JWT.io</td>
-              <td>
-                <a href="https://jwt.io/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: Middleware -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Middleware —</td>
-            </tr>
-            <tr>
-              <td>Express Middleware Guide</td>
-              <td>
-                <a
-                  href="https://expressjs.com/en/guide/using-middleware.html"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: Testing -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Testing —</td>
-            </tr>
-            <tr>
-              <td>Jest Documentation</td>
-              <td>
-                <a
-                  href="https://jestjs.io/docs/getting-started"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>Mocha Documentation</td>
-              <td>
-                <a href="https://mochajs.org/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: Performance -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Performance —</td>
-            </tr>
-            <tr>
-              <td>WebPageTest</td>
-              <td>
-                <a
-                  href="https://www.webpagetest.org/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>Lighthouse (Chrome DevTools)</td>
-              <td>
-                <a
-                  href="https://developer.chrome.com/docs/lighthouse/overview/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-
-            <!-- @cluster: Deployment -->
-            <tr>
-              <td colspan="3" class="cluster-label">— Deployment —</td>
-            </tr>
-            <tr>
-              <td>Docker Documentation</td>
-              <td>
-                <a
-                  href="https://docs.docker.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>Railway.app</td>
-              <td>
-                <a href="https://railway.app/" target="_blank" rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
+          <tbody data-shelf="backend-sector">
+            <!-- @reason:
+              Frame for the backend craft. Divider rows with colspan="3"
+              reappear automatically thanks to the kind-grouping in the engine.
+            -->
           </tbody>
         </table>
       </section>
@@ -888,63 +470,11 @@
               <th>Mission Status</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @cluster: SQL -->
-            <tr>
-              <td colspan="3" class="cluster-label">— SQL —</td>
-            </tr>
-            <tr>
-              <td>PostgreSQL Documentation</td>
-              <td>
-                <a
-                  href="https://www.postgresql.org/docs/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>In Progress</td>
-            </tr>
-            <tr>
-              <td>MySQL Documentation</td>
-              <td>
-                <a
-                  href="https://dev.mysql.com/doc/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @cluster: NoSQL -->
-            <tr>
-              <td colspan="3" class="cluster-label">— NoSQL —</td>
-            </tr>
-            <tr>
-              <td>MongoDB Documentation</td>
-              <td>
-                <a
-                  href="https://www.mongodb.com/docs/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <tr>
-              <td>Redis Documentation</td>
-              <td>
-                <a
-                  href="https://redis.io/docs/latest/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
+          <tbody data-shelf="database-void">
+            <!-- @reason:
+              Database shelf — filled by the machine from "database-void"
+              JSON entries.
+            -->
           </tbody>
         </table>
       </section>
@@ -956,8 +486,7 @@
       <section id="ux-refs" class="log-entry">
         <!-- @structure:
           Section V catalogues references for user experience design and
-          accessibility standards. These resources shape how the vessel's
-          interfaces are perceived and operated by the crew.
+          accessibility standards.
         -->
         <h3>V. UX Lab</h3>
 
@@ -969,76 +498,10 @@
               <th>Mission Status</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: WCAG -->
-            <tr>
-              <td>WCAG 2.2 — Web Content Accessibility Guidelines</td>
-              <td>
-                <a
-                  href="https://www.w3.org/TR/WCAG22/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-              <!-- @reason:
-                WCAG is marked "Active" because it is continuously consulted
-                during development to ensure accessibility compliance.
-              -->
-            </tr>
-            <!-- @block: ARIA -->
-            <tr>
-              <td>WAI-ARIA Authoring Practices</td>
-              <td>
-                <a
-                  href="https://www.w3.org/WAI/ARIA/apg/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: Nielsen Norman Group -->
-            <tr>
-              <td>Nielsen Norman Group — UX Heuristics</td>
-              <td>
-                <a
-                  href="https://www.nngroup.com/articles/ten-usability-heuristics/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: UX Foundations (Don Norman) -->
-            <tr>
-              <td>Don Norman — The Design of Everyday Things</td>
-              <td>
-                <a
-                  href="https://www.nngroup.com/books/design-everyday-things/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: Refactoring UI -->
-            <tr>
-              <td>Refactoring UI (Tailwind Labs)</td>
-              <td>
-                <a
-                  href="https://www.refactoringui.com/"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
+          <tbody data-shelf="ux-lab">
+            <!-- @reason:
+              UX shelf surface — the machine fills it from "ux-lab".
+            -->
           </tbody>
         </table>
       </section>
@@ -1049,9 +512,9 @@
            ================================================================ -->
       <section id="delivery-refs" class="log-entry">
         <!-- @structure:
-          Section VI catalogues resources for version control, collaboration,
-          CI/CD pipelines, and deployment automation — the systems that propel
-          code from the workstation into production orbit.
+          Section VI catalogues version control, collaboration, CI/CD, and
+          deployment — the systems that move code from workstation to the
+          outer orbit of production.
         -->
         <h3>VI. Delivery Deck</h3>
 
@@ -1063,244 +526,124 @@
               <th>Mission Status</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- @block: Git Documentation -->
+          <tbody data-shelf="delivery-deck">
+            <!-- @reason:
+              Delivery shelf for "delivery-deck" JSON entries.
+            -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ================================================================
+           SECTION VII: SHORT-RANGE GUIDANCE (META)
+           The ships's "choosing-the-next-course" appendix: it does not belong
+           to a single volume; it is the discipline that looks at the map and
+           picks where to fly next. Its JSON category is "meta".
+           ================================================================ -->
+      <section id="meta-refs" class="log-entry">
+        <h3>Epilogue — Navigating the Map Itself</h3>
+        <!-- @reason:
+          A tiny, honest section for the resources about the craft of
+          choosing: roadmap.sh, the MDN Curriculum, and Norvig's essay on
+          learning to program courageously. It lives under the category
+          "meta" in the JSON engine.
+        -->
+
+        <table class="data-grid">
+          <thead>
             <tr>
-              <td>Git Documentation</td>
-              <td>
-                <a href="https://git-scm.com/doc" target="_blank" rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-              <!-- @reason:
-                Git is marked "Active" because it is used daily throughout the
-                project's development lifecycle.
-              -->
+              <th>Source Name</th>
+              <th>Frequency (URL)</th>
+              <th>Mission Status</th>
             </tr>
-            <!-- @block: GitHub Docs -->
-            <tr>
-              <td>GitHub Documentation</td>
-              <td>
-                <a
-                  href="https://docs.github.com/en"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: GitHub Actions -->
-            <tr>
-              <td>GitHub Actions — CI/CD</td>
-              <td>
-                <a
-                  href="https://docs.github.com/en/actions"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
-            <!-- @block: Pro Git Book -->
-            <tr>
-              <td>Pro Git Book (Scott Chacon &amp; Ben Straub)</td>
-              <td>
-                <a
-                  href="https://git-scm.com/book/en/v2"
-                  target="_blank"
-                  rel="noopener"
-                  >Access Link</a
-                >
-              </td>
-              <td>Locked</td>
-            </tr>
-            <!-- @block: Conventional Commits -->
-            <tr>
-              <td>Conventional Commits Specification</td>
-              <td>
-                <a
-                  href="https://www.conventionalcommits.org/"
-                  target="_blank"
-                  rel="noopener"
-                  >Reference Only</a
-                >
-              </td>
-              <td>Active</td>
-            </tr>
+          </thead>
+          <tbody data-shelf="meta">
+            <!-- @reason:
+              The meta shelf — the same machine as all the others, just fed
+              the "meta" category.
+            -->
           </tbody>
         </table>
       </section>
 
       <!-- @block: ARCHIVE LEGEND
-        A brief legend explaining the three mission-status indicators.
-        This helps the crew interpret the tables at a glance.
+        A short legend explaining the mission-status indicators that the
+        machine prints in the third column. This is fixed, hand-written,
+        because it is the shared codebook between the visitor and the table.
       -->
       <section id="archive-legend" class="log-entry">
         <h3>Signal Legend</h3>
-        <!-- @reason:
-          The legend decodes the three status badges used across all six
-          tables. It sits at the bottom of the page as a quick reference.
-        -->
         <!-- @pedagogy: THE <dl> ELEMENT (DESCRIPTION LIST)
-          <dl> stands for "description list" (or "definition list" in older
-          HTML versions). It is a three-part structure:
-            <dl>  → the list container
-            <dt>  → the term being defined (description term)
-            <dd>  → the definition itself (description details)
-          The browser indents <dd> text by default. I use it here instead of
-          a <table> or <ul> because the content is inherently a term-definition
-          relationship — each status label is a concept that needs explaining.
-          This is more semantically correct than faking it with a two-column
-          table or a bullet list.
+           <dl> stands for "description list". It is a three-part structure:
+             <dl>  → the list container
+             <dt>  → the term (description term)
+             <dd>  → the definition (description details)
         -->
         <dl class="status-legend">
           <!-- @block: Active -->
-          <dt><span class="telemetry-active">Active</span></dt>
+          <dt><span class="status-active">Active</span></dt>
           <dd>
             Continuously consulted reference — the signal is locked and
-            streaming.
+            streaming. (green, like a live console light)
           </dd>
           <!-- @block: In Progress -->
           <dt><span class="status-in-progress">In Progress</span></dt>
           <dd>
             Currently being worked through — the expedition is in this sector.
+            (amber)
           </dd>
-          <!-- @block: Locked -->
-          <dt><span class="status-locked">Locked</span></dt>
+          <!-- @block: Queued -->
+          <dt><span class="status-in-progress">Queued</span></dt>
           <dd>
-            Planned but not yet started — the signal is charted but the course
-            is not set.
+            Planned, charted, sitting in the queue — not yet started. The
+            machine lights it amber too, because it is in the works.
           </dd>
         </dl>
-        <!-- @concept:
-          The three states mirror the ship's navigational status lights:
-          green (active / all systems go), amber (in progress / under way),
-          and gold (locked / awaiting departure window).
-        -->
       </section>
     </main>
 
-    <!-- @block:
-      I open the footer block here. This is the closing section of every page
-      in the project. On the bibliography page, the Star Charts link is omitted
-      because this page itself is the reference archive — there is no need to
-      navigate outward to itself.
-    -->
+    <!-- @block: FOOTER — SECONDARY COMMAND CONSOLE -->
     <footer class="footer">
-      <!-- @block: SECONDARY COMMAND CONSOLE
-        The footer houses The Astrogation Charter (transmission), the language
-        toggle between English and Romanian, and the telemetry data stream.
-        @concept:
-          The footer is the ship's auxiliary navigation station — less
-          prominent than the HUD overlay, but essential for systems that
-          do not belong to a specific volume: the founding manifesto and
-          the language switch.
-      -->
       <ul class="footer-links">
-        <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
           <a href="transmission.html">The Astrogation Charter</a>
         </li>
-        <!-- @bridge: Language toggle between EN and RO subprojects -->
         <li>
-          <!-- @reason:
-            The language toggle lets the crew switch between the English and
-            Romanian versions of the project. The current language is marked
-            with the .lang-toggle-active class (phosphor green highlight).
-            The separator pipe (|) visually divides the two options.
-          -->
           <a href="../en/bibliography.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
           <a href="../ro/bibliography.html" class="">RO</a>
         </li>
       </ul>
 
-      <!-- @structure:
-        I write the first telemetry data line. It tells the reader which sector
-        they are currently viewing.
-      -->
       <p>
         SYS_ORBIT: DEEP_SPACE_ARCHIVES // STATUS:
         <span class="telemetry-active">ONLINE</span>
-        <!-- @theme:
-          I wrap the word ONLINE in a <span> with the class .telemetry-active.
-          This class applies the solar-mint green color (#a7f3d0) and adds a
-          neon text-shadow glow effect. The green phosphor color mimics the
-          look of active status indicators on 1970s NASA mission control terminals.
-        -->
       </p>
 
-      <!-- @structure:
-        I write the second telemetry data line. It anchors the project in real
-        physical space and time. The coordinates point to the captain's location,
-        and the date marks when this footer was last updated.
-        @pedagogy: HTML ENTITIES
-          In HTML, certain characters have special meanings. The less-than sign
-          (<) starts a tag, so you cannot write it as raw text. HTML entities
-          are codes that represent these characters safely:
-            &deg;  →  °  (degree symbol)
-            &copy; →  ©  (copyright symbol)
-            &amp;  →  &  (ampersand — used in table cell text above)
-            &nbsp; →  non-breaking space
-            &lt;   →  <  (less than)
-            &gt;   →  >  (greater than)
-          The browser decodes these when rendering the page — the user sees
-          °, ©, &, not the entity code.
-      -->
+      <p>
+        STITCHING_ENGINE: bibliography.js // data:
+        <code>shared/data/bibliography-links.json</code>
+      </p>
+
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.27
-        <!-- @reason:
-          I include geographic coordinates and a system timestamp.
-          The numbers 46.7712° N, 23.6236° E are the latitude and longitude of
-          Cluj-Napoca, Romania — the place where this project is being built.
-          SYSTEM_TIME records the date of the latest footer update.
-        -->
       </p>
 
-      <!-- @structure:
-        I write the final line of the footer. It declares who created and owns
-        this project. The copyright symbol (rendered from the &copy; entity —
-        see the HTML entities note above) followed by the year and the captain's
-        name marks the intellectual ownership of the content.
-      -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey by
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
-        <!-- @theme:
-          I wrap the captain's name in a <span> with the class .vessel-sig.
-          This class applies the nebula-pink color (#ff007f) with an incandescent
-          text-shadow glow. The magenta signature acts as the captain's unique
-          identifier across all decks of the ship.
-        -->
       </p>
     </footer>
 
     <!-- @block:
-      I load the JavaScript file at the end of the <body>.
-      Placing the script here means the browser parses all HTML and CSS
-      before downloading and executing the JavaScript. This prevents
-      render-blocking and ensures DOM elements exist when the script runs.
-      The ./ path resolves to the en/ folder, same as the bibliography page.
+      I load the two scripts at the end of <body>.
+      First the shared ship-wide engine (script.js), then the page-specific
+      stitching machine (bibliography.js) that paints the rows of the JSON.
+      Placing them after the HTML is processed: the DOM the scripts need
+      already exists when execution begins.
     -->
     <script src="./script.js"></script>
+    <script src="../shared/js/bibliography.js"></script>
   </body>
-  <!-- @bridge:
-      For the full technical index of HTML tags used in this project,
-      see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
-  -->
 </html>
-
-<!-- @bridge:
-  Tags legend: ./docs/legend-en.md
--->
-
-<!-- @reason:
-  This document is the Star Charts — Cartographed References page for the
-  English version of the project. It catalogues every external resource,
-  reference, and signal that guides the vessel's journey across all six
-  volumes of the D::0dy55ey architecture.
--->
