@@ -1337,26 +1337,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //  ==========================================================================
 //     BACKLOG — Navigation & UX Enhancements (Planned Mechanisms)
-//     These are not active code — they are entries in the ship's development
-//     backlog, preserved here for future implementation.
-//  ==========================================================================
-
-//  @todo: 01 — Dynamic Sidebar Index Generation
-//    Instead of manually writing 1000+ sidebar links, a script will extract
-//    text from every <h3> and auto-generate the corresponding <li> elements.
-//    Essential for the extended HTML-Log journal pages.
-
-//  @todo: 02 — Search & Filter Archive
-//    A search bar in the sidebar that filters log entries by keyword
-//    (e.g. "Flexbox", "Joins", "Loops") in real time, using the browser's
-//    built-in filter or a simple text-matching algorithm.
-
-//  @todo: 03 — Dynamic Navbar Offset Calculation
-//    Instead of hardcoding the 100px offset in MECANISM 05, JavaScript will
-//    measure the actual navbar height at runtime and adjust scroll-margin-top
-//    dynamically for every device.
-
-//  @todo: 04 — Note Export System
-//    Extend MECANISM 04 with a "download" button that compiles all saved
-//    notes into a single markdown or text file for offline reference.
+//     These items now live in the project's main register: BACKLOG-EN.md.
+//     See entries 013–016 (Dynamic Sidebar Index, Search & Filter, Dynamic
+//     Navbar Offset, Note Export) — maintained there, not duplicated here.
 //  ==========================================================================

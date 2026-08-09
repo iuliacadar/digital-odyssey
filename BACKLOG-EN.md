@@ -219,6 +219,91 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 ---
 
+### 013 — Dynamic Sidebar Index Generation
+
+**Title:** Dynamic sidebar index generation
+
+**Description:** Instead of manually writing 1000+ sidebar links, a script will extract the text from every `<h3>` and auto-generate the corresponding `<li>` elements. Essential for the extended HTML-Log journal pages.
+
+**Status:** Proposed
+**Priority:** Medium
+**Phase:** When the extended HTML-Log journal pages are built
+
+**Why later:** The current pages still have hand-written sidebars; generating them becomes worthwhile once the extended log pages multiply the link count.
+
+**Affected files:** `en/script.js`, `ro/script.js`, `en/frontend/html-log.html`, `ro/frontend/html-log.html` (and future extended HTML-Log pages)
+
+**Steps:**
+- write a generator that scans each page for `<h3>` headings;
+- produce the matching `<li>` elements in the sidebar;
+- keep the generated output byte-identical in `en/` and `ro/`.
+
+**Completion conditions:**
+- sidebars are derived from the page's actual headings;
+- no manual link list needs maintenance.
+
+---
+
+### 014 — Search & Filter Archive
+
+**Title:** Search and filter archive
+
+**Description:** A search bar in the sidebar that filters log entries by keyword (e.g. "Flexbox", "Joins", "Loops") in real time, using the browser's built-in filter or a simple text-matching algorithm.
+
+**Status:** Proposed
+**Priority:** Medium
+**Phase:** After the log pages are populated with content
+
+**Why later:** Filtering is only useful once the entries actually exist and are numerous.
+
+**Affected files:** `en/script.js`, `ro/script.js`, and the sidebar markup on every log page
+
+**Completion conditions:**
+- typing a keyword filters the visible log entries live;
+- the feature behaves identically in both languages.
+
+---
+
+### 015 — Dynamic Navbar Offset Calculation
+
+**Title:** Dynamic navbar offset calculation
+
+**Description:** Instead of hardcoding the 100px offset in MECANISM 05, JavaScript will measure the actual navbar height at runtime and adjust `scroll-margin-top` dynamically for every device.
+
+**Status:** Proposed
+**Priority:** Low
+**Phase:** A later calibration pass across breakpoints
+
+**Why later:** The hardcoded value works on the current layout; runtime measurement is polish, not a blocker.
+
+**Affected files:** `en/script.js`, `ro/script.js`, `en/style.css`, `ro/style.css`
+
+**Completion conditions:**
+- anchor scrolling stays precise on every viewport height;
+- the hardcoded offset in MECANISM 05 is removed.
+
+---
+
+### 016 — Note Export System
+
+**Title:** Note export system
+
+**Description:** Extend MECANISM 04 with a "download" button that compiles all saved notes into a single markdown or text file for offline reference.
+
+**Status:** Proposed
+**Priority:** Medium
+**Phase:** After the note persistence system is stable
+
+**Why later:** Export is a natural follow-up once notes are saved reliably across pages.
+
+**Affected files:** `en/script.js`, `ro/script.js`
+
+**Completion conditions:**
+- all saved notes are compiled into one downloadable file;
+- the export works in both languages.
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

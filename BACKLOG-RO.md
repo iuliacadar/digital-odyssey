@@ -221,6 +221,91 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 ---
 
+### 013 — Generarea dinamică a indexului barei laterale
+
+**Titlu:** Generarea dinamică a indexului barei laterale
+
+**Descriere:** În loc să scriem manual mii de linkuri în sidebar, un script va extrage textul din fiecare `<h3>` și va genera automat elementele `<li>` corespunzătoare. Esențial pentru paginile extinse din jurnalul HTML-Log.
+
+**Status:** Propus
+**Prioritate:** Medie
+**Fază:** La construirea paginilor extinse din jurnalul HTML-Log
+
+**De ce mai târziu:** Paginile de azi au încă sidebaruri scrise de mână; generarea devine avantajoasă când paginile extinse înmulțesc numărul de linkuri.
+
+**Fișiere afectate:** `en/script.js`, `ro/script.js`, `en/frontend/html-log.html`, `ro/frontend/html-log.html` (și viitoarele pagini HTML-Log extinse)
+
+**Pași:**
+- a scrie un generator care scanează fiecare pagină după titlurile `<h3>`;
+- a produce elementele `<li>` potrivite în sidebar;
+- a păstra ieșirea generată identic între `en/` și `ro/`.
+
+**Condiții de finalizare:**
+- sidebarurile sunt derivate din titlurile reale ale paginii;
+- nicio listă de linkuri nu mai cere întreținere manuală.
+
+---
+
+### 014 — Arhiva de căutare și filtrare
+
+**Titlu:** Arhiva de căutare și filtrare
+
+**Descriere:** O bară de căutare în sidebar care filtrează intrările din jurnal după cuvinte-cheie (ex. „Flexbox", „Joins", „Loops") în timp real, folosind filtrul încorporat al browserului sau un algoritm simplu de potrivire a textului.
+
+**Status:** Propus
+**Prioritate:** Medie
+**Fază:** După ce paginile de jurnal sunt populate cu conținut
+
+**De ce mai târziu:** Filtrarea e utilă numai când intrările există deja și sunt numeroase.
+
+**Fișiere afectate:** `en/script.js`, `ro/script.js` și markup-ul sidebarului de pe fiecare pagină de jurnal
+
+**Condiții de finalizare:**
+- scrierea unui cuvânt-cheie filtrează în timp real intrările vizibile;
+- funcția se comporta identic în ambele limbi.
+
+---
+
+### 015 — Calcularea dinamică a offsetului barei de navigare
+
+**Titlu:** Calcularea dinamică a offsetului barei de navigare
+
+**Descriere:** În loc de codarea fixă a celor 100px din MECANISM 05, JavaScript va măsura înălțimea reală a navbarului la runtime și va ajusta `scroll-margin-top` dinamic pentru fiecare dispozitiv.
+
+**Status:** Propus
+**Prioritate:** Low
+**Fază:** O viitoare trecere de calibrare peste punctele de întrerupere
+
+**De ce mai târziu:** Valoarea codată funcționează pe layout-ul curent; măsurarea la runtime e rafinare, nu un blocaj.
+
+**Fișiere afectate:** `en/script.js`, `ro/script.js`, `en/style.css`, `ro/style.css`
+
+**Condiții de finalizare:**
+- ancorarea derulării rămâne precisă pe fiecare înălțime de viewport;
+- offsetul codat din MECANISM 05 este eliminat.
+
+---
+
+### 016 — Sistemul de export al notelor
+
+**Titlu:** Sistemul de export al notelor
+
+**Descriere:** Extinde MECANISM 04 cu un buton „descarcă" care compilează toate notele salvate într-un singur fișier markdown sau text, pentru referință offline.
+
+**Status:** Propus
+**Prioritate:** Medie
+**Fază:** După ce sistemul de persistență a notelor este stabil
+
+**De ce mai târziu:** Exportul este o consecință naturală odată ce notele sunt salvate fiabil între pagini.
+
+**Fișiere afectate:** `en/script.js`, `ro/script.js`
+
+**Condiții de finalizare:**
+- toate notele salvate sunt compilate într-un fișier descărcabil;
+- exportul funcționează în ambele limbi.
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.
