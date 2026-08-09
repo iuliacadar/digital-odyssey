@@ -345,7 +345,7 @@
           creation: the code that builds the ship, displayed on the ship itself,
           for the crew to read, question, and understand. There is no hidden layer.
           What scrolls across the starboard pane is the vessel&#39;s raw neural
-          archive — thirty files of logic, poetry, and structure, exposed to the
+          archive — thirty-two files of logic, poetry, and structure, exposed to the
           light of its own phosphor screen. The ship reads itself aloud so that
           you may learn not just what it does, but what it is.
         </p>
@@ -435,7 +435,7 @@
           <h3 class="panel-title">Raw Source Stream</h3>
 
           <!-- @block: FILE SELECTOR CONSOLE
-            A horizontally scrollable console listing all 30 project files
+            A horizontally scrollable console listing all 32 project files
             grouped by volume. Each button carries a data-path attribute
             that JavaScript reads via the Fetch API to retrieve and display
             the source code. The first tab (recursive-blueprint.html) is
@@ -455,6 +455,14 @@
             <button class="tab-btn" data-path="script.js">script.js</button>
             <button class="tab-btn" data-path="favicon.svg">favicon.svg</button>
             <button class="tab-btn" data-path="bibliography.html">bibliography.html</button>
+            <!-- @file:
+              bibliography.js — THE STITCHING MACHINE, the script that renders
+              the bibliography table. It is a sibling of bibliography.html:
+              the HTML holds only the shell, the JS fetches the shared JSON
+              index and stitches every row into the <tbody>.
+            -->
+            <button class="tab-btn" data-path="bibliography.js">bibliography.js</button>
+            <button class="tab-btn" data-path="vault.html">vault.html</button>
             <button class="tab-btn" data-path="transmission.html">transmission.html</button>
 
             <!-- FRONTEND -->
