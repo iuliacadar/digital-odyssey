@@ -1,130 +1,132 @@
 //  ==========================================================================
-//     D::0dy55ey — ENGINE ROOM: script.js
-//     Every mechanism that animates, observes, and remembers.
-//     Tag legend: ../docs/legend-en.md
+//     D::0dy55ey — SALA DE MAȘINI: script.js
+//     Fiecare mecanism care animează, observă și memorează.
+//     Legenda etichetelor: ../docs/legend-ro.md
 //  ==========================================================================
 
-//  @block: SHIP SENSORS (Global Variable Declarations)
-//    These variables live at the module root because multiple mechanisms need
-//    access to them. They act as the ship's primary sensors — tracking scroll
-//    position and caching DOM references that are expensive to query repeatedly.
+//  @block: SENZORII NAVEI (Declararea variabilelor globale)
+//    Aceste variabile trăiesc la rădăcina modulului pentru că mai multe
+//    mecanisme au nevoie de acces la ele. Ele acționează ca senzorii principali
+//    ai navei — urmăresc poziția scroll-ului și stochează în cache referințe
+//    DOM care ar fi costisitor de interogat în mod repetat.
 //  ==========================================================================
 
-//  @state: lastScrollY — remembers the vertical scroll coordinate from the
-//    previous event. Used by MECANISM 01 to determine scroll direction.
-let lastScrollY = window.scrollY; // Stores the last known Y position. Starts at whatever the page currently reads.
+//  @state: lastScrollY — ține minte coordonata verticală a scroll-ului de la
+//    evenimentul trecut. E folosit de MECANISMUL 01 pentru a afla direcția.
+let lastScrollY = window.scrollY; // Stochează ultima poziție Y cunoscută. Începe cu orice ar citi pagina.
 
-//  @bridge: navbar — the top HUD bar shared across all pages. MECANISM 01
-//    hides/shows it; MECANISM 06.5 toggles overlay on it.
-const navbar = document.querySelector(".navbar"); // Grabs the top navigation bar from the DOM — our persistent HUD.
+//  @bridge: navbar — bara HUD de sus, comună tuturor paginilor. MECANISMUL 01
+//    o ascunde/o arată; MECANISMUL 06.5 pornește overlay pe ea.
+const navbar = document.querySelector(".navbar"); // Prinde bara de navigație de sus din DOM — HUD-ul nostru permanent.
 
-//  @bridge: sidebar — the left-hand navigation console used on log pages.
-//    MECANISMS 02 and 06 read and write its scroll position; MECANISM 05 keeps it stable.
-const sidebar = document.querySelector(".log-sidebar"); // Grabs the left panel — our mission control sidebar.
+//  @bridge: sidebar — consola de navigație din stânga, folosită pe paginile de jurnal.
+//    MECANISMUL 02 și MECANISMUL 06 îi citesc și îi scriu poziția de scroll; MECANISMUL 05 o menține stabilă.
+const sidebar = document.querySelector(".log-sidebar"); // Prinde panoul din stânga — consola noastră de misiune.
 
 
 //  ==========================================================================
-//     MECANISM 01: NAVBAR HIDE/SHOW ON SCROLL
-//     Immersion detail: the menu vanishes when you read down, returns when
-//     you scroll up. Mimics a HUD that retreats when not needed.
+//     MECANISMUL 01: ASCUNDEREA/AFIȘAREA BAREI DE NAVIGAȚIE LA SCROLL
+//     Detaliu de imersiune: meniul dispare când citești în jos și revine când
+//     urci înapoi. Imită un HUD care se retrage când nu e nevoie de el.
 //  ==========================================================================
-//  @mechanism: 01 — Navbar Scroll Dynamics
-//  @event: window scroll
-//  @pedagogy: "scroll" fires hundreds of times per second. But all we do
-//    here is compare two numbers and toggle a CSS class — that is fast
-//    enough to keep the UI smooth without any throttling.
+//  @mechanism: 01 — Dinamica barei la scroll
+//  @event: scroll pe fereastră
+//  @pedagogy: "scroll" se declanșează de sute de ori pe secundă. Tot ce facem
+//    aici e să comparăm două numere și să comutăm o clasă CSS — suficient de
+//    rapid pentru a păstra interfața fluidă, fără nicio constrângere manuală.
 //  ==========================================================================
 
-// We attach a permanent listener to the window's scroll event.
+// Atașăm un ascultător permanent la evenimentul de scroll al ferestrei.
 window.addEventListener("scroll", () => {
-  // We ask the browser: where is the scrollbar right now?
-  const currentScrollY = window.scrollY; // Fresh coordinate, live from the browser engine.
+  // Întrebăm browserul: unde este bara de derulare chiar acum?
+  const currentScrollY = window.scrollY; // Coordona proaspătă, direct din motorul browserului.
 
-  // Check: is the user scrolling down AND past the 100px threshold?
+  // Verifică: derulează în JOS ȘI peste pragul de 100px?
   if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    // Add the CSS class that translates the navbar upward off the screen.
-    navbar.classList.add("navbar--hidden"); // The transition lives in style.css — smooth upward slide.
+    // Adăugăm clasa CSS care ridică bara de navigație în sus, în afara ecranului.
+    navbar.classList.add("navbar--hidden"); // Tranziția trăiește în style.css — alunecare lină în sus.
 
-    // Sidebar optimisation: if the HUD vanished, we glue the sidebar to the top edge (0px).
-    if (sidebar) sidebar.style.top = "0"; // Removes the 60px gap that was reserved for the navbar.
+    // Optimizare sidebar: dacă HUD-ul a dispărut, lipim sidebarul de marginea de sus (0px).
+    if (sidebar) sidebar.style.top = "0"; // Îndepărtează golul de 60px rezervat barei.
   }
-  // Otherwise the user is scrolling up — they want to navigate, bring the HUD back.
+  // În caz contrar utilizatorul derulează în sus — vrea să navigheze, adu HUD-ul înapoi.
   else {
-    navbar.classList.remove("navbar--hidden"); // Strip the hidden class, the navbar slides back down.
+    navbar.classList.remove("navbar--hidden"); // Scoate clasa ascunsă, bara revine în jos.
 
-    // Restore the sidebar offset so it sits comfortably below the visible navbar.
-    if (sidebar) sidebar.style.top = "60px"; // The 60px gap is back, just like before.
+    // Restaurează poziția sidebarului pentru a sta confortabil sub bara vizibilă.
+    if (sidebar) sidebar.style.top = "60px"; // Golul de 60px s-a întors, ca înainte.
   }
 
-  // Update the global sensor with the new coordinate for the next scroll event.
-  lastScrollY = currentScrollY; // The old "last" now becomes "current" — ready for the next comparison.
+  // Actualizăm senzorul global cu noua coordonată pentru următorul eveniment de scroll.
+  lastScrollY = currentScrollY; // Vechiul "last" devine "current" — gata pentru comparația următoare.
 });
 
 
 //  ==========================================================================
-//     MECANISM 02: INTERSECTION OBSERVER — SIDEBAR ACTIVE DETECTION
-//     Reads which section the user is currently looking at and highlights the
-//     corresponding button in the sidebar. On desktop it also auto-scrolls the
-//     sidebar to centre the active button.
+//     MECANISMUL 02: INTERSECTION OBSERVER — DETECTAREA SECȚIUNII ACTIVE
+//     Citește ce secțiune privește acum utilizatorul și evidențiază butonul
+//     corespunzător din sidebar. Pe desktop auto-derulează chiar sidebar-ul
+//     pentru a centra butonul activ.
 //  ==========================================================================
-//  @mechanism: 02 — Sidebar Active Tracking
-//  @event: IntersectionObserver (viewport-based)
-//  @pedagogy: IntersectionObserver is a modern browser API that fires a
-//    callback when an element enters or exits a defined zone of the screen.
-//    It is far more performant than listening to "scroll" and manually
-//    calculating positions — the browser does the geometry internally.
+//  @mechanism: 02 — Urmărirea secțiunii active
+//  @event: IntersectionObserver (bazat pe viewport)
+//  @pedagogy: IntersectionObserver este o API modernă a browserului care
+//    declanșează un callback atunci când un element intră sau iese dintr-o
+//    zonă definită a ecranului. Este cu mult mai performant decât ascultarea
+//    lui "scroll" și calcularea manuală a pozițiilor — browser-ul face
+//    geometria intern.
 //  ==========================================================================
 
-// 1. THE RADAR CONFIGURATION: We define the laser scan zone within the viewport.
+// 1. CONFIGURAȚIA RADARULUI: definim prin viewport zona de scanare cu laser.
 const observerOptions = {
-  root: null, // null means the sensor scans against the visible browser viewport directly.
+  root: null, // null înseamnă că sensorul radar scanează direct viewport-ul vizibil al browserului.
 
-  //   The laser scan line: we detect the element when it sits in the upper-centre area.
-  //   We ignore the top 20% and the bottom 70% — this leaves a fixed 10% scan window.
-  rootMargin: "-20% 0px -70% 0px", // The active scan zone is the upper-middle slice of the screen.
-  threshold: 0, // Fire the signal instantly the instant the article touches the margin above.
+  //   Linia de scanare cu laser: detectăm elementul când se află în zona central-superioară.
+  //   Ignorăm partea de sus 20% și partea de jos 70% — rămâne o fereastră fixă de scanare 10%.
+  rootMargin: "-20% 0px -70% 0px", // Zona de scanare activă este feliul de mijloc-superior al ecranului.
+  threshold: 0, // Declanșează semnalul instantaneu când articolul atinge marginea de mai sus.
 };
 
-// 2. THE SENSOR LOGIC: What happens when a log section enters our scan zone.
+// 2. LOGICA SENZORULUI:  Ce se întâmplă când o secțiune de jurnal intră în zona noastră de scanare.
 const observer = new IntersectionObserver((entries) => {
-  // The observer gives us an array of entries — we check each one.
+  // Observerul ne dă un array de intrări — verificăm fiecare.
   entries.forEach((entry) => {
-    // If this log entry has successfully intersected our scan margin...
+    // Dacă această intrare s-a intersectat cu succes cu marginea noastră de scanare...
     if (entry.isIntersecting) {
-      const id = entry.target.getAttribute("id"); // Grab the entry's unique ID (e.g. "html-day01").
+      const id = entry.target.getAttribute("id"); // Preia ID-ul unic al intrării (de ex. "html-day01").
 
-      // Step A: Wipe the active state (pink glow) from ALL sidebar links first.
+      // Pasul A: Ștergem starea activă (luciu roz) de la TOATE link-urile din sidebar mai întâi.
       document.querySelectorAll(".sidebar-nav a").forEach((link) => {
-        link.classList.remove("active"); // Kill the light everywhere before lighting one up.
+        link.classList.remove("active"); // Oprim lumina peste tot înainte de a aprinde una singură.
       });
 
-      // Step B: Find the exact sidebar button whose href matches this detected ID.
+      // Pasul B: Găsim exact butonul din sidebar al cărui href se potrivește cu acest ID detectat.
       const activeLink = document.querySelector(
         `.sidebar-nav a[href="#${id}"]`,
       );
 
-      // If we found the matching button, inject the .active class to light it up.
+      // Dacă am găsit butonul potrivit, injectăm clasa .active ca să-l facem să strălucească.
       if (activeLink) {
-        // Step C: Light up the current day's button with the nebula-pink glow.
-        activeLink.classList.add("active"); // The button now shines in the sidebar.
+        // Pasul C: Aprindem butonul zilei curente cu luciul nebula-pink.
+        activeLink.classList.add("active"); // Butonul acum strălucește în sidebar.
 
-        // Step D: Select the inner scrollable list (the <ul> inside the sidebar).
+        // Pasul D: Selectăm lista interioară derulabilă (elementul <ul> din interiorul sidebarului).
         const innerSidebarList = document.querySelector(".sidebar-nav ul");
 
-        // ACTIVATE THE RADAR: Only run this auto-centering on Desktop (screens > 768px).
+        // ACTIVEAZĂ RADARUL: Executăm această autocentrare doar pe Desktop (ecrane peste 768px).
         if (window.innerWidth > 768 && innerSidebarList) {
-          //     THE AUTO-CENTRE ALGORITHM:
-          //    We calculate where the day's button sits within the list (offsetTop)
-          //    and subtract half the sidebar window height (clientHeight / 2).
-          //    This simple maths brings the button and its Sector label
-          //    RIGHT into the visual centre of the menu, right beneath the MAP title!
+          //     ALGORITMUL DE AUTOCENTRARE:
+          //    Calculăm unde se află butonul zilei în interiorul listei (offsetTop)
+          //    și scădem jumătate din înălțimea ferestrei sidebaruluiui (clientHeight / 2).
+          //    Acest calcul simplu aduce atâta butonul cât si eticheta Sectorului
+          //    chiar în centrul vizual al meniului, chiar sub titlul HARTĂ!
           const centerPosition =
             activeLink.offsetTop - innerSidebarList.clientHeight / 2;
 
-          // The sidebar performs a smooth, silent scroll to that exact position.
+          // Sidebar-ul execută o derulare silențioasă și lin către acea poziție exactă.
           innerSidebarList.scrollTo({
-            top: centerPosition, // Scroll to the calculated centre point.
-            behavior: "smooth", // Smooth cinematic glide.
+            top: centerPosition, // Derulare la punctul central calculat.
+            behavior: "smooth", // Glisare cinematică lină.
           });
         }
       }
@@ -132,159 +134,162 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// 3. PHYSICAL SENSOR ACTIVATION. Attach one sensor to each log day you wrote in HTML.
-// We tell the browser to place a radar on every .log-entry article.
+// 3. ACTIVAREA FIZICĂ A SENZORILOR. Atașăm câte un sensor fiecărei zile de jurnal scrisă in HTML.
+// Spunem browserului să pună un radar pe fiecare articol .log-entry.
 document.querySelectorAll(".log-entry").forEach((article) => {
-  observer.observe(article); // Start scanning this article for intersection events.
+  observer.observe(article); // Începe scanarea acestui articol pentru evenimente de intersecție.
 });
 
 
 //  ==========================================================================
-//     MECANISM 03: MISSION STATUS — ANIMATION RE-TRIGGER
-//     Every time a .mission-status box scrolls into view, its typing animation
-//     is forcibly reset so the user sees it type out fresh.
+//     MECANISMUL 03: STATUS DE MISIUNE — RE-DECLANȘAREA ANIMAȚIEI
+//     De fiecare dată când o casetă .mission-status intră în câmpul vizual,
+//     animația ei de tipar este resetată forțat, ca utilizatorul să o vadă
+//     scriindu-se din nou.
 //  ==========================================================================
-//  @mechanism: 03 — Typing Animation Reset
-//  @event: IntersectionObserver (30% visibility threshold)
-//  @pedagogy: The re-trigger trick works by setting animation to "none" (stops
-//    the CSS animation), forcing a browser reflow via offsetHeight, then
-//    setting animation back to null (restores the original CSS animation). The
-//    browser re-interprets the animation as "new" and replays it from frame 0.
+//  @mechanism: 03 — Resetarea animației de tipar
+//  @event: IntersectionObserver (prag de 30% vizibilitate)
+//  @pedagogy: Trucul de re-declanșare funcționează setând animation la "none"
+//    (oprește animația CSS), forțând un reflow din partea browserului prin
+//    offsetHeight, apoi setând animation înapoi la null (restaurează animația
+//    CSS originală). Browserul reinterpretează animația ca fiind "nouă" și o
+//    redă de la cadrul 0.
 //  ==========================================================================
 
-// We create a second observer dedicated to the green mission status boxes.
+// Creăm un al doilea observer dedicat casetelor verzi cu starea misiunii.
 const statusObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      // When the green mission status box enters the screen (>30% visible)...
+      // Când caseta verde cu starea de misiune intră în ecran (>30% vizibilă)...
       if (entry.isIntersecting) {
-        const statusText = entry.target.querySelector("p"); // Find the <p> tag inside the box.
+        const statusText = entry.target.querySelector("p"); // Găsește tag-ul <p> din interiorul casetei.
 
         if (statusText) {
-          // Step A: Freeze and forcibly stop the current animation.
+          // Pasul A: Îngheață și oprește cu forța animația curentă.
           statusText.style.animation = "none";
-          // Step B: THE MAGIC TRICK! Force the browser to recalculate the size, registering the reset.
-          statusText.offsetHeight; // Accessing offsetHeight forces a synchronous reflow — the browser notices the "none".
-          // Step C: Remove the block, allowing the CSS animations (typing + blink) to restart cleanly from frame 0.
-          statusText.style.animation = null; // null restores the original CSS animation, which now feels "new" to the browser.
+          // Pasul B: TRUCUL MAGIC! Forțează browserul să recalculeze dimensiunea, înregistrând reset-ul.
+          statusText.offsetHeight; // Accesarea offsetHeight forțează un reflow sincron — browserul observă "none".
+          // Pasul C: Preia blocul, permițând animațiile CSS (tipar + blink) să repornească curat de la cadrul 0.
+          statusText.style.animation = null; // null restaurează animația CSS originală, care acum pare "nouă" browserului.
         }
       }
     });
   },
-  { threshold: 0.3 }, // Fire when at least 30% of the box is visible on screen.
+  { threshold: 0.3 }, // Declanșează când cel puțin 30% din casetă este vizibilă pe ecran.
 );
 
-// Attach the radar to every mission status bar across all your HTML journals.
+// Atașăm radarul la fiecare bară de status de misiune din toate jurnalele HTML.
 document.querySelectorAll(".mission-status").forEach((status) => {
-  statusObserver.observe(status); // Start the monitoring radar on each status box.
+  statusObserver.observe(status); // Activează radarul de supraveghere pe fiecare casetă de status.
 });
 
 
 //  ==========================================================================
-//     MECANISM 04: LOCALSTORAGE — PERSISTENT NOTES SYSTEM
-//     Lets the captain write notes in terminal-style textareas and have them
-//     survive page refreshes. Uses the browser's localStorage API.
+//     MECANISMUL 04: LOCALSTORAGE — SISTEM DE NOTE PERSISTENTE
+//     Îi permite căpitanului să scrie note tip terminal și să le păstreze
+//     peste reîncărcările paginii. Folosește API-ul localStorage al browserului.
 //  ==========================================================================
-//  @mechanism: 04 — Persistent Note Saving
-//  @pedagogy: localStorage is a key-value store built into every browser. Data
-//    survives page reloads and browser restarts. Each note gets its own key
-//    (the textarea's id), so notes do not overwrite each other. The limit is
-//    approximately 5MB per origin (domain).
+//  @mechanism: 04 — Salvarea persistentă a notelor
+//  @pedagogy: localStorage este un depozit cheie-valoare integrat în fiecare
+//    browser. Datele supraviețuiesc reîncărcărilor de pagină și repornirilor
+//    browserului. Fiecare notă primește propria cheie (id-ul textarea-ului),
+//    astfel încât notele să nu se suprascrie reciproc. Limita este de
+//    aproximativ 5MB per origine (domeniu).
 //  ==========================================================================
 
-// Function A: Saving the signal to the archives (when you click the button below the textarea).
+// Funcția A: Salvarea semnalului în arhive (când dai click pe butonul de sub textarea).
 function saveNote(dayId) {
-  const textarea = document.getElementById(dayId); // Find the textarea using its unique ID.
-  const noteContent = textarea.value; // Extract the text you typed inside it.
+  const textarea = document.getElementById(dayId); // Găsește textarea după id-ul său unic.
+  const noteContent = textarea.value; // Extrage textul pe care l-ai tasta în interior.
 
-  // Save the content to the browser's secure localStorage memory.
-  // The day ID becomes a unique "key" (e.g. key "html-note-day01" holds only that day's text).
-  localStorage.setItem(dayId, noteContent); // localStorage = key-value. Key: dayId, Value: what you typed.
+  // Salvează conținutul în memoria localStorage securizată a browserului.
+  // Id-ul zilei devine o "cheie" unică (ex. cheia "html-note-day01" păstrează doar textul acelei zile).
+  localStorage.setItem(dayId, noteContent); // localStorage = cheie-valoare. Cheie: dayId, Valoare: ce ai tastat.
 
-  console.log(`Signal saved for sector: ${dayId}`); // Log a technical confirmation to the dev console.
-  alert("Signal extension saved to local archives."); // On-screen alert confirming the save to the user.
+  console.log(`Signal saved for sector: ${dayId}`); // Loghează o confirmare tehnică în consola dezvoltatorului.
+  alert("Signal extension saved to local archives."); // Alertă pe ecran care confirmă salvarea.
 }
 
-// Function B: Automatic loading of stored data when the page starts/loads.
+// Funcția B: încărcarea automată a datelor stocate când pagina pornește/încarcă.
 window.addEventListener("load", () => {
-  const allNotes = document.querySelectorAll(".note-terminal textarea"); // Find every textarea in the journal.
+  const allNotes = document.querySelectorAll(".note-terminal textarea"); // Găsește fiecare textarea din jurnal.
 
   allNotes.forEach((textarea) => {
-    const savedContent = localStorage.getItem(textarea.id); // Ask the browser memory: anything saved for this ID?
+    const savedContent = localStorage.getItem(textarea.id); // Întreabă memoria browserului: există ceva salvat pentru acest ID?
 
-    // If we found old notes in the archive, auto-inject them back into the textarea so you don't lose them.
+    // Dacă am găsit note vechi în arhivă, le reintroducem automat în textarea ca să nu le pierzi.
     if (savedContent) {
-      textarea.value = savedContent; // Restore the captain's previous writing.
+      textarea.value = savedContent; // Restaurează scrierea anterioară a căpitanului.
     }
   });
 });
 
 
 //  ==========================================================================
-//     MECANISM 05: DESKTOP ANCHOR NAVIGATION (Log Page Sidebar)
-//     Prevents the browser from jumping the sidebar when clicking an anchor
-//     link. Instead, it scrolls only the right-hand content panel
-//     (.log-content) and updates the URL via history.pushState.
+//     MECANISMUL 05: NAVIGAȚIA PRIN ANCORE PE DESKTOP (Sidebar-ul Paginii de Jurnal)
+//     Împiedică browserul să sare cu pagina când dai click pe un link-ancoră.
+//     În schimb, derulează doar panoul de conținut din dreapta
+//     (.log-content) și actualizează adresa URL prin history.pushState.
 //  ==========================================================================
-//  @mechanism: 05 — Anti-Drift Anchor Navigation
-//  @event: DOMContentLoaded → click on .sidebar-link and .map-title-link
-//  @reason: Without this mechanism, clicking "#html-day01" would scroll the
-//    entire page, dragging the sidebar out of position. By intercepting the
-//    click, we scroll only the content panel and leave the sidebar fixed.
+//  @mechanism: 05 — Navigare prin ancore fără derive
+//  @event: DOMContentLoaded → click pe .sidebar-link și .map-title-link
+//  @reason: Fără acest mecanism, click pe "#html-day01" ar derula întreaga
+//    pagină, scoțând sidebar-ul din poziție. Prin interceptarea click-ului,
+//    derulăm doar panoul de conținut și lăsăm sidebar-ul fix.
 //  ==========================================================================
 
-// The protocol activates automatically when the full DOM matrix of the cockpit has loaded.
+// Protocolul se activează automat când întreaga matrice DOM a cabinei de pilotare a fost încărcată.
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the right-side container (the article zone with the scrollbar).
-  const mainContentZone = document.querySelector(".log-content"); // This is the <main> scrollable area.
+  // Selectăm containerul din dreapta (zona articolelor cu scrollbar).
+  const mainContentZone = document.querySelector(".log-content"); // Aceasta este zona <main> care se poate derula.
 
-  //  CORRECTED RADAR: We select both the days (.sidebar-link) AND the special map link (.map-title-link)
-  //  so they all fall under the same mechanical shield protection!
+  //  RADARUL CORECTAT: Selectăm atât zilele (.sidebar-link) CÂT ȘI linkul special către hartă (.map-title-link)
+  //  ca toate să cadă sub aceeași protecție mecanică a scutului!
   const navigationLinks = document.querySelectorAll(
     ".sidebar-link, .map-title-link",
   );
 
   navigationLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      // STEP A: CHECK OPERATING MODE (Desktop vs Mobile)
+      // Pasul A: VERIFICAREA MODULUI DE OPERARE (Desktop vs Mobil)
       if (window.innerWidth > 768) {
-        //  ABSOLUTELY ESSENTIAL: We stop the browser's native action that used to drag the sidebar up!
-        //  This is the shield that blocks the h4 title from flying off the screen.
-        event.preventDefault(); // Kill the browser's default jump-to-anchor behaviour.
+        //  ABSOLUT ESENȚIAL: Oprim acțiunea nativă a browserului care obișnuia să tragă sidebar-ul în sus!
+        //  Acesta este scutul care blochează titlul h4 să zboare de pe ecran.
+        event.preventDefault(); // Oprim comportamentul nativ de salt-către-ancoră al browserului.
 
-        const targetAnchorId = link.getAttribute("href"); // Grab the anchor (e.g. "#top-deck" or "#html-day01").
-        const targetArticleSection = document.querySelector(targetAnchorId); // Find the target element in the DOM.
+        const targetAnchorId = link.getAttribute("href"); // Preia ancora (ex. "#top-deck" sau "#html-day01").
+        const targetArticleSection = document.querySelector(targetAnchorId); // Găsește elementul țintă în DOM.
 
         if (targetArticleSection && mainContentZone) {
           let exactScrollCoordinates;
 
-          //  INDIVIDUAL PROTOCOL FOR MAPS:
-          //   If the user clicked the big MAP title, we order the right container
-          //   to reset completely to the top (coordinate 0), no parasitic offsets!
+          //  PROTOCOL INDIVIDUAL PENTRU HĂRȚI:
+          //   Dacă utilizatorul a dat click pe marele titlu HĂRTĂ, ordinăm containerului
+          //   din dreapta să se reseteze complet în sus (coordonata 0), fără offseturi parazite!
           if (link.classList.contains("map-title-link")) {
-            exactScrollCoordinates = 0; // The map link always goes to the very top.
+            exactScrollCoordinates = 0; // Linkul către hartă duce mereu chiar în vârf.
           }
-          //  INDIVIDUAL PROTOCOL FOR DAYS:
-          //  Apply your ideal 100px cushion to place log entries neatly under the HUD.
+          //  PROTOCOL INDIVIDUAL PENTRU ZILE:
+          //  Aplică tăşia ideală de 100px ca să plasezi intrările de jurnal ordonat sub HUD.
           else {
-            exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px accounts for the fixed navbar.
+            exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px ia în calcul navigația fixă.
           }
 
-          // Execute a smooth scroll STRICTLY inside the right-side window (.log-content).
+          // Executăm o derulare lină STRICT în interiorul ferestrei din dreapta (.log-content).
           mainContentZone.scrollTo({
-            top: exactScrollCoordinates, // The calculated target position.
-            behavior: "smooth", // Smooth cinematic glide.
+            top: exactScrollCoordinates, // Poziția țintă calculată.
+            behavior: "smooth", // Glisare cinematografică fină.
           });
 
-          // Discreetly update the browser URL bar without chaotic visual jumps.
-          history.pushState(null, null, targetAnchorId); // Changes the URL hash without reloading the page.
+          // Actualizăm discret bara URL a browserului fără sărituri vizuale haotice.
+          history.pushState(null, null, targetAnchorId); // Schimbă hash-ul URL fără să reintre încărce pagina.
         }
       }
-      // STEP B: MOBILE MODE
+      // Pasul B: MODUL MOBILE
       else {
         console.log(
           `Mobile navigation active for sector: ${link.getAttribute("href")}`,
-        ); // Just log it; let the browser handle anchors natively on mobile.
+        ); // Doar loghează; lasă browserul să manejeze ancorele nativ pe mobil.
       }
     });
   });
@@ -292,41 +297,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //  ==========================================================================
-//     MECANISM 06: MOBILE HUD — HORIZONTAL AUTO-SCROLL
-//     On narrow screens, when a new section becomes active via MECANISM 02,
-//     the sidebar horizontally scrolls to centre the active button.
+//     MECANISMUL 06: HUD MOBILE — DERULARE ORIZONTALĂ AUTOMATĂ
+//     Pe ecranele înguste, când o nouă secțiune devine activă prin MECANISMUL 02,
+//     sidebar-ul se derulează orizontal ca să centraze butonul activ.
 //  ==========================================================================
-//  @mechanism: 06 — HUD Horizontal Sync
+//  @mechanism: 06 — Sincronizarea orizontală a HUD
 //  @event: window scroll
-//  @guard: only runs on viewports <= 768px (mobile and split-screen).
+//  @guard: rulează doar pe viewport-uri <= 768px (mobil și ecran divizat).
 //  ==========================================================================
 
-// We listen to the global scroll event again, but this time for mobile.
+// Ascultăm din nou evenimentul global de scroll, dar de data aceasta pentru mobil.
 document.addEventListener("scroll", () => {
-  // Execute this protocol strictly on narrow screens (Mobile / Split-screen).
+  // Executăm acest protocol strict pe ecranele înguste (Mobil / Ecran divizat).
   if (window.innerWidth <= 768) {
-    // Select the outer console container (the one with overflow-x: auto).
-    const hudContainer = document.querySelector(".log-sidebar"); // The sidebar doubles as a horizontal HUD on mobile.
+    // Selectăm containerul consolei exterioare (cel cu overflow-x: auto).
+    const hudContainer = document.querySelector(".log-sidebar"); // Sidebar-ul dublat ca HUD orizontal pe mobil.
 
-    // Find the day button that received the .active class in that moment from MECANISM 02.
-    const activeButton = document.querySelector(".sidebar-nav a.active"); // The glow tells us which section is visible.
+    // Găsește butonul zilei care a primit clasa .active în acel moment din MECANISMUL 02.
+    const activeButton = document.querySelector(".sidebar-nav a.active"); // Luciul ne spune care secțiune este vizibilă.
 
-    // Safety shield: run the logic only if both elements are alive on screen.
+    // Scut de siguranță: rulează logica doar dacă ambele elemente sunt prezente pe ecran.
     if (hudContainer && activeButton) {
-      /* TACTILE REALITY MATHS:
-          Calculate the button's position relative to the screen's left edge (offsetLeft)
-         and subtract half the HUD width to land it EXACTLY centre! */
-      const buttonLeft = activeButton.offsetLeft; // Distance from the left edge of the container.
-      const buttonWidth = activeButton.offsetWidth; // How wide is the active button itself?
-      const hudWidth = hudContainer.offsetWidth; // How wide is the visible HUD window?
+      /* MATEMATICA REALITĂȚII TACTILE:
+          Calculăm poziția butonului relativ la marginea stângă a ecranului (offsetLeft)
+          și scădem jumătate din lățimea HUD pentru a-l aduce EXACT în centru! */
+      const buttonLeft = activeButton.offsetLeft; // Distanța de la marginea stângă a containerului.
+      const buttonWidth = activeButton.offsetWidth; // Cât de lat este butonul activ?
+      const hudWidth = hudContainer.offsetWidth; // Cât de lată este fereastra HUD vizibilă?
 
       const targetScroll =
-        buttonLeft - hudWidth / 2 + buttonWidth / 2; // Centre the button in the visible area.
+        buttonLeft - hudWidth / 2 + buttonWidth / 2; // Centrează butonul în aria vizibilă.
 
-      // Order the console to execute a smooth horizontal glide to that coordinate.
+      // Ordin pentru consolă: execută o glisare orizontală lină către coordonată.
       hudContainer.scrollTo({
-        left: targetScroll, // The calculated centre position.
-        behavior: "smooth", // Smooth slide, like a camera dolly.
+        left: targetScroll, // Poziția centrată calculată.
+        behavior: "smooth", // Glisare lină, ca un dolly de cameră.
       });
     }
   }
@@ -334,444 +339,481 @@ document.addEventListener("scroll", () => {
 
 
 //  ==========================================================================
-//     MECANISM 06.5: HUD TELEPORT CONSOLE TOGGLE
-//     The "Command Deck" button opens/closes the holographic volume overlay.
-//     The CSS class .hud-open on the .navbar triggers the slide-down animation.
-//     Clicking outside the overlay or pressing Escape closes it.
+//     MECANISMUL 06.5: CONSOLA DE TELEPORTARE HUD — PORNIRE/OPRIRE
+//     Butonul "Comandă Deck" deschide/închide overlay-ul holografic de volum.
+//     Clasa CSS .hud-open de pe .navbar declanșează animația de coborâre.
+//     Click în afara overlay-ului sau apăsarea tastei Escape îl închide.
 //  ==========================================================================
-//  @mechanism: 06.5 — HUD Console Toggle
-//  @event: click on .hud-toggle, click outside .hud-overlay, Escape key
-//  @pedagogy: Toggling a CSS class via classList.toggle is the simplest
-//    and most performant way to show/hide UI elements. No display:none
-//    switching, no height calculations — just let CSS transitions handle
-//    the animation. The outside-click and Escape listeners act as safety
-//    releases, ensuring the overlay never traps the user.
+//  @mechanism: 06.5 — Comutatorul consolei HUD
+//  @event: click pe .hud-toggle, click în afara .hud-overlay, tasta Escape
+//  @pedagogy: Comutarea unei clase CSS prin classList.toggle este cea mai
+//    simplă și mai performantă metodă de a arăta/ascunde elemente UI. Nu se
+//    folosește display:none, nici calcule de înălțime — doar transițiile CSS
+//    se ocupă de animație. Ascultătorii de click-în-afară și Escape acționează
+//    ca eliberări de siguranță, asigurând că overlay-ul nu prinde niciodată.
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".hud-toggle"); // The "Command Deck" button.
-  const navBar = document.querySelector(".navbar"); // The parent navbar that receives .hud-open.
-  const overlay = document.querySelector(".hud-overlay"); // The slide-down panel.
+  const toggleBtn = document.querySelector(".hud-toggle"); // Butonul "Comand Deck".
+  const navBar = document.querySelector(".navbar"); // Navbar-ul părinte care primește .hud-open.
+  const overlay = document.querySelector(".hud-overlay"); // Panoul care coboară cu animație.
 
-  // Safety exit: if any element is missing, we're on a page without the HUD — bail out.
+  // Ieșire de siguranță: dacă lipsește vreun element, ne aflăm pe o pagină fără HUD — abandonăm.
   if (!toggleBtn || !navBar || !overlay) return;
 
-  // Toggle the .hud-open class on the navbar when the button is clicked.
+  // Comută clasa .hud-open pe navbar când se apasă butonul.
   toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent the click from reaching the document listener below.
-    navBar.classList.toggle("hud-open"); // CSS handles the height animation.
+    e.stopPropagation(); // Împiedică click-ul să ajungă la ascultătorul documentului de mai jos.
+    navBar.classList.toggle("hud-open"); // CSS-ul se ocupă de animația înălțimii.
   });
 
-  // Close the overlay when clicking outside of it.
+  // Închide overlay-ul când se face click în afara lui.
   document.addEventListener("click", (e) => {
-    // If the overlay is open and the click is outside both the overlay and the toggle button...
+    // Dacă overlay-ul este deschis și click-ul este în afara atât a lui cât și a butonului de comutare...
     if (
       navBar.classList.contains("hud-open") &&
       !overlay.contains(e.target) &&
       !toggleBtn.contains(e.target)
     ) {
-      navBar.classList.remove("hud-open"); // Close the HUD panel.
+      navBar.classList.remove("hud-open"); // Închide panoul HUD.
     }
   });
 
-  // Close the overlay when the Escape key is pressed.
+  // Închide overlay-ul când se apasă tasta Escape.
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && navBar.classList.contains("hud-open")) {
-      navBar.classList.remove("hud-open"); // Emergency release: Escape shuts the panel.
+      navBar.classList.remove("hud-open"); // Eliberare de urgență: Escape închide panoul.
     }
   });
 });
 
 
 //  ==========================================================================
-//     MECANISM 07: CURSOR ERASE PROTOCOL (Typing Animation Cleanup)
-//     After the CSS typing animation on the index page finishes, this mechanism
-//     removes the blinking cursor by setting border-right to "none" with
-//     !important. The timing matches the CSS keyframe durations.
+//     MECANISMUL 07: PROTOCOLUL DE ȘTERGERE A CURSORULUI (Curățarea Animației de Tipar)
+//     După ce se termină animația de tipar CSS de pe pagina index, acest mecanism
+//     elimină cursorul intermitent setând border-right la "none" cu
+//     !important. Timingul se potrivește cu duratele keyframe-urilor CSS.
 //  ==========================================================================
-//  @mechanism: 07 — Stencil Cursor Erase
+//  @mechanism: 07 — Ștergerea cursorului șablon
 //  @event: DOMContentLoaded
-//  @bridge: Targets .stenciled-metal-text (h1) and .stenciled-metal-text-sub
-//    (p) — the same elements animated by CSS in style.css.
+//  @bridge: Țintește .stenciled-metal-text (h1) și .stenciled-metal-text-sub
+//    (p) — aceleași elemente animate de CSS în style.css.
 //  ==========================================================================
 
-// The protocol activates automatically when the complete DOM matrix has loaded.
+// Protocolul se activează automat când matricea DOM completă s-a încărcat.
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. SENSOR TARGETS: Identify the stencilled text elements in the header.
-  const macroText = document.querySelector(".stenciled-metal-text"); // The big h1 title.
-  const microText = document.querySelector(".stenciled-metal-text-sub"); // The smaller subtitle.
+  // 1. ȚINTELE SENZORILOR: Identificăm elementele de text șablon din antet.
+  const macroText = document.querySelector(".stenciled-metal-text"); // Marele titlu h1.
+  const microText = document.querySelector(".stenciled-metal-text-sub"); // Subtitlul mai mic.
 
-  // Safety shield: only calibrate if both elements are present on the page.
+  // Scut de siguranță: calibare doar dacă ambele elemente sunt prezente pe pagină.
   if (macroText && microText) {
-    //  2. MAIN TITLE (H1) ERASE PROTOCOL
-    //  The CSS typing animation lasts exactly 3 seconds (3000ms).
-    //  We launch a military timer that removes the border line when it expires.
+    //  2. PROTOCOLUL DE ȘTERGERE AL TITLULUI PRINCIPAL (H1)
+    //  Animația de tipar CSS durează exact 3 secunde (3000ms).
+    //  Lansăm un cronometru militar care elimină linia de bordură la expirare.
     setTimeout(() => {
-      macroText.style.setProperty("border-right", "none", "important"); // Cut the physical right border of the text.
+      macroText.style.setProperty("border-right", "none", "important"); // Taie bordura fizică din dreapta textului.
       macroText.style.setProperty(
         "border-right-color",
         "transparent",
         "important",
-      ); // Force opacity to absolute zero.
-    }, 3000); // 3000ms = exact duration of the h1 animation.
+      ); // Forțăm opacitatea la zero absolut.
+    }, 3000); // 3000ms = durata exactă a animației h1.
 
-    //  3. SUBTITLE MONOSPACE (P) ERASE PROTOCOL
-    //  The subtitle has a 3-second delay and then types for 4 seconds.
-    //  Total time to full metal stabilisation is 7 seconds (7000ms).
+    //  3. PROTOCOLUL DE ȘTERGERE AL SUBTITLULUI MONOSPACE (P)
+    //  Subtitlul are o întârziere de 3 secunde iar apoi se tipărește timp de 4 secunde.
+    //  Timpul total până la stabilizarea completă a metalului este de 7 secunde (7000ms).
     setTimeout(() => {
-      microText.style.setProperty("border-right", "none", "important"); // Stop the blinking, erase the secondary line.
+      microText.style.setProperty("border-right", "none", "important"); // Oprește intermitența, șterge linia secundară.
       microText.style.setProperty(
         "border-right-color",
         "transparent",
         "important",
-      ); // Guarantee total pixel cleanup.
-    }, 7000); // 7000ms = 3000ms (delay) + 4000ms (typing duration).
+      ); // Garantează curățarea totală a pixelilor.
+    }, 7000); // 7000ms = 3000ms (întârziere) + 4000ms (durata de tipar).
   }
 });
 
 
 //  ==========================================================================
-//     MECANISM 08: RECURSIVE SOURCE INTEGRATION (Blueprint Page Only)
-//     Reads the data-path attribute from .tab-btn buttons, fetches the
-//     corresponding file via the Fetch API, and injects its raw source code
-//     into .code-inspector-screen. Also handles auto-centre on mobile.
+//     MECANISMUL 08: INTEGRAREA SURSEI RECURSIVE (Doar pe Pagina de Blueprint)
+//     Citește atributul data-path din butoanele .tab-btn, preia fișierul
+//     corespunzător prin API-ul Fetch și injectează codul său brut
+//     în .code-inspector-screen. Gestionează și auto-centrarea pe mobil.
 //  ==========================================================================
-//  @mechanism: 08 — Recursive Source Loader
-//  @event: DOMContentLoaded, then click on .tab-btn
-//  @pedagogy: The Fetch API is the modern way to make HTTP requests from
-//    JavaScript. fetch() returns a Promise that resolves with a Response
-//    object. .then() chains handle the response, .catch() handles errors.
-//    The loaded code is displayed as plain text (not executed) via
-//    textContent, which is safe against XSS attacks.
+//  @mechanism: 08 — Încărcător recursiv de sursă
+//  @event: DOMContentLoaded, apoi click pe .tab-btn
+//  @pedagogy: API-ul Fetch este metoda modernă de a face cereri HTTP din
+//    JavaScript. fetch() întoarce un Promise care se rezolvă cu un obiect
+//    Response. Lanțurile .then() gestionează răspunsul, iar .catch() erorile.
+//    Codul încărcat este afișat ca text simplu (nu este executat) prin
+//    textContent, ceea ce este sigur împotriva atacurilor XSS.
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Grab the output container and the tab button container from the DOM.
-  const scriptTarget = document.getElementById("script-stream-target"); // The <pre> or <code> block where source appears.
-  const tabContainer = document.querySelector(".source-selector-tabs"); // The tab bar with data-path buttons.
+  // Preia containerul de ieșire și containerul butoanelor tab din DOM.
+  const scriptTarget = document.getElementById("script-stream-target"); // Blocul <pre> sau <code> în care apare sursa.
+  const tabContainer = document.querySelector(".source-selector-tabs"); // Bara de tab-uri cu butoane data-path.
 
-  // Safety exit: if these elements don't exist, we're NOT on the recursive-blueprint page — bail out.
+  // Ieșire de siguranță: dacă aceste elemente nu există, NU suntem pe pagina de blueprint recursiv — renunțăm.
   if (!scriptTarget || !tabContainer) return;
 
-  // Launch an async fetch scan towards the selected source file.
+  // Lansăm o scanare fetch asincronă către fișierul sursă selectat.
   function loadSourceFile(filePath) {
-    // Show "Loading..." visual feedback to the user.
+    // Afișăm feedback-ul vizual "Se încarcă..." utilizatorului.
     scriptTarget.textContent = "Loading...";
-    scriptTarget.style.color = ""; // Reset any previous error colour.
+    scriptTarget.style.color = ""; // Resetăm orice culoare de eroare anterioară.
 
-    fetch(filePath) // Start the HTTP fetch request to the target file.
+    fetch(filePath) // Pornește cererea HTTP fetch către fișierul țintă.
       .then((response) => {
         if (!response.ok) {
           throw new Error(
             `File "${filePath}" not found. (${response.status})`,
-          ); // Network error? Throw it to the catch block.
+          ); // Eroare de rețea? O aruncăm către blocul catch.
         }
-        return response.text(); // Convert the raw network buffer into plain usable text.
+        return response.text(); // Transformă tamponul brut al rețelei în text simplu util.
       })
       .then((rawCode) => {
-        // Inject the text directly into the inspector screen as plain non-executable text.
-        scriptTarget.textContent = rawCode; // The source code now appears in the glass cylinder.
+        // Injectăm textul direct în ecranul inspectorului ca text simplu neexecutabil.
+        scriptTarget.textContent = rawCode; // Codul sursă apare acum în cilindrul de sticlă.
       })
       .catch((error) => {
-        // If anything failed, display a pink critical error alert on screen.
+        // Dacă a eșuat ceva, afișăm pe ecran o alertă critică de eroare roz.
         scriptTarget.textContent = `[CRITICAL ERROR]: ${error.message}`;
-        scriptTarget.style.color = "var(--nebula-pink)"; // Pink visual alert for system damage.
+        scriptTarget.style.color = "var(--nebula-pink)"; // Alertă vizuală roză pentru defecțiune de sistem.
       });
   }
 
-  // TAB CLICK HANDLER: When the user clicks a tab button in the source selector.
+  // GESTIONAREA CLICK PE TAB: Când utilizatorul apasă un buton tab în selectorul de surse.
   tabContainer.addEventListener("click", (e) => {
-    // closest() walks up the DOM tree to find the nearest .tab-btn.
-    // This handles clicks on child elements (like a <span> inside the button).
+    // closest() urcă prin arborele DOM ca să găsească cel mai apropiat .tab-btn.
+    // Gestionează click-urile pe elemente copil (cum ar fi un <span> în interiorul butonului).
     const btn = e.target.closest(".tab-btn");
-    if (!btn) return; // Clicked outside a tab button? Ignore.
+    if (!btn) return; // Click în afara unui buton de tab? Ignoră.
 
-    // Step A: Strip the active-tab class from ALL tabs.
+    // Pasul A: Șterge clasa active-tab de la TOATE taburile.
     tabContainer.querySelectorAll(".tab-btn").forEach((b) => {
-      b.classList.remove("active-tab"); // Kill the active state across the board.
+      b.classList.remove("active-tab"); // Ucide starea activă în totalitate.
     });
-    // Step B: Light up only the clicked button.
-    btn.classList.add("active-tab"); // The clicked tab now glows.
+    // Pasul B: Aprinde doar butonul apăsat.
+    btn.classList.add("active-tab"); // Tab-ul apăsat acum strălucește.
 
-    // Step C: Read the data-path attribute — it holds the relative URL to the source file.
+    // Pasul C: Citește atributul data-path — acesta deține URL-ul relativ al fișierului sursă.
     const filePath = btn.getAttribute("data-path");
     if (filePath) {
-      loadSourceFile(filePath); // Launch the fetch and inject the source.
+      loadSourceFile(filePath); // Pornește la fetch și injectează sursa.
     }
 
-    // Mobile auto-centre: same tactile maths as MECANISM 06.
+    // Auto-centrare mobilă: aceleași calcule tactile ca la MECANISMUL 06.
     if (window.innerWidth <= 768) {
-      const btnLeft = btn.offsetLeft; // Distance of the tab from the container's left edge.
-      const btnWidth = btn.offsetWidth; // The tab's own width.
-      const containerWidth = tabContainer.offsetWidth; // The visible width of the tab bar.
-      const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Centre it.
+      const btnLeft = btn.offsetLeft; // Distanța tab-ului față de marginea stângă a containerului.
+      const btnWidth = btn.offsetWidth; // Lățimea proprie a tab-ului.
+      const containerWidth = tabContainer.offsetWidth; // Lățimea vizibilă a barei de tab-uri.
+      const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Îl centrează.
       tabContainer.scrollTo({
-        left: targetScroll, // The calculated centre.
-        behavior: "smooth", // Smooth horizontal slide.
+        left: targetScroll, // Centrul calculat.
+        behavior: "smooth", // Alunecare orizontală lină.
       });
     }
   });
 
-  // LOAD DEFAULT TAB ON PAGE INIT:
-  // If a .tab-btn already has the active-tab class in the raw HTML,
-  // load its file automatically without requiring a manual click.
+  // ÎNCĂRCĂ TAB-UL IMPLICIT LA INIȚIALIZAREA PAGINII:
+  // Dacă un .tab-btn are deja clasa active-tab în HTML-ul brut,
+  // îi încărcăm fișierul automat, fără un click manual.
   const defaultTab = tabContainer.querySelector(".tab-btn.active-tab");
   if (defaultTab) {
     const defaultPath = defaultTab.getAttribute("data-path");
     if (defaultPath) {
-      loadSourceFile(defaultPath); // Pre-load the first tab's source on page load.
+      loadSourceFile(defaultPath); // Pre-încarcă sursa primului tab la încărcarea paginii.
     }
   }
 });
 
 
 //  ==========================================================================
-//     MECANISM 09: COSMIC TYPEWRITER (Transmission / Astrogation Charter)
-//     Types the manifesto text one character at a time inside the glass
-//     cylinder, as if the message is being received live from deep space.
-//     Only activates on pages containing .manifesto-entry.
+//     MECANISMUL 09: MAȘINA DE TIPAR COSMICĂ (Transmisie / Cartă de Astrogație)
+//     Scrie textul manifestului caracter cu caracter, în interiorul cilindrului
+//     de sticlă, ca și cum mesajul ar fi primit în direct din spațiul profund.
+//     Se activează doar pe paginile care conțin .manifesto-entry.
 //  ==========================================================================
-//  @mechanism: 09 — Cosmic Typewriter
+//  @mechanism: 09 — Mașina de tipar cosmică
 //  @event: DOMContentLoaded
-//  @pedagogy: This demonstrates three fundamental patterns in JavaScript:
-//    1. DOM manipulation — creating elements, setting classes, appending
-//    2. Recursive setTimeout — each character schedules the next, creating a
-//       typing effect without blocking the browser
-//    3. scrollIntoView — keeps the cursor visible as text is written on screen,
-//       but stops as soon as the reader takes over scrolling (handed to the user)
+//  @pedagogy: Aici demonstrează trei tipare fundamentale din JavaScript:
+//    1. manipularea DOM — crearea de elemente, setarea de clase, adăugarea
+//    2. setTimeout recursiv — fiecare caracter îl programează pe următorul, creând
+//       un efect de scriere fără a bloca browserul
+//    3. scrollIntoView — ține cursorul vizibil în timp ce textul e scris pe ecran,
+//       dar se oprește de îndată ce cititorul preia derularea (cedată utilizatorului)
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".manifesto-entry"); // Find the glass cylinder container.
+  const container = document.querySelector(".manifesto-entry"); // Găsește containerul cilindrului de sticlă.
 
-  // Safety exit: only run on the transmission page.
+  // Ieșire de siguranță: se execută doar pe pagina de transmisie.
   if (!container) return;
 
-  // The manifesto paragraphs are hardcoded directly in transmission.html.
-  const paragraphs = container.querySelectorAll("p"); // Grab every <p> inside the container.
-  if (!paragraphs.length) return; // No paragraphs? Nothing to type. Bail out.
+  // Paragrafele manifestului sunt scrise direct în transmission.html.
+  const paragraphs = container.querySelectorAll("p"); // Preia fiecare paragraf <p> din interiorul containerului.
+  if (!paragraphs.length) return; // Niciun paragraf? Nimic de scris. Renunță.
 
-  // Archive the text content and the signoff flag from each paragraph for later typing.
+  // Arhivează textul și steagul de semnătură din fiecare paragraf în parte.
   const lines = Array.from(paragraphs).map((p) => ({
-    text: p.textContent, // The raw text content of this paragraph.
-    isSignoff: p.classList.contains("manifesto-signoff"), // Is this the captain's signature line?
+    text: p.textContent, // Textul brut al acestui paragraf.
+    isSignoff: p.classList.contains("manifesto-signoff"), // E linia asta semnătura căpitanului?
   }));
 
-  // Clear the container — JS will re-type everything from the archived data.
-  // The original pedagogical comments in the HTML are removed here too; their purpose was during authoring.
-  container.innerHTML = ""; // Empty the glass cylinder. Ready for the live transmission.
+  // Golește containerul — JS va rescrie totul din datele arhivate.
+  // Comentariile pedagogice originale din HTML sunt eliminate și ele aici; rostul lor a fost în timpul scrierii.
+  container.innerHTML = ""; // Golește cilindrul de sticlă. Gata pentru transmisia live.
 
-  // CREATE OUTPUT CONTAINER AND BLINKING CURSOR.
-  const output = document.createElement("div"); // Create a fresh <div> for the typing output.
-  output.className = "typewriter-output"; // Give it the CSS class that styles the typed text.
-  container.appendChild(output); // Insert it into the glass cylinder.
+  // CREEAZĂ CONTAINERUL DE IEȘIRE ȘI CURSORUL INTERMITENT.
+  const output = document.createElement("div"); // Creează un <div> nou pentru ieșirea de scris.
+  output.className = "typewriter-output"; // Îi dă clasa CSS care stilizează textul scris.
+  container.appendChild(output); // Îl inserează în cilindrul de sticlă.
 
-  const cursor = document.createElement("span"); // Create a <span> for the blinking cursor.
-  cursor.className = "typing-cursor"; // The CSS class that makes it blink via animation.
-  container.appendChild(cursor); // Insert the cursor after the output text.
+  const cursor = document.createElement("span"); // Creează un <span> pentru cursorul intermitent.
+  cursor.className = "typing-cursor"; // Clasa CSS care îl face să clipească prin animație.
+  container.appendChild(cursor); // Pune cursorul după textul de ieșire.
 
-  // Reading takeover: once the reader scrolls (wheel/touch/key), the typewriter
-  // stops pulling the viewport back to the cursor, so the page scrolls freely
-  // while the manifesto keeps typing in the background.
+// Preluarea citirii: de îndată ce cititorul derulează (scroll/atingere/tastă), mașina de scris
+  // încetează să mai tragă viewport-ul înapoi spre cursor, astfel pagina se derulează liber
+  // în timp ce manifestul continuă să fie scris în fundal.
   let readerTookOver = false;
 
-  // Any wheel, touch, or arrow/space/PageDown/PageUp keystroke is a sign the
-  // reader wants the page under their control. We stop auto-scrolling from then on.
+  // Orice mișcare de rotiță, atingere sau apăsare de săgeată/Space/PageDown/PageUp este semnal
+  // că cititorul vrea pagina sub controlul lui. De aici înainte oprim derularea automată.
   const handScrollToReader = () => (readerTookOver = true);
   window.addEventListener("wheel", handScrollToReader, { passive: true });
   window.addEventListener("touchmove", handScrollToReader, { passive: true });
   window.addEventListener("touchstart", handScrollToReader, { passive: true });
   window.addEventListener("keydown", handScrollToReader);
 
-  // Typing counters: paraIdx tracks which paragraph, charIdx tracks which character inside that paragraph.
-  let paraIdx = 0; // Start at the first paragraph (index 0).
-  let charIdx = 0; // Start at the first character of that paragraph (index 0).
-  let currentP = null; // No paragraph element has been created yet.
+  // Contoare de scriere: paraIdx specifică paragraful, charIdx — caracterul din acel paragraf.
+  let paraIdx = 0; // Pornește de la primul paragraf (indexul 0).
+  let charIdx = 0; // Pornește de la primul caracter al acelui paragraf (indexul 0).
+  let currentP = null; // Niciun element de paragraf nu a fost încă creat.
 
-  // randomDelay varies the typing speed between 15-50ms per character.
-  // This simulates the irregular rhythm of a deep-space cosmic signal.
+  // randomDelay variază viteza de scriere între 15-50ms per caracter.
+  // Astfel se simulează ritmul neregulat al unui semnal cosmic din spațiul adânc.
   function randomDelay() {
-    return Math.floor(Math.random() * 35 + 15); // Returns a random integer between 15 and 50.
+    return Math.floor(Math.random() * 35 + 15); // Returnează un întreg aleatoriu între 15 și 50.
   }
 
-  // typeNextChar — the recursive typing engine.
-  // Types one character, then schedules itself via setTimeout.
-  // When a paragraph is complete, it moves to the next with a dramatic pause.
-  // When all paragraphs are done, a 3-second timer hides the cursor.
+  // typeNextChar — motorul recursiv de tipărire.
+  // Scrie un caracter, apoi se auto-programează prin setTimeout.
+  // Când paragraful e complet, trece la următorul cu o pauză dramatică.
+  // Când toate paragrafele sunt gata, un cronometru de 3 secunde ascunde cursorul.
   function typeNextChar() {
-    // Guard: all paragraphs have been typed — dismiss the cursor after 3 seconds.
+    // Gardă: toate paragrafele au fost tipărite — îndepărtează cursorul după 3 secunde.
     if (paraIdx >= lines.length) {
-      // cursor-hidden is a CSS class that sets opacity to 0, making the cursor disappear.
+      // cursor-hidden e o clasă CSS care setează opacitatea la 0, făcând cursorul să dispară.
       setTimeout(() => {
-        cursor.classList.add("cursor-hidden"); // Fade out the cursor silently.
+        cursor.classList.add("cursor-hidden"); // Estompează cursorul în tăcere.
       }, 3000);
-      return; // Stop the recursion. The transmission is complete.
+      return; // Oprește recursiunea. Transmisiunea e completă.
     }
 
-    // Logic: create a new <p> element when we start typing a fresh paragraph.
+    // Logică: crează un element <p> nou doar când începem să tipărim un paragraf proaspăt.
     if (!currentP) {
-      currentP = document.createElement("p"); // Create a new paragraph element.
+      currentP = document.createElement("p"); // Creează un element de paragraf nou.
       if (lines[paraIdx].isSignoff) {
-        currentP.className = "manifesto-signoff"; // Special class for the captain's signature line.
+        currentP.className = "manifesto-signoff"; // Clasa specială pentru linia semnătura căpitanului.
       }
-      output.appendChild(currentP); // Append the new paragraph to the output container.
+      output.appendChild(currentP); // Adaugă paragraful nou în containerul de ieșire.
     }
 
-    const text = lines[paraIdx].text; // Get the full text of the current paragraph.
+    const text = lines[paraIdx].text; // Obține textul complet al paragrafului curent.
 
     if (charIdx < text.length) {
-      // There are still characters left to type in this paragraph.
-      currentP.textContent += text[charIdx]; // Append the next character to the paragraph.
-      charIdx++; // Move to the next character index.
-      // scrollIntoView keeps the cursor on screen as the text grows — but only
-      // until the reader has taken over scrolling, so it never fights them.
+      // Mai sunt caractere de tipărit în acest paragraf.
+      currentP.textContent += text[charIdx]; // Adaugă următorul caracter la paragraf.
+      charIdx++; // Treci la următorul index de caracter.
+      // scrollIntoView ţine cursorul pe ecran pe măsură ce textul crește — dar numai
+      // până când cititorul a preluat derularea, ca să nu se lupte niciodată cu el.
       if (!readerTookOver) cursor.scrollIntoView({ block: "nearest" });
-      setTimeout(typeNextChar, randomDelay()); // Schedule the next character with a random delay.
+      setTimeout(typeNextChar, randomDelay()); // Programează următorul caracter cu o întârziere aleatorie.
     } else {
-      // This paragraph is finished — advance to the next one.
-      paraIdx++; // Move to the next paragraph index.
-      charIdx = 0; // Reset character index to 0 for the new paragraph.
-      currentP = null; // Signal that a new <p> needs to be created next time.
+      // Acest paragraf e terminat — avansează la următorul.
+      paraIdx++; // Treci la următorul index de paragraf.
+      charIdx = 0; // Resetează indexul de caracter la 0 pentru noul paragraf.
+      currentP = null; // Semnalizează că un nou <p> trebuie creat data viitoare.
 
       if (paraIdx < lines.length) {
-        // Longer pause before the signoff line (the captain's signature) for dramatic narrative effect.
-        const pause = lines[paraIdx].isSignoff ? 1200 : 500; // 1200ms for signoff, 500ms for regular paragraphs.
-        setTimeout(typeNextChar, pause); // Schedule the next paragraph after the pause.
+        // Pauză mai lungă înaintea liniei de semnătură (semnătura căpitanului) pentru efect narativ dramatic.
+        const pause = lines[paraIdx].isSignoff ? 1200 : 500; // 1200ms pentru semnătură, 500ms pentru paragrafe obișnuite.
+        setTimeout(typeNextChar, pause); // Programează paragraful următor după pauză.
       } else {
-        // One final call to trigger the completion guard above.
-        setTimeout(typeNextChar, 500); // Short pause, then the guard fires and hides the cursor.
+        // Un ultim apel care declanșează garda de mai sus.
+        setTimeout(typeNextChar, 500); // Pauză scurtă, apoi garda declanșează și ascunde cursorul.
       }
     }
   }
 
-  // A brief moment of silence before the cosmic transmission begins. Immersion first.
-  setTimeout(typeNextChar, 1000); // Wait 1 second, then start typing character by character.
+// O scurtă clipă de tăcere înainte ca transmisia cosmică să înceapă. Imersiunea pe primul loc.
+  setTimeout(typeNextChar, 1000); // Așteaptă 1 secundă, apoi începe să tipărească caracter cu caracter.
 });
 
 
 //  ==========================================================================
-//     MECANISM 10: THE SELDON VAULT
-//     Runs on every page. Stamps the voyage log (first contact + waypoints),
-//     and when the traveller reaches the Vault page (vault.html), it governs
-//     the two remaining keys of the novel:
-//       Key One   — the Nav-Gate quizzes: passing a volume's test turns the
-//                   first key of its capsule.
-//       Key Two   — the voyage clock: real time since first contact,
-//                   accelerated by exploration, ripens the second key.
-//     When both keys turn, the Sleeper projects the novel's transmission
-//     through the crystal.
-//     @pedagogy: This mechanism demonstrates seven real JavaScript patterns:
-//       1. localStorage as a persistent cross-page state store (the voyage log)
-//       2. the Fetch API for loading JSON and raw markdown (no libraries)
-//       3. template literal rendering into the DOM (constellation capsules)
-//       4. the FormData API + event delegation for the quizzes
-//       5. a recursive setTimeout typing engine (the Sleeper's voice)
-//       6. the hidden attribute to keep the Nav-Gate quiz hidden until a
-//          capsule is chosen (a deliberate reveal, accessibility-first)
-//       7. the page itself as the gate: navigation replaced the click-unseal
-//          that the old single-page design used for the chamber
+//     MECANISMUL 10: CAMERA PRIMORDIALĂ SELDON
+//     Rulează pe toate paginile. Aplică ștampila pe jurnalul de călătorie
+//     (primul contact + punctele de reper), iar când călătorul ajunge pe pagina
+//     Camerei (vault.html), guvernează cele două chei rămase ale romanului:
+//       Cheia Întâi  — quiz-urile Nav-Gate: trecerea testului unui volum întoarce
+//                      prima cheie a capsulei sale.
+//       Cheia a Doua — ceasul călătoriei: timpul real scurs de la primul contact,
+//                      accelerat de explorare, coace a doua cheie.
+//     Când ambele chei se întorc, Adormitul proiectează transmisiunea romanului
+//     prin cristal.
+//     @pedagogy: Acest mecanism demonstrează șapte tipare JavaScript reale:
+//       1. localStorage ca magazie persistentă de stare între pagini (jurnalul de călătorie)
+//       2. API-ul Fetch pentru încărcarea de JSON și markdown brut (fără biblioteci)
+//       3. redarea cu template literal în DOM (capsulele constelației)
+//       4. API-ul FormData + delegarea de evenimente pentru quizuri
+//       5. un motor recursiv de scriere prin setTimeout (vocea Adormitului)
+//       6. atributul hidden pentru a ține quizul Nav-Gate ascuns până este
+//          aleasă o capsulă (o revelare deliberată, accesibilitate pe primul loc)
+//       7. pagina însăși ca barieră: navigarea a înlocuit descuerea prin click
+//          pe care vechiul design cu o singură pagină o folosea pentru cameră
 //  ==========================================================================
 
-//  @block: 10-A — VOYAGE LOG (runs on every page of the ship)
-//  The moment a traveller loads ANY page, the voyage begins.
+//  @block: 10-A — JURNALUL DE CĂLĂTORIE (rulează pe fiecare pagină a navei)
+//  Din clipa în care un călător încarcă ORICE pagină, călătoria începe.
+//  @pedagogy: Acesta este un IIFE (Immediately Invoked Function Expression —
+//  Expresie de funcție invocată imediat) — funcția rulează o singură dată, chiar
+//  în clipa exactă în care scriptul se încarcă și nu are nevoie niciodată să fie
+//  chemată din nou. Singura sa treabă este să scrie două fapte în localStorage,
+//  magazia persistentă cheie–valoare a browser-ului care supraviețuiește
+//  reîncărcărilor de pagină:
+//    1. clipa primului contact (când călătorul a pus întâia oară piciorul la bord)
+//    2. lista în creștere a paginilor distincte ("puncte de reper") vizitate
+//    de atunci încoace
+//    Pentru că localStorage acceptă doar șiruri, numerele trebuie convertite în
+//    șiruri (String()), iar tablourile serializate cu JSON.stringify().
 //  ==========================================================================
 (function stampVoyageLog() {
+  //  Chei de stocare scrise manual. Ținându-le în constante cu nume rezultă că
+  //  același șir este garantat în fiecare fișier — o singură greșeală de tipar în
+  //  un literal gol ar crea neobservat o a doua intrare, goală. MECANISM 10-B
+  //  citește exact aceleași chei, astfel încât ambele blocuri sunt de acord asupra
+  //  felului de a numi cele două fapte ale călătoriei.
   const FIRST_KEY = "d0_voyage_firstContact";
   const WAYPOINTS_KEY = "d0_voyage_waypoints";
 
-  //  First contact: the instant the traveller first stepped aboard.
+  //  ---------------------------------------------------------------
+  //  MARCHEAZĂ PRIMUL CONTACT
+  //  ---------------------------------------------------------------
+  //  Primul contact: clipa în care călătorul a pus prima dată piciorul la bord.
   if (!localStorage.getItem(FIRST_KEY)) {
-    localStorage.setItem(FIRST_KEY, String(Date.now())); // Stored in milliseconds.
+    //  O pui doar dacă nu există încă niciun timestamp — prima vizită câștigă și
+    //  nu este rescrisă, așa încât "vechimea călătoriei" rămâne stabilă între vizite.
+    localStorage.setItem(FIRST_KEY, String(Date.now())); // Stocat în milisecunde.
   }
 
-  //  Waypoint stamping: derive the volume + page from the current URL.
-  //  Example: /digital-odyssey/en/frontend/html-log.html -> frontend/html-log
-  const path = window.location.pathname.replace(/\/$/, "");
+  //  ---------------------------------------------------------------
+  //  DEDUCE PUNCTUL DE REPER CURENT DIN URL
+  //  ---------------------------------------------------------------
+  //  Ștampilarea punctelor de reper: deducem volumul + pagina din URL-ul curent.
+  //  Exemplu: /digital-odyssey/en/frontend/html-log.html -> frontend/html-log
+  const path = window.location.pathname.replace(/\/$/, ""); // Îndepărtează întâi orice bară finală, ca regexul să pornească curat.
   const match = path.match(
     /\/(frontend|backend|database|data-bridge|ux|delivery)\/([^/]+?)\.html$/,
   );
-  let currentWaypoint = null;
+  let currentWaypoint = null; // Păstrează numele lizibil al acestei pagini, sau null dacă pagina nu e un punct de reper.
 
   if (match) {
-    currentWaypoint = `${match[1]}/${match[2]}`; // e.g. "frontend/html-log"
+    //  match[1] = volumul ("frontend"), match[2] = pagina ("html-log").
+    //  Stocarea lor ca un singur șir unit cu slash dă un ID lizibil și unic.
+    currentWaypoint = `${match[1]}/${match[2]}`; // ex. "frontend/html-log"
   } else {
-    //  Flagship pages also count as waypoints (index, transmission, etc.).
-    const page = path.split("/").pop();
+    //  Paginile-amiral contează și ele ca puncte de reper (index, transmission etc.).
+    const page = path.split("/").pop(); // Ia ultimul segment din URL (numele paginii).
     if (page && page.endsWith(".html")) currentWaypoint = page;
   }
 
+  //  ---------------------------------------------------------------
+  //  ȘTAMPILEAZĂ PUNCTUL DE REPER (DOAR O DATĂ PER PAGINĂ DISTINCTĂ)
+  //  ---------------------------------------------------------------
   if (currentWaypoint) {
-    //  Load the existing waypoint array (or start fresh).
+    //  Încarcă vectorul existent de puncte de reper (sau pornește de la zero).
     let waypoints = [];
     try {
       waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
     } catch {
-      waypoints = [];
+      waypoints = []; // JSON corupt sau gol? Revenirea la un tablou curat.
     }
-    //  Add only pages never visited before — each distinct visit is one boost.
+    //  Adaugă doar paginile niciodată vizitate — fiecare vizită distinctă este un boost.
     if (!waypoints.includes(currentWaypoint)) {
       waypoints.push(currentWaypoint);
-      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints));
+      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serializează la string înainte de a stoca.
     }
   }
-})();
+})(); // Bracket-ul IIFE: tot blocul a fost deja executat până la această linie
 
 
-//  @block: 10-B — VAULT CHAMBER ENGINE
-//  Only activates on the vault page. Now that the vault has its own page, there
-//  is no hidden chamber to unseal: the deliberate act is the navigation itself,
-//  so the Key-Zero gate code is gone. This block governs the two remaining
-//  keys of the novel:
-//    Key One   — the Nav-Gate quizzes: passing a volume's test turns the
-//                first key of its capsule.
-//    Key Two   — the voyage clock: real time since first contact,
-//                accelerated by exploration, ripens the second key.
-//  When both keys turn, the Sleeper projects the novel's transmission
-//  through the crystal.
-//  @pedagogy: This is the ship's largest single mechanism. Read it slowly, top to
-//    bottom — every function is a discrete teaching unit:
-//      1.  The opening line selects the page context (a safety exit that keeps
-//          the whole engine asleep on non-vault pages).
-//      2.  A set of constants and DOM references, bound once so every later
-//          function shares the SAME readable name for each on-screen element.
-//      3.  Fetching the JSON manifest, then the voyage-clock maths and the
-//          game-logic predicates that decide what the traveller may unlock.
-//      4.  The constellation renderer (a template-literal builder over an array).
-//      5.  The Nav-Gate quiz (FormData + radio groups, scored, rewarded).
-//      6.  The Sleeper's crystal (a scripted transmission + recursive typeSignal).
-//      7.  The journal fetch (slices DAY packages out of raw markdown).
-//    These are the same tools a beginner meets in the first month of JavaScript:
-//    DOM queries, addEventListener, array.map / .join / .filter / .includes,
-//    template literals, JSON, fetch/then, and recursive setTimeout. Not one
-//    line relies on a third-party library — every behaviour is built by hand.
+//  @block: 10-B — MOTORUL CAMEREI PRIMORDIALE
+//  Se activează doar pe pagina Camerei. Acum că vault-ul are propria pagină, nu
+//  mai există o cameră ascunsă de descuiat: actul deliberat este însăși
+//  navigarea,
+//  așa încât codul de poartă Key-Zero a dispărut. Acest bloc guvernează cele
+//  două chei rămase ale romanului:
+//    Cheia Întâi  — quiz-urile Nav-Gate: trecerea unui test de volum întoarce
+//                   prima cheie a capsulei sale.
+//    Cheia a Doua — ceasul călătoriei: timpul real scurs de la primul contact,
+//                   accelerat de explorare, coace a doua cheie.
+//  Când ambele chei se întorc, Adormitul proiectează transmisiunea romanului
+//  prin cristal.
+//  @pedagogy: Acesta este cel mai mare mecanism unic al navei. Citește-l încet,
+//  de sus până jos — fiecare funcție este o unitate didactică distinctă:
+//      1.  Linia de deschidere selectează contextul paginii (o ieșire de
+//          siguranță care ține întregul motor adormit pe paginile care nu sunt
+//          Camera).
+//      2.  Un set de constante și referințe DOM, legate o singură dată așa încât
+//          fiecare funcție de mai încolo împărtășește ACELAȘI nume lizibil pentru
+//          fiecare element de pe ecran.
+//      3.  Încărcarea manifestului JSON, apoi calculele ceasului călătoriei și
+//          particulele de logică de joc care decid ce poate debloca călătorul.
+//      4.  Renderizarea constelației (un constructor de template literal peste un
+//          tablou).
+//      5.  Quizul Nav-Gate (FormData + grupuri de radio, punctat, răsplătit).
+//      6.  Cristalul Adormitului (o transmisiune scenarizată + typeSignal
+//          recursiv).
+//      7.  Încărcarea jurnalului (deduce pachetele de ZI din markdown-ul brut).
+//    Acestea sunt aceleași unelte pe care le întâlnește un începător în prima lună
+//    de JavaScript: interogări DOM, addEventListener, array.map / .join / .filter
+//    / .includes, template literal, JSON, fetch/then, și setTimeout recursiv. Nici
+//    o linie nu depinde de o bibliotecă terță — orice comportament e construit din
+//    propria mână.
 //  ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  //  The chamber <div> is the landmark that proves we are ON the vault page.
-  //  If it is missing, we are on some content page — exit immediately so the
-  //  whole engine (and every DOM binding below) stays asleep.
+  //  Elementul <div> al camerei este reperul care dovedește că suntem PE pagina
+  //  Camerei. Dacă lipsește, suntem pe o pagină de conținut — ieșim imediat ca tot
+  //  motorul (și orice legare DOM de dedesubt) să rămână adormit.
   const chamber = document.querySelector(".vault-chamber");
-  if (!chamber) return; // Not the vault page — leave the engine asleep.
+  if (!chamber) return; // Nu e pagina Camerei — lasă motorul adormit.
 
   //  ---------------------------------------------------------------
-  //  LANGUAGE + STORAGE KEYS
+  //  LIMBA + CHEI DE STOCARE
   //  ---------------------------------------------------------------
-  //  First, the language: JavaScript reads the <html lang="ro"> attribute set
-  //  in the page's head. Every user-facing string below is chosen at runtime
-  //  between the Romanian (ro) and English (en) variants using this one value.
+  //  Întâi limba: JavaScript citește atributul <html lang="ro"> setat în capul
+  //  paginii. Fiecare șir care apare utilizatorului este ales la rulare între
+  //  variantele română (ro) și engleză (en) folosind această valoare.
   const lang = (document.documentElement.lang || "en").toLowerCase();
-  //  The three storage keys mirror MECANISM 10-A (the voyage's two keys) plus
-  //  this block's own per-volume "quiz passed" flags. PASS_PREFIX is completed
-  //  later: "d0_vault_pass_" + the volume (e.g. frontend) identifies one capsule.
+  //  Cele trei chei de stocare oglindesc MECANISMUL 10-A (cele două chei ale
+  //  călătoriei) plus drapeelele proprii acestui bloc pentru "quiz trecut" per
+  //  volum. PASS_PREFIX se completează mai târziu: "d0_vault_pass_" + volumul
+  //  (ex. frontend) identifică o capsulă.
   const FIRST_KEY = "d0_voyage_firstContact";
   const WAYPOINTS_KEY = "d0_voyage_waypoints";
   const PASS_PREFIX = "d0_vault_pass_";
 
   //  ---------------------------------------------------------------
-  //  DOM REFERENCES — bound ONCE, reused by every function below.
+  //  REFERINȚE DOM — legate O SINGURĂ DATĂ, refolosite de fiecare funcție de
+  //  mai jos.
   //  ---------------------------------------------------------------
-  //  Each getElementById call performs a search of the whole page. Binding the
-  //  result to a const means the search happens exactly once, and the rest of
-  //  the engine talks to these elements by a short, readable name.
+  //  Fiecare apel getElementById execută o căutare în toată pagina. Legarea
+  //  rezultatului la o const înseamnă căutare o singură dată, iar restul
+  //  motorului vorbește cu aceste elemente printr-un nume scurt și citibil.
   const growthNote = document.getElementById("vault-growth-note");
   const constellation = document.getElementById("capsule-constellation");
   const firstContactEl = document.getElementById("vault-first-contact");
@@ -787,38 +829,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const navGateForm = document.getElementById("nav-gate-form");
   const navGateResult = document.getElementById("nav-gate-result");
 
-  //  The raw journal is fetched live so the website and GitHub stay one body.
-  //  JOURNAL_PATH resolves to ../JOURNAL-EN.md or ../JOURNAL-RO.md — the very
-  //  markdown file the GitHub repository hosts. The vault never duplicates the
-  //  novel: it reads the captain's real book at the moment the page runs.
+  //  Jurnalul brut este încărcat live, ca site-ul și GitHub să rămână un singur
+  //  corp. JOURNAL_PATH se rezolvă la ../JOURNAL-EN.md sau ../JOURNAL-RO.md —
+  //  exact fișierul markdown pe care îl găzduiește repository-ul GitHub. Camera
+  //  nu duplică niciodată romanul: citește cartea reală a căpitanului în clipa
+  //  în care pagina rulează.
   const JOURNAL_PATH = `../JOURNAL-${lang === "ro" ? "RO" : "EN"}.md`;
 
-  //  Two shared "working memory" slots for the whole block:
-  let vaultData = null;   // The parsed vault-transmissions.json
-  let activeCapsule = null; // The capsule currently open in the Nav-Gate
+  //  Două locuri de "memorie de lucru" împărtășite pentru tot blocul:
+  let vaultData = null;   // vault-transmissions.json analizat
+  let activeCapsule = null; // Capsula deschisă acum în Nav-Gate
 
   //  ---------------------------------------------------------------
-  //  LOAD THE VAULT MANIFEST
+  //  ÎNCARCĂ MANIFESTUL CAMEREI
   //  ---------------------------------------------------------------
-  //  fetch() returns a Promise. The .then() chain unpacks the response in two
-  //  stages: first check the HTTP status, then parse the body as JSON.
+  //  fetch() returnează o Promisiune. Lanțul .then() desface răspunsul în două
+  //  etape: întâi verifică statusul HTTP, apoi parsează corpul ca JSON.
   fetch("../shared/data/vault-transmissions.json")
     .then((response) => {
       if (!response.ok) throw new Error(`Vault manifest not found (${response.status}).`);
       return response.json();
     })
     .then((data) => {
-      //  Store the parsed manifest in the shared variable so every later
-      //  function can reach capsules, voyage, and novel data without re-fetching.
+      //  Păstrează manifestul analizat în variabila împărtășită, ca fiecare
+      //  funcție ulterioară să ajungă la capsule, călătorie și datele romanului
+      //  fără a reîncărca.
       vaultData = data;
-      //  Kick off the two things that need the data: draw the capsule buttons
-      //  and show the telemetry, then keep the voyage clock ticking.
+      //  Pornește cele două lucruri care au nevoie de date: desenează butoanele
+      //  capsulelor și arată telemetria, apoi ține ceasul călătoriei în mers.
       renderConstellation(data.capsules);
       refreshTelemetry();
-      setInterval(refreshTelemetry, 30000); // The clock ticks every 30 seconds.
+      setInterval(refreshTelemetry, 30000); // Ceasul ticăie la fiecare 30 de secunde.
 
-      //  The growth note: the manifest's novel meta tells the traveller how
-      //  many days are sealed and promises the constellation keeps growing.
+      //  Nota de creștere: meta datele romanului din manifest spun călătorului
+      //  câte zile sunt sigilate și promit că schema continuă să crească.
       if (growthNote && data.novel) {
         growthNote.textContent =
           (lang === "ro"
@@ -830,122 +874,125 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch((error) => {
-      //  Offline, wrong path, or a corrupt file? Show a pink error in the
-      //  chamber rather than leaving the traveller staring at a silent box.
+      //  Offline, cale greșită sau fișier corrupt? Arată o eroare roz în
+      //  cameră în loc să lase călătorul să se uite la o cutie tăcută.
       constellation.innerHTML =
         `<p class="vault-error">[VAULT ERROR]: ${error.message}</p>`;
     });
 
   //  ---------------------------------------------------------------
-  //  VOYAGE CLOCK
+  //  CEASUL CĂLĂTORIEI
   //  ---------------------------------------------------------------
-  //  This is the "Key Two" maths. The traveller does not simply wait for the
-  //  clock: they can explore the ship (accumulate waypoints) to accelerate it.
-  //  readVoyageState() reads the two localStorage facts written by MECANISM 10-A
-  //  and computes a single number: the effective ship-hours that have elapsed.
+  //  Aceasta este matematica "Cheii a Doua". Călătorul nu așteaptă pur și simplu
+  //  ceasul: poate explora nava (acumulând puncte de reper) ca să-l accelereze.
+  //  readVoyageState() citește cele două fapte din localStorage scrise de
+  //  MECANISMUL 10-A și calculează un singur număr: orele-navă efective trecute.
   function readVoyageState() {
-    //  First contact, stored as a millisecond timestamp; fall back to "now" if
-    //  it is missing, so the voyage has a starting point on its very first run.
+    //  Primul contact, stocat ca timestamp în milisecunde; revine la "acum" dacă
+    //  lipsește, ca să aibă călătoria un punct de pornire chiar la prima rulare.
     const firstContact = Number(localStorage.getItem(FIRST_KEY)) || Date.now();
     let waypoints = [];
     try {
       waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
     } catch {
-      waypoints = []; // Corrupted array? Treat the voyage as just starting.
+      waypoints = []; // Tablou corupt? Tratează călătoria ca abia începută.
     }
-    //  effectiveVoyageHours = realHours * (1 + boost * waypointCount)
-    const realHours = (Date.now() - firstContact) / 3600000; // Milliseconds -> hours (1 hour = 3,600,000 ms).
-    const boost = (vaultData && vaultData.voyage.perWaypointBoost) || 0.5; // Each waypoint multiplies progress.
-    const shipHours = realHours * (1 + boost * waypoints.length); // The accelerated total.
-    return { firstContact, waypoints, realHours, shipHours }; // One object, four facts.
+    //  oreEfectiveCălătorie = oreReale * (1 + boost * numărulPunctelor)
+    const realHours = (Date.now() - firstContact) / 3600000; // Milisecunde -> ore (1 oră = 3.600.000 ms).
+    const boost = (vaultData && vaultData.voyage.perWaypointBoost) || 0.5; // Fiecare punct de reper multiplică progresul.
+    const shipHours = realHours * (1 + boost * waypoints.length); // Totalul accelerat.
+    return { firstContact, waypoints, realHours, shipHours }; // Un obiect, patru fapte.
   }
 
-  //  Writes the four telemetry cells on the vault page: the date of first
-  //  contact, how many waypoints are stamped, the current ship-hours, and the
-  //  unlocked/total count. Called on load and on the 30-second tick.
+  //  Scrie cele patru celule de telemetrie pe pagina Camerei: data primului
+  //  contact, câte puncte de reper sunt ștampilate, orele-navă curente și
+  //  numărul deblocate/total. Apelat la încărcare și pe fiecare tic de 30 de
+  //  secunde.
   function refreshTelemetry() {
-    const state = readVoyageState(); // Grab the freshly computed clock.
-    firstContactEl.textContent = new Date(state.firstContact).toLocaleDateString(lang, { // Format the timestamp nicely...
-      year: "numeric",          // ...full year,
-      month: "short",           // short month name,
-      day: "numeric",           // and numeric day
+    const state = readVoyageState(); // Ia ceasul proaspăt calculat.
+    firstContactEl.textContent = new Date(state.firstContact).toLocaleDateString(lang, { // Formatează timestamp-ul frumos...
+      year: "numeric",          // ...anul complet,
+      month: "short",           // numele scurt al lunii,
+      day: "numeric",           // și ziua numerică
     });
-    waypointsEl.textContent = String(state.waypoints.length); // Waypoint tally.
-    shipHoursEl.textContent = state.shipHours.toFixed(1); // One decimal place.
+    waypointsEl.textContent = String(state.waypoints.length); // Numără punctele de reper.
+    shipHoursEl.textContent = state.shipHours.toFixed(1); // O zecimală.
 
     if (vaultData) {
-      const total = vaultData.capsules.length; // Number of capsules on the manifest.
-      const unlocked = vaultData.capsules.filter((c) => isUnlocked(c)).length; // How many have BOTH keys.
-      unlockedEl.textContent = `${unlocked} / ${total}`; // e.g. "1 / 6".
+      const total = vaultData.capsules.length; // Numărul de capsule din manifest.
+      const unlocked = vaultData.capsules.filter((c) => isUnlocked(c)).length; // Câte au AMBELE chei.
+      unlockedEl.textContent = `${unlocked} / ${total}`; // ex. "1 / 6".
     }
   }
 
+//  ---------------------------------------------------------------
+  //  STAREA CHEILOR: quiz trecut ȘI ceasul călătoriei copt
   //  ---------------------------------------------------------------
-  //  KEY STATE: quiz passed AND voyage clock ripened
-  //  ---------------------------------------------------------------
-  //  The next three tiny functions are "predicates" — they each answer ONE
-  //  yes/no question about a capsule. Keeping them separate lets the rest of
-  //  the code ask clear questions ("has this quiz been passed?") without caring
-  //  HOW the answer is stored.
+  //  Următoarele trei funcțulețe sunt "predicate" — fiecare răspunde la O
+  //  întrebare da/nu despre o capsulă. Ținându-le separate, restul codului poate
+  //  pune întrebări clare ("a fost trecut quizul?") fără să-i pese CUM este
+  //  stocat răspunsul.
   function quizPassed(capsule) {
-    //  Read the flag keyed by volume: "d0_vault_pass_frontend" === "1" means the
-    //  traveller cleared that volume's Nav-Gate. String "1" stands for true.
+    //  Citește steagul cheiat după volum: "d0_vault_pass_frontend" === "1" înseamnă
+    //  călătorul a trecut Nav-Gate-ul acelui volum. String-ul "1" înseamnă adevărat.
     return localStorage.getItem(PASS_PREFIX + capsule.volume) === "1";
   }
 
   function clockRipened(capsule) {
-    //  Key Two ripens when the accelerated ship-hours reach the capsule's quota.
+    //  Cheia a Doua se coace când orele-navă accelerate ating cota capsulei.
     return readVoyageState().shipHours >= capsule.requiredShipHours;
   }
 
   function isUnlocked(capsule) {
-    //  A capsule is truly open ONLY when both keys turn at once. && (AND) means
-    //  a quiz pass without time, or time without a quiz, still reads as locked.
+    //  O capsulă este cu adevărat deschisă DOAR când ambele chei se întorc deodată.
+    //  && (ȘI) înseamnă că un quiz trecut fără timp, sau timp fără quiz, contează
+    //  tot ca blocat.
     return quizPassed(capsule) && clockRipened(capsule);
   }
 
   //  ---------------------------------------------------------------
-  //  CAPSULE CONSTELLATION RENDERER
+  //  RENDERIZATORUL CONSTELAȚIEI DE CAPSULE
   //  ---------------------------------------------------------------
-  //  The click listener is attached ONCE, outside the renderer, so that
-  //  re-rendering the constellation never stacks duplicate handlers. This is the
-  //  "event delegation" pattern: instead of giving every capsule its own
-  //  listener (which would break the instant we re-render the list), ONE
-  //  listener lives on the container and inspects whatever was clicked.
+  //  Listener-ul de click este atașat O SINGURĂ DATĂ, în afara renderizatorului,
+  //  astfel încât re-renderizarea constelației să nu îngrămădească niciodată
+  //  handlere duplicate. Acesta este tiparul "delegare de evenimente": în loc să
+  //  dea fiecărei capsule propriul listener (care s-ar strica în clipa în care
+  //  re-renderizăm lista), UN singur listener trăiește pe container și inspectează
+  //  orice a fost clicat.
   constellation.addEventListener("click", (event) => {
-    const btn = event.target.closest(".capsule"); // Walk up from the click to find the capsule button.
-    if (!btn) return; // Clicked somewhere outside a capsule? Ignore.
-    const cap = vaultData.capsules.find((c) => c.id === btn.dataset.capsule); // Match the data attribute to a manifest capsule.
-    if (cap) handleCapsuleClick(cap, btn); // Found! Send it to the main router.
+    const btn = event.target.closest(".capsule"); // Urcă de la click până găsește butonul de capsulă.
+    if (!btn) return; // Clicundeva în afara unei capsule? Ignoră.
+    const cap = vaultData.capsules.find((c) => c.id === btn.dataset.capsule); // Potrivește data attribute-ul cu o capsulă din manifest.
+    if (cap) handleCapsuleClick(cap, btn); // Găsită! Trimite la routerul principal.
   });
 
-  //  Builds the capsule buttons as a single HTML string from the manifest array.
-  //  This shows three core array methods used in one breath:
-  //    .map()     convert every capsule -> one button string
-  //    .join("")  glue all the button strings together with nothing between them
-  //  innerHTML receives the finished string all at once. State is a string:
-  //  "sealed", "ripening", or "open".
+  //  Construiește butoanele de capsulă ca un singur șir HTML din tabloul
+  //  manifestului. Aceasta arată trei metode de tablou folosite dintr-o suflare:
+  //    .map()     converta fiecare capsulă -> un șir de buton
+  //    .join("")  lipi toate șirele de buton cu nimic între ele
+  //  innerHTML primește șirul finisat dintr-o dată. Starea este un string:
+  //  "sealed", "ripening", sau "open".
   function renderConstellation(capsules) {
     constellation.innerHTML = capsules
       .map((cap) => {
-        const passed = quizPassed(cap); // Has the quiz flag been stamped?
-        const ripened = clockRipened(cap); // Is the voyage clock mature enough?
-        const state = isUnlocked(cap) // Decide the visual state...
-          ? "open"        // ...both keys: fully unlocked.
+        const passed = quizPassed(cap); // Steagul de quiz a fost ștampilat?
+        const ripened = clockRipened(cap); // Este ceasul călătoriei suficient de copt?
+        const state = isUnlocked(cap) // Decide starea vizuală...
+          ? "open"        // ...ambele chei: deblocată complet.
           : passed
-            ? "ripening"  // quiz done, time still short.
-            : "sealed";   // otherwise: locked.
-        const lockLabel = // Human-readable lock text, matching the state.
+            ? "ripening"  // quiz făcut, timpul încă scurt.
+            : "sealed";   // altfel: blocat.
+        const lockLabel = // Text lizibil al lacătului, potrivit cu starea.
           !passed && !ripened
             ? `${lang === "ro" ? "CHEIE DUALĂ: test + timp" : "DUAL KEY: quiz + time"}`
             : !passed
               ? `${lang === "ro" ? "TEST NECESAR" : "QUIZ REQUIRED"}`
               : `${lang === "ro" ? "SE COACE (timp)" : "RIPENING (time)"}`;
-        const title = cap.title[lang] || cap.title.en; // Pick the language's title.
+        const title = cap.title[lang] || cap.title.en; // Alege titlul limbii.
 
-        //  Template literal: a real HTML button built with ${} placeholders.
-        //  data-capsule stashes the capsule id so the click handler above can
-        //  find it; type="button" stops the button from submitting any form.
+        //  Template literal: un buton HTML real construit cu înlocuitori ${}.
+        //  data-capsule ascunde id-ul capsulei ca handlerul de click să-l poată
+        //  găsi; type="button" oprește butonul să trimită vreun formular.
         return `
         <button class="capsule capsule--${state}" data-capsule="${cap.id}" type="button">
           <span class="capsule-day">${cap.day}</span>
@@ -954,30 +1001,31 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="capsule-lock">${lockLabel}</span>
         </button>`;
       })
-      .join(""); // Concatenate every button string into ONE innerHTML payload.
+      .join(""); // Concaten­ează fiecare șir de buton într-un singur payload innerHTML.
   }
 
-  //  The central router for a capsule click. It reads the two keys and chooses
-  //  one of three behaviour paths — this is a clean if/else decision ladder.
+  //  Routerul central pentru un click pe capsulă. Citește cele două chei și alege
+  //  una dintre cele trei căi de comportament — aceasta este o scară curată de
+  //  decizii if/else.
   function handleCapsuleClick(cap, btn) {
-    const passed = quizPassed(cap); // Snapshot Key One (quiz).
-    const ripened = clockRipened(cap); // Snapshot Key Two (time).
+    const passed = quizPassed(cap); // Instantaneu al Cheii Întâi (quizul).
+    const ripened = clockRipened(cap); // Instantaneu al Cheii a Doua (timp).
 
-    //  Case 1: already unlocked — project the transmission directly.
+    //  Cazul 1: deja deblocată — proiectează transmisiunea direct.
     if (passed && ripened) {
-      projectTransmission(cap); // Both keys turned: wake the Sleeper now.
+      projectTransmission(cap); // Ambele chei întoarse: trezește Adormitul acum.
       return;
     }
 
-    //  Case 2: quiz not yet passed — open the Nav-Gate.
+    //  Cazul 2: quizul încă netrecut — deschide Nav-Gate-ul.
     if (!passed) {
-      openNavGate(cap); // First key still missing: give the test.
+      openNavGate(cap); // Cheia întâi încă lipsește: dă testul.
       return;
     }
 
-    //  Case 3: quiz passed, clock still ripening — explain the wait.
+    //  Cazul 3: quiz trecut, ceasul tot se coace — explică așteptarea.
     if (!ripened) {
-      const need = cap.requiredShipHours - readVoyageState().shipHours; // How many ship-hours remain.
+      const need = cap.requiredShipHours - readVoyageState().shipHours; // Câte ore-navă mai rămân.
       setSleeperStatus(
         lang === "ro"
           ? `CAPSULA SE COACE — încă ${need.toFixed(1)} ore-navă până se deschide. Explorează nava ca s-o accelerezi.`
@@ -986,8 +1034,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //  ---------------------------------------------------------------
-  //  NAV-GATE QUIZ
+//  ---------------------------------------------------------------
+  //  QUIZUL NAV-GATE
   //  ---------------------------------------------------------------
   function openNavGate(cap) {
     activeCapsule = cap;
@@ -999,12 +1047,13 @@ document.addEventListener("DOMContentLoaded", () => {
         : `Prove you have traversed the ${cap.volume} volume. Answer at least ${q.passThreshold} of ${q.questions.length} correctly to turn the first key of this capsule.`;
     navGateResult.innerHTML = "";
 
-    //  Render the quiz questions as radio groups.
-    //  One .map() over the questions produces the initial HTML; inside it, the
-    //  options get their OWN .map() so each radio is built from its own object.
-    //  name="q${qIndex}" groups the radios of one question together — the
-    //  browser enforces "only one radio per name group" for free. Each answer's
-    //  whitespace is held raw inside a template literal, then all are join("")ed.
+    //  Renderizează întrebările de quiz ca grupuri de radio.
+    //  Un .map() peste întrebări produce HTML-ul inițial; în interiorul lui,
+    //  opțiunile își primesc propriul .map() ca fiecare radio să fie construit din
+    //  propriul obiect. name="q${qIndex}" grupează radio-urile unei întrebări
+    //  împreună — browserul întoarce singur "doar un radio per grup de nume".
+    //  Spațiile albe din fiecare răspuns rămân brute în interiorul template
+    //  literal-ului, apoi toate sunt unite cu join("").
     navGateForm.innerHTML = q.questions
       .map((question, qIndex) => {
         const options = question.options
@@ -1024,51 +1073,54 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    //  Submit button — built with createElement so we control its type and
-    //  label, then appended to the form as a real node (no re-parsing needed).
+    //  Butonul de trimitere — construit cu createElement ca să controlăm type-ul
+    //  și eticheta, apoi atașat la formular ca un node real (fără re-parse).
     const submit = document.createElement("button");
     submit.type = "submit";
     submit.className = "nav-gate-submit";
     submit.textContent = lang === "ro" ? "DESCUIE CAPSULA" : "UNSEAL THE CAPSULE";
     navGateForm.appendChild(submit);
 
-    //  Reveal the panel and glide the viewport to it.
+    //  Dezvăluie panoul și duce viewport-ul glisat spre el.
     navGate.hidden = false;
     navGate.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
+//  ---------------------------------------------------------------
+  //  TRIMITE — notează quizul, decide cheia
   //  ---------------------------------------------------------------
-  //  SUBMIT — score the quiz, decide the key
-  //  ---------------------------------------------------------------
-  //  Event delegation again, but for "submit" (fired when the form's submit
-  //  button is clicked OR Enter is pressed). event.preventDefault() stops the
-  //  browser's native GET-resubmit so the page never reloads and the result
-  //  can be drawn live in place.
+  //  Din nou delegare de evenimente, dar pentru "submit" (se declanșează când se
+  //  apasă butonul de trimitere al formularului SAU tasta Enter).
+  //  event.preventDefault() oprește GET-resubmit-ul nativ al browserului,
+  //  ca pagina să nu se reîncarce niciodată și rezultatul să fie desenat live la
+  //  fața locului.
   navGateForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Stop the native page reload.
-    if (!activeCapsule) return; // No capsule in context? Nothing to score.
+    event.preventDefault(); // Oprește reîncărcarea nativă a paginii.
+    if (!activeCapsule) return; // Niciun context de capsulă? Nimic de notat.
 
-    //  FormData is the browser's own tool for reading form controls. .get()
-    //  returns the chosen radio's value ("" for radio) by that group's name —
-    //  giving us the selected answer index for every question at once.
+    //  FormData este unealta proprie a browserului pentru citirea controalelor
+    //  de formular. .get() returnează valoarea radio-ului ales (indexul pentru
+    //  radio) după numele grupului — dându-ne indexul răspunsului ales pentru
+    //  fiecare întrebare dintr-odată.
     const formData = new FormData(navGateForm);
     const answers = activeCapsule.quiz.questions.map((_, qIndex) =>
-      formData.get(`q${qIndex}`), // The index the traveller chose.
+      formData.get(`q${qIndex}`), // Indexul ales de călător.
     );
 
-    //  Score: .reduce() walks every question, accumulating 1 for each correct
-    //  answer. Number(string) turns the radio value into an integer so we can
-    //  compare it to q.correct with ===. compare === q.correct ? 1 : 0 becomes
-    //  the accumulator's adder (ternary inside a reduce — a beginner pattern).
+    //  Scorul: .reduce() străbate fiecare întrebare, acumulând 1 pentru fiecare
+    //  răspuns corect. Number(string) transformă valoarea radio într-un întreg
+    //  ca să-l comparăm cu q.correct prin ===. Compararea === q.correct ? 1 : 0
+    //  devine elementul de adunare al acumulării (ternar într-un reduce — un tipar de începător).
     const score = activeCapsule.quiz.questions.reduce((acc, q, idx) => {
       return acc + (Number(answers[idx]) === q.correct ? 1 : 0);
     }, 0);
 
-    const threshold = activeCapsule.quiz.passThreshold; // Needed correct answers.
-    const passed = score >= threshold; // The whole quiz's binary verdict.
+    const threshold = activeCapsule.quiz.passThreshold; // Răspunsurile corecte necesare.
+    const passed = score >= threshold; // Verdictul binar al întregului quiz.
 
     if (passed) {
-      //  The first key turns: the volume's waypoint is permanently stamped.
+      //  Cheia întâi se întoarce: punctul de reper al volumului e ștampilat
+      //  permanent.
       localStorage.setItem(PASS_PREFIX + activeCapsule.volume, "1");
       navGateResult.innerHTML =
         `<p class="nav-gate-result-ok">${
@@ -1076,12 +1128,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ? `CHEIE ÎNTOARSĂ — ${score}/${answers.length} corecte. Capsula a primit cheia întâi.`
             : `FIRST KEY TURNED — ${score}/${answers.length} correct. The capsule has received its first key.`
         }</p>`;
-      //  The constellation and telemetry are re-rendered so the "ripening"
-      //  state and the unlocked tally reflect the freshly-turned key.
+      //  Constelația și telemetria sunt re-renderizate ca starea "se coace"
+      //  și numărătoarea deblocatelor să reflecte cheia proaspăt întoarsă.
       renderConstellation(vaultData.capsules);
       refreshTelemetry();
     } else {
-      //  Below threshold: no key, and clear feedback on what to do next.
+      //  Sub prag: nicio cheie, și feedback clar despre ce să faci în continuare.
       navGateResult.innerHTML =
         `<p class="nav-gate-result-fail">${
           lang === "ro"
@@ -1091,52 +1143,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //  ---------------------------------------------------------------
-  //  THE SLEEPER'S CRYSTAL — projection engine
+//  ---------------------------------------------------------------
+  //  CRISTALUL ADORMITULUI — motorul de proiecție
   //  ---------------------------------------------------------------
   function setSleeperStatus(text) {
-    //  A one-line helper: a short, loud status line above the output.
+    //  Un helper de o linie: o linie scurtă și sonoră de stare deasupra ieșirii.
     sleeperStatus.textContent = text;
   }
 
-  //  projectTransmission is the vault's grand finale: the moment both keys are
-  //  turned, this builds the full transmission DOM. It shows the other side of
-  //  innerHTML usage — building nodes with createElement when the markup must
-  //  be inserted WHILE user text (the teaser) is still typing into them.
+  //  projectTransmission este marea finală a Camerei: în clipa în care ambele
+  //  chei se întorc, aceasta construiește întregul DOM al transmisiunii. Arată
+  //  cealaltă față a utilizării innerHTML — construirea unor noduri cu
+  //  createElement când markup-ul trebuie insertat CHIAR ÎN TIMP ce textul
+  //  utilizatorului (teaserul) se scrie încă în ele.
   function projectTransmission(cap) {
-    //  Mark the capsule as opened so it keeps its lit state visually.
-    //  First un-light EVERY capsule, then light the one that was clicked —
-    //  querySelectorAll + forEach walks all of them, remove/add the class.
+    //  Marchează capsula ca deschisă ca să-și păstreze starea luminată vizual.
+    //  Întâi stingem TOATE capsulele, apoi luminăm pe cea clicată —
+    //  querySelectorAll + forEach le parcurge pe toate, șterge/adaugă clasa.
     constellation
       .querySelectorAll(".capsule")
       .forEach((b) => b.classList.remove("capsule--active"));
     const activeBtn = constellation.querySelector(
-      `[data-capsule="${cap.id}"]`, // Template literal again, this time as a CSS selector.
+      `[data-capsule="${cap.id}"]`, // Template literal din nou, de data asta ca selector CSS.
     );
     if (activeBtn) activeBtn.classList.add("capsule--active");
 
-    //  Wake the Sleeper: a banner status line in the current language.
+    //  Trezește Adormitul: o linie de stare-banner în limba curentă.
     setSleeperStatus(
       lang === "ro"
         ? "ADORMITA SE TREZEȘTE — TRANSMISIE RECEPȚIONATĂ"
         : "THE SLEEPER WAKES — TRANSMISSION RECEIVED",
     );
-    vaultOutput.innerHTML = ""; // Clear any previous transmission first.
+    vaultOutput.innerHTML = ""; // Golește întâi orice transmisiune anterioară.
 
-    //  The projection begins with the title line, then the teaser signal.
-    //  Pick the language-appropriate strings from the manifest capsule.
+    //  Proiecția începe cu linia de semnătură: apoi semnalul teaser.
+    //  Alege șirul potrivit limbii din capsula manifestului.
     const title = cap.title[lang] || cap.title.en;
     const teaser = cap.teaser[lang] || cap.teaser.en;
 
-    const header = document.createElement("p");
+const header = document.createElement("p");
     header.className = "vault-transmission-title";
-    header.textContent = `${cap.day} — ${title}`; // e.g. "DAY 12 — The Joins".
+    header.textContent = `${cap.day} — ${title}`; // ex. „DAY 12 — The Joins”.
     vaultOutput.appendChild(header);
 
     const signal = document.createElement("p");
-    vaultOutput.appendChild(signal); // This <p> is where typeSignal writes, one char at a time.
+    vaultOutput.appendChild(signal); // În acest <p> scrie typeSignal, caracter cu caracter.
 
-    //  Delta layer: the commit hashes that gave birth to this transmission.
+    //  Stratul delta: hashele de commit care au dat naștere acestei transmisiuni.
     if (cap.deltas && cap.deltas.length) {
       const delta = document.createElement("p");
       delta.className = "vault-delta-line";
@@ -1144,8 +1197,8 @@ document.addEventListener("DOMContentLoaded", () => {
       vaultOutput.appendChild(delta);
     }
 
-    //  If the day is unwritten, the Sleeper speaks the pending prophecy only.
-    //  cap.status === "pending" marks still-sealed days in the manifest.
+    //  Dacă ziua nu e scrisă, Adormitul rostește numai profeția în așteptare.
+    //  cap.status === "pending" marchează în manifest zilele încă sigilate.
     if (cap.status === "pending") {
       typeSignal(signal, teaser, () => {
         const pending = document.createElement("p");
@@ -1156,32 +1209,32 @@ document.addEventListener("DOMContentLoaded", () => {
             : "This cargo hold is still being loaded. The captain is writing — return when the ship has advanced.";
         vaultOutput.appendChild(pending);
       });
-      return; // Stop here: there is no journal text to fetch for a pending day.
+      return; // Oprește-te aici: nu există text de jurnal de adus pentru o zi în așteptare.
     }
 
-    //  Written days: type the teaser, then fetch the live journal section.
-    //  The projection is sequential — typeSignal runs the fetch only AFTER the
-    //  teaser finishes (its onDone callback), so the traveller hears the teaser
-    //  first and the full day second.
+    //  Zilele scrise: scrie teaser-ul, apoi aduce secțiunea jurnalului la viață.
+    //  Proiecția e secvențială — typeSignal rulează fetch doar DUPĂ ce teaser-ul
+    //  se termină (callback-ul onDone), ca să audă călătorul întâi teaser-ul,
+    //  după viața întregii zile.
     typeSignal(signal, teaser, () => {
       fetchJournalPackage(cap, (fullText) => {
         const divider = document.createElement("p");
         divider.className = "vault-divider";
-        divider.textContent = "— · — · —"; // A motif splitting teaser from prose.
+        divider.textContent = "— · — · —"; // Un motiv grafic care separă teaser-ul de proză.
         vaultOutput.appendChild(divider);
 
         const full = document.createElement("pre");
         full.className = "vault-full-text";
-        full.textContent = fullText; // The stripped DAY-section markdown, verbatim.
+        full.textContent = fullText; // Markdown-ul secțiunii de ZI, cum a fost fixat, verbatim.
         vaultOutput.appendChild(full);
 
-        //  A real link to the captain's journal on GitHub, opened in a new tab.
+        //  Un link real către jurnalul căpitanului pe GitHub, deschis în tab nou.
         const link = document.createElement("p");
         link.className = "vault-journal-link";
         const a = document.createElement("a");
         a.href = JOURNAL_PATH;
-        a.target = "_blank"; // New tab ...
-        a.rel = "noopener"; // ... without giving the new page a back-reference.
+        a.target = "_blank"; // Tab nou ...
+        a.rel = "noopener"; // ... fără a da noii pagini o referință înapoi.
         a.textContent =
           lang === "ro"
             ? "DESCHIDE JURNALUL COMPLET (GitHub)"
@@ -1193,114 +1246,118 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //  ---------------------------------------------------------------
-  //  THE SLEEPER'S VOICE — a recursive typing engine
+  //  VOCEA ADORMITULUI — un motor recursiv de scriere
   //  ---------------------------------------------------------------
-  //  The signature takes the element to write into, the text to reveal, and an
-  //  onDone callback run when the whole string has been typed. This is a lesson
-  //  in recursion + a closure: typeNext schedules ITSELF with setTimeout until
-  //  idx reaches the end — the closure keeps remembering idx between ticks.
+  //  Funcția primește elementul în care să scrie, textul de dezvăluit și un
+  //  callback onDone rulat când tot string-ul a fost scris. Aceasta este o
+  //  lecție despre recursiune + o închidere (closure): typeNext se programează
+  //  SINGUR cu setTimeout până când idx ajunge la capăt — închiderea continuă
+  //  să-și aducă aminte de idx între ticuri.
   function typeSignal(element, text, onDone) {
-    let idx = 0; // The cursor position inside the string (our shared counter).
-    vaultCursor.style.display = "inline"; // Show the blinking block caret.
+    let idx = 0; // Poziția cursorului în interiorul stringului (contorul nostru partajat).
+    vaultCursor.style.display = "inline"; // Arată cursorul de text intermitent.
     vaultOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
     function typeNext() {
       if (idx < text.length) {
-        element.textContent += text[idx]; // Append one character to the element.
-        idx++; // Advance the shared counter.
-        vaultCursor.scrollIntoView({ block: "nearest" }); // Chase the caret.
-        //  Random 8–20ms delays emulate an irregular deep-space signal.
+        element.textContent += text[idx]; // Adaugă un caracter elementului.
+        idx++; // Avansează contorul partajat.
+        vaultCursor.scrollIntoView({ block: "nearest" }); // Urmărește cursorul.
+        //  Întârzieri aleatorii de 8–20ms emulează un semnal neregulat din spațiul
+        //  adânc.
         setTimeout(typeNext, Math.floor(Math.random() * 12 + 8));
       } else {
-        //  Done typing: hide the caret and call the caller's continuation.
+        //  Scrisul s-a terminat: ascunde cursorul și cheamă continuarea apelantului.
         vaultCursor.style.display = "none";
         if (onDone) onDone();
       }
     }
-    typeNext(); // Kick off the very first tick.
+    typeNext(); // Declanșează primul tic.
   }
 
+//  ---------------------------------------------------------------
+  //  JURNALUL — taie pachete de ZILE din markdown-ul live
   //  ---------------------------------------------------------------
-  //  JOURNAL — slice DAY packages out of the live markdown
-  //  ---------------------------------------------------------------
-  //  Fetches the raw journal and slices out the package of DAY sections the
-  //  capsule unlocks (cap.days, e.g. ["DAY 00", ..., "DAY 21"]). Each DAY is
-  //  sliced, markdown is stripped, and the sections are joined with a divider
-  //  so the whole package types out as one transmission.
-  //  Progressive enhancement: if the fetch fails (offline / file://), the
-  //  teaser already received stands alone — the vault never breaks.
+  //  Aduce jurnalul brut și extrage pachetul de secțiuni DAY pe care capsula
+  //  îl deblochează (cap.days, ex. ["DAY 00", ..., "DAY 21"]). Fiecare DAY este
+  //  tăiat, markdown-ul este dezbrăcat, iar secțiunile sunt unite cu un divizor,
+  //  ca pachetul întreg să bată la mașină drept o singură transmisiune.
+  //  Îmbunătățire progresivă: dacă fetch-ul eșuează (offline / file://), teaser-ul
+  //  deja primit stă de unul singur — Camera nu se sparge niciodată.
   function extractDaySection(markdown, dayWord, dayNumber) {
-    //  What is being hunted, e.g. "DAY 12". Interpolated from the capsule's day
-    //  list, so the same function serves every volume.
+//  Ce vânăm, ex. "DAY 12". Interpolat din lista de zile a capsulei, deci
+    //  aceeași funcție servește fiecare volum.
     const sectionHeader = `${dayWord} ${dayNumber}`;
-    //  A RegExp built at runtime. We escape special characters in the header
-    //  first (replace with \$&) so "DAY 12" cannot be misread as a pattern.
-    //  ^#{1,3} = 1..3 leading hashes (a markdown heading), then the header,
-    //  then \b (a word boundary) so "DAY 12" never matches inside "DAY 123".
-    const headerPattern = new RegExp(
+    //  O RegExp construită la runtime. Scăpăm caracterele speciale din header
+    //  prima dată (replace cu \$&) ca să nu poată fi citit "DAY 12" drept tipar.
+    //  ^#{1,3} = 1..3 hare la început (un titlu markdown), apoi header-ul,
+    //  apoi \b (o graniță de cuvânt) astfel încât "DAY 12" să nu se potrivească
+    //  niciodată în interiorul "DAY 123".
+const headerPattern = new RegExp(
       `^#{1,3}\\s+${sectionHeader.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
-      "m", // The "m" flag lets ^ match line starts across the whole file.
+      "m", // Steagul "m" lasă ^ să se potrivească peste începuturile de linie din tot fișierul.
     );
     const startMatch = markdown.match(headerPattern);
     if (!startMatch) throw new Error(`Section ${sectionHeader} not found.`);
-    const startIdx = startMatch.index; // Character offset of the heading start.
+    const startIdx = startMatch.index; // Deplasarea de caracter a începutului de titlu.
 
-    //  Find the next section header after it (a new DAY / ZIUA for any volume).
-    //  .slice() crops the string right after this heading, so the search starts
-    //  cleanly past the current day; +sectionHeader.length skips the heading.
+    //  Găsește următorul titlu de secțiune după el (un nou DAY / ZIUA, pentru orice
+    //  volum).
+    //  .slice() decupează șirul chiar după acest titlu, ca să înceapă căutarea
+    //  curat dincolo de ziua curentă; +sectionHeader.length trece peste titlu.
     const nextMatch = markdown
       .slice(startIdx + sectionHeader.length)
       .match(/^#{1,3}\s+(DAY|ZIUA)\s+\d+[:\s—]/m);
     const endIdx = nextMatch
-      ? startIdx + sectionHeader.length + nextMatch.index // Stop at next day.
-      : markdown.length; // No next day: the section runs to the file's end.
+      ? startIdx + sectionHeader.length + nextMatch.index // Oprește la ziua următoare.
+      : markdown.length; // Fără zi următoare: secțiunea merge până la capătul fișierului.
 
-    //  Strip markdown syntax to type readable prose. Each .replace is ONE
-    //  translation rule, run left to right on the slice.
+    //  Dezbrăcă sintaxa markdown ca să bată proză lizibilă. Fiecare .replace
+    //  este UNA regula de traducere, rulată de la stânga la dreapta pe felie.
     let section = markdown.slice(startIdx, endIdx);
     section = section
-      .replace(/^\s*#+\s*/gm, "")   // remove heading markers (a leading # ...)
-      .replace(/\*\*([^*]+)\*\*/g, "$1") // bold: **word** -> word
-      .replace(/\*([^*]+)\*/g, "$1")     // italics: *word* -> word
-      .replace(/^---\s*$/gm, "")          // horizontal rules (a lone divider)
-      .replace(/`([^`]+)`/g, "$1")        // inline code: `code` -> code
-      .trim(); // Drop leading/trailing blank lines around the section.
-    return section; // The readable DAY text, ready for the <pre>.
+      .replace(/^\s*#+\s*/gm, "")   // îndepărtează titlurile (un # la început)
+      .replace(/\*\*([^*]+)\*\*/g, "$1") // bold: **cuvânt** -> cuvânt
+      .replace(/\*([^*]+)\*/g, "$1")     // italic: *cuvânt* -> cuvânt
+      .replace(/^---\s*$/gm, "")          // reguli orizontale (un singur divizor)
+      .replace(/`([^`]+)`/g, "$1")        // cod inline: `cod` -> cod
+      .trim(); // Scade liniile goale din cap și coadă din zona secțiunii.
+    return section; // Textul DAY lizibil, pregătit pentru <pre>.
   }
 
-  //  Ties the package together: resolves each day number, slices ALL its DAY
-  //  sections, and — only if at least one landed — calls onSuccess with the
-  //  sections joined by a blank line. Days handed to it come straight from the
-  //  capsule's manifest (cap.days).
+  //  Leagă pachetul întreg: rezolvă fiecare număr de zi, taie TOATE secțiunile
+  //  de DAY și — doar dacă a aterizat cel puțin una — cheamă onSuccess cu
+  //  secțiunile unite de o linie goală. Zilele primite vin direct din manifestul
+  //  capsulei (cap.days).
   function fetchJournalPackage(cap, onSuccess) {
     const days = cap.days || [];
-    if (!days.length) return; // No package assigned yet — teaser stands.
+    if (!days.length) return; // Încă nu s-a repartizat niciun pachet — teaserul stă.
 
     fetch(JOURNAL_PATH)
       .then((response) => {
         if (!response.ok) throw new Error("Journal unavailable.");
-        return response.text(); // We want raw markdown, not JSON.
+        return response.text(); // Vrem markdown brut, nu JSON.
       })
       .then((markdown) => {
-        //  The Romanian journal spells the day "ZIUA", the English one "DAY".
+        //  Jurnalul românesc scrie ziua „ZIUA", cel englezesc „DAY".
         const dayWord = lang === "ro" ? "ZIUA" : "DAY";
-        //  Resolve each day number, then slice every section in the package.
+        //  Rezolvă fiecare număr de zi, apoi taie fiecare secțiune din pachet.
         const sections = [];
         for (const day of days) {
-          //  Pull the first digits out of "DAY 12" -> "12".
+          //  Scoate primele cifre din „DAY 12" -> „12".
           const dayNumber = (day.match(/\d+/) || [""])[0];
-          if (!dayNumber) continue; // No digits after all? Skip this entry.
+          if (!dayNumber) continue; // Până la urmă nicio cifră? Sar peste intrarea asta.
           try {
             sections.push(extractDaySection(markdown, dayWord, dayNumber));
           } catch {
-            //  A missing day breaks nothing: later or earlier days still land.
+            //  O zi lipsă nu strică nimic: zilele mai târzii ori mai vechi tot aterizează.
           }
         }
         if (!sections.length) throw new Error("No sections projected.");
-        onSuccess(sections.join("\n\n")); // Hand over the whole package.
+        onSuccess(sections.join("\n\n")); // Predă pachetul întreg.
       })
       .catch(() => {
-        //  Silent fallback: the teaser already typed remains the projection.
+        //  Revenire tăcută: teaserul deja scris rămâne proiecția.
         setSleeperStatus(
           lang === "ro"
             ? "SIGNAL PARȚIAL — arhiva e în afara razei; teaserul rămâne."
@@ -1311,27 +1368,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //  ==========================================================================
-//     BACKLOG — Navigation & UX Enhancements (Planned Mechanisms)
-//     These are not active code — they are entries in the ship's development
-//     backlog, preserved here for future implementation.
-//  ==========================================================================
-
-//  @todo: 01 — Dynamic Sidebar Index Generation
-//    Instead of manually writing 1000+ sidebar links, a script will extract
-//    text from every <h3> and auto-generate the corresponding <li> elements.
-//    Essential for the extended HTML-Log journal pages.
-
-//  @todo: 02 — Search & Filter Archive
-//    A search bar in the sidebar that filters log entries by keyword
-//    (e.g. "Flexbox", "Joins", "Loops") in real time, using the browser's
-//    built-in filter or a simple text-matching algorithm.
-
-//  @todo: 03 — Dynamic Navbar Offset Calculation
-//    Instead of hardcoding the 100px offset in MECANISM 05, JavaScript will
-//    measure the actual navbar height at runtime and adjust scroll-margin-top
-//    dynamically for every device.
-
-//  @todo: 04 — Note Export System
-//    Extend MECANISM 04 with a "download" button that compiles all saved
-//    notes into a single markdown or text file for offline reference.
+//     BACKLOG — Îmbunătățiri de Navigare & UX (Mecanisme Planificate)
+//     Aceste intrări trăiesc acum în registrul principal al proiectului:
+//     BACKLOG-RO.md. Vezi intrările 013–016 (Index dinamic al sidebarului,
+//     Căutare și filtrare, Offset dinamic al navbarului, Export de note) —
+//     întreținute acolo, nu duplicate aici.
 //  ==========================================================================
