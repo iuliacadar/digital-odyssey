@@ -640,10 +640,14 @@
       I load the two scripts at the end of <body>.
       First the shared ship-wide engine (script.js), then the page-specific
       stitching machine (bibliography.js) that paints the rows of the JSON.
+      Each language keeps its own copy of bibliography.js (en/ and ro/) — the
+      code is identical, the didactic commentary is written in its own tongue —
+      so the machine is a learning resource too, not just a utility. The data
+      still has a single source of truth: shared/data/bibliography-links.json.
       Placing them after the HTML is processed: the DOM the scripts need
       already exists when execution begins.
     -->
     <script src="./script.js"></script>
-    <script src="../shared/js/bibliography.js"></script>
+    <script src="./bibliography.js"></script>
   </body>
 </html>

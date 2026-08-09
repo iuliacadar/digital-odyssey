@@ -1,11 +1,14 @@
 //  ==========================================================================
-//  D::0dy55ey — THE STITCHING MACHINE (shared): bibliography.js
-//  Renders the Star Charts page (bibliography.html, en + ro) from the shared
-//  JSON index. Lives in shared/js so that one engine serves BOTH languages —
-//  the same single-source-of-truth principle it teaches about the data.
-//  Tag legend: ../docs/legend-(en|ro).md
+//     D::0dy55ey — THE STITCHING MACHINE: bibliography.js
+//     Renders the Star Charts page (bibliography.html) from the shared JSON
+//     index. Lives inside the en/ folder so that the English crew keeps its
+//     own fully-commented copy of the machine — this file is a didactic
+//     resource, not a shared utility. The code is identical to the ro/
+//     sibling; only the language of the explanations changes.
+//     Tag legend: ../docs/legend-en.md
 //  ==========================================================================
 //
+//  @block: WHY THE MACHINE EXISTS
 //  @pedagogy: FROM HAND-STITCHING TO THE STITCHING MACHINE
 //    Until now, every row of every bibliography table was written by hand,
 //    directly in the HTML file:
@@ -23,12 +26,12 @@
 //      2. every update had to be repeated four times by hand;
 //      3. a row added in one language could silently be forgotten in the other.
 //
-//    The machine below changes the contract. The HTML files now hold ONLY the
+//    The machine below changes the contract. The HTML file now holds ONLY the
 //    skeleton — the shell, the <thead> labels, the empty <tbody>. The data
-//    has a single source of truth: ../data/bibliography-links.json (this
-//    shared file lives in shared/js/, the JSON one level up in shared/data/).
-//    On every visit the page fetches that JSON and stitches every <tr>
-//    itself, the way a loom turns one ball of thread into a whole sheet.
+//    has a single source of truth: ../shared/data/bibliography-links.json
+//    (the JSON lives in shared/data/; this file lives in en/). On every visit
+//    the page fetches that JSON and stitches every <tr> itself, the way a
+//    loom turns one ball of thread into a whole sheet.
 //
 //    On purpose we still teach every tag the hand could not unlearn:
 //    <table>, <thead>, <tbody>, <tr>, <th>, <td>, colspan, and the
@@ -39,10 +42,10 @@
 
 //  --------------------------------------------------------------------------
 //  @block: LANGUAGE DETECTION
-//  The <html lang="en"> (or lang="ro") attribute written in each HTML page
-//  is the only thing that tells the machine which language to speak. This
-//  is the same trick MECANISM 10-B of script.js uses. One engine, two
-//  languages: the browser reads the attribute, the machine obeys.
+//  The <html lang="en"> attribute written in this HTML page is the only thing
+//  that tells the machine which language to speak. This is the same trick
+//  MECANISM 10-B of script.js uses. One engine, two languages: the browser
+//  reads the attribute, the machine obeys.
 //  --------------------------------------------------------------------------
 const lang = (document.documentElement.lang || "en").toLowerCase();
 
@@ -51,7 +54,9 @@ const lang = (document.documentElement.lang || "en").toLowerCase();
 //  Every phrase the user can see is kept here, in both languages, indexed by
 //  the lang code read above. One word box, two collections. The data (titles,
 //  URLs, annotations) stays in the JSON untouched — only the dashboard text
-//  is translated at render time.
+//  is translated at render time. Keeping BOTH collections in both files means
+//  the en/ and ro/ copies of this machine stay byte-identical in code — the
+//  only thing that differs between them is the didactic commentary.
 //  --------------------------------------------------------------------------
 const strings = {
   en: {
@@ -93,7 +98,7 @@ const bibliographyShelves = document.querySelectorAll("[data-shelf]");
 if (bibliographyShelves.length > 0) {
   //  --------------------------------------------------------------------------
   //  THE ONE SOURCE OF TRUTH — shared/data/bibliography-links.json.
-  //  The machine lives in shared/js/, and the JSON lives in shared/data/.
+  //  The machine lives in en/ (or ro/), and the JSON lives in shared/data/.
   //  But fetch() resolves its path against the PAGE, not against this file.
   //  Both pages (en/ and ro/) sit exactly one folder below the project root,
   //  so the same relative path "../shared/data/bibliography-links.json"
@@ -188,8 +193,8 @@ if (bibliographyShelves.length > 0) {
           //    hole (XSS). Our own file would "work" either way, but the safe
           //    way is the lesson — textContent, always.
           nameCell.textContent = entry.title;
-          //  The library annotation becomes a tooltip (title attribute-show
-          //  on hover), so the crowd never sees a bare fishing title.
+          //  The library annotation becomes a tooltip (title attribute shows
+          //  on hover), so the crew never sees a bare listing title.
           nameCell.title = entry.annotation || entry.title;
           row.appendChild(nameCell);
 

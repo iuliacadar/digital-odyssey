@@ -252,7 +252,7 @@
                mașina bibliography.js ia fișierul comun
                shared/data/bibliography-links.json și creează fiecare <tr>
                la rulare, în browserul vizitatorului.
-           → vezi ../shared/js/bibliography.js pentru fiecare detaliu.
+           → vezi ./bibliography.js pentru fiecare detaliu.
 
            În inspectorul de elemente (DevTools), vei vedea <tbody>-ul prinzând
            viață: rânduri pe care nimeni nu le-a tastat în fișier.
@@ -502,11 +502,12 @@
       Încarc două scripturi la înse sfârșitul <body>: mai întâi motorul
       general (script.js), apoi mașina de cusut (bibliography.js), care
       citește indexul JSON și pictează rândurile în fiecare <tbody>.
-      Calea ../shared/js/ arată că acest script este utilizat de ambele
-      versiuni — o singură sursă pentru cod, echivalentul datelor cu o
-      singură sursă de adevăr.
+      Fiecare limbă își păstrează copia proprie de bibliography.js (en/ și
+      ro/) — cod identic, comentat didactic în limba ei — pentru ca mașina
+      să fie și ea o resursă de învățare, nu doar un utilitar. Datele rămân
+      cu o singură sursă de adevăr: shared/data/bibliography-links.json.
     -->
     <script src="./script.js"></script>
-    <script src="../shared/js/bibliography.js"></script>
+    <script src="./bibliography.js"></script>
   </body>
 </html>
