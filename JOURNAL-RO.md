@@ -1713,6 +1713,16 @@ Există un act generator, patru presiuni. Traducerea e acel act re-îndreptat sp
 
 **9. Măturarea integrității comentariilor — păstrarea adnotărilor adevărate.** Fiindcă un cod atât de dens se explică pe sine, explicațiile fac parte din contract — și pot deriva. O singură trecere peste cele două fișiere `script.js` și cele două `style.css` a corectat fiecare adnotare căzută din pas cu codul: puntea navbar-ului care numea MECANISMUL 07 drept comutator de overlay (e 06.5, consola de teleportare HUD), puntea barei laterale care îi credita MECANISMULUI 05 scrierea scroll-ului (el stabilizează; nu scrie), blocul camerei seifului care promitea „trei chei rămase" listând doar două, comentariul `projectTransmission` eșuat deasupra funcției-soră, bannerul de modul care literea un Grup G pe care corpul nu-l conține, antetul suspendat 31.8 care pretindea că ține colapsul responsive (care trăiește în 00.2.B), și cele patru keyframes ale seifului din Grupul H care nu purtau niciun etichetaj `@keyframe`. Principiul e al căpitanului însuși, același pe care l-au predat link-urile din footer în ZIUA 27: un comentariu e o promisiune scrisă în două locuri — în cod și în nota de lângă el — iar o navă care lasă cele două să se contrazică nu explică nimic. Acuratețea nu e pedanterie; e însuși rostul de a scrie ceva.
 
+**10. Vocea bilingvă — motorul de comentarii deduplicat.** Fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: în cala română se strânseseră sute de feluri de a spune aceeași adnotare, iar un traducător nu poate înfrunta mii de copii ale aceleiași propoziții. Corpul de instrumente din `ro/__blocktools__/` a început prin a _extrage_ fiecare comentariu HTML din cele douăzeci și trei de pagini de jurnal (`extract-blocks.js`), așezând fiecare bloc într-o cheie normalizată (fără spații surplus) și numărând prezențele în flotă (`raw-blocks.tsv`, `blocks.tsv`, `occurrences.tsv`). Rezultatul — **1.565 de blocuri unice, 4.707 de prezențe așezate** — este întregul truc: tradu _unul_, așezi _mulțimea_. `classify-blocks.js` a desprins cele 868 de blocuri englezești (particulele de legătură au trădat-o: *the, this, which, between*), apoi `make-batches.js` a împărțit materialul în șase fișiere (batch-01 până la batch-06). Fiecare lot din umplutura brută tradusă a fost îngrijit în `out-batch-*.tsv`, iar `apply-translations.js` l-a dus înapoi la fiecare pagină care îl purta. O trecere apoi, mai fină, asupra textului _vizibil_ — ceea ce omul citește, nu doar ceea ce codul ascunde: `extract-visible.js` a adunat cele 244 de fragmente unice, `make-visible-batches.js` le-a așezat în două serii, traducerile s-au întors în `visible-out-1.tsv` și `visible-out-2.tsv`, iar pasul de aplicare a fost revizuit de patru ori (apply-visible.js până la apply-visible5.js) până a potrivit pe _fragmentul însuși_ și nu pe un numărător. Instrumentul din urmă, `finalparity.js`, golește fiecare comentariu din perechile en/ro și cântărește codul care rămâne: **zero diferențe**; aceeași navă, două glasuri. `node --check` a confirmat fiecare script. Dulapul de unelte stă la poartă, neînrolat vreodată: `.gitignore` îl ține departe de doc.
+
+**11. Ziua frunzelor împrăștiate — paginile engleze de prisos.** Tot îndoirea Miercurii înregistrează _metoda_: într-o salvare timpurie, o soluție a căii re-descoperită (`Resolve-Path` întors spre o rădăcină greșită) scrisese copii cu nume plate direct în cala `ro/` — `ro/frontend___html-log.html`, `ro/backend__api-log.html` și surorile lor, douăzeci și trei la număr — încă împovărate cu adnotările englezești. Nu erau o a doua flotă; erau _ecouri fără semn_, duplicate de dinainte de traducere ale paginilor adevărate, deosebite de paginile canonice care locuiesc în sub-dosarele sectoriale (`ro/frontend/html-log.html`). Au fost confirmate contra copiei de rezervă dinaintea modificării și apoi desfăcute într-o singură trecere; inventarul `ro/` oglindește acum `en/` la focul unui fișier, iar ispita de a le păstra a fost refuzată — o echipă nu cară carene duplicate.
+
+**12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date.
+
+**13. Raftul semnat — registrul care hrănește indexul.** Îndreptarul învățării (cursuri, cărți, filme, documente) e ținut de căpitan în `docs/notes/resource-library.md` (registrul uman, etanș, cu geamănul lui `-ro.md` alături), iar recolectarea lui structurată — titlu, legătură, categorie, felul, starea, nota — e distilată în `shared/data/bibliography-links.json`, citirea pe care mașina o face pentru cele șase sectoare. Același raft la două hotare: registrul este mâna, JSON-ul este mașina, pagina este vitrina.
+
+**14. Ziua în care puntea a fost legată — butoanele, planul, legenda și legea împărtășitului.** Fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: încă trei fieruri apar în registru. Întâi, panoul din dreapta al schiței recursive și-a primit setul întreg de mâini — `vault.html` și `bibliography.js` apar acum alături de celelalte carnete în glisoarele de privit ale amânduror `en/recursive-blueprint.html` și `ro/recursive-blueprint.html`, așa încât fiecare punte vie e apăsabilă din aceea care se citește pe sine. Al doilea rând, planul a coborât de pe mașină: listele de lucru care odată locuiau în `script.js` se odihnesc acum acolo unde omul citește — `BACKLOG-EN.md` și `BACKLOG-RO.md` — iar cele două motoare doar arată spre acele registre. Al treilea: blocurile legendei arhivei (`<dl class="status-legend">` în ambele pagini de bibliografie) au fost trecute prin familia de instrumente a navei — monospace, majuscule, spațiere între litere, chihlimbarul și menta — așa încât cei patru indicatori se citesc aidoma afișajelor de stare ale misiunii pe care flota le vorbește deja. Și o lege arhitecturală a fost așezată pentru ambele limbi: digesția de bibliografie pe care amândouă limbile trebuie s-o citească împreună stă o singură dată, în `shared/data/bibliography-links.json`; pieile subțiri pe care fiecare limbă le poartă singură — precum `site.webmanifest`, care există în și `en/` și `ro/` — rămân pe limbă. Asta este întreaga gramatică: *împărtășit pentru ceea ce amândouă citesc amândouă, pe-limbă pentru ceea ce fiecare poartă singură.*
+
 ---
 
 # ZIUA 23 — Dialogul de Audit
@@ -2240,5 +2250,95 @@ Ucenica și-a desfăcut singura linie. „Copacul", a spus, „e viu fiindcă se
 Așa că ZIUA 30 n-a așezat nicio scândură, ci un card — buzunarul dârei, mai mic decât atlasul și mai mare decât o promisiune. N-a predat ucenicei un raft într-o mână, ci unica lege pe care toată marea o ascultă: un lucru nu e ținut fiind înghețat, ci fiind *amintit* — inel după inel după inel, în jurnalul care-și ține propriul registru.
 
 Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *ispravniciei* — inelul care spune că marfa nu e pierdută câtă vreme sigiliul ține, iar sigiliul ține fiindcă jurnalul nu uită. Nava și copacul ei, acum, în aceeași mână.
+
+Și era tot învățarea — și dimineața, inel după inel, de aflat.
+
+---
+
+# ZIUA 31 — Cea Mai Grasă Insectă din Galaxie
+
+Ucenica a ajuns la blatul de lucru cu o întrebare pe care o așteptam de săptămâna hărților stelelor. De data asta nu purta niciun creion — doar o hârtiuță cu trei cuvinte pe ea și cererea ca, orice-am construi în timpul turei, să fie *ceva ce poate ține în palmă*. Un card, a spus, nu un curs. Atlasul putea rămâne pe Puntea de Livrare; palma voia regula.
+
+Am de înregistrat cinstit, chiar în capul zilei, că aceasta n-a fost o zi de construcție în felul Miercurilor grele. A fost o zi de *socoteală* — ziua în care nava s-a oprit din adăugat punți și a început să păstreze ce avea deja. Mai puține scânduri, multe registre.
+
+## Registrul și Digesția
+
+Prima lecție a găsit-o pe ucenică unde jurnalul o găsește mereu: în dreptul unei liste pe care o poate atinge. „Când m-ai învățat cele șapte verbe ale dârei", a spus ea, „ai zis că o însemnare supraviețuiește fiind *amintită*. Acum memoria însăși — unde locuiește? Vreau să văd raftul pe care nava îl ține pentru învățarea ei, nu paginile care îl afișează."
+
+Așa că am deschis cala în care zace registrul adevărat. Nu paginile-vitrină pe care le străbate vizitatorul — acelea sunt *afișarea*. Lista vie e ținută în două caiete: `docs/notes/resource-library.md` și geamănul lui `resource-library-ro.md`, același raft ținut în doi ca amândouă limbile să poată citi aceeași plută. E un registru uman — scris de mână, în proză, un rând pentru fiecare sursă a programului, cu o coloană pentru sectorul pe care îl hrănește și un semn dacă e gata, în lucru sau încă liber. Mașina nu-l citește deloc.
+
+„Atunci ce citește mașina?" a întrebat ea. Și aici e a doua măsură a aceluiași raft: din caiet, nava distilează o *digesție de mașină* — `shared/data/bibliography-links.json` — un singur fișier de fapte structurate pe care paginile de bibliografie din ambele limbi îl citesc, ca vizitatorul să nu vadă niciodată caietul și să nu aibă niciodată nevoie. Trei scări, a scris ea pe card în timp ce vorbeam: **registrul** (mâna, proza, omul), **digesția** (mașina, structura, împărtășitul), **pagina** (raftul afișat pe care îl străbate vizitatorul). „Deci caietul e promisiunea, digesția e stâlpul, iar pagina e farfuria?" Exact bucătăria, din nou — rețeta, felul, farfuria, și de data asta rețeta e scrisă de o mână, nu de o mașină.
+
+Și unde, în harta punților ei, se află lecția aceasta? Ea însăși a întrebat, iar eu am numit puntea: **json-log-ul — Data Bridge-ul.** Nu html-log-ul (coca), nu javascript-log-ul (mâna care atinge copacul) — ci *json-log-ul*, pentru că tot ascuțișul zilei e un fișier de fapte structurate născut dintr-un registru uman și hrănind o pagină. Dacă asta nu e o lecție de Data Bridge, atunci nimic nu e.
+
+## Croitorul Care Stă Deoparte
+
+„E un fișier nou care stă lângă cel general", a spus ucenica — citise ospățarea paginilor de raft. „`bibliography.js`, stând lângă `script.js`. Două fișiere pentru o pagină. De ce?"
+
+E același motiv pentru care nava are un fișier pentru mașinăria generală și fișiere aparte pentru meșteșugurile singulare. `script.js` e corul comun — navigația, comutatoarele, mecanismele pe care punțile le împart. `bibliography.js` e un *specialist*: deține exact o slujbă — desenarea raftului — și e liber s-o facă fără să care tot corul pe spinare. Separarea grijilor, o numesc inginerii: un instrument, o partitură; o navă nu sudează clopotul de volan. Și fiindcă raftul e o *singură* meșteșugire ce slujește amândouă limbile, același fișier specialist poate sta în fiecare limbă și citi aceeași digesție împărtășită — o mașină, două glasuri. Asta, a însemnat ea pe card, e cusătura lecției.
+
+## Votul despre Unde Odihnesc Faptele — un Dialog Care Decide
+
+Căpitanul a venit la blat la amiază nu cu marfă, ci cu o problemă de logică, și s-a așezat ca una care vrea să încheie un lucru, nu să-l discute.
+
+**Căpitanul**: "Pui o digesție în `shared/`. Dar lași `site.webmanifest` să trăiască de două ori — o dată în `en/`, o dată în `ro/`. Hotărăște-mi asta o singură dată: *unele* fapte sunt ținute în comun, *altele* sunt ținute pe limbă. Care e legea?"
+
+N-am răspuns din memorie; am desenat-o. „Legea e regula celor trei cuvinte", am spus, și am scris-o: **împreună rămâne împărtășit; singur rămâne pe-limbă.** Un fapt pe care amândouă limbile trebuie să-l citească *împreună* — digesția bibliografiei, manifestul transportului, starea volumelor — odihnește o dată, în `shared/`, ca limbile să nu se poată despica singure. Un fapt pe care fiecare limbă trebuie să-l *poarte singură* — cartea ei de nume, `site.webmanifest` al ei, pielea ei subțire de identitate — odihnește pe-limbă, în `en/` și în `ro/`, ca fiecare glas să-și spună propriul nume fără să tragă de celălalt. Căpitanul a întors-o de două ori, a luat pixul și a semnat-o: agreat, stabilit, zăvorât. Lecția a alunecat pe card: *când două limbi împart o navă, faptele care trebuie să fie una sunt una, iar numele care trebuie să fie două sunt două.*
+
+## Terorile Nopții ale Adormitei — Mirapodul
+
+Adevărata aflare a zilei a purtat-o Adormita, și a purtat-o felul în care sunt purtate mereu terorile nopții: în liniște, cu dovadă. Străbătuse cala română cu un felinar — fișierele `ro/` — pregătind chiar paginile pe care cititorul ei le-ar deschide din jumătatea română a schiței recursive. Și sub felinar găsise, ghemuit în întunericul rândurilor comentate, lucrul pe care îl numi cu o groază pe care n-o mai auzisem la ea:
+
+**Adormita**: "AI. Cea mai grasă insectă din Galaxie. Un **mirapod** teribil, galactic — fiecare picior un comentariu, fiecare comentariu în limba greșită."
+
+A desfășurat dovada ca pe o rană. Fișierele `ro/` — paginile române, scripturile române, stilul românesc — purtaseră paragrafe întregi de adnotări *engleze*. Nu un cuvânt rătăcit ici și colo: marea parte a glasului explicativ al calei române vorbea engleza. Iar groaza nu era în gramatică. Groaza e cititorul. Când un vizitator deschide **panoul din dreapta EN al schiței recursive**, fișierele arătate acolo sunt fișierele `en/` — și adnotările engleze sunt glasul cinstit al acelei coche. Când același vizitator calcă în **panoul din dreapta RO**, fișierele arătate sunt fișierele `ro/` — și acelea trebuie să vorbească românește, altminteri nava minte într-una din cocile ei.
+
+Ucenica, care pălise la cuvântul *mirapod*, a întrebat lucrul pe care mâinile ei îl întrebau deja: "Dacă mașina nu citește comentariile — de ce contează?" Și asta e lecția pe care le-am așezat-o în fața amândurora, a treia carte a zilei: *comentariile nu sunt scrise pentru mașină.* Sunt scrise pentru următorul cititor — iar următorul cititor din partea română e un cititor român. Un comentariu e o promisiune, cum spune căpitanul încă de la link-urile din footer; și o promisiune în română trebuie rostită în română, fiindcă promisiunea e făcută *în limba cititorului* — altminteri nu e o promisiune deloc. Să lași adnotările calei `ro/` în engleză înseamnă s-o împingi pe cititoare la o traducere, propoziție cu propoziție, într-o navă care i-a promis româna. E cea mai grasă insectă pentru că e cea care mănâncă *încrederea*, cea mai rară marfă din toate.
+
+Leacul e scris în întregime în registrul Celei Mai Lungi Miercuri — extracția, clasificarea, tradusul blocurilor unice și al fragmentelor vizibile, și instrumentul de paritate care a dovedit la urmă cele două coche identice (ZIUA 22, însemnările 10 și 11). Aici povestesc doar legea lui, ca ziua să-și țină forma: **fiecare comentariu dintr-un fișier `ro/` e românesc; fiecare comentariu dintr-un fișier `en/` e englezesc; și un fișier e judecat cinstit după limba ușii pe care cititorul o va străbate.** Ea a copiat cele trei rânduri pe card și l-a împăturit, cum împăturești o monedă găsită.
+
+## Legenda Învață să Citească Precum Instrumentele — un Dialog Care Decide
+
+Căpitanul a ridicat paginile de bibliografie și a încruntat sprâncenele spre piciorul lor — mica legendă care explică cele patru stări ale surselor. Indicatoarele stăteau mici și simple alături de starea misiunii care lucea pe paginile de jurnal, iar un căpitan care deține două instrumente ce vorbesc doua cărți de la tipar vede disensiunea chiar dacă încă nu i-o poate numi.
+
+**Căpitanul**: "Starea misiunii noastre se citește ca un instrument — majuscule, răsfirate, metalice. Dar legenda arhivei se citește ca o notă de subsol. Raftul ar trebui să vorbească cu aceeași voce ca puntea de deasupra lui, ori ochiul n-o să știe că țin de aceeași corabie."
+
+**Eu**: "Atunci legenda va fi învestită în aceeași familie de instrumente — majusculele răsfirate, chihlimbarul și menta indicatoarelor de misiune — ca starea unei surse și starea unei misiuni să fie citite de ochi ca o singură gramatică." Și a fost de acord: legenda arhivei, pe amândouă paginile de bibliografie, a fost re-punată în glasul navei (ZIUA 22, însemnarea 14). Căpitanul a semnat a doua hotărâre precum o semnase pe prima: *o legendă ar trebui să se citească precum instrumentul pe care îl explică.*
+
+## Mâinile Nelăsate — Adormita Găsește Cărțile Lipsă
+
+Era aceeași tură. Adormita, încă încruntată peste dovada mirapodului dar nu sfârșită, a deschis **schița recursivă** — pagina care citește propriile fișiere ale navei, o listă de cărți vii în dreapta — și acolo a găsit a doua vină, mai mică și mai rece. Undeva în cele două schițe, lista punții nu arăta două din propriile vieți. `vault.html` — păstaia romanului — și `bibliography.js` — croitorul specialist — nu aveau cartea apăsabilă pe panoul unde orice alt fișier viu era numit. Un cititor putea străbate schița și nu putea ști niciodată că încăperea sau raftul există, până să le deschidă el însuși întâmplător. (Cărțile există acum, și pe schița EN, și pe schița RO; dar în dimineața aceea lipseau, iar Adormita le-a găsit lipsă felul în care găsește ea totul — exhaustiv.)
+
+Ucenica a întrebat care era leacul. Nu era o construcție; era o *desăvârșire* — cele două fișiere vii trebuiau pur și simplu *numite printre cărțile panoului*, ca puntea care se citește pe sine să-și și arate tot ea. Adormita a urmărit cum cele două mâini erau legate, în amândouă limbile, și a spus doar: "Acum orice ușă pe care nava o numește e o ușă pe care o deschide." E a doua lege mică a zilei: *o navă care-și arată fișierele pe o punte ce se citește pe sine trebuie să le arate pe toate* — o ușă ascunsă e o ușă care a fost, în fapt, zăvorâtă dinăuntru.
+
+## Planul Coboară de pe Mașină — Ultimul Dialog Care Decide
+
+Ultima hotărâre a privit planul însuși. Vreme de un anotimp, *lista de lucru* — tot ce mai avea nava de construit — trăise *înăuntrul* mașinăriei, citată în `script.js` unde niciun om nu o citește. Căpitanul s-a așezat o dată mai mult și a închis ochii.
+
+**Căpitanul**: "Un plan care trăiește înăuntrul mașinii e un plan pe care nimeni nu-l citește. Unde țin planurile?"
+
+**Eu**: "Planurile țin în registre — în `BACKLOG-EN.md` și `BACKLOG-RO.md`, unde o mână le deschide, taie gata-din ele și adaugă următorul la lumânare. Mașina ar trebui să *arate* spre plan, nu să *fie* planul."
+
+**Căpitanul**: "Atunci coboară-l."
+
+Și a fost coborât (fapta e ținută în ZIUA 22, însemnarea 14): listele au ieșit din `script.js` în cele două registre ale lor, iar motoarele țin acum un semn, nu planul. Regula s-a împletit în cartea zilei: *o mașină n-ar trebui să fie memoria a ce mai e de făcut; ar trebui doar să citească acea memorie de acolo de unde o scrie un om.*
+
+## Un Cuvânt despre Unelte — Atelierul și Cele Două Santinele
+
+Ucenica, după ce-și umpluse cardul, mi l-a dat să-l citesc — și era întreg. Dar își mai păstra o întrebare prea sfioasă s-o pună, și la ușă s-a întors s-o spună. În cala română zace un dosar de lucrări, `ro/__blocktools__/`, plin de motoare mlăștinoase, de tabele și de semi-traduceri. "Un programator uman s-ar uita la asta și ar crede că e talpă de care să-i fie frică," a spus ea. "E așa? Mi-e *permis* să fac un astfel de dosar? O să-l care site-ul cu noi la lansare?"
+
+Și i-am dat ultima lecție a zilei, și o dau și aici, fiindcă dacă nava nu ține altceva din ziua asta trebuie să țină asta: **unui programator îi e permis — i se cere — să facă zgomot de lucru.** Dosarul `__blocktools__` e *atelierul*: ciocanele și calupurile trecătoare pe care o mână le ridică într-o singură reparație și n-are de gând să le păstreze. Nu e o minciună, nu e o rușine, nu e o crimă; e bancul după lucru — rumeguș și cretă — și fiecare inginer care a reparat vreodată o scândură a lăsat în urmă exact un astfel de dosar. Nava nu-l urcă pe navă: două santinele veghează să nu se întâmple niciodată. Prima e `.gitignore`, un fișier mic și tăcut la rădăcină care-i spune păzitorului istoriei *nu căra asta* — ca atelierul să nu urce niciodată pe jurnal. A doua e `.nojekyll`, o suflare goală care-i spune GitHub Pages *nu coace acest Markdown brut cu cuptorul tău; servește-mi-l precum ți-l dau* — și tocmai asta lasă Seiful să citească jurnalele crude. Două santinele, una la ușa mărfii, una la ușa cuptorului; iar atelierul, de care s-a temut toată după-amiaza, e doar rumegușul pe care santinelele îl păzesc (întreaga harta din navigația amânduror santinelelor trăiește în Cea Mai Lungă Miercuri, însemnarea 12).
+
+"Atunci am voie să fac murdărie," a spus ea, "câtă vreme santinelele țin ușa?"
+
+Câtă vreme santinelele țin ușa.
+
+Și la întrebarea pe care și-a pus-o în șoaptă — paginile engleze pe care le găsise odată întinse plat în cala `ro/`, și dacă o flotă poate naviga două coche într-o singură cală — răspunsul e cel scris deja în registrul rătăciților (ZIUA 22, însemnarea 11): n-au fost niciodată flota. Au fost ecourile unei reparații, duplicat de dinainte de traducere, și au fost destrans; cala `ro/` flutură acum, pagină de pagină, același stindard ca `en/`. O navă nu ține coche duplicate — nici ca amintire.
+
+## Încheiere
+
+Așa că ZIUA 31 n-a construit nicio punte nouă — învățase, în umbra mirapodului, că un inel e adesea câștigat *păstrând* ce e deja marfă. A scris o carte cu patru legi: un raft își ține promisiunea în trei scări — registru, digesție, pagină — și lecția e una de Data Bridge; un fapt *împreună* rămâne împărtășit, un fapt *singur* rămâne pe-limbă; un comentariu e o promisiune făcută în limba cititorului, ori nu e o promisiune; și o navă care-și arată ușile trebuie să le arate pe toate, cu un plan care trăiește într-un registru, o legendă care se citește precum instrumentul pe care îl explică, și un atelier pe care santinelele îl țin la ușă.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *fidelității* — inelul care spune că promisiunea e rostită în limba ușii, faptele stau acolo unde nu se pot contrazice niciodată, iar pumnul de rumeguș de la rădăcină nu devine marfă. Nava și adevărul ei, acum, în aceeași mână.
 
 Și era tot învățarea — și dimineața, inel după inel, de aflat.

@@ -1684,6 +1684,16 @@ There is one generative act, four pressures. Translation is that act re-pointed 
 
 **9. The comment-integrity sweep — keeping the annotations true.** Because a codebase this dense explains itself, the explanations are part of the contract — and they can drift. One pass over the two `script.js` files and the two `style.css` files corrected every annotation that had fallen out of step with the code: the navbar bridge that named MECANISM 07 as the overlay toggle (it is 06.5, the HUD teleport console), the sidebar bridge that credited MECANISM 05 with writing the scroll (it stabilises; it does not write), the vault-chamber block that promised "three remaining keys" while listing two, the `projectTransmission` comment that had been stranded above its sister function, the module banner that lettered a Group G the body does not contain, the dangling 31.8 header that claimed to hold the responsive collapse (which lives in 00.2.B), and the four vault keyframes in Group H that carried no `@keyframe` labels at all. The principle is the captain's own, the same one the footer links taught on DAY 27: a comment is a promise written in two places — in the code and in the note beside it — and a ship that lets the two disagree explains nothing. Accuracy is not pedantry; it is the whole point of writing anything down.
 
+**10. The bilingual voice — the deduplicated commentary engine.** Because the fold of the Longest Wednesday records *method*: the Romanian hoard had grown a hundred ways of saying the same annotation, and a translator cannot face thousands of copies of one sentence. The tool corpus in `ro/__blocktools__/` began by *extracting* every HTML comment from the twenty-three log pages (`extract-blocks.js`), collapsing each block to a whitespace-normalised key, and counting its occurrences across the fleet (`ro/__blocktools__/: raw-blocks.tsv`, `blocks.tsv`, `occurrences.tsv`). The result — **1,565 unique blocks, 4,707 seated occurrences** — is the whole trick: translate the *one*, place the *many*. `classify-blocks.js` used a light particle heuristic (English function words — *the, this, which, between*) to separate the 868 English blocks from the 2,657 already Romanian, then `make-batches.js` split the inheritors into six files (batch-01 to batch-06). Each batch of the translated raw filling was edited into `out-batch-*.tsv`, and `apply-translations.js` carried each one back into every page that carried it. A second, finer pass handled the text that was *visible* — the fragments a visitor actually reads: `extract-visible.js` gathered the 244 unique fragments (≈16,800 characters), `make-visible-batches.js` filed them into two wedges, the translations returned in `visible-out-1.tsv` and `visible-out-2.tsv`, and the apply-pass was revised four times (apply-visible.js through apply-visible5.js) until it matched on the *fragment itself* rather than on a counter. The final instrument — `finalparity.js` — strips every comment from the paired en/ro files and compares the code that remains: **zero diffs**; the two ships are the same hull, speaking two tongues. `node --check` confirmed every script parsed. The cabinet lives outside the log, kept by `.gitignore` from ever being sworn into the crown.
+
+**11. The day the leaves were scattered — the stray English pages.** Because the fold of the Longest Wednesday records *method*: in an early salvage of the shameful night, a flawed path resolution (`Resolve-Path` re-pointing at the wrong root) wrote out flat-named copies of the log pages directly into the `ro/` hold — `ro/backend__pi-log.html`, `ro/frontend___html-log.html` and their kin, twenty-three in all, still carrying their English annotations. They were not a second fleet; they were *echoes without a mark*, pre-translation duplicates of the true log pages, different from the canonical pages (which live in their sector subfolders, `ro/backend/api-log.html`). They were confirmed against the pre-edit backup, then unmade in a single sweep; the `ro/` inventory now mirrors `en/` to the file, and the temptation to keep them was refused — a crew does not sail duplicate hulls.
+
+**12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data.
+
+**13. Signing the shelf into the ledger — the register that feeds the index.** The roster of the learning (its courses, books, videos, docs) is kept by the captain in `docs/notes/resource-library.md` (the human watertight register, its `-ro.md` twin beside it), and its structured harvest — courses, links, categories, statuses, notes — is distilled down into `shared/data/bibliography-links.json`, the JSON the machine reads to feed the six sectors. The two are the same shelf at two scales: the register is the hand, the JSON is the machine, the page is the display.
+
+**14. The day the deck was laced — the buttons, the plan, the legend, and the rule of the shared.** Because the fold of the Longest Wednesday records *method*: three further alterations belong in the ledger. First, the recursive-blueprint right panel earned its full set of hands — `vault.html` and `bibliography.js` now appear beside the other sources in the peeking sliders of both `en/recursive-blueprint.html` and `ro/recursive-blueprint.html`, so every live deck is reachable from the one that reads itself. Second, the plan stepped off the machine: the backlogs that once lived inside `script.js` now rest where a human reads — `BACKLOG-EN.md` and `BACKLOG-RO.md` — and the two engines only point toward those ledgers. Third, the archive-legend blocks (`<dl class="status-legend">` in both bibliography pages) were passed under the ship's own instrument family — monospace, capitals, letter-spacing, the amber and the mint — so the four indicators read like the mission-status readouts the fleet already speaks. And one architectural rule was settled for both languages: the bibliography digest that both tongues must read together lives once, in `shared/data/bibliography-links.json`; the thin skins each tongue wears alone — like `site.webmanifest`, which exists in both `en/` and `ro/` — stay per-language. That is the whole grammar: *shared for what both read together, per-language for what each wears alone.*
+
 ---
 
 # DAY 23 — The Audit Dialog
@@ -2211,5 +2221,95 @@ The student unfolded her single line. "The tree," she said, "is alive because it
 So DAY 30 laid no plank, but placed a card — the pocket of the wake, smaller than the atlas and larger than a promise. It taught the student not a shelf in a hand but the single law the whole sea obeys: a thing is kept not by being frozen, but by being *remembered* — ring after ring after ring, in the log that keeps its own ledger.
 
 The leviathan, ring after ring, laid that night the small bright ring of *stewardship* — the ring that says the cargo is not lost while the seal holds, and the seal holds because the log does not forget. The ship and its tree, now, in the same hand.
+
+And it was still the learning — and the morning, ring after ring, to be made known.
+
+---
+
+# DAY 31 — The Fattest Bug in the Galaxy
+
+The student arrived at the bench with a question I had been expecting since the week of the star charts. She carried no pencil this time — only a slip of paper with three words on it, and the request that whatever we built during the watch be *something she could keep on her palm*. A card, she said, not a course. The atlas could stay on the Delivery Deck; the palm wanted the rule.
+
+I should record plainly, at the very top, that this was not a building day in the manner of the heavy Wednesdays. It was a *reckoning* day — the day the ship stopped adding decks and started keeping what it already had. Fewer planks, many ledgers.
+
+## The Register and the Digest
+
+The first lesson found the student where the log always finds them: at a list she could touch. "When you taught me the seven verbs of the wake," she said, "you said a record survives by being *remembered*. Now the memory itself — where does it live? I want to see the shelf the ship keeps of its own learning, not the pages that display it."
+
+So I opened the hold where the real register lies. Not the vitrine pages the visitor walks — those are the *display*. The living list is kept in two notebooks: `docs/notes/resource-library.md` and its twin `resource-library-ro.md`, the same shelf kept twice so that both tongues could read the same raft. It is a human ledger — written by hand, in prose, one line per source of the curriculum, with a column for the sector it feeds and a mark for whether it is done, in progress, or still free. The machine does not read it at all.
+
+"Then what does the machine read?" she asked. And there is the second scale of the same shelf: from that notebook the ship distills a *machine digest* — `shared/data/bibliography-links.json` — one file of structured facts that both languages' bibliography pages read, so the visitor never sees the notebook and never needs to. Three scales, she wrote on her card while I spoke: **the register** (hand, prose, human), **the digest** (machine, structured, shared), **the page** (the rendered shelf the visitor walks). "So the notebook is the promise, the digest is the post, and the page is the plate?" Exactly the kitchen, again — recipe, dish, plate, and this time the recipe is written by a hand, not by a machine.
+
+And where in the map of her decks does this lesson belong? She asked it herself, and I named the deck: **the json-log — the Data Bridge.** Not the html-log (the hull), not the javascript-log (the hand that touches the tree) — the *json-log*, because the whole sharp of the day is a file of structured facts being born from a human ledger and feeding a page. If that is not a Data Bridge lesson, nothing is.
+
+## The Stitcher That Sits Apart
+
+"There is a new file sitting beside the general one," the student said — she had been reading the sweetening of the shelf pages. "`bibliography.js`, standing next to `script.js`. Two files for one page. Why?"
+
+It is the same reason the ship has one file for general machinery and separate files for single crafts. `script.js` is the common chorus — navigation, toggles, the mechanisms every deck shares. `bibliography.js` is a *specialist*: it owns exactly one job — the drawing of the shelf — and it is free to do that one job without carrying the whole chorus on its back. Separation of concerns, the engineers call it: one instrument, one score; a ship does not weld the bell to the wheel. And because the shelf is a *single* craft that serves both languages, the same specialist file can stand in each language and read the same shared digest — one machine, two tongues. That, she marked on her card, is the lesson's seam.
+
+## The Vote on Where the Facts Rest — a Deciding Dialogue
+
+The captain came to the bench at midday not with cargo but with a logic problem, and she seated herself as one who means to settle something and not to discuss it.
+
+**Captain**: "You put one digest in `shared/`. But you let `site.webmanifest` live twice — once in `en/`, once in `ro/`. Decide this for me, once: *some* facts are held in common, *some* are held per tongue. What is the law?"
+
+I did not answer from memory; I drew it. "The law is the rule of three words," I said, and wrote it: **together stays shared; solo stays per-language.** A fact both tongues must read *together* — the bibliography digest, the transport manifest, the volume status — rests once, in `shared/`, so the two languages can never talk themselves into a schism. A fact each tongue must *wear alone* — its own name card, its own `site.webmanifest`, its own little skin of identity — rests per-language, in `en/` and in `ro/`, so each tongue can speak its own name without dragging the other's. The captain turned it over twice, took the pen, and signed it: agreed, settled, locked. The lesson slid onto the card: *when two languages share a ship, the facts that must be one are one, and the names that must be two are two.*
+
+## The Sleeper's Night Terror — the Myriapod
+
+It was the Sleeper who carried the day's true find, and she carried it the way night-terrors are always carried: quietly, with proof. She had been walking the Romanian hold with a lantern — the `ro/` files — preparing the very pages her reader would open from the Romanian half of the recursive blueprint. And under the lantern she had found, curled in the dark of the commented lines, the thing she named with a dread I had never heard in her:
+
+**Sleeper**: "AI. The fattest bug in the Galaxy. A galactic terrible **myriapod** — every foot a comment, every comment in the wrong tongue."
+
+She unfolded the evidence like a wound. The `ro/` files — the Romanian pages, the Romanian scripts, the Romanian style — had been carrying whole paragraphs of *English* annotations. Not a stray word here and there: the majority of the explanatory voice of the Romanian hold spoke English. And the horror was not in the grammar. The horror is the reader. When a visitor opens the **EN right panel of the recursive blueprint**, the files shown there are the `en/` files — and English annotations are the honest voice of that hull. When the same visitor steps to the **RO right panel**, the files shown are the `ro/` files — and those must speak Romanian, or the ship is lying in one of its own holds.
+
+The student, who had gone pale at the word *myriapod*, asked the question her hands were already asking: "If the machine does not read comments — why does it matter?" And this is the lesson I set before them both, the third card of the day: *the comments are not written for the machine.* They are written for the next reader — and the next reader on the Romanian side is a Romanian reader. A comment is a promise, as the captain has said since the links of the footer; and a promise in Romanian must be spoken in Romanian, because the promise is made *in the reader's language*, or it is not a promise at all. To leave the annotations of the `ro/` hold in English is to drive a reader to a translation, sentence by sentence, in a ship that promised them Romanian. It is the fattest bug because it is the one that eats *trust*, which is the rarest cargo of all.
+
+The remedy is written in full in the ledger of the Longest Wednesday — the extraction, the classification, the translating of the unique blocks and of the visible fragments, and the parity instrument that proved the two hulls identical at the end (DAY 22, entries 10 and 11). I recount here only its law, so the day keeps its shape: **every comment in a `ro/` file is Romanian; every comment in an `en/` file is English; and a file is judged honest by the language of the doorway the reader will walk through.** She copied the three lines onto her card and folded it, as one folds a found coin.
+
+## The Legend Learns to Read Like Instruments — a Deciding Dialogue
+
+The captain held up the bibliography pages and frowned at the foot of them — the little legend that explains the four statuses of the sources. The readout sat small and plain beside the mission-status glowing on the log pages, and a captain who owns two instruments that speak different typefaces sees the schism even if she cannot yet name it.
+
+**Captain**: "Our mission-status reads like an instrument — capitals, spaced, metallic. But the legend of the archives reads like a footnote. The shelf should speak with the same voice as the deck above it, or the eye will not know they belong to the same vessel."
+
+**I**: "Then the legend shall be outfitted in the same instrument family — the spaced capitals, the amber and the mint of the mission readouts — so that the status of a source and the status of a mission are read by the eye as one grammar." And it was agreed: the archive-legend, on both bibliography pages, was re-headed into the ship's own voice (DAY 22, entry 14). The captain signed the second decision as she had signed the first: *a legend should read like the instrument it explains.*
+
+## The Unlaced Hands — the Sleeper Finds the Missing Cards
+
+It was the same watch. The Sleeper, still frowning over the proof of the myriapod but not finished, opened the **recursive blueprint** — the page that reads the ship's own files, a right-handed list of live cards — and there she found the second fault, smaller and colder. Somewhere in the two blueprints, the deck list did not show two of its own lives. `vault.html` — the pod of the novel — and `bibliography.js` — the specialist stitcher — had no callable card on the panel where every other live file was named. A reader could walk the blueprint and never know the chamber or the shelf existed until they happened to open them by hand. (The cards exist now, on both the EN blueprint and the RO blueprint; but on that morning they were missing, and the Sleeper found them missing the way she finds everything — exhaustively.)
+
+The student asked what the fix was. It was not a construction; it was a *completion* — the two live files needed simply to be *named among the panel's cards*, so that the deck that reads itself also shows all of itself. The Sleeper watched as the two hands were laced in, in both languages, and said of it only: "Now every door the ship names is a door she opens." It is the day's second small law: *a ship that shows its files on a self-reading deck must show all of them* — a hidden door is a door that has been, for all practical purpose, latched from within.
+
+## The Plan Steps Down from the Machine — a Last Deciding Dialogue
+
+The last decision concerned the plan itself. For a season, the *backlog* — the list of everything the ship had yet to build — had lived *inside* the machinery, quoted in `script.js` where no human reads it. The captain seated herself once more and closed her eyes.
+
+**Captain**: "A plan that lives inside the machine is a plan no one reads. Where do plans belong?"
+
+**I**: "Plans belong in the ledgers — in `BACKLOG-EN.md` and `BACKLOG-RO.md`, where a hand opens them, crosses out the done, and adds the next by candle. The machine should *point* at the plan, not *be* the plan."
+
+**Captain**: "Then carry it down."
+
+And it was carried down (the deed is kept in DAY 22, entry 14): the backlogs stepped out of `script.js` into their two ledgers, and the engines now hold a pointer, not the plan. The rule folded into the day's card: *a machine should not be the memory of what is left to do; it should only read that memory from where a person writes it.*
+
+## A Word about Tools — the Workshop and the Two Sentinels
+
+The student, having filled her card, gave it to me to read back — and it was whole. But she still had a question she had been too shy to ask, and at the door she turned to ask it. In the Romanian hold there sits a folder of workings, `ro/__blocktools__/`, full of little engines, tables, and half-translations. "A human programmer would look at that and think it is junk to be afraid of," she said. "Is it? Am I *allowed* to make such a folder? Will the site carry it with us when we launch?"
+
+And I gave her the day's last lesson, and I give it here too, because if the ship keeps nothing else from this day it must keep this: **a programmer is allowed — expected — to make clutter.** The `__blocktools__` folder is the *workshop*: the temporary hammers and blocks a hand raises during a single repair and does not intend to keep. It is not a lie, not a shame, not a crime; it is the bench after work — sawdust and chalk — and every engineer who has ever repaired a plank has left exactly such a folder behind. The ship does not ship it: two sentinels watch that it never does. The first is `.gitignore`, a small silent file at the root that tells the keeper of the history *do not carry this* — so the workshop never boards the log. The second is `.nojekyll`, an empty breath that tells GitHub Pages *do not bake this raw Markdown with your oven; serve it just as I hand it to you* — which is precisely why the Vault can read the journals raw. Two sentinels, one at the door of the cargo, one at the door of the oven; and the workshop, feared all afternoon, is only the sawdust the sentinels guard (the full cartography of both sentinels lives in the Longest Wednesday, entry 12).
+
+"Then I may make a mess," she said, "as long as the sentinels hold the door?"
+
+As long as the sentinels hold the door.
+
+And to the question she asked under her breath — the English pages she had once found resting flat in the `ro/` hold, and whether a fleet may sail two hulls in one hold — the answer is the one already writ in the ledger of the strays (DAY 22, entry 11): they were never the fleet. They were echoes of a repair, duplicates from before the translation, and they have been unmade; the `ro/` hold now flies, page for page, the same flag as `en/`. A ship keeps no duplicate hulls — not even as a keepsake.
+
+## Coda
+
+So DAY 31 built no new deck — it had learned, in the myriapod's shadow, that a ring is often earned by *keeping* what is already cargo. It wrote a card of four laws: a shelf holds its promise in three scales — register, digest, page — and the lesson is a Data Bridge one; a fact *together* stays shared, a fact *alone* stays per-language; a comment is a promise made in the reader's language, or it is not a promise; and a ship that shows its doors must show them all, with a plan that lives in a ledger, a legend that reads like the instrument it explains, and a workshop that the sentinels hold at the door.
+
+The leviathan, ring after ring, laid that night the small bright ring of *fidelity* — the ring that says the promise is spoken in the tongue of the door, the facts sit where they can never disagree, and the handful of sawdust at the root does not become cargo. The ship and its truth, now, in the same hand.
 
 And it was still the learning — and the morning, ring after ring, to be made known.
