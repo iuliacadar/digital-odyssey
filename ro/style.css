@@ -1410,6 +1410,100 @@ asincrone sincronizate de tastare cu blocare precisă de tip cursor fizic.
     hide-cursor 0s linear 3.5s forwards;
 }
 
+/* @group: 15.C — DECODOR DE SEMNALE (Legenda Arhivei & Lămpile de Status)
+Scop: Legenda bibliografiei citește același cod pe care mașina îl așează în a
+treia coloană a fiecărui tabel. Folosește aceeași familie de instrumente ca și
+consola de status al misiunii — bara de semnal mint, fundalul cu fosfor,
+capitalele monospace — astfel încât legenda și celulele de tabel pe care le
+decodează luminează cu o singură voce. Clasele .status-active și
+.status-in-progress sunt chiar acelea pe care mașina le aplică pe celulele
+tabelului; sunt stilizate aici o singură dată, atât pentru legendă, cât și
+pentru tabel. */
+.status-legend {
+  background: rgba(
+    167,
+    243,
+    208,
+    0.04
+  ); /* @theme: Ceață translucidă cu fosfor, ecoul plăcii consolei de status al misiunii */
+  border-left: 3px solid var(--solar-mint); /* @layout: Aceeași bară verticală rigidă de semnal care ancorează readout-ul live */
+  border-radius: 0 4px 4px 0; /* @concept: Împământare asimetrică: colțurile de la babord rotunjite, latura de la tribord fixată plat */
+  padding: 16px 20px 8px; /* @layout: Plic dens de padding telemetric, ușor la bază pentru a lăsa lămpile să respire */
+  margin: 16px 0 6px; /* @line: Ține codul aproape de tabelul pe care îl decodează, fără a intra în coliziune cu el */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.45); /* @theme: Umbră CRT interioară care acoperă placa în profunzime de consolă */
+}
+
+.status-legend dt {
+  margin: 0; /* @layout: Șterge decalajul implicit al termenilor din lista de descriere */
+  font-family: monospace; /* @layout: Tipar rigid mecanic cu lățime fixă care replică ieșirile autentice de cod al mașinii */
+  font-size: 0.78rem; /* @theme: Dimensiuni tactice de telemetrie reduse la scară */
+  text-transform: uppercase; /* @line: Capitale de protocol militar pe etichetele decodorului */
+  letter-spacing: 2px; /* @layout: Spațiere tehnică extinsă care stabilizează readout-ul */
+}
+
+.status-legend dd {
+  margin: 3px 0 14px; /* @layout: Ritm asimetric strâns: termenii se ridică, definițiile se așază sub ei */
+  font-size: 0.8rem; /* @theme: Definițiile stau cu un pas sub termenii-lampă */
+  line-height: 1.6; /* @line: Aer confortabil pentru notele lungi ale codului */
+  color: rgba(
+    209,
+    209,
+    209,
+    0.85
+  ); /* @theme: Gri stardust pentru definiții pe placa întunecată cu fosfor */
+}
+
+/* Lămpile: aceleași clase pe care mașina le aplică pe celulele tabelului
+   (status-active / status-in-progress). Un decodor, un cod, împărțit între
+   legendă și tabelele pe care mașina le umple. */
+.status-active,
+.status-in-progress {
+  font-family: monospace; /* @layout: Caractere de citire cu lățime fixă pentru etichetele de lumină */
+  text-transform: uppercase; /* @line: Capitale de consens pentru ca lămpile să se citească drept etichete de instrument */
+  letter-spacing: 1.5px; /* @layout: Spațiere moderată pentru celulele compacte */
+  font-size: 0.76rem; /* @theme: Caption compact de lampă, împărțit între legendă și celula de tabel */
+}
+
+.status-active {
+  color: var(--solar-mint); /* @theme: Mint cu fosfor — semnalul că o referință este fixată și în flux */
+  text-shadow: 0 0 6px rgba(167, 243, 208, 0.55); /* @line: Coroană mint moale pentru ca lampa să se citească drept aprinsă */
+}
+
+.status-in-progress {
+  color: var(--amber-glow); /* @theme: Chihlimbarul expediției — semnalul că sectorul este în lucru în prezent */
+  text-shadow: 0 0 6px rgba(255, 179, 0, 0.5); /* @line: Coroană chihlimbar moale pentru ca lampa să se citească drept aprinsă */
+}
+
+/* În legendă, fiecare termen poartă un LED fizic: un orb-lampă mic pulsând în
+   lumina propriului status, montat înaintea etichetei. */
+.status-legend dt .status-active,
+.status-legend dt .status-in-progress {
+  display: inline-flex; /* @layout: Orb-lampa și eticheta unul lângă altul pe o singură linie de telemetrie */
+  align-items: center; /* @line: Centrează vertical orb-lampa față de linia de bază a etichetei */
+  gap: 8px; /* @layout: Spațiere fixă între orb și eticheta sa */
+  font-size: 0.78rem; /* @theme: Lampa legendei păstrează scara telemetrică a termenului dt */
+  letter-spacing: 2px; /* @layout: Se potrivește cu urmărirea mai largă a termenilor legendei */
+}
+
+.status-legend dt .status-active::before,
+.status-legend dt .status-in-progress::before {
+  content: ""; /* @component: LED-ul fizic construit dintr-un orb pseudo-element */
+  width: 8px; /* @layout: Orbe compacte de lampă calibrate la scara telemetrică */
+  height: 8px; /* @layout: Orbe compacte de lampă calibrate la scara telemetrică */
+  border-radius: 50%; /* @theme: Lentilă rotundă de lampă, nu un indicator pătrat */
+  flex: 0 0 auto; /* @line: Blochează dimensiunea orbului pentru a nu se strivi lângă etichetă */
+}
+
+.status-legend dt .status-active::before {
+  background: var(--solar-mint); /* @theme: Lentila LED aprinsă mint */
+  box-shadow: 0 0 6px rgba(167, 243, 208, 0.8); /* @line: Halo de strălucire care radiază din lentila aprinsă */
+}
+
+.status-legend dt .status-in-progress::before {
+  background: var(--amber-glow); /* @theme: Lentila LED aprinsă chihlimbar */
+  box-shadow: 0 0 6px rgba(255, 179, 0, 0.7); /* @line: Halo de strălucire care radiază din lentila aprinsă */
+}
+
 /* ==========================================================================
 @module: 16 — TERMINAL DE NOTE (SEIFURI TERMINALE CUANTICE)
 @sub-module: 16.1 — Carcasa Monitorului Hardware de Bază

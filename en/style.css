@@ -1409,6 +1409,98 @@ asynchronous typewriting loops with physical cursor pinpoint lock.
     hide-cursor 0s linear 3.5s forwards;
 }
 
+/* @group: 15.C — SIGNAL DECODER (The Archive Legend & the Status Lamps)
+Purpose: The bibliography legend reads the same code the machine prints in the
+third column of every table. It uses the same instrument family as the mission
+status console — the mint signal bar, the phosphor backdrop, monospace capitals
+— so the legend and the table cells it decodes light with one voice. The classes
+.status-active and .status-in-progress are the very classes the machine stamps
+on the table cells; they are styled here once, for the legend and for the table. */
+.status-legend {
+  background: rgba(
+    167,
+    243,
+    208,
+    0.04
+  ); /* @theme: Translucent phosphor haze echoing the mission-status console plate */
+  border-left: 3px solid var(--solar-mint); /* @layout: The same rigid vertical signal bar that anchors the live readout */
+  border-radius: 0 4px 4px 0; /* @concept: Asymmetric grounding: starboard corners rounded, portside edge locked flat */
+  padding: 16px 20px 8px; /* @layout: Dense telemetry padding envelope, light at the base to let lamps breathe */
+  margin: 16px 0 6px; /* @line: Keeps the codebook close to the table it decodes without colliding with it */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.45); /* @theme: Inner CRT shadow draping the plate in console depth */
+}
+
+.status-legend dt {
+  margin: 0; /* @layout: Clears the default description-list term offset */
+  font-family: monospace; /* @layout: Rigid mechanical fixed-width typeface replicating authentic machine code outputs */
+  font-size: 0.78rem; /* @theme: Down-scaled tactical telemetry dimensions */
+  text-transform: uppercase; /* @line: Military protocol capitals across the decoder labels */
+  letter-spacing: 2px; /* @layout: Extended technical spacing tracking stabilizing the readout */
+}
+
+.status-legend dd {
+  margin: 3px 0 14px; /* @layout: Tight asymmetric rhythm: terms lift, definitions settle beneath them */
+  font-size: 0.8rem; /* @theme: Definitions sit one step below the lamp terms */
+  line-height: 1.6; /* @line: Comfortable air for the long codebook notes */
+  color: rgba(
+    209,
+    209,
+    209,
+    0.85
+  ); /* @theme: Stardust grey definitions against the dark phosphor plate */
+}
+
+/* The lamps: the same classes the machine stamps on table cells (status-active /
+   status-in-progress). One decoder, one code, shared between the legend and the
+   tables the machine fills. */
+.status-active,
+.status-in-progress {
+  font-family: monospace; /* @layout: Fixed-width readout characters for the light labels */
+  text-transform: uppercase; /* @line: Consensus capitals so the lamps read as instrument labels */
+  letter-spacing: 1.5px; /* @layout: Moderate tracking for the compact cells */
+  font-size: 0.76rem; /* @theme: Compact lamp caption shared by legend and table cell */
+}
+
+.status-active {
+  color: var(--solar-mint); /* @theme: Phosphor mint — the signal a reference is locked and streaming */
+  text-shadow: 0 0 6px rgba(167, 243, 208, 0.55); /* @line: Soft mint corona so the lamp reads as lit */
+}
+
+.status-in-progress {
+  color: var(--amber-glow); /* @theme: Expedition amber — the signal the sector is currently being worked */
+  text-shadow: 0 0 6px rgba(255, 179, 0, 0.5); /* @line: Soft amber corona so the lamp reads as lit */
+}
+
+/* In the legend, each term carries a physical LED: a small lamp orb pulsing in
+   the light of its own status, mounted ahead of the label. */
+.status-legend dt .status-active,
+.status-legend dt .status-in-progress {
+  display: inline-flex; /* @layout: Side-by-side lamp orb and label along one telemetry line */
+  align-items: center; /* @line: Vertically centers the lamp orb against the label baseline */
+  gap: 8px; /* @layout: Fixed spacing between the orb and its label */
+  font-size: 0.78rem; /* @theme: The legend lamp keeps the telemetry scale of the dt term */
+  letter-spacing: 2px; /* @layout: Matches the wider decoder tracking of the legend terms */
+}
+
+.status-legend dt .status-active::before,
+.status-legend dt .status-in-progress::before {
+  content: ""; /* @component: The physical LED built from a pseudo-element orb */
+  width: 8px; /* @layout: Compact lamp orbs calibrated to the telemetry scale */
+  height: 8px; /* @layout: Compact lamp orbs calibrated to the telemetry scale */
+  border-radius: 50%; /* @theme: Round lamp lens, not a square indicator */
+  flex: 0 0 auto; /* @line: Locks the orb size so it never squashes against the label */
+}
+
+.status-legend dt .status-active::before {
+  background: var(--solar-mint); /* @theme: The LED lens lit mint */
+  box-shadow: 0 0 6px rgba(167, 243, 208, 0.8); /* @line: Glow halo radiating from the lit lens */
+}
+
+.status-legend dt .status-in-progress::before {
+  background: var(--amber-glow); /* @theme: The LED lens lit amber */
+  box-shadow: 0 0 6px rgba(255, 179, 0, 0.7); /* @line: Glow halo radiating from the lit lens */
+}
+
 /* ==========================================================================
 @module: 16 — NOTE TERMINAL (QUANTUM TERMINAL VAULTS)
 @sub-module: 16.1 — Core Hardware Monitor Case
