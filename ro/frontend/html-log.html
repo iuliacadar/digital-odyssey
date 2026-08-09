@@ -7,46 +7,46 @@
 
 <html lang="ro">
   <!-- @block:
-    The root element of the document.
+    Elementul rădăcină al documentului.
     Atributul lang="ro" declară că limba principală a acestei pagini este româna.
-    This helps accessibility tools, search engines, and automated processing systems.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele de procesare automată.
   -->
   <head>
     <!-- @block:
-      The [head] contains the document metadata.
-      I do not place the main visible content here; instead, I keep the information
-      the browser needs in order to understand, prepare, and connect the page resources.
+      Elementul [head] conține metadatele documentului.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
             <meta charset="UTF-8" />
     <!-- @meta:
-      I set the character encoding to UTF-8.
-      This ensures that diacritics, special symbols, and international characters display correctly.
+      Setez codificarea caracterelor la UTF-8.
+      Acest lucru asigură că diacriticele, simbolurile speciale și caracterele internaționale se afișează corect.
 
-      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
-      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
-      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
-      ?i textul se va afi?a gre?it.
+      <meta charset="UTF-8" /> trebuie să fie în primii 1024 de octeți
+      pentru ca browserul să detecteze UTF-8 înainte de parsare. Dacă
+      nu o detectează, poate folosi o altă codificare (ex. Windows-1252)
+      și textul se va afișa greșit.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      This instruction is historically related to Internet Explorer compatibility.
-      In modern projects it has little practical use, but I keep it here if I want
-      to preserve the classic basic-head structure.
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are o utilitate practică redusă, dar o păstrez aici dacă vreau
+      să păstrez structura clasică de bază a head-ului (capului) de model.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
-      I configure the viewport for responsive display.
-      width=device-width aligns the page width with the real screen width,
-      and initial-scale=1.0 starts without artificial zoom.
+      Configurez viewport-ul pentru afișarea responsive.
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
     <title>D::0dy55ey | Jurnal HTML</title>
     <!-- @meta:
-      The page title.
-      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+      Titlul paginii.
+      Îl văd în fila browserului, în marcaje (bookmarks) și uneori în rezultatele motoarelor de căutare.
     -->
 
     <meta
@@ -54,9 +54,9 @@
       content="Un jurnal structurat care documentează explorarea HTML-ului — elemente semantice, structură de document, formulare, accesibilitate și bune practici de markup."
     />
     <!-- @meta:
-      The page description.
-      I use it as a short summary of the content; it is not directly visible in the page,
-      but search engines may use it as descriptive text.
+      Descrierea paginii.
+      O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
     -->
 
     <meta
@@ -64,117 +64,117 @@
       content="html, elemente semantice, structură, formulare, accesibilitate, markup, frontend, odisee digitală"
     />
     <!-- @meta:
-      The keywords meta tag lists the main themes of the page.
-      Search engines no longer rank on it, but it stays a useful, self-documenting
-      summary of the page's scope and a teaching example of the tag itself.
+      Eticheta meta keywords listează temele principale ale paginii.
+      Motoarele de căutare nu se mai bazează pe ea pentru poziționare, dar rămâne un rezumat
+      util care se auto-documentează privind scopul paginii și un exemplu didactic al etichetei în sine.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
     <!-- @meta:
-      The author meta tag declares who created and maintains this document.
-      It is a standard metadata field that identifies the creator of the work.
+      Eticheta meta author declară cine a creat și întreține acest document.
+      Este un câmp standard de metadate care identifică creatorul lucrării.
     -->
 
     <link rel="manifest" href="../site.webmanifest" />
     <!-- @path:
-      I link the web app manifest. Firefox reads theme_color from the manifest
-      rather than from the meta tag, so this ensures consistent theme-color
-      support across all modern browsers including Firefox.
+      Leg manifestul aplicației web. Firefox citește theme_color din manifest
+      mai degrabă decât din eticheta meta, astfel încât acest lucru asigură suport
+      consistent pentru theme-color în toate browserele moderne, inclusiv Firefox.
     -->
 
 
     <meta property="og:title" content="D::0dy55ey | HTML Log" />
     <!-- @meta:
-      Open Graph title.
-      When the page link is shared on social networks or portfolio sites,
-      this text appears as the card title instead of the raw URL.
+      Titlul Open Graph.
+      Când link-ul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
+      acest text apare ca titlul cardului în locul URL-ului brut.
     -->
 
     <meta
       property="og:description"
-      content="A structured log documenting the study of semantic HTML, document architecture, accessible markup, and structured content patterns in frontend development."
+      content="Un jurnal structurat care documentează studiul HTML semantic, arhitectura documentelor, markup accesibil și modele de conținut structurat în dezvoltarea frontend."
     />
     <!-- @meta:
-      Open Graph description.
-      It is the companion summary shown under the Open Graph title on shared cards.
-      I keep it aligned with the meta description for consistency.
+      Descrierea Open Graph.
+      Este rezumatul însoțitor afișat sub titlul Open Graph pe cardurile distribuite.
+      Îl păstrez aliniat cu meta descrierea pentru consistență.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
-      Open Graph type.
-      I declare this page as a website, the general type for standard HTML pages.
-      For journal entries, I could use "article" instead depending on the content nature.
+      Tipul Open Graph.
+      Declar această pagină ca website, tipul general pentru paginile HTML standard.
+      Pentru înregistrările de jurnal, aș putea folosi "article" în funcție de natura conținutului.
     -->
 
     <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/frontend/html-log.html" />
     <!-- @meta:
-      Open Graph canonical URL.
-      When the page is shared, this tells platforms the exact, permanent address of this page.
-      It prevents confusion if the same content is accessible from multiple URLs.
+      URL-ul canonic Open Graph.
+      Când pagina este distribuită, acest câmp le spune platformelor adresa exactă și permanentă a acestei pagini.
+      Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
     -->
 
     <meta property="og:locale" content="en_US" />
     <!-- @meta:
-      Open Graph locale.
-      I set it to en_US for the English version of the page.
-      This tells social platforms and aggregators the language and regional variant of the content.
+      Locale-ul Open Graph.
+      Îl setez la en_US pentru versiunea în limba engleză a paginii.
+      Acest lucru le spune platformelor sociale și agregatoarelor limba și varianta regională a conținutului.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
-      Open Graph site name.
-      This is the overarching project name shown on social sharing cards,
-      so the audience knows which site the page belongs to.
+      Numele site-ului Open Graph.
+      Acesta este numele de proiect principal afișat pe cardurile de distribuire socială,
+      astfel încât publicul să știe cărui site îi aparține pagina.
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
-      Open Graph background color.
-      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+      Culoarea de fundal Open Graph.
+      Unele suprafețe de distribuire o folosesc pentru a nuanța cardul de previzualizare cu paleta deep-space a proiectului.
     -->
 
     <meta property="og:image" content="../favicon.svg" />
     <!-- @path:
-      Open Graph image.
-      It is the preview picture used on shared cards. I point it at the favicon
-      in the corresponding language folder as a stable, always-available placeholder,
-      until a dedicated capture exists for each page.
+      Imaginea Open Graph.
+      Este imaginea de previzualizare folosită pe cardurile distribuite. O îndrept către favicon
+      din folderul de limbă corespunzător ca un placeholder stabil și mereu disponibil,
+      până când există o captură dedicată pentru fiecare pagină.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <!-- @meta:
-      Twitter card type.
-      I choose summary_large_image so that shared links on X/Twitter display
-      a large image preview alongside the title and description.
+      Tipul de card Twitter.
+      Aleg summary_large_image, astfel încât link-urile distribuite pe X/Twitter să afișeze
+      o previzualizare mare de imagine alături de titlu și descriere.
     -->
 
     <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/frontend/html-log.html" />
     <!-- @meta:
-      Canonical link.
-      I tell search engines that this URL is the authoritative version of the page.
-      This helps prevent duplicate-content issues and consolidates ranking signals.
+      Link-ul canonic.
+      Le spun motoarelor de căutare că acest URL este versiunea autoritativă a paginii.
+      Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de ranking.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Robots meta tag.
-      I allow search engines to index this page and follow its links,
-      which is the default and expected behavior for public content.
+      Eticheta meta robots.
+      Permit motoarelor de căutare să indexeze această pagină și să urmărească link-urile sale,
+      ceea ce este comportamentul implicit și așteptat pentru conținutul public.
     -->
 
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <!-- @path:
-      I link the page favicon.
-      The path is relative to the current file location.
-      The browser looks for favicon.svg in the appropriate folder.
+      Leg favicon-ul paginii.
+      Calea este relativă la locația fișierului curent.
+      Browserul caută favicon.svg în folderul corespunzător.
     -->
 
     <link rel="apple-touch-icon" href="../favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      Leg Apple Touch Icon pentru dispozitivele iOS.
+      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată pe ecranul de pornire
+      sau afișată ca aplicație web. Reutilizez același favicon.svg ca sursă a pictogramei.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -197,105 +197,105 @@
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
-      I link the local stylesheet.
-      The path is relative to the current file location.
+      Leg fișierul de stiluri local.
+      Calea este relativă la locația fișierului curent.
     -->
   </head>
-  <!-- @block: BODY — THE VISIBLE DECK
-    The [body] element is where every visible element of the page lives.
-    Everything the traveller sees — the navigation bar, the sidebar map,
-    the journal entries, the footer telemetry — is a child of this single
-    container. In the ship metaphor, the body is the main habitable deck
-    of the vessel: the space where the crew walks, reads, and interacts
-    with the ship's systems.
+  <!-- @block: BODY — PUNTA VIZIBILĂ
+    Elementul [body] este locul unde trăiește fiecare element vizibil al paginii.
+    Tot ceea ce vede călătorul — bara de navigare, harta din sidebar,
+    înregistrările de jurnal, telemetria din subsol — este un copil al acestui
+    singur container. În metafora navei, body este puntea principală locuibilă
+    a vasului: spațiul în care echipajul umblă, citește și interacționează
+    cu sistemele navei.
     @structure:
-      The [body] is the direct child of [html]. It has no special default
-      styling by itself, but in this project it inherits the deep-space
-      background (#0a0b1e) and the Space Grotesk font from style.css.
+      [body] este copilul direct al lui [html]. Nu are nicio stilizare
+      implicită specială în sine, dar în acest proiect moștenește fundalul
+      deep-space (#0a0b1e) și fontul Space Grotesk din style.css.
   -->
   <body>
-    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
-      The [nav] element semantically marks this section as the ship's
-      primary navigation interface. Wrapping the navbar in [nav] tells
-      browsers, screen readers, and search engines: "this block contains
-      the main controls for moving between the vessel's decks."
+    <!-- @block: NAVIGAȚIA PRINCIPALĂ — STAȚIA CORMANEI
+      Elementul [nav] marchează semantic această secțiune ca interfața de navigare
+      principală a navei. Învelirea navbar-ului într-un [nav] le spune
+      browserelor, cititoarelor de ecran și motoarelor de căutare: "acest bloc conține
+      comenzile principale pentru deplasarea între punțile vasului."
       @structure:
-        The navbar uses flexbox (via the .navbar class) to display the
-        vessel logo on the left and the navigation command list on the
-        right, keeping the helm compact and always visible at the top.
+        Navbar-ul folosește flexbox (prin clasa .navbar) pentru a afișa
+        sigla vasului în stânga și lista de comenzi de navigare în
+        dreapta, păstrând cormana compactă și mereu vizibilă în partea de sus.
     -->
     <nav class="navbar">
-      <!-- @block: TERMINAL IDENTITY
-        The logo block displays the vessel callsign and the current section name.
-        It is static text (not a link) because this page is itself a station
-        on the ship; the crew reads their location here.
+      <!-- @block: IDENTITATEA TERMINALULUI
+        Blocul siglei afișează indicativul vasului și numele secțiunii curente.
+        Este text static (nu un link) deoarece această pagină este ea însăși o stație
+        pe navă; echipajul își citește locația aici.
       -->
       <div class="logo">D::0dy55ey / Jurnal HTML</div>
 
-      <!-- @block: NAVIGATION COMMANDS
-        The nav-links list contains the primary navigation actions.
-        On secondary pages, only one command is offered: return to the bridge.
+      <!-- @block: COMENZILE DE NAVIGAȚIE
+        Lista nav-links conține acțiunile principale de navigare.
+        Pe paginile secundare este oferită doar o singură comandă: întoarcerea pe puntea de comandă.
       -->
       <ul class="nav-links">
         <li>
           <a href="../index.html" class="return-btn"
             ><!-- @reason:
-              Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
-            -->← Return to Command Deck</a
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+    -->← Înapoi la puntea de comandă</a
           >
         </li>
       </ul>
     </nav>
 
-    <!-- @block: MAIN CONTENT — HTML EXPEDITION LOG
-      The main deck is split into two zones: the sidebar (expedition map / table
-      of contents) and the log-content zone (the day-by-day journal entries).
-      The class "log-layout" applies a CSS Grid with two columns.
+    <!-- @block: CONȚINUT PRINCIPAL — JURNALUL EXPEDIȚIEI HTML
+      Puntea principală este împărțită în două zone: sidebar-ul (harta expediției / cuprinsul)
+      și zona log-content (intrările de jurnal zi cu zi).
+      Clasa "log-layout" aplică un CSS Grid cu două coloane.
     -->
     <main class="main-container log-layout">
-      <!-- @block: SIDEBAR — HTML EXPEDITION MAP
-        The sidebar is wrapped in an [aside] element — a semantic HTML5
-        tag that marks content as tangentially related to the main page.
-        In the ship metaphor, the sidebar is the navigator's console:
-        a secondary station that holds the expedition map rather than
-        the primary log content.
+      <!-- @block: SIDEBAR — HARTA EXPEDIȚIEI HTML
+        Sidebar-ul este înfășurat într-un element [aside] — o etichetă semantică
+        HTML5 care marchează conținutul ca fiind tangențial legat de pagina principală.
+        În metafora navei, sidebar-ul este consola navigatorului:
+        o stație secundară care deține harta expediției mai degrabă decât
+        conținutul principal al jurnalului.
         @concept:
-          The [aside] element is one of several semantic tags introduced
-          in HTML5. Like [nav], [header], [footer], and [article], it
-          gives meaning to the container instead of using a generic [div].
-          This helps screen readers announce the sidebar's role and
-          helps search engines understand the page structure.
+          Elementul [aside] este una dintre etichetele semantice introduse
+          în HTML5. La fel ca [nav], [header], [footer] și [article],
+          oferă sens containerului în loc să folosească un [div] generic.
+          Acest lucru ajută cititoarele de ecran să anunțe rolul sidebar-ului și
+          ajută motoarele de căutare să înțeleagă structura paginii.
       -->
       <aside class="log-sidebar">
-        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
-          This [nav] inside the [aside] is the secondary navigation
-          system. While the top navbar returns the crew to the bridge,
-          this sidebar nav lets them jump directly to any day entry
-          within the current expedition log.
+        <!-- @block: NAVIGAREA DIN SIDEBAR — CONSOLA SECUNDARĂ
+          Acest [nav] din interiorul [aside] este sistemul de navigare
+          secundar. În timp ce navbar-ul de sus întoarce echipajul pe puntea de comandă,
+          această navigare din sidebar le permite să sară direct la orice zi
+          din jurnalul expediției curente.
           @structure:
-            The .sidebar-nav class applies a compact, scrollable list
-            layout distinct from the main navbar. The map-title-link
-            at the top scrolls the view back to the main header when
-            clicked.
+            Clasa .sidebar-nav aplică o listă compactă, derulabilă,
+            distinctă de navbar-ul principal. map-title-link
+            din partea de sus derulează vederea înapoi la antetul principal când
+            este apăsat.
         -->
         <nav class="sidebar-nav">
           <a href="#top-deck" class="map-title-link">
             <h4>Hartă Expediție HTML</h4>
             <!-- @reason:
-              Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
-            -->
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+    -->
           </a>
 
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: LISTA DE LINK-URI DIN SIDEBAR
+            [ul] (lista neordonată) deține fiecare link de zi a expediției.
+            Fiecare [li] (element de listă) conține un [a] (ancoră) care indică
+            către [article]-ul unei anumite zile prin atributul său id — acest lucru
+            se numește "fragment link" deoarece simbolul # îi spune
+            browserului să deruleze până la elementul cu acel id.
             @reason:
-              Fragment links (href="#html-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              Fragment link-urile (href="#html-day01") creează un cuprins
+              care le permite membrilor echipajului să se teleporteze direct la orice
+              intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
             <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
@@ -305,140 +305,140 @@
               </a>
             </li>
 
-            <!-- @block: WEEK 01 — THE HULL & THE SKELETON
-              The first full week covers core HTML mechanics: boilerplate,
-              headings, semantic structure, links, lists, and navigation.
+            <!-- @block: SĂPTĂMÂNA 01 — CARENA & SCHELETUL
+              Prima săptămână completă acoperă mecanismele HTML de bază: boilerplate,
+              titluri, structură semantică, link-uri, liste și navigare.
               @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
+                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
+                acționează ca un marcator de rând — un indiciu vizual mic care ajută
+                ochiul să parcurgă rapid lista în jos.
             -->
             <li class="week-label">
               <a href="#html-sector-01" class="sidebar-link">S01</a>
             </li>
             <li>
-              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; The Boilerplate</a>
+              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; Șablonul de Bază</a>
             </li>
             <li>
-              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Headings & Paragraphs</a>
+              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Titluri & Paragrafe</a>
             </li>
             <li>
-              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; Semantic HTML & Layout</a>
+              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; HTML Semantic & Layout</a>
             </li>
             <li>
-              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Anchors, Absolute vs Relative Links</a>
+              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Ancore, Link-uri Absolute vs Relative</a>
             </li>
             <li>
-              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Unordered, Ordered & Description Lists</a>
+              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Liste Neordonate, Ordonate & de Descriere</a>
             </li>
             <li>
-              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Special entities & Emojis in code</a>
+              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Entități speciale & Emoji în cod</a>
             </li>
             <li>
-              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Navigation menus</a>
+              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Meniuri de navigare</a>
             </li>
 
-            <!-- @block: WEEK 02 — VISUAL SENSORS & MEDIA
-              The second week shifts from structural HTML to embedded
-              media: images, audio, video, iframes, and figures.
+            <!-- @block: SĂPTĂMÂNA 02 — SENZORI VIZUALI & MEDIA
+              A doua săptămână trece de la HTML-ul structural la media
+              încorporată: imagini, audio, video, iframe-uri și figure.
             -->
             <li class="week-label">
               <a href="#html-sector-02" class="sidebar-link">S02</a>
             </li>
             <li>
-              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; The &lt;img&gt; tag & alt attribute</a>
+              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; Tagul &lt;img&gt; & atributul alt</a>
             </li>
             <li>
-              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; The &lt;picture&gt; element & srcset atribute</a>
+              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; Elementul &lt;picture&gt; & atributul srcset</a>
             </li>
             <li>
-              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; The &lt;audio&gt; element & formats</a>
+              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; Elementul &lt;audio&gt; & formate</a>
             </li>
             <li>
-              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; The &lt;video&gt; element & subtitles with &lt;track&gt;</a>
+              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; Elementul &lt;video&gt; & subtitrări cu &lt;track&gt;</a>
             </li>
             <li>
-              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; The &lt;iframe&gt; elemnt & embedding maps/videos</a>
+              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; Elementul &lt;iframe&gt; & încorporarea hărților/videourilor</a>
             </li>
             <li>
-              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; The &lt;figure&gt; & &lt;figcaption&gt; elements</a>
+              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; Elementele &lt;figure&gt; & &lt;figcaption&gt;</a>
             </li>
             <li>
-              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Review & Navigation Stress Test</a>
+              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Recapitulare & Test de Stres de Navigare</a>
             </li>
           </ul>
         </nav>
       </aside>
 
-      <!-- @block: LOG CONTENT ZONE
-        The [section] element is a semantic container that groups related
-        content under a common theme. Here it wraps the entire expedition
-        log — the header, sector announcements, and day articles. Unlike
-        [article] (which holds self-contained entries), [section] groups
-        them into a coherent chapter.
+      <!-- @block: ZONA DE CONȚINUT A JURNALULUI
+        Elementul [section] este un container semantic care grupează conținutul conex
+        sub o temă comună. Aici înfășoară întregul jurnal al expediției
+        — antetul, anunțurile de sector și articolele de zi. Spre deosebire de
+        [article] (care deține intrări de sine stătătoare), [section] le grupează
+        într-un capitol coerent.
         @structure:
-          The .log-content class works together with .log-sidebar inside
-          the .log-layout grid. The sidebar occupies the left column
-          (about 250px), and .log-content fills the remaining space on
-          the right, creating the classic two-panel terminal interface.
+          Clasa .log-content lucrează împreună cu .log-sidebar în interiorul
+          grid-ului .log-layout. Sidebar-ul ocupă coloana din stânga
+          (aproximativ 250px), iar .log-content umple spațiul rămas din
+          dreapta, creând interfața clasică de terminal cu două panouri.
       -->
       <section class="log-content">
-        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
-          The [header] element inside the log content acts as the
-          chapter title card. While the [header] in a document usually
-          contains navigation or introductory content, here it is a
-          simple banner that sets the thematic tone for the log.
+        <!-- @block: ANTET DE CATEGORIE — TITLUL EXPEDIȚIEI
+          Elementul [header] din interiorul conținutului jurnalului acționează ca
+          un card de titlu de capitol. În timp ce [header]-ul dintr-un document conține de obicei
+          navigare sau conținut introductiv, aici este un
+          simplu banner care setează tonul tematic al jurnalului.
           @theme:
-            The .category-header class applies a bottom border glow
-            effect and centers the title text, visually marking this
-            as the start of a new expedition chapter.
+            Clasa .category-header aplică un efect de strălucire pe bordura de jos
+            și centrează textul titlului, marcând vizual acest
+            element ca începutul unui nou capitol al expediției.
         -->
         <header id="top-deck" class="category-header">
-          <h2>The Mercurial Sea of Structure</h2>
-          <p>Mapping the foundational skeleton of the digital void</p>
+          <h2>Marea Mercurială a Structurii</h2>
+          <p>Cartografiind scheletul fundamental al vidului digital</p>
           <!-- @theme:
-            "Mercurial Sea" frames HTML as a fluid, shape-shifting medium —
-            unpredictable but masterable by a sharp-minded captain.
+            "Marea Mercurială" prezintă HTML-ul ca un mediu fluid, care își schimbă
+            forma — imprevizibil, dar stăpânibil de un căpitan cu mintea ascuțită.
           -->
         </header>
 
         <!-- ===== AIRLOCK (WEEK 00) ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — AIRLOCK / INITIATION
-          The sector-announcement div acts as a visual chapter divider,
-          marking the transition between major learning phases. The
-          "ENTER AIRLOCK" label tells the crew they are crossing into
-          a new cluster of days.
+        <!-- @block: ANUNȚ DE SECTOR — AIRLOCK / INIȚIERE
+          Div-ul sector-announcement acționează ca un divizor vizual de capitol,
+          marcând tranziția între fazele majore de învățare. Eticheta
+          "ENTER AIRLOCK" le spune membrilor echipajului că pătrund
+          într-un nou grup de zile.
           @concept:
-            The airlock metaphor frames each sector as a sealed compartment
-            that the crew must intentionally enter.
+            Metafora airlock-ului prezintă fiecare sector ca un compartiment etanș
+            în care echipajul trebuie să intre intenționat.
         -->
         <div id="html-sector-00" class="sector-announcement">
           <span>ENTER AIRLOCK</span>
           <h2>Initiation</h2>
         </div>
 
-        <!-- @block: DAY 00 — THE MERCURIAL SEA :: INITIATION
-          The first day entry establishes the log-entry pattern: a numbered
-          title, a narrative paragraph, a mission-status telemetry readout,
-          and a note-terminal for annotations.
+        <!-- @block: ZIUA 00 — MAREA MERCURIALĂ :: INIȚIERE
+          Prima intrare de zi stabilește tiparul intrării de jurnal: un titlu
+          numerotat, un paragraf narativ, o citire de telemetrie a stării misiunii
+          și un terminal de note pentru notații.
           @theme:
-            "Mercurial Sea" frames HTML as a fluid, shape-shifting medium —
-            unpredictable but masterable by a sharp-minded captain.
+            "Marea Mercurială" prezintă HTML-ul ca un mediu fluid, care își schimbă
+            forma — imprevizibil, dar stăpânibil de un căpitan cu mintea ascuțită.
         -->
         <article id="html-day00" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 00</span>
-            <span class="meta-title"> The Mercurial Sea :: Initiation</span>
+            <span class="meta-title"> Marea Mercurială :: Inițiere</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              HTML reveals itself as a mercurial sea of encoded possibilities.
-              These shifting tides demand a sharp-minded captain to navigate the
-              vessel through the fog of syntax. Today, I am but a novice at the
-              helm, charting unknown currents. What constellations will tomorrow
+              HTML se dezvăluie ca o mare mercurială de posibilități codificate.
+              Aceste maree schimbătoare cer un căpitan cu mintea ageră pentru a naviga
+              nava prin ceața sintaxei. Astăzi, nu sunt decât un novice la
+              cârmă, cartografiind curenți necunoscuți. Ce constelații ne va dezvălui mâine
               bring ahead?
             </p>
           </div>
@@ -448,9 +448,9 @@
             <p>Status: Initialized | Navigation: Manual</p>
           </div>
 
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day00') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day00') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -465,57 +465,57 @@
         </article>
 
         <!-- ===== SECTOR 01: THE HULL & THE SKELETON ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — THE HULL & THE SKELETON
-          The first operational sector after the airlock. This sector covers
-          the core HTML mechanics: boilerplate, headings, semantic structure,
-          links, lists, and navigation patterns.
+        <!-- @block: ANUNȚ DE SECTOR — CARENA & SCHELETUL
+          Primul sector operațional după airlock. Acest sector acoperă
+          mecanismele HTML de bază: boilerplate, titluri, structură semantică,
+          link-uri, liste și tipare de navigare.
           @theme:
-            "The Hull & The Skeleton" presents HTML as the rigid structural
-            frame of the ship — the bones upon which all style and behaviour
-            layers are mounted.
+            "Carena & Scheletul" prezintă HTML-ul ca rama structurală rigidă
+            a navei — oasele pe care sunt montate toate straturile de stil
+            și comportament.
         -->
         <div id="html-sector-01" class="sector-announcement">
           <span>Entering Sector 01</span>
-          <h2>The Hull & The Skeleton</h2>
+          <h2>Carena & Scheletul</h2>
         </div>
 
-        <!-- @block: DAY 01 — THE STEEL HULL :: BOILERPLATE, DOCTYPE, META TAGS
-          The first real content lesson. The narrative introduces the HTML
-          boilerplate as the "steel hull" of the vessel — the minimal
-          structural code every HTML document requires.
+        <!-- @block: ZIUA 01 — CARENA DE OȚEL :: BOILERPLATE, DOCTYPE, META TAGS
+          Prima lecție reală de conținut. Narațiunea introduce boilerplate-ul HTML
+          ca "carena de oțel" a vasului — codul structural minim
+          de care are nevoie fiecare document HTML.
           @concept:
-            The <!DOCTYPE html> declaration is presented as a "hailing
-            frequency" that tells the browser which HTML version to use.
-            The [head] is the "ship's brain" — invisible but essential.
+            Declarația <!DOCTYPE html> este prezentată ca o "frecvență
+            de apelare" care îi spune browserului ce versiune de HTML să folosească.
+            [head] este "creierul navei" — invizibil, dar esențial.
         -->
         <article id="html-day01" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 01</span>
             <span class="meta-title">
-              The Steel Hull :: Boilerplate, Doctype, Meta Tags
+              Carena de Oțel :: Boilerplate, Doctype, Meta Tags
             </span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Every vessel needs a hull before it can face the sea. The
-              Boilerplate is our hull—the fundamental code that defines our
-              existence in the digital void.
+              Orice navă are nevoie de o carenă înainte de a putea înfrunta marea.
+              Boilerplate-ul este carena noastră — codul fundamental care ne definește
+              existența în vidul digital.
             </p>
             <p>
-              Today's mission was to stabilize the <strong>Boilerplate</strong>.
-              Without these core directives, the browser (our navigation
-              computer) wouldn't know how to interpret the signals we send. I've
-              initialized the <code>&lt;!DOCTYPE html&gt;</code>, which acts as
-              our universal hailing frequency, announcing that we are operating
-              on modern HTML5 protocols.
+              Misiunea de azi a fost să stabilizăm <strong>Boilerplate-ul</strong>.
+              Fără aceste directive esențiale, browserul (computerul nostru de navigație)
+              nu ar ști cum să interpreteze semnalele pe care le trimitem. Am
+              inițializat <code>&lt;!DOCTYPE html&gt;</code>, care acționează ca
+              frecvența noastră universală de apel, anunțând că operăm
+              pe protocoale moderne HTML5.
             </p>
-            <!-- @block: CODE DISPLAY — BOILERPLATE
-              The [pre][code] block displays the minimal HTML boilerplate.
-              Using [pre] preserves whitespace and line breaks, while [code]
-              semantically marks the content as computer code.
+            <!-- @block: AFIȘARE DE COD — BOILERPLATE
+              Blocul [pre][code] afișează boilerplate-ul HTML minim.
+              Folosirea [pre] păstrează spațiile albe și întreruperile de linie, iar [code]
+              marchează semantic conținutul ca fiind cod de computer.
             -->
             <pre><code>
 &lt;!DOCTYPE html&gt;
@@ -530,14 +530,14 @@
 &lt;/html&gt;
             </code></pre>
             <p>
-              <strong>Captain's Observations:</strong> The
-              <code>&lt;head&gt;</code> section feels like the ship's
-              brain—unseen by the passenger but vital for processing metadata
-              and loading external systems (like our CSS thrusters). In
-              contrast, the <code>&lt;body&gt;</code> is the deck where all
-              visible action happens. One small anomaly encountered: forgetting
-              the <code>lang="ro"</code> attribute can confuse global search
-              radars (SEO).
+              <strong>Observațiile Căpitanului:</strong> Secțiunea
+              <code>&lt;head&gt;</code> se simte ca un creier al navei —
+              nevăzut de călător, dar vital pentru procesarea metadatelor
+              și încărcarea sistemelor externe (precum propulsoarele noastre CSS). În
+              contrast, <code>&lt;body&gt;</code> este puntea unde are loc
+              toată acțiunea vizibilă. O mică anomalie întâlnită: uitarea
+              atributului <code>lang="ro"</code> poate confunda radarul global de căutare
+              (SEO).
             </p>
           </div>
 
@@ -545,9 +545,9 @@
           <div class="mission-status">
             <p>Data Stream: Confirmed | Structure: Stable | Hull Integrity: 100%</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day01') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day01') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -561,28 +561,28 @@
           </div>
         </article>
 
-        <!-- @block: DAY 02 — HEADINGS & PARAGRAPHS
-          Covers the [h1]-[h6] heading hierarchy and the [p] element as the
-          vessel's "voice" — the primary textual communication channel.
+        <!-- @block: ZIUA 02 — TITLURILE & PARAGRAFELE
+          Acoperă ierarhia de titluri [h1]-[h6] și elementul [p] ca
+          "vocea" vasului — principalul canal de comunicare textuală.
           @concept:
-            Headings establish a document outline. Skipping levels (h1 to h3
-            without h2) breaks the semantic structure and confuses assistive
-            technologies.
+            Titlurile stabilesc un contur de document. Sărirea peste niveluri (de la h1 la h3
+            fără h2) rupe structura semantică și confundă tehnologiile
+            asistive.
         -->
         <article id="html-day02" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 02</span>
             <span class="meta-title">
-              Voice of the Vessel :: Headings & Paragraphs
+              Vocea Navei :: Titluri & Paragrafe
             </span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Today I explored the primary skeleton of the web. I've learned that
-              the header is not just a title, but a declaration of intent.
+              Astăzi am explorat scheletul principal al web-ului. Am învățat că
+              headerul nu este doar un titlu, ci o declarație de intenție.
             </p>
             <pre><code>
 &lt;header&gt;
@@ -590,16 +590,16 @@
   &lt;p&gt;Mission Start&lt;/p&gt;
 &lt;/header&gt;
             </code></pre>
-            <p>The signal is now stable. Moving to the next frequency.</p>
+            <p>Semnalul este acum stabil. Trec la următoarea frecvență.</p>
           </div>
 
           <!-- @block: MISSION STATUS INDICATOR -->
           <div class="mission-status">
             <p>Data Stream: Confirmed | Structure: Stable</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day02') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day02') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -613,139 +613,139 @@
           </div>
         </article>
 
-        <!-- @block: DAY 03 — MAPPING THE DECK :: SEMANTIC HTML & LAYOUT
-          The most substantive day in Sector 01. Introduces semantic HTML5
-          elements ([header], [nav], [main], [article], [section], [aside],
-          [footer]) as ship-deck metaphors.
+        <!-- @block: ZIUA 03 — HARTAREA PUNȚII :: HTML SEMANTIC & LAYOUT
+          Cea mai importantă zi din Sectorul 01. Introduce elementele semantice
+          HTML5 ([header], [nav], [main], [article], [section], [aside],
+          [footer]) prin metafore de punți ale navei.
           @concept:
-            Semantic HTML is presented as "replacing meaningless shells
-            with Semantic Relays" — every tag communicates meaning to
-            browsers, search engines, and assistive technologies.
+            HTML-ul semantic este prezentat ca fiind "înlocuirea carcaselor lipsite de sens
+            cu relee semantice" — fiecare etichetă comunică sens către
+            browsere, motoare de căutare și tehnologii asistive.
         -->
         <article id="html-day03" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 03</span>
             <span class="meta-title">
-              Mapping the Deck :: Semantic HTML & Layout
+              Cartografiind Puntea :: HTML Semantic & Layout
             </span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              To navigate the digital void, a captain must look beyond the generic
-              clusters of generic containers. Today's mission is the most vital:
-              we are mapping the structural soul of our vessel. By replacing
-              meaningless shells with Semantic Relays, we ensure that our signal
-              is not only seen but understood by every radar and beacon in the
-              network. We are building more than a ship; we are defining its
+              Pentru a naviga vidul digital, un căpitan trebuie să privească dincolo de
+              grupurile de containere generice. Misiunea de astăzi este cea mai vitală:
+              cartografiem sufletul structural al navei noastre. Prin înlocuirea
+              carcaselor fără sens cu Relee Semantice, ne asigurăm că semnalul nostru
+              nu este doar văzut, ci și înțeles de fiecare radar și baliză din
+              rețea. Construim mai mult decât o navă; îi definim
               purpose.
             </p>
 
             <hr class="cosmic-divider" />
 
-            <!-- @block: SEMANTIC MODULE LIST
-              Each .semantic-module is a card that pairs an HTML tag name with
-              a cosmic metaphor. This helps anchor the abstract concept of
-              semantic elements to concrete spaceship imagery.
+            <!-- @block: LISTA DE MODULE SEMANTICE
+              Fiecare .semantic-module este un card care asociază un nume de etichetă HTML cu
+              o metaforă cosmică. Acest lucru ajută la ancorarea conceptului abstract de
+              elemente semantice în imagini concrete de navă spațială.
               @structure:
-                The .semantic-module cards are laid out vertically using the
-                log-text's default block flow. Each card contains three parts:
-                .tag-name (the HTML element), .tag-meta (the metaphor), and
-                .tag-description (the explanation).
+                Cardurile .semantic-module sunt aranjate vertical folosind
+                fluxul de bloc implicit al log-textului. Fiecare card conține trei părți:
+                .tag-name (elementul HTML), .tag-meta (metafora) și
+                .tag-description (explicația).
             -->
             <div class="semantic-module">
               <code class="tag-name">&lt;html&gt;</code>
-              <span class="tag-meta">// The Vessel Boundary</span>
+              <span class="tag-meta">// Frontiera Navei</span>
               <p class="tag-description">
-                The outer hull that defines the absolute limits of our digital
-                existence. It encapsulates the entirety of our cosmic presence.
+                Carena exterioară care definește limitele absolute ale
+                existenței noastre digitale. Ea încapsulează întreaga noastră prezență cosmică.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;head&gt;</code>
-              <span class="tag-meta">// The Hidden Intelligence</span>
+              <span class="tag-meta">// Inteligența Ascunsă</span>
               <p class="tag-description">
-                The ship's hidden intelligence center. It processes invisible data
-                streams, coordinates external thrusters (CSS), and broadcasts our
-                identity to the star-charts (SEO).
+                Centrul de inteligență ascuns al navei. Acesta procesează date invizibile
+                fluxuri, coordonează propulsoarele externe (CSS) și difuzează
+                identitatea noastră către hărțile stelare (SEO).
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;body&gt;</code>
-              <span class="tag-meta">// The Living Quarters</span>
+              <span class="tag-meta">// Cartierele de Locuit</span>
               <p class="tag-description">
-                The physical expanse where the crew resides. Every visible
-                interaction and material manifestation occurs within these
+                Spațiul fizic în care locuiește echipajul. Fiecare
+                interacțiune și manifestare materială au loc în cadrul acestor
                 reinforced walls.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;header&gt;</code>
-              <span class="tag-meta">// The Bridge</span>
+              <span class="tag-meta">// Puntea de Comandă</span>
               <p class="tag-description">
-                The primary command deck. It houses the mission emblems and the
-                master instruments of orientation.
+                Puntea principală de comandă. Ea adăpostește emblemele misiunii și
+                instrumentele principale de orientare.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;nav&gt;</code>
-              <span class="tag-meta">// The Navigation Console</span>
+              <span class="tag-meta">// Consola de Navigație</span>
               <p class="tag-description">
-                A dedicated interface for star-mapping, allowing the crew to
-                teleport between the ship's various sectors.
+                O interfață dedicată cartografierii stelelor, permițând echipajului să
+                se teleporteze între diferitele sectoare ale navei.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;main&gt;</code>
-              <span class="tag-meta">// The Power Core</span>
+              <span class="tag-meta">// Nucleul de Energie</span>
               <p class="tag-description">
-                The singular, non-replicable heart of the vessel. It generates the
-                primary energy for our mission's core data, ensuring that the
-                essence of our journey is contained within a single, unbreakable
+                Inima unică, de nereplicat a navei. Ea generează
+                energia primară pentru datele esențiale ale misiunii, asigurând că
+                esența călătoriei noastre este cuprinsă într-un singur nucleu, indestructibil
                 field.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;section&gt;</code>
-              <span class="tag-meta">// The Deck</span>
+              <span class="tag-meta">// Puntea</span>
               <p class="tag-description">
-                A thematic partition of the ship's internal space, grouping
-                related experimental modules and data.
+                O partiție tematică a spațiului intern al navei, care grupează
+                module experimentale și date conexe.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;article&gt;</code>
-              <span class="tag-meta">// The Data Pod</span>
+              <span class="tag-meta">// Podul de Date</span>
               <p class="tag-description">
-                A self-contained, independent capsule of information. It is
-                designed to be extracted and understood even if detached from the
-                main vessel.
+                 O capsulă de informație autonomă și independentă. Este
+                proiectată să fie extrasă și înțeleasă chiar și detașată de
+                vasul principal.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;aside&gt;</code>
-              <span class="tag-meta">// The Auxiliary Radar</span>
+              <span class="tag-meta">// Radarul Auxiliar</span>
               <p class="tag-description">
-                A secondary terminal providing tangential insights or technical
-                footnotes that complement the main mission stream.
+                Un terminal secundar care oferă perspective tangențiale sau note
+                tehnice de subsol care completează fluxul principal al misiunii.
               </p>
             </div>
             <div class="semantic-module">
               <code class="tag-name">&lt;footer&gt;</code>
-              <span class="tag-meta">// The Chronometer Log</span>
+              <span class="tag-meta">// Jurnalul Cronometrului</span>
               <p class="tag-description">
-                The ship's base station where we record the mission's final
-                coordinates, legal signatures, and time-stamps.
+                Stația de bază a navei unde înregistrăm
+                coordonatele finale ale misiunii, semnăturile legale și marcajele de timp.
               </p>
             </div>
 
             <hr class="cosmic-divider" />
             <p>
-              The ship's architecture is no longer a chaotic cluster of generic
-              containers; it has gained a logical soul. We are navigating with
-              purpose through the structural void.
+              Arhitectura navei nu mai este o aglomerație haotică de
+              containere generice; a dobândit un suflet logic. Navigăm cu scop
+              prin vidul structural.
             </p>
           </div>
 
@@ -753,9 +753,9 @@
           <div class="mission-status">
             <p>Status: Structure Integrity Validated | Semantic Relays: Online.</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day03') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day03') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -769,20 +769,20 @@
           </div>
         </article>
 
-        <!-- @block: DAY 04 — SIGNAL RELAYS :: ANCHORS, ABSOLUTE VS RELATIVE LINKS
-          Introduces the [a] element as a "signal relay" that connects the
-          vessel to other locations in the digital cosmos.
+        <!-- @block: ZIUA 04 — RELEE DE SEMNAL :: ANCORE, LINK-URI ABSOLUTE VS RELATIVE
+          Introduce elementul [a] ca un "releu de semnal" care conectează
+          vasul la alte locații din cosmosul digital.
           @concept:
-            Absolute URLs (full https://path) are presented as "interstellar
-            beacons" pointing to external systems; relative URLs are
-            "intra-ship corridors" between local pages.
+            URL-urile absolute (calea completă https://) sunt prezentate ca "balize
+            interstelare" care indică spre sistemele externe; URL-urile relative sunt
+            "coridoare intra-navă" între paginile locale.
         -->
         <article id="html-day04" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 04</span>
             <span class="meta-title">
-              Signal Relays :: Anchors, Absolute vs Relative Links
+              Relee de Semnal :: Ancore, Link-uri Absolute vs Relative
             </span>
           </h3>
 
@@ -800,9 +800,9 @@
           <div class="mission-status">
             <p>Status: lorem ipsum</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day04') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day04') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -816,21 +816,21 @@
           </div>
         </article>
 
-        <!-- @block: DAY 05 — THE ARCHIVES :: UNORDERED, ORDERED & DESCRIPTION LISTS
-          Covers the three HTML list types: [ul] (unordered), [ol] (ordered),
-          and [dl] (description list). Lists are framed as "archival records"
-          that organize the ship's data inventory.
+        <!-- @block: ZIUA 05 — ARHIVELE :: LISTE NEORDONATE, ORDONATE & DE DESCRIERE
+          Acoperă cele trei tipuri de liste HTML: [ul] (neordonată), [ol] (ordonată)
+          și [dl] (listă de descriere). Listele sunt prezentate ca "înregistrări de arhivă"
+          care organizează inventarul de date al navei.
           @concept:
-            [ul] is for items without inherent order (cargo manifest),
-            [ol] for sequenced steps (launch checklist),
-            [dl] for term-definition pairs (technical glossary).
+            [ul] este pentru elemente fără o ordine inerentă (manifest de marfă),
+            [ol] pentru pași secvențiați (checklist de lansare),
+            [dl] pentru perechi termen-definiție (glosar tehnic).
         -->
         <article id="html-day05" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 05</span>
             <span class="meta-title">
-              The Archives :: Unordered, Ordered & Description Lists
+              Arhivele :: Liste Neordonate, Ordonate & de Descriere
             </span>
           </h3>
 
@@ -848,9 +848,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day05') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day05') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -864,20 +864,20 @@
           </div>
         </article>
 
-        <!-- @block: DAY 06 — CHARACTER ENCODING :: SPECIAL ENTITIES & EMOJIS IN CODE
-          Explores HTML character entities (&amp;, &lt;, &gt;, &nbsp;, etc.)
-          and emoji rendering. Framed as the "ship's communication encoding"
-          — ensuring symbols are transmitted without corruption.
+        <!-- @block: ZIUA 06 — CODIFICAREA CARACTERELOR :: ENTITĂȚI SPECIALE & EMOJI ÎN COD
+          Explorează entitățile de caractere HTML (&amp;, &lt;, &gt;, &nbsp;, etc.)
+          și randarea emoji. Este prezentată ca "codificarea de comunicare a navei"
+          — asigurând că simbolurile sunt transmise fără corupere.
           @concept:
-            Character entities prevent the browser from misinterpreting
-            reserved characters (&lt; as a tag opener vs. literal text).
+            Entitățile de caractere împiedică browserul să interpreteze greșit
+            caracterele rezervate (&lt; ca deschizător de etichetă vs. text literal).
         -->
         <article id="html-day06" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 06</span>
             <span class="meta-title">
-              Character Encoding :: Special entities & Emojis in code
+              Codificarea Caracterelor :: Entități speciale & Emoji în cod
             </span>
           </h3>
 
@@ -895,9 +895,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day06') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day06') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -911,21 +911,21 @@
           </div>
         </article>
 
-        <!-- @block: DAY 07 — THE NAVIGATOR'S PATH :: BREADCRUMBS & NAVIGATION MENUS
-          Covers breadcrumb trails and [nav] menu patterns as the ship's
-          "navigational instruments" — guiding the crew through the vessel's
-          various decks and sectors.
+        <!-- @block: ZIUA 07 — CĂILE NAVIGATORULUI :: BREADCRUMBS & MENIURI DE NAVIGARE
+          Acoperă urmele de breadcrumb și tiparele de meniu [nav] ca
+          "instrumentele de navigație" ale navei — ghidând echipajul prin
+          diversele punți și sectoare ale vasului.
           @concept:
-            Breadcrumbs provide spatial orientation within the site hierarchy.
-            [nav] semantically marks the primary navigation block for
-            screen readers and search engines.
+            Breadcrumb-urile oferă orientare spațială în cadrul ierarhiei site-ului.
+            [nav] marchează semantic blocul de navigare principal pentru
+            cititoarele de ecran și motoarele de căutare.
         -->
         <article id="html-day07" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 07</span>
             <span class="meta-title">
-              The Navigator's Path :: Breadcrumbs & Navigation menus
+              Calea Navigatorului :: Breadcrumbs & Meniuri de navigare
             </span>
           </h3>
 
@@ -943,9 +943,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day07') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day07') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -960,34 +960,34 @@
         </article>
 
         <!-- ===== SECTOR 02: VISUAL SENSORS & MEDIA ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — VISUAL SENSORS & MEDIA
-          The second sector shifts from structural HTML to embedded media:
-          images, audio, video, iframes, and figure/figcaption.
+        <!-- @block: ANUNȚ DE SECTOR — SENZORI VIZUALI & MEDIA
+          Al doilea sector trece de la HTML-ul structural la media încorporată:
+          imagini, audio, video, iframe-uri și figure/figcaption.
           @theme:
-            "Visual Sensors & Media" frames media elements as the ship's
-            external sensing apparatus — cameras, microphones, and
-            communication relays.
+            "Senzorii vizuali & Media" prezintă elementele media ca aparatul
+            de percepție extern al navei — camere, microfoane și
+            relee de comunicație.
         -->
         <div id="html-sector-02" class="sector-announcement">
           <span>Entering Sector 02</span>
           <h2>Visual Sensors & Media</h2>
         </div>
 
-        <!-- @block: DAY 08 — OPTICAL SENSORS :: THE [img] TAG & ALT ATTRIBUTE
-          Introduces the [img] element as an "optical sensor" that captures
-          and displays visual data from the void. The alt attribute is
-          presented as the emergency text beacon when the sensor fails.
+        <!-- @block: ZIUA 08 — SENZORI OPTICI :: ETICHETA [img] & ATRIBUTUL ALT
+          Introduce elementul [img] ca un "senzor optic" care captează
+          și afișează date vizuale din vid. Atributul alt este
+          prezentat ca farul text de urgență atunci când senzorul cedează.
           @concept:
-            The alt attribute serves dual purpose: accessibility (screen
-            readers announce it) and resilience (shown when the image
-            fails to load).
+            Atributul alt are un dublu scop: accesibilitate (cititoarele
+            de ecran îl anunță) și reziliență (este afișat atunci când imaginea
+            nu reușește să se încarce).
         -->
         <article id="html-day08" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 08</span>
             <span class="meta-title">
-              Optical Sensors :: The &lt;img&gt; tag & alt attribute
+              Senzori Optici :: Tagul &lt;img&gt; & atributul alt
             </span>
           </h3>
 
@@ -1005,9 +1005,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day08') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day08') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1021,21 +1021,21 @@
           </div>
         </article>
 
-        <!-- @block: DAY 09 — RESPONSIVE VISION :: THE [picture] ELEMENT & SRCSET ATTRIBUTE
-          Covers the [picture] element and srcset attribute as adaptive
-          "vision filters" that serve different image resolutions based
-          on the viewer's screen size and pixel density.
+        <!-- @block: ZIUA 09 — VEDERE RESPONSIVĂ :: ELEMENTUL [picture] & ATRIBUTUL SRCSET
+          Acoperă elementul [picture] și atributul srcset ca "filtre de
+          vedere" adaptive care servesc diferite rezoluții de imagine în funcție
+          de dimensiunea ecranului și densitatea de pixeli a privitorului.
           @concept:
-            srcset allows the browser to choose the optimal image source
-            from a set of candidates, improving load time and visual
-            quality across devices.
+            srcset permite browserului să aleagă sursa optimă de imagine
+            dintr-un set de candidați, îmbunătățind timpul de încărcare și calitatea
+            vizuală pe toate dispozitivele.
         -->
         <article id="html-day09" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 09</span>
             <span class="meta-title">
-              Responsive Vision :: The &lt;picture&gt; element and srcset
+              Viziune Responsivă :: Elementul &lt;picture&gt; și srcset
               attribute
             </span>
           </h3>
@@ -1054,9 +1054,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('html-note-day09') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('html-note-day09') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1070,46 +1070,46 @@
           </div>
         </article>
       <!-- @structure:
-        [/section] closes the log-content zone. Everything above it —
-        from the category-header through the last day article — belongs
-        to this one section.
+        [/section] închide zona log-content. Tot ceea ce se află deasupra —
+        de la category-header până la ultimul articol de zi — aparține
+        acestei singure secțiuni.
       -->
       </section>
     <!-- @structure:
-      [/main] closes the main-container. The [main] element wraps the
-      primary content of the page — in this case, the sidebar and the
-      log-content columns. There should be only one [main] per page.
+      [/main] închide main-container. Elementul [main] înfășoară
+      conținutul principal al paginii — în acest caz, sidebar-ul și
+      coloanele log-content. Ar trebui să existe un singur [main] pe pagină.
     -->
     </main>
 
-    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
-      The [footer] element marks the closing section of the page. In
-      the ship metaphor, the footer is the aft station — less visible
-      than the helm, but holding critical systems: the star charts,
-      the transmission log, the language switch, and the captain's
-      signature.
+    <!-- @block: FOOTER — STAȚIA DE NAVIGARE AUXILIARĂ
+      Elementul [footer] marchează secțiunea de închidere a paginii. În
+      metafora navei, footer-ul este stația din pupa — mai puțin vizibilă
+      decât cormana, dar care deține sisteme critice: hărțile stelare,
+      jurnalul de transmisie, comutatorul de limbă și semnătura
+      căpitanului.
       @structure:
-        The .footer class applies a dark, bordered container at the
-        bottom of the viewport. It uses a column layout for the links
-        and telemetry data, keeping everything compact and readable.
+        Clasa .footer aplică un container întunecat, cu bordură, în partea de
+        jos a viewport-ului. Folosește un layout pe coloane pentru link-uri
+        și datele de telemetrie, păstrând totul compact și lizibil.
     -->
     <footer class="footer">
-      <!-- @block: SECONDARY COMMAND CONSOLE
-        The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It houses the Star Charts (bibliography),
-        The Astrogation Charter (transmission), and the language toggle
-        between the English and Romanian versions of the project.
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDE
+        Footer-ul se extinde dincolo de un singur link de bibliografie într-un
+        panou complet de sisteme ale navei. Adăpostește Hărțile Stelare (bibliografia),
+        Carta de Astrogare (transmisia) și comutatorul de limbă
+        între versiunile în engleză și română ale proiectului.
         @concept:
-          The footer is the ship's auxiliary navigation station — less
-          prominent than the HUD overlay, but essential for systems that
-          do not belong to a specific volume: the founding manifesto, the
-          reference archive, and the language switch.
+          Footer-ul este stația de navigare auxiliară a navei — mai puțin
+          proeminentă decât overlay-ul HUD, dar esențială pentru sistemele care
+          nu aparțin unui volum specific: manifestul fondator, arhiva de
+          referință și comutatorul de limbă.
       -->
-      <!-- @block: FOOTER LINKS LIST
-        The [ul] here groups three [li] items: the bibliography link,
-        the transmission page, and the language toggle. Using a list
-        is semantically correct because these are a collection of
-        related navigation destinations.
+      <!-- @block: LISTA DE LINK-URI DIN FOOTER
+        [ul]-ul de aici grupează trei elemente [li]: link-ul de bibliografie,
+        pagina de transmisie și comutatorul de limbă. Folosirea unei liste
+        este corectă semantic deoarece acestea sunt o colecție de
+        destinații de navigare conexe.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
@@ -1120,30 +1120,30 @@
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../transmission.html">The Astrogation Charter</a>
+          <a href="../transmission.html">Carta de Astronavigație</a>
         </li>
-        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <!-- @bridge: Comutatorul de limbă între subproiectele EN și RO -->
         <li>
           <!-- @reason:
-            Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
-          -->
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+    -->
           <a href="../../en/frontend/html-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
           <a href="../../ro/frontend/html-log.html" class="">RO</a>
         </li>
       </ul>
-      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
-        The first telemetry line declares which expedition sector the
-        vessel is currently orbiting (FRONTEND_EXPEDITION) and the
-        system status (ONLINE). The CSS typing animation reveals this
-        text character by character when the page loads, simulating
-        a vintage mission control display.
+      <!-- @block: TELEMETRIE DE SISTEM — ORBITA & STADIUL SECTORULUI
+        Prima linie de telemetrie declară în ce sector de expediție
+        se află vasul în prezent (FRONTEND_EXPEDITION) și
+        starea sistemului (ONLINE). Animația de tastare CSS dezvăluie acest
+        text caracter cu caracter la încărcarea paginii, simulând
+        un afișaj vintage de control al misiunii.
         @theme:
-          The ONLINE status is wrapped in a [span]
-          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
-          This phosphor-green aesthetic directly references 1970s NASA
-          control terminals, where green monochrome displays scrolled
-          telemetry data in real time.
+          Starea ONLINE este înfășurată într-un [span]
+          care strălucește în verde solar-mentă (#a7f3d0) cu un text-shadow neon.
+          Această estetică verde-fosfor face referire directă la terminalele de control
+          NASA din anii 1970, unde afișajele verzi monocrome derulau
+          date de telemetrie în timp real.
       -->
       <p>
         SYS_ORBIT: FRONTEND_EXPEDITION
@@ -1152,68 +1152,67 @@
       </p>
 
       <!-- @structure:
-        I write the second telemetry data line. It anchors the project in real
-        physical space and time. The coordinates point to the captain's location,
-        and the date marks when this footer was last updated.
+        Scriu a doua linie de date de telemetrie. Aceasta ancorează proiectul în spațiul
+        fizic și timpul real. Coordonatele indică locația căpitanului,
+        iar data marchează momentul în care acest footer a fost actualizat ultima dată.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:
-          Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
-        -->
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+    -->
       </p>
 
       <!-- @structure:
-        I write the final line of the footer. It declares who created and owns
-        this project. The copyright symbol followed by the year and the captain's
-        name marks the intellectual ownership of the content.
+        Scriu linia finală a footer-ului. Aceasta declară cine a creat și deține
+        acest proiect. Simbolul copyright urmat de an și de numele căpitanului
+        marchează proprietatea intelectuală a conținutului.
       -->
       <p class="copyright">
-        &copy; 2026 | D::0dy55ey by
+        &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
         <!-- @theme:
-          I wrap the captain's name in a [span] with the class .vessel-sig.
-          This class applies the nebula-pink color (#ff007f) with an incandescent
-          text-shadow glow. The magenta signature acts as the captain's unique
-          identifier across all decks of the ship.
+          Înfășor numele căpitanului într-un [span] cu clasa .vessel-sig.
+          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
+          incandescentă de text-shadow. Semnătura magenta acționează ca identificatorul unic
+          al căpitanului pe toate punțile navei.
         -->
       </p>
     </footer>
 
-    <!-- @block: JAVASCRIPT LOADER
-      The [script] tag loads the ship's control systems — a single
-      JavaScript file (script.js) that lives one directory above this
-      page. This file contains all the interactive mechanisms:
-      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
-      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
-      and the sidebar search filter.
+    <!-- @block: ÎNCĂRCĂTOR DE JAVASCRIPT
+      Eticheta [script] încarcă sistemele de control ale navei — un singur
+      fișier JavaScript (script.js) care se află cu un director mai sus decât această
+      pagină. Acest fișier conține toate mecanismele interactive:
+      MECANISMUL 01 (Animația de tastare), MECANISMUL 04 (Terminalul de note
+      persistente prin localStorage), MECANISMUL 06.5 (Comutatorul consolei HUD)
+      și filtrul de căutare din sidebar.
       @path:
-        The src="../script.js" attribute tells the browser to fetch
-        en/script.js relative to this page's location
+        Atributul src="../script.js" le spune browserelor să preia
+        en/script.js relativ la locația acestei pagini
         (en/frontend/html-log.html → en/script.js).
       @reason:
-        Placing the [script] tag just before [/body] (rather than in
-        [head]) ensures the HTML content loads and renders before the
-        JavaScript executes. This is called "deferred loading" and it
-        prevents the script from blocking the visual rendering of the
-        page.
+        Plasarea etichetei [script] chiar înainte de [/body] (în loc de
+        [head]) asigură că conținutul HTML se încarcă și se randează înainte ca
+        JavaScript-ul să se execute. Aceasta se numește "încărcare întârziată" și
+        previne blocarea randării vizuale a paginii de către script.
     -->
     <script src="../script.js"></script>
   <!-- @structure:
-    [/body] closes the visible deck. Everything inside the [body] —
-    navbar, sidebar, log entries, footer — is now finished rendering.
-    The browser stops painting the page here.
+    [/body] închide puntea vizibilă. Tot ce se află în interiorul [body] —
+    navbar, sidebar, intrările de jurnal, footer — este acum finalizat de randare.
+    Browserul încetează să picteze pagina aici.
   -->
   </body>
   <!-- @structure:
-    [/html] closes the root element. The document is complete. The
-    browser has finished constructing the DOM (Document Object Model)
-    and the page is fully loaded. What the traveller sees now is the
-    result of the HTML structure combined with the CSS styles from
-    style.css and the interactive behaviour from script.js.
+    [/html] închide elementul rădăcină. Documentul este complet.
+    Browserul a terminat de construit DOM-ul (Document Object Model)
+    și pagina este complet încărcată. Ceea ce vede călătorul acum este
+    rezultatul structurii HTML combinată cu stilurile CSS din
+    style.css și comportamentul interactiv din script.js.
     @bridge:
-      For the full technical index of HTML tags used in this project,
-      see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
+      Pentru indexul tehnic complet al etichetelor HTML folosite în acest proiect,
+      vezi Manualul Semantic de Teren la ./docs/semantic-field-manual-ro.md.
   -->
 </html>
 
@@ -1222,5 +1221,5 @@
 -->
 
 <!-- @reason:
-  Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
--->
+      Acest document este un jurnal structurat de învățare pentru HTML. Înregistrează explorarea elementelor semantice, structurii de document, formularelor, accesibilității și bunelor practici de markup.
+    -->

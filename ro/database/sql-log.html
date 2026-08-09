@@ -7,46 +7,46 @@
 
 <html lang="ro">
   <!-- @block:
-    The root element of the document.
+    Elementul rădăcină al documentului.
     Atributul lang="ro" declară că limba principală a acestei pagini este româna.
-    This helps accessibility tools, search engines, and automated processing systems.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele de procesare automată.
   -->
   <head>
     <!-- @block:
-      The [head] contains the document metadata.
-      I do not place the main visible content here; instead, I keep the information
-      the browser needs in order to understand, prepare, and connect the page resources.
+      Elementul [head] conține metadatele documentului.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
     -->
 
             <meta charset="UTF-8" />
     <!-- @meta:
-      I set the character encoding to UTF-8.
-      This ensures that diacritics, special symbols, and international characters display correctly.
+      Setez codificarea caracterelor la UTF-8.
+      Acest lucru asigură că diacriticele, simbolurile speciale și caracterele internaționale se afișează corect.
 
-      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
-      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
-      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
-      ?i textul se va afi?a gre?it.
+      <meta charset="UTF-8" /> trebuie să fie în primii 1024 de octeți
+      pentru ca browserul să detecteze UTF-8 înainte de parsare. Dacă
+      nu o detectează, poate folosi o altă codificare (ex. Windows-1252)
+      și textul se va afișa greșit.
     -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
-      This instruction is historically related to Internet Explorer compatibility.
-      In modern projects it has little practical use, but I keep it here if I want
-      to preserve the classic basic-head structure.
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      În proiectele moderne are o utilitate practică redusă, dar o păstrez aici dacă vreau
+      să păstrez structura clasică de bază a head-ului (capului) de model.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- @meta:
-      I configure the viewport for responsive display.
-      width=device-width aligns the page width with the real screen width,
-      and initial-scale=1.0 starts without artificial zoom.
+      Configurez viewport-ul pentru afișarea responsive.
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
     -->
 
     <title>D::0dy55ey | Jurnal SQL</title>
     <!-- @meta:
-      The page title.
-      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+      Titlul paginii.
+      Îl văd în fila browserului, în marcaje (bookmarks) și uneori în rezultatele motoarelor de căutare.
     -->
 
     <meta
@@ -54,9 +54,9 @@
       content="Un jurnal structurat care documentează explorarea SQL-ului — interogări, joins, indexuri, optimizare și proiectarea bazelor de date relaționale."
     />
     <!-- @meta:
-      The page description.
-      I use it as a short summary of the content; it is not directly visible in the page,
-      but search engines may use it as descriptive text.
+      Descrierea paginii.
+      O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
     -->
 
     <meta
@@ -64,117 +64,117 @@
       content="sql, interogări, joins, indexuri, optimizare, baze de date, odisee digitală"
     />
     <!-- @meta:
-      The keywords meta tag lists the main themes of the page.
-      Search engines no longer rank on it, but it stays a useful, self-documenting
-      summary of the page's scope and a teaching example of the tag itself.
+      Eticheta meta keywords listează temele principale ale paginii.
+      Motoarele de căutare nu se mai bazează pe ea pentru poziționare, dar rămâne un rezumat
+      util care se auto-documentează privind scopul paginii și un exemplu didactic al etichetei în sine.
     -->
 
     <meta name="author" content="Iulia-Alexandra Cadar" />
     <!-- @meta:
-      The author meta tag declares who created and maintains this document.
-      It is a standard metadata field that identifies the creator of the work.
+      Eticheta meta author declară cine a creat și întreține acest document.
+      Este un câmp standard de metadate care identifică creatorul lucrării.
     -->
 
     <link rel="manifest" href="../site.webmanifest" />
     <!-- @path:
-      I link the web app manifest. Firefox reads theme_color from the manifest
-      rather than from the meta tag, so this ensures consistent theme-color
-      support across all modern browsers including Firefox.
+      Leg manifestul aplicației web. Firefox citește theme_color din manifest
+      mai degrabă decât din eticheta meta, astfel încât acest lucru asigură suport
+      consistent pentru theme-color în toate browserele moderne, inclusiv Firefox.
     -->
 
 
     <meta property="og:title" content="D::0dy55ey | SQL Log" />
     <!-- @meta:
-      Open Graph title.
-      When the page link is shared on social networks or portfolio sites,
-      this text appears as the card title instead of the raw URL.
+      Titlul Open Graph.
+      Când link-ul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
+      acest text apare ca titlul cardului în locul URL-ului brut.
     -->
 
     <meta
       property="og:description"
-      content="A structured log documenting SQL — relational databases, queries, schemas, joins, indexing, and data modeling techniques."
+      content="Un jurnal structurat care documentează SQL — baze de date relaționale, interogări, scheme, join-uri, indexare și tehnici de modelare a datelor."
     />
     <!-- @meta:
-      Open Graph description.
-      It is the companion summary shown under the Open Graph title on shared cards.
-      I keep it aligned with the meta description for consistency.
+      Descrierea Open Graph.
+      Este rezumatul însoțitor afișat sub titlul Open Graph pe cardurile distribuite.
+      Îl păstrez aliniat cu meta descrierea pentru consistență.
     -->
 
     <meta property="og:type" content="website" />
     <!-- @meta:
-      Open Graph type.
-      I declare this page as a website, the general type for standard HTML pages.
-      For journal entries, I could use "article" instead depending on the content nature.
+      Tipul Open Graph.
+      Declar această pagină ca website, tipul general pentru paginile HTML standard.
+      Pentru înregistrările de jurnal, aș putea folosi "article" în funcție de natura conținutului.
     -->
 
     <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/database/sql-log.html" />
     <!-- @meta:
-      Open Graph canonical URL.
-      When the page is shared, this tells platforms the exact, permanent address of this page.
-      It prevents confusion if the same content is accessible from multiple URLs.
+      URL-ul canonic Open Graph.
+      Când pagina este distribuită, acest câmp le spune platformelor adresa exactă și permanentă a acestei pagini.
+      Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
     -->
 
     <meta property="og:locale" content="en_US" />
     <!-- @meta:
-      Open Graph locale.
-      I set it to en_US for the English version of the page.
-      This tells social platforms and aggregators the language and regional variant of the content.
+      Locale-ul Open Graph.
+      Îl setez la en_US pentru versiunea în limba engleză a paginii.
+      Acest lucru le spune platformelor sociale și agregatoarelor limba și varianta regională a conținutului.
     -->
 
     <meta property="og:site_name" content="D::0dy55ey" />
     <!-- @meta:
-      Open Graph site name.
-      This is the overarching project name shown on social sharing cards,
-      so the audience knows which site the page belongs to.
+      Numele site-ului Open Graph.
+      Acesta este numele de proiect principal afișat pe cardurile de distribuire socială,
+      astfel încât publicul să știe cărui site îi aparține pagina.
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
     <!-- @theme:
-      Open Graph background color.
-      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+      Culoarea de fundal Open Graph.
+      Unele suprafețe de distribuire o folosesc pentru a nuanța cardul de previzualizare cu paleta deep-space a proiectului.
     -->
 
     <meta property="og:image" content="../favicon.svg" />
     <!-- @path:
-      Open Graph image.
-      It is the preview picture used on shared cards. I point it at the favicon
-      in the corresponding language folder as a stable, always-available placeholder,
-      until a dedicated capture exists for each page.
+      Imaginea Open Graph.
+      Este imaginea de previzualizare folosită pe cardurile distribuite. O îndrept către favicon
+      din folderul de limbă corespunzător ca un placeholder stabil și mereu disponibil,
+      până când există o captură dedicată pentru fiecare pagină.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <!-- @meta:
-      Twitter card type.
-      I choose summary_large_image so that shared links on X/Twitter display
-      a large image preview alongside the title and description.
+      Tipul de card Twitter.
+      Aleg summary_large_image, astfel încât link-urile distribuite pe X/Twitter să afișeze
+      o previzualizare mare de imagine alături de titlu și descriere.
     -->
 
     <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/database/sql-log.html" />
     <!-- @meta:
-      Canonical link.
-      I tell search engines that this URL is the authoritative version of the page.
-      This helps prevent duplicate-content issues and consolidates ranking signals.
+      Link-ul canonic.
+      Le spun motoarelor de căutare că acest URL este versiunea autoritativă a paginii.
+      Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de ranking.
     -->
 
     <meta name="robots" content="index, follow" />
     <!-- @meta:
-      Robots meta tag.
-      I allow search engines to index this page and follow its links,
-      which is the default and expected behavior for public content.
+      Eticheta meta robots.
+      Permit motoarelor de căutare să indexeze această pagină și să urmărească link-urile sale,
+      ceea ce este comportamentul implicit și așteptat pentru conținutul public.
     -->
 
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <!-- @path:
-      I link the page favicon.
-      The path is relative to the current file location.
-      The browser looks for favicon.svg in the appropriate folder.
+      Leg favicon-ul paginii.
+      Calea este relativă la locația fișierului curent.
+      Browserul caută favicon.svg în folderul corespunzător.
     -->
 
     <link rel="apple-touch-icon" href="../favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      Leg Apple Touch Icon pentru dispozitivele iOS.
+      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată pe ecranul de pornire
+      sau afișată ca aplicație web. Reutilizez același favicon.svg ca sursă a pictogramei.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -197,101 +197,101 @@
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
-      I link the local stylesheet.
-      The path is relative to the current file location.
+      Leg fișierul de stiluri local.
+      Calea este relativă la locația fișierului curent.
     -->
   </head>
-  <!-- @block: BODY — THE VISIBLE DECK
-    The [body] element is where every visible element of the page lives.
-    Everything the traveller sees — the navigation bar, the sidebar map,
-    the journal entries, the footer telemetry — is a child of this single
-    container. In the ship metaphor, the body is the main habitable deck
-    of the vessel: the space where the crew walks, reads, and interacts
-    with the ship's systems.
+  <!-- @block: BODY — PUNTA VIZIBILĂ
+    Elementul [body] este locul unde trăiește fiecare element vizibil al paginii.
+    Tot ceea ce vede călătorul — bara de navigare, harta din sidebar,
+    înregistrările de jurnal, telemetria din subsol — este un copil al acestui
+    singur container. În metafora navei, body este puntea principală locuibilă
+    a vasului: spațiul în care echipajul umblă, citește și interacționează
+    cu sistemele navei.
     @structure:
-      The [body] is the direct child of [html]. It has no special default
-      styling by itself, but in this project it inherits the deep-space
-      background (#0a0b1e) and the Space Grotesk font from style.css.
+      [body] este copilul direct al lui [html]. Nu are nicio stilizare
+      implicită specială în sine, dar în acest proiect moștenește fundalul
+      deep-space (#0a0b1e) și fontul Space Grotesk din style.css.
   -->
   <body>
-    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
-      The [nav] element semantically marks this section as the ship's
-      primary navigation interface. Wrapping the navbar in [nav] tells
-      browsers, screen readers, and search engines: "this block contains
-      the main controls for moving between the vessel's decks."
+    <!-- @block: NAVIGAȚIA PRINCIPALĂ — STAȚIA CORMANEI
+      Elementul [nav] marchează semantic această secțiune ca interfața de navigare
+      principală a navei. Învelirea navbar-ului într-un [nav] le spune
+      browserelor, cititoarelor de ecran și motoarelor de căutare: "acest bloc conține
+      comenzile principale pentru deplasarea între punțile vasului."
       @structure:
-        The navbar uses flexbox (via the .navbar class) to display the
-        vessel logo on the left and the navigation command list on the
-        right, keeping the helm compact and always visible at the top.
+        Navbar-ul folosește flexbox (prin clasa .navbar) pentru a afișa
+        sigla vasului în stânga și lista de comenzi de navigare în
+        dreapta, păstrând cormana compactă și mereu vizibilă în partea de sus.
     -->
     <nav class="navbar">
-      <!-- @block: TERMINAL IDENTITY
-        The logo block displays the vessel callsign and the current section name.
-        It is static text (not a link) because this page is itself a station
-        on the ship; the crew reads their location here.
+      <!-- @block: IDENTITATEA TERMINALULUI
+        Blocul siglei afișează indicativul vasului și numele secțiunii curente.
+        Este text static (nu un link) deoarece această pagină este ea însăși o stație
+        pe navă; echipajul își citește locația aici.
       -->
       <div class="logo">D::0dy55ey / Jurnal SQL</div>
 
-      <!-- @block: NAVIGATION COMMANDS
-        The nav-links list contains the primary navigation actions.
-        On secondary pages, only one command is offered: return to the bridge.
+      <!-- @block: COMENZILE DE NAVIGAȚIE
+        Lista nav-links conține acțiunile principale de navigare.
+        Pe paginile secundare este oferită doar o singură comandă: întoarcerea pe puntea de comandă.
       -->
       <ul class="nav-links">
         <li>
           <a href="../index.html" class="return-btn"
             ><!-- @reason:
-              Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
-            -->← Return to Command Deck</a
+      Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
+    -->← Înapoi la puntea de comandă</a
           >
         </li>
       </ul>
     </nav>
 
-    <!-- @block: MAIN CONTENT — SQL EXPEDITION LOG
-      The main deck is split into two zones: the sidebar (expedition map) and
-      the log-content zone (the day-by-day journal entries). The class
-      "log-layout" applies a CSS Grid with two columns.
+    <!-- @block: CONȚINUT PRINCIPAL — JURNALUL EXPEDIȚIEI SQL
+      Puntea principală este împărțită în două zone: sidebar-ul (harta expediției) și
+      zona log-content (intrările de jurnal zi cu zi). Clasa
+      "log-layout" aplică un CSS Grid cu două coloane.
     -->
     <main class="main-container log-layout">
-      <!-- @block: SIDEBAR — SQL EXPEDITION MAP
-        The sidebar is wrapped in an [aside] element — a semantic HTML5
-        tag that marks content as tangentially related to the main page.
-        In the ship metaphor, the sidebar is the navigator's console:
-        a secondary station that holds the expedition map rather than
-        the primary log content.
+      <!-- @block: SIDEBAR — HARTA EXPEDIȚIEI SQL
+        Sidebar-ul este înfășurat într-un element [aside] — o etichetă semantică
+        HTML5 care marchează conținutul ca fiind tangențial legat de pagina principală.
+        În metafora navei, sidebar-ul este consola navigatorului:
+        o stație secundară care deține harta expediției mai degrabă decât
+        conținutul principal al jurnalului.
         @concept:
-          The [aside] element is one of several semantic tags introduced
-          in HTML5. Like [nav], [header], [footer], and [article], it
-          gives meaning to the container instead of using a generic [div].
-          This helps screen readers announce the sidebar's role and
-          helps search engines understand the page structure.
+          Elementul [aside] este una dintre etichetele semantice introduse
+          în HTML5. La fel ca [nav], [header], [footer] și [article],
+          oferă sens containerului în loc să folosească un [div] generic.
+          Acest lucru ajută cititoarele de ecran să anunțe rolul sidebar-ului și
+          ajută motoarele de căutare să înțeleagă structura paginii.
       -->
       <aside class="log-sidebar">
-        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
-          This [nav] inside the [aside] is the secondary navigation
-          system. While the top navbar returns the crew to the bridge,
-          this sidebar nav lets them jump directly to any day entry
-          within the current expedition log.
+        <!-- @block: NAVIGAREA DIN SIDEBAR — CONSOLA SECUNDARĂ
+          Acest [nav] din interiorul [aside] este sistemul de navigare
+          secundar. În timp ce navbar-ul de sus întoarce echipajul pe puntea de comandă,
+          această navigare din sidebar le permite să sară direct la orice zi
+          din jurnalul expediției curente.
           @structure:
-            The .sidebar-nav class applies a compact, scrollable list
-            layout distinct from the main navbar. The map-title-link
-            at the top scrolls the view back to the main header when
-            clicked.
+            Clasa .sidebar-nav aplică o listă compactă, derulabilă,
+            distinctă de navbar-ul principal. map-title-link
+            din partea de sus derulează vederea înapoi la antetul principal când
+            este apăsat.
         -->
         <nav class="sidebar-nav">
           <a href="#top-deck" class="map-title-link">
             <h4>Hartă Expediție SQL</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: LISTA DE LINK-URI DIN SIDEBAR
+            [ul] (lista neordonată) deține fiecare link de zi a expediției.
+            Fiecare [li] (element de listă) conține un [a] (ancoră) care indică
+            către [article]-ul unei anumite zile prin atributul său id — acest lucru
+            se numește "fragment link" deoarece simbolul # îi spune
+            browserului să deruleze până la elementul cu acel id.
             @reason:
-              Fragment links (href="#sql-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              Fragment link-urile (href="#sql-day01") creează un cuprins
+              care le permite membrilor echipajului să se teleporteze direct la orice
+              intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
             <li><a href="#sql-day00">Day 00 &#9672; Intro</a></li>
@@ -354,66 +354,66 @@
         </nav>
       </aside>
 
-      <!-- @block: LOG CONTENT ZONE
-        The [section] element is a semantic container that groups related
-        content under a common theme. Here it wraps the entire expedition
-        log — the header, sector announcements, and day articles. Unlike
-        [article] (which holds self-contained entries), [section] groups
-        them into a coherent chapter.
+      <!-- @block: ZONA DE CONȚINUT A JURNALULUI
+        Elementul [section] este un container semantic care grupează conținutul conex
+        sub o temă comună. Aici înfășoară întregul jurnal al expediției
+        — antetul, anunțurile de sector și articolele de zi. Spre deosebire de
+        [article] (care deține intrări de sine stătătoare), [section] le grupează
+        într-un capitol coerent.
         @structure:
-          The .log-content class works together with .log-sidebar inside
-          the .log-layout grid. The sidebar occupies the left column
-          (about 250px), and .log-content fills the remaining space on
-          the right, creating the classic two-panel terminal interface.
+          Clasa .log-content lucrează împreună cu .log-sidebar în interiorul
+          grid-ului .log-layout. Sidebar-ul ocupă coloana din stânga
+          (aproximativ 250px), iar .log-content umple spațiul rămas din
+          dreapta, creând interfața clasică de terminal cu două panouri.
       -->
       <section class="log-content">
-        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
-          The [header] element inside the log content acts as the
-          chapter title card. While the [header] in a document usually
-          contains navigation or introductory content, here it is a
-          simple banner that sets the thematic tone for the log.
+        <!-- @block: ANTET DE CATEGORIE — TITLUL EXPEDIȚIEI
+          Elementul [header] din interiorul conținutului jurnalului acționează ca
+          un card de titlu de capitol. În timp ce [header]-ul dintr-un document conține de obicei
+          navigare sau conținut introductiv, aici este un
+          simplu banner care setează tonul tematic al jurnalului.
           @theme:
-            The .category-header class applies a bottom border glow
-            effect and centers the title text, visually marking this
-            as the start of a new expedition chapter.
+            Clasa .category-header aplică un efect de strălucire pe bordura de jos
+            și centrează textul titlului, marcând vizual acest
+            element ca începutul unui nou capitol al expediției.
         -->
         <header id="top-deck" class="category-header">
-          <h2>The Deep Archives: Memory of the Void</h2>
-          <p>Exploring the relational void — SQL queries, schemas, and data modeling.</p>
+          <h2>Arhivele Adânci: Memoria Vidului</h2>
+          <p>Explorarea vidului relațional — interogări SQL, scheme și modelare a datelor.</p>
           <!-- @theme:
-            "Deep Archives" and "Memory of the Void" frame the database as an
-            abyssal storage layer, where data is archived and retrieved from
-            the silent darkness of the digital cosmos.
+            "Arhivele Adânci" și "Memoria Vidului" prezintă baza de date ca un
+            nivel de stocare abisal, unde datele sunt arhivate și recuperate din
+            întunericul tăcut al cosmosului digital.
           -->
         </header>
 
         <!-- ===== AIRLOCK (WEEK 00) ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — AIRLOCK / INITIATION
-          Each sector opens with a .sector-announcement that acts as a
-          dimensional gateway into a new cluster of days.
+        <!-- @block: ANUNȚ DE SECTOR — AIRLOCK / INIȚIERE
+          Fiecare sector se deschide cu un .sector-announcement care acționează ca
+          o poartă dimensională către un nou grup de zile.
           @concept:
-            The airlock metaphor frames each sector as a sealed compartment
-            that the crew must intentionally enter.
+            Metafora airlock-ului prezintă fiecare sector ca un compartiment etanș
+            în care echipajul trebuie să intre intenționat.
         -->
         <div id="sql-sector-00" class="sector-announcement">
           <span>ENTER AIRLOCK</span>
           <h2>Initiation</h2>
         </div>
 
-        <!-- @block: DAY 00 — THE DEEP ARCHIVES :: INITIATION
-          The first day entry establishes the log-entry pattern for the
-          SQL track: a numbered title, a narrative paragraph, a
-          mission-status telemetry readout, and a note-terminal.
+        <!-- @block: ZIUA 00 — ARHIVELE ADÂNCI :: INIȚIERE
+          Prima intrare de zi stabilește tiparul intrării de jurnal pentru
+          traseul SQL: un titlu numerotat, un paragraf narativ, o
+          citire de telemetrie a stării misiunii și un terminal de note.
           @theme:
-            "The Deep Archives" frames the database as an abyssal storage
-            layer where data is archived in the silent darkness of the
-            digital cosmos.
+            "Arhivele Adânci" prezintă baza de date ca un strat de stocare
+            abisal, unde datele sunt arhivate în întunericul tăcut al
+            cosmosului digital.
         -->
         <article id="sql-day00" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 00</span>
-            <span class="meta-title">The Deep Archives :: Initiation</span>
+            <span class="meta-title">Arhivele Adânci :: Inițiere</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -430,9 +430,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day00') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day00') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -447,33 +447,33 @@
         </article>
 
         <!-- ===== SECTOR 01 ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — FOUNDATIONS OF THE RELATIONAL VOID
-          The first operational sector covers the core SQL mechanics: tables,
-          columns, data types, SELECT queries, filtering, sorting, joins,
-          and subqueries.
+        <!-- @block: ANUNȚ DE SECTOR — FUNDAȚIILE VIDULUI RELAȚIONAL
+          Primul sector operațional acoperă mecanismele SQL de bază: tabele,
+          coloane, tipuri de date, interogări SELECT, filtrare, sortare, join-uri
+          și subinterogări.
           @theme:
-            "Foundations of the Relational Void" presents the database as
-            a cosmic archive where every piece of data has its place.
+            "Fundațiile Vidului Relațional" prezintă baza de date ca
+            o arhivă cosmică în care fiecare fragment de date își are locul său.
         -->
         <div id="sql-sector-01" class="sector-announcement">
           <span>Entering Sector 01</span>
-          <h2>Foundations of the Relational Void</h2>
+          <h2>Fundațiile Vidului Relațional</h2>
         </div>
 
-        <!-- @block: DAY 01 — TABLES & COLUMNS :: THE ARCHIVAL SHELVES
-          Introduces the CREATE TABLE statement and column definitions as
-          the "archival shelves" that organize data into structured rows
-          and columns.
+        <!-- @block: ZIUA 01 — TABELE & COLOANE :: RAFTURILE DE ARHIVĂ
+          Introduce instrucțiunea CREATE TABLE și definițiile de coloane ca
+          "rafturile de arhivă" care organizează datele în rânduri și coloane
+          structurate.
           @concept:
-            A table is a collection of related data organized into rows
-            (records) and columns (fields). Each column has a name and
-            a data type that constrains what values it can hold.
+            Un tabel este o colecție de date conexe organizate în rânduri
+            (înregistrări) și coloane (câmpuri). Fiecare coloană are un nume și
+            un tip de date care constrânge valorile pe care le poate conține.
         -->
         <article id="sql-day01" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 01</span>
-            <span class="meta-title">Tables & Columns :: The Archival Shelves</span>
+            <span class="meta-title">Tabele & Coloane :: Rafturile de Arhivă</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -490,9 +490,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day01') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day01') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -506,19 +506,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 02 — DATA TYPES :: THE MOLECULAR STRUCTURE
-          Covers SQL data types (INT, VARCHAR, DATE, BOOLEAN, etc.) as the
-          "molecular structure" that defines what kind of matter each
-          column can contain.
+        <!-- @block: ZIUA 02 — TIPURI DE DATE :: STRUCTURA MOLECULARĂ
+          Acoperă tipurile de date SQL (INT, VARCHAR, DATE, BOOLEAN, etc.) ca
+          "structura moleculară" care definește ce fel de materie poate
+          conține fiecare coloană.
           @concept:
-            Choosing the correct data type is essential for data integrity,
-            storage efficiency, and query performance.
+            Alegerea tipului de date corect este esențială pentru integritatea datelor,
+            eficiența stocării și performanța interogărilor.
         -->
         <article id="sql-day02" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 02</span>
-            <span class="meta-title">Data Types :: The Molecular Structure</span>
+            <span class="meta-title">Tipuri de Date :: Structura Moleculară</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -535,9 +535,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day02') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day02') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -551,19 +551,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 03 — SELECT QUERIES :: THE RETRIEVAL SIGNAL
-          Introduces the SELECT statement as the primary "retrieval signal"
-          — the command that pulls data from the archival shelves.
+        <!-- @block: ZIUA 03 — INTEROGĂRI SELECT :: SEMNALUL DE RECUPERARE
+          Introduce instrucțiunea SELECT ca principalul "semnal de recuperare"
+          — comanda care extrage datele de pe rafturile de arhivă.
           @concept:
-            SELECT column FROM table WHERE condition is the fundamental
-            read pattern. The * wildcard selects all columns but should
-            be used sparingly in production.
+            SELECT column FROM table WHERE condition este tiparul fundamental
+            de citire. Wildcard-ul * selectează toate coloanele, dar ar trebui
+            folosit cu moderație în producție.
         -->
         <article id="sql-day03" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 03</span>
-            <span class="meta-title">SELECT Queries :: The Retrieval Signal</span>
+            <span class="meta-title">Interogări SELECT :: Semnalul de Recuperare</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -580,9 +580,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day03') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day03') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -596,19 +596,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 04 — WHERE CLAUSE :: THE FILTERING LENS
-          Covers the WHERE clause as the "filtering lens" that narrows
-          query results to only the records matching specific conditions.
+        <!-- @block: ZIUA 04 — CLAUZA WHERE :: LENTILA DE FILTRARE
+          Acoperă clauza WHERE ca "lentila de filtrare" care restrânge
+          rezultatele interogării doar la înregistrările care corespund unor condiții specifice.
           @concept:
-            WHERE supports comparison operators (=, <>, >, <, LIKE, IN,
-            BETWEEN) and logical operators (AND, OR, NOT) for compound
-            filter conditions.
+            WHERE acceptă operatori de comparație (=, <>, >, <, LIKE, IN,
+            BETWEEN) și operatori logici (AND, OR, NOT) pentru condiții
+            de filtrare compuse.
         -->
         <article id="sql-day04" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 04</span>
-            <span class="meta-title">WHERE Clause :: The Filtering Lens</span>
+            <span class="meta-title">Clauza WHERE :: Lentila de Filtrare</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -625,9 +625,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day04') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day04') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -641,19 +641,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 05 — ORDER BY & GROUP BY :: SORTING THE ARCHIVE
-          Covers the ORDER BY clause for sorting results and the GROUP BY
-          clause for aggregating records into summary rows.
+        <!-- @block: ZIUA 05 — ORDER BY & GROUP BY :: SORTAREA ARHIVEI
+          Acoperă clauza ORDER BY pentru sortarea rezultatelor și clauza GROUP BY
+          pentru agregarea înregistrărilor în rânduri rezumative.
           @concept:
-            ORDER BY sorts ascending (ASC) or descending (DESC). GROUP BY
-            is typically paired with aggregate functions (COUNT, SUM, AVG,
-            MAX, MIN) to produce grouped summaries.
+            ORDER BY sortează crescător (ASC) sau descrescător (DESC). GROUP BY
+            este de obicei asociat cu funcțiile de agregare (COUNT, SUM, AVG,
+            MAX, MIN) pentru a produce rezumate grupate.
         -->
         <article id="sql-day05" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 05</span>
-            <span class="meta-title">ORDER BY & GROUP BY :: Sorting the Archive</span>
+            <span class="meta-title">ORDER BY & GROUP BY :: Sortarea Arhivei</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -670,9 +670,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day05') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day05') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -686,19 +686,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 06 — JOINS :: THE BRIDGE BETWEEN ARCHIVES
-          Introduces JOIN operations (INNER, LEFT, RIGHT, FULL) as the
-          "bridges" that connect related data across multiple tables.
+        <!-- @block: ZIUA 06 — JOIN-URI :: PUNȚEA DINTRE ARHIVE
+          Introduce operațiile JOIN (INNER, LEFT, RIGHT, FULL) ca
+          "punțile" care conectează datele conexe între mai multe tabele.
           @concept:
-            JOINs combine rows from two or more tables based on a related
-            column between them. INNER JOIN returns matching rows only;
-            LEFT JOIN returns all rows from the left table plus matches.
+            JOIN-urile combină rânduri din două sau mai multe tabele pe baza unei
+            coloane conexe dintre ele. INNER JOIN returnează doar rândurile care se potrivesc;
+            LEFT JOIN returnează toate rândurile din tabelul din stânga plus potrivirile.
         -->
         <article id="sql-day06" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 06</span>
-            <span class="meta-title">JOINs :: The Bridge Between Archives</span>
+            <span class="meta-title">JOIN-uri :: Puntea dintre Arhive</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -715,9 +715,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day06') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day06') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -731,13 +731,13 @@
           </div>
         </article>
 
-        <!-- @block: DAY 07 — SUBQUERIES :: QUERIES WITHIN QUERIES
-          Covers subqueries — queries nested inside other queries — as
-          "queries within queries" that allow multi-step data retrieval.
+        <!-- @block: ZIUA 07 — SUBINTEROGĂRI :: INTEROGĂRI ÎN INTERIORUL INTEROGĂRILOR
+          Acoperă subinterogările — interogări imbricate în alte interogări — ca
+          "interogări în interiorul interogărilor" care permit recuperarea de date în mai mulți pași.
           @concept:
-            Subqueries can appear in SELECT, FROM, or WHERE clauses.
-            Correlated subqueries reference the outer query and execute
-            once per row, which affects performance on large datasets.
+            Subinterogările pot apărea în clauzele SELECT, FROM sau WHERE.
+            Subinterogările corelate fac referire la interogarea exterioară și se execută
+            o dată per rând, ceea ce afectează performanța pe seturi de date mari.
         -->
         <article id="sql-day07" class="log-entry">
           <!-- @block: ENTRY HEADER -->
@@ -760,9 +760,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day07') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day07') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -777,32 +777,32 @@
         </article>
 
         <!-- ===== SECTOR 02 ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — SCHEMA DESIGN & RELATIONSHIPS
-          The second sector advances from basic queries to database schema
-          design: primary keys, foreign keys, indexes, normalization,
-          ACID properties, and transactions.
+        <!-- @block: ANUNȚ DE SECTOR — PROIECTAREA SCHEMEI & RELAȚII
+          Al doilea sector avansează de la interogările de bază la proiectarea schemei
+          bazei de date: chei primare, chei străine, indexuri, normalizare,
+          proprietăți ACID și tranzacții.
           @theme:
-            "Schema Design & Relationships" presents the database structure
-            as the architectural blueprint of the ship's data systems.
+            "Proiectarea Schemei & Relațiile" prezintă structura bazei de date
+            ca planul arhitectural al sistemelor de date ale navei.
         -->
         <div id="sql-sector-02" class="sector-announcement">
           <span>Entering Sector 02</span>
           <h2>Schema Design & Relationships</h2>
         </div>
 
-        <!-- @block: DAY 08 — PRIMARY KEYS :: THE UNIQUE IDENTIFIER
-          Introduces PRIMARY KEY constraints as the "unique identifier"
-          that distinguishes each row in a table.
+        <!-- @block: ZIUA 08 — CHEI PRIMARE :: IDENTIFICATORUL UNIC
+          Introduce constrângerile PRIMARY KEY ca "identificatorul unic"
+          care distinge fiecare rând dintr-un tabel.
           @concept:
-            A primary key must contain unique, non-null values. A table
-            can have only one primary key, which may consist of single
-            or multiple columns (composite key).
+            O cheie primară trebuie să conțină valori unice, non-nule. Un tabel
+            poate avea o singură cheie primară, care poate consta dintr-o singură
+            coloană sau din mai multe coloane (cheie compusă).
         -->
         <article id="sql-day08" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 08</span>
-            <span class="meta-title">Primary Keys :: The Unique Identifier</span>
+            <span class="meta-title">Chei Primare :: Identificatorul Unic</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -819,9 +819,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day08') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day08') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -835,19 +835,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 09 — FOREIGN KEYS :: THE RELATIONAL TETHER
-          Covers FOREIGN KEY constraints as the "relational tether" that
-          links tables together and enforces referential integrity.
+        <!-- @block: ZIUA 09 — CHEI STRĂINE :: LEGĂTURA RELAȚIONALĂ
+          Acoperă constrângerile FOREIGN KEY ca "legătura relațională" care
+          leagă tabelele între ele și impune integritatea referențială.
           @concept:
-            A foreign key in one table points to a primary key in another
-            table, creating a parent-child relationship. ON DELETE CASCADE
-            propagates deletions automatically.
+            O cheie străină dintr-un tabel indică spre o cheie primară dintr-un alt
+            tabel, creând o relație părinte-copil. ON DELETE CASCADE
+            propagă ștergerile automat.
         -->
         <article id="sql-day09" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 09</span>
-            <span class="meta-title">Foreign Keys :: The Relational Tether</span>
+            <span class="meta-title">Chei Străine :: Legătura Relațională</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -864,9 +864,9 @@
           <div class="mission-status">
             <p>Status:lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day09') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day09') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -880,20 +880,20 @@
           </div>
         </article>
 
-        <!-- @block: DAY 10 — INDEXES :: THE SEARCH ACCELERATOR
-          Introduces database indexes as "search accelerators" that speed
-          up data retrieval at the cost of additional storage and slower
-          writes.
+        <!-- @block: ZIUA 10 — INDEXURI :: ACCELERATORUL DE CĂUTARE
+          Introduce indexurile bazei de date ca "acceleratori de căutare" care grăbesc
+          recuperarea datelor în schimbul unui stocaj suplimentar și al unor scrieri
+          mai lente.
           @concept:
-            Indexes are lookup tables that the database engine uses to
-            find rows without scanning the entire table. They are most
-            effective on columns used in WHERE, JOIN, and ORDER BY.
+            Indexurile sunt tabele de căutare pe care motorul bazei de date le folosește pentru
+            a găsi rânduri fără a scana întregul tabel. Sunt cele mai
+            eficiente pe coloanele folosite în WHERE, JOIN și ORDER BY.
         -->
         <article id="sql-day10" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 10</span>
-            <span class="meta-title">Indexes :: The Search Accelerator</span>
+            <span class="meta-title">Indexuri :: Acceleratorul de Căutare</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -910,9 +910,9 @@
           <div class="mission-status">
             <p>Status: Lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day10') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day10') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -926,14 +926,14 @@
           </div>
         </article>
 
-        <!-- @block: DAY 11 — NORMALIZATION :: ELIMINATING REDUNDANCY
-          Covers database normalization (1NF, 2NF, 3NF) as the process
-          of eliminating data redundancy and ensuring dependencies make
-          sense.
+        <!-- @block: ZIUA 11 — NORMALIZARE :: ELIMINAREA REDUNDANȚEI
+          Acoperă normalizarea bazei de date (1NF, 2NF, 3NF) ca procesul
+          de eliminare a redundanței datelor și de asigurare a faptului că dependențele
+          au sens.
           @concept:
-            Normalization reduces data duplication and improves integrity
-            by splitting large tables into smaller, related tables. Each
-            normal form addresses a specific type of redundancy.
+            Normalizarea reduce duplicarea datelor și îmbunătățește integritatea
+            prin împărțirea tabelelor mari în tabele mai mici, conexe. Fiecare
+            formă normală abordează un tip specific de redundanță.
         -->
         <article id="sql-day11" class="log-entry">
           <!-- @block: ENTRY HEADER -->
@@ -956,9 +956,9 @@
           <div class="mission-status">
             <p>Status: ipsum</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day11') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day11') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -972,20 +972,20 @@
           </div>
         </article>
 
-        <!-- @block: DAY 12 — ACID PROPERTIES :: THE INTEGRITY COVENANT
-          Introduces ACID (Atomicity, Consistency, Isolation, Durability)
-          as the "integrity covenant" that guarantees reliable database
-          transactions.
+        <!-- @block: ZIUA 12 — PROPRIETĂȚILE ACID :: PACTUL DE INTEGRITATE
+          Introduce ACID (Atomicitate, Consistență, Izolare, Durabilitate)
+          ca "pactul de integritate" care garantează tranzacții fiabile ale
+          bazei de date.
           @concept:
-            ACID ensures that database transactions are processed reliably.
-            Atomicity means "all or nothing" — a transaction either
-            completes fully or has no effect.
+            ACID asigură faptul că tranzacțiile bazei de date sunt procesate fiabil.
+            Atomicitatea înseamnă "totul sau nimic" — o tranzacție fie
+            se finalizează complet, fie nu are niciun efect.
         -->
         <article id="sql-day12" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 12</span>
-            <span class="meta-title">ACID Properties :: The Integrity Covenant</span>
+            <span class="meta-title">Proprietățile ACID :: Pactul de Integritate</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -1002,9 +1002,9 @@
           <div class="mission-status">
             <p>Status:lorem ipsum</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day12') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day12') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1018,20 +1018,20 @@
           </div>
         </article>
 
-        <!-- @block: DAY 13 — TRANSACTIONS :: THE ATOMIC OPERATION
-          Covers SQL transactions (BEGIN, COMMIT, ROLLBACK) as "atomic
-          operations" that group multiple statements into a single unit
-          of work.
+        <!-- @block: ZIUA 13 — TRANZACȚII :: OPERAȚIA ATOMICĂ
+          Acoperă tranzacțiile SQL (BEGIN, COMMIT, ROLLBACK) ca "operații
+          atomice" care grupează mai multe instrucțiuni într-o singură unitate
+          de lucru.
           @concept:
-            Transactions protect data integrity by ensuring that either
-            all statements succeed (COMMIT) or none take effect (ROLLBACK),
-            preventing partial updates.
+            Tranzacțiile protejează integritatea datelor asigurând că fie
+            toate instrucțiunile reușesc (COMMIT), fie niciuna nu se aplică (ROLLBACK),
+            prevenind actualizările parțiale.
         -->
         <article id="sql-day13" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 13</span>
-            <span class="meta-title">Transactions :: The Atomic Operation</span>
+            <span class="meta-title">Tranzacții :: Operația Atomică</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -1048,9 +1048,9 @@
           <div class="mission-status">
             <p>Status: lorem ipsum</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day13') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day13') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1064,13 +1064,13 @@
           </div>
         </article>
 
-        <!-- @block: DAY 14 — REVIEW :: RELATIONAL FOUNDATIONS
-          A review day that consolidates the relational foundations covered
-          in Sectors 01 and 02: tables, queries, joins, keys, and schema
-          design.
+        <!-- @block: ZIUA 14 — RECAPITULARE :: FUNDAȚII RELAȚIONALE
+          O zi de recapitulare care consolidează fundațiile relaționale acoperite
+          în Sectoarele 01 și 02: tabele, interogări, join-uri, chei și proiectarea
+          schemei.
           @theme:
-            The review entry serves as a "system diagnostic" — checking
-            that all previously installed knowledge modules are operational.
+            Intrarea de recapitulare servește ca un "diagnostic de sistem" — verificând
+            că toate modulele de cunoaștere instalate anterior sunt operaționale.
         -->
         <article id="sql-day14" class="log-entry">
           <!-- @block: ENTRY HEADER -->
@@ -1093,9 +1093,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day14') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day14') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1110,32 +1110,32 @@
         </article>
 
         <!-- ===== SECTOR 03 ===== -->
-        <!-- @block: SECTOR ANNOUNCEMENT — ADVANCED QUERY PATTERNS
-          The third sector covers advanced SQL: window functions, CTEs,
-          and complex query patterns beyond the basics.
+        <!-- @block: ANUNȚ DE SECTOR — TIPARE AVANSATE DE INTEROGĂRI
+          Al treilea sector acoperă SQL avansat: funcții de fereastră, CTE-uri
+          și tipare complexe de interogări dincolo de elementele de bază.
           @theme:
-            "Advanced Query Patterns" signals that the crew is now
-            ready for sophisticated data analysis techniques.
+            "Tiparele Avansate de Interogări" semnalează că echipajul este acum
+            pregătit pentru tehnici sofisticate de analiză a datelor.
         -->
         <div id="sql-sector-03" class="sector-announcement">
           <span>Entering Sector 03</span>
           <h2>Advanced Query Patterns</h2>
         </div>
 
-        <!-- @block: DAY 15 — WINDOW FUNCTIONS :: THE ANALYTIC LENS
-          Introduces window functions (ROW_NUMBER, RANK, SUM OVER) as
-          the "analytic lens" that performs calculations across a set
-          of rows related to the current row.
+        <!-- @block: ZIUA 15 — FUNCȚII DE FEREASTRĂ :: LENTILA ANALITICĂ
+          Introduce funcțiile de fereastră (ROW_NUMBER, RANK, SUM OVER) ca
+          "lentila analitică" care efectuează calcule pe un set
+          de rânduri legate de rândul curent.
           @concept:
-            Unlike GROUP BY which collapses rows, window functions
-            retain individual rows while computing aggregate values
-            across a defined window (PARTITION BY, ORDER BY).
+            Spre deosebire de GROUP BY, care colapsează rândurile, funcțiile de fereastră
+            rețin rândurile individuale în timp ce calculează valori agregate
+            pe o fereastră definită (PARTITION BY, ORDER BY).
         -->
         <article id="sql-day15" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 15</span>
-            <span class="meta-title">Window Functions :: The Analytic Lens</span>
+            <span class="meta-title">Funcții de Fereastră :: Lentila Analitică</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -1152,9 +1152,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day15') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day15') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1168,19 +1168,19 @@
           </div>
         </article>
 
-        <!-- @block: DAY 16 — CTES :: THE NAMED SUBQUERY
-          Covers Common Table Expressions (WITH clause) as "named subqueries"
-          that improve query readability and enable recursive queries.
+        <!-- @block: ZIUA 16 — CTE-URI :: SUBINTEROGAREA NUMITĂ
+          Acoperă Common Table Expressions (clauza WITH) ca "subinterogări numite"
+          care îmbunătățesc lizibilitatea interogărilor și permit interogări recursive.
           @concept:
-            CTEs are temporary result sets that you can reference within
-            a SELECT, INSERT, UPDATE, or DELETE. They simplify complex
-            queries by breaking them into named, reusable steps.
+            CTE-urile sunt seturi de rezultate temporare la care poți face referință în
+            cadrul unui SELECT, INSERT, UPDATE sau DELETE. Simplifică interogările
+            complexe împărțindu-le în pași numiți, reutilizabili.
         -->
         <article id="sql-day16" class="log-entry">
           <!-- @block: ENTRY HEADER -->
           <h3>
             <span>Day 16</span>
-            <span class="meta-title">CTEs :: The Named Subquery</span>
+            <span class="meta-title">CTE-uri :: Subinterogarea Numită</span>
           </h3>
 
           <!-- @block: NARRATIVE LOG TEXT -->
@@ -1197,9 +1197,9 @@
           <div class="mission-status">
             <p>Status: lorem</p>
           </div>
-          <!-- @block: NOTE TERMINAL
-            @bridge: saveNote('sql-note-day16') is handled by MECANISM 04
-            in en/script.js — Persistent Notes Terminal via localStorage.
+          <!-- @block: TERMINAL DE NOTE
+            @bridge: saveNote('sql-note-day16') este gestionat de MECANISM 04
+            în en/script.js — Terminalul de note persistente prin localStorage.
           -->
           <div class="note-terminal">
             <textarea
@@ -1214,40 +1214,40 @@
         </article>
       </section>
     <!-- @structure:
-      [/main] closes the main-container. The [main] element wraps the
-      primary content of the page — in this case, the sidebar and the
-      log-content columns. There should be only one [main] per page.
+      [/main] închide main-container. Elementul [main] înfășoară
+      conținutul principal al paginii — în acest caz, sidebar-ul și
+      coloanele log-content. Ar trebui să existe un singur [main] pe pagină.
     -->
     </main>
 
-    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
-      The [footer] element marks the closing section of the page. In
-      the ship metaphor, the footer is the aft station — less visible
-      than the helm, but holding critical systems: the star charts,
-      the transmission log, the language switch, and the captain's
-      signature.
+    <!-- @block: FOOTER — STAȚIA DE NAVIGARE AUXILIARĂ
+      Elementul [footer] marchează secțiunea de închidere a paginii. În
+      metafora navei, footer-ul este stația din pupa — mai puțin vizibilă
+      decât cormana, dar care deține sisteme critice: hărțile stelare,
+      jurnalul de transmisie, comutatorul de limbă și semnătura
+      căpitanului.
       @structure:
-        The .footer class applies a dark, bordered container at the
-        bottom of the viewport. It uses a column layout for the links
-        and telemetry data, keeping everything compact and readable.
+        Clasa .footer aplică un container întunecat, cu bordură, în partea de
+        jos a viewport-ului. Folosește un layout pe coloane pentru link-uri
+        și datele de telemetrie, păstrând totul compact și lizibil.
     -->
     <footer class="footer">
-      <!-- @block: SECONDARY COMMAND CONSOLE
-        The footer expands beyond a single bibliography link into a full
-        ship-systems panel. It houses the Star Charts (bibliography),
-        The Astrogation Charter (transmission), and the language toggle
-        between the English and Romanian versions of the project.
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDE
+        Footer-ul se extinde dincolo de un singur link de bibliografie într-un
+        panou complet de sisteme ale navei. Adăpostește Hărțile Stelare (bibliografia),
+        Carta de Astrogare (transmisia) și comutatorul de limbă
+        între versiunile în engleză și română ale proiectului.
         @concept:
-          The footer is the ship's auxiliary navigation station — less
-          prominent than the HUD overlay, but essential for systems that
-          do not belong to a specific volume: the founding manifesto, the
-          reference archive, and the language switch.
+          Footer-ul este stația de navigare auxiliară a navei — mai puțin
+          proeminentă decât overlay-ul HUD, dar esențială pentru sistemele care
+          nu aparțin unui volum specific: manifestul fondator, arhiva de
+          referință și comutatorul de limbă.
       -->
-      <!-- @block: FOOTER LINKS LIST
-        The [ul] here groups three [li] items: the bibliography link,
-        the transmission page, and the language toggle. Using a list
-        is semantically correct because these are a collection of
-        related navigation destinations.
+      <!-- @block: LISTA DE LINK-URI DIN FOOTER
+        [ul]-ul de aici grupează trei elemente [li]: link-ul de bibliografie,
+        pagina de transmisie și comutatorul de limbă. Folosirea unei liste
+        este corectă semantic deoarece acestea sunt o colecție de
+        destinații de navigare conexe.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page -->
@@ -1258,30 +1258,30 @@
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../transmission.html">The Astrogation Charter</a>
+          <a href="../transmission.html">Carta de Astronavigație</a>
         </li>
-        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <!-- @bridge: Comutatorul de limbă între subproiectele EN și RO -->
         <li>
           <!-- @reason:
-            Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
-          -->
+      Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
+    -->
           <a href="../../en/database/sql-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
           <a href="../../ro/database/sql-log.html" class="">RO</a>
         </li>
       </ul>
-      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
-        The first telemetry line declares which expedition sector the
-        vessel is currently orbiting (DATABASE_EXPEDITION) and the
-        system status (ONLINE). The CSS typing animation reveals this
-        text character by character when the page loads, simulating
-        a vintage mission control display.
+      <!-- @block: TELEMETRIE DE SISTEM — ORBITA & STADIUL SECTORULUI
+        Prima linie de telemetrie declară în ce sector de expediție
+        se află vasul în prezent (DATABASE_EXPEDITION) și
+        starea sistemului (ONLINE). Animația de tastare CSS dezvăluie acest
+        text caracter cu caracter la încărcarea paginii, simulând
+        un afișaj vintage de control al misiunii.
         @theme:
-          The ONLINE status is wrapped in a [span]
-          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
-          This phosphor-green aesthetic directly references 1970s NASA
-          control terminals, where green monochrome displays scrolled
-          telemetry data in real time.
+          Starea ONLINE este înfășurată într-un [span]
+          care strălucește în verde solar-mentă (#a7f3d0) cu un text-shadow neon.
+          Această estetică verde-fosfor face referire directă la terminalele de control
+          NASA din anii 1970, unde afișajele verzi monocrome derulau
+          date de telemetrie în timp real.
       -->
       <p>
         SYS_ORBIT: DATABASE_EXPEDITION
@@ -1290,68 +1290,68 @@
       </p>
 
       <!-- @structure:
-        I write the second telemetry data line. It anchors the project in real
-        physical space and time. The coordinates point to the captain's location,
-        and the date marks when this footer was last updated.
+        Scriu a doua linie de date de telemetrie. Aceasta ancorează proiectul în spațiul
+        fizic și timpul real. Coordonatele indică locația căpitanului,
+        iar data marchează momentul în care acest footer a fost actualizat ultima dată.
       -->
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:
-          Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
-        -->
+      Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
+    -->
       </p>
 
       <!-- @structure:
-        I write the final line of the footer. It declares who created and owns
-        this project. The copyright symbol followed by the year and the captain's
-        name marks the intellectual ownership of the content.
+        Scriu linia finală a footer-ului. Aceasta declară cine a creat și deține
+        acest proiect. Simbolul copyright urmat de an și de numele căpitanului
+        marchează proprietatea intelectuală a conținutului.
       -->
       <p class="copyright">
-        &copy; 2026 | D::0dy55ey by
+        &copy; 2026 | D::0dy55ey de
         <span class="vessel-sig">Iulia-Alexandra Cadar</span>
         <!-- @theme:
-          I wrap the captain's name in a [span] with the class .vessel-sig.
-          This class applies the nebula-pink color (#ff007f) with an incandescent
-          text-shadow glow. The magenta signature acts as the captain's unique
-          identifier across all decks of the ship.
+          Înfășor numele căpitanului într-un [span] cu clasa .vessel-sig.
+          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
+          incandescentă de text-shadow. Semnătura magenta acționează ca identificatorul unic
+          al căpitanului pe toate punțile navei.
         -->
       </p>
     </footer>
 
-    <!-- @block: JAVASCRIPT LOADER
-      The [script] tag loads the ship's control systems — a single
-      JavaScript file (script.js) that lives one directory above this
-      page. This file contains all the interactive mechanisms:
-      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
-      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
-      and the sidebar search filter.
+    <!-- @block: ÎNCĂRCĂTOR DE JAVASCRIPT
+      Eticheta [script] încarcă sistemele de control ale navei — un singur
+      fișier JavaScript (script.js) care se află cu un director mai sus decât această
+      pagină. Acest fișier conține toate mecanismele interactive:
+      MECANISMUL 01 (Animația de tastare), MECANISMUL 04 (Terminalul de note
+      persistente prin localStorage), MECANISMUL 06.5 (Comutatorul consolei HUD)
+      și filtrul de căutare din sidebar.
       @path:
-        The src="../script.js" attribute tells the browser to fetch
-        en/script.js relative to this page's location
+        Atributul src="../script.js" le spune browserelor să preia
+        en/script.js relativ la locația acestei pagini
         (en/database/sql-log.html → en/script.js).
       @reason:
-        Placing the [script] tag just before [/body] (rather than in
-        [head]) ensures the HTML content loads and renders before the
-        JavaScript executes. This is called "deferred loading" and it
-        prevents the script from blocking the visual rendering of the
-        page.
+        Plasarea etichetei [script] chiar înainte de [/body] (în loc de
+        [head]) asigură că conținutul HTML se încarcă și se randează înainte ca
+        JavaScript-ul să se execute. Aceasta se numește "încărcare întârziată" și
+        previne blocarea randării vizuale
+        a paginii de către script.
     -->
     <script src="../script.js"></script>
   <!-- @structure:
-    [/body] closes the visible deck. Everything inside the [body] —
-    navbar, sidebar, log entries, footer — is now finished rendering.
-    The browser stops painting the page here.
+    [/body] închide puntea vizibilă. Tot ce se află în interiorul [body] —
+    navbar, sidebar, intrările de jurnal, footer — este acum finalizat de randare.
+    Browserul încetează să picteze pagina aici.
   -->
   </body>
   <!-- @structure:
-    [/html] closes the root element. The document is complete. The
-    browser has finished constructing the DOM (Document Object Model)
-    and the page is fully loaded. What the traveller sees now is the
-    result of the HTML structure combined with the CSS styles from
-    style.css and the interactive behaviour from script.js.
+    [/html] închide elementul rădăcină. Documentul este complet.
+    Browserul a terminat de construit DOM-ul (Document Object Model)
+    și pagina este complet încărcată. Ceea ce vede călătorul acum este
+    rezultatul structurii HTML combinată cu stilurile CSS din
+    style.css și comportamentul interactiv din script.js.
     @bridge:
-      For the full technical index of HTML tags used in this project,
-      see the Semantic Field Manual at ./docs/semantic-field-manual-ro.md.
+      Pentru indexul tehnic complet al etichetelor HTML folosite în acest proiect,
+      vezi Manualul Semantic de Teren la ./docs/semantic-field-manual-ro.md.
   -->
 </html>
 
@@ -1360,5 +1360,5 @@
 -->
 
 <!-- @reason:
-  Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
--->
+      Acest document este un jurnal structurat de învățare pentru SQL. Înregistrează explorarea interogărilor, join-urilor, indexurilor, optimizării și proiectării bazelor de date relaționale.
+    -->
