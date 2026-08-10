@@ -370,6 +370,16 @@ section[id] {
   scroll-margin-top: 0px; /* @line: Sets scroll-margin-top to 0px. This declaration configures the corresponding CSS property for this element. */
 }
 
+/* @sub-module: 04.2.B — ARCHIVE SHELF LANDING CLEARANCE (Bibliography deck anchors)
+Purpose: The bibliography sections carry matching footer anchors (#frontend-refs,
+#backend-refs, …). These refs are the deck positions a log page footers deliver.
+A 72px scroll clearance parks the shelf heading below the fixed 60px navbar, so
+the section title is never swallowed by the HUD when a visitor lands on it — by
+native anchor jump or by the re-aiming block in bibliography.js. */
+section[id$="-refs"] {
+  scroll-margin-top: 72px; /* @line: Keeps a 72px air buffer between the fixed navbar and the landed shelf heading */
+}
+
 /* @sub-module: 04.3 — MONOLITHIC CONTAINMENT SHIELD FOR BIBLIOGRAPHY DECK */
 .archive-body {
   /* HORIZONTAL HARDWARE CAPTURE SHIELD:

@@ -366,9 +366,20 @@ section[id] {
   flex-direction: column; /* @layout: Axa primară — determină direcția fluxului flex: column. */
   justify-content: center; /* @layout: Distribuția pe axa principală — alocă spațiu suplimentar de-a lungul axei primare: center. */
 
-  /* COMPENSATORUL VECTORULUI DE ATERIZARE AL ANCOREI CINETICE:
-     Resetează deplasarea nativă de derulare a user-agent; alinierea absolută este guvernată strict de navigația punții principale. */
+/* COMPENSATORUL VECTORULUI DE ATERIZARE AL ANCOREI CINETICE:
+      Resetează deplasarea nativă de derulare a user-agent; alinierea absolută este guvernată strict de navigația punții principale. */
   scroll-margin-top: 0px; /* @line: Setează scroll-margin-top la 0px. Această declarație configurează proprietatea CSS corespunzătoare pentru acest element. */
+}
+
+/* @sub-module: 04.2.B — AVERTISMENTUL DE ATERIZARE PE RAFTURILE ARHIVEI (Ancorele punții de bibliografie)
+Scop: Secțiunile bibliografiei poartă ancore de subsol potrivite (#frontend-refs,
+#backend-refs, …). Aceste refs sunt pozițiile de punte pe care subsolurile paginilor
+de jurnal le livrează. O clearanță de derulare de 72px parchează titlul raftului sub
+bara de navigație fixă de 60px, astfel încât titlul secțiunii să nu fie niciodată
+înghițit de HUD când un vizitator aterizează pe el — prin saltul nativ de ancoră
+sau prin blocul de re-ajustare din bibliography.js. */
+section[id$="-refs"] {
+  scroll-margin-top: 72px; /* @line: Păstrează un tampon de aer de 72px între bara de navigație fixă și titlul raftului aterizat */
 }
 
 /* @sub-module: 04.3 — SCUT MONOLITIC DE CONȚINERE PENTRU PUNTE DE BIBLIOGRAFIE */

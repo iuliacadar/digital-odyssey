@@ -228,6 +228,25 @@ if (bibliographyShelves.length > 0) {
         }
       });
     })
+    .then(() => {
+      //  ------------------------------------------------------------------
+      //  RE-AJUSTAREA ATERIZĂRII — vizitatorul poate ajunge printr-un hash de
+      //  subsol precum #backend-refs. Browser-ul țintește acea ancoră ÎN TIMP CE
+      //  rafturile sunt încă cadre goale; mașina cusește apoi rânduri în fiecare
+      //  raft aflat deasupra țintei, pagina crește, iar secțiunea dorită este
+      //  împinsă în jos, departe de locul unde a aterizat inițial browser-ul. Așa
+      //  că, odată ce fiecare raft este plin, țintește încă o dată poziția reală.
+      //  (Frontend-ul părea să „aterizeze” doar pentru că este primul tabel —
+      //  nimic deasupra lui nu se mută.)
+      //  CSS-ul scroll-margin-top pe aceste secțiuni eliberează bara fixă de navigație.
+      //  ------------------------------------------------------------------
+      if (window.location.hash) {
+        const landing = document.getElementById(window.location.hash.slice(1));
+        if (landing) {
+          landing.scrollIntoView();
+        }
+      }
+    })
     .catch((error) => {
       //  ------------------------------------------------------------------
       //  ALEARTA DE DRILL — dacă fetch-ul a eșuat, nu lăsa niciodată punți goale.

@@ -225,6 +225,24 @@ if (bibliographyShelves.length > 0) {
         }
       });
     })
+    .then(() => {
+      //  ------------------------------------------------------------------
+      //  RE-AIMING THE LANDING — the visitor may arrive through a footer hash
+      //  like #backend-refs. The browser aims at that anchor WHILE the shelves
+      //  are still empty frames; the machine then stitches rows into every
+      //  shelf above the target, the page grows, and the intended section gets
+      //  pushed down away from where the browser first landed. So once every
+      //  shelf is full, aim once more at the true position. (Frontend appeared
+      //  to "land" only because it is the first table — nothing above it moves.)
+      //  The CSS scroll-margin-top on these sections clears the fixed navbar.
+      //  ------------------------------------------------------------------
+      if (window.location.hash) {
+        const landing = document.getElementById(window.location.hash.slice(1));
+        if (landing) {
+          landing.scrollIntoView();
+        }
+      }
+    })
     .catch((error) => {
       //  ------------------------------------------------------------------
       //  FAILURE DRILL — if the fetch failed, never leave blank decks.
