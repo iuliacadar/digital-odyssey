@@ -73,7 +73,18 @@ const strings = {
       "in progress": "In Progress",
       queued: "Queued", // nava păstrează și o coadă de așteptare, cinstit luminată.
     },
-    freeSuffix: { true: "(free)", false: "(subscription)" },
+    //  Cele patru feluri în care se ajunge la o resursă. Cheia este cuvântul
+    //  RAW de acces pe care îl folosește JSON-ul; valoarea este sufixul scurt
+    //  pe care îl citește vizitatorul pe linkul de frecvență: free nu cere
+    //  plată, subscription se ascunde în spatele unei platforme plătite
+    //  (Everand/Scribd), purchase costă un preț fix pe carte, iar borrow este
+    //  împrumutul temporar al Archive.org (împrumuturi de 1 oră sau 14 zile).
+    accessSuffix: {
+      free: "(free)",
+      subscription: "(subscription)",
+      purchase: "(purchase)",
+      borrow: "(borrow)",
+    },
     empty: "No signals charted for this sector yet.",
     open: "Open", //  Eticheta-verb de pe linkul de frecvență.
     error: "ARCHIVE ERROR", //  Prefixul răsunător pe care antrenamentul de eșec îl vopsește în roz.
@@ -87,7 +98,12 @@ const strings = {
       "in progress": "În Progres",
       queued: "În așteptare", // coada, cinstit iluminată.
     },
-    freeSuffix: { true: "(gratuit)", false: "(abonament)" },
+    accessSuffix: {
+      free: "(gratuit)",
+      subscription: "(abonament)",
+      purchase: "(cumpărare)",
+      borrow: "(împrumut)",
+    },
     empty: "Niciun semnal încă desenat pentru acest sector.",
     open: "Deschide",
     error: "EROARE ARHIVĂ",
@@ -291,9 +307,9 @@ if (bibliographyShelves.length > 0) {
           link.href = entry.url; //  Încotro pointează linkul.
           link.target = "_blank"; //  Tab nou: pagina de hărți rămâne în spate.
           link.rel = "noopener"; //  @warning: noopener blochează tab-nabbing.
-          link.textContent = `${txt.open} ${txt.freeSuffix[
-            entry.free ? "true" : "false"
-          ]}`; //  @line: "Open (free)" / "Open (subscription)" în limba paginii.
+          link.textContent = `${txt.open} ${txt.accessSuffix[
+            entry.access
+          ]}`; //  @line: "Open (free)" / "Open (subscription)" / "Open (purchase)" / "Open (borrow)" în limba paginii.
           linkCell.appendChild(link); //  Ancoră în celula ei.
           row.appendChild(linkCell); //  Montează celula 2.
 

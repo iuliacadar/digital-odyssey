@@ -72,7 +72,17 @@ const strings = {
       "in progress": "In Progress",
       queued: "Queued", // the ship also keeps a waiting queue, honestly lit.
     },
-    freeSuffix: { true: "(free)", false: "(subscription)" },
+    //  The four ways a resource can be reached. The key is the RAW access
+    //  word the JSON uses; the value is the short suffix a visitor reads on
+    //  the frequency link: free needs no payment, subscription hides behind a
+    //  paid platform (Everand/Scribd), purchase costs a fixed price per book,
+    //  and borrow is Archive.org's temporary lending (1-hour or 14-day loans).
+    accessSuffix: {
+      free: "(free)",
+      subscription: "(subscription)",
+      purchase: "(purchase)",
+      borrow: "(borrow)",
+    },
     empty: "No signals charted for this sector yet.",
     open: "Open", //  The verb label on the frequency link.
     error: "ARCHIVE ERROR", //  The loud prefix the failure drill paints in pink.
@@ -86,7 +96,12 @@ const strings = {
       "in progress": "În Progres",
       queued: "În așteptare", // the queue, honestly lit.
     },
-    freeSuffix: { true: "(gratuit)", false: "(abonament)" },
+    accessSuffix: {
+      free: "(gratuit)",
+      subscription: "(abonament)",
+      purchase: "(cumpărare)",
+      borrow: "(împrumut)",
+    },
     empty: "Niciun semnal încă desenat pentru acest sector.",
     open: "Deschide",
     error: "EROARE ARHIVĂ",
@@ -278,9 +293,9 @@ if (bibliographyShelves.length > 0) {
           link.href = entry.url; //  Where the link points.
           link.target = "_blank"; //  New tab: the charts page stays behind.
           link.rel = "noopener"; //  @warning: noopener blocks tab-nabbing.
-          link.textContent = `${txt.open} ${txt.freeSuffix[
-            entry.free ? "true" : "false"
-          ]}`; //  @line: "Open (free)" / "Open (subscription)" in the page's tongue.
+          link.textContent = `${txt.open} ${txt.accessSuffix[
+            entry.access
+          ]}`; //  @line: "Open (free)" / "Open (subscription)" / "Open (purchase)" / "Open (borrow)" in the page's tongue.
           linkCell.appendChild(link); //  Anchor into its cell.
           row.appendChild(linkCell); //  Mount cell 2.
 
