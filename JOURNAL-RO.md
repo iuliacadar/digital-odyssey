@@ -2257,9 +2257,9 @@ Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și străluci
 
 # ZIUA 31 — Cea Mai Grasă Insectă din Galaxie
 
-Ucenica a ajuns la blatul de lucru cu o întrebare pe care o așteptam de săptămâna hărților stelelor. De data asta nu purta niciun creion — doar o hârtiuță cu trei cuvinte pe ea și cererea ca, orice-am construi în timpul turei, să fie *ceva ce poate ține în palmă*. Un card, a spus, nu un curs. Atlasul putea rămâne pe Puntea de Livrare; palma voia regula.
+Ucenica a ajuns la blatul de lucru cu o întrebare pe care o așteptam încă din săptămâna hărților stelelor. De data asta nu purta niciun creion — doar o hârtiuță cu trei cuvinte pe ea și cererea ca, orice-am construi în timpul turei, să fie *ceva ce poate ține în palmă*. Un card, a spus, nu un curs. Atlasul putea rămâne pe Puntea de Livrare; palma voia regula.
 
-Am de înregistrat cinstit, chiar în capul zilei, că aceasta n-a fost o zi de construcție în felul Miercurilor grele. A fost o zi de *socoteală* — ziua în care nava s-a oprit din adăugat punți și a început să păstreze ce avea deja. Mai puține scânduri, multe registre.
+Am de înregistrat cinstit, chiar în capul zilei, că aceasta n-a fost o zi de construcție în felul Miercurilor grele. A fost o zi de *socoteală* — ziua în care nava s-a oprit din adăugat punți și a început să păstreze ce avea deja. Mai puține scânduri, mai multe registre.
 
 ## Registrul și Digesția
 
