@@ -231,6 +231,8 @@ own shelf.
 | Big Data: A Very Short Introduction | Dawn Holmes / OUP | Book | https://global.oup.com/academic/product/big-data-9780198779575 | purchase | queued | — |
 | Seven Databases in Seven Weeks, 2nd Ed. | Perkins, Wilson, Redmond / PragProg | Book | https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/ | purchase | queued | — |
 | An Introduction to Database Systems | C. J. Date | Book | https://archive.org/details/date2004 | borrow | queued | — |
+| Database Design for Mere Mortals, 2nd Ed. | Michael J. Hernandez | Book | https://archive.org/details/databasedesignfo0000hern | borrow | queued | `database/database-design-for-mere-mortals.md` |
+| Introduction of ER Model | GeeksforGeeks | Docs | https://www.geeksforgeeks.org/dbms/introduction-of-er-model/ | free | queued | `database/geeksforgeeks-introduction-er-model.md` |
 | Let's Build a Simple Database | cstack | Guide | https://cstack.github.io/db_tutorial/ | free | queued | — |
 
 ## Database — NoSQL

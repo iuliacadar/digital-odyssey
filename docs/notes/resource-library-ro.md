@@ -231,6 +231,8 @@ citească propriul raft.
 | Big Data: A Very Short Introduction | Dawn Holmes / OUP | Carte | https://global.oup.com/academic/product/big-data-9780198779575 | cumpărare | coadă | — |
 | Seven Databases in Seven Weeks, Ediția 2 | Perkins, Wilson, Redmond / PragProg | Carte | https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/ | cumpărare | coadă | — |
 | An Introduction to Database Systems | C. J. Date | Carte | https://archive.org/details/date2004 | împrumut | coadă | — |
+| Database Design for Mere Mortals, Ediția 2 | Michael J. Hernandez | Carte | https://archive.org/details/databasedesignfo0000hern | împrumut | coadă | `database/database-design-for-mere-mortals.md` |
+| Introduction of ER Model | GeeksforGeeks | Documentație | https://www.geeksforgeeks.org/dbms/introduction-of-er-model/ | gratuit | coadă | `database/geeksforgeeks-introduction-er-model.md` |
 | Let's Build a Simple Database | cstack | Ghid | https://cstack.github.io/db_tutorial/ | gratuit | coadă | — |
 
 ## Database — NoSQL
