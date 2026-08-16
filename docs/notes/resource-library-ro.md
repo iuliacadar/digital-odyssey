@@ -220,6 +220,15 @@ citească propriul raft.
 | SQLZoo | SQLZoo | Curs | https://sqlzoo.net/ | D | coadă | — |
 | PGExercises | pgexercises.com | Curs | https://pgexercises.com/ | D | coadă | — |
 | Relational Database Certification | freeCodeCamp | Curs | https://www.freecodecamp.org/learn/relational-database/ | D | coadă | — |
+| 30 Days of SQL — from Basic to Advanced | GeeksforGeeks | Curs | https://www.geeksforgeeks.org/sql/30-days-of-sql-from-basic-to-advanced-level/ | D | coadă | — |
+| SQL Full Course for Beginners — 30 Hours | Data with Baraa | Curs | https://www.youtube.com/playlist?list=PLNcg_FV9n7qZY_2eAtUzEUulNjTJREhQe | D | coadă | — |
+| SQL QuickStart Guide | Walter Shields / ClydeBank Media | Carte | https://www.quickstartguides.com/products/sql-quickstart-guide | N | coadă | — |
+| Practical SQL, Ediția 2 | Anthony DeBarros / No Starch | Carte | https://nostarch.com/practical-sql-2nd-edition | N | coadă | — |
+| SQL in 10 Minutes a Day, Ediția 5 | Ben Forta / Sams | Carte | https://www.informit.com/store/sql-in-10-minutes-a-day-sams-teach-yourself-9780135182796 | N | coadă | — |
+| Big Data: A Very Short Introduction | Dawn Holmes / OUP | Carte | https://global.oup.com/academic/product/big-data-9780198779575 | N | coadă | — |
+| Seven Databases in Seven Weeks, Ediția 2 | Perkins, Wilson, Redmond / PragProg | Carte | https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/ | N | coadă | — |
+| An Introduction to Database Systems | C. J. Date | Carte | https://archive.org/details/date2004 | N (împrumut gratuit) | coadă | — |
+| Let's Build a Simple Database | cstack | Ghid | https://cstack.github.io/db_tutorial/ | D | coadă | — |
 
 ## Database — NoSQL
 

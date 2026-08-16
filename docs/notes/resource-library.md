@@ -220,6 +220,15 @@ own shelf.
 | SQLZoo | SQLZoo | Course | https://sqlzoo.net/ | Y | queued | — |
 | PGExercises | pgexercises.com | Course | https://pgexercises.com/ | Y | queued | — |
 | Relational Database Certification | freeCodeCamp | Course | https://www.freecodecamp.org/learn/relational-database/ | Y | queued | — |
+| 30 Days of SQL — from Basic to Advanced | GeeksforGeeks | Course | https://www.geeksforgeeks.org/sql/30-days-of-sql-from-basic-to-advanced-level/ | Y | queued | — |
+| SQL Full Course for Beginners — 30 Hours | Data with Baraa | Course | https://www.youtube.com/playlist?list=PLNcg_FV9n7qZY_2eAtUzEUulNjTJREhQe | Y | queued | — |
+| SQL QuickStart Guide | Walter Shields / ClydeBank Media | Book | https://www.quickstartguides.com/products/sql-quickstart-guide | N | queued | — |
+| Practical SQL, 2nd Edition | Anthony DeBarros / No Starch | Book | https://nostarch.com/practical-sql-2nd-edition | N | queued | — |
+| SQL in 10 Minutes a Day, 5th Edition | Ben Forta / Sams | Book | https://www.informit.com/store/sql-in-10-minutes-a-day-sams-teach-yourself-9780135182796 | N | queued | — |
+| Big Data: A Very Short Introduction | Dawn Holmes / OUP | Book | https://global.oup.com/academic/product/big-data-9780198779575 | N | queued | — |
+| Seven Databases in Seven Weeks, 2nd Ed. | Perkins, Wilson, Redmond / PragProg | Book | https://pragprog.com/titles/pwrdata/seven-databases-in-seven-weeks-second-edition/ | N | queued | — |
+| An Introduction to Database Systems | C. J. Date | Book | https://archive.org/details/date2004 | N (free borrow) | queued | — |
+| Let's Build a Simple Database | cstack | Guide | https://cstack.github.io/db_tutorial/ | Y | queued | — |
 
 ## Database — NoSQL
 
