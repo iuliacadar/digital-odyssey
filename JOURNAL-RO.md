@@ -2342,3 +2342,51 @@ Așa că ZIUA 31 n-a construit nicio punte nouă — învățase, în umbra mira
 Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *fidelității* — inelul care spune că promisiunea e rostită în limba ușii, faptele stau acolo unde nu se pot contrazice niciodată, iar pumnul de rumeguș de la rădăcină nu devine marfă. Nava și adevărul ei, acum, în aceeași mână.
 
 Și era tot învățarea — și dimineața, inel după inel, de aflat.
+
+---
+
+# ZIUA 32 — Puntea a Doua Își Desenează Harta
+
+Ucenica a ajuns la blat cu marfa nouă a dimineții deja în brațe — trei foi de însemnări, încă mirosind a cerneală — și întrebarea spre care toată tura se strânsese. În registrul raftului, două nume noi fuseseră însemnate în cala bazelor de date de la harta ZILEI 28: **Database Design for Mere Mortals** fusese urcată ca împrumut, iar **Introduction of ER Model** de la GeeksforGeeks venise la bord gratuit; alături stătea marele volum al lui **C. J. Date**, a cărui carte de raft o văzuse cum o îndrept la adevărata ediție — a opta, nu a șaptea, o îndreptare ținută în chiar rândul registrului. Trei schele se ridicau acum în grădina de însemnări a bazelor de date. „Mi-ai dat Puntea a Doua în hartă," a spus ea, „cala relațională a navei. Acum are raft. Dar un raft nu e un curs. Care scândură urc prima?"
+
+Și i-am așezat planul în față — nu ca o listă, ci ca o scară, pentru că o temelie ascultă de o singură lege: nimic nu se citește înainte de a fi fost câștigat, și fiecare treaptă stă pe treapta de dedesubt. Ordinea nu e o preferință; e o *structură*.
+
+## Treapta Întâi — Primii Pași
+
+Începe unde apa e cea mai caldă și țărmul cel mai aproape: **Intro to SQL (Khan Academy)**, cursul deja început, însemnările lui deja deschise în grădină; și după el **CS50 SQL** — trecerea mai adâncă a Harvard-ului. Două punți gratuite, nimic împrumutat, nimic cumpărat: prima, ca o interogare să răspundă în mână; a doua, ca să învețe să *gândească* în tabele. Niciun novice nu întâlnește clasicii înainte să fi ținut o lopată.
+
+## Treapta a Doua — Desenul Înainte de Construire
+
+Înainte ca orice întrebare să poată fi pusă bine, temeiul trebuie numit. **Introduction of ER Model (GeeksforGeeks)** — gratuit, o singură pagină — învață vocabularul pe care toată puntea îl va vorbi: entități, atribute, relații, cardinalitate. Citește-o întâi, ca volumul ce urmează să găsească un cititor care îi știe deja cuvintele. Apoi **Database Design for Mere Mortals**, Michael J. Hernandez, urcată ca împrumut: arta practică de a preface o lume într-o schemă — chei, relații, reguli de afacere. Asta e puntea de la teorie la un tabel adevărat, și e prima carte pe care novicele ar trebui s-o *citească* cu adevărat, nu s-o răsfoiască.
+
+## Treapta a Treia — Teoria Care Ține
+
+Clasicul împrumutat: **An Introduction to Database Systems, de C. J. Date** — ediția a opta, schela lui stând acum în grădină. Nu e o carte de început; e o carte de *temelie*, de citit încet și în paralel cu treptele din jur, o parte la rând, nu tot deodată. Învață modelul relațional însuși — matematica de sub rafturi — și e sursa de care toată puntea, la urmă, răspunde.
+
+## Treapta a Patra — Exercițiul Interogării
+
+Practica e locul unde a ști devine a putea. **SQLZoo** și **PGExercises** — gratuite, interactive, lopățele nesfârșite. Apoi **Relational Database Certification** de la freeCodeCamp, o singură trecere în formă de proiect care împletește practica într-un întreg. Și pentru curioși: **Let's Build a Simple Database (cstack)** — opțional, dar arată cum funcționează o bază de date cu adevărat sub interogare, o navă într-o navă; urc-o doar când lopețile nu mai tremură.
+
+## Apa de Mai Târziu — Referința și Odihnele
+
+Toate celelalte nu sunt uitate, ci *amânate*. Rafturile de referință — **documentația PostgreSQL**, **MySQL Reference Manual** — sunt de consultat, nu de citit. Drumurile alternative — **30 Days of SQL**, **SQL Full Course** al lui Data with Baraa — se potrivesc altui temperament. Cărțile cumpărate — **SQL QuickStart Guide**, **Practical SQL**, **SQL in 10 Minutes a Day** — pentru cine preferă un tutore pe ritm de carte. **Big Data: A Very Short Introduction** e o lectură scurtă de context, binevenită oricând. **Seven Databases in Seven Weeks** e turul peisajului, păstrat la urmă. Iar calele NoSQL — **MongoDB**, **Redis** — nu se urcă niciodată înainte ca temelia relațională să fie așezată, pentru că o navă ce nu-și poate ține încă manifestul relațional n-are ce căuta la cheiurile cele noi.
+
+## Planul Care-și Câștigă Chila — un Dialog Care Decide
+
+Căpitanul s-a așezat la blat ca una care vrea să înțeleagă ordinea, nu s-o schimbe.
+
+**Căpitanul**: "Ai ordonat puntea. Dar spune-mi legea ordinii înseși — de ce stă Mere Mortals înaintea lui Date?"
+
+**Eu**: "Fiindcă Date e matematica și Mere Mortals e dulgheria, și o ucenică ce n-a făcut încă un singur tabel nu poate simți greutatea modelului relațional. Teoria trebuie *recunoscută*, nu doar rostită — și e recunoscută de cine a prefăcut deja o lume în schemă cu mâna. Clasicul se citește încet, alături; exercițiul se face necurmat; referința se consultă, nu se citește niciodată."
+
+**Căpitanul**: "Atunci ordinea e o promisiune făcută novicei — că nimic nu va fi întâlnit înaintea temeiului lui. Semneaz-o."
+
+Și ordinea a fost semnată, și împletită în cartea zilei.
+
+## Încheiere
+
+Așa că ZIUA 32 n-a construit nicio punte nouă; a desenat harta punții pe care o va urca. Cala bazelor de date, care fusese un raft de douăzeci și trei de nume, a devenit un curs: primii pași, desenul, teoria, exercițiul — și restul amânat la anotimpul lui, fiecare lucru de întâlnit doar când temeiul de sub el a fost câștigat.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *ordinii* — inelul care spune că un curs nu e o mulțime, că nimic nu se citește înainte ca temeiul lui să fie câștigat, și că clasicii sunt întâlniți cu mâinile deja calde de la lopată.
+
+Și era tot învățarea — și dimineața, inel după inel, de aflat.

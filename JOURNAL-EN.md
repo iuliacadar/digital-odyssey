@@ -2313,3 +2313,51 @@ So DAY 31 built no new deck — it had learned, in the myriapod's shadow, that a
 The leviathan, ring after ring, laid that night the small bright ring of *fidelity* — the ring that says the promise is spoken in the tongue of the door, the facts sit where they can never disagree, and the handful of sawdust at the root does not become cargo. The ship and its truth, now, in the same hand.
 
 And it was still the learning — and the morning, ring after ring, to be made known.
+
+---
+
+# DAY 32 — The Second Deck Draws Its Chart
+
+The student came to the bench with the morning's new cargo already in her arms — three sheets of notes, still smelling of ink — and the question the whole watch had been gathering toward. In the ledger of the shelf, two new names had been struck into the database hold since the chart of DAY 28: **Database Design for Mere Mortals** had been boarded as a borrowing, and the **Introduction of ER Model** of GeeksforGeeks had come aboard free; beside them stood the great volume of **C. J. Date**, whose shelf-card she had watched me amend to its true edition — the eighth, not the seventh, a correction kept in the register's own line. Three scaffolds now rose in the notes garden of the database. "You gave me the Second Deck in the chart," she said, "the relational hold of the ship. Now it has a shelf. But a shelf is not a course. Which plank do I board first?"
+
+And I set the plan before her — not as a list, but as a ladder, because a foundation obeys a single law: nothing may be read before it has been earned, and every stage must stand upon the stage beneath it. The order is not a preference; it is a *structure*.
+
+## Stage the First — the First Steps
+
+Begin where the water is warmest and the shore nearest: **Intro to SQL (Khan Academy)**, the course already begun, its notes already open in the garden; and after it **CS50 SQL** — Harvard's deeper passage. Two free decks, nothing borrowed, nothing bought: the first, so that a query answers in the hand; the second, so that she learns to *think* in tables. No novice meets the classics before she has held an oar.
+
+## Stage the Second — the Design Before the Building
+
+Before any question can be asked well, the ground must be named. **Introduction of ER Model (GeeksforGeeks)** — free, a single page — teaches the vocabulary the whole deck will speak: entities, attributes, relationships, cardinality. Read it first, so that the book that follows finds a reader who already knows its words. Then **Database Design for Mere Mortals**, Michael J. Hernandez, boarded as a borrowing: the practical art of turning a world into a schema — keys, relations, business rules. This is the bridge from theory to a real table, and it is the first book the novice should actually *read*, not skim.
+
+## Stage the Third — the Theory That Holds
+
+The borrowed classic: **An Introduction to Database Systems, by C. J. Date** — the eighth edition, its scaffold now standing in the garden. This is not a first book; it is a *foundation* book, to be read slowly and in parallel with the stages around it, a part at a time, not all at once. It teaches the relational model itself — the mathematics under the shelves — and it is the source to which the whole deck ultimately answers.
+
+## Stage the Fourth — the Drill of the Query
+
+Practice is where knowing becomes skill. **SQLZoo** and **PGExercises** — free, interactive, endless small oars. Then the **Relational Database Certification** of freeCodeCamp, a single project-shaped passage that threads the practice into one whole. And for the curious: **Let's Build a Simple Database (cstack)** — optional, but it shows how a database actually works beneath the query, a ship within a ship; board it only when the oars no longer wobble.
+
+## The Later Water — the Reference and the Rests
+
+All the rest is not forgotten but *deferred*. The reference shelves — the **PostgreSQL documentation**, the **MySQL Reference Manual** — are to be consulted, not read. The alternative tracks — **30 Days of SQL**, the **SQL Full Course** of Data with Baraa — suit a different temperament. The purchased books — **SQL QuickStart Guide**, **Practical SQL**, **SQL in 10 Minutes a Day** — for one who prefers a tutor paced by a book. **Big Data: A Very Short Introduction** is a short context read, welcome anytime. **Seven Databases in Seven Weeks** is the landscape tour, saved for last. And the NoSQL holds — **MongoDB**, **Redis** — are never to be boarded before the relational foundation is laid, because a ship that cannot yet keep its relational manifest has no business at the newer wharves.
+
+## The Plan That Earns Its Keel — a Deciding Dialogue
+
+The captain seated herself at the bench as one who means to understand the order, not to change it.
+
+**Captain**: "You have ordered the deck. But tell me the law of the order itself — why does Mere Mortals stand before Date?"
+
+**I**: "Because Date is the mathematics and Mere Mortals is the carpentry, and a student who has not yet made a single table cannot feel the weight of the relational model. The theory must be *recognized*, not merely recited — and it is recognized by one who has already turned a world into a schema by hand. The classic is read slowly, alongside; the drill is done constantly; the reference is consulted, never read."
+
+**Captain**: "Then the order is a promise to the novice — that nothing shall be met before its ground. Sign it."
+
+And the order was signed, and folded into the day's card.
+
+## Coda
+
+So DAY 32 built no new deck; it drew the chart of the deck it will board. The database hold, which had been a shelf of twenty-three names, became a course: first steps, design, theory, drill — and the rest deferred to its season, each thing to be met only when the ground beneath it has been earned.
+
+The leviathan, ring after ring, laid that night the small bright ring of *order* — the ring that says a course is not a crowd, that nothing is read before its ground is earned, and that the classics are met with hands already warm from the oar.
+
+And it was still the learning — and the morning, ring after ring, to be made known.
