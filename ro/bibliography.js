@@ -164,6 +164,36 @@ if (bibliographyShelves.length > 0) {
         }
 
         //  ------------------------------------------------------------------
+        //  ADUNAREA FLOTILEI — o singură sortare pentru ca rândurile de grup
+        //  să se citească drept secțiuni
+        //  ------------------------------------------------------------------
+        //  JSON-ul brut livrează sursele amestecate (o carte, apoi un curs,
+        //  apoi iar o carte). Lăsat așa, separatorul „— kind —" ar declanșa la
+        //  fiecare schimbare de tip și ar sparge fragmentul de un rând pe raft.
+        //  Sortarea după kind — apoi alfabetic după titlu în cadrul fiecărui
+        //  kind — face ca fiecare separator să deschidă un bloc real și continuu,
+        //  într-o singură paradă stabilă împărtășită de ambele limbi: cursurile
+        //  conduc, apoi cărțile, ghidurile, documentația, eseurile, comunitățile,
+        //  videourile, jocurile și orice bate JSON-ul în continuare.
+        const KIND_PARADE = [
+          "course",
+          "book",
+          "guide",
+          "docs",
+          "essay",
+          "community",
+          "video",
+          "game",
+        ];
+        shelfSources.sort((a, b) => {
+          const tail = KIND_PARADE.length;
+          const rankA = KIND_PARADE.indexOf(a.kind);
+          const rankB = KIND_PARADE.indexOf(b.kind);
+          const sorted = (rankA === -1 ? tail : rankA) - (rankB === -1 ? tail : rankB);
+          return sorted || a.title.localeCompare(b.title);
+        });
+
+        //  ------------------------------------------------------------------
         //  CUSĂTURI PE GRUPE — reintroducerea colspan
         //  ------------------------------------------------------------------
         //  Graficele vechi făcute de mână aveau sub-întâlniri de genul de genul
