@@ -1,4 +1,4 @@
----
+﻿---
 
 # D::0dy55ey — Scriere prin deltă, sau cum să scrii prin diferențe
 
@@ -12,13 +12,13 @@ Acesta nu e un dosar. E cazul deschis.
 
 # DAY 00 — Bază de inspirație
 
-Am deschis Manual_project în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: _asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă._
+Am deschis digital-odyssey-v1 în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: _asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă._
 
-Această secțiune este jurnalul de bord al plecării lui `D::0dy55ey`. Nu o specificație tehnică — o înregistrare a ceea ce am luat din epava Manual_project, ce am reconstruit și ce am lăsat în urmă, în întuneric.
+Această secțiune este jurnalul de bord al plecării lui `D::0dy55ey`. Nu o specificație tehnică — o înregistrare a ceea ce am luat din epava digital-odyssey-v1, ce am reconstruit și ce am lăsat în urmă, în întuneric.
 
 ## Ce am luat cu mine
 
-Am luat nucleul atmosferic: lecția greu câștigată că o interfață poate să se simtă ca un loc. Manual_project mă învățase că o paletă cromatică nu e decor, ci gravitație. `space-dark` te trage în jos, în vid; `amber-glow` avertizează că ceva important e aproape; `solar-mint` e culoarea oxigenului pe o navă avariată. Am păstrat totul, dar aveam nevoie de o arhitectură mai strânsă pentru a susține greutatea.
+Am luat nucleul atmosferic: lecția greu câștigată că o interfață poate să se simtă ca un loc. digital-odyssey-v1 mă învățase că o paletă cromatică nu e decor, ci gravitație. `space-dark` te trage în jos, în vid; `amber-glow` avertizează că ceva important e aproape; `solar-mint` e culoarea oxigenului pe o navă avariată. Am păstrat totul, dar aveam nevoie de o arhitectură mai strânsă pentru a susține greutatea.
 
 Noul proiect extinde volumele vechi — `Frontend Landscape`, `Database Void` — și adaugă compartimente noi: `JSON Data Bridge`, `Backend Core`, `UX Lab`, `Deployment`. Dar schimbarea reală nu e numărul de încăperi. E că nava are acum un sistem de navigație coerent. Cititorul se mișcă pe trasee de învățare, nu doar prin pagini.
 
@@ -38,7 +38,7 @@ Ce construiește `D::0dy55ey` deasupra:
 
 ## Moștenirea tehnică — acolo unde bate inima
 
-Cea mai vizibilă moștenire din Manual_project este **rețeaua de reactor poliedric 3D**: un icosaedru cu douăzeci de fețe triunghiulare, fiecare construită cu `clip-path` CSS pur și poziționată pe coordonate sferice 3D. L-am construit noaptea târziu, cafeaua răcindu-se alături, rotind fețele în minte înainte să le rotesc în browser. Când s-a randat în sfârșit — douăzeci de triunghiuri plutind în void-black ca un roi Dyson — m-am lăsat pe spate și am simțit, pentru o clipă, că am construit ceva ce nu aparține în întregime acestei lumi.
+Cea mai vizibilă moștenire din digital-odyssey-v1 este **rețeaua de reactor poliedric 3D**: un icosaedru cu douăzeci de fețe triunghiulare, fiecare construită cu `clip-path` CSS pur și poziționată pe coordonate sferice 3D. L-am construit noaptea târziu, cafeaua răcindu-se alături, rotind fețele în minte înainte să le rotesc în browser. Când s-a randat în sfârșit — douăzeci de triunghiuri plutind în void-black ca un roi Dyson — m-am lăsat pe spate și am simțit, pentru o clipă, că am construit ceva ce nu aparține în întregime acestei lumi.
 
 Apoi a venit criza GPU.
 
@@ -54,7 +54,7 @@ Alte moșteniri dinaintea crizei:
 - **Intersection Observer API** configurat cu margini de rădăcină de `-20% 0px -70% 0px` — precis ca o tăietură de lunetist, detectând vizibilitatea articolelor pentru a sincroniza starea activă a sidebarului. Am calibrat marginile astea manual, derulând în sus și în jos o oră întreagă până când trackingul s-a simțit _previzibil_.
 - Șase mecanisme JavaScript coordonate care guvernează cockpitul: navbarul știe când să se ascundă, mașina de scris știe când să reia, radarul știe unde te uiți.
 
-Strategia bilingvă era deja acolo, în Manual_project: `style-en.css` și `style-ro.css` ca vieți separate sub aceeași piele. Pagina recursivă — `recursive-blueprint.html` — era cea mai personală: un terminal split-screen care preia și afișează propriul cod sursă al proiectului. Un proiect care se citește pe sine. Am construit-o pentru că voiam ca baza de cod să fie propriul său profesor — să închidă cercul dintre scris și înțeles.
+Strategia bilingvă era deja acolo, în digital-odyssey-v1: `style-en.css` și `style-ro.css` ca vieți separate sub aceeași piele. Pagina recursivă — `recursive-blueprint.html` — era cea mai personală: un terminal split-screen care preia și afișează propriul cod sursă al proiectului. Un proiect care se citește pe sine. Am construit-o pentru că voiam ca baza de cod să fie propriul său profesor — să închidă cercul dintre scris și înțeles.
 
 Numele `D::0dy55ey` a venit mai târziu, dar aștepta. Trimite la navigație cosmică, sisteme de comandă, telemetrie, explorare digitală. Nu e un titlu; e o coordonată. Atmosfera vizuală — fosfor CRT, straturi HUD translucide, accente neon, fundaluri void-black — nu e un stil aplicat din exterior. E vocea naturală a interfeței, învățată dintr-un an de privit același ecran prin ochi diferiți.
 
@@ -68,7 +68,7 @@ Pe baza stadiului actual, următorii pași firești sunt:
 - organizarea manifestului și a jurnalelor bilingve într-o schemă predictibilă.
 - migrarea controlată a atmosferei și stilului din proiectul anterior către noua arhitectură.
 
-## Manual_project — cele cinci faze
+## digital-odyssey-v1 — cele cinci faze
 
 Proiectul-mamă n-a fost scris dintr-o suflare. A crescut prin cinci faze distincte, fiecare cu registrul ei emoțional:
 
@@ -144,11 +144,11 @@ _Sursă:_ Cryo Chamber. Canal YouTube (https://www.youtube.com/@cryochamberlabel
 
 **Sfere armilare renascentiste (sec. XV–XVII)**
 Sfera armilară — un model mecanic al sferei cerești făcut din inele metalice imbricate — e prototipul structural direct pentru headerul reactorului icosaedric (clasa `.armillary-reactor-core` în codul sursă). Ca un astronom renascentist, utilizatorul stă în centrul unui univers mecanic ale cărui inele cartografiază mișcarea corpurilor invizibile. Am numit clasa înainte s-o construiesc, și numele m-a forțat să construiesc ceva vrednic de ea.
-_Sursă:_ Referință istorică generală. Sfera armilară e documentată în colecții de instrumente științifice precum Museo Galileo din Florența și Oxford Museum of the History of Science. Pentru aplicarea specifică în design web și denumirea clasei `.armillary-reactor-core`, vezi codul sursă Manual_project (JURNAL.md, rândurile 3095–3123 și modulul `style.css` pentru `.armillary-reactor-core`).
+_Sursă:_ Referință istorică generală. Sfera armilară e documentată în colecții de instrumente științifice precum Museo Galileo din Florența și Oxford Museum of the History of Science. Pentru aplicarea specifică în design web și denumirea clasei `.armillary-reactor-core`, vezi codul sursă digital-odyssey-v1 (JURNAL.md, rândurile 3095–3123 și modulul `style.css` pentru `.armillary-reactor-core`).
 
 **Monitoare CRT / terminale hardware din anii 1970**
 Scanline-urile (`body::before` cu background raster dual), strălucirea verde fosforic a blocurilor de cod, animația de pâlpâire catodică (`crt-flicker`), efectul de ecran CRT bombat (`inset box-shadow` pe containerele terminalului) — toate recreează experiența de a sta în fața unui monitor militar industrial din anii 1970. Asta nu e nostalgie. CRT-ul impune o _limită materială_ asupra digitalului: interfața recunoaște că e făcută din sticlă, fosfor și fascicule de electroni. Refuză imaterialitatea curată a designului plat modern.
-_Sursă:_ Implementare originală documentată în `style.css` al Manual_project (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, selectorul `body::before`) și `JURNAL.md` rândurile 822–826, 5481. Efectul face referire la terminale autentice din anii 1970 precum VT100 și IBM 3270.
+_Sursă:_ Implementare originală documentată în `style.css` al digital-odyssey-v1 (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, selectorul `body::before`) și `JURNAL.md` rândurile 822–826, 5481. Efectul face referire la terminale autentice din anii 1970 precum VT100 și IBM 3270.
 
 **Space Age / Retro-futurism (1950–1970)**
 Fontul geometric (Space Grotesk), butoanele în formă de capsulă, etichetele tehnice ștanțate, indicatorii de stare amber și mint — toate aparțin limbajului vizual al Epocii Spațiale, perioada în care viitorul era imaginat ca o mașină curată, rațională, geometrică. Proiectul respinge ironia postmodernă în favoarea acestui futurism _sincer_.
@@ -156,11 +156,11 @@ _Sursă:_ Fontul Space Grotesk de Florian Karsten (Google Fonts). Limbajul vizua
 
 **Cyberpunk (1980–prezent)**
 Accentele neon-pink și magenta, fundalurile întunecate cu lumini strălucitoare, senzația că interfața e o consolă piratată într-un sistem mai mare — toate gesturi cyberpunk, dar folosite fără narațiunea distopică. Aici, cockpitul de neon e un spațiu de învățare și explorare, nu de supraveghere corporatistă.
-_Sursă:_ Gibson, William. _Neuromancer_. New York: Ace, 1984. Scott, Ridley. _Blade Runner_. Warner Bros, 1982. Otomo, Katsuhiro. _Akira_. Kodansha, 1982–1990 (manga); Tokyo Movie Shinsha, 1988 (film). Modulele CSS 7 și 8 din Manual_project.
+_Sursă:_ Gibson, William. _Neuromancer_. New York: Ace, 1984. Scott, Ridley. _Blade Runner_. Warner Bros, 1982. Otomo, Katsuhiro. _Akira_. Kodansha, 1982–1990 (manga); Tokyo Movie Shinsha, 1988 (film). Modulele CSS 7 și 8 din digital-odyssey-v1.
 
 **Glassmorphism (tendință UI din anii 2020)**
 Panourile translucide de sticlă mată (`backdrop-filter: blur` pe barele de navigare, cardurile de categorii și footer) simulează materiale fizice de cockpit — acrilic, sticlă fumurie, policarbonat. O adâncime stratificată care oglindește stratificarea conceptuală a proiectului însuși: interfață, cod, comentariu.
-_Sursă:_ Implementare originală în `style.css` al Manual_project (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). Tendința UI mai largă documentată pe Dribbble și UX Collective (circa 2020–2021).
+_Sursă:_ Implementare originală în `style.css` al digital-odyssey-v1 (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). Tendința UI mai largă documentată pe Dribbble și UX Collective (circa 2020–2021).
 
 **HUD (Heads-Up Display) — adaptat din aviație**
 Bara de navigare sticky, sidebarul persistent cu urmărirea stării active, mesajele de status tip telemetrie ("SYS_STATUS: READY_TO_WRITE //") — toate simulează experiența de a pilota o navă. Am adaptat asta din heads-up display-urile aviatice, unde datele critice de zbor sunt proiectate pe câmpul vizual al pilotului ca să nu fie nevoit să privească niciodată în altă parte.
@@ -180,7 +180,7 @@ _Sursă:_ Formație academică, Universitatea din București, Facultatea de Limb
 
 # DAY 01 — Prolegomena
 
-Am întors pagina. Asta e senzația pe care o am în seara asta, cu terminalul deschis și cursorul clipind în colțul HUD-ului. `Manual_project` rămâne în urmă — nu ca o epavă, ci ca un port din care am plecat. `D::0dy55ey` e nava pe care o construiesc acum, și această intrare de jurnal e prima înscriere pe harta de navigație: o declarație că proiectul trebuie să respire simultan ca sistem tehnic, ca obiect didactic și ca formă de prezentare cu identitate proprie.
+Am întors pagina. Asta e senzația pe care o am în seara asta, cu terminalul deschis și cursorul clipind în colțul HUD-ului. `digital-odyssey-v1` rămâne în urmă — nu ca o epavă, ci ca un port din care am plecat. `D::0dy55ey` e nava pe care o construiesc acum, și această intrare de jurnal e prima înscriere pe harta de navigație: o declarație că proiectul trebuie să respire simultan ca sistem tehnic, ca obiect didactic și ca formă de prezentare cu identitate proprie.
 
 Proiectul stă pe trei stâlpi, și fiecare poartă greutatea altui strat al formației mele. **Pilonul tehnic** e cel mai vizibil: informatică, logică, matematică, arhitectură web, disciplina de a scrie cod care funcționează și care e curat și care respectă standardele. E meșteșugul de a construi ceva ce nu se rupe. **Pilonul didactic** e orientat spre pedagogie, spre teoria învățării, spre felul în care cunoașterea se transmite — meșteșugul de a face codul explicabil din interior, ca oricine deschide fișierele sursă să poată învăța din ele. **Pilonul narativ** e ancorat în cultura umanistă, în atmosfera literară, în imaginația artistică și în atenția pentru formă și sens — meșteșugul de a transforma o interfață tehnică într-un spațiu care spune o poveste.
 
@@ -188,7 +188,7 @@ Formația mea în filosofie și masteratul în literatură americană — am scr
 
 ## Singurătatea călătorului cosmic
 
-Și totuși, dincolo de arhitectură și stâlpi, există un adevăr mai tăcut. Am fost singur cu acest proiect mai mult timp decât am lucrat la el. _Manual_project_ care a precedat `D::0dy55ey` a fost construit în tăcere — noapte după noapte, același ecran, același cursor, aceeași coborâre în structuri pe care nimeni nu le ceruse și nimeni nu aștepta să le vadă. Nu construiam pentru un public; construiam pentru că actul de a construi este felul meu de a naviga vidul.
+Și totuși, dincolo de arhitectură și stâlpi, există un adevăr mai tăcut. Am fost singur cu acest proiect mai mult timp decât am lucrat la el. _digital-odyssey-v1_ care a precedat `D::0dy55ey` a fost construit în tăcere — noapte după noapte, același ecran, același cursor, aceeași coborâre în structuri pe care nimeni nu le ceruse și nimeni nu aștepta să le vadă. Nu construiam pentru un public; construiam pentru că actul de a construi este felul meu de a naviga vidul.
 
 Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în _The House on the Borderland_ a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, pentru a rămâne în continuare om, prea-om — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
 
@@ -231,7 +231,7 @@ Am trecut de la hartă la construcție. Cadrul conceptual era fixat; acum trebui
 
 Primul lucru pe care l-am clarificat a fost ierarhia de autonomie a paginilor. `index.html` rămâne centrul de comandă al navei-mamă — puntea din care pilotez ansamblul proiectului. De aici coordonez paginile de log, bibliografie, manifest, documentație și anexe. Sunt module independente ca funcție, dar rămân conectate la centrul flotei, pentru că aparțin aceleiași arhitecturi editoriale și tehnice.
 
-`recursive-blueprint.html` are un statut diferit. Am gândit-o ca pe o navă mai mică — un explorator autonom, cu libertate de mișcare mai mare decât celelalte module. Nu e doar o anexă; e un sistem care se poate orienta singur, își poate afișa propriile date și poate funcționa ca proiect în proiect. De aceea are un `h1` propriu, la fel ca în `Manual_project`: trebuie percepută ca instanță autonomă.
+`recursive-blueprint.html` are un statut diferit. Am gândit-o ca pe o navă mai mică — un explorator autonom, cu libertate de mișcare mai mare decât celelalte module. Nu e doar o anexă; e un sistem care se poate orienta singur, își poate afișa propriile date și poate funcționa ca proiect în proiect. De aceea are un `h1` propriu, la fel ca în `digital-odyssey-v1`: trebuie percepută ca instanță autonomă.
 
 Am rafinat și ierarhia semantică. Proiectul păstrează o structură logică strictă: un singur `h1` în `index.html`, apoi `h2` pentru volume, `h3` pentru capitole și sectoare, `h4` și `h5` pentru anexe și submodule. Am decis să tratez React și Angular ca extensii ale capitolului JavaScript, nu ca discipline separate — coerența didactică e mai importantă decât inventarierea tehnică, iar cunoașterea se transmite ordonat sau nu se transmite deloc.
 
@@ -239,7 +239,7 @@ Pe partea vizuală, am fixat identitatea retro-futuristă. Limbajul cromatic, sc
 
 Am început să consolidez mecanica de navigație. Modelul de command deck, meniul sticky, scroll-ul lin, urmărirea secțiunilor active, sincronizarea stării în sidebar — interfața nu trebuie să lase utilizatorul să se piardă. Trebuie să-l ghideze, controlat, prin conținut. Stratul ăsta susține și tehnica și didactica deodată.
 
-Stratul JavaScript e construit pe șase mecanisme coordonate, moștenite și rafinate din Manual_project:
+Stratul JavaScript e construit pe șase mecanisme coordonate, moștenite și rafinate din digital-odyssey-v1:
 
 1. **Scutul de Vizibilitate al Cockpit-ului** — monitorizează direcția de scroll și ascunde navbar-ul la scroll în jos, în mod imersiune; o scurtă mișcare în sus îl readuce la suprafață.
 2. **Cuplarea Accesibilității Log-urilor** — gestionează stările de click pe linkurile de navigație, asigurând comutarea corectă a clasei `.active` între module.
@@ -666,7 +666,7 @@ Am scris un footer care să funcționeze ca un flux de telemetrie, aceeași stru
 
 Pe unele pagini, cum e bibliografia, footerul poartă și un link de comunicații externe cu un beacon `.pulse-dot`. Fiecare element e adnotat cu etichete din `docs/legend-ro.md`, pentru ca oricine citește codul să înțeleagă ce face fiecare indicator de status, fiecare clasă `.telemetry-active`, fiecare `.vessel-sig`.
 
-## 3. Migrarea din Manual_project
+## 3. Migrarea din digital-odyssey-v1
 
 Am adus încărcătura din proiectul-mamă. Pagină cu pagină, am transferat `index.html`, `bibliography.html`, `recursive-blueprint.html` și toate jurnalele de capitol — `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log` și `accessibility-log`. Fiecare `<section>`, fiecare `<article>`, fiecare `<p>` și `<ul>` și `<table>` a primit imediat eticheta ei — `@block`, `@reason`, `@structure`, `@concept`, `@theme` — pentru ca novicele care deschide inspectorul să vadă nu doar cod, ci și gândirea din spatele lui.
 
@@ -963,7 +963,7 @@ Am forţat-pus (`force-push`) istoricul pe `main`, după ce am creat o ramură t
 
 ## Vechea arhivă, demontată
 
-Bibliografia pe care o adusesem din Manual_project era o fantomă. Avea trei secţiuni — HTML/CSS, SQL, JavaScript — şi scheletul unei a patra care nu se umpluse niciodată. Servise un proiect de nouă pagini, nu cincizeci şi patru. Pentru `D::0dy55ey`, nu era o arhivă de referinţă; era un locţiitor pe care îl ocolisem de săptămâni, ştiind că nu va supravieţui expansiunii.
+Bibliografia pe care o adusesem din digital-odyssey-v1 era o fantomă. Avea trei secţiuni — HTML/CSS, SQL, JavaScript — şi scheletul unei a patra care nu se umpluse niciodată. Servise un proiect de nouă pagini, nu cincizeci şi patru. Pentru `D::0dy55ey`, nu era o arhivă de referinţă; era un locţiitor pe care îl ocolisem de săptămâni, ştiind că nu va supravieţui expansiunii.
 
 În noaptea asta, am demontat-o complet şi am construit **Arhivele Adâncului** în locul ei.
 
@@ -995,7 +995,7 @@ După ce arhivele au fost reconstruite, fiecare footer din flotă trebuia să ş
 
 Pentru paginile de jurnal, am avut nevoie de o atingere mai fină. Fiecare dintre cele 48 de fişiere de jurnal — 24 engleze, 24 române — trimitea anterior la `bibliography.html` cu un subtitlu generic precum `Star Charts — HTML Log` sau `Hărţi Stelare — Jurnal SQL`. Am înlocuit fiecare, unul câte unul, cu un link direct către secţiunea volumului său: o pagină de jurnal frontend indică acum `bibliography.html#frontend-refs` cu subtitlul `Deep Space Archives — Frontend Core`. Un jurnal backend indică `#backend-refs` cu `Deep Space Archives — Backend Sector`. Navigaţia nu mai este generică — ştie din ce sector a venit cititorul şi îl aterizează exact în tabelul potrivit.
 
-Numele vechi `Star Charts`, moştenit din Manual_project, nu mai apare acum nicăieri în linkurile de footer. Singura apariţie rămasă este în interiorul `bibliography.html` însuşi, unde comentariul de deschidere spune "Acest document este pagina Hărţi Stelare — Referinţe Cartografiate" — o auto-identificare, nu un indicator de navigaţie.
+Numele vechi `Star Charts`, moştenit din digital-odyssey-v1, nu mai apare acum nicăieri în linkurile de footer. Singura apariţie rămasă este în interiorul `bibliography.html` însuşi, unde comentariul de deschidere spune "Acest document este pagina Hărţi Stelare — Referinţe Cartografiate" — o auto-identificare, nu un indicator de navigaţie.
 
 ## Commit
 
@@ -1018,7 +1018,7 @@ Ziua cincisprezece fusese despre arhive și linkuri — sistemul nervos bibliogr
 
 ## Stratul JavaScript: de la șase la nouă mecanisme
 
-Vechiul script.js servise bine încă din Manual_project — șase mecanisme coordonate care guvernau interactivitatea cockpitului. Dar nava a crescut de atunci. Pagini noi cereau comportamente noi: încărcătorul de sursă pentru pagina Blueprint Recursiv, mașina de scris cosmică pentru pagina Transmisiunii, o animație de cursor care avea nevoie de propriul ciclu de curățare după terminarea tastării.
+Vechiul script.js servise bine încă din digital-odyssey-v1 — șase mecanisme coordonate care guvernau interactivitatea cockpitului. Dar nava a crescut de atunci. Pagini noi cereau comportamente noi: încărcătorul de sursă pentru pagina Blueprint Recursiv, mașina de scris cosmică pentru pagina Transmisiunii, o animație de cursor care avea nevoie de propriul ciclu de curățare după terminarea tastării.
 
 Am rescris ambele fișiere — `en/script.js` și `ro/script.js` — de la zero, păstrând cele șase mecanisme originale și adăugând trei noi:
 
@@ -1040,7 +1040,7 @@ Versiunea română a urmat imediat — nu o traducere mecanică, ci o construcț
 
 ## Stratul CSS: treizeci și unu de module, etichetate și explicate
 
-Vechiul `en/style.css` avea o structură modulară moștenită din Manual_project — paisprezece module numerotate plus două module utilitare pentru keyframe-uri și media queries. Conținutul era acolo, structura era solidă, dar densitatea pedagogică era redusă. Antetele de module existau, dar liniile individuale nu aveau explicații. Adnotările `@tag:` nu existau — sistemul de etichete nu fusese inventat când fișierul fusese scris pentru prima dată.
+Vechiul `en/style.css` avea o structură modulară moștenită din digital-odyssey-v1 — paisprezece module numerotate plus două module utilitare pentru keyframe-uri și media queries. Conținutul era acolo, structura era solidă, dar densitatea pedagogică era redusă. Antetele de module existau, dar liniile individuale nu aveau explicații. Adnotările `@tag:` nu existau — sistemul de etichete nu fusese inventat când fișierul fusese scris pentru prima dată.
 
 Am restructurat ambele fișiere CSS într-o arhitectură de 31 de module (30 numerotate + 2 utilitare), fiecare modul guvernând exact o componentă sau un concern, ordonate după ierarhia vizuală strictă: Fundație → Layout → Navigare → Componente → Avansat/Experimental → Mișcare (Modulul 00.1) → Responsive (Modulul 00.2). Fiecare antet de modul poartă etichetele `@module:` și `@sub-module:`. Fiecare proprietate CSS poartă un comentariu inline `@tag:` — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — urmând legenda de adnotări.
 
@@ -1180,7 +1180,7 @@ c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
 
 # ZIUA 19 — Flota Românească: Bara Laterală, Traducerea și Manualul Bilingv
 
-Nava vorbise engleza de la început. Flota soră românească — `ro/` — fusese clonată și tradusă în timpul ZILEI 11, dar numai paginile non-jurnal: indexul, bibliografia, blueprint-ul recursiv, transmisia. Paginile de jurnal din `ro/` erau încă vechii scheleți de doisprezece kiloocteți din Manual_project — un navbar, un footer, un titlu și nimic mai mult. Cele douăzeci de pagini de jurnal engleze perfecționate, fiecare cu douăzeci și nouă de zile de conținut și șase sute de linii de comentarii didactice, nu aveau niciun omolog românesc.
+Nava vorbise engleza de la început. Flota soră românească — `ro/` — fusese clonată și tradusă în timpul ZILEI 11, dar numai paginile non-jurnal: indexul, bibliografia, blueprint-ul recursiv, transmisia. Paginile de jurnal din `ro/` erau încă vechii scheleți de doisprezece kiloocteți din digital-odyssey-v1 — un navbar, un footer, un titlu și nimic mai mult. Cele douăzeci de pagini de jurnal engleze perfecționate, fiecare cu douăzeci și nouă de zile de conținut și șase sute de linii de comentarii didactice, nu aveau niciun omolog românesc.
 
 Asta s-a schimbat astăzi.
 

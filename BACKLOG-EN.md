@@ -1,4 +1,4 @@
-# D::0dy55ey — BACKLOG-EN.md
+﻿# D::0dy55ey — BACKLOG-EN.md
 
 This document centralizes ideas, postponed features, refactors, and technical debt for the project. Inline code comments remain useful for local context, but the backlog acts as the main register for items planned for later implementation.
 
@@ -328,7 +328,7 @@ Move completed items here, keeping the date and a short note about what changed.
 
 ---
 
-### 009 — Log page template: clone Manual_project structure into all log pages
+### 009 — Log page template: clone digital-odyssey-v1 structure into all log pages
 
 **Date:** 2026-07-30 (DAY 22)
 **Note:** All 54 HTML files (27 EN + 27 RO) now have the complete 29-day structural skeleton (sidebar, day sections, mission-status, footer) via template generation scripts. The structural clone is complete. The 3 manually-written pages (html-log, css-log, sql-log) still have incomplete day counts and ghost sidebar links — these will be filled during content creation starting DAY 24. The original 18 empty shells per language no longer exist; every page has a visible, navigable framework.

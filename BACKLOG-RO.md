@@ -1,4 +1,4 @@
-# D::0dy55ey — BACKLOG-RO.md
+﻿# D::0dy55ey — BACKLOG-RO.md
 
 Acest document centralizează ideile, funcționalitățile amânate, refactorizările și datoria tehnică a proiectului. Comentariile inline din cod rămân utile pentru context local, dar backlog-ul funcționează ca registru principal al lucrurilor planificate pentru implementare ulterioară.
 
@@ -326,7 +326,7 @@ Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a
 
 ---
 
-### 009 — Șablon pagini de jurnal: clonează structura Manual_project în toate paginile de jurnal
+### 009 — Șablon pagini de jurnal: clonează structura digital-odyssey-v1 în toate paginile de jurnal
 
 **Data:** 2026-07-30 (ZIUA 22)
 **Notă:** Toate cele 54 de fișiere HTML (27 EN + 27 RO) au acum scheletul structural complet de 29 de zile (sidebar, secțiuni-zi, mission-status, footer) prin scripturi de generare a șabloanelor. Clonarea structurală este completă. Cele 3 pagini scrise manual (html-log, css-log, sql-log) au încă număr incomplet de zile și linkuri fantomă în sidebar — acestea vor fi completate în timpul creării conținutului începând cu ZIUA 24. Cele 18 shell-uri goale originale per limbă nu mai există; fiecare pagină are un cadru vizibil și navigabil.

@@ -1,4 +1,4 @@
----
+﻿---
 
 # D::0dy55ey — Delta writing, or how to write through differences
 
@@ -12,13 +12,13 @@ This is not a case file. This is the open case.
 
 # DAY 00 — Inspiration Baseline
 
-I opened Manual_project again tonight. Not to copy from it — I know every line — but to remember how it felt to sit inside it for the first time. The CRT scanlines were the first thing I built: a `body::before` with a dual raster that flickered across an otherwise empty terminal. I stared at it for twenty minutes, watching the phosphor glow fade in and out, thinking: *this is what I want the reader to feel — not that they are reading code, but that they have entered a vessel.*
+I opened digital-odyssey-v1 again tonight. Not to copy from it — I know every line — but to remember how it felt to sit inside it for the first time. The CRT scanlines were the first thing I built: a `body::before` with a dual raster that flickered across an otherwise empty terminal. I stared at it for twenty minutes, watching the phosphor glow fade in and out, thinking: *this is what I want the reader to feel — not that they are reading code, but that they have entered a vessel.*
 
-This section is the departure log of `D::0dy55ey`. Not a technical specification — a record of what I carried from the wreck of Manual_project, what I rebuilt, and what I left behind in the dark.
+This section is the departure log of `D::0dy55ey`. Not a technical specification — a record of what I carried from the wreck of digital-odyssey-v1, what I rebuilt, and what I left behind in the dark.
 
 ## What I carried
 
-I carried the atmospheric core: the hard-won knowledge that an interface can feel like a place. Manual_project had taught me that a colour palette is not decoration but gravity. `space-dark` pulls you down into the void; `amber-glow` warns that something important is near; `solar-mint` is the colour of oxygen on a damaged ship. I kept all of it, but I needed a tighter architecture to hold the weight.
+I carried the atmospheric core: the hard-won knowledge that an interface can feel like a place. digital-odyssey-v1 had taught me that a colour palette is not decoration but gravity. `space-dark` pulls you down into the void; `amber-glow` warns that something important is near; `solar-mint` is the colour of oxygen on a damaged ship. I kept all of it, but I needed a tighter architecture to hold the weight.
 
 The new project expands the old volumes — `Frontend Landscape`, `Database Void` — and adds new compartments: `JSON Data Bridge`, `Backend Core`, `UX Lab`, `Deployment`. But the real change is not the number of rooms. It is that the ship now has a coherent navigation system. The reader moves through learning paths, not just pages.
 
@@ -38,7 +38,7 @@ What `D::0dy55ey` builds on top:
 
 ## The technical lineage — where the heartbeat lives
 
-The most visible inheritance from Manual_project is the **3D polyhedral reactor mesh**: an icosahedron of twenty triangular faces, each one a CSS `clip-path` miracle positioned on spherical 3D coordinates. I built it late at night, coffee going cold, rotating the faces in my head before I rotated them in the browser. When it finally rendered — twenty triangles floating in void-black like a Dyson swarm — I sat back and felt, for a moment, that I had built something that did not belong entirely to this world.
+The most visible inheritance from digital-odyssey-v1 is the **3D polyhedral reactor mesh**: an icosahedron of twenty triangular faces, each one a CSS `clip-path` miracle positioned on spherical 3D coordinates. I built it late at night, coffee going cold, rotating the faces in my head before I rotated them in the browser. When it finally rendered — twenty triangles floating in void-black like a Dyson swarm — I sat back and felt, for a moment, that I had built something that did not belong entirely to this world.
 
 Then the GPU crisis hit.
 
@@ -54,7 +54,7 @@ Other inheritances from before the crisis:
 - The **Intersection Observer API** configured with root margins of `-20% 0px -70% 0px` — precise as a sniper cut, detecting article visibility to synchronise the sidebar's active state. I calibrated those margins by hand, scrolling up and down for an hour until the tracking felt *predictable*.
 - Six coordinated JavaScript mechanisms that govern the cockpit: the navbar knows when to hide, the typewriter knows when to retrigger, the radar knows where you are looking.
 
-The bilingual strategy was already there in Manual_project: `style-en.css` and `style-ro.css` as separate lives under the same skin. The recursive page — `recursive-blueprint.html` — was the most personal: a split-screen terminal that fetches and displays the project's own source code. A project that reads itself. I built it because I wanted the codebase to be its own teacher — to close the loop between writing and understanding.
+The bilingual strategy was already there in digital-odyssey-v1: `style-en.css` and `style-ro.css` as separate lives under the same skin. The recursive page — `recursive-blueprint.html` — was the most personal: a split-screen terminal that fetches and displays the project's own source code. A project that reads itself. I built it because I wanted the codebase to be its own teacher — to close the loop between writing and understanding.
 
 The name `D::0dy55ey` came later, but it was waiting. It points toward cosmic navigation, cockpit systems, telemetry, digital exploration. It is not a title; it is a coordinate. The visual atmosphere — CRT phosphor, translucent HUD layers, neon accents, void-black backgrounds — is not a style applied from outside. It is the interface's natural voice, learned from a year of watching the same screen through different eyes.
 
@@ -68,7 +68,7 @@ Based on where the ship stands now, the next natural moves are:
 - organising the manifesto and bilingual journals into a predictable scheme.
 - carefully migrating atmosphere and style from the previous project into the new architecture.
 
-## Manual_project — the five-phase arc
+## digital-odyssey-v1 — the five-phase arc
 
 The parent project was not written in one breath. It grew through five distinct phases, each with its own emotional register:
 
@@ -144,11 +144,11 @@ This is the ambient architecture of the project's silence. Simon Heath's dark am
 
 **Renaissance armillary spheres (15th–17th centuries)**
 The armillary sphere — a mechanical model of the celestial sphere made of nested metal rings — is the direct structural prototype for the icosahedral reactor header (class `.armillary-reactor-core` in the source code). Like a Renaissance astronomer, the user stands at the centre of a mechanical universe whose rings chart the motion of invisible bodies. I named the class before I built it, and the name forced me to build something worthy of it.
-*Source:* General historical reference. The armillary sphere is documented in scientific instrument collections such as the Museo Galileo in Florence and the Oxford Museum of the History of Science. For the specific application to web design and the naming of the `.armillary-reactor-core` class, see the Manual_project source code (JURNAL.md, lines 3095–3123 and the `style.css` module for `.armillary-reactor-core`).
+*Source:* General historical reference. The armillary sphere is documented in scientific instrument collections such as the Museo Galileo in Florence and the Oxford Museum of the History of Science. For the specific application to web design and the naming of the `.armillary-reactor-core` class, see the digital-odyssey-v1 source code (JURNAL.md, lines 3095–3123 and the `style.css` module for `.armillary-reactor-core`).
 
 **CRT monitors / 1970s hardware terminals**
 The scanlines (`body::before` with dual-raster background), the phosphor green glow of code blocks, the cathode-ray flicker animation (`crt-flicker`), the bombé CRT screen effect (`inset box-shadow` on terminal containers) — all recreate the experience of sitting in front of an industrial military monitor from the 1970s. This is not nostalgia. The CRT imposes a *material limit* on the digital: the interface admits that it is made of glass, phosphor, and electron beams. It refuses the clean immateriality of flat design.
-*Source:* Original implementation documented in Manual_project's `style.css` (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, `body::before` selector) and `JURNAL.md` lines 822–826, 5481. The effect references authentic 1970s terminals such as the VT100 and IBM 3270.
+*Source:* Original implementation documented in digital-odyssey-v1's `style.css` (MODULE 02: GLOBAL RESET & GRAVITY FIELDS, `body::before` selector) and `JURNAL.md` lines 822–826, 5481. The effect references authentic 1970s terminals such as the VT100 and IBM 3270.
 
 **Space Age / Retro-futurism (1950s–1970s)**
 The geometric typeface (Space Grotesk), the capsule-shaped buttons, the stencilled technical labels, the amber and mint-green status indicators — all belong to the visual language of the Space Age, when the future was imagined as a clean, rational, geometric machine. The project rejects postmodern irony in favour of this *earnest* futurism.
@@ -156,11 +156,11 @@ The geometric typeface (Space Grotesk), the capsule-shaped buttons, the stencill
 
 **Cyberpunk (1980s–present)**
 The neon-pink and magenta accents, the dark backgrounds with glowing highlights, the sense of the interface as a console hacked into a larger system — all cyberpunk gestures, but used without the dystopian narrative. Here, the neon cockpit is a space of learning and exploration, not corporate surveillance.
-*Source:* Gibson, William. *Neuromancer*. New York: Ace, 1984. Scott, Ridley. *Blade Runner*. Warner Bros, 1982. Otomo, Katsuhiro. *Akira*. Kodansha, 1982–1990 (manga); Tokyo Movie Shinsha, 1988 (film). Manual_project CSS modules 7 and 8.
+*Source:* Gibson, William. *Neuromancer*. New York: Ace, 1984. Scott, Ridley. *Blade Runner*. Warner Bros, 1982. Otomo, Katsuhiro. *Akira*. Kodansha, 1982–1990 (manga); Tokyo Movie Shinsha, 1988 (film). digital-odyssey-v1 CSS modules 7 and 8.
 
 **Glassmorphism (2020s UI trend)**
 The translucent frosted-glass panels (`backdrop-filter: blur` on navigation bars, category cards, and footer) simulate physical cockpit materials — acrylic, smoked glass, polycarbonate. A layered depth that mirrors the conceptual layering of the project itself: interface, code, commentary.
-*Source:* Original implementation in Manual_project's `style.css` (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). The broader UI trend documented on Dribbble and UX Collective (circa 2020–2021).
+*Source:* Original implementation in digital-odyssey-v1's `style.css` (MODULE 05: INTERFACE NAVIGATION & TERMINAL CONTROLS). The broader UI trend documented on Dribbble and UX Collective (circa 2020–2021).
 
 **HUD (Heads-Up Display) — adapted from aviation**
 The sticky navigation bar, the persistent sidebar with active-state tracking, the telemetry-style status messages ("SYS_STATUS: READY_TO_WRITE //") — all simulate the experience of piloting a vessel. I adapted this from aviation heads-up displays, where critical flight data is projected onto the pilot's forward view so they never look away from the world outside.
@@ -194,7 +194,7 @@ These three pillars are not separate in my mind. My training in philosophy and m
 
 ## The solitude of the cosmic traveller
 
-And yet, behind the architecture and the pillars, there is a quieter truth. I have been alone with this project longer than I have been working on it. The *Manual_project* that preceded `D::0dy55ey` was built in silence — night after night, the same screen, the same cursor, the same descent into structures that no one had asked for and no one was waiting to see. I was not building for an audience; I was building because the act of building is how I navigate the void.
+And yet, behind the architecture and the pillars, there is a quieter truth. I have been alone with this project longer than I have been working on it. The *digital-odyssey-v1* that preceded `D::0dy55ey` was built in silence — night after night, the same screen, the same cursor, the same descent into structures that no one had asked for and no one was waiting to see. I was not building for an audience; I was building because the act of building is how I navigate the void.
 
 There is a cry in Oxiplegatz's lyrics that has always felt like the right soundtrack for this work — a note I feel vibrating along the infinite column, the spine, the axis around which I now build the astronomical ship, not in its size but in the size of its future explorations. Not a scream of despair, but the sustained note of a solitary voice moving through a cosmos that does not answer. I remember now the night I first entered *The House on the Borderland* by Hodgson. The same quality, the same call, the same wanderlust: the house stands at the edge of an infinite chasm, not to collapse into it, not to crumble. The chasm is the launching pad. The house is a space-time ship. And the man, the witness within, keeps his vigil not to find his salvation — not to preserve himself, to go on being human, the overman — but because watching is what he does. A witness of the crossing, of the transgression: from now on I look down at the stars. The weird tales I have heard and forgotten so many times — Lovecraft's eroding architectures, Arthur Machen's hidden geometries, Blackwood's sentient silences — all share this condition: a lone consciousness pushing, with all its force, the limits of the known into the unknown. Are there gods vaster than Aleph-null? More abyssal than the cosmicisation of chaos itself?
 
@@ -206,7 +206,7 @@ This is not a lament. It is the atmospheric composition of the vessel. The ship 
 
 In the architecture, `index.html` is the command deck. From it, I coordinate the satellite pages — the logs, the recursive blueprint, the bibliography, the manifesto — each one a module with its own function, none of them breaking the clarity of the whole. The manifesto lives in its own file, not inside the README. The bilingual journal is not a commit log in prose; it is a living archive, the ship's own memory written down at night.
 
-The narrative identity of `D::0dy55ey` runs on the fuel of cosmic navigation — the command room, telemetry streams, self-documentation as a form of cartography. I carried the cinematic atmosphere and cultural weight of `Manual_project` into this new hull, but I rebuilt it cleaner, more coherent, scalable. At the centre of that identity is the belief that an interface can be both a learning instrument and a space of cultural resonance, and that these two functions do not compete.
+The narrative identity of `D::0dy55ey` runs on the fuel of cosmic navigation — the command room, telemetry streams, self-documentation as a form of cartography. I carried the cinematic atmosphere and cultural weight of `digital-odyssey-v1` into this new hull, but I rebuilt it cleaner, more coherent, scalable. At the centre of that identity is the belief that an interface can be both a learning instrument and a space of cultural resonance, and that these two functions do not compete.
 
 I initialized the repository by splitting Romanian and English into two parallel corridors: `ro/` and `en/`. This was not convenience. It was structural discipline. Each language has its own pages, its own style, its own favicon — so the experience stays coherent within each version. I chose a clean, predictable split over a universal compromise.
 
@@ -237,7 +237,7 @@ I moved from the drawing board to the hull today. The prolegomena had laid out w
 
 The most important clarification was the autonomy hierarchy of the pages. `index.html` is the command centre of the mother ship — the bridge from which the entire fleet is piloted. From there I coordinate the log pages, the bibliography, the manifesto, the documentation, all the appendices. They are independent modules in function, but they remain tethered to the central control because they share the same editorial and technical architecture. They are ships in a fleet, not derelicts adrift.
 
-`recursive-blueprint.html` has a different status. I designed it as a smaller, self-piloted vessel — an explorer that ranges further than the other modules. It is not merely an appendix; it is a system that can orient itself, display its own data, and function as a project within the project. That is why it carries its own `h1`, just as it did in `Manual_project` — so that anyone who lands on it knows they have entered an autonomous instance, not a subordinate page.
+`recursive-blueprint.html` has a different status. I designed it as a smaller, self-piloted vessel — an explorer that ranges further than the other modules. It is not merely an appendix; it is a system that can orient itself, display its own data, and function as a project within the project. That is why it carries its own `h1`, just as it did in `digital-odyssey-v1` — so that anyone who lands on it knows they have entered an autonomous instance, not a subordinate page.
 
 I continued refining the semantic hierarchy. The project holds a strict structure: one `h1` in the main context, `h2` for volumes, `h3` for chapters and sectors, deeper levels for annexes and submodules. React and Angular are not treated as separate disciplines — they are extensions of the JavaScript chapter. This preserves didactic coherence. Knowledge should be transmitted in an ordered way, not scattered across parallel tracks.
 
@@ -245,7 +245,7 @@ On the visual side, I locked the retro-futurist identity. The colour language, t
 
 The navigation and interactivity mechanisms began to take shape. The command deck model — sticky menu, smooth scrolling, active-section tracking, sidebar synchronisation — creates an interface that does not let the crew get lost. It guides them through the content in a controlled way, serving both the technical and the didactic functions of the vessel.
 
-The JavaScript layer runs on six coordinated mechanisms, inherited from `Manual_project` and refined:
+The JavaScript layer runs on six coordinated mechanisms, inherited from `digital-odyssey-v1` and refined:
 
 1. **The Cockpit Visibility Shield** — watches the scroll direction. When the crew scrolls down, the navbar vanishes into immersion mode. A short upward scroll brings it back.
 2. **Log Accessibility Coupling** — manages click states on navigation links, ensuring the `.active` class switches cleanly between modules.
@@ -685,7 +685,7 @@ On certain pages — the bibliography, for instance — the footer also carries 
 
 ## Importing from the mother project
 
-I brought the body content of `Manual_project` across the void and into the new hull — every page that had existed in the original structure: `index.html`, `bibliography.html` with its `<table class="data-grid">` entries, `recursive-blueprint.html` with its split-screen terminal, and all twenty-three chapter log pages covering every sector from HTML to deployment.
+I brought the body content of `digital-odyssey-v1` across the void and into the new hull — every page that had existed in the original structure: `index.html`, `bibliography.html` with its `<table class="data-grid">` entries, `recursive-blueprint.html` with its split-screen terminal, and all twenty-three chapter log pages covering every sector from HTML to deployment.
 
 Each imported block received didactic HTML comments — `@block` for logical zones, `@reason` for motivation, `@structure` for document architecture, `@concept` for narrative meaning, `@theme` for atmospheric choices — on every `<section>`, `<article>`, `<p>`, `<ul>`, and `<table>`. In the `ro/` folder, I noted that all explanatory comments must eventually be translated to Romanian, and the same applies to `script.js` and `style.css`: imported, annotated, waiting for a full language pass.
 
@@ -953,7 +953,7 @@ With the full list settled, I rewrote 18 past commits that lacked tags using `gi
 
 ## The old archive, dismantled
 
-The bibliography that came with us from Manual_project was a ghost. It had three sections — HTML/CSS, SQL, JavaScript — and the skeleton of a fourth that had never filled. It served a project of nine pages, not fifty-four. For `D::0dy55ey` it was not a reference archive; it was a placeholder that I had circled around for weeks, knowing it would not survive the expansion.
+The bibliography that came with us from digital-odyssey-v1 was a ghost. It had three sections — HTML/CSS, SQL, JavaScript — and the skeleton of a fourth that had never filled. It served a project of nine pages, not fifty-four. For `D::0dy55ey` it was not a reference archive; it was a placeholder that I had circled around for weeks, knowing it would not survive the expansion.
 
 Tonight I dismantled it completely and built the **Deep Space Archives** in its place.
 
@@ -985,7 +985,7 @@ With the archives rebuilt, every footer in the fleet needed to know where to poi
 
 The log pages required a finer touch. Each of the 48 log files — 24 English, 24 Romanian — previously linked to `bibliography.html` with a generic subtitle like `Star Charts — HTML Log` or `Hărți Stelare — Jurnal SQL`. I replaced every single one with a direct anchor link to its volume's section: a frontend log page now points to `bibliography.html#frontend-refs` with the subtitle `Deep Space Archives — Frontend Core`. A backend log points to `#backend-refs` with `Deep Space Archives — Backend Sector`. The navigation is no longer generic — it knows which sector the reader came from and lands them in exactly the right table.
 
-The old `Star Charts` name, inherited from Manual_project, now appears nowhere in the footer links. The only remaining occurrence is inside `bibliography.html` itself, where the opening comment says "This document is the Star Charts — Cartographed References page" — a self-identification, not a navigational signpost.
+The old `Star Charts` name, inherited from digital-odyssey-v1, now appears nowhere in the footer links. The only remaining occurrence is inside `bibliography.html` itself, where the opening comment says "This document is the Star Charts — Cartographed References page" — a self-identification, not a navigational signpost.
 
 ## Commit
 
@@ -1008,7 +1008,7 @@ I pushed both to `main` and watched the remote repository reflect the changes. T
   
   ## The JavaScript layer: from six mechanisms to nine
   
-  The old script.js had served well since Manual_project — six coordinated mechanisms that governed the cockpit's interactivity. But the ship had grown since then. New pages demanded new behaviours: the Recursive Blueprint page's source loader, the Transmission page's cosmic typewriter, a cursor animation that needed its own cleanup cycle after the typing finished.
+  The old script.js had served well since digital-odyssey-v1 — six coordinated mechanisms that governed the cockpit's interactivity. But the ship had grown since then. New pages demanded new behaviours: the Recursive Blueprint page's source loader, the Transmission page's cosmic typewriter, a cursor animation that needed its own cleanup cycle after the typing finished.
   
   I rewrote both `en/script.js` and `ro/script.js` from the ground up, preserving the six original mechanisms and adding three new ones:
   
@@ -1030,7 +1030,7 @@ I pushed both to `main` and watched the remote repository reflect the changes. T
   
   ## The CSS layer: thirty-one modules, tagged and explained
   
-  The old `en/style.css` had a module structure inherited from Manual_project — fourteen numbered modules plus two utility modules for keyframes and media queries. The content was there, the structure was sound, but the pedagogical density was sparse. Module headers existed, but individual lines lacked explanations. `@tag` annotations did not exist — the tag system had not been invented when the file was first written.
+  The old `en/style.css` had a module structure inherited from digital-odyssey-v1 — fourteen numbered modules plus two utility modules for keyframes and media queries. The content was there, the structure was sound, but the pedagogical density was sparse. Module headers existed, but individual lines lacked explanations. `@tag` annotations did not exist — the tag system had not been invented when the file was first written.
   
   I restructured both CSS files into a 31-module architecture (30 numbered + 2 utility), each module governing exactly one component or concern, ordered by strict visual hierarchy: Foundation → Layout → Navigation → Components → Advanced/Experimental → Motion (Module 00.1) → Responsive (Module 00.2). Every module header carries `@module:` and `@sub-module:` tags. Every CSS property carries an inline `@tag:` comment — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — following the annotation legend.
   
@@ -1167,7 +1167,7 @@ c348850 docs: add semantic-field-manual-en.md and semantic-field-manual-ro.md
 
 # DAY 19 — The Romanian Fleet: Sidebar, Translation, and the Bilingual Manual
 
-The ship had spoken English from the start. The Romanian sister fleet — `ro/` — had been cloned and translated during DAY 11, but only the non-log pages: the index, the bibliography, the recursive blueprint, the transmission. The log pages in `ro/` were still the old twelve-kilobyte skeletons from Manual_project — a navbar, a footer, a title, and nothing more. The twenty perfected English log pages, each with twenty-nine days of content and six hundred lines of didactic comments, had no Romanian counterpart.
+The ship had spoken English from the start. The Romanian sister fleet — `ro/` — had been cloned and translated during DAY 11, but only the non-log pages: the index, the bibliography, the recursive blueprint, the transmission. The log pages in `ro/` were still the old twelve-kilobyte skeletons from digital-odyssey-v1 — a navbar, a footer, a title, and nothing more. The twenty perfected English log pages, each with twenty-nine days of content and six hundred lines of didactic comments, had no Romanian counterpart.
 
 That changed today.
 
