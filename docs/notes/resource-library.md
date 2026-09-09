@@ -71,6 +71,49 @@ own shelf.
 | Learn JavaScript — Full Course for Beginners | freeCodeCamp (Beau Carnes) | Video | YouTube — freeCodeCamp.org | free | queued | — |
 | Full Stack JavaScript path | The Odin Project | Course | https://www.theodinproject.com/paths/full-stack-javascript | free | queued | — |
 
+## Frontend — TypeScript
+
+Added 2026-09-10. Named explicitly in current junior frontend postings, and the
+largest gap found when the ledger was audited against the 2026 hiring bar.
+Studied in Phase 3 alongside React — *after* the JavaScript phase, never before.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| The TypeScript Handbook | Microsoft / TS team | Docs | https://www.typescriptlang.org/docs/handbook/intro.html | free | queued | — |
+| Beginner's TypeScript (tutorial) | Matt Pocock — Total TypeScript | Course | https://www.totaltypescript.com/tutorials/beginners-typescript | free | queued | — |
+| TypeScript Deep Dive | Basarat Ali Syed | Book | https://basarat.gitbook.io/typescript | free | queued | — |
+| Type Challenges (puzzles) | type-challenges community | Game | https://github.com/type-challenges/type-challenges | free | queued | — |
+
+## Frontend — tooling (npm, bundlers)
+
+Added 2026-09-10. A modern React project cannot be started without these.
+No prior entry existed.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| Package management basics (npm) | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Package_management | free | queued | — |
+| Vite — Getting Started | Vite team | Docs | https://vite.dev/guide/ | free | queued | — |
+
+## Frontend — testing
+
+Added 2026-09-10. The done-definition of the curriculum requires "green CI";
+the only testing entries in the ledger sat under *backend*.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| Testing Library — docs & guiding principles | Kent C. Dodds et al. | Docs | https://testing-library.com/docs/ | free | queued | — |
+| Playwright — Getting Started | Microsoft | Docs | https://playwright.dev/docs/intro | free | queued | — |
+
+## Frontend — debugging & DevTools
+
+Added 2026-09-10. The highest-leverage daily practical skill, and the one most
+consistently never taught deliberately.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| What are browser developer tools? | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools | free | queued | — |
+| Chrome DevTools documentation | Google | Docs | https://developer.chrome.com/docs/devtools | free | queued | — |
+
 ## Frontend — React
 
 | Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
@@ -294,6 +337,114 @@ own shelf.
 | Deploying to Vercel | Vercel Docs | Docs | https://vercel.com/docs/deployments | free | queued | — |
 | Deploy a Website with Netlify | Scrimba / Coursera | Course | https://www.coursera.org/learn/how-to-deploy-with-netlify | free | queued | — |
 | GitLab CI/CD learning path | GitLab University | Course | https://university.gitlab.com/pages/ci-cd-content | free | queued | — |
+
+---
+
+## The Humanities Deck — beletristic, historical, philosophical
+
+Added 2026-09-10 at the captain's request. Her background is **philosophy and
+philology**; a book with a voice digests better than a manual, at least
+occasionally. This deck is **not on the critical path to employment** and no
+entry here gates a phase. It exists because a curriculum a philologist cannot
+bear to read is a curriculum that gets abandoned in month three, and because
+several of these are genuinely the best explanations of their subject that exist
+in any register.
+
+Read one of these on the seventh day, when the six study days are done.
+
+### Origins — the ancestors of the machine
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| Sketch of the Analytical Engine — with **Ada Lovelace's Notes** | L. F. Menabrea, tr. & annotated by Ada Lovelace (1843) | Primary text | https://www.fourmilab.ch/babbage/sketch.html | free | queued | — |
+| The Thrilling Adventures of Lovelace and Babbage | Sydney Padua | Graphic novel | https://sydneypadua.com/2dgoggles/comics/ | free (webcomic) / purchase (book) | queued | — |
+| Computing Machinery and Intelligence (1950) | Alan Turing | Primary text | https://redirect.cs.umbc.edu/courses/471/papers/turing.pdf | free | queued | — |
+| As We May Think (1945) | Vannevar Bush — *The Atlantic* | Essay | https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/ | free | queued | — |
+| The Victorian Internet | Tom Standage | Book | https://archive.org/details/victorianinternetremarkablestoryoftelegraph19centuryonlinepioneerstomstandage_232_B | borrow | queued | — |
+| Weaving the Web | Tim Berners-Lee | Book | https://archive.org/details/weavingweborigin00bern | borrow | queued | — |
+
+### The craft as a human activity — the philosophy shelf
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| **Programming as Theory Building** (1985) | Peter Naur | Essay | https://pages.cs.wisc.edu/~remzi/Naur.pdf | free | queued | — |
+| Literate Programming (1984) | Donald Knuth | Essay | http://www.literateprogramming.com/knuthweb.pdf | free | queued | — |
+| The Humble Programmer (EWD340, 1972) | Edsger W. Dijkstra | Essay | https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html | free | queued | — |
+| The Rise of "Worse is Better" | Richard P. Gabriel | Essay | https://www.dreamsongs.com/RiseOfWorseIsBetter.html | free | queued | — |
+| Teach Yourself Programming in Ten Years | Peter Norvig | Essay | https://norvig.com/21-days.html | free | queued | — |
+| The Mythical Man-Month | Frederick P. Brooks Jr. | Book | https://archive.org/details/mythicalmanmonth0000broo | borrow | queued | — |
+| Tools for Conviviality | Ivan Illich | Book | https://archive.org/details/toolsforconvivia0000illi | borrow | queued | — |
+| Close to the Machine | Ellen Ullman | Book | https://archive.org/details/closetomachinete0000ullm | borrow | queued | — |
+| Gödel, Escher, Bach: An Eternal Golden Braid | Douglas Hofstadter | Book | https://archive.org/details/godel-escher-bach-an-eternal-golden-braid-douglas-r.-hofstadter | borrow | queued | — |
+
+### Narrative histories — the ones that read like novels
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| The Soul of a New Machine | Tracy Kidder | Book | https://archive.org/details/soulofnewmachine00kidd | borrow | queued | — |
+| Hackers: Heroes of the Computer Revolution | Steven Levy | Book | https://archive.org/details/hackersheroesofc0000levy | borrow | queued | — |
+| The Information: A History, a Theory, a Flood | James Gleick | Book | https://archive.org/details/informationhisto0000glei | borrow | queued | — |
+| The Dream Machine | M. Mitchell Waldrop | Book | https://press.stripe.com/the-dream-machine | free (web) / purchase | queued | — |
+| Broad Band: The Untold Story of the Women Who Made the Internet | Claire L. Evans | Book | https://archive.org/details/broadbanduntolds0000evan | borrow | queued | — |
+| Coders at Work | Peter Seibel | Book | https://www.apress.com/gp/book/9781430219484 | subscription (Everand/O'Reilly) | queued | — |
+
+### Bookish, but technically load-bearing
+
+These are literary in register *and* teach the machine properly. The rare
+overlap — worth prioritising over the pure-pleasure entries above.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| **Code: The Hidden Language of Computer Hardware and Software** | Charles Petzold | Book | https://www.codehiddenlanguage.com/ (2nd ed. site) · https://archive.org/details/CharlesPetzoldCodeTheHiddenLanguageOfComputerHardwareAndSoftwareMicrosoftPress2000 | borrow / purchase | queued | — |
+| The Pattern on the Stone | W. Daniel Hillis | Book | https://archive.org/details/patternonstonesi0000hill | borrow | queued | — |
+| The Annotated Turing | Charles Petzold | Book | https://www.wiley.com/en-us/The+Annotated+Turing-p-9780470229057 | subscription (O'Reilly) / purchase | queued | — |
+| Resilient Web Design | Jeremy Keith | Book | https://resilientwebdesign.com/ | free | queued | — |
+
+### The long-form magazines — for a reading habit, not a syllabus
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| A List Apart | A List Apart | Magazine | https://alistapart.com/ | free | queued | — |
+| Smashing Magazine | Smashing Media | Magazine | https://www.smashingmagazine.com/ | free | queued | — |
+| CSS-Tricks | DigitalOcean | Magazine | https://css-tricks.com/ | free | queued | — |
+| Josh W. Comeau — essays | Josh W. Comeau | Blog | https://www.joshwcomeau.com/ | free | queued | — |
+
+---
+
+## Interview & hiring preparation
+
+Added 2026-09-10. The gate between a good portfolio and an actual offer.
+Opened in **Phase 3, week 24**, when applications begin — not at the end.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| Tech Interview Handbook | Yangshun Tay | Docs | https://www.techinterviewhandbook.org/ | free | queued | — |
+| Front End Interview Handbook | Yangshun Tay | Docs | https://www.frontendinterviewhandbook.com/ | free | queued | — |
+| GreatFrontEnd — practice questions | GreatFrontEnd | Course + labs | https://www.greatfrontend.com/ | free tier / subscription | queued | — |
+| Exercism — JavaScript track (free mentoring) | Exercism | Course | https://exercism.org/tracks/javascript | free | queued | — |
+
+---
+
+## Subscriptions & platforms — the captain's ledger of cost
+
+Added 2026-09-10 at the captain's request: what is worth paying for, what is
+already paid for, and what is free and mistaken for paid.
+
+| Platform | Cost (approx., verify at signup) | Verdict |
+|---|---|---|
+| **GitHub Student Developer Pack** | **free** with proof of student status | https://education.github.com/pack — check eligibility **first**. Bundles free tiers of many paid developer tools. If eligible, it changes the economics of everything below. |
+| **Everand / Scribd** | already subscribed | Covers Duckett, Krug, Norman, Flanagan, Meyer, *Coders at Work*, and much of the narrative-history shelf. **Use what is already paid for before buying anything.** |
+| **O'Reilly Learning** | ~$49/mo | The deepest technical catalogue that exists. Genuinely excellent, and the one most likely to be **redundant with Everand** for this curriculum's needs. Only worth it if a specific book is unavailable elsewhere. |
+| **Frontend Masters** | ~$39/mo | The strongest paid frontend courses available. Its **Bootcamp is free**: https://frontendmasters.com/bootcamp/ — start there before paying anything. |
+| **Total TypeScript (paid tiers)** | one-off | The free *Beginner's TypeScript* tutorial is listed above and is enough for Phase 3. Do not buy the paid tier before completing it. |
+| **freeCodeCamp · The Odin Project · Full Stack Open · CS50** | **free** | The four strongest structured curricula in existence are all free. Nothing on this plan requires a paid course. |
+
+**The ledger's honest position:** every spine source in `docs/CURRICULUM.md` is
+free or already covered by the existing Everand subscription. No new
+subscription is required to become employable on this plan. Check the GitHub
+Student Pack first; then, if any single paid thing is added later, Frontend
+Masters is the one with the clearest return — and only after its free Bootcamp
+has been finished.
 
 ---
 
