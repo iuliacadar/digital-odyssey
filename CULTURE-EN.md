@@ -70,6 +70,20 @@ This list is **open by nature**. It grows as we meet new references; nothing her
 | *The Willows* | Algernon Blackwood · 1907 | Two men on a river taken over by ancient presences in the trees; no climax, only dread — landscape as the abyss. |
 | *The King in Yellow* | Robert W. Chambers · 1895 | A play that wounds whoever reads it — a signal alive *inside the text itself*; the archetype of the contagious record (Pontypool remembers). |
 
+### The written machine — where the craft meets the letter
+
+*The ship came to code from philosophy and philology. These are the texts where the two shelves touch — not manuals, but works that would sit here even if the captain had never written a line of HTML. Each one answers a question this register was already asking.*
+
+| Work | Author · Year | Why it lands |
+|---|---|---|
+| *Notes* on Menabrea's *Sketch of the Analytical Engine* | Ada Lovelace · 1843 | She was asked to translate; she annotated instead, and her Notes run longer than the text they annotate. The first programmer was also the first commentator — a philologist's origin story for the whole craft, and the direct ancestor of a project whose source files explain themselves in the margin. |
+| *Programming as Theory Building* | Peter Naur · 1985 | A program is not a text but a **theory**, held in the living minds that built it — which is why documentation decays, and why a codebase whose crew has left is dead though every line survives. This is *the Ship of Theseus* restated in software: the planks are all still there and the ship is gone. Twelve pages; the deepest thing on this shelf. |
+| *Literate Programming* | Donald Knuth · 1984 | "Instead of imagining that our main task is to instruct a *computer* what to do, let us concentrate rather on explaining to *human beings* what we want a computer to do." The founding text of this project's didactic pillar, written decades before the pillar was named. Reading it is reading the origin of one's own method. |
+| *Gödel, Escher, Bach: An Eternal Golden Braid* | Douglas Hofstadter · 1979 | Strange loops, self-reference, and the thing that contains itself — the same obsession this register already keeps through Borges' *Aleph* and Brâncuși's Endless Column, worked out at 800 pages. The recursive blueprint has a book. |
+| *Tools for Conviviality* | Ivan Illich · 1973 | When does a tool stop serving its user and begin demanding to be served? Philosophy proper, and the ethical floor beneath a project that insists code must teach rather than merely work. The argument against the interface that makes its user smaller. |
+| *The Information: A History, a Theory, a Flood* | James Gleick · 2011 | From talking drums to Shannon's entropy: the long history of what a message *is*. A literary history of information itself — the intellectual biography of everything this vessel logs. |
+| *Close to the Machine* | Ellen Ullman · 1997 | A programmer's memoir written as literature — the loneliness, the absorption, the strange intimacy of thinking in a machine's terms for months. The interior weather of the work this journal records from the outside. |
+
 ---
 
 ## Filmography

@@ -79,10 +79,10 @@ Studied in Phase 3 alongside React — *after* the JavaScript phase, never befor
 
 | Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
 |---|---|---|---|---|---|---|
-| The TypeScript Handbook | Microsoft / TS team | Docs | https://www.typescriptlang.org/docs/handbook/intro.html | free | queued | — |
-| Beginner's TypeScript (tutorial) | Matt Pocock — Total TypeScript | Course | https://www.totaltypescript.com/tutorials/beginners-typescript | free | queued | — |
-| TypeScript Deep Dive | Basarat Ali Syed | Book | https://basarat.gitbook.io/typescript | free | queued | — |
-| Type Challenges (puzzles) | type-challenges community | Game | https://github.com/type-challenges/type-challenges | free | queued | — |
+| The TypeScript Handbook | Microsoft / TS team | Docs | https://www.typescriptlang.org/docs/handbook/intro.html | free | queued | `typescript/typescriptlang-org-handbook.md` |
+| Beginner's TypeScript (tutorial) | Matt Pocock — Total TypeScript | Course | https://www.totaltypescript.com/tutorials/beginners-typescript | free | queued | `typescript/total-typescript-beginners-typescript.md` |
+| TypeScript Deep Dive | Basarat Ali Syed | Book | https://basarat.gitbook.io/typescript | free | queued | `typescript/basarat-typescript-deep-dive.md` |
+| Type Challenges (puzzles) | type-challenges community | Game | https://github.com/type-challenges/type-challenges | free | queued | `typescript/type-challenges.md` |
 
 ## Frontend — tooling (npm, bundlers)
 

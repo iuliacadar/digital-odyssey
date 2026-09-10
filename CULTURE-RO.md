@@ -70,6 +70,20 @@ Această listă este **deschisă prin natură**. Crește pe măsură ce întâln
 | *The Willows* | Algernon Blackwood · 1907 | Doi bărbați pe un râu copleșiți de prezențe străvechi din copaci; fără climax, doar spaimă — peisajul ca abis. |
 | *The King in Yellow* | Robert W. Chambers · 1895 | O piesă de teatru care rănește pe oricine o citește — un semnal viu *în textul însuși*; arhetipul înregistrării contagioase (Pontypool își amintește). |
 
+### Mașina scrisă — unde meșteșugul întâlnește litera
+
+*Nava a venit către cod dinspre filosofie și filologie. Acestea sunt textele în care cele două rafturi se ating — nu manuale, ci opere care ar sta aici și dacă acest căpitan nu ar fi scris niciodată un rând de HTML. Fiecare răspunde unei întrebări pe care registrul o punea deja.*
+
+| Operă | Autor · An | De ce rezonează |
+|---|---|---|
+| *Notes* la *Sketch of the Analytical Engine* al lui Menabrea | Ada Lovelace · 1843 | I s-a cerut să traducă; ea a adnotat, iar Notele ei sunt mai lungi decât textul pe care îl adnotează. Prima programatoare a fost și prima comentatoare — o poveste de origine scrisă pentru un filolog, și strămoșul direct al unui proiect ale cărui fișiere-sursă se explică singure pe margine. |
+| *Programming as Theory Building* | Peter Naur · 1985 | Un program nu este un text, ci o **teorie**, ținută în mințile vii care l-au construit — de aceea documentația se degradează, și de aceea un cod ai cărui autori au plecat e mort deși fiecare rând îi supraviețuiește. Este *Corabia lui Tezeu* rostită în termeni de software: scândurile sunt toate acolo, iar corabia s-a dus. Douăsprezece pagini; lucrul cel mai adânc de pe acest raft. |
+| *Literate Programming* | Donald Knuth · 1984 | „În loc să ne închipuim că sarcina noastră principală este să instruim un *calculator* ce să facă, să ne concentrăm mai degrabă pe a explica unor *ființe omenești* ce vrem să facă un calculator.“ Textul fondator al pilonului didactic al acestui proiect, scris cu decenii înainte ca pilonul să fie numit. A-l citi înseamnă a citi originea propriei tale metode. |
+| *Gödel, Escher, Bach: An Eternal Golden Braid* | Douglas Hofstadter · 1979 | Bucle stranii, autoreferință și lucrul care se conține pe sine — aceeași obsesie pe care registrul o ține deja prin *Aleph*-ul lui Borges și prin Coloana fără sfârșit a lui Brâncuși, desfășurată în 800 de pagini. Planul recursiv are o carte. |
+| *Tools for Conviviality* | Ivan Illich · 1973 | Când încetează o unealtă să-și slujească omul și începe să ceară a fi slujită? Filosofie propriu-zisă, și temelia etică de sub un proiect care insistă că un cod trebuie să învețe, nu doar să funcționeze. Argumentul împotriva interfeței care își micșorează utilizatorul. |
+| *The Information: A History, a Theory, a Flood* | James Gleick · 2011 | De la tobele vorbitoare la entropia lui Shannon: istoria lungă a ceea ce *este* un mesaj. O istorie literară a informației înseși — biografia intelectuală a tot ce înregistrează această navă. |
+| *Close to the Machine* | Ellen Ullman · 1997 | Memoriile unui programator scrise ca literatură — singurătatea, absorbția, intimitatea stranie a gândirii în termenii unei mașini luni în șir. Vremea dinăuntru a muncii pe care jurnalul acesta o consemnează din afară. |
+
 ---
 
 ## Filmografie

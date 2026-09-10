@@ -202,12 +202,27 @@
       Consola HUD de sus a paginii de bibliografie.
     -->
     <nav class="navbar">
+      <!-- @block: IDENTITATEA TERMINALULUI
+        Blocul logo afișează indicativul de apel al navei și numele
+        secțiunii curente. Este text static (nu un link) pentru că
+        această pagină face ea însăși parte din navă; echipajul își
+        citește locația aici.
+      -->
       <div class="logo">D::0dy55ey / Arhivele Adâncului</div>
 
+      <!-- @block: COMENZI DE NAVIGARE
+        Lista nav-links conține acțiunile principale de navigare. Pe
+        paginile secundare, este oferită o singură comandă: întoarcerea
+        la puntea de comandă.
+      -->
       <ul class="nav-links">
         <li>
           <a href="index.html" class="return-btn"
-            >← Înapoi la Puntea de Comandă</a
+            ><!-- @reason:
+              Simbolul săgeată-stânga (←) acționează ca indiciu vizual de
+              direcție înapoi. „Înapoi la Puntea de Comandă“ leagă către
+              index.html, puntea principală a navei-mamă.
+            -->← Înapoi la Puntea de Comandă</a
           >
         </li>
       </ul>
@@ -222,8 +237,16 @@
       umplut de mașina partajată (bibliography.js) care citește indexul JSON.
     -->
     <main class="main-container">
+      <!-- @block: ANTETUL ARHIVEI -->
       <header class="category-header">
         <h2>Arhivele Adâncului — Referințe Cartografiate</h2>
+        <!-- @concept:
+          Titlul încadrează bibliografia ca pe o hartă de navigare — nu o
+          listă seacă de URL-uri, ci o hartă stelară vie a fiecărui semnal
+          care ghidează nava prin vidul digital. „Referințe Cartografiate“
+          reia limbajul cartografilor cerești din secolul al XVII-lea, care
+          au trasat hărți ale cerurilor necunoscute.
+        -->
         <p>
           Catalogul complet indexat al tuturor semnalelor primite din Web-Sferă,
           organizat pe sectoare de volum. Rândurile de mai jos nu sunt scrise de
@@ -263,7 +286,20 @@
            Ancore: #frontend-refs
            ================================================================ -->
       <section id="frontend-refs" class="log-entry">
+        <!-- @structure:
+          Fiecare secțiune folosește un ID care se potrivește cu ancora
+          propriului volum. Paginile de jurnal care aparțin acestui volum
+          (de exemplu html-log.html, css-log.html) pot lega direct către
+          această ancoră din subsolul lor:
+            🛰️ Referințe Astrogare → Sectorul Frontend Core
+        -->
         <h3>I. Frontend Core</h3>
+        <!-- @reason:
+          Secțiunea I acoperă tehnologiile fundamentale ale stratului
+          orientat spre utilizator: HTML pentru structură, CSS pentru
+          stil, JavaScript pentru comportament și framework-urile
+          React/Angular pentru arhitectura pe componente.
+        -->
 
         <!-- @pedagogy: ANATOMIA TABELULUI — încă scrisă manual, corect
           Un <table> se alcătuiește din containere și etichete:
@@ -284,6 +320,12 @@
               <th>Frecvență (URL)</th>
               <th>Statusul Misiunii</th>
             </tr>
+            <!-- @reason:
+              Rândul de antet este fix — depinde de <thead>, iar mașinile
+              JSON îl produc la fel. Cele trei coloane sunt aceleași la
+              fiecare vizită, așa că scrierea lor de mână, aici, este
+              alegerea corectă.
+            -->
           </thead>
           <tbody data-shelf="frontend">
             <!-- @reason:
@@ -300,6 +342,12 @@
            Andocare: #data-bridge-refs
            ================================================================ -->
       <section id="data-bridge-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea Data Bridge face tranziția între volumele frontend și
+          backend. Cataloghează resurse despre JSON, proiectare API și
+          formate de transfer de date — moneda universală care circulă
+          între straturi.
+        -->
         <h3>II. Data Bridge</h3>
 
         <table class="data-grid">
@@ -324,6 +372,15 @@
            Andocare: #backend-refs
            ================================================================ -->
       <section id="backend-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea III acoperă întregul strat server-side: motoare de
+          execuție de bază, framework-uri API, autentificare, middleware,
+          testare, performanță și implementare. În vechea construcție
+          scrisă de mână, acesta era un singur tabel uriaș cu rânduri de
+          separare manuale „— Motoare de bază —“ (colspan="3"). Mașina
+          reface aceleași separatoare automat, grupând câmpul `kind` din
+          JSON, așa cum este documentat în bibliography.js.
+        -->
         <h3>III. Backend Sector</h3>
 
         <table class="data-grid">
@@ -349,6 +406,12 @@
            Andocare: #database-refs
            ================================================================ -->
       <section id="database-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea IV acoperă atât stocarea structurată (SQL), cât și pe
+          cea nestructurată (NoSQL). Este „vidul“ pentru că datele, odată
+          stocate, devin invizibile — există în adâncurile tăcute ale
+          memoriei navei.
+        -->
         <h3>IV. Database Void</h3>
 
         <table class="data-grid">
@@ -372,6 +435,10 @@
            Andocare: #ux-refs
            ================================================================ -->
       <section id="ux-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea V cataloghează referințe pentru proiectarea experienței
+          utilizatorului și standardele de accesibilitate.
+        -->
         <h3>V. UX Lab</h3>
 
         <table class="data-grid">
@@ -395,6 +462,11 @@
            Andocare: #delivery-refs
            ================================================================ -->
       <section id="delivery-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea VI cataloghează controlul versiunilor, colaborarea,
+          CI/CD și implementarea — sistemele care mută codul de la stația
+          de lucru până în orbita exterioară a producției.
+        -->
         <h3>VI. Delivery Deck</h3>
 
         <table class="data-grid">
@@ -420,6 +492,12 @@
            ================================================================ -->
       <section id="meta-refs" class="log-entry">
         <h3>Epilog — Alegerea Următoarei Rute</h3>
+        <!-- @reason:
+          O secțiune mică și onestă pentru resursele despre meșteșugul
+          alegerii: roadmap.sh, Curriculum-ul MDN și eseul lui Norvig despre
+          învățatul curajos al programării. Trăiește sub categoria „meta“
+          în motorul JSON.
+        -->
 
         <table class="data-grid">
           <thead>
@@ -437,21 +515,139 @@
         </table>
       </section>
 
+      <!-- ================================================================
+           SECȚIUNEA VIII — POARTA ANGAJĂRII
+           Andocare: #interview-refs
+           (categorie "interview")
+           Cel mai îngust raft al navei: trecerea dintre un portofoliu
+           terminat și o ofertă adevărată.
+           ================================================================ -->
+      <section id="interview-refs" class="log-entry">
+        <!-- @structure:
+          Secțiunea VIII cataloghează pregătirea pentru procesul de angajare
+          în sine. Este mică în mod deliberat. Un portofoliu dovedește
+          munca; acest raft învață doar cum se vorbește despre ea sub
+          examinare.
+        -->
+        <h3>VII. Poarta Angajării</h3>
+        <!-- @reason:
+          Numeralul din titlu este VII, nu VIII, pentru că secțiunea
+          „Epilog“ de mai sus nu poartă un numeral propriu — este o anexă,
+          nu un volum. Secvența romană continuă deci aici.
+        -->
+
+        <table class="data-grid">
+          <thead>
+            <tr>
+              <th>Numele Sursei</th>
+              <th>Frecvență (URL)</th>
+              <th>Statusul Misiunii</th>
+            </tr>
+          </thead>
+          <tbody data-shelf="interview">
+            <!-- @reason:
+              Raftul angajării — categoria "interview". Portofoliul dovedește
+              munca; acest raft învață doar cum se vorbește despre ea.
+            -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ================================================================
+           SECȚIUNEA IX — PUNTEA UMANIOARELOR
+           Andocare: #humanities-refs
+           (categorie "humanities")
+           Singurul raft al navei care nu condiționează nimic. Există fiindcă
+           un curriculum pe care un filolog nu-l poate citi este un curriculum
+           abandonat în luna a treia.
+           ================================================================ -->
+      <section id="humanities-refs" class="log-entry">
+        <!-- @structure:
+          Această secțiune poartă un ID care se potrivește cu propria
+          ancoră, #humanities-refs, același tipar folosit de fiecare altă
+          secțiune de pe pagină — astfel încât o viitoare pagină de jurnal
+          ar putea lega direct către „Puntea Umanioarelor“ exact cum leagă
+          deja către „Sectorul Frontend Core“ sau „Sectorul Backend“.
+        -->
+        <!-- @concept:
+          Fiecare altă secțiune a acestei arhive răspunde la întrebarea „ce
+          trebuie să învăț ca să construiesc lucrul?“. Aceasta răspunde la
+          alta: „ce este acest meșteșug și de unde vine?“. Nu sunt aceeași
+          întrebare, iar a doua este mai veche.
+
+          Raftul ține texte primare (Notele lui Lovelace, 1843; lucrarea lui
+          Turing, 1950), eseuri despre filosofia meșteșugului (Naur, Knuth,
+          Dijkstra), istorii narative care se citesc ca literatură (Kidder,
+          Gleick, Ullman) și câteva cărți deopotrivă literare și temeinice
+          tehnic — „Code“ al lui Petzold în frunte.
+
+          Nimic de aici nu stă pe drumul critic. Tot ce e aici explică de ce
+          merită parcurs drumul critic.
+        -->
+        <h3>VIII. Puntea Umanioarelor</h3>
+
+        <table class="data-grid">
+          <!-- @reason:
+            Același schelet de tabel ca la fiecare alt raft de pe pagină:
+            <table> este containerul-grilă fix, scris manual o singură
+            dată și niciodată retastat de mașină — doar rândurile din
+            interior sunt construite la rulare.
+          -->
+          <thead>
+            <!-- @reason:
+              <thead> ține cele trei etichete de coloană pentru acest raft.
+              Este scris manual pentru că nu se schimbă niciodată, spre
+              deosebire de grupul de rânduri de sub el, pe care mașina JSON
+              îl umple la încărcare.
+            -->
+            <tr>
+              <th>Numele Sursei</th>
+              <th>Frecvență (URL)</th>
+              <th>Statusul Misiunii</th>
+            </tr>
+            <!-- @reason:
+              Rândul de antet este fix, exact ca la fiecare alt raft de pe
+              pagină: trei coloane — sursă, frecvență (URL) și statusul
+              misiunii — descriu orice tip de referință de pe acest raft,
+              de la un caiet din secolul al nouăsprezecelea până la o
+              lucrare de conferință din 1968.
+            -->
+          </thead>
+          <tbody data-shelf="humanities">
+            <!-- @reason:
+              Raftul umanioarelor — "humanities" în JSON. Cea mai mare punte
+              adăugată acestei arhive după prima ei lansare, și singura ale
+              cărei intrări pot rămâne „în așteptare“ la nesfârșit fără ca
+              asta să fie vreun eșec.
+            -->
+          </tbody>
+        </table>
+      </section>
+
       <!-- @block: LEGENDA SEMNALELOR
         Codul comun dintre plisca și tabel: explicația celor trei statusuri
         pe care mașina le așează în coloana „Statusul Misiunii”.
       -->
       <section id="archive-legend" class="log-entry">
         <h3>Legenda Semnalelor</h3>
+        <!-- @pedagogy: ELEMENTUL <dl> (LISTĂ DE DESCRIERE)
+           <dl> înseamnă „description list“. Este o structură în trei părți:
+             <dl>  → containerul listei
+             <dt>  → termenul (description term)
+             <dd>  → definiția (description details)
+        -->
         <dl class="status-legend">
+          <!-- @block: Activ -->
           <dt><span class="status-active">Activ</span></dt>
           <dd>
             Referință consultată continuu — semnalul este fix și în flux.
           </dd>
+          <!-- @block: În Progres -->
           <dt><span class="status-in-progress">În Progres</span></dt>
           <dd>
             Parcursă în prezent — expediția se află în acest sector.
           </dd>
+          <!-- @block: În Așteptare -->
           <dt><span class="status-in-progress">În așteptare</span></dt>
           <dd>
             Planificat și cartografiat, dar neînceput: stă în coadă. Fiindcă

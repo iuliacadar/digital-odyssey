@@ -19,6 +19,7 @@ docs/notes/
 │   └── ... (one file per source, as they are consulted)
 ├── css/               <- CSS chapter
 ├── javascript/        <- JavaScript chapter
+├── typescript/        <- TypeScript chapter
 ├── react/             <- React chapter
 ├── angular/           <- Angular chapter
 ├── backend/           <- Backend chapter
@@ -67,6 +68,7 @@ whenever a better arrangement emerges.
 | `sql/` | SQL (relational) | — | not begun |
 | `nosql/` | NoSQL | — | not begun |
 | `json/` | JSON / data bridge | — | not begun |
+| `typescript/` | TypeScript | Handbook, Total TypeScript, Deep Dive, Type Challenges | not begun |
 | `ux/` | UX | — | not begun |
 | `delivery/` | Delivery (Git, GitHub, pipeline) | — | not begun |
 
