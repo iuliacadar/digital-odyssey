@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează bazele de date NoSQL — documente, cheie-valoare, coloane, grafuri și modele de date."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -1408,7 +1408,8 @@
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#database-refs" target="_blank">Deep Space Archives — Database Void</a>
+          <!-- @warning: rel="noopener noreferrer" este obligatoriu pe orice link target="_blank" — refuză tabului nou o referință înapoi prin window.opener (tab-nabbing) și reține adresa referrer. -->
+          <a href="../bibliography.html#database-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Database Void</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>

@@ -777,14 +777,19 @@
             Acționează ca un far în fața fiecărui link din footer.
           -->
           <span class="pulse-dot"></span>
-          <a href="bibliography.html" target="_blank">Arhivele Adâncului — Referințe Cartografiate</a>
           <!-- @reason:
-            Atributul target="_blank" deschide linkul într-o filă nouă de browser.
-            Acest lucru este util pentru resurse externe, astfel încât echipajul
-            să nu navigheze departe de puntea de comandă. Pentru securitate,
-            luați în considerare adăugarea rel="noopener noreferrer" pentru a
-            împiedica pagina deschisă să acceseze fereastra originală prin window.opener.
+            Atributul target="_blank" deschide linkul într-o filă nouă de
+            browser, astfel încât echipajul să nu navigheze departe de puntea
+            de comandă.
           -->
+          <!-- @warning:
+            target="_blank" nu se scrie niciodată singur. Fără rel="noopener",
+            pagina deschisă primește un mâner viu window.opener înapoi spre
+            această filă și o poate rescrie pe sub vizitator — atacul numit
+            "tab-nabbing". noreferrer reține, în plus, adresa acestei pagini
+            din antetul Referer al destinației. Ambele jetoane, de fiecare dată.
+          -->
+          <a href="bibliography.html" target="_blank" rel="noopener noreferrer">Arhivele Adâncului — Referințe Cartografiate</a>
         </li>
         <!-- @path: Pagina de transmisie / Cartă de Astronavigație -->
         <li>

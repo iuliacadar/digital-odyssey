@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează limbajele de programare backend — Go, Rust, Python, Node.js — prin comparații de sintaxă, performanță și ecosistem."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -1408,7 +1408,8 @@
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#backend-refs" target="_blank">Deep Space Archives — Backend Sector</a>
+          <!-- @warning: rel="noopener noreferrer" este obligatoriu pe orice link target="_blank" — refuză tabului nou o referință înapoi prin window.opener (tab-nabbing) și reține adresa referrer. -->
+          <a href="../bibliography.html#backend-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Backend Sector</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>

@@ -16,7 +16,7 @@
 //      <tr>
 //        <td>MDN Web Docs — HTML</td>
 //        <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-//               target="_blank" rel="noopener">Reference Only</a></td>
+//               target="_blank" rel="noopener noreferrer">Reference Only</a></td>
 //        <td>Active</td>
 //      </tr>
 //
@@ -35,7 +35,7 @@
 //
 //    Intenționat, mai predăm încă fiecare etichetă de care mâna nu s-a putut
 //    dezlipi: <table>, <thead>, <tbody>, <tr>, <th>, <td>, colspan și
-//    link-ul <a target="_blank" rel="noopener">. Diferența este de unde se
+//    link-ul <a target="_blank" rel="noopener noreferrer">. Diferența este de unde se
 //    nasc: pe drumul vechi erau tastele o dată în .html; pe drumul nou mașina
 //    le creează pe loc cu document.createElement().
 //  ==========================================================================
@@ -301,12 +301,13 @@ if (bibliographyShelves.length > 0) {
           const linkCell = document.createElement("td"); //  Celula linkului.
           const link = document.createElement("a"); //  @pedagogy: <a> este eticheta de ancoră.
           //  href = destinația; target="_blank" deschide un tab nou ca
-          //  echipajul să rămână pe hărți; rel="noopener" este un gard de
-          //  siguranță care împiedică pagina deschisă să se întindă înapoi
-          //  prin window.opener.
+          //  echipajul să rămână pe hărți; rel="noopener noreferrer" este un
+          //  gard de siguranță care împiedică pagina deschisă să se întindă
+          //  înapoi prin window.opener ȘI reține adresa noastră din antetul
+          //  Referer al cererii.
           link.href = entry.url; //  Încotro pointează linkul.
           link.target = "_blank"; //  Tab nou: pagina de hărți rămâne în spate.
-          link.rel = "noopener"; //  @warning: noopener blochează tab-nabbing.
+          link.rel = "noopener noreferrer"; //  @warning: blochează tab-nabbing + scurgerea referrer.
           link.textContent = `${txt.open} ${txt.accessSuffix[
             entry.access
           ]}`; //  @line: "Open (free)" / "Open (subscription)" / "Open (purchase)" / "Open (borrow)" în limba paginii.

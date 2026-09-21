@@ -1234,7 +1234,7 @@ const header = document.createElement("p");
         const a = document.createElement("a");
         a.href = JOURNAL_PATH;
         a.target = "_blank"; // Tab nou ...
-        a.rel = "noopener"; // ... fără a da noii pagini o referință înapoi.
+        a.rel = "noopener noreferrer"; // ... fără referință înapoi prin window.opener și fără scurgere Referer.
         a.textContent =
           lang === "ro"
             ? "DESCHIDE JURNALUL COMPLET (GitHub)"

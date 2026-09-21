@@ -491,7 +491,8 @@
         <!-- @path: Pagina de bibliografie -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="bibliography.html" target="_blank">Arhivele Adâncului — Referințe Cartografiate</a>
+          <!-- @warning: rel="noopener noreferrer" este obligatoriu pe orice link target="_blank" — refuză tabului nou o referință înapoi prin window.opener (tab-nabbing) și reține adresa referrer. -->
+          <a href="bibliography.html" target="_blank" rel="noopener noreferrer">Arhivele Adâncului — Referințe Cartografiate</a>
         </li>
         <!-- @path: Pagina Cartei de Astronavigație -->
         <li>
