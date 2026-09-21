@@ -298,74 +298,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#html-day00" class="sidebar-link">
-                Day 00 &#9672; Intro
-              </a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — CARENA & SCHELETUL
-              Prima săptămână completă acoperă mecanismele HTML de bază: boilerplate,
-              titluri, structură semantică, link-uri, liste și navigare.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#html-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li>
-              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; Șablonul de Bază</a>
-            </li>
-            <li>
-              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Titluri & Paragrafe</a>
-            </li>
-            <li>
-              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; HTML Semantic & Layout</a>
-            </li>
-            <li>
-              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Ancore, Link-uri Absolute vs Relative</a>
-            </li>
-            <li>
-              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Liste Neordonate, Ordonate & de Descriere</a>
-            </li>
-            <li>
-              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Entități speciale & Emoji în cod</a>
-            </li>
-            <li>
-              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Meniuri de navigare</a>
-            </li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SENZORI VIZUALI & MEDIA
-              A doua săptămână trece de la HTML-ul structural la media
-              încorporată: imagini, audio, video, iframe-uri și figure.
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
+
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
+
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#html-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li>
-              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; Tagul &lt;img&gt; & atributul alt</a>
-            </li>
-            <li>
-              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; Elementul &lt;picture&gt; & atributul srcset</a>
-            </li>
-            <li>
-              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; Elementul &lt;audio&gt; & formate</a>
-            </li>
-            <li>
-              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; Elementul &lt;video&gt; & subtitrări cu &lt;track&gt;</a>
-            </li>
-            <li>
-              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; Elementul &lt;iframe&gt; & încorporarea hărților/videourilor</a>
-            </li>
-            <li>
-              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; Elementele &lt;figure&gt; & &lt;figcaption&gt;</a>
-            </li>
-            <li>
-              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Recapitulare & Test de Stres de Navigare</a>
-            </li>
           </ul>
         </nav>
       </aside>
