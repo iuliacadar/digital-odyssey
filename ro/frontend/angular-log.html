@@ -385,7 +385,51 @@
           <p>
             Cartografiind principiile, modelele și practicile Angular.
           </p>
-        </header>        <!-- ===== SECTOR 00: Modulul ===== -->
+        </header>
+
+        <!-- @block: BANNERUL „ÎN CONSTRUCȚIE" — FARUL DE SCHELĂRIE
+          Această punte nu este terminată. În loc să lăsăm un vizitator să
+          citească proză de umplutură și să o confunde cu jurnalul navei,
+          starea este declarată deschis, în capul paginii, înaintea primei
+          porți de sector.
+          @reason:
+            Textul de umplutură care nu este etichetat drept text de umplutură
+            este o minciună tăcută: pagina pare completă, iar paragrafele par
+            conținut. Acest banner transformă acel eșec tăcut într-o stare
+            onestă, vizibilă, pe care cititorul o poate folosi.
+          @concept:
+            Notificarea nu se bazează niciodată doar pe culoare. Poartă trei
+            canale independente — glifa de pericol, cuvintele literale
+            „În Construcție" și propoziția explicativă de dedesubt. Un cititor
+            cu orice formă de daltonism sau care folosește un mod cu contrast
+            forțat ori un mod de lectură nu pierde nimic.
+          @structure:
+            [aside] marchează conținut pus deoparte față de jurnalul din jur.
+            Cu aria-label devine un reper denumit, astfel încât tehnologia
+            asistivă îl poate atinge direct sau îl poate sări complet.
+          @warning:
+            Glifa poartă aria-hidden="true" pentru că duplică cuvintele
+            alăturate. Anunțarea ei ar adăuga zgomot, nu sens.
+          @bridge:
+            Stilizarea trăiește în ro/style.css, Modulul 32 — Bannerul
+            „În Construcție". Metricile pentru punțile înguste trăiesc în
+            Modulul 00.2, B6.
+        -->
+        <aside class="under-construction" aria-label="Notificare: secțiune în construcție">
+          <p class="uc-label">
+            <span class="uc-icon" aria-hidden="true">&#128679;</span>
+            În Construcție
+          </p>
+          <p>
+            Această punte este încă în construcție. Fiecare intrare de jurnal de
+            mai jos este text de umplutură — structura există, dar scrierea
+            nu a fost încă făcută. Nimic de aici nu este conținut real.
+            Punțile terminate sunt listate pe
+            <a href="../index.html">puntea de comandă</a>.
+          </p>
+        </aside>
+
+        <!-- ===== SECTOR 00: Modulul ===== -->
         <!-- @block: ANUNȚ DE SECTOR — Modulul -->
         <div id="angular-sector-00" class="sector-announcement">
           <span>ENTER AIRLOCK</span>

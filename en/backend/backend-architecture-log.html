@@ -390,7 +390,48 @@
           <p>
             Charting the principles, patterns, and practices of Backend Architecture.
           </p>
-        </header>        <!-- ===== SECTOR 00: The Foundation ===== -->
+        </header>
+
+        <!-- @block: UNDER CONSTRUCTION BANNER — THE SCAFFOLDING BEACON
+          This deck is not finished. Rather than let a visitor read filler
+          prose and mistake it for the ship's log, the state is declared
+          openly, at the top, before the first sector gate.
+          @reason:
+            Placeholder text that is not labelled as placeholder text is a
+            silent lie: the page looks complete and the paragraphs look like
+            content. This banner turns that silent failure into an honest,
+            visible status the reader can act on.
+          @concept:
+            The notice never relies on colour alone. It carries three
+            independent channels — the hazard glyph, the literal words
+            "Under Construction", and the explanatory sentence beneath. A
+            reader with any form of colour blindness, or one using a forced-
+            colours or reader mode, loses nothing.
+          @structure:
+            [aside] marks content set apart from the surrounding log. With
+            aria-label it becomes a named landmark, so assistive technology
+            can reach it directly or skip it entirely.
+          @warning:
+            The glyph carries aria-hidden="true" because it duplicates the
+            adjacent words. Announcing it would add noise, not meaning.
+          @bridge:
+            Styling lives in en/style.css, Module 32 — Under Construction
+            Banner. The narrow-deck metrics live in Module 00.2, B6.
+        -->
+        <aside class="under-construction" aria-label="Under construction notice">
+          <p class="uc-label">
+            <span class="uc-icon" aria-hidden="true">&#128679;</span>
+            Under Construction
+          </p>
+          <p>
+            This deck is still being built. Every log entry below is placeholder
+            text — the structure is in place, but the writing has not been
+            done yet. Nothing here is real content. The finished decks are
+            listed on the <a href="../index.html">main bridge</a>.
+          </p>
+        </aside>
+
+        <!-- ===== SECTOR 00: The Foundation ===== -->
         <!-- @block: SECTOR ANNOUNCEMENT — The Foundation -->
         <div id="backend-architecture-sector-00" class="sector-announcement">
           <span>ENTER AIRLOCK</span>
