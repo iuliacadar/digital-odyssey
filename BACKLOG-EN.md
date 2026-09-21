@@ -142,7 +142,7 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 - `https://iuliacadar.github.io/digital-odyssey/en/` shows the EN index;
 - no `target="_blank"` link lacks `rel="noopener noreferrer"`;
 - no log page shows an empty body or placeholder text without an "Under Construction" banner;
-- deployment is automated or documented with a single command.
+- deployment is automated or documented with a single command. **Done:** `.github/workflows/deploy.yml` auto-publishes `main` to GitHub Pages on every push (Pages source = GitHub Actions, confirmed live); `make deploy` / `git push origin main` is the one-command trigger. See `DEPLOY.md` for prerequisites and rollback.
 
 ---
 

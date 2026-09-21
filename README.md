@@ -132,6 +132,11 @@ cd digital-odyssey
 
 Then open the English or Romanian entry point locally with a development server such as Live Server in VS Code.
 
+## Deploy
+
+Production deploy is one command: `make deploy`. See [`DEPLOY.md`](./DEPLOY.md)
+for prerequisites and rollback steps.
+
 ## Status
 
 D::0dy55ey is currently in an active building and refactoring phase.  

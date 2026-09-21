@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+# One-command deploy: `git push origin main` (or `gh workflow run deploy.yml`)
+# triggers this workflow, which publishes the repository root as-is —
+# there is no build step, this is a static HTML/CSS/JS site.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy in flight at a time; never cancel one that's already
+# uploading/publishing so we never ship a half-published artifact.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Publish the whole repo root: en/ and ro/ are served as sibling
+          # sites (see BACKLOG-EN.md #008 — option 3, en/ is canonical).
+          # docs/, tools/, and Markdown sources are harmless extra bytes
+          # (no server-side execution on Pages) but excluded for a smaller
+          # artifact and to avoid publishing internal working notes.
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
