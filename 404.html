@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  @block:
+  Root-level 404 page for GitHub Pages.
+
+  This project has no root index.html by design — Pages serves en/ and ro/
+  as sibling subfolder sites, and en/ is the canonical entry point (see
+  BACKLOG-EN.md #008, option 3: "Accept bare root as 404, document en/ as
+  canonical"). GitHub Pages automatically serves this file for ANY
+  unmatched path, including the bare root https://iuliacadar.github.io/digital-odyssey/,
+  so this doubles as the site's generic not-found page and as a friendly
+  landing stub that points visitors at the canonical language entries
+  instead of leaving them at a bare, unstyled 404.
+
+  This file is intentionally self-contained (inline styles, no external
+  assets) so it renders correctly no matter which path 404'd or whether
+  ./en/ or ./ro/ assets are reachable from that path's depth.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | D::0dy55ey</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #05070d;
+        color: #d8e2f0;
+        font-family: "Courier New", Consolas, monospace;
+        text-align: center;
+        padding: 2rem;
+        box-sizing: border-box;
+      }
+      main {
+        max-width: 36rem;
+      }
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.5rem;
+        color: #7fd7ff;
+      }
+      p {
+        line-height: 1.6;
+        margin: 0.75rem 0;
+      }
+      .links {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      a {
+        color: #7fd7ff;
+        text-decoration: none;
+        border: 1px solid #2a3b52;
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.25rem;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+      a:hover,
+      a:focus {
+        background: #7fd7ff;
+        color: #05070d;
+      }
+      code {
+        color: #9fb3c8;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>404 — Signal Lost</h1>
+      <p>
+        There is no transmission at this coordinate. D::0dy55ey has no
+        content at the bare project root — the bilingual archive lives one
+        level down.
+      </p>
+      <p>
+        The canonical entry point is <code>/en/</code> (English). The
+        Romanian volume lives at <code>/ro/</code>.
+      </p>
+      <div class="links">
+        <a href="./en/index.html">Enter EN — Canonical</a>
+        <a href="./ro/index.html">Intră RO</a>
+      </div>
+    </main>
+  </body>
+</html>

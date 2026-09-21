@@ -124,6 +124,8 @@ The project has no root `index.html` — Pages serves `en/` and `ro/` as sibling
 
 At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point to `.../digital-odyssey/en/index.html`. Option 3 is the simplest match for the current architecture, but the choice is deferred to launch.
 
+**Decision (implemented):** Option 3 — bare root returns GitHub Pages' standard 404 handling via a root `404.html` stub; `en/` remains canonical. The root `404.html` is a self-contained landing/error page (inline styles, no build step) that GitHub Pages serves automatically for any unmatched path under the project, including the bare root `https://iuliacadar.github.io/digital-odyssey/`. It briefly explains there is no root content and links to `./en/index.html` (canonical) and `./ro/index.html`. No repo code links to the bare root expecting content — `en/index.html` and `ro/index.html` already carry the `og:url`/`link[rel=canonical]` pointing at `.../en/index.html`, and a repo-wide search found zero internal `href`s targeting the bare project root. No Pages Settings change (source path) or `.github/workflows/` redirect workflow is required — GitHub Pages' built-in 404 mechanism picks up `/404.html` from the published root automatically once Pages is enabled for this repo.
+
 **Affected files:** `en/*.html`, `ro/*.html`, `en/style.css`, `ro/style.css`, `.github/workflows/deploy.yml`, `shared/data/*.json`, `404.html` (only for option 2)
 
 **Steps:**
