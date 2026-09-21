@@ -51,7 +51,7 @@
 
     <meta
       name="description"
-      content="A structured log documenting SQL — relational databases, queries, schemas, joins, indexing, and data modeling techniques."
+      content="A structured log on SQL — relational tables, data types, queries, joins, subqueries, schema design, keys, indexing, normalization, ACID, and transactions."
     />
     <!-- @meta:
       The page description.
@@ -61,7 +61,7 @@
 
     <meta
       name="keywords"
-      content="sql, relational databases, queries, schemas, joins, indexing, data modeling, database, D::0dy55ey"
+      content="sql, relational databases, queries, joins, subqueries, schema design, indexing, normalization, acid, transactions, database"
     />
     <!-- @meta:
       The keywords meta tag lists the main themes of the page.
@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="A structured log documenting SQL — relational databases, queries, schemas, joins, indexing, and data modeling techniques."
+      content="A structured log on SQL — relational tables, data types, queries, joins, subqueries, schema design, keys, indexing, normalization, ACID, and transactions."
     />
     <!-- @meta:
       Open Graph description.
@@ -1258,7 +1258,8 @@
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#database-refs" target="_blank">Deep Space Archives — Database Void</a>
+          <!-- @warning: rel="noopener noreferrer" is mandatory on every target="_blank" link — it denies the new tab a window.opener back-reference (tab-nabbing) and withholds the referrer URL. -->
+          <a href="../bibliography.html#database-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Database Void</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
