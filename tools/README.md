@@ -105,13 +105,21 @@ python3 tools/check-uc-banner.py           # 0 = clean, 1 = violations
 python3 tools/check-uc-banner.py -v        # every page and its verdict
 ```
 
-Three verdicts per log page:
+Four verdicts per log page:
 
 | Verdict    | Meaning                                              |
 |------------|------------------------------------------------------|
 | `CONTENT`  | real prose throughout — no banner needed             |
 | `DECLARED` | filler and/or empty entries, and a banner says so    |
 | `NAKED`    | filler and/or empty entries with **no** banner ← fail |
+| `STALE`    | real prose throughout, but a banner still claims filler ← fail |
+
+`STALE` is the mirror of `NAKED`, and it is the verdict this gate learned
+late. Decks are written continuously by other work; the moment one is
+finished, the banner still sitting on it stops being a courtesy and
+becomes a false claim that real writing is placeholder. A gate that only
+hunted for missing banners would call that page perfect. Fix it with
+`add-uc-banner.py --prune`.
 
 ### What "empty" means
 
@@ -129,19 +137,52 @@ states; only what the visitor actually sees can decide the verdict.
 
 ---
 
-## `add-uc-banner.py` — the companion that writes them in
+## `add-uc-banner.py` — the companion that writes them in and takes them out
 
 `check-uc-banner.py` judges; this one fixes. It finds every log deck
 with filler and inserts the banner immediately after the deck's
 `<header class="category-header">`, before the first sector gate.
 
 ```
-python3 tools/add-uc-banner.py --check     # report what is missing
+python3 tools/add-uc-banner.py --check     # report what is missing or stale
 python3 tools/add-uc-banner.py --apply     # write the banners in
+python3 tools/add-uc-banner.py --prune     # take them out once a deck is written
 ```
 
 It is **idempotent** — a page that already carries the banner is left
 alone — so it can be re-run after a new batch of log pages is generated.
+
+### `--prune` is not optional
+
+A banner is a claim: *some of the prose below is placeholder*. That claim
+is only honest while the filler is still there. These decks get written
+by other work, and the moment one is finished the banner on it starts
+deceiving the reader in the opposite direction — telling them that real,
+finished writing is filler, which sends them away from a completed page.
+That is the original failure with its sign flipped, and it is the more
+expensive of the two: an unlabelled draft merely looks odd, while a
+finished deck labelled unfinished never gets read at all.
+
+So the gate fails on a **STALE** banner exactly as hard as on a missing
+one, and `--prune` is the half of the tool that answers it.
+
+### Why removal has two tests of its own
+
+`--prune` edits pages other cards are actively writing, so "the banner is
+gone" is not a sufficient claim — it must take **nothing else** with it.
+
+- `test-uc-prune-safety.py` — for every banner-bearing page, removes the
+  banner and asserts that every deleted line belongs to the banner block,
+  that nothing is added or reordered, and that no CRLF anywhere else is
+  rewritten to LF.
+- `test-uc-prune-selftest.py` — injects three real faults into the remover
+  (newline normalisation, eating one extra neighbouring line, leaving the
+  `<aside>` behind) and requires the safety proof to reject all three. A
+  safety check that has never rejected anything is decoration.
+
+Both run in `.github/workflows/lint.yml`. Both prefer git history for the
+richest sample but fall back to the working tree, because CI clones at
+depth 1 and a guard that errors in CI is a guard everyone learns to mute.
 
 Two wordings are emitted, chosen per page by counting entries:
 

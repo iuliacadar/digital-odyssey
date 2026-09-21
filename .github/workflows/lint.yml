@@ -51,13 +51,44 @@ jobs:
 
       # @bridge: tools/check-uc-banner.py enforces BACKLOG-EN.md #008,
       #   completion condition 3. tools/add-uc-banner.py is the companion
-      #   that writes the banners in; this job only judges.
-      # @reason: The site ships 46 log decks whose entries are still
+      #   that writes the banners in and prunes them back out; this job
+      #   only judges.
+      # @reason: The site ships log decks whose entries are still
       #   placeholder prose. That is acceptable — an unfinished ship that
       #   says so is honest. What is NOT acceptable is a deck that renders
       #   filler or emptiness while looking finished. This job is the line
       #   between the two, and it must hold for every newly generated page,
       #   not just the ones that existed when the rule was written.
+      # @warning: The gate judges BOTH directions, and the second one is the
+      #   reason this job keeps earning its runtime. Decks are being written
+      #   continuously by other work; the moment a deck's filler is replaced
+      #   with real prose, the banner still sitting on it stops being a
+      #   courtesy and becomes a false claim that finished writing is
+      #   placeholder — which sends a reader away from a completed page. A
+      #   STALE verdict fails this job exactly as hard as a NAKED one.
 
       - name: Every filler or empty log deck declares itself under construction
         run: python3 tools/check-uc-banner.py
+
+      # @reason: The gate above claims it fails in BOTH directions. That claim
+      #   is worth what a demonstration of it is worth: this step puts a banner
+      #   back onto a deck whose prose is finished — the exact regression that
+      #   once shipped 22 lying notices — and requires the gate to go red, then
+      #   restores the page. Without it, the STALE half could rot into a no-op
+      #   and nobody would find out until a reader was misled again.
+      - name: The gate rejects a banner left on finished prose (control)
+        run: python3 tools/test-uc-stale-control.py
+
+      # @reason: --prune edits pages that other work is actively writing, so
+      #   "it removed the banner" is not a sufficient claim: it must remove
+      #   NOTHING ELSE. These two run together deliberately — the safety
+      #   proof shows the removal is surgical across all 46 banner pages, and
+      #   the self-test shows that proof can still fail, by injecting three
+      #   real faults (newline normalisation, over-eager line deletion, a
+      #   half-removed banner) and requiring each to be caught. A safety
+      #   check that has never rejected anything is decoration.
+      - name: The banner remover can still detect damage (self-test)
+        run: python3 tools/test-uc-prune-selftest.py
+
+      - name: Removing a banner disturbs nothing else
+        run: python3 tools/test-uc-prune-safety.py

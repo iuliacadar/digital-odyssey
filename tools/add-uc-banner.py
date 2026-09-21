@@ -26,9 +26,21 @@
 #  Usage:
 #      python3 tools/add-uc-banner.py --check    # report only, exit 1 if gaps
 #      python3 tools/add-uc-banner.py --apply    # write the banners in
+#      python3 tools/add-uc-banner.py --prune    # remove banners gone stale
 #
 #  The script is idempotent: a page that already carries the banner is left
 #  untouched, so it can be re-run after new log pages are generated.
+#
+#  @warning: THE BANNER MUST BE ABLE TO LEAVE. A notice that announces filler
+#    is only honest while the filler is still there. Once a deck is written,
+#    the same banner that protected the reader starts deceiving them: it tells
+#    a visitor the prose they are reading is placeholder when every word of it
+#    is real, which sends them away from a finished deck. That is the original
+#    failure with its sign flipped, and it is the more expensive of the two —
+#    an unlabelled draft merely looks odd, whereas a finished deck labelled
+#    unfinished is never read at all. --prune is the other half of --apply and
+#    is not optional; check-uc-banner.py fails on a STALE banner for exactly
+#    this reason.
 #  ==========================================================================
 
 import pathlib
@@ -242,6 +254,105 @@ def classify(path):
     return True, variant, filler, total
 
 
+#  --------------------------------------------------------------------------
+#  REMOVAL — the banner's exit
+#  --------------------------------------------------------------------------
+#  @reason: The banner is a claim about the page: "some of this is filler". A
+#    claim that has stopped being true has to be retractable, and retracting it
+#    by hand across 46 decks in two languages is how it silently does not get
+#    done. The removal is therefore mechanical and exact: it lifts the didactic
+#    comment and the [aside] together, plus the blank lines the insertion added,
+#    so that applying then pruning returns the file to its original bytes.
+#
+#  @structure: The block written by insert() is, in order — two terminators,
+#    the "@block: UNDER CONSTRUCTION" comment, the [aside], one terminator.
+#    Matching from the comment's opening "<!--" through "</aside>" removes both
+#    halves; leaving the comment behind would orphan an essay describing markup
+#    that is no longer on the page.
+BANNER_BLOCK = re.compile(
+    r"[ \t]*<!--\s*@block:[^\n\r]*(?:UNDER CONSTRUCTION|ÎN CONSTRUCȚIE)"
+    r".*?-->\s*<aside[^>]*class=\"[^\"]*\bunder-construction\b[^\"]*\".*?</aside>[ \t]*",
+    re.S,
+)
+
+#  @warning: A page may carry the [aside] without the didactic comment if a
+#    future edit strips comments. This fallback removes the markup alone, so
+#    pruning still succeeds rather than reporting a false "nothing to do".
+BANNER_ASIDE = re.compile(
+    r"[ \t]*<aside[^>]*class=\"[^\"]*\bunder-construction\b[^\"]*\".*?</aside>[ \t]*",
+    re.S,
+)
+
+
+def remove(raw):
+    """Strip the banner block, restoring the file to its pre-insert bytes.
+
+    @reason: Returns None when there is nothing to remove, so the caller can
+      tell "already clean" apart from "removed", rather than rewriting a file
+      byte-for-byte identically and dirtying it in git for no reason.
+
+    @warning: This must be the EXACT inverse of insert(), not merely something
+      that deletes the markup. insert() wrote:
+
+          raw[:cut] + term + term + block + term + rest.lstrip("\\r\\n")
+
+      Two traps live in that line, and both were hit before this was right.
+
+      First, do NOT re-derive the terminator. insert() picks term from the
+      file's first 4KB, but ro/data-bridge/json-log.html is stored with mixed
+      CRLF/CR/LF: the heuristic picks CRLF while the banner committed there is
+      written with bare LF (a later EOL-repair pass normalised it). Guessing
+      the terminator again on the way out drifted that file's CRLF count from
+      517 to 519 — a silent rewrite of lines nobody edited. The separator that
+      insert() actually wrote is still sitting in the file between </header>
+      and the block, so it is copied verbatim instead of being recomputed.
+
+      Second, the separator is TWO terminators, not one. Rejoining with a
+      single one lost exactly one byte on all 46 pages — the kind of
+      off-by-one that a "looks right" eyeball review passes and a byte
+      comparison against git does not.
+
+      Third, trailing terminators must be stripped as PAIRS. A bare
+      lstrip("\\r\\n") treats the string as a set of characters, so on a page
+      whose next line ends CRLF it eats the "\\r" and leaves the "\\n" behind —
+      silently converting one CRLF line to LF on ro/ux/accessibility-log.html,
+      ro/ux/ux-foundations-log.html and ro/data-bridge/json-log.html. One byte,
+      one line, invisible in review, and exactly the class of damage this
+      docstring exists to prevent.
+    """
+    match = BANNER_BLOCK.search(raw) or BANNER_ASIDE.search(raw)
+    if not match:
+        return None
+
+    #  @warning: Strip whole terminators, never individual characters. See the
+    #    third trap above — lstrip("\r\n") would split a CRLF in half.
+    after = raw[match.end() :]
+    while True:
+        if after.startswith("\r\n"):
+            after = after[2:]
+        elif after[:1] in ("\r", "\n"):
+            after = after[1:]
+        else:
+            break
+
+    #  @structure: Cut at the close of the category header — the same seam
+    #    insert() opened — and re-join using the separator bytes that are
+    #    literally there, so the result is what insert() was handed.
+    opening = HEADER_OPEN.search(raw)
+    if opening:
+        close = raw.find("</header>", opening.end())
+        if close != -1 and close < match.start():
+            cut = close + len("</header>")
+            separator = raw[cut : match.start()]
+            return raw[:cut] + separator + after
+
+    #  @reason: Fallback for a banner that is not preceded by a category header
+    #    (none exist today, but the tool must not corrupt one tomorrow). The
+    #    leading whitespace of the match is preserved for the same reason.
+    term = "\r\n" if "\r\n" in raw[:4096] else ("\r" if "\r" in raw[:4096] else "\n")
+    return raw[: match.start()].rstrip("\r\n") + term + term + after
+
+
 def insert(raw, lang, variant):
     """Place the banner immediately after the category header closes."""
     opening = HEADER_OPEN.search(raw)
@@ -272,11 +383,13 @@ def insert(raw, lang, variant):
 
 def main():
     apply = "--apply" in sys.argv
-    if not apply and "--check" not in sys.argv:
-        print("usage: add-uc-banner.py [--check | --apply]")
+    prune = "--prune" in sys.argv
+    if not apply and not prune and "--check" not in sys.argv:
+        print("usage: add-uc-banner.py [--check | --apply | --prune]")
         return 2
 
     needs, already, written, failed = [], [], [], []
+    stale, pruned = [], []
 
     for glob in GLOBS:
         for path in sorted(ROOT.glob(glob)):
@@ -286,7 +399,19 @@ def main():
             has_banner = MARKER in raw
             wants, variant, filler, total = classify(path)
 
+            #  @concept: A banner on a deck that no longer has filler is STALE —
+            #    the page has been written since the notice went up, and the
+            #    notice is now telling the reader a lie about finished prose.
             if not wants:
+                if has_banner:
+                    stale.append(rel)
+                    if prune:
+                        updated = remove(raw)
+                        if updated is None:
+                            failed.append(rel)
+                            continue
+                        write_source(path, updated)
+                        pruned.append(rel)
                 continue
             if has_banner:
                 already.append(rel)
@@ -304,21 +429,36 @@ def main():
     for rel, variant, filler, total in needs:
         print(f"  {rel}  [{variant}]  {filler}/{total} entries are filler")
 
+    for rel in stale:
+        verb = "pruned" if rel in pruned else "STALE"
+        print(f"  {verb}  {rel}  — no filler left, banner no longer true")
+
     print()
     print(f"already banner-ed: {len(already)}")
+    if prune:
+        print(f"stale banners removed: {len(pruned)}")
     if apply:
         print(f"banners written:   {len(written)}")
-        if failed:
-            print(f"FAILED (no category-header found): {len(failed)}")
-            for rel in failed:
-                print(f"  {rel}")
-            return 1
+
+    if failed:
+        print(f"FAILED (no insertion point / removal point found): {len(failed)}")
+        for rel in failed:
+            print(f"  {rel}")
+        return 1
+
+    if apply or prune:
         return 0
 
-    if needs:
-        print(f"FAIL — {len(needs)} log page(s) show filler with no Under Construction banner")
+    problems = len(needs) + len(stale)
+    if problems:
+        if needs:
+            print(f"FAIL — {len(needs)} log page(s) show filler with no Under Construction banner")
+        if stale:
+            print(f"FAIL — {len(stale)} log page(s) carry a banner but no longer have any filler")
+            print("       Run --prune: the notice is now false.")
         return 1
-    print("OK — every log page with filler content carries an Under Construction banner.")
+    print("OK — every log page with filler content carries an Under Construction banner,")
+    print("     and no page carries one it has outgrown.")
     return 0
 
 

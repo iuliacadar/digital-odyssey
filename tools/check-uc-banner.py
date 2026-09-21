@@ -16,6 +16,16 @@
 #      CONTENT  — real prose, no filler, no banner needed
 #      DECLARED — filler and/or emptiness, and a banner says so
 #      NAKED    — filler and/or emptiness with NO banner   <- the failure
+#      STALE    — real prose, but a banner still claims filler  <- also a failure
+#
+#  @warning: STALE is the failure this gate learned late, and it is the one
+#    that costs the most. These decks are filled in by other hands while the
+#    banners sit on them; the moment a deck is written, its banner stops being
+#    a courtesy and becomes a false claim that the prose below is placeholder.
+#    A reader who believes it leaves a finished deck unread. A gate that only
+#    hunts for missing banners would call that page perfect, so both directions
+#    are checked here: a notice must appear when it is true and leave when it
+#    is not.
 #
 #  Usage:
 #      python3 tools/check-uc-banner.py        # exit 0 = clean, 1 = violations
@@ -73,8 +83,15 @@ def audit(path):
 
     unlabelled = (filler or empty or hollow) and not has_banner
 
+    #  @concept: The mirror failure. Nothing on this deck is filler, nothing is
+    #    empty, and yet a banner still announces placeholder text. The page has
+    #    been written since the notice went up and the notice was never lifted.
+    outdated = not (filler or empty or hollow) and has_banner
+
     if unlabelled:
         verdict = "NAKED"
+    elif outdated:
+        verdict = "STALE"
     elif filler or empty or hollow:
         verdict = "DECLARED"
     else:
@@ -91,7 +108,8 @@ def audit(path):
 
 def main():
     verbose = "-v" in sys.argv
-    naked, tally = [], {"CONTENT": 0, "DECLARED": 0, "NAKED": 0}
+    naked, stale = [], []
+    tally = {"CONTENT": 0, "DECLARED": 0, "NAKED": 0, "STALE": 0}
 
     for glob in GLOBS:
         for path in sorted(ROOT.glob(glob)):
@@ -100,6 +118,8 @@ def main():
             tally[verdict] += 1
             if verdict == "NAKED":
                 naked.append((rel, facts))
+            if verdict == "STALE":
+                stale.append((rel, facts))
             if verbose:
                 print(
                     f"  {verdict:8s} {str(rel):48s} "
@@ -111,21 +131,33 @@ def main():
         print()
         for rel, facts in naked:
             print(f"  NAKED  {rel}  {facts}")
+    if stale:
+        print()
+        for rel, facts in stale:
+            print(f"  STALE  {rel}  banner claims filler, deck has {facts['entries']} written entries")
 
     print()
     print(f"CONTENT  (real prose, no banner needed): {tally['CONTENT']}")
     print(f"DECLARED (filler/empty, banner present): {tally['DECLARED']}")
     print(f"NAKED    (filler/empty, NO banner):      {tally['NAKED']}")
+    print(f"STALE    (real prose, banner lingers):   {tally['STALE']}")
     print()
 
-    if naked:
-        print(f"FAIL — {len(naked)} log page(s) show empty or placeholder content")
-        print("       with no Under Construction banner (BACKLOG-EN.md #008).")
+    if naked or stale:
+        if naked:
+            print(f"FAIL — {len(naked)} log page(s) show empty or placeholder content")
+            print("       with no Under Construction banner (BACKLOG-EN.md #008).")
+        if stale:
+            print(f"FAIL — {len(stale)} log page(s) carry an Under Construction banner")
+            print("       over fully written content. The notice is now false; it tells")
+            print("       a reader that finished prose is placeholder. Run:")
+            print("           python3 tools/add-uc-banner.py --prune")
         return 1
 
     total = tally["CONTENT"] + tally["DECLARED"]
     print(f"OK — all {total} log page(s) either carry real content or declare")
-    print("     themselves under construction. BACKLOG-EN.md #008 condition 3 met.")
+    print("     themselves under construction, and none carries a notice it has")
+    print("     outgrown. BACKLOG-EN.md #008 condition 3 met.")
     return 0
 
 
