@@ -139,7 +139,7 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 **Condiții de finalizare:**
 - `https://iuliacadar.github.io/digital-odyssey/en/` afișează indexul EN;
 - niciun link `target="_blank"` nu este fără `rel="noopener noreferrer"`;
-- nicio pagină de jurnal nu arată un corp gol sau text placeholder fără un banner „În construcție";
+- nicio pagină de jurnal nu arată un corp gol sau text placeholder fără un banner „În construcție". **Realizat:** toate cele 46 de pagini de jurnal (23 EN + 23 RO) poartă un banner `🚧 Under Construction` / `🚧 În Construcție` direct sub antetul de categorie. Stilizarea este Modulul 32 din `en/style.css` / `ro/style.css`, cu metricile pentru punți înguste în Modulul 00.2 §B6. `tools/add-uc-banner.py` le scrie (idempotent, re-rulabil după generarea de pagini noi); `tools/check-uc-banner.py` este poarta de regresie și rulează în `.github/workflows/lint.yml`. Poarta verifică și corpurile goale, nu doar textul de umplutură, astfel încât o punte goală nu poate trece pentru că nu conține „lorem".
 - deploy-ul este automatizat sau documentat cu o singură comandă.
 
 ---
