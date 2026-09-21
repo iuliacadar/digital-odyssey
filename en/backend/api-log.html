@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>API Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#api-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#api-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#api-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#api-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#api-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#api-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#api-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#api-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#api-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#api-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#api-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#api-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#api-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#api-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#api-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#api-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#api-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#api-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#api-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#api-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#api-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#api-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#api-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#api-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#api-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#api-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#api-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#api-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#api-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#api-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#api-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#api-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#api-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#api-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 

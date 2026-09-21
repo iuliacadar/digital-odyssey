@@ -292,87 +292,29 @@
             -->
           </a>
 
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#html-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#html-day00" class="sidebar-link">
-                Day 00 &#9672; Intro
-              </a>
-            </li>
-
-            <!-- @block: WEEK 01 — THE HULL & THE SKELETON
-              The first full week covers core HTML mechanics: boilerplate,
-              headings, semantic structure, links, lists, and navigation.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#html-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li>
-              <a href="#html-day01" class="sidebar-link">Day 01 &#9672; The Boilerplate</a>
-            </li>
-            <li>
-              <a href="#html-day02" class="sidebar-link">Day 02 &#9672; Headings & Paragraphs</a>
-            </li>
-            <li>
-              <a href="#html-day03" class="sidebar-link">Day 03 &#9672; Semantic HTML & Layout</a>
-            </li>
-            <li>
-              <a href="#html-day04" class="sidebar-link">Day 04 &#9672; Anchors, Absolute vs Relative Links</a>
-            </li>
-            <li>
-              <a href="#html-day05" class="sidebar-link">Day 05 &#9672; Unordered, Ordered & Description Lists</a>
-            </li>
-            <li>
-              <a href="#html-day06" class="sidebar-link">Day 06 &#9672; Special entities & Emojis in code</a>
-            </li>
-            <li>
-              <a href="#html-day07" class="sidebar-link">Day 07 &#9672; Breadcrumbs & Navigation menus</a>
-            </li>
-
-            <!-- @block: WEEK 02 — VISUAL SENSORS & MEDIA
-              The second week shifts from structural HTML to embedded
-              media: images, audio, video, iframes, and figures.
-            -->
-            <li class="week-label">
-              <a href="#html-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li>
-              <a href="#html-day08" class="sidebar-link">Day 08 &#9672; The &lt;img&gt; tag & alt attribute</a>
-            </li>
-            <li>
-              <a href="#html-day09" class="sidebar-link">Day 09 &#9672; The &lt;picture&gt; element & srcset atribute</a>
-            </li>
-            <li>
-              <a href="#html-day10" class="sidebar-link">Day 10 &#9672; The &lt;audio&gt; element & formats</a>
-            </li>
-            <li>
-              <a href="#html-day11" class="sidebar-link">Day 11 &#9672; The &lt;video&gt; element & subtitles with &lt;track&gt;</a>
-            </li>
-            <li>
-              <a href="#html-day12" class="sidebar-link">Day 12 &#9672; The &lt;iframe&gt; elemnt & embedding maps/videos</a>
-            </li>
-            <li>
-              <a href="#html-day13" class="sidebar-link">Day 13 &#9672; The &lt;figure&gt; & &lt;figcaption&gt; elements</a>
-            </li>
-            <li>
-              <a href="#html-day14" class="sidebar-link">Day 14 &#9672; Review & Navigation Stress Test</a>
-            </li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
