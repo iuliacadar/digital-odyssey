@@ -225,9 +225,9 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 **Title:** Dynamic sidebar index generation
 
-**Description:** Instead of manually writing 1000+ sidebar links, a script will extract the text from every `<h3>` and auto-generate the corresponding `<li>` elements. Essential for the extended HTML-Log journal pages.
+**Description:** Instead of manually writing 1000+ sidebar links, a script generates the `<li>` elements from the page's own content blocks. Essential for the extended HTML-Log journal pages.
 
-**Status:** Proposed
+**Status:** EN done (MECANISM 11 in `en/script.js`); RO mirrored on its own card
 **Priority:** Medium
 **Phase:** When the extended HTML-Log journal pages are built
 
@@ -235,13 +235,18 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 **Affected files:** `en/script.js`, `ro/script.js`, `en/frontend/html-log.html`, `ro/frontend/html-log.html` (and future extended HTML-Log pages)
 
+**Correction to the original premise.** The wording above ("extract the text from every `<h3>`") turned out to be wrong in two ways, discovered during the audit:
+
+1. **Sources are content blocks, not `<h3>` elements.** Sidebar entries come from `article.log-entry` *and* `div.sector-announcement`, merged in document order. Sector announcements contain an `<h2>`, never an `<h3>`, so an h3-only scan silently loses every one of the 182 week dividers. `*-sector-00` is excluded — it exists in the content but never had a sidebar entry.
+2. **Anchors are read from the existing `id`, never slugged from heading text.** `href = "#" + element.id`. The ids are authored and identical across `en/` and `ro/`, while heading text is translated — slugging would produce different anchors per language and would break MECANISM 02's `.sidebar-nav a[href="#id"]` lookup.
+
 **Steps:**
-- write a generator that scans each page for `<h3>` headings;
+- write a generator that scans each page for `article.log-entry` and `div.sector-announcement`;
 - produce the matching `<li>` elements in the sidebar;
 - keep the generated output byte-identical in `en/` and `ro/`.
 
 **Completion conditions:**
-- sidebars are derived from the page's actual headings;
+- sidebars are derived from the page's actual content;
 - no manual link list needs maintenance.
 
 ---
