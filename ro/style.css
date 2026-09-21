@@ -29,7 +29,7 @@ din următoarele motive de ghidare cosmică:
     care ar putea deveni resturi cosmice în viitor.
 
 @tag: schelet-modular
-   Această foaie de stil este organizată în 31 de module numerotate + 2 module de
+   Această foaie de stil este organizată în 32 de module numerotate + 2 module de
    utilități. Fiecare modul guvernează UNA singură componentă sau preocupare. Structura
    respectă o cascadă logică strictă: Fundație -> Layout -> Navigare -> Componente ->
    Avansat/Experimental -> Mișcare (@keyframes) -> Responsiv (@media).
@@ -68,6 +68,7 @@ din următoarele motive de ghidare cosmică:
      29  Icosaedru 3D / Reactor Geodezic
      30  Ecran Împărțit Blueprint / Inspector Recursiv
      31  Seiful Seldon
+     32  Bannerul „În Construcție"
      00.1  Motoarele de Mișcare @keyframes
      00.2  Query-uri @media
 ================================================================================ */
@@ -4020,6 +4021,201 @@ Modulul 00 este întotdeauna ultimul modul al foii de stil.
 
 
 /* ==========================================================================
+@module: 32 — BANNERUL „ÎN CONSTRUCȚIE" (FARUL DE SCHELĂRIE)
+@sub-module: 32.1 — Carcasa Bannerului
+@sub-module: 32.2 — Panglica de Chevroane de Pericol
+@sub-module: 32.3 — Eticheta de Semnal
+@sub-module: 32.4 — Proza Explicativă
+@sub-module: 32.5 — Contractul de Mișcare Redusă
+Domeniu: .under-construction, .under-construction::before, .uc-label,
+      .uc-icon, .under-construction p.
+Scop: O avertizare onestă fixată în capul oricărei punți de jurnal ale cărei
+intrări sunt încă materie de umplutură. Nava nu pretinde că un hambar este
+aprovizionat atunci când este gol — acest far îi spune vizitatorului, înainte
+de a citi un singur rând, că ceea ce urmează este schelărie, nu marfă.
+@reason:
+  Proza de umplutură („Lorem ipsum ...") citită de un vizitator neavertizat
+  este o minciună prin omisiune: pagina pare terminată, iar textul pare
+  conținut. Bannerul transformă acel eșec tăcut într-o stare declarată,
+  vizibilă.
+@theme:
+  Împrumută spectrul de avertizare chihlimbar deja stabilit de Modulul 24
+  (Jurnale Viitoare) și Modulul 25 (Volumuri de Pod) — chihlimbarul este
+  culoarea permanentă a acestui vas pentru „lucrare încă în desfășurare".
+  Vizitatorul care a întâlnit deja o capsulă latentă de jurnal viitor
+  citește acest banner instantaneu.
+@concept:
+  Statusul este transportat prin TREI canale independente, niciodată doar
+  prin culoare: glifa de pericol, cuvintele literale „ÎN CONSTRUCȚIE" și
+  propoziția de proză de dedesubt. Un vizitator cu orice formă de daltonism
+  sau care citește o randare cu contrast forțat nu pierde nimic.
+========================================================================== */
+
+/* @sub-module: 32.1 — CARCASA BANNERULUI (Placa de Pericol Chihlimbar) */
+.under-construction {
+  position: relative; /* @layout: Schema de poziționare — deschide o rădăcină locală de coordonate astfel încât panglica de chevroane din 32.2 să poată fi fixată pe marginea superioară a plăcii. */
+  max-width: 1200px; /* @layout: Constrângerea lățimii maxime — plafonează expansiunea la 1200px, egalând plafonul .category-header din Modulul 04.4, astfel încât bannerul nu depășește niciodată antetul pe care îl urmează. */
+  margin: 0 auto 50px auto; /* @layout: Control al spațierii externe — centrat în coloana sa, cu un spațiu generos înaintea primului anunț de sector, astfel încât avertizarea să se citească drept afirmație de sine stătătoare. */
+  padding: 26px 30px 24px 30px; /* @layout: Control al spațierii interne — interior spațios; padding-ul superior suplimentar eliberează panglica de chevroane așezată peste marginea de sus. */
+  box-sizing: border-box; /* @layout: Metoda de calcul a dimensiunii — include padding-ul și bordura în lățimea declarată, împiedicând placa să debordeze punțile înguste. */
+
+  /* @theme: SUPRAFAȚA DE AVERTIZARE CHIHLIMBAR: O spălare chihlimbar de 6% peste carena întunecată — suficient de prezentă pentru a separa placa de pagină, suficient de slabă pentru a păstra proza lizibilă. */
+  background: rgba(255, 179, 0, 0.06); /* @theme: Randarea suprafeței — aplică o nuanță chihlimbar de intensitate joasă drept fundal al plăcii de avertizare. */
+  border: 1px solid rgba(255, 179, 0, 0.45); /* @component: Limita marginii — un perimetru chihlimbar complet marchează placa drept obiect distinct de avizare, nu proză de pagină. */
+  border-left: 5px solid var(--amber-glow); /* @component: Limita marginii — bara grea din stânga este același canal prioritar pe care Modulul 24 îl folosește pentru capsulele latente, legând cele două avertizări într-o singură familie vizuală. */
+  border-radius: 2px; /* @theme: Geometria colțurilor — o rază abia perceptibilă; panourile acestui vas sunt industriale, nu moi. */
+
+  /* @theme: STRĂLUCIREA DE CONTENȚIE: O ceață chihlimbar interioară plus o coroană exterioară slabă, ecou al stării .future-log:hover, astfel încât bannerul să pară nativ navei. */
+  box-shadow:
+    inset 0 0 24px rgba(255, 179, 0, 0.07),
+    0 0 18px rgba(255, 179, 0, 0.05);
+
+  /* @layout: SCUT DE DERULARE: Dacă un vizitator aterizează aici printr-un link de fragment, oprește cu 150px mai devreme astfel încât cabina HUD fixă să nu acopere avertizarea. Aceeași valoare ca .sector-announcement din Modulul 14.2. */
+  scroll-margin-top: 150px; /* @line: Setează scroll-margin-top la 150px, eliberând bara de navigare fixă la sosirea pe ancoră. */
+}
+
+/* @sub-module: 32.2 — PANGLICA DE CHEVROANE DE PERICOL (Banda de Barieră Vopsită)
+   @structure:
+     O dungă decorativă repeating-linear-gradient așezată de-a lungul marginii
+     superioare a plăcii — echivalentul web al benzii de avertizare întinse peste
+     o ușă. Este un pseudo-element ::before și, prin urmare, invizibil pentru
+     tehnologia asistivă, ceea ce este corect: sensul este deja transportat de
+     textul din 32.3. */
+.under-construction::before {
+  content: ""; /* @line: Conținut generat — un șir gol; acest pseudo-element este o suprafață vopsită, nu un purtător de text. */
+  position: absolute; /* @layout: Schema de poziționare — ridicat din flux și fixat pe rădăcina de coordonate proprie a plăcii, stabilită în 32.1. */
+  top: 0; /* @layout: Decalaj față de marginea superioară — lipit de limita de sus a plăcii. */
+  left: 0; /* @layout: Decalaj față de marginea din stânga — pornește din colțul babord. */
+  right: 0; /* @layout: Decalaj față de marginea din dreapta — se întinde pe toată lățimea plăcii. */
+  height: 6px; /* @layout: Dimensiunea verticală — o panglică subțire de 6px; o dungă de avertizare, nu un zid. */
+
+  /* @theme: DUNGI DIAGONALE DE PERICOL: Benzi chihlimbar la 45° alternând cu goluri transparente, repetându-se la fiecare 16px — tiparul universal de „zonă de construcție". */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 179, 0, 0.75) 0px,
+    rgba(255, 179, 0, 0.75) 8px,
+    rgba(255, 179, 0, 0.12) 8px,
+    rgba(255, 179, 0, 0.12) 16px
+  );
+  pointer-events: none; /* @reason: Panglica este pură decorațiune — nu trebuie niciodată să intercepteze un click destinat textului sau unui link de dedesubt. */
+}
+
+/* @sub-module: 32.3 — ETICHETA DE SEMNAL (Statusul Rostit)
+   @concept:
+     Acesta este elementul portant al întregului modul. Culoarea poate fi
+     pierdută, panglica de chevroane poate fi dezbrăcată de un mod de lectură,
+     strălucirea chihlimbar nu înseamnă nimic într-un cititor de ecran — dar
+     aceste cuvinte supraviețuiesc fiecăreia dintre acele transformări. */
+.under-construction .uc-label {
+  display: flex; /* @layout: Tipul cutiei — Flexbox, astfel încât glifa și cuvintele să stea pe un singur rând aliniat la linia de bază. */
+  align-items: center; /* @layout: Aliniere pe axa transversală — glifa și textul centrate unul față de celălalt, indiferent de înălțimile lor diferite. */
+  gap: 12px; /* @layout: Jgheabul dintre celule — spațiu de respirație între glifa de pericol și cuvintele pe care le introduce. */
+  margin: 0 0 12px 0; /* @layout: Control al spațierii externe — fără margine superioară (padding-ul plăcii se ocupă de asta), un spațiu clar dedesubt, înainte de proză. */
+
+  font-family: monospace; /* @layout: Font rigid cu lățime fixă — vocea terminalului de diagnostic folosită de span-urile .sector-announcement din Modulul 14.4. */
+  font-size: 0.95rem; /* @layout: Scala caracterelor — asertivă, dar subordonată titlului h2 de deasupra. */
+  font-weight: 700; /* @layout: Grosimea trăsăturii — bold; aceasta este o alertă și nu trebuie să șoptească. */
+  letter-spacing: 3px; /* @layout: Spațiere de glifuri — tracking tactic larg, egalând celelalte afișaje de status de la bord. */
+  text-transform: uppercase; /* @reason: Impune formatarea cu majuscule a protocolului de alertă al vasului, consecventă cu fiecare altă etichetă de status de la bord. */
+  color: var(--amber-glow); /* @theme: Culoarea textului — chihlimbar la putere maximă pe carena întunecată; raportul de contrast față de --space-dark (#0d0f14) depășește confortabil WCAG AA la această mărime. */
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.35); /* @theme: Strălucirea glifelor — o coroană chihlimbar blândă, același tratament de „lampă lăsată aprinsă" folosit pentru notele în lucru din restul navei. */
+}
+
+/* @sub-module: 32.3.b — GLIFA DE PERICOL
+   @warning:
+     Glifa trăiește în HTML ca un caracter real în interiorul unui span marcat
+     aria-hidden="true". Este o duplicare decorativă a cuvintelor alăturate —
+     anunțarea „emoji semn de construcție, ÎN CONSTRUCȚIE" ar fi zgomot.
+     NU este un ::before CSS, deoarece o glifă generată prin content este
+     anunțată de unele cititoare de ecran și nu poate fi ascunsă de ele în
+     mod fiabil. */
+.under-construction .uc-icon {
+  font-size: 1.15rem; /* @layout: Scala caracterelor — ușor mai mare decât textul etichetei, astfel încât glifa să se citească drept semn, nu drept literă. */
+  line-height: 1; /* @layout: Interlinie verticală — colapsată la propria cutie a glifei, împiedicând-o să umfle înălțimea rândului flex. */
+  flex-shrink: 0; /* @layout: Factorul de contracție flex — glifa își păstrează mărimea când eticheta se rupe pe o punte îngustă. */
+}
+
+/* @sub-module: 32.4 — PROZA EXPLICATIVĂ (Ce Îi Trebuie De Fapt Vizitatorului)
+   @reason:
+     „În construcție" singur răspunde doar la jumătate din întrebare. Acest
+     paragraf răspunde la cealaltă jumătate: ce este de fapt textul de dedesubt
+     și că punțile terminate ale navei merită totuși vizitate. */
+.under-construction p {
+  margin: 0; /* @layout: Control al spațierii externe — padding-ul plăcii deține toată spațierea; paragraful nu adaugă nimic al său. */
+  font-size: 0.9rem; /* @layout: Scala caracterelor — mărime confortabilă la lectură, deliberat mai mare decât cei 0.78rem ai legendelor secundare, întrucât acest text chiar trebuie citit. */
+  line-height: 1.6; /* @layout: Interlinie verticală — interlinie generoasă; o avertizare citită în grabă are nevoie de rânduri rărite. */
+  letter-spacing: 0.3px; /* @layout: Spațiere de glifuri — o șoaptă de tracking pentru caracterul de terminal, fără a dăuna lizibilității. */
+  color: var(--stardust); /* @theme: Culoarea textului — albul de titan anti-oboseală folosit pentru toată proza lizibilă de la bord, nu chihlimbar: chihlimbarul este alerta, aceasta este explicația. */
+  max-width: 68ch; /* @layout: Constrângerea lățimii maxime — plafonează măsura la aproximativ 68 de caractere, lungimea de rând lizibilă, chiar și pe afișaje ultra-late. */
+
+  /* @warning: PAZĂ PENTRU CUVINTE LUNGI. Măsurat la 320px: un singur token
+     neîntrerupt de 200 de caractere extinde lățimea de derulare a acestui
+     paragraf la 1309px într-o cutie de 235px — strămoșul îl decupează, deci
+     textul este TĂIAT în tăcere, nu rupt pe rânduri. Textul de astăzi nu
+     conține un asemenea cuvânt, dar un compus românesc viitor, un URL lipit
+     sau un identificator lung l-ar declanșa. Bannerul există pentru a fi citit;
+     o avertizare care își pierde propria clauză finală a eșuat la singura ei
+     misiune. */
+  overflow-wrap: break-word; /* @layout: Ruperea cuvintelor — permite o rupere în interiorul unui token prea lung, în loc să îl lase să debordeze containerul. */
+}
+
+/* @sub-module: 32.4.b — LINK-URI INLINE ÎN INTERIORUL PROZEI */
+.under-construction p a {
+  color: var(--solar-mint); /* @theme: Culoarea textului — mentă de fosfor, culoarea permanentă a link-urilor navei, astfel încât link-ul să fie recognoscibil drept link. */
+  text-decoration: underline; /* @reason: Subliniere, nu doar culoare — link-ul trebuie să rămână identificabil pentru un vizitator care nu poate distinge menta de alb. */
+  text-underline-offset: 3px; /* @layout: Decalajul sublinierii — coboară linia sub descendente, pentru lizibilitate. */
+}
+
+.under-construction p a:hover,
+.under-construction p a:focus-visible {
+  color: var(--amber-glow); /* @theme: Culoarea textului — link-ul se încălzește spre chihlimbar la apropiere, egalând bannerul în care trăiește. */
+}
+
+/* @sub-module: 32.4.c — INELUL DE FOCUS DE LA TASTATURĂ
+   @warning:
+     Inelul de focus implicit al browserului se rezolvă la aproximativ 1px de
+     aproape-negru pe carena aproape-neagră a acestui vas — măsurat, nu
+     presupus: getComputedStyle a returnat „1px rgb(16, 16, 16)" pe o suprafață
+     #0d0f14. Un vizitator de la tastatură care parcurge pagina cu Tab ar
+     ajunge la acest link și nu ar vedea nimic mișcându-se. Un indicator pe
+     care nimeni nu îl poate vedea este totuna cu lipsa indicatorului, așa că
+     inelul este declarat explicit aici, nu lăsat în seama user agent-ului.
+   @reason:
+     Menta la 3px depășește larg pragul de contrast non-text de 3:1 față de
+     carenă, iar decalajul de 3px ridică inelul deasupra sublinierii, astfel
+     încât cele două semne nu se citesc niciodată ca o singură pată groasă. */
+.under-construction p a:focus-visible {
+  outline: 3px solid var(--solar-mint); /* @component: Inelul de focus — o bandă mentă de fosfor, suficient de groasă pentru a prinde ochiul în scanare pe un ecran întunecat. */
+  outline-offset: 3px; /* @component: Decalajul inelului de focus — împinge banda deasupra glifelor și a sublinierii lor. */
+  border-radius: 2px; /* @theme: Geometria colțurilor — colțurile inelului se înmoaie fracționar, astfel încât se citește drept semn deliberat, nu artefact de randare. */
+}
+
+/* @sub-module: 32.5 — CONTRACTUL DE MIȘCARE REDUSĂ
+   @reason:
+     Modulul 04.6 animează .category-header h2 cu neon-pulse-pink, iar acest
+     banner stă direct sub acel titlu pulsatoriu. Un vizitator care i-a cerut
+     sistemului său mișcare redusă ne spune că textul pulsatoriu îl costă ceva
+     — disconfort vestibular sau pur și simplu imposibilitatea de a citi un
+     rând care nu stă locului. Onorăm acea cerere aici, nu o lăsăm în seama
+     modulului responsiv, pentru că întreaga misiune a bannerului este să fie
+     CITIT, iar o cerere de a opri mișcarea este o cerere pe care o acordăm
+     întotdeauna. */
+@media (prefers-reduced-motion: reduce) {
+  .under-construction,
+  .under-construction::before,
+  .under-construction .uc-label {
+    animation: none !important; /* @theme: Suprimarea mișcării — niciun motor de keyframe-uri nu poate acționa vreo parte a plăcii de avertizare. */
+    transition: none !important; /* @theme: Suprimarea mișcării — schimbările de stare aterizează instantaneu, fără atenuare. */
+  }
+}
+
+/* 32.6 — Responsiv: padding-ul plăcii, tracking-ul etichetei și scala prozei sunt
+   re-fluentizate pentru punțile înguste în Secțiunea 00.2.B, Sub-secțiunea B6
+   (Compresia Bannerului „În Construcție") — conform regulii navei că fiecare
+   supraînscriere @media trăiește în Modulul 00.2 și nicăieri altundeva. */
+
+
+/* ==========================================================================
 @module: 00.1 — MOTOARE DE PROPULSIE CINETICĂ & KEYFRAME-URI CENTRALE
 @group: A — Efecte Ambientale de Interfață / Ecran Hardware Catodic
 @group: B — Motoare Asincrone de Teletip / Intrare Mecanică de Text
@@ -4580,6 +4776,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
 @sub-section: B3 — Tampon de Aterizare la Click & Scut Anti-Debri
 @sub-section: B4 — Cinetica Reactorului Avansat & Stivuirea Teletipului
 @sub-section: B5 — Colapsul Seifului Seldon & Reticulul de Orbită
+@sub-section: B6 — Compresia Bannerului „În Construcție"
 ========================================================================== */
 
 @media screen and (max-width: 768px) {
@@ -5105,5 +5302,38 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
 
   .capsule-constellation {
     grid-template-columns: 1fr; /* @layout: Definiția pistelor de coloană — o capsulă per rând pe mobil. */
+  }
+
+  /* ========================================================================
+  @sub-section: B6 — COMPRESIA BANNERULUI „ÎN CONSTRUCȚIE"
+  SUMAR: Placa de avertizare din Modulul 32 re-fluentizată pentru puntea
+  mobilă cu panglica de 40px. Padding-ul se contractă, tracking-ul tactic
+  larg al etichetei se relaxează astfel încât cuvintele să supraviețuiască
+  unui viewport de 320px fără a se rupe în nonsens, iar proza coboară la
+  scara .log-entry p stabilită în B2. Nimic din SENSUL avertizării nu se
+  schimbă pe un ecran mic — doar metricile ei.
+  ======================================================================== */
+
+  .under-construction {
+    margin: 0 auto 30px auto !important; /* @layout: Control al spațierii externe — spațiul de sub placă se strânge pe o punte unde spațiul vertical este rar. */
+    padding: 20px 18px 18px 18px !important; /* @layout: Control al spațierii interne — perne laterale mai înguste, astfel încât proza să își păstreze măsura la 320px. */
+    border-left-width: 4px !important; /* @component: Limita marginii — bara prioritară se subțiază ușor; la lățimi mobile, 5px mănâncă lățime de lectură măsurabilă. */
+  }
+
+  .under-construction .uc-label {
+    font-size: 0.8rem !important; /* @layout: Scala caracterelor — coboară odată cu restul tipografiei mobile. */
+    letter-spacing: 1.5px !important; /* @layout: Spațiere de glifuri — tracking înjumătățit; 3px de tracking împing „ÎN CONSTRUCȚIE" dincolo de marginea unei punți înguste. */
+    gap: 9px !important; /* @layout: Jgheabul dintre celule — glifa se apropie de cuvinte. */
+    flex-wrap: wrap !important; /* @layout: Ruperea rândurilor — dacă eticheta tot nu încape, se rupe în loc să debordeze placa. */
+  }
+
+  .under-construction .uc-icon {
+    font-size: 1rem !important; /* @layout: Scala caracterelor — glifa se micșorează în pas cu eticheta ei. */
+  }
+
+  .under-construction p {
+    font-size: 0.8rem !important; /* @layout: Scala caracterelor — egalează mărimea prozei mobile, dar FĂRĂ opacitatea 0.75 pe care B2 o aplică intrărilor de jurnal: o avertizare nu este niciodată estompată. */
+    line-height: 1.5 !important; /* @layout: Interlinie verticală — interlinie ușor mai strânsă pentru litera mai mică. */
+    max-width: 100% !important; /* @layout: Constrângerea lățimii maxime — măsura desktop de 68ch este irelevantă aici; viewport-ul este deja constrângerea. */
   }
 }
