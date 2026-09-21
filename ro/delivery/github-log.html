@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează platforma GitHub — repository-uri, pull request-uri, acțiuni, colaborare și automatizare."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#github-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#github-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#github-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#github-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#github-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#github-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#github-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#github-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#github-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#github-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#github-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#github-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#github-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#github-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#github-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#github-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#github-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#github-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#github-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#github-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#github-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#github-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#github-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#github-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#github-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#github-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#github-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#github-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#github-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#github-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi echipajul a urcat la bordul Hub-ului, marea stație orbitală unde
+              începe orice călătorie de cod. GitHub nu este doar un doc de parcare pentru
+              repository-uri; este o platformă de coordonare unde istoricul versiunilor,
+              colaborarea și implementarea converg într-un singur panou de comandă. Înainte
+              de orice expediție, cadeții trebuie să înțeleagă că această stație
+              înregistrează fiecare commit ca o intrare permanentă în jurnal, imuabilă odată
+              scrisă. Învățarea navigării în interfața ei este primul pas spre o inginerie
+              disciplinată și trasabilă.
             </p>
           </div>
 
@@ -482,7 +450,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am cercetat instrumentarul de bază al platformei. GitHub adaugă un
+              înveliș social și organizatoric peste motorul brut Git: repository-uri,
+              organizații, echipe și permisiuni trăiesc aici ca structuri vizibile pe carena
+              stației. Stelele, fork-urile și numărul de urmăritori funcționează ca semnale
+              de senzor, arătând câtă atenție atrage o navă din partea restului flotei.
+              Înțelegerea acestei topologii de bază permite unui navigator să se orienteze
+              înainte de a atinge orice sistem mai profund.
             </p>
           </div>
 
@@ -515,7 +489,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Atenția s-a îndreptat spre repository-ul propriu-zis, modulul presurizat unde
+              trăiesc de fapt conținuturile unui proiect. Fiecare repo are setări pentru
+              vizibilitate, protecția ramurilor și ramura implicită, toate determinând cât
+              de sigur poate fi modificat codul fără riscul unei breșe de carenă. Am
+              configurat astăzi un repository nou, stabilind ramura implicită și revizuind
+              câmpurile de descriere și subiecte care ajută alte echipaje să-l descopere. Un
+              repository bine structurat face diferența dintre o cală de marfă ordonată și
+              resturi împrăștiate.
             </p>
           </div>
 
@@ -548,7 +529,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a vizat fișierul README și wiki-ul, balizele de documentație
+              care ghidează orice echipaj aflat la bord. Un README randat la rădăcina unui
+              repository este prima transmisie pe care o primește un vizitator, așa că
+              trebuie să explice scopul, instalarea și utilizarea clar și rapid. Wiki-urile
+              extind acest lucru, oferind o bază de cunoștințe mai profundă pentru note de
+              arhitectură, jurnale de decizii și ghiduri de integrare care nu aparțin
+              transmisiei principale. Cadeții au exersat scrierea de titluri Markdown,
+              blocuri de cod și insigne pentru a-și face documentația lizibilă dintr-o
+              privire.
             </p>
           </div>
 
@@ -581,7 +570,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am deschis astăzi zona Issues, sistemul stației pentru urmărirea anomaliilor,
+              cererilor și lucrărilor în așteptare. Fiecare issue este un tichet înregistrat
+              pentru misiune, cu titlu, descriere și un fir de discuție unde membrii
+              echipajului pot dezbate cea mai bună soluție. Filtrarea după stare deschisă,
+              închisă sau după persoana asignată permite unui comandant de echipă să sorteze
+              rapid coada în timpul unei călătorii lungi. Cadeții și-au depus astăzi primele
+              issue-uri, învățând să scrie pași reproductibili astfel încât cititorii
+              viitori să înțeleagă anomalia fără ghicit.
             </p>
           </div>
 
@@ -614,7 +610,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am organizat coada de issue-uri folosind etichete și milestone-uri,
+              instrumentele de marcare și grupare care împiedică un backlog în creștere să
+              devină o derivă haotică. Etichete precum bug, enhancement și priority
+              acționează ca steaguri colorate pe carenă, permițând echipajului să scaneze
+              sute de tichete dintr-o privire. Milestone-urile grupează issue-uri și pull
+              request-uri sub un termen comun, util pentru urmărirea progresului către un
+              punct de lansare. Aplicarea consecventă a ambelor este ceea ce separă un
+              jurnal de expediție organizat de o mizerie ilizibilă de transmisii.
             </p>
           </div>
 
@@ -647,7 +650,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Atenția s-a mutat spre Projects, panoul kanban al GitHub pentru vizualizarea
+              fluxului de lucru pe parcursul misiunii. Cardurile care reprezintă issue-uri
+              și pull request-uri se deplasează prin coloane precum backlog, în lucru și
+              finalizat, oferind întregului echipaj o imagine comună a stării misiunii.
+              Regulile de automatizare pot muta cardurile automat atunci când un pull
+              request asociat este integrat, reducând contabilitatea manuală. Am construit
+              astăzi primul nostru panou, mapând sarcinile sprintului viitor pe o linie de
+              flux vizibilă.
             </p>
           </div>
 
@@ -680,7 +690,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare. Am revizitat elementele de bază: Hub-ul ca platformă de
+              coordonare, repository-urile ca module presurizate care ne găzduiesc codul,
+              fișierele README ca balize de prim contact, și issue-urile, etichetele,
+              milestone-urile și proiectele ca instrumente pentru urmărirea și organizarea
+              muncii. Un echipaj care a interiorizat aceste elemente de bază poate avansa cu
+              încredere spre mecanica mai profundă a colaborării. Cadeții au parcurs astăzi
+              o simulare de test, urmărind un bug fictiv de la crearea issue-ului până la
+              atribuirea etichetei, milestone-ului și panoului.
             </p>
           </div>
 
@@ -718,7 +735,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am lansat primul nostru pull request, mecanismul formal prin care se
+              propune ca modificările unei ramuri să fie integrate în linia principală. Un
+              PR grupează un diff, o descriere și un fir de conversație, transformând o
+              ramură privată într-o propunere publică pe care întregul echipaj o poate
+              inspecta. Am exersat scrierea unor descrieri clare de PR care explică ce s-a
+              schimbat și de ce, întrucât un reviewer fără context este ca un tehnician care
+              citește un cablaj neetichetat. Înțelegerea acestui proces este poarta către
+              fiecare contribuție colaborativă care urmează.
             </p>
           </div>
 
@@ -751,7 +775,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am exersat arta revizuirii codului, învățând să lăsăm comentarii la
+              nivel de linie și sugestii de modificare direct pe un diff. Un comentariu bun
+              de revizuire identifică un risc sau o îmbunătățire specifică, nu o obiecție
+              vagă, iar funcția de sugestie permite unui reviewer să propună o înlocuire
+              exactă pe care autorul o poate accepta dintr-un click. Cadeții au exersat atât
+              oferirea, cât și primirea de feedback, întrucât o cultură sănătoasă de
+              revizuire tratează critica drept întreținere a carenei, nu atac personal.
+              Această disciplină menține o bază de cod comună structural solidă de-a lungul
+              multor călătorii.
             </p>
           </div>
 
@@ -784,7 +816,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Verificarea sistemelor de astăzi a implicat integrarea CI, urmărind
+              verificările automate de stare raportate direct pe pull request. Fiecare push
+              pe o ramură de PR poate declanșa un workflow care compilează, verifică stilul
+              și testează codul, postând markere de stare verzi sau roșii înainte ca un
+              reviewer uman să se uite măcar. Regulile de protecție a ramurilor pot cere
+              trecerea acestor verificări înainte de a permite integrarea, acționând ca o
+              etanșare automată a ecluzei. Am conectat astăzi o verificare simplă la un PR
+              de test și am observat cum a blocat o build stricat intenționat.
             </p>
           </div>
 
@@ -817,7 +856,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat cele trei strategii de integrare disponibile la ecluză: merge
+              commit, squash și rebase. Un merge commit standard păstrează întregul istoric
+              al ramurii, un squash merge comprimă multe commit-uri mici într-o singură
+              intrare curată, iar un rebase reaplică commit-urile pe vârful ramurii țintă
+              pentru un istoric liniar. Fiecare strategie face un compromis între
+              trasabilitate și lizibilitate, iar o echipă trebuie să convină asupra unei
+              convenții înainte ca stilurile contradictorii să polueze jurnalul. Am exersat
+              astăzi toate cele trei pe un repository de test controlat.
             </p>
           </div>
 
@@ -850,7 +896,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Focusul de astăzi a fost pull request-urile draft, un mod de a semnala că
+              lucrul este încă în desfășurare. Marcarea unui PR ca draft previne integrarea
+              accidentală, permițând totuși feedback timpuriu și rularea verificărilor CI pe
+              codul în lucru. Acest lucru este util pentru călătorii lungi în care un membru
+              al echipajului dorește vizibilitate asupra traiectoriei sale înainte de
+              revizuirea finală. Am convertit astăzi un draft în stare de revizuire,
+              observând cum schimbarea de stare alertează automat reviewerii asignați.
             </p>
           </div>
 
@@ -883,7 +935,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am construit astăzi un template de pull request, un formular standardizat
+              care preîncarcă noile PR-uri cu aceeași structură: rezumat, note de testare și
+              o listă de verificare. Template-urile reduc încărcarea cognitivă a
+              contribuitorilor și garantează că reviewerii primesc întotdeauna contextul
+              necesar, la fel cum o listă de verificare pre-zbor garantează că niciun pas
+              critic nu este omis înainte de lansare. Stocarea template-ului în directorul
+              .github îl aplică automat în tot repository-ul. Consecvența aici scutește
+              echipajul de a reexplica aceleași detalii lipsă la fiecare călătorie.
             </p>
           </div>
 
@@ -916,7 +975,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru pull request-uri. Am consolidat totul: deschiderea
+              unui PR, scrierea revizuirilor cu comentarii inline și sugestii, conectarea
+              verificărilor CI la poarta de integrare, alegerea unei strategii de integrare,
+              folosirea draft-urilor pentru lucrul în desfășurare și standardizarea
+              procesului prin template-uri. Un echipaj fluent în acest ciclu poate colabora
+              la modificări de cod fără să-și încalce reciproc traiectoriile. Cadeții au
+              finalizat astăzi un ciclu complet simulat de PR, de la ramură până la
+              integrare.
             </p>
           </div>
 
@@ -954,7 +1020,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am deschis zona Actions, motorul de automatizare integrat al GitHub.
+              Un workflow este definit în YAML și declanșat de evenimente precum push-uri,
+              pull request-uri sau programări, apoi execută o secvență de job-uri și pași pe
+              un runner virtual. Acesta este sistemul de propulsie din spatele integrării
+              continue, transformând ritualurile manuale de verificare în verificări
+              automate și repetabile. Am scris astăzi primul nostru fișier de workflow,
+              declanșând un script simplu la fiecare push pe ramura principală.
             </p>
           </div>
 
@@ -987,7 +1059,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am trecut astăzi de la consumul de actions la construirea propriei noastre
+              actions personalizate, o unitate reutilizabilă de automatizare care poate fi
+              partajată între repository-uri. Actions pot fi scripturi compozite, containere
+              Docker sau module JavaScript, fiecare împachetat cu metadate care descriu
+              intrările și ieșirile sale. Publicarea unei actions personalizate pe
+              marketplace permite altor echipaje să o instaleze în propriile workflow-uri
+              fără a duplica logica. Am creat astăzi o mică acțiune compozită care afișează
+              un salut folosind un parametru de intrare.
             </p>
           </div>
 
@@ -1020,7 +1099,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a acoperit workflow-urile programate, declanșate nu de un
+              eveniment, ci de o expresie cron care ticăie pe ceasul intern al stației.
+              Acest lucru este util pentru sarcini periodice de întreținere precum build-uri
+              nocturne, audituri de dependențe sau operații de curățare care nu depind de
+              activitatea umană. Am configurat un workflow să ruleze zilnic la o oră fixă,
+              verificând execuția lui în jurnalul de istoric al Actions. Automatizarea
+              programată permite echipajului să se odihnească în timp ce întreținerea de
+              rutină continuă în fundal.
             </p>
           </div>
 
@@ -1053,7 +1139,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ne-am securizat astăzi automatizarea folosind secrete de mediu, variabile
+              criptate la care workflow-urile pot accesa fără a expune valori sensibile în
+              text simplu. Cheile API, tokenurile de implementare și credențialele aparțin
+              aici, nu într-un fișier de workflow, întrucât orice este comis în istoric
+              devine efectiv public pentru totdeauna. Environments adaugă un strat
+              suplimentar, permițând ca secretele să fie limitate la ținte specifice de
+              implementare precum staging sau producție. Cadeții au exersat astăzi referirea
+              în siguranță a unui secret într-un pas de workflow.
             </p>
           </div>
 
@@ -1086,7 +1179,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am rulat matrix build-uri, o tehnică pentru testarea unei singure baze
+              de cod pe mai multe configurații simultan. O matrice poate varia sistemul de
+              operare, versiunea de limbaj sau setul de dependențe, generând automat un job
+              separat pentru fiecare combinație. Aceasta prinde anomalii de compatibilitate
+              pe care un mediu fix unic nu le-ar dezvălui niciodată, la fel cum se testează
+              integritatea carenei pe o gamă de presiuni atmosferice. Am configurat astăzi o
+              matrice care acoperă trei versiuni de runtime și am urmărit toate cele trei
+              job-uri executându-se în paralel.
             </p>
           </div>
 
@@ -1119,7 +1219,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am conectat astăzi acțiuni de implementare, automatizând împingerea finală a
+              codului verificat către un mediu live. Un job de deploy rulează de obicei doar
+              după ce etapele de build și test reușesc, conectându-se la un furnizor de
+              găzduire printr-un pas de acțiune autentificat. Acest lucru închide bucla de
+              la commit la producție fără intervenție manuală, deși mecanisme de siguranță
+              precum aprobările necesare păstrează un om la comanda deciziei finale. Am
+              simulat astăzi o implementare folosind o țintă de găzduire fictivă pentru a
+              observa întreaga secvență.
             </p>
           </div>
 
@@ -1131,7 +1238,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day20') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day20"
@@ -1152,7 +1260,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru Actions și automatizare. Am acoperit sintaxa
+              workflow-urilor, construirea de actions personalizate, declanșatoare
+              programate, gestionarea secretelor, testarea matrice și automatizarea
+              implementării. Împreună, acestea formează sistemele de propulsie și ghidaj
+              care duc modificările de cod de la ramura unui dezvoltator la un serviciu în
+              funcțiune cu intervenție manuală minimă. Cadeții au asamblat astăzi un
+              workflow compozit care exersează fiecare concept din acest ciclu în secvență.
             </p>
           </div>
 
@@ -1164,7 +1278,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day21') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day21"
@@ -1190,7 +1305,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am lansat GitHub Pages, găzduirea de site-uri statice integrată
+              atașată fiecărui repository. Pages servește fișiere HTML, CSS și JavaScript
+              direct dintr-o ramură sau dintr-un artefact de build dedicat, oferind fiecărui
+              echipaj un terminal public gratuit pentru documentație sau un portofoliu. Am
+              configurat astăzi Pages să construiască dintr-o ramură specifică, urmărind cum
+              publică automat după fiecare push. Aceasta este adesea cea mai rapidă
+              modalitate de a pune conținut static în fața unui public fără a provizionase
+              infrastructură separată.
             </p>
           </div>
 
@@ -1202,7 +1324,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day22') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day22"
@@ -1223,7 +1346,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am explorat astăzi GitHub Packages, registrul integrat al platformei pentru
+              găzduirea artefactelor compilate precum imagini container, pachete npm sau
+              build-uri Maven. Publicarea aici păstrează distribuția pachetelor legată de
+              aceleași permisiuni și structură organizatorică ca și repository-ul sursă,
+              evitând o graniță de încredere separată. Am publicat astăzi un mic pachet de
+              test și l-am descărcat înapoi pentru a confirma că circuitul registrului
+              funcționează. Aceasta menține lanțurile de aprovizionare scurte și auditabile
+              într-o singură platformă.
             </p>
           </div>
 
@@ -1235,7 +1365,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day23') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day23"
@@ -1256,7 +1387,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sistemul de astăzi a acoperit Dependabot, santinela automatizată care
+              scanează manifestele de dependențe pentru pachete învechite sau vulnerabile.
+              Când există o versiune mai nouă sau corectată, Dependabot deschide automat un
+              pull request, complet cu link-uri de changelog și note de compatibilitate.
+              Aceasta preia munca plictisitoare a urmăririi manuale a versiunilor, permițând
+              echipajului să se concentreze pe revizuire în loc de căutare. Am activat
+              astăzi Dependabot pe un repository de test și am observat prima sa propunere
+              automată de actualizare.
             </p>
           </div>
 
@@ -1268,7 +1406,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day24') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day24"
@@ -1289,7 +1428,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat astăzi avizele de securitate, mecanismul pentru dezvăluirea
+              privată și coordonarea remedierilor pentru vulnerabilități înainte de lansarea
+              publică. Un mentenant poate redacta un aviz, colabora cu raportorii într-un
+              fork privat și publica o dezvăluire legată de un CVE odată ce o remediere este
+              lansată. Aceasta protejează utilizatorii de expunere în timpul ferestrei
+              vulnerabile, oferind totuși credit cercetătorilor care au găsit problema.
+              Înțelegerea acestui proces contează pentru orice echipaj care întreține o
+              dependență pe care alții se bazează.
             </p>
           </div>
 
@@ -1301,7 +1447,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day25') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day25"
@@ -1322,7 +1469,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am lăsat browserul deoparte și am lucrat integral prin GitHub CLI,
+              interfața de linie de comandă pentru operațiuni pe repository. Instrumentul gh
+              permite unui membru al echipajului să creeze issue-uri, să deschidă pull
+              request-uri și să verifice rulările de workflow fără a părăsi terminalul,
+              integrând operațiunile stației în același shell folosit pentru dezvoltarea
+              locală. Am exersat astăzi crearea unui pull request de la un capăt la altul
+              din linia de comandă, de la push-ul ramurii până la integrare. Aceasta este
+              adesea mai rapidă pentru echipajele care preferă să-și țină mâinile pe
+              tastatură, nu pe mouse.
             </p>
           </div>
 
@@ -1334,7 +1489,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day26') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day26"
@@ -1355,7 +1511,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat astăzi API-ul GitHub, interfața programatică ce stă la baza atât
+              interfeței web, cât și a CLI-ului. Endpoint-urile REST și GraphQL expun
+              aproape fiecare capacitate a platformei, permițând unui echipaj să
+              construiască instrumente, boți sau tablouri de bord personalizate, adaptate
+              misiunii lor. Autentificarea prin tokenuri de acces personal sau aplicații
+              GitHub controlează la ce are voie un script să acceseze. Am scris astăzi un
+              mic script care a interogat issue-urile deschise prin API și a afișat un
+              raport rezumativ.
             </p>
           </div>
 
@@ -1367,7 +1530,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day27') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day27"
@@ -1388,7 +1552,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru ecosistemul GitHub. Am închis bucla pentru Pages ca
+              găzduire, Packages ca distribuție, Dependabot și avizele ca securitate, iar
+              CLI-ul și API-ul ca automatizare dincolo de browser. Împreună, acestea extind
+              Hub-ul de la un simplu repository de cod la o platformă completă de control al
+              misiunii. Cadeții au finalizat astăzi un exercițiu final, publicând o pagină,
+              înregistrând un pachet și interogând totul prin CLI.
             </p>
           </div>
 
@@ -1400,7 +1569,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('github-note-day28') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="github-note-day28"

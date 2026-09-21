@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Deployment Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#deployment-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#deployment-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#deployment-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#deployment-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#deployment-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#deployment-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#deployment-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#deployment-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#deployment-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#deployment-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#deployment-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#deployment-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#deployment-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#deployment-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#deployment-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#deployment-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#deployment-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#deployment-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#deployment-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#deployment-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#deployment-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#deployment-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#deployment-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#deployment-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#deployment-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#deployment-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#deployment-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#deployment-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#deployment-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#deployment-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The launch sequence begins now. Before any code reaches a real user, it must
+              leave the safety of your local machine and be placed on a server that never
+              sleeps, one that stays online while you rest in cryo-sleep. This log will
+              chart the full arc of that voyage: from a single rented shelf of disk space to
+              fully automated fleets of containers deploying themselves. Today is simply
+              about accepting that a project is not finished until strangers on the network
+              can actually reach it.
             </p>
           </div>
 
@@ -484,7 +431,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Shared hosting is the crowded transport shuttle of the deployment world: many
+              small crews packed onto the same physical server, each paying a modest fare
+              for a slice of CPU, memory, and disk. It is cheap and simple, often just an
+              FTP upload and a control panel, which makes it a fine entry point for static
+              sites or small PHP applications. The tradeoff is that noisy neighbors sharing
+              your hardware can throttle your performance, and you have little control over
+              the underlying environment. Still, understanding this tier matters, because it
+              is where most developers first learn what a server actually is.
             </p>
           </div>
 
@@ -517,7 +471,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A Virtual Private Server hands you your own private cabin instead of a shared
+              bunk room. Through virtualization, one physical machine is sliced into
+              isolated virtual machines, each with guaranteed CPU cycles, memory, and root
+              access to configure the operating system exactly as your mission requires.
+              This is the point where you become responsible for security patches, firewall
+              rules, and process managers, since nobody else will do it for you. VPS
+              providers like DigitalOcean or Linode remain a favorite training ground
+              precisely because they force you to understand what a managed platform
+              normally hides.
             </p>
           </div>
 
@@ -550,7 +512,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Platform as a Service providers like Heroku and Render act as an automated
+              ground crew that handles the tedious mechanics of launch. You push your code,
+              and the platform builds it, provisions a runtime, attaches a database, and
+              routes traffic to it without you touching a single server configuration file.
+              This buildpack-driven approach trades some flexibility for enormous velocity,
+              letting a solo developer deploy a full-stack application in minutes instead of
+              days. Understanding PaaS is essential because it represents the balance point
+              between raw VPS control and total cloud abstraction.
             </p>
           </div>
 
@@ -583,7 +552,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The major cloud providers, AWS, Google Cloud, and Azure, are less like a
+              single ship and more like an entire orbital shipyard offering compute,
+              storage, networking, and dozens of specialized services under one roof.
+              Services like EC2, Compute Engine, or Azure VMs give you VPS-like control,
+              while managed offerings like RDS or Cloud SQL handle entire categories of
+              infrastructure for you. The tradeoff for this power is complexity: pricing
+              models, IAM permissions, and networking topology can overwhelm a new crew
+              member fast. Learning to navigate one of these providers deliberately, rather
+              than clicking buttons at random, is what separates confident engineers from
+              those perpetually lost in the console.
             </p>
           </div>
 
@@ -616,7 +594,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Static hosting platforms like Netlify and Vercel specialize in launching
+              frontend cargo directly from a git repository with zero server management
+              required. Every push to your main branch triggers an automatic build pipeline
+              that compiles your site and distributes it across a global content delivery
+              network, placing copies close to every reader on the planet. These platforms
+              also generate preview deployments for every pull request, letting your crew
+              review changes in a live environment before merging them into the main
+              timeline. For frontend-heavy projects and JAMstack architectures, this is now
+              the default and most efficient route to orbit.
             </p>
           </div>
 
@@ -649,7 +635,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Serverless computing, embodied by AWS Lambda and similar function platforms,
+              discards the concept of a persistent server entirely. Instead, you deploy
+              small units of code called functions that the cloud provider spins up on
+              demand, execute for milliseconds to seconds, and then shut down completely,
+              meaning you pay only for actual execution time rather than idle uptime. This
+              model excels at event-driven tasks like processing an image upload or
+              responding to an API request, but it introduces new challenges like cold
+              starts and statelessness that a persistent server never had. Grasping
+              serverless architecture means rethinking your application as a constellation
+              of independent reactions rather than one continuously running process.
             </p>
           </div>
 
@@ -682,7 +677,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we chart the full hosting spectrum discovered so far, from shared
+              shuttles to serverless functions scattered like probes across the network.
+              Each tier trades control for convenience along a single sliding scale: shared
+              hosting offers the least control and least effort, a raw VPS demands the most
+              manual maintenance for the most flexibility, and PaaS or serverless sit
+              somewhere in between depending on how much automation you are willing to
+              trust. The right choice always depends on mission parameters, not fashion; a
+              small landing page has different needs than a high-traffic API. Carrying this
+              map forward will let future decisions about infrastructure be deliberate
+              rather than accidental.
             </p>
           </div>
 
@@ -720,7 +724,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Continuous Integration is the practice of merging every crew member's code
+              changes into a shared trunk frequently, often multiple times a day, with
+              automated verification running at each merge. Rather than letting divergent
+              branches drift apart for weeks and colliding catastrophically at the end, CI
+              catches integration conflicts and broken builds within minutes of them being
+              introduced. This requires discipline: every commit should be small, tested,
+              and mergeable, transforming version control from a mere history log into an
+              active safety net for the whole team. The philosophy underlying CI is that
+              failures are far cheaper to fix when detected immediately rather than
+              discovered weeks later during a doomed final assembly.
             </p>
           </div>
 
@@ -753,7 +766,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              GitHub Actions turns your repository itself into a fully automated mission
+              control center, triggered directly by events like pushes, pull requests, or
+              scheduled timers. A pipeline is defined in a YAML workflow file living inside
+              the repo, describing a sequence of jobs and steps that run on hosted or
+              self-hosted runners, virtual machines spun up specifically to execute your
+              instructions. A typical pipeline might install dependencies, run linters,
+              execute the test suite, and then trigger a deployment job only if every prior
+              step reports success. Because the configuration lives alongside the code it
+              protects, the entire automation history is versioned and reviewable like any
+              other change to the project.
             </p>
           </div>
 
@@ -786,7 +808,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Automated testing inside a CI pipeline is the diagnostic scan run on every
+              incoming shipment before it is allowed anywhere near production systems. Unit
+              tests verify individual functions in isolation, integration tests confirm that
+              multiple modules cooperate correctly, and end-to-end tests simulate an actual
+              user journey through the deployed application. Running these suites
+              automatically on every pull request means a human reviewer never has to
+              manually re-verify basic correctness, freeing their attention for design and
+              architecture concerns instead. A pipeline that skips this step is not really
+              practicing continuous integration at all, it is just continuous merging, and
+              continuous merging without verification is how disasters reach orbit.
             </p>
           </div>
 
@@ -819,7 +850,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A build artifact is the sealed, ready-to-launch capsule produced once your
+              source code has been compiled, bundled, and optimized for its destination
+              environment. This might be a minified JavaScript bundle, a compiled binary, or
+              a container image, but the defining trait is immutability: the exact artifact
+              tested in CI should be the exact artifact deployed to production, never
+              rebuilt from scratch at each stage. This principle, often called build once
+              deploy everywhere, eliminates an entire category of bugs caused by subtle
+              differences between build environments. Treating artifacts as sealed cargo
+              rather than something to be reassembled at every checkpoint is one of the most
+              important disciplines a deployment pipeline can enforce.
             </p>
           </div>
 
@@ -852,7 +892,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Blue-green deployment maintains two identical production environments,
+              designated blue and dark green, where only one serves live traffic at any
+              given moment. When a new release is ready, it is deployed quietly to the idle
+              environment and fully verified there, invisible to real users, before a router
+              or load balancer instantly flips traffic over to it. If anything goes wrong
+              post-flip, reverting is nearly instantaneous since the previous environment
+              remains fully intact and can absorb traffic again immediately. The cost of
+              this safety is running duplicate infrastructure, but for missions where
+              downtime is unacceptable, that cost is a small price for near-zero-risk
+              releases.
             </p>
           </div>
 
@@ -885,7 +934,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rollback strategy is the emergency thruster every deployment pipeline needs
+              before it ever needs it. The simplest approach keeps the previous build
+              artifact and configuration ready to redeploy immediately, since a fast
+              redeploy of a known-good version is almost always safer than attempting to
+              patch forward under pressure. Feature flags offer a finer-grained rollback,
+              letting you disable a single problematic feature without touching the rest of
+              the release at all. Database changes complicate rollbacks the most, since
+              schema migrations are not always reversible, which is why every migration
+              should be planned with a tested down-path from the very beginning.
             </p>
           </div>
 
@@ -918,7 +975,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Reviewing the automation systems charted so far, a mature CI/CD pipeline
+              forms a continuous chain: integration catches conflicts early, automated tests
+              verify correctness, artifacts are built once and promoted unchanged,
+              deployment strategies like blue-green minimize risk during the switch, and
+              rollback plans provide an exit hatch when something still goes wrong. No
+              single link in this chain is optional if the goal is shipping software
+              reliably and often. The crews that treat deployment as a rare, terrifying
+              event are the ones still deploying manually; the crews that treat it as
+              routine have built exactly this kind of pipeline.
             </p>
           </div>
 
@@ -956,7 +1021,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Environment variables are the mission parameters injected into your
+              application at runtime rather than hardcoded into its source, keeping
+              configuration separate from code as the twelve-factor methodology insists. A
+              database connection string, an API key, or a feature toggle should live in the
+              environment, not in a committed file, so the same codebase can run correctly
+              across development, staging, and production simply by swapping which variables
+              are loaded. This separation also protects sensitive credentials from ever
+              being exposed in a public repository's history. Reading environment variables
+              properly, with sane defaults and clear failures when a required one is
+              missing, prevents an entire class of configuration disasters.
             </p>
           </div>
 
@@ -989,7 +1063,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Every serious mission maintains at least three isolated environments:
+              development, where the crew experiments freely and breakage is expected;
+              staging, a near-exact replica of production used for final verification before
+              launch; and production, the live environment actual users depend on, where
+              mistakes carry real consequences. Isolation between these tiers means each has
+              its own database, its own credentials, and often its own infrastructure,
+              preventing an experiment in development from ever contaminating live data.
+              Promoting a build through this sequence, rather than deploying directly to
+              production, is what catches environment-specific bugs before they reach real
+              users. Skipping staging might feel efficient until the day it isn't.
             </p>
           </div>
 
@@ -1022,7 +1105,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Infrastructure as Code, embodied by tools like Terraform, treats your
+              servers, networks, and databases as version-controlled configuration files
+              rather than manually clicked settings in a cloud console. You declare the
+              desired state, this many servers, this network topology, these permissions,
+              and Terraform calculates and executes the precise changes needed to make
+              reality match that declaration. This transforms infrastructure from a fragile,
+              undocumented artifact living only in one engineer's memory into a reviewable,
+              repeatable blueprint that can rebuild an entire environment from scratch if
+              disaster strikes. Learning IaC is learning to treat your entire deployment
+              platform with the same discipline you already apply to application code.
             </p>
           </div>
 
@@ -1055,7 +1147,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Docker Compose lets you define an entire multi-container application, a web
+              server, a database, a cache, and a background worker, in a single declarative
+              YAML file, describing how these isolated containers should network together
+              and share resources. Running one command spins up the whole constellation in
+              correctly linked containers, replicating a production-like topology on a
+              single developer's laptop with near-perfect fidelity. This eliminates the
+              classic works-on-my-machine problem, since every crew member runs the exact
+              same container images regardless of their host operating system. Compose is
+              typically a development and testing tool rather than a production
+              orchestrator, but it is the essential first step toward understanding
+              container orchestration at scale.
             </p>
           </div>
 
@@ -1088,7 +1190,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Secrets management systems like HashiCorp Vault or cloud-native secret
+              managers exist because environment variables alone are not secure enough for
+              the most sensitive credentials, database passwords, encryption keys, and
+              third-party API tokens. A vault stores these secrets encrypted at rest, grants
+              access only to authenticated and authorized services, and can rotate
+              credentials automatically on a schedule without any human intervention. This
+              centralizes secret lifecycle management instead of scattering credentials
+              across dozens of configuration files and deployment scripts where they might
+              be accidentally leaked. Any mission handling real user data eventually needs
+              this level of discipline around its most sensitive cargo.
             </p>
           </div>
 
@@ -1121,7 +1232,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Monitoring deployments means instrumenting your application to broadcast its
+              own vital signs, error rates, response latency, memory usage, and request
+              throughput, continuously back to a central dashboard. Alerting systems watch
+              these telemetry streams and page the on-call crew the instant a metric crosses
+              a dangerous threshold, rather than waiting for a user complaint to reveal the
+              problem hours later. Good alerts are actionable and specific, telling you
+              exactly what broke and where, since vague or excessive alerts train crews to
+              ignore them entirely, a failure mode known as alert fatigue. Pairing every
+              deployment with active monitoring closes the loop between shipping code and
+              knowing whether that code is actually healthy in production.
             </p>
           </div>
 
@@ -1154,7 +1274,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Reviewing environment management as a whole, the discipline runs from
+              configuration through infrastructure through observation: environment
+              variables separate config from code, isolated dev, staging, and production
+              tiers prevent contamination between mission phases, Infrastructure as Code
+              makes environments reproducible, containers make them portable, vaults keep
+              secrets safe, and monitoring proves the whole system is actually working after
+              launch. None of these practices alone guarantees a stable mission, but
+              together they form the operational backbone that lets a crew deploy
+              confidently and sleep soundly afterward. This is the difference between hoping
+              a deployment works and knowing it does.
             </p>
           </div>
 
@@ -1192,7 +1321,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Semantic versioning assigns every release a three-part number, major, minor,
+              and patch, each with a precise contractual meaning for anyone depending on
+              your software. A patch increment signals a backward-compatible bug fix, a
+              minor increment signals new backward-compatible functionality, and a major
+              increment signals a breaking change that may require dependent code to be
+              updated. This numbering scheme lets downstream crews upgrade dependencies with
+              informed confidence, automatically pulling in patches and minor updates while
+              treating major version bumps as events requiring careful review. Without this
+              shared convention, every version number would be an opaque guess rather than a
+              promise.
             </p>
           </div>
 
@@ -1225,7 +1363,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A changelog is the mission log translated for external readers, a running
+              document listing what changed, was added, or was fixed in each released
+              version, written in language a human user can actually parse. Good changelogs
+              group entries by category, added, changed, fixed, and removed, and are updated
+              as part of the release process itself rather than reconstructed from git
+              history after the fact under deadline pressure. This document builds trust
+              with users and downstream developers, since it lets them assess quickly
+              whether an upgrade affects their own systems before committing to it.
+              Neglecting the changelog is a small omission that compounds into real support
+              burden over time.
             </p>
           </div>
 
@@ -1258,7 +1405,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Feature flags let a team deploy new code to production while keeping it
+              invisible or restricted to a small percentage of users, decoupling the act of
+              deployment from the act of release entirely. A flag might enable a feature
+              only for internal crew members first, then five percent of users, then fifty
+              percent, watching telemetry at each stage before committing to a full rollout.
+              This gradual exposure strategy dramatically limits the blast radius of any bug
+              that slips through testing, since a broken feature can be disabled instantly
+              for everyone without a full deployment rollback. Flags do introduce their own
+              complexity, since old, unused flags left in the codebase become a form of
+              technical debt requiring periodic cleanup.
             </p>
           </div>
 
@@ -1291,7 +1447,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Database migrations are versioned scripts that evolve your schema over time,
+              adding a column, creating an index, or restructuring a relationship, in small,
+              reversible, and ordered steps rather than one massive manual edit against a
+              live database. Each migration typically pairs an up operation, applying the
+              change, with a down operation, reverting it, giving the crew a tested escape
+              path if a deployment needs to be rolled back. Migrations must run as part of
+              the deployment pipeline itself, applied automatically and in the correct
+              sequence, so that application code and database schema never drift out of sync
+              with each other. Careless schema changes against live production data are
+              among the most dangerous operations in the entire deployment lifecycle,
+              deserving extra caution and always a backup beforehand.
             </p>
           </div>
 
@@ -1324,7 +1490,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Smoke testing is the brief systems check performed the instant a new
+              deployment reaches production, verifying that the most critical paths, login,
+              checkout, core API endpoints, are functioning before declaring the mission a
+              success. Unlike the full test suite already run during CI, smoke tests run
+              against the real live environment with real infrastructure, catching problems
+              that only manifest outside of a controlled testing sandbox, misconfigured
+              environment variables, DNS issues, or a missing production secret. A
+              deployment pipeline that stops at the moment code reaches the server, without
+              confirming it actually works there, has not truly finished its job. Automating
+              this final check closes the last gap between deploying and knowing the
+              deployment succeeded.
             </p>
           </div>
 
@@ -1357,7 +1533,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              On-call rotation means a designated crew member carries the pager, literal or
+              figurative, ready to respond immediately when production alerts fire outside
+              normal working hours. Effective incident response follows a clear structure:
+              detect the problem through monitoring, triage its severity, mitigate the
+              immediate impact often through rollback or a feature flag, and only afterward
+              investigate the true root cause once the fire is out. A blameless postmortem
+              written after every significant incident turns a stressful event into
+              institutional knowledge, documenting what happened, why, and what process or
+              safeguard will prevent a recurrence. Treating incidents as inevitable rather
+              than shameful is what lets a crew respond fast instead of freezing under
+              pressure.
             </p>
           </div>
 
@@ -1390,7 +1576,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Reviewing release and maintenance as a discipline, it extends far past the
+              moment code reaches production: semantic versioning and changelogs communicate
+              change honestly to dependents, feature flags decouple risky rollout from
+              deployment itself, migrations keep schema and code synchronized safely, smoke
+              tests confirm real-world success, and on-call response handles the incidents
+              that inevitably slip through despite every precaution. Together these
+              practices form the long tail of a mission that never really ends at launch,
+              since a deployed system needs continued care for as long as it stays in orbit.
+              This full arc, from launchpad to long-term maintenance, is what separates
+              shipping code once from operating a system responsibly.
             </p>
           </div>
 

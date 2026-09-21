@@ -287,75 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>SQL Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#sql-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <li><a href="#sql-day00">Day 00 &#9672; Intro</a></li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: FOUNDATIONS OF THE RELATIONAL VOID -->
-            <li class="week-label">
-              <a href="#sql-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#sql-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#sql-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#sql-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#sql-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#sql-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#sql-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#sql-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: SCHEMA DESIGN & RELATIONSHIPS -->
-            <li class="week-label">
-              <a href="#sql-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#sql-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#sql-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#sql-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#sql-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#sql-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#sql-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#sql-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: ADVANCED QUERY PATTERNS -->
-            <li class="week-label">
-              <a href="#sql-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#sql-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#sql-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#sql-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#sql-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#sql-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#sql-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#sql-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04 -->
-            <li class="week-label">
-              <a href="#sql-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#sql-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#sql-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#sql-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#sql-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#sql-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#sql-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#sql-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-
-            <!-- @block: WEEK 05 — SECTOR 05 -->
-            <li class="week-label">
-              <a href="#sql-sector-05" class="sidebar-link">S05</a>
-            </li>
-            <li><a href="#sql-day29" class="sidebar-link">Day 29 &#9672;</a></li>
-            <li><a href="#sql-day30" class="sidebar-link">Day 30 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -463,10 +417,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Today we descend into the Deep Archives for the first time, the relational
+              databases where every mission's persistent memory truly lives. Unlike the
+              transient state of a running application, a database survives restarts,
+              crashes, and redeployments, holding the single source of truth about users,
+              transactions, and events across the entire voyage. Structured Query Language,
+              SQL, is the universal dialect used to speak with these archives, letting a
+              crew member ask precise questions and receive precise answers back. Before
+              touching a single query, understanding that the archive is organized,
+              structured, and governed by strict rules is the first and most important
+              lesson.
             </p>
           </div>
 
@@ -523,10 +483,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A table is the archival shelf where a single type of record lives, and its
+              columns define exactly what attributes each entry on that shelf must carry, a
+              name column, an email column, a timestamp column. Every row in the table
+              represents one concrete record, one user, one order, one sensor reading,
+              conforming to the exact structure the columns declare. This rigid structure is
+              what makes relational databases so reliable: unlike a loose document store, a
+              table refuses to accept a row missing a required column or holding a value of
+              the wrong shape. Learning to design tables well, choosing the right columns
+              and the right boundaries between them, is the foundation every later query
+              depends on.
             </p>
           </div>
 
@@ -568,10 +534,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Every column in a table is bound to a data type, the molecular structure
+              determining exactly what kind of value it can hold and how much space it
+              occupies in the archive. Integers store whole numbers efficiently, VARCHAR and
+              TEXT store character strings of bounded or unbounded length, DATE and
+              TIMESTAMP store points in time, and BOOLEAN stores a simple true-or-false
+              signal. Choosing the correct type is not a cosmetic decision: it determines
+              what operations are valid, how much storage is consumed, and whether the
+              database can enforce constraints like a maximum length or a range
+              automatically. A poorly chosen type is a structural weakness that will
+              eventually crack under the pressure of real data.
             </p>
           </div>
 
@@ -613,10 +585,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              The SELECT statement is the retrieval signal you fire into the archive,
+              asking it to return specific columns from specific tables and beam the results
+              back to you. A basic query names the columns you want and the table to search,
+              but SELECT can also compute expressions, rename columns with aliases, and
+              limit how many rows return in a single transmission. Mastering SELECT means
+              understanding that you are never retrieving the raw storage itself, but rather
+              a computed result set, assembled fresh from the archive at the moment your
+              query executes. Every other SQL concept you will learn eventually attaches
+              itself to this fundamental retrieval operation.
             </p>
           </div>
 
@@ -658,10 +635,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              The WHERE clause is the filtering lens that narrows a broad retrieval down to
+              only the rows matching specific conditions, transforming a raw scan of the
+              entire archive into a precise, targeted search. Conditions can compare column
+              values against literals or other columns, combine multiple criteria with AND
+              and OR, and check for null values, empty archive slots, using IS NULL rather
+              than an equality comparison. Without a WHERE clause, a SELECT statement
+              returns every single row in the table, which is rarely what a mission actually
+              needs. Learning to write precise, efficient filter conditions is what
+              separates a query that returns exactly the right data from one that floods the
+              console with noise.
             </p>
           </div>
 
@@ -703,10 +686,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              ORDER BY imposes a specific sequence on your retrieved results, sorting rows
+              ascending or descending by one or more columns, essential whenever
+              presentation order matters, like showing the newest transmissions first. GROUP
+              BY works differently: it collapses many rows sharing a common value into a
+              single summary row per group, letting you compute aggregates like COUNT, SUM,
+              or AVG across each group independently rather than across the whole table.
+              These two clauses are often combined, grouping records by category and then
+              ordering the resulting summaries by their computed totals. Understanding the
+              distinction between sorting individual rows and aggregating groups of rows is
+              a turning point in querying competence.
             </p>
           </div>
 
@@ -748,10 +737,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A JOIN is the bridge construction operation that reconnects data spread
+              across multiple related tables back into a single unified result, since
+              relational design deliberately splits related information apart to avoid
+              duplication. An INNER JOIN returns only rows with matches in both tables,
+              while a LEFT JOIN preserves every row from the first table even when no match
+              exists in the second, filling the gap with nulls. Joins are typically
+              performed on a shared key, a column present in both tables that identifies the
+              same conceptual entity in each. Mastering joins is mastering the core insight
+              of relational design itself: information lives in many small, well-organized
+              shelves, and joins are how you reassemble the full picture on demand.
             </p>
           </div>
 
@@ -793,10 +788,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A subquery is a query nested entirely within another query, its result
+              consumed by the outer query as if it were a table, a filter value, or a
+              computed column. Subqueries can appear inside a WHERE clause to filter based
+              on a dynamically computed set of values, inside the FROM clause as a temporary
+              derived table, or inside the SELECT list to compute a related value per row.
+              They allow a crew member to express multi-step logical reasoning, find this,
+              then use it to find that, within the structure of a single SQL statement
+              rather than multiple round trips to the archive. Correlated subqueries, which
+              reference the outer query's current row, are especially powerful but demand
+              careful attention to performance.
             </p>
           </div>
 
@@ -852,10 +853,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A primary key is the unique identifier stamped onto every single row in a
+              table, guaranteeing that no two records can ever be confused with one another
+              regardless of how similar their other attributes might be. The database
+              enforces this uniqueness automatically, rejecting any attempt to insert a
+              duplicate key, and most primary keys are also indexed by default, making
+              lookups by that key extremely fast. Choosing a good primary key, often a
+              simple auto-incrementing integer or a universally unique identifier, is one of
+              the earliest and most consequential decisions in table design. Without a
+              reliable primary key, referencing a specific record from anywhere else in the
+              archive becomes fundamentally unsafe.
             </p>
           </div>
 
@@ -897,10 +904,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A foreign key is the relational tether connecting a row in one table to a
+              specific row in another, typically linking a child record back to the primary
+              key of its parent, an order row pointing back to the customer who placed it.
+              This constraint is enforced by the database itself: it refuses to let an order
+              reference a customer that does not exist, and it can be configured to cascade
+              deletions or block them entirely when a parent record is removed. Foreign keys
+              are what let JOINs actually work meaningfully, since they encode the exact
+              relationship that a join operation later traverses. Designing foreign keys
+              correctly is designing the actual shape of your data's relationships, not just
+              its individual tables.
             </p>
           </div>
 
@@ -943,10 +956,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              An index is the search accelerator built alongside a table, a separate,
+              ordered structure, usually a B-tree, that lets the database locate matching
+              rows without scanning every single record in the archive. Placing an index on
+              a frequently filtered or joined column can turn a query that once took seconds
+              into one completing in milliseconds, especially as the archive grows into
+              millions of records. This speed is not free: every index consumes additional
+              storage and slows down writes slightly, since each insert or update must also
+              update the index structure. Deciding which columns deserve an index, usually
+              those used heavily in WHERE clauses, JOIN conditions, or ORDER BY, is a
+              balance between read speed and write overhead.
             </p>
           </div>
 
@@ -989,10 +1008,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Normalization is the disciplined process of eliminating redundancy from your
+              archive's structure, splitting data into multiple related tables so that any
+              single fact is stored in exactly one place. Without normalization, updating a
+              customer's address might require modifying dozens of duplicate copies
+              scattered across every order row, an operation guaranteed to eventually
+              produce inconsistent, contradictory data. Formal normal forms, first, second,
+              and third, provide increasingly strict rules for eliminating specific
+              categories of redundancy and dependency. Perfect normalization is not always
+              the goal, since some redundancy is deliberately reintroduced later for
+              performance through denormalization, but understanding the disciplined default
+              is essential before you ever choose to break it.
             </p>
           </div>
 
@@ -1035,10 +1061,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              ACID properties, Atomicity, Consistency, Isolation, and Durability, form the
+              integrity covenant every serious relational database makes with the data it
+              stores. Atomicity guarantees a multi-step operation either completes entirely
+              or not at all, Consistency ensures every transaction leaves the archive in a
+              valid state according to its rules, Isolation prevents concurrent operations
+              from corrupting each other's results, and Durability guarantees that once
+              committed, a change survives even a power failure. This covenant is what makes
+              a relational database trustworthy for financial transactions, inventory
+              counts, and any mission-critical record where a partial or corrupted write
+              would be catastrophic. Understanding ACID is understanding exactly what
+              promise you are relying on every time you write data to the archive.
             </p>
           </div>
 
@@ -1081,10 +1114,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A transaction bundles multiple SQL statements into a single atomic operation,
+              one indivisible unit that either commits entirely, saving all its changes
+              permanently, or rolls back entirely, undoing every change as if none of it
+              ever happened. This matters most when several statements must succeed or fail
+              together, transferring funds between two accounts requires both a debit and a
+              credit to happen, never just one alone. Beginning a transaction, executing its
+              statements, and finally issuing a COMMIT or ROLLBACK gives a crew member
+              explicit control over exactly when changes become permanent. Without
+              transactions, a crash or error midway through a multi-step operation could
+              leave the archive in a corrupted, half-finished state.
             </p>
           </div>
 
@@ -1126,10 +1165,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Reviewing the relational foundations charted so far, tables and columns give
+              data its shape, data types enforce its molecular structure, SELECT and WHERE
+              retrieve and filter it, JOINs and subqueries recombine it across tables, keys
+              and indexes make relationships fast and safe, normalization eliminates
+              redundancy, and the ACID covenant guarantees the whole archive remains
+              trustworthy under transactional load. Each concept builds directly on the ones
+              before it, forming a coherent discipline rather than a scattered toolkit. A
+              crew member who has internalized this full foundation can now query, model,
+              and reason about relational data with genuine confidence rather than trial and
+              error.
             </p>
           </div>
 
@@ -1185,10 +1230,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Window functions perform the analytic lens trick of computing a value across
+              a set of related rows, a window, without collapsing those rows into a single
+              summary the way GROUP BY does. Functions like ROW_NUMBER, RANK, and running
+              totals computed with SUM OVER let you rank each row within its category or
+              compute a cumulative sum down a sorted sequence, all while every original row
+              remains visible in the result. This is what makes window functions
+              indispensable for analytics: ranking top performers per department,
+              calculating month-over-month growth, or finding the running balance of an
+              account, tasks that GROUP BY alone simply cannot express. Mastering the OVER
+              clause and its PARTITION BY and ORDER BY sub-clauses unlocks an entire
+              category of reporting queries.
             </p>
           </div>
 
@@ -1230,10 +1282,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              A Common Table Expression, or CTE, is a named, temporary subquery defined at
+              the top of a statement with the WITH keyword, letting you reference it by name
+              one or more times later in the same query as if it were a real table. This
+              dramatically improves readability compared to nesting nested subqueries five
+              layers deep, since each named CTE can represent one clear logical step in a
+              larger multi-stage computation. Recursive CTEs, a special variant that
+              reference themselves, can even traverse hierarchical data like an
+              organizational chart or a category tree, something a standard query structure
+              cannot express at all. Adopting CTEs as your default approach to complex
+              queries is often the difference between an unreadable wall of nested
+              subqueries and a clear, step-by-step archival investigation.
             </p>
           </div>
 

@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează sistemul de control al versiunilor Git — branching, merging, rebase, workflow-uri și bune practici."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#git-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#git-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#git-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#git-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#git-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#git-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#git-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#git-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#git-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#git-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#git-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#git-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#git-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#git-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#git-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#git-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#git-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#git-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#git-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#git-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#git-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#git-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#git-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#git-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#git-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#git-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#git-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#git-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#git-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#git-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am sigilat primul repository al navei, vasul care va păstra fiecare
+              modificare adusă codului de-a lungul întregii călătorii. Un repository nu este
+              doar un folder de fișiere, ci un istoric complet, adresabil, fiecare commit
+              fiind o instantanee păstrată a navei într-un anumit moment. Am rulat git init
+              pentru a aduce la viață directorul .git, înregistratorul de tip cutie neagră
+              care va urmări totul de acum înainte. Nimic nu există cu adevărat în jurnalul
+              misiunii până nu este confirmat printr-un commit; munca neconfirmată este
+              marfă care încă plutește liberă în cală.
             </p>
           </div>
 
@@ -482,7 +450,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Git nu păstrează o listă continuă de diferențe așa cum făceau sistemele mai
+              vechi; păstrează o instantanee completă a întregului proiect la fiecare
+              commit, apoi optimizează stocarea referind fișierele neschimbate în loc să le
+              copieze. Fiecare commit indică înapoi spre părintele său, formând un lanț, sau
+              mai precis un graf orientat, care urmărește configurația exactă a navei în
+              orice moment din istoria ei. Acest model de instantaneu este motivul pentru
+              care Git poate sări instantaneu la orice stare trecută: nu redă modificările,
+              ci încarcă pur și simplu o imagine stocată a acelui moment. Înțelegerea
+              acestui model recontextualizează tot ce urmează, ramurile, fuziunile și
+              rebase-urile sunt toate doar moduri diferite de a naviga acest graf de
+              instantanee.
             </p>
           </div>
 
@@ -515,7 +493,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trei comenzi formează ritmul de bază al operațiunilor zilnice de la bordul
+              acestei nave: git init creează repository-ul, git add pune modificările în
+              așteptare în index, o zonă de tranzit înainte de înregistrarea permanentă, iar
+              git commit sigilează acele modificări puse în așteptare într-o instantanee
+              permanentă, cu un mesaj care descrie intrarea din jurnalul misiunii. Punerea
+              în așteptare este deliberată: alegi exact ce modificări intră în următorul
+              commit, în loc să confirmi totul fără discernământ. Un mesaj de commit clar și
+              descriptiv este o intrare de jurnal de care viitorii membri ai echipajului,
+              inclusiv tu însuți din viitor, vor depinde pentru a înțelege de ce a fost
+              făcută o modificare. Am exersat acest ciclu, editare, punere în așteptare,
+              commit, până a devenit natural.
             </p>
           </div>
 
@@ -548,7 +536,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              git log derulează întregul istoric al misiunii navei, commit cu commit,
+              arătând autorul, marcajul de timp și mesajul fiecărei instantanee
+              înregistrate, până la chiar prima. Opțiuni precum --oneline comprimă asta
+              într-un manifest ușor de scanat, în timp ce --graph redă vizual structura
+              ramificată, arătând exact unde s-a despărțit și reîntâlnit cronologia navei.
+              git diff arată delta precisă dintre două stări, liniile exacte adăugate sau
+              eliminate, permițând echipajului să inspecteze o modificare înainte de a o
+              confirma sau să revadă ce s-a întâmplat între oricare două puncte din istorie.
+              Împreună, aceste două instrumente transformă un istoric opac într-o
+              înregistrare complet navigabilă și inspectabilă.
             </p>
           </div>
 
@@ -581,7 +578,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Greșelile se întâmplă chiar și pe o navă bine condusă, așa că Git ne oferă
+              două unelte foarte diferite pentru a le anula. git reset rescrie istoricul,
+              mutând indicatorul ramurii înapoi și, opțional, renunțând la modificări,
+              puternic dar periculos pentru orice a fost deja partajat cu restul
+              echipajului. git revert, în schimb, creează un commit complet nou care
+              anulează unul anterior, păstrând întreaga înregistrare istorică în loc s-o
+              șteargă, alegerea mai sigură odată ce munca a părăsit stația ta locală.
+              Alegerea dintre ele se reduce la o singură întrebare: a fost deja transmis
+              acest istoric altor membri ai echipajului?
             </p>
           </div>
 
@@ -614,7 +619,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un remote este copia altei nave a repository-ului, de obicei un hub central,
+              precum o stație partajată aflată pe orbită deasupra întregii misiuni. git
+              clone descarcă o copie completă a acelui repository remote, istoric și tot
+              restul, oferind noului membru al echipajului o copie de lucru complet
+              independentă. git push transmite commit-urile tale locale către remote,
+              sincronizând munca ta cu restul flotei, în timp ce git pull aduce commit-urile
+              lor înapoi în ale tale. Lucrul cu remote-uri transformă Git dintr-un jurnal
+              personal într-un sistem de comunicare coordonat pentru întregul echipaj.
             </p>
           </div>
 
@@ -647,7 +659,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Nu tot ce se află în directorul de lucru al unei nave aparține înregistrării
+              permanente: artefactele de build, cache-urile de dependențe și fișierele de
+              configurare locală ar aglomera doar jurnalul misiunii cu zgomot. Un fișier
+              .gitignore listează tiparele pe care Git nu ar trebui niciodată să le
+              urmărească, ținând complet în afara fiecărui commit viitor rezultatele
+              compilate, node_modules și credențialele secrete. Ignorarea unui fișier
+              previne doar urmărirea nouă; un fișier deja confirmat continuă să apară până
+              este eliminat explicit din index cu git rm --cached. Un .gitignore curat,
+              îngrijit de la început, păstrează istoricul navei concentrat pe ceea ce
+              contează cu adevărat: codul sursă și intenția.
             </p>
           </div>
 
@@ -680,7 +701,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ne-am oprit pentru a recalibra fundamentele: modelul de instantaneu, ritmul
+              init-add-commit, citirea istoricului prin log și diff, anularea sigură a
+              greșelilor și sincronizarea cu remote-urile. Fiecare dintre aceste piese se
+              bazează direct pe cea precedentă, înțelegerea instantaneelor face reset și
+              revert intuitive, iar înțelegerea remote-urilor face push și pull să pară
+              extensii naturale ale commit-ului. Exercițiile de verificare au confirmat că
+              echipajul poate naviga cu încredere istoricul unui repository înainte de a
+              trece la terenul mai complex al ramificării. Fundamentele Git formează
+              placarea corpului pentru fiecare manevră avansată care urmează.
             </p>
           </div>
 
@@ -718,7 +747,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O ramură este un indicator ușor și mobil către un commit, permițând unui
+              membru al echipajului să dezvolte o funcționalitate nouă în izolare completă,
+              fără a perturba traiectoria principală a navei. git branch creează una, git
+              switch sau git checkout se mută între ele, iar pentru că ramurile sunt atât de
+              ieftin de creat, Git încurajează ramificarea liberală pentru fiecare unitate
+              distinctă de muncă. Munca confirmată pe o ramură de funcționalitate nu atinge
+              deloc ramura principală până nu este fuzionată explicit înapoi, astfel încât
+              munca experimentală poate fi abandonată complet, fără niciun risc pentru
+              traiectoria stabilă. Această izolare este ceea ce face posibilă dezvoltarea
+              paralelă, concurentă, pentru un echipaj numeros, fără coliziuni constante.
             </p>
           </div>
 
@@ -751,7 +789,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fuzionarea aduce munca dintr-o ramură izolată înapoi în traiectoria
+              principală, combinând două istorii divergente într-o singură cronologie
+              unificată. O fuziune fast-forward mută pur și simplu indicatorul înainte
+              atunci când nu există muncă divergentă pe ramura țintă, în timp ce o fuziune
+              reală creează un commit nou cu doi părinți, înregistrând exact punctul în care
+              două căi de dezvoltare s-au reunit. git merge realizează această operație, iar
+              înțelegerea tipului de fuziune care are loc, fast-forward sau fuziune reală,
+              explică de ce unele istorii rămân liniare, în timp ce altele arată o structură
+              de ramificare vizibilă. Fuzionarea este momentul în care munca izolată se
+              alătură din nou înregistrării partajate a misiunii.
             </p>
           </div>
 
@@ -784,7 +831,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un conflict de fuziune apare atunci când două ramuri au modificat exact
+              aceleași linii ale unui fișier în moduri incompatibile, iar Git, refuzând să
+              ghicească ce versiune este corectă, oprește fuziunea și cere echipajului să
+              decidă. Marcajele de conflict, <<<<<<<, ======= și >>>>>>>, apar direct în
+              fișier, arătând ambele versiuni concurente alăturate, pentru o revizuire
+              manuală. Rezolvarea unui conflict înseamnă editarea fișierului până la starea
+              finală corectă, eliminarea completă a marcajelor, apoi punerea în așteptare și
+              confirmarea rezultatului pentru a finaliza fuziunea. Conflictele nu sunt
+              defecțiuni; sunt Git refuzând corect să ia o decizie care necesită judecată
+              umană despre intenția reală a navei.
             </p>
           </div>
 
@@ -817,7 +873,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Pe măsură ce echipajul crește, ramificarea ad-hoc nu mai este suficientă, iar
+              strategiile structurate de ramificare precum Git Flow definesc exact ce ramuri
+              există și cum circulă munca între ele. Git Flow menține de obicei o ramură
+              main pentru lansările stabile, o ramură develop pentru munca integrată în
+              desfășurare și ramuri scurte de funcționalitate, lansare și remediere urgentă,
+              care fuzionează înapoi în ambele. Strategii mai simple, precum GitHub Flow,
+              reduc totul la doar main plus ramuri de funcționalitate fuzionate prin pull
+              request-uri, favorizând viteza în locul ceremoniei pentru echipele care
+              livrează continuu. Alegerea unei strategii înseamnă alegerea unui protocol
+              partajat pe care întregul echipaj se angajează să-l urmeze, consecvența
+              contează mai mult decât strategia specifică aleasă.
             </p>
           </div>
 
@@ -850,7 +916,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rebase rescrie istoricul unei ramuri redând commit-urile ei deasupra unei
+              baze noi, producând un istoric liniar, ca și cum munca ar fi fost construită
+              acolo încă de la început, în loc de structura încrucișată pe care o lasă în
+              urmă un commit de fuziune. git rebase main preia commit-urile ramurii tale de
+              funcționalitate și le reaplică una câte una peste vârful ramurii main,
+              generând în acest proces noi hash-uri de commit pentru fiecare. Acest lucru
+              produce un jurnal mai curat, mai ușor de citit, dar regula de aur rămâne
+              fermă: nu rescrie niciodată commit-uri deja transmise și partajate, întrucât
+              rescrierea unui istoric partajat blochează copia fiecărui alt membru al
+              echipajului. Rebase înainte de partajare, fuziune după, este ritmul sigur pe
+              care majoritatea echipajelor îl adoptă.
             </p>
           </div>
 
@@ -883,7 +959,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Uneori este nevoie doar de un singur commit dintr-o altă ramură, nu de
+              întreaga ramură, iar git cherry-pick permite echipajului să aplice
+              modificările acelei instantanee specifice pe ramura curentă, fără să preia
+              nimic altceva. Acesta este instrumentul standard pentru a duce o remediere
+              critică de bug din linia principală de dezvoltare pe o ramură mai veche de
+              lansare stabilă, unde fuzionarea întregii ramuri ar aduce muncă neconexă,
+              nepregătită. Cherry-pick creează un commit complet nou, cu un hash nou, chiar
+              dacă modificarea este identică, întrucât este redată într-un context istoric
+              diferit. Folosit cu măsură, cherry-pick este o intervenție chirurgicală
+              precisă; folosit constant, semnalează o strategie de ramificare care trebuie
+              regândită.
             </p>
           </div>
 
@@ -916,7 +1002,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuirea acestui ciclu a confirmat stăpânirea echipajului asupra
+              dezvoltării izolate: ramificarea pentru muncă paralelă, fuzionarea pentru
+              reintegrarea ei, rezolvarea conflictelor când istoriile se ciocnesc, strategii
+              structurate pentru coordonarea unui echipaj în creștere, rebase pentru un
+              istoric curat și cherry-pick pentru remedieri chirurgicale. Fiecare unealtă
+              rezolvă o problemă distinctă, iar a ști pe care o cere situația este adevărata
+              abilitate, nu memorarea comenzilor izolat. Exercițiile au confirmat că
+              echipajul poate naviga cronologii divergente fără a pierde muncă sau a corupe
+              înregistrarea partajată. Acum avansăm către fluxurile de colaborare care
+              coordonează o flotă întreagă.
             </p>
           </div>
 
@@ -954,7 +1049,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un fork este o copie completă și independentă a repository-ului altcuiva,
+              găzduită sub propriul tău cont, oferindu-ți acces complet de scriere la copia
+              ta, în timp ce proiectul original rămâne neatins până propui explicit
+              modificări. Acesta este fluxul standard pentru contribuția open source: faci
+              fork la proiect, clonezi local fork-ul tău, confirmi modificările pe o ramură,
+              apoi trimiți la fork-ul tău și deschizi un pull request către repository-ul
+              original. Menținerea fork-ului sincronizat cu proiectul upstream, adăugându-l
+              ca remote și fuzionând sau rebasând periodic, previne ca și contribuția ta să
+              rămână prea în urmă pentru a fuziona curat. Modelul de fork permite mii de
+              echipaje independente să contribuie la o singură misiune partajată fără a avea
+              nevoie de acces direct de scriere la ea.
             </p>
           </div>
 
@@ -987,7 +1092,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Într-un singur repository partajat, majoritatea echipelor adoptă fluxul de
+              ramuri de funcționalitate: fiecare unitate de muncă, oricât de mică, primește
+              propria ramură scurtă, desprinsă din main, dezvoltată izolat, apoi fuzionată
+              înapoi prin revizuire. Numele ramurilor codifică de obicei intenția și
+              proprietatea, precum feature/tabloul-de-telemetrie sau fix/timeout-ecluza,
+              astfel încât orice membru al echipajului poate înțelege scopul unei ramuri
+              dintr-o privire, fără să-i citească întregul istoric. Menținerea ramurilor de
+              funcționalitate scurte, fuzionate în zile, nu săptămâni, minimizează
+              conflictele dureroase care se acumulează când o ramură se îndepărtează prea
+              mult de modificările continue ale ramurii main. Acest flux este țesutul
+              conjunctiv care permite mai multor membri ai echipajului să construiască
+              simultan, fără să se calce pe muncă unii altora.
             </p>
           </div>
 
@@ -1020,7 +1136,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un pull request este o propunere formală de a fuziona o ramură în alta,
+              adunând o diferență, o descriere a intenției și un spațiu pentru ca restul
+              echipajului să o revizuiască înainte ca modificarea să fie acceptată în
+              înregistrarea misiunii. Este un punct de control, nu doar o fuziune mecanică,
+              prinzând bug-uri, probleme de design și lacune de cunoaștere înainte să ajungă
+              pe traiectoria principală, răspândind în același timp înțelegerea modificării
+              dincolo de mintea unui singur membru al echipajului. Verificările automate,
+              teste, linters și validarea build-ului, rulează de obicei pentru fiecare pull
+              request, blocând fuziunea până când sistemele navei confirmă că modificarea
+              este sigură. Un pull request lăsat deschis prea mult timp acumulează decalaj
+              și conflicte, așa că echipajele sănătoase revizuiesc și fuzionează prompt, în
+              loc să lase propunerile să se adune pe orbită.
             </p>
           </div>
 
@@ -1053,7 +1180,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuirea bună a pull request-ului unui coechipier este propria ei
+              disciplină: concentrează feedback-ul pe comportamentul și claritatea reală a
+              codului, nu pe competența autorului, și explică mereu raționamentul din
+              spatele unei modificări cerute, în loc să dai comenzi seci. Pull request-urile
+              mici și concentrate sunt mult mai ușor de revizuit temeinic decât cele
+              întinse, o diferență de cinci sute de linii invită aprobarea din reflex, în
+              timp ce una de cincizeci de linii invită o examinare autentică. Distingerea
+              problemelor blocante de sugestiile opționale, adesea prin etichete explicite,
+              respectă timpul autorului și evită ca revizuirea să blocheze misiunea inutil.
+              O cultură bună de revizuire tratează feedback-ul ca un dar schimbat între
+              membri ai echipajului care merg spre aceeași destinație, nu ca un ritual de
+              gardă.
             </p>
           </div>
 
@@ -1086,7 +1224,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O etichetă (tag) este un indicator fix, permanent, către un commit specific,
+              spre deosebire de o ramură care continuă să avanseze, marcând un punct exact
+              din istorie ca fiind semnificativ, de obicei o lansare pregătită să părăsească
+              nava. git tag v1.2.0 ștampilează permanent acel commit, iar versionarea
+              semantică, major.minor.patch, comunică natura fiecărei lansări: modificări
+              incompatibile, funcționalități noi sau remedieri de bug-uri, respectiv.
+              Etichetele adnotate poartă propriul mesaj, autor și marcaj de timp, distincte
+              de commit-ul spre care indică, făcându-le potrivite pentru înregistrări
+              formale de lansare, nu doar simple semne de carte. Combinarea etichetelor cu
+              note de lansare generate oferă restului flotei o hartă clară, versionată, a
+              exact ce a fost livrat și când.
             </p>
           </div>
 
@@ -1119,7 +1267,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un hook Git este un script care se declanșează automat în puncte specifice
+              ale ciclului de commit sau push, permițând navei să impună reguli fără a se
+              baza pe faptul că membrii echipajului le țin minte manual. Un hook pre-commit
+              poate rula linters sau teste înainte ca un commit să fie măcar autorizat să se
+              finalizeze, prinzând codul defect înainte să intre în înregistrarea
+              permanentă, nu după. Un hook pre-push poate bloca complet un push dacă testele
+              eșuează local, iar hook-urile de pe partea de server, pe remote, pot impune
+              politici, precum blocarea push-urilor directe pe main, pentru întregul echipaj
+              deodată. Hook-urile transformă disciplina care altfel ar depinde de memorie în
+              disciplină impusă automat de sistemele proprii ale navei.
             </p>
           </div>
 
@@ -1152,7 +1309,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Inspecția de azi a trecut prin forking, ramuri de funcționalitate, pull
+              request-uri, cultura de revizuire, etichetare și hook-uri de automatizare,
+              confirmând că funcționează ca un singur sistem de colaborare coordonat, nu ca
+              ritualuri separate. Un echipaj bine condus face fork sau ramifică
+              corespunzător, deschide pull request-uri concentrate, le revizuiește
+              constructiv, etichetează repere semnificative și lasă hook-urile să impună
+              regulile pe care nimeni n-ar trebui să le țină minte manual. Exercițiile au
+              arătat că echipajul poate acum coordona munca pe mulți contribuitori fără să
+              piardă coerența unei nave cu un singur pilot. Fluxurile de colaborare sunt
+              suficient de complete pentru misiuni reale, și acum ne îndreptăm către
+              manevrele mai avansate ale Git.
             </p>
           </div>
 
@@ -1190,7 +1357,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Uneori nava are nevoie de o corecție urgentă de curs în mijlocul unei
+              sarcini, înainte ca munca actuală să fie gata de confirmat, iar git stash
+              permite echipajului să pună deoparte temporar acele modificări neconfirmate,
+              aducând directorul de lucru instantaneu la o stare curată. Stash-ul
+              funcționează ca o stivă, git stash pop restaurează cele mai recente modificări
+              puse deoparte, în timp ce git stash list dezvăluie tot ce este ținut momentan
+              în rezervă. Acesta este instrumentul standard pentru schimbarea contextului
+              fără a polua istoricul cu commit-uri pe jumătate terminate, nefuncționale,
+              făcute doar pentru a-ți salva locul. Stash-ul permite unui membru al
+              echipajului să răspundă unei urgențe fără a pierde nici măcar o linie din
+              munca deja în desfășurare.
             </p>
           </div>
 
@@ -1223,7 +1400,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rebase-ul interactiv, git rebase -i, deschide o listă editabilă de commit-uri
+              și permite echipajului să le reordoneze, editeze, combine sau elimine înainte
+              de a fi partajate cu restul flotei, rescriind în esență un jurnal dezordonat
+              de lucru-în-desfășurare într-o narațiune coerentă. Squashing-ul comprimă mai
+              multe commit-uri mici și zgomotoase, repar greșeală de scriere, repar din nou,
+              de fapt repar greșeala, într-un singur commit curat, care spune o poveste
+              clară despre ce s-a schimbat și de ce. Acest lucru este puternic tocmai pentru
+              că este periculos: rebase-ul interactiv trebuie să atingă doar commit-uri care
+              nu au fost încă trimise și partajate, din același motiv pentru care rebase-ul
+              obișnuit poartă această regulă. Folosit bine, rebase-ul interactiv transformă
+              un istoric personal haotic într-un jurnal de misiune din care restul
+              echipajului poate chiar învăța.
             </p>
           </div>
 
@@ -1256,7 +1444,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Când un bug apare undeva într-un istoric lung și nimeni nu-și mai amintește
+              exact ce commit l-a introdus, git bisect automatizează căutarea folosind
+              căutare binară de-a lungul cronologiei de commit-uri. Marchezi un commit
+              cunoscut ca fiind bun și unul cunoscut ca fiind defect, iar Git face checkout
+              la punctul de mijloc pentru ca tu să-l testezi, înjumătățind căutarea la
+              fiecare rundă, până când commit-ul vinovat exact este izolat. Asta transformă
+              ceea ce ar putea fi ore de arheologie manuală prin sute de commit-uri în doar
+              câteva cicluri de testare, de obicei logaritm în bază doi din numărul total de
+              commit-uri. Bisect este unul dintre cele mai subutilizate instrumente ale Git,
+              precis, rapid și mult mai fiabil decât ghicitul locului unde a fost introdusă
+              o regresie.
             </p>
           </div>
 
@@ -1289,7 +1487,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un submodul încorporează un repository Git în altul, ca referință fixă la un
+              commit specific, util atunci când o navă depinde de o bibliotecă externă sau o
+              componentă partajată care trăiește în propriul ei istoric independent. git
+              submodule add leagă repository-ul extern la o cale specifică, dar
+              repository-ul părinte înregistrează doar ce commit al submodulului trebuie
+              folosit, nu conținutul real al fișierelor submodulului direct. Asta înseamnă
+              că clonarea unui repository cu submodule necesită un pas suplimentar, git
+              submodule update --init, altfel directoarele legate sosesc goale, o sursă
+              comună de confuzie pentru noii membri ai echipajului. Submodulele sunt
+              puternice pentru partajarea codului între proiecte, dar adaugă complexitate
+              operațională reală, iar multe echipaje preferă acum alternative mai simple,
+              precum managerii de pachete, acolo unde cazul de utilizare permite.
             </p>
           </div>
 
@@ -1322,7 +1531,19 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Comportamentul Git este profund configurabil prin git config, iar definirea
+              de aliasuri pentru secvențe de comenzi tastate frecvent economisește
+              echipajului o cantitate enormă de taste de-a lungul unei misiuni lungi: git
+              config --global alias.co checkout, sau un alias mai elaborat pentru o vedere
+              de jurnal decorată și ramificată grafic. Configurația globală din ~/.gitconfig
+              se aplică pe fiecare repository de pe navă, în timp ce configurația locală,
+              per-repository, din .git/config o suprascrie pentru cazuri speciale, precum o
+              identitate diferită de autor pentru o anumită misiune. Dincolo de aliasuri,
+              configurația controlează comportamentul de bază: numele ramurii implicite,
+              strategiile de fuziune, stocarea credențialelor și gestionarea terminatorilor
+              de linie pe diferite sisteme de operare. Un fișier de configurare bine reglat
+              este un cockpit personalizat, construit după ritmurile exacte în care lucrează
+              cu adevărat un membru al echipajului.
             </p>
           </div>
 
@@ -1355,7 +1576,20 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sub fiecare comandă stă un model de obiecte remarcabil de simplu: Git
+              stochează totul ca unul din patru tipuri de obiecte, blob-uri care păstrează
+              conținutul fișierelor, arbori (trees) care păstrează structura directoarelor,
+              commit-uri care păstrează instantanee și etichete care păstrează indicatori
+              numiți, fiecare adresat prin hash-ul SHA-1 sau SHA-256 al propriului conținut.
+              Un obiect commit nu stochează deloc o diferență; indică spre un arbore ce
+              reprezintă întreaga stare a proiectului și spre commit-ul său părinte,
+              confirmând modelul de instantaneu de chiar din prima zi a acestei călătorii.
+              Referințele, ramurile și etichetele, nu sunt nimic mai mult decât fișiere în
+              .git/refs care conțin un hash de commit, motiv pentru care crearea sau mutarea
+              unei ramuri este aproape instantanee, nu se copiază date, doar se mută un
+              indicator. Înțelegerea acestui model intern demistifică tot ce face Git
+              deasupra lui; nu mai rămâne nicio magie, doar stocare adresată prin conținut
+              și indicatori.
             </p>
           </div>
 
@@ -1388,7 +1622,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Acest ciclu final de revizuire a urmărit întregul arc, de la modelul de
+              instantaneu, prin ramificare și fuzionare, fluxuri colaborative, și
+              instrumentele avansate, stash, rebase interactiv, bisect, submodule,
+              configurație personalizată și modelul brut de obiecte de dedesubt. Fiecare
+              strat depinde de cele de dedesubt; rebase-ul interactiv nu are sens fără a
+              înțelege mai întâi commit-urile ca instantanee, iar bisect este rapid doar
+              pentru că graful de commit-uri pe care îl caută este ieftin de parcurs.
+              Echipajul a demonstrat fluență pe tot spectrul, de la un prim git init până la
+              rescrierea încrezătoare a istoricului înainte de a-l partaja cu flota.
+              Repository-ul inițiat acum douăzeci și nouă de cicluri este acum un instrument
+              complet stăpânit, pregătit pentru orice misiune urmează.
             </p>
           </div>
 

@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Deployment Pipeline Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#deployment-pipeline-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#deployment-pipeline-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#deployment-pipeline-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#deployment-pipeline-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#deployment-pipeline-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#deployment-pipeline-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we stepped onto the Conveyor, the automated belt that carries code from
+              a developer's hands to a running system. A deployment pipeline is a sequence
+              of automated stages that build, verify, and release software without manual
+              repetition of the same tedious steps. Understanding this conveyor is essential
+              before we start loading cargo onto it, since a single misconfigured stage can
+              jam the entire line. We toured the full length of the belt today, naming each
+              station we will study in depth.
             </p>
           </div>
 
@@ -484,7 +431,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We examined what a pipeline actually is: a defined sequence of stages,
+              typically source, build, test, package, and deploy, each gating entry into the
+              next. Failure at any stage halts the conveyor immediately, preventing broken
+              cargo from reaching later, more expensive stations. This fail-fast principle
+              saves enormous time compared to discovering a defect only after full
+              deployment. We diagrammed a basic five-stage pipeline today and traced how a
+              single commit flows through it.
             </p>
           </div>
 
@@ -517,7 +470,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson covered how a pipeline is triggered from source control,
+              watching a repository for pushes, tags, or pull requests that should ignite
+              the conveyor. Webhooks notify the pipeline system the instant new code lands,
+              removing the need for manual polling or human initiation. Configuring trigger
+              rules carefully prevents wasted runs on irrelevant branches while ensuring
+              nothing important slips through unbuilt. We configured a trigger today that
+              fires only on pushes to protected branches.
             </p>
           </div>
 
@@ -550,7 +509,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied the build stage, where source code is compiled, transpiled, or
+              bundled into a runnable artifact. This station converts human-readable
+              instructions into the binary or packaged form a machine can actually execute,
+              catching syntax errors and missing dependencies immediately. A clean,
+              reproducible build environment is essential, since a build that only works on
+              one engineer's machine defeats the purpose of automation. We ran our first
+              automated build today, watching the conveyor reject a deliberately broken
+              syntax error.
             </p>
           </div>
 
@@ -583,7 +549,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we reached the test stage, where automated suites verify that new code
+              behaves as expected before it travels further down the line. Unit tests check
+              individual components in isolation, while integration tests confirm that
+              assembled parts still function together correctly. A pipeline that skips this
+              station risks shipping defects directly to passengers, so most conveyors
+              refuse to advance cargo that fails here. We wired a test suite into our
+              pipeline today and watched it correctly block a regression.
             </p>
           </div>
 
@@ -616,7 +588,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We covered the package stage today, where verified code is bundled into a
+              distributable artifact such as a container image, a compiled binary, or a
+              versioned archive. Packaging standardizes what actually gets deployed,
+              ensuring the exact bits tested in the previous stage are the same bits that
+              ship, with no last-minute edits introducing drift. Artifacts are typically
+              tagged with a version or commit hash so any deployed instance can be traced
+              back to its origin. We built and tagged our first container image today as
+              part of this stage.
             </p>
           </div>
 
@@ -649,7 +628,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we arrived at the deploy stage, the final station where packaged
+              artifacts are released into a live environment. This can mean pushing a
+              container to a cluster, uploading a binary to a server fleet, or publishing
+              static files to a hosting platform. Automated deploys remove the error-prone
+              ritual of manual file copying, replacing it with a repeatable, auditable
+              action. We simulated a deploy to a test environment today, confirming the
+              artifact from the package stage arrived intact.
             </p>
           </div>
 
@@ -682,7 +667,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for pipeline fundamentals. We traced the full conveyor from source
+              trigger through build, test, package, and deploy, understanding how each
+              station gates the next and why fail-fast matters at every checkpoint. A crew
+              that understands this flow can diagnose where a pipeline broke just by knowing
+              which station rejected the cargo. Cadets ran a full simulated pipeline today,
+              injecting a deliberate failure at each stage to observe the halt behavior.
             </p>
           </div>
 
@@ -720,7 +710,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we configured our first real workflow setup in GitHub Actions,
+              translating the pipeline theory into an actual YAML definition. Jobs and steps
+              map directly onto the stages we studied, with each job running on a fresh
+              virtual runner unless explicitly cached or chained. We wrote a workflow file
+              today with distinct jobs for build, test, and deploy, wiring dependencies
+              between them so later jobs wait for earlier ones to succeed. This gave us our
+              first working conveyor running entirely inside the platform.
             </p>
           </div>
 
@@ -753,7 +749,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We examined Jenkins today, the long-standing self-hosted automation server
+              that many older fleets still rely on. Unlike hosted platforms, Jenkins
+              requires a crew to provision and maintain its own runner infrastructure,
+              trading convenience for full control over the execution environment. Pipelines
+              are defined in a Jenkinsfile using a Groovy-based DSL, describing stages much
+              like the ones we've already studied. We installed a local Jenkins instance
+              today and ran a simple declarative pipeline against it.
             </p>
           </div>
 
@@ -786,7 +788,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson covered GitLab CI, a pipeline system integrated directly into
+              the GitLab platform rather than bolted on separately. Pipelines are defined in
+              a .gitlab-ci.yml file at the repository root, describing stages and jobs in a
+              structure similar to what we've seen elsewhere. GitLab's tight integration
+              means merge requests, pipeline status, and deployment environments all appear
+              in one unified interface. We configured a basic GitLab CI pipeline today and
+              observed its stage graph render automatically.
             </p>
           </div>
 
@@ -819,7 +827,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied environment variables and pipeline configuration today, the
+              mechanism for injecting settings and secrets into a running job without
+              hardcoding them into scripts. Variables can be scoped globally, per pipeline,
+              or per environment, letting the same pipeline definition behave differently
+              for staging versus production targets. Sensitive values should always be
+              marked as protected or masked so they never appear in logs. We configured a
+              set of environment-specific variables today and verified they resolved
+              correctly per target.
             </p>
           </div>
 
@@ -852,7 +867,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we tackled caching in CI, a technique for avoiding redundant work
+              across pipeline runs. Dependency directories, compiled build artifacts, and
+              downloaded packages can be cached between runs, dramatically reducing the time
+              spent on repeated installation steps. A poorly configured cache can serve
+              stale data, so cache keys must be tied to the inputs that actually determine
+              validity, like a lockfile hash. We measured our pipeline's runtime before and
+              after enabling caching today, observing a significant speedup.
             </p>
           </div>
 
@@ -885,7 +906,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We explored parallel jobs today, running independent pipeline stages
+              simultaneously on separate runners rather than sequentially. Tests that don't
+              depend on each other, or builds targeting different platforms, are ideal
+              candidates for this kind of fan-out. Parallelization can cut total pipeline
+              duration dramatically, though it requires runners with sufficient capacity and
+              careful dependency management to avoid races. We split our test suite into
+              three parallel jobs today, cutting total pipeline time nearly in half.
             </p>
           </div>
 
@@ -918,7 +945,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for CI implementation. We consolidated hands-on workflow
+              authoring, comparing GitHub Actions, Jenkins, and GitLab CI as three different
+              vessels achieving similar goals, alongside environment configuration, caching,
+              and parallelization as optimization techniques. A crew fluent across multiple
+              CI systems can adapt quickly when a mission requires a different platform.
+              Cadets rebuilt the same pipeline today across two different systems to compare
+              their syntax and behavior directly.
             </p>
           </div>
 
@@ -956,7 +989,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we crossed into continuous deployment, where every change that passes
+              the pipeline is released automatically without a manual approval gate. This
+              represents the fastest possible cycle from commit to production, appropriate
+              for teams with strong automated test coverage and confidence in their safety
+              nets. Without adequate testing, continuous deployment can ship defects to
+              users at the same speed it ships fixes. We configured a fully automated deploy
+              today, watching a passing pipeline release directly to a live target.
             </p>
           </div>
 
@@ -989,7 +1028,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied staging environments today, the pre-production waypoint that
+              mirrors live conditions as closely as possible without exposing real
+              passengers to risk. A staging deploy lets the crew verify behavior under
+              realistic load, configuration, and data shape before committing to a full
+              production release. Discrepancies between staging and production, sometimes
+              called environment drift, are a common source of surprises that this stage
+              exists to catch. We deployed to a staging environment today and compared its
+              configuration against production for drift.
             </p>
           </div>
 
@@ -1022,7 +1068,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson covered blue-green deployments, a strategy for achieving zero
+              downtime by running two identical production environments and switching
+              traffic between them. The blue environment serves live traffic while green
+              receives the new release, and once green is verified, a router or load
+              balancer flips traffic over instantly. If problems emerge, reverting is as
+              simple as flipping the switch back to blue. We simulated a blue-green cutover
+              today, verifying that traffic switched without any dropped requests.
             </p>
           </div>
 
@@ -1055,7 +1107,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We examined canary releases today, a gradual rollout strategy that exposes a
+              new version to a small percentage of traffic before a full release. Monitoring
+              error rates and latency on the canary slice reveals problems while exposure is
+              still limited, protecting the majority of passengers from broader impact. If
+              the canary performs well, traffic is incrementally shifted until the new
+              version handles everything. We configured a canary rollout today, watching
+              traffic ramp from five percent up to full deployment.
             </p>
           </div>
 
@@ -1088,7 +1146,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we studied feature flags, runtime toggles that separate deploying code
+              from releasing functionality to users. A feature can be deployed dark, meaning
+              the code ships to production but remains inactive until a flag is flipped,
+              decoupling release risk from deployment risk entirely. Flags also enable
+              targeted rollouts to specific user segments and instant rollback without a
+              redeploy. We wired a feature flag into a sample application today and toggled
+              it live without touching the deployment pipeline.
             </p>
           </div>
 
@@ -1121,7 +1185,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We covered rollback strategies today, the procedures for safely reverting a
+              bad deployment before it causes lasting damage. Options include redeploying a
+              previous known-good artifact, reverting the triggering commit, or toggling a
+              feature flag off if one gates the new behavior. A good rollback strategy is
+              rehearsed in advance and measured for speed, since the value of a rollback
+              plan is inversely proportional to how long it takes to execute under pressure.
+              We ran a rollback drill today, timing how quickly we could restore the
+              previous stable version.
             </p>
           </div>
 
@@ -1154,7 +1225,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for CD implementation. We consolidated continuous deployment,
+              staging environments, blue-green and canary strategies, feature flags, and
+              rollback procedures into a coherent picture of safe, fast release practice. A
+              crew equipped with all of these tools can ship frequently while keeping the
+              blast radius of any single mistake small. Cadets designed a full release
+              strategy today combining canary rollout with an automated rollback trigger on
+              error rate spikes.
             </p>
           </div>
 
@@ -1192,7 +1269,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we addressed pipeline security, focusing on how secrets like API keys
+              and deployment credentials are managed without leaking into logs or source
+              history. Secrets should be injected at runtime from a dedicated vault or the
+              platform's secret store, never hardcoded into pipeline definitions or
+              committed to the repository. Least-privilege access ensures a compromised
+              pipeline credential can't reach further than its specific job requires. We
+              audited a sample pipeline today and found two hardcoded values that should
+              have been secrets.
             </p>
           </div>
 
@@ -1225,7 +1309,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied pipeline monitoring today, the instrumentation that gives a crew
+              visibility into how the conveyor is performing over time. Dashboards tracking
+              build duration, failure rate, and deployment frequency reveal degrading health
+              long before a full outage occurs. Alerting on anomalies, such as a sudden
+              spike in build failures, lets the crew respond before a minor issue compounds.
+              We set up a basic monitoring dashboard today tracking our pipeline's success
+              rate across the past month.
             </p>
           </div>
 
@@ -1258,7 +1348,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson covered pipeline as code, the practice of defining the entire
+              pipeline configuration in version-controlled files rather than through a
+              mutable web interface. This means pipeline changes go through the same review
+              process as application code, with history, diffs, and rollback available for
+              the automation itself. It also makes pipelines portable and reproducible
+              across environments, since the configuration travels with the repository. We
+              migrated a manually configured pipeline into version-controlled YAML today.
             </p>
           </div>
 
@@ -1291,7 +1387,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We examined multi-environment pipelines today, structures that promote a
+              single artifact progressively through development, staging, and production
+              without rebuilding it at each step. Building once and promoting the same
+              artifact guarantees that what was tested is exactly what ships, eliminating a
+              whole class of environment-specific build discrepancies. Each promotion gate
+              can require different approvals or automated checks appropriate to that
+              environment's risk level. We configured a three-environment promotion chain
+              today, tracing one artifact from build through to production.
             </p>
           </div>
 
@@ -1324,7 +1427,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we studied pipeline testing, the practice of verifying that the
+              pipeline definition itself behaves correctly, not just the application it
+              builds. This can include linting workflow syntax, running the pipeline against
+              a mock repository, or asserting that specific stages fail under known bad
+              conditions. Treating pipeline code with the same rigor as application code
+              catches misconfigurations before they cause a failed release at the worst
+              possible moment. We wrote a test today that verified our deploy stage
+              correctly refuses to run if the test stage failed.
             </p>
           </div>
 
@@ -1357,7 +1467,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We covered pipeline documentation and runbooks today, the written procedures
+              that let any crew member operate or troubleshoot the conveyor without tribal
+              knowledge. A good runbook explains how to trigger a manual deploy, how to
+              perform a rollback, and who to contact when a stage fails mysteriously.
+              Documentation that lives next to the pipeline code, rather than in a separate
+              forgotten location, is far more likely to stay accurate. We wrote a runbook
+              today covering our pipeline's three most common failure scenarios.
             </p>
           </div>
 
@@ -1390,7 +1506,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for pipeline best practices. We closed the loop on security,
+              monitoring, pipeline as code, multi-environment promotion, pipeline testing,
+              and documentation, the disciplines that keep a conveyor reliable long after
+              its initial construction. A crew that masters all of these practices operates
+              a pipeline that is fast, safe, and maintainable across the life of a mission.
+              Cadets completed a capstone exercise today, auditing a flawed pipeline and
+              correcting its security, testing, and documentation gaps.
             </p>
           </div>
 

@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#documentation-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#documentation-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#documentation-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#documentation-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#documentation-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#documentation-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#documentation-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#documentation-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#documentation-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#documentation-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#documentation-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#documentation-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#documentation-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#documentation-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#documentation-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#documentation-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#documentation-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#documentation-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#documentation-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#documentation-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#documentation-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#documentation-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#documentation-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#documentation-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#documentation-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#documentation-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#documentation-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#documentation-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#documentation-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#documentation-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Interfața jurnalului de bord prinde viață astăzi pentru prima dată. Fiecare
+              expediție prin baza de cod depinde de o evidență fiabilă a ceea ce a fost
+              construit, de ce a fost construit așa și cum poate fi operat de viitorii
+              membri ai echipajului fără să refacă fiecare pas de la zero. Documentația este
+              cutia neagră a software-ului: atunci când sistemele eșuează sau colaboratorii
+              se schimbă, ea rămâne singurul martor al intenției inițiale. Deschiderea
+              acestui jurnal este primul act prin care scrisul este tratat la fel de serios
+              ca scrierea codului.
             </p>
           </div>
 
@@ -482,7 +450,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un cod nedocumentat este o navă fără manual — poate zbura, dar doar pilotul
+              original știe ce face fiecare comutator. O documentație bună reduce timpul de
+              integrare, previne repetarea greșelilor și transformă cunoștințele tribale
+              într-un bun comun accesibil întregului echipaj. Ea obligă totodată autorul
+              să-și clarifice propria gândire, pentru că a explica bine un sistem înseamnă
+              de fapt a-l înțelege. Echipele care documentează constant livrează mai repede
+              pe termen lung, pentru că pierd mai puțin timp redescoperind probleme deja
+              rezolvate.
             </p>
           </div>
 
@@ -515,7 +490,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fișierul README este ecluza prin care trece orice vizitator înainte de a
+              intra în proiect. Un README bun spune ce face proiectul, cum se instalează,
+              cum se rulează și unde se raportează problemele, totul în primul ecran de
+              text. Trebuie să presupună că cititorul nu știe nimic despre arhitectura
+              internă, dar este suficient de competent pentru a urma instrucțiuni clare. A
+              omite acest fișier înseamnă a scoate indicatorul de la intrarea în stație și a
+              te aștepta ca noii membri să găsească puntea de comandă din instinct.
             </p>
           </div>
 
@@ -548,7 +529,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Comentariile scrise direct în sursă sunt ca notele de întreținere gravate pe
+              un panou al carenei — vizibile doar celor care deschid placarea. Un comentariu
+              inline bun explică de ce a fost luată o decizie, nu ce face codul, pentru că
+              acest ultim aspect e deja vizibil în cod. Comentariile excesive aglomerează
+              vederea cu zgomot, în timp ce lipsa lor lasă viitorii ingineri să ghicească
+              intenția din spatele unei logici delicate. Disciplina constă în a ști când un
+              comentariu adaugă semnal real și când numirea și structura clară vorbesc deja
+              de la sine.
             </p>
           </div>
 
@@ -581,7 +569,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația API este manualul de andocare pentru orice navă externă care
+              vrea să se conecteze la stația ta. Trebuie să specifice metoda, calea,
+              parametrii, corpul așteptat al cererii și forma răspunsului pentru fiecare
+              punct terminal, cu suficientă precizie încât cel care integrează sistemul să
+              nu fie nevoit vreodată să citească sursa. O documentație API bună include
+              exemple de cereri și răspunsuri, cerințe de autentificare și coduri de eroare,
+              astfel încât eșecurile să poată fi diagnosticate fără ghicit. Instrumentele
+              care generează această documentație direct din cod reduc riscul ca manualul să
+              se dezalinieze de sistemul real.
             </p>
           </div>
 
@@ -614,7 +610,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația de arhitectură trasează forma generală a navei — modul în care
+              modulele, serviciile și fluxurile de date se conectează în întregul sistem.
+              Spre deosebire de comentariile din cod sau referințele API, ea funcționează la
+              altitudine, oferind noilor ingineri o hartă mentală înainte să coboare în
+              orice fișier individual. Diagramele care arată fluxul cererilor, granițele
+              dintre servicii și proprietatea datelor previn colaboratorii de la a încălca
+              din greșeală structura intenționată a sistemului. Fără această hartă, fiecare
+              membru nou al echipajului trebuie să reconstruiască schița navei pornind de la
+              zero.
             </p>
           </div>
 
@@ -647,7 +651,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un ghid de stil face ca fiecare transmisie a echipajului să sune ca și cum ar
+              veni de la același centru de control al misiunii. El standardizează tonul,
+              formatarea, terminologia și structura, astfel încât documentația scrisă de
+              zece ingineri diferiți să se citească totuși ca o voce coerentă. Consistența
+              reduce efortul cognitiv al cititorilor, care nu mai trebuie să se adapteze la
+              obiceiurile personale ale fiecărui autor. Impunerea unui stil comun, fie
+              printr-un ghid scris, fie prin verificare automată, este ceea ce separă o bază
+              de cunoștințe profesională de o grămadă răzleață de notițe.
             </p>
           </div>
 
@@ -680,7 +691,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi consolidează elementele fundamentale: fișierele
+              README ca punct de intrare, comentariile inline ca note interne, documentația
+              API ca manual de andocare, documentația de arhitectură ca hartă generală și
+              ghidurile de stil ca voce comună care leagă totul. Fiecare artefact deservește
+              un alt nivel de altitudine al înțelegerii, de la o singură linie de cod până
+              la sistemul întreg. Omiterea oricărui strat creează puncte oarbe care
+              încetinesc fiecare colaborator viitor. Stăpânirea acestor elemente de bază
+              este ceea ce face posibilă restul călătoriei prin documentație.
             </p>
           </div>
 
@@ -718,7 +736,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Markdown este formatul universal de transmisie, citit de aproape orice
+              terminal din galaxie — GitHub, wiki-uri, generatoare de site-uri statice și
+              instrumente de chat îl parsează nativ. Sintaxa sa ușoară pentru titluri,
+              liste, blocuri de cod și linkuri îi lasă pe scriitori să se concentreze pe
+              conținut în loc să lupte cu un limbaj de marcare. Pentru că se degradează
+              grațios spre text simplu, documentele Markdown rămân utile chiar și fără un
+              randator. Alegerea Markdown pentru majoritatea documentației proiectului
+              menține pragul de contribuție scăzut, atât pentru ingineri, cât și pentru
+              non-ingineri.
             </p>
           </div>
 
@@ -751,7 +777,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              JSDoc și TypeDoc transformă automat comentariile inline din cod în
+              documentație structurată și navigabilă. Prin adnotarea funcțiilor cu
+              comentarii etichetate care descriu parametrii, tipurile de returnare și
+              comportamentul, aceste instrumente extrag un site de referință complet direct
+              din sursă, păstrând documentația legată fizic de codul pe care îl descrie.
+              Această legătură strânsă înseamnă că documentația are șanse mult mai mici să
+              rămână în urmă, deoarece actualizarea semnăturii unei funcții impune firesc și
+              actualizarea comentariului adiacent. Rezultatul generat poate fi publicat ca
+              referință API navigabilă pentru orice consumator al bazei de cod.
             </p>
           </div>
 
@@ -784,7 +818,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Swagger și specificația OpenAPI oferă API-urilor REST o schiță standardizată,
+              lizibilă de mașină. Scris în YAML sau JSON, un document OpenAPI descrie
+              fiecare punct terminal, parametru, schemă și cod de răspuns într-un format pe
+              care atât oamenii, cât și instrumentele îl pot parsa. Din această unică sursă
+              de adevăr, echipele pot genera automat documentație interactivă, SDK-uri
+              client și chiar servere simulate pentru testare. A trata specificația API ca
+              artefact principal — nu ca o idee ulterioară — împiedică contractul și
+              implementarea să se dezalinieze.
             </p>
           </div>
 
@@ -817,7 +858,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Storybook construiește un showroom izolat în care fiecare componentă de
+              interfață poate fi vizualizată, testată interactiv și documentată independent
+              de aplicația completă. Fiecare componentă primește propriul set de povești
+              care demonstrează stări, proprietăți și cazuri limită diferite, transformând
+              biblioteca de componente în documentație vie, la care se pot raporta atât
+              designerii, cât și inginerii. Această izolare prinde din timp și regresiile
+              vizuale, deoarece componentele sunt testate în afara zgomotului întregii
+              aplicații. Pentru echipele care construiesc sisteme de design partajate,
+              Storybook devine referința canonică pentru cum ar trebui să arate și să se
+              comporte fiecare piesă.
             </p>
           </div>
 
@@ -850,7 +900,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un wiki intern este camera de arhivă comună în care trăiește cunoașterea
+              instituțională care nu aparține codului — ghiduri de integrare, înregistrări
+              de decizii, manuale de proceduri și procese de echipă. Spre deosebire de
+              documentația de cod, wiki-urile sunt gândite să fie editate liber și des,
+              captând cunoașterea pe măsură ce evoluează, nu așa cum a fost concepută
+              inițial. Riscul este învechirea: un wiki neîntreținut devine rapid un cimitir
+              de instrucțiuni depășite care induc în eroare mai mult decât ajută. Wiki-urile
+              de succes atribuie o proprietate clară și cicluri periodice de revizuire
+              pentru a păstra arhiva demnă de încredere.
             </p>
           </div>
 
@@ -883,7 +941,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Generatoarele de documentație precum Docusaurus, MkDocs și Sphinx transformă
+              fișierele sursă simple în Markdown sau reStructuredText în site-uri statice
+              elegante și căutabile. Ele gestionează automat navigarea, indexarea de
+              căutare, versionarea și tematizarea, lăsându-i pe scriitori să se concentreze
+              exclusiv pe conținut, nu pe dezvoltare web. Pentru că rezultatul este static,
+              aceste site-uri sunt ieftin de găzduit, rapide la încărcare și ușor de
+              implementat alături de o linie de integrare continuă. Adoptarea unui generator
+              transformă un folder de fișiere text răzlețe într-un adevărat portal de
+              documentație pentru întregul echipaj și pentru orice vizitator extern.
             </p>
           </div>
 
@@ -916,7 +982,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi andochează stratul de instrumente: Markdown ca
+              format comun de transmisie, JSDoc și TypeDoc pentru extragerea documentației
+              din cod, OpenAPI pentru contracte API lizibile de mașină, Storybook pentru
+              referințe vii ale componentelor, wiki-urile pentru cunoașterea instituțională
+              în evoluție și generatoarele de site-uri statice pentru publicarea tuturor
+              acestora. Fiecare instrument automatizează o altă bucată din procesul de
+              documentare, reducând efortul manual necesar pentru a ține echipajul informat.
+              Împreună formează un lanț de unelte în care scrierea unei documentații bune
+              devine calea cu cea mai mică rezistență, nu o corvoadă adăugată ulterior.
             </p>
           </div>
 
@@ -954,7 +1028,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un tutorial ghidează un nou membru al echipajului pas cu pas printr-o sarcină
+              specifică, de la prima comandă până la un rezultat funcțional, fără a
+              presupune cunoștințe anterioare despre acel flux de lucru anume. Tutorialele
+              bune folosesc un exemplu real, concret, nu substitute abstracte, pentru că
+              pașii concreți sunt mai ușor de verificat și de urmat. Fiecare pas trebuie să
+              producă un progres vizibil, verificabil, astfel încât cel care învață să știe
+              că este încă pe traseul corect. Tutorialele diferă de documentația de
+              referință prin scop: ele predau un traseu, nu catalogă fiecare opțiune
+              posibilă.
             </p>
           </div>
 
@@ -987,7 +1069,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un ghid de depanare este manualul de proceduri de urgență pentru moduri de
+              eșec cunoscute — erorile și cazurile limită pe care echipajul le-a întâlnit și
+              diagnosticat deja. În loc să explice cum ar trebui să funcționeze sistemul, el
+              documentează simptome, cauze probabile și soluții concrete pentru lucruri care
+              chiar merg prost în practică. Cele mai bune ghiduri de depanare sunt
+              construite din tichete de suport reale și rapoarte de incidente, asigurându-se
+              că abordează probleme reale, nu ipotetice. Menținerea acestui document
+              actualizat după fiecare incident major împiedică echipajul să rezolve aceeași
+              problemă de două ori.
             </p>
           </div>
 
@@ -1020,7 +1110,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Secțiunea de întrebări frecvente gestionează semnalele scurte, repetate des,
+              de la echipaj și pasageri — întrebări rapide cu răspunsuri rapide care nu
+              justifică un tutorial complet. O secțiune FAQ bună este alcătuită din
+              întrebări recurente reale din canalele de suport, nu inventate speculativ de
+              autorul documentației. Fiecare intrare trebuie să poată fi parcursă în câteva
+              secunde, cu întrebarea formulată exact așa cum ar întreba-o un utilizator.
+              Când un răspuns din FAQ devine prea lung, este de obicei un semnal că e nevoie
+              de un ghid dedicat în locul lui.
             </p>
           </div>
 
@@ -1053,7 +1150,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația video captează o transmisie live a interfeței în mișcare,
+              arătând exact ce ar trebui să vadă și pe ce ar trebui să dea click un
+              utilizator, în timp real. Pentru fluxuri vizuale sau spațiale — interacțiuni
+              complexe cu interfața, asistenți de instalare sau sesiuni de depanare —
+              videoclipul transmite un context pe care captura de ecran statică și textul cu
+              greu îl pot exprima. Compromisul este costul de întreținere: un videoclip
+              devine învechit în clipa în care interfața se schimbă, iar reînregistrarea
+              este mult mai costisitoare decât editarea unui paragraf de text. Videoclipul
+              funcționează cel mai bine ca supliment la documentația scrisă, nu ca
+              înlocuitor al ei.
             </p>
           </div>
 
@@ -1086,7 +1192,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația interactivă încorporează un mediu de cod live, funcțional,
+              direct în pagina de documentație, permițând cititorilor să modifice parametri
+              și să vadă rezultatele fără a părăsi site-ul sau a configura un mediu local.
+              Aceasta elimină distanța dintre a citi despre o funcționalitate și a o
+              experimenta efectiv, crescând dramatic înțelegerea și reținerea informației.
+              Instrumente precum încorporările CodeSandbox, componentele MDX live sau
+              REPL-urile integrate fac acest lucru posibil cu infrastructură suplimentară
+              minimă. Pentru biblioteci și API-uri, exemplele interactive comunică adesea
+              comportamentul mai clar decât orice cantitate de proză.
             </p>
           </div>
 
@@ -1119,7 +1233,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația versionată urmărește mai multe versiuni simultane ale unui
+              proiect, pentru că membrii echipajului care rulează o versiune mai veche au
+              nevoie de instrucțiuni care corespund mediului lor real, nu celui mai recent.
+              Site-urile de documentație expun de obicei un selector de versiune, astfel
+              încât un cititor de pe v2 să nu urmeze din greșeală instrucțiunile de v4 care
+              menționează funcții pe care nu le are. Menținerea mai multor versiuni de
+              documentație este o muncă continuă reală, care necesită o politică clară
+              privind cât de mult în urmă se extinde suportul înainte ca documentele vechi
+              să fie arhivate. A greși versionarea este una dintre cele mai rapide căi de a
+              eroda încrederea într-un set de documentație.
             </p>
           </div>
 
@@ -1152,7 +1275,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi andochează stratul de conținut avansat:
+              tutorialele pentru predarea de trasee noi, ghidurile de depanare pentru moduri
+              de eșec cunoscute, FAQ-urile pentru răspunsuri rapide recurente,
+              videoclipurile pentru context spațial și vizual, mediile interactive pentru
+              învățare practică și versionarea pentru a ține instrucțiunile aliniate cu
+              versiunea reală a cititorului. Împreună, aceste formate deservesc stiluri
+              diferite de învățare și momente diferite de nevoie. Un set matur de
+              documentație nu se bazează pe un singur format — le stratifică pe toate,
+              astfel încât fiecare tip de întrebare să aibă un răspuns potrivit.
             </p>
           </div>
 
@@ -1190,7 +1321,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuirea documentației este punctul de control al calității înainte ca
+              orice text să fie publicat pentru echipaj, la fel cum niciun modul nu este
+              livrat fără revizuire de cod. Revizorii verifică acuratețea tehnică, confirmă
+              că pașii chiar funcționează atunci când sunt urmați literal și semnalează
+              formulările confuze sau ambigue înainte ca acestea să inducă în eroare un
+              cititor. A trata modificările documentației cu același rigoare ca pe
+              modificările de cod — inclusiv cereri de merge și aprobare — arată că
+              documentația este un livrabil de prim rang, nu o idee ulterioară. Sărirea
+              acestui pas este modul în care instrucțiuni subtil greșite ajung să coste
+              întregului echipaj ore de confuzie.
             </p>
           </div>
 
@@ -1223,7 +1363,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația lăsată neîntreținută se degradează exact ca o carenă neglijată —
+              încet, în tăcere, până cedează sub presiune. Fiecare modificare de cod care
+              schimbă un comportament, elimină o funcționalitate sau redenumește un
+              parametru creează o datorie de documentație corespunzătoare, care trebuie
+              plătită prompt, ideal în aceeași cerere de merge care a provocat-o.
+              Verificările automate, precum detectarea linkurilor rupte și verificarea
+              lingvistică a documentelor, prind o parte din învechire, dar verificările
+              reale de acuratețe necesită ca un om să încerce efectiv, periodic, pașii
+              documentați. Programarea unor audituri recurente de documentație este singura
+              modalitate fiabilă de a păstra arhiva demnă de încredere în timp.
             </p>
           </div>
 
@@ -1256,7 +1405,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Măsurarea eficacității documentației înseamnă a trata documentele ca orice
+              altă suprafață de produs, cu analitice reale, nu presupunând că funcționează
+              doar pentru că există. Vizualizările de pagină, căutările fără rezultate,
+              timpul petrecut pe pagină și volumul de tichete de suport pentru subiecte
+              presupus deja documentate dezvăluie toate unde documentația eșuează cititorii.
+              O creștere bruscă a cererilor de suport despre o funcționalitate documentată
+              este un semnal puternic că pagina respectivă este neclară, greșită sau pur și
+              simplu nu este găsită. Închiderea acestei bucle de feedback transformă
+              documentația dintr-un exercițiu de scriere unic într-un sistem în continuă
+              îmbunătățire.
             </p>
           </div>
 
@@ -1289,7 +1447,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ghidurile de contribuție sunt procedurile de îmbarcare pentru oricine vrea să
+              se alăture echipajului și să ajute la construirea navei. Ele explică cum se
+              configurează un mediu de dezvoltare local, formatul așteptat al mesajelor de
+              commit, fluxul de ramificare și de cereri de merge, precum și standardele pe
+              care o modificare trebuie să le îndeplinească înainte de a fi integrată.
+              Ghidurile clare scad pragul de intrare pentru noii colaboratori și reduc
+              povara întreținătorului de a explica repetat același proces fiecărui nou
+              venit. Proiectele cu documentație de contribuție vagă sau lipsă descurajează
+              în tăcere exact creșterea comunității pe care pretind că o doresc.
             </p>
           </div>
 
@@ -1322,7 +1488,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Localizarea extinde documentația dincolo de o singură limbă de bază, astfel
+              încât membrii echipajului din regiuni diferite să poată naviga aceleași
+              sisteme în limba lor proprie. Necesită mai mult decât o traducere literală —
+              contextul cultural, expresiile idiomatice, formatele de dată și chiar
+              exemplele de cod trebuie uneori ajustate pentru a rămâne naturale și corecte
+              pentru fiecare public. Menținerea documentației sincronizate în mai multe
+              limbi este un cost real, continuu, necesitând adesea instrumente de memorie de
+              traducere și un proces clar pentru propagarea actualizărilor din limba sursă.
+              Proiectele care localizează bine semnalează un angajament autentic față de un
+              echipaj mai larg și mai incluziv.
             </p>
           </div>
 
@@ -1355,7 +1530,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentația ca și codul tratează proza la fel cum este tratat codul sursă:
+              stocată în control de versiuni, revizuită prin cereri de merge, testată prin
+              verificări automate de linkuri și build, și livrată prin aceeași linie CI/CD
+              ca aplicația în sine. Această abordare elimină ruptura dintre un wiki separat
+              care se îndepărtează de realitate și baza de cod care chiar este livrată.
+              Documentele scrise astfel beneficiază de diff-uri, istoric și revenire la fel
+              ca orice alt artefact de inginerie. Adoptarea abordării documentație-ca-și-cod
+              este adesea cea mai puternică pârghie pentru a menține documentația cu
+              adevărat sincronizată cu un sistem în evoluție rapidă.
             </p>
           </div>
 
@@ -1388,7 +1571,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea finală în revistă de astăzi a sectorului de documentație parcurge
+              întregul arc: elemente fundamentale precum README-uri și comentarii,
+              instrumente precum Markdown și generatoare, formate avansate precum tutoriale
+              și medii interactive, și practici de proces precum revizuirea, întreținerea și
+              documentația-ca-și-cod. Niciuna dintre aceste piese nu funcționează izolat — o
+              cultură puternică a documentației tratează scrisul ca pe o disciplină
+              inginerească, cu propriile standarde, instrumente și bucle de feedback.
+              Echipajele care interiorizează această cultură livrează software pe care alți
+              oameni chiar îl pot înțelege, extinde și în care pot avea încredere mult după
+              ce autorii inițiali au plecat mai departe.
             </p>
           </div>
 

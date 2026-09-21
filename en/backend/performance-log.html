@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Performance Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#performance-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#performance-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#performance-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#performance-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#performance-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#performance-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#performance-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#performance-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#performance-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#performance-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#performance-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#performance-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#performance-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#performance-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#performance-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#performance-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#performance-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#performance-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#performance-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#performance-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#performance-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#performance-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#performance-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#performance-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#performance-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#performance-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#performance-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#performance-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#performance-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#performance-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The benchmark instrumentation powers up for the first time today. Before any
+              system can be improved, it must first be measured, since optimizing blind is
+              like adjusting thrusters without instrument readings. This log begins the
+              discipline of performance engineering: establishing a baseline, defining what
+              fast actually means for this mission, and building the habit of measuring
+              before and after every change. Nothing that follows will matter without this
+              foundation of honest measurement.
             </p>
           </div>
 
@@ -484,7 +431,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Performance is not a single number but a set of metrics that together
+              describe how the system behaves under real conditions — response time,
+              throughput, error rate, and resource usage all matter differently depending on
+              the mission. Setting concrete goals, like a 95th-percentile response time
+              under 200 milliseconds, turns a vague feeling of slowness into an actionable
+              target the crew can navigate toward. Without a defined goal, optimization work
+              drifts aimlessly, chasing whichever bottleneck looks interesting rather than
+              the one that matters most to users. Metrics anchor every subsequent decision
+              in this sector to something measurable.
             </p>
           </div>
 
@@ -517,7 +472,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Latency is how long a single request takes to complete its round trip, while
+              throughput is how many requests the system can process per unit of time — two
+              related but distinct dimensions of speed. A system can have low latency but
+              low throughput if it handles one request beautifully but chokes under
+              concurrency, or high throughput with poor latency if it batches work at the
+              cost of individual response time. Understanding which dimension actually
+              matters for a given workload prevents optimizing the wrong metric entirely.
+              Most real systems require a deliberate tradeoff between the two, tuned to the
+              specific traffic pattern they expect to serve.
             </p>
           </div>
 
@@ -550,7 +513,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Profiling tools are the sensor arrays that reveal exactly where a system
+              spends its time and resources, replacing guesswork with hard data. CPU
+              profilers sample the call stack to show which functions consume the most
+              execution time, while memory profilers track allocation patterns to expose
+              leaks and excessive garbage collection pressure. Flame graphs visualize this
+              data so the widest bars — representing the biggest time sinks — are
+              immediately visible without reading raw numbers. Profiling before optimizing
+              prevents the common trap of speeding up code that was never actually the
+              bottleneck.
             </p>
           </div>
 
@@ -583,7 +554,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Benchmarking establishes the baseline reading against which every future
+              change is measured, run under controlled and repeatable conditions so results
+              are comparable over time. A meaningful benchmark isolates the variable being
+              tested, runs enough iterations to smooth out noise, and reports both average
+              and tail latencies rather than a single misleading number. Without a baseline,
+              engineers cannot tell whether a change actually helped, hurt, or made no
+              measurable difference at all. Recording benchmark results over time turns
+              performance work into a trackable trend instead of a series of disconnected
+              guesses.
             </p>
           </div>
 
@@ -616,7 +595,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Load testing simulates realistic — and unrealistic — traffic patterns against
+              the system before real users ever generate them, revealing how the ship
+              behaves under stress before an actual crisis. Tools like k6, JMeter, or Locust
+              ramp up concurrent virtual users and record how latency, error rates, and
+              resource usage degrade as load increases. The goal is finding the breaking
+              point deliberately, in a controlled test, rather than discovering it in
+              production during a critical mission. Load testing also validates that
+              autoscaling and failover mechanisms actually trigger when they are supposed
+              to.
             </p>
           </div>
 
@@ -649,7 +636,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A performance budget sets explicit limits on metrics like page weight, time
+              to interactive, or API response time, agreed upon before development begins
+              rather than discovered as a problem afterward. Treating these limits like a
+              budget means any addition, like a new dependency or a heavier image, must be
+              paid for by savings elsewhere, keeping performance a continuous constraint
+              rather than an occasional cleanup task. Automated checks in the CI pipeline
+              can fail a build that exceeds its budget, catching regressions before they
+              ever reach the crew. Budgets turn performance from a vague aspiration into an
+              enforced engineering constraint.
             </p>
           </div>
 
@@ -682,7 +677,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review docks the fundamentals: metrics and goals defining what fast
+              means, latency versus throughput as the two core dimensions, profiling tools
+              for finding real bottlenecks, benchmarking for establishing a trustworthy
+              baseline, load testing for stress-proofing the system, and performance budgets
+              for keeping regressions out. Together these form the instrumentation panel
+              every performance engineer relies on before touching a single line of
+              optimization code. Skipping straight to changes without this foundation risks
+              optimizing the wrong thing entirely.
             </p>
           </div>
 
@@ -720,7 +722,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The critical rendering path is the sequence of steps a browser must complete
+              before pixels appear on screen — parsing HTML, building the DOM, computing
+              styles, and finally painting. Blocking resources like synchronous scripts and
+              render-blocking stylesheets delay this path, leaving the crew staring at a
+              blank viewport longer than necessary. Techniques like deferring non-critical
+              JavaScript, inlining critical CSS, and minimizing the DOM's depth all shorten
+              this path directly. Understanding this sequence is the foundation of every
+              frontend performance optimization that follows.
             </p>
           </div>
 
@@ -753,7 +762,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Images and fonts are typically the heaviest cargo in a page's payload, and
+              optimizing them yields some of the largest performance wins for the least
+              engineering effort. Modern formats like WebP and AVIF compress images far more
+              efficiently than legacy JPEG or PNG, while responsive image techniques serve
+              appropriately sized assets per device instead of one oversized file for
+              everyone. Font loading strategies like font-display: swap prevent invisible
+              text while custom fonts download, avoiding a jarring flash of unstyled
+              content. Auditing asset weight regularly catches bloat before it silently
+              accumulates across releases.
             </p>
           </div>
 
@@ -786,7 +803,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Code splitting breaks a monolithic JavaScript bundle into smaller chunks that
+              load only when actually needed, rather than forcing every visitor to download
+              the entire application upfront. Route-based splitting loads code for a page
+              only when the crew navigates there, while lazy loading defers components until
+              they are about to enter the viewport or be interacted with. This dramatically
+              reduces the initial payload size, getting the interface interactive far
+              sooner. The tradeoff is added complexity in build tooling and the need to
+              handle loading states gracefully while chunks arrive.
             </p>
           </div>
 
@@ -819,7 +843,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Bundle size analysis tools like Webpack Bundle Analyzer visualize exactly
+              which dependencies occupy the most space in a compiled JavaScript bundle,
+              turning an abstract file size into an inspectable treemap. This often reveals
+              surprises: a single unused utility library pulled in for one small function,
+              or duplicate copies of the same dependency bundled at different versions.
+              Tree-shaking and switching to lighter alternative libraries are common fixes
+              once the offending modules are identified. Regular bundle audits prevent slow,
+              invisible bloat from accumulating release after release.
             </p>
           </div>
 
@@ -852,7 +883,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Service workers intercept network requests and let the application decide how
+              to respond — from cache, from network, or some strategic combination of both —
+              enabling offline functionality and dramatically faster repeat visits. Caching
+              strategies like cache-first for static assets and network-first for frequently
+              changing data balance freshness against speed depending on the resource type.
+              A well-designed caching layer means returning crew members load the interface
+              almost instantly, since most assets never need to leave the local cache.
+              Getting cache invalidation wrong, however, can strand a user on a stale
+              version of the app indefinitely.
             </p>
           </div>
 
@@ -885,7 +924,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lighthouse audits run an automated battery of checks against performance,
+              accessibility, best practices, and SEO, producing a scored report that flags
+              specific, actionable issues. Because it runs the same checks consistently,
+              Lighthouse scores can be tracked over time and wired into CI pipelines to
+              catch regressions before deployment. The tool doesn't just report numbers — it
+              explains which resources are render-blocking, which images are oversized, and
+              which scripts delay interactivity. Running Lighthouse regularly turns
+              performance monitoring from a manual chore into an automated safeguard.
             </p>
           </div>
 
@@ -918,7 +964,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review docks the frontend sector: the critical rendering path as the
+              sequence to shorten, asset optimization for the heaviest cargo, code splitting
+              and lazy loading for deferring unnecessary work, bundle analysis for spotting
+              bloat, service workers for intelligent caching, and Lighthouse for automated
+              scoring. Each technique attacks a different stage of the page load lifecycle,
+              from first byte to full interactivity. Mastering all six together is what
+              separates a merely functional frontend from a genuinely fast one.
             </p>
           </div>
 
@@ -956,7 +1008,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Database query optimization begins with indexing — a structure that lets the
+              database locate rows without scanning the entire table, the way a star chart
+              lets a navigator find a system without searching every sector. A missing index
+              on a frequently filtered or joined column can turn a millisecond lookup into a
+              multi-second table scan as data grows. But indexes are not free: each one adds
+              write overhead and storage cost, so they must be chosen deliberately based on
+              actual query patterns rather than added everywhere speculatively. Query
+              execution plans reveal exactly where the database is spending time, guiding
+              which indexes will actually help.
             </p>
           </div>
 
@@ -989,7 +1049,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Connection pooling reuses a fixed set of established database connections
+              across many requests instead of opening and closing a new connection for every
+              single one, since connection setup carries real latency and resource cost. A
+              pool sized too small forces requests to queue and wait for an available
+              connection, while a pool sized too large can exhaust the database server's own
+              connection limits. Tuning pool size to match actual concurrent load, and
+              monitoring wait times for a free connection, keeps this layer from becoming an
+              invisible bottleneck. Nearly every backend framework provides pooling out of
+              the box, but its defaults rarely match a specific application's real traffic
+              profile.
             </p>
           </div>
 
@@ -1022,7 +1091,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              An in-memory caching layer like Redis or Memcached stores frequently accessed
+              data in RAM, avoiding the far slower round trip to disk-backed storage or an
+              expensive recomputation. Caching works best for data that is read often,
+              changes infrequently, and is expensive to regenerate — session data, computed
+              aggregates, and rendered fragments are common candidates. The hard part is
+              invalidation: stale cached data served after the source of truth has changed
+              can silently corrupt what users see, so a clear expiration or invalidation
+              strategy is essential. A well-tuned cache layer can reduce database load by an
+              order of magnitude for read-heavy workloads.
             </p>
           </div>
 
@@ -1055,7 +1132,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Asynchronous processing lets a system hand off slow or non-critical work —
+              sending emails, generating reports, processing uploads — to a background queue
+              instead of blocking the main request thread while it completes. This keeps the
+              primary response fast, since the client gets an immediate acknowledgment while
+              a worker process handles the heavier task separately. Message queues like
+              RabbitMQ or Kafka, paired with dedicated worker processes, decouple request
+              handling from task execution entirely. The tradeoff is added architectural
+              complexity and the need for monitoring to catch queue backlogs before they
+              silently delay outcomes users are still waiting on.
             </p>
           </div>
 
@@ -1088,7 +1173,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Load balancing distributes incoming traffic across multiple server instances
+              so no single machine bears the full weight of every request, the way a fleet
+              spreads risk across multiple vessels instead of one flagship. Algorithms like
+              round-robin, least-connections, and weighted distribution each suit different
+              traffic patterns and server capacities. Health checks let the balancer route
+              around instances that have failed or are responding slowly, keeping the fleet
+              resilient to individual node failures. Proper load balancing is what allows
+              horizontal scaling — adding more servers — to actually translate into higher
+              capacity.
             </p>
           </div>
 
@@ -1121,7 +1214,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              API response optimization often starts with pagination, returning data in
+              manageable chunks instead of dumping an entire dataset into a single massive
+              response that strains both server and client. Cursor-based pagination scales
+              better than offset-based pagination for large or frequently changing datasets,
+              since offsets can skip or duplicate rows as data shifts underneath them. Field
+              filtering, letting clients request only the attributes they actually need,
+              further trims payload size and serialization cost. Together these techniques
+              keep API responses fast and predictable even as the underlying dataset grows
+              into the millions of records.
             </p>
           </div>
 
@@ -1154,7 +1255,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review docks the backend sector: indexing for fast lookups,
+              connection pooling for efficient reuse, in-memory caching for avoiding
+              expensive recomputation, async processing for non-blocking work, load
+              balancing for distributing traffic, and pagination for manageable API
+              responses. Each layer of the backend stack has its own bottleneck profile, and
+              optimizing one without understanding the others can simply shift the pressure
+              point elsewhere. A resilient backend treats performance as a system-wide
+              property, not a single component's responsibility.
             </p>
           </div>
 
@@ -1192,7 +1300,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A content delivery network places cached copies of static assets on servers
+              physically distributed around the globe, so a crew member's request travels to
+              a nearby edge node instead of crossing the entire planet to the origin server.
+              This dramatically reduces latency for geographically distant users and
+              simultaneously offloads traffic from the origin, protecting it from spikes.
+              CDNs also provide built-in protection against certain traffic surges and
+              attacks, since the edge network absorbs load before it ever reaches origin
+              infrastructure. Choosing what to cache at the edge, and for how long, is the
+              core tuning decision every CDN integration requires.
             </p>
           </div>
 
@@ -1225,7 +1341,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              HTTP/2 and HTTP/3 solve long-standing inefficiencies in the original HTTP/1.1
+              protocol, primarily around how many requests can travel over a single
+              connection at once. HTTP/2 introduces multiplexing, letting multiple requests
+              and responses share one connection without head-of-line blocking at the
+              application layer, plus header compression to shrink repetitive overhead.
+              HTTP/3 goes further by replacing TCP with QUIC, a UDP-based transport that
+              eliminates head-of-line blocking at the transport layer entirely and recovers
+              faster from packet loss. Upgrading to these protocols often yields measurable
+              speed gains with minimal application code changes, since the improvements live
+              mostly in the transport layer.
             </p>
           </div>
 
@@ -1258,7 +1383,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Memory leaks occur when a program retains references to objects it no longer
+              needs, preventing the garbage collector from reclaiming that memory and
+              causing usage to climb steadily until the process degrades or crashes. Common
+              culprits include forgotten event listeners, growing caches with no eviction
+              policy, and closures that unintentionally capture large objects. Heap
+              snapshots taken at intervals reveal which object types are accumulating over
+              time, pinpointing the leak's source. Catching leaks early, before they
+              compound in production under sustained load, prevents the slow, silent
+              degradation that eventually forces an emergency restart.
             </p>
           </div>
 
@@ -1291,7 +1424,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              CPU profiling identifies exactly which functions consume the most processor
+              time, turning a vague sense that the system feels slow into a precise,
+              actionable target. Sampling profilers periodically capture the call stack
+              during execution, building a statistical picture of where time is actually
+              spent without the heavy overhead of tracing every single function call. Flame
+              graphs make the resulting data legible at a glance, with wider frames
+              representing hotter code paths that deserve optimization attention first.
+              Optimizing a function that only accounts for one percent of total CPU time
+              wastes effort that could have gone toward the genuine hotspot.
             </p>
           </div>
 
@@ -1324,7 +1465,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Database sharding splits a single large database into multiple smaller,
+              independent pieces distributed across separate servers, each holding a subset
+              of the total data — horizontal scaling rather than a single ever-larger
+              vessel. A sharding key determines which shard owns which rows, and choosing it
+              well is critical, since a poor choice creates hot shards that receive
+              disproportionate traffic while others sit idle. Sharding solves the problem of
+              a dataset outgrowing any single server's capacity, but it introduces real
+              complexity: cross-shard queries and joins become far harder, and rebalancing
+              shards as data grows is a genuinely difficult operation. Sharding is usually a
+              last resort, reached only after simpler scaling techniques are exhausted.
             </p>
           </div>
 
@@ -1357,7 +1507,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Application performance monitoring tools like Datadog, New Relic, or Grafana
+              continuously track a system's real-world behavior in production, surfacing
+              latency, error rates, and resource usage as live telemetry rather than one-off
+              measurements. Distributed tracing follows a single request across every
+              service it touches, revealing exactly where time is spent in a complex
+              microservices architecture that no single log file could show alone. Alerting
+              rules tied to these metrics notify the crew the moment a system drifts outside
+              acceptable bounds, often before users notice anything is wrong. Continuous
+              monitoring turns performance from a pre-launch checklist item into an ongoing
+              operational discipline.
             </p>
           </div>
 
@@ -1390,7 +1549,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's final review of the performance sector surveys the full arc:
+              fundamentals like metrics and profiling, frontend techniques like code
+              splitting and caching, backend techniques like indexing and load balancing,
+              and advanced practices like CDNs, protocol upgrades, and continuous
+              monitoring. Performance is never a one-time fix — it is a discipline of
+              measuring, optimizing the actual bottleneck, and re-measuring to confirm the
+              change helped. Crews that internalize this discipline build systems that stay
+              fast not just at launch, but as traffic, data, and complexity grow over the
+              life of the mission.
             </p>
           </div>
 

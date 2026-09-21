@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#deployment-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#deployment-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#deployment-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#deployment-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#deployment-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#deployment-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#deployment-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#deployment-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#deployment-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#deployment-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#deployment-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#deployment-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#deployment-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#deployment-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#deployment-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#deployment-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#deployment-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#deployment-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#deployment-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#deployment-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#deployment-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#deployment-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#deployment-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#deployment-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#deployment-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#deployment-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#deployment-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#deployment-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#deployment-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#deployment-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#deployment-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Secvența de lansare începe acum. Înainte ca orice cod să ajungă la un
+              utilizator real, trebuie să părăsească siguranța mașinii tale locale și să fie
+              plasat pe un server care nu doarme niciodată, unul care rămâne online cât timp
+              tu te odihnești în crio-somn. Acest jurnal va trasa întregul arc al acestei
+              călătorii: de la un singur raft închiriat de spațiu pe disc până la flote
+              complet automatizate de containere care se implementează singure. Astăzi este
+              vorba doar despre a accepta că un proiect nu este terminat până când străinii
+              din rețea îl pot atinge cu adevărat.
             </p>
           </div>
 
@@ -482,7 +450,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Găzduirea partajată este naveta de transport aglomerată a lumii
+              implementărilor: multe echipaje mici înghesuite pe același server fizic,
+              fiecare plătind o taxă modestă pentru o felie de CPU, memorie și disc. Este
+              ieftină și simplă, adesea doar un upload prin FTP și un panou de control, ceea
+              ce o face un punct de intrare bun pentru site-uri statice sau aplicații PHP
+              mici. Compromisul este că vecinii zgomotoși care împart hardware-ul tău îți
+              pot limita performanța, iar tu ai puțin control asupra mediului de bază.
+              Totuși, înțelegerea acestui nivel contează, deoarece este locul unde
+              majoritatea dezvoltatorilor învață pentru prima dată ce este de fapt un
+              server.
             </p>
           </div>
 
@@ -515,7 +492,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un Virtual Private Server îți oferă propria cabină privată în loc de o cameră
+              comună cu paturi suprapuse. Prin virtualizare, o mașină fizică este împărțită
+              în mașini virtuale izolate, fiecare cu cicluri de CPU garantate, memorie și
+              acces root pentru a configura sistemul de operare exact așa cum cere misiunea
+              ta. Acesta este momentul în care devii responsabil pentru patch-uri de
+              securitate, reguli de firewall și manageri de procese, deoarece nimeni
+              altcineva nu o va face pentru tine. Furnizorii VPS precum DigitalOcean sau
+              Linode rămân un teren de antrenament preferat tocmai pentru că te obligă să
+              înțelegi ce ascunde de obicei o platformă gestionată.
             </p>
           </div>
 
@@ -548,7 +533,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Furnizorii de Platform as a Service precum Heroku și Render acționează ca o
+              echipă de sol automatizată care se ocupă de mecanica plictisitoare a lansării.
+              Tu trimiți codul, iar platforma îl construiește, provizionează un mediu de
+              execuție, atașează o bază de date și direcționează traficul către el fără să
+              atingi vreun fișier de configurare server. Această abordare bazată pe
+              buildpack-uri schimbă o parte din flexibilitate cu o viteză enormă, permițând
+              unui dezvoltator solo să implementeze o aplicație full-stack în minute în loc
+              de zile. Înțelegerea PaaS este esențială deoarece reprezintă punctul de
+              echilibru între controlul brut al unui VPS și abstractizarea totală a
+              cloud-ului.
             </p>
           </div>
 
@@ -581,7 +575,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Marii furnizori de cloud, AWS, Google Cloud și Azure, seamănă mai puțin cu o
+              singură navă și mai mult cu un întreg șantier naval orbital care oferă calcul,
+              stocare, rețea și zeci de servicii specializate sub un singur acoperiș.
+              Servicii precum EC2, Compute Engine sau Azure VMs îți oferă un control
+              asemănător VPS-ului, în timp ce ofertele gestionate precum RDS sau Cloud SQL
+              se ocupă de întregi categorii de infrastructură pentru tine. Prețul acestei
+              puteri este complexitatea: modelele de prețuri, permisiunile IAM și topologia
+              de rețea pot copleși rapid un membru nou al echipajului. Să înveți să
+              navighezi deliberat unul dintre acești furnizori, în loc să apeși butoane la
+              întâmplare, este ceea ce separă inginerii încrezători de cei perpetuu pierduți
+              în consolă.
             </p>
           </div>
 
@@ -614,7 +618,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Platformele de găzduire statică precum Netlify și Vercel se specializează în
+              lansarea încărcăturii frontend direct dintr-un repository git, fără a fi
+              nevoie de gestionarea vreunui server. Fiecare push pe branch-ul principal
+              declanșează automat un pipeline de build care compilează site-ul și îl
+              distribuie printr-o rețea globală de livrare a conținutului, plasând copii
+              aproape de fiecare cititor de pe planetă. Aceste platforme generează de
+              asemenea implementări de previzualizare pentru fiecare pull request, permițând
+              echipajului să revizuiască schimbările într-un mediu live înainte de a le
+              integra în linia principală de timp. Pentru proiecte axate pe frontend și
+              arhitecturi JAMstack, aceasta este acum ruta implicită și cea mai eficientă
+              spre orbită.
             </p>
           </div>
 
@@ -647,7 +661,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Calculul serverless, întruchipat de AWS Lambda și platforme de funcții
+              similare, renunță complet la conceptul de server persistent. În schimb, tu
+              implementezi unități mici de cod numite funcții pe care furnizorul de cloud le
+              pornește la cerere, le execută pentru milisecunde până la secunde, apoi le
+              oprește complet, ceea ce înseamnă că plătești doar pentru timpul de execuție
+              real, nu pentru uptime inactiv. Acest model excelează la sarcini declanșate de
+              evenimente, precum procesarea unui upload de imagine sau răspunsul la o cerere
+              API, dar introduce provocări noi precum pornirile la rece și lipsa stării, pe
+              care un server persistent nu le-a avut niciodată. A înțelege arhitectura
+              serverless înseamnă a regândi aplicația ta ca pe o constelație de reacții
+              independente, nu ca pe un proces continuu unic.
             </p>
           </div>
 
@@ -680,7 +704,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi trasăm întregul spectru de găzduire descoperit până acum, de la navete
+              partajate până la funcții serverless împrăștiate ca sonde prin rețea. Fiecare
+              nivel schimbă control pentru comoditate de-a lungul unei singure scale
+              glisante: găzduirea partajată oferă cel mai puțin control și efort, un VPS
+              brut cere cea mai multă întreținere manuală pentru cea mai mare flexibilitate,
+              iar PaaS sau serverless se situează undeva la mijloc, în funcție de cât
+              automatizare ești dispus să încrezi. Alegerea corectă depinde întotdeauna de
+              parametrii misiunii, nu de modă; o pagină de destinație mică are nevoi
+              diferite față de un API cu trafic ridicat. Ducând mai departe această hartă,
+              deciziile viitoare despre infrastructură vor fi deliberate, nu accidentale.
             </p>
           </div>
 
@@ -718,7 +751,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Continuous Integration este practica de a integra frecvent modificările de
+              cod ale fiecărui membru al echipajului într-o trunchi comun, adesea de mai
+              multe ori pe zi, cu verificare automată rulând la fiecare integrare. În loc să
+              lăsăm ramuri divergente să se îndepărteze săptămâni întregi și să se
+              ciocnească catastrofal la final, CI prinde conflictele de integrare și
+              build-urile stricate la câteva minute după ce apar. Aceasta cere disciplină:
+              fiecare commit trebuie să fie mic, testat și integrabil, transformând
+              controlul versiunilor dintr-un simplu jurnal istoric într-o plasă de siguranță
+              activă pentru întreaga echipă. Filosofia din spatele CI este că eșecurile sunt
+              mult mai ieftin de reparat atunci când sunt detectate imediat, nu descoperite
+              săptămâni mai târziu în timpul unui asamblaj final sortit eșecului.
             </p>
           </div>
 
@@ -751,7 +794,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              GitHub Actions transformă chiar repository-ul tău într-un centru de control
+              al misiunii complet automatizat, declanșat direct de evenimente precum
+              push-uri, pull request-uri sau temporizatoare programate. Un pipeline este
+              definit într-un fișier de workflow YAML aflat în repository, descriind o
+              secvență de job-uri și pași care rulează pe runner-e găzduite sau
+              auto-găzduite, mașini virtuale pornite special pentru a executa instrucțiunile
+              tale. Un pipeline tipic ar putea instala dependențele, rula linteri, executa
+              suita de teste și apoi declanșa un job de implementare doar dacă fiecare pas
+              anterior raportează succes. Deoarece configurația trăiește alături de codul pe
+              care îl protejează, întregul istoric de automatizare este versionat și
+              revizuibil ca orice altă schimbare a proiectului.
             </p>
           </div>
 
@@ -784,7 +837,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea automată în interiorul unui pipeline CI este scanarea diagnostică
+              rulată pe fiecare încărcătură primită înainte ca aceasta să fie lăsată aproape
+              de sistemele de producție. Testele unitare verifică funcții individuale
+              izolat, testele de integrare confirmă că mai multe module cooperează corect,
+              iar testele end-to-end simulează o călătorie reală a utilizatorului prin
+              aplicația implementată. Rularea automată a acestor suite la fiecare pull
+              request înseamnă că un revizor uman nu mai trebuie să reverifice manual
+              corectitudinea de bază, eliberându-i atenția pentru probleme de design și
+              arhitectură. Un pipeline care sare peste acest pas nu practică de fapt
+              integrare continuă, ci doar integrare continuă a codului fără verificare, iar
+              aceasta este exact modul în care dezastrele ajung pe orbită.
             </p>
           </div>
 
@@ -817,7 +880,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un artefact de build este capsula sigilată, gata de lansare, produsă după ce
+              codul tău sursă a fost compilat, împachetat și optimizat pentru mediul său de
+              destinație. Acesta poate fi un bundle JavaScript minificat, un binar compilat
+              sau o imagine de container, dar trăsătura definitorie este imuabilitatea:
+              artefactul exact testat în CI ar trebui să fie artefactul exact implementat în
+              producție, niciodată reconstruit de la zero la fiecare etapă. Acest principiu,
+              adesea numit build once deploy everywhere, elimină o întreagă categorie de
+              bug-uri cauzate de diferențe subtile între mediile de build. Tratarea
+              artefactelor ca încărcătură sigilată, nu ca ceva de reasamblat la fiecare
+              punct de control, este una dintre cele mai importante discipline pe care un
+              pipeline de implementare le poate impune.
             </p>
           </div>
 
@@ -850,7 +923,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Implementarea blue-green menține două medii de producție identice, numite
+              albastru și verde-închis, unde doar unul servește trafic live la un moment
+              dat. Când o nouă versiune este gata, aceasta este implementată discret în
+              mediul inactiv și complet verificată acolo, invizibilă pentru utilizatorii
+              reali, înainte ca un router sau un load balancer să comute instantaneu
+              traficul către el. Dacă ceva merge prost după comutare, revenirea este aproape
+              instantanee, deoarece mediul anterior rămâne complet intact și poate absorbi
+              din nou trafic imediat. Costul acestei siguranțe este rularea unei
+              infrastructuri duplicate, dar pentru misiunile în care timpul de nefuncționare
+              este inacceptabil, acest cost este un preț mic pentru lansări cu risc aproape
+              zero.
             </p>
           </div>
 
@@ -883,7 +966,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Strategia de rollback este propulsorul de urgență de care fiecare pipeline de
+              implementare are nevoie înainte de a avea vreodată nevoie de el. Cea mai
+              simplă abordare păstrează artefactul de build anterior și configurația gata
+              pentru reimplementare imediată, deoarece o reimplementare rapidă a unei
+              versiuni cunoscute ca fiind bună este aproape întotdeauna mai sigură decât
+              încercarea de a petici înainte sub presiune. Feature flag-urile oferă un
+              rollback mai fin, permițându-ți să dezactivezi o singură funcționalitate
+              problematică fără a atinge deloc restul versiunii. Schimbările de bază de date
+              complică cel mai mult rollback-urile, deoarece migrațiile de schemă nu sunt
+              întotdeauna reversibile, motiv pentru care fiecare migrație ar trebui
+              planificată cu o cale de revenire testată încă de la început.
             </p>
           </div>
 
@@ -916,7 +1009,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuind sistemele de automatizare trasate până acum, un pipeline CI/CD
+              matur formează un lanț continuu: integrarea prinde conflictele devreme,
+              testele automate verifică corectitudinea, artefactele sunt construite o
+              singură dată și promovate neschimbate, strategiile de implementare precum
+              blue-green minimizează riscul în timpul comutării, iar planurile de rollback
+              oferă o ieșire de urgență când ceva tot mai merge prost. Nicio verigă din
+              acest lanț nu este opțională dacă obiectivul este livrarea software-ului
+              fiabil și frecvent. Echipajele care tratează implementarea ca pe un eveniment
+              rar și înfricoșător sunt cele care încă implementează manual; echipajele care
+              o tratează ca pe o rutină au construit exact acest tip de pipeline.
             </p>
           </div>
 
@@ -954,7 +1056,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Variabilele de mediu sunt parametrii misiunii injectați în aplicația ta la
+              runtime, în loc să fie codificați direct în sursă, păstrând configurația
+              separată de cod așa cum insistă metodologia celor douăsprezece factori. Un șir
+              de conexiune la baza de date, o cheie API sau un comutator de funcționalitate
+              ar trebui să trăiască în mediu, nu într-un fișier comis, astfel încât aceeași
+              bază de cod să poată rula corect în dezvoltare, staging și producție doar prin
+              schimbarea variabilelor încărcate. Această separare protejează de asemenea
+              credențialele sensibile de a fi vreodată expuse în istoricul unui repository
+              public. Citirea corectă a variabilelor de mediu, cu valori implicite
+              rezonabile și eșecuri clare atunci când una necesară lipsește, previne o
+              întreagă categorie de dezastre de configurare.
             </p>
           </div>
 
@@ -987,7 +1099,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fiecare misiune serioasă menține cel puțin trei medii izolate: dezvoltare,
+              unde echipajul experimentează liber și defectarea este de așteptat; staging, o
+              replică aproape exactă a producției folosită pentru verificarea finală înainte
+              de lansare; și producție, mediul live de care depind utilizatorii reali, unde
+              greșelile au consecințe reale. Izolarea între aceste niveluri înseamnă că
+              fiecare are propria bază de date, propriile credențiale și adesea propria
+              infrastructură, prevenind ca un experiment din dezvoltare să contamineze
+              vreodată datele live. Promovarea unui build prin această secvență, în loc de
+              implementarea directă în producție, este ceea ce prinde bug-urile specifice
+              mediului înainte ca acestea să ajungă la utilizatorii reali. Sărirea peste
+              staging poate părea eficientă până în ziua în care nu mai este.
             </p>
           </div>
 
@@ -1020,7 +1142,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Infrastructure as Code, întruchipat de instrumente precum Terraform, tratează
+              serverele, rețelele și bazele de date ca fișiere de configurare versionate, nu
+              ca setări apăsate manual într-o consolă cloud. Tu declari starea dorită,
+              atâtea servere, această topologie de rețea, aceste permisiuni, iar Terraform
+              calculează și execută schimbările precise necesare pentru ca realitatea să
+              corespundă acelei declarații. Aceasta transformă infrastructura dintr-un
+              artefact fragil, nedocumentat, care trăiește doar în memoria unui inginer,
+              într-un plan revizuibil și repetabil, care poate reconstrui un întreg mediu de
+              la zero dacă lovește dezastrul. A învăța IaC înseamnă a învăța să tratezi
+              întreaga ta platformă de implementare cu aceeași disciplină pe care o aplici
+              deja codului aplicației.
             </p>
           </div>
 
@@ -1053,7 +1185,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Docker Compose îți permite să definești o întreagă aplicație multi-container,
+              un server web, o bază de date, un cache și un worker de fundal, într-un singur
+              fișier YAML declarativ, descriind cum aceste containere izolate ar trebui să
+              comunice în rețea și să partajeze resurse. Rularea unei singure comenzi
+              pornește întreaga constelație în containere corect legate, replicând o
+              topologie asemănătoare producției pe laptopul unui singur dezvoltator cu
+              fidelitate aproape perfectă. Aceasta elimină clasica problemă merge pe mașina
+              mea, deoarece fiecare membru al echipajului rulează exact aceleași imagini de
+              container indiferent de sistemul de operare gazdă. Compose este de obicei un
+              instrument de dezvoltare și testare, nu un orchestrator de producție, dar este
+              primul pas esențial spre înțelegerea orchestrării containerelor la scară.
             </p>
           </div>
 
@@ -1086,7 +1228,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sistemele de gestionare a secretelor precum HashiCorp Vault sau managerii de
+              secrete nativi cloud există deoarece variabilele de mediu singure nu sunt
+              suficient de sigure pentru cele mai sensibile credențiale, parole de baze de
+              date, chei de criptare și token-uri API terțe. Un vault stochează aceste
+              secrete criptate în repaus, acordă acces doar serviciilor autentificate și
+              autorizate și poate roti automat credențialele după un program, fără nicio
+              intervenție umană. Aceasta centralizează gestionarea ciclului de viață al
+              secretelor, în loc să împrăștie credențiale prin zeci de fișiere de
+              configurare și scripturi de implementare unde ar putea fi scurse accidental.
+              Orice misiune care gestionează date reale ale utilizatorilor are nevoie în
+              cele din urmă de acest nivel de disciplină în privința celei mai sensibile
+              încărcături.
             </p>
           </div>
 
@@ -1119,7 +1272,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Monitorizarea implementărilor înseamnă instrumentarea aplicației tale pentru
+              a-și transmite continuu propriile semne vitale, rate de erori, latență de
+              răspuns, utilizare memorie și debit de cereri, către un dashboard central.
+              Sistemele de alertare urmăresc aceste fluxuri de telemetrie și alertează
+              echipajul de gardă în clipa în care o metrică depășește un prag periculos, în
+              loc să aștepte ca o reclamație a utilizatorului să dezvăluie problema ore mai
+              târziu. Alertele bune sunt acționabile și specifice, spunându-ți exact ce s-a
+              stricat și unde, deoarece alertele vagi sau excesive antrenează echipajele să
+              le ignore complet, un mod de eșec cunoscut ca oboseala alertelor. Asocierea
+              fiecărei implementări cu monitorizare activă închide bucla dintre livrarea
+              codului și cunoașterea faptului că acel cod este cu adevărat sănătos în
+              producție.
             </p>
           </div>
 
@@ -1152,7 +1316,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuind gestionarea mediilor în ansamblu, disciplina se întinde de la
+              configurare prin infrastructură până la observare: variabilele de mediu separă
+              configurația de cod, nivelurile izolate de dezvoltare, staging și producție
+              previn contaminarea între fazele misiunii, Infrastructure as Code face mediile
+              reproductibile, containerele le fac portabile, vault-urile păstrează secretele
+              în siguranță, iar monitorizarea dovedește că întregul sistem chiar
+              funcționează după lansare. Niciuna dintre aceste practici singură nu
+              garantează o misiune stabilă, dar împreună formează coloana vertebrală
+              operațională care permite unui echipaj să implementeze cu încredere și să
+              doarmă liniștit după aceea. Aceasta este diferența dintre a spera că o
+              implementare funcționează și a ști cu certitudine că funcționează.
             </p>
           </div>
 
@@ -1190,7 +1364,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Versionarea semantică atribuie fiecărei versiuni un număr din trei părți,
+              major, minor și patch, fiecare cu un sens contractual precis pentru oricine
+              depinde de software-ul tău. O creștere de patch semnalează o corecție de bug
+              compatibilă retroactiv, o creștere minoră semnalează funcționalitate nouă
+              compatibilă retroactiv, iar o creștere majoră semnalează o schimbare
+              incompatibilă care ar putea cere actualizarea codului dependent. Această
+              schemă de numerotare permite echipajelor din aval să actualizeze dependențele
+              cu încredere informată, preluând automat patch-uri și actualizări minore,
+              tratând în același timp saltul de versiune majoră ca pe un eveniment ce
+              necesită revizuire atentă. Fără această convenție comună, fiecare număr de
+              versiune ar fi o presupunere opacă, nu o promisiune.
             </p>
           </div>
 
@@ -1223,7 +1407,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un changelog este jurnalul misiunii tradus pentru cititorii externi, un
+              document continuu care enumeră ce s-a schimbat, a fost adăugat sau reparat în
+              fiecare versiune lansată, scris într-un limbaj pe care un utilizator uman îl
+              poate cu adevărat înțelege. Changelog-urile bune grupează intrările pe
+              categorii, adăugat, schimbat, reparat și eliminat, și sunt actualizate ca
+              parte a procesului de lansare în sine, nu reconstruite din istoricul git
+              ulterior, sub presiunea termenului limită. Acest document construiește
+              încredere cu utilizatorii și dezvoltatorii din aval, deoarece le permite să
+              evalueze rapid dacă o actualizare le afectează propriile sisteme înainte de a
+              se angaja la ea. Neglijarea changelog-ului este o omisiune mică ce se
+              acumulează în timp într-o povară reală de suport.
             </p>
           </div>
 
@@ -1256,7 +1450,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Feature flag-urile permit unei echipe să implementeze cod nou în producție
+              păstrându-l invizibil sau restricționat la un procent mic de utilizatori,
+              decuplând complet actul implementării de actul lansării. Un flag ar putea
+              activa o funcționalitate mai întâi doar pentru membrii interni ai echipajului,
+              apoi cinci procente din utilizatori, apoi cincizeci de procente, urmărind
+              telemetria la fiecare etapă înainte de a se angaja la o lansare completă.
+              Această strategie de expunere graduală limitează dramatic raza de impact a
+              oricărui bug care trece de testare, deoarece o funcționalitate stricată poate
+              fi dezactivată instantaneu pentru toată lumea fără un rollback complet al
+              implementării. Flag-urile introduc totuși propria complexitate, deoarece
+              flag-urile vechi, nefolosite, lăsate în baza de cod devin o formă de datorie
+              tehnică ce necesită curățare periodică.
             </p>
           </div>
 
@@ -1289,7 +1494,19 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Migrațiile de bază de date sunt scripturi versionate care evoluează schema ta
+              în timp, adăugând o coloană, creând un index sau restructurând o relație, în
+              pași mici, reversibili și ordonați, în loc de o singură editare manuală masivă
+              asupra unei baze de date live. Fiecare migrație asociază de obicei o operație
+              up, care aplică schimbarea, cu o operație down, care o revine, oferind
+              echipajului o cale de evacuare testată dacă o implementare trebuie anulată.
+              Migrațiile trebuie să ruleze ca parte a pipeline-ului de implementare în sine,
+              aplicate automat și în ordinea corectă, astfel încât codul aplicației și
+              schema bazei de date să nu se decaleze niciodată una față de cealaltă.
+              Schimbările neglijente de schemă asupra datelor de producție live sunt printre
+              cele mai periculoase operațiuni din întregul ciclu de viață al implementării,
+              meritând precauție suplimentară și întotdeauna o copie de rezervă în
+              prealabil.
             </p>
           </div>
 
@@ -1322,7 +1539,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de fum este verificarea scurtă a sistemelor efectuată în clipa în
+              care o nouă implementare ajunge în producție, verificând dacă cele mai critice
+              căi, autentificare, checkout, endpoint-uri API de bază, funcționează înainte
+              de a declara misiunea un succes. Spre deosebire de suita completă de teste
+              deja rulată în timpul CI, testele de fum rulează împotriva mediului live real
+              cu infrastructură reală, prinzând probleme care se manifestă doar în afara
+              unui sandbox de testare controlat, variabile de mediu configurate greșit,
+              probleme DNS sau un secret de producție lipsă. Un pipeline de implementare
+              care se oprește în momentul în care codul ajunge pe server, fără a confirma că
+              funcționează cu adevărat acolo, nu și-a terminat cu adevărat treaba.
+              Automatizarea acestei verificări finale închide ultimul decalaj dintre a
+              implementa și a ști că implementarea a reușit.
             </p>
           </div>
 
@@ -1355,7 +1583,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rotația de gardă înseamnă că un membru desemnat al echipajului poartă
+              pager-ul, literal sau figurativ, gata să răspundă imediat când alertele de
+              producție se declanșează în afara orelor normale de lucru. Un răspuns eficient
+              la incidente urmează o structură clară: detectarea problemei prin
+              monitorizare, evaluarea severității ei, atenuarea impactului imediat adesea
+              prin rollback sau un feature flag, și abia apoi investigarea adevăratei cauze
+              rădăcină după ce focul a fost stins. Un post-mortem fără vină scris după
+              fiecare incident semnificativ transformă un eveniment stresant în cunoaștere
+              instituțională, documentând ce s-a întâmplat, de ce și ce proces sau protecție
+              va preveni o repetare. Tratarea incidentelor ca inevitabile, nu ca rușinoase,
+              este ceea ce permite unui echipaj să răspundă rapid în loc să înghețe sub
+              presiune.
             </p>
           </div>
 
@@ -1388,7 +1627,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuind lansarea și mentenanța ca disciplină, aceasta se extinde mult
+              dincolo de momentul în care codul ajunge în producție: versionarea semantică
+              și changelog-urile comunică schimbarea onest celor dependenți, feature
+              flag-urile decuplează lansarea riscantă de implementarea în sine, migrațiile
+              păstrează schema și codul sincronizate în siguranță, testele de fum confirmă
+              succesul în lumea reală, iar răspunsul de gardă gestionează incidentele care
+              inevitabil scapă în ciuda tuturor precauțiilor. Împreună, aceste practici
+              formează coada lungă a unei misiuni care nu se termină cu adevărat la lansare,
+              deoarece un sistem implementat are nevoie de îngrijire continuă atâta timp cât
+              rămâne pe orbită. Acest arc complet, de la platforma de lansare până la
+              mentenanța pe termen lung, este ceea ce separă livrarea codului o singură dată
+              de operarea responsabilă a unui sistem.
             </p>
           </div>
 

@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>NoSQL Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#nosql-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#nosql-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#nosql-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#nosql-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#nosql-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#nosql-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#nosql-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#nosql-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#nosql-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#nosql-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#nosql-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#nosql-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#nosql-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#nosql-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#nosql-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#nosql-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#nosql-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#nosql-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#nosql-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#nosql-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#nosql-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#nosql-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#nosql-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#nosql-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#nosql-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#nosql-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#nosql-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#nosql-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#nosql-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#nosql-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The first transmission from the data-sector arrives garbled with acronyms:
+              NoSQL, sharding, eventual consistency. Before touching a single database, the
+              crew must understand that not every cargo manifest fits neatly into rows and
+              columns. This orientation day is about recalibrating expectations away from
+              the rigid relational grids we mapped earlier in the voyage. We open the
+              airlock to a universe of flexible, schema-optional storage built for scale and
+              speed.
             </p>
           </div>
 
@@ -484,7 +431,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              NoSQL is not a single engine but a whole constellation of database
+              philosophies that abandon the fixed table structure of relational systems.
+              Where SQL databases demand a predefined schema before any data can be stored,
+              NoSQL stores let documents, keys, columns, or graph nodes evolve shape as the
+              mission evolves. This trade-off sacrifices some consistency guarantees for
+              horizontal scalability across many distributed nodes. Understanding this shift
+              in priorities — availability and partition tolerance over rigid structure — is
+              the core lesson of today's transmission.
             </p>
           </div>
 
@@ -517,7 +471,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Document stores like MongoDB organize data as self-contained JSON-like
+              packages called BSON documents, each one a sealed cargo pod carrying its own
+              nested fields and arrays. Unlike a relational table, a document can embed
+              related data directly inside it, avoiding the need for costly joins across
+              separate structures. Collections group similar documents loosely, without
+              enforcing a strict schema across every record. This flexibility makes document
+              stores ideal for rapidly evolving data models where structure varies from one
+              record to the next.
             </p>
           </div>
 
@@ -550,7 +511,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Key-value stores are the simplest storage primitive in the fleet's toolkit:
+              every piece of data is retrieved by a single unique key, like a locker number
+              on the station. Redis, the reference implementation studied today, keeps its
+              entire dataset in memory for near-instant lookups, making it the go-to engine
+              for caching, session storage, and rate limiting. Beyond simple strings, Redis
+              supports rich structures like lists, sets, hashes, and sorted sets, extending
+              its usefulness well past basic key retrieval. Its speed comes at a cost:
+              memory constraints and, in default configurations, less durability than
+              disk-based systems.
             </p>
           </div>
 
@@ -583,7 +552,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Column-family stores like Cassandra rearrange the storage deck: instead of
+              reading whole rows, the engine organizes data by column families, allowing
+              queries to sweep across billions of records efficiently when only certain
+              columns matter. Cassandra's masterless, ring-based architecture means there is
+              no single point of failure — every node in the cluster can accept writes, and
+              data is automatically replicated across the ring for resilience. This design
+              trades some query flexibility for extreme write throughput and horizontal
+              scalability, making it a favorite for time-series telemetry and sensor logs.
+              Today's lesson is about understanding partition keys and clustering columns,
+              the coordinates that determine how data is distributed across the cluster.
             </p>
           </div>
 
@@ -616,7 +594,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Graph databases like Neo4j abandon tables entirely in favor of nodes and
+              relationships, modeling data the way a star chart models connections between
+              systems. Each node represents an entity, and each relationship carries its own
+              properties, making deeply connected data — social networks, recommendation
+              engines, fraud detection — dramatically faster to traverse than the equivalent
+              chain of relational joins. Neo4j's Cypher query language reads almost like
+              drawing the graph itself, using ASCII-art arrows to express traversal paths.
+              Today's transmission covers why relationship-heavy domains benefit from a
+              storage engine built around connections rather than tables.
             </p>
           </div>
 
@@ -649,7 +635,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Choosing the right database is a navigational decision, not a fashion
+              statement. Document stores suit content management and catalogs with varying
+              structure; key-value stores excel at caching and session data; column-family
+              stores handle massive write-heavy telemetry streams; graph databases shine
+              when relationships themselves are the valuable data. Today's exercise walks
+              the crew through several mission profiles, matching each one's access patterns
+              and consistency needs to the storage engine best suited for the job. The wrong
+              choice here doesn't sink the ship immediately, but it creates drag that
+              compounds as the mission scales.
             </p>
           </div>
 
@@ -682,7 +676,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Consolidation day: the crew revisits the full spectrum of NoSQL models
+              covered so far, from documents to key-value pairs, column families, and
+              graphs. Rather than memorizing definitions, today's review focuses on the
+              underlying trade-offs — schema flexibility versus query power, consistency
+              versus availability, simplicity versus expressiveness. A short diagnostic
+              exercise asks each cadet to justify a storage engine choice for a hypothetical
+              station system, defending the decision against alternative approaches. This is
+              the checkpoint before hands-on MongoDB operations begin in earnest.
             </p>
           </div>
 
@@ -720,7 +721,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Before any document can be stored, the local MongoDB instance must be
+              installed, configured, and connected — the equivalent of pressurizing a new
+              module before habitation. Today covers installing the MongoDB server,
+              understanding the mongod process and its configuration file, and connecting
+              via the mongosh shell or a driver. Cadets configure data directories, bind
+              addresses, and authentication settings, learning why exposing a database to
+              the open network without credentials is one of the fastest ways to lose the
+              whole cargo hold. By the end of the session, a local instance answers pings
+              and is ready to receive its first collection.
             </p>
           </div>
 
@@ -753,7 +762,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              CRUD — Create, Read, Update, Delete — forms the basic maneuvering thrusters
+              of any database interaction, and MongoDB's document model gives each operation
+              its own syntax. insertOne and insertMany load new documents into a collection;
+              find and its query operators retrieve documents matching specific criteria;
+              updateOne and updateMany modify existing fields, often using operators like
+              $set and $inc; deleteOne and deleteMany remove documents that no longer serve
+              the mission. Today's drills walk through each operation against a sample
+              dataset, building the muscle memory needed before moving on to more complex
+              aggregation work.
             </p>
           </div>
 
@@ -786,7 +803,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              One of the most consequential decisions in document design is whether to
+              embed related data directly inside a parent document or reference it by ID in
+              a separate collection, much like deciding whether cargo travels sealed inside
+              the main hull or docked externally. Embedding favors read performance and
+              atomic updates for data that is always accessed together, but it can bloat
+              documents and duplicate information. Referencing keeps documents lean and
+              avoids duplication, at the cost of requiring additional lookups to reassemble
+              related data. Today's lesson works through several real scenarios — blog posts
+              and comments, orders and line items — to build intuition for when each pattern
+              serves the mission best.
             </p>
           </div>
 
@@ -819,7 +845,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              An unindexed query forces MongoDB to scan every document in a collection, the
+              data equivalent of searching every cargo container by hand. Indexes create
+              sorted, searchable structures on specific fields, dramatically accelerating
+              lookups at the cost of extra storage and slower writes. Today covers
+              single-field and compound indexes, how to inspect query performance with
+              explain(), and the classic trade-off between too few indexes, which slows
+              reads, and too many, which slows writes and inflates storage. Understanding
+              index selectivity — how well a field narrows down results — is the key skill
+              unlocked today.
             </p>
           </div>
 
@@ -852,7 +886,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The aggregation pipeline is MongoDB's assembly line for transforming raw
+              documents into refined intelligence, passing data through a sequence of stages
+              like $match, $group, $sort, and $project. Each stage takes the output of the
+              previous one and reshapes it further, allowing complex analytics — totals,
+              averages, groupings — to run directly inside the database rather than in
+              application code. Today's exercises build pipelines that filter a collection,
+              group by a category, compute aggregates, and reshape the output fields,
+              mirroring the kind of reporting queries a real mission dashboard would need.
+              Mastering pipeline stages turns raw telemetry into actionable command
+              decisions.
             </p>
           </div>
 
@@ -885,7 +928,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A single database node is a single point of failure, so today's transmission
+              covers replica sets — groups of MongoDB instances holding identical copies of
+              the same data. One node serves as primary, accepting all writes, while
+              secondary nodes replicate the oplog and stand ready to take over if the
+              primary goes dark. This architecture provides both fault tolerance and, with
+              read preferences configured correctly, the ability to distribute read load
+              across secondaries. Understanding elections, the process by which secondaries
+              choose a new primary during an outage, is essential for keeping
+              mission-critical systems online through hardware failures.
             </p>
           </div>
 
@@ -918,7 +969,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day consolidates everything learned about MongoDB: installation, CRUD
+              operations, schema design choices, indexing strategy, aggregation pipelines,
+              and replication for high availability. Cadets work through an integrated
+              exercise, designing a small application's data model, writing the queries
+              needed to support it, and adding the indexes and replication configuration
+              that would keep it running under real mission load. This is the last
+              checkpoint before the log broadens out to survey other NoSQL engines beyond
+              the document model.
             </p>
           </div>
 
@@ -956,7 +1014,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Redis returns to the log today, this time focused beyond simple key-value
+              caching into publish/subscribe messaging and expiring keys. Channels allow one
+              process to broadcast a message that any number of subscribers receive
+              instantly, a pattern useful for real-time notifications and inter-service
+              communication across the fleet's microservices. TTL (time-to-live) settings
+              let cached values expire automatically, keeping the in-memory dataset fresh
+              without manual cleanup. Today's lab wires up a simple pub/sub notification
+              system and a cache layer with expiration, demonstrating why Redis earns a
+              permanent seat in most production architectures.
             </p>
           </div>
 
@@ -989,7 +1055,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cassandra returns for a deeper dive into distributed storage mechanics:
+              consistent hashing distributes data around a ring of nodes, replication factor
+              determines how many copies of each piece of data exist, and tunable
+              consistency levels let each query choose its own balance between speed and
+              accuracy. A write can be acknowledged by just one replica or by a full quorum,
+              depending on how critical correctness is for that particular operation.
+              Today's exercise walks through configuring a keyspace with a chosen
+              replication strategy and observing how consistency level choices affect both
+              latency and the risk of reading stale data.
             </p>
           </div>
 
@@ -1022,7 +1096,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cypher, Neo4j's query language, treats a graph traversal almost like drawing
+              it: patterns such as (person)-[:FOLLOWS]->(person) describe nodes and
+              relationships using arrows that mirror the actual graph structure. Today's
+              lesson builds queries that find shortest paths, count mutual connections, and
+              traverse multiple relationship hops to answer questions that would require
+              many expensive joins in a relational system. Graph algorithms like PageRank
+              and community detection, available as built-in procedures, reveal patterns in
+              connected data that are difficult to surface any other way. This session
+              cements why relationship-first thinking unlocks entirely new categories of
+              queries.
             </p>
           </div>
 
@@ -1055,7 +1138,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Firebase's Realtime Database and its successor Firestore offer a different
+              flavor of NoSQL: a fully managed, cloud-hosted document store with built-in
+              real-time synchronization to connected clients. Any change to the data is
+              pushed instantly to every subscribed device, making it a natural fit for chat
+              applications, live dashboards, and collaborative tools where the crew across
+              the station needs to see the same state simultaneously. Security rules, rather
+              than application-level authentication logic, control who can read or write
+              which paths in the data tree. Today's exercise wires a simple client to
+              Firestore and observes updates propagate live across two open sessions.
             </p>
           </div>
 
@@ -1088,7 +1179,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              DynamoDB is AWS's fully managed key-value and document database, engineered
+              for single-digit millisecond latency at effectively unlimited scale without
+              managing a single server. Today's lesson covers partition keys and optional
+              sort keys, which together determine how data is distributed and queried, along
+              with the on-demand versus provisioned capacity models that control cost and
+              throughput. Global secondary indexes allow querying by attributes other than
+              the primary key, at the cost of additional storage and eventual consistency
+              for those index reads. Understanding DynamoDB's access-pattern-first design
+              philosophy — modeling queries before modeling data — is the crucial mental
+              shift for today's transmission.
             </p>
           </div>
 
@@ -1121,7 +1221,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Elasticsearch isn't a general-purpose database so much as a specialized
+              search-and-analytics engine built on inverted indexes, the same structure
+              found at the back of a book mapping words to page numbers. Documents are
+              analyzed and tokenized on ingest, enabling full-text search, fuzzy matching,
+              and relevance scoring far beyond what a simple WHERE clause could achieve.
+              Aggregations let Elasticsearch compute analytics — histograms, averages, terms
+              counts — across massive datasets in near real time, powering dashboards like
+              Kibana. Today's lab indexes a sample dataset and runs both full-text queries
+              and aggregation requests to see search and analytics working side by side.
             </p>
           </div>
 
@@ -1154,7 +1262,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Survey day: the crew maps the full territory of NoSQL engines encountered so
+              far — MongoDB's documents, Redis's speed, Cassandra's distributed columns,
+              Neo4j's graphs, Firebase's real-time sync, DynamoDB's managed scale, and
+              Elasticsearch's search power. Rather than ranking them, today's discussion
+              focuses on the specific mission profile each was built to solve, reinforcing
+              that polyglot fluency across these engines is more valuable than mastery of
+              just one. A comparison chart built collaboratively during the session becomes
+              a permanent reference for future mission planning.
             </p>
           </div>
 
@@ -1192,7 +1307,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Data modeling in NoSQL inverts the relational approach: instead of
+              normalizing data into many small tables and joining them at query time, NoSQL
+              modeling starts from the queries the application needs and shapes the data
+              structure around them. This query-first mindset often means duplicating data
+              across documents or rows to avoid expensive joins, trading storage space for
+              read speed. Today's exercise takes a normalized relational schema and
+              redesigns it for a document store, explicitly walking through which
+              relationships to embed, which to reference, and which to duplicate outright.
             </p>
           </div>
 
@@ -1225,7 +1347,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Migrating a live system from a relational database to NoSQL is closer to
+              transferring cargo between ships mid-flight than flipping a switch. Today's
+              transmission covers strategies like dual-writing to both systems during a
+              transition period, using change data capture to stream updates from the old
+              system into the new one, and running both databases in parallel with a
+              comparison layer to validate correctness before cutting over. Rollback plans
+              are non-negotiable: a migration is not complete until the crew has verified
+              data integrity and proven the new system can be safely reverted if problems
+              emerge. Today's case study walks through the phases of a real migration
+              project step by step.
             </p>
           </div>
 
@@ -1258,7 +1389,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The CAP theorem states that a distributed system can guarantee only two of
+              three properties during a network partition: Consistency, Availability, and
+              Partition tolerance — and since partitions are unavoidable in any real
+              distributed fleet, the actual choice is between consistency and availability
+              when the network splits. Today's lesson maps specific NoSQL systems onto this
+              spectrum: MongoDB leans consistent by default, while Cassandra leans
+              available, with tunable knobs on both sides. Understanding CAP isn't about
+              picking a winner but about knowing which failure mode your mission can
+              tolerate when the connection between stations goes dark.
             </p>
           </div>
 
@@ -1291,7 +1430,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A database without a backup plan is a mission one hardware failure away from
+              catastrophe. Today covers NoSQL backup strategies: full snapshots, incremental
+              backups that capture only changed data, and point-in-time recovery using
+              operation logs like MongoDB's oplog. Restore drills are just as important as
+              backups themselves — an untested backup is a hypothesis, not a safety net.
+              Today's exercise performs a full backup, simulates data loss, and walks
+              through the restore procedure end to end to confirm the recovery plan actually
+              works under pressure.
             </p>
           </div>
 
@@ -1324,7 +1470,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Keeping a database healthy requires constant telemetry: query latency,
+              throughput, connection counts, replication lag, and disk usage all need
+              continuous monitoring to catch problems before they become mission failures.
+              Today's lesson sets up dashboards tracking key metrics for a NoSQL deployment,
+              configures alerting thresholds for warning signs like rising replication lag
+              or memory pressure, and reviews slow query logs to identify optimization
+              targets. Establishing a baseline of normal behavior early makes it far easier
+              to spot the anomaly that signals real trouble ahead.
             </p>
           </div>
 
@@ -1357,7 +1510,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Polyglot persistence means accepting that no single database serves every
+              need aboard the ship, and that a well-designed system often combines several
+              storage engines, each handling the workload it does best. A typical
+              architecture might use MongoDB for flexible application data, Redis for
+              caching and session state, Elasticsearch for search, and a relational database
+              for strictly transactional records. Today's exercise designs a small system's
+              architecture across multiple storage engines, mapping each data type to the
+              engine best suited for its access pattern and consistency needs. This hybrid
+              mindset marks the transition from student to system architect.
             </p>
           </div>
 
@@ -1390,7 +1551,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Final review of the NoSQL sector: the crew consolidates lessons on document,
+              key-value, column-family, and graph models, plus the operational skills of
+              indexing, replication, backup, monitoring, and migration. A capstone exercise
+              asks each cadet to design, justify, and partially implement a polyglot
+              persistence architecture for a realistic mission scenario, defending every
+              storage choice against the CAP theorem trade-offs and access patterns studied
+              throughout the sector. This transmission closes the database chapter of the
+              voyage, and the log now turns toward new systems ahead.
             </p>
           </div>
 

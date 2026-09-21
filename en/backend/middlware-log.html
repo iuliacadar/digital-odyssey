@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Middleware Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#middlware-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#middlware-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#middlware-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#middlware-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#middlware-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#middlware-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#middlware-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#middlware-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#middlware-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#middlware-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#middlware-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#middlware-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#middlware-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#middlware-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#middlware-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#middlware-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#middlware-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#middlware-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#middlware-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#middlware-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#middlware-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#middlware-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#middlware-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#middlware-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#middlware-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#middlware-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#middlware-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#middlware-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#middlware-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#middlware-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today the pipeline came online. Every request that boards this vessel now
+              passes through a corridor of inspection stations before it reaches its
+              destination, and each station can read, modify, or reject the cargo.
+              Middleware is the name we give to these checkpoints, and learning to build
+              them is the first step toward commanding the flow of the entire ship. Nothing
+              here is optional decoration; the pipeline is the ship's nervous system.
             </p>
           </div>
 
@@ -484,7 +430,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware follows the pipeline pattern: a function receives the request
+              object, the response object, and a call to the next station in the chain. Each
+              function can inspect headers, mutate the payload, short-circuit the journey
+              with a response, or wave the transmission onward. Chaining these functions
+              together lets us compose complex behavior from small, single-purpose modules
+              instead of one monolithic reactor core. This composability is why the pattern
+              has survived so many generations of server frameworks.
             </p>
           </div>
 
@@ -517,7 +469,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              In Express, middleware is any function with the signature (req, res, next).
+              Calling next() is the airlock release that lets the transmission continue
+              toward the next handler; forgetting it strands the request in the corridor
+              forever, and the client waits until the connection times out. Express walks
+              the stack top to bottom, registering handlers with app.use() or
+              method-specific verbs like app.get(). Mastering next() is mastering the rhythm
+              of the whole pipeline.
             </p>
           </div>
 
@@ -550,7 +508,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Express ships with built-in middleware so we don't have to fabricate every
+              module from scratch. express.static() opens an airlock directly onto a folder
+              of files, serving assets like images and stylesheets without custom routing
+              logic. express.json() and express.urlencoded() decode incoming request bodies
+              into usable JavaScript objects, translating alien transmission formats into
+              ship-standard data structures. These built-ins cover the most common cargo
+              types so custom middleware can focus on mission-specific logic.
             </p>
           </div>
 
@@ -583,7 +547,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Beyond the built-ins, the open expanse of third-party middleware extends the
+              ship's sensor array. Morgan logs every incoming transmission with method,
+              path, status, and response time, giving the bridge crew a running telemetry
+              feed of traffic. Helmet hardens the hull by setting protective HTTP headers
+              that block common attack vectors like clickjacking and MIME sniffing.
+              Installing both is often the first move on any new Express mission, since
+              visibility and armor plating matter before a single custom route is written.
             </p>
           </div>
 
@@ -616,7 +586,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Error-handling middleware carries a distinct signature: four parameters
+              instead of three, with err arriving first. Express recognizes this shape
+              automatically and routes any error passed to next(err) straight into this
+              special handler, bypassing the normal stack. Centralizing error handling here
+              means individual route handlers stay clean, simply forwarding failures rather
+              than each writing its own damage-control response. A single well-placed error
+              handler at the end of the stack becomes the ship's emergency response station
+              for the entire vessel.
             </p>
           </div>
 
@@ -649,7 +626,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Order is not a formality in the pipeline; it is physics. Middleware
+              registered first runs first, and if a logging module is placed after the
+              response has already been sent, it never fires at all. Authentication checks
+              must precede the routes they protect, and error handlers must sit at the very
+              end, after every other app.use() call, or errors thrown downstream will never
+              reach them. Reading a stack trace on this ship always begins by checking
+              whether the crew wired the corridors in the right sequence.
             </p>
           </div>
 
@@ -682,7 +665,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. We have covered the core anatomy of the pipeline: the
+              (req, res, next) signature, the release valve of next(), the built-in modules
+              for static files and body parsing, third-party armor like Helmet and Morgan,
+              and the non-negotiable rule that order determines behavior. Before advancing
+              to custom middleware construction, every cadet should be able to trace a
+              request from entry to response by hand, station by station. The fundamentals
+              are the hull plating everything else gets welded to.
             </p>
           </div>
 
@@ -720,7 +709,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Custom logging middleware is our first independent build: a function that
+              timestamps the incoming request, records the method and URL, and calls next()
+              to let the transmission continue unmodified. Placing console.log or a proper
+              logging library inside this function turns every request into a data point on
+              the mission log. More advanced versions measure elapsed time by capturing a
+              timestamp before and after next() resolves, giving us our own lightweight
+              instrumentation. This is the pattern behind every observability tool we'll
+              meet later in the voyage.
             </p>
           </div>
 
@@ -753,7 +749,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Authentication middleware inspects the Authorization header, extracts a
+              bearer token, and verifies its signature before granting passage. A JWT is
+              decoded and checked against a secret key; if verification fails, the
+              middleware short-circuits with a 401 response instead of calling next(). If it
+              succeeds, the decoded payload is typically attached to req.user so downstream
+              handlers know exactly which crew member is making the request. This checkpoint
+              is the airlock between the public expanse and the ship's protected systems.
             </p>
           </div>
 
@@ -786,7 +788,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rate limiting middleware tracks how many transmissions a given source has
+              sent within a rolling time window and throttles or rejects excess traffic with
+              a 429 status. Libraries like express-rate-limit maintain counters keyed by IP
+              address or token, resetting them as the window slides forward. This defends
+              the ship's reactor from being overwhelmed by a single overzealous source,
+              whether malicious or simply misconfigured. Without throttling, one runaway
+              client script can consume resources meant for the entire crew.
             </p>
           </div>
 
@@ -819,7 +827,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Validation middleware inspects incoming payloads against a defined schema
+              before any business logic runs, rejecting malformed cargo at the airlock
+              rather than deep inside the ship. Libraries like Joi, Zod, or
+              express-validator define the expected shape, types, and constraints of the
+              data, then return a 400 response with detailed errors when the transmission
+              doesn't match. This keeps validation logic out of route handlers and
+              concentrated in one reusable, testable layer. Trusting unvalidated input is
+              one of the fastest ways to breach the hull.
             </p>
           </div>
 
@@ -852,7 +867,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              CORS middleware controls which foreign origins are permitted to request
+              resources from this ship. Browsers enforce the same-origin policy by default,
+              blocking cross-origin requests unless the server explicitly grants permission
+              via Access-Control-Allow-Origin and related headers. The cors package for
+              Express handles preflight OPTIONS requests automatically and lets us whitelist
+              specific domains, methods, and headers. Configuring this correctly is
+              essential for any API meant to be consumed by a separate frontend vessel.
             </p>
           </div>
 
@@ -885,7 +906,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cache middleware intercepts a request, checks whether a fresh response
+              already exists in a cache store, and returns it immediately without touching
+              downstream handlers or the database. When no cached copy exists, the
+              middleware lets the request through and stores the resulting response for next
+              time, often with an expiration window. This can dramatically reduce load on
+              expensive operations, trading a small amount of staleness for a large amount
+              of speed. Cache invalidation, as any veteran engineer will warn a new recruit,
+              remains one of the hardest problems on any mission.
             </p>
           </div>
 
@@ -918,7 +946,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. We've now built logging, authentication, rate
+              limiting, validation, CORS, and caching middleware from first principles, each
+              one a self-contained module doing exactly one job. The recurring shape is
+              always the same: inspect, decide, either forward with next() or terminate with
+              a response. Recognizing this shape means any new middleware requirement,
+              however exotic, can be built by following the same blueprint.
             </p>
           </div>
 
@@ -956,7 +989,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Async middleware introduces a hazard: if an async function throws inside a
+              route handler, Express's default error handling in older versions won't catch
+              it automatically, leaving the ship without a distress signal. Wrapping async
+              handlers in a try/catch that calls next(err) on failure, or using a helper
+              utility that does this automatically, ensures rejected promises still reach
+              the centralized error handler. Express 5 improves this by catching rejected
+              promises natively, but understanding the manual pattern remains essential for
+              maintaining older codebases. A silently swallowed rejection is the quietest
+              kind of hull breach.
             </p>
           </div>
 
@@ -989,7 +1030,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Conditional middleware only engages for specific routes or conditions rather
+              than the entire application. Passing a middleware function as a second
+              argument to app.get() or app.use('/path', middleware) scopes it to only that
+              corridor of the ship. This lets us apply expensive checks like authentication
+              only where they're needed, keeping public routes like health checks
+              lightweight and fast. Precision targeting keeps the pipeline efficient instead
+              of running every check on every transmission.
             </p>
           </div>
 
@@ -1022,7 +1069,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware composition means chaining multiple functions in sequence, either
+              as separate arguments or as an array, all applied to the same route. Express
+              executes them in the order listed, each calling next() to hand off to the
+              following function, forming a mini assembly line for that specific corridor.
+              This lets complex route logic be decomposed into small reusable pieces:
+              validate, then authenticate, then authorize, then handle. Composition is how
+              we avoid writing giant monolithic route handlers that do everything at once.
             </p>
           </div>
 
@@ -1055,7 +1108,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Router-level middleware attaches to an express.Router() instance instead of
+              the main app, creating a self-contained sub-stack that only applies to routes
+              mounted under that router. This is how we build modular sections of the ship,
+              each with its own middleware requirements, then mount them onto the main
+              application with app.use('/api/users', userRouter). Sub-stacks keep large
+              applications organized into independently testable compartments. A breach in
+              one compartment doesn't have to compromise the whole vessel.
             </p>
           </div>
 
@@ -1088,7 +1147,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Graceful degradation means designing error-handling middleware that keeps the
+              ship operational even when a subsystem fails. Instead of crashing the entire
+              process on an unhandled exception, well-structured error middleware logs the
+              incident, returns an appropriate status code and message to the client, and
+              lets the server continue serving other requests. Distinguishing between
+              operational errors, like a failed database query, and programmer errors, like
+              a null reference, helps decide whether to recover or trigger a controlled
+              restart. A resilient ship survives damage to one system without losing life
+              support everywhere else.
             </p>
           </div>
 
@@ -1121,7 +1188,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Performance middleware measures how long each request takes to process,
+              typically by recording a high-resolution timestamp on entry and calculating
+              the delta when the response finishes. Attaching a listener to the 'finish'
+              event on the response object catches the moment headers are sent, giving an
+              accurate end-to-end duration. This telemetry feeds directly into monitoring
+              dashboards and helps the crew spot which corridors of the pipeline are running
+              slow before passengers start complaining. Measuring before optimizing is
+              standard procedure on any mission.
             </p>
           </div>
 
@@ -1154,7 +1228,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. Advanced patterns covered so far include async error
+              handling, conditional and route-scoped middleware, composition chains,
+              router-level sub-stacks, graceful degradation, and performance timing.
+              Together these patterns let a single Express application scale from a toy
+              prototype to a production-grade service without losing structural clarity.
+              Every pattern here is really the same core idea, inspect and forward, applied
+              with increasing sophistication.
             </p>
           </div>
 
@@ -1192,7 +1272,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testing middleware means isolating the (req, res, next) function from the
+              full HTTP stack and calling it directly with mock objects. Libraries like jest
+              and sinon let us create fake request and response objects, then assert that
+              next() was called, that res.status() received the right code, or that
+              res.json() returned the expected payload. Integration tests, by contrast, spin
+              up the full Express app and send real HTTP requests through supertest to
+              verify the entire pipeline behaves correctly end to end. Both layers matter:
+              unit tests catch logic errors fast, integration tests catch wiring errors.
             </p>
           </div>
 
@@ -1225,7 +1312,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Monitoring middleware exports metrics like request count, latency
+              distribution, and error rate to an external system such as Prometheus. Each
+              request increments counters and records histogram buckets for response time,
+              tagged by route and status code, building a live telemetry feed of the ship's
+              health. Exposing a /metrics endpoint lets external dashboards scrape this data
+              on a schedule, turning raw traffic into visual mission control. Without this
+              instrumentation, the crew is flying blind between deployments.
             </p>
           </div>
 
@@ -1258,7 +1351,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Security middleware best practices go beyond Helmet's default headers: rate
+              limiting prevents brute-force attacks, input validation blocks injection
+              attempts, and CORS configuration prevents unauthorized cross-origin access.
+              Sanitizing user input before it reaches a database query defends against SQL
+              and NoSQL injection, while escaping output defends against cross-site
+              scripting. Layering these defenses means a single failure doesn't compromise
+              the entire ship; this is defense in depth, not a single force field. Security
+              middleware is the armor plating that should never be treated as optional.
             </p>
           </div>
 
@@ -1291,7 +1391,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              In a microservices architecture, middleware concerns like authentication and
+              logging often get extracted into a shared gateway or sidecar rather than
+              duplicated in every service. An API gateway can handle rate limiting, auth
+              token verification, and request routing once, before traffic ever reaches
+              individual services, reducing duplicated logic across the fleet. Distributed
+              tracing middleware attaches a correlation ID to each request so its path
+              across multiple services can be reconstructed later. Coordinating many small
+              ships requires shared protocols, not each vessel improvising its own.
             </p>
           </div>
 
@@ -1324,7 +1431,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Building a custom middleware framework means implementing the core pattern
+              ourselves: an array of functions, an index tracking position in the stack, and
+              a dispatch function that calls the current middleware with a next() that
+              advances the index and calls dispatch again. This is essentially what Express,
+              Koa, and Connect all do under the hood, just with different levels of
+              abstraction and additional features layered on top. Understanding this
+              mechanism demystifies frameworks entirely and makes debugging stack ordering
+              issues far more intuitive. Once you've built the pipeline yourself, no
+              framework's internals feel like a black box again.
             </p>
           </div>
 
@@ -1357,7 +1472,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Common anti-patterns include forgetting to call next(), calling next() more
+              than once, mutating shared state without care for request isolation, and
+              placing heavy synchronous computation directly in a middleware function and
+              blocking the entire event loop for other passengers. Another frequent mistake
+              is registering error-handling middleware before other routes instead of after,
+              which means it never receives forwarded errors. Recognizing these
+              anti-patterns during code review saves the ship from mysterious,
+              hard-to-reproduce failures. Every experienced engineer has been burned by at
+              least one of these before learning to watch for it.
             </p>
           </div>
 
@@ -1390,7 +1513,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete: middleware in production. We have traveled from the
+              basic (req, res, next) signature through custom logging, auth, validation,
+              caching, async handling, composition, monitoring, security hardening, and
+              distributed patterns across microservices. A production-ready pipeline is
+              disciplined about order, defensive about errors, instrumented for
+              observability, and tested at both the unit and integration level. This closes
+              the middleware chapter of the mission log; the pipeline is now yours to
+              command.
             </p>
           </div>
 

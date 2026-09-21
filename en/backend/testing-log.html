@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Testing Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#testing-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#testing-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#testing-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#testing-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#testing-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#testing-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#testing-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#testing-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#testing-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#testing-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#testing-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#testing-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#testing-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#testing-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#testing-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#testing-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#testing-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#testing-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#testing-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#testing-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#testing-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#testing-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#testing-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#testing-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#testing-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#testing-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#testing-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#testing-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#testing-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#testing-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today the diagnostics lab powers on for the first time. Every system we build
+              on this voyage, from the smallest utility function to the full pipeline, needs
+              a way to prove it works before it's trusted with real cargo. Testing is that
+              proof: a controlled environment where we simulate conditions, observe
+              outcomes, and catch failures before they reach the crew. Nothing launches from
+              this lab without evidence.
             </p>
           </div>
 
@@ -484,7 +430,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Skipping tests feels faster in the moment, but the debt compounds with every
+              new feature bolted onto an unverified foundation. A good test suite catches
+              regressions the instant they're introduced, long before a passenger ever
+              notices a malfunction. It also serves as living documentation, showing exactly
+              how a module is meant to behave through concrete examples rather than aging
+              comments. Teams that test well ship faster over the long run, not slower,
+              because they spend far less time chasing mystery bugs in production.
             </p>
           </div>
 
@@ -517,7 +469,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Unit tests target the smallest testable unit in the system, typically a
+              single function or method, in complete isolation from its dependencies. A pure
+              function like calculateTotal(items) is tested by feeding it known inputs and
+              asserting the output matches expectations exactly. Isolation means no real
+              database calls, no real network requests, and no shared mutable state bleeding
+              between tests. Fast, focused unit tests form the base of the testing pyramid
+              because they run in milliseconds and pinpoint failures precisely.
             </p>
           </div>
 
@@ -550,7 +508,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test runners are the engines that discover test files, execute them, and
+              report results. Jest bundles a test runner, assertion library, and mocking
+              framework into a single tool, making it the default choice for most modern
+              JavaScript missions. Mocha is more modular, pairing with separate assertion
+              libraries like Chai and mocking tools like Sinon for teams that want finer
+              control over their toolchain. Both watch for file changes and re-run affected
+              tests automatically, turning the feedback loop into something close to real
+              time.
             </p>
           </div>
 
@@ -583,7 +548,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Assertions are the actual claims a test makes about expected behavior. Jest's
+              expect(value).toBe(expected) syntax reads almost like plain language, and the
+              library ships dozens of matchers for equality, type checking, array contents,
+              thrown errors, and asynchronous resolution. Chai offers alternate assertion
+              styles including should and expect, letting teams choose the syntax that reads
+              most naturally to them. Whatever the syntax, an assertion that fails silently
+              or passes when it shouldn't is worse than no test at all, so precision here
+              matters enormously.
             </p>
           </div>
 
@@ -616,7 +588,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Arrange-Act-Assert structures every test into three clear phases: set up the
+              initial state and inputs, perform the action being tested, then verify the
+              outcome. This structure keeps tests readable even months later, when the
+              original author has forgotten every detail of the implementation. Mixing these
+              phases together, testing multiple unrelated behaviors in one block, is a
+              common source of brittle, confusing test suites. A disciplined crew writes
+              tests that read top to bottom like a clear mission log, not a tangled
+              transmission.
             </p>
           </div>
 
@@ -649,7 +628,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test coverage measures what percentage of the codebase's lines, branches, and
+              functions are executed by the test suite, typically reported by tools like
+              Istanbul or Jest's built-in coverage flag. High coverage numbers feel
+              reassuring, but coverage measures execution, not correctness; a line can run
+              during a test without any meaningful assertion checking its behavior. Chasing
+              100 percent coverage often produces low-value tests written just to touch
+              every line rather than verify real behavior. Coverage is a useful instrument
+              on the dashboard, but it is not the mission objective itself.
             </p>
           </div>
 
@@ -682,7 +668,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. We've covered why testing matters, the anatomy of a
+              unit test, the tools that run and assert on our code, the Arrange-Act-Assert
+              structure, and the honest limits of coverage metrics. Every cadet should now
+              be able to write a focused unit test for a pure function without hesitation.
+              The lab's fundamentals are set; the rest of the voyage builds increasingly
+              complex diagnostics on top of them.
             </p>
           </div>
 
@@ -720,7 +711,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Integration tests verify that multiple modules work correctly together,
+              catching the failures that unit tests, by design, cannot see. A service
+              function that calls a database layer and a validation layer might pass all its
+              unit tests individually while still failing when wired together, because of a
+              mismatched interface or unexpected side effect. Integration tests run real or
+              near-real versions of these collaborating pieces rather than mocking
+              everything away. They sit above unit tests in the testing pyramid: fewer in
+              number, slower to run, but essential for catching wiring failures.
             </p>
           </div>
 
@@ -753,7 +751,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              API testing verifies that HTTP endpoints behave correctly from the outside,
+              checking status codes, response bodies, and headers against expectations.
+              Supertest integrates with Express apps directly, letting tests send real HTTP
+              requests without spinning up an actual network listener, keeping the tests
+              fast and self-contained. Postman offers a GUI-driven alternative, useful for
+              manual exploration and for building shareable collections that double as
+              living API documentation. Automating these checks in CI catches breaking API
+              changes before they reach any consumer of the service.
             </p>
           </div>
 
@@ -786,7 +791,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Database testing introduces a fresh hazard: tests that mutate a shared
+              database can interfere with each other or leave the system in an inconsistent
+              state between runs. Test containers, using tools like Testcontainers, spin up
+              a real, ephemeral database instance in Docker for the duration of a test run,
+              then tear it down completely afterward. This gives tests genuine database
+              behavior, including real constraints and query performance, without touching
+              any persistent shared environment. Seeding known fixture data at the start of
+              each test keeps results deterministic and repeatable.
             </p>
           </div>
 
@@ -819,7 +831,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              End-to-end tests simulate a real user navigating the actual application in a
+              real browser, clicking buttons, filling forms, and asserting on what appears
+              on screen. Cypress and Playwright both automate browser interaction, but
+              Playwright supports multiple browser engines natively, while Cypress focuses
+              deeply on developer experience within a single execution model. These tests
+              sit at the top of the pyramid: fewest in number, slowest to run, but they
+              catch integration failures across the entire stack, from database to UI, that
+              lower-level tests structurally cannot see. A full mission simulation before
+              launch is expensive, but it catches what nothing else can.
             </p>
           </div>
 
@@ -852,7 +872,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Visual regression testing captures screenshots of rendered UI components and
+              compares them pixel by pixel against a stored baseline image, flagging any
+              unexpected visual drift. Tools like Percy or Playwright's built-in screenshot
+              comparison catch layout shifts, broken styles, and rendering bugs that
+              functional tests, which only check DOM structure and behavior, would never
+              notice. Updating the baseline is a deliberate, reviewed action whenever a
+              visual change is intentional, not something that happens silently. This is the
+              ship's external hull inspection: does it still look the way the crew expects
+              it to look?
             </p>
           </div>
 
@@ -885,7 +913,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cross-browser testing verifies the application behaves consistently across
+              different browser engines like Chromium, Firefox, and WebKit, since each
+              implements web standards with subtle differences. A layout that renders
+              perfectly in one engine might collapse in another due to differing default
+              styles or JavaScript API support. Cloud services like BrowserStack or
+              Playwright's multi-browser runner let a single test suite execute against many
+              browser and OS combinations without maintaining physical devices for each.
+              Skipping this step means discovering compatibility bugs from user reports
+              instead of automated checks.
             </p>
           </div>
 
@@ -918,7 +954,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. Integration and end-to-end testing extend our
+              diagnostics beyond isolated functions: API tests verify contracts, database
+              tests verify persistence behavior under real conditions, E2E tests verify full
+              user journeys, and visual and cross-browser tests catch what functional
+              assertions alone would miss. Each layer trades speed for confidence, and a
+              healthy mission relies on all of them working together rather than any single
+              layer doing everything. The testing pyramid earns its shape because each layer
+              catches different classes of failure.
             </p>
           </div>
 
@@ -956,7 +999,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Mocking replaces a real dependency, like a database call or an external API,
+              with a fake, controllable stand-in for the duration of a test. Jest's
+              jest.fn() creates a mock function that records how it was called and lets
+              tests specify a canned return value, isolating the code under test from the
+              real behavior of its dependency. This makes tests fast and deterministic,
+              since no test result depends on network latency or an external service being
+              available. Overusing mocks, however, can hide real integration bugs, so
+              mocking is a scalpel for unit tests, not a habit to apply everywhere.
             </p>
           </div>
 
@@ -989,7 +1039,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fixtures are predefined sets of test data used to put the system into a known
+              state before a test runs, such as a sample user object or a seeded database
+              row. Storing fixtures in dedicated files keeps test setup consistent and
+              reusable across many test files instead of duplicating the same inline object
+              everywhere. Factory functions that generate fixtures with sensible defaults,
+              while allowing individual fields to be overridden, scale far better than
+              static fixture files as a test suite grows. Well-managed fixtures are the
+              ship's standardized cargo manifests, known and trusted every time they're
+              loaded.
             </p>
           </div>
 
@@ -1022,7 +1080,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Parameterized tests run the same test logic against multiple sets of inputs
+              and expected outputs without duplicating the test body for each case. Jest's
+              test.each() and Mocha's equivalent patterns accept an array of tuples, running
+              the same assertions once per row, which is especially powerful for testing
+              edge cases like empty arrays, negative numbers, and boundary values. This
+              keeps test files concise while dramatically increasing the coverage of input
+              variations actually exercised. A single well-parameterized test can replace a
+              dozen copy-pasted near-duplicates.
             </p>
           </div>
 
@@ -1055,7 +1120,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test doubles is the umbrella term for stand-ins used in place of real
+              dependencies: stubs return predetermined values without any real logic, while
+              spies wrap a real function and record how it was called without changing its
+              behavior. A stub might replace a payment gateway call with a hardcoded success
+              response, while a spy might wrap a real logging function just to verify it was
+              invoked with the right arguments. Choosing the right double, whether stub,
+              spy, mock, or fake, depends on whether the test needs to verify behavior,
+              isolate side effects, or both. Precision in this choice keeps tests meaningful
+              instead of just green.
             </p>
           </div>
 
@@ -1088,7 +1161,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test-Driven Development flips the usual order: write a failing test first,
+              write the minimum code needed to make it pass, then refactor with the safety
+              net of that passing test already in place. This red-green-refactor cycle
+              forces engineers to think about the interface and expected behavior of a
+              function before its implementation exists. TDD tends to produce naturally
+              well-tested code since every feature arrives with its test already attached,
+              rather than tests being bolted on afterward as an afterthought. It's a
+              discipline more than a tool, and like any discipline, it pays off most under
+              sustained practice.
             </p>
           </div>
 
@@ -1121,7 +1202,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Behavior-Driven Development extends TDD's philosophy toward tests written in
+              language non-technical stakeholders can read, often using Given-When-Then
+              syntax with tools like Cucumber. A scenario like 'Given a logged-in user, when
+              they add an item to the cart, then the cart total updates' describes behavior
+              from the user's perspective rather than implementation details. This bridges
+              the gap between product requirements and executable tests, letting the same
+              document serve as specification and verification. BDD works best when the
+              whole crew, not just engineers, can read and validate the scenarios.
             </p>
           </div>
 
@@ -1154,7 +1242,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete. Testing patterns covered include mocking to isolate
+              dependencies, fixtures for consistent test data, parameterization to cover
+              many cases efficiently, the taxonomy of test doubles, and the TDD and BDD
+              philosophies that shape how tests get written in the first place. These
+              patterns aren't mutually exclusive; a mature test suite mixes and matches them
+              based on what each situation actually requires. Knowing the full toolkit
+              prevents reaching for the wrong tool out of habit.
             </p>
           </div>
 
@@ -1192,7 +1286,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              CI integration means the test suite runs automatically on every push or pull
+              request, before code is allowed to merge into the main branch. Tools like
+              GitHub Actions, CircleCI, and Jenkins trigger a fresh environment, install
+              dependencies, and run the full suite, blocking the merge if anything fails.
+              This catches regressions the moment they're introduced rather than days later
+              when a teammate stumbles onto the broken code. Automated gates like this are
+              the ship's mandatory pre-launch checklist: nothing proceeds until every system
+              reports green.
             </p>
           </div>
 
@@ -1225,7 +1326,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test reporting turns raw pass/fail output into dashboards the whole crew can
+              read at a glance: trends over time, flaky test frequency, coverage percentage,
+              and slowest-running tests. Tools like Allure or built-in CI dashboards
+              aggregate results across many runs, making it possible to spot a test suite
+              that's slowly degrading before it becomes unmanageable. Historical trend data
+              matters more than any single run, since a single green result doesn't reveal
+              whether the suite is getting faster, slower, or more brittle over time. Good
+              reporting turns testing from a gate into genuine mission telemetry.
             </p>
           </div>
 
@@ -1258,7 +1366,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Flaky tests pass and fail intermittently without any code change, usually
+              caused by race conditions, unmocked timing dependencies, shared state between
+              tests, or reliance on external services with variable latency. Ignoring flaky
+              tests erodes trust in the entire suite, since a team that's used to seeing
+              occasional red for no reason starts ignoring red altogether, including real
+              failures. Fixing the root cause, rather than simply retrying until it passes,
+              is the only durable solution, though a quarantine system for known-flaky tests
+              can prevent them from blocking unrelated work in the meantime. An
+              untrustworthy alarm is worse than no alarm at all.
             </p>
           </div>
 
@@ -1291,7 +1407,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Performance testing, particularly load testing, verifies the system holds up
+              under realistic or extreme traffic volumes rather than just correct
+              single-request behavior. Tools like k6 or Artillery simulate hundreds or
+              thousands of concurrent virtual users hitting the API, measuring response time
+              percentiles, error rates, and throughput as load increases. This exposes
+              bottlenecks like database connection pool exhaustion or unbounded memory
+              growth long before real passengers ever encounter them. A ship rated for
+              cruising speed still needs to be tested at full thrust before launch day.
             </p>
           </div>
 
@@ -1324,7 +1447,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Security testing scans the application for known vulnerabilities: SQL
+              injection, cross-site scripting, insecure dependencies, and misconfigured
+              authentication. Automated tools like OWASP ZAP or npm audit catch common
+              classes of vulnerability, while manual penetration testing digs into logic
+              flaws that automated scanners structurally miss. Running dependency
+              vulnerability scans in CI catches newly disclosed vulnerabilities in
+              third-party packages the moment they're published, not months later during an
+              incident. Security testing isn't a one-time inspection before launch; it's an
+              ongoing patrol of the hull for the life of the mission.
             </p>
           </div>
 
@@ -1357,7 +1488,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testing culture is the set of team habits and shared expectations that
+              determine whether tests actually get written, maintained, and trusted,
+              regardless of what tools are available. Teams with a strong testing culture
+              treat a failing test as a blocking signal, not a nuisance to silence, and
+              treat writing tests as part of finishing a feature, not optional extra credit.
+              Code review that asks 'where are the tests for this' as a default question
+              does more for quality than any single tool ever could. Culture is the crew's
+              shared discipline; tools are just the instruments that discipline relies on.
             </p>
           </div>
 
@@ -1390,7 +1528,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review cycle complete: testing in production. We've traveled from a single
+              unit test through integration, E2E, mocking, TDD and BDD philosophies, CI
+              automation, reporting, flaky test management, performance and security
+              testing, and the team culture that ties it all together. A mature testing
+              practice isn't one technique but a layered system, each layer catching what
+              the others structurally cannot. This closes the testing chapter of the mission
+              log; the diagnostics lab is now fully staffed and ready for whatever the
+              voyage brings next.
             </p>
           </div>
 

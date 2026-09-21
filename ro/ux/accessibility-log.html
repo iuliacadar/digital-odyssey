@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -180,12 +180,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->
+
 
     <link
       rel="stylesheet"
@@ -193,7 +195,8 @@
     />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->
+
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
@@ -241,7 +244,8 @@
           <a href="../index.html" class="return-btn"
             ><!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->← Înapoi la puntea de comandă</a
+    -->
+← Înapoi la puntea de comandă</a
           >
         </li>
       </ul>
@@ -292,77 +296,39 @@
               Fragment link-urile (href="#accessibility-day01") creează un cuprins
               care le permite membrilor echipajului să se teleporteze direct la orice
               intrare fără să deruleze prin întregul jurnal.
-          -->
+          -->
+
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#accessibility-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#accessibility-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#accessibility-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#accessibility-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#accessibility-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#accessibility-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#accessibility-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#accessibility-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#accessibility-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#accessibility-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#accessibility-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#accessibility-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#accessibility-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#accessibility-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#accessibility-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#accessibility-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#accessibility-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#accessibility-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#accessibility-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#accessibility-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#accessibility-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#accessibility-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#accessibility-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#accessibility-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#accessibility-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#accessibility-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#accessibility-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#accessibility-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#accessibility-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#accessibility-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +410,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi expediția și-a deschis porțile pentru fiecare membru posibil al
+              echipajului, indiferent de modul în care interacționează cu comenzile navei.
+              Accesibilitatea web este disciplina construirii interfețelor pe care orice
+              pilot le poate opera, fie că navighează prin văz, auz, atingere sau tehnologie
+              asistivă. Am cartografiat principiile fundamentale cunoscute sub numele de
+              POUR: perceptibil, operabil, inteligibil și robust. De acum înainte, fiecare
+              sistem construit trebuie să treacă prin aceste patru ecluze înainte de a
+              ajunge la echipaj.
             </p>
           </div>
 
@@ -456,7 +429,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day00') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day00"
@@ -482,7 +456,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Placarea corpului unei interfețe accesibile este HTML-ul semantic, elemente
+              alese pentru sensul lor, nu pentru aspect. Folosirea unui <button> în locul
+              unui <div> stilizat, sau a unui <nav> în locul unui container generic, spune
+              tehnologiei asistive exact ce face fiecare modul, fără instrumentație
+              suplimentară. Cititoarele de ecran și alte unelte analizează această structură
+              pentru a construi o hartă navigabilă a paginii, la fel cum computerul navei
+              construiește un plan al punților. Ignorarea semanticii obligă fiecare membru
+              al echipajului să memoreze comenzi personalizate în loc să se bazeze pe
+              semnalizarea universală.
             </p>
           </div>
 
@@ -494,7 +476,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day01') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day01"
@@ -515,7 +498,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Când marcajele native HTML nu mai ajung, desfășurăm ARIA, setul de
+              instrumente Accessible Rich Internet Applications, ca balize de semnal
+              auxiliare pentru tehnologia asistivă. Atribute precum role, aria-label și
+              aria-expanded descriu componente personalizate care nu au un echivalent
+              semantic nativ, cum ar fi o hartă de sector pliabilă sau o consolă dropdown
+              personalizată. Prima regulă a ARIA este să folosești cât mai puțin din ea
+              posibil: elementele native sunt mereu preferate, întrucât ARIA schimbă doar
+              modul în care ceva este anunțat, nu și modul în care se comportă. ARIA
+              aplicată greșit poate bruia complet semnalul, făcând un control să mintă chiar
+              echipajul pe care ar trebui să-l ajute.
             </p>
           </div>
 
@@ -527,7 +519,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day02') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day02"
@@ -548,7 +541,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Nu orice membru al echipajului poate opera un dispozitiv de tip mouse, așa că
+              fiecare control de la bordul navei trebuie să răspundă și doar la tastatură.
+              Tab, Shift+Tab, Enter și Space trebuie să mute focalizarea și să declanșeze
+              acțiuni într-o ordine logică și previzibilă, care reflectă structura vizuală a
+              consolei. Widget-urile personalizate, precum caruselul nostru de sectoare sau
+              paleta de comenzi, au nevoie de handlere de taste explicite, deoarece nu
+              moștenesc acest comportament în mod gratuit. Un membru al echipajului fără
+              acces la mouse trebuie să poată ajunge la fel de bine la orice ecluză, trapă
+              sau panou de control de la bord.
             </p>
           </div>
 
@@ -560,7 +561,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day03') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day03"
@@ -581,7 +583,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Focalizarea este singurul indicator luminos care arată unui navigator ce
+              folosește doar tastatura unde se află în acest moment pe navă. Când deschidem
+              un dialog modal sau un panou lateral, focalizarea trebuie mutată deliberat în
+              acel context nou și captivă acolo până la închidere, pentru ca pilotul să nu
+              rătăcească pe puntea din fundal. Închiderea acelui dialog trebuie să readucă
+              focalizarea la elementul care l-a deschis, păstrând locul pilotului în
+              secvența misiunii. O gestionare defectuoasă a focalizării seamănă cu o
+              defecțiune de teleportare: membrul echipajului dispare din vedere și reapare
+              undeva unde nu a intenționat niciodată să ajungă.
             </p>
           </div>
 
@@ -593,7 +603,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day04') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day04"
@@ -614,7 +625,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Culoarea singură este un semnal fragil pe o navă unde mulți membri ai
+              echipajului percep spectrul vizibil diferit sau deloc. WCAG stabilește
+              rapoarte minime de contrast, 4.5:1 pentru text normal și 3:1 pentru text mare
+              și componente de interfață, pentru a garanta că citirile critice rămân
+              lizibile în orice condiție vizuală. Nu codificăm niciodată sensul doar prin
+              culoare; o lumină roșie de eroare este însoțită de o iconiță și de text,
+              astfel încât un inginer daltonist citește aceeași alertă ca oricine altcineva.
+              Verificatoarele de contrast au devenit un instrument permanent pe consola de
+              azi, rulate pentru fiecare etichetă înainte de lansare.
             </p>
           </div>
 
@@ -626,7 +645,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day05') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day05"
@@ -647,7 +667,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi ne-am conectat direct la un cititor de ecran, tehnologia asistivă care
+              transformă interfața noastră în vorbire sintetizată sau ieșire braille pentru
+              membrii echipajului care navighează fără văz. Acesta citește DOM-ul în ordinea
+              documentului, anunțând repere, titluri și etichete de formular, astfel încât o
+              pagină bine structurată devine o hartă audio navigabilă a navei. Testarea cu
+              un cititor de ecran real, nu doar imaginat, a scos la iveală butoane mute,
+              iconițe fără etichetă și imagini care rosteau zgomot pur în loc de sens.
+              Fiecare element care transmite informație vizual trebuie să transmită aceeași
+              informație și prin acest canal audio.
             </p>
           </div>
 
@@ -659,7 +687,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day06') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day06"
@@ -680,7 +709,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am întrerupt călătoria pentru a recalibra tot ce am învățat în acest ciclu:
+              semantica, ARIA, operabilitatea prin tastatură, focalizarea, contrastul și
+              ieșirea cititorului de ecran, toate funcționând ca un singur sistem coordonat
+              de susținere a vieții. Niciunul dintre aceste sisteme nu funcționează izolat;
+              un buton perfect etichetat este inutil dacă nu poate primi niciodată
+              focalizare de la tastatură. Exercițiile de verificare au confirmat că
+              accesibilitatea nu este o singură funcție adăugată la final, ci o cerință de
+              bază care traversează fiecare subsistem construit. Cu integrarea încheiată,
+              echipajul este pregătit să construiască modele de interacțiune mai complexe.
             </p>
           </div>
 
@@ -692,7 +729,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day07') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day07"
@@ -718,7 +756,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Formularele sunt panourile principale de control prin care membrii
+              echipajului transmit comenzi înapoi către navă, așa că fiecare câmp are nevoie
+              de un <label> asociat corect din punct de vedere programatic, nu doar de text
+              alăturat care doar arată ca unul. Etichetele programatice permit tehnologiei
+              asistive să anunțe exact ce așteaptă fiecare câmp, în timp ce gruparea
+              controalelor înrudite cu <fieldset> și <legend> clarifică citiri complexe
+              precum introducerea coordonatelor. Câmpurile obligatorii și formatele de
+              intrare trebuie comunicate prin text, nu doar prin culoare, înainte ca membrul
+              echipajului să trimită transmisia. Un formular care are sens doar vizual va
+              bloca orice pilot care folosește un cititor de ecran.
             </p>
           </div>
 
@@ -730,7 +777,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day08') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day08"
@@ -751,7 +799,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Când o transmisie eșuează la validare, mesajul de eroare trebuie legat
+              programatic de câmpul respectiv folosind aria-describedby și anunțat imediat,
+              pentru ca niciun membru al echipajului să nu rămână ghicind ce a mers greșit.
+              Erorile vagi precum „intrare invalidă” sunt static de navigație; erorile utile
+              spun exact ce a fost greșit și cum se corectează cursul, precum „formatul
+              datei stelare trebuie să fie AAAA-LL-ZZ”. Erorile ar trebui rezumate și în
+              partea de sus a formularului pentru membrii echipajului care folosesc
+              cititoare de ecran, care nu se pot baza pe scanarea evidențierilor roșii
+              pentru a găsi toate punctele de eșec deodată. Recuperarea grațioasă din eșec
+              face parte din designul accesibil la fel de mult ca prevenirea lui.
             </p>
           </div>
 
@@ -763,7 +820,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day09') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day09"
@@ -784,7 +842,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fiecare jurnal de navă începe cu aceeași matrice de navigare recurentă, iar
+              un pilot care folosește doar tastatura ar trebui să treacă prin ea cu Tab pe
+              fiecare pagină, fără nicio ieșire de urgență. Un link de salt, ascuns până
+              primește focalizare, permite acelui membru al echipajului să sară direct la
+              conținutul principal, ocolind controalele repetitive dintr-o singură apăsare
+              de tastă. Noi l-am ancorat ca fiind chiar primul element focalizabil din
+              document, vizibil doar când primește focalizare prin Tab, astfel încât
+              utilizatorii de mouse cu văz normal nici nu-i observă existența. Această mică
+              baliză economisește un timp de tranzit enorm de-a lungul unui jurnal de
+              misiune lung.
             </p>
           </div>
 
@@ -796,7 +863,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day10') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day10"
@@ -817,7 +885,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Titlurile formează planul punților unei pagini, iar membrii echipajului care
+              folosesc cititoare de ecran navighează adesea sărind de la un titlu la altul,
+              în loc să citească liniar prin corpul navei. O structură logică, un singur h1
+              pe pagină, h2 și h3 imbricate fără a sări niveluri de dragul stilului, permite
+              acelei navigări să dezvăluie un contur precis al conținutului. Alegerea unui
+              titlu pentru mărimea sa vizuală, nu pentru nivelul său semantic, rupe complet
+              această hartă, lăsând membrul echipajului fără o modalitate fiabilă de a sonda
+              sectorul. Am auditat astăzi fiecare pagină și am reparat lanțurile de titluri
+              rupte, găsite plutind în afara ordinii.
             </p>
           </div>
 
@@ -829,7 +905,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day11') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day11"
@@ -850,7 +927,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fiecare imagine transmisă din arhiva navei are nevoie de text alternativ care
+              să-i descrie conținutul sau funcția pentru membrii echipajului care nu o pot
+              vedea direct. Imaginile cu sens primesc o descriere concisă și specifică, nu
+              un leneș „image123.png” lăsat de sistemul de fișiere, în timp ce imaginile pur
+              decorative primesc un atribut alt gol, astfel încât cititoarele de ecran le
+              sar complet și nu irosesc atenția echipajului. Diagramele complexe, precum o
+              hartă stelară, pot avea nevoie de o descriere mai lungă, legată alăturat, mai
+              degrabă decât înghesuită chiar în atributul alt. A face asta corect înseamnă
+              că fiecare semnal vizual de la bord are o transmisie verbală echivalentă.
             </p>
           </div>
 
@@ -862,7 +947,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day12') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day12"
@@ -883,7 +969,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Butoanele doar cu iconițe arată elegant pe consolă, dar sunt mute pentru
+              tehnologia asistivă dacă nu poartă un nume accesibil, de obicei prin
+              aria-label sau text ascuns vizual. O iconiță de coș de gunoi fără etichetă se
+              anunță doar ca „buton” pentru un cititor de ecran, forțând membrul echipajului
+              să-i ghicească funcția prin încercare și eroare. Fonturile de iconițe și
+              SVG-urile inline au nevoie de tratament special, aria-hidden pentru glifele
+              decorative și titluri explicite pentru cele cu sens, astfel încât traseele
+              vectoriale de dedesubt să nu fie citite cu voce tare drept bălmăjeală. Am
+              tratat astăzi fiecare iconiță drept o componentă cu o semnătură atât vizuală,
+              cât și verbală.
             </p>
           </div>
 
@@ -895,7 +990,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day13') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day13"
@@ -916,7 +1012,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuirea acestui ciclu a confirmat tiparele accesibile fundamentale:
+              formulare etichetate, recuperare clară din erori, linkuri de salt, structură
+              solidă de titluri, text alt cu sens și iconițe numite corect. Fiecare tipar îl
+              întărește pe celălalt, un formular perfect etichetat este subminat de o
+              structură de titluri ruptă în jurul lui, iar un contur de titluri perfect
+              înseamnă puțin dacă formularul din interior este inutilizabil. Echipajul a
+              demonstrat că aceste fundații rezistă la inspecție din partea mai multor
+              tehnologii asistive, nu doar a unui singur cititor de ecran de referință. Acum
+              avansăm către provocările de interacțiune mai dinamice ce așteaptă în sectorul
+              următor.
             </p>
           </div>
 
@@ -928,7 +1033,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day14') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day14"
@@ -954,7 +1060,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un indicator de focalizare este conturul vizibil care arată unui navigator
+              prin tastatură exact unde se află pe consolă în orice moment, iar eliminarea
+              lui cu outline: none, fără un înlocuitor adecvat, lasă acel pilot să zboare
+              orb. WCAG 2.2 a ridicat ștacheta cu criteriul de aspect al focalizării, cerând
+              ca indicatorii să fie suficient de mari și contrastați pentru a fi văzuți pe
+              orice fundal de la bord. Stilurile personalizate de focalizare trebuie să
+              rămână vizibile în fiecare stare interactivă, butoane, linkuri și câmpuri de
+              formular deopotrivă, nu doar în cele pe care echipa de design și-a amintit să
+              le testeze. Am restaurat astăzi fiecare contur eliminat și l-am înlocuit cu
+              indicatori care supraviețuiesc contactului cu echipajul real.
             </p>
           </div>
 
@@ -966,7 +1081,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day15') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day15"
@@ -987,7 +1103,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Pe consolele cu ecran tactil, degetul unui membru al echipajului este un
+              instrument mult mai puțin precis decât un cursor de mouse, așa că fiecare
+              control atingibil are nevoie de o dimensiune minimă a țintei, WCAG recomandă
+              cel puțin 24 pe 24 de pixeli CSS, cu spațiere adecvată între ținte. Butoanele
+              înghesuite și minuscule provoacă atingeri greșite care pot declanșa complet
+              comanda greșită, un pericol serios atunci când un control operează ceva la fel
+              de important precum eliberarea unei trape. Munca de azi a distanțat
+              controalele noastre de navigare și a mărit invizibil zonele de atingere
+              folosind padding, fără a perturba densitatea vizuală dorită de designeri. O
+              navă construită pentru atingere trebuie să ierte un deget imprecis, nu să-l
+              pedepsească.
             </p>
           </div>
 
@@ -999,7 +1125,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day16') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day16"
@@ -1020,7 +1147,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Tranzițiile animate pot comunica elegant schimbări de stare, dar pentru
+              membrii echipajului cu tulburări vestibulare, mișcarea excesivă poate declanșa
+              dezorientare fizică reală, greață sau mai rău. Am legat fiecare animație
+              neesențială de media query-ul prefers-reduced-motion, astfel încât membrii
+              echipajului care au semnalat o preferință pentru interfețe calme primesc o
+              versiune redusă sau instantanee a aceleiași tranziții. Caruselele cu redare
+              automată și efectele de paralaxă parazitare au fost reevaluate pentru
+              necesitate, întrucât o mișcare care nu servește niciun scop funcțional este o
+              mișcare care ar trebui să fie opțională. Respectarea acestei preferințe costă
+              puțin efort de inginerie, dar protejează membri reali ai echipajului de
+              vătămări reale.
             </p>
           </div>
 
@@ -1032,7 +1169,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day17') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day17"
@@ -1053,7 +1191,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Jurnalele video transmise din misiuni la distanță au nevoie de subtitrări
+              pentru membrii echipajului surzi sau cu deficiențe de auz, iar acele
+              subtitrări trebuie să fie text sincronizat, nu un adaos ulterior lansării.
+              Transmisiile doar audio au nevoie de o transcriere text pentru ca aceeași
+              informație să ajungă la membrii echipajului care nu pot auzi, iar orice
+              videoclip cu conținut vizual important, precum o secvență de diagrame mute,
+              are nevoie și de descriere audio. Media cu redare automată și sunet
+              dezorientează utilizatorii de cititoare de ecran, a căror propria ieșire audio
+              este acoperită de o transmisie nesolicitată, așa că am setat implicit toate
+              materialele media în stare pauzată, inițiată de utilizator. Multimedia cere
+              canale multiple, nu unul singur îmbrăcat să pară complet.
             </p>
           </div>
 
@@ -1065,7 +1213,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day18') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day18"
@@ -1086,7 +1235,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Nu orice document pe care îl arhivăm trăiește în HTML; rapoartele de misiune
+              și manualele tehnice ajung adesea sigilate în format PDF, iar un PDF
+              inaccesibil este o ecluză sigilată fără control manual de rezervă. Un PDF
+              etichetat („tagged”) poartă aceeași structură semantică precum un HTML
+              accesibil, titluri, ordine de citire și text alt pentru imagini, încorporate
+              direct în arborele intern de etichete al documentului. PDF-urile scanate,
+              neetichetate, sunt mai rele decât inutile pentru un cititor de ecran, apărând
+              ca o singură imagine plată, fără niciun text extractibil. Am trecut arhiva de
+              azi printr-un proces de etichetare și am validat ordinea de citire față de
+              aspectul vizual înainte de a o depune în registrele navei.
             </p>
           </div>
 
@@ -1098,7 +1256,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day19') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day19"
@@ -1119,7 +1278,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Accesibilitatea cognitivă protejează membrii echipajului cu diferențe de
+              memorie, atenție sau procesare, cerând limbaj clar, aspecte previzibile și
+              tipare de interacțiune îngăduitoare pe fiecare consolă. Instrucțiunile simple
+              și directe întrec jargonul ingenios; navigarea consecventă, care nu se
+              reorganizează de la o pagină la alta, permite echipajului să construiască
+              modele mentale fiabile ale navei. Termenele generoase, sau posibilitatea de a
+              le extinde, previn blocarea unui membru al echipajului care citește mai lent
+              la mijlocul unei transmisii, iar opțiunile de anulare transformă greșelile
+              ireversibile în unele recuperabile. Proiectarea pentru încărcarea cognitivă
+              beneficiază fiecare membru al echipajului care navighează sub stresul unei
+              misiuni lungi, nu doar pe cei care au nevoie de ea structural.
             </p>
           </div>
 
@@ -1131,7 +1300,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day20') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day20"
@@ -1152,7 +1322,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Inspecția de azi a trecut prin indicatorii de focalizare, țintele tactile,
+              preferințele de mișcare, alternativele media, etichetarea documentelor și
+              încărcarea cognitivă, confirmând că funcționează împreună ca un singur strat
+              de interacțiune, nu ca reparații izolate. Un membru al echipajului cu vedere
+              slabă, deficiență motorie și preferință pentru mișcare redusă s-ar putea baza
+              simultan pe toate aceste sisteme într-o singură sesiune, așa că niciunul nu
+              putea fi tratat ca opțional. Exercițiile au scos la iveală câteva lacune
+              rămase privind mesajele de expirare a termenului, acum înregistrate pentru
+              reparație. Accesibilitatea interacțiunii este suficient de completă pentru a
+              susține misiuni reale, deși rafinarea nu se termină niciodată cu adevărat.
             </p>
           </div>
 
@@ -1164,7 +1343,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day21') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day21"
@@ -1190,7 +1370,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Uneltele automate de testare a accesibilității, precum axe sau Lighthouse,
+              scanează interfața compilată și prind aproximativ o treime din toate
+              încălcările posibile: text alt lipsă, contrast insuficient, ARIA malformată și
+              etichete de formular absente. Am legat aceste scanere direct în pipeline-ul de
+              build, astfel încât o încălcare oprește secvența de lansare înainte să ajungă
+              vreodată în producție, prinzând regresiile chiar în momentul în care sunt
+              introduse. Aceste unelte sunt o primă linie rapidă de apărare, nu un audit
+              complet, întrucât nu pot judeca dacă o descriere alt are cu adevărat sens sau
+              dacă o ordine de tabulare este cu adevărat logică. Automatizarea prinde
+              eșecurile mecanice; nu poate prinde eșecurile de experiență.
             </p>
           </div>
 
@@ -1202,7 +1391,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day22') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day22"
@@ -1223,7 +1413,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Scanerele automate nu-ți pot spune dacă navigarea navei doar prin tastatură
+              chiar se simte coerentă, așa că misiunea de azi a cerut testare manuală:
+              deconectarea mouse-ului și parcurgerea fiecărui flux critic folosind doar Tab,
+              Enter și tastele săgeată. Am rulat de asemenea un pas complet cu un cititor de
+              ecran real, ascultând cum sună cu adevărat interfața, nu cum arată, ceea ce a
+              scos la iveală mai multe anunțuri confuze pe care scanarea automată le-a ratat
+              complet. Testarea manuală prinde deciziile de judecată pe care automatizarea
+              nu le poate prinde: este această ordine de focalizare logică, este această
+              etichetă cu adevărat descriptivă, chiar ajută acest mesaj de eroare. Ambele
+              metode de testare sunt instrumente necesare; niciuna nu o înlocuiește pe
+              cealaltă.
             </p>
           </div>
 
@@ -1235,7 +1435,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day23') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day23"
@@ -1256,7 +1457,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un audit complet de accesibilitate combină scanarea automată, testarea
+              manuală cu tastatura și cititorul de ecran, și o trecere structurată prin
+              criteriile de succes WCAG, producând un raport prioritizat al fiecărei
+              încălcări găsite la bord. Constatările sunt de obicei clasate după severitate,
+              o capcană de tastatură care blochează complet echipajul depășește ca
+              prioritate un raport de contrast ușor scăzut pe o etichetă decorativă, astfel
+              încât efortul de remediere merge acolo unde contează cel mai mult. Auditurile
+              externe, realizate chiar de utilizatori cu dizabilități, scot la iveală
+              probleme pe care echipele interne, orbite de propriile presupuneri, le ratează
+              constant. Am înregistrat astăzi constatările auditului în registrul misiunii
+              și am atribuit fiecăreia un responsabil și un termen.
             </p>
           </div>
 
@@ -1268,7 +1479,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day24') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day24"
@@ -1289,7 +1501,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ghidurile de Accesibilitate a Conținutului Web sunt carta oficială a navei,
+              organizate în jurul celor patru principii POUR și punctate pe trei niveluri de
+              conformitate: A, AA și AAA. Majoritatea organizațiilor țintesc conformitatea
+              AA ca standard practic, întrucât AAA include criterii prea stricte sau prea
+              dependente de context pentru ca multe interfețe reale să le satisfacă
+              universal. Conformitatea nu este un singur certificat câștigat o dată; este o
+              stare continuă care trebuie reverificată de fiecare dată când interfața se
+              schimbă, întrucât o singură componentă nouă poate redeschide în tăcere o veche
+              încălcare. Am mapat astăzi interfața față de criteriile de succes AA și am
+              confirmat ce elemente mai au nevoie de remediere înainte de plecare.
             </p>
           </div>
 
@@ -1301,7 +1522,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day25') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day25"
@@ -1322,7 +1544,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Designul incluziv mută misiunea în amonte de reparațiile de accesibilitate,
+              construind pentru întreaga gamă a diversității umane încă din prima schiță, nu
+              adăugând conformitate ulterior lansării. Efectul „curb-cut” descrie bine acest
+              lucru: rampele construite pentru utilizatorii de scaun cu rotile ajung să
+              ajute membri ai echipajului cu bagaje, cărucioare sau răniri temporare,
+              beneficiile se propagă dincolo de nevoia inițială. Proiectarea împreună cu
+              membrii echipajului cu dizabilități, nu doar pentru ei, scoate la iveală
+              cerințe la care niciun designer fără dizabilități nu s-ar gândi vreodată să le
+              specifice. Revizuirea de design de azi nu a întrebat „trece asta de un audit”,
+              ci „pe cine ar putea exclude asta”, o întrebare fundamental diferită și mai
+              generativă.
             </p>
           </div>
 
@@ -1334,7 +1566,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day26') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day26"
@@ -1355,7 +1588,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Accesibilitatea care supraviețuiește doar în capul unui singur specialist se
+              evaporă în clipa în care acesta părăsește nava, așa că munca de azi s-a
+              concentrat pe cultură: liste de verificare comune, biblioteci de componente
+              accesibile și documentație de sistem de design care face din alegerea
+              accesibilă alegerea implicită. Instruirea fiecărui membru al echipajului,
+              designeri, ingineri și autori de conținut deopotrivă, distribuie
+              responsabilitatea în loc s-o concentreze într-un singur revizor
+              suprasolicitat. Sprijinul conducerii contează enorm aici; munca de
+              accesibilitate este dezpriorizată în clipa în care termenele se strâng, dacă
+              nu este protejată ca cerință nenegociabilă de sus. O navă cu o cultură reală a
+              accesibilității nu are nevoie de un erou care s-o mențină în funcțiune.
             </p>
           </div>
 
@@ -1367,7 +1610,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day27') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day27"
@@ -1388,7 +1632,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Acest ciclu final de revizuire a urmărit întregul arc, de la semantica
+              fundamentală, prin pipeline-uri automate, audituri, conformitate formală WCAG,
+              până la sistemele culturale care susțin totul după încheierea misiunii.
+              Fiecare strat, tehnic, procedural și cultural, depinde de cele de dedesubt; o
+              cultură sănătoasă a accesibilității nu valorează nimic fără ingineri care
+              știu, în primul rând, să construiască HTML semantic. Echipajul a demonstrat
+              fluență pe tot spectrul, de la scrierea corectă a unui singur aria-label până
+              la susținerea unui buget de accesibilitate într-o revizuire de conducere.
+              Inițiativa interfeței incluzive lansată acum douăzeci și nouă de cicluri este
+              acum un subsistem permanent, auto-sustenabil, al navei.
             </p>
           </div>
 
@@ -1400,7 +1653,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('accessibility-note-day28') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="accessibility-note-day28"
@@ -1464,7 +1718,8 @@
         <li>
           <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->
+
           <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
           <a href="../../ro/frontend/css-log.html" class="">RO</a>
@@ -1498,7 +1753,8 @@
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->
+
       </p>
 
       <!-- @structure:
@@ -1560,4 +1816,4 @@
 
 <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+    -->

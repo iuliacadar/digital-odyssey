@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>UX Foundations Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#ux-foundations-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#ux-foundations-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#ux-foundations-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#ux-foundations-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#ux-foundations-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#ux-foundations-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#ux-foundations-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#ux-foundations-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#ux-foundations-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#ux-foundations-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#ux-foundations-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#ux-foundations-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#ux-foundations-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#ux-foundations-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#ux-foundations-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#ux-foundations-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#ux-foundations-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#ux-foundations-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#ux-foundations-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#ux-foundations-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#ux-foundations-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#ux-foundations-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#ux-foundations-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#ux-foundations-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#ux-foundations-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#ux-foundations-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#ux-foundations-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#ux-foundations-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#ux-foundations-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#ux-foundations-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today the log opens a new instrument: the user compass, a tool for orienting
+              every design decision around the human being on the other side of the screen.
+              Before sketching a single interface, the crew must internalize that user
+              experience design is not decoration layered on top of a working product but a
+              discipline that shapes whether the product works at all. This orientation day
+              surveys the full arc ahead — research, design, testing, and delivery — as
+              stages of one continuous voyage toward products people can actually navigate.
+              Empathy, today's lesson insists, is the fuel that powers every instrument that
+              follows.
             </p>
           </div>
 
@@ -484,7 +433,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              User research is the sensor array that prevents the crew from designing in a
+              vacuum, gathering real data about who the users are, what they need, and where
+              current systems fail them. Today covers core methods: interviews for depth,
+              surveys for breadth, and contextual inquiry for observing behavior in its
+              natural habitat rather than relying on what users merely say they do. The goal
+              is not to confirm existing assumptions but to actively hunt for disconfirming
+              evidence, since the most valuable research findings are the ones that surprise
+              the team. Today's exercise conducts a short interview and extracts actionable
+              insights from the raw transcript.
             </p>
           </div>
 
@@ -517,7 +474,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A persona condenses research findings into a fictional but evidence-based
+              representative of a real user segment, giving the crew a concrete face to
+              design for instead of an abstract statistic. Effective personas capture goals,
+              frustrations, and behavioral patterns grounded in actual research data, not
+              guesses or stereotypes dressed up with a stock photo. Today's lesson warns
+              against the common failure mode of building personas from assumption rather
+              than evidence, since a fictional user built on fiction leads design decisions
+              astray. The exercise today synthesizes interview notes from the previous
+              session into a working persona document.
             </p>
           </div>
 
@@ -550,7 +515,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A user journey maps the full arc of a person's interaction with a product
+              over time, from first awareness through onboarding, regular use, and eventual
+              advocacy or abandonment. Each stage records the user's actions, thoughts,
+              emotions, and pain points, revealing moments of friction that might be
+              invisible when looking at any single screen in isolation. Journey mapping
+              shifts the team's focus from individual features to the end-to-end experience,
+              often surfacing gaps between departments or systems that no one owns. Today's
+              exercise maps a journey for a chosen scenario, marking emotional highs and
+              lows along the timeline.
             </p>
           </div>
 
@@ -583,7 +556,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Information architecture is the structural framework beneath every interface
+              — the sitemap, the navigation hierarchy, the labeling system that determines
+              whether users can find what they need or drift lost through the station's
+              corridors. Card sorting, where users group and label content themselves,
+              reveals the mental models people actually hold, which frequently differ from
+              how the organization internally categorizes its own content. Today's lesson
+              covers both open and closed card sorting techniques and how to translate the
+              resulting clusters into a coherent navigation structure. Good information
+              architecture is invisible when it works and catastrophic when it doesn't.
             </p>
           </div>
 
@@ -616,7 +597,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Content strategy governs what words and messages actually populate the
+              interface, treating content as a designed material rather than an afterthought
+              dropped in after the layout is finished. Today's lesson covers voice and tone
+              guidelines, content audits that inventory and evaluate existing material, and
+              the discipline of writing for scanning rather than deep reading, since most
+              users skim rather than read every word. Microcopy — button labels, error
+              messages, empty states — receives special attention today, since these small
+              fragments of text carry disproportionate weight in how trustworthy and usable
+              a product feels.
             </p>
           </div>
 
@@ -649,7 +638,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Wireframing strips away color, imagery, and polish to focus entirely on
+              structure, layout, and information hierarchy — the skeletal blueprint before
+              any visual skin is applied. Low-fidelity wireframes, often sketched by hand or
+              in simple boxes, let the team iterate on layout ideas quickly and cheaply
+              before investing in detailed visuals that are expensive to change. Today's
+              lesson distinguishes wireframes from mockups and prototypes, clarifying that
+              each fidelity level serves a different purpose in the design process. The
+              exercise today produces wireframes for three key screens based on the journey
+              map from earlier sessions.
             </p>
           </div>
 
@@ -682,7 +679,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day consolidates the research phase: interviews and surveys that
+              gathered raw data, personas that gave that data a human face, journey maps
+              that traced the full experience arc, information architecture that organized
+              the content space, content strategy that shaped the words, and wireframes that
+              structured the layout. Cadets present a mini research-to-wireframe pipeline
+              for a chosen product, defending each design decision by tracing it back to a
+              specific research finding. This checkpoint confirms the crew is grounding
+              design in evidence before the log moves into visual design.
             </p>
           </div>
 
@@ -720,7 +724,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Visual design translates the structural skeleton of wireframes into a fully
+              realized interface, applying color, imagery, iconography, and visual hierarchy
+              to guide the eye and communicate meaning at a glance. Today's lesson covers
+              Gestalt principles — proximity, similarity, closure — that explain how humans
+              perceive grouped elements even when no explicit boundary is drawn. Visual
+              hierarchy techniques like size, contrast, and whitespace direct attention
+              deliberately, ensuring the most important actions and information are the ones
+              users notice first. Today's exercise applies a visual design pass to one of
+              the wireframes produced earlier.
             </p>
           </div>
 
@@ -753,7 +765,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Typography is a silent instrument that shapes readability, tone, and trust
+              long before a user consciously registers a single letterform. Today's lesson
+              covers typeface classification, the difference between serif and sans-serif in
+              both legibility and personality, and the critical role of line height, letter
+              spacing, and line length in keeping long passages of text comfortable to read.
+              A type scale — a defined set of font sizes used consistently across an
+              interface — prevents the visual chaos of ad-hoc sizing decisions made screen
+              by screen. Today's exercise builds a small type scale and applies it across a
+              sample interface.
             </p>
           </div>
 
@@ -786,7 +806,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Color theory in interface design goes beyond aesthetic preference into
+              functional territory: color communicates state, hierarchy, and emotion, and
+              must be chosen with accessibility and cultural context in mind. Today's lesson
+              covers color harmony models, the difference between hue, saturation, and
+              lightness, and how sufficient contrast ratios keep text legible for users with
+              low vision. Color should never be the sole carrier of critical information,
+              since users who are colorblind or using grayscale displays must be able to
+              understand the interface through other cues as well. Today's exercise audits
+              an existing interface's color palette for both harmony and accessibility
+              compliance.
             </p>
           </div>
 
@@ -819,7 +848,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Layout and grid systems impose an invisible structure that keeps interfaces
+              aligned, consistent, and scannable across different screen sizes. Today's
+              lesson covers column-based grid systems, the use of consistent spacing units
+              to create rhythm, and responsive breakpoints that reflow the grid as viewport
+              width changes across devices. Alignment, more than any single visual flourish,
+              is what separates a design that reads as professional from one that reads as
+              amateur, since misaligned elements create subconscious friction even when
+              users can't articulate why something feels off. Today's exercise rebuilds a
+              chaotic layout using a defined grid system.
             </p>
           </div>
 
@@ -852,7 +889,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A design system is the shared instrument panel that keeps an entire crew
+              building consistent interfaces at scale: a documented library of reusable
+              components, patterns, and guidelines that every designer and developer draws
+              from rather than reinventing each screen from scratch. Today's lesson covers
+              the anatomy of a design system — foundational styles like color and type,
+              component libraries like buttons and form fields, and usage guidelines that
+              explain when and how to apply each piece. A well-maintained design system
+              dramatically accelerates both design and development while ensuring the
+              product feels like one coherent vessel rather than a patchwork of mismatched
+              parts.
             </p>
           </div>
 
@@ -885,7 +931,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Prototyping brings static screens to life, simulating the interactions,
+              transitions, and flows a user would actually experience, long before a single
+              line of production code is written. Today's lesson distinguishes low-fidelity
+              click-through prototypes, useful for testing flow and structure early, from
+              high-fidelity interactive prototypes that closely mimic the final product's
+              look and feel. Prototyping tools let designers link screens together, define
+              transition animations, and simulate conditional logic, creating a testable
+              artifact that reveals usability problems long before development resources are
+              committed. Today's exercise builds a clickable prototype from the wireframes
+              and visual designs completed in earlier sessions.
             </p>
           </div>
 
@@ -918,7 +973,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day consolidates the design phase: visual design principles that gave
+              the interface polish and hierarchy, typography and color choices that shaped
+              readability and tone, layout and grid systems that kept everything aligned,
+              design systems that scaled consistency across the whole product, and
+              prototypes that brought it all to interactive life. Cadets present a prototype
+              built from the research and structure established earlier in the sector,
+              defending every visual decision as a deliberate choice rather than an
+              aesthetic guess. This checkpoint marks the transition from designing to
+              testing whether the design actually works.
             </p>
           </div>
 
@@ -956,7 +1019,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Usability testing puts a prototype in front of real users and observes,
+              without leading or explaining, whether they can complete realistic tasks
+              without confusion or frustration. Today's lesson covers moderated versus
+              unmoderated testing formats, the importance of the think-aloud protocol where
+              participants narrate their thoughts as they navigate, and the discipline of
+              never rescuing a struggling participant mid-task, since the friction itself is
+              the data. A handful of testing sessions, typically five to eight participants,
+              reveals the majority of usability problems in an interface, making usability
+              testing one of the highest-return activities in the entire design process.
+              Today's exercise runs a moderated usability test on the prototype from the
+              previous session.
             </p>
           </div>
 
@@ -989,7 +1062,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A/B testing runs two variants of a design against live traffic, measuring
+              which version performs better against a specific, pre-defined metric rather
+              than relying on opinion or intuition. Today's lesson covers formulating a
+              clear hypothesis before testing, choosing a single variable to change per test
+              to isolate its effect, and calculating statistical significance to ensure
+              observed differences aren't simply the result of random noise. A/B testing
+              complements usability testing rather than replacing it: usability testing
+              reveals why users struggle, while A/B testing reveals which of two working
+              solutions performs measurably better at scale.
             </p>
           </div>
 
@@ -1022,7 +1103,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Analytics turn a live product into a continuous telemetry feed, tracking how
+              real users actually behave rather than how they behave in a controlled testing
+              session. Today's lesson covers key metrics like conversion rate, bounce rate,
+              time on task, and funnel analysis, which traces where users drop off during a
+              multi-step process like checkout or signup. Quantitative analytics answer what
+              is happening at scale, but rarely explain why, which is where qualitative
+              methods like usability testing and user interviews remain essential
+              complements. Today's exercise interprets a sample analytics dashboard and
+              identifies the funnel stage with the highest drop-off for further
+              investigation.
             </p>
           </div>
 
@@ -1055,7 +1145,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Heuristic evaluation has experienced evaluators inspect an interface against
+              a checklist of established usability principles, such as Nielsen's ten
+              heuristics covering visibility of system status, error prevention, and
+              consistency. Unlike usability testing, heuristic evaluation requires no real
+              users, making it a fast, low-cost way to catch obvious problems early before
+              investing in a full testing round. Today's lesson walks through each heuristic
+              with concrete examples of violations and fixes, then applies the full
+              checklist to a real interface, cataloging and severity-rating each issue
+              found. This method works best as a complement to, not a replacement for,
+              testing with actual users.
             </p>
           </div>
 
@@ -1088,7 +1187,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Accessibility review ensures an interface can be used by people with a full
+              range of abilities, including those using screen readers, keyboard-only
+              navigation, or assistive technology of any kind. Today's lesson covers WCAG
+              guidelines, the importance of semantic markup and proper heading structure for
+              screen reader navigation, sufficient color contrast, and keyboard focus states
+              that let users navigate without a mouse. Accessibility is not a checkbox
+              exercise added at the end of a project but a design constraint considered from
+              the very first sketch, since retrofitting accessibility onto a finished
+              interface is far more expensive than designing it in from the start.
             </p>
           </div>
 
@@ -1121,7 +1228,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              User feedback channels — support tickets, app store reviews, in-app feedback
+              widgets, and direct outreach — form a continuous stream of unsolicited signal
+              that complements the structured research conducted earlier in the sector.
+              Today's lesson covers how to triage and categorize incoming feedback,
+              distinguishing frequent minor annoyances from rare but severe blocking issues,
+              and how to avoid over-indexing on the loudest voices at the expense of silent
+              majority patterns visible only in aggregate data. Feedback loops close the gap
+              between a shipped product and the evolving needs of its real user base,
+              keeping the design process alive well past launch.
             </p>
           </div>
 
@@ -1154,7 +1269,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day consolidates the testing phase: usability testing that revealed
+              friction through direct observation, A/B testing that measured performance
+              differences at scale, analytics that tracked real-world behavior continuously,
+              heuristic evaluation that caught known problem patterns quickly, accessibility
+              review that ensured the interface serves every user, and feedback channels
+              that kept the loop open after launch. Cadets synthesize findings from a
+              testing round into a prioritized list of design changes, ranking issues by
+              both severity and frequency. This checkpoint confirms the crew can validate
+              design decisions with evidence rather than assumption.
             </p>
           </div>
 
@@ -1192,7 +1315,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Design handoff is the docking maneuver where a finished design transfers from
+              the design team to the engineering team without losing fidelity or intent in
+              the transition. Today's lesson covers annotated specifications that document
+              spacing, sizing, and interaction states, exported design assets in the correct
+              formats and resolutions, and shared tools like Figma's inspect mode that let
+              developers extract exact values directly from source files. A poor handoff
+              process introduces gaps where the shipped product drifts from the intended
+              design, undoing weeks of careful research and iteration in the final mile.
             </p>
           </div>
 
@@ -1225,7 +1355,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Developer collaboration works best as a continuous conversation throughout
+              the design process rather than a single handoff event at the end. Today's
+              lesson covers involving developers early to flag technical constraints before
+              designs are finalized, establishing shared vocabulary between design and
+              engineering teams to prevent miscommunication, and running joint reviews where
+              both disciplines critique work together rather than in isolated silos.
+              Products built by tightly collaborating design and engineering crews
+              consistently ship with fewer implementation compromises than those built by
+              teams that only interact at handoff.
             </p>
           </div>
 
@@ -1258,7 +1396,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Design tokens are the smallest atomic values in a design system — color
+              codes, spacing units, font sizes — stored as named variables rather than
+              hardcoded values scattered across both design files and code. Today's lesson
+              covers how tokens create a single source of truth that keeps design tools and
+              production code synchronized, so a single change to a token propagates
+              automatically everywhere it's used, rather than requiring manual updates
+              across dozens of separate locations. Today's exercise defines a small token
+              set for color and spacing and applies it consistently across both a design
+              file and a code snippet.
             </p>
           </div>
 
@@ -1291,7 +1437,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Pattern libraries extend design systems by documenting not just individual
+              components but proven solutions to recurring interface problems, such as how
+              to structure a multi-step form or display an empty state. Today's lesson
+              covers when to reach for an established pattern versus when a problem
+              genuinely warrants a novel solution, since over-relying on patterns can stifle
+              innovation while ignoring them entirely leads to reinventing solved problems
+              badly. A well-documented pattern library captures not just the visual solution
+              but the reasoning behind it, helping future designers understand when the
+              pattern applies and when it doesn't.
             </p>
           </div>
 
@@ -1324,7 +1478,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              DesignOps is the discipline of removing friction from the design process
+              itself, treating the design team's own workflow, tooling, and collaboration
+              practices as a system worth deliberately designing. Today's lesson covers
+              common DesignOps responsibilities: maintaining design system infrastructure,
+              standardizing file organization and naming conventions across a growing team,
+              and streamlining the tools and processes that connect research, design, and
+              engineering. As design teams scale, the absence of DesignOps creates
+              increasing chaos — inconsistent files, duplicated effort, and slow handoffs —
+              that no amount of individual designer talent can fully offset.
             </p>
           </div>
 
@@ -1357,7 +1519,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              UX strategy connects design work to broader business objectives, ensuring
+              that user experience decisions serve not just individual user needs but the
+              organization's mission and measurable goals simultaneously. Today's lesson
+              covers translating business objectives into design priorities, building the
+              case for design investment using data and research rather than aesthetic
+              argument alone, and aligning design roadmaps with product and business
+              roadmaps so the disciplines move in formation rather than working at cross
+              purposes. A mature UX practice earns a seat at the strategic table by
+              consistently demonstrating measurable impact on the metrics leadership
+              actually cares about.
             </p>
           </div>
 
@@ -1390,7 +1561,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Final review of the UX sector: the crew consolidates lessons spanning the
+              entire journey from research through design, testing, and delivery, including
+              the operational disciplines of design tokens, pattern libraries, DesignOps,
+              and UX strategy that scale good design practice across a growing organization.
+              A capstone exercise asks each cadet to walk a hypothetical product from
+              initial user research through a fully specified, developer-ready handoff,
+              justifying every decision along the way with evidence gathered at each stage.
+              This transmission closes the UX foundations chapter of the voyage, and the log
+              now turns toward new systems ahead.
             </p>
           </div>
 

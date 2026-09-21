@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#performance-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#performance-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#performance-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#performance-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#performance-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#performance-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#performance-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#performance-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#performance-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#performance-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#performance-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#performance-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#performance-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#performance-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#performance-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#performance-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#performance-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#performance-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#performance-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#performance-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#performance-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#performance-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#performance-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#performance-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#performance-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#performance-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#performance-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#performance-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#performance-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#performance-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#performance-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Instrumentele de referință prind viață astăzi pentru prima dată. Înainte ca
+              orice sistem să poată fi îmbunătățit, el trebuie mai întâi măsurat, pentru că
+              optimizarea pe nevăzute e ca ajustarea propulsoarelor fără citiri ale
+              instrumentelor. Acest jurnal deschide disciplina ingineriei de performanță:
+              stabilirea unei valori de referință, definirea a ceea ce înseamnă cu adevărat
+              „rapid” pentru această misiune și formarea obiceiului de a măsura înainte și
+              după fiecare schimbare. Nimic din ce urmează nu va conta fără această fundație
+              de măsurare onestă.
             </p>
           </div>
 
@@ -482,7 +450,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Performanța nu este un singur număr, ci un set de metrici care descriu
+              împreună comportamentul sistemului în condiții reale — timpul de răspuns,
+              debitul, rata de erori și utilizarea resurselor contează diferit în funcție de
+              misiune. Stabilirea unor obiective concrete, precum un timp de răspuns la
+              percentila 95 sub 200 de milisecunde, transformă un sentiment vag de
+              încetineală într-o țintă acționabilă spre care echipajul poate naviga. Fără un
+              obiectiv definit, munca de optimizare se rătăcește, urmărind orice blocaj pare
+              interesant, nu neapărat pe cel mai important pentru utilizatori. Metricile
+              ancorează fiecare decizie ulterioară din acest sector de ceva măsurabil.
             </p>
           </div>
 
@@ -515,7 +491,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Latența este timpul necesar unei singure cereri pentru a finaliza traseul
+              dus-întors, în timp ce debitul este numărul de cereri pe care sistemul le
+              poate procesa pe unitatea de timp — două dimensiuni legate, dar distincte, ale
+              vitezei. Un sistem poate avea latență scăzută, dar debit scăzut, dacă
+              gestionează frumos o singură cerere, dar se blochează sub concurență, sau
+              debit mare cu latență proastă dacă grupează lucrul în loturi în detrimentul
+              timpului de răspuns individual. Înțelegerea dimensiunii care contează cu
+              adevărat pentru o anumită încărcătură de lucru previne optimizarea metricii
+              greșite. Majoritatea sistemelor reale necesită un compromis deliberat între
+              cele două, ajustat pentru tiparul specific de trafic pe care se așteaptă să-l
+              deservească.
             </p>
           </div>
 
@@ -548,7 +534,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Instrumentele de profilare sunt matricele de senzori care dezvăluie exact
+              unde își petrece sistemul timpul și resursele, înlocuind presupunerile cu date
+              concrete. Profilatoarele de CPU eșantionează stiva de apeluri pentru a arăta
+              care funcții consumă cel mai mult timp de execuție, în timp ce profilatoarele
+              de memorie urmăresc tiparele de alocare pentru a scoate la iveală scurgerile
+              și presiunea excesivă a colectorului de gunoi. Graficele flacără vizualizează
+              aceste date astfel încât cele mai late bare — reprezentând cele mai mari
+              consumuri de timp — sunt vizibile imediat, fără a citi numere brute.
+              Profilarea înainte de optimizare previne capcana comună de a accelera cod care
+              nu a fost niciodată de fapt blocajul.
             </p>
           </div>
 
@@ -581,7 +576,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de referință stabilește citirea de bază față de care se măsoară
+              orice schimbare viitoare, rulată în condiții controlate și repetabile astfel
+              încât rezultatele să fie comparabile în timp. Un test de referință relevant
+              izolează variabila testată, rulează suficiente iterații pentru a netezi
+              zgomotul și raportează atât latențele medii, cât și cele de coadă, nu un
+              singur număr înșelător. Fără o valoare de bază, inginerii nu pot spune dacă o
+              schimbare a ajutat, a dăunat sau nu a făcut nicio diferență măsurabilă.
+              Înregistrarea rezultatelor testelor de referință în timp transformă munca de
+              performanță într-o tendință urmăribilă, nu o serie de presupuneri disparate.
             </p>
           </div>
 
@@ -614,7 +617,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de sarcină simulează tipare de trafic realiste — și nerealiste —
+              asupra sistemului înainte ca utilizatorii reali să le genereze vreodată,
+              dezvăluind cum se comportă nava sub stres înainte de o criză reală.
+              Instrumente precum k6, JMeter sau Locust cresc numărul de utilizatori virtuali
+              concurenți și înregistrează cum se degradează latența, ratele de eroare și
+              utilizarea resurselor pe măsură ce sarcina crește. Scopul este găsirea
+              deliberată a punctului de rupere, într-un test controlat, nu descoperirea lui
+              în producție în timpul unei misiuni critice. Testarea de sarcină validează
+              totodată că mecanismele de scalare automată și comutare de rezervă chiar se
+              declanșează atunci când trebuie.
             </p>
           </div>
 
@@ -647,7 +659,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un buget de performanță stabilește limite explicite pentru metrici precum
+              greutatea paginii, timpul până la interactivitate sau timpul de răspuns al
+              API-ului, convenite înainte de a începe dezvoltarea, nu descoperite ca
+              problemă ulterior. A trata aceste limite ca pe un buget înseamnă că orice
+              adăugare, precum o nouă dependență sau o imagine mai grea, trebuie plătită
+              prin economii în altă parte, păstrând performanța o constrângere continuă, nu
+              o sarcină ocazională de curățenie. Verificările automate din linia CI pot
+              respinge un build care depășește bugetul, prinzând regresiile înainte să
+              ajungă vreodată la echipaj. Bugetele transformă performanța dintr-o aspirație
+              vagă într-o constrângere inginerească impusă.
             </p>
           </div>
 
@@ -680,7 +701,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi andochează elementele fundamentale: metricile
+              și obiectivele care definesc ce înseamnă „rapid”, latența versus debitul ca
+              cele două dimensiuni de bază, instrumentele de profilare pentru găsirea
+              blocajelor reale, testarea de referință pentru stabilirea unei baze de
+              încredere, testarea de sarcină pentru testarea la stres a sistemului și
+              bugetele de performanță pentru a ține regresiile la distanță. Împreună,
+              acestea formează panoul de instrumente pe care se bazează orice inginer de
+              performanță înainte de a atinge vreo linie de cod de optimizare. A sări direct
+              la modificări fără această fundație riscă să optimizeze cu totul lucrul
+              greșit.
             </p>
           </div>
 
@@ -718,7 +748,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Traseul critic de randare este secvența de pași pe care browserul trebuie să
+              o parcurgă înainte ca pixelii să apară pe ecran — parsarea HTML, construirea
+              DOM-ului, calcularea stilurilor și, în final, desenarea. Resursele blocante,
+              precum scripturile sincrone și foile de stil care blochează randarea, întârzie
+              acest traseu, lăsând echipajul să privească o fereastră goală mai mult decât e
+              necesar. Tehnici precum amânarea JavaScript-ului necritic, includerea inline a
+              CSS-ului critic și minimizarea adâncimii DOM-ului scurtează direct acest
+              traseu. Înțelegerea acestei secvențe este fundația fiecărei optimizări de
+              performanță frontend care urmează.
             </p>
           </div>
 
@@ -751,7 +789,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Imaginile și fonturile sunt de obicei cea mai grea încărcătură din sarcina
+              utilă a unei pagini, iar optimizarea lor aduce unele dintre cele mai mari
+              câștiguri de performanță pentru cel mai mic efort inginerie. Formate moderne
+              precum WebP și AVIF comprimă imaginile mult mai eficient decât vechile JPEG
+              sau PNG, în timp ce tehnicile de imagini responsive servesc active
+              dimensionate corespunzător pentru fiecare dispozitiv, nu un singur fișier
+              supradimensionat pentru toată lumea. Strategiile de încărcare a fonturilor
+              precum font-display: swap previn textul invizibil în timp ce fonturile
+              personalizate se descarcă, evitând un flash deranjant de conținut nestilizat.
+              Auditarea regulată a greutății activelor prinde balastul înainte să se
+              acumuleze silențios de-a lungul lansărilor.
             </p>
           </div>
 
@@ -784,7 +832,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Divizarea codului rupe un pachet JavaScript monolitic în bucăți mai mici care
+              se încarcă doar atunci când sunt cu adevărat necesare, în loc să forțeze
+              fiecare vizitator să descarce întreaga aplicație de la început. Divizarea
+              bazată pe rută încarcă codul pentru o pagină doar când echipajul navighează
+              acolo, în timp ce încărcarea leneșă amână componentele până când sunt pe cale
+              să intre în fereastra vizibilă sau să fie utilizate. Aceasta reduce dramatic
+              dimensiunea sarcinii inițiale, făcând interfața interactivă mult mai devreme.
+              Compromisul este complexitatea suplimentară în instrumentele de build și
+              nevoia de a gestiona elegant stările de încărcare cât timp bucățile sosesc.
             </p>
           </div>
 
@@ -817,7 +873,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Instrumentele de analiză a dimensiunii pachetului, precum Webpack Bundle
+              Analyzer, vizualizează exact ce dependențe ocupă cel mai mult spațiu într-un
+              pachet JavaScript compilat, transformând o dimensiune abstractă de fișier
+              într-o hartă arborescentă inspectabilă. Aceasta dezvăluie adesea surprize: o
+              singură bibliotecă utilitară nefolosită inclusă pentru o singură funcție mică,
+              sau copii duplicate ale aceleiași dependențe incluse la versiuni diferite.
+              Tree-shaking-ul și trecerea la biblioteci alternative mai ușoare sunt soluții
+              comune odată ce modulele vinovate sunt identificate. Auditurile regulate de
+              pachete previn acumularea lentă, invizibilă, de balast de la o lansare la
+              alta.
             </p>
           </div>
 
@@ -850,7 +915,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Service workers interceptează cererile de rețea și lasă aplicația să decidă
+              cum să răspundă — din cache, din rețea sau o combinație strategică a celor
+              două — permițând funcționalitate offline și vizite repetate mult mai rapide.
+              Strategiile de cache precum cache-first pentru active statice și network-first
+              pentru date care se schimbă des echilibrează prospețimea față de viteză, în
+              funcție de tipul resursei. Un strat de cache bine proiectat înseamnă că
+              membrii echipajului care revin încarcă interfața aproape instantaneu, pentru
+              că majoritatea activelor nu trebuie niciodată să părăsească cache-ul local.
+              Invalidarea greșită a cache-ului poate însă bloca un utilizator pe o versiune
+              învechită a aplicației la nesfârșit.
             </p>
           </div>
 
@@ -883,7 +957,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Auditurile Lighthouse rulează o baterie automată de verificări privind
+              performanța, accesibilitatea, bunele practici și SEO, producând un raport
+              punctat care semnalează probleme specifice, acționabile. Pentru că rulează
+              aceleași verificări în mod consistent, scorurile Lighthouse pot fi urmărite în
+              timp și conectate la liniile CI pentru a prinde regresiile înainte de
+              implementare. Instrumentul nu doar raportează numere — explică ce resurse
+              blochează randarea, ce imagini sunt supradimensionate și ce scripturi întârzie
+              interactivitatea. Rularea regulată a Lighthouse transformă monitorizarea
+              performanței dintr-o corvoadă manuală într-o măsură de siguranță automatizată.
             </p>
           </div>
 
@@ -916,7 +998,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi andochează sectorul frontend: traseul critic de
+              randare ca secvență de scurtat, optimizarea activelor pentru cea mai grea
+              încărcătură, divizarea codului și încărcarea leneșă pentru amânarea muncii
+              inutile, analiza pachetelor pentru depistarea balastului, service workers
+              pentru cache inteligent și Lighthouse pentru punctare automată. Fiecare
+              tehnică atacă o etapă diferită a ciclului de încărcare a paginii, de la primul
+              byte până la interactivitatea completă. Stăpânirea tuturor celor șase împreună
+              este ceea ce separă un frontend doar funcțional de unul cu adevărat rapid.
             </p>
           </div>
 
@@ -954,7 +1043,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Optimizarea interogărilor de bază de date începe cu indexarea — o structură
+              care permite bazei de date să localizeze rânduri fără a scana întregul tabel,
+              așa cum o hartă stelară permite unui navigator să găsească un sistem fără a
+              căuta prin fiecare sector. Un index lipsă pe o coloană filtrată sau unită
+              frecvent poate transforma o căutare de milisecunde într-o scanare de tabel de
+              câteva secunde pe măsură ce datele cresc. Dar indexurile nu sunt gratuite:
+              fiecare adaugă suprasarcină la scriere și cost de stocare, așa că trebuie
+              alese deliberat, pe baza tiparelor reale de interogare, nu adăugate peste tot
+              speculativ. Planurile de execuție a interogărilor dezvăluie exact unde își
+              petrece timpul baza de date, ghidând ce indexuri vor ajuta cu adevărat.
             </p>
           </div>
 
@@ -987,7 +1085,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Gruparea conexiunilor reutilizează un set fix de conexiuni de bază de date
+              deja stabilite pentru multe cereri, în loc să deschidă și să închidă o nouă
+              conexiune pentru fiecare, pentru că stabilirea unei conexiuni are un cost real
+              de latență și resurse. Un grup dimensionat prea mic forțează cererile să
+              aștepte la coadă pentru o conexiune disponibilă, în timp ce un grup
+              dimensionat prea mare poate epuiza limitele proprii de conexiuni ale
+              serverului de bază de date. Ajustarea dimensiunii grupului pentru a corespunde
+              sarcinii concurente reale și monitorizarea timpilor de așteptare pentru o
+              conexiune liberă împiedică acest strat să devină un blocaj invizibil. Aproape
+              orice framework de backend oferă grupare din start, dar valorile implicite
+              rareori se potrivesc cu profilul real de trafic al unei aplicații specifice.
             </p>
           </div>
 
@@ -1020,7 +1128,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un strat de cache în memorie precum Redis sau Memcached stochează datele
+              accesate frecvent în RAM, evitând traseul dus-întors mult mai lent către
+              stocarea pe disc sau o recalculare costisitoare. Cache-ul funcționează cel mai
+              bine pentru date citite des, care se schimbă rar și sunt costisitoare de
+              regenerat — datele de sesiune, agregatele calculate și fragmentele randate
+              sunt candidați obișnuiți. Partea dificilă este invalidarea: datele din cache
+              învechite servite după ce sursa de adevăr s-a schimbat pot corupe silențios
+              ceea ce văd utilizatorii, deci o strategie clară de expirare sau invalidare
+              este esențială. Un strat de cache bine ajustat poate reduce încărcarea bazei
+              de date cu un ordin de mărime pentru sarcini de lucru dominate de citire.
             </p>
           </div>
 
@@ -1053,7 +1170,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Procesarea asincronă permite unui sistem să transfere munca lentă sau
+              necritică — trimiterea de e-mailuri, generarea de rapoarte, procesarea
+              încărcărilor — către o coadă de fundal, în loc să blocheze firul principal al
+              cererii cât timp aceasta se finalizează. Astfel răspunsul principal rămâne
+              rapid, pentru că clientul primește o confirmare imediată în timp ce un proces
+              worker gestionează separat sarcina mai grea. Cozile de mesaje precum RabbitMQ
+              sau Kafka, împreună cu procese worker dedicate, decuplează complet gestionarea
+              cererilor de execuția sarcinilor. Compromisul este complexitatea arhitecturală
+              suplimentară și nevoia de monitorizare pentru a prinde blocajele din coadă
+              înainte ca acestea să întârzie silențios rezultate pe care utilizatorii încă
+              le așteaptă.
             </p>
           </div>
 
@@ -1086,7 +1213,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Balansarea sarcinii distribuie traficul primit pe mai multe instanțe de
+              server, astfel încât nicio mașină singură să nu poarte întreaga greutate a
+              fiecărei cereri, așa cum o flotă distribuie riscul pe mai multe nave în loc de
+              una singură. Algoritmi precum round-robin, cel mai puțin conectat și
+              distribuția ponderată se potrivesc fiecare unor tipare de trafic și capacități
+              de server diferite. Verificările de sănătate permit balansorului să ocolească
+              instanțele care au eșuat sau răspund lent, menținând flota rezistentă la
+              eșecurile nodurilor individuale. Balansarea corectă a sarcinii este ceea ce
+              permite scalării orizontale — adăugarea mai multor servere — să se traducă
+              efectiv într-o capacitate mai mare.
             </p>
           </div>
 
@@ -1119,7 +1255,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Optimizarea răspunsurilor API începe adesea cu paginarea, returnând date în
+              bucăți gestionabile în loc să deverseze un set de date întreg într-un singur
+              răspuns masiv care solicită atât serverul, cât și clientul. Paginarea bazată
+              pe cursor scalează mai bine decât cea bazată pe offset pentru seturi de date
+              mari sau care se schimbă frecvent, pentru că offset-urile pot sări sau duplica
+              rânduri pe măsură ce datele se schimbă dedesubt. Filtrarea câmpurilor,
+              permițând clienților să ceară doar atributele de care au cu adevărat nevoie,
+              reduce în continuare dimensiunea sarcinii utile și costul de serializare.
+              Împreună, aceste tehnici păstrează răspunsurile API rapide și predictibile
+              chiar și pe măsură ce setul de date subiacent crește la milioane de
+              înregistrări.
             </p>
           </div>
 
@@ -1152,7 +1298,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea în revistă de astăzi andochează sectorul backend: indexarea pentru
+              căutări rapide, gruparea conexiunilor pentru reutilizare eficientă, cache-ul
+              în memorie pentru evitarea recalculărilor costisitoare, procesarea asincronă
+              pentru muncă neblocantă, balansarea sarcinii pentru distribuirea traficului și
+              paginarea pentru răspunsuri API gestionabile. Fiecare strat al stivei de
+              backend are propriul profil de blocaj, iar optimizarea unuia fără a le
+              înțelege pe celelalte poate pur și simplu muta punctul de presiune în altă
+              parte. Un backend rezistent tratează performanța ca pe o proprietate a
+              întregului sistem, nu ca pe responsabilitatea unei singure componente.
             </p>
           </div>
 
@@ -1190,7 +1344,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O rețea de livrare de conținut plasează copii în cache ale activelor statice
+              pe servere distribuite fizic în jurul globului, astfel încât cererea unui
+              membru al echipajului călătorește către un nod de margine apropiat, nu
+              traversează întreaga planetă până la serverul de origine. Aceasta reduce
+              dramatic latența pentru utilizatorii aflați la distanță geografică și,
+              simultan, descarcă traficul de pe originea, protejând-o de vârfuri. CDN-urile
+              oferă totodată protecție incorporată împotriva anumitor creșteri de trafic și
+              atacuri, pentru că rețeaua de margine absoarbe sarcina înainte ca aceasta să
+              ajungă vreodată la infrastructura de origine. Alegerea a ce se pune în cache
+              la margine și pentru cât timp este decizia centrală de ajustare pe care o cere
+              fiecare integrare CDN.
             </p>
           </div>
 
@@ -1223,7 +1387,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              HTTP/2 și HTTP/3 rezolvă ineficiențe vechi ale protocolului original
+              HTTP/1.1, în principal legate de câte cereri pot circula simultan pe o singură
+              conexiune. HTTP/2 introduce multiplexarea, permițând mai multor cereri și
+              răspunsuri să partajeze o conexiune fără blocarea la începutul cozii la
+              nivelul aplicației, plus compresia antetelor pentru a reduce suprasarcina
+              repetitivă. HTTP/3 merge mai departe, înlocuind TCP cu QUIC, un transport
+              bazat pe UDP care elimină complet blocarea la începutul cozii la nivelul
+              transportului și se recuperează mai rapid după pierderea pachetelor. Trecerea
+              la aceste protocoale aduce adesea câștiguri de viteză măsurabile cu modificări
+              minime de cod la nivelul aplicației, deoarece îmbunătățirile trăiesc în mare
+              parte în stratul de transport.
             </p>
           </div>
 
@@ -1256,7 +1430,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Scurgerile de memorie apar când un program păstrează referințe la obiecte de
+              care nu mai are nevoie, împiedicând colectorul de gunoi să elibereze acea
+              memorie și făcând utilizarea să crească constant până când procesul se
+              degradează sau se blochează. Vinovații obișnuiți includ ascultătorii de
+              evenimente uitați, cache-urile care cresc fără o politică de eliminare și
+              closure-urile care capturează neintenționat obiecte mari. Instantaneele de
+              heap luate la intervale dezvăluie ce tipuri de obiecte se acumulează în timp,
+              indicând sursa scurgerii. Prinderea scurgerilor din timp, înainte să se
+              acumuleze în producție sub sarcină susținută, previne degradarea lentă,
+              silențioasă, care în cele din urmă forțează o repornire de urgență.
             </p>
           </div>
 
@@ -1289,7 +1472,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Profilarea CPU identifică exact ce funcții consumă cel mai mult timp de
+              procesor, transformând un sentiment vag că sistemul pare lent într-o țintă
+              precisă, acționabilă. Profilatoarele de eșantionare capturează periodic stiva
+              de apeluri în timpul execuției, construind o imagine statistică a locului unde
+              se petrece efectiv timpul, fără suprasarcina masivă de a urmări fiecare apel
+              de funcție în parte. Graficele flacără fac datele rezultate lizibile dintr-o
+              privire, cadrele mai late reprezentând căile de cod mai „fierbinți” care
+              merită atenție de optimizare prioritară. Optimizarea unei funcții care
+              reprezintă doar unu la sută din timpul total de CPU irosește efort care ar fi
+              putut merge către blocajul real.
             </p>
           </div>
 
@@ -1322,7 +1514,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fragmentarea bazei de date (sharding) împarte o singură bază de date mare în
+              mai multe bucăți mai mici, independente, distribuite pe servere separate,
+              fiecare deținând un subset din datele totale — scalare orizontală în loc de o
+              singură navă mereu mai mare. O cheie de fragmentare determină ce fragment
+              deține ce rânduri, iar alegerea ei bună este critică, pentru că o alegere
+              proastă creează fragmente fierbinți care primesc trafic disproporționat, în
+              timp ce altele stau inactive. Fragmentarea rezolvă problema unui set de date
+              care depășește capacitatea oricărui server singular, dar introduce
+              complexitate reală: interogările și unirile între fragmente devin mult mai
+              dificile, iar reechilibrarea fragmentelor pe măsură ce datele cresc este o
+              operație cu adevărat dificilă. Fragmentarea este de obicei o ultimă soluție,
+              la care se ajunge doar după epuizarea tehnicilor de scalare mai simple.
             </p>
           </div>
 
@@ -1355,7 +1558,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Instrumentele de monitorizare a performanței aplicației, precum Datadog, New
+              Relic sau Grafana, urmăresc continuu comportamentul real al unui sistem în
+              producție, expunând latența, ratele de eroare și utilizarea resurselor ca
+              telemetrie live, nu ca măsurători punctuale. Urmărirea distribuită
+              (distributed tracing) urmărește o singură cerere prin fiecare serviciu pe care
+              îl atinge, dezvăluind exact unde se pierde timpul într-o arhitectură complexă
+              de microservicii pe care niciun fișier de jurnal singular nu ar putea-o arăta.
+              Regulile de alertare legate de aceste metrici anunță echipajul în clipa în
+              care un sistem se abate de la limitele acceptabile, adesea înainte ca
+              utilizatorii să observe ceva greșit. Monitorizarea continuă transformă
+              performanța dintr-un element de verificare pre-lansare într-o disciplină
+              operațională permanentă.
             </p>
           </div>
 
@@ -1388,7 +1602,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Trecerea finală în revistă de astăzi a sectorului de performanță parcurge
+              întregul arc: fundamente precum metricile și profilarea, tehnici frontend
+              precum divizarea codului și cache-ul, tehnici backend precum indexarea și
+              balansarea sarcinii, și practici avansate precum CDN-urile, actualizările de
+              protocol și monitorizarea continuă. Performanța nu este niciodată o reparație
+              unică — este o disciplină de măsurare, optimizare a blocajului real și
+              re-măsurare pentru a confirma că schimbarea a ajutat. Echipajele care
+              interiorizează această disciplină construiesc sisteme care rămân rapide nu
+              doar la lansare, ci și pe măsură ce traficul, datele și complexitatea cresc
+              de-a lungul misiunii.
             </p>
           </div>
 

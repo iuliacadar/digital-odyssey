@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>GitHub Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#github-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#github-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#github-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#github-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#github-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#github-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#github-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#github-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#github-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#github-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#github-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#github-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#github-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#github-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#github-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#github-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#github-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#github-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#github-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#github-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#github-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#github-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#github-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#github-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#github-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#github-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#github-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#github-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#github-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#github-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#github-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today the crew boarded the Hub, the great orbital station where every voyage
+              of code begins. GitHub is not merely a parking bay for repositories; it is a
+              coordination platform where version history, collaboration, and deployment
+              converge into a single command deck. Before any expedition launches, cadets
+              must understand that this station tracks every commit as a permanent log
+              entry, immutable once written. Learning to navigate its interface is the first
+              step toward disciplined, traceable engineering.
             </p>
           </div>
 
@@ -484,7 +431,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We surveyed the platform's core instrumentation today. GitHub layers a social
+              and organizational shell around the raw Git engine: repositories,
+              organizations, teams, and permissions all live here as visible structures on
+              the station's hull. Stars, forks, and watch counts function like sensor pings,
+              telling us how much attention a given vessel draws from the wider fleet.
+              Grasping this basic topology lets a navigator find their bearings before
+              touching any deeper system.
             </p>
           </div>
 
@@ -517,7 +470,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Attention turned to the repository itself, the pressurized module where a
+              project's contents actually live. Each repo carries settings for visibility,
+              branch protection, and default branches, all of which determine how safely
+              code can be modified without risking hull breach. We configured a fresh
+              repository, setting its default branch and reviewing the topics and
+              description fields that help other crews discover it. A well-structured
+              repository is the difference between an orderly cargo hold and scattered
+              debris.
             </p>
           </div>
 
@@ -550,7 +510,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson concerned the README file and the wiki, the documentation
+              beacons that guide any boarding crew. A README rendered at the root of a
+              repository is the first transmission a visitor receives, so it must explain
+              purpose, installation, and usage clearly and quickly. Wikis extend this
+              further, offering a deeper knowledge base for architecture notes, decision
+              logs, and onboarding guides that don't belong in the main transmission. Cadets
+              practiced writing Markdown headers, code fences, and badges to make their
+              documentation legible at a glance.
             </p>
           </div>
 
@@ -583,7 +550,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We opened the Issues bay, the station's system for tracking anomalies,
+              requests, and pending work. Every issue is a ticket logged against the
+              mission, complete with a title, description, and thread of discussion where
+              crew members can debate the best fix. Filtering by open, closed, or assignee
+              lets a team commander triage the queue quickly during a long voyage. Cadets
+              filed their first issues today, learning to write reproducible steps so future
+              readers understand the anomaly without guesswork.
             </p>
           </div>
 
@@ -616,7 +589,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we organized the issue queue using labels and milestones, the tagging
+              and grouping tools that keep a growing backlog from becoming chaotic drift.
+              Labels like bug, enhancement, and priority act as colored flags on the hull,
+              letting the crew scan hundreds of tickets at a glance. Milestones bundle
+              issues and pull requests into a shared deadline, useful for tracking progress
+              toward a release checkpoint. Applying both consistently is what separates an
+              organized expedition log from an unreadable mess of transmissions.
             </p>
           </div>
 
@@ -649,7 +628,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Attention shifted to Projects, GitHub's kanban board for visualizing the flow
+              of work across the mission. Cards representing issues and pull requests move
+              through columns such as backlog, in progress, and done, giving the whole crew
+              a shared view of the mission's state. Automation rules can move cards
+              automatically when a linked pull request merges, reducing manual bookkeeping.
+              We built our first board today, mapping the coming sprint's tasks onto a
+              visible pipeline.
             </p>
           </div>
 
@@ -682,7 +667,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day. We revisited the fundamentals: the Hub as coordination platform,
+              repositories as the pressurized modules holding our code, README files as
+              first-contact beacons, and issues, labels, milestones, and projects as the
+              instruments for tracking and organizing work. A crew that has internalized
+              these basics can move confidently into the deeper collaboration mechanics
+              ahead. Cadets ran a quiz simulation today, tracing a fictional bug from issue
+              creation through label, milestone, and board assignment.
             </p>
           </div>
 
@@ -720,7 +711,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we launched our first pull request, the formal mechanism for proposing
+              that a branch's changes be merged into the mainline. A PR bundles a diff, a
+              description, and a conversation thread, transforming a private branch into a
+              public proposal the whole crew can inspect. We practiced writing clear PR
+              descriptions that explain what changed and why, since a reviewer without
+              context is like a technician reading unlabeled wiring. Understanding this
+              process is the gateway to every collaborative contribution that follows.
             </p>
           </div>
 
@@ -753,7 +750,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We drilled the art of code review today, learning to leave line-level
+              comments and suggested changes directly on a diff. A good review comment
+              identifies a specific risk or improvement rather than a vague objection, and
+              the suggestion feature lets a reviewer propose an exact replacement the author
+              can accept with one click. Cadets practiced both giving and receiving
+              feedback, since a healthy review culture treats critique as hull maintenance,
+              not personal attack. This discipline is what keeps a shared codebase
+              structurally sound over many voyages.
             </p>
           </div>
 
@@ -786,7 +790,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's systems check involved CI integration, watching automated status
+              checks report directly on the pull request. Every push to a PR branch can
+              trigger a workflow that compiles, lints, and tests the code, posting green or
+              red status markers before a human reviewer even looks. Branch protection rules
+              can require these checks to pass before merge is allowed, acting as an
+              automated airlock seal. We wired a simple check into a sample PR today and
+              watched it block a deliberately broken build.
             </p>
           </div>
 
@@ -819,7 +829,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied the three merge strategies available at the airlock: merge commit,
+              squash, and rebase. A standard merge commit preserves the full branch history,
+              a squash merge collapses many small commits into one clean entry, and a rebase
+              replays commits onto the tip of the target branch for a linear history. Each
+              strategy trades off traceability against readability, and a team must agree on
+              a convention before conflicting styles pollute the log. We practiced all three
+              today on a controlled test repository.
             </p>
           </div>
 
@@ -852,7 +868,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's focus was draft pull requests, a mode for signaling work still
+              underway. Marking a PR as draft prevents accidental merging while still
+              allowing early feedback and running CI checks against in-progress code. This
+              is useful for long voyages where a crew member wants visibility into their
+              trajectory before final review. We converted a draft to ready for review
+              today, observing how the status change alerts assigned reviewers
+              automatically.
             </p>
           </div>
 
@@ -885,7 +907,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We built a pull request template today, a standardized form that
+              pre-populates new PRs with the same structure: summary, testing notes, and a
+              checklist. Templates reduce the cognitive load on contributors and ensure
+              reviewers always receive the context they need, much like a preflight
+              checklist ensures no critical step is skipped before launch. Storing the
+              template in the .github directory makes it apply automatically across the
+              repository. Consistency here saves the crew from re-explaining the same
+              missing details every voyage.
             </p>
           </div>
 
@@ -918,7 +947,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for pull requests. We consolidated everything: opening a PR,
+              writing reviews with inline comments and suggestions, wiring CI checks into
+              the merge gate, choosing a merge strategy, using drafts for in-progress work,
+              and templating the process for consistency. A crew fluent in this cycle can
+              collaborate on code changes without stepping on each other's trajectories.
+              Cadets completed a full simulated PR lifecycle today, from branch to merge.
             </p>
           </div>
 
@@ -956,7 +990,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we opened the Actions bay, GitHub's built-in automation engine. A
+              workflow is defined in YAML and triggered by events like pushes, pull
+              requests, or schedules, then executes a sequence of jobs and steps on a
+              virtual runner. This is the propulsion system behind continuous integration,
+              turning manual verification rituals into automated, repeatable checks. We
+              wrote our first workflow file today, triggering a simple script on every push
+              to the main branch.
             </p>
           </div>
 
@@ -989,7 +1029,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We moved from consuming actions to building our own custom action today, a
+              reusable unit of automation that can be shared across repositories. Actions
+              can be composite scripts, Docker containers, or JavaScript modules, each
+              packaged with metadata describing its inputs and outputs. Publishing a custom
+              action to the marketplace lets other crews install it into their own workflows
+              without duplicating logic. We authored a small composite action today that
+              echoes a greeting using an input parameter.
             </p>
           </div>
 
@@ -1022,7 +1068,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's lesson covered scheduled workflows, triggered not by an event but by
+              a cron expression ticking on the station's internal clock. This is useful for
+              periodic maintenance tasks like nightly builds, dependency audits, or cleanup
+              jobs that don't depend on human activity. We configured a workflow to run
+              daily at a fixed hour, verifying its execution in the Actions history log.
+              Scheduled automation lets the crew rest while routine maintenance continues in
+              the background.
             </p>
           </div>
 
@@ -1055,7 +1107,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We secured our automation today using environment secrets, encrypted
+              variables that workflows can access without exposing sensitive values in
+              plaintext. API keys, deployment tokens, and credentials belong here rather
+              than in a workflow file, since anything committed to history is effectively
+              public forever. Environments add an extra layer, letting secrets be scoped to
+              specific deployment targets like staging or production. Cadets practiced
+              referencing a secret safely within a workflow step today.
             </p>
           </div>
 
@@ -1088,7 +1146,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we ran matrix builds, a technique for testing a single codebase across
+              multiple configurations simultaneously. A matrix might vary operating system,
+              language version, or dependency set, generating a separate job for every
+              combination automatically. This catches compatibility anomalies that a single
+              fixed environment would never reveal, much like testing hull integrity across
+              a range of atmospheric pressures. We configured a matrix spanning three
+              runtime versions today and watched all three jobs execute in parallel.
             </p>
           </div>
 
@@ -1121,7 +1185,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We wired up deployment actions today, automating the final push of verified
+              code to a live environment. A deploy job typically runs only after build and
+              test stages succeed, connecting to a hosting provider through an authenticated
+              action step. This closes the loop from commit to production without manual
+              intervention, though guardrails like required approvals keep a human in
+              command of the final decision. We simulated a deployment today using a mock
+              hosting target to observe the full sequence.
             </p>
           </div>
 
@@ -1154,7 +1224,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for Actions and automation. We covered workflow syntax, building
+              custom actions, scheduled triggers, secret management, matrix testing, and
+              deployment automation. Together these form the propulsion and guidance systems
+              that carry code changes from a developer's branch to a running service with
+              minimal manual intervention. Cadets assembled a composite workflow today
+              exercising every concept from this cycle in sequence.
             </p>
           </div>
 
@@ -1192,7 +1267,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we launched GitHub Pages, the built-in static site hosting attached to
+              every repository. Pages serves HTML, CSS, and JavaScript files directly from a
+              branch or a dedicated build artifact, giving any crew a free public terminal
+              for documentation or a portfolio. We configured Pages to build from a specific
+              branch today, watching it publish automatically after each push. This is often
+              the fastest way to get static content in front of an audience without
+              provisioning separate infrastructure.
             </p>
           </div>
 
@@ -1225,7 +1306,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We explored GitHub Packages today, the platform's integrated registry for
+              hosting compiled artifacts like container images, npm packages, or Maven
+              builds. Publishing here keeps package distribution tied to the same
+              permissions and organizational structure as the source repository, avoiding a
+              separate trust boundary. We published a small test package today and pulled it
+              back down to confirm the registry round-trip worked. This keeps supply chains
+              short and auditable within a single platform.
             </p>
           </div>
 
@@ -1258,7 +1345,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's system covered Dependabot, the automated sentinel that scans
+              dependency manifests for outdated or vulnerable packages. When a newer or
+              patched version exists, Dependabot opens a pull request automatically,
+              complete with changelog links and compatibility notes. This offloads the
+              tedious work of manual version tracking, letting the crew focus on reviewing
+              rather than searching. We enabled Dependabot on a sample repository today and
+              observed its first automated update proposal.
             </p>
           </div>
 
@@ -1291,7 +1384,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied security advisories today, the mechanism for privately disclosing
+              and coordinating fixes for vulnerabilities before public release. A maintainer
+              can draft an advisory, collaborate with reporters in a private fork, and
+              publish a CVE-linked disclosure once a patch ships. This protects users from
+              exposure during the vulnerable window while still crediting researchers who
+              found the issue. Understanding this process matters for any crew maintaining a
+              dependency others rely on.
             </p>
           </div>
 
@@ -1324,7 +1423,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we left the browser behind and worked entirely through the GitHub CLI,
+              the command-line interface for repository operations. The gh tool lets a crew
+              member create issues, open pull requests, and check workflow runs without
+              leaving the terminal, folding station operations into the same shell used for
+              local development. We practiced creating a pull request end-to-end from the
+              command line today, from branch push to merge. This is often faster for crews
+              who prefer to keep their hands on the keyboard rather than the mouse.
             </p>
           </div>
 
@@ -1357,7 +1462,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We studied the GitHub API today, the programmatic interface underlying both
+              the web interface and the CLI. REST and GraphQL endpoints expose nearly every
+              platform capability, letting a crew build custom tooling, bots, or dashboards
+              tailored to their mission. Authentication via personal access tokens or GitHub
+              Apps controls what a script is permitted to touch. We wrote a small script
+              today that queried open issues via the API and printed a summary report.
             </p>
           </div>
 
@@ -1390,7 +1500,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Review day for the GitHub ecosystem. We closed the loop on Pages for hosting,
+              Packages for distribution, Dependabot and advisories for security, and the CLI
+              and API for automation beyond the browser. Together these extend the Hub from
+              a mere code repository into a full mission control platform. Cadets completed
+              a capstone exercise today, publishing a page, registering a package, and
+              querying it all through the CLI.
             </p>
           </div>
 

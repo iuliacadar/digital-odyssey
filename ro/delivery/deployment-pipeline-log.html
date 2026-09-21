@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează pipeline-urile de deploy — integrare continuă, livrare continuă, automatizare și medii."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#deployment-pipeline-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#deployment-pipeline-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#deployment-pipeline-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#deployment-pipeline-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#deployment-pipeline-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#deployment-pipeline-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#deployment-pipeline-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am pășit pe Conveyor, banda automatizată care duce codul din mâinile
+              unui dezvoltator până la un sistem în funcțiune. O conductă de implementare
+              este o secvență de etape automate care construiesc, verifică și lansează
+              software fără repetarea manuală a acelorași pași plictisitori. Înțelegerea
+              acestei benzi este esențială înainte să începem să încărcăm marfă pe ea,
+              întrucât o singură etapă configurată greșit poate bloca întreaga linie. Am
+              parcurs astăzi întreaga lungime a benzii, numind fiecare stație pe care o vom
+              studia în profunzime.
             </p>
           </div>
 
@@ -482,7 +450,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am examinat ce este de fapt o conductă: o secvență definită de etape, de
+              obicei sursă, build, test, ambalare și implementare, fiecare condiționând
+              intrarea în următoarea. Eșecul la orice etapă oprește imediat banda,
+              împiedicând marfa defectă să ajungă la stații ulterioare, mai costisitoare.
+              Acest principiu de eșec rapid economisește timp enorm comparativ cu
+              descoperirea unui defect abia după implementarea completă. Am diagramat astăzi
+              o conductă de bază cu cinci etape și am urmărit cum curge un singur commit
+              prin ea.
             </p>
           </div>
 
@@ -515,7 +490,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a acoperit modul în care o conductă este declanșată din
+              controlul sursei, urmărind un repository pentru push-uri, tag-uri sau pull
+              request-uri care ar trebui să aprindă banda. Webhook-urile notifică sistemul
+              de conducte în clipa în care apare cod nou, eliminând nevoia de interogare
+              manuală sau inițiere umană. Configurarea atentă a regulilor de declanșare
+              previne rulările irosite pe ramuri irelevante, asigurând în același timp că
+              nimic important nu scapă neconstruit. Am configurat astăzi un declanșator care
+              pornește doar la push-uri pe ramuri protejate.
             </p>
           </div>
 
@@ -548,7 +530,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat etapa de build, unde codul sursă este compilat, transpilat sau
+              împachetat într-un artefact executabil. Această stație convertește
+              instrucțiunile lizibile pentru oameni în forma binară sau împachetată pe care
+              o mașină o poate executa efectiv, prinzând imediat erori de sintaxă și
+              dependențe lipsă. Un mediu de build curat și reproductibil este esențial,
+              întrucât un build care funcționează doar pe mașina unui singur inginer
+              anulează scopul automatizării. Am rulat astăzi primul nostru build automat,
+              urmărind cum banda respinge o eroare de sintaxă stricată intenționat.
             </p>
           </div>
 
@@ -581,7 +570,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am ajuns la etapa de test, unde suitele automate verifică dacă noul
+              cod se comportă conform așteptărilor înainte de a merge mai departe pe linie.
+              Testele unitare verifică componente individuale izolat, în timp ce testele de
+              integrare confirmă că părțile asamblate funcționează în continuare corect
+              împreună. O conductă care sare peste această stație riscă să livreze defecte
+              direct pasagerilor, așa că majoritatea benzilor refuză să avanseze marfa care
+              eșuează aici. Am conectat astăzi o suită de teste în conducta noastră și am
+              urmărit cum a blocat corect o regresie.
             </p>
           </div>
 
@@ -614,7 +610,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am acoperit astăzi etapa de ambalare, unde codul verificat este grupat
+              într-un artefact distribuibil precum o imagine container, un binar compilat
+              sau o arhivă versionată. Ambalarea standardizează exact ce se implementează
+              efectiv, asigurând că exact biții testați în etapa anterioară sunt aceiași
+              biți care se livrează, fără editări de ultimă oră care introduc derivă.
+              Artefactele sunt de obicei etichetate cu o versiune sau un hash de commit
+              astfel încât orice instanță implementată poate fi urmărită înapoi la origine.
+              Am construit și etichetat astăzi prima noastră imagine container ca parte a
+              acestei etape.
             </p>
           </div>
 
@@ -647,7 +651,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am ajuns la etapa de implementare, stația finală unde artefactele
+              ambalate sunt lansate într-un mediu live. Aceasta poate însemna împingerea
+              unui container către un cluster, încărcarea unui binar pe o flotă de servere
+              sau publicarea de fișiere statice pe o platformă de găzduire. Implementările
+              automate elimină ritualul predispus la erori al copierii manuale de fișiere,
+              înlocuindu-l cu o acțiune repetabilă și auditabilă. Am simulat astăzi o
+              implementare într-un mediu de test, confirmând că artefactul din etapa de
+              ambalare a ajuns intact.
             </p>
           </div>
 
@@ -680,7 +691,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru elementele de bază ale conductei. Am urmărit
+              întreaga bandă de la declanșarea sursei prin build, test, ambalare și
+              implementare, înțelegând cum fiecare stație condiționează următoarea și de ce
+              eșecul rapid contează la fiecare punct de control. Un echipaj care înțelege
+              acest flux poate diagnostica unde s-a defectat o conductă doar știind care
+              stație a respins marfa. Cadeții au rulat astăzi o conductă complet simulată,
+              injectând un eșec deliberat la fiecare etapă pentru a observa comportamentul
+              de oprire.
             </p>
           </div>
 
@@ -718,7 +736,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am configurat prima noastră configurare reală de workflow în GitHub
+              Actions, traducând teoria conductelor într-o definiție YAML efectivă.
+              Job-urile și pașii se mapează direct pe etapele studiate, fiecare job rulând
+              pe un runner virtual proaspăt, cu excepția cazului în care este explicit
+              cache-uit sau înlănțuit. Am scris astăzi un fișier de workflow cu job-uri
+              distincte pentru build, test și implementare, conectând dependențe între ele
+              astfel încât job-urile ulterioare așteaptă succesul celor anterioare. Aceasta
+              ne-a oferit prima bandă funcțională care rulează în întregime în interiorul
+              platformei.
             </p>
           </div>
 
@@ -751,7 +777,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am examinat astăzi Jenkins, serverul de automatizare auto-găzduit de lungă
+              durată pe care multe flote mai vechi încă se bazează. Spre deosebire de
+              platformele găzduite, Jenkins cere unui echipaj să-și provizioneze și să-și
+              mențină propria infrastructură de runner-e, schimbând confortul pentru control
+              complet asupra mediului de execuție. Conductele sunt definite într-un
+              Jenkinsfile folosind un DSL bazat pe Groovy, descriind etape asemănătoare
+              celor deja studiate. Am instalat astăzi o instanță locală de Jenkins și am
+              rulat o conductă declarativă simplă pe ea.
             </p>
           </div>
 
@@ -784,7 +817,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a acoperit GitLab CI, un sistem de conducte integrat direct
+              în platforma GitLab, nu adăugat separat. Conductele sunt definite într-un
+              fișier .gitlab-ci.yml la rădăcina repository-ului, descriind etape și job-uri
+              într-o structură similară cu ceea ce am văzut în altă parte. Integrarea
+              strânsă a GitLab înseamnă că merge request-urile, starea conductei și mediile
+              de implementare apar toate într-o interfață unificată. Am configurat astăzi o
+              conductă de bază GitLab CI și am observat graful ei de etape randând automat.
             </p>
           </div>
 
@@ -817,7 +856,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat astăzi variabilele de mediu și configurarea conductei, mecanismul
+              pentru injectarea setărilor și secretelor într-un job aflat în execuție fără a
+              le codifica direct în scripturi. Variabilele pot fi delimitate global, per
+              conductă sau per mediu, permițând aceleiași definiții de conductă să se
+              comporte diferit pentru ținte de staging versus producție. Valorile sensibile
+              ar trebui întotdeauna marcate ca protejate sau mascate, astfel încât să nu
+              apară niciodată în jurnale. Am configurat astăzi un set de variabile specifice
+              mediului și am verificat că se rezolvă corect pentru fiecare țintă.
             </p>
           </div>
 
@@ -850,7 +896,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am abordat cache-uirea în CI, o tehnică pentru evitarea muncii
+              redundante între rulările conductei. Directoarele de dependențe, artefactele
+              de build compilate și pachetele descărcate pot fi cache-uite între rulări,
+              reducând dramatic timpul petrecut pe pași repetați de instalare. Un cache
+              configurat greșit poate servi date învechite, așa că cheile de cache trebuie
+              legate de intrările care determină efectiv validitatea, cum ar fi un hash de
+              lockfile. Am măsurat astăzi timpul de rulare al conductei noastre înainte și
+              după activarea cache-uirii, observând o accelerare semnificativă.
             </p>
           </div>
 
@@ -883,7 +936,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am explorat astăzi job-urile paralele, rulând etape independente ale
+              conductei simultan pe runner-e separate în loc de secvențial. Testele care nu
+              depind unele de altele, sau build-urile care vizează platforme diferite, sunt
+              candidați ideali pentru acest tip de ramificare. Paralelizarea poate reduce
+              dramatic durata totală a conductei, deși necesită runner-e cu capacitate
+              suficientă și o gestionare atentă a dependențelor pentru a evita cursele. Am
+              împărțit astăzi suita noastră de teste în trei job-uri paralele, tăind timpul
+              total al conductei aproape în jumătate.
             </p>
           </div>
 
@@ -916,7 +976,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru implementarea CI. Am consolidat scrierea practică
+              de workflow-uri, comparând GitHub Actions, Jenkins și GitLab CI ca trei nave
+              diferite care ating obiective similare, alături de configurarea mediului,
+              cache-uire și paralelizare ca tehnici de optimizare. Un echipaj fluent în mai
+              multe sisteme CI se poate adapta rapid când o misiune cere o platformă
+              diferită. Cadeții au reconstruit astăzi aceeași conductă pe două sisteme
+              diferite pentru a compara direct sintaxa și comportamentul.
             </p>
           </div>
 
@@ -954,7 +1020,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am trecut în implementarea continuă, unde fiecare schimbare care trece
+              de conductă este lansată automat fără o poartă de aprobare manuală. Aceasta
+              reprezintă cel mai rapid ciclu posibil de la commit la producție, potrivit
+              pentru echipe cu acoperire puternică de teste automate și încredere în plasele
+              lor de siguranță. Fără testare adecvată, implementarea continuă poate livra
+              defecte utilizatorilor cu aceeași viteză cu care livrează remedieri. Am
+              configurat astăzi o implementare complet automatizată, urmărind cum o conductă
+              reușită lansează direct către o țintă live.
             </p>
           </div>
 
@@ -987,7 +1060,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat astăzi mediile de staging, punctul de tranzit pre-producție care
+              oglindește cât mai fidel posibil condițiile live fără a expune pasageri reali
+              la risc. O implementare de staging permite echipajului să verifice
+              comportamentul sub sarcină, configurație și formă de date realiste înainte de
+              a se angaja la o lansare completă în producție. Discrepanțele dintre staging
+              și producție, numite uneori derivă de mediu, sunt o sursă comună de surprize
+              pe care această etapă există să le prindă. Am implementat astăzi într-un mediu
+              de staging și am comparat configurația lui cu producția pentru derivă.
             </p>
           </div>
 
@@ -1020,7 +1100,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a acoperit implementările blue-green, o strategie pentru a
+              obține zero timp de nefuncționare rulând două medii de producție identice și
+              comutând traficul între ele. Mediul blue servește traficul live în timp ce
+              green primește noua lansare, iar odată ce green este verificat, un router sau
+              load balancer comută traficul instantaneu. Dacă apar probleme, revenirea este
+              la fel de simplă ca comutarea înapoi la blue. Am simulat astăzi o comutare
+              blue-green, verificând că traficul a fost comutat fără cereri pierdute.
             </p>
           </div>
 
@@ -1053,7 +1139,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am examinat astăzi lansările canary, o strategie de lansare treptată care
+              expune o versiune nouă unui procent mic din trafic înainte de o lansare
+              completă. Monitorizarea ratelor de eroare și a latenței pe felia canary
+              dezvăluie probleme cât timp expunerea este încă limitată, protejând
+              majoritatea pasagerilor de un impact mai larg. Dacă canary performează bine,
+              traficul este mutat treptat până când noua versiune gestionează totul. Am
+              configurat astăzi o lansare canary, urmărind traficul crescând de la cinci
+              procente până la implementarea completă.
             </p>
           </div>
 
@@ -1086,7 +1179,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am studiat feature flags, comutatoare la runtime care separă
+              implementarea codului de lansarea funcționalității către utilizatori. O
+              funcție poate fi implementată în întuneric, adică codul ajunge în producție
+              dar rămâne inactiv până când un flag este comutat, decuplând complet riscul de
+              lansare de riscul de implementare. Flag-urile permit și lansări țintite către
+              segmente specifice de utilizatori și revenire instantanee fără o
+              reimplementare. Am conectat astăzi un feature flag într-o aplicație de test și
+              l-am comutat live fără a atinge conducta de implementare.
             </p>
           </div>
 
@@ -1119,7 +1219,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am acoperit astăzi strategiile de revenire, procedurile pentru a inversa în
+              siguranță o implementare proastă înainte să cauzeze daune de durată. Opțiunile
+              includ reimplementarea unui artefact anterior cunoscut ca bun, revenirea la
+              commit-ul declanșator sau dezactivarea unui feature flag dacă unul
+              condiționează noul comportament. O strategie bună de revenire este exersată în
+              avans și măsurată pentru viteză, întrucât valoarea unui plan de revenire este
+              invers proporțională cu timpul necesar execuției sub presiune. Am rulat astăzi
+              un exercițiu de revenire, cronometrând cât de repede am putut restaura
+              versiunea stabilă anterioară.
             </p>
           </div>
 
@@ -1152,7 +1260,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru implementarea CD. Am consolidat implementarea
+              continuă, mediile de staging, strategiile blue-green și canary, feature flags
+              și procedurile de revenire într-o imagine coerentă a practicii de lansare
+              sigure și rapide. Un echipaj echipat cu toate aceste instrumente poate lansa
+              frecvent păstrând mică raza de impact a oricărei greșeli individuale. Cadeții
+              au proiectat astăzi o strategie completă de lansare combinând o lansare canary
+              cu un declanșator automat de revenire la creșteri ale ratei de eroare.
             </p>
           </div>
 
@@ -1190,7 +1304,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am abordat securitatea conductei, concentrându-ne pe modul în care
+              secrete precum cheile API și credențialele de implementare sunt gestionate
+              fără a se scurge în jurnale sau în istoricul sursei. Secretele ar trebui
+              injectate la runtime dintr-un vault dedicat sau din magazinul de secrete al
+              platformei, niciodată codificate direct în definițiile conductei sau comise în
+              repository. Accesul cu privilegiu minim asigură că o credențială de conductă
+              compromisă nu poate ajunge mai departe decât cere job-ul ei specific. Am
+              auditat astăzi o conductă de test și am găsit două valori codificate direct
+              care ar fi trebuit să fie secrete.
             </p>
           </div>
 
@@ -1223,7 +1345,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am studiat astăzi monitorizarea conductei, instrumentarea care oferă unui
+              echipaj vizibilitate asupra modului în care performează banda de-a lungul
+              timpului. Tablourile de bord care urmăresc durata build-ului, rata de eșec și
+              frecvența implementărilor dezvăluie o sănătate în degradare cu mult înainte de
+              a apărea o pană completă. Alertarea asupra anomaliilor, precum o creștere
+              bruscă a eșecurilor de build, permite echipajului să reacționeze înainte ca o
+              problemă minoră să se agraveze. Am configurat astăzi un tablou de bord de bază
+              pentru monitorizare, urmărind rata de succes a conductei noastre în ultima
+              lună.
             </p>
           </div>
 
@@ -1256,7 +1386,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Lecția de astăzi a acoperit conducta ca și cod, practica de a defini întreaga
+              configurație a conductei în fișiere versionate în loc de printr-o interfață
+              web mutabilă. Aceasta înseamnă că modificările conductei trec prin același
+              proces de revizuire ca și codul aplicației, cu istoric, diff-uri și revenire
+              disponibile pentru automatizarea însăși. De asemenea, face conductele
+              portabile și reproductibile pe medii diferite, întrucât configurația
+              călătorește împreună cu repository-ul. Am migrat astăzi o conductă configurată
+              manual în YAML versionat.
             </p>
           </div>
 
@@ -1289,7 +1426,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am examinat astăzi conductele multi-mediu, structuri care promovează un
+              singur artefact progresiv prin dezvoltare, staging și producție fără a-l
+              reconstrui la fiecare pas. Construirea o singură dată și promovarea aceluiași
+              artefact garantează că ceea ce a fost testat este exact ceea ce se livrează,
+              eliminând o întreagă clasă de discrepanțe de build specifice mediului. Fiecare
+              poartă de promovare poate cere aprobări sau verificări automate diferite,
+              potrivite nivelului de risc al acelui mediu. Am configurat astăzi un lanț de
+              promovare pe trei medii, urmărind un artefact de la build până în producție.
             </p>
           </div>
 
@@ -1322,7 +1466,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi am studiat testarea conductei, practica de a verifica dacă definiția
+              conductei se comportă corect, nu doar aplicația pe care o construiește.
+              Aceasta poate include verificarea sintaxei workflow-ului, rularea conductei
+              împotriva unui repository fictiv sau afirmarea că etape specifice eșuează în
+              condiții rele cunoscute. Tratarea codului conductei cu același rigor ca și
+              codul aplicației prinde configurările greșite înainte să cauzeze o lansare
+              eșuată în cel mai nepotrivit moment. Am scris astăzi un test care a verificat
+              că etapa noastră de implementare refuză corect să ruleze dacă etapa de test a
+              eșuat.
             </p>
           </div>
 
@@ -1355,7 +1507,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Am acoperit astăzi documentația conductei și runbook-urile, procedurile
+              scrise care permit oricărui membru al echipajului să opereze sau să depaneze
+              banda fără cunoștințe tribale. Un runbook bun explică cum să declanșezi o
+              implementare manuală, cum să efectuezi o revenire și pe cine să contactezi
+              când o etapă eșuează în mod misterios. Documentația care trăiește lângă codul
+              conductei, nu într-o locație separată și uitată, este mult mai probabil să
+              rămână corectă. Am scris astăzi un runbook care acoperă cele mai comune trei
+              scenarii de eșec ale conductei noastre.
             </p>
           </div>
 
@@ -1388,7 +1547,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de recapitulare pentru cele mai bune practici ale conductei. Am închis
+              bucla pentru securitate, monitorizare, conducta ca și cod, promovarea
+              multi-mediu, testarea conductei și documentație, disciplinele care mențin o
+              bandă fiabilă mult timp după construcția ei inițială. Un echipaj care
+              stăpânește toate aceste practici operează o conductă rapidă, sigură și ușor de
+              întreținut pe durata unei misiuni. Cadeții au finalizat astăzi un exercițiu
+              final, auditând o conductă defectuoasă și corectându-i lipsurile de
+              securitate, testare și documentație.
             </p>
           </div>
 

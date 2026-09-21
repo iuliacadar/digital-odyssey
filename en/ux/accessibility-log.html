@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Accessibility Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#accessibility-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#accessibility-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#accessibility-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#accessibility-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#accessibility-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#accessibility-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#accessibility-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#accessibility-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#accessibility-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#accessibility-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#accessibility-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#accessibility-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#accessibility-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#accessibility-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#accessibility-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#accessibility-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#accessibility-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#accessibility-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#accessibility-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#accessibility-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#accessibility-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#accessibility-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#accessibility-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#accessibility-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#accessibility-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#accessibility-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#accessibility-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#accessibility-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#accessibility-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#accessibility-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#accessibility-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today the expedition opened its doors to every possible crew member,
+              regardless of how they interface with the ship's controls. Web accessibility
+              is the discipline of building interfaces that any pilot can operate, whether
+              they navigate by sight, sound, touch, or assistive technology. We charted the
+              core principles known as POUR: perceivable, operable, understandable, and
+              robust. Every system we build from here on must pass through these four
+              airlocks before it reaches the crew.
             </p>
           </div>
 
@@ -484,7 +431,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The hull plating of an accessible interface is semantic HTML, elements chosen
+              for meaning rather than appearance. Using <button> instead of a styled <div>,
+              <nav> instead of a generic wrapper, tells assistive technology exactly what
+              each module does without extra instrumentation. Screen readers and other tools
+              parse this structure to build a navigable map of the page, much like a ship's
+              computer building a deck plan. Skipping semantics forces every crew member to
+              memorize custom controls instead of relying on universal signage.
             </p>
           </div>
 
@@ -517,7 +470,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              When native HTML markers run out, we deploy ARIA, the Accessible Rich
+              Internet Applications toolkit, as auxiliary signal beacons for assistive
+              technology. Attributes like role, aria-label, and aria-expanded describe
+              custom components that don't have a native semantic equivalent, such as a
+              collapsible sector map or a custom dropdown console. The first rule of ARIA is
+              to use as little of it as possible: native elements are always preferred,
+              since ARIA only changes how something is announced, not how it behaves.
+              Misapplied ARIA can jam the signal entirely, making a control lie to the very
+              crew it's meant to help.
             </p>
           </div>
 
@@ -550,7 +511,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Not every crew member can operate a mouse-like pointing device, so every
+              control on the ship must also respond to the keyboard alone. Tab, Shift+Tab,
+              Enter, and Space must move focus and trigger actions in a logical, predictable
+              order that mirrors the visual layout of the console. Custom widgets, like our
+              sector carousel or command palette, need explicit key handlers since they
+              don't inherit this behavior for free. A crew member stranded without mouse
+              access should still be able to reach every airlock, hatch, and control panel
+              on board.
             </p>
           </div>
 
@@ -583,7 +551,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Focus is the single glowing indicator that tells a keyboard-only navigator
+              where they currently stand on the ship. When we open a modal dialog or a side
+              panel, focus must be moved deliberately into that new context, and trapped
+              there until it closes, so the pilot isn't lost wandering the background deck.
+              Closing that dialog should return focus to the element that opened it,
+              preserving the pilot's place in the mission sequence. Poor focus management is
+              like a transporter malfunction: the crew member vanishes from view and
+              reappears somewhere they never intended to go.
             </p>
           </div>
 
@@ -616,7 +591,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Color alone is a fragile signal on a ship where many crew members perceive
+              the visible spectrum differently or not at all. WCAG sets minimum contrast
+              ratios, 4.5:1 for normal text and 3:1 for large text and UI components, to
+              guarantee that critical readouts remain legible under any visual condition. We
+              never encode meaning through color alone; a red error light is paired with an
+              icon and text so a colorblind engineer reads the same alert as everyone else.
+              Contrast checkers became a permanent instrument on today's console, run
+              against every label before launch.
             </p>
           </div>
 
@@ -649,7 +631,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we plugged directly into a screen reader, the assistive technology that
+              converts our interface into synthesized speech or braille output for crew
+              members who navigate without sight. It reads the DOM in document order,
+              announcing landmarks, headings, and form labels, so a well-structured page
+              becomes a navigable audio map of the ship. Testing with a real screen reader,
+              not just imagining one, exposed silent buttons, unlabeled icons, and images
+              that spoke pure noise instead of meaning. Every element that conveys
+              information visually must convey the same information through this audio
+              channel.
             </p>
           </div>
 
@@ -682,7 +672,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We paused the voyage to recalibrate everything learned this cycle: semantics,
+              ARIA, keyboard operability, focus, contrast, and screen reader output all
+              working as one coordinated life-support system. None of these systems function
+              in isolation; a perfectly labeled button is useless if it can never receive
+              keyboard focus. The review drills confirmed that accessibility isn't a single
+              feature bolted on at the end but a baseline requirement running through every
+              subsystem we build. With onboarding complete, the crew is ready to construct
+              more complex interaction models.
             </p>
           </div>
 
@@ -720,7 +717,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Forms are the primary control panels where crew members transmit commands
+              back to the ship, so every input needs a properly associated <label>, not just
+              adjacent text that looks like one. Programmatic labels let assistive
+              technology announce exactly what each field expects, while grouping related
+              controls with <fieldset> and <legend> clarifies complex readouts like
+              coordinate entry. Required fields and input formats must be communicated in
+              text, not color alone, before the crew member ever submits the transmission. A
+              form that only makes sense visually will strand any pilot using a screen
+              reader.
             </p>
           </div>
 
@@ -753,7 +758,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              When a transmission fails validation, the error message must be
+              programmatically tied to its field using aria-describedby, and announced
+              immediately so no crew member is left guessing what went wrong. Vague errors
+              like 'invalid input' are navigational static; useful errors state exactly what
+              was wrong and how to correct course, such as 'stardate format must be
+              YYYY-MM-DD'. Errors should also be summarized at the top of the form for crew
+              members using screen readers, who can't rely on scanning red highlights to
+              find every failure point at once. Recovering gracefully from failure is as
+              much a part of accessible design as preventing it.
             </p>
           </div>
 
@@ -786,7 +799,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Every ship log begins with the same recurring navigation array, and a
+              keyboard-only pilot would have to tab through it on every single page without
+              an escape hatch. A skip link, hidden until it receives focus, lets that crew
+              member jump directly to the main content, bypassing repetitive controls in a
+              single keystroke. We anchored ours as the very first focusable element in the
+              document, visible only when tabbed to, so sighted mouse users never notice it
+              exists. This small beacon saves enormous transit time across a long mission
+              log.
             </p>
           </div>
 
@@ -819,7 +839,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Headings form the deck plan of a page, and screen reader crew members
+              frequently navigate by jumping heading to heading rather than reading linearly
+              through the hull. A logical structure, one h1 per page, nested h2s and h3s
+              without skipping levels for style, lets that navigation reveal an accurate
+              outline of the content. Choosing a heading for its visual size rather than its
+              semantic level breaks this map entirely, leaving the crew member without a
+              reliable way to survey the sector. We audited every page today and repaired
+              the broken heading chains found drifting out of order.
             </p>
           </div>
 
@@ -852,7 +879,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Every image transmitted from the ship's archive needs alternative text
+              describing its content or function for crew members who cannot see it
+              directly. Meaningful images get a concise, specific description, not a lazy
+              'image123.png' left behind by the file system, while purely decorative images
+              get an empty alt attribute so screen readers skip them entirely and don't
+              waste the crew's attention. Complex diagrams, like a star chart, may need a
+              longer description linked nearby rather than crammed into the alt attribute
+              itself. Getting this right means every visual signal on the ship has an
+              equivalent verbal transmission.
             </p>
           </div>
 
@@ -885,7 +920,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Icon-only buttons look sleek on the console but are silent to assistive
+              technology unless they carry an accessible name, typically via aria-label or
+              visually hidden text. A trash can icon with no label announces only as
+              'button' to a screen reader, forcing the crew member to guess its function
+              through trial and error. Icon fonts and inline SVGs need special handling,
+              aria-hidden on decorative glyphs and explicit titles on meaningful ones, so
+              the underlying vector paths don't get read aloud as gibberish. We treated
+              every icon today as a component with both a visual and a verbal signature.
             </p>
           </div>
 
@@ -918,7 +960,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              This cycle's review confirmed the foundational accessible patterns: labeled
+              forms, clear error recovery, skip links, sound heading structure, meaningful
+              alt text, and properly named icons. Each pattern reinforces the others, a
+              well-labeled form is undermined by a broken heading structure surrounding it,
+              and a perfect heading outline means little if the form inside it is unusable.
+              The crew demonstrated these foundations hold under inspection from multiple
+              assistive technologies, not just one reference screen reader. We now advance
+              toward the more dynamic interaction challenges waiting in the next sector.
             </p>
           </div>
 
@@ -956,7 +1005,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A focus indicator is the visible outline that shows a keyboard navigator
+              exactly where they are on the console at any given moment, and removing it
+              with outline: none without a proper replacement leaves that pilot flying
+              blind. WCAG 2.2 raised the bar with the focus appearance criterion, requiring
+              indicators to be large and contrasted enough to be seen against any background
+              element on the ship. Custom focus styles must remain visible across every
+              interactive state, buttons, links, and form fields alike, not just the ones
+              the design team remembered to test. We restored every stripped outline today
+              and replaced them with indicators that survive contact with the real crew.
             </p>
           </div>
 
@@ -989,7 +1046,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              On touchscreen consoles, a crew member's finger is a far less precise
+              instrument than a mouse cursor, so every tappable control needs a minimum
+              target size, WCAG recommends at least 24 by 24 CSS pixels with adequate
+              spacing between targets. Cramped, tiny buttons cause mis-taps that can trigger
+              the wrong command entirely, a serious hazard when a control operates something
+              as consequential as a hatch release. Today's work spaced out our navigation
+              controls and enlarged tap zones invisibly using padding, without disturbing
+              the visual density the designers wanted. A ship built for touch must forgive
+              an imprecise finger, not punish it.
             </p>
           </div>
 
@@ -1022,7 +1087,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Animated transitions can communicate state changes elegantly, but for crew
+              members with vestibular disorders, excessive motion can trigger genuine
+              physical disorientation, nausea, or worse. We wired every non-essential
+              animation to the prefers-reduced-motion media query, so crew members who've
+              signaled a preference for calm interfaces receive a reduced or instant version
+              of the same transition. Auto-playing carousels and parasitic parallax effects
+              were reviewed for necessity, since motion that serves no functional purpose is
+              motion that should be optional. Respecting this preference costs little in
+              engineering effort but protects real crew members from real harm.
             </p>
           </div>
 
@@ -1055,7 +1128,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Video logs beamed back from away missions need captions for crew members who
+              are deaf or hard of hearing, and those captions must be synchronized text, not
+              an afterthought bolted on post-launch. Audio-only transmissions need a text
+              transcript so the same information reaches crew members who cannot hear, and
+              any video with meaningful visual-only content, like a silent diagram sequence,
+              needs audio description as well. Auto-playing media with sound is disorienting
+              for screen reader users, whose own audio output gets drowned out by an
+              unrequested transmission, so we default all media to a paused, user-initiated
+              state. Multimedia demands multiple channels, not a single one dressed up to
+              look complete.
             </p>
           </div>
 
@@ -1088,7 +1170,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Not every document we archive lives in HTML; mission reports and technical
+              manuals often get sealed into PDF format, and an inaccessible PDF is a sealed
+              airlock with no manual override. A tagged PDF carries the same semantic
+              structure as accessible HTML, headings, reading order, and alt text for
+              images, embedded directly in the document's internal tag tree. Untagged,
+              scanned PDFs are worse than useless to a screen reader, appearing as a single
+              flat image with no extractable text at all. We ran today's archive through a
+              tagging pass and validated reading order against the visual layout before
+              filing it into the ship's records.
             </p>
           </div>
 
@@ -1121,7 +1211,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cognitive accessibility protects crew members with memory, attention, or
+              processing differences by demanding clear language, predictable layouts, and
+              forgiving interaction patterns across every console. Plain, direct
+              instructions beat clever jargon; consistent navigation that doesn't reorganize
+              itself between pages lets the crew build reliable mental models of the ship.
+              Generous timeouts, or the ability to extend them, prevent a slower-reading
+              crew member from being locked out mid-transmission, and undo options turn
+              irreversible mistakes into recoverable ones. Designing for cognitive load
+              benefits every crew member navigating under the stress of a long mission, not
+              only those who need it structurally.
             </p>
           </div>
 
@@ -1154,7 +1253,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's inspection swept through focus indicators, touch targets, motion
+              preferences, media alternatives, document tagging, and cognitive load,
+              confirming they function together as one interaction layer rather than
+              isolated fixes. A crew member with low vision, motor impairment, and a
+              preference for reduced motion might rely on all of these systems
+              simultaneously during a single session, so none could be treated as optional.
+              The drills revealed a few remaining gaps around timeout messaging, now logged
+              for repair. Interaction accessibility is complete enough to support real
+              missions, though refinement never truly ends.
             </p>
           </div>
 
@@ -1192,7 +1299,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Automated accessibility testing tools, like axe or Lighthouse, scan the
+              compiled interface and catch roughly a third of all possible violations:
+              missing alt text, insufficient contrast, malformed ARIA, and absent form
+              labels. We wired these scanners directly into the build pipeline so a
+              violation halts the launch sequence before it ever reaches production,
+              catching regressions the moment they're introduced. These tools are a fast
+              first line of defense, not a complete audit, since they cannot judge whether
+              an alt description is actually meaningful or a tab order is actually logical.
+              Automation catches the mechanical failures; it cannot catch experience
+              failures.
             </p>
           </div>
 
@@ -1225,7 +1341,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Automated scanners can't tell you whether navigating the ship by keyboard
+              alone actually feels coherent, so today's mission required manual testing:
+              unplugging the mouse and navigating every critical flow using only Tab, Enter,
+              and arrow keys. We also ran a full pass with a real screen reader, listening
+              to how the interface actually sounds rather than how it looks, which surfaced
+              several confusing announcements the automated scan missed entirely. Manual
+              testing catches the judgment calls automation cannot: is this focus order
+              logical, is this label actually descriptive, does this error message actually
+              help. Both testing methods are required instruments; neither replaces the
+              other.
             </p>
           </div>
 
@@ -1258,7 +1383,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A full accessibility audit combines automated scanning, manual keyboard and
+              screen reader testing, and a structured walkthrough against the WCAG success
+              criteria, producing a prioritized report of every violation found aboard.
+              Findings are typically ranked by severity, a keyboard trap that blocks the
+              crew entirely outranks a slightly low contrast ratio on a decorative label, so
+              remediation effort goes where it matters most. External audits, conducted by
+              disabled users themselves, surface issues that internal teams, blind to their
+              own assumptions, consistently miss. We logged today's audit findings into the
+              mission ledger and assigned each one an owner and a deadline.
             </p>
           </div>
 
@@ -1291,7 +1424,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The Web Content Accessibility Guidelines are the ship's official charter,
+              organized around the four POUR principles and scored across three conformance
+              levels: A, AA, and AAA. Most organizations target AA compliance as the
+              practical standard, since AAA includes criteria too strict or
+              context-dependent for many real interfaces to universally satisfy. Compliance
+              isn't a single certificate earned once; it's an ongoing state that must be
+              re-verified every time the interface changes, since a single new component can
+              silently reopen an old violation. We mapped today's interface against the AA
+              success criteria and confirmed which items still need remediation before
+              departure.
             </p>
           </div>
 
@@ -1324,7 +1466,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Inclusive design shifts the mission upstream of accessibility fixes, building
+              for the full range of human diversity from the very first sketch rather than
+              retrofitting compliance after launch. The curb-cut effect describes this well:
+              ramps built for wheelchair users end up helping crew members with luggage,
+              strollers, or temporary injuries, benefits ripple outward from the original
+              need. Designing with, not just for, disabled crew members surfaces
+              requirements no able-bodied designer would ever think to specify. Today's
+              design review asked not 'does this pass an audit' but 'who might this
+              exclude', a fundamentally different and more generative question.
             </p>
           </div>
 
@@ -1357,7 +1507,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Accessibility that survives only inside one specialist's head evaporates the
+              moment they leave the ship, so today's work focused on culture: shared
+              checklists, accessible component libraries, and design system documentation
+              that makes the accessible choice the default choice. Training every crew
+              member, designers, engineers, and content writers alike, distributes
+              responsibility instead of concentrating it in a single overloaded reviewer.
+              Leadership sponsorship matters enormously here; accessibility work gets
+              deprioritized the moment deadlines tighten unless it's protected as a
+              non-negotiable requirement from above. A ship with genuine accessibility
+              culture doesn't need a hero to keep it running.
             </p>
           </div>
 
@@ -1390,7 +1549,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              This final review cycle traced the full arc from foundational semantics
+              through automated pipelines, audits, formal WCAG compliance, and the cultural
+              systems that sustain it all after the mission ends. Every layer, technical,
+              procedural, and cultural, depends on the ones beneath it; a healthy
+              accessibility culture is worthless without engineers who know how to build
+              semantic HTML in the first place. The crew demonstrated fluency across the
+              full spectrum, from writing a single aria-label correctly to arguing for
+              accessibility budget in a leadership review. The inclusive interface
+              initiative launched twenty-nine cycles ago is now a permanent, self-sustaining
+              subsystem of the ship.
             </p>
           </div>
 

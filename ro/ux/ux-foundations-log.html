@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Un jurnal structurat care documentează explorarea CSS — sisteme de layout, design responsive, animații, stilizare cinematografică și modele de design vizual."
+      content="Un jurnal structurat care documentează fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate."
     />
     <!-- @meta:
       Descrierea Open Graph.
@@ -180,12 +180,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->
+
 
     <link
       rel="stylesheet"
@@ -193,7 +195,8 @@
     />
     <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->
+
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
@@ -241,7 +244,8 @@
           <a href="../index.html" class="return-btn"
             ><!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->← Înapoi la puntea de comandă</a
+    -->
+← Înapoi la puntea de comandă</a
           >
         </li>
       </ul>
@@ -292,77 +296,39 @@
               Fragment link-urile (href="#ux-foundations-day01") creează un cuprins
               care le permite membrilor echipajului să se teleporteze direct la orice
               intrare fără să deruleze prin întregul jurnal.
-          -->
+          -->
+
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#ux-foundations-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#ux-foundations-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#ux-foundations-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#ux-foundations-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#ux-foundations-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#ux-foundations-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#ux-foundations-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#ux-foundations-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#ux-foundations-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#ux-foundations-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#ux-foundations-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#ux-foundations-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#ux-foundations-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#ux-foundations-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#ux-foundations-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#ux-foundations-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#ux-foundations-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#ux-foundations-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#ux-foundations-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#ux-foundations-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#ux-foundations-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#ux-foundations-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#ux-foundations-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#ux-foundations-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#ux-foundations-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#ux-foundations-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#ux-foundations-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#ux-foundations-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#ux-foundations-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#ux-foundations-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +410,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi jurnalul deschide un instrument nou: busola utilizatorului, un unealtă
+              pentru orientarea fiecărei decizii de design în jurul ființei umane aflate de
+              cealaltă parte a ecranului. Înainte de a schița vreo interfață, echipajul
+              trebuie să interiorizeze faptul că design-ul experienței utilizatorului nu
+              este o decorație adăugată peste un produs funcțional, ci o disciplină care
+              determină dacă produsul funcționează deloc. Această zi de orientare trece în
+              revistă întregul arc din față — cercetare, design, testare și livrare — ca
+              etape ale unei singure călătorii continue spre produse pe care oamenii chiar
+              le pot naviga. Empatia, insistă lecția de azi, este combustibilul care
+              alimentează fiecare instrument ce va urma.
             </p>
           </div>
 
@@ -456,7 +431,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day00') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day00"
@@ -482,7 +458,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cercetarea utilizatorilor este rețeaua de senzori care împiedică echipajul să
+              proiecteze în vid, adunând date reale despre cine sunt utilizatorii, de ce au
+              nevoie și unde sistemele actuale îi dezamăgesc. Ziua de azi acoperă metodele
+              fundamentale: interviurile pentru profunzime, sondajele pentru amploare și
+              ancheta contextuală pentru observarea comportamentului în habitatul său
+              natural, nu doar bazându-se pe ce spun utilizatorii că fac. Scopul nu este
+              confirmarea presupunerilor existente, ci vânarea activă a dovezilor care le
+              contrazic, deoarece cele mai valoroase descoperiri de cercetare sunt cele care
+              surprind echipa. Exercițiul de azi realizează un scurt interviu și extrage
+              observații acționabile din transcrierea brută.
             </p>
           </div>
 
@@ -494,7 +479,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day01') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day01"
@@ -515,7 +501,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O persona condensează descoperirile cercetării într-un reprezentant fictiv,
+              dar bazat pe dovezi, al unui segment real de utilizatori, oferind echipajului
+              un chip concret pentru care să proiecteze în loc de o statistică abstractă.
+              Personele eficiente captează obiective, frustrări și tipare comportamentale
+              ancorate în date reale de cercetare, nu presupuneri sau stereotipuri îmbrăcate
+              cu o fotografie de stoc. Lecția de azi avertizează împotriva eșecului comun de
+              a construi persone din presupuneri, nu din dovezi, deoarece un utilizator
+              fictiv construit pe ficțiune deviază deciziile de design. Exercițiul de azi
+              sintetizează notițele de interviu din sesiunea anterioară într-un document de
+              persona funcțional.
             </p>
           </div>
 
@@ -527,7 +522,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day02') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day02"
@@ -548,7 +544,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O hartă a călătoriei utilizatorului mapează întregul arc al interacțiunii
+              unei persoane cu un produs în timp, de la prima conștientizare, prin
+              integrare, utilizare regulată, până la eventuala susținere sau abandonare.
+              Fiecare etapă înregistrează acțiunile, gândurile, emoțiile și punctele
+              dureroase ale utilizatorului, dezvăluind momente de frecare care ar putea fi
+              invizibile privind orice ecran izolat. Maparea călătoriei mută atenția echipei
+              de la funcționalități individuale la experiența completă, scoțând adesea la
+              iveală goluri între departamente sau sisteme pe care nimeni nu le deține.
+              Exercițiul de azi mapează o călătorie pentru un scenariu ales, marcând
+              momentele de vârf și de cădere emoțională de-a lungul cronologiei.
             </p>
           </div>
 
@@ -560,7 +565,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day03') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day03"
@@ -581,7 +587,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Arhitectura informației este cadrul structural de sub fiecare interfață —
+              harta site-ului, ierarhia de navigare, sistemul de etichetare care determină
+              dacă utilizatorii pot găsi ce au nevoie sau rătăcesc pierduți prin coridoarele
+              stației. Sortarea cardurilor, unde utilizatorii grupează și etichetează
+              singuri conținutul, dezvăluie modelele mentale pe care oamenii le au cu
+              adevărat, care diferă adesea de modul în care organizația își categorisește
+              intern propriul conținut. Lecția de azi acoperă tehnicile de sortare a
+              cardurilor deschisă și închisă și modul de traducere a grupărilor rezultate
+              într-o structură de navigare coerentă. O arhitectură a informației bună este
+              invizibilă când funcționează și catastrofală când nu.
             </p>
           </div>
 
@@ -593,7 +608,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day04') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day04"
@@ -614,7 +630,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Strategia de conținut guvernează ce cuvinte și mesaje populează efectiv
+              interfața, tratând conținutul ca pe un material proiectat, nu ca pe o idee
+              ulterioară adăugată după finalizarea layout-ului. Lecția de azi acoperă
+              ghidurile de voce și ton, auditurile de conținut care inventariază și
+              evaluează materialul existent, și disciplina de a scrie pentru scanare, nu
+              pentru citire aprofundată, deoarece majoritatea utilizatorilor răsfoiesc, nu
+              citesc fiecare cuvânt. Micro-textul — etichetele butoanelor, mesajele de
+              eroare, stările goale — primește atenție specială azi, deoarece aceste
+              fragmente mici de text poartă o greutate disproporționată în cât de demn de
+              încredere și utilizabil pare un produs.
             </p>
           </div>
 
@@ -626,7 +651,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day05') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day05"
@@ -647,7 +673,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Wireframing-ul elimină culoarea, imaginile și rafinamentul pentru a se
+              concentra în întregime pe structură, layout și ierarhia informației — schița
+              scheletică înainte de aplicarea vreunei învelișuri vizuale. Wireframe-urile de
+              fidelitate scăzută, adesea schițate manual sau în cutii simple, permit echipei
+              să itereze rapid și ieftin asupra ideilor de layout, înainte de a investi în
+              vizuale detaliate care sunt costisitoare de modificat. Lecția de azi distinge
+              wireframe-urile de machete și prototipuri, clarificând că fiecare nivel de
+              fidelitate servește un scop diferit în procesul de design. Exercițiul de azi
+              produce wireframe-uri pentru trei ecrane cheie, bazate pe harta călătoriei din
+              sesiunile anterioare.
             </p>
           </div>
 
@@ -659,7 +694,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day06') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day06"
@@ -680,7 +716,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ziua de recapitulare consolidează faza de cercetare: interviurile și
+              sondajele care au adunat date brute, personele care au dat acestor date un
+              chip uman, hărțile călătoriei care au trasat întregul arc al experienței,
+              arhitectura informației care a organizat spațiul de conținut, strategia de
+              conținut care a modelat cuvintele și wireframe-urile care au structurat
+              layout-ul. Cadeții prezintă un mini-pipeline de la cercetare la wireframe
+              pentru un produs ales, apărând fiecare decizie de design prin raportarea ei la
+              o descoperire specifică de cercetare. Acest punct de control confirmă că
+              echipajul ancorează design-ul în dovezi înainte ca jurnalul să treacă spre
+              design-ul vizual.
             </p>
           </div>
 
@@ -692,7 +737,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day07') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day07"
@@ -718,7 +764,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Design-ul vizual traduce scheletul structural al wireframe-urilor într-o
+              interfață pe deplin realizată, aplicând culoare, imagini, iconografie și
+              ierarhie vizuală pentru a ghida privirea și a comunica sensul dintr-o privire.
+              Lecția de azi acoperă principiile Gestalt — proximitate, similaritate,
+              închidere — care explică modul în care oamenii percep elemente grupate chiar
+              și atunci când nicio graniță explicită nu este desenată. Tehnicile de ierarhie
+              vizuală precum dimensiunea, contrastul și spațiul alb direcționează atenția în
+              mod deliberat, asigurându-se că cele mai importante acțiuni și informații sunt
+              cele observate primele de utilizatori. Exercițiul de azi aplică o trecere de
+              design vizual peste unul dintre wireframe-urile produse anterior.
             </p>
           </div>
 
@@ -730,7 +785,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day08') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day08"
@@ -751,7 +807,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Tipografia este un instrument tăcut care modelează lizibilitatea, tonul și
+              încrederea cu mult înainte ca un utilizator să înregistreze conștient vreo
+              literă. Lecția de azi acoperă clasificarea fonturilor, diferența dintre serif
+              și sans-serif, atât în lizibilitate cât și personalitate, și rolul critic al
+              înălțimii liniei, spațierii literelor și lungimii liniei în păstrarea
+              confortului de citire a pasajelor lungi de text. O scală tipografică — un set
+              definit de dimensiuni de font folosite consecvent într-o interfață — previne
+              haosul vizual al deciziilor de dimensionare ad-hoc, luate ecran cu ecran.
+              Exercițiul de azi construiește o mică scală tipografică și o aplică pe o
+              interfață exemplu.
             </p>
           </div>
 
@@ -763,7 +828,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day09') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day09"
@@ -784,7 +850,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Teoria culorii în design-ul de interfață depășește preferința estetică și
+              intră în teritoriu funcțional: culoarea comunică stare, ierarhie și emoție, și
+              trebuie aleasă ținând cont de accesibilitate și context cultural. Lecția de
+              azi acoperă modelele de armonie a culorii, diferența dintre nuanță, saturație
+              și luminozitate, și modul în care rapoartele de contrast suficiente păstrează
+              textul lizibil pentru utilizatorii cu vedere slabă. Culoarea nu ar trebui
+              niciodată să fie singurul purtător al informației critice, deoarece
+              utilizatorii daltoniști sau care folosesc afișaje în tonuri de gri trebuie să
+              poată înțelege interfața și prin alte indicii. Exercițiul de azi auditează
+              paleta de culori a unei interfețe existente atât pentru armonie, cât și pentru
+              conformitate de accesibilitate.
             </p>
           </div>
 
@@ -796,7 +872,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day10') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day10"
@@ -817,7 +894,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sistemele de layout și grilă impun o structură invizibilă care menține
+              interfețele aliniate, consecvente și ușor de scanat pe diferite dimensiuni de
+              ecran. Lecția de azi acoperă sistemele de grilă bazate pe coloane, folosirea
+              unităților de spațiere consecvente pentru a crea ritm și punctele de
+              întrerupere responsive care rearanjează grila pe măsură ce lățimea ferestrei
+              de vizualizare se schimbă între dispozitive. Alinierea, mai mult decât orice
+              element vizual izolat, este ceea ce separă un design care pare profesionist de
+              unul care pare amatoricesc, deoarece elementele nealiniate creează frecare
+              subconștientă chiar și atunci când utilizatorii nu pot articula de ce ceva
+              pare în neregulă. Exercițiul de azi reconstruiește un layout haotic folosind
+              un sistem de grilă definit.
             </p>
           </div>
 
@@ -829,7 +916,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day11') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day11"
@@ -850,7 +938,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un sistem de design este panoul de instrumente comun care menține un întreg
+              echipaj construind interfețe consecvente la scară: o bibliotecă documentată de
+              componente, tipare și ghiduri reutilizabile de care fiecare designer și
+              dezvoltator se folosește, în loc să reinventeze fiecare ecran de la zero.
+              Lecția de azi acoperă anatomia unui sistem de design — stiluri fundamentale
+              precum culoarea și tipografia, biblioteci de componente precum butoane și
+              câmpuri de formular și ghiduri de utilizare care explică când și cum se aplică
+              fiecare piesă. Un sistem de design bine întreținut accelerează dramatic atât
+              design-ul cât și dezvoltarea, asigurându-se totodată că produsul pare o
+              singură navă coerentă, nu un petic de piese nepotrivite.
             </p>
           </div>
 
@@ -862,7 +959,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day12') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day12"
@@ -883,7 +981,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Prototiparea aduce ecranele statice la viață, simulând interacțiunile,
+              tranzițiile și fluxurile pe care un utilizator le-ar trăi cu adevărat, cu mult
+              înainte ca vreo linie de cod de producție să fie scrisă. Lecția de azi
+              distinge prototipurile de fidelitate scăzută, de tip click-through, utile
+              pentru testarea fluxului și structurii timpuriu, de prototipurile interactive
+              de fidelitate ridicată care imită îndeaproape aspectul și senzația produsului
+              final. Instrumentele de prototipare permit designerilor să lege ecrane între
+              ele, să definească animații de tranziție și să simuleze logică condițională,
+              creând un artefact testabil care dezvăluie probleme de utilizabilitate cu mult
+              înainte ca resursele de dezvoltare să fie angajate. Exercițiul de azi
+              construiește un prototip clickabil din wireframe-urile și design-urile vizuale
+              finalizate în sesiunile anterioare.
             </p>
           </div>
 
@@ -895,7 +1004,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day13') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day13"
@@ -916,7 +1026,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ziua de recapitulare consolidează faza de design: principiile de design
+              vizual care au dat interfeței rafinament și ierarhie, alegerile tipografice și
+              de culoare care au modelat lizibilitatea și tonul, sistemele de layout și
+              grilă care au păstrat totul aliniat, sistemele de design care au scalat
+              consecvența pe tot produsul și prototipurile care au adus totul la viață
+              interactivă. Cadeții prezintă un prototip construit din cercetarea și
+              structura stabilite mai devreme în sector, apărând fiecare decizie vizuală ca
+              pe o alegere deliberată, nu o presupunere estetică. Acest punct de control
+              marchează tranziția de la proiectare la testarea dacă design-ul chiar
+              funcționează.
             </p>
           </div>
 
@@ -928,7 +1047,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day14') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day14"
@@ -954,7 +1074,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de utilizabilitate pune un prototip în fața unor utilizatori reali
+              și observă, fără a-i ghida sau explica, dacă pot finaliza sarcini realiste
+              fără confuzie sau frustrare. Lecția de azi acoperă formatele de testare
+              moderată versus nemoderată, importanța protocolului de gândire cu voce tare,
+              unde participanții își narrează gândurile pe măsură ce navighează, și
+              disciplina de a nu salva niciodată un participant care se luptă în mijlocul
+              unei sarcini, deoarece frecarea în sine este data căutată. Câteva sesiuni de
+              testare, de obicei cinci până la opt participanți, dezvăluie majoritatea
+              problemelor de utilizabilitate ale unei interfețe, făcând testarea de
+              utilizabilitate una dintre activitățile cu cel mai mare randament din întregul
+              proces de design. Exercițiul de azi rulează un test de utilizabilitate moderat
+              pe prototipul din sesiunea anterioară.
             </p>
           </div>
 
@@ -966,7 +1097,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day15') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day15"
@@ -987,7 +1119,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea A/B rulează două variante ale unui design pe trafic real, măsurând
+              care versiune performează mai bine în raport cu o metrică specifică,
+              predefinită, în loc să se bazeze pe opinie sau intuiție. Lecția de azi acoperă
+              formularea unei ipoteze clare înainte de testare, alegerea unei singure
+              variabile de schimbat per test pentru a-i izola efectul, și calcularea
+              semnificației statistice pentru a se asigura că diferențele observate nu sunt
+              pur și simplu rezultatul zgomotului aleator. Testarea A/B completează testarea
+              de utilizabilitate, nu o înlocuiește: testarea de utilizabilitate dezvăluie de
+              ce utilizatorii se luptă, în timp ce testarea A/B dezvăluie care dintre două
+              soluții funcționale performează măsurabil mai bine la scară.
             </p>
           </div>
 
@@ -999,7 +1140,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day16') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day16"
@@ -1020,7 +1162,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Analitica transformă un produs live într-un flux continuu de telemetrie,
+              urmărind cum se comportă cu adevărat utilizatorii reali, nu cum se comportă
+              într-o sesiune de testare controlată. Lecția de azi acoperă metrici cheie
+              precum rata de conversie, rata de respingere, timpul petrecut pe sarcină și
+              analiza de funnel, care urmărește unde abandonează utilizatorii într-un proces
+              cu mai mulți pași, precum finalizarea comenzii sau înregistrarea. Analitica
+              cantitativă răspunde la ce se întâmplă la scară, dar rareori explică de ce,
+              aici rămânând esențiale metode calitative precum testarea de utilizabilitate
+              și interviurile cu utilizatorii. Exercițiul de azi interpretează un panou de
+              analitică exemplu și identifică etapa de funnel cu cea mai mare rată de
+              abandon pentru investigare ulterioară.
             </p>
           </div>
 
@@ -1032,7 +1184,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day17') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day17"
@@ -1053,7 +1206,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Evaluarea euristică pune evaluatori experimentați să inspecteze o interfață
+              în raport cu o listă de principii de utilizabilitate consacrate, precum cele
+              zece euristici ale lui Nielsen, care acoperă vizibilitatea stării sistemului,
+              prevenirea erorilor și consecvența. Spre deosebire de testarea de
+              utilizabilitate, evaluarea euristică nu necesită utilizatori reali, făcând-o o
+              metodă rapidă și cu cost redus de a depista probleme evidente timpuriu,
+              înainte de a investi într-o rundă completă de testare. Lecția de azi parcurge
+              fiecare euristică cu exemple concrete de încălcări și remedii, apoi aplică
+              lista completă unei interfețe reale, catalogând și evaluând severitatea
+              fiecărei probleme găsite. Această metodă funcționează cel mai bine ca un
+              complement al testării cu utilizatori reali, nu ca înlocuitor.
             </p>
           </div>
 
@@ -1065,7 +1228,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day18') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day18"
@@ -1086,7 +1250,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Revizuirea accesibilității se asigură că o interfață poate fi folosită de
+              oameni cu întreaga gamă de abilități, inclusiv cei care folosesc cititoare de
+              ecran, navigare doar cu tastatura sau orice tip de tehnologie asistivă. Lecția
+              de azi acoperă ghidurile WCAG, importanța marcajului semantic și a structurii
+              corecte de titluri pentru navigarea cu cititorul de ecran, contrastul de
+              culoare suficient și stările de focus la tastatură care permit utilizatorilor
+              să navigheze fără mouse. Accesibilitatea nu este un exercițiu de bifat la
+              finalul unui proiect, ci o constrângere de design luată în calcul din prima
+              schiță, deoarece adăugarea ulterioară a accesibilității pe o interfață
+              finalizată este mult mai costisitoare decât proiectarea ei de la început.
             </p>
           </div>
 
@@ -1098,7 +1271,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day19') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day19"
@@ -1119,7 +1293,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Canalele de feedback ale utilizatorilor — tichete de suport, recenzii din
+              magazinul de aplicații, widget-uri de feedback în aplicație și contactare
+              directă — formează un flux continuu de semnal nesolicitat care completează
+              cercetarea structurată realizată mai devreme în sector. Lecția de azi acoperă
+              modul de triere și categorizare a feedback-ului primit, distingând enervările
+              frecvente și minore de problemele rare, dar severe și blocante, și cum se
+              evită supra-indexarea pe vocile cele mai zgomotoase în detrimentul tiparelor
+              majorității tăcute, vizibile doar în date agregate. Buclele de feedback închid
+              golul dintre un produs lansat și nevoile în evoluție ale bazei sale reale de
+              utilizatori, menținând procesul de design viu mult după lansare.
             </p>
           </div>
 
@@ -1131,7 +1314,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day20') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day20"
@@ -1152,7 +1336,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ziua de recapitulare consolidează faza de testare: testarea de
+              utilizabilitate care a dezvăluit frecarea prin observare directă, testarea A/B
+              care a măsurat diferențe de performanță la scară, analitica ce a urmărit
+              continuu comportamentul din lumea reală, evaluarea euristică ce a depistat
+              rapid tipare de probleme cunoscute, revizuirea accesibilității care s-a
+              asigurat că interfața servește fiecare utilizator și canalele de feedback care
+              au menținut bucla deschisă după lansare. Cadeții sintetizează descoperirile
+              dintr-o rundă de testare într-o listă prioritizată de schimbări de design,
+              clasificând problemele atât după severitate cât și după frecvență. Acest punct
+              de control confirmă că echipajul poate valida deciziile de design cu dovezi,
+              nu presupuneri.
             </p>
           </div>
 
@@ -1164,7 +1358,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day21') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day21"
@@ -1190,7 +1385,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Predarea design-ului este manevra de andocare unde un design finalizat trece
+              de la echipa de design la echipa de inginerie fără a pierde fidelitate sau
+              intenție în tranziție. Lecția de azi acoperă specificațiile adnotate care
+              documentează spațierea, dimensionarea și stările de interacțiune, activele de
+              design exportate în formatele și rezoluțiile corecte și instrumentele
+              partajate precum modul de inspecție din Figma, care permit dezvoltatorilor să
+              extragă valori exacte direct din fișierele sursă. Un proces de predare
+              deficitar introduce goluri în care produsul livrat deviază de la design-ul
+              intenționat, anulând săptămâni de cercetare și iterare atentă în ultima etapă.
             </p>
           </div>
 
@@ -1202,7 +1405,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day22') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day22"
@@ -1223,7 +1427,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Colaborarea cu dezvoltatorii funcționează cel mai bine ca o conversație
+              continuă pe tot parcursul procesului de design, nu ca un singur eveniment de
+              predare la final. Lecția de azi acoperă implicarea timpurie a dezvoltatorilor
+              pentru a semnala constrângeri tehnice înainte ca design-urile să fie
+              finalizate, stabilirea unui vocabular comun între echipele de design și
+              inginerie pentru a preveni neînțelegerile și rularea unor revizuiri comune
+              unde ambele discipline critică lucrul împreună, nu în silozuri izolate.
+              Produsele construite de echipaje de design și inginerie strâns colaborative
+              sunt lansate în mod constant cu mai puține compromisuri de implementare decât
+              cele construite de echipe care interacționează doar la predare.
             </p>
           </div>
 
@@ -1235,7 +1448,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day23') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day23"
@@ -1256,7 +1470,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Token-urile de design sunt cele mai mici valori atomice dintr-un sistem de
+              design — coduri de culoare, unități de spațiere, dimensiuni de font — stocate
+              ca variabile numite, nu ca valori fixe împrăștiate atât în fișierele de design
+              cât și în cod. Lecția de azi acoperă modul în care token-urile creează o
+              singură sursă de adevăr care menține sincronizate instrumentele de design și
+              codul de producție, astfel încât o singură schimbare a unui token se propagă
+              automat peste tot unde este folosit, în loc să necesite actualizări manuale în
+              zeci de locații separate. Exercițiul de azi definește un mic set de token-uri
+              pentru culoare și spațiere și îl aplică consecvent atât într-un fișier de
+              design, cât și într-un fragment de cod.
             </p>
           </div>
 
@@ -1268,7 +1491,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day24') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day24"
@@ -1289,7 +1513,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Bibliotecile de tipare extind sistemele de design documentând nu doar
+              componente individuale, ci soluții dovedite la probleme recurente de
+              interfață, precum modul de structurare a unui formular cu mai mulți pași sau
+              afișarea unei stări goale. Lecția de azi acoperă când să apelezi la un tipar
+              stabilit versus când o problemă justifică cu adevărat o soluție inedită,
+              deoarece bazarea excesivă pe tipare poate sufoca inovația, în timp ce
+              ignorarea lor completă duce la reinventarea prost a unor probleme deja
+              rezolvate. O bibliotecă de tipare bine documentată captează nu doar soluția
+              vizuală, ci și raționamentul din spatele ei, ajutând viitorii designeri să
+              înțeleagă când tiparul se aplică și când nu.
             </p>
           </div>
 
@@ -1301,7 +1534,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day25') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day25"
@@ -1322,7 +1556,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              DesignOps este disciplina eliminării frecării din procesul de design în sine,
+              tratând propriul flux de lucru, uneltele și practicile de colaborare ale
+              echipei de design ca pe un sistem demn de proiectat în mod deliberat. Lecția
+              de azi acoperă responsabilitățile comune ale DesignOps: menținerea
+              infrastructurii sistemului de design, standardizarea organizării fișierelor și
+              a convențiilor de denumire pe o echipă în creștere și eficientizarea
+              instrumentelor și proceselor care conectează cercetarea, design-ul și
+              ingineria. Pe măsură ce echipele de design se extind, absența DesignOps
+              creează un haos tot mai mare — fișiere inconsecvente, efort duplicat și
+              predări lente — pe care niciun talent individual de designer nu-l poate
+              compensa complet.
             </p>
           </div>
 
@@ -1334,7 +1578,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day26') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day26"
@@ -1355,7 +1600,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Strategia UX conectează munca de design la obiectivele mai largi de business,
+              asigurându-se că deciziile de experiență a utilizatorului servesc simultan nu
+              doar nevoile individuale ale utilizatorilor, ci și misiunea și obiectivele
+              măsurabile ale organizației. Lecția de azi acoperă traducerea obiectivelor de
+              business în priorități de design, construirea argumentelor pentru investiția
+              în design folosind date și cercetare, nu doar argumente estetice, și alinierea
+              foilor de parcurs de design cu cele de produs și business, astfel încât
+              disciplinele să avanseze în formație, nu în scopuri divergente. O practică UX
+              matură câștigă un loc la masa strategică demonstrând constant impact măsurabil
+              asupra metricilor de care conducerea chiar îi pasă.
             </p>
           </div>
 
@@ -1367,7 +1621,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day27') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day27"
@@ -1388,7 +1643,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Recapitularea finală a sectorului UX: echipajul consolidează lecțiile care
+              acoperă întreaga călătorie, de la cercetare prin design, testare și livrare,
+              incluzând disciplinele operaționale ale token-urilor de design, bibliotecilor
+              de tipare, DesignOps și strategiei UX, care scalează practica bună de design
+              pe o organizație în creștere. Un exercițiu final cere fiecărui cadet să
+              parcurgă un produs ipotetic de la cercetarea inițială a utilizatorilor până la
+              o predare complet specificată, pregătită pentru dezvoltatori, justificând
+              fiecare decizie pe parcurs cu dovezi adunate la fiecare etapă. Această
+              transmisiune încheie capitolul fundamentelor UX al călătoriei, iar jurnalul se
+              îndreaptă acum spre noi sisteme.
             </p>
           </div>
 
@@ -1400,7 +1664,8 @@
                     <!-- @block: TERMINAL DE NOTE\
             @bridge: saveNote('ux-foundations-note-day28') este gestionat de MECANISM 04\
             în en/script.js - Terminalul de note persistente prin localStorage.\
-          -->
+          -->
+
           <div class="note-terminal">
             <textarea
               name="ux-foundations-note-day28"
@@ -1464,7 +1729,8 @@
         <li>
           <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->
+
           <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
           <a href="../../ro/frontend/css-log.html" class="">RO</a>
@@ -1498,7 +1764,8 @@
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->
+
       </p>
 
       <!-- @structure:
@@ -1560,4 +1827,4 @@
 
 <!-- @reason:\
       Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+    -->

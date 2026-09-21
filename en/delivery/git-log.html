@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Git Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#git-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#git-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#git-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#git-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#git-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#git-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#git-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#git-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#git-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#git-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#git-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#git-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#git-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#git-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#git-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#git-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#git-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#git-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#git-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#git-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#git-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#git-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#git-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#git-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#git-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#git-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#git-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#git-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#git-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#git-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#git-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today we sealed the ship's first repository, the vessel that will hold every
+              change made to the codebase across the entire voyage. A repository is not just
+              a folder of files but a complete, addressable history, every commit a
+              preserved snapshot of the ship at a moment in time. We ran git init to bring
+              the .git directory to life, the black box recorder that will track everything
+              from this point forward. Nothing exists in the mission log until it has been
+              committed; uncommitted work is cargo still floating loose in the hold.
             </p>
           </div>
 
@@ -484,7 +431,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Git doesn't store a running list of diffs the way older systems did; it
+              stores a full snapshot of the entire project at every commit, then optimizes
+              storage by referencing unchanged files rather than copying them. Each commit
+              points backward to its parent, forming a chain, or more precisely a directed
+              graph, that traces the ship's exact configuration at any point in its history.
+              This snapshot model is why Git can jump instantly to any past state: it isn't
+              replaying changes, it's simply loading a stored image of that moment.
+              Understanding this model reframes everything that follows, branches, merges,
+              and rebases are all just different ways of navigating this graph of snapshots.
             </p>
           </div>
 
@@ -517,7 +472,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Three commands form the core rhythm of daily operations aboard this ship: git
+              init creates the repository, git add stages changes into the index, a holding
+              bay before permanent recording, and git commit seals those staged changes into
+              a permanent snapshot with a message describing the mission log entry. Staging
+              is deliberate: you choose exactly which changes join the next commit, rather
+              than committing everything indiscriminately. A clear, descriptive commit
+              message is a log entry future crew members, including your future self, will
+              depend on to understand why a change was made. We drilled this cycle, edit,
+              stage, commit, until it became second nature.
             </p>
           </div>
 
@@ -550,7 +513,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              git log unspools the ship's full mission history, commit by commit, showing
+              author, timestamp, and message for every recorded snapshot back to the very
+              first. Flags like --oneline compress this into a scannable manifest, while
+              --graph renders the branching structure visually, showing exactly where the
+              ship's timeline split and rejoined. git diff shows the precise delta between
+              two states, the exact lines added or removed, letting the crew inspect a
+              change before committing it or review what happened between any two points in
+              history. Together, these two instruments turn an opaque history into a fully
+              navigable, inspectable record.
             </p>
           </div>
 
@@ -583,7 +554,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Mistakes happen even on a well-run ship, so Git gives us two very different
+              tools for undoing them. git reset rewrites history, moving the branch pointer
+              backward and optionally discarding changes, powerful but dangerous on anything
+              already shared with the rest of the crew. git revert instead creates a brand
+              new commit that undoes a previous one, preserving the full historical record
+              rather than erasing it, the safer choice once work has left your local
+              station. Choosing between them comes down to one question: has this history
+              already been transmitted to other crew members?
             </p>
           </div>
 
@@ -616,7 +594,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A remote is another ship's copy of the repository, typically a central hub
+              like a shared station orbiting above the whole mission. git clone pulls down a
+              complete copy of that remote repository, history and all, giving the new crew
+              member a fully independent working copy. git push transmits your local commits
+              up to the remote, synchronizing your work with the rest of the fleet, while
+              git pull pulls their commits back down into yours. Working with remotes turns
+              Git from a personal logbook into a coordinated communication system across the
+              entire crew.
             </p>
           </div>
 
@@ -649,7 +634,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Not everything in a ship's working directory belongs in the permanent record:
+              build artifacts, dependency caches, and local configuration files would only
+              clutter the mission log with noise. A .gitignore file lists patterns Git
+              should never track, keeping compiled output, node_modules, and secret
+              credentials out of every future commit entirely. Ignoring a file only prevents
+              new tracking; a file already committed keeps showing up until it's explicitly
+              removed from the index with git rm --cached. A clean .gitignore, curated
+              early, keeps the ship's history focused on what actually matters: source code
+              and intent.
             </p>
           </div>
 
@@ -682,7 +675,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              We paused to recalibrate the fundamentals: the snapshot model, the
+              init-add-commit rhythm, reading history through log and diff, undoing mistakes
+              safely, and synchronizing with remotes. Each of these pieces builds directly
+              on the last, understanding snapshots makes reset and revert intuitive, and
+              understanding remotes makes push and pull feel like natural extensions of
+              commit. The review drills confirmed the crew can navigate a repository's
+              history confidently before moving into the more complex terrain of branching.
+              Git fundamentals form the hull plating for every advanced maneuver still
+              ahead.
             </p>
           </div>
 
@@ -720,7 +721,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A branch is a lightweight, movable pointer to a commit, letting a crew member
+              develop a new feature in complete isolation without disturbing the ship's main
+              trajectory. git branch creates one, git switch or git checkout moves between
+              them, and because branches are so cheap to create, Git encourages branching
+              liberally for every distinct unit of work. Work committed on a feature branch
+              doesn't touch the main branch at all until it's explicitly merged back in, so
+              experimental work can be abandoned entirely with zero risk to the stable
+              trajectory. This isolation is what makes parallel, concurrent development
+              across a large crew possible without constant collision.
             </p>
           </div>
 
@@ -753,7 +762,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Merging brings the work from an isolated branch back into the main
+              trajectory, combining two divergent histories into one unified timeline. A
+              fast-forward merge simply moves the pointer forward when no divergent work
+              exists on the target branch, while a true merge commit creates a new snapshot
+              with two parents, recording the exact point where two paths of development
+              rejoined. git merge performs this operation, and understanding which type of
+              merge is happening, fast-forward or true merge, explains why some histories
+              stay linear while others show visible branching structure. Merging is the
+              moment isolated work rejoins the shared mission record.
             </p>
           </div>
 
@@ -786,7 +803,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A merge conflict occurs when two branches have changed the exact same lines
+              of a file in incompatible ways, and Git, refusing to guess which version is
+              correct, halts the merge and asks the crew to decide. Conflict markers,
+              <<<<<<<, =======, and >>>>>>>, appear directly in the file, showing both
+              competing versions side by side for manual review. Resolving a conflict means
+              editing the file to the correct final state, removing the markers entirely,
+              then staging and committing the result to complete the merge. Conflicts aren't
+              malfunctions; they're Git correctly refusing to make a decision that requires
+              human judgment about the ship's actual intent.
             </p>
           </div>
 
@@ -819,7 +844,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              As a crew scales up, ad hoc branching stops being enough, and structured
+              branching strategies like Git Flow define exactly which branches exist and how
+              work flows between them. Git Flow typically maintains a main branch for stable
+              releases, a develop branch for integrated work in progress, and short-lived
+              feature, release, and hotfix branches that merge back into both. Simpler
+              strategies like GitHub Flow strip this down to just main plus feature branches
+              merged through pull requests, favoring speed over ceremony for teams shipping
+              continuously. Choosing a strategy is choosing a shared protocol the entire
+              crew commits to following, consistency matters more than which specific
+              strategy is picked.
             </p>
           </div>
 
@@ -852,7 +886,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Rebasing rewrites a branch's history by replaying its commits on top of a new
+              base, producing a linear history as if the work had been built there from the
+              start, rather than the criss-crossing structure a merge commit leaves behind.
+              git rebase main takes your feature branch's commits and reapplies them one by
+              one onto the tip of main, generating new commit hashes for each one in the
+              process. This produces a cleaner, easier-to-read log, but the golden rule
+              stands firm: never rebase commits that have already been pushed and shared,
+              since rewriting shared history strands every other crew member's copy. Rebase
+              before sharing, merge after, is the safe rhythm most crews adopt.
             </p>
           </div>
 
@@ -885,7 +927,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sometimes only a single commit from another branch is needed, not the entire
+              branch, and git cherry-pick lets the crew apply that one specific snapshot's
+              changes onto the current branch without pulling in anything else. This is the
+              standard tool for backporting a critical bug fix from the main development
+              line onto an older stable release branch, where merging the entire branch
+              would pull in unrelated, unready work. Cherry-picking creates a brand new
+              commit with a new hash, even though the change is identical, since it's being
+              replayed in a different historical context. Used sparingly, cherry-pick is
+              precise surgery; used constantly, it signals a branching strategy that needs
+              rethinking.
             </p>
           </div>
 
@@ -918,7 +969,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              This cycle's review confirmed the crew's command of isolated development:
+              branching for parallel work, merging to reintegrate it, resolving conflicts
+              when histories collide, structured strategies for coordinating a growing crew,
+              rebasing for clean history, and cherry-picking for surgical fixes. Each tool
+              solves a distinct problem, and knowing which one the situation calls for is
+              the actual skill, not memorizing commands in isolation. The drills confirmed
+              the crew can navigate divergent timelines without losing work or corrupting
+              the shared record. We now advance toward the collaborative workflows that
+              coordinate an entire fleet.
             </p>
           </div>
 
@@ -956,7 +1015,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A fork is a complete, independent copy of someone else's repository, hosted
+              under your own account, giving you full write access to your copy while the
+              original project remains untouched until you explicitly propose changes. This
+              is the standard workflow for open source contribution: fork the project, clone
+              your fork locally, commit your changes on a branch, then push to your fork and
+              open a pull request against the original repository. Keeping your fork
+              synchronized with the upstream project, by adding it as a remote and
+              periodically merging or rebasing, prevents your contribution from drifting too
+              far out of date to merge cleanly. The forking model lets thousands of
+              independent crews contribute to a single shared mission without needing direct
+              write access to it.
             </p>
           </div>
 
@@ -989,7 +1058,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Inside a single shared repository, most teams adopt the feature branch
+              workflow: every unit of work, however small, gets its own short-lived branch
+              cut from main, developed in isolation, then merged back through review. Branch
+              names typically encode intent and ownership, like feature/telemetry-dashboard
+              or fix/airlock-timeout, so any crew member can understand a branch's purpose
+              at a glance without reading its full history. Keeping feature branches
+              short-lived, merged within days rather than weeks, minimizes the painful
+              conflicts that accumulate when a branch drifts too far from main's ongoing
+              changes. This workflow is the connective tissue that lets many crew members
+              build simultaneously without stepping on each other's work.
             </p>
           </div>
 
@@ -1022,7 +1100,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A pull request is a formal proposal to merge one branch into another,
+              bundling a diff, a description of intent, and a space for the rest of the crew
+              to review before the change is accepted into the mission record. It's a
+              checkpoint, not just a mechanical merge, catching bugs, design issues, and
+              knowledge gaps before they reach the main trajectory, while simultaneously
+              spreading understanding of the change across more than one crew member's head.
+              Automated checks, tests, linters, and build verification, typically run
+              against every pull request, blocking the merge until the ship's systems
+              confirm the change is safe. A pull request left open too long accumulates
+              drift and conflict, so healthy crews review and merge promptly rather than
+              letting proposals stack up in orbit.
             </p>
           </div>
 
@@ -1055,7 +1143,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Reviewing a crewmate's pull request well is its own discipline: focus
+              feedback on the code's actual behavior and clarity, not the author's
+              competence, and always explain the reasoning behind a requested change rather
+              than issuing bare commands. Small, focused pull requests are far easier to
+              review thoroughly than sprawling ones, a five-hundred-line diff invites
+              rubber-stamp approval where a fifty-line diff invites genuine scrutiny.
+              Distinguishing blocking issues from optional suggestions, often with explicit
+              labels, respects the author's time and keeps review from stalling the mission
+              unnecessarily. Good review culture treats feedback as a gift exchanged between
+              crew members working toward the same destination, not a gatekeeping ritual.
             </p>
           </div>
 
@@ -1088,7 +1185,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A tag is a fixed, permanent pointer to a specific commit, unlike a branch
+              which keeps moving forward, marking an exact point in history as significant,
+              typically a release ready to leave the ship. git tag v1.2.0 stamps that commit
+              permanently, and semantic versioning, major.minor.patch, communicates the
+              nature of each release: breaking changes, new features, or bug fixes
+              respectively. Annotated tags carry a message, author, and timestamp of their
+              own, distinct from the commit they point to, making them suitable for formal
+              release records rather than lightweight bookmarks. Pairing tags with generated
+              release notes gives the rest of the fleet a clear, versioned map of exactly
+              what shipped and when.
             </p>
           </div>
 
@@ -1121,7 +1227,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A Git hook is a script that fires automatically at specific points in the
+              commit or push lifecycle, letting the ship enforce rules without relying on
+              crew members to remember them manually. A pre-commit hook can run linters or
+              tests before a commit is even allowed to complete, catching broken code before
+              it enters the permanent record rather than after. A pre-push hook can block a
+              push entirely if tests fail locally, and server-side hooks on the remote can
+              enforce policy, like blocking direct pushes to main, for the entire crew at
+              once. Hooks turn discipline that would otherwise depend on memory into
+              discipline enforced automatically by the ship's own systems.
             </p>
           </div>
 
@@ -1154,7 +1268,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's inspection swept through forking, feature branches, pull requests,
+              review culture, tagging, and automation hooks, confirming they function as one
+              coordinated collaboration system rather than separate rituals. A well-run crew
+              forks or branches appropriately, opens focused pull requests, reviews them
+              constructively, tags meaningful milestones, and lets hooks enforce the rules
+              nobody should have to remember by hand. The drills revealed the crew can now
+              coordinate work across many contributors without losing the coherence of a
+              single-pilot ship. Collaboration workflows are complete enough for real
+              missions, and we now turn toward Git's more advanced maneuvers.
             </p>
           </div>
 
@@ -1192,7 +1314,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sometimes the ship needs an urgent course correction mid-task, before the
+              current work is ready to commit, and git stash lets the crew shelve those
+              uncommitted changes temporarily, returning the working directory to a clean
+              state instantly. The stash acts as a stack, git stash pop restores the most
+              recent shelved changes, while git stash list reveals everything currently held
+              in reserve. This is the standard tool for context-switching without polluting
+              history with half-finished, non-functional commits made only to save your
+              place. Stashing lets a crew member respond to an emergency without losing a
+              single line of the work already in progress.
             </p>
           </div>
 
@@ -1225,7 +1355,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Interactive rebase, git rebase -i, opens an editable list of commits and lets
+              the crew reorder, edit, combine, or drop them before they're shared with the
+              rest of the fleet, essentially rewriting a messy work-in-progress log into a
+              coherent narrative. Squashing folds several small, noisy commits, fix typo,
+              fix typo again, actually fix typo, into one clean commit that tells a clear
+              story about what changed and why. This is powerful precisely because it's
+              dangerous: interactive rebase must only touch commits that haven't yet been
+              pushed and shared, for the same reason regular rebase carries that rule. Used
+              well, interactive rebase turns a chaotic personal history into a mission log
+              the rest of the crew can actually learn from.
             </p>
           </div>
 
@@ -1258,7 +1397,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              When a bug appears somewhere in a long history and nobody remembers exactly
+              which commit introduced it, git bisect automates the search using binary
+              search across the commit timeline. You mark one known-good commit and one
+              known-bad commit, and Git checks out the midpoint for you to test, narrowing
+              the search by half with every round until the exact culprit commit is
+              isolated. This turns what could be hours of manual archaeology through
+              hundreds of commits into a handful of test cycles, typically log-base-two of
+              the total commit count. Bisect is one of Git's most underused instruments,
+              precise, fast, and far more reliable than guessing where a regression was
+              introduced.
             </p>
           </div>
 
@@ -1291,7 +1439,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A submodule embeds one Git repository inside another as a fixed reference to
+              a specific commit, useful when a ship depends on an external library or shared
+              component that lives in its own independent history. git submodule add links
+              the external repository at a specific path, but the parent repository only
+              records which commit of the submodule to use, not the submodule's actual file
+              contents directly. This means cloning a repository with submodules requires an
+              extra step, git submodule update --init, or the linked directories arrive
+              empty, a common source of confusion for new crew members. Submodules are
+              powerful for sharing code across projects but add real operational complexity,
+              and many crews now prefer simpler alternatives like package managers where the
+              use case allows it.
             </p>
           </div>
 
@@ -1324,7 +1482,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Git's behavior is deeply configurable through git config, and defining
+              aliases for frequently typed command sequences saves the crew enormous
+              keystrokes over a long mission: git config --global alias.co checkout, or a
+              more elaborate alias for a decorated, graphed log view. Global config in
+              ~/.gitconfig applies across every repository on the ship, while local,
+              per-repository config in .git/config overrides it for special cases, like a
+              different author identity for a specific mission. Beyond aliases, config
+              controls core behavior: default branch names, merge strategies, credential
+              storage, and line-ending handling across different operating systems. A
+              well-tuned config file is a personalized cockpit, built to match the exact
+              rhythms of how one crew member actually works.
             </p>
           </div>
 
@@ -1357,7 +1525,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Beneath every command lies a remarkably simple object model: Git stores
+              everything as one of four object types, blobs holding file content, trees
+              holding directory structure, commits holding snapshots, and tags holding named
+              pointers, each addressed by the SHA-1 or SHA-256 hash of its own content. A
+              commit object doesn't store a diff at all; it points to a tree representing
+              the entire project state and to its parent commit, confirming the snapshot
+              model from the very first day of this voyage. References, branches and tags,
+              are nothing more than files in .git/refs containing a commit hash, which is
+              why creating or moving a branch is nearly instantaneous, no data is copied,
+              only a pointer moves. Understanding this internal model demystifies everything
+              Git does above it; there is no magic left, only content-addressed storage and
+              pointers.
             </p>
           </div>
 
@@ -1390,7 +1569,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              This final review cycle traced the full arc from the snapshot model through
+              branching and merging, collaborative workflows, and the advanced instruments,
+              stashing, interactive rebase, bisect, submodules, custom configuration, and
+              the raw object model underneath it all. Every layer depends on the ones
+              beneath it; interactive rebase makes no sense without first understanding
+              commits as snapshots, and bisect is only fast because the commit graph it
+              searches is cheap to traverse. The crew demonstrated fluency across the full
+              spectrum, from a first git init to confidently rewriting history before
+              sharing it with the fleet. The repository initiated twenty-nine cycles ago is
+              now a fully mastered instrument, ready for whatever mission comes next.
             </p>
           </div>
 

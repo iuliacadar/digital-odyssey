@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#testing-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#testing-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#testing-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#testing-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#testing-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#testing-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#testing-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#testing-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#testing-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#testing-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#testing-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#testing-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#testing-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#testing-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#testing-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#testing-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#testing-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#testing-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#testing-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#testing-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#testing-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#testing-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#testing-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#testing-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#testing-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#testing-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#testing-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#testing-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#testing-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#testing-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#testing-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi laboratorul de diagnosticare pornește pentru prima dată. Fiecare
+              sistem pe care îl construim în această călătorie, de la cea mai mică funcție
+              utilitară până la întregul pipeline, are nevoie de o modalitate de a-și dovedi
+              funcționarea înainte de a i se încredința marfă reală. Testarea este acea
+              dovadă: un mediu controlat în care simulăm condiții, observăm rezultate și
+              prindem defecțiunile înainte ca acestea să ajungă la echipaj. Nimic nu
+              pornește din acest laborator fără dovezi.
             </p>
           </div>
 
@@ -482,7 +449,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Sărirea peste teste pare mai rapidă pe moment, dar datoria se acumulează cu
+              fiecare funcționalitate nouă adăugată pe o fundație neverificată. O suită de
+              teste bună prinde regresiile instantaneu, cu mult înainte ca vreun pasager să
+              observe o defecțiune. Servește de asemenea ca documentație vie, arătând exact
+              cum ar trebui să se comporte un modul prin exemple concrete, nu prin
+              comentarii care îmbătrânesc. Echipele care testează bine livrează mai repede
+              pe termen lung, nu mai încet, pentru că petrec mult mai puțin timp vânând
+              bug-uri misterioase în producție.
             </p>
           </div>
 
@@ -515,7 +489,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testele unitare vizează cea mai mică unitate testabilă din sistem, de obicei
+              o singură funcție sau metodă, izolată complet de dependențele ei. O funcție
+              pură precum calculateTotal(items) este testată furnizându-i intrări cunoscute
+              și verificând că rezultatul se potrivește exact așteptărilor. Izolarea
+              înseamnă fără apeluri reale către baza de date, fără cereri reale de rețea și
+              fără stare mutabilă partajată care se scurge între teste. Testele unitare
+              rapide și concentrate formează baza piramidei de testare pentru că rulează în
+              milisecunde și localizează defecțiunile cu precizie.
             </p>
           </div>
 
@@ -548,7 +529,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test runner-ele sunt motoarele care descoperă fișierele de test, le execută
+              și raportează rezultatele. Jest combină un test runner, o bibliotecă de
+              assertion-uri și un framework de mocking într-un singur instrument, făcându-l
+              alegerea implicită pentru majoritatea misiunilor JavaScript moderne. Mocha
+              este mai modular, împerecheat cu biblioteci separate de assertion-uri precum
+              Chai și instrumente de mocking precum Sinon, pentru echipele care doresc un
+              control mai fin asupra lanțului de unelte. Ambele monitorizează schimbările de
+              fișiere și rerulează automat testele afectate, transformând bucla de feedback
+              în ceva aproape de timp real.
             </p>
           </div>
 
@@ -581,7 +570,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Assertion-urile sunt afirmațiile concrete pe care un test le face despre
+              comportamentul așteptat. Sintaxa expect(value).toBe(expected) din Jest se
+              citește aproape ca limbajul natural, iar biblioteca vine cu zeci de matchere
+              pentru egalitate, verificare de tip, conținut de array, erori aruncate și
+              rezolvare asincronă. Chai oferă stiluri alternative de assertion, inclusiv
+              should și expect, permițând echipelor să aleagă sintaxa care li se pare cea
+              mai naturală. Indiferent de sintaxă, un assertion care eșuează silențios sau
+              trece când n-ar trebui este mai rău decât niciun test, așa că precizia aici
+              contează enorm.
             </p>
           </div>
 
@@ -614,7 +611,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Arrange-Act-Assert structurează fiecare test în trei faze clare: pregătește
+              starea inițială și intrările, execută acțiunea testată, apoi verifică
+              rezultatul. Această structură menține testele lizibile chiar și luni mai
+              târziu, când autorul original a uitat fiecare detaliu al implementării.
+              Amestecarea acestor faze, testarea mai multor comportamente fără legătură
+              într-un singur bloc, este o sursă comună de suite de teste fragile și confuze.
+              Un echipaj disciplinat scrie teste care se citesc de sus în jos ca un jurnal
+              de misiune clar, nu ca o transmisie încâlcită.
             </p>
           </div>
 
@@ -647,7 +651,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Acoperirea testelor măsoară ce procent din liniile, ramurile și funcțiile
+              bazei de cod sunt executate de suita de teste, raportat de obicei de
+              instrumente precum Istanbul sau flag-ul de acoperire încorporat în Jest.
+              Numerele mari de acoperire par liniștitoare, dar acoperirea măsoară execuția,
+              nu corectitudinea; o linie poate rula într-un test fără nicio verificare
+              semnificativă a comportamentului ei. Vânătoarea acoperirii de 100 la sută
+              produce adesea teste de valoare scăzută, scrise doar pentru a atinge fiecare
+              linie, nu pentru a verifica un comportament real. Acoperirea este un
+              instrument util pe panoul de bord, dar nu este obiectivul misiunii în sine.
             </p>
           </div>
 
@@ -680,7 +692,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Am acoperit de ce contează testarea, anatomia
+              unui test unitar, instrumentele care rulează și verifică codul nostru,
+              structura Arrange-Act-Assert și limitele oneste ale metricilor de acoperire.
+              Fiecare cadet ar trebui acum să poată scrie fără ezitare un test unitar
+              concentrat pentru o funcție pură. Fundamentele laboratorului sunt stabilite;
+              restul călătoriei construiește diagnosticări din ce în ce mai complexe
+              deasupra lor.
             </p>
           </div>
 
@@ -718,7 +736,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testele de integrare verifică faptul că mai multe module funcționează corect
+              împreună, prinzând defecțiunile pe care testele unitare, prin design, nu le
+              pot vedea. O funcție de serviciu care apelează un strat de bază de date și un
+              strat de validare ar putea trece toate testele unitare individual, dar totuși
+              ar putea eșua când sunt conectate împreună, din cauza unei interfețe
+              nepotrivite sau a unui efect secundar neașteptat. Testele de integrare rulează
+              versiuni reale sau aproape reale ale acestor piese colaborative, în loc să
+              mockeze totul. Se situează deasupra testelor unitare în piramida de testare:
+              mai puține la număr, mai lente de rulat, dar esențiale pentru a prinde
+              defecțiunile de cablare.
             </p>
           </div>
 
@@ -751,7 +778,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea API verifică dacă endpoint-urile HTTP se comportă corect din
+              exterior, verificând codurile de status, corpurile răspunsurilor și anteturile
+              față de așteptări. Supertest se integrează direct cu aplicațiile Express,
+              permițând testelor să trimită cereri HTTP reale fără a porni un listener de
+              rețea propriu-zis, menținând testele rapide și autonome. Postman oferă o
+              alternativă bazată pe interfață grafică, utilă pentru explorare manuală și
+              pentru construirea unor colecții partajabile care servesc dublu ca
+              documentație API vie. Automatizarea acestor verificări în CI prinde
+              schimbările API care rup compatibilitatea înainte ca acestea să ajungă la
+              vreun consumator al serviciului.
             </p>
           </div>
 
@@ -784,7 +820,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea bazei de date introduce un pericol nou: testele care modifică o bază
+              de date partajată pot interfera unul cu altul sau pot lăsa sistemul într-o
+              stare inconsistentă între rulări. Test containers, folosind instrumente precum
+              Testcontainers, pornesc o instanță reală, efemeră, de bază de date în Docker
+              pe durata unei rulări de test, apoi o dezasamblează complet după aceea.
+              Aceasta oferă testelor un comportament autentic al bazei de date, inclusiv
+              constrângeri reale și performanță reală a interogărilor, fără a atinge vreun
+              mediu partajat persistent. Însămânțarea unor date fixture cunoscute la
+              începutul fiecărui test menține rezultatele deterministe și repetabile.
             </p>
           </div>
 
@@ -817,7 +861,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testele end-to-end simulează un utilizator real care navighează aplicația
+              reală într-un browser real, dând clic pe butoane, completând formulare și
+              verificând ce apare pe ecran. Atât Cypress, cât și Playwright automatizează
+              interacțiunea cu browserul, dar Playwright suportă nativ mai multe motoare de
+              browser, în timp ce Cypress se concentrează profund pe experiența
+              dezvoltatorului într-un singur model de execuție. Aceste teste se află în
+              vârful piramidei: cele mai puține la număr, cele mai lente de rulat, dar prind
+              defecțiuni de integrare pe întreaga stivă, de la baza de date până la UI, pe
+              care testele de nivel inferior nu le pot vedea din punct de vedere structural.
+              O simulare completă a misiunii înainte de lansare este costisitoare, dar
+              prinde ce nimic altceva nu poate.
             </p>
           </div>
 
@@ -850,7 +904,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de regresie vizuală capturează capturi de ecran ale componentelor UI
+              randate și le compară pixel cu pixel față de o imagine de bază stocată,
+              semnalând orice derivă vizuală neașteptată. Instrumente precum Percy sau
+              comparația de capturi de ecran încorporată în Playwright prind schimbări de
+              layout, stiluri rupte și bug-uri de randare pe care testele funcționale, care
+              verifică doar structura și comportamentul DOM-ului, nu le-ar observa
+              niciodată. Actualizarea imaginii de bază este o acțiune deliberată, revizuită,
+              ori de câte ori o schimbare vizuală este intenționată, nu ceva ce se întâmplă
+              silențios. Aceasta este inspecția externă a carenei navei: mai arată așa cum
+              se așteaptă echipajul?
             </p>
           </div>
 
@@ -883,7 +946,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea cross-browser verifică dacă aplicația se comportă consistent pe
+              diferite motoare de browser precum Chromium, Firefox și WebKit, deoarece
+              fiecare implementează standardele web cu diferențe subtile. Un layout care se
+              randează perfect într-un motor s-ar putea prăbuși în altul din cauza
+              stilurilor implicite diferite sau a suportului diferit pentru API-urile
+              JavaScript. Serviciile cloud precum BrowserStack sau runner-ul multi-browser
+              al Playwright permit unei singure suite de teste să ruleze pe multe combinații
+              de browser și sistem de operare fără a întreține dispozitive fizice pentru
+              fiecare. Sărirea acestui pas înseamnă descoperirea bug-urilor de
+              compatibilitate din rapoartele utilizatorilor, nu din verificări automate.
             </p>
           </div>
 
@@ -916,7 +988,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Testarea de integrare și end-to-end extinde
+              diagnosticările noastre dincolo de funcțiile izolate: testele API verifică
+              contractele, testele de bază de date verifică comportamentul de persistență în
+              condiții reale, testele E2E verifică călătoriile complete ale utilizatorului,
+              iar testele vizuale și cross-browser prind ce doar assertion-urile funcționale
+              ar rata. Fiecare strat tranzacționează viteza pentru încredere, iar o misiune
+              sănătoasă se bazează pe toate lucrând împreună, nu pe un singur strat care
+              face totul. Piramida de testare își câștigă forma pentru că fiecare strat
+              prinde clase diferite de defecțiuni.
             </p>
           </div>
 
@@ -954,7 +1034,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Mocking-ul înlocuiește o dependență reală, precum un apel către baza de date
+              sau un API extern, cu un substitut fals, controlabil, pe durata unui test.
+              jest.fn() din Jest creează o funcție mock care înregistrează cum a fost
+              apelată și permite testelor să specifice o valoare de retur prestabilită,
+              izolând codul testat de comportamentul real al dependenței sale. Aceasta face
+              testele rapide și deterministe, pentru că niciun rezultat de test nu depinde
+              de latența rețelei sau de disponibilitatea unui serviciu extern.
+              Suprautilizarea mock-urilor poate însă ascunde bug-uri reale de integrare,
+              deci mocking-ul este un bisturiu pentru testele unitare, nu un obicei de
+              aplicat peste tot.
             </p>
           </div>
 
@@ -987,7 +1076,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Fixture-urile sunt seturi predefinite de date de test folosite pentru a pune
+              sistemul într-o stare cunoscută înainte ca un test să ruleze, precum un obiect
+              utilizator de exemplu sau un rând de bază de date însămânțat. Stocarea
+              fixture-urilor în fișiere dedicate menține configurarea testelor consistentă
+              și reutilizabilă în multe fișiere de test, în loc să dublăm același obiect
+              inline peste tot. Funcțiile factory care generează fixture-uri cu valori
+              implicite sensibile, permițând totodată suprascrierea câmpurilor individuale,
+              scalează mult mai bine decât fișierele statice de fixture pe măsură ce o suită
+              de teste crește. Fixture-urile bine gestionate sunt manifestele standardizate
+              de încărcătură ale navei, cunoscute și de încredere de fiecare dată când sunt
+              încărcate.
             </p>
           </div>
 
@@ -1020,7 +1119,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testele parametrizate rulează aceeași logică de test pentru mai multe seturi
+              de intrări și rezultate așteptate fără a duplica corpul testului pentru
+              fiecare caz. test.each() din Jest și modele echivalente din Mocha acceptă un
+              array de tupluri, rulând aceleași assertion-uri o dată pentru fiecare rând,
+              ceea ce este deosebit de puternic pentru testarea cazurilor limită precum
+              array-uri goale, numere negative și valori de graniță. Aceasta menține
+              fișierele de test concise, crescând dramatic totodată acoperirea variațiilor
+              de intrare exercitate efectiv. Un singur test bine parametrizat poate înlocui
+              o duzină de aproape-duplicate copiate-lipite.
             </p>
           </div>
 
@@ -1053,7 +1160,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test doubles este termenul umbrelă pentru substituenții folosiți în locul
+              dependențelor reale: stub-urile returnează valori predeterminate fără nicio
+              logică reală, în timp ce spy-urile împachetează o funcție reală și
+              înregistrează cum a fost apelată fără a-i schimba comportamentul. Un stub ar
+              putea înlocui un apel către un gateway de plată cu un răspuns de succes
+              codificat direct, în timp ce un spy ar putea împacheta o funcție reală de
+              logging doar pentru a verifica că a fost invocată cu argumentele corecte.
+              Alegerea substituentului potrivit, fie stub, spy, mock sau fake, depinde de
+              dacă testul trebuie să verifice comportamentul, să izoleze efectele secundare,
+              sau ambele. Precizia acestei alegeri menține testele semnificative, nu doar
+              verzi.
             </p>
           </div>
 
@@ -1086,7 +1203,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Test-Driven Development inversează ordinea obișnuită: scrie mai întâi un test
+              care eșuează, scrie codul minim necesar pentru a-l face să treacă, apoi
+              refactorizează având plasa de siguranță a acelui test deja funcțional. Acest
+              ciclu red-green-refactor obligă inginerii să gândească interfața și
+              comportamentul așteptat al unei funcții înainte ca implementarea să existe.
+              TDD tinde să producă cod testat în mod natural bine, pentru că fiecare
+              funcționalitate sosește cu testul ei deja atașat, în loc ca testele să fie
+              adăugate ulterior ca o idee târzie. Este mai degrabă o disciplină decât un
+              instrument și, ca orice disciplină, dă cele mai bune rezultate sub practică
+              susținută.
             </p>
           </div>
 
@@ -1119,7 +1245,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Behavior-Driven Development extinde filosofia TDD spre teste scrise într-un
+              limbaj pe care stakeholderii non-tehnici îl pot citi, folosind adesea sintaxa
+              Given-When-Then cu instrumente precum Cucumber. Un scenariu precum 'Dat fiind
+              un utilizator autentificat, când adaugă un articol în coș, atunci totalul
+              coșului se actualizează' descrie comportamentul din perspectiva
+              utilizatorului, nu detaliile de implementare. Aceasta face legătura între
+              cerințele produsului și testele executabile, permițând ca același document să
+              servească atât ca specificație, cât și ca verificare. BDD funcționează cel mai
+              bine când întregul echipaj, nu doar inginerii, poate citi și valida
+              scenariile.
             </p>
           </div>
 
@@ -1152,7 +1287,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Modelele de testare acoperite includ mocking
+              pentru izolarea dependențelor, fixture-uri pentru date de test consistente,
+              parametrizarea pentru a acoperi eficient multe cazuri, taxonomia test doubles
+              și filosofiile TDD și BDD care modelează modul în care sunt scrise testele de
+              la bun început. Aceste modele nu se exclud reciproc; o suită de teste matură
+              le combină în funcție de ce necesită efectiv fiecare situație. Cunoașterea
+              întregului set de unelte previne alegerea uneltei greșite din obișnuință.
             </p>
           </div>
 
@@ -1190,7 +1331,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Integrarea CI înseamnă că suita de teste rulează automat la fiecare push sau
+              pull request, înainte ca codul să fie permis să se îmbine în ramura
+              principală. Instrumente precum GitHub Actions, CircleCI și Jenkins declanșează
+              un mediu proaspăt, instalează dependențele și rulează suita completă, blocând
+              îmbinarea dacă ceva eșuează. Aceasta prinde regresiile în momentul în care
+              sunt introduse, nu zile mai târziu când un coleg dă peste codul stricat. Porți
+              automate ca aceasta sunt lista de verificare obligatorie de dinaintea
+              lansării: nimic nu avansează până când fiecare sistem nu raportează verde.
             </p>
           </div>
 
@@ -1223,7 +1371,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Raportarea testelor transformă rezultatul brut trece/eșuează în panouri pe
+              care întregul echipaj le poate citi dintr-o privire: tendințe în timp,
+              frecvența testelor instabile, procentul de acoperire și testele cele mai
+              lente. Instrumente precum Allure sau panourile CI încorporate agregă
+              rezultatele pe multe rulări, permițând identificarea unei suite de teste care
+              se degradează lent înainte să devină ingestionabilă. Datele de tendință
+              istorică contează mai mult decât orice rulare individuală, pentru că un singur
+              rezultat verde nu dezvăluie dacă suita devine mai rapidă, mai lentă sau mai
+              fragilă în timp. O raportare bună transformă testarea dintr-o poartă în
+              telemetrie de misiune autentică.
             </p>
           </div>
 
@@ -1256,7 +1413,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testele instabile (flaky) trec și eșuează intermitent fără nicio schimbare de
+              cod, de obicei cauzate de condiții de cursă, dependențe de timing nemockate,
+              stare partajată între teste sau dependența de servicii externe cu latență
+              variabilă. Ignorarea testelor instabile erodează încrederea în întreaga suită,
+              pentru că o echipă obișnuită să vadă roșu ocazional fără motiv începe să
+              ignore roșul în general, inclusiv defecțiunile reale. Rezolvarea cauzei
+              fundamentale, în loc de simpla rerulare până trece, este singura soluție
+              durabilă, deși un sistem de carantină pentru testele cunoscute ca instabile
+              poate preveni blocarea muncii nelegate în acest timp. O alarmă nedemnă de
+              încredere este mai rea decât nicio alarmă.
             </p>
           </div>
 
@@ -1289,7 +1455,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de performanță, în special load testing, verifică dacă sistemul
+              rezistă la volume de trafic realiste sau extreme, nu doar comportamentul
+              corect la o singură cerere. Instrumente precum k6 sau Artillery simulează sute
+              sau mii de utilizatori virtuali concurenți care lovesc API-ul, măsurând
+              percentilele timpului de răspuns, ratele de eroare și throughput-ul pe măsură
+              ce sarcina crește. Aceasta expune blocaje precum epuizarea pool-ului de
+              conexiuni la baza de date sau creșterea nelimitată a memoriei, cu mult înainte
+              ca pasagerii reali să le întâlnească vreodată. O navă calificată pentru viteza
+              de croazieră tot trebuie testată la propulsie maximă înainte de ziua lansării.
             </p>
           </div>
 
@@ -1322,7 +1496,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea de securitate scanează aplicația pentru vulnerabilități cunoscute:
+              injecție SQL, cross-site scripting, dependențe nesigure și autentificare
+              configurată greșit. Instrumente automate precum OWASP ZAP sau npm audit prind
+              clase comune de vulnerabilități, în timp ce testarea de penetrare manuală sapă
+              în defecte de logică pe care scanerele automate nu le pot vedea din punct de
+              vedere structural. Rularea scanărilor de vulnerabilități ale dependențelor în
+              CI prinde vulnerabilitățile nou dezvăluite în pachetele terță parte chiar în
+              momentul publicării lor, nu luni mai târziu în timpul unui incident. Testarea
+              de securitate nu este o inspecție unică înainte de lansare; este o patrulare
+              continuă a carenei pe toată durata misiunii.
             </p>
           </div>
 
@@ -1355,7 +1538,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cultura testării este setul de obiceiuri de echipă și așteptări partajate
+              care determină dacă testele chiar se scriu, se întrețin și se respectă,
+              indiferent de instrumentele disponibile. Echipele cu o cultură puternică de
+              testare tratează un test eșuat ca pe un semnal de blocare, nu ca pe o
+              neplăcere de redus la tăcere, și tratează scrierea testelor ca parte a
+              finalizării unei funcționalități, nu ca pe un extra opțional. Revizuirea
+              codului care întreabă implicit 'unde sunt testele pentru asta' face mai mult
+              pentru calitate decât orice instrument singular ar putea vreodată. Cultura
+              este disciplina partajată a echipajului; instrumentele sunt doar aparatura pe
+              care se bazează acea disciplină.
             </p>
           </div>
 
@@ -1388,7 +1580,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat: testarea în producție. Am călătorit de la un
+              singur test unitar prin integrare, E2E, mocking, filosofiile TDD și BDD,
+              automatizare CI, raportare, gestionarea testelor instabile, testare de
+              performanță și securitate, și cultura de echipă care leagă totul împreună. O
+              practică matură de testare nu este o singură tehnică, ci un sistem
+              stratificat, fiecare strat prinzând ce celelalte nu pot din punct de vedere
+              structural. Aceasta încheie capitolul de testare al jurnalului misiunii;
+              laboratorul de diagnosticare este acum complet dotat și pregătit pentru orice
+              aduce călătoria mai departe.
             </p>
           </div>
 

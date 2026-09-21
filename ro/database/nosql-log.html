@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#nosql-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#nosql-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#nosql-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#nosql-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#nosql-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#nosql-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#nosql-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#nosql-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#nosql-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#nosql-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#nosql-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#nosql-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#nosql-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#nosql-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#nosql-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#nosql-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#nosql-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#nosql-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#nosql-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#nosql-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#nosql-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#nosql-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#nosql-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#nosql-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#nosql-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#nosql-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#nosql-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#nosql-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#nosql-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#nosql-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#nosql-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Prima transmisiune din sectorul de date sosește plină de acronime greu de
+              descifrat: NoSQL, sharding, consistență eventuală. Înainte de a atinge vreo
+              bază de date, echipajul trebuie să înțeleagă că nu orice manifest de marfă se
+              potrivește ordonat în rânduri și coloane. Această zi de orientare recalibrează
+              așteptările, îndepărtându-le de grilele relaționale rigide cartografiate mai
+              devreme în călătorie. Deschidem sasul către un univers de stocare flexibilă,
+              cu schemă opțională, construit pentru scalare și viteză.
             </p>
           </div>
 
@@ -482,7 +449,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              NoSQL nu este un singur motor, ci o întreagă constelație de filozofii de baze
+              de date care abandonează structura fixă de tabele a sistemelor relaționale.
+              Acolo unde bazele de date SQL cer o schemă predefinită înainte ca orice dată
+              să poată fi stocată, depozitele NoSQL permit documentelor, cheilor, coloanelor
+              sau nodurilor din graf să își schimbe forma pe măsură ce misiunea evoluează.
+              Acest compromis sacrifică unele garanții de consistență în schimbul
+              scalabilității orizontale pe mulți noduri distribuite. Înțelegerea acestei
+              schimbări de priorități — disponibilitate și toleranță la partiționare în
+              locul structurii rigide — este lecția centrală a transmisiunii de azi.
             </p>
           </div>
 
@@ -515,7 +490,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Depozitele de documente precum MongoDB organizează datele ca pachete
+              auto-conținute de tip JSON, numite documente BSON, fiecare o capsulă de marfă
+              sigilată ce transportă propriile câmpuri și tablouri imbricate. Spre deosebire
+              de un tabel relațional, un document poate încorpora date asociate direct în
+              interiorul său, evitând necesitatea unor joncțiuni costisitoare între
+              structuri separate. Colecțiile grupează documente similare fără a impune o
+              schemă strictă pentru fiecare înregistrare. Această flexibilitate face
+              depozitele de documente ideale pentru modele de date care evoluează rapid,
+              unde structura variază de la o înregistrare la alta.
             </p>
           </div>
 
@@ -548,7 +531,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Depozitele cheie-valoare sunt cea mai simplă primitivă de stocare din trusa
+              flotei: fiecare fragment de date este recuperat printr-o cheie unică, precum
+              un număr de dulap pe stație. Redis, implementarea de referință studiată azi,
+              păstrează întregul set de date în memorie pentru căutări aproape instantanee,
+              devenind motorul preferat pentru caching, stocarea sesiunilor și limitarea
+              ratei. Dincolo de șiruri simple, Redis suportă structuri bogate precum liste,
+              seturi, hash-uri și seturi ordonate, extinzându-și utilitatea mult peste
+              simpla recuperare de chei. Viteza sa vine cu un cost: constrângeri de memorie
+              și, în configurările implicite, o durabilitate mai redusă decât a sistemelor
+              bazate pe disc.
             </p>
           </div>
 
@@ -581,7 +573,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Depozitele column-family precum Cassandra rearanjează puntea de stocare: în
+              loc să citească rânduri întregi, motorul organizează datele pe familii de
+              coloane, permițând interogărilor să parcurgă eficient miliarde de înregistrări
+              atunci când doar anumite coloane contează. Arhitectura Cassandra, fără master,
+              bazată pe un inel de noduri, înseamnă că nu există un punct unic de eșec —
+              orice nod din cluster poate accepta scrieri, iar datele sunt replicate automat
+              pe inel pentru reziliență. Acest design sacrifică o parte din flexibilitatea
+              interogărilor pentru un debit de scriere extrem și scalabilitate orizontală,
+              făcând-o preferată pentru telemetrie de tip serie temporală și jurnale de
+              senzori. Lecția de azi explică cheile de partiție și coloanele de clustering,
+              coordonatele care determină cum sunt distribuite datele în cluster.
             </p>
           </div>
 
@@ -614,7 +616,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Bazele de date de tip graf precum Neo4j abandonează complet tabelele în
+              favoarea nodurilor și relațiilor, modelând datele așa cum o hartă stelară
+              modelează conexiunile dintre sisteme. Fiecare nod reprezintă o entitate, iar
+              fiecare relație poartă propriile proprietăți, făcând ca datele puternic
+              interconectate — rețele sociale, motoare de recomandare, detectarea fraudei —
+              să fie parcurse dramatic mai rapid decât lanțul echivalent de joncțiuni
+              relaționale. Limbajul de interogare Cypher al Neo4j se citește aproape ca
+              desenarea grafului însuși, folosind săgeți în stil ASCII pentru a exprima
+              traseele de parcurgere. Transmisiunea de azi explică de ce domeniile bogate în
+              relații beneficiază de un motor de stocare construit în jurul conexiunilor, nu
+              al tabelelor.
             </p>
           </div>
 
@@ -647,7 +659,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Alegerea bazei de date potrivite este o decizie de navigație, nu o modă.
+              Depozitele de documente se potrivesc gestionării conținutului și cataloagelor
+              cu structură variabilă; depozitele cheie-valoare excelează la caching și date
+              de sesiune; depozitele column-family gestionează fluxuri masive de telemetrie
+              orientate spre scriere; bazele de date de tip graf strălucesc atunci când
+              relațiile în sine sunt datele valoroase. Exercițiul de azi ghidează echipajul
+              prin mai multe profiluri de misiune, potrivind tiparele de acces și nevoile de
+              consistență ale fiecăruia cu motorul de stocare cel mai potrivit. Alegerea
+              greșită nu scufundă nava imediat, dar creează o frânare care se acumulează pe
+              măsură ce misiunea crește în amploare.
             </p>
           </div>
 
@@ -680,7 +701,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de consolidare: echipajul revizitează întregul spectru de modele NoSQL
+              parcurse până acum, de la documente la perechi cheie-valoare, familii de
+              coloane și grafuri. În loc să memoreze definiții, recapitularea de azi se
+              concentrează pe compromisurile fundamentale — flexibilitatea schemei versus
+              puterea interogărilor, consistență versus disponibilitate, simplitate versus
+              expresivitate. Un scurt exercițiu de diagnostic cere fiecărui cadet să
+              justifice alegerea unui motor de stocare pentru un sistem ipotetic al stației,
+              apărând decizia în fața abordărilor alternative. Acesta este punctul de
+              control înainte de a începe operațiunile practice cu MongoDB.
             </p>
           </div>
 
@@ -718,7 +747,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Înainte ca vreun document să poată fi stocat, instanța locală de MongoDB
+              trebuie instalată, configurată și conectată — echivalentul presurizării unui
+              modul nou înainte de locuire. Ziua de azi acoperă instalarea serverului
+              MongoDB, înțelegerea procesului mongod și a fișierului său de configurare,
+              precum și conectarea prin shell-ul mongosh sau un driver. Cadeții configurează
+              directoarele de date, adresele de legare și setările de autentificare,
+              învățând de ce expunerea unei baze de date către rețeaua deschisă fără
+              credențiale este una dintre cele mai rapide căi de a pierde întregul
+              compartiment de marfă. Până la finalul sesiunii, o instanță locală răspunde la
+              ping-uri și este gata să primească prima sa colecție.
             </p>
           </div>
 
@@ -751,7 +789,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              CRUD — Create, Read, Update, Delete — formează propulsoarele de manevră de
+              bază ale oricărei interacțiuni cu o bază de date, iar modelul de documente al
+              MongoDB oferă fiecărei operații propria sintaxă. insertOne și insertMany
+              încarcă documente noi într-o colecție; find și operatorii săi de interogare
+              recuperează documentele care corespund unor criterii specifice; updateOne și
+              updateMany modifică câmpuri existente, adesea folosind operatori precum $set
+              și $inc; deleteOne și deleteMany elimină documentele care nu mai servesc
+              misiunii. Exercițiile de azi parcurg fiecare operație pe un set de date
+              exemplu, construind reflexele necesare înainte de a trece la operațiuni de
+              agregare mai complexe.
             </p>
           </div>
 
@@ -784,7 +831,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Una dintre cele mai consecvente decizii în proiectarea documentelor este dacă
+              datele asociate se încorporează direct în documentul părinte sau se
+              referențiază prin ID într-o colecție separată, la fel cum se decide dacă marfa
+              călătorește sigilată în interiorul cocii principale sau andocată extern.
+              Încorporarea favorizează performanța la citire și actualizările atomice pentru
+              date accesate mereu împreună, dar poate umfla documentele și duplica
+              informația. Referențierea păstrează documentele suple și evită duplicarea, cu
+              costul unor căutări suplimentare pentru a reasambla datele asociate. Lecția de
+              azi parcurge mai multe scenarii reale — articole de blog și comentarii,
+              comenzi și articole de comandă — pentru a construi intuiția privind momentul
+              potrivit pentru fiecare tipar.
             </p>
           </div>
 
@@ -817,7 +874,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O interogare fără index forțează MongoDB să scaneze fiecare document dintr-o
+              colecție, echivalentul din lumea datelor al căutării manuale prin fiecare
+              container de marfă. Indexurile creează structuri sortate, căutabile pe câmpuri
+              specifice, accelerând dramatic căutările cu costul unui spațiu de stocare
+              suplimentar și al unor scrieri mai lente. Ziua de azi acoperă indexurile pe un
+              singur câmp și cele compuse, modul de inspectare a performanței interogărilor
+              cu explain(), precum și clasicul compromis dintre prea puține indexuri, care
+              încetinesc citirile, și prea multe, care încetinesc scrierile și umflă
+              stocarea. Înțelegerea selectivității unui index — cât de bine restrânge un
+              câmp rezultatele — este abilitatea cheie deblocată azi.
             </p>
           </div>
 
@@ -850,7 +916,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Pipeline-ul de agregare este linia de asamblare a MongoDB pentru
+              transformarea documentelor brute în informații rafinate, trecând datele
+              printr-o secvență de etape precum $match, $group, $sort și $project. Fiecare
+              etapă preia ieșirea celei anterioare și o remodelează în continuare, permițând
+              ca analize complexe — totaluri, medii, grupări — să ruleze direct în
+              interiorul bazei de date, nu în codul aplicației. Exercițiile de azi
+              construiesc pipeline-uri care filtrează o colecție, grupează după o categorie,
+              calculează agregate și remodelează câmpurile de ieșire, oglindind tipul de
+              interogări de raportare de care ar avea nevoie un panou de comandă real al
+              misiunii. Stăpânirea etapelor de pipeline transformă telemetria brută în
+              decizii de comandă acționabile.
             </p>
           </div>
 
@@ -883,7 +959,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Un singur nod de bază de date este un singur punct de eșec, așa că
+              transmisiunea de azi acoperă seturile de replici — grupuri de instanțe MongoDB
+              care păstrează copii identice ale acelorași date. Un nod servește ca primar,
+              acceptând toate scrierile, în timp ce nodurile secundare replică oplog-ul și
+              stau pregătite să preia rolul dacă primarul se stinge. Această arhitectură
+              oferă atât toleranță la defecte, cât și, cu preferințele de citire configurate
+              corect, capacitatea de a distribui sarcina de citire pe secundari. Înțelegerea
+              alegerilor, procesul prin care secundarii aleg un nou primar în timpul unei
+              pene, este esențială pentru a menține online sistemele critice ale misiunii în
+              timpul defecțiunilor hardware.
             </p>
           </div>
 
@@ -916,7 +1001,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ziua de recapitulare consolidează tot ce s-a învățat despre MongoDB:
+              instalare, operațiuni CRUD, alegeri de proiectare a schemei, strategie de
+              indexare, pipeline-uri de agregare și replicare pentru disponibilitate
+              ridicată. Cadeții parcurg un exercițiu integrat, proiectând modelul de date al
+              unei aplicații mici, scriind interogările necesare pentru a-l susține și
+              adăugând indexurile și configurația de replicare care l-ar menține funcțional
+              sub sarcina reală a misiunii. Acesta este ultimul punct de control înainte ca
+              jurnalul să se extindă spre alte motoare NoSQL dincolo de modelul de
+              documente.
             </p>
           </div>
 
@@ -954,7 +1047,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Redis revine în jurnal astăzi, de această dată concentrându-se dincolo de
+              caching-ul simplu cheie-valoare, spre mesageria publish/subscribe și cheile cu
+              expirare. Canalele permit unui proces să difuzeze un mesaj pe care orice număr
+              de abonați îl primesc instantaneu, un tipar util pentru notificări în timp
+              real și comunicare între serviciile microservicii ale flotei. Setările TTL
+              (time-to-live) permit expirarea automată a valorilor din cache, păstrând setul
+              de date din memorie proaspăt fără curățare manuală. Laboratorul de azi
+              conectează un sistem simplu de notificări pub/sub și un strat de cache cu
+              expirare, demonstrând de ce Redis își câștigă un loc permanent în majoritatea
+              arhitecturilor de producție.
             </p>
           </div>
 
@@ -987,7 +1089,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cassandra revine pentru o analiză mai profundă a mecanicii stocării
+              distribuite: hashing-ul consistent distribuie datele pe un inel de noduri,
+              factorul de replicare determină câte copii ale fiecărei date există, iar
+              nivelurile de consistență reglabile permit fiecărei interogări să-și aleagă
+              propriul echilibru între viteză și acuratețe. O scriere poate fi confirmată de
+              o singură replică sau de un cvorum complet, în funcție de cât de critică este
+              corectitudinea pentru acea operație particulară. Exercițiul de azi parcurge
+              configurarea unui keyspace cu o strategie de replicare aleasă și observarea
+              modului în care alegerile nivelului de consistență afectează atât latența, cât
+              și riscul de a citi date învechite.
             </p>
           </div>
 
@@ -1020,7 +1131,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Cypher, limbajul de interogare al Neo4j, tratează parcurgerea unui graf
+              aproape ca și cum l-ai desena: tipare precum
+              (persoană)-[:URMĂREȘTE]->(persoană) descriu noduri și relații folosind săgeți
+              care oglindesc structura reală a grafului. Lecția de azi construiește
+              interogări care găsesc cele mai scurte căi, numără conexiunile mutuale și
+              parcurg mai multe salturi de relații pentru a răspunde la întrebări care ar
+              necesita multe joncțiuni costisitoare într-un sistem relațional. Algoritmi de
+              graf precum PageRank și detectarea comunităților, disponibili ca proceduri
+              predefinite, dezvăluie tipare în datele conectate greu de scos la iveală
+              altfel. Această sesiune consolidează motivul pentru care gândirea centrată pe
+              relații deblochează categorii complet noi de interogări.
             </p>
           </div>
 
@@ -1053,7 +1174,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Baza de date Realtime a Firebase și succesoarea sa, Firestore, oferă o
+              variantă diferită de NoSQL: un depozit de documente complet gestionat, găzduit
+              în cloud, cu sincronizare în timp real integrată către clienții conectați.
+              Orice modificare a datelor este trimisă instant către fiecare dispozitiv
+              abonat, făcând-o o potrivire naturală pentru aplicații de chat, panouri live
+              și instrumente colaborative unde echipajul de pe toată stația trebuie să vadă
+              simultan aceeași stare. Regulile de securitate, mai degrabă decât logica de
+              autentificare la nivel de aplicație, controlează cine poate citi sau scrie ce
+              căi din arborele de date. Exercițiul de azi conectează un client simplu la
+              Firestore și observă cum actualizările se propagă live între două sesiuni
+              deschise.
             </p>
           </div>
 
@@ -1086,7 +1217,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              DynamoDB este baza de date cheie-valoare și de documente complet gestionată a
+              AWS, concepută pentru latențe de ordinul milisecundei la o scară practic
+              nelimitată, fără a administra vreun server. Lecția de azi acoperă cheile de
+              partiție și cheile de sortare opționale, care împreună determină cum sunt
+              distribuite și interogate datele, alături de modelele de capacitate on-demand
+              versus provizionate, care controlează costul și debitul. Indexurile secundare
+              globale permit interogarea după atribute diferite de cheia primară, cu costul
+              unui spațiu de stocare suplimentar și al unei consistențe eventuale pentru
+              acele citiri de index. Înțelegerea filozofiei DynamoDB, axată întâi pe tiparul
+              de acces — modelarea interogărilor înainte de modelarea datelor — este
+              schimbarea mentală crucială pentru transmisiunea de azi.
             </p>
           </div>
 
@@ -1119,7 +1260,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Elasticsearch nu este atât o bază de date de uz general, cât un motor
+              specializat de căutare și analiză construit pe indexuri inversate, aceeași
+              structură găsită la finalul unei cărți, care asociază cuvintele cu numerele de
+              pagină. Documentele sunt analizate și tokenizate la ingestie, permițând
+              căutare full-text, potrivire aproximativă și scoruri de relevanță mult dincolo
+              de ce ar putea realiza o simplă clauză WHERE. Agregările permit Elasticsearch
+              să calculeze analize — histograme, medii, numărători de termeni — pe seturi de
+              date masive aproape în timp real, alimentând panouri precum Kibana.
+              Laboratorul de azi indexează un set de date exemplu și rulează atât interogări
+              full-text, cât și cereri de agregare pentru a vedea căutarea și analiza
+              funcționând împreună.
             </p>
           </div>
 
@@ -1152,7 +1303,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Zi de trecere în revistă: echipajul cartografiază întregul teritoriu al
+              motoarelor NoSQL întâlnite până acum — documentele MongoDB, viteza Redis,
+              coloanele distribuite Cassandra, grafurile Neo4j, sincronizarea în timp real
+              Firebase, scara gestionată DynamoDB și puterea de căutare Elasticsearch. În
+              loc să le clasifice, discuția de azi se concentrează pe profilul specific de
+              misiune pentru care fiecare a fost construit, întărind ideea că fluența
+              poliglotă între aceste motoare este mai valoroasă decât stăpânirea unuia
+              singur. Un tabel comparativ construit colaborativ în timpul sesiunii devine o
+              referință permanentă pentru planificarea misiunilor viitoare.
             </p>
           </div>
 
@@ -1190,7 +1349,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Modelarea datelor în NoSQL inversează abordarea relațională: în loc să
+              normalizeze datele în multe tabele mici și să le unească la momentul
+              interogării, modelarea NoSQL pornește de la interogările de care aplicația are
+              nevoie și modelează structura de date în jurul lor. Această mentalitate
+              orientată pe interogare înseamnă adesea duplicarea datelor în documente sau
+              rânduri pentru a evita joncțiuni costisitoare, sacrificând spațiul de stocare
+              pentru viteza de citire. Exercițiul de azi preia o schemă relațională
+              normalizată și o reproiectează pentru un depozit de documente, parcurgând
+              explicit ce relații se încorporează, care se referențiază și care se duplică
+              pur și simplu.
             </p>
           </div>
 
@@ -1223,7 +1391,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Migrarea unui sistem viu de la o bază de date relațională la NoSQL seamănă
+              mai mult cu transferul mărfii între nave în plin zbor decât cu apăsarea unui
+              buton. Transmisiunea de azi acoperă strategii precum scrierea dublă în ambele
+              sisteme în timpul unei perioade de tranziție, folosirea capturii de modificări
+              de date pentru a transmite actualizări din sistemul vechi în cel nou și
+              rularea ambelor baze de date în paralel cu un strat de comparație pentru a
+              valida corectitudinea înainte de comutare. Planurile de rollback nu sunt
+              negociabile: o migrare nu este completă până când echipajul nu a verificat
+              integritatea datelor și nu a demonstrat că noul sistem poate fi revenit în
+              siguranță dacă apar probleme. Studiul de caz de azi parcurge etapele unui
+              proiect real de migrare, pas cu pas.
             </p>
           </div>
 
@@ -1256,7 +1434,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Teorema CAP afirmă că un sistem distribuit poate garanta doar două din trei
+              proprietăți în timpul unei partiționări de rețea: Consistență, Disponibilitate
+              și Toleranță la partiționare — și cum partiționările sunt inevitabile în orice
+              flotă distribuită reală, alegerea efectivă este între consistență și
+              disponibilitate atunci când rețeaua se despică. Lecția de azi plasează sisteme
+              NoSQL specifice pe acest spectru: MongoDB înclină implicit spre consistență,
+              în timp ce Cassandra înclină spre disponibilitate, ambele cu butoane
+              reglabile. Înțelegerea teoremei CAP nu ține de alegerea unui câștigător, ci de
+              a ști ce mod de eșec poate tolera misiunea ta atunci când conexiunea dintre
+              stații se întrerupe.
             </p>
           </div>
 
@@ -1289,7 +1476,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              O bază de date fără plan de backup este o misiune la un defect hardware
+              distanță de catastrofă. Ziua de azi acoperă strategiile de backup NoSQL:
+              instantanee complete, backup-uri incrementale care capturează doar datele
+              modificate și recuperare la un anumit punct în timp folosind jurnale de
+              operații precum oplog-ul MongoDB. Exercițiile de restaurare sunt la fel de
+              importante ca backup-urile în sine — un backup netestat este o ipoteză, nu o
+              plasă de siguranță. Exercițiul de azi realizează un backup complet, simulează
+              pierderea de date și parcurge procedura de restaurare integral, pentru a
+              confirma că planul de recuperare funcționează cu adevărat sub presiune.
             </p>
           </div>
 
@@ -1322,7 +1517,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Menținerea sănătoasă a unei baze de date necesită telemetrie constantă:
+              latența interogărilor, debitul, numărul de conexiuni, întârzierea replicării
+              și utilizarea discului trebuie monitorizate continuu pentru a depista
+              problemele înainte să devină eșecuri de misiune. Lecția de azi configurează
+              panouri care urmăresc metricile cheie ale unei implementări NoSQL, stabilește
+              praguri de alertă pentru semne de avertizare precum întârzierea crescândă a
+              replicării sau presiunea de memorie și revizuiește jurnalele de interogări
+              lente pentru a identifica ținte de optimizare. Stabilirea timpurie a unei
+              linii de bază a comportamentului normal face mult mai ușoară detectarea
+              anomaliei care semnalează probleme reale.
             </p>
           </div>
 
@@ -1355,7 +1559,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Persistența poliglotă înseamnă acceptarea faptului că nicio bază de date
+              singură nu servește fiecare nevoie de la bordul navei și că un sistem bine
+              proiectat combină adesea mai multe motoare de stocare, fiecare gestionând
+              sarcina pe care o face cel mai bine. O arhitectură tipică ar putea folosi
+              MongoDB pentru date flexibile de aplicație, Redis pentru caching și starea
+              sesiunilor, Elasticsearch pentru căutare și o bază de date relațională pentru
+              înregistrări strict tranzacționale. Exercițiul de azi proiectează arhitectura
+              unui sistem mic pe mai multe motoare de stocare, potrivind fiecare tip de date
+              cu motorul cel mai potrivit tiparului său de acces și nevoilor de consistență.
+              Această mentalitate hibridă marchează tranziția de la student la arhitect de
+              sisteme.
             </p>
           </div>
 
@@ -1388,7 +1602,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Recapitularea finală a sectorului NoSQL: echipajul consolidează lecțiile
+              despre modelele de documente, cheie-valoare, column-family și graf, plus
+              abilitățile operaționale de indexare, replicare, backup, monitorizare și
+              migrare. Un exercițiu de încheiere cere fiecărui cadet să proiecteze,
+              justifice și implementeze parțial o arhitectură de persistență poliglotă
+              pentru un scenariu realist de misiune, apărând fiecare alegere de stocare în
+              fața compromisurilor teoremei CAP și a tiparelor de acces studiate pe
+              parcursul sectorului. Această transmisiune încheie capitolul bazelor de date
+              al călătoriei, iar jurnalul se îndreaptă acum spre noi sisteme.
             </p>
           </div>
 

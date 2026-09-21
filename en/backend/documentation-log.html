@@ -287,88 +287,29 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Documentation Expedition Map</h4>
           </a>
-          <!-- @block: SIDEBAR LINK LIST
-            The [ul] (unordered list) holds every expedition day link.
-            Each [li] (list item) contains an [a] (anchor) that points
-            to a specific day's [article] via its id attribute — this
-            is called a "fragment link" because the # symbol tells the
-            browser to scroll to the element with that id.
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
             @reason:
               Fragment links (href="#documentation-day01") create a table of
-              contents that lets the crew teleport directly to any
-              entry without scrolling through the entire log.
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
           -->
-          <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#documentation-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
-
-            <!-- @block: WEEK 01 — SECTOR 01: GALACTIC FOUNDATIONS
-              The first full week covers core CSS mechanics: selectors,
-              specificity, the box model, and layout fundamentals.
-              @theme:
-                The diamond symbol (&#9672;) next to each day number
-                acts as a bullet marker — a tiny visual cue that helps
-                the eye scan down the list quickly.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#documentation-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#documentation-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#documentation-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#documentation-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#documentation-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#documentation-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#documentation-day07" class="sidebar-link">Day 07 &#9672;</a></li>
-
-            <!-- @block: WEEK 02 — SECTOR 02: ADVANCED GRIDS & FLEXBOX
-              The second week transitions from basic layout to modern
-              CSS layout engines: Flexbox and CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#documentation-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#documentation-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#documentation-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#documentation-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#documentation-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#documentation-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#documentation-day14" class="sidebar-link">Day 14 &#9672;</a></li>
-
-            <!-- @block: WEEK 03 — SECTOR 03: RESPONSIVE & ANIMATION
-              The third week introduces responsive design principles,
-              media queries, transitions, and keyframe animations.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#documentation-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#documentation-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#documentation-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#documentation-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#documentation-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#documentation-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#documentation-day21" class="sidebar-link">Day 21 &#9672;</a></li>
-
-            <!-- @block: WEEK 04 — SECTOR 04: ADVANCED & CINEMATIC CSS
-              The final week covers advanced selectors, custom
-              properties, blend modes, filters, and the cinematic
-              visual language that defines this project's aesthetic.
-            -->
-            <li class="week-label">
-              <a href="#documentation-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#documentation-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#documentation-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#documentation-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#documentation-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#documentation-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#documentation-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#documentation-day28" class="sidebar-link">Day 28 &#9672;</a></li>
-          </ul>
+          <ul></ul>
         </nav>
       </aside>
 
@@ -446,7 +387,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The logbook interface hums to life for the first time today. Every expedition
+              through the codebase depends on a reliable record of what was built, why it
+              was built, and how future crew members can operate it without retracing every
+              step. Documentation is the black box recorder of software: when systems fail
+              or contributors change, it is the only surviving witness to original intent.
+              Starting this log is the first act of treating writing as seriously as writing
+              code.
             </p>
           </div>
 
@@ -484,7 +431,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Undocumented code is a ship with no manual — it may fly, but only the
+              original pilot knows which switch does what. Good documentation reduces
+              onboarding time, prevents repeated mistakes, and turns tribal knowledge into a
+              shared asset the whole crew can access. It also forces the author to clarify
+              their own thinking, since explaining a system well requires actually
+              understanding it. Teams that document consistently ship faster over the long
+              run because less time is lost re-discovering solved problems.
             </p>
           </div>
 
@@ -517,7 +470,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The README file is the airlock every visitor passes through before entering
+              the project. A strong README states what the project does, how to install it,
+              how to run it, and where to report issues, all within the first screen of
+              text. It should assume the reader knows nothing about the internal
+              architecture but is competent enough to follow clear instructions. Skipping
+              this file is like removing the sign at the entrance to a station and expecting
+              new crew to find the bridge by instinct.
             </p>
           </div>
 
@@ -550,7 +509,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Comments embedded directly in the source are like maintenance notes etched
+              into a hull panel — visible only to those who open the plating. Good inline
+              comments explain why a decision was made, not what the code does, since the
+              code itself already shows the what. Overcommenting clutters the view with
+              noise, while undercommenting leaves future engineers guessing at intent behind
+              tricky logic. The discipline is knowing when a comment adds real signal versus
+              when clean naming and structure already speak for themselves.
             </p>
           </div>
 
@@ -583,7 +548,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              API documentation is the docking manual for every external ship that wants to
+              connect to your station. It must specify each endpoint's method, path,
+              parameters, expected request bodies, and response shapes with enough precision
+              that an integrator never needs to read your source code. Good API docs include
+              example requests and responses, authentication requirements, and error codes
+              so failures are diagnosable without guesswork. Tools that generate these docs
+              from the actual code reduce the risk of the manual drifting out of sync with
+              the real system.
             </p>
           </div>
 
@@ -616,7 +588,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Architecture documentation charts the overall shape of the vessel — how
+              modules, services, and data flows connect across the whole system. Unlike code
+              comments or API references, it operates at altitude, giving new engineers a
+              mental map before they descend into any single file. Diagrams showing request
+              flow, service boundaries, and data ownership prevent contributors from
+              accidentally violating the system's intended structure. Without this map,
+              every new crew member has to reverse-engineer the ship's blueprint from
+              scratch.
             </p>
           </div>
 
@@ -649,7 +628,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A style guide keeps every transmission from the crew sounding like it comes
+              from the same mission control. It standardizes tone, formatting, terminology,
+              and structure so that documentation written by ten different engineers still
+              reads as one coherent voice. Consistency reduces cognitive load for readers
+              who no longer have to adapt to each author's personal habits. Enforcing a
+              shared style, whether through a written guide or automated linting, is what
+              separates a professional knowledge base from a scattered pile of notes.
             </p>
           </div>
 
@@ -682,7 +667,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review sweep consolidates the fundamentals: README files as the entry
+              point, inline comments as internal notes, API docs as the docking manual,
+              architecture docs as the overall chart, and style guides as the shared voice
+              binding them together. Each artifact serves a different altitude of
+              understanding, from the single line of code to the whole system. Skipping any
+              layer creates blind spots that slow down every future contributor. Mastering
+              these basics is what makes the rest of the documentation voyage possible.
             </p>
           </div>
 
@@ -720,7 +711,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Markdown is the universal transmission format readable by nearly every
+              terminal in the galaxy — GitHub, wikis, static site generators, and chat tools
+              all parse it natively. Its lightweight syntax for headers, lists, code blocks,
+              and links lets writers focus on content instead of fighting a markup language.
+              Because it degrades gracefully to plain text, Markdown documents remain useful
+              even without a renderer. Choosing Markdown for most project documentation
+              keeps the barrier to contribution low for engineers and non-engineers alike.
             </p>
           </div>
 
@@ -753,7 +750,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              JSDoc and TypeDoc turn inline code comments into structured, browsable
+              documentation automatically. By annotating functions with tagged comments
+              describing parameters, return types, and behavior, these tools extract a full
+              reference site directly from the source, keeping docs physically bound to the
+              code they describe. This tight coupling means documentation is far less likely
+              to drift out of date, since updating a function's signature naturally prompts
+              an update to its adjacent comment. Generated output can be published as a
+              browsable API reference for any consumer of the codebase.
             </p>
           </div>
 
@@ -786,7 +790,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Swagger and the OpenAPI specification give REST APIs a standardized,
+              machine-readable blueprint. Written in YAML or JSON, an OpenAPI document
+              describes every endpoint, parameter, schema, and response code in a format
+              that both humans and tooling can parse. From that single source of truth,
+              teams can auto-generate interactive documentation, client SDKs, and even mock
+              servers for testing. Treating the API spec as the primary artifact — rather
+              than an afterthought — keeps contract and implementation from drifting apart.
             </p>
           </div>
 
@@ -819,7 +829,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Storybook builds an isolated showroom where each UI component can be viewed,
+              interacted with, and documented independently of the full application. Every
+              component gets its own set of stories demonstrating different states, props,
+              and edge cases, turning the component library into living documentation that
+              designers and engineers can both reference. This isolation also catches visual
+              regressions early, since components are tested outside the noise of the entire
+              app. For teams building shared design systems, Storybook becomes the canonical
+              reference for how every piece should look and behave.
             </p>
           </div>
 
@@ -852,7 +869,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              An internal wiki is the shared archive room where institutional knowledge
+              that doesn't belong in code lives — onboarding guides, decision records,
+              runbooks, and team processes. Unlike code documentation, wikis are meant to be
+              edited freely and often, capturing knowledge as it evolves rather than as it
+              was originally designed. The risk is staleness: an unmaintained wiki quickly
+              becomes a graveyard of outdated instructions that mislead more than they help.
+              Successful wikis assign clear ownership and periodic review cycles to keep the
+              archive trustworthy.
             </p>
           </div>
 
@@ -885,7 +909,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentation generators like Docusaurus, MkDocs, and Sphinx convert plain
+              Markdown or reStructuredText source files into polished, searchable static
+              websites. They handle navigation, search indexing, versioning, and theming
+              automatically, letting writers focus purely on content rather than web
+              development. Because the output is static, these sites are cheap to host, fast
+              to load, and easy to deploy alongside a continuous integration pipeline.
+              Adopting a generator turns a folder of scattered text files into a proper
+              documentation portal for the whole crew and any external visitors.
             </p>
           </div>
 
@@ -918,7 +949,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review docks the tooling layer: Markdown as the common transmission
+              format, JSDoc and TypeDoc for extracting docs from code, OpenAPI for
+              machine-readable API contracts, Storybook for living component references,
+              wikis for evolving institutional knowledge, and static site generators for
+              publishing it all. Each tool automates a different piece of the documentation
+              pipeline, reducing the manual effort required to keep the crew informed.
+              Together they form a toolchain where writing good docs becomes the path of
+              least resistance rather than a chore bolted on afterward.
             </p>
           </div>
 
@@ -956,7 +994,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A tutorial guides a new crew member step by step through a specific task,
+              from first command to working result, with no assumed prior knowledge of that
+              particular workflow. Good tutorials use a real, concrete example rather than
+              abstract placeholders, since concrete steps are easier to verify and follow
+              along with. Each step should produce visible, checkable progress so the
+              learner knows they are still on course. Tutorials differ from reference docs
+              in purpose: they teach a path, not catalog every possible option.
             </p>
           </div>
 
@@ -989,7 +1033,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              A troubleshooting guide is the emergency procedures manual for known failure
+              modes — the errors and edge cases the crew has already encountered and
+              diagnosed. Rather than explaining how the system should work, it documents
+              symptoms, likely causes, and concrete fixes for things that actually go wrong
+              in practice. The best troubleshooting guides are built from real support
+              tickets and incident reports, ensuring they address genuine pain points rather
+              than hypothetical ones. Keeping this document current after every major
+              incident prevents the crew from solving the same problem twice.
             </p>
           </div>
 
@@ -1022,7 +1073,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              The FAQ section handles the short-range, frequently repeated hails from the
+              crew and passengers — quick questions with quick answers that don't warrant a
+              full tutorial. A good FAQ is sourced from actual recurring questions in
+              support channels rather than invented speculatively by the documentation
+              author. Each entry should be scannable in seconds, with the question phrased
+              exactly as a user would ask it. When an FAQ answer grows too long, it usually
+              signals the need for a dedicated guide instead.
             </p>
           </div>
 
@@ -1055,7 +1112,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Video documentation captures a live transmission of the interface in motion,
+              showing exactly what a user should see and click in real time. For visual or
+              spatial workflows — complex UI interactions, installation wizards, or
+              debugging sessions — video conveys context that static screenshots and text
+              struggle to express. The tradeoff is maintenance cost: a video becomes
+              outdated the moment the UI changes, and re-recording is far more expensive
+              than editing a paragraph of text. Video works best as a supplement to written
+              docs, not a replacement for them.
             </p>
           </div>
 
@@ -1088,7 +1152,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Interactive documentation embeds a live, running code sandbox directly inside
+              the docs page, letting readers modify parameters and see results without
+              leaving the site or setting up a local environment. This collapses the gap
+              between reading about a feature and actually experiencing it, dramatically
+              increasing comprehension and retention. Tools like CodeSandbox embeds, live
+              MDX components, or embedded REPLs make this possible with minimal extra
+              infrastructure. For libraries and APIs, interactive examples often communicate
+              behavior more clearly than any amount of prose.
             </p>
           </div>
 
@@ -1121,7 +1192,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Versioned documentation tracks multiple simultaneous releases of a project,
+              since crew members running an older build need instructions that match their
+              actual environment, not the latest one. Docs sites typically expose a version
+              switcher so a reader on v2 doesn't accidentally follow v4 instructions that
+              reference features they don't have. Maintaining multiple doc versions is real
+              ongoing work, requiring a clear policy on how far back support extends before
+              old docs are archived. Getting versioning wrong is one of the fastest ways to
+              erode trust in a documentation set.
             </p>
           </div>
 
@@ -1154,7 +1232,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's review docks the advanced content layer: tutorials for teaching new
+              paths, troubleshooting guides for known failure modes, FAQs for quick
+              recurring answers, video for spatial and visual context, interactive sandboxes
+              for hands-on learning, and versioning for keeping instructions aligned with
+              the reader's actual build. Together these formats serve different learning
+              styles and different moments of need. A mature documentation set doesn't rely
+              on a single format — it layers these together so every kind of question has an
+              appropriate answer.
             </p>
           </div>
 
@@ -1192,7 +1277,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentation review is the quality control checkpoint before any writing is
+              published to the crew, just as no module ships without a code review.
+              Reviewers check technical accuracy, verify that steps actually work when
+              followed literally, and flag confusing or ambiguous language before it
+              misleads a reader. Treating doc changes with the same rigor as code changes —
+              including pull requests and sign-off — signals that documentation is a
+              first-class deliverable, not an afterthought. Skipping this step is how subtly
+              wrong instructions end up costing the whole crew hours of confusion.
             </p>
           </div>
 
@@ -1225,7 +1317,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentation left unmaintained decays exactly like an untended hull —
+              slowly, quietly, until it fails under pressure. Every code change that alters
+              behavior, removes a feature, or renames a parameter creates a corresponding
+              doc debt that must be paid down promptly, ideally in the same pull request
+              that caused it. Automated checks like broken-link detection and doc-linting
+              catch some staleness, but genuine accuracy checks require a human to actually
+              attempt the documented steps periodically. Scheduling recurring documentation
+              audits is the only reliable way to keep the archive trustworthy over time.
             </p>
           </div>
 
@@ -1258,7 +1357,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Measuring documentation effectiveness means treating docs like any other
+              product surface with real analytics rather than assuming they work because
+              they exist. Page views, search queries with no results, time-on-page, and
+              support ticket volume for topics that are supposedly already documented all
+              reveal where the docs are failing readers. A spike in support requests about a
+              documented feature is a strong signal that the relevant page is unclear,
+              wrong, or simply not being found. Closing this feedback loop turns
+              documentation from a one-time writing exercise into a continuously improving
+              system.
             </p>
           </div>
 
@@ -1291,7 +1398,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Contribution guidelines are the boarding procedures for anyone who wants to
+              join the crew and help build the ship. They explain how to set up a local
+              development environment, the expected commit message format, the branching and
+              pull request workflow, and the standards a change must meet before merging.
+              Clear guidelines lower the barrier for new contributors and reduce the
+              maintainer's burden of repeatedly explaining the same process to each
+              newcomer. Projects with vague or missing contribution docs quietly discourage
+              the very community growth they claim to want.
             </p>
           </div>
 
@@ -1324,7 +1438,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Localization extends documentation beyond a single home language so crew
+              members across different regions can navigate the same systems in their own
+              tongue. It requires more than literal translation — cultural context, idioms,
+              date formats, and even code examples sometimes need adjustment to remain
+              natural and accurate for each audience. Maintaining synchronized documentation
+              across multiple languages is a real ongoing cost, often requiring translation
+              memory tools and a clear process for propagating source-language updates.
+              Projects that localize well signal a genuine commitment to a broader, more
+              inclusive crew.
             </p>
           </div>
 
@@ -1357,7 +1479,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Documentation as code treats prose the same way source code is treated:
+              stored in version control, reviewed through pull requests, tested through
+              automated link and build checks, and deployed through the same CI/CD pipeline
+              as the application itself. This approach eliminates the divide between a
+              separate wiki that drifts from reality and the codebase that actually ships.
+              Docs written this way benefit from diffs, history, and rollback just like any
+              other engineering artifact. Adopting docs-as-code is often the single biggest
+              lever for keeping documentation genuinely synchronized with a fast-moving
+              system.
             </p>
           </div>
 
@@ -1390,7 +1520,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Today's final review of the documentation sector surveys the full arc:
+              fundamentals like READMEs and comments, tooling like Markdown and generators,
+              advanced formats like tutorials and interactive sandboxes, and process
+              practices like review, maintenance, and docs-as-code. None of these pieces
+              work in isolation — a strong documentation culture treats writing as an
+              engineering discipline with its own standards, tooling, and feedback loops.
+              Crews that internalize this culture ship software that other people can
+              actually understand, extend, and trust long after the original authors have
+              moved on.
             </p>
           </div>
 

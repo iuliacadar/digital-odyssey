@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#middlware-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#middlware-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#middlware-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#middlware-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#middlware-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#middlware-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#middlware-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#middlware-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#middlware-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#middlware-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#middlware-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#middlware-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#middlware-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#middlware-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#middlware-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#middlware-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#middlware-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#middlware-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#middlware-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#middlware-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#middlware-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#middlware-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#middlware-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#middlware-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#middlware-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#middlware-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#middlware-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#middlware-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#middlware-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#middlware-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#middlware-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>
@@ -444,7 +405,12 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Astăzi pipeline-ul a fost activat. Fiecare cerere care urcă la bordul acestei
+              nave trece acum printr-un coridor de puncte de control înainte de a ajunge la
+              destinație, iar fiecare punct poate citi, modifica sau respinge încărcătura.
+              Middleware este numele pe care îl dăm acestor puncte de control, iar învățarea
+              construirii lor este primul pas către comanda fluxului întregii nave. Nimic
+              aici nu este decorațiune opțională; pipeline-ul este sistemul nervos al navei.
             </p>
           </div>
 
@@ -482,7 +448,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware urmează modelul pipeline: o funcție primește obiectul cererii,
+              obiectul răspunsului și un apel către următoarea stație din lanț. Fiecare
+              funcție poate inspecta anteturi, modifica payload-ul, scurtcircuita călătoria
+              cu un răspuns sau lăsa transmisia să treacă mai departe. Înlănțuirea acestor
+              funcții permite compunerea unui comportament complex din module mici, cu un
+              singur scop, în loc de un reactor monolitic uriaș. Această compozabilitate
+              este motivul pentru care modelul a supraviețuit atâtor generații de
+              framework-uri server.
             </p>
           </div>
 
@@ -515,7 +488,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              În Express, middleware este orice funcție cu semnătura (req, res, next).
+              Apelarea next() este eliberarea airlock-ului care permite transmisiei să
+              continue către următorul handler; uitarea acestui apel blochează cererea
+              permanent în coridor, iar clientul așteaptă până la expirarea conexiunii.
+              Express parcurge stiva de sus în jos, înregistrând handlere cu app.use() sau
+              verbe specifice metodelor precum app.get(). Stăpânirea next() înseamnă
+              stăpânirea ritmului întregului pipeline.
             </p>
           </div>
 
@@ -548,7 +527,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Express vine cu middleware încorporat, astfel încât nu trebuie să construim
+              fiecare modul de la zero. express.static() deschide un airlock direct către un
+              folder de fișiere, servind resurse precum imagini și foi de stil fără logică
+              de rutare personalizată. express.json() și express.urlencoded() decodează
+              corpurile cererilor primite în obiecte JavaScript utilizabile, traducând
+              formate de transmisie străine în structuri de date standard ale navei. Aceste
+              module încorporate acoperă cele mai comune tipuri de încărcătură, astfel încât
+              middleware-ul personalizat se poate concentra pe logica specifică misiunii.
             </p>
           </div>
 
@@ -581,7 +567,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Dincolo de modulele încorporate, expansiunea deschisă a middleware-ului terță
+              parte extinde rețeaua de senzori a navei. Morgan înregistrează fiecare
+              transmisie primită cu metodă, cale, status și timp de răspuns, oferind
+              echipajului de pe punte un flux continuu de telemetrie a traficului. Helmet
+              blindează carena setând anteturi HTTP de protecție care blochează vectori
+              comuni de atac precum clickjacking și MIME sniffing. Instalarea ambelor este
+              adesea prima mișcare în orice misiune Express nouă, deoarece vizibilitatea și
+              blindajul contează înainte de a scrie vreo rută personalizată.
             </p>
           </div>
 
@@ -614,7 +607,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de gestionare a erorilor poartă o semnătură distinctă: patru
+              parametri în loc de trei, cu err sosind primul. Express recunoaște automat
+              această formă și direcționează orice eroare transmisă către next(err) direct
+              către acest handler special, ocolind stiva normală. Centralizarea gestionării
+              erorilor aici înseamnă că handlerele individuale de rute rămân curate,
+              transmițând pur și simplu eșecurile în loc să scrie fiecare propriul răspuns
+              de control al avariilor. Un singur handler de erori bine plasat la finalul
+              stivei devine stația de răspuns la urgențe a întregii nave.
             </p>
           </div>
 
@@ -647,7 +647,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ordinea nu este o formalitate în pipeline; este fizică pură. Middleware-ul
+              înregistrat primul rulează primul, iar dacă un modul de logging este plasat
+              după ce răspunsul a fost deja trimis, nu se activează niciodată. Verificările
+              de autentificare trebuie să preceadă rutele pe care le protejează, iar
+              handlerele de erori trebuie să stea la finalul absolut, după fiecare apel
+              app.use(), altfel erorile aruncate mai jos în stivă nu le vor ajunge
+              niciodată. Citirea unui stack trace pe această navă începe întotdeauna prin
+              verificarea dacă echipajul a cablat coridoarele în secvența corectă.
             </p>
           </div>
 
@@ -680,7 +687,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Am acoperit anatomia de bază a pipeline-ului:
+              semnătura (req, res, next), supapa de eliberare next(), modulele încorporate
+              pentru fișiere statice și parsarea corpului cererii, blindajul terță parte
+              precum Helmet și Morgan și regula nenegociabilă conform căreia ordinea
+              determină comportamentul. Înainte de a avansa spre construirea middleware-ului
+              personalizat, fiecare cadet ar trebui să poată urmări manual o cerere de la
+              intrare până la răspuns, stație cu stație. Fundamentele sunt placarea de
+              carenă pe care se sudează tot restul.
             </p>
           </div>
 
@@ -718,7 +732,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul personalizat de logging este prima noastră construcție
+              independentă: o funcție care marchează cu timestamp cererea primită,
+              înregistrează metoda și URL-ul și apelează next() pentru a lăsa transmisia să
+              continue nemodificată. Plasarea console.log sau a unei biblioteci de logging
+              adecvate în interiorul acestei funcții transformă fiecare cerere într-un punct
+              de date în jurnalul misiunii. Versiunile mai avansate măsoară timpul scurs
+              capturând un timestamp înainte și după rezolvarea next(), oferindu-ne propria
+              instrumentație ușoară. Acesta este modelul din spatele fiecărui instrument de
+              observabilitate pe care îl vom întâlni mai târziu în călătorie.
             </p>
           </div>
 
@@ -751,7 +773,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de autentificare inspectează antetul Authorization, extrage un
+              token bearer și verifică semnătura acestuia înainte de a acorda trecerea. Un
+              JWT este decodat și verificat față de o cheie secretă; dacă verificarea
+              eșuează, middleware-ul scurtcircuitează cu un răspuns 401 în loc să apeleze
+              next(). Dacă reușește, payload-ul decodat este de obicei atașat la req.user
+              astfel încât handlerele din aval să știe exact ce membru al echipajului face
+              cererea. Acest punct de control este airlock-ul dintre expansiunea publică și
+              sistemele protejate ale navei.
             </p>
           </div>
 
@@ -784,7 +813,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de rate limiting urmărește câte transmisii a trimis o anumită
+              sursă într-o fereastră de timp glisantă și limitează sau respinge traficul în
+              exces cu un status 429. Biblioteci precum express-rate-limit mențin contoare
+              indexate după adresa IP sau token, resetându-le pe măsură ce fereastra
+              avansează. Aceasta apără reactorul navei de a fi copleșit de o singură sursă
+              prea zeloasă, fie malițioasă, fie pur și simplu configurată greșit. Fără
+              limitare, un singur script client scăpat de sub control poate consuma resurse
+              destinate întregului echipaj.
             </p>
           </div>
 
@@ -817,7 +853,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de validare inspectează payload-urile primite față de o schemă
+              definită înainte ca orice logică de business să ruleze, respingând încărcătura
+              malformată la airlock, nu adânc în interiorul navei. Biblioteci precum Joi,
+              Zod sau express-validator definesc forma, tipurile și constrângerile așteptate
+              ale datelor, apoi returnează un răspuns 400 cu erori detaliate atunci când
+              transmisia nu se potrivește. Aceasta menține logica de validare în afara
+              handlerelor de rute și concentrată într-un singur strat reutilizabil și
+              testabil. A avea încredere în date de intrare nevalidate este una dintre cele
+              mai rapide căi de a breșa carena.
             </p>
           </div>
 
@@ -850,7 +894,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul CORS controlează ce origini străine au permisiunea de a
+              solicita resurse de la această navă. Browserele impun implicit politica
+              same-origin, blocând cererile cross-origin decât dacă serverul acordă explicit
+              permisiune prin Access-Control-Allow-Origin și anteturile aferente. Pachetul
+              cors pentru Express gestionează automat cererile preflight OPTIONS și ne
+              permite să punem pe listă albă domenii, metode și anteturi specifice.
+              Configurarea corectă a acestuia este esențială pentru orice API destinat a fi
+              consumat de o navă frontend separată.
             </p>
           </div>
 
@@ -883,7 +934,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de cache interceptează o cerere, verifică dacă există deja un
+              răspuns proaspăt într-un depozit de cache și îl returnează imediat fără a
+              atinge handlerele din aval sau baza de date. Când nu există o copie cached,
+              middleware-ul lasă cererea să treacă și stochează răspunsul rezultat pentru
+              data următoare, adesea cu o fereastră de expirare. Aceasta poate reduce
+              dramatic sarcina asupra operațiunilor costisitoare, sacrificând o cantitate
+              mică de prospețime pentru o cantitate mare de viteză. Invalidarea cache-ului,
+              așa cum orice inginer veteran va avertiza un recrut nou, rămâne una dintre
+              cele mai grele probleme din orice misiune.
             </p>
           </div>
 
@@ -916,7 +975,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Am construit acum middleware de logging,
+              autentificare, rate limiting, validare, CORS și caching pornind de la
+              principii fundamentale, fiecare fiind un modul autonom care face exact o
+              singură treabă. Forma recurentă este mereu aceeași: inspectează, decide, fie
+              transmite mai departe cu next(), fie termină cu un răspuns. Recunoașterea
+              acestei forme înseamnă că orice nouă cerință de middleware, oricât de exotică,
+              poate fi construită urmând același plan.
             </p>
           </div>
 
@@ -954,7 +1019,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul asincron introduce un pericol: dacă o funcție async aruncă o
+              eroare într-un handler de rută, gestionarea implicită a erorilor din
+              versiunile mai vechi ale Express nu o va prinde automat, lăsând nava fără
+              semnal de urgență. Împachetarea handlerelor async într-un try/catch care
+              apelează next(err) în caz de eșec, sau folosirea unui utilitar auxiliar care
+              face asta automat, asigură că promisiunile respinse ajung totuși la handlerul
+              centralizat de erori. Express 5 îmbunătățește acest lucru prinzând nativ
+              promisiunile respinse, dar înțelegerea modelului manual rămâne esențială
+              pentru menținerea codului mai vechi. O respingere înghițită în tăcere este cel
+              mai silențios tip de breșă în carenă.
             </p>
           </div>
 
@@ -987,7 +1061,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul condiționat se activează doar pentru rute sau condiții
+              specifice, nu pentru întreaga aplicație. Transmiterea unei funcții middleware
+              ca al doilea argument la app.get() sau app.use('/cale', middleware) o
+              limitează doar la acel coridor al navei. Aceasta ne permite să aplicăm
+              verificări costisitoare precum autentificarea doar unde este nevoie, păstrând
+              rutele publice precum health check-urile ușoare și rapide. Țintirea precisă
+              menține pipeline-ul eficient în loc să ruleze fiecare verificare pentru
+              fiecare transmisie.
             </p>
           </div>
 
@@ -1020,7 +1101,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Compoziția middleware înseamnă înlănțuirea mai multor funcții în secvență,
+              fie ca argumente separate, fie ca un array, toate aplicate aceleiași rute.
+              Express le execută în ordinea listată, fiecare apelând next() pentru a preda
+              controlul funcției următoare, formând o mini-linie de asamblare pentru acel
+              coridor specific. Aceasta permite descompunerea logicii complexe de rutare în
+              bucăți mici, reutilizabile: validează, apoi autentifică, apoi autorizează,
+              apoi gestionează. Compoziția este modul în care evităm scrierea unor handlere
+              monolitice uriașe de rute care fac totul deodată.
             </p>
           </div>
 
@@ -1053,7 +1141,13 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul la nivel de router se atașează la o instanță express.Router()
+              în loc de aplicația principală, creând o sub-stivă autonomă care se aplică
+              doar rutelor montate sub acel router. Așa construim secțiuni modulare ale
+              navei, fiecare cu propriile cerințe de middleware, apoi le montăm pe aplicația
+              principală cu app.use('/api/users', userRouter). Sub-stivele mențin
+              aplicațiile mari organizate în compartimente testabile independent. O breșă
+              într-un compartiment nu trebuie să compromită întreaga navă.
             </p>
           </div>
 
@@ -1086,7 +1180,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Degradarea grațioasă înseamnă proiectarea unui middleware de gestionare a
+              erorilor care menține nava operațională chiar și atunci când un subsistem
+              cedează. În loc să prăbușească întregul proces la o excepție negestionată, un
+              middleware de erori bine structurat înregistrează incidentul, returnează
+              clientului un cod de status și un mesaj adecvat și permite serverului să
+              continue să deservească alte cereri. Distincția între erori operaționale,
+              precum o interogare eșuată în baza de date, și erori de programator, precum o
+              referință nulă, ajută la decizia dacă să se recupereze sau să declanșeze o
+              repornire controlată. O navă rezilientă supraviețuiește avariilor la un sistem
+              fără a pierde suportul vital peste tot.
             </p>
           </div>
 
@@ -1119,7 +1222,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de performanță măsoară cât timp durează procesarea fiecărei
+              cereri, de obicei prin înregistrarea unui timestamp de înaltă rezoluție la
+              intrare și calcularea diferenței când răspunsul se finalizează. Atașarea unui
+              listener la evenimentul 'finish' al obiectului de răspuns prinde momentul în
+              care anteturile sunt trimise, oferind o durată exactă de la un capăt la altul.
+              Această telemetrie alimentează direct panourile de monitorizare și ajută
+              echipajul să identifice ce coridoare ale pipeline-ului rulează lent înainte ca
+              pasagerii să se plângă. Măsurarea înainte de optimizare este procedura
+              standard în orice misiune.
             </p>
           </div>
 
@@ -1152,7 +1263,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat. Modelele avansate acoperite până acum includ
+              gestionarea erorilor asincrone, middleware condiționat și limitat la rute,
+              lanțuri de compoziție, sub-stive la nivel de router, degradare grațioasă și
+              cronometrarea performanței. Împreună, aceste modele permit unei singure
+              aplicații Express să crească de la un prototip jucărie până la un serviciu de
+              nivel producție fără a pierde claritatea structurală. Fiecare model de aici
+              este de fapt aceeași idee de bază, inspectează și transmite mai departe,
+              aplicată cu o sofisticare crescândă.
             </p>
           </div>
 
@@ -1190,7 +1308,15 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Testarea middleware-ului înseamnă izolarea funcției (req, res, next) de stiva
+              HTTP completă și apelarea ei directă cu obiecte mock. Biblioteci precum jest
+              și sinon ne permit să creăm obiecte false de cerere și răspuns, apoi să
+              verificăm dacă next() a fost apelat, dacă res.status() a primit codul corect
+              sau dacă res.json() a returnat payload-ul așteptat. Testele de integrare, în
+              schimb, pornesc întreaga aplicație Express și trimit cereri HTTP reale prin
+              supertest pentru a verifica dacă întregul pipeline se comportă corect de la un
+              capăt la altul. Ambele niveluri contează: testele unitare prind rapid erorile
+              de logică, testele de integrare prind erorile de cablare.
             </p>
           </div>
 
@@ -1223,7 +1349,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Middleware-ul de monitorizare exportă metrici precum numărul de cereri,
+              distribuția latenței și rata erorilor către un sistem extern precum
+              Prometheus. Fiecare cerere incrementează contoare și înregistrează bucket-uri
+              de histogramă pentru timpul de răspuns, etichetate după rută și cod de status,
+              construind un flux de telemetrie viu al stării navei. Expunerea unui endpoint
+              /metrics permite panourilor externe să extragă aceste date periodic,
+              transformând traficul brut în control al misiunii vizual. Fără această
+              instrumentație, echipajul zboară orb între lansări.
             </p>
           </div>
 
@@ -1256,7 +1389,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Bunele practici de securitate pentru middleware depășesc anteturile implicite
+              ale Helmet: rate limiting previne atacurile de tip forță brută, validarea
+              intrărilor blochează tentativele de injecție, iar configurarea CORS previne
+              accesul cross-origin neautorizat. Igienizarea intrărilor utilizatorului
+              înainte ca acestea să ajungă la o interogare a bazei de date apără împotriva
+              injecției SQL și NoSQL, în timp ce escaparea ieșirilor apără împotriva
+              cross-site scripting. Stratificarea acestor apărări înseamnă că un singur eșec
+              nu compromite întreaga navă; aceasta este apărarea în adâncime, nu un singur
+              scut de forță. Middleware-ul de securitate este placarea de blindaj care nu
+              trebuie niciodată tratată ca opțională.
             </p>
           </div>
 
@@ -1289,7 +1431,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Într-o arhitectură de microservicii, preocupările de middleware precum
+              autentificarea și logging-ul sunt adesea extrase într-un gateway partajat sau
+              un sidecar în loc să fie duplicate în fiecare serviciu. Un API gateway poate
+              gestiona rate limiting, verificarea token-ului de autentificare și rutarea
+              cererilor o singură dată, înainte ca traficul să ajungă la serviciile
+              individuale, reducând logica duplicată în întreaga flotă. Middleware-ul de
+              trasare distribuită atașează un ID de corelare fiecărei cereri, astfel încât
+              traiectoria ei prin mai multe servicii poate fi reconstruită ulterior.
+              Coordonarea multor nave mici necesită protocoale partajate, nu fiecare navă
+              improvizând propriul sistem.
             </p>
           </div>
 
@@ -1322,7 +1473,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Construirea unui framework de middleware personalizat înseamnă implementarea
+              noastră proprie a modelului de bază: un array de funcții, un index care
+              urmărește poziția în stivă și o funcție de dispatch care apelează
+              middleware-ul curent cu un next() care avansează indexul și apelează din nou
+              dispatch. Aceasta este în esență ceea ce fac Express, Koa și Connect sub
+              capotă, doar cu niveluri diferite de abstractizare și funcții suplimentare
+              stratificate deasupra. Înțelegerea acestui mecanism demistifică complet
+              framework-urile și face depanarea problemelor de ordonare a stivei mult mai
+              intuitivă. Odată ce ai construit singur pipeline-ul, internele niciunui
+              framework nu mai par o cutie neagră.
             </p>
           </div>
 
@@ -1355,7 +1515,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Anti-modelele comune includ uitarea apelării next(), apelarea next() de mai
+              multe ori, modificarea stării partajate fără grijă pentru izolarea cererilor
+              și plasarea unui calcul sincron greu direct într-o funcție middleware, blocând
+              întreaga buclă de evenimente pentru ceilalți pasageri. O altă greșeală
+              frecventă este înregistrarea middleware-ului de gestionare a erorilor înaintea
+              altor rute în loc de după, ceea ce înseamnă că nu primește niciodată erorile
+              transmise. Recunoașterea acestor anti-modele în timpul revizuirii codului
+              salvează nava de eșecuri misterioase, greu de reprodus. Fiecare inginer cu
+              experiență a fost ars cel puțin de una dintre acestea înainte de a învăța să
+              fie atent la ea.
             </p>
           </div>
 
@@ -1388,7 +1557,14 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+              Ciclu de recapitulare încheiat: middleware în producție. Am călătorit de la
+              semnătura de bază (req, res, next) prin logging personalizat, autentificare,
+              validare, caching, gestionare asincronă, compoziție, monitorizare, blindaj de
+              securitate și modele distribuite în microservicii. Un pipeline pregătit pentru
+              producție este disciplinat în privința ordinii, defensiv în privința erorilor,
+              instrumentat pentru observabilitate și testat atât la nivel unitar, cât și de
+              integrare. Aceasta încheie capitolul middleware al jurnalului misiunii;
+              pipeline-ul este acum al vostru de comandat.
             </p>
           </div>
 

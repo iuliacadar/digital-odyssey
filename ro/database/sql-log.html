@@ -294,62 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <li><a href="#sql-day00">Day 00 &#9672; Intro</a></li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: WEEK 01 — SECTOR 01: FOUNDATIONS OF THE RELATIONAL VOID -->
-            <li class="week-label">
-              <a href="#sql-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#sql-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#sql-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#sql-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#sql-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#sql-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#sql-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#sql-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [main class="log-content"].
 
-            <!-- @block: WEEK 02 — SECTOR 02: SCHEMA DESIGN & RELATIONSHIPS -->
-            <li class="week-label">
-              <a href="#sql-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#sql-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#sql-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#sql-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#sql-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#sql-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#sql-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#sql-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: WEEK 03 — SECTOR 03: ADVANCED QUERY PATTERNS -->
-            <li class="week-label">
-              <a href="#sql-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#sql-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#sql-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#sql-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#sql-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#sql-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#sql-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#sql-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: WEEK 04 — SECTOR 04 -->
-            <li class="week-label">
-              <a href="#sql-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#sql-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#sql-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#sql-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#sql-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#sql-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#sql-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#sql-day28" class="sidebar-link">Day 28 &#9672;</a></li>
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
 
-            <!-- @block: WEEK 05 — SECTOR 05 -->
-            <li class="week-label">
-              <a href="#sql-sector-05" class="sidebar-link">S05</a>
-            </li>
-            <li><a href="#sql-day29" class="sidebar-link">Day 29 &#9672;</a></li>
-            <li><a href="#sql-day30" class="sidebar-link">Day 30 &#9672;</a></li>
+              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
+            -->
           </ul>
         </nav>
       </aside>
@@ -461,10 +435,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Astăzi coborâm pentru prima dată în Arhivele Adânci, bazele de date
+              relaționale unde locuiește cu adevărat memoria persistentă a fiecărei misiuni.
+              Spre deosebire de starea trecătoare a unei aplicații în funcțiune, o bază de
+              date supraviețuiește repornirilor, căderilor și reimplementărilor, păstrând
+              sursa unică de adevăr despre utilizatori, tranzacții și evenimente de-a lungul
+              întregii călătorii. Structured Query Language, SQL, este dialectul universal
+              folosit pentru a vorbi cu aceste arhive, permițând unui membru al echipajului
+              să pună întrebări precise și să primească răspunsuri precise înapoi. Înainte
+              de a atinge vreo interogare, înțelegerea faptului că arhiva este organizată,
+              structurată și guvernată de reguli stricte este prima și cea mai importantă
+              lecție.
             </p>
           </div>
 
@@ -521,10 +502,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Un tabel este raftul de arhivă unde locuiește un singur tip de înregistrare,
+              iar coloanele sale definesc exact ce atribute trebuie să poarte fiecare
+              intrare de pe acel raft, o coloană de nume, o coloană de email, o coloană de
+              marcă temporală. Fiecare rând din tabel reprezintă o înregistrare concretă, un
+              utilizator, o comandă, o citire de senzor, conformă exact cu structura
+              declarată de coloane. Această structură rigidă este ceea ce face bazele de
+              date relaționale atât de fiabile: spre deosebire de un depozit de documente
+              liber, un tabel refuză să accepte un rând căruia îi lipsește o coloană
+              necesară sau care conține o valoare de formă greșită. A învăța să proiectezi
+              bine tabelele, alegând coloanele potrivite și granițele potrivite dintre ele,
+              este fundația de care depinde fiecare interogare ulterioară.
             </p>
           </div>
 
@@ -566,10 +554,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Fiecare coloană dintr-un tabel este legată de un tip de date, structura
+              moleculară care determină exact ce fel de valoare poate conține și cât spațiu
+              ocupă în arhivă. Numerele întregi stochează numere întregi eficient, VARCHAR
+              și TEXT stochează șiruri de caractere de lungime limitată sau nelimitată, DATE
+              și TIMESTAMP stochează momente în timp, iar BOOLEAN stochează un simplu semnal
+              adevărat-sau-fals. Alegerea tipului corect nu este o decizie cosmetică: ea
+              determină ce operații sunt valide, cât spațiu de stocare se consumă și dacă
+              baza de date poate impune automat constrângeri precum o lungime maximă sau un
+              interval. Un tip ales prost este o slăbiciune structurală care se va fisura
+              eventual sub presiunea datelor reale.
             </p>
           </div>
 
@@ -611,10 +605,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Instrucțiunea SELECT este semnalul de recuperare pe care îl trimiți în
+              arhivă, cerându-i să returneze coloane specifice din tabele specifice și să
+              transmită rezultatele înapoi la tine. O interogare de bază numește coloanele
+              dorite și tabelul de căutat, dar SELECT poate de asemenea calcula expresii,
+              redenumi coloane cu aliasuri și limita câte rânduri se returnează într-o
+              singură transmisie. Stăpânirea SELECT înseamnă înțelegerea faptului că nu
+              recuperezi niciodată stocarea brută în sine, ci mai degrabă un set de
+              rezultate calculat, asamblat proaspăt din arhivă în momentul executării
+              interogării tale. Fiecare alt concept SQL pe care îl vei învăța se atașează în
+              cele din urmă de această operație fundamentală de recuperare.
             </p>
           </div>
 
@@ -656,10 +656,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Clauza WHERE este lentila de filtrare care restrânge o recuperare largă doar
+              la rândurile care îndeplinesc condiții specifice, transformând o scanare brută
+              a întregii arhive într-o căutare precisă și țintită. Condițiile pot compara
+              valori de coloană cu literali sau alte coloane, pot combina mai multe criterii
+              cu AND și OR și pot verifica valori nule, sloturi goale din arhivă, folosind
+              IS NULL în loc de o comparație de egalitate. Fără o clauză WHERE, o
+              instrucțiune SELECT returnează fiecare rând din tabel, ceea ce rareori este
+              ceea ce o misiune are cu adevărat nevoie. A învăța să scrii condiții de
+              filtrare precise și eficiente este ceea ce separă o interogare care returnează
+              exact datele potrivite de una care inundă consola cu zgomot.
             </p>
           </div>
 
@@ -701,10 +707,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              ORDER BY impune o secvență specifică rezultatelor recuperate, sortând
+              rândurile ascendent sau descendent după una sau mai multe coloane, esențial
+              ori de câte ori ordinea de prezentare contează, precum afișarea celor mai noi
+              transmisii primele. GROUP BY funcționează diferit: colapsează multe rânduri
+              care partajează o valoare comună într-un singur rând rezumat per grup,
+              permițându-ți să calculezi agregate precum COUNT, SUM sau AVG independent
+              pentru fiecare grup, nu pentru întregul tabel. Aceste două clauze sunt adesea
+              combinate, grupând înregistrările pe categorie și apoi ordonând rezumatele
+              rezultate după totalurile lor calculate. Înțelegerea distincției dintre
+              sortarea rândurilor individuale și agregarea grupurilor de rânduri este un
+              punct de cotitură în competența de interogare.
             </p>
           </div>
 
@@ -746,10 +759,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Un JOIN este operația de construcție a unui pod care reconectează date
+              răspândite pe mai multe tabele înrudite înapoi într-un singur rezultat
+              unificat, deoarece designul relațional separă deliberat informațiile înrudite
+              pentru a evita duplicarea. Un INNER JOIN returnează doar rândurile cu
+              potriviri în ambele tabele, în timp ce un LEFT JOIN păstrează fiecare rând din
+              primul tabel chiar și atunci când nu există nicio potrivire în al doilea,
+              umplând golul cu valori nule. Join-urile sunt de obicei efectuate pe o cheie
+              comună, o coloană prezentă în ambele tabele care identifică aceeași entitate
+              conceptuală în fiecare. Stăpânirea join-urilor înseamnă stăpânirea intuiției
+              centrale a designului relațional în sine: informația trăiește în multe rafturi
+              mici, bine organizate, iar join-urile sunt modul în care reasamblezi imaginea
+              completă la cerere.
             </p>
           </div>
 
@@ -791,10 +812,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              O subinterogare este o interogare imbricată complet într-o altă interogare,
+              rezultatul ei fiind consumat de interogarea exterioară ca și cum ar fi un
+              tabel, o valoare de filtrare sau o coloană calculată. Subinterogările pot
+              apărea într-o clauză WHERE pentru a filtra pe baza unui set de valori calculat
+              dinamic, în clauza FROM ca un tabel derivat temporar, sau în lista SELECT
+              pentru a calcula o valoare înrudită per rând. Ele permit unui membru al
+              echipajului să exprime raționament logic în mai mulți pași, găsește asta, apoi
+              folosește-o pentru a găsi cealaltă, în structura unei singure instrucțiuni
+              SQL, în loc de mai multe călătorii dus-întors către arhivă. Subinterogările
+              corelate, care referențiază rândul curent al interogării exterioare, sunt
+              deosebit de puternice dar cer atenție sporită la performanță.
             </p>
           </div>
 
@@ -850,10 +878,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              O cheie primară este identificatorul unic ștampilat pe fiecare rând dintr-un
+              tabel, garantând că nicio două înregistrări nu pot fi vreodată confundate una
+              cu cealaltă, indiferent cât de similare le-ar fi celelalte atribute. Baza de
+              date impune automat această unicitate, respingând orice încercare de a insera
+              o cheie duplicată, iar majoritatea cheilor primare sunt de asemenea indexate
+              implicit, făcând căutările după acea cheie extrem de rapide. Alegerea unei
+              chei primare bune, adesea un simplu întreg auto-incrementat sau un
+              identificator universal unic, este una dintre cele mai timpurii și consecvente
+              decizii în proiectarea tabelelor. Fără o cheie primară fiabilă, referirea unei
+              înregistrări specifice din orice alt loc al arhivei devine fundamental
+              nesigură.
             </p>
           </div>
 
@@ -895,10 +930,17 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              O cheie externă este legătura relațională care conectează un rând dintr-un
+              tabel cu un rând specific din altul, de obicei legând o înregistrare copil
+              înapoi la cheia primară a părintelui său, un rând de comandă indicând înapoi
+              către clientul care a plasat-o. Această constrângere este impusă chiar de baza
+              de date: refuză să lase o comandă să referențieze un client care nu există și
+              poate fi configurată să propage ștergerile sau să le blocheze complet atunci
+              când o înregistrare părinte este eliminată. Cheile externe sunt cele care fac
+              ca JOIN-urile să funcționeze cu adevărat semnificativ, deoarece ele codifică
+              exact relația pe care o operație de join o traversează mai târziu. Proiectarea
+              corectă a cheilor externe înseamnă proiectarea formei reale a relațiilor
+              datelor tale, nu doar a tabelelor individuale.
             </p>
           </div>
 
@@ -941,10 +983,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Un index este acceleratorul de căutare construit alături de un tabel, o
+              structură separată, ordonată, de obicei un B-tree, care permite bazei de date
+              să localizeze rândurile potrivite fără a scana fiecare înregistrare din
+              arhivă. Plasarea unui index pe o coloană frecvent filtrată sau folosită în
+              join-uri poate transforma o interogare care odată dura secunde într-una
+              finalizată în milisecunde, mai ales pe măsură ce arhiva crește la milioane de
+              înregistrări. Această viteză nu este gratuită: fiecare index consumă spațiu de
+              stocare suplimentar și încetinește ușor scrierile, deoarece fiecare inserare
+              sau actualizare trebuie să actualizeze și structura indexului. Decizia asupra
+              cărei coloane merită un index, de obicei cele folosite intens în clauze WHERE,
+              condiții JOIN sau ORDER BY, este un echilibru între viteza de citire și costul
+              suplimentar la scriere.
             </p>
           </div>
 
@@ -987,10 +1037,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Normalizarea este procesul disciplinat de eliminare a redundanței din
+              structura arhivei tale, divizând datele în mai multe tabele înrudite astfel
+              încât orice fapt singular să fie stocat într-un singur loc. Fără normalizare,
+              actualizarea adresei unui client ar putea necesita modificarea a zeci de copii
+              duplicate răspândite pe fiecare rând de comandă, o operație garantată să
+              producă în cele din urmă date inconsistente și contradictorii. Formele normale
+              formale, prima, a doua și a treia, oferă reguli din ce în ce mai stricte
+              pentru eliminarea unor categorii specifice de redundanță și dependență.
+              Normalizarea perfectă nu este întotdeauna obiectivul, deoarece o parte din
+              redundanță este reintrodusă deliberat mai târziu pentru performanță prin
+              denormalizare, dar înțelegerea implicitului disciplinat este esențială înainte
+              de a alege vreodată să-l încalci.
             </p>
           </div>
 
@@ -1033,10 +1091,19 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Proprietățile ACID, Atomicitate, Consistență, Izolare și Durabilitate,
+              formează legământul de integritate pe care fiecare bază de date relațională
+              serioasă îl face cu datele pe care le stochează. Atomicitatea garantează că o
+              operație în mai mulți pași fie se finalizează complet, fie deloc, Consistența
+              asigură că fiecare tranzacție lasă arhiva într-o stare validă conform
+              regulilor sale, Izolarea previne ca operațiile concurente să corupă
+              rezultatele unele altora, iar Durabilitatea garantează că, odată angajată, o
+              schimbare supraviețuiește chiar și unei căderi de curent. Acest legământ este
+              ceea ce face o bază de date relațională demnă de încredere pentru tranzacții
+              financiare, numărători de inventar și orice înregistrare critică pentru
+              misiune unde o scriere parțială sau coruptă ar fi catastrofală. Înțelegerea
+              ACID înseamnă înțelegerea exactă a promisiunii pe care te bazezi de fiecare
+              dată când scrii date în arhivă.
             </p>
           </div>
 
@@ -1079,10 +1146,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              O tranzacție grupează mai multe instrucțiuni SQL într-o singură operație
+              atomică, o unitate indivizibilă care fie se angajează complet, salvând toate
+              schimbările permanent, fie revine complet înapoi, anulând fiecare schimbare ca
+              și cum nimic nu s-ar fi întâmplat. Aceasta contează cel mai mult atunci când
+              mai multe instrucțiuni trebuie să reușească sau să eșueze împreună, transferul
+              de fonduri între două conturi necesită atât o debitare cât și o creditare care
+              să se întâmple, niciodată doar una singură. Începerea unei tranzacții,
+              executarea instrucțiunilor sale și emiterea în final a unui COMMIT sau
+              ROLLBACK oferă unui membru al echipajului control explicit asupra momentului
+              exact în care schimbările devin permanente. Fără tranzacții, o cădere sau o
+              eroare la jumătatea unei operații în mai mulți pași ar putea lăsa arhiva
+              într-o stare coruptă, pe jumătate finalizată.
             </p>
           </div>
 
@@ -1124,10 +1199,16 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Revizuind fundațiile relaționale trasate până acum, tabelele și coloanele
+              oferă datelor forma lor, tipurile de date impun structura lor moleculară,
+              SELECT și WHERE le recuperează și le filtrează, JOIN-urile și subinterogările
+              le recombină între tabele, cheile și indexii fac relațiile rapide și sigure,
+              normalizarea elimină redundanța, iar legământul ACID garantează că întreaga
+              arhivă rămâne demnă de încredere sub sarcină tranzacțională. Fiecare concept
+              se construiește direct pe cele dinainte, formând o disciplină coerentă, nu un
+              set de instrumente disparat. Un membru al echipajului care a interiorizat
+              această fundație completă poate acum interoga, modela și raționa despre date
+              relaționale cu încredere reală, nu prin încercare și eroare.
             </p>
           </div>
 
@@ -1183,10 +1264,18 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              Funcțiile fereastră execută trucul lentilei analitice de a calcula o valoare
+              pe un set de rânduri înrudite, o fereastră, fără a colapsa acele rânduri
+              într-un singur rezumat așa cum face GROUP BY. Funcții precum ROW_NUMBER, RANK
+              și totalurile cumulate calculate cu SUM OVER îți permit să clasifici fiecare
+              rând în categoria sa sau să calculezi o sumă cumulativă de-a lungul unei
+              secvențe sortate, toate în timp ce fiecare rând original rămâne vizibil în
+              rezultat. Aceasta este ceea ce face funcțiile fereastră indispensabile pentru
+              analitică: clasificarea celor mai performanți per departament, calcularea
+              creșterii lunare sau găsirea soldului curent al unui cont, sarcini pe care
+              GROUP BY singur pur și simplu nu le poate exprima. Stăpânirea clauzei OVER și
+              a sub-clauzelor sale PARTITION BY și ORDER BY deblochează o întreagă categorie
+              de interogări de raportare.
             </p>
           </div>
 
@@ -1228,10 +1317,19 @@
           <!-- @block: NARRATIVE LOG TEXT -->
           <div class="log-text">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              similique tempore minima numquam. Sint distinctio atque corporis
-              minima debitis dolor, animi assumenda, nesciunt at illo inventore
-              architecto expedita hic numquam.
+              O Common Table Expression, sau CTE, este o subinterogare numită, temporară,
+              definită la începutul unei instrucțiuni cu cuvântul cheie WITH, permițându-ți
+              să o referențiezi după nume una sau mai multe ori mai târziu în aceeași
+              interogare, ca și cum ar fi un tabel real. Aceasta îmbunătățește dramatic
+              lizibilitatea comparativ cu imbricarea subinterogărilor cinci niveluri în
+              adâncime, deoarece fiecare CTE numit poate reprezenta un pas logic clar
+              dintr-un calcul mai mare, în mai multe etape. CTE-urile recursive, o variantă
+              specială care se referențiază pe sine, pot chiar traversa date ierarhice
+              precum o organigramă sau un arbore de categorii, ceva ce o structură de
+              interogare standard nu poate exprima deloc. Adoptarea CTE-urilor ca abordare
+              implicită pentru interogări complexe este adesea diferența dintre un zid
+              ilizibil de subinterogări imbricate și o investigație de arhivă clară, pas cu
+              pas.
             </p>
           </div>
 
