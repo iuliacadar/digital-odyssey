@@ -1,0 +1,43 @@
+name: Lint
+
+# @reason: A one-time fix decays the moment the next page is written.
+#   This workflow re-checks the repository's standing frontend rules on
+#   every push and pull request, so a regression is caught in review
+#   rather than in production.
+#
+#   It deliberately does NOT gate deploy.yml: the two workflows are kept
+#   independent so a lint failure never blocks an urgent content publish,
+#   and so neither file has to be edited when the other changes.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  noopener:
+    name: 'target="_blank" carries rel="noopener noreferrer"'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # @bridge: tools/check-noopener.py — see tools/README.md for the
+      #   tab-nabbing threat this rule defends against.
+      # @reason: no setup-python step is needed. The checker is pure
+      #   standard-library Python 3 with no dependencies, and every
+      #   ubuntu-latest runner ships python3 already.
+
+      - name: Prove the checker still detects known violations
+        # @warning: run the self-test FIRST. A checker that has silently
+        #   stopped matching would otherwise report a cheerful "OK" over a
+        #   broken site — a green tick that means nothing. This step fails
+        #   if any planted fixture violation goes undetected.
+        run: python3 tools/check-noopener.py --self-test
+
+      - name: Scan the site for unprotected new-tab links
+        run: python3 tools/check-noopener.py
