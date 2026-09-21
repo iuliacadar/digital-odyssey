@@ -1206,7 +1206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const a = document.createElement("a");
         a.href = JOURNAL_PATH;
         a.target = "_blank"; // New tab ...
-        a.rel = "noopener"; // ... without giving the new page a back-reference.
+        a.rel = "noopener noreferrer"; // ... with no window.opener back-reference and no Referer leak.
         a.textContent =
           lang === "ro"
             ? "DESCHIDE JURNALUL COMPLET (GitHub)"

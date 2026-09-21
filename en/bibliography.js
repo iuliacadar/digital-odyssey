@@ -16,7 +16,7 @@
 //      <tr>
 //        <td>MDN Web Docs — HTML</td>
 //        <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-//               target="_blank" rel="noopener">Reference Only</a></td>
+//               target="_blank" rel="noopener noreferrer">Reference Only</a></td>
 //        <td>Active</td>
 //      </tr>
 //
@@ -35,7 +35,7 @@
 //
 //    On purpose we still teach every tag the hand could not unlearn:
 //    <table>, <thead>, <tbody>, <tr>, <th>, <td>, colspan, and the
-//    <a target="_blank" rel="noopener"> link. The difference is where they
+//    <a target="_blank" rel="noopener noreferrer"> link. The difference is where they
 //    are born: on the old road they were typed once in the .html; on the new
 //    road the machine creates them on the fly with document.createElement().
 //  ==========================================================================
@@ -288,11 +288,12 @@ if (bibliographyShelves.length > 0) {
           const linkCell = document.createElement("td"); //  The link cell.
           const link = document.createElement("a"); //  @pedagogy: <a> is the anchor tag.
           //  href = the destination; target="_blank" opens a new tab so the
-          //  crew stays on the charts; rel="noopener" is a safety fence that
-          //  stops the opened page from reaching back through window.opener.
+          //  crew stays on the charts; rel="noopener noreferrer" is a safety
+          //  fence that stops the opened page from reaching back through
+          //  window.opener AND withholds our URL from its Referer header.
           link.href = entry.url; //  Where the link points.
           link.target = "_blank"; //  New tab: the charts page stays behind.
-          link.rel = "noopener"; //  @warning: noopener blocks tab-nabbing.
+          link.rel = "noopener noreferrer"; //  @warning: blocks tab-nabbing + referrer leak.
           link.textContent = `${txt.open} ${txt.accessSuffix[
             entry.access
           ]}`; //  @line: "Open (free)" / "Open (subscription)" / "Open (purchase)" / "Open (borrow)" in the page's tongue.

@@ -1413,7 +1413,8 @@
         <!-- @path: Bibliography page -->
         <li>
           <span class="pulse-dot"></span>
-          <a href="../bibliography.html#frontend-refs" target="_blank">Deep Space Archives — Frontend Core</a>
+          <!-- @warning: rel="noopener noreferrer" is mandatory on every target="_blank" link — it denies the new tab a window.opener back-reference (tab-nabbing) and withholds the referrer URL. -->
+          <a href="../bibliography.html#frontend-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Frontend Core</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>

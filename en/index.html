@@ -765,14 +765,18 @@
             It acts as a beacon in front of each footer link.
           -->
           <span class="pulse-dot"></span>
-          <a href="bibliography.html" target="_blank">Deep Space Archives — Cartographed References</a>
           <!-- @reason:
-            The target="_blank" attribute opens the link in a new browser tab.
-            This is useful for external resources so the crew does not navigate
-            away from the command deck. For security, consider adding
-            rel="noopener noreferrer" to prevent the opened page from accessing
-            the original window via window.opener.
+            The target="_blank" attribute opens the link in a new browser tab,
+            so the crew does not navigate away from the command deck.
           -->
+          <!-- @warning:
+            target="_blank" is never written alone. Without rel="noopener" the
+            opened page receives a live window.opener handle back into this
+            tab and can rewrite it underneath the visitor — the "tab-nabbing"
+            attack. noreferrer additionally withholds this page's URL from the
+            destination's Referer header. Both tokens, every time.
+          -->
+          <a href="bibliography.html" target="_blank" rel="noopener noreferrer">Deep Space Archives — Cartographed References</a>
         </li>
         <!-- @path: Transmission / Astrogation Charter page -->
         <li>
