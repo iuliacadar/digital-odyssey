@@ -227,10 +227,31 @@ window.addEventListener("load", () => {
 //     (.log-content) and updates the URL via history.pushState.
 //  ==========================================================================
 //  @mechanism: 05 — Anti-Drift Anchor Navigation
-//  @event: DOMContentLoaded → click on .sidebar-link and .map-title-link
+//  @event: DOMContentLoaded → click on .sidebar-nav (delegated to
+//    .sidebar-link and .map-title-link)
 //  @reason: Without this mechanism, clicking "#html-day01" would scroll the
 //    entire page, dragging the sidebar out of position. By intercepting the
 //    click, we scroll only the content panel and leave the sidebar fixed.
+//  @bridge: MECANISM 11 rebuilds the sidebar <li> list from page content.
+//    That rebuild REPLACES every <li> node in the list, which is exactly why
+//    the listener below is delegated instead of attached link by link.
+//  @warning: Do NOT revert this to a per-link loop
+//    (`querySelectorAll(".sidebar-link").forEach(link => link.addEventListener(...))`).
+//    A handler attached to a node dies with that node. Because MECANISM 11
+//    swaps the whole list out, per-link handlers survive on the ORIGINAL
+//    markup only — the freshly generated links silently lose their shield and
+//    fall back to the browser's native anchor jump, which is precisely the
+//    sidebar-dragging bug this mechanism exists to prevent. The failure is
+//    invisible: the links still look and render correctly, they just stop
+//    calling preventDefault().
+//  @pedagogy: EVENT DELEGATION is the pattern that fixes this. Instead of N
+//    listeners on N links, we attach ONE listener to a stable ancestor that
+//    is authored in HTML and never regenerated (.sidebar-nav). Clicks on any
+//    descendant BUBBLE up to it, and `event.target.closest(selector)` walks
+//    back down the ancestor chain to ask "did this click start inside a link
+//    I care about?". Links created a second, third, or hundredth time after
+//    page load are covered automatically — the listener never had to know
+//    they existed.
 //  ==========================================================================
 
 // The protocol activates automatically when the full DOM matrix of the cockpit has loaded.
@@ -238,55 +259,69 @@ document.addEventListener("DOMContentLoaded", () => {
   // Select the right-side container (the article zone with the scrollbar).
   const mainContentZone = document.querySelector(".log-content"); // This is the <main> scrollable area.
 
-  //  CORRECTED RADAR: We select both the days (.sidebar-link) AND the special map link (.map-title-link)
-  //  so they all fall under the same mechanical shield protection!
-  const navigationLinks = document.querySelectorAll(
-    ".sidebar-link, .map-title-link",
-  );
+  //  THE STABLE ANCHOR POINT: the <nav> is authored directly in each log page's
+  //  HTML and is never touched by MECANISM 11 — only its inner <ul> is rebuilt.
+  //  That makes it the perfect place to mount a single, permanent listener.
+  const sidebarNavigation = document.querySelector(".sidebar-nav");
 
-  navigationLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      // STEP A: CHECK OPERATING MODE (Desktop vs Mobile)
-      if (window.innerWidth > 768) {
-        //  ABSOLUTELY ESSENTIAL: We stop the browser's native action that used to drag the sidebar up!
-        //  This is the shield that blocks the h4 title from flying off the screen.
-        event.preventDefault(); // Kill the browser's default jump-to-anchor behaviour.
+  //  @guard: pages without a sidebar (index, bibliography, vault…) have no
+  //  .sidebar-nav at all. Bail out rather than call addEventListener on null.
+  if (!sidebarNavigation) return; // No console to wire up — nothing to do here.
 
-        const targetAnchorId = link.getAttribute("href"); // Grab the anchor (e.g. "#top-deck" or "#html-day01").
-        const targetArticleSection = document.querySelector(targetAnchorId); // Find the target element in the DOM.
+  //  ONE listener for the entire console, covering both the day buttons
+  //  (.sidebar-link) and the big map title (.map-title-link) — present and future.
+  sidebarNavigation.addEventListener("click", (event) => {
+    //  STEP 0: IDENTIFY THE CLICKED LINK.
+    //  event.target is the deepest element the user actually hit, which can be
+    //  a text node's parent or an element nested inside the anchor. closest()
+    //  climbs upward from there and returns the first matching ancestor (or the
+    //  element itself), so we get the <a> no matter where inside it the click landed.
+    const link = event.target.closest(".sidebar-link, .map-title-link");
 
-        if (targetArticleSection && mainContentZone) {
-          let exactScrollCoordinates;
+    //  @guard: the click landed on the <ul>'s padding or some other dead space
+    //  inside the nav — not on a navigation link. Ignore it entirely.
+    if (!link) return; // Not our business; let the event continue on its way.
 
-          //  INDIVIDUAL PROTOCOL FOR MAPS:
-          //   If the user clicked the big MAP title, we order the right container
-          //   to reset completely to the top (coordinate 0), no parasitic offsets!
-          if (link.classList.contains("map-title-link")) {
-            exactScrollCoordinates = 0; // The map link always goes to the very top.
-          }
-          //  INDIVIDUAL PROTOCOL FOR DAYS:
-          //  Apply your ideal 100px cushion to place log entries neatly under the HUD.
-          else {
-            exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px accounts for the fixed navbar.
-          }
+    // STEP A: CHECK OPERATING MODE (Desktop vs Mobile)
+    if (window.innerWidth > 768) {
+      //  ABSOLUTELY ESSENTIAL: We stop the browser's native action that used to drag the sidebar up!
+      //  This is the shield that blocks the h4 title from flying off the screen.
+      event.preventDefault(); // Kill the browser's default jump-to-anchor behaviour.
 
-          // Execute a smooth scroll STRICTLY inside the right-side window (.log-content).
-          mainContentZone.scrollTo({
-            top: exactScrollCoordinates, // The calculated target position.
-            behavior: "smooth", // Smooth cinematic glide.
-          });
+      const targetAnchorId = link.getAttribute("href"); // Grab the anchor (e.g. "#top-deck" or "#html-day01").
+      const targetArticleSection = document.querySelector(targetAnchorId); // Find the target element in the DOM.
 
-          // Discreetly update the browser URL bar without chaotic visual jumps.
-          history.pushState(null, null, targetAnchorId); // Changes the URL hash without reloading the page.
+      if (targetArticleSection && mainContentZone) {
+        let exactScrollCoordinates;
+
+        //  INDIVIDUAL PROTOCOL FOR MAPS:
+        //   If the user clicked the big MAP title, we order the right container
+        //   to reset completely to the top (coordinate 0), no parasitic offsets!
+        if (link.classList.contains("map-title-link")) {
+          exactScrollCoordinates = 0; // The map link always goes to the very top.
         }
+        //  INDIVIDUAL PROTOCOL FOR DAYS:
+        //  Apply your ideal 100px cushion to place log entries neatly under the HUD.
+        else {
+          exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px accounts for the fixed navbar.
+        }
+
+        // Execute a smooth scroll STRICTLY inside the right-side window (.log-content).
+        mainContentZone.scrollTo({
+          top: exactScrollCoordinates, // The calculated target position.
+          behavior: "smooth", // Smooth cinematic glide.
+        });
+
+        // Discreetly update the browser URL bar without chaotic visual jumps.
+        history.pushState(null, null, targetAnchorId); // Changes the URL hash without reloading the page.
       }
-      // STEP B: MOBILE MODE
-      else {
-        console.log(
-          `Mobile navigation active for sector: ${link.getAttribute("href")}`,
-        ); // Just log it; let the browser handle anchors natively on mobile.
-      }
-    });
+    }
+    // STEP B: MOBILE MODE
+    else {
+      console.log(
+        `Mobile navigation active for sector: ${link.getAttribute("href")}`,
+      ); // Just log it; let the browser handle anchors natively on mobile.
+    }
   });
 });
 
@@ -1336,8 +1371,157 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //  ==========================================================================
+//     MECANISM 11: DYNAMIC SIDEBAR INDEX
+//     Builds the sidebar's <li> link list from the page's own content instead
+//     of from hand-written HTML. Every log entry and every sector announcement
+//     in .log-content becomes one link, in document order. Write a new day in
+//     the log and its sidebar entry appears by itself.
+//  ==========================================================================
+//  @mechanism: 11 — Content-Driven Sidebar Index
+//  @event: DOMContentLoaded
+//  @guard: no-ops on any page without a .sidebar-nav ul (index, bibliography,
+//    recursive-blueprint, vault) — those pages own no expedition map.
+//  @bridge: MECANISM 02 finds the link to highlight with
+//    `.sidebar-nav a[href="#id"]`, and MECANISM 05 intercepts clicks on it.
+//    Both keep working because this mechanism emits the exact same markup the
+//    hand-written list used: an <a class="sidebar-link" href="#id"> inside an
+//    <li>, with <li class="week-label"> for sector dividers.
+//  @bridge: BACKLOG-EN.md #013 — this mechanism closes that entry.
+//  @reason: The hand-maintained list was 1490 <li> across 46 pages, kept in
+//    sync with the content by hand. It drifted: 96 links pointed at days that
+//    were never written (dead anchors that still took keyboard focus and were
+//    still announced by screen readers), while one article that did exist —
+//    sql-day00 — had no link at all. A list derived from the content cannot
+//    drift, because there is only one source of truth left.
+//  @pedagogy: This is the difference between DATA and a COPY OF DATA. The
+//    articles are the data. The old sidebar was a hand-typed copy, and every
+//    copy of data eventually disagrees with the original. Deriving the menu at
+//    runtime means the disagreement is structurally impossible.
+//  ==========================================================================
+
+// Wait for the full DOM so every article and sector announcement is parsed and readable.
+document.addEventListener("DOMContentLoaded", () => {
+  //  THE TARGET: the <ul> inside the sidebar nav. Authored in HTML (so the CSS
+  //  and the surrounding <nav>/<h4> map title stay exactly where they were);
+  //  only its CONTENTS are ours to rebuild.
+  const sidebarList = document.querySelector(".sidebar-nav ul");
+
+  //  THE SOURCE: the right-hand panel holding the actual expedition log.
+  const logContent = document.querySelector(".log-content");
+
+  //  @guard: pages with no sidebar or no log content are not log pages at all.
+  //  Leave them completely untouched — index.html has 21 <h3> of its own and
+  //  must never have them scraped into a menu that does not exist.
+  if (!sidebarList || !logContent) return; // Not a log page. Nothing to generate.
+
+  //  THE SCAN: one query for BOTH block kinds.
+  //  @warning: this MUST be a single querySelectorAll with a comma-separated
+  //    selector, never two separate queries concatenated. A single query
+  //    returns nodes in DOCUMENT ORDER, which is what interleaves the sector
+  //    dividers between the right days (S01, Day 01…07, S02, Day 08…). Two
+  //    queries would return all articles, then all sectors — a broken menu.
+  //  @warning: sector announcements contain an <h2>, not an <h3>. Scanning for
+  //    <h3> alone would silently drop every one of the 182 week dividers.
+  const contentBlocks = logContent.querySelectorAll(
+    "article.log-entry, div.sector-announcement",
+  );
+
+  //  The finished <li> elements accumulate here before touching the page.
+  //  @reason: appending inside the loop would force the browser to recalculate
+  //    layout once per entry — 33 reflows on a typical page. Building the set
+  //    in memory and committing it once costs exactly one.
+  const generatedItems = [];
+
+  // Walk every content block in the order the reader will meet it.
+  contentBlocks.forEach((block) => {
+    //  THE ANCHOR, READ NOT INVENTED.
+    //  @warning: never slug this from the heading text. The id is authored on
+    //    the article/div ("deployment-day01") and is identical in en/ and ro/,
+    //    while the heading text is translated. A slug would produce a different
+    //    anchor per language and would break MECANISM 02's href lookup.
+    const blockId = block.id;
+
+    //  @guard: a block with no id cannot be linked to — a fragment link needs
+    //  a target. Skip it rather than emit an anchor that goes nowhere.
+    if (!blockId) return; // Unaddressable block; it simply gets no menu entry.
+
+    // Build the two nodes this entry needs: the list item and its anchor.
+    const listItem = document.createElement("li"); // The <li> wrapper — list semantics for screen readers.
+    const anchor = document.createElement("a"); // The real, focusable, keyboard-reachable <a>.
+
+    anchor.className = "sidebar-link"; // The class every sidebar style and both other mechanisms key off.
+    anchor.href = "#" + blockId; // The fragment link: "#deployment-day01".
+
+    //  BRANCH A: SECTOR ANNOUNCEMENT -> a week divider pill ("S01").
+    if (block.classList.contains("sector-announcement")) {
+      //  Pull the two-digit sector number straight out of the id:
+      //  "deployment-sector-01" -> "01".
+      const sectorNumber = blockId.match(/-sector-(\d+)$/);
+
+      //  @guard: an id that does not end in -sector-NN is not a divider we know
+      //  how to label. Skip rather than guess.
+      if (!sectorNumber) return; // Unrecognised sector id; no entry.
+
+      //  @reason: sector-00 exists in every page's content (the airlock before
+      //    Day 00) but has never had a sidebar entry. Preserve that.
+      if (sectorNumber[1] === "00") return; // The airlock is not a week. No entry.
+
+      listItem.className = "week-label"; // The class that renders this as a sector pill, not a day button.
+      anchor.textContent = "S" + sectorNumber[1]; // "S01" — derived from the id.
+
+      //  @warning: do NOT build this label from the announcement's <h2>. That
+      //    heading is translated ("The Launchpad" / "Rampa de Lansare"), so
+      //    using it would make the en/ and ro/ menus disagree. The id does not
+      //    change across languages; the heading does.
+    }
+    //  BRANCH B: LOG ENTRY -> a day button ("Day 01 ◈").
+    else {
+      //  The day token is the FIRST direct child <span> of the <h3>:
+      //    <h3><span>Day 01</span><span class="meta-title"> Shared Hosting…</span></h3>
+      //  @warning: the selector is "h3 > span" with the child combinator, not
+      //    "h3 span". A descendant selector would still return the first span
+      //    today, but any future nesting inside .meta-title would silently
+      //    start winning and the label would become the whole article title.
+      const dayToken = block.querySelector("h3 > span");
+
+      //  @guard: an article with no <h3> has no day number to show. Skip it.
+      if (!dayToken) return; // No heading token; no entry.
+
+      //  The label: the day token, whitespace normalised, plus the diamond.
+      //  @reason: the authored markup indents these spans inconsistently — some
+      //    carry a leading newline, some a plain space. Collapsing every run of
+      //    whitespace to one space and trimming makes the output identical
+      //    regardless of how the HTML happens to be formatted.
+      //  @concept: "\u25C8" is the same character the hand-written markup spelled
+      //    as the HTML entity &#9672; — the white diamond that marks each day in
+      //    the expedition map. textContent takes the character directly; entity
+      //    syntax is an HTML-source spelling and would be printed literally here.
+      anchor.textContent = dayToken.textContent.replace(/\s+/g, " ").trim() + " \u25C8";
+    }
+
+    //  @warning: everything above assigns via textContent, never innerHTML.
+    //    Heading text contains "&", "&lt;img&gt;" and Romanian diacritics;
+    //    textContent escapes them correctly for free, while innerHTML would
+    //    re-interpret "&lt;" and render a literal "&amp;lt;" on screen.
+    listItem.appendChild(anchor); // Nest the anchor inside its list item.
+    generatedItems.push(listItem); // Queue it; nothing has touched the page yet.
+  });
+
+  //  THE SINGLE COMMIT: swap the entire list contents in one operation.
+  //  @reason: replaceChildren removes the old children and inserts the new ones
+  //    atomically, so the list is never briefly empty and the layout never
+  //    flickers. It also spares us a manual innerHTML = "" wipe.
+  //  @bridge: this is the exact moment MECANISM 05 is designed around — every
+  //    <li> here is a brand-new node, so its click handling must come from a
+  //    delegated listener on .sidebar-nav, never from per-link binding.
+  sidebarList.replaceChildren(...generatedItems);
+});
+
+
+//  ==========================================================================
 //     BACKLOG — Navigation & UX Enhancements (Planned Mechanisms)
 //     These items now live in the project's main register: BACKLOG-EN.md.
-//     See entries 013–016 (Dynamic Sidebar Index, Search & Filter, Dynamic
-//     Navbar Offset, Note Export) — maintained there, not duplicated here.
+//     See entries 014–016 (Search & Filter, Dynamic Navbar Offset, Note
+//     Export) — maintained there, not duplicated here. Entry 013 (Dynamic
+//     Sidebar Index) is now built: see MECANISM 11 above.
 //  ==========================================================================
