@@ -41,3 +41,23 @@ jobs:
 
       - name: Scan the site for unprotected new-tab links
         run: python3 tools/check-noopener.py
+
+  under-construction:
+    name: 'no log page shows filler or empty content undeclared'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # @bridge: tools/check-uc-banner.py enforces BACKLOG-EN.md #008,
+      #   completion condition 3. tools/add-uc-banner.py is the companion
+      #   that writes the banners in; this job only judges.
+      # @reason: The site ships 46 log decks whose entries are still
+      #   placeholder prose. That is acceptable — an unfinished ship that
+      #   says so is honest. What is NOT acceptable is a deck that renders
+      #   filler or emptiness while looking finished. This job is the line
+      #   between the two, and it must hold for every newly generated page,
+      #   not just the ones that existed when the rule was written.
+
+      - name: Every filler or empty log deck declares itself under construction
+        run: python3 tools/check-uc-banner.py
