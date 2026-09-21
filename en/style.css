@@ -29,7 +29,7 @@ following reasons of cosmic guidance:
     than a temporary vessel that might become cosmic debris in the future.
 
 @tag: modular-skeleton
-   This stylesheet is organized into 31 numbered modules + 2 utility modules.
+   This stylesheet is organized into 32 numbered modules + 2 utility modules.
    Each module governs ONE component or concern. The structure follows a
    strict logical cascade: Foundation -> Layout -> Navigation -> Components ->
    Advanced/Experimental -> Motion (@keyframes) -> Responsive (@media).
@@ -68,6 +68,7 @@ following reasons of cosmic guidance:
      29  3D Icosahedron / Geodesic Reactor
      30  Blueprint Split-Screen / Recursive Inspector
      31  The Seldon Vault
+     32  Under Construction Banner
      00.1  @keyframes Motion Engines
      00.2  @media Queries
 ================================================================================ */
@@ -4013,6 +4014,193 @@ Module 00 is always the last module of the stylesheet.
 
 
 /* ==========================================================================
+@module: 32 — UNDER CONSTRUCTION BANNER (THE SCAFFOLDING BEACON)
+@sub-module: 32.1 — Banner Shell
+@sub-module: 32.2 — Hazard Chevron Ribbon
+@sub-module: 32.3 — Signal Label
+@sub-module: 32.4 — Explanatory Prose
+@sub-module: 32.5 — Reduced-Motion Contract
+Scope: .under-construction, .under-construction::before, .uc-label,
+      .uc-icon, .under-construction p.
+Purpose: An honest warning fixed to the top of any log deck whose entries are
+still placeholder matter. The ship does not pretend a hold is stocked when it
+is empty — this beacon tells the visitor, before they read a single line, that
+what follows is scaffolding and not cargo.
+@reason:
+  Placeholder prose ("Lorem ipsum ...") read by an unwarned visitor is a lie
+  of omission: the page looks finished and the text looks like content. The
+  banner converts that silent failure into a declared, visible state.
+@theme:
+  It borrows the amber warning spectrum already established by Module 24
+  (Future Logs) and Module 25 (Bridge Volumes) — amber is this vessel's
+  standing colour for "work still in progress". The visitor who has already
+  met a dormant future-log capsule reads this banner instantly.
+@concept:
+  The status is carried by THREE independent channels, never by colour alone:
+  the hazard glyph, the literal words "UNDER CONSTRUCTION", and the sentence
+  of prose beneath. A visitor with any form of colour blindness, or reading
+  a high-contrast forced-colours rendering, loses nothing.
+========================================================================== */
+
+/* @sub-module: 32.1 — BANNER SHELL (The Amber Hazard Plate) */
+.under-construction {
+  position: relative; /* @layout: Positioning scheme — opens a local coordinate root so the chevron ribbon in 32.2 can be pinned to the plate's top edge. */
+  max-width: 1200px; /* @layout: Maximum width constraint — caps expansion at 1200px, matching the .category-header ceiling from Module 04.4 so the banner never outgrows the header it follows. */
+  margin: 0 auto 50px auto; /* @layout: External spacing control — centred in its column, with a generous gap before the first sector announcement so the warning reads as its own statement. */
+  padding: 26px 30px 24px 30px; /* @layout: Internal spacing control — roomy interior; the extra top padding clears the chevron ribbon laid over the upper edge. */
+  box-sizing: border-box; /* @layout: Dimension calculation method — includes padding and border within the declared width, preventing the plate from overflowing narrow decks. */
+
+  /* @theme: AMBER WARNING SURFACE: A 6% amber wash over the dark hull — present enough to separate the plate from the page, faint enough to keep the prose legible. */
+  background: rgba(255, 179, 0, 0.06); /* @theme: Surface rendering — applies a low-intensity amber tint as the background of the warning plate. */
+  border: 1px solid rgba(255, 179, 0, 0.45); /* @component: Edge boundary — a full amber perimeter marks the plate as a discrete advisory object rather than page prose. */
+  border-left: 5px solid var(--amber-glow); /* @component: Edge boundary — the heavy left bar is the same priority channel Module 24 uses for dormant capsules, tying the two warnings into one visual family. */
+  border-radius: 2px; /* @theme: Corner geometry — a barely-there radius; this vessel's panels are industrial, not soft. */
+
+  /* @theme: CONTAINMENT GLOW: An inner amber haze plus a faint outer corona, echoing the .future-log hover state so the banner feels native to the ship. */
+  box-shadow:
+    inset 0 0 24px rgba(255, 179, 0, 0.07),
+    0 0 18px rgba(255, 179, 0, 0.05);
+
+  /* @layout: SCROLL SHIELDING: If a visitor lands here via a fragment link, halt 150px early so the fixed HUD cockpit does not cover the warning. Same value as .sector-announcement in Module 14.2. */
+  scroll-margin-top: 150px; /* @line: Sets scroll-margin-top to 150px, clearing the fixed navigation bar on anchored arrival. */
+}
+
+/* @sub-module: 32.2 — HAZARD CHEVRON RIBBON (The Painted Barrier Tape)
+   @structure:
+     A decorative repeating-linear-gradient stripe laid across the plate's top
+     edge — the web equivalent of hazard tape strung across a doorway. It is a
+     ::before pseudo-element and therefore invisible to assistive technology,
+     which is correct: the meaning is already carried by the text in 32.3. */
+.under-construction::before {
+  content: ""; /* @line: Generated content — an empty string; this pseudo-element is a painted surface, not a text carrier. */
+  position: absolute; /* @layout: Positioning scheme — lifted out of flow and pinned to the plate's own coordinate root established in 32.1. */
+  top: 0; /* @layout: Offset from the top edge — flush against the plate's upper boundary. */
+  left: 0; /* @layout: Offset from the left edge — starts at the portside corner. */
+  right: 0; /* @layout: Offset from the right edge — stretches the full width of the plate. */
+  height: 6px; /* @layout: Vertical dimension — a thin 6px ribbon; a warning stripe, not a wall. */
+
+  /* @theme: DIAGONAL HAZARD STRIPES: 45° amber bands alternating with transparent gaps, repeating every 16px — the universal "construction zone" pattern. */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 179, 0, 0.75) 0px,
+    rgba(255, 179, 0, 0.75) 8px,
+    rgba(255, 179, 0, 0.12) 8px,
+    rgba(255, 179, 0, 0.12) 16px
+  );
+  pointer-events: none; /* @reason: The ribbon is pure decoration — it must never intercept a click meant for the text or a link beneath it. */
+}
+
+/* @sub-module: 32.3 — SIGNAL LABEL (The Spoken Status)
+   @concept:
+     This is the load-bearing element of the whole module. Colour can be lost,
+     the chevron ribbon can be stripped by a reader mode, the amber glow means
+     nothing in a screen reader — but these words survive every one of those
+     transformations. */
+.under-construction .uc-label {
+  display: flex; /* @layout: Box type — Flexbox, so the glyph and the words sit on one baseline-aligned row. */
+  align-items: center; /* @layout: Cross-axis alignment — glyph and text centred against each other regardless of their differing heights. */
+  gap: 12px; /* @layout: Inter-cell gutter — breathing room between the hazard glyph and the words it introduces. */
+  margin: 0 0 12px 0; /* @layout: External spacing control — no top margin (the plate's padding handles that), a clear gap below before the prose. */
+
+  font-family: monospace; /* @layout: Rigid fixed-width typeface — the diagnostic terminal voice used by .sector-announcement spans in Module 14.4. */
+  font-size: 0.95rem; /* @layout: Character scale — assertive but subordinate to the h2 page title above it. */
+  font-weight: 700; /* @layout: Stroke weight — bold; this is an alert, and it should not whisper. */
+  letter-spacing: 3px; /* @layout: Glyph spacing — wide tactical tracking, matching the ship's other status readouts. */
+  text-transform: uppercase; /* @reason: Enforces the vessel's alert-protocol capital formatting, consistent with every other status tag aboard. */
+  color: var(--amber-glow); /* @theme: Text color — full-strength amber on the dark hull; the contrast ratio against --space-dark (#0d0f14) clears WCAG AA comfortably at this size. */
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.35); /* @theme: Glyph glow — a soft amber corona, the same lamp-left-on treatment used for in-progress notes elsewhere. */
+}
+
+/* @sub-module: 32.3.b — HAZARD GLYPH
+   @warning:
+     The glyph lives in the HTML as a real character inside a span marked
+     aria-hidden="true". It is decorative duplication of the adjacent words —
+     announcing "construction sign emoji, UNDER CONSTRUCTION" would be noise.
+     It is NOT a CSS ::before, because a content-generated glyph is announced
+     by some screen readers and cannot be hidden from them reliably. */
+.under-construction .uc-icon {
+  font-size: 1.15rem; /* @layout: Character scale — slightly larger than the label text so the glyph reads as a sign, not a letter. */
+  line-height: 1; /* @layout: Vertical leading — collapsed to the glyph's own box, preventing it from inflating the flex row's height. */
+  flex-shrink: 0; /* @layout: Flex shrink factor — the glyph holds its size when the label wraps on a narrow deck. */
+}
+
+/* @sub-module: 32.4 — EXPLANATORY PROSE (What The Visitor Actually Needs)
+   @reason:
+     "Under Construction" alone answers only half the question. This paragraph
+     answers the other half: what the text below actually is, and that the
+     ship's finished decks are still worth visiting. */
+.under-construction p {
+  margin: 0; /* @layout: External spacing control — the plate's padding owns all spacing; the paragraph adds none of its own. */
+  font-size: 0.9rem; /* @layout: Character scale — comfortable reading size, deliberately larger than the 0.78rem of secondary captions since this text must actually be read. */
+  line-height: 1.6; /* @layout: Vertical leading — generous leading; a warning read in a hurry needs loose lines. */
+  letter-spacing: 0.3px; /* @layout: Glyph spacing — a whisper of tracking for terminal character without harming readability. */
+  color: var(--stardust); /* @theme: Text color — the anti-fatigue titanium white used for all legible body prose aboard, not amber: amber is the alert, this is the explanation. */
+  max-width: 68ch; /* @layout: Maximum width constraint — caps the measure at roughly 68 characters, the readable line length, even on ultra-wide displays. */
+
+  /* @warning: LONG-WORD GUARD. Measured at 320px: a single unbroken 200-character
+     token expands this paragraph's scroll width to 1309px inside a 235px box —
+     the ancestor clips it, so the text is silently CUT OFF rather than wrapped.
+     Today's copy contains no such word, but a future Romanian compound, a
+     pasted URL, or a long identifier would trigger it. The banner exists to be
+     read; a warning that loses its own final clause has failed at its one job. */
+  overflow-wrap: break-word; /* @layout: Word breaking — permits a break inside an over-long token rather than letting it overflow its container. */
+}
+
+/* @sub-module: 32.4.b — INLINE LINKS INSIDE THE PROSE */
+.under-construction p a {
+  color: var(--solar-mint); /* @theme: Text color — phosphor mint, the ship's standing link colour, so the link is recognisable as a link. */
+  text-decoration: underline; /* @reason: Underline, not colour alone — the link must remain identifiable to a visitor who cannot distinguish mint from white. */
+  text-underline-offset: 3px; /* @layout: Underline offset — drops the rule clear of the descenders for legibility. */
+}
+
+.under-construction p a:hover,
+.under-construction p a:focus-visible {
+  color: var(--amber-glow); /* @theme: Text color — the link warms to amber on approach, matching the banner it lives in. */
+}
+
+/* @sub-module: 32.4.c — KEYBOARD FOCUS RING
+   @warning:
+     The browser's default focus ring resolves to roughly 1px of near-black on
+     this vessel's near-black hull — measured, not guessed: getComputedStyle
+     returned "1px rgb(16, 16, 16)" against a #0d0f14 surface. A keyboard
+     visitor tabbing through the page would reach this link and see nothing
+     move. An indicator nobody can see is the same as no indicator, so the
+     ring is declared explicitly here rather than left to the user agent.
+   @reason:
+     Mint at 3px clears the 3:1 non-text contrast bar against the hull by a
+     wide margin, and the 3px offset lifts it clear of the underline so the
+     two marks never read as one thick smear. */
+.under-construction p a:focus-visible {
+  outline: 3px solid var(--solar-mint); /* @component: Focus ring — a phosphor-mint band, thick enough to catch the eye mid-scan on a dark screen. */
+  outline-offset: 3px; /* @component: Focus ring offset — pushes the band clear of the glyphs and their underline. */
+  border-radius: 2px; /* @theme: Corner geometry — the ring's corners soften fractionally so it reads as a deliberate mark, not a rendering artefact. */
+}
+
+/* @sub-module: 32.5 — REDUCED-MOTION CONTRACT
+   @reason:
+     Module 04.6 animates .category-header h2 with neon-pulse-pink, and this
+     banner sits directly beneath that pulsing title. A visitor who has asked
+     their system for reduced motion is telling us that pulsing text costs
+     them something — vestibular discomfort, or simply the inability to read a
+     line that will not hold still. We honour that request here rather than
+     leaving it to the responsive module, because the banner's entire job is
+     to be READ, and a request to stop moving is a request we always grant. */
+@media (prefers-reduced-motion: reduce) {
+  .under-construction,
+  .under-construction::before,
+  .under-construction .uc-label {
+    animation: none !important; /* @theme: Motion suppression — no keyframe engine may drive any part of the warning plate. */
+    transition: none !important; /* @theme: Motion suppression — state changes land instantly rather than easing. */
+  }
+}
+
+/* 32.6 — Responsive: the plate's padding, label tracking, and prose scale are
+   re-flowed for narrow decks in Section 00.2.B, Sub-section B6 (Under
+   Construction Banner Compression) — per the ship's rule that every @media
+   override lives in Module 00.2 and nowhere else. */
+
+
+/* ==========================================================================
 @module: 00.1 — KINETIC PROPULSION ENGINES & CENTRAL KEYFRAMES
 @group: A — Ambient Interface Effects / Hardware Cathode Screen
 @group: B — Asynchronous Teletype Engines / Mechanical Text Input
@@ -4573,6 +4761,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
 @sub-section: B3 — Click Landing Buffer & Anti-Debris Shielding
 @sub-section: B4 — Advanced Reactor Kinetics & Teletype Stacking
 @sub-section: B5 — Seldon Vault Collapse & Orbit Reticle
+@sub-section: B6 — Under Construction Banner Compression
 ========================================================================== */
 
 @media screen and (max-width: 768px) {
@@ -5098,5 +5287,38 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
 
   .capsule-constellation {
     grid-template-columns: 1fr; /* @layout: Column track definition — one capsule per row on mobile. */
+  }
+
+  /* ========================================================================
+  @sub-section: B6 — UNDER CONSTRUCTION BANNER COMPRESSION
+  SUMMARY: The warning plate from Module 32 re-flowed for the 40px-ribbon
+  mobile deck. Padding contracts, the wide tactical tracking of the label
+  relaxes so the words survive a 320px viewport without wrapping into
+  nonsense, and the prose steps down to match the .log-entry p scale set
+  in B2. Nothing about the warning's MEANING changes on a small screen —
+  only its metrics.
+  ======================================================================== */
+
+  .under-construction {
+    margin: 0 auto 30px auto !important; /* @layout: External spacing control — the gap below the plate tightens on a deck where vertical space is scarce. */
+    padding: 20px 18px 18px 18px !important; /* @layout: Internal spacing control — narrower side cushions so the prose keeps its measure at 320px. */
+    border-left-width: 4px !important; /* @component: Edge boundary — the priority bar thins slightly; at mobile widths 5px eats measurable reading width. */
+  }
+
+  .under-construction .uc-label {
+    font-size: 0.8rem !important; /* @layout: Character scale — steps down with the rest of the mobile typography. */
+    letter-spacing: 1.5px !important; /* @layout: Glyph spacing — halved tracking; 3px of tracking pushes "UNDER CONSTRUCTION" past the edge of a narrow deck. */
+    gap: 9px !important; /* @layout: Inter-cell gutter — the glyph tucks closer to the words. */
+    flex-wrap: wrap !important; /* @layout: Line wrapping — if the label still cannot fit, it wraps rather than overflowing the plate. */
+  }
+
+  .under-construction .uc-icon {
+    font-size: 1rem !important; /* @layout: Character scale — the glyph shrinks in step with its label. */
+  }
+
+  .under-construction p {
+    font-size: 0.8rem !important; /* @layout: Character scale — matches the mobile body-prose size, but WITHOUT the 0.75 opacity B2 applies to log entries: a warning is never dimmed. */
+    line-height: 1.5 !important; /* @layout: Vertical leading — slightly tighter leading for the smaller type. */
+    max-width: 100% !important; /* @layout: Maximum width constraint — the 68ch desktop measure is irrelevant here; the viewport is already the constraint. */
   }
 }
