@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>fixture</title></head>
+  <body>
+    <!-- 1. plain violation, single line -->
+    <a href="https://example.com" target="_blank">bare</a>
+
+    <!-- 2. violation split across lines (formatter-wrapped) -->
+    <a href="https://example.com" target="_blank"
+      >wrapped</a
+    >
+
+    <!-- 3. half-fixed: noopener but no noreferrer -->
+    <a href="https://example.com" target="_blank" rel="noopener">half</a>
+
+    <!-- 4. single quotes -->
+    <a href='https://example.com' target='_blank'>quotes</a>
+
+    <!-- 5. rel BEFORE target, correct — must NOT be reported -->
+    <a rel="noopener noreferrer" href="https://example.com" target="_blank">ok</a>
+
+    <!-- 6. no target at all — must NOT be reported -->
+    <a href="https://example.com">internal</a>
+  </body>
+</html>
