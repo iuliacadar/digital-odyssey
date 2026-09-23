@@ -597,6 +597,24 @@
       "annotation": "Kleppmann; subscription."
     },
     {
+      "title": "Introduction to the server side",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction",
+      "category": "backend-sector",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Explains what a server does and why a site needs one, vs static hosting."
+    },
+    {
+      "title": "Rendering on the Web",
+      "url": "https://web.dev/articles/rendering-on-the-web",
+      "category": "backend-sector",
+      "kind": "article",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Compares SSR/CSR/SSG rendering strategies and their backend implications."
+    },
+    {
       "title": "Fundamentals of Software Architecture",
       "url": "https://www.everand.com",
       "category": "backend-sector",

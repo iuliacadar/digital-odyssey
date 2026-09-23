@@ -194,6 +194,8 @@ consistently never taught deliberately.
 | Software architecture writings | Martin Fowler | Docs | https://martinfowler.com/ | free | queued | — |
 | Designing Data-Intensive Applications | Martin Kleppmann | Book | Scribd / Everand / O'Reilly | subscription | queued | — |
 | Fundamentals of Software Architecture | Mark Richards & Neal Ford | Book | Scribd / Everand / O'Reilly | subscription | queued | — |
+| Introduction to the server side | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction | free | queued | docs/notes/backend/mdn-introduction-to-the-server-side.md |
+| Rendering on the Web | web.dev (Google) | Article | https://web.dev/articles/rendering-on-the-web | free | queued | docs/notes/backend/web-dev-rendering-on-the-web.md |
 
 ## Backend — API (REST / HTTP)
 

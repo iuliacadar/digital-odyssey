@@ -151,6 +151,8 @@ citească propriul raft.
 | Scrieri despre arhitectura software | Martin Fowler | Documentație | https://martinfowler.com/ | gratuit | coadă | — |
 | Designing Data-Intensive Applications | Martin Kleppmann | Carte | Scribd / Everand / O'Reilly | abonament | coadă | — |
 | Fundamentals of Software Architecture | Mark Richards & Neal Ford | Carte | Scribd / Everand / O'Reilly | abonament | coadă | — |
+| Introduction to the server side | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction | gratuit | coadă | docs/notes/backend/mdn-introduction-to-the-server-side.md |
+| Rendering on the Web | web.dev (Google) | Articol | https://web.dev/articles/rendering-on-the-web | gratuit | coadă | docs/notes/backend/web-dev-rendering-on-the-web.md |
 
 ## Backend — API (REST / HTTP)
 
