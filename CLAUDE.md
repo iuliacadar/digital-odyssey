@@ -21,4 +21,5 @@ Python checkers in `tools/`, CI in `.github/workflows/`.
 - Read `docs/legend-en.md` before writing comments, and match the existing voice.
 - Mirror every change across `en/` and `ro/` in the same commit, and update both
   `BACKLOG-EN.md` and `BACKLOG-RO.md` together.
-- Run `python3 tools/check-noopener.py` and `python3 tools/check-uc-banner.py` before committing.
+- Before committing, run the checkers: `check-noopener.py`, `check-uc-banner.py`,
+  `check-log-prose.py` and `check-parity.py` (all in `tools/`, all stdlib Python).

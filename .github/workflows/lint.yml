@@ -119,3 +119,24 @@ jobs:
       #   cannot reintroduce the defect.
       - name: The content injector still escapes text and keeps line endings
         run: python3 tools/inject_log_content.py --self-test
+
+  parity:
+    name: 'en/ and ro/ stay twins: code, toggles, mechanism references'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # @bridge: tools/check-parity.py — see tools/README.md.
+      # @reason: The bilingual volumes are deliberate twins. The audit of
+      #   2026-11-04 found three ways they drifted apart in production: an
+      #   EN mechanism committed without its RO twin, a copied language
+      #   toggle on 40 pages, and comments naming a mechanism that never
+      #   existed. This job turns each of those into a red build.
+      # @warning: self-test FIRST, as in every job here.
+
+      - name: Prove the checker still detects planted twin drift
+        run: python3 tools/check-parity.py --self-test
+
+      - name: Code identical, toggles lead to their twin, references resolve
+        run: python3 tools/check-parity.py
