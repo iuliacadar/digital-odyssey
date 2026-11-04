@@ -137,6 +137,36 @@ and it fell into the newline trap described below.
 
 ---
 
+## `check-parity.py` — the twin inspector
+
+`en/` and `ro/` are deliberate twins: prose and comments differ, code does
+not. This script checks the three ways the twins drifted apart in practice
+(audit 2026-11-04):
+
+1. **Code parity.** `script.js`, `style.css` and `bibliography.js` must be
+   identical in both volumes once comments are removed. Indentation and
+   blank lines are ignored; `//` inside a string, a template literal or a
+   regex is recognised as code, not as a comment.
+2. **Language toggles.** Every EN/RO link must lead to the same page in the
+   other volume, the target must exist, and only the page's own language
+   carries `lang-toggle-active`.
+3. **Mechanism references.** Every `MECANISM NN` / `MECANISMUL NN` named
+   anywhere in a volume must have its banner in that volume's `script.js`
+   (`//     MECANISM NN: TITLE`). `MECANISM 10-A` is valid when 10 exists.
+
+```bash
+python3 tools/check-parity.py              # scan both volumes
+python3 tools/check-parity.py --self-test  # prove the guard still bites
+```
+
+The self-test reads `tools/fixtures/parity/`, which plants one mistake per
+rule and several lookalikes that must stay quiet. Run against the site as
+it was before the audit (`c2b0d17`), the checker reports 206 problems: the
+missing RO generator, 40 misrouted toggle pages, and 42 references to a
+"MECANISMUL 04.5" that never existed.
+
+---
+
 ## `check-uc-banner.py` — the honesty gate
 
 Guards one rule, taken verbatim from `BACKLOG-EN.md` #008: **no log page
