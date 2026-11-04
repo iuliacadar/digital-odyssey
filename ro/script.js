@@ -24,6 +24,42 @@ const navbar = document.querySelector(".navbar"); // Prinde bara de navigație d
 const sidebar = document.querySelector(".log-sidebar"); // Prinde panoul din stânga — consola noastră de misiune.
 
 
+//  @block: UȘA SIGURĂ A MEMORIEI — singura cale de intrare și ieșire din localStorage
+//    Fiecare mecanism care ține minte ceva (notițele, jurnalul de călătorie,
+//    cheile seifului) citește și scrie prin aceste două funcții, în loc să
+//    atingă direct localStorage.
+//  @reason: localStorage nu este garantat. Când un vizitator blochează
+//    datele site-urilor (setări stricte de confidențialitate, unele moduri
+//    private), simpla CITIRE a lui window.localStorage aruncă o eroare
+//    SecurityError. Aruncată la nivelul de sus al acestui fișier, acea singură
+//    eroare oprește tot scriptul: niciun mecanism de sub ea nu mai este pornit,
+//    iar harta din sidebar rămâne goală. Auditul din 2026-11-04 a reprodus
+//    exact asta (33 de link-uri -> 0).
+//  @pedagogy: try/catch transformă o prăbușire într-o decizie. Aici decizia
+//    este "comportă-te ca la prima vizită": o citire eșuată întoarce null
+//    (nimic salvat), iar o scriere eșuată întoarce false, ca apelantul să-i
+//    poată spune vizitatorului adevărul în loc să pretindă că salvarea a reușit.
+//  @warning: Nu apelați niciodată localStorage direct în cod nou. Folosiți
+//    storeGet() și storeSet(), altfel următorul mecanism scris poate goli nava.
+//  ==========================================================================
+function storeGet(key) {
+  try {
+    return window.localStorage.getItem(key); // null când cheia n-a fost scrisă niciodată.
+  } catch {
+    return null; // Memoria e blocată: ne purtăm ca și cum nimic n-ar fi fost salvat.
+  }
+}
+
+function storeSet(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+    return true; // Valoarea e în siguranță în arhivă.
+  } catch {
+    return false; // Memorie blocată sau plină: apelantul decide ce îi spune vizitatorului.
+  }
+}
+
+
 //  ==========================================================================
 //     MECANISMUL 01: ASCUNDEREA/AFIȘAREA BAREI DE NAVIGAȚIE LA SCROLL
 //     Detaliu de imersiune: meniul dispare când citești în jos și revine când
@@ -202,12 +238,21 @@ function saveNote(dayId) {
   const textarea = document.getElementById(dayId); // Găsește textarea după id-ul său unic.
   const noteContent = textarea.value; // Extrage textul pe care l-ai tasta în interior.
 
-  // Salvează conținutul în memoria localStorage securizată a browserului.
+  // Salvează conținutul în memoria localStorage a browserului, prin ușa sigură a memoriei.
+  // localStorage este persistent, NU securizat: e text simplu pe care îl poate citi orice script
+  // de pe acest site, deci e potrivit pentru notițe, niciodată pentru parole sau date personale.
   // Id-ul zilei devine o "cheie" unică (ex. cheia "html-note-day01" păstrează doar textul acelei zile).
-  localStorage.setItem(dayId, noteContent); // localStorage = cheie-valoare. Cheie: dayId, Valoare: ce ai tastat.
+  const saved = storeSet(dayId, noteContent); // true dacă s-a salvat, false dacă browserul blochează memoria.
 
-  console.log(`Signal saved for sector: ${dayId}`); // Loghează o confirmare tehnică în consola dezvoltatorului.
-  alert("Signal extension saved to local archives."); // Alertă pe ecran care confirmă salvarea.
+  //  @reason: Anunțăm succesul doar când scrierea chiar a avut loc. O alertă
+  //    "salvat" după o scriere eșuată l-ar lăsa pe căpitan să închidă tabul
+  //    și să piardă notița crezând că a fost arhivată.
+  if (saved) {
+    console.log(`Signal saved for sector: ${dayId}`); // Loghează o confirmare tehnică în consola dezvoltatorului.
+    alert("Signal extension saved to local archives."); // Alertă pe ecran care confirmă salvarea.
+  } else {
+    alert("Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe."); // Spune adevărul.
+  }
 }
 
 // Funcția B: încărcarea automată a datelor stocate când pagina pornește/încarcă.
@@ -215,7 +260,7 @@ window.addEventListener("load", () => {
   const allNotes = document.querySelectorAll(".note-terminal textarea"); // Găsește fiecare textarea din jurnal.
 
   allNotes.forEach((textarea) => {
-    const savedContent = localStorage.getItem(textarea.id); // Întreabă memoria browserului: există ceva salvat pentru acest ID?
+    const savedContent = storeGet(textarea.id); // Întreabă memoria browserului: există ceva salvat pentru acest ID?
 
     // Dacă am găsit note vechi în arhivă, le reintroducem automat în textarea ca să nu le pierzi.
     if (savedContent) {
@@ -728,10 +773,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //  MARCHEAZĂ PRIMUL CONTACT
   //  ---------------------------------------------------------------
   //  Primul contact: clipa în care călătorul a pus prima dată piciorul la bord.
-  if (!localStorage.getItem(FIRST_KEY)) {
+  if (!storeGet(FIRST_KEY)) {
     //  O pui doar dacă nu există încă niciun timestamp — prima vizită câștigă și
     //  nu este rescrisă, așa încât "vechimea călătoriei" rămâne stabilă între vizite.
-    localStorage.setItem(FIRST_KEY, String(Date.now())); // Stocat în milisecunde.
+    storeSet(FIRST_KEY, String(Date.now())); // Stocat în milisecunde.
   }
 
   //  ---------------------------------------------------------------
@@ -762,14 +807,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //  Încarcă vectorul existent de puncte de reper (sau pornește de la zero).
     let waypoints = [];
     try {
-      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+      waypoints = JSON.parse(storeGet(WAYPOINTS_KEY)) || [];
     } catch {
       waypoints = []; // JSON corupt sau gol? Revenirea la un tablou curat.
     }
     //  Adaugă doar paginile niciodată vizitate — fiecare vizită distinctă este un boost.
     if (!waypoints.includes(currentWaypoint)) {
       waypoints.push(currentWaypoint);
-      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serializează la string înainte de a stoca.
+      storeSet(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serializează la string înainte de a stoca.
     }
   }
 })(); // Bracket-ul IIFE: tot blocul a fost deja executat până la această linie
@@ -914,10 +959,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function readVoyageState() {
     //  Primul contact, stocat ca timestamp în milisecunde; revine la "acum" dacă
     //  lipsește, ca să aibă călătoria un punct de pornire chiar la prima rulare.
-    const firstContact = Number(localStorage.getItem(FIRST_KEY)) || Date.now();
+    const firstContact = Number(storeGet(FIRST_KEY)) || Date.now();
     let waypoints = [];
     try {
-      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+      waypoints = JSON.parse(storeGet(WAYPOINTS_KEY)) || [];
     } catch {
       waypoints = []; // Tablou corupt? Tratează călătoria ca abia începută.
     }
@@ -959,7 +1004,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function quizPassed(capsule) {
     //  Citește steagul cheiat după volum: "d0_vault_pass_frontend" === "1" înseamnă
     //  călătorul a trecut Nav-Gate-ul acelui volum. String-ul "1" înseamnă adevărat.
-    return localStorage.getItem(PASS_PREFIX + capsule.volume) === "1";
+    return storeGet(PASS_PREFIX + capsule.volume) === "1";
   }
 
   function clockRipened(capsule) {
@@ -1145,7 +1190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (passed) {
       //  Cheia întâi se întoarce: punctul de reper al volumului e ștampilat
       //  permanent.
-      localStorage.setItem(PASS_PREFIX + activeCapsule.volume, "1");
+      storeSet(PASS_PREFIX + activeCapsule.volume, "1");
       navGateResult.innerHTML =
         `<p class="nav-gate-result-ok">${
           lang === "ro"
