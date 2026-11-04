@@ -326,6 +326,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //  inside the nav — not on a navigation link. Ignore it entirely.
     if (!link) return; // Not our business; let the event continue on its way.
 
+    //  @guard: a modified click is a request for a NEW tab or window, not for
+    //  in-page scrolling. Ctrl/Cmd+click (new tab), Shift+click (new window)
+    //  and Alt+click (download) must reach the browser untouched, so we step
+    //  aside before preventDefault() can swallow them.
+    //  @pedagogy: event.button is 0 for the main button. Middle-click already
+    //  bypasses this listener: browsers report it as "auxclick", not "click".
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
     // STEP A: CHECK OPERATING MODE (Desktop vs Mobile)
     if (window.innerWidth > 768) {
       //  ABSOLUTELY ESSENTIAL: We stop the browser's native action that used to drag the sidebar up!

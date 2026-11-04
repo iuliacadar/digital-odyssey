@@ -321,6 +321,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //    orice altceva din [nav]: nu ne privește, lăsăm evenimentul în pace.
     if (!link) return; // Niciun link sub cursor, niciun protocol de executat.
 
+    //  @guard: un click cu tastă modificatoare cere un tab sau o fereastră NOUĂ,
+    //  nu derulare în pagină. Ctrl/Cmd+click (tab nou), Shift+click (fereastră
+    //  nouă) și Alt+click (descărcare) trebuie să ajungă neatinse la browser,
+    //  așa că ne dăm la o parte înainte ca preventDefault() să le înghită.
+    //  @pedagogy: event.button este 0 pentru butonul principal. Click-ul din
+    //  mijloc ocolește deja acest listener: browserul îl raportează ca
+    //  "auxclick", nu ca "click".
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
     // Pasul A: VERIFICAREA MODULUI DE OPERARE (Desktop vs Mobil)
     if (window.innerWidth > 768) {
       //  ABSOLUT ESENȚIAL: Oprim acțiunea nativă a browserului care obișnuia să tragă sidebar-ul în sus!
