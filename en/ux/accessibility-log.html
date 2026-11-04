@@ -393,8 +393,8 @@
           <div class="log-text">
             <p>
               The hull plating of an accessible interface is semantic HTML, elements chosen
-              for meaning rather than appearance. Using <button> instead of a styled <div>,
-              <nav> instead of a generic wrapper, tells assistive technology exactly what
+              for meaning rather than appearance. Using <code class="tag-name">&lt;button&gt;</code> instead of a styled <code class="tag-name">&lt;div&gt;</code>,
+              <code class="tag-name">&lt;nav&gt;</code> instead of a generic wrapper, tells assistive technology exactly what
               each module does without extra instrumentation. Screen readers and other tools
               parse this structure to build a navigable map of the page, much like a ship's
               computer building a deck plan. Skipping semantics forces every crew member to
@@ -679,10 +679,10 @@
           <div class="log-text">
             <p>
               Forms are the primary control panels where crew members transmit commands
-              back to the ship, so every input needs a properly associated <label>, not just
+              back to the ship, so every input needs a properly associated <code class="tag-name">&lt;label&gt;</code>, not just
               adjacent text that looks like one. Programmatic labels let assistive
               technology announce exactly what each field expects, while grouping related
-              controls with <fieldset> and <legend> clarifies complex readouts like
+              controls with <code class="tag-name">&lt;fieldset&gt;</code> and <code class="tag-name">&lt;legend&gt;</code> clarifies complex readouts like
               coordinate entry. Required fields and input formats must be communicated in
               text, not color alone, before the crew member ever submits the transmission. A
               form that only makes sense visually will strand any pilot using a screen
@@ -1597,11 +1597,13 @@
             The language toggle lets the crew switch between the English and
             Romanian versions of the project. The current language is marked
             with the .lang-toggle-active class (phosphor green highlight).
-            The separator pipe (|) visually divides the two options.
+            The separator pipe (|) visually divides the two options. Each link
+            leads to the SAME page in the other language, so the reader never
+            loses their place in the expedition.
           -->
-          <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
+          <a href="../../en/ux/accessibility-log.html" class="lang-toggle-active">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/frontend/css-log.html" class="">RO</a>
+          <a href="../../ro/ux/accessibility-log.html" class="">RO</a>
         </li>
       </ul>
       <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS

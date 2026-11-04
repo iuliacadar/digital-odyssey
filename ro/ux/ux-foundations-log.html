@@ -303,9 +303,9 @@
               Această listă este intenționat goală în HTML.
 
               Link-urile zilelor și etichetele de sector sunt construite la
-              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              încărcarea paginii de MECANISMUL 11 din ../script.js, citind
               direct articolele [article class="log-entry"] și anunțurile
-              [div class="sector-announcement"] din [main class="log-content"].
+              [div class="sector-announcement"] din [section class="log-content"].
 
               @reason:
                 Înainte, fiecare [li] era scris de mână aici. Aceeași informație
@@ -317,16 +317,16 @@
 
               @concept:
                 "Single source of truth" — sursa unică de adevăr. Conținutul
-                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [section class="log-content"] apare
                 automat în hartă, fără o a doua editare, în nicio limbă.
 
               @warning:
                 NU ștergeți elementul [ul] în sine. El este ținta în care
-                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                scrie MECANISMUL 11, iar MECANISMUL 02 îi citește
                 clientHeight ca să centreze ziua activă pe desktop. Fără el,
                 ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
 
-              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+              @bridge: ../script.js — MECANISMUL 11 (generarea) și
                 MECANISMUL 05 (navigarea delegată prin ancore).
             -->
           </ul>
@@ -1685,13 +1685,18 @@
         </li>
         <!-- @bridge: Comutatorul de limbă între subproiectele EN și RO -->
         <li>
-          <!-- @reason:\
-      Acest document este un jurnal structurat de învățare pentru fundamentele experienței utilizatorului — cercetare, wireframing, prototipare și testare de utilizabilitate.\
-    -->
+          <!-- @reason:
+            Comutatorul de limbă permite echipajului să treacă între versiunile
+            în engleză și română ale proiectului. Limba curentă este marcată
+            cu clasa .lang-toggle-active (evidențiere verde fosfor). Bara
+            separatoare (|) desparte vizual cele două opțiuni. Fiecare link
+            duce la ACEEAȘI pagină în cealaltă limbă, astfel încât cititorul
+            nu își pierde locul în expediție.
+          -->
 
-          <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
+          <a href="../../en/ux/ux-foundations-log.html" class="">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/frontend/css-log.html" class="">RO</a>
+          <a href="../../ro/ux/ux-foundations-log.html" class="lang-toggle-active">RO</a>
         </li>
       </ul>
       <!-- @block: TELEMETRIE DE SISTEM — ORBITA & STADIUL SECTORULUI

@@ -9,7 +9,8 @@
 > source sheets into a personal curriculum structure. The notes drive the
 > structure; the Sector pages adapt to it, never the reverse."*
 >
-> **Status:** approved 2026-09-10. Romanian twin: `docs/CURRICULUM-ro.md`.
+> **Status:** approved 2026-09-10; *How the web works* item added 2026-10-29
+> at the captain's request. Romanian twin: `docs/CURRICULUM-ro.md`.
 > **Drafted:** 2026-09-10.
 
 ---
@@ -139,11 +140,14 @@ fails.
 | Reference | Meyer & Weyl *CSS: The Definitive Guide*, W3Schools, DevDocs |
 | ⚠️ Flag | **Jeremy Keith, *HTML5 for Web Designers*** — 2010. Historically lovely, currently dated. Read for pleasure, not for the bar. |
 | ⚠️ Flag | **Duckett, *HTML & CSS*** — beautiful, but shallower than MDN. Redundant with the spine. |
+| Folded in | **How the web works** — client and server, URLs, ports, `localhost` / `127.0.0.1`, the HTTP request and response, status codes, and why a page is served over `http://` rather than opened as `file://`. ~3–5 h, weeks 1–2, beside Khan Academy, because Live Server runs from day one. In order: MDN *How the web works* → *What is a URL?* → *What is a web server?* → *How do you set up a local testing server?* Reference: MDN *Overview of HTTP*, *HTTP response status codes*. A vocabulary, not a sector. |
 
 **Exit gate:** build one static, responsive, semantic page from a design you did
 not write — no framework, no copy-paste — that passes WCAG 2.2 AA with measured
 contrast numbers. If it is built by trial and error rather than by knowing what
-the properties do, the gate is not passed.
+the properties do, the gate is not passed. Plus, from week 2: explain out loud
+what happens between typing `http://127.0.0.1:5500/strigoi/atlas.html` and the
+page appearing — and what the `5500` is.
 
 ### Phase 2 — JavaScript (weeks 7–16) — **the real gate**
 
@@ -190,6 +194,7 @@ to jobs begin here.**
 | Spine (short) | **The Twelve-Factor App** — one afternoon, permanently useful |
 | Reference | PostgreSQL docs, MDN HTTP, Express docs |
 | Reference | GeeksforGeeks ER model (note sheet exists — keep as reference) |
+| Folded in | **How the web works, second pass** — MDN *Overview of HTTP* and *HTTP response status codes* again, now from the server's side: you write the endpoint, so you choose the method it answers, the headers it sends, and whether it returns `200`, `404` or `500`. ~2 h, week 25, before Full Stack Open part 3. |
 
 **Exit gate: Strigoi Milestone 0 live** — one read-only product API endpoint,
 backed by a real database, deployed, with the existing Strigoi frontend reading

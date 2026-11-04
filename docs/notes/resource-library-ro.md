@@ -122,8 +122,17 @@ citească propriul raft.
 
 ## Backend — nucleu
 
+Adăugate la 2026-10-29, la cererea căpitanului: cele patru pagini MDN despre
+*How the web works* se citesc în săptămânile 1–2 (Faza 1 din
+`docs/CURRICULUM-ro.md`), cu mult înainte să se deschidă această punte. Stau
+aici pentru că serverul e jumătatea pe care o explică.
+
 | Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |
 |---|---|---|---|---|---|---|
+| How the web works | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works | gratuit | coadă | — |
+| What is a URL? | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL | gratuit | coadă | — |
+| What is a web server? | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server | gratuit | coadă | — |
+| How do you set up a local testing server? | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server | gratuit | coadă | — |
 | Node.js documentation + Learn | OpenJS Foundation | Documentație | https://nodejs.org/en/learn | gratuit | coadă | — |
 | The Node.js Handbook | Flavio Copes | Carte | https://flaviocopes.com/ebooks/ | gratuit | coadă | — |
 | How to Code in Node.js | David Landup / DigitalOcean | Carte | https://www.digitalocean.com/community/tutorials | gratuit | coadă | — |
@@ -151,6 +160,8 @@ citească propriul raft.
 | Scrieri despre arhitectura software | Martin Fowler | Documentație | https://martinfowler.com/ | gratuit | coadă | — |
 | Designing Data-Intensive Applications | Martin Kleppmann | Carte | Scribd / Everand / O'Reilly | abonament | coadă | — |
 | Fundamentals of Software Architecture | Mark Richards & Neal Ford | Carte | Scribd / Everand / O'Reilly | abonament | coadă | — |
+| Introduction to the server side | MDN Web Docs | Documentație | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction | gratuit | coadă | docs/notes/backend/mdn-introduction-to-the-server-side.md |
+| Rendering on the Web | web.dev (Google) | Articol | https://web.dev/articles/rendering-on-the-web | gratuit | coadă | docs/notes/backend/web-dev-rendering-on-the-web.md |
 
 ## Backend — API (REST / HTTP)
 

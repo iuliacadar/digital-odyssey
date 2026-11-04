@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>fixture</title></head>
+  <body>
+    <!-- 1-3. the original defect: tag names written raw in prose -->
+    <div class="log-text">
+      <p>
+        Use <button> instead of a styled <div>,
+        <nav> instead of a generic wrapper.
+      </p>
+    </div>
+
+    <!-- 4. wrapped across lines, as the formatter does -->
+    <div class="log-text">
+      <p>Group controls with <fieldset
+        > and a legend.</p>
+    </div>
+
+    <!-- 5. correct: escaped and wrapped in code — must NOT be reported -->
+    <div class="log-text">
+      <p>Use <code class="tag-name">&lt;button&gt;</code> and <strong>never</strong> a div.</p>
+    </div>
+
+    <!-- 6. markup inside a comment — must NOT be reported -->
+    <div class="log-text">
+      <p><!-- <nav> is discussed here --> Plain sentence.</p>
+    </div>
+  </body>
+</html>

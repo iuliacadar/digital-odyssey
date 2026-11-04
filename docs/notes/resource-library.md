@@ -165,8 +165,16 @@ consistently never taught deliberately.
 
 ## Backend — core
 
+Added 2026-10-29 at the captain's request: the four MDN *How the web works* pages
+are read in weeks 1–2 (Phase 1 of `docs/CURRICULUM.md`), long before this deck
+opens. They live here because the server is the half they explain.
+
 | Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
 |---|---|---|---|---|---|---|
+| How the web works | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works | free | queued | — |
+| What is a URL? | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL | free | queued | — |
+| What is a web server? | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server | free | queued | — |
+| How do you set up a local testing server? | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server | free | queued | — |
 | Node.js documentation + Learn | OpenJS Foundation | Docs | https://nodejs.org/en/learn | free | queued | — |
 | The Node.js Handbook | Flavio Copes | Book | https://flaviocopes.com/ebooks/ | free | queued | — |
 | How to Code in Node.js | David Landup / DigitalOcean | Book | https://www.digitalocean.com/community/tutorials | free | queued | — |
@@ -194,6 +202,8 @@ consistently never taught deliberately.
 | Software architecture writings | Martin Fowler | Docs | https://martinfowler.com/ | free | queued | — |
 | Designing Data-Intensive Applications | Martin Kleppmann | Book | Scribd / Everand / O'Reilly | subscription | queued | — |
 | Fundamentals of Software Architecture | Mark Richards & Neal Ford | Book | Scribd / Everand / O'Reilly | subscription | queued | — |
+| Introduction to the server side | MDN Web Docs | Docs | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction | free | queued | docs/notes/backend/mdn-introduction-to-the-server-side.md |
+| Rendering on the Web | web.dev (Google) | Article | https://web.dev/articles/rendering-on-the-web | free | queued | docs/notes/backend/web-dev-rendering-on-the-web.md |
 
 ## Backend — API (REST / HTTP)
 

@@ -64,7 +64,7 @@ whenever a better arrangement emerges.
 | `javascript/` | JavaScript | — | not begun |
 | `react/` | React | — | not begun |
 | `angular/` | Angular | — | not begun |
-| `backend/` | Backend | — | not begun |
+| `backend/` | Backend | MDN — Introduction to the server side, web.dev — Rendering on the Web | not begun |
 | `sql/` | SQL (relational) | — | not begun |
 | `nosql/` | NoSQL | — | not begun |
 | `json/` | JSON / data bridge | — | not begun |

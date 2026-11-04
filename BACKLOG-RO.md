@@ -227,7 +227,7 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 **Descriere:** În loc să scriem manual mii de linkuri în sidebar, un script va extrage textul din fiecare `<h3>` și va genera automat elementele `<li>` corespunzătoare. Esențial pentru paginile extinse din jurnalul HTML-Log.
 
-**Status:** Propus
+**Status:** Realizat (MECANISMUL 11 în `en/script.js` și `ro/script.js`)
 **Prioritate:** Medie
 **Fază:** La construirea paginilor extinse din jurnalul HTML-Log
 

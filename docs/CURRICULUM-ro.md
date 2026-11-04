@@ -9,7 +9,8 @@
 > sursă într-o structură personală de curriculum. Notițele dictează structura;
 > paginile de Sector se adaptează la ea, niciodată invers.”*
 >
-> **Stare:** aprobat 2026-09-10. Geamănul englez: `docs/CURRICULUM.md`.
+> **Stare:** aprobat 2026-09-10; elementul *How the web works* adăugat la
+> 2026-10-29, la cererea căpitanului. Geamănul englez: `docs/CURRICULUM.md`.
 > **Redactat:** 2026-09-10.
 
 ---
@@ -147,12 +148,16 @@ vertebrală este principala cale prin care planul acesta eșuează.
 | Referință | Meyer & Weyl *CSS: The Definitive Guide*, W3Schools, DevDocs |
 | ⚠️ Semnalare | **Jeremy Keith, *HTML5 for Web Designers*** — 2010. Frumoasă istoric, depășită în prezent. De citit pentru plăcere, nu pentru ștachetă. |
 | ⚠️ Semnalare | **Duckett, *HTML & CSS*** — superbă, dar mai puțin adâncă decât MDN. Redundantă față de coloana vertebrală. |
+| Integrat | **How the web works** — client și server, URL-uri, porturi, `localhost` / `127.0.0.1`, cererea și răspunsul HTTP, codurile de stare și de ce o pagină e servită prin `http://` în loc să fie deschisă ca `file://`. ~3–5 h, săptămânile 1–2, alături de Khan Academy, pentru că Live Server rulează din prima zi. În ordine: MDN *How the web works* → *What is a URL?* → *What is a web server?* → *How do you set up a local testing server?* Referință: MDN *Overview of HTTP*, *HTTP response status codes*. Un vocabular, nu un sector. |
 
 **Poarta de ieșire:** construiește o pagină statică, responsive, semantică,
 pornind de la un design pe care nu l-ai făcut tu — fără framework, fără
 copy-paste — care trece WCAG 2.2 AA cu cifre de contrast măsurate. Dacă e
 construită prin încercare și eroare, nu prin cunoașterea a ceea ce fac
-proprietățile, poarta nu e trecută.
+proprietățile, poarta nu e trecută. Plus, din săptămâna 2: explică cu voce tare
+ce se întâmplă între momentul în care tastezi
+`http://127.0.0.1:5500/strigoi/atlas.html` și apariția paginii — și ce este
+acel `5500`.
 
 ### Faza 2 — JavaScript (săptămânile 7–16) — **poarta adevărată**
 
@@ -199,6 +204,7 @@ deployată, cu descompunere reală în componente, deployată prin CI, cu README
 | Coloană vertebrală (scurtă) | **The Twelve-Factor App** — o după-amiază, util pentru totdeauna |
 | Referință | Documentația PostgreSQL, MDN HTTP, documentația Express |
 | Referință | GeeksforGeeks ER model (fișa de notițe există — de păstrat ca referință) |
+| Integrat | **How the web works, a doua trecere** — din nou MDN *Overview of HTTP* și *HTTP response status codes*, de data aceasta din partea serverului: tu scrii endpointul, deci tu alegi metoda la care răspunde, headerele pe care le trimite și dacă întoarce `200`, `404` sau `500`. ~2 h, săptămâna 25, înainte de Full Stack Open partea 3. |
 
 **Poarta de ieșire: Strigoi Milestone 0 live** — un singur endpoint de API
 read-only pentru produse, sprijinit pe o bază de date reală, deployat, cu

@@ -303,9 +303,9 @@
               Această listă este intenționat goală în HTML.
 
               Link-urile zilelor și etichetele de sector sunt construite la
-              încărcarea paginii de MECANISMUL 04.5 din ../script.js, citind
+              încărcarea paginii de MECANISMUL 11 din ../script.js, citind
               direct articolele [article class="log-entry"] și anunțurile
-              [div class="sector-announcement"] din [main class="log-content"].
+              [div class="sector-announcement"] din [section class="log-content"].
 
               @reason:
                 Înainte, fiecare [li] era scris de mână aici. Aceeași informație
@@ -317,16 +317,16 @@
 
               @concept:
                 "Single source of truth" — sursa unică de adevăr. Conținutul
-                paginii ESTE cuprinsul ei. O zi nouă adăugată în [main] apare
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [section class="log-content"] apare
                 automat în hartă, fără o a doua editare, în nicio limbă.
 
               @warning:
                 NU ștergeți elementul [ul] în sine. El este ținta în care
-                scrie MECANISMUL 04.5, iar MECANISMUL 02 îi citește
+                scrie MECANISMUL 11, iar MECANISMUL 02 îi citește
                 clientHeight ca să centreze ziua activă pe desktop. Fără el,
                 ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
 
-              @bridge: ../script.js — MECANISMUL 04.5 (generarea) și
+              @bridge: ../script.js — MECANISMUL 11 (generarea) și
                 MECANISMUL 05 (navigarea delegată prin ancore).
             -->
           </ul>
@@ -415,8 +415,8 @@
           <div class="log-text">
             <p>
               Placarea corpului unei interfețe accesibile este HTML-ul semantic, elemente
-              alese pentru sensul lor, nu pentru aspect. Folosirea unui <button> în locul
-              unui <div> stilizat, sau a unui <nav> în locul unui container generic, spune
+              alese pentru sensul lor, nu pentru aspect. Folosirea unui <code class="tag-name">&lt;button&gt;</code> în locul
+              unui <code class="tag-name">&lt;div&gt;</code> stilizat, sau a unui <code class="tag-name">&lt;nav&gt;</code> în locul unui container generic, spune
               tehnologiei asistive exact ce face fiecare modul, fără instrumentație
               suplimentară. Cititoarele de ecran și alte unelte analizează această structură
               pentru a construi o hartă navigabilă a paginii, la fel cum computerul navei
@@ -716,10 +716,10 @@
             <p>
               Formularele sunt panourile principale de control prin care membrii
               echipajului transmit comenzi înapoi către navă, așa că fiecare câmp are nevoie
-              de un <label> asociat corect din punct de vedere programatic, nu doar de text
+              de un <code class="tag-name">&lt;label&gt;</code> asociat corect din punct de vedere programatic, nu doar de text
               alăturat care doar arată ca unul. Etichetele programatice permit tehnologiei
               asistive să anunțe exact ce așteaptă fiecare câmp, în timp ce gruparea
-              controalelor înrudite cu <fieldset> și <legend> clarifică citiri complexe
+              controalelor înrudite cu <code class="tag-name">&lt;fieldset&gt;</code> și <code class="tag-name">&lt;legend&gt;</code> clarifică citiri complexe
               precum introducerea coordonatelor. Câmpurile obligatorii și formatele de
               intrare trebuie comunicate prin text, nu doar prin culoare, înainte ca membrul
               echipajului să trimită transmisia. Un formular care are sens doar vizual va
@@ -1674,13 +1674,18 @@
         </li>
         <!-- @bridge: Comutatorul de limbă între subproiectele EN și RO -->
         <li>
-          <!-- @reason:\
-      Acest document este un jurnal structurat de învățare pentru accesibilitatea web — WCAG, ARIA, contrast, navigare cu tastatura și design incluziv.\
-    -->
+          <!-- @reason:
+            Comutatorul de limbă permite echipajului să treacă între versiunile
+            în engleză și română ale proiectului. Limba curentă este marcată
+            cu clasa .lang-toggle-active (evidențiere verde fosfor). Bara
+            separatoare (|) desparte vizual cele două opțiuni. Fiecare link
+            duce la ACEEAȘI pagină în cealaltă limbă, astfel încât cititorul
+            nu își pierde locul în expediție.
+          -->
 
-          <a href="../../en/frontend/css-log.html" class="lang-toggle-active">EN</a>
+          <a href="../../en/ux/accessibility-log.html" class="">EN</a>
           <span class="lang-sep">|</span>
-          <a href="../../ro/frontend/css-log.html" class="">RO</a>
+          <a href="../../ro/ux/accessibility-log.html" class="lang-toggle-active">RO</a>
         </li>
       </ul>
       <!-- @block: TELEMETRIE DE SISTEM — ORBITA & STADIUL SECTORULUI
