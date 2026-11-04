@@ -116,6 +116,27 @@ wrapped around half a paragraph (audit 2026-11-04, F3).
 
 ---
 
+## `inject_log_content.py` — the typesetter
+
+Replaces each Lorem-ipsum paragraph inside `<div class="log-text">` with the
+next entry from one or more JSON content files, in document order, on both
+volumes. It was used once (commit `96740c9`) to write the DAY 00+ narrative
+for 12 log topics; its original content files were not kept.
+
+```bash
+python3 tools/inject_log_content.py content.json [more.json ...]
+python3 tools/inject_log_content.py --self-test
+```
+
+Content format: `{ "<topic>": { "en": ["…"], "ro": ["…"] } }`, with topics
+listed in the script's `TARGETS`.
+
+The first version had two defects, both fixed and both covered by the
+self-test: it did not HTML-escape the text (see `check-log-prose.py` above),
+and it fell into the newline trap described below.
+
+---
+
 ## `check-uc-banner.py` — the honesty gate
 
 Guards one rule, taken verbatim from `BACKLOG-EN.md` #008: **no log page

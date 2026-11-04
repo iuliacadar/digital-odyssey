@@ -112,3 +112,10 @@ jobs:
 
       - name: Scan every log page's prose for unescaped tags
         run: python3 tools/check-log-prose.py
+
+      # @reason: inject_log_content.py is the tool that once wrote the
+      #   unescaped prose this job hunts for. Its self-test proves it still
+      #   escapes markup and keeps line endings, so a future content run
+      #   cannot reintroduce the defect.
+      - name: The content injector still escapes text and keeps line endings
+        run: python3 tools/inject_log_content.py --self-test
