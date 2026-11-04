@@ -23,6 +23,41 @@ const navbar = document.querySelector(".navbar"); // Grabs the top navigation ba
 const sidebar = document.querySelector(".log-sidebar"); // Grabs the left panel — our mission control sidebar.
 
 
+//  @block: SAFE STORAGE DOOR — the only way in or out of localStorage
+//    Every mechanism that remembers something (notes, the voyage log, the
+//    vault's keys) reads and writes through these two functions instead of
+//    touching localStorage directly.
+//  @reason: localStorage is not guaranteed to exist. When a visitor blocks
+//    site data (strict privacy settings, some private modes), merely
+//    READING window.localStorage throws a SecurityError. Thrown at the top
+//    level of this file, that one error stops the whole script: every
+//    mechanism below it is never set up, and the sidebar map stays empty.
+//    The 2026-11-04 audit reproduced exactly that (33 links -> 0).
+//  @pedagogy: try/catch turns a crash into a decision. Here the decision is
+//    "behave like a first visit": a read that fails returns null (nothing
+//    saved), and a write that fails returns false, so the caller can tell
+//    the visitor the truth instead of pretending the save worked.
+//  @warning: Never call localStorage directly in new code. Use storeGet()
+//    and storeSet(), or the next mechanism you write can blank the ship.
+//  ==========================================================================
+function storeGet(key) {
+  try {
+    return window.localStorage.getItem(key); // null when the key was never written.
+  } catch {
+    return null; // Storage blocked: behave as if nothing was ever saved.
+  }
+}
+
+function storeSet(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+    return true; // The value is safely in the archive.
+  } catch {
+    return false; // Storage blocked or full: the caller decides what to tell the visitor.
+  }
+}
+
+
 //  ==========================================================================
 //     MECANISM 01: NAVBAR HIDE/SHOW ON SCROLL
 //     Immersion detail: the menu vanishes when you read down, returns when
@@ -197,12 +232,21 @@ function saveNote(dayId) {
   const textarea = document.getElementById(dayId); // Find the textarea using its unique ID.
   const noteContent = textarea.value; // Extract the text you typed inside it.
 
-  // Save the content to the browser's secure localStorage memory.
+  // Save the content to the browser's localStorage memory, through the safe storage door.
+  // localStorage is persistent, NOT secure: it is plain text that any script on this site can read,
+  // so it suits notes but never passwords or personal data.
   // The day ID becomes a unique "key" (e.g. key "html-note-day01" holds only that day's text).
-  localStorage.setItem(dayId, noteContent); // localStorage = key-value. Key: dayId, Value: what you typed.
+  const saved = storeSet(dayId, noteContent); // true if stored, false if the browser blocks storage.
 
-  console.log(`Signal saved for sector: ${dayId}`); // Log a technical confirmation to the dev console.
-  alert("Signal extension saved to local archives."); // On-screen alert confirming the save to the user.
+  //  @reason: Only claim success when the write really happened. A "saved"
+  //    alert after a failed write would let the captain close the tab and
+  //    lose the note while believing it was archived.
+  if (saved) {
+    console.log(`Signal saved for sector: ${dayId}`); // Log a technical confirmation to the dev console.
+    alert("Signal extension saved to local archives."); // On-screen alert confirming the save to the user.
+  } else {
+    alert("Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe."); // Tell the truth.
+  }
 }
 
 // Function B: Automatic loading of stored data when the page starts/loads.
@@ -210,7 +254,7 @@ window.addEventListener("load", () => {
   const allNotes = document.querySelectorAll(".note-terminal textarea"); // Find every textarea in the journal.
 
   allNotes.forEach((textarea) => {
-    const savedContent = localStorage.getItem(textarea.id); // Ask the browser memory: anything saved for this ID?
+    const savedContent = storeGet(textarea.id); // Ask the browser memory: anything saved for this ID?
 
     // If we found old notes in the archive, auto-inject them back into the textarea so you don't lose them.
     if (savedContent) {
@@ -730,10 +774,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //  MARK FIRST CONTACT
   //  ---------------------------------------------------------------
   //  First contact: the instant the traveller first stepped aboard.
-  if (!localStorage.getItem(FIRST_KEY)) {
+  if (!storeGet(FIRST_KEY)) {
     //  Only stamp it if no timestamp exists yet — the maiden visit wins and is
     //  never overwritten, so the "age of the voyage" stays stable across visits.
-    localStorage.setItem(FIRST_KEY, String(Date.now())); // Stored in milliseconds.
+    storeSet(FIRST_KEY, String(Date.now())); // Stored in milliseconds.
   }
 
   //  ---------------------------------------------------------------
@@ -764,14 +808,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //  Load the existing waypoint array (or start fresh).
     let waypoints = [];
     try {
-      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+      waypoints = JSON.parse(storeGet(WAYPOINTS_KEY)) || [];
     } catch {
       waypoints = []; // Corrupted or empty JSON? Fall back to a clean array.
     }
     //  Add only pages never visited before — each distinct visit is one boost.
     if (!waypoints.includes(currentWaypoint)) {
       waypoints.push(currentWaypoint);
-      localStorage.setItem(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serialise to a string before storing.
+      storeSet(WAYPOINTS_KEY, JSON.stringify(waypoints)); // Serialise to a string before storing.
     }
   }
 })(); // The IIFE bracket: the whole block has already executed by this line.
@@ -906,10 +950,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function readVoyageState() {
     //  First contact, stored as a millisecond timestamp; fall back to "now" if
     //  it is missing, so the voyage has a starting point on its very first run.
-    const firstContact = Number(localStorage.getItem(FIRST_KEY)) || Date.now();
+    const firstContact = Number(storeGet(FIRST_KEY)) || Date.now();
     let waypoints = [];
     try {
-      waypoints = JSON.parse(localStorage.getItem(WAYPOINTS_KEY)) || [];
+      waypoints = JSON.parse(storeGet(WAYPOINTS_KEY)) || [];
     } catch {
       waypoints = []; // Corrupted array? Treat the voyage as just starting.
     }
@@ -950,7 +994,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function quizPassed(capsule) {
     //  Read the flag keyed by volume: "d0_vault_pass_frontend" === "1" means the
     //  traveller cleared that volume's Nav-Gate. String "1" stands for true.
-    return localStorage.getItem(PASS_PREFIX + capsule.volume) === "1";
+    return storeGet(PASS_PREFIX + capsule.volume) === "1";
   }
 
   function clockRipened(capsule) {
@@ -1129,7 +1173,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (passed) {
       //  The first key turns: the volume's waypoint is permanently stamped.
-      localStorage.setItem(PASS_PREFIX + activeCapsule.volume, "1");
+      storeSet(PASS_PREFIX + activeCapsule.volume, "1");
       navGateResult.innerHTML =
         `<p class="nav-gate-result-ok">${
           lang === "ro"
