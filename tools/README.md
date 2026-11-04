@@ -80,6 +80,42 @@ walks into them — the ordinary run is confined to `en/` and `ro/`.
 
 ---
 
+## `check-log-prose.py` — the proofreader
+
+Log entries often talk *about* HTML. Written raw, a sentence like
+"use <button> instead of a styled <div>" is not shown as words: the
+browser builds a real `<button>` and a real `<div>` mid-sentence, and the
+tag names disappear from the text. The browser never reports this, so the
+page looks fine in the source and wrong only on screen.
+
+This script reads every `<p>` inside a `<div class="log-text">` on every
+log page and fails if it finds a tag that does not belong in a sentence.
+Only inline, non-interactive tags (`code`, `strong`, `em`, `span`, …) and
+links are allowed. A tag name meant as words is written in the house style:
+
+```html
+<code class="tag-name">&lt;button&gt;</code>
+```
+
+### Running it
+
+```bash
+python3 tools/check-log-prose.py              # scan the log pages
+python3 tools/check-log-prose.py --self-test  # prove the guard still bites
+```
+
+The self-test reads `tools/fixtures/log-prose-violations.html`, which plants
+four violations (one of them wrapped across lines) and two lookalikes that
+must stay quiet: an escaped tag name, and markup inside a comment.
+
+### Where the defect came from
+
+`inject_log_content.py` pasted text into the pages without escaping it,
+which is how the accessibility log ended up with a real, focusable button
+wrapped around half a paragraph (audit 2026-11-04, F3).
+
+---
+
 ## `check-uc-banner.py` — the honesty gate
 
 Guards one rule, taken verbatim from `BACKLOG-EN.md` #008: **no log page

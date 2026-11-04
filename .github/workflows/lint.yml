@@ -92,3 +92,23 @@ jobs:
 
       - name: Removing a banner disturbs nothing else
         run: python3 tools/test-uc-prune-safety.py
+
+  log-prose:
+    name: 'log prose shows tag names as words, not as markup'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # @bridge: tools/check-log-prose.py — see tools/README.md.
+      # @reason: The browser never complains about a raw <button> written
+      #   inside a sentence; it silently builds a real one and the words
+      #   vanish. This job is the complaint the browser never makes.
+      # @warning: self-test FIRST, for the same reason as the noopener job:
+      #   a checker that has stopped matching would report a green "OK".
+
+      - name: Prove the checker still detects planted stray markup
+        run: python3 tools/check-log-prose.py --self-test
+
+      - name: Scan every log page's prose for unescaped tags
+        run: python3 tools/check-log-prose.py
