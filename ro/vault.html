@@ -183,7 +183,7 @@
       la care ajunge echipajul după atingerea nucleului 3D de pe pagina Cartei de Astrogație.
     -->
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navigare principală">
       <!-- @block: IDENTITATEA TERMINALULUI
         Blocul logo afișează semnalul de apel al vasului și numele secțiunii curente.
         Este text static (nu un link) pentru că această pagină este ea însăși o stație a navei.
@@ -223,7 +223,10 @@
           poarta originală de click deliberat (Cheia Zero a primului design) este
           înlocuită de navigarea deliberată care l-a adus pe călător aici.
       -->
-      <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+      <!-- @reason: aria-live stă pe cele două locuri care anunță ceva, starea
+        Adormitului și rezultatul Porții de Navigație, nu pe toată camera. Pe
+        cameră, fiecare caracter adăugat de mașina de scris era anunțat. -->
+      <section id="vault-chamber" class="vault-chamber">
         <!-- @block: ANTETUL CAMEREI
           Același idiom de antet ca pe alte pagini. h2 păstrează accentul nebula-pink, în timp ce h1
           rămâne rezervat celor două pagini emblematice (index și blueprint recursive).
@@ -303,7 +306,7 @@
       -->
       <div class="sleeper-crystal" id="sleeper-crystal">
         <div class="sleeper-crystal-header">
-          <span class="sleeper-status" id="sleeper-status">ADORMITA DOARME</span>
+          <span class="sleeper-status" id="sleeper-status" aria-live="polite">ADORMITA DOARME</span>
         </div>
         <div class="typewriter-output vault-output" id="vault-output"></div>
         <span class="typing-cursor vault-cursor" id="vault-cursor"></span>
@@ -324,7 +327,7 @@
           <h3 class="nav-gate-title" id="nav-gate-title">Nav-Gate</h3>
           <p class="nav-gate-intro" id="nav-gate-intro"></p>
           <form class="nav-gate-form" id="nav-gate-form"></form>
-          <div class="nav-gate-result" id="nav-gate-result"></div>
+          <div class="nav-gate-result" id="nav-gate-result" aria-live="polite"></div>
         </div>
       </div>
 

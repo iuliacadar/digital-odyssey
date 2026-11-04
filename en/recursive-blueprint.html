@@ -224,7 +224,7 @@
       (no hyperlink) because this page functions as a specialised engineering
       terminal rather than a general deck.
     -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <!-- @block: TERMINAL IDENTITY
         Unlike the index page, this logo is static (not a hyperlink) because
         the recursive blueprint is a self-piloted explorer — the crew already
@@ -241,8 +241,12 @@
           the same navigation system as the mothership, reinforcing its status
           as a self-piloted explorer, not a mere appendix.
       -->
-      <button class="hud-toggle" aria-label="Toggle navigation menu">
-        Command Deck <span class="hud-arrow">▾</span>
+      <!-- @reason: The aria-label begins with the visible words "Command Deck",
+          so a voice-control user can say what they see, and a screen reader
+          announces the same name the eye reads. The arrow is decorative and
+          hidden from assistive technology (aria-hidden). -->
+      <button class="hud-toggle" aria-label="Command Deck: open or close the navigation menu">
+        Command Deck <span class="hud-arrow" aria-hidden="true">▾</span>
       </button>
 
       <!-- @block: HOLOGRAPHIC NAVIGATION OVERLAY
@@ -512,8 +516,12 @@
             the ideal container for raw source code. JavaScript injects the
             fetched file content as text into this element's innerHTML.
           -->
+          <!-- @reason: tabindex="0" lets keyboard users reach this scrolling
+            code panel and scroll it with the arrow keys; without it, only a
+            mouse or touch could move through the source. -->
           <pre
             id="script-stream-target"
+            tabindex="0"
             class="code-inspector-screen"
           >Connecting to core files... Initializing script.js packet pull...</pre>
           <!-- @theme:

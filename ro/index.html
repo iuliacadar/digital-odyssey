@@ -228,7 +228,7 @@
       Acesta este cockpitul HUD fix de sus, care rămâne ancorat de tavanul viewport-ului.
       Adăpostește logo-ul navei (partea stângă) și linkurile meniului de teleportare (partea dreaptă).
     -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navigare principală">
       <!-- @block: LOGO-UL IDENTITĂȚII NAVEI -->
       <div class="logo"><a href="#hero-core-portal">D::0dy55ey</a></div>
       <!-- @structure:
@@ -241,13 +241,17 @@
         Înlocuiește vechea listă inline de linkuri pentru a păstra navbar-ul curat
         și optimizat pentru mobil.
       -->
-      <button class="hud-toggle" aria-label="Deschide meniul de navigare">
+      <!-- @reason: aria-label începe cu cuvintele vizibile "Puntea de Comandă",
+          ca un utilizator care comandă vocal să poată rosti ce vede, iar
+          cititorul de ecran să anunțe același nume pe care îl citește ochiul.
+          Săgeata e decorativă și ascunsă tehnologiei asistive (aria-hidden). -->
+      <button class="hud-toggle" aria-label="Puntea de Comandă: deschide sau închide meniul de navigare">
         <!-- @reason:
           "Puntea de Comandă" este eticheta HUD — invită echipajul să deschidă
           consola principală de navigare a navei. Săgeata ▾ se animă la ▴ când
           panoul este deschis.
         -->
-        Puntea de Comandă <span class="hud-arrow">▾</span>
+        Puntea de Comandă <span class="hud-arrow" aria-hidden="true">▾</span>
       </button>
 
       <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC

@@ -220,7 +220,7 @@
       (fără hyperlink) deoarece această pagină funcționează ca un terminal
       specializat de inginerie, nu ca o punte generală.
     -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navigare principală">
       <!-- @block: IDENTITATEA TERMINALULUI
         Spre deosebire de pagina index, acest logo este static (nu hyperlink) pentru că
         blueprintul recursiv este un explorator auto-pilotat — echipajul știe deja că se
@@ -236,8 +236,12 @@
           sistem de navigație ca nava-mamă, întărindu-și statutul de explorator
           auto-pilotat, nu de simplă anexă.
       -->
-      <button class="hud-toggle" aria-label="Deschide meniul de navigare">
-        Puntea de Comandă <span class="hud-arrow">▾</span>
+      <!-- @reason: aria-label începe cu cuvintele vizibile "Puntea de Comandă",
+          ca un utilizator care comandă vocal să poată rosti ce vede, iar
+          cititorul de ecran să anunțe același nume pe care îl citește ochiul.
+          Săgeata e decorativă și ascunsă tehnologiei asistive (aria-hidden). -->
+      <button class="hud-toggle" aria-label="Puntea de Comandă: deschide sau închide meniul de navigare">
+        Puntea de Comandă <span class="hud-arrow" aria-hidden="true">▾</span>
       </button>
 
       <!-- @block: OVERLAY-UL DE NAVIGAȚIE HOLOGRAPHIC
@@ -611,7 +615,10 @@
             fiind containerul ideal pentru codul sursă brut. JavaScript injectează
             conținutul fișierului preluat ca text în innerHTML al acestui element.
           -->
-          <pre id="script-stream-target" class="code-inspector-screen">
+          <!-- @reason: tabindex="0" le permite utilizatorilor de tastatură să
+            ajungă la acest panou de cod care derulează și să-l parcurgă cu
+            săgețile; fără el, doar mouse-ul sau atingerea l-ar putea derula. -->
+          <pre id="script-stream-target" tabindex="0" class="code-inspector-screen">
 Se conectează la fișierele nucleu... Inițializare preluare pachet script.js...</pre
           >
           <!-- @theme:

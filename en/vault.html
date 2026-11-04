@@ -183,7 +183,7 @@
       deck the crew reaches after touching the 3D core on the Astrogation Charter page.
     -->
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <!-- @block: TERMINAL IDENTITY
         The logo block displays the vessel callsign and the current section name.
         It is static text (not a link) because this page is itself a station on the ship.
@@ -223,7 +223,10 @@
           the original deliberate-click gate (Key Zero of the very first design) is
           replaced by the deliberate navigation that brought the traveller here.
       -->
-      <section id="vault-chamber" class="vault-chamber" aria-live="polite">
+      <!-- @reason: aria-live is placed on the two places that announce something,
+        the Sleeper's status and the Nav-Gate result, not on the whole chamber.
+        On the chamber, every character the typewriter added was announced. -->
+      <section id="vault-chamber" class="vault-chamber">
         <!-- @block: CHAMBER HEADER
           Same header idiom as other pages. The h2 keeps the nebula-pink accent while h1
           stays reserved for the two flagship pages (index and recursive blueprint).
@@ -364,7 +367,7 @@
             begins and ends. The resting text (SLEEPER SLEEPS) is the fallback a reader
             sees if the engine never runs.
           -->
-          <span class="sleeper-status" id="sleeper-status">THE SLEEPER SLEEPS</span>
+          <span class="sleeper-status" id="sleeper-status" aria-live="polite">THE SLEEPER SLEEPS</span>
         </div>
         <!-- @line: TYPEWRITER OUTPUT
           The console surface where the raw journal's text is typed out. Two classes
@@ -428,7 +431,7 @@
             unlocks) or the gate refuses. The engine writes this area, then lets the
             projection begin.
           -->
-          <div class="nav-gate-result" id="nav-gate-result"></div>
+          <div class="nav-gate-result" id="nav-gate-result" aria-live="polite"></div>
         </div>
       </div>
 
