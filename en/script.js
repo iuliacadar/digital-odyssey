@@ -23,6 +23,20 @@ const navbar = document.querySelector(".navbar"); // Grabs the top navigation ba
 const sidebar = document.querySelector(".log-sidebar"); // Grabs the left panel — our mission control sidebar.
 
 
+//  @block: MOTION PREFERENCE SENSOR
+//  @reason: Visitors can ask their system to reduce motion (an accessibility
+//    setting). The stylesheet honours it in Section 00.2.C; the two JavaScript
+//    typewriters (MECANISM 09 and the Sleeper's voice in 10-B) ask this
+//    function and print their text at once instead of letter by letter.
+//  @pedagogy: matchMedia() lets JavaScript ask the same questions as a CSS
+//    @media rule. It is a function call, not a constant, so the answer is
+//    read fresh at the moment it matters.
+//  ==========================================================================
+function motionIsReduced() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+
 //  @block: SAFE STORAGE DOOR — the only way in or out of localStorage
 //    Every mechanism that remembers something (notes, the voyage log, the
 //    vault's keys) reads and writes through these two functions instead of
@@ -732,6 +746,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // A brief moment of silence before the cosmic transmission begins. Immersion first.
+  //  @guard: reduced motion requested -> print the whole transmission at once.
+  //  The same paragraphs, the same signoff class; only the letter-by-letter
+  //  reveal and the blinking cursor are skipped.
+  if (motionIsReduced()) {
+    lines.forEach((line) => {
+      const p = document.createElement("p"); // One paragraph per line, as the typewriter would build.
+      if (line.isSignoff) p.className = "manifesto-signoff"; // Keep the captain's signature styling.
+      p.textContent = line.text; // The full text, in one step.
+      output.appendChild(p);
+    });
+    cursor.classList.add("cursor-hidden"); // Nothing is being typed, so no cursor.
+    return;
+  }
+
   setTimeout(typeNextChar, 1000); // Wait 1 second, then start typing character by character.
 });
 
@@ -1313,6 +1341,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //  idx reaches the end — the closure keeps remembering idx between ticks.
   function typeSignal(element, text, onDone) {
     let idx = 0; // The cursor position inside the string (our shared counter).
+    //  @guard: reduced motion requested -> reveal the whole signal at once,
+    //  then continue exactly as the typewriter would have when it finished.
+    if (motionIsReduced()) {
+      element.textContent += text;
+      vaultCursor.style.display = "none";
+      if (onDone) onDone();
+      return;
+    }
     vaultCursor.style.display = "inline"; // Show the blinking block caret.
     vaultOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
 

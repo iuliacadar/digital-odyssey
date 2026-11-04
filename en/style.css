@@ -4590,6 +4590,7 @@ vault-unseal rises the chamber in; vault-rise lifts the Nav-Gate panel.
 @module: 00.2 — MEDIA QUERIES & SPATIAL ISOLATION ENGINES
 @section: 00.2.A — Desktop Protocol: Large Screens (min-width: 769px)
 @section: 00.2.B — Global Mutation Protocol: Mobile Viewports (max-width: 768px)
+@section: 00.2.C — Reduced Motion Protocol (prefers-reduced-motion: reduce)
 Purpose: Anchors the adaptive viewport overhauls, split into two strict
 behavioral streams. The Desktop Protocol freezes the dual-column log viewports
 and scroll tunnels, while the Mobile Protocol squashes boundaries into an
@@ -5321,4 +5322,42 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     line-height: 1.5 !important; /* @layout: Vertical leading — slightly tighter leading for the smaller type. */
     max-width: 100% !important; /* @layout: Maximum width constraint — the 68ch desktop measure is irrelevant here; the viewport is already the constraint. */
   }
+}
+
+
+/* ==========================================================================
+@section: 00.2.C — REDUCED MOTION PROTOCOL (prefers-reduced-motion: reduce)
+==========================================================================
+@reason: Some visitors ask their operating system to reduce motion, because
+  movement on screen can cause dizziness, nausea or migraines, and a fast
+  flicker can trigger seizures. The CRT flicker on body::before repeats
+  about 7 times per second across the whole screen. Until this section
+  existed, only the Under Construction plate (32.5) honoured the request.
+@pedagogy: The rule does not delete the animations: it makes each one
+  finish almost instantly and play once. An element that "types in" or
+  "fades in" therefore lands directly in its final, readable state instead
+  of being stranded at its invisible first frame, which is what
+  animation: none would do to anything that starts at opacity 0 or width 0.
+@bridge: MECANISM 09 and the Sleeper's voice (10-B) in script.js check
+  the same media query and print their text at once.
+@pedagogy: Why "@layer"? Nine rules in this file bind an animation with
+  !important (the pulse dots, the spinning core, the armillary flicker), and
+  a class selector outranks the universal selector "*" even when both say
+  !important. Cascade layers settle it differently: for !important
+  declarations, a rule INSIDE a layer beats every !important rule OUTSIDE
+  layers, whatever their specificity. Wrapping this block in a layer makes
+  the visitor's request win without a specificity arms race.
+========================================================================== */
+@layer reduced-motion {
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* @reason: Every keyframe engine jumps straight to its end state. */
+    animation-delay: 0ms !important; /* @reason: No staged entrance leaves content hidden while it waits its turn. */
+    animation-iteration-count: 1 !important; /* @reason: Infinite loops (flicker, pulse, spin) play once and stop. */
+    transition-duration: 0.01ms !important; /* @reason: State changes land instantly rather than sliding. */
+    scroll-behavior: auto !important; /* @reason: Anchor jumps cut instead of gliding across the page. */
+  }
+}
 }

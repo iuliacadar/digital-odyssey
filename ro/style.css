@@ -4605,6 +4605,7 @@ vault-unseal ridică camera în; vault-rise ridică panoul Nav-Gate.
 @module: 00.2 — QUERY-URI MEDIA & MOTOARE DE IZOLARE SPAȚIALĂ
 @section: 00.2.A — Protocol Desktop: Ecrane Mari (min-width: 769px)
 @section: 00.2.B — Protocol Global de Mutație: Viewport-uri Mobile (max-width: 768px)
+@section: 00.2.C — Protocolul de Mișcare Redusă (prefers-reduced-motion: reduce)
 Scop: Ancorează reviziile adaptive ale viewport-ului, împărțite în două fluxuri
 comportamentale stricte. Protocolul Desktop îngheață viewport-urile de jurnal cu două coloane
 și tunelurile de derulare, în timp ce Protocolul Mobile strivește granițele într-o
@@ -5336,4 +5337,43 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     line-height: 1.5 !important; /* @layout: Interlinie verticală — interlinie ușor mai strânsă pentru litera mai mică. */
     max-width: 100% !important; /* @layout: Constrângerea lățimii maxime — măsura desktop de 68ch este irelevantă aici; viewport-ul este deja constrângerea. */
   }
+}
+
+
+/* ==========================================================================
+@section: 00.2.C — PROTOCOLUL DE MIȘCARE REDUSĂ (prefers-reduced-motion: reduce)
+==========================================================================
+@reason: Unii vizitatori îi cer sistemului de operare să reducă mișcarea,
+  pentru că mișcarea pe ecran poate provoca amețeală, greață sau migrene,
+  iar o pâlpâire rapidă poate declanșa crize. Pâlpâirea CRT de pe
+  body::before se repetă de aproximativ 7 ori pe secundă pe tot ecranul.
+  Până la această secțiune, doar placa În Construcție (32.5) respecta cererea.
+@pedagogy: Regula nu șterge animațiile: le face pe fiecare să se termine
+  aproape instantaneu și să ruleze o singură dată. Un element care "se
+  tastează" sau "apare treptat" ajunge astfel direct în starea finală,
+  lizibilă, în loc să rămână blocat în primul cadru invizibil, cum ar face
+  animation: none cu orice pornește de la opacity 0 sau width 0.
+@bridge: MECANISMUL 09 și vocea Adormitului (10-B) din script.js verifică
+  aceeași interogare media și își afișează textul dintr-odată.
+@pedagogy: De ce "@layer"? Nouă reguli din acest fișier leagă o animație cu
+  !important (punctele care pulsează, nucleul care se rotește, pâlpâirea
+  armilară), iar un selector de clasă îl depășește pe selectorul universal
+  "*" chiar dacă ambele spun !important. Straturile cascadei (cascade
+  layers) rezolvă altfel: pentru declarațiile !important, o regulă DIN
+  INTERIORUL unui strat bate orice regulă !important din AFARA straturilor,
+  indiferent de specificitate. Învelind acest bloc într-un strat, cererea
+  vizitatorului câștigă fără o cursă a specificității.
+========================================================================== */
+@layer reduced-motion {
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* @reason: Fiecare motor de keyframe sare direct la starea finală. */
+    animation-delay: 0ms !important; /* @reason: Nicio intrare eșalonată nu lasă conținutul ascuns cât își așteaptă rândul. */
+    animation-iteration-count: 1 !important; /* @reason: Buclele infinite (pâlpâire, puls, rotire) rulează o dată și se opresc. */
+    transition-duration: 0.01ms !important; /* @reason: Schimbările de stare se aplică instant, fără alunecare. */
+    scroll-behavior: auto !important; /* @reason: Salturile la ancore taie direct, fără să alunece pe pagină. */
+  }
+}
 }
