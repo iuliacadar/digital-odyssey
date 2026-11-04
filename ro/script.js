@@ -232,10 +232,21 @@ window.addEventListener("load", () => {
 //     (.log-content) și actualizează adresa URL prin history.pushState.
 //  ==========================================================================
 //  @mechanism: 05 — Navigare prin ancore fără derive
-//  @event: DOMContentLoaded → click pe .sidebar-link și .map-title-link
+//  @event: DOMContentLoaded → click delegat pe .sidebar-nav
 //  @reason: Fără acest mecanism, click pe "#html-day01" ar derula întreaga
 //    pagină, scoțând sidebar-ul din poziție. Prin interceptarea click-ului,
 //    derulăm doar panoul de conținut și lăsăm sidebar-ul fix.
+//  @concept: DELEGAREA DE EVENIMENTE. Nu legăm câte un ascultător de fiecare
+//    link, ci UNUL SINGUR de containerul lor comun (.sidebar-nav). Click-ul pe
+//    un link "urcă" (bubbling) până la container, unde îl prindem și întrebăm
+//    prin closest() dacă a pornit de la un link care ne interesează.
+//  @warning: Delegarea nu este aici o preferință de stil, ci o necesitate.
+//    MECANISMUL 11 înlocuiește conținutul listei cu replaceChildren, deci
+//    nodurile [a] existente la încărcare sunt distruse. Legarea link-cu-link
+//    (varianta anterioară) și-ar pierde tăcut toate ascultătoarele: link-urile
+//    ar arăta identic, dar click-ul ar reveni la saltul nativ al browserului —
+//    exact deriva pe care acest mecanism există ca să o prevină. Ascultătorul
+//    de pe container supraviețuiește oricâtor regenerări ale listei.
 //  ==========================================================================
 
 // Protocolul se activează automat când întreaga matrice DOM a cabinei de pilotare a fost încărcată.
@@ -243,55 +254,68 @@ document.addEventListener("DOMContentLoaded", () => {
   // Selectăm containerul din dreapta (zona articolelor cu scrollbar).
   const mainContentZone = document.querySelector(".log-content"); // Aceasta este zona <main> care se poate derula.
 
-  //  RADARUL CORECTAT: Selectăm atât zilele (.sidebar-link) CÂT ȘI linkul special către hartă (.map-title-link)
-  //  ca toate să cadă sub aceeași protecție mecanică a scutului!
-  const navigationLinks = document.querySelectorAll(
-    ".sidebar-link, .map-title-link",
-  );
+  //  @structure: Containerul de navigație. El există în HTML-ul scris de mână și
+  //    nu este niciodată înlocuit, spre deosebire de [li]-urile dinăuntru.
+  //    De aceea este ancora sigură pentru ascultătorul nostru unic.
+  const sidebarNavigation = document.querySelector(".sidebar-nav"); // Consola care conține și harta, și zilele.
 
-  navigationLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      // Pasul A: VERIFICAREA MODULUI DE OPERARE (Desktop vs Mobil)
-      if (window.innerWidth > 768) {
-        //  ABSOLUT ESENȚIAL: Oprim acțiunea nativă a browserului care obișnuia să tragă sidebar-ul în sus!
-        //  Acesta este scutul care blochează titlul h4 să zboare de pe ecran.
-        event.preventDefault(); // Oprim comportamentul nativ de salt-către-ancoră al browserului.
+  //  @reason: Paginile fără sidebar (index, bibliografie, seif) nu au ce delega.
+  if (!sidebarNavigation) return; // Fără consolă de navigație, mecanismul nu are obiect.
 
-        const targetAnchorId = link.getAttribute("href"); // Preia ancora (ex. "#top-deck" sau "#html-day01").
-        const targetArticleSection = document.querySelector(targetAnchorId); // Găsește elementul țintă în DOM.
+  //  RADARUL CORECTAT: Un singur ascultător prinde atât zilele (.sidebar-link)
+  //  CÂT ȘI linkul special către hartă (.map-title-link), pentru că amândouă
+  //  trăiesc în interiorul .sidebar-nav și click-ul lor urcă până aici.
+  sidebarNavigation.addEventListener("click", (event) => {
+    //  @concept: closest() pornește de la elementul efectiv apăsat și urcă prin
+    //    părinți până găsește unul care se potrivește selectorului. E necesar
+    //    pentru că utilizatorul poate apăsa pe [h4]-ul dinăuntrul link-ului
+    //    hărții, nu pe ancora însăși — event.target ar fi atunci [h4], nu [a].
+    const link = event.target.closest(".sidebar-link, .map-title-link"); // Link-ul real din spatele click-ului.
 
-        if (targetArticleSection && mainContentZone) {
-          let exactScrollCoordinates;
+    //  @reason: Click pe fundalul consolei, pe spațiul dintre link-uri sau pe
+    //    orice altceva din [nav]: nu ne privește, lăsăm evenimentul în pace.
+    if (!link) return; // Niciun link sub cursor, niciun protocol de executat.
 
-          //  PROTOCOL INDIVIDUAL PENTRU HĂRȚI:
-          //   Dacă utilizatorul a dat click pe marele titlu HĂRTĂ, ordinăm containerului
-          //   din dreapta să se reseteze complet în sus (coordonata 0), fără offseturi parazite!
-          if (link.classList.contains("map-title-link")) {
-            exactScrollCoordinates = 0; // Linkul către hartă duce mereu chiar în vârf.
-          }
-          //  PROTOCOL INDIVIDUAL PENTRU ZILE:
-          //  Aplică tăşia ideală de 100px ca să plasezi intrările de jurnal ordonat sub HUD.
-          else {
-            exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px ia în calcul navigația fixă.
-          }
+    // Pasul A: VERIFICAREA MODULUI DE OPERARE (Desktop vs Mobil)
+    if (window.innerWidth > 768) {
+      //  ABSOLUT ESENȚIAL: Oprim acțiunea nativă a browserului care obișnuia să tragă sidebar-ul în sus!
+      //  Acesta este scutul care blochează titlul h4 să zboare de pe ecran.
+      event.preventDefault(); // Oprim comportamentul nativ de salt-către-ancoră al browserului.
 
-          // Executăm o derulare lină STRICT în interiorul ferestrei din dreapta (.log-content).
-          mainContentZone.scrollTo({
-            top: exactScrollCoordinates, // Poziția țintă calculată.
-            behavior: "smooth", // Glisare cinematografică fină.
-          });
+      const targetAnchorId = link.getAttribute("href"); // Preia ancora (ex. "#top-deck" sau "#html-day01").
+      const targetArticleSection = document.querySelector(targetAnchorId); // Găsește elementul țintă în DOM.
 
-          // Actualizăm discret bara URL a browserului fără sărituri vizuale haotice.
-          history.pushState(null, null, targetAnchorId); // Schimbă hash-ul URL fără să reintre încărce pagina.
+      if (targetArticleSection && mainContentZone) {
+        let exactScrollCoordinates;
+
+        //  PROTOCOL INDIVIDUAL PENTRU HĂRȚI:
+        //   Dacă utilizatorul a dat click pe marele titlu HĂRTĂ, ordinăm containerului
+        //   din dreapta să se reseteze complet în sus (coordonata 0), fără offseturi parazite!
+        if (link.classList.contains("map-title-link")) {
+          exactScrollCoordinates = 0; // Linkul către hartă duce mereu chiar în vârf.
         }
+        //  PROTOCOL INDIVIDUAL PENTRU ZILE:
+        //  Aplică tăşia ideală de 100px ca să plasezi intrările de jurnal ordonat sub HUD.
+        else {
+          exactScrollCoordinates = targetArticleSection.offsetTop - 100; // 100px ia în calcul navigația fixă.
+        }
+
+        // Executăm o derulare lină STRICT în interiorul ferestrei din dreapta (.log-content).
+        mainContentZone.scrollTo({
+          top: exactScrollCoordinates, // Poziția țintă calculată.
+          behavior: "smooth", // Glisare cinematografică fină.
+        });
+
+        // Actualizăm discret bara URL a browserului fără sărituri vizuale haotice.
+        history.pushState(null, null, targetAnchorId); // Schimbă hash-ul URL fără să reintre încărce pagina.
       }
-      // Pasul B: MODUL MOBILE
-      else {
-        console.log(
-          `Mobile navigation active for sector: ${link.getAttribute("href")}`,
-        ); // Doar loghează; lasă browserul să manejeze ancorele nativ pe mobil.
-      }
-    });
+    }
+    // Pasul B: MODUL MOBILE
+    else {
+      console.log(
+        `Mobile navigation active for sector: ${link.getAttribute("href")}`,
+      ); // Doar loghează; lasă browserul să manejeze ancorele nativ pe mobil.
+    }
   });
 });
 
@@ -1181,7 +1205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = cap.title[lang] || cap.title.en;
     const teaser = cap.teaser[lang] || cap.teaser.en;
 
-const header = document.createElement("p");
+    const header = document.createElement("p");
     header.className = "vault-transmission-title";
     header.textContent = `${cap.day} — ${title}`; // ex. „DAY 12 — The Joins”.
     vaultOutput.appendChild(header);
@@ -1293,7 +1317,7 @@ const header = document.createElement("p");
     //  ^#{1,3} = 1..3 hare la început (un titlu markdown), apoi header-ul,
     //  apoi \b (o graniță de cuvânt) astfel încât "DAY 12" să nu se potrivească
     //  niciodată în interiorul "DAY 123".
-const headerPattern = new RegExp(
+    const headerPattern = new RegExp(
       `^#{1,3}\\s+${sectionHeader.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
       "m", // Steagul "m" lasă ^ să se potrivească peste începuturile de linie din tot fișierul.
     );
@@ -1368,9 +1392,166 @@ const headerPattern = new RegExp(
 });
 
 //  ==========================================================================
+//     MECANISMUL 11: INDEXUL DINAMIC AL SIDEBAR-ULUI
+//     Construiește lista de link-uri a hărții expediției din conținutul real
+//     al paginii, în loc ca ea să fie scrisă de mână în fiecare fișier HTML.
+//     Citește articolele zilelor și anunțurile de sector, apoi înlocuiește
+//     conținutul lui [ul] cu link-uri generate.
+//  ==========================================================================
+//  @mechanism: 11 — Index de sidebar generat din conținut
+//  @event: DOMContentLoaded
+//  @guard: nu face nimic pe nicio pagină fără `.sidebar-nav ul` (index,
+//    bibliografie, recursive-blueprint, seif) — acele pagini nu au hartă de expediție.
+//  @bridge: MECANISMUL 02 găsește link-ul de evidențiat prin
+//    `.sidebar-nav a[href="#id"]`, iar MECANISMUL 05 îi interceptează click-ul.
+//    Amândouă continuă să funcționeze pentru că acest mecanism emite exact
+//    același markup pe care îl folosea lista scrisă de mână: un
+//    <a class="sidebar-link" href="#id"> în interiorul unui <li>, cu
+//    <li class="week-label"> pentru divizoarele de sector.
+//  @bridge: BACKLOG-RO.md #013 — acest mecanism închide acea intrare.
+//  @reason: Lista întreținută manual însemna 1490 de <li> în 46 de pagini,
+//    ținute în sincron cu conținutul de mână. A derivat: 96 de link-uri arătau
+//    către zile care nu fuseseră scrise niciodată (ancore moarte care totuși
+//    primeau focus de la tastatură și erau anunțate de cititoarele de ecran),
+//    în timp ce un articol care chiar exista — sql-day00 — nu avea niciun link.
+//    O listă derivată din conținut nu poate deriva, pentru că a mai rămas o
+//    singură sursă a adevărului.
+//  @pedagogy: Aceasta este diferența dintre DATE și o COPIE A DATELOR.
+//    Articolele sunt datele. Vechiul sidebar era o copie bătută la mașină, iar
+//    orice copie a datelor ajunge în cele din urmă să nu mai fie de acord cu
+//    originalul. Derivând meniul la rulare, dezacordul devine structural imposibil.
+//  @warning: Poziția acestui mecanism la finalul fișierului NU contează pentru
+//    ordinea de execuție, deși el construiește link-urile pe care MECANISMUL 05
+//    le ascultă. Ambele sunt înregistrate pe DOMContentLoaded, iar MECANISMUL 05
+//    folosește delegare: ascultătorul lui stă pe .sidebar-nav, un element scris
+//    de mână care nu este niciodată regenerat. De aceea nu-l interesează dacă
+//    lista a fost construită înainte sau după ce el s-a legat. Cu vechea legare
+//    link-cu-link, această ordine ar fi fost o eroare.
+//  ==========================================================================
+
+// Așteptăm întregul DOM, ca fiecare articol și anunț de sector să fie analizat și lizibil.
+document.addEventListener("DOMContentLoaded", () => {
+  //  ȚINTA: elementul <ul> din interiorul navigației sidebar. Este scris de mână
+  //  în HTML (deci CSS-ul și titlul hărții <nav>/<h4> din jur rămân exact unde
+  //  erau); doar CONȚINUTUL lui este al nostru, de reconstruit.
+  const sidebarList = document.querySelector(".sidebar-nav ul"); // Lista goală care va primi link-urile generate.
+
+  //  SURSA: panoul din dreapta care ține jurnalul propriu-zis al expediției.
+  const logContent = document.querySelector(".log-content"); // Panoul din dreapta care conține articolele.
+
+  //  @reason: Scut de siguranță. Paginile fără jurnal (index, bibliografie,
+  //    blueprint, seif) au și ele titluri [h3], dar nu au sidebar. Fără această
+  //    verificare, mecanismul ar încerca să scrie într-un element inexistent.
+  //    Ieșim tăcut: absența sidebar-ului nu este o eroare, este o altă pagină.
+  if (!sidebarList || !logContent) return; // Fără hartă de expediție, nu avem ce construi.
+
+  //  @concept: O singură interogare pentru AMBELE tipuri de bloc. querySelectorAll
+  //    întoarce mereu elementele în ordinea din document, indiferent de ordinea
+  //    selectorilor din virgulă. Asta ne dă gratuit intercalarea corectă
+  //    zi/sector. Două interogări separate, concatenate, ar grupa toate zilele
+  //    la un loc și ar distruge împărțirea pe sectoare.
+  const contentBlocks = logContent.querySelectorAll(
+    "article.log-entry, div.sector-announcement",
+  );
+
+  //  @reason: Adunăm elementele într-un array și le punem în DOM o singură dată,
+  //    la final. Dacă am adăuga fiecare [li] direct în listă, browserul ar
+  //    recalcula layout-ul de 33 de ori pe o pagină obișnuită. Așa: o dată.
+  const generatedItems = []; // Depozitul temporar pentru link-urile construite.
+
+  contentBlocks.forEach((block) => {
+    const blockId = block.id; // Ancora este ID-ul deja scris în HTML.
+
+    //  @warning: Un bloc fără id nu poate fi destinația unui link — l-am trimite
+    //    către "#" gol. Îl sărim. Atenție: "return" aici se află în interiorul
+    //    unui callback forEach, deci sare la următorul bloc (ca un "continue");
+    //    NU oprește generarea întregii liste.
+    if (!blockId) return; // Fără id nu există ancoră, deci nu există link.
+
+    const listItem = document.createElement("li"); // Elementul de listă, containerul semantic.
+    const anchor = document.createElement("a"); // Ancora propriu-zisă, elementul pe care se dă click.
+
+    anchor.className = "sidebar-link"; // Clasa de care se agață tot stilul din style.css.
+
+    //  @warning: href-ul se CITEȘTE din id-ul existent, niciodată nu se calculează
+    //    din textul titlului. Dacă l-am genera din text, versiunea română ar
+    //    produce "#carena-de-otel..." acolo unde engleza produce "#the-steel-hull...",
+    //    iar cele două limbi nu ar mai avea aceleași ancore. În plus, MECANISMUL 02
+    //    caută exact `.sidebar-nav a[href="#${id}"]` — alt sistem de ancore ar
+    //    opri tăcut evidențierea zilei active.
+    anchor.href = "#" + blockId; // Citire verbatim: ancora este id-ul blocului.
+
+    // RAMURA A: anunț de sector — devine eticheta de săptămână dintre zile.
+    if (block.classList.contains("sector-announcement")) {
+      //  @reason: Numărul sectorului se extrage din id (ex. "deployment-sector-01"),
+      //    NU din [h2]-ul dinăuntru. [h2]-ul este tradus ("Rampa de Lansare" în
+      //    română, "The Launchpad" în engleză), deci folosirea lui ar face ca
+      //    cele două limbi să genereze etichete diferite. Id-ul este identic
+      //    în ambele limbi, deci rezultatul rămâne identic.
+      const sectorNumber = blockId.match(/-sector-(\d+)$/); // Prinde cele două cifre de la finalul id-ului.
+
+      //  @warning: Un id care nu se termină în -sector-NN nu este un divizor pe
+      //    care să-l știm eticheta. Îl sărim, în loc să ghicim. Atenție: "return"
+      //    aici se află în interiorul unui callback forEach, deci sare la
+      //    următorul bloc (ca un "continue"); NU oprește generarea listei.
+      if (!sectorNumber) return; // Id de sector nerecunoscut: niciun link.
+
+      //  @reason: Sectorul 00 (rampa de lansare) există în conținutul fiecărei
+      //    pagini, dar nu a avut niciodată link în sidebar — el introduce Ziua 00,
+      //    care are deja propriul link. Îl sărim ca să păstrăm lista exact
+      //    așa cum a fost scrisă de mână.
+      if (sectorNumber[1] === "00") return; // Rampa de lansare nu este o săptămână. Niciun link.
+
+      listItem.className = "week-label"; // Clasa care transformă [li] în pastila de sector.
+      anchor.textContent = "S" + sectorNumber[1]; // Eticheta scurtă: "S01", "S02"...
+    }
+    // RAMURA B: articol de zi — devine un link obișnuit de zi.
+    else {
+      //  @warning: "h3 > span" cu combinatorul de copil direct, NU "h3 span".
+      //    Titlul conține două [span]-uri: primul este jetonul "Day NN", al
+      //    doilea este .meta-title cu subtitlul. Un selector descendent ar putea
+      //    prinde spanul greșit pe orice pagină unde markup-ul este mai adânc.
+      const dayToken = block.querySelector("h3 > span"); // Primul span: jetonul zilei.
+
+      //  @reason: Un articol .log-entry fără [h3] nu este o intrare de jurnal
+      //    completă, deci nu primește link. Iarăși, "return" = "continue".
+      if (!dayToken) return; // Fără titlu de zi nu avem etichetă de afișat.
+
+      //  @concept: textContent, niciodată innerHTML. Titlurile conțin caractere
+      //    speciale scrise ca entități — "&lt;img&gt;", "&" — și diacritice
+      //    românești (ă â î ș ț). textContent le tratează ca text simplu și le
+      //    scapă corect automat. Construind aceeași etichetă prin innerHTML,
+      //    "&lt;" ar fi re-escapat și s-ar afișa literal ca "&amp;lt;".
+      //  @reason: Markup-ul scris de mână indentează aceste [span]-uri inconsecvent
+      //    — unele au un newline la început, altele un simplu spațiu. Înlocuind
+      //    orice succesiune de spații albe cu un singur spațiu și tăind capetele,
+      //    rezultatul devine identic indiferent de cum e formatat HTML-ul.
+      //  @theme: Diamantul \u25C8 este același caracter cu entitatea &#9672;
+      //    scrisă în HTML-ul original (punctul de cod 9672) — un mic marcator
+      //    de rând care ajută ochiul să parcurgă lista pe verticală.
+      anchor.textContent = dayToken.textContent.replace(/\s+/g, " ").trim() + " \u25C8"; // "Day 07 ◈"
+    }
+
+    listItem.appendChild(anchor); // Ancora intră în elementul de listă.
+    generatedItems.push(listItem); // Elementul intră în depozitul temporar.
+  });
+
+  //  @reason: replaceChildren șterge vechile [li] scrise de mână și le instalează
+  //    pe cele generate într-o singură operație atomică. Lista nu apare niciodată
+  //    goală în timpul înlocuirii, deci sidebar-ul nu pâlpâie.
+  //  @warning: Din acest moment, nodurile [a] din sidebar sunt ALTE noduri decât
+  //    cele existente la încărcarea paginii. Orice mecanism care s-ar lega de
+  //    ele individual și-ar pierde legătura — vezi MECANISMUL 05, care de aceea
+  //    folosește delegare de evenimente, nu legare link cu link.
+  sidebarList.replaceChildren(...generatedItems); // Cuprinsul generat înlocuiește lista scrisă de mână.
+});
+
+
+//  ==========================================================================
 //     BACKLOG — Îmbunătățiri de Navigare & UX (Mecanisme Planificate)
 //     Aceste intrări trăiesc acum în registrul principal al proiectului:
-//     BACKLOG-RO.md. Vezi intrările 013–016 (Index dinamic al sidebarului,
-//     Căutare și filtrare, Offset dinamic al navbarului, Export de note) —
-//     întreținute acolo, nu duplicate aici.
+//     BACKLOG-RO.md. Vezi intrările 014–016 (Căutare și filtrare, Offset
+//     dinamic al navbarului, Export de note) — întreținute acolo, nu
+//     duplicate aici. Intrarea 013 (Index dinamic al sidebarului) este acum
+//     construită: vezi MECANISMUL 11 de mai sus.
 //  ==========================================================================

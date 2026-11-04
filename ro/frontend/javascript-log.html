@@ -294,75 +294,36 @@
               intrare fără să deruleze prin întregul jurnal.
           -->
           <ul>
-            <!-- @block: WEEK 00 — INITIATION (Day 00 only) -->
-            <li>
-              <a href="#javascript-day00" class="sidebar-link">Day 00 &#9672; Intro</a>
-            </li>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
 
-            <!-- @block: SĂPTĂMÂNA 01 — SECTORUL 01: FUNDAȚII GALACTICE
-              Prima săptămână completă acoperă mecanismele CSS de bază: selectoare,
-              specificitate, modelul box și fundamentele layout-ului.
-              @theme:
-                Simbolul diamantului (&#9672;) de lângă fiecare număr de zi
-                acționează ca un marcator de rând — un indiciu vizual mic care ajută
-                ochiul să parcurgă rapid lista în jos.
-            -->
-            <li class="week-label">
-              <a href="#javascript-sector-01" class="sidebar-link">S01</a>
-            </li>
-            <li><a href="#javascript-day01" class="sidebar-link">Day 01 &#9672;</a></li>
-            <li><a href="#javascript-day02" class="sidebar-link">Day 02 &#9672;</a></li>
-            <li><a href="#javascript-day03" class="sidebar-link">Day 03 &#9672;</a></li>
-            <li><a href="#javascript-day04" class="sidebar-link">Day 04 &#9672;</a></li>
-            <li><a href="#javascript-day05" class="sidebar-link">Day 05 &#9672;</a></li>
-            <li><a href="#javascript-day06" class="sidebar-link">Day 06 &#9672;</a></li>
-            <li><a href="#javascript-day07" class="sidebar-link">Day 07 &#9672;</a></li>
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 11 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [section class="log-content"].
 
-            <!-- @block: SĂPTĂMÂNA 02 — SECTORUL 02: GRIDURI AVANSATE & FLEXBOX
-              A doua săptămână trece de la layout-ul de bază la motoarele
-              moderne de layout CSS: Flexbox și CSS Grid.
-            -->
-            <li class="week-label">
-              <a href="#javascript-sector-02" class="sidebar-link">S02</a>
-            </li>
-            <li><a href="#javascript-day08" class="sidebar-link">Day 08 &#9672;</a></li>
-            <li><a href="#javascript-day09" class="sidebar-link">Day 09 &#9672;</a></li>
-            <li><a href="#javascript-day10" class="sidebar-link">Day 10 &#9672;</a></li>
-            <li><a href="#javascript-day11" class="sidebar-link">Day 11 &#9672;</a></li>
-            <li><a href="#javascript-day12" class="sidebar-link">Day 12 &#9672;</a></li>
-            <li><a href="#javascript-day13" class="sidebar-link">Day 13 &#9672;</a></li>
-            <li><a href="#javascript-day14" class="sidebar-link">Day 14 &#9672;</a></li>
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
 
-            <!-- @block: SĂPTĂMÂNA 03 — SECTORUL 03: RESPONSIVE & ANIMATION
-              A treia săptămână introduce principiile design-ului responsive,
-              media queries, tranzițiile și animațiile cu keyframes.
-            -->
-            <li class="week-label">
-              <a href="#javascript-sector-03" class="sidebar-link">S03</a>
-            </li>
-            <li><a href="#javascript-day15" class="sidebar-link">Day 15 &#9672;</a></li>
-            <li><a href="#javascript-day16" class="sidebar-link">Day 16 &#9672;</a></li>
-            <li><a href="#javascript-day17" class="sidebar-link">Day 17 &#9672;</a></li>
-            <li><a href="#javascript-day18" class="sidebar-link">Day 18 &#9672;</a></li>
-            <li><a href="#javascript-day19" class="sidebar-link">Day 19 &#9672;</a></li>
-            <li><a href="#javascript-day20" class="sidebar-link">Day 20 &#9672;</a></li>
-            <li><a href="#javascript-day21" class="sidebar-link">Day 21 &#9672;</a></li>
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [section class="log-content"] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
 
-            <!-- @block: SĂPTĂMÂNA 04 — SECTORUL 04: CSS AVANSAT & CINEMATIC
-              Ultima săptămână acoperă selectoarele avansate, proprietățile
-              custom, modurile de blend, filtrele și limbajul vizual
-              cinematografic care definește estetica acestui proiect.
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 11, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 11 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
             -->
-            <li class="week-label">
-              <a href="#javascript-sector-04" class="sidebar-link">S04</a>
-            </li>
-            <li><a href="#javascript-day22" class="sidebar-link">Day 22 &#9672;</a></li>
-            <li><a href="#javascript-day23" class="sidebar-link">Day 23 &#9672;</a></li>
-            <li><a href="#javascript-day24" class="sidebar-link">Day 24 &#9672;</a></li>
-            <li><a href="#javascript-day25" class="sidebar-link">Day 25 &#9672;</a></li>
-            <li><a href="#javascript-day26" class="sidebar-link">Day 26 &#9672;</a></li>
-            <li><a href="#javascript-day27" class="sidebar-link">Day 27 &#9672;</a></li>
-            <li><a href="#javascript-day28" class="sidebar-link">Day 28 &#9672;</a></li>
           </ul>
         </nav>
       </aside>

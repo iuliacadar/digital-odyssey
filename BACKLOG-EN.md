@@ -227,7 +227,7 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 **Description:** Instead of manually writing 1000+ sidebar links, a script generates the `<li>` elements from the page's own content blocks. Essential for the extended HTML-Log journal pages.
 
-**Status:** EN done (MECANISM 11 in `en/script.js`); RO mirrored on its own card
+**Status:** Done (MECANISM 11 in `en/script.js` and `ro/script.js`)
 **Priority:** Medium
 **Phase:** When the extended HTML-Log journal pages are built
 
