@@ -201,7 +201,7 @@
     <!-- @block: BARA DE NAVIGARE A ARHIVEI
       Consola HUD de sus a paginii de bibliografie.
     -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navigare principală">
       <!-- @block: IDENTITATEA TERMINALULUI
         Blocul logo afișează indicativul de apel al navei și numele
         secțiunii curente. Este text static (nu un link) pentru că
@@ -239,7 +239,8 @@
     <main class="main-container">
       <!-- @block: ANTETUL ARHIVEI -->
       <header class="category-header">
-        <h2>Arhivele Adâncului — Referințe Cartografiate</h2>
+        <!-- @reason: h1 = titlul acestei pagini, unul pe pagină. De ce, și cum păstrează aspectul de h2: style.css 04.6. -->
+        <h1>Arhivele Adâncului — Referințe Cartografiate</h1>
         <!-- @concept:
           Titlul încadrează bibliografia ca pe o hartă de navigare — nu o
           listă seacă de URL-uri, ci o hartă stelară vie a fiecărui semnal
@@ -293,7 +294,7 @@
           această ancoră din subsolul lor:
             🛰️ Referințe Astrogare → Sectorul Frontend Core
         -->
-        <h3>I. Frontend Core</h3>
+        <h2>I. Frontend Core</h2>
         <!-- @reason:
           Secțiunea I acoperă tehnologiile fundamentale ale stratului
           orientat spre utilizator: HTML pentru structură, CSS pentru
@@ -348,7 +349,7 @@
           formate de transfer de date — moneda universală care circulă
           între straturi.
         -->
-        <h3>II. Data Bridge</h3>
+        <h2>II. Data Bridge</h2>
 
         <table class="data-grid">
           <thead>
@@ -381,7 +382,7 @@
           reface aceleași separatoare automat, grupând câmpul `kind` din
           JSON, așa cum este documentat în bibliography.js.
         -->
-        <h3>III. Backend Sector</h3>
+        <h2>III. Backend Sector</h2>
 
         <table class="data-grid">
           <thead>
@@ -412,7 +413,7 @@
           stocate, devin invizibile — există în adâncurile tăcute ale
           memoriei navei.
         -->
-        <h3>IV. Database Void</h3>
+        <h2>IV. Database Void</h2>
 
         <table class="data-grid">
           <thead>
@@ -439,7 +440,7 @@
           Secțiunea V cataloghează referințe pentru proiectarea experienței
           utilizatorului și standardele de accesibilitate.
         -->
-        <h3>V. UX Lab</h3>
+        <h2>V. UX Lab</h2>
 
         <table class="data-grid">
           <thead>
@@ -467,7 +468,7 @@
           CI/CD și implementarea — sistemele care mută codul de la stația
           de lucru până în orbita exterioară a producției.
         -->
-        <h3>VI. Delivery Deck</h3>
+        <h2>VI. Delivery Deck</h2>
 
         <table class="data-grid">
           <thead>
@@ -491,7 +492,7 @@
            (categorie "meta")
            ================================================================ -->
       <section id="meta-refs" class="log-entry">
-        <h3>Epilog — Alegerea Următoarei Rute</h3>
+        <h2>Epilog — Alegerea Următoarei Rute</h2>
         <!-- @reason:
           O secțiune mică și onestă pentru resursele despre meșteșugul
           alegerii: roadmap.sh, Curriculum-ul MDN și eseul lui Norvig despre
@@ -529,7 +530,7 @@
           munca; acest raft învață doar cum se vorbește despre ea sub
           examinare.
         -->
-        <h3>VII. Poarta Angajării</h3>
+        <h2>VII. Poarta Angajării</h2>
         <!-- @reason:
           Numeralul din titlu este VII, nu VIII, pentru că secțiunea
           „Epilog“ de mai sus nu poartă un numeral propriu — este o anexă,
@@ -584,7 +585,7 @@
           Nimic de aici nu stă pe drumul critic. Tot ce e aici explică de ce
           merită parcurs drumul critic.
         -->
-        <h3>VIII. Puntea Umanioarelor</h3>
+        <h2>VIII. Puntea Umanioarelor</h2>
 
         <table class="data-grid">
           <!-- @reason:
@@ -629,7 +630,7 @@
         pe care mașina le așează în coloana „Statusul Misiunii”.
       -->
       <section id="archive-legend" class="log-entry">
-        <h3>Legenda Semnalelor</h3>
+        <h2>Legenda Semnalelor</h2>
         <!-- @pedagogy: ELEMENTUL <dl> (LISTĂ DE DESCRIERE)
            <dl> înseamnă „description list“. Este o structură în trei părți:
              <dl>  → containerul listei

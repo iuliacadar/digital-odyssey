@@ -227,7 +227,7 @@
         vessel logo on the left and the navigation command list on the
         right, keeping the helm compact and always visible at the top.
     -->
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main navigation">
       <!-- @block: TERMINAL IDENTITY
         The logo block displays the vessel callsign and the current section name.
         It is static text (not a link) because this page is itself a station
@@ -283,7 +283,7 @@
             at the top scrolls the view back to the main header when
             clicked.
         -->
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" aria-label="Page contents">
           <a href="#top-deck" class="map-title-link">
             <h4>CSS Expedition Map</h4>
           </a>
@@ -337,7 +337,8 @@
             as the start of a new expedition chapter.
         -->
         <header id="top-deck" class="category-header">
-          <h2>The Gravitational Fields of Aesthetic</h2>
+          <!-- @reason: h1 = this page's title, one per page. Why, and how it keeps the h2 look: style.css 04.6. -->
+          <h1>The Gravitational Fields of Aesthetic</h1>
           <p>
             Gazing into the visual energy, layout matrix, and stylistic vectors
             of the void.

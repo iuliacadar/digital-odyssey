@@ -224,7 +224,7 @@
       This is the fixed top HUD cockpit that stays pinned to the viewport ceiling.
       It houses the vessel logo (portside) and the teleport menu links (starboard).
     -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <!-- @block: VESSEL IDENTITY LOGO -->
       <div class="logo"><a href="#hero-core-portal">D::0dy55ey</a></div>
       <!-- @structure:
@@ -236,12 +236,16 @@
         A toggle button that opens the holographic volume overlay.
         Replaces the old inline link list to keep the navbar clean and mobile-friendly.
       -->
-      <button class="hud-toggle" aria-label="Toggle navigation menu">
+      <!-- @reason: The aria-label begins with the visible words "Command Deck",
+          so a voice-control user can say what they see, and a screen reader
+          announces the same name the eye reads. The arrow is decorative and
+          hidden from assistive technology (aria-hidden). -->
+      <button class="hud-toggle" aria-label="Command Deck: open or close the navigation menu">
         <!-- @reason:
           "Command Deck" is the HUD label — it invites the crew to open the
           ship's main navigation console. The ▾ arrow animates to ▴ when open.
         -->
-        Command Deck <span class="hud-arrow">▾</span>
+        Command Deck <span class="hud-arrow" aria-hidden="true">▾</span>
       </button>
 
       <!-- @block: HOLOGRAPHIC NAVIGATION OVERLAY

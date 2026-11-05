@@ -24,6 +24,21 @@ const navbar = document.querySelector(".navbar"); // Prinde bara de navigație d
 const sidebar = document.querySelector(".log-sidebar"); // Prinde panoul din stânga — consola noastră de misiune.
 
 
+//  @block: SENZORUL PREFERINȚEI DE MIȘCARE
+//  @reason: Vizitatorii îi pot cere sistemului să reducă mișcarea (o setare
+//    de accesibilitate). Foaia de stil o respectă în Secțiunea 00.2.C; cele
+//    două mașini de scris din JavaScript (MECANISMUL 09 și vocea Adormitului
+//    din 10-B) întreabă această funcție și își afișează textul dintr-odată,
+//    nu literă cu literă.
+//  @pedagogy: matchMedia() îi permite JavaScript-ului să pună aceleași
+//    întrebări ca o regulă CSS @media. Este un apel de funcție, nu o
+//    constantă, deci răspunsul e citit proaspăt exact când contează.
+//  ==========================================================================
+function motionIsReduced() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+
 //  @block: UȘA SIGURĂ A MEMORIEI — singura cale de intrare și ieșire din localStorage
 //    Fiecare mecanism care ține minte ceva (notițele, jurnalul de călătorie,
 //    cheile seifului) citește și scrie prin aceste două funcții, în loc să
@@ -320,6 +335,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //  @reason: Click pe fundalul consolei, pe spațiul dintre link-uri sau pe
     //    orice altceva din [nav]: nu ne privește, lăsăm evenimentul în pace.
     if (!link) return; // Niciun link sub cursor, niciun protocol de executat.
+
+    //  @guard: un click cu tastă modificatoare cere un tab sau o fereastră NOUĂ,
+    //  nu derulare în pagină. Ctrl/Cmd+click (tab nou), Shift+click (fereastră
+    //  nouă) și Alt+click (descărcare) trebuie să ajungă neatinse la browser,
+    //  așa că ne dăm la o parte înainte ca preventDefault() să le înghită.
+    //  @pedagogy: event.button este 0 pentru butonul principal. Click-ul din
+    //  mijloc ocolește deja acest listener: browserul îl raportează ca
+    //  "auxclick", nu ca "click".
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
     // Pasul A: VERIFICAREA MODULUI DE OPERARE (Desktop vs Mobil)
     if (window.innerWidth > 768) {
@@ -719,6 +743,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // O scurtă clipă de tăcere înainte ca transmisia cosmică să înceapă. Imersiunea pe primul loc.
+  //  @guard: s-a cerut mișcare redusă -> afișăm toată transmisia dintr-odată.
+  //  Aceleași paragrafe, aceeași clasă pentru semnătură; doar dezvăluirea
+  //  literă cu literă și cursorul care clipește sunt omise.
+  if (motionIsReduced()) {
+    lines.forEach((line) => {
+      const p = document.createElement("p"); // Câte un paragraf pe linie, cum l-ar construi mașina de scris.
+      if (line.isSignoff) p.className = "manifesto-signoff"; // Păstrăm stilul semnăturii căpitanului.
+      p.textContent = line.text; // Textul întreg, dintr-un singur pas.
+      output.appendChild(p);
+    });
+    cursor.classList.add("cursor-hidden"); // Nu se tastează nimic, deci fără cursor.
+    return;
+  }
+
   setTimeout(typeNextChar, 1000); // Așteaptă 1 secundă, apoi începe să tipărească caracter cu caracter.
 });
 
@@ -1324,6 +1362,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //  să-și aducă aminte de idx între ticuri.
   function typeSignal(element, text, onDone) {
     let idx = 0; // Poziția cursorului în interiorul stringului (contorul nostru partajat).
+    //  @guard: s-a cerut mișcare redusă -> dezvăluim tot semnalul dintr-odată,
+    //  apoi continuăm exact cum ar fi continuat mașina de scris la final.
+    if (motionIsReduced()) {
+      element.textContent += text;
+      vaultCursor.style.display = "none";
+      if (onDone) onDone();
+      return;
+    }
     vaultCursor.style.display = "inline"; // Arată cursorul de text intermitent.
     vaultOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
