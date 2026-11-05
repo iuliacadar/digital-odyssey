@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!-- @block:
-  <!DOCTYPE html> must be the first token of every HTML document,
-  before any content or comments, per the HTML spec. It activates
-  standards mode (predictable rendering) over quirks mode.
+  <!DOCTYPE html> switches the browser into standards mode: predictable,
+  spec-following rendering. Without it, the page renders in quirks mode,
+  which imitates the bugs of 1990s browsers. It names no HTML version;
+  "html" is all modern HTML needs (the long version strings belong to
+  HTML 4 and XHTML). Only whitespace and comments may stand before it,
+  so this comment could have sat above it; any other content there
+  would drop the page into quirks mode.
 -->
 
 <html lang="en">
@@ -129,17 +133,19 @@
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
-    <!-- @theme:
-      Open Graph background color.
-      Some sharing surfaces use it to tint the preview card with the project's deep-space palette.
+    <!-- @warning:
+      og:background_color is NOT an Open Graph property: the protocol
+      (ogp.me) defines no colour, so sharing services ignore this line.
+      It does nothing today and is a candidate for removal.
     -->
 
     <meta property="og:image" content="../favicon.svg" />
     <!-- @path:
-      Open Graph image.
-      It is the preview picture used on shared cards. I point it at the favicon
-      in the corresponding language folder as a stable, always-available placeholder,
-      until a dedicated capture exists for each page.
+      Open Graph image: the preview picture on shared cards. It points at
+      the favicon as a placeholder until a dedicated capture exists.
+      @warning: the placeholder does not work yet. Facebook, LinkedIn, X
+      and messaging apps refuse SVG here; they want a raster image (PNG or
+      JPEG, ideally 1200x630), so shared cards currently show no picture.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -172,9 +178,10 @@
 
     <link rel="apple-touch-icon" href="../favicon.svg" />
     <!-- @path:
-      I link the Apple Touch Icon for iOS devices.
-      Safari on iPhone and iPad uses this icon when the page is added to the home screen
-      or displayed as a web app. I reuse the same favicon.svg as the icon source.
+      The Apple Touch Icon: the picture iOS shows when the page is added to
+      the home screen.
+      @warning: iOS does not accept SVG here; it needs a PNG (180x180).
+      With this SVG, iOS ignores the link and makes an icon of its own.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -252,7 +259,7 @@
       </ul>
     </nav>
 
-    <!-- @block: MAIN CONTENT — CSS EXPEDITION LOG
+    <!-- @block: MAIN CONTENT — VERSION CONTROL EXPEDITION LOG
       The main deck is split into two zones: the sidebar (expedition map) and
       the log-content zone. The class "log-layout" applies a CSS Grid for a
       two-column terminal interface.
@@ -322,7 +329,7 @@
         @structure:
           The .log-content class works together with .log-sidebar inside
           the .log-layout grid. The sidebar occupies the left column
-          (about 250px), and .log-content fills the remaining space on
+          (280px, set on .log-layout in style.css 00.2.A), and .log-content fills the remaining space on
           the right, creating the classic two-panel terminal interface.
       -->
       <section class="log-content">        <!-- @block: CATEGORY HEADER - THE EXPEDITION TITLE -->

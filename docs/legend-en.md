@@ -27,11 +27,11 @@ This legend establishes a shared vocabulary for comments across the whole projec
 - `@cluster:` groups a set of related entries under a thematic heading (used in bibliography pages, e.g. `@cluster: Core Runtimes`).
 
 ## CSS
-- `@module:` defines the current module number and name (e.g. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Acts as the primary structural landmark in the 31-module architecture.
+- `@module:` defines the current module number and name (e.g. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Acts as the primary structural landmark across the 32 numbered modules (01–32), plus 00.1 (keyframes) and 00.2 (media queries).
 - `@sub-module:` defines the current sub-module number and name within a module (e.g. `@sub-module: 04.1 — Section Architecture`). Nests under the parent `@module:`.
 - `@keyframe:` annotates a `@keyframes` animation block (e.g. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Links the animation to its narrative purpose.
 - `@manifest:` file-level annotation identifying the document type and purpose (used in the opening block of the stylesheet).
-- `@group:` labels a logical cluster of related rules within a module, often with a letter code (e.g. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Also used to group `@keyframes` blocks into categories (A–G).
+- `@group:` labels a logical cluster of related rules within a module, often with a letter code (e.g. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Also used to group `@keyframes` blocks into categories (A–F and H; there is no G).
 - `@section:` marks a major division within the responsive / media queries area, identified by a numeric code (e.g. `@section: 00.2.A — Desktop Protocol`).
 - `@sub-section:` marks a sub-division within a `@section:`, identified by an alphanumeric code (e.g. `@sub-section: A1 — Global Parent Grid Container`). Nests under the parent `@section:`.
 - `@block:` explains a logical styling section, such as reset, layout, components, or responsive rules.
@@ -42,7 +42,7 @@ This legend establishes a shared vocabulary for comments across the whole projec
 
 ## JS
 - `@block:` explains a logical behaviour or functionality block.
-- `@mechanism:` identifies a numbered mechanism (MECANISM 01–10). Each mechanism is a self-contained unit of behaviour that can be referenced by its number across code, CSS, and the ship's journal.
+- `@mechanism:` identifies a numbered mechanism (MECANISM 01–11, plus 06.5). Each mechanism is a self-contained unit of behaviour that can be referenced by its number across code, CSS, and the ship's journal.
 - `@logic:` explains the internal flow of a function, condition, or transformation.
 - `@event:` explains a listened-to or triggered event, such as `click`, `submit`, `scroll`, or `DOMContentLoaded`.
 - `@state:` explains a UI or data state, such as active/inactive, open/closed, or loaded/unloaded.

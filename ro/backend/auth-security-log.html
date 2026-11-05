@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!-- @block:
-  <!DOCTYPE html> trebuie s? fie primul token al fiec?rui document
-  HTML, înaintea oric?rui con?inut sau comentariu, conform
-  specifica?iei. Activeaz? modul standard de randare.
+  <!DOCTYPE html> trece browserul în modul standard: randare previzibilă,
+  conformă cu specificația. Fără el, pagina se randează în modul quirks,
+  care imită erorile browserelor din anii '90. Nu numește nicio versiune
+  HTML; "html" e tot ce îi trebuie HTML-ului modern (șirurile lungi de
+  versiune țin de HTML 4 și XHTML). Înaintea lui pot sta doar spații albe
+  și comentarii, deci acest comentariu ar fi putut sta deasupra lui; orice
+  alt conținut acolo ar arunca pagina în modul quirks.
 -->
 
 <html lang="ro">
@@ -129,17 +133,20 @@
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
-    <!-- @theme:
-      Culoarea de fundal Open Graph.
-      Unele suprafețe de distribuire o folosesc pentru a nuanța cardul de previzualizare cu paleta deep-space a proiectului.
+    <!-- @warning:
+      og:background_color NU este o proprietate Open Graph: protocolul
+      (ogp.me) nu definește nicio culoare, deci serviciile de partajare
+      ignoră această linie. Azi nu face nimic și poate fi eliminată.
     -->
 
     <meta property="og:image" content="../favicon.svg" />
     <!-- @path:
-      Imaginea Open Graph.
-      Este imaginea de previzualizare folosită pe cardurile distribuite. O îndrept către favicon
-      din folderul de limbă corespunzător ca un placeholder stabil și mereu disponibil,
-      până când există o captură dedicată pentru fiecare pagină.
+      Imaginea Open Graph: imaginea de previzualizare de pe cardurile partajate.
+      Indică spre favicon ca substituent, până când va exista o captură dedicată.
+      @warning: substituentul încă nu funcționează. Facebook, LinkedIn, X și
+      aplicațiile de mesagerie refuză SVG aici; cer o imagine raster (PNG sau
+      JPEG, ideal 1200x630), deci cardurile partajate nu arată deocamdată nicio
+      imagine.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -172,9 +179,10 @@
 
     <link rel="apple-touch-icon" href="../favicon.svg" />
     <!-- @path:
-      Leg Apple Touch Icon pentru dispozitivele iOS.
-      Safari pe iPhone și iPad folosește această pictogramă când pagina este adăugată pe ecranul de pornire
-      sau afișată ca aplicație web. Reutilizez același favicon.svg ca sursă a pictogramei.
+      Apple Touch Icon: imaginea pe care iOS o arată când pagina este adăugată
+      pe ecranul de pornire.
+      @warning: iOS nu acceptă SVG aici; are nevoie de un PNG (180x180). Cu
+      acest SVG, iOS ignoră legătura și își face singur o pictogramă.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -247,7 +255,7 @@
       </ul>
     </nav>
 
-    <!-- @block: CONȚINUT PRINCIPAL — JURNALUL EXPEDIȚIEI CSS
+    <!-- @block: CONȚINUT PRINCIPAL — JURNALUL EXPEDIȚIEI AUTENTIFICARE & SECURITATE
       Puntea principală este împărțită în două zone: sidebar-ul (harta expediției) și
       zona log-content. Clasa "log-layout" aplică un CSS Grid pentru o
       interfață de terminal cu două coloane.
@@ -337,7 +345,7 @@
         @structure:
           Clasa .log-content lucrează împreună cu .log-sidebar în interiorul
           grid-ului .log-layout. Sidebar-ul ocupă coloana din stânga
-          (aproximativ 250px), iar .log-content umple spațiul rămas din
+          (280px, stabilit pe .log-layout în style.css 00.2.A), iar .log-content umple spațiul rămas din
           dreapta, creând interfața clasică de terminal cu două panouri.
       -->
       <section class="log-content">        <!-- @block: CATEGORY HEADER - THE EXPEDITION TITLE -->
