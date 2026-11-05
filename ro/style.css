@@ -228,7 +228,7 @@ body::before {
 
 /* ==========================================================================
 @module: 03 — CORP & TIPOGRAFIE DE BAZĂ
-@sub-module: 03.1 — Indicatori Macro (h2)
+@sub-module: 03.1 — Indicatori Macro (h2 și h1-ul titlului de pagină)
 @sub-module: 03.2 — Sub-titluri Intermediare (h3)
 @sub-module: 03.3 — Micro-Semnale (h4, h5)
 @sub-module: 03.4 — Paragraf Narativ (p)
@@ -242,7 +242,8 @@ indicatorii macro primari.
 ========================================================================== */
 
 /* @sub-module: 03.1 — Indicatorii Macro: Titluri structurale master care reprezintă volume și antete */
-h2 {
+h2,
+.category-header h1 {
   font-size: 2.2rem; /* @theme: Volum de font calibrat pentru un impact vizual cognitiv imediat */
   color: var(
     --nebula-pink
@@ -260,7 +261,8 @@ h2 {
 }
 
 /* @concept: Supraîncărcare de Energie Cinetică: Nucleul titlului se aprinde intens când proximitatea de hover este validată */
-h2:hover {
+h2:hover,
+.category-header h1:hover {
   /* @concept: VÂRF CRITIC DE ENERGIE: Intensifică radiația magenta când cursorul echipajului vizează elementul */
   text-shadow:
     0 0 10px rgba(255, 0, 127, 0.7),
@@ -417,7 +419,29 @@ section[id$="-refs"] {
   text-align: center; /* @theme: REVIZUIRE COMPLETĂ A SIMETRIEI VIZUALE: Centrare absolută pentru nodurile interne h2 și p */
 }
 
-/* @sub-module: 04.6 — ANIMAȚIA DE ENERGIE CINETICĂ FAR */
+/* @sub-module: 04.6 — ANIMAȚIA DE ENERGIE CINETICĂ FAR
+   @reason: DE CE TITLUL PAGINII ESTE UN h1 (auditul 2026-11-04, fix #6).
+     Nivelurile titlurilor sunt cuprinsul paginii, scris pentru mașini.
+     Un cititor de ecran sare la h1 ca să răspundă la „pe ce pagină sunt?” și
+     îi lasă ascultătorului să parcurgă pagina titlu cu titlu; un motor de
+     căutare citește h1 ca cel mai puternic indiciu despre subiectul paginii.
+     De aceea HTML și WCAG cer UN SINGUR h1 pe pagină, care o numește. Titlurile
+     paginilor de log, bibliografie, transmisie și seif erau h2: conturul nu
+     avea vârf, iar fiecare titlu stătea pe același nivel cu propriile secțiuni.
+   @pedagogy: Nivelul înseamnă SENS, aspectul ține de CSS. Doar titlul a urcat:
+     secțiunile rămân h2 și intrările lor h3, pentru că acum sunt așezate sub
+     el (dacă toate titlurile ar urca un nivel, secțiunile ar deveni h1).
+     Titlul își păstrează exact aspectul de h2 pentru că fiecare regulă h2 care
+     îl stilizează numește și ".category-header h1": 03.1, regula de față și
+     varianta ei pentru telefon din 00.2. Cele două pagini emblematice ies în
+     evidență în continuare prin clasele lor (.stenciled-metal-text,
+     .blueprint-master-title).
+   @warning: h1-ul propriu al browserului este mai mare decât h2-ul lui, cu alte
+     margini, și se micșorează din nou într-o <section>. Nimic din toate acestea
+     nu se vede aici doar pentru că 02.1 anulează toate marginile, iar 03.1
+     stabilește font-size. O regulă nouă pentru titlu trebuie să-și numească în
+     continuare mărimea și marginile, altfel revine ghicitul browserului. */
+.category-header h1,
 .category-header h2 {
   margin-top: 0; /* @layout: Șterge derivarea verticală a marginii injectată nativ de browser */
 
@@ -1794,6 +1818,7 @@ de umbră CRT, bara verde solidă de scanare și tipografia antetului condusă d
 }
 
 /* @sub-module: 18.4 — ALINIEREA SIMETRICĂ A ANTETULUI (Subsistemul de Urmărire a Rândului) */
+.log-entry h2,
 .log-entry h3 {
   display: flex; /* @layout: Activează motorul orizontal Flexbox pe banda antetului */
   justify-content: space-between; /* @line: Conduce șirul de titlu spre flancul stâng extrem și metadatele spre flancul drept extrem */
@@ -3020,6 +3045,35 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   font-size: 0.9rem; /* @layout: Scala caracterelor — setează mărimea textului la 0.9rem. Stabilește ierarhia tipografică a componentei. */
 }
 
+/* @reason: Trei grupuri de titluri au trecut de la h3 la h2 (fix #6): titlurile
+     panourilor din blueprint, Poarta de Navigație din seif și sectoarele
+     bibliografiei. Fiecare stă direct sub h1-ul paginii, așa că, ca h3, făceau
+     conturul să sară o treaptă (h1 -> h3), exact greșeala de care avertizează
+     logul HTML. Dar regula h2 din 03.1 dă fiecărui h2 o strălucire roz și o
+     tranziție. O clasă (sau clasă plus :hover) depășește "h2" și "h2:hover",
+     așa că regula de față redă aspectul plat pe care îl aveau ca h3. Același
+     aspect, contur mai corect.
+   @pedagogy: Specificitatea se numără, nu se ghicește: ".log-entry h2:hover"
+     are o clasă, o pseudo-clasă și un element (0,2,1); "h2:hover" are o
+     pseudo-clasă și un element (0,1,1). Numărul mai mare câștigă. */
+.panel-title,
+.panel-title:hover,
+.nav-gate-title,
+.nav-gate-title:hover,
+.log-entry h2,
+.log-entry h2:hover {
+  text-shadow: none; /* @theme: Fără halou roz: titlul mentă al panoului rămâne plat, ca înainte. */
+  transition: initial; /* @theme: Renunță la tranziția text-shadow moștenită; aici nimic nu se animă. */
+}
+
+/* @reason: Sectoarele bibliografiei erau h3, care nu au moștenit niciodată
+     majusculele și spațierea largă a lui h2 din 03.1. Aceste două linii le
+     păstrează scrise normal. */
+.log-entry h2 {
+  text-transform: none; /* @line: Litere mari și mici, cum au fost scrise sectoarele. */
+  letter-spacing: normal; /* @line: Spațierea proprie a fontului, nu cei 4px ai lui h2. */
+}
+
 /* @sub-module: 30.4 — MOTORUL INSPECTORULUI DE COD HARDWARE (Ecranul Analogic CRT din Dreapta) */
 .code-inspector-screen {
   width: 100% !important; /* @layout: Amprentă orizontală — setează lățimea elementului la 100% !important. Controlează cât spațiu orizontal ocupă acest nod în fluxul layout-ului. */
@@ -4192,7 +4246,7 @@ de a citi un singur rând, că ceea ce urmează este schelărie, nu marfă.
 
 /* @sub-module: 32.5 — CONTRACTUL DE MIȘCARE REDUSĂ
    @reason:
-     Modulul 04.6 animează .category-header h2 cu neon-pulse-pink, iar acest
+     Modulul 04.6 animează titlul paginii (.category-header h1) cu neon-pulse-pink, iar acest
      banner stă direct sub acel titlu pulsatoriu. Un vizitator care i-a cerut
      sistemului său mișcare redusă ne spune că textul pulsatoriu îl costă ceva
      — disconfort vestibular sau pur și simplu imposibilitatea de a citi un
@@ -4953,6 +5007,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   @sub-section: B2 — VANE DE CITIRE & RESTRUCTURAREA TITLURILOR
   ======================================================================== */
 
+  .log-entry h2,
   .log-entry h3 {
     display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
     flex-direction: column !important; /* @layout: Axa primară — determină direcția fluxului flex: column !important. */
@@ -4982,6 +5037,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     padding-bottom: 30px; /* @layout: Perna internă inferioară — ajustează spațierea pe această latură specifică între granița elementului și conținutul copil. */
     text-align: center; /* @layout: Alinierea textului — aliniază textul la center. Controlează poziționarea orizontală a textului în cadrul containerului său. */
   }
+  .category-header h1,
   .category-header h2 {
     font-size: 1.55rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 1.55rem !important. Stabilește ierarhia tipografică a componentei. */
     letter-spacing: 1px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */

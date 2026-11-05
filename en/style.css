@@ -228,7 +228,7 @@ body::before {
 
 /* ==========================================================================
 @module: 03 — BODY & BASE TYPOGRAPHY
-@sub-module: 03.1 — Macro Indicators (h2)
+@sub-module: 03.1 — Macro Indicators (h2, and the page-title h1)
 @sub-module: 03.2 — Intermediate Sub-headings (h3)
 @sub-module: 03.3 — Micro-Signals (h4, h5)
 @sub-module: 03.4 — Narrative Paragraph (p)
@@ -242,7 +242,8 @@ indicators.
 ========================================================================== */
 
 /* @sub-module: 03.1 — Macro Indicators: Master structural titles representing volumes and headers */
-h2 {
+h2,
+.category-header h1 {
   font-size: 2.2rem; /* @theme: Calibrated font volume for immediate cognitive visual impact */
   color: var(
     --nebula-pink
@@ -260,7 +261,8 @@ h2 {
 }
 
 /* @concept: Kinetic Energy Overload: Title core illuminates intensely when hover proximity is validated */
-h2:hover {
+h2:hover,
+.category-header h1:hover {
   /* @concept: CRITICAL ENERGY SPIKE: Intensifies the magenta radiation when crew cursor targets the element */
   text-shadow:
     0 0 10px rgba(255, 0, 127, 0.7),
@@ -415,7 +417,28 @@ section[id$="-refs"] {
   text-align: center; /* @theme: VISUAL SYMMETRY OVERHAUL: Absolute centering for internal h2 and p nodes */
 }
 
-/* @sub-module: 04.6 — HEADLIGHT KINETIC ENERGY ANIMATION */
+/* @sub-module: 04.6 — HEADLIGHT KINETIC ENERGY ANIMATION
+   @reason: WHY THE PAGE TITLE IS AN h1 (audit 2026-11-04, fix #6).
+     Heading levels are the page's table of contents, written for machines.
+     A screen reader jumps to the h1 to answer "which page am I on?" and lets
+     its listener skim the page heading by heading; a search engine reads the
+     h1 as the strongest hint of what the page is about. So HTML and WCAG ask
+     for ONE h1 per page, naming that page. The log, bibliography, transmission
+     and vault titles used to be h2s: the outline had no top, and each title
+     stood on the same level as its own sections.
+   @pedagogy: Level is MEANING, look is CSS. Only the title moved up: the
+     sections stay h2 and their entries h3, because they now nest under it
+     (moving every heading up one level would just make the sections h1s).
+     The title keeps its exact h2 look because each h2 rule that styles it
+     also names ".category-header h1": 03.1, this rule, and its phone
+     override in 00.2. The two flagship pages still stand out, through their
+     own classes (.stenciled-metal-text, .blueprint-master-title).
+   @warning: A browser's own h1 is bigger than its h2, with different
+     margins, and shrinks again inside a <section>. None of that shows here
+     only because 02.1 zeroes every margin and 03.1 sets the font-size. A new
+     title rule must keep naming its size and margins, or the browser's guess
+     returns. */
+.category-header h1,
 .category-header h2 {
   margin-top: 0; /* @layout: Obliterates native browser-injected vertical margin drift */
 
@@ -1789,6 +1812,7 @@ depths, the solid green scan bar, and flex-driven header typography.
 }
 
 /* @sub-module: 18.4 — SYMMETRICAL HEADER ALIGNMENT (The Row Tracking Subsystem) */
+.log-entry h2,
 .log-entry h3 {
   display: flex; /* @layout: Activates the horizontal Flexbox engine across the header strip */
   justify-content: space-between; /* @line: Drives title string to far left flank and metadata to far right flank */
@@ -3012,6 +3036,33 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   font-size: 0.9rem; /* @layout: Character scale — sets text size to 0.9rem. Establishes the typographic hierarchy for the component. */
 }
 
+/* @reason: Three groups of headings went from h3 to h2 (fix #6): the blueprint
+     panel titles, the vault's Nav-Gate and the bibliography sectors. Each sits
+     directly under its page's h1, so as h3s they made the outline skip a step
+     (h1 -> h3), the mistake the HTML log itself warns about. But the 03.1 h2
+     rule gives every h2 a pink glow and a transition. A class (or class plus
+     :hover) outranks "h2" and "h2:hover", so this rule hands back the flat
+     look they had as h3s. Same appearance, truer outline.
+   @pedagogy: Specificity is counted, not guessed: ".log-entry h2:hover" is one
+     class, one pseudo-class and one element (0,2,1); "h2:hover" is one
+     pseudo-class and one element (0,1,1). The higher count wins. */
+.panel-title,
+.panel-title:hover,
+.nav-gate-title,
+.nav-gate-title:hover,
+.log-entry h2,
+.log-entry h2:hover {
+  text-shadow: none; /* @theme: No pink halo: the mint panel title stays flat, as it was. */
+  transition: initial; /* @theme: Drops the inherited text-shadow easing; nothing here animates. */
+}
+
+/* @reason: The bibliography sectors were h3s, which never inherited the 03.1 h2
+     capitals and wide tracking. These two lines keep them in mixed case. */
+.log-entry h2 {
+  text-transform: none; /* @line: Mixed case, as the sectors were written. */
+  letter-spacing: normal; /* @line: The font's own tracking, not the h2's 4px. */
+}
+
 /* @sub-module: 30.4 — HARDWARE CODE INSPECTOR ENGINE (The Right-Side Analog CRT Screen) */
 .code-inspector-screen {
   width: 100% !important; /* @layout: Horizontal footprint — sets the element width to 100% !important. Controls how much horizontal space this node occupies within the layout flow. */
@@ -4178,7 +4229,7 @@ what follows is scaffolding and not cargo.
 
 /* @sub-module: 32.5 — REDUCED-MOTION CONTRACT
    @reason:
-     Module 04.6 animates .category-header h2 with neon-pulse-pink, and this
+     Module 04.6 animates the page title (.category-header h1) with neon-pulse-pink, and this
      banner sits directly beneath that pulsing title. A visitor who has asked
      their system for reduced motion is telling us that pulsing text costs
      them something — vestibular discomfort, or simply the inability to read a
@@ -4938,6 +4989,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   @sub-section: B2 — READING VANS & TITLE RESTRUCTURING
   ======================================================================== */
 
+  .log-entry h2,
   .log-entry h3 {
     display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
     flex-direction: column !important; /* @layout: Primary axis — determines flex flow direction: column !important. */
@@ -4967,6 +5019,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     padding-bottom: 30px; /* @layout: Internal lower cushion — adjusts spacing on this specific side between the element boundary and its child content. */
     text-align: center; /* @layout: Text alignment — aligns text to center. Controls horizontal positioning of text within its container. */
   }
+  .category-header h1,
   .category-header h2 {
     font-size: 1.55rem !important; /* @layout: Character scale — sets text size to 1.55rem !important. Establishes the typographic hierarchy for the component. */
     letter-spacing: 1px !important; /* @layout: Glyph spacing — adjusts tracking to 1px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
