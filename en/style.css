@@ -15,9 +15,10 @@ following reasons of cosmic guidance:
     no hidden magic or background alterations.
 
 2. DIRECT RECURSIVE LOGIC (The JS Scanning Sensors)
-    Our JavaScript scanning arrays fetch this file as a plain-text star-chart, 
-    extracting these custom annotations to project them directly onto the bridge 
-    (the UI). Had we used Sass, the unique structure of these travel notes would 
+    The recursive blueprint (MECANISM 08) fetches this file as a plain-text 
+    star-chart and projects it onto the bridge (the UI) exactly as written, 
+    comments and tags included. No script parses the tags: they are written 
+    for the human eye that reads them there. Had we used Sass, the unique structure of these travel notes would 
     be stripped away during hyperspace (compilation), breaking the direct link 
     between the vector and its documentation.
 
@@ -138,7 +139,7 @@ global CRT overlay mask.
 *::after {
   margin: 0; /* @layout: Clears erratic default margins injected by various browsers */
   padding: 0; /* @layout: Flushes native padding matrices to ensure absolute spacing control */
-  box-sizing: border-box; /* @layout: CRUCIAL UX: Forces borders into width math, halting accidental layout breaking */
+  box-sizing: border-box; /* @layout: CRUCIAL UX: width and height now include padding AND border, so adding either never makes a box wider than declared */
 }
 
 /* @sub-module: 02.2 — ROOT HARDWARE SYSTEM (The structural HTML anchor) */
@@ -304,7 +305,7 @@ p code {
   background: rgba(167, 243, 208, 0.1); /* @theme: Surface rendering — applies rgba(167, 243, 208, 0.1) as the background. Serves as the visual foundation upon which all content is displayed. */
 
   /* @layout: MICRO-COMPRESSION: Compact padding framework protecting letter bounds */
-  padding: 2px 6px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 2px 6px; /* @layout: Inner spacing (padding) — 2px top and bottom, 6px left and right. */
   border-radius: 3px; /* @component: Corner curvature — rounds corners to 3px. Softens rigid geometric appearance, suggesting polished hardware edges. */
 
   /* @theme: CRITICAL SIGNAL OVERLOAD: Illuminates inline tags into an intensive neon nebula-pink */
@@ -325,7 +326,7 @@ hr {
   );
 
   /* @layout: MASSIVE ISOLATION GAP: Generates a 60px protective vertical void balancing structural modules */
-  margin: 60px 0; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: 60px 0; /* @layout: Outer spacing (margin) — 60px top and bottom, 0 left and right. */
 }
 
 /* ==========================================================================
@@ -462,7 +463,7 @@ and structural ceiling for all grid content on index.html.
   max-width: 1200px; /* @component: Anti-stretching shield: prevents excessive widening on large desktop screens */
   margin: 0 auto; /* @component: Automatically centers the entire technical structure along the screen axis */
   padding: 40px; /* @layout: Generous internal safety padding protecting module structural boundaries */
-  box-sizing: border-box; /* @layout: Forces padding variables into width math, halting accidental layout breaking */
+  box-sizing: border-box; /* @layout: Padding and border count inside the declared width, so they never push the box wider */
 }
 
 /* ==========================================================================
@@ -495,7 +496,7 @@ raster of CRT scanlines, and encapsulates the main outbound portal.
   justify-content: center !important; /* @layout: Geometrically centers the entire technical bundle vertically */
   align-items: center !important; /* @layout: Standardizes horizontal centering across all internal nodes */
   text-align: center; /* @layout: Enforces absolute text block centering for narrative elements */
-  box-sizing: border-box; /* @layout: Forces padding variables into width math, halting structural fractures */
+  box-sizing: border-box; /* @layout: Padding and border count inside the declared width, so the box keeps its size */
 }
 
 /* @sub-module: 06.2 — LOCAL CINEMATIC CRT SIMULATOR (Old Monitor Texture Mask) */
@@ -949,7 +950,7 @@ full-screen mobile adaptation.
   font-size: 0.75rem; /* @layout: Character scale — sets text size to 0.75rem. Establishes the typographic hierarchy for the component. */
   text-transform: uppercase; /* @layout: Case formatting — transforms text to uppercase. */
   letter-spacing: 1px; /* @layout: Glyph spacing — adjusts tracking to 1px. Wider spacing gives text a technical, uppercase-industrial appearance. */
-  padding: 4px 10px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 4px 10px; /* @layout: Inner spacing (padding) — 4px top and bottom, 10px left and right. */
   border-radius: 3px; /* @component: Corner curvature — rounds corners to 3px. Softens rigid geometric appearance, suggesting polished hardware edges. */
   cursor: pointer; /* @component: Pointer icon — changes cursor to pointer, signaling interactivity. */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* @theme: State animation — smooths property changes over all 0.3s cubic-bezier(0.4, 0, 0.2, 1). */
@@ -998,9 +999,9 @@ full-screen mobile adaptation.
   display: grid; /* @layout: Box type — switches to Grid mode, enabling two-dimensional layout control with explicit row and column placement. */
   grid-template-columns: repeat(3, 1fr); /* @layout: Column track definition — divides the grid into columns: repeat(3, 1fr). */
   gap: 20px; /* @layout: Inter-cell gutter — sets spacing between grid/flex children to 20px. */
-  padding: 30px 40px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 30px 40px; /* @layout: Inner spacing (padding) — 30px top and bottom, 40px left and right. */
   max-width: 1200px; /* @layout: Maximum width constraint — caps expansion at 1200px. Prevents the element from exceeding this limit, preserving layout integrity. */
-  margin: 0 auto; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: 0 auto; /* @layout: Outer spacing (margin) — 0 top and bottom; auto left and right splits the leftover width equally, which centres the block. */
   height: 100%; /* @layout: Vertical dimension — sets the element height to 100%. Determines the vertical screen real estate allocated to this component. */
   overflow-y: auto; /* @layout: Overflow control — clips or scrolls content on vertical axis: auto. */
 }
@@ -1010,7 +1011,7 @@ full-screen mobile adaptation.
   opacity: 0; /* @theme: Translucency — adjusts opacity to 0. 1 is fully opaque, 0 is fully transparent. */
   transform: translateY(15px); /* @theme: Geometric transformation — applies translateY(15px) without affecting document flow. */
   animation: hudBoot 0.5s ease forwards; /* @theme: Keyframe animation — binds hudBoot 0.5s ease forwards to this element. Brings kinetic energy and motion to the interface. */
-  padding: 12px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 12px; /* @layout: Inner spacing (padding) — 12px on all four sides. */
   border-left: 2px solid var(--nebula-pink); /* @component: Edge boundary — draws a left border: 2px solid var(--nebula-pink). The border defines the element perimeter and separates it from adjacent components. */
   background: rgba(255, 255, 255, 0.03); /* @theme: Surface rendering — applies rgba(255, 255, 255, 0.03) as the background. Serves as the visual foundation upon which all content is displayed. */
   border-radius: 4px; /* @component: Corner curvature — rounds corners to 4px. Softens rigid geometric appearance, suggesting polished hardware edges. */
@@ -1043,7 +1044,7 @@ full-screen mobile adaptation.
   text-transform: uppercase; /* @layout: Case formatting — transforms text to uppercase. */
   letter-spacing: 2px; /* @layout: Glyph spacing — adjusts tracking to 2px. Wider spacing gives text a technical, uppercase-industrial appearance. */
   color: var(--nebula-pink); /* @theme: Text color — sets foreground to var(--nebula-pink). Determines contrast against the background and affects readability directly. */
-  margin: 0 0 8px 0; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: 0 0 8px 0; /* @layout: Outer spacing (margin) — 0 top, 0 right, 8px bottom, 0 left. */
   padding-bottom: 6px; /* @layout: Internal lower cushion — adjusts spacing on this specific side between the element boundary and its child content. */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* @component: Edge boundary — draws a bottom border: 1px solid rgba(255, 255, 255, 0.1). The border defines the element perimeter and separates it from adjacent components. */
 }
@@ -2337,8 +2338,8 @@ on hover, suggesting the tremor of a bridge when crossed.
 /* @sub-module: 25.1 — BRIDGE VOLUME CAPSULE (The Interstitial Amber Crossing) */
 .bridge-volume {
   position: relative; /* @layout: Positioning scheme — sets to relative. Determines whether the element is placed in normal flow or positioned relative to ancestors/viewport. */
-  padding: 30px 25px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
-  margin: 30px 0; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  padding: 30px 25px; /* @layout: Inner spacing (padding) — 30px top and bottom, 25px left and right. */
+  margin: 30px 0; /* @layout: Outer spacing (margin) — 30px top and bottom, 0 left and right. */
   border: 1px dashed var(--amber-glow); /* @component: Edge boundary — draws a surrounding border: 1px dashed var(--amber-glow). The border defines the element perimeter and separates it from adjacent components. */
   border-radius: 6px; /* @component: Corner curvature — rounds corners to 6px. Softens rigid geometric appearance, suggesting polished hardware edges. */
   background: rgba(255, 179, 0, 0.03); /* @theme: Surface rendering — applies rgba(255, 179, 0, 0.03) as the background. Serves as the visual foundation upon which all content is displayed. */
@@ -2398,8 +2399,8 @@ animation. Contains the typewriter paragraph engine and blinking cursor.
 /* @sub-module: 26.1 — COSMIC GLASS CYLINDER (The Astrogation Charter / Message Vessel) */
 .hologram-crystal {
   position: relative; /* @layout: Positioning scheme — sets to relative. Determines whether the element is placed in normal flow or positioned relative to ancestors/viewport. */
-  margin: 50px auto; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
-  padding: 60px 50px 50px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  margin: 50px auto; /* @layout: Outer spacing (margin) — 50px top and bottom; auto left and right splits the leftover width equally, which centres the block. */
+  padding: 60px 50px 50px; /* @layout: Inner spacing (padding) — 60px top, 50px left and right, 50px bottom. */
   max-width: 780px; /* @layout: Maximum width constraint — caps expansion at 780px. Prevents the element from exceeding this limit, preserving layout integrity. */
   border-radius: 40px; /* @layout: Pill-shaped — suggests a vertical cylinder */
 
@@ -2521,7 +2522,7 @@ and metadata streams with beacon pulse indicator.
   opacity: 0.8; /* @component: Dormant phase: desaturates entire deck to 80% to protect user vision */
   transition: opacity 0.3s ease; /* @component: Fluid transition loop handling visibility changes upon terminal touch */
   padding: 40px 20px !important; /* @layout: Enforces dense horizontal and vertical visual air cushions surrounding text */
-  box-sizing: border-box; /* @layout: Forces padding variables into width math, halting structural breaking */
+  box-sizing: border-box; /* @layout: Padding and border count inside the declared width, so the layout never breaks */
 
   /* @reason: CRUCIAL AXIAL MONITOR BALANCING */
   margin-left: auto !important; /* @layout: Enforces strict automatic left margins preventing horizontal layout displacement */
@@ -2617,7 +2618,7 @@ and metadata streams with beacon pulse indicator.
   text-decoration: none; /* @layout: Text ornamentation — decorates text with none. */
   text-transform: uppercase; /* @layout: Case formatting — transforms text to uppercase. */
   letter-spacing: 2px; /* @layout: Glyph spacing — adjusts tracking to 2px. Wider spacing gives text a technical, uppercase-industrial appearance. */
-  padding: 6px 14px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 6px 14px; /* @layout: Inner spacing (padding) — 6px top and bottom, 14px left and right. */
   border: 1px solid var(--solar-mint); /* @component: Edge boundary — draws a surrounding border: 1px solid var(--solar-mint). The border defines the element perimeter and separates it from adjacent components. */
   transition: all 0.3s ease; /* @theme: State animation — smooths property changes over all 0.3s ease. */
 }
@@ -3069,7 +3070,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   height: 520px !important; /* @layout: Vertical dimension — sets the element height to 520px !important. Determines the vertical screen real estate allocated to this component. */
   background: #04050a !important; /* @theme: Surface rendering — applies #04050a !important as the background. Serves as the visual foundation upon which all content is displayed. */
   border: 1px solid rgba(167, 243, 208, 0.2) !important; /* @component: Edge boundary — draws a surrounding border: 1px solid rgba(167, 243, 208, 0.2) !important. The border defines the element perimeter and separates it from adjacent components. */
-  padding: 25px 15px 15px 15px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 25px 15px 15px 15px !important; /* @layout: Inner spacing (padding) — 25px top, 15px right, 15px bottom, 15px left. !important lets it win over competing rules. */
   overflow-x: auto !important; /* @layout: Overflow control — clips or scrolls content on horizontal axis: auto !important. */
   overflow-y: auto !important; /* @layout: Overflow control — clips or scrolls content on vertical axis: auto !important. */
   box-sizing: border-box; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
@@ -3120,7 +3121,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   color: #ffffff !important; /* @theme: Text color — sets foreground to #ffffff !important. Determines contrast against the background and affects readability directly. */
   font-family: var(--font-main) !important; /* @theme: Typeface selection — renders text in var(--font-main) !important. The chosen typeface defines the technological era and tone of the interface. */
   letter-spacing: 2px !important; /* @layout: Glyph spacing — adjusts tracking to 2px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
-  margin: 10px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: 10px 0 !important; /* @layout: Outer spacing (margin) — 10px top and bottom, 0 left and right. !important lets it win over competing rules. */
 }
 .blueprint-master-subtitle {
   color: var(--amber-glow) !important; /* @theme: Text color — sets foreground to var(--amber-glow) !important. Determines contrast against the background and affects readability directly. */
@@ -3128,7 +3129,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   font-size: 1rem !important; /* @layout: Character scale — sets text size to 1rem !important. Establishes the typographic hierarchy for the component. */
   letter-spacing: 3px !important; /* @layout: Glyph spacing — adjusts tracking to 3px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
   text-transform: uppercase !important; /* @layout: Case formatting — transforms text to uppercase !important. */
-  margin: 0 0 15px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: 0 0 15px 0 !important; /* @layout: Outer spacing (margin) — 0 top, 0 right, 15px bottom, 0 left. !important lets it win over competing rules. */
   opacity: 0.8 !important; /* @theme: Translucency — adjusts opacity to 0.8 !important. 1 is fully opaque, 0 is fully transparent. */
 }
 .blueprint-master-description {
@@ -3152,7 +3153,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
   justify-content: center !important; /* @layout: Main-axis distribution — allocates extra space along the primary axis: center !important. */
   align-items: center !important; /* @layout: Cross-axis alignment — controls how children align perpendicular to the main axis. */
-  margin: -40px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+  margin: -40px 0 !important; /* @layout: Outer spacing (margin) — -40px top and bottom, 0 left and right. !important lets it win over competing rules. */
   transform-style: preserve-3d !important; /* @theme: 3D rendering context — preserves or flattens 3D child transforms: preserve-3d !important. */
 }
 
@@ -3211,7 +3212,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
   align-items: center !important; /* @layout: Cross-axis alignment — controls how children align perpendicular to the main axis. */
   gap: 8px !important; /* @layout: Inter-cell gutter — sets spacing between grid/flex children to 8px !important. */
-  padding: 8px 12px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 8px 12px !important; /* @layout: Inner spacing (padding) — 8px top and bottom, 12px left and right. !important lets it win over competing rules. */
   background: rgba(10, 11, 30, 0.6) !important; /* @theme: Surface rendering — applies rgba(10, 11, 30, 0.6) !important as the background. Serves as the visual foundation upon which all content is displayed. */
   border: 1px solid rgba(167, 243, 208, 0.1) !important; /* @component: Edge boundary — draws a surrounding border: 1px solid rgba(167, 243, 208, 0.1) !important. The border defines the element perimeter and separates it from adjacent components. */
   border-radius: 6px !important; /* @component: Corner curvature — rounds corners to 6px !important. Softens rigid geometric appearance, suggesting polished hardware edges. */
@@ -3235,7 +3236,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   background: transparent !important; /* @theme: Surface rendering — applies transparent !important as the background. Serves as the visual foundation upon which all content is displayed. */
   border: 1px solid rgba(167, 243, 208, 0.2) !important; /* @component: Edge boundary — draws a surrounding border: 1px solid rgba(167, 243, 208, 0.2) !important. The border defines the element perimeter and separates it from adjacent components. */
   color: var(--solar-mint) !important; /* @theme: Text color — sets foreground to var(--solar-mint) !important. Determines contrast against the background and affects readability directly. */
-  padding: 5px 12px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 5px 12px !important; /* @layout: Inner spacing (padding) — 5px top and bottom, 12px left and right. !important lets it win over competing rules. */
   font-size: 0.75rem !important; /* @layout: Character scale — sets text size to 0.75rem !important. Establishes the typographic hierarchy for the component. */
   font-family: "Courier New", monospace !important; /* @theme: Typeface selection — renders text in "Courier New", monospace !important. The chosen typeface defines the technological era and tone of the interface. */
   border-radius: 4px !important; /* @component: Corner curvature — rounds corners to 4px !important. Softens rigid geometric appearance, suggesting polished hardware edges. */
@@ -3265,7 +3266,7 @@ micro-scaling wrappers, and locks an advanced anti-stacking protective network.
   font-family: var(--font-main) !important; /* @theme: Typeface selection — renders text in var(--font-main) !important. The chosen typeface defines the technological era and tone of the interface. */
   letter-spacing: 1.5px !important; /* @layout: Glyph spacing — adjusts tracking to 1.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
   text-transform: uppercase !important; /* @layout: Case formatting — transforms text to uppercase !important. */
-  padding: 0 4px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+  padding: 0 4px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 4px left and right. !important lets it win over competing rules. */
   opacity: 0.7 !important; /* @theme: Translucency — adjusts opacity to 0.7 !important. 1 is fully opaque, 0 is fully transparent. */
   flex-shrink: 0 !important; /* @layout: Shrink factor — determines how much this item compresses when space is tight: 0 !important. */
   -webkit-user-select: none !important; /* @component: Selection control — allows or prevents text selection: none !important. */
@@ -4311,15 +4312,15 @@ and the neon-pink border pulse for airlocks (border-pulse-purple).
 @keyframes glow-flicker {
   0% {
     opacity: 0.25; /* @theme: Translucency — adjusts opacity to 0.25. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(0.5) blur(1px); /* @theme: Visual effect — applies brightness(0.5) blur(1px) GPU-accelerated graphical effect to the element. */
+    filter: brightness(0.5) blur(1px); /* @theme: Visual effect — applies brightness(0.5) blur(1px) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   50% {
     opacity: 0.85; /* @theme: Translucency — adjusts opacity to 0.85. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(1.5) blur(0px); /* @theme: Visual effect — applies brightness(1.5) blur(0px) GPU-accelerated graphical effect to the element. */
+    filter: brightness(1.5) blur(0px); /* @theme: Visual effect — applies brightness(1.5) blur(0px) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   100% {
     opacity: 1; /* @theme: Translucency — adjusts opacity to 1. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(2.2) blur(0px); /* @theme: Visual effect — applies brightness(2.2) blur(0px) GPU-accelerated graphical effect to the element. */
+    filter: brightness(2.2) blur(0px); /* @theme: Visual effect — applies brightness(2.2) blur(0px) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
 }
 
@@ -4340,23 +4341,23 @@ and the neon-pink border pulse for airlocks (border-pulse-purple).
   0%,
   100% {
     opacity: 0.25; /* @theme: Translucency — adjusts opacity to 0.25. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(0.8); /* @theme: Visual effect — applies brightness(0.8) GPU-accelerated graphical effect to the element. */
+    filter: brightness(0.8); /* @theme: Visual effect — applies brightness(0.8) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   45% {
     opacity: 0.3; /* @theme: Translucency — adjusts opacity to 0.3. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(0.9); /* @theme: Visual effect — applies brightness(0.9) GPU-accelerated graphical effect to the element. */
+    filter: brightness(0.9); /* @theme: Visual effect — applies brightness(0.9) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   50% {
     opacity: 0.85; /* @theme: Translucency — adjusts opacity to 0.85. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(1.5); /* @theme: Visual effect — applies brightness(1.5) GPU-accelerated graphical effect to the element. */
+    filter: brightness(1.5); /* @theme: Visual effect — applies brightness(1.5) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   54% {
     opacity: 0.4; /* @theme: Translucency — adjusts opacity to 0.4. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(1); /* @theme: Visual effect — applies brightness(1) GPU-accelerated graphical effect to the element. */
+    filter: brightness(1); /* @theme: Visual effect — applies brightness(1) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
   85% {
     opacity: 0.3; /* @theme: Translucency — adjusts opacity to 0.3. 1 is fully opaque, 0 is fully transparent. */
-    filter: brightness(0.9); /* @theme: Visual effect — applies brightness(0.9) GPU-accelerated graphical effect to the element. */
+    filter: brightness(0.9); /* @theme: Visual effect — applies brightness(0.9) to the element. A filter repaints the element\'s pixels; it is not reliably handed to the GPU, so animating it can cost a repaint per frame. */
   }
 }
 
@@ -4685,7 +4686,7 @@ dampening.
     backdrop-filter: blur(15px); /* @theme: Background effect — applies blur(15px) filter to the area behind the element, creating frosted-glass depth effects. */
     border-bottom: 1px solid rgba(167, 243, 208, 0.1); /* @component: Edge boundary — draws a bottom border: 1px solid rgba(167, 243, 208, 0.1). The border defines the element perimeter and separates it from adjacent components. */
     overflow: hidden !important; /* @layout: Overflow control — clips or scrolls content on both axes: hidden !important. */
-    padding: 25px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 25px; /* @layout: Inner spacing (padding) — 25px on all four sides. */
     box-sizing: border-box; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
   }
 
@@ -4705,7 +4706,7 @@ dampening.
     background: rgba(13, 15, 20, 0.95) !important; /* @theme: Surface rendering — applies rgba(13, 15, 20, 0.95) !important as the background. Serves as the visual foundation upon which all content is displayed. */
     border: 1px double var(--nebula-pink); /* @component: Edge boundary — draws a surrounding border: 1px double var(--nebula-pink). The border defines the element perimeter and separates it from adjacent components. */
     border-radius: 4px; /* @component: Corner curvature — rounds corners to 4px. Softens rigid geometric appearance, suggesting polished hardware edges. */
-    padding: 12px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 12px !important; /* @layout: Inner spacing (padding) — 12px on all four sides. !important lets it win over competing rules. */
     padding-bottom: 15px; /* @layout: Internal lower cushion — adjusts spacing on this specific side between the element boundary and its child content. */
     margin-bottom: 15px !important; /* @layout: External lower edge spacing — overrides inherited margin on this specific side. */
     z-index: 10; /* @layout: Stacking order — depth position: 10. Higher values render above lower ones. */
@@ -4758,7 +4759,7 @@ dampening.
   .log-content {
     height: 100%; /* @layout: Vertical dimension — sets the element height to 100%. Determines the vertical screen real estate allocated to this component. */
     overflow-y: auto !important; /* @layout: Overflow control — clips or scrolls content on vertical axis: auto !important. */
-    padding: 40px 60px 60px 60px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 40px 60px 60px 60px; /* @layout: Inner spacing (padding) — 40px top, 60px right, 60px bottom, 60px left. */
     scroll-behavior: smooth; /* @component: Scroll animation — sets scroll behavior to smooth. */
     box-sizing: border-box; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
     padding-top: 50px !important; /* @layout: Internal upper cushion — adjusts spacing on this specific side between the element boundary and its child content. */
@@ -4802,7 +4803,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
 @media screen and (max-width: 1024px) {
   .hud-panel {
     grid-template-columns: repeat(2, 1fr); /* @layout: Column track definition — divides the grid into columns: repeat(2, 1fr). */
-    padding: 20px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 20px; /* @layout: Inner spacing (padding) — 20px on all four sides. */
   }
 }
 
@@ -4822,7 +4823,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   ======================================================================== */
 
   .navbar {
-    padding: 0 16px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 0 16px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 16px left and right. !important lets it win over competing rules. */
   }
   .logo {
     animation: pulse 3s infinite; /* @theme: Keyframe animation — binds pulse 3s infinite to this element. Brings kinetic energy and motion to the interface. */
@@ -4854,7 +4855,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     margin-right: -40px !important; /* @layout: External starboard spacing — overrides inherited margin on this specific side. */
     width: calc(100vw + 80px) !important; /* @layout: Horizontal footprint — sets the element width to calc(100vw + 80px) !important. Controls how much horizontal space this node occupies within the layout flow. */
     height: 40px !important; /* @layout: Vertical dimension — sets the element height to 40px !important. Determines the vertical screen real estate allocated to this component. */
-    padding: 0 15px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 0 15px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 15px left and right. !important lets it win over competing rules. */
     box-sizing: border-box !important; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
     z-index: 1005 !important; /* @layout: Stacking order — depth position: 1005 !important. Higher values render above lower ones. */
     background: rgba(10, 11, 20, 0.85) !important; /* @theme: Surface rendering — applies rgba(10, 11, 20, 0.85) !important as the background. Serves as the visual foundation upon which all content is displayed. */
@@ -4893,7 +4894,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
     position: static !important; /* @layout: Positioning scheme — sets to static !important. Determines whether the element is placed in normal flow or positioned relative to ancestors/viewport. */
     font-size: 0.55rem !important; /* @layout: Character scale — sets text size to 0.55rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 0 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 0 10px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 10px left and right. !important lets it win over competing rules. */
     margin: 0; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
     border-right: 1px solid var(--solar-mint); /* @component: Edge boundary — draws a right border: 1px solid var(--solar-mint). The border defines the element perimeter and separates it from adjacent components. */
     white-space: nowrap; /* @layout: Whitespace handling — controls processing of whitespace and line breaks: nowrap. */
@@ -4906,14 +4907,14 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
     align-items: center; /* @layout: Cross-axis alignment — controls how children align perpendicular to the main axis. */
     height: 100%; /* @layout: Vertical dimension — sets the element height to 100%. Determines the vertical screen real estate allocated to this component. */
-    padding: 0 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 0 10px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 10px left and right. !important lets it win over competing rules. */
     margin: 0; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
     gap: 10px; /* @layout: Inter-cell gutter — sets spacing between grid/flex children to 10px. */
     list-style: none; /* @component: List marker — configures list item markers: none. */
     width: auto; /* @layout: Horizontal footprint — sets the element width to auto. Controls how much horizontal space this node occupies within the layout flow. */
   }
   .sidebar-nav .week-label {
-    margin: 0 4px !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 0 4px !important; /* @layout: Outer spacing (margin) — 0 top and bottom, 4px left and right. !important lets it win over competing rules. */
     display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
     align-items: center !important; /* @layout: Cross-axis alignment — controls how children align perpendicular to the main axis. */
     height: 100% !important; /* @layout: Vertical dimension — sets the element height to 100% !important. Determines the vertical screen real estate allocated to this component. */
@@ -4921,7 +4922,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .sidebar-nav .week-label a {
     font-size: 0.6rem !important; /* @layout: Character scale — sets text size to 0.6rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 4px 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 4px 10px !important; /* @layout: Inner spacing (padding) — 4px top and bottom, 10px left and right. !important lets it win over competing rules. */
     border-radius: 0 !important; /* @component: Corner curvature — rounds corners to 0 !important. Softens rigid geometric appearance, suggesting polished hardware edges. */
     display: inline-flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
   }
@@ -4938,7 +4939,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   .sidebar-nav a {
     background: transparent; /* @theme: Surface rendering — applies transparent as the background. Serves as the visual foundation upon which all content is displayed. */
     border: 1px solid rgba(167, 243, 208, 0.1); /* @component: Edge boundary — draws a surrounding border: 1px solid rgba(167, 243, 208, 0.1). The border defines the element perimeter and separates it from adjacent components. */
-    padding: 4px 8px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 4px 8px !important; /* @layout: Inner spacing (padding) — 4px top and bottom, 8px left and right. !important lets it win over competing rules. */
     font-size: 0.6rem !important; /* @layout: Character scale — sets text size to 0.6rem !important. Establishes the typographic hierarchy for the component. */
     color: var(--solar-mint); /* @theme: Text color — sets foreground to var(--solar-mint). Determines contrast against the background and affects readability directly. */
     opacity: 0.6; /* @theme: Translucency — adjusts opacity to 0.6. 1 is fully opaque, 0 is fully transparent. */
@@ -4961,7 +4962,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     background: rgba(13, 15, 20, 0.95) !important; /* @theme: Surface rendering — applies rgba(13, 15, 20, 0.95) !important as the background. Serves as the visual foundation upon which all content is displayed. */
     border: 1px double var(--nebula-pink) !important; /* @component: Edge boundary — draws a surrounding border: 1px double var(--nebula-pink) !important. The border defines the element perimeter and separates it from adjacent components. */
     box-shadow: 0 0 10px rgba(255, 0, 127, 0.2) !important; /* @theme: Depth shadow — casts 0 0 10px rgba(255, 0, 127, 0.2) !important beneath the element, creating visual depth and hierarchy. */
-    padding: 4px 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 4px 10px !important; /* @layout: Inner spacing (padding) — 4px top and bottom, 10px left and right. !important lets it win over competing rules. */
     border-radius: 4px !important; /* @component: Corner curvature — rounds corners to 4px !important. Softens rigid geometric appearance, suggesting polished hardware edges. */
     white-space: nowrap !important; /* @layout: Whitespace handling — controls processing of whitespace and line breaks: nowrap !important. */
     margin: 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
@@ -5030,15 +5031,15 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     font-size: 0.78rem !important; /* @layout: Character scale — sets text size to 0.78rem !important. Establishes the typographic hierarchy for the component. */
     line-height: 1.4 !important; /* @layout: Vertical leading — sets line spacing to 1.4 !important. Essential for readability: the value creates comfortable reading rhythm. */
     max-width: 85% !important; /* @layout: Maximum width constraint — caps expansion at 85% !important. Prevents the element from exceeding this limit, preserving layout integrity. */
-    margin: 0 auto !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 0 auto !important; /* @layout: Outer spacing (margin) — 0 top and bottom; auto left and right splits the leftover width equally, which centres the block. !important lets it win over competing rules. */
     opacity: 0.8 !important; /* @theme: Translucency — adjusts opacity to 0.8 !important. 1 is fully opaque, 0 is fully transparent. */
   }
 
   .archive-link {
     font-size: 0.7rem !important; /* @layout: Character scale — sets text size to 0.7rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 6px 16px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 6px 16px !important; /* @layout: Inner spacing (padding) — 6px top and bottom, 16px left and right. !important lets it win over competing rules. */
     letter-spacing: 0.5px !important; /* @layout: Glyph spacing — adjusts tracking to 0.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
-    margin: 0 auto !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 0 auto !important; /* @layout: Outer spacing (margin) — 0 top and bottom; auto left and right splits the leftover width equally, which centres the block. !important lets it win over competing rules. */
     display: inline-block !important; /* @layout: Box type — renders as a block-level box occupying full available width. */
   }
   .log-entry h4,
@@ -5051,7 +5052,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .sub-future-log h5 {
     font-size: 0.72rem !important; /* @layout: Character scale — sets text size to 0.72rem !important. Establishes the typographic hierarchy for the component. */
-    margin: 0 0 4px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 0 0 4px 0 !important; /* @layout: Outer spacing (margin) — 0 top, 0 right, 4px bottom, 0 left. !important lets it win over competing rules. */
     letter-spacing: 0.5px !important; /* @layout: Glyph spacing — adjusts tracking to 0.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
     line-height: 1.1 !important; /* @layout: Vertical leading — sets line spacing to 1.1 !important. Essential for readability: the value creates comfortable reading rhythm. */
   }
@@ -5081,11 +5082,11 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
     display: flex !important; /* @layout: Box type — switches to Flexbox mode, enabling one-dimensional layout along a single axis with responsive distribution. */
     align-items: center !important; /* @layout: Cross-axis alignment — controls how children align perpendicular to the main axis. */
     justify-content: center !important; /* @layout: Main-axis distribution — allocates extra space along the primary axis: center !important. */
-    padding: 8px 16px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 8px 16px !important; /* @layout: Inner spacing (padding) — 8px top and bottom, 16px left and right. !important lets it win over competing rules. */
     background: rgba(10, 11, 20, 0.4) !important; /* @theme: Surface rendering — applies rgba(10, 11, 20, 0.4) !important as the background. Serves as the visual foundation upon which all content is displayed. */
     border: 1px solid rgba(167, 243, 208, 0.1) !important; /* @component: Edge boundary — draws a surrounding border: 1px solid rgba(167, 243, 208, 0.1) !important. The border defines the element perimeter and separates it from adjacent components. */
     max-width: 92% !important; /* @layout: Maximum width constraint — caps expansion at 92% !important. Prevents the element from exceeding this limit, preserving layout integrity. */
-    margin: 15px auto !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 15px auto !important; /* @layout: Outer spacing (margin) — 15px top and bottom; auto left and right splits the leftover width equally, which centres the block. !important lets it win over competing rules. */
   }
   @supports (scrollbar-width: none) {
     .mission-status {
@@ -5164,8 +5165,8 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
 
   .blueprint-container {
-    margin: 80px auto 40px auto !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
-    padding: 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    margin: 80px auto 40px auto !important; /* @layout: Outer spacing (margin) — 80px top, 40px bottom; auto left and right splits the leftover width equally, which centres the block. !important lets it win over competing rules. */
+    padding: 10px !important; /* @layout: Inner spacing (padding) — 10px on all four sides. !important lets it win over competing rules. */
     width: 100% !important; /* @layout: Horizontal footprint — sets the element width to 100% !important. Controls how much horizontal space this node occupies within the layout flow. */
     overflow-x: hidden !important; /* @layout: Overflow control — clips or scrolls content on horizontal axis: hidden !important. */
     box-sizing: border-box !important; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
@@ -5178,7 +5179,7 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .panel {
     width: 100% !important; /* @layout: Horizontal footprint — sets the element width to 100% !important. Controls how much horizontal space this node occupies within the layout flow. */
-    padding: 15px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 15px !important; /* @layout: Inner spacing (padding) — 15px on all four sides. !important lets it win over competing rules. */
     box-sizing: border-box !important; /* @layout: Dimension calculation method — includes padding and border within the declared width/height. Without this, adding padding or border would expand the element beyond its specified size, causing layout overflow and breaking grid systems. */
   }
   .code-inspector-screen::before {
@@ -5189,26 +5190,26 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
 
   .source-selector-tabs {
     gap: 5px !important; /* @layout: Inter-cell gutter — sets spacing between grid/flex children to 5px !important. */
-    padding: 6px 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 6px 10px !important; /* @layout: Inner spacing (padding) — 6px top and bottom, 10px left and right. !important lets it win over competing rules. */
   }
   .tab-btn {
-    padding: 5px 8px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 5px 8px !important; /* @layout: Inner spacing (padding) — 5px top and bottom, 8px left and right. !important lets it win over competing rules. */
     font-size: 0.65rem !important; /* @layout: Character scale — sets text size to 0.65rem !important. Establishes the typographic hierarchy for the component. */
   }
   .volume-label {
     font-size: 0.5rem !important; /* @layout: Character scale — sets text size to 0.5rem !important. Establishes the typographic hierarchy for the component. */
     letter-spacing: 1px !important; /* @layout: Glyph spacing — adjusts tracking to 1px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
-    padding: 0 2px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 0 2px !important; /* @layout: Inner spacing (padding) — 0 top and bottom, 2px left and right. !important lets it win over competing rules. */
   }
 
   .hud-panel {
     grid-template-columns: 1fr; /* @layout: Column track definition — divides the grid into columns: 1fr. */
-    padding: 15px; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 15px; /* @layout: Inner spacing (padding) — 15px on all four sides. */
     gap: 12px; /* @layout: Inter-cell gutter — sets spacing between grid/flex children to 12px. */
   }
   .hud-toggle {
     font-size: 0.6rem !important; /* @layout: Character scale — sets text size to 0.6rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 3px 8px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 3px 8px !important; /* @layout: Inner spacing (padding) — 3px top and bottom, 8px left and right. !important lets it win over competing rules. */
     letter-spacing: 0.5px !important; /* @layout: Glyph spacing — adjusts tracking to 0.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
   }
   .footer-links {
@@ -5216,20 +5217,20 @@ Targets the HUD panel grid specifically for tablet-sized viewports.
   }
   .footer-links a {
     font-size: 0.55rem !important; /* @layout: Character scale — sets text size to 0.55rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 4px 10px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 4px 10px !important; /* @layout: Inner spacing (padding) — 4px top and bottom, 10px left and right. !important lets it win over competing rules. */
     letter-spacing: 1px !important; /* @layout: Glyph spacing — adjusts tracking to 1px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
   }
   .nav-links a.return-btn,
   .nav-links a[href="index.html"] {
     font-size: 0.6rem !important; /* @layout: Character scale — sets text size to 0.6rem !important. Establishes the typographic hierarchy for the component. */
-    padding: 3px 8px !important; /* @layout: Internal spacing control — clears default padding. All spacing is explicitly controlled by the design system rather than inherited from unpredictable user-agent stylesheets. */
+    padding: 3px 8px !important; /* @layout: Inner spacing (padding) — 3px top and bottom, 8px left and right. !important lets it win over competing rules. */
     letter-spacing: 0.5px !important; /* @layout: Glyph spacing — adjusts tracking to 0.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
   }
   .footer p,
   .footer .copyright {
     font-size: 0.6rem !important; /* @layout: Character scale — sets text size to 0.6rem !important. Establishes the typographic hierarchy for the component. */
     letter-spacing: 1.5px !important; /* @layout: Glyph spacing — adjusts tracking to 1.5px !important. Wider spacing gives text a technical, uppercase-industrial appearance. */
-    margin: 5px 0 !important; /* @layout: External spacing control — removes default margins. Zeroing margins at the box-model level guarantees predictable spacing regardless of the viewing environment, eliminating cross-browser inconsistencies. */
+    margin: 5px 0 !important; /* @layout: Outer spacing (margin) — 5px top and bottom, 0 left and right. !important lets it win over competing rules. */
   }
   /* ========================================================================
   @sub-section: B5 — SELDON VAULT COLLAPSE & ORBIT RETICLE

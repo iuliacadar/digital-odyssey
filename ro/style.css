@@ -15,9 +15,11 @@ din următoarele motive de ghidare cosmică:
     fără magie ascunsă sau alterări de fundal.
 
 2. LOGICĂ RECURSIVĂ DIRECTĂ (Senzorii de Scanare JS)
-    Tablourile noastre de scanare JavaScript preiau acest fișier ca hartă stelară
-    text simplu, extrag aceste adnotări personalizate și le proiectează direct pe
-    puntea de comandă (UI). Dacă am fi folosit Sass, structura unică a acestor
+    Blueprint-ul recursiv (MECANISMUL 08) preia acest fișier ca hartă stelară
+    text simplu și îl proiectează pe puntea de comandă (UI) exact cum e scris,
+    cu comentarii și etichete cu tot. Niciun script nu interpretează etichetele:
+    ele sunt scrise pentru ochiul omenesc care le citește acolo. Dacă am fi
+    folosit Sass, structura unică a acestor
     note de călătorie ar fi fost eliminată în timpul hiperspațiului (compilare),
     rupând legătura directă dintre vector și documentația sa.
 
@@ -138,7 +140,7 @@ proiectează masca globală de overlay CRT.
 *::after {
   margin: 0; /* @layout: Elimină marginile implicite eratice injectate de diverse browsere */
   padding: 0; /* @layout: Golește matricile native de padding pentru a asigura control absolut asupra spațierii */
-  box-sizing: border-box; /* @layout: UX CRUCIAL: Forțează borderurile în calculul lățimii, blocând ruperea accidentală a layout-ului */
+  box-sizing: border-box; /* @layout: UX CRUCIAL: lățimea și înălțimea includ acum padding-ul ȘI borderul, deci adăugarea lor nu face niciodată o cutie mai lată decât s-a declarat */
 }
 
 /* @sub-module: 02.2 — SISTEM HARDWARE RĂDĂCINĂ (Ancora structurală HTML) */
@@ -304,7 +306,7 @@ p code {
   background: rgba(167, 243, 208, 0.1); /* @theme: Randare de suprafață — aplică rgba(167, 243, 208, 0.1) ca fundal. Servește ca fundație vizuală pe care este afișat întregul conținut. */
 
   /* @layout: MICRO-COMPRESIUNE: Cadru compact de padding care protejează limitele literelor */
-  padding: 2px 6px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 2px 6px; /* @layout: Spațiere interioară (padding) — 2px sus și jos, 6px stânga și dreapta. */
   border-radius: 3px; /* @component: Curbură de colț — rotunjește colțurile la 3px. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
 
   /* @theme: SUPRASEMNAL CRITIC: Iluminează tagurile inline într-un roz nebuloasă neon intens */
@@ -325,7 +327,7 @@ hr {
   );
 
   /* @layout: GOL DE IZOLARE MASIV: Generează un vid vertical protector de 60px care echilibrează modulele structurale */
-  margin: 60px 0; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: 60px 0; /* @layout: Spațiere exterioară (margin) — 60px sus și jos, 0 stânga și dreapta. */
 }
 
 /* ==========================================================================
@@ -465,7 +467,7 @@ Scop: Containerul axial al paginii. Oferă scutul primar de orbită
   max-width: 1200px; /* @component: Scut anti-întindere: previne lărgirea excesivă pe ecrane desktop mari */
   margin: 0 auto; /* @component: Centrează automat întreaga structură tehnică de-a lungul axei ecranului */
   padding: 40px; /* @layout: Padding intern generos de siguranță care protejează granițele structurale ale modulelor */
-  box-sizing: border-box; /* @layout: Forțează variabilele de padding în calculul lățimii, oprind ruperea accidentală a layout-ului */
+  box-sizing: border-box; /* @layout: Padding-ul și borderul intră în lățimea declarată, deci nu împing niciodată cutia mai lat */
 }
 
 /* ==========================================================================
@@ -498,7 +500,7 @@ un raster local de scanline-uri CRT și încapsulează portalul principal de ie�
   justify-content: center !important; /* @layout: Centrează geometric întregul pachet tehnic pe verticală */
   align-items: center !important; /* @layout: Standardizează centrarea orizontală în toate nodurile interne */
   text-align: center; /* @layout: Impune centrarea absolută a blocului de text pentru elementele narative */
-  box-sizing: border-box; /* @layout: Forțează variabilele de padding în calculul lățimii, oprind fracturile structurale */
+  box-sizing: border-box; /* @layout: Padding-ul și borderul intră în lățimea declarată, deci cutia își păstrează mărimea */
 }
 
 /* @sub-module: 06.2 — SIMULATORUL CRT CINEMATIC LOCAL (Masca de Textură a Monitorului Vechi) */
@@ -952,7 +954,7 @@ adaptare mobilă pe ecran complet.
   font-size: 0.75rem; /* @layout: Scala caracterelor — setează mărimea textului la 0.75rem. Stabilește ierarhia tipografică a componentei. */
   text-transform: uppercase; /* @layout: Formatarea majusculelor — transformă textul în majuscule. */
   letter-spacing: 1px; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1px. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-  padding: 4px 10px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 4px 10px; /* @layout: Spațiere interioară (padding) — 4px sus și jos, 10px stânga și dreapta. */
   border-radius: 3px; /* @component: Curbură de colț — rotunjește colțurile la 3px. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
   cursor: pointer; /* @component: Iconița cursorului — schimbă cursorul în pointer, semnalând interactivitatea. */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* @theme: Animație de stare — uniformizează schimbările de proprietate pe all 0.3s cubic-bezier(0.4, 0, 0.2, 1). */
@@ -1001,9 +1003,9 @@ adaptare mobilă pe ecran complet.
   display: grid; /* @layout: Tip de cutie — trece la modul Grid, activând controlul bidimensional de layout cu plasare explicită pe rânduri și coloane. */
   grid-template-columns: repeat(3, 1fr); /* @layout: Definiția pistelor de coloană — împarte grila în coloane: repeat(3, 1fr). */
   gap: 20px; /* @layout: Canal inter-celular — setează spațierea între copiii grid/flex la 20px. */
-  padding: 30px 40px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 30px 40px; /* @layout: Spațiere interioară (padding) — 30px sus și jos, 40px stânga și dreapta. */
   max-width: 1200px; /* @layout: Constrângerea maximă a lățimii — limitează expansiunea la 1200px. Previne depășirea acestei limite de către element, păstrând integritatea layout-ului. */
-  margin: 0 auto; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: 0 auto; /* @layout: Spațiere exterioară (margin) — 0 sus și jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. */
   height: 100%; /* @layout: Dimensiune verticală — setează înălțimea elementului la 100%. Determină spațiul vertical de ecran alocat acestei componente. */
   overflow-y: auto; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe axa verticală: auto. */
 }
@@ -1013,7 +1015,7 @@ adaptare mobilă pe ecran complet.
   opacity: 0; /* @theme: Transparență — ajustează opacitatea la 0. 1 este complet opac, 0 este complet transparent. */
   transform: translateY(15px); /* @theme: Transformare geometrică — aplică translateY(15px) fără a afecta fluxul documentului. */
   animation: hudBoot 0.5s ease forwards; /* @theme: Animație keyframe — leagă hudBoot 0.5s ease forwards de acest element. Aduce energie cinetică și mișcare interfeței. */
-  padding: 12px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 12px; /* @layout: Spațiere interioară (padding) — 12px pe toate cele patru laturi. */
   border-left: 2px solid var(--nebula-pink); /* @component: Graniță de margine — desenează un border stâng: 2px solid var(--nebula-pink). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
   background: rgba(255, 255, 255, 0.03); /* @theme: Randare de suprafață — aplică rgba(255, 255, 255, 0.03) ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
   border-radius: 4px; /* @component: Curbură de colț — rotunjește colțurile la 4px. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
@@ -1046,7 +1048,7 @@ adaptare mobilă pe ecran complet.
   text-transform: uppercase; /* @layout: Formatarea majusculelor — transformă textul în majuscule. */
   letter-spacing: 2px; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 2px. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   color: var(--nebula-pink); /* @theme: Culoarea textului — setează prim-planul la var(--nebula-pink). Determină contrastul față de fundal și afectează direct lizibilitatea. */
-  margin: 0 0 8px 0; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: 0 0 8px 0; /* @layout: Spațiere exterioară (margin) — 0 sus, 0 dreapta, 8px jos, 0 stânga. */
   padding-bottom: 6px; /* @layout: Perna internă inferioară — ajustează spațierea pe această latură specifică între granița elementului și conținutul copil. */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* @component: Graniță de margine — desenează un border inferior: 1px solid rgba(255, 255, 255, 0.1). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
 }
@@ -2345,8 +2347,8 @@ de tremur la hover, sugerând tremorul unei punți când este traversată.
 /* @sub-module: 25.1 — CAPSULA VOLUM DE PUNTE (Trecerile Chihlimbar Interstițiază) */
 .bridge-volume {
   position: relative; /* @layout: Schemă de poziționare — setează la relative. Determină dacă elementul este plasat în fluxul normal sau poziționat relativ la strămoși/viewport. */
-  padding: 30px 25px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
-  margin: 30px 0; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  padding: 30px 25px; /* @layout: Spațiere interioară (padding) — 30px sus și jos, 25px stânga și dreapta. */
+  margin: 30px 0; /* @layout: Spațiere exterioară (margin) — 30px sus și jos, 0 stânga și dreapta. */
   border: 1px dashed var(--amber-glow); /* @component: Graniță de margine — desenează un border în jur: 1px dashed var(--amber-glow). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
   border-radius: 6px; /* @component: Curbură de colț — rotunjește colțurile la 6px. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
   background: rgba(255, 179, 0, 0.03); /* @theme: Randare de suprafață — aplică rgba(255, 179, 0, 0.03) ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
@@ -2406,8 +2408,8 @@ animație plutitoare. Conține motorul de paragraf al mașinii de scris și curs
 /* @sub-module: 26.1 — CILINDRUL COSMIC DE STICLĂ (Carta de Astrogare / Vasul de Mesaje) */
 .hologram-crystal {
   position: relative; /* @layout: Schemă de poziționare — setează la relative. Determină dacă elementul este plasat în fluxul normal sau poziționat relativ la strămoși/viewport. */
-  margin: 50px auto; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
-  padding: 60px 50px 50px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  margin: 50px auto; /* @layout: Spațiere exterioară (margin) — 50px sus și jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. */
+  padding: 60px 50px 50px; /* @layout: Spațiere interioară (padding) — 60px sus, 50px stânga și dreapta, 50px jos. */
   max-width: 780px; /* @layout: Constrângerea maximă a lățimii — limitează expansiunea la 780px. Previne depășirea acestei limite de către element, păstrând integritatea layout-ului. */
   border-radius: 40px; /* @layout: Formă de pastilă — sugerează un cilindru vertical */
 
@@ -2529,7 +2531,7 @@ de limbă și fluxuri de metadate cu indicator de puls de baliză.
   opacity: 0.8; /* @component: Faza latentă: desaturează întreaga punte la 80% pentru a proteja vederea utilizatorului */
   transition: opacity 0.3s ease; /* @component: Buclă fluidă de tranziție care gestionează schimbările de vizibilitate la atingerea terminalului */
   padding: 40px 20px !important; /* @layout: Impune perne dense orizontale și verticale de aer vizual în jurul textului */
-  box-sizing: border-box; /* @layout: Forțează variabilele de padding în calculul lățimii, oprind ruperea structurală */
+  box-sizing: border-box; /* @layout: Padding-ul și borderul intră în lățimea declarată, deci layout-ul nu se rupe */
 
   /* @reason: ECHILIBRARE CRUCIALĂ AXIALĂ A MONITORULUI */
   margin-left: auto !important; /* @layout: Impune marginile stângi automate stricte prevenind deplasarea orizontală a layout-ului */
@@ -2625,7 +2627,7 @@ de limbă și fluxuri de metadate cu indicator de puls de baliză.
   text-decoration: none; /* @layout: Ornamentarea textului — decorează textul cu none. */
   text-transform: uppercase; /* @layout: Formatarea majusculelor — transformă textul în majuscule. */
   letter-spacing: 2px; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 2px. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-  padding: 6px 14px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 6px 14px; /* @layout: Spațiere interioară (padding) — 6px sus și jos, 14px stânga și dreapta. */
   border: 1px solid var(--solar-mint); /* @component: Graniță de margine — desenează un border în jur: 1px solid var(--solar-mint). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
   transition: all 0.3s ease; /* @theme: Animație de stare — uniformizează schimbările de proprietate pe all 0.3s ease. */
 }
@@ -3080,7 +3082,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   height: 520px !important; /* @layout: Dimensiune verticală — setează înălțimea elementului la 520px !important. Determină spațiul vertical de ecran alocat acestei componente. */
   background: #04050a !important; /* @theme: Randare de suprafață — aplică #04050a !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
   border: 1px solid rgba(167, 243, 208, 0.2) !important; /* @component: Graniță de margine — desenează un border în jur: 1px solid rgba(167, 243, 208, 0.2) !important. Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
-  padding: 25px 15px 15px 15px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 25px 15px 15px 15px !important; /* @layout: Spațiere interioară (padding) — 25px sus, 15px dreapta, 15px jos, 15px stânga. !important o face să câștige în fața regulilor concurente. */
   overflow-x: auto !important; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe axa orizontală: auto !important. */
   overflow-y: auto !important; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe axa verticală: auto !important. */
   box-sizing: border-box; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
@@ -3131,7 +3133,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   color: #ffffff !important; /* @theme: Culoarea textului — setează prim-planul la #ffffff !important. Determină contrastul față de fundal și afectează direct lizibilitatea. */
   font-family: var(--font-main) !important; /* @theme: Selecția tiparului — randează textul în var(--font-main) !important. Tiparul ales definește era tehnologică și tonul interfeței. */
   letter-spacing: 2px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 2px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-  margin: 10px 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: 10px 0 !important; /* @layout: Spațiere exterioară (margin) — 10px sus și jos, 0 stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
 }
 .blueprint-master-subtitle {
   color: var(--amber-glow) !important; /* @theme: Culoarea textului — setează prim-planul la var(--amber-glow) !important. Determină contrastul față de fundal și afectează direct lizibilitatea. */
@@ -3139,7 +3141,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   font-size: 1rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 1rem !important. Stabilește ierarhia tipografică a componentei. */
   letter-spacing: 3px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 3px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   text-transform: uppercase !important; /* @layout: Formatarea majusculelor — transformă textul în majuscule !important. */
-  margin: 0 0 15px 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: 0 0 15px 0 !important; /* @layout: Spațiere exterioară (margin) — 0 sus, 0 dreapta, 15px jos, 0 stânga. !important o face să câștige în fața regulilor concurente. */
   opacity: 0.8 !important; /* @theme: Transparență — ajustează opacitatea la 0.8 !important. 1 este complet opac, 0 este complet transparent. */
 }
 .blueprint-master-description {
@@ -3163,7 +3165,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
   justify-content: center !important; /* @layout: Distribuția pe axa principală — alocă spațiu suplimentar de-a lungul axei primare: center !important. */
   align-items: center !important; /* @layout: Alinierea pe axa transversală — controlează modul în care copiii se aliniază perpendicular pe axa principală. */
-  margin: -40px 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+  margin: -40px 0 !important; /* @layout: Spațiere exterioară (margin) — -40px sus și jos, 0 stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   transform-style: preserve-3d !important; /* @theme: Context de randare 3D — păstrează sau nivelează transformările copiilor 3D: preserve-3d !important. */
 }
 
@@ -3222,7 +3224,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
   align-items: center !important; /* @layout: Alinierea pe axa transversală — controlează modul în care copiii se aliniază perpendicular pe axa principală. */
   gap: 8px !important; /* @layout: Canal inter-celular — setează spațierea între copiii grid/flex la 8px !important. */
-  padding: 8px 12px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 8px 12px !important; /* @layout: Spațiere interioară (padding) — 8px sus și jos, 12px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   background: rgba(10, 11, 30, 0.6) !important; /* @theme: Randare de suprafață — aplică rgba(10, 11, 30, 0.6) !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
   border: 1px solid rgba(167, 243, 208, 0.1) !important; /* @component: Graniță de margine — desenează un border în jur: 1px solid rgba(167, 243, 208, 0.1) !important. Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
   border-radius: 6px !important; /* @component: Curbură de colț — rotunjește colțurile la 6px !important. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
@@ -3246,7 +3248,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   background: transparent !important; /* @theme: Randare de suprafață — aplică transparent !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
   border: 1px solid rgba(167, 243, 208, 0.2) !important; /* @component: Graniță de margine — desenează un border în jur: 1px solid rgba(167, 243, 208, 0.2) !important. Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
   color: var(--solar-mint) !important; /* @theme: Culoarea textului — setează prim-planul la var(--solar-mint) !important. Determină contrastul față de fundal și afectează direct lizibilitatea. */
-  padding: 5px 12px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 5px 12px !important; /* @layout: Spațiere interioară (padding) — 5px sus și jos, 12px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   font-size: 0.75rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.75rem !important. Stabilește ierarhia tipografică a componentei. */
   font-family: "Courier New", monospace !important; /* @theme: Selecția tiparului — randează textul în "Courier New", monospace !important. Tiparul ales definește era tehnologică și tonul interfeței. */
   border-radius: 4px !important; /* @component: Curbură de colț — rotunjește colțurile la 4px !important. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
@@ -3276,7 +3278,7 @@ micro-scalare asimetrice și blochează o rețea protectoare anti-stivuire avans
   font-family: var(--font-main) !important; /* @theme: Selecția tiparului — randează textul în var(--font-main) !important. Tiparul ales definește era tehnologică și tonul interfeței. */
   letter-spacing: 1.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   text-transform: uppercase !important; /* @layout: Formatarea majusculelor — transformă textul în majuscule !important. */
-  padding: 0 4px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+  padding: 0 4px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 4px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   opacity: 0.7 !important; /* @theme: Transparență — ajustează opacitatea la 0.7 !important. 1 este complet opac, 0 este complet transparent. */
   flex-shrink: 0 !important; /* @layout: Factor de micșorare — determină cât de mult se comprimă acest element când spațiul este strâns: 0 !important. */
   -webkit-user-select: none !important; /* @component: Control al selecției — permite sau previne selecția textului: none !important. */
@@ -4329,15 +4331,15 @@ umbrele duale volumetrice de separare a grilelor (energy-flicker, cosmic-flicker
 @keyframes glow-flicker {
   0% {
     opacity: 0.25; /* @theme: Transparență — ajustează opacitatea la 0.25. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(0.5) blur(1px); /* @theme: Efect vizual — aplică brightness(0.5) blur(1px), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(0.5) blur(1px); /* @theme: Efect vizual — aplică brightness(0.5) blur(1px) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   50% {
     opacity: 0.85; /* @theme: Transparență — ajustează opacitatea la 0.85. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(1.5) blur(0px); /* @theme: Efect vizual — aplică brightness(1.5) blur(0px), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(1.5) blur(0px); /* @theme: Efect vizual — aplică brightness(1.5) blur(0px) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   100% {
     opacity: 1; /* @theme: Transparență — ajustează opacitatea la 1. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(2.2) blur(0px); /* @theme: Efect vizual — aplică brightness(2.2) blur(0px), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(2.2) blur(0px); /* @theme: Efect vizual — aplică brightness(2.2) blur(0px) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
 }
 
@@ -4358,23 +4360,23 @@ umbrele duale volumetrice de separare a grilelor (energy-flicker, cosmic-flicker
   0%,
   100% {
     opacity: 0.25; /* @theme: Transparență — ajustează opacitatea la 0.25. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(0.8); /* @theme: Efect vizual — aplică brightness(0.8), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(0.8); /* @theme: Efect vizual — aplică brightness(0.8) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   45% {
     opacity: 0.3; /* @theme: Transparență — ajustează opacitatea la 0.3. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(0.9); /* @theme: Efect vizual — aplică brightness(0.9), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(0.9); /* @theme: Efect vizual — aplică brightness(0.9) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   50% {
     opacity: 0.85; /* @theme: Transparență — ajustează opacitatea la 0.85. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(1.5); /* @theme: Efect vizual — aplică brightness(1.5), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(1.5); /* @theme: Efect vizual — aplică brightness(1.5) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   54% {
     opacity: 0.4; /* @theme: Transparență — ajustează opacitatea la 0.4. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(1); /* @theme: Efect vizual — aplică brightness(1), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(1); /* @theme: Efect vizual — aplică brightness(1) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
   85% {
     opacity: 0.3; /* @theme: Transparență — ajustează opacitatea la 0.3. 1 este complet opac, 0 este complet transparent. */
-    filter: brightness(0.9); /* @theme: Efect vizual — aplică brightness(0.9), efect grafic accelerat GPU asupra elementului. */
+    filter: brightness(0.9); /* @theme: Efect vizual — aplică brightness(0.9) asupra elementului. Un filtru redesenează pixelii elementului; nu e predat sigur plăcii grafice (GPU), deci animarea lui poate costa o redesenare pe cadru. */
   }
 }
 
@@ -4703,7 +4705,7 @@ a volumelor de bază.
     backdrop-filter: blur(15px); /* @theme: Efect de fundal — aplică filtrul blur(15px) zonei din spatele elementului, creând efecte de adâncime de sticlă mată. */
     border-bottom: 1px solid rgba(167, 243, 208, 0.1); /* @component: Graniță de margine — desenează un border inferior: 1px solid rgba(167, 243, 208, 0.1). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
     overflow: hidden !important; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe ambele axe: hidden !important. */
-    padding: 25px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 25px; /* @layout: Spațiere interioară (padding) — 25px pe toate cele patru laturi. */
     box-sizing: border-box; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
   }
 
@@ -4723,7 +4725,7 @@ a volumelor de bază.
     background: rgba(13, 15, 20, 0.95) !important; /* @theme: Randare de suprafață — aplică rgba(13, 15, 20, 0.95) !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
     border: 1px double var(--nebula-pink); /* @component: Graniță de margine — desenează un border în jur: 1px double var(--nebula-pink). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
     border-radius: 4px; /* @component: Curbură de colț — rotunjește colțurile la 4px. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
-    padding: 12px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 12px !important; /* @layout: Spațiere interioară (padding) — 12px pe toate cele patru laturi. !important o face să câștige în fața regulilor concurente. */
     padding-bottom: 15px; /* @layout: Perna internă inferioară — ajustează spațierea pe această latură specifică între granița elementului și conținutul copil. */
     margin-bottom: 15px !important; /* @layout: Spațiere externă pe marginea inferioară — suprascrie marginul moștenit pe această latură specifică. */
     z-index: 10; /* @layout: Ordinea de impilare — poziție de adâncime: 10. Valorile mai mari se randează deasupra celor mai mici. */
@@ -4776,7 +4778,7 @@ a volumelor de bază.
   .log-content {
     height: 100%; /* @layout: Dimensiune verticală — setează înălțimea elementului la 100%. Determină spațiul vertical de ecran alocat acestei componente. */
     overflow-y: auto !important; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe axa verticală: auto !important. */
-    padding: 40px 60px 60px 60px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 40px 60px 60px 60px; /* @layout: Spațiere interioară (padding) — 40px sus, 60px dreapta, 60px jos, 60px stânga. */
     scroll-behavior: smooth; /* @component: Animație de derulare — setează comportamentul de derulare la smooth. */
     box-sizing: border-box; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
     padding-top: 50px !important; /* @layout: Perna internă superioară — ajustează spațierea pe această latură specifică între granița elementului și conținutul copil. */
@@ -4820,7 +4822,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
 @media screen and (max-width: 1024px) {
   .hud-panel {
     grid-template-columns: repeat(2, 1fr); /* @layout: Definiția pistelor de coloană — împarte grila în coloane: repeat(2, 1fr). */
-    padding: 20px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 20px; /* @layout: Spațiere interioară (padding) — 20px pe toate cele patru laturi. */
   }
 }
 
@@ -4840,7 +4842,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   ======================================================================== */
 
   .navbar {
-    padding: 0 16px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 0 16px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 16px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   }
   .logo {
     animation: pulse 3s infinite; /* @theme: Animație keyframe — leagă pulse 3s infinite de acest element. Aduce energie cinetică și mișcare interfeței. */
@@ -4872,7 +4874,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     margin-right: -40px !important; /* @layout: Spațiere externă tribord — suprascrie marginea moștenită pe această latură specifică. */
     width: calc(100vw + 80px) !important; /* @layout: Amprentă orizontală — setează lățimea elementului la calc(100vw + 80px) !important. Controlează cât spațiu orizontal ocupă acest nod în fluxul layout-ului. */
     height: 40px !important; /* @layout: Dimensiune verticală — setează înălțimea elementului la 40px !important. Determină spațiul vertical de ecran alocat acestei componente. */
-    padding: 0 15px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 0 15px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 15px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     box-sizing: border-box !important; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
     z-index: 1005 !important; /* @layout: Ordinea de impilare — poziție de adâncime: 1005 !important. Valorile mai mari se randează deasupra celor mai mici. */
     background: rgba(10, 11, 20, 0.85) !important; /* @theme: Randare de suprafață — aplică rgba(10, 11, 20, 0.85) !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
@@ -4911,7 +4913,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
     position: static !important; /* @layout: Schemă de poziționare — setează la static !important. Determină dacă elementul este plasat în fluxul normal sau poziționat relativ la strămoși/viewport. */
     font-size: 0.55rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.55rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 0 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 0 10px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     margin: 0; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
     border-right: 1px solid var(--solar-mint); /* @component: Graniță de margine — desenează un border drept: 1px solid var(--solar-mint). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
     white-space: nowrap; /* @layout: Gestionarea spațiilor albe — controlează procesarea spațiilor albe și a întreruperilor de linie: nowrap. */
@@ -4924,14 +4926,14 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
     align-items: center; /* @layout: Alinierea pe axa transversală — controlează modul în care copiii se aliniază perpendicular pe axa principală. */
     height: 100%; /* @layout: Dimensiune verticală — setează înălțimea elementului la 100%. Determină spațiul vertical de ecran alocat acestei componente. */
-    padding: 0 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 0 10px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     margin: 0; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
     gap: 10px; /* @layout: Canal inter-celular — setează spațierea între copiii grid/flex la 10px. */
     list-style: none; /* @component: Marcator de listă — configurează marcatorii elementelor de listă: none. */
     width: auto; /* @layout: Amprentă orizontală — setează lățimea elementului la auto. Controlează cât spațiu orizontal ocupă acest nod în fluxul layout-ului. */
   }
   .sidebar-nav .week-label {
-    margin: 0 4px !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 0 4px !important; /* @layout: Spațiere exterioară (margin) — 0 sus și jos, 4px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
     align-items: center !important; /* @layout: Alinierea pe axa transversală — controlează modul în care copiii se aliniază perpendicular pe axa principală. */
     height: 100% !important; /* @layout: Dimensiune verticală — setează înălțimea elementului la 100% !important. Determină spațiul vertical de ecran alocat acestei componente. */
@@ -4939,7 +4941,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   }
   .sidebar-nav .week-label a {
     font-size: 0.6rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.6rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 4px 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 4px 10px !important; /* @layout: Spațiere interioară (padding) — 4px sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     border-radius: 0 !important; /* @component: Curbură de colț — rotunjește colțurile la 0 !important. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
     display: inline-flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
   }
@@ -4956,7 +4958,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   .sidebar-nav a {
     background: transparent; /* @theme: Randare de suprafață — aplică transparent ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
     border: 1px solid rgba(167, 243, 208, 0.1); /* @component: Graniță de margine — desenează un border în jur: 1px solid rgba(167, 243, 208, 0.1). Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
-    padding: 4px 8px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 4px 8px !important; /* @layout: Spațiere interioară (padding) — 4px sus și jos, 8px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     font-size: 0.6rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.6rem !important. Stabilește ierarhia tipografică a componentei. */
     color: var(--solar-mint); /* @theme: Culoarea textului — setează prim-planul la var(--solar-mint). Determină contrastul față de fundal și afectează direct lizibilitatea. */
     opacity: 0.6; /* @theme: Transparență — ajustează opacitatea la 0.6. 1 este complet opac, 0 este complet transparent. */
@@ -4979,7 +4981,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     background: rgba(13, 15, 20, 0.95) !important; /* @theme: Randare de suprafață — aplică rgba(13, 15, 20, 0.95) !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
     border: 1px double var(--nebula-pink) !important; /* @component: Graniță de margine — desenează un border în jur: 1px double var(--nebula-pink) !important. Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
     box-shadow: 0 0 10px rgba(255, 0, 127, 0.2) !important; /* @theme: Umbră de adâncime — aruncă 0 0 10px rgba(255, 0, 127, 0.2) !important sub element, creând adâncime și ierarhie vizuală. */
-    padding: 4px 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 4px 10px !important; /* @layout: Spațiere interioară (padding) — 4px sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     border-radius: 4px !important; /* @component: Curbură de colț — rotunjește colțurile la 4px !important. Înmoaie aspectul geometric rigid, sugerând margini hardware lustruite. */
     white-space: nowrap !important; /* @layout: Gestionarea spațiilor albe — controlează procesarea spațiilor albe și a întreruperilor de linie: nowrap !important. */
     margin: 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
@@ -5048,15 +5050,15 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     font-size: 0.78rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.78rem !important. Stabilește ierarhia tipografică a componentei. */
     line-height: 1.4 !important; /* @layout: Conducere verticală — setează spațierea liniilor la 1.4 !important. Esențială pentru lizibilitate: valoarea creează un ritm confortabil de citire. */
     max-width: 85% !important; /* @layout: Constrângerea maximă a lățimii — limitează expansiunea la 85% !important. Previne depășirea acestei limite de către element, păstrând integritatea layout-ului. */
-    margin: 0 auto !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 0 auto !important; /* @layout: Spațiere exterioară (margin) — 0 sus și jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. !important o face să câștige în fața regulilor concurente. */
     opacity: 0.8 !important; /* @theme: Transparență — ajustează opacitatea la 0.8 !important. 1 este complet opac, 0 este complet transparent. */
   }
 
   .archive-link {
     font-size: 0.7rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.7rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 6px 16px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 6px 16px !important; /* @layout: Spațiere interioară (padding) — 6px sus și jos, 16px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     letter-spacing: 0.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 0.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-    margin: 0 auto !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 0 auto !important; /* @layout: Spațiere exterioară (margin) — 0 sus și jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. !important o face să câștige în fața regulilor concurente. */
     display: inline-block !important; /* @layout: Tip de cutie — se randează ca o cutie de nivel block care ocupă lățimea disponibilă completă. */
   }
   .log-entry h4,
@@ -5069,7 +5071,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   }
   .sub-future-log h5 {
     font-size: 0.72rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.72rem !important. Stabilește ierarhia tipografică a componentei. */
-    margin: 0 0 4px 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 0 0 4px 0 !important; /* @layout: Spațiere exterioară (margin) — 0 sus, 0 dreapta, 4px jos, 0 stânga. !important o face să câștige în fața regulilor concurente. */
     letter-spacing: 0.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 0.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
     line-height: 1.1 !important; /* @layout: Conducere verticală — setează spațierea liniilor la 1.1 !important. Esențială pentru lizibilitate: valoarea creează un ritm confortabil de citire. */
   }
@@ -5099,11 +5101,11 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
     display: flex !important; /* @layout: Tip de cutie — trece la modul Flexbox, activând layout unidimensional de-a lungul unei singure axe cu distribuție receptivă. */
     align-items: center !important; /* @layout: Alinierea pe axa transversală — controlează modul în care copiii se aliniază perpendicular pe axa principală. */
     justify-content: center !important; /* @layout: Distribuția pe axa principală — alocă spațiu suplimentar de-a lungul axei primare: center !important. */
-    padding: 8px 16px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 8px 16px !important; /* @layout: Spațiere interioară (padding) — 8px sus și jos, 16px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     background: rgba(10, 11, 20, 0.4) !important; /* @theme: Randare de suprafață — aplică rgba(10, 11, 20, 0.4) !important ca fundal. Servește ca fundație vizuală pe care este afișat tot conținutul. */
     border: 1px solid rgba(167, 243, 208, 0.1) !important; /* @component: Graniță de margine — desenează un border în jur: 1px solid rgba(167, 243, 208, 0.1) !important. Borderul definește perimetrul elementului și îl separă de componentele adiacente. */
     max-width: 92% !important; /* @layout: Constrângerea maximă a lățimii — limitează expansiunea la 92% !important. Previne depășirea acestei limite de către element, păstrând integritatea layout-ului. */
-    margin: 15px auto !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 15px auto !important; /* @layout: Spațiere exterioară (margin) — 15px sus și jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. !important o face să câștige în fața regulilor concurente. */
   }
   @supports (scrollbar-width: none) {
     .mission-status {
@@ -5182,8 +5184,8 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   }
 
   .blueprint-container {
-    margin: 80px auto 40px auto !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
-    padding: 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    margin: 80px auto 40px auto !important; /* @layout: Spațiere exterioară (margin) — 80px sus, 40px jos; auto stânga și dreapta împarte egal lățimea rămasă, ceea ce centrează blocul. !important o face să câștige în fața regulilor concurente. */
+    padding: 10px !important; /* @layout: Spațiere interioară (padding) — 10px pe toate cele patru laturi. !important o face să câștige în fața regulilor concurente. */
     width: 100% !important; /* @layout: Amprentă orizontală — setează lățimea elementului la 100% !important. Controlează cât spațiu orizontal ocupă acest nod în fluxul layout-ului. */
     overflow-x: hidden !important; /* @layout: Control al overflow-ului — decupează sau derulează conținutul pe axa orizontală: hidden !important. */
     box-sizing: border-box !important; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
@@ -5196,7 +5198,7 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   }
   .panel {
     width: 100% !important; /* @layout: Amprentă orizontală — setează lățimea elementului la 100% !important. Controlează cât spațiu orizontal ocupă acest nod în fluxul layout-ului. */
-    padding: 15px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 15px !important; /* @layout: Spațiere interioară (padding) — 15px pe toate cele patru laturi. !important o face să câștige în fața regulilor concurente. */
     box-sizing: border-box !important; /* @layout: Metodă de calcul a dimensiunii — include padding-ul și borderul în lățimea/înălțimea declarate. Fără aceasta, adăugarea de padding sau border ar extinde elementul dincolo de dimensiunea specificată, cauzând overflow de layout și rupând sistemele de grilă. */
   }
   .code-inspector-screen::before {
@@ -5207,26 +5209,26 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
 
   .source-selector-tabs {
     gap: 5px !important; /* @layout: Canal inter-celular — setează spațierea între copiii grid/flex la 5px !important. */
-    padding: 6px 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 6px 10px !important; /* @layout: Spațiere interioară (padding) — 6px sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   }
   .tab-btn {
-    padding: 5px 8px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 5px 8px !important; /* @layout: Spațiere interioară (padding) — 5px sus și jos, 8px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     font-size: 0.65rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.65rem !important. Stabilește ierarhia tipografică a componentei. */
   }
   .volume-label {
     font-size: 0.5rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.5rem !important. Stabilește ierarhia tipografică a componentei. */
     letter-spacing: 1px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-    padding: 0 2px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 0 2px !important; /* @layout: Spațiere interioară (padding) — 0 sus și jos, 2px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   }
 
   .hud-panel {
     grid-template-columns: 1fr; /* @layout: Definiția pistelor de coloană — împarte grila în coloane: 1fr. */
-    padding: 15px; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 15px; /* @layout: Spațiere interioară (padding) — 15px pe toate cele patru laturi. */
     gap: 12px; /* @layout: Canal inter-celular — setează spațierea între copiii grid/flex la 12px. */
   }
   .hud-toggle {
     font-size: 0.6rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.6rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 3px 8px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 3px 8px !important; /* @layout: Spațiere interioară (padding) — 3px sus și jos, 8px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     letter-spacing: 0.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 0.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   }
   .footer-links {
@@ -5234,20 +5236,20 @@ Vizează grila panoului HUD specific pentru viewport-uri de dimensiune tabletă.
   }
   .footer-links a {
     font-size: 0.55rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.55rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 4px 10px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 4px 10px !important; /* @layout: Spațiere interioară (padding) — 4px sus și jos, 10px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     letter-spacing: 1px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   }
   .nav-links a.return-btn,
   .nav-links a[href="index.html"] {
     font-size: 0.6rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.6rem !important. Stabilește ierarhia tipografică a componentei. */
-    padding: 3px 8px !important; /* @layout: Control al spațierii interne — elimină padding-ul implicit. Toată spațierea este controlată explicit de sistemul de design, nu moștenită din foi de stil user-agent imprevizibile. */
+    padding: 3px 8px !important; /* @layout: Spațiere interioară (padding) — 3px sus și jos, 8px stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
     letter-spacing: 0.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 0.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
   }
   .footer p,
   .footer .copyright {
     font-size: 0.6rem !important; /* @layout: Scala caracterelor — setează mărimea textului la 0.6rem !important. Stabilește ierarhia tipografică a componentei. */
     letter-spacing: 1.5px !important; /* @layout: Spațiere de glifuri — ajustează tracking-ul la 1.5px !important. Spațiere mai largă conferă textului un aspect tehnic, industrial cu majuscule. */
-    margin: 5px 0 !important; /* @layout: Control al spațierii externe — elimină marginile implicite. Zero-izarea marginilor la nivelul modelului de cutie garantează spațiere previzibilă indiferent de mediul de vizualizare, eliminând inconsistențele cross-browser. */
+    margin: 5px 0 !important; /* @layout: Spațiere exterioară (margin) — 5px sus și jos, 0 stânga și dreapta. !important o face să câștige în fața regulilor concurente. */
   }
   /* ========================================================================
   @sub-section: B5 — COLAPSUL SEIFULUI SELDON & RETICULUL DE ORBITĂ
