@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!-- @block:
-  <!DOCTYPE html> trebuie să fie primul token al fiecărui document HTML,
-  înaintea oricărui conținut sau comentariu, conform specificației HTML. Activează
-  modul standard (randare previzibilă) în loc de modul quirks.
+  <!DOCTYPE html> trece browserul în modul standard: randare previzibilă,
+  conformă cu specificația. Fără el, pagina se randează în modul quirks,
+  care imită erorile browserelor din anii '90. Nu numește nicio versiune
+  HTML; "html" e tot ce îi trebuie HTML-ului modern (șirurile lungi de
+  versiune țin de HTML 4 și XHTML). Înaintea lui pot sta doar spații albe
+  și comentarii, deci acest comentariu ar fi putut sta deasupra lui; orice
+  alt conținut acolo ar arunca pagina în modul quirks.
 -->
 
 <html lang="ro">
@@ -110,13 +114,20 @@
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
-    <!-- @theme:
-      Culoarea de fundal Open Graph, nuanțând cardurile de partajare cu paleta spațiului profund.
+    <!-- @warning:
+      og:background_color NU este o proprietate Open Graph: protocolul
+      (ogp.me) nu definește nicio culoare, deci serviciile de partajare
+      ignoră această linie. Azi nu face nimic și poate fi eliminată.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
-      Imaginea Open Graph — imaginea de previzualizare pe cardurile partajate; favicon-ul fișierului de limbă ca placeholder stabil.
+      Imaginea Open Graph: imaginea de previzualizare de pe cardurile partajate.
+      Indică spre favicon ca substituent, până când va exista o captură dedicată.
+      @warning: substituentul încă nu funcționează. Facebook, LinkedIn, X și
+      aplicațiile de mesagerie refuză SVG aici; cer o imagine raster (PNG sau
+      JPEG, ideal 1200x630), deci cardurile partajate pot rămâne fără nicio
+      imagine.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -144,7 +155,11 @@
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      Apple Touch Icon pentru ecranul de start iOS și utilizarea web-app; același SVG ca sursă.
+      Apple Touch Icon: imaginea pe care iOS o arată când pagina este adăugată
+      pe ecranul de pornire.
+      @warning: iOS nu acceptă SVG aici; are nevoie de un PNG (Apple recomandă
+      180x180). Cu acest SVG, iOS ignoră legătura și își face singur o
+      pictogramă.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />

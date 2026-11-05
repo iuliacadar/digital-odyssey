@@ -79,9 +79,10 @@ function storeSet(key, value) {
 //  ==========================================================================
 //  @mechanism: 01 — Navbar Scroll Dynamics
 //  @event: window scroll
-//  @pedagogy: "scroll" fires hundreds of times per second. But all we do
-//    here is compare two numbers and toggle a CSS class — that is fast
-//    enough to keep the UI smooth without any throttling.
+//  @pedagogy: While the page moves, "scroll" fires about once per frame
+//    (60 to 120 times a second; browsers never fire it more often than they
+//    paint). All we do here is compare two numbers and toggle a CSS class,
+//    which is cheap enough to keep the UI smooth without any throttling.
 //  ==========================================================================
 
 // We attach a permanent listener to the window's scroll event.
@@ -163,12 +164,21 @@ const observer = new IntersectionObserver((entries) => {
         // ACTIVATE THE RADAR: Only run this auto-centering on Desktop (screens > 768px).
         if (window.innerWidth > 768 && innerSidebarList) {
           //     THE AUTO-CENTRE ALGORITHM:
-          //    We calculate where the day's button sits within the list (offsetTop)
-          //    and subtract half the sidebar window height (clientHeight / 2).
-          //    This simple maths brings the button and its Sector label
-          //    RIGHT into the visual centre of the menu, right beneath the MAP title!
+          //    offsetTop does NOT count from the list. It counts from the link's
+          //    offsetParent: its nearest positioned ancestor, here the whole
+          //    .log-sidebar, MAP title included. Subtracting the list's own
+          //    offsetTop gives the link's place INSIDE the list. Then subtract
+          //    half the list's visible height and add half the link's height:
+          //    the link's middle lands on the list's middle.
+          //  @warning: until audit fix #7 the list's own offset was missing,
+          //    and every "centred" day stopped about 70px above the centre.
+          //    Before trusting offsetTop/offsetLeft, ask: offset from WHAT?
+          //    element.offsetParent answers it.
           const centerPosition =
-            activeLink.offsetTop - innerSidebarList.clientHeight / 2;
+            activeLink.offsetTop -
+            innerSidebarList.offsetTop - // From the sidebar's top to the list's top.
+            innerSidebarList.clientHeight / 2 +
+            activeLink.offsetHeight / 2;
 
           // The sidebar performs a smooth, silent scroll to that exact position.
           innerSidebarList.scrollTo({
@@ -398,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //     the sidebar horizontally scrolls to centre the active button.
 //  ==========================================================================
 //  @mechanism: 06 — HUD Horizontal Sync
-//  @event: window scroll
+//  @event: scroll on document (it bubbles up to window too; either works)
 //  @guard: only runs on viewports <= 768px (mobile and split-screen).
 //  ==========================================================================
 
@@ -415,9 +425,12 @@ document.addEventListener("scroll", () => {
     // Safety shield: run the logic only if both elements are alive on screen.
     if (hudContainer && activeButton) {
       /* TACTILE REALITY MATHS:
-          Calculate the button's position relative to the screen's left edge (offsetLeft)
-         and subtract half the HUD width to land it EXACTLY centre! */
-      const buttonLeft = activeButton.offsetLeft; // Distance from the left edge of the container.
+          offsetLeft counts from the button's offsetParent (its nearest
+          positioned ancestor), not from the screen. Here that ancestor is
+          .log-sidebar itself, the very box we scroll, so offsetLeft is already
+          the distance inside it. Subtract half the HUD width and add half the
+          button width to land it EXACTLY centre! */
+      const buttonLeft = activeButton.offsetLeft; // Distance from .log-sidebar's left edge (its offsetParent).
       const buttonWidth = activeButton.offsetWidth; // How wide is the active button itself?
       const hudWidth = hudContainer.offsetWidth; // How wide is the visible HUD window?
 
@@ -443,10 +456,13 @@ document.addEventListener("scroll", () => {
 //  @mechanism: 06.5 — HUD Console Toggle
 //  @event: click on .hud-toggle, click outside .hud-overlay, Escape key
 //  @pedagogy: Toggling a CSS class via classList.toggle is the simplest
-//    and most performant way to show/hide UI elements. No display:none
-//    switching, no height calculations — just let CSS transitions handle
-//    the animation. The outside-click and Escape listeners act as safety
-//    releases, ensuring the overlay never traps the user.
+//    way to show/hide UI elements: JavaScript states WHAT changed, and CSS
+//    decides HOW it looks and moves. No style values live in the script.
+//    It is not free, though: .hud-overlay animates its height, and changing
+//    height makes the browser redo layout on every frame of the slide. The
+//    animations that cost least are transform and opacity. The
+//    outside-click and Escape listeners act as safety releases, ensuring
+//    the overlay never traps the user.
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -565,7 +581,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) {
           throw new Error(
             `File "${filePath}" not found. (${response.status})`,
-          ); // Network error? Throw it to the catch block.
+          ); // HTTP error (404, 500...): the server answered, just not with the file. Throw it to the catch block.
+          //  @pedagogy: a true network failure (offline, DNS, blocked) never
+          //    reaches this line: fetch() REJECTS and jumps straight to .catch.
+          //    fetch only resolves when a server answered, whatever the status,
+          //    so checking response.ok is our job.
         }
         return response.text(); // Convert the raw network buffer into plain usable text.
       })
@@ -602,7 +622,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mobile auto-centre: same tactile maths as MECANISM 06.
     if (window.innerWidth <= 768) {
-      const btnLeft = btn.offsetLeft; // Distance of the tab from the container's left edge.
+      //  @warning: unlike MECANISM 06, the offsetParent here is NOT the box we
+      //    scroll. No ancestor of the tab is positioned, so the offsetParent
+      //    falls back to <body> (here body.blueprint-layout), and the tab bar
+      //    sits 26px inside it. Subtracting the bar's offsetLeft (to its
+      //    border) and its clientLeft (the 1px border itself) measures the tab
+      //    from where scrollLeft counts: the bar's inner edge. Without them,
+      //    every tab stopped 27px short of the centre (audit fix #7).
+      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft - tabContainer.clientLeft; // Distance of the tab from the tab bar's left edge.
       const btnWidth = btn.offsetWidth; // The tab's own width.
       const containerWidth = tabContainer.offsetWidth; // The visible width of the tab bar.
       const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Centre it.
@@ -1189,8 +1216,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!activeCapsule) return; // No capsule in context? Nothing to score.
 
     //  FormData is the browser's own tool for reading form controls. .get()
-    //  returns the chosen radio's value ("" for radio) by that group's name —
-    //  giving us the selected answer index for every question at once.
+    //  returns the chosen radio's value by that group's name, giving us the
+    //  selected answer index for every question at once.
+    //  @warning: a question left unanswered returns null, not "". Here it
+    //    cannot happen: every radio carries `required`, so the browser refuses
+    //    to submit a blank quiz. Drop `required` and Number(null) would turn
+    //    each blank into 0: a point whenever option 0 is the correct one.
     const formData = new FormData(navGateForm);
     const answers = activeCapsule.quiz.questions.map((_, qIndex) =>
       formData.get(`q${qIndex}`), // The index the traveller chose.
@@ -1375,8 +1406,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //  capsule unlocks (cap.days, e.g. ["DAY 00", ..., "DAY 21"]). Each DAY is
   //  sliced, markdown is stripped, and the sections are joined with a divider
   //  so the whole package types out as one transmission.
-  //  Progressive enhancement: if the fetch fails (offline / file://), the
-  //  teaser already received stands alone — the vault never breaks.
+  //  Graceful degradation: the full transmission is the design, and if the
+  //  fetch fails (offline / file://) the vault falls back to the teaser it
+  //  already has. It never breaks. (Progressive enhancement is the reverse
+  //  direction: start from a page that works with no JavaScript at all, then
+  //  add layers on top.)
   function extractDaySection(markdown, dayWord, dayNumber) {
     //  What is being hunted, e.g. "DAY 12". Interpolated from the capsule's day
     //  list, so the same function serves every volume.
@@ -1498,7 +1532,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logContent = document.querySelector(".log-content");
 
   //  @guard: pages with no sidebar or no log content are not log pages at all.
-  //  Leave them completely untouched — index.html has 21 <h3> of its own and
+  //  Leave them completely untouched — index.html has <h3>s of its own and
   //  must never have them scraped into a menu that does not exist.
   if (!sidebarList || !logContent) return; // Not a log page. Nothing to generate.
 
@@ -1509,15 +1543,21 @@ document.addEventListener("DOMContentLoaded", () => {
   //    dividers between the right days (S01, Day 01…07, S02, Day 08…). Two
   //    queries would return all articles, then all sectors — a broken menu.
   //  @warning: sector announcements contain an <h2>, not an <h3>. Scanning for
-  //    <h3> alone would silently drop every one of the 182 week dividers.
+  //    <h3> alone would silently drop every week divider.
   const contentBlocks = logContent.querySelectorAll(
     "article.log-entry, div.sector-announcement",
   );
 
   //  The finished <li> elements accumulate here before touching the page.
-  //  @reason: appending inside the loop would force the browser to recalculate
-  //    layout once per entry — 33 reflows on a typical page. Building the set
-  //    in memory and committing it once costs exactly one.
+  //  @reason: the new list is built completely in memory, and only then swapped
+  //    in with a single call, so the page goes straight from the old list to
+  //    the finished new one.
+  //  @pedagogy: a common myth says appending inside the loop would cost one
+  //    reflow per entry. It would not: the browser batches DOM writes and
+  //    runs layout once, before the next paint. A reflow is FORCED only when
+  //    code READS layout (offsetHeight, getBoundingClientRect...) between
+  //    writes, which makes the browser lay out the page there and then.
+  //    Reading and writing in turns inside a loop is "layout thrashing".
   const generatedItems = [];
 
   // Walk every content block in the order the reader will meet it.
@@ -1588,17 +1628,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //  @warning: everything above assigns via textContent, never innerHTML.
-    //    Heading text contains "&", "&lt;img&gt;" and Romanian diacritics;
-    //    textContent escapes them correctly for free, while innerHTML would
-    //    re-interpret "&lt;" and render a literal "&amp;lt;" on screen.
+    //    The source spells "&lt;img&gt;", but textContent hands us the decoded
+    //    characters: a real "<img>", plus "&" and Romanian diacritics.
+    //    Written back with textContent they stay characters. Written with
+    //    innerHTML, "<img>" would be PARSED into a real image element, and a
+    //    crafted heading such as <img src=x onerror=...> would run code: the
+    //    door that cross-site scripting (XSS) walks through.
     listItem.appendChild(anchor); // Nest the anchor inside its list item.
     generatedItems.push(listItem); // Queue it; nothing has touched the page yet.
   });
 
   //  THE SINGLE COMMIT: swap the entire list contents in one operation.
   //  @reason: replaceChildren removes the old children and inserts the new ones
-  //    atomically, so the list is never briefly empty and the layout never
-  //    flickers. It also spares us a manual innerHTML = "" wipe.
+  //    in one call. It spares us a manual innerHTML = "" wipe (which goes
+  //    through the HTML parser) and a loop of appendChild.
+  //  @pedagogy: it is NOT what prevents flicker. The browser never paints in
+  //    the middle of a running script, so even a wipe-then-refill could not
+  //    show an empty list: the screen only updates after the script ends.
   //  @bridge: this is the exact moment MECANISM 05 is designed around — every
   //    <li> here is a brand-new node, so its click handling must come from a
   //    delegated listener on .sidebar-nav, never from per-link binding.

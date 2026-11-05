@@ -38,13 +38,16 @@ GLOBS = ("en/**/*.html", "ro/**/*.html", "en/**/*.js", "ro/**/*.js")
 #  --------------------------------------------------------------------------
 #  PATTERN 1 — the HTML anchor
 #  --------------------------------------------------------------------------
-#  @warning: re.DOTALL matters here. Anchors in this project are sometimes
-#    wrapped across several lines by the formatter:
+#  @warning: multi-line tags matter here. Anchors in this project are
+#    sometimes wrapped across several lines by the formatter:
 #        <a href="bibliography.html" target="_blank"
 #          >Arhivele Adâncului</a
 #        >
 #    A line-by-line grep would miss the attributes that drifted to line two.
-#    Matching the whole opening tag with [^>]*? and re.S catches both shapes.
+#    Matching the whole file with [^>]*? catches both shapes: a negated class
+#    such as [^>] matches a newline on its own. re.S only changes what "."
+#    matches, and this pattern has no ".", so the flag changes nothing today;
+#    it stays as a guard in case a "." is ever added.
 ANCHOR = re.compile(r"""<a\b[^>]*?target\s*=\s*["']_blank["'][^>]*?>""", re.I | re.S)
 
 #  --------------------------------------------------------------------------

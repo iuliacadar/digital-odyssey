@@ -27,11 +27,11 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 - `@cluster:` grupează un set de intrări conexe sub un titlu tematic (folosit în paginile de bibliografie, ex. `@cluster: Runtime-uri de Bază`).
 
 ## CSS
-- `@module:` definește numărul și numele modulului curent (ex. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Reprezintă reperul structural principal în arhitectura celor 31 de module.
+- `@module:` definește numărul și numele modulului curent (ex. `@module: 04 — SECTION LAYOUT & CONTENT WRAPPERS`). Reprezintă reperul structural principal în cele 32 de module numerotate (01–32), plus 00.1 (cadre-cheie) și 00.2 (media queries).
 - `@sub-module:` definește numărul și numele sub-modulului curent dintr-un modul (ex. `@sub-module: 04.1 — Section Architecture`). Se plasează sub `@module:` părinte.
 - `@keyframe:` adnotează un bloc de animație `@keyframes` (ex. `@keyframe: A3 — HIGH-VOLTAGE CRT SHIELD STROBE ENGINE`). Leagă animația de scopul său narativ.
 - `@manifest:` adnotare la nivel de fișier care identifică tipul și scopul documentului (folosit în blocul de deschidere al stylesheet-ului).
-- `@group:` etichetează un grup logic de reguli conexe într-un modul, adesea cu un cod literă (ex. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Folosit și pentru gruparea blocurilor `@keyframes` pe categorii (A–G).
+- `@group:` etichetează un grup logic de reguli conexe într-un modul, adesea cu un cod literă (ex. `@group: 05.A — THE AXIAL CONTAINER OF THE PAGE`). Folosit și pentru gruparea blocurilor `@keyframes` pe categorii (A–F și H; nu există G).
 - `@section:` marchează o diviziune majoră în zona de responsive / media queries, identificată printr-un cod numeric (ex. `@section: 00.2.A — Desktop Protocol`).
 - `@sub-section:` marchează o sub-diviziune în cadrul unui `@section:`, identificată printr-un cod alfanumeric (ex. `@sub-section: A1 — Global Parent Grid Container`). Se plasează sub `@section:` părinte.
 - `@block:` explică o secțiune logică de stiluri, de exemplu reset, layout, componente sau responsive rules.
@@ -42,7 +42,7 @@ Această legendă stabilește un vocabular comun pentru comentariile din întreg
 
 ## JS
 - `@block:` explică un bloc logic de comportament sau funcționalitate.
-- `@mechanism:` identifică un mecanism numerotat (MECANISM 01–10). Fiecare mecanism este o unitate de comportament autonomă care poate fi referită prin numărul ei în cod, CSS și jurnalul navei.
+- `@mechanism:` identifică un mecanism numerotat (MECANISM 01–11, plus 06.5). Fiecare mecanism este o unitate de comportament autonomă care poate fi referită prin numărul ei în cod, CSS și jurnalul navei.
 - `@logic:` explică fluxul intern al unei funcții, condiții sau transformări.
 - `@event:` explică un eveniment ascultat sau declanșat, cum ar fi `click`, `submit`, `scroll` sau `DOMContentLoaded`.
 - `@state:` explică o stare a interfeței sau a datelor, de exemplu activ/inactiv, deschis/închis, încărcat/neîncărcat.

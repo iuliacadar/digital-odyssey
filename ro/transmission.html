@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!-- @block:
-  <!DOCTYPE html> trebuie s? fie primul token al fiec?rui document
-  HTML, înaintea oric?rui con?inut sau comentariu, conform
-  specifica?iei. Activeaz? modul standard de randare.
+  <!DOCTYPE html> trece browserul în modul standard: randare previzibilă,
+  conformă cu specificația. Fără el, pagina se randează în modul quirks,
+  care imită erorile browserelor din anii '90. Nu numește nicio versiune
+  HTML; "html" e tot ce îi trebuie HTML-ului modern (șirurile lungi de
+  versiune țin de HTML 4 și XHTML). Înaintea lui pot sta doar spații albe
+  și comentarii, deci acest comentariu ar fi putut sta deasupra lui; orice
+  alt conținut acolo ar arunca pagina în modul quirks.
 -->
 
 <html lang="ro">
@@ -20,10 +24,10 @@
 
             <meta charset="UTF-8" />
     <!-- @meta:
-      <meta charset="UTF-8" /> trebuie s? fie în primii 1024 de octe?i
-      pentru ca browserul s? detecteze UTF-8 înainte de parsare. Dac?
-      nu o detecteaz?, poate folosi o alt? codificare (ex. Windows-1252)
-      ?i textul se va afi?a gre?it.
+      <meta charset="UTF-8" /> trebuie să fie în primii 1024 de octeți
+      pentru ca browserul să detecteze UTF-8 înainte de parsare. Dacă
+      nu o detectează, poate folosi o altă codificare (ex. Windows-1252)
+      și textul se va afișa greșit.
       Setez codificarea caracterelor la UTF-8.
       Aceasta asigură afișarea corectă a diacriticelor, simbolurilor speciale și caracterelor internaționale.
     -->
@@ -118,14 +122,20 @@
     -->
 
     <meta property="og:background_color" content="#0a0b1e" />
-    <!-- @theme:
-      Culoarea de fundal Open Graph. Unele suprafețe de distribuire o folosesc
-      pentru a nuanța cardul cu paleta spațiului profund.
+    <!-- @warning:
+      og:background_color NU este o proprietate Open Graph: protocolul
+      (ogp.me) nu definește nicio culoare, deci serviciile de partajare
+      ignoră această linie. Azi nu face nimic și poate fi eliminată.
     -->
 
     <meta property="og:image" content="./favicon.svg" />
     <!-- @path:
-      Imaginea Open Graph. Este previzualizarea folosită pe cardurile partajate.
+      Imaginea Open Graph: imaginea de previzualizare de pe cardurile partajate.
+      Indică spre favicon ca substituent, până când va exista o captură dedicată.
+      @warning: substituentul încă nu funcționează. Facebook, LinkedIn, X și
+      aplicațiile de mesagerie refuză SVG aici; cer o imagine raster (PNG sau
+      JPEG, ideal 1200x630), deci cardurile partajate pot rămâne fără nicio
+      imagine.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -153,7 +163,11 @@
 
     <link rel="apple-touch-icon" href="favicon.svg" />
     <!-- @path:
-      Legătura către Apple Touch Icon pentru dispozitive iOS.
+      Apple Touch Icon: imaginea pe care iOS o arată când pagina este adăugată
+      pe ecranul de pornire.
+      @warning: iOS nu acceptă SVG aici; are nevoie de un PNG (Apple recomandă
+      180x180). Cu acest SVG, iOS ignoră legătura și își face singur o
+      pictogramă.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
