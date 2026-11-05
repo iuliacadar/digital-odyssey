@@ -265,11 +265,25 @@ function saveNote(dayId) {
   //  @reason: Only claim success when the write really happened. A "saved"
   //    alert after a failed write would let the captain close the tab and
   //    lose the note while believing it was archived.
+  //  @reason: The alerts speak the page's language. This file and its
+  //    ro/script.js twin must hold the same code (tools/check-parity.py), so
+  //    both volumes carry both sentences and choose at runtime from the
+  //    <html lang="..."> attribute, the same way the vault engine
+  //    (MECANISM 10) picks its strings. An English page shows the English one.
+  const lang = (document.documentElement.lang || "en").toLowerCase(); // "en" or "ro", read from the page's <html> tag.
   if (saved) {
     console.log(`Signal saved for sector: ${dayId}`); // Log a technical confirmation to the dev console.
-    alert("Signal extension saved to local archives."); // On-screen alert confirming the save to the user.
+    alert(
+      lang === "ro"
+        ? "Extensia de semnal a fost salvată în arhivele locale."
+        : "Signal extension saved to local archives.",
+    ); // On-screen alert confirming the save to the user.
   } else {
-    alert("Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe."); // Tell the truth.
+    alert(
+      lang === "ro"
+        ? "Semnalul NU a fost salvat: acest browser blochează stocarea locală pentru acest site (mod privat sau setări stricte de confidențialitate). Copiază-ți nota într-un loc sigur."
+        : "Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe.",
+    ); // Tell the truth.
   }
 }
 
