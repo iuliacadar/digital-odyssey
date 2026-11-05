@@ -38,9 +38,25 @@ jobs:
         with:
           # Publish the whole repo root: en/ and ro/ are served as sibling
           # sites (see BACKLOG-EN.md #008 — option 3, en/ is canonical).
-          # docs/, tools/, and Markdown sources are harmless extra bytes
-          # (no server-side execution on Pages) but excluded for a smaller
-          # artifact and to avoid publishing internal working notes.
+          # @warning: this workflow excludes NOTHING. `path: '.'` hands the
+          #   whole checkout to the action, whose own tar step skips only
+          #   `.git/` and `.github/`. Everything else is reachable on the
+          #   live site: docs/, tools/, the Makefile and the Markdown
+          #   sources (BACKLOG-*.md, JOURNAL-*.md, DEPLOY.md, CLAUDE.md...).
+          #   An earlier version of this comment said docs/, tools/ and the
+          #   Markdown were left out "to avoid publishing internal working
+          #   notes"; they never were (audit 2026-11-04, F10).
+          # @reason: that is acceptable, and partly required:
+          #   - the repository is public, so the artifact reveals nothing
+          #     a visitor could not already read on GitHub;
+          #   - Pages only serves files, it executes nothing server-side,
+          #     so a published .py or Makefile is text, not an attack surface;
+          #   - the vault (script.js, JOURNAL_PATH) fetches ../JOURNAL-EN.md
+          #     and ../JOURNAL-RO.md from the live site at run time, so the
+          #     journals MUST be published.
+          #   If the site ever needs to hide something, the fix is a staged
+          #   `_site/` directory that copies what is served (journals
+          #   included), not a comment that promises an exclusion.
           path: '.'
 
       - name: Deploy to GitHub Pages
