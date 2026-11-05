@@ -184,14 +184,21 @@ python3 tools/test-deploy-status.py --makefile OLD     # e.g. git show main:Make
 It never talks to GitHub. A stand-in `gh` goes first on `PATH`: it plays
 back a scripted list of runs, lets the new run "appear" only after a few
 polls, records which run id it was asked to watch, and refuses any command
-it does not know, so the test cannot deploy anything by accident. Four
+it does not know, so the test cannot deploy anything by accident. Eight
 scenarios: the late-registering run (the race), a run that never appears,
-the happy path, and a `gh` that is not logged in. Each one checks the exit
-code **and** the run actually watched, because the old target's exit code
-in the race was a cheerful 0.
+the happy path, a `gh` that is not logged in, a short SHA the clone can
+expand, a short SHA it cannot, and `DEPLOY_POLL=00` / `08` (zero in
+disguise, and a number shell arithmetic reads as broken octal). Each one
+checks the exit code **and** the run actually watched, because the old
+target's exit code in the race was a cheerful 0. A target stuck in an
+endless poll loop is killed after a short timeout, whole process group
+included, and reported as a failure.
 
 Run against the old target it fails the race and the never-appears
-scenarios with `FALSE SUCCESS`; that is the guard proving it bites.
+scenarios with `FALSE SUCCESS`; that is the guard proving it bites. Run
+against the first fix (7ee7ef2) it fails the four newer scenarios: the
+short SHA waits out the timeout and reports no run, and `DEPLOY_POLL=00`
+calls `gh` hundreds of times in ten seconds.
 
 ---
 

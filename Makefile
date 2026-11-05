@@ -40,14 +40,26 @@ deploy:
 #   an honest "not found" would have started.
 #
 # @logic: three knobs, all overridable on the command line:
-#   DEPLOY_SHA   commit whose run to watch. `make deploy` passes the one it
-#                just pushed. Left empty, the target asks origin what `main`
-#                points at right now (`git ls-remote`), not the local
-#                `origin/main`, which is stale if the push came from
-#                another machine.
+#   DEPLOY_SHA   the FULL 40-character SHA of the commit whose run to watch.
+#                `make deploy` passes the one it just pushed. Left empty, the
+#                target asks origin what `main` points at right now
+#                (`git ls-remote`), not the local `origin/main`, which is
+#                stale if the push came from another machine.
 #   DEPLOY_WAIT  seconds to wait for the run to be registered (default 120).
 #   DEPLOY_POLL  seconds between looks (default 5; at least 1, or the wait
 #                would never run out).
+# @warning: `gh run list --commit` matches the full SHA only. A short one
+#   (`7324fd0`) matches nothing, so the target used to wait out DEPLOY_WAIT
+#   and then report "no run" for a run that existed (QA of audit fix #8).
+#   A short hex SHA is now expanded with `git rev-parse` when this clone
+#   knows the commit; if it does not, the target refuses at once and asks
+#   for the full SHA. Branch names are refused too: a local `main` can be
+#   behind origin, which is the stale answer DEPLOY_SHA exists to avoid.
+# @warning: DEPLOY_POLL must not start with 0. `00` is zero written twice:
+#   it slipped past a check for the literal `0` and polled GitHub in a
+#   tight loop forever. `08` and `09` are not numbers at all to the shell's
+#   arithmetic (a leading 0 means octal), so it crashed after the first
+#   sleep. Both are now refused before the first `gh` call.
 # @line: the variable is DEPLOY_SHA, not plain SHA, because make imports
 #   every environment variable, and a stray `SHA` exported for some other
 #   tool would silently choose the commit to watch.
@@ -60,8 +72,8 @@ DEPLOY_POLL ?= 5
 
 deploy-status:
 	@case "$(DEPLOY_WAIT):$(DEPLOY_POLL)" in \
-		*[!0-9:]*|:*|*:|*:0) \
-			echo "error: DEPLOY_WAIT and DEPLOY_POLL must be whole seconds, DEPLOY_POLL >= 1" >&2; \
+		*[!0-9:]*|:*|*:|*:*:*|*:0*) \
+			echo "error: DEPLOY_WAIT and DEPLOY_POLL must be whole seconds, DEPLOY_POLL >= 1 with no leading 0" >&2; \
 			exit 1;; \
 	esac; \
 	sha="$(DEPLOY_SHA)"; \
@@ -69,8 +81,22 @@ deploy-status:
 		sha=$$(git ls-remote origin refs/heads/main | cut -f1); \
 	fi; \
 	if [ -z "$$sha" ]; then \
-		echo "error: could not ask origin which commit main is on; pass DEPLOY_SHA=<commit>" >&2; \
+		echo "error: could not ask origin which commit main is on; pass DEPLOY_SHA=<full 40-character SHA>" >&2; \
 		exit 1; \
+	fi; \
+	if ! printf '%s\n' "$$sha" | grep -Eqx '[0-9a-f]{40}'; then \
+		full=; \
+		if printf '%s\n' "$$sha" | grep -Eqx '[0-9a-fA-F]{4,40}'; then \
+			full=$$(git rev-parse --verify --quiet "$$sha^{commit}"); \
+		fi; \
+		if [ -z "$$full" ]; then \
+			echo "error: DEPLOY_SHA=$$sha is not a full 40-character SHA, and this clone cannot expand it." >&2; \
+			echo "  gh matches the full SHA only. Pass it in full, e.g. from 'git rev-parse <commit>'" >&2; \
+			echo "  after a 'git fetch', or from the commit's page on GitHub." >&2; \
+			exit 1; \
+		fi; \
+		echo "DEPLOY_SHA=$$sha expanded to $$full (gh matches full SHAs only)."; \
+		sha=$$full; \
 	fi; \
 	echo "Waiting for the deploy.yml run of commit $$sha (up to $(DEPLOY_WAIT)s)..."; \
 	waited=0; \

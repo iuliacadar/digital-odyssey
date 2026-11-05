@@ -29,6 +29,7 @@ Exit code 0 = every scenario behaved, 1 = at least one did not.
 import json
 import os
 import pathlib
+import signal
 import subprocess
 import sys
 import tempfile
@@ -40,6 +41,13 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 #   `make deploy` has just pushed. Full 40-character SHAs, like git prints.
 OLD = "1" * 40
 NEW = "2" * 40
+
+# @line: the short-SHA scenario needs a commit this clone really knows, because
+#   the target expands a short SHA with `git rev-parse`. HEAD will do; its run
+#   is scripted below like any other. None outside a git checkout.
+_head = subprocess.run(["git", "rev-parse", "--verify", "--quiet", "HEAD^{commit}"],
+                       cwd=REPO, capture_output=True, text=True)
+LOCAL = _head.stdout.strip() if _head.returncode == 0 else None
 
 # @block: the stand-in `gh`. It reads its script (the runs, when each one
 #   becomes visible) from a JSON state file and appends every call to it.
@@ -154,13 +162,79 @@ SCENARIOS = [
         "expect_ok": False,
         "expect_max_list_calls": 1,
     },
+    # @reason: the four scenarios below come from the QA of audit fix #8.
+    #   `gh run list --commit` matches the FULL SHA only, so a short one found
+    #   nothing and the target reported "no run" for a run that existed.
+    {
+        "name": "short SHA this clone knows: expand it, watch its run",
+        "needs_local": True,
+        "sha": "LOCAL_SHORT",
+        "runs": [
+            {"databaseId": 200, "headSha": "LOCAL", "conclusion": "success", "visible_from_call": 1},
+            {"databaseId": 300, "headSha": OLD, "conclusion": "success", "visible_from_call": 1},
+        ],
+        "wait": 2,
+        "expect_watched": [200],
+        "expect_ok": True,
+    },
+    {
+        "name": "short SHA this clone cannot expand: refuse at once, ask for the full SHA",
+        "sha": NEW[:7],
+        "runs": [
+            {"databaseId": 100, "headSha": OLD, "conclusion": "success", "visible_from_call": 1},
+        ],
+        "wait": 30,
+        "expect_watched": [],
+        "expect_ok": False,
+        "expect_text": "full 40-character SHA",
+        "expect_max_list_calls": 0,
+    },
+    # @warning: `DEPLOY_POLL=00` used to slip past a check for the literal `0`
+    #   and poll in a tight loop forever, so these two scenarios run under a
+    #   short timeout that kills the whole process group, loop included.
+    {
+        "name": "DEPLOY_POLL=00 (zero in disguise): refuse, never poll",
+        "poll": "00",
+        "runs": [
+            {"databaseId": 100, "headSha": OLD, "conclusion": "success", "visible_from_call": 1},
+        ],
+        "wait": 30,
+        "timeout": 10,
+        "expect_watched": [],
+        "expect_ok": False,
+        "expect_text": "DEPLOY_POLL",
+        "expect_max_list_calls": 0,
+    },
+    {
+        "name": "DEPLOY_POLL=08 (not a number to shell arithmetic): refuse with our message",
+        "poll": "08",
+        "runs": [
+            {"databaseId": 100, "headSha": OLD, "conclusion": "success", "visible_from_call": 1},
+        ],
+        "wait": 30,
+        "timeout": 20,
+        "expect_watched": [],
+        "expect_ok": False,
+        "expect_text": "DEPLOY_POLL",
+        "expect_max_list_calls": 0,
+    },
 ]
+
+
+def resolve(value):
+    """Swap the LOCAL placeholders for the real commit (see LOCAL above)."""
+    if value == "LOCAL":
+        return LOCAL
+    if value == "LOCAL_SHORT":
+        return LOCAL[:7]
+    return value
 
 
 def run_scenario(makefile, scenario, tmp):
     state = pathlib.Path(tmp) / "state.json"
+    runs = [dict(r, headSha=resolve(r["headSha"])) for r in scenario["runs"]]
     state.write_text(json.dumps({
-        "runs": scenario["runs"],
+        "runs": runs,
         "list_fails": scenario.get("list_fails", False),
         "list_calls": 0,
         "watched": [],
@@ -177,12 +251,27 @@ def run_scenario(makefile, scenario, tmp):
     #   Makefile simply ignores the three variables, which is the point: it
     #   is judged on what it does, not on what it is told. DEPLOY_POLL=1
     #   keeps the waiting scenarios to a couple of seconds.
-    result = subprocess.run(
+    sha = resolve(scenario.get("sha", NEW))
+    poll = scenario.get("poll", "1")
+    # @line: a new session puts make, its shell and any `sleep` in one process
+    #   group, so a timeout can kill them all. Killing only make would leave
+    #   an endless poll loop running behind the test's back.
+    proc = subprocess.Popen(
         ["make", "-s", "--no-print-directory", "-f", str(makefile), "deploy-status",
-         f"DEPLOY_SHA={NEW}", f"DEPLOY_WAIT={scenario['wait']}", "DEPLOY_POLL=1"],
-        cwd=REPO, env=env, capture_output=True, text=True, timeout=120,
+         f"DEPLOY_SHA={sha}", f"DEPLOY_WAIT={scenario['wait']}", f"DEPLOY_POLL={poll}"],
+        cwd=REPO, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+        start_new_session=True,
     )
+    timed_out = False
+    try:
+        out, err = proc.communicate(timeout=scenario.get("timeout", 120))
+    except subprocess.TimeoutExpired:
+        timed_out = True
+        os.killpg(proc.pid, signal.SIGKILL)
+        out, err = proc.communicate()
+    result = subprocess.CompletedProcess(proc.args, proc.returncode, out, err)
     final = json.loads(state.read_text())
+    final["timed_out"] = timed_out
     return result, final
 
 
@@ -196,19 +285,28 @@ def main():
 
     failures = 0
     for sc in SCENARIOS:
+        if sc.get("needs_local") and LOCAL is None:
+            # @line: say what was not checked, rather than pass it in silence.
+            print(f"[SKIP] {sc['name']}")
+            print("       not run from a git checkout, so there is no local commit to expand")
+            print()
+            continue
         with tempfile.TemporaryDirectory() as tmp:
             result, final = run_scenario(makefile, sc, tmp)
         ok = result.returncode == 0
         problems = []
+        if final["timed_out"]:
+            problems.append(f"still running after {sc['timeout']}s, killed (endless poll loop?)")
         if final["watched"] != sc["expect_watched"]:
             problems.append(f"watched run(s) {final['watched']}, expected {sc['expect_watched']}")
         if ok != sc["expect_ok"]:
             verdict = "FALSE SUCCESS" if ok else "unexpected failure"
             problems.append(f"exit {result.returncode} ({verdict})")
         if sc.get("expect_text") and sc["expect_text"] not in result.stdout + result.stderr:
-            problems.append("error message does not name the pushed commit")
+            problems.append(f"output does not mention {sc['expect_text']!r}")
         if "expect_max_list_calls" in sc and final["list_calls"] > sc["expect_max_list_calls"]:
-            problems.append(f"kept polling a failing gh ({final['list_calls']} calls)")
+            problems.append(f"called gh run list {final['list_calls']}x, "
+                            f"expected at most {sc['expect_max_list_calls']}")
 
         mark = "PASS" if not problems else "FAIL"
         failures += bool(problems)

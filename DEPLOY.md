@@ -23,8 +23,16 @@ default it watches the run for the commit `main` points at on origin right
 now. To watch a specific commit, or wait longer:
 
 ```bash
-make deploy-status DEPLOY_SHA=<commit> DEPLOY_WAIT=300
+make deploy-status DEPLOY_SHA=<full 40-character SHA> DEPLOY_WAIT=300
 ```
+
+Give the **full** SHA (`git rev-parse <commit>` prints it). GitHub's run
+filter matches full SHAs only; a short one such as `7324fd0` matches
+nothing. The target expands a short SHA itself when your clone knows that
+commit, and refuses at once, asking for the full SHA, when it doesn't.
+Branch names are refused, because your local `main` may be behind origin.
+`DEPLOY_POLL` (seconds between looks, default 5) must be at least 1, written
+without a leading 0.
 
 Why it matters: right after a push, the newest run GitHub lists is often
 still the *previous* deploy. The first version of `deploy-status` watched
