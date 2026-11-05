@@ -82,9 +82,11 @@ function storeSet(key, value) {
 //  ==========================================================================
 //  @mechanism: 01 — Dinamica barei la scroll
 //  @event: scroll pe fereastră
-//  @pedagogy: "scroll" se declanșează de sute de ori pe secundă. Tot ce facem
-//    aici e să comparăm două numere și să comutăm o clasă CSS — suficient de
-//    rapid pentru a păstra interfața fluidă, fără nicio constrângere manuală.
+//  @pedagogy: Cât timp pagina se mișcă, "scroll" se declanșează cam o dată pe
+//    cadru (de 60 până la 120 de ori pe secundă; browserele nu îl declanșează
+//    niciodată mai des decât redesenează). Tot ce facem aici e să comparăm
+//    două numere și să comutăm o clasă CSS — destul de ieftin pentru a păstra
+//    interfața fluidă, fără nicio constrângere manuală.
 //  ==========================================================================
 
 // Atașăm un ascultător permanent la evenimentul de scroll al ferestrei.
@@ -404,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //     sidebar-ul se derulează orizontal ca să centraze butonul activ.
 //  ==========================================================================
 //  @mechanism: 06 — Sincronizarea orizontală a HUD
-//  @event: window scroll
+//  @event: scroll pe document (urcă și până la window; oricare merge)
 //  @guard: rulează doar pe viewport-uri <= 768px (mobil și ecran divizat).
 //  ==========================================================================
 
@@ -452,10 +454,13 @@ document.addEventListener("scroll", () => {
 //  @mechanism: 06.5 — Comutatorul consolei HUD
 //  @event: click pe .hud-toggle, click în afara .hud-overlay, tasta Escape
 //  @pedagogy: Comutarea unei clase CSS prin classList.toggle este cea mai
-//    simplă și mai performantă metodă de a arăta/ascunde elemente UI. Nu se
-//    folosește display:none, nici calcule de înălțime — doar transițiile CSS
-//    se ocupă de animație. Ascultătorii de click-în-afară și Escape acționează
-//    ca eliberări de siguranță, asigurând că overlay-ul nu prinde niciodată.
+//    simplă metodă de a arăta/ascunde elemente UI: JavaScript spune CE s-a
+//    schimbat, iar CSS decide CUM arată și cum se mișcă. Nicio valoare de stil
+//    nu stă în script. Nu e însă gratuită: .hud-overlay își animă înălțimea,
+//    iar schimbarea înălțimii obligă browserul să refacă layout-ul la fiecare
+//    cadru al alunecării. Cele mai ieftine animații sunt transform și opacity.
+//    Ascultătorii de click-în-afară și Escape acționează ca eliberări de
+//    siguranță, asigurând că overlay-ul nu prinde niciodată.
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -574,7 +579,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) {
           throw new Error(
             `File "${filePath}" not found. (${response.status})`,
-          ); // Eroare de rețea? O aruncăm către blocul catch.
+          ); // Eroare HTTP (404, 500...): serverul a răspuns, doar că nu cu fișierul. O aruncăm către blocul catch.
+          //  @pedagogy: o adevărată cădere de rețea (offline, DNS, blocare) nu
+          //    ajunge niciodată pe această linie: fetch() RESPINGE promisiunea și
+          //    sare direct la .catch. fetch se rezolvă ori de câte ori un server
+          //    a răspuns, oricare ar fi statusul, deci verificarea response.ok
+          //    e treaba noastră.
         }
         return response.text(); // Transformă tamponul brut al rețelei în text simplu util.
       })
@@ -1223,9 +1233,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!activeCapsule) return; // Niciun context de capsulă? Nimic de notat.
 
     //  FormData este unealta proprie a browserului pentru citirea controalelor
-    //  de formular. .get() returnează valoarea radio-ului ales (indexul pentru
-    //  radio) după numele grupului — dându-ne indexul răspunsului ales pentru
-    //  fiecare întrebare dintr-odată.
+    //  de formular. .get() returnează valoarea radio-ului ales după numele
+    //  grupului — dându-ne indexul răspunsului ales pentru fiecare întrebare
+    //  dintr-odată.
+    //  @warning: o întrebare lăsată fără răspuns returnează null, nu "". Aici
+    //    nu se poate întâmpla: fiecare radio poartă `required`, deci browserul
+    //    refuză să trimită un chestionar gol. Fără `required`, Number(null) ar
+    //    transforma fiecare gol în 0: un punct ori de câte ori opțiunea 0 e
+    //    cea corectă.
     const formData = new FormData(navGateForm);
     const answers = activeCapsule.quiz.questions.map((_, qIndex) =>
       formData.get(`q${qIndex}`), // Indexul ales de călător.
@@ -1414,8 +1429,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //  îl deblochează (cap.days, ex. ["DAY 00", ..., "DAY 21"]). Fiecare DAY este
   //  tăiat, markdown-ul este dezbrăcat, iar secțiunile sunt unite cu un divizor,
   //  ca pachetul întreg să bată la mașină drept o singură transmisiune.
-  //  Îmbunătățire progresivă: dacă fetch-ul eșuează (offline / file://), teaser-ul
-  //  deja primit stă de unul singur — Camera nu se sparge niciodată.
+  //  Degradare grațioasă: transmisiunea completă este designul, iar dacă
+  //  fetch-ul eșuează (offline / file://) Camera se retrage la teaser-ul pe care
+  //  îl are deja. Nu se sparge niciodată. (Îmbunătățirea progresivă merge în
+  //  sens invers: pornește de la o pagină care funcționează fără pic de
+  //  JavaScript, apoi adaugă straturi deasupra.)
   function extractDaySection(markdown, dayWord, dayNumber) {
 //  Ce vânăm, ex. "DAY 12". Interpolat din lista de zile a capsulei, deci
     //  aceeași funcție servește fiecare volum.
@@ -1563,8 +1581,15 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   //  @reason: Adunăm elementele într-un array și le punem în DOM o singură dată,
-  //    la final. Dacă am adăuga fiecare [li] direct în listă, browserul ar
-  //    recalcula layout-ul de 33 de ori pe o pagină obișnuită. Așa: o dată.
+  //    la final, printr-un singur apel: pagina trece direct de la lista veche
+  //    la cea nouă, terminată.
+  //  @pedagogy: un mit răspândit spune că adăugarea fiecărui [li] direct în
+  //    listă ar costa câte un reflow pe intrare. Nu e așa: browserul grupează
+  //    scrierile în DOM și rulează layout-ul o singură dată, înainte de
+  //    următoarea redesenare. Un reflow este FORȚAT doar când codul CITEȘTE
+  //    layout-ul (offsetHeight, getBoundingClientRect...) între scrieri, ceea
+  //    ce obligă browserul să așeze pagina pe loc. Citirile și scrierile
+  //    alternate într-o buclă se numesc "layout thrashing".
   const generatedItems = []; // Depozitul temporar pentru link-urile construite.
 
   contentBlocks.forEach((block) => {
@@ -1625,11 +1650,13 @@ document.addEventListener("DOMContentLoaded", () => {
       //    completă, deci nu primește link. Iarăși, "return" = "continue".
       if (!dayToken) return; // Fără titlu de zi nu avem etichetă de afișat.
 
-      //  @concept: textContent, niciodată innerHTML. Titlurile conțin caractere
-      //    speciale scrise ca entități — "&lt;img&gt;", "&" — și diacritice
-      //    românești (ă â î ș ț). textContent le tratează ca text simplu și le
-      //    scapă corect automat. Construind aceeași etichetă prin innerHTML,
-      //    "&lt;" ar fi re-escapat și s-ar afișa literal ca "&amp;lt;".
+      //  @concept: textContent, niciodată innerHTML. Sursa scrie "&lt;img&gt;",
+      //    dar textContent ne dă caracterele decodate: un "<img>" adevărat,
+      //    plus "&" și diacritice românești (ă â î ș ț). Scrise înapoi cu
+      //    textContent, rămân caractere. Scrise cu innerHTML, "<img>" ar fi
+      //    INTERPRETAT ca un element imagine real, iar un titlu meșteșugit,
+      //    precum <img src=x onerror=...>, ar rula cod: ușa prin care intră
+      //    cross-site scripting (XSS).
       //  @reason: Markup-ul scris de mână indentează aceste [span]-uri inconsecvent
       //    — unele au un newline la început, altele un simplu spațiu. Înlocuind
       //    orice succesiune de spații albe cu un singur spațiu și tăind capetele,
@@ -1645,8 +1672,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //  @reason: replaceChildren șterge vechile [li] scrise de mână și le instalează
-  //    pe cele generate într-o singură operație atomică. Lista nu apare niciodată
-  //    goală în timpul înlocuirii, deci sidebar-ul nu pâlpâie.
+  //    pe cele generate într-un singur apel. Ne scutește de o ștergere manuală
+  //    cu innerHTML = "" (care trece prin parserul HTML) și de o buclă de
+  //    appendChild.
+  //  @pedagogy: NU acesta e motivul pentru care lista nu pâlpâie. Browserul nu
+  //    redesenează niciodată în mijlocul unui script care rulează, așa că nici
+  //    o ștergere urmată de reumplere n-ar putea arăta o listă goală: ecranul
+  //    se actualizează abia după ce scriptul se termină.
   //  @warning: Din acest moment, nodurile [a] din sidebar sunt ALTE noduri decât
   //    cele existente la încărcarea paginii. Orice mecanism care s-ar lega de
   //    ele individual și-ar pierde legătura — vezi MECANISMUL 05, care de aceea
