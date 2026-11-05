@@ -163,12 +163,21 @@ const observer = new IntersectionObserver((entries) => {
         // ACTIVATE THE RADAR: Only run this auto-centering on Desktop (screens > 768px).
         if (window.innerWidth > 768 && innerSidebarList) {
           //     THE AUTO-CENTRE ALGORITHM:
-          //    We calculate where the day's button sits within the list (offsetTop)
-          //    and subtract half the sidebar window height (clientHeight / 2).
-          //    This simple maths brings the button and its Sector label
-          //    RIGHT into the visual centre of the menu, right beneath the MAP title!
+          //    offsetTop does NOT count from the list. It counts from the link's
+          //    offsetParent: its nearest positioned ancestor, here the whole
+          //    .log-sidebar, MAP title included. Subtracting the list's own
+          //    offsetTop gives the link's place INSIDE the list. Then subtract
+          //    half the list's visible height and add half the link's height:
+          //    the link's middle lands on the list's middle.
+          //  @warning: until audit fix #7 the list's own offset was missing,
+          //    and every "centred" day stopped about 70px above the centre.
+          //    Before trusting offsetTop/offsetLeft, ask: offset from WHAT?
+          //    element.offsetParent answers it.
           const centerPosition =
-            activeLink.offsetTop - innerSidebarList.clientHeight / 2;
+            activeLink.offsetTop -
+            innerSidebarList.offsetTop - // From the sidebar's top to the list's top.
+            innerSidebarList.clientHeight / 2 +
+            activeLink.offsetHeight / 2;
 
           // The sidebar performs a smooth, silent scroll to that exact position.
           innerSidebarList.scrollTo({
@@ -415,9 +424,12 @@ document.addEventListener("scroll", () => {
     // Safety shield: run the logic only if both elements are alive on screen.
     if (hudContainer && activeButton) {
       /* TACTILE REALITY MATHS:
-          Calculate the button's position relative to the screen's left edge (offsetLeft)
-         and subtract half the HUD width to land it EXACTLY centre! */
-      const buttonLeft = activeButton.offsetLeft; // Distance from the left edge of the container.
+          offsetLeft counts from the button's offsetParent (its nearest
+          positioned ancestor), not from the screen. Here that ancestor is
+          .log-sidebar itself, the very box we scroll, so offsetLeft is already
+          the distance inside it. Subtract half the HUD width and add half the
+          button width to land it EXACTLY centre! */
+      const buttonLeft = activeButton.offsetLeft; // Distance from .log-sidebar's left edge (its offsetParent).
       const buttonWidth = activeButton.offsetWidth; // How wide is the active button itself?
       const hudWidth = hudContainer.offsetWidth; // How wide is the visible HUD window?
 
@@ -602,7 +614,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mobile auto-centre: same tactile maths as MECANISM 06.
     if (window.innerWidth <= 768) {
-      const btnLeft = btn.offsetLeft; // Distance of the tab from the container's left edge.
+      //  @warning: unlike MECANISM 06, the offsetParent here is NOT the box we
+      //    scroll: it is .blueprint-layout, and the tab bar sits 26px inside
+      //    it. Subtracting the bar's own offsetLeft turns the distance into one
+      //    measured inside the bar. Without it, every tab stopped 27px short of
+      //    the centre (audit fix #7).
+      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft; // Distance of the tab from the tab bar's left edge.
       const btnWidth = btn.offsetWidth; // The tab's own width.
       const containerWidth = tabContainer.offsetWidth; // The visible width of the tab bar.
       const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Centre it.

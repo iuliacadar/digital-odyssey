@@ -167,12 +167,21 @@ const observer = new IntersectionObserver((entries) => {
         // ACTIVEAZĂ RADARUL: Executăm această autocentrare doar pe Desktop (ecrane peste 768px).
         if (window.innerWidth > 768 && innerSidebarList) {
           //     ALGORITMUL DE AUTOCENTRARE:
-          //    Calculăm unde se află butonul zilei în interiorul listei (offsetTop)
-          //    și scădem jumătate din înălțimea ferestrei sidebaruluiui (clientHeight / 2).
-          //    Acest calcul simplu aduce atâta butonul cât si eticheta Sectorului
-          //    chiar în centrul vizual al meniului, chiar sub titlul HARTĂ!
+          //    offsetTop NU se măsoară de la listă. Se măsoară de la offsetParent-ul
+          //    linkului: cel mai apropiat strămoș poziționat, aici întregul
+          //    .log-sidebar, cu titlul HARTĂ cu tot. Scăzând offsetTop-ul propriu
+          //    al listei obținem locul linkului ÎN INTERIORUL listei. Apoi scădem
+          //    jumătate din înălțimea vizibilă a listei și adunăm jumătate din
+          //    înălțimea linkului: mijlocul linkului ajunge pe mijlocul listei.
+          //  @warning: până la fix-ul #7 din audit lipsea offsetul propriu al
+          //    listei, iar fiecare zi „centrată” se oprea cu circa 70px deasupra
+          //    centrului. Înainte să ai încredere în offsetTop/offsetLeft, întreabă:
+          //    offset față de CE? Răspunsul îl dă element.offsetParent.
           const centerPosition =
-            activeLink.offsetTop - innerSidebarList.clientHeight / 2;
+            activeLink.offsetTop -
+            innerSidebarList.offsetTop - // De la vârful sidebarului la vârful listei.
+            innerSidebarList.clientHeight / 2 +
+            activeLink.offsetHeight / 2;
 
           // Sidebar-ul execută o derulare silențioasă și lin către acea poziție exactă.
           innerSidebarList.scrollTo({
@@ -412,9 +421,12 @@ document.addEventListener("scroll", () => {
     // Scut de siguranță: rulează logica doar dacă ambele elemente sunt prezente pe ecran.
     if (hudContainer && activeButton) {
       /* MATEMATICA REALITĂȚII TACTILE:
-          Calculăm poziția butonului relativ la marginea stângă a ecranului (offsetLeft)
-          și scădem jumătate din lățimea HUD pentru a-l aduce EXACT în centru! */
-      const buttonLeft = activeButton.offsetLeft; // Distanța de la marginea stângă a containerului.
+          offsetLeft se măsoară de la offsetParent-ul butonului (cel mai apropiat
+          strămoș poziționat), nu de la ecran. Aici acel strămoș este chiar
+          .log-sidebar, cutia pe care o derulăm, deci offsetLeft este deja
+          distanța din interiorul ei. Scădem jumătate din lățimea HUD și adunăm
+          jumătate din lățimea butonului pentru a-l aduce EXACT în centru! */
+      const buttonLeft = activeButton.offsetLeft; // Distanța de la marginea stângă a .log-sidebar (offsetParent-ul lui).
       const buttonWidth = activeButton.offsetWidth; // Cât de lat este butonul activ?
       const hudWidth = hudContainer.offsetWidth; // Cât de lată este fereastra HUD vizibilă?
 
@@ -599,7 +611,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Auto-centrare mobilă: aceleași calcule tactile ca la MECANISMUL 06.
     if (window.innerWidth <= 768) {
-      const btnLeft = btn.offsetLeft; // Distanța tab-ului față de marginea stângă a containerului.
+      //  @warning: spre deosebire de MECANISMUL 06, offsetParent-ul de aici NU este
+      //    cutia pe care o derulăm: este .blueprint-layout, iar bara de taburi
+      //    stă la 26px în interiorul lui. Scăzând offsetLeft-ul propriu al barei,
+      //    distanța devine una măsurată în interiorul barei. Fără el, fiecare tab
+      //    se oprea cu 27px înainte de centru (fix-ul #7 din audit).
+      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft; // Distanța tab-ului față de marginea stângă a barei de taburi.
       const btnWidth = btn.offsetWidth; // Lățimea proprie a tab-ului.
       const containerWidth = tabContainer.offsetWidth; // Lățimea vizibilă a barei de tab-uri.
       const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Îl centrează.
