@@ -460,7 +460,8 @@ document.addEventListener("scroll", () => {
 //    iar schimbarea înălțimii obligă browserul să refacă layout-ul la fiecare
 //    cadru al alunecării. Cele mai ieftine animații sunt transform și opacity.
 //    Ascultătorii de click-în-afară și Escape acționează ca eliberări de
-//    siguranță, asigurând că overlay-ul nu prinde niciodată.
+//    siguranță, asigurând că overlay-ul nu prinde niciodată utilizatorul în
+//    capcană.
 //  ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -622,11 +623,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Auto-centrare mobilă: aceleași calcule tactile ca la MECANISMUL 06.
     if (window.innerWidth <= 768) {
       //  @warning: spre deosebire de MECANISMUL 06, offsetParent-ul de aici NU este
-      //    cutia pe care o derulăm: este .blueprint-layout, iar bara de taburi
-      //    stă la 26px în interiorul lui. Scăzând offsetLeft-ul propriu al barei,
-      //    distanța devine una măsurată în interiorul barei. Fără el, fiecare tab
-      //    se oprea cu 27px înainte de centru (fix-ul #7 din audit).
-      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft; // Distanța tab-ului față de marginea stângă a barei de taburi.
+      //    cutia pe care o derulăm. Niciun strămoș al tabului nu e poziționat,
+      //    deci offsetParent-ul revine implicit la <body> (aici
+      //    body.blueprint-layout), iar bara de taburi stă la 26px în interiorul
+      //    lui. Scăzând offsetLeft-ul barei (până la border) și clientLeft-ul ei
+      //    (borderul de 1px), măsurăm tabul de unde numără scrollLeft: marginea
+      //    interioară a barei. Fără ele, fiecare tab se oprea cu 27px înainte de
+      //    centru (fix-ul #7 din audit).
+      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft - tabContainer.clientLeft; // Distanța tab-ului față de marginea stângă a barei de taburi.
       const btnWidth = btn.offsetWidth; // Lățimea proprie a tab-ului.
       const containerWidth = tabContainer.offsetWidth; // Lățimea vizibilă a barei de tab-uri.
       const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Îl centrează.
@@ -1676,8 +1680,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //    cu innerHTML = "" (care trece prin parserul HTML) și de o buclă de
   //    appendChild.
   //  @pedagogy: NU acesta e motivul pentru care lista nu pâlpâie. Browserul nu
-  //    redesenează niciodată în mijlocul unui script care rulează, așa că nici
-  //    o ștergere urmată de reumplere n-ar putea arăta o listă goală: ecranul
+  //    redesenează niciodată în mijlocul unui script care rulează, așa că nicio
+  //    ștergere urmată de reumplere n-ar putea arăta o listă goală: ecranul
   //    se actualizează abia după ce scriptul se termină.
   //  @warning: Din acest moment, nodurile [a] din sidebar sunt ALTE noduri decât
   //    cele existente la încărcarea paginii. Orice mecanism care s-ar lega de

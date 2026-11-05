@@ -623,11 +623,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mobile auto-centre: same tactile maths as MECANISM 06.
     if (window.innerWidth <= 768) {
       //  @warning: unlike MECANISM 06, the offsetParent here is NOT the box we
-      //    scroll: it is .blueprint-layout, and the tab bar sits 26px inside
-      //    it. Subtracting the bar's own offsetLeft turns the distance into one
-      //    measured inside the bar. Without it, every tab stopped 27px short of
-      //    the centre (audit fix #7).
-      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft; // Distance of the tab from the tab bar's left edge.
+      //    scroll. No ancestor of the tab is positioned, so the offsetParent
+      //    falls back to <body> (here body.blueprint-layout), and the tab bar
+      //    sits 26px inside it. Subtracting the bar's offsetLeft (to its
+      //    border) and its clientLeft (the 1px border itself) measures the tab
+      //    from where scrollLeft counts: the bar's inner edge. Without them,
+      //    every tab stopped 27px short of the centre (audit fix #7).
+      const btnLeft = btn.offsetLeft - tabContainer.offsetLeft - tabContainer.clientLeft; // Distance of the tab from the tab bar's left edge.
       const btnWidth = btn.offsetWidth; // The tab's own width.
       const containerWidth = tabContainer.offsetWidth; // The visible width of the tab bar.
       const targetScroll = btnLeft - containerWidth / 2 + btnWidth / 2; // Centre it.
