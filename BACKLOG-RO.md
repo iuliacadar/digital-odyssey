@@ -235,13 +235,18 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 **Fișiere afectate:** `en/script.js`, `ro/script.js`, `en/frontend/html-log.html`, `ro/frontend/html-log.html` (și viitoarele pagini HTML-Log extinse)
 
+**Corectură la premisa inițială.** Formularea de mai sus („va extrage textul din fiecare `<h3>`") s-a dovedit greșită în două privințe, descoperite în timpul auditului:
+
+1. **Sursele sunt blocuri de conținut, nu elemente `<h3>`.** Intrările din sidebar provin din `article.log-entry` *și* din `div.sector-announcement`, intercalate în ordinea din document. Anunțurile de sector conțin un `<h2>`, niciodată un `<h3>`, așa că o scanare doar după `<h3>` pierde tăcut toate cele 182 de separatoare de săptămână. `*-sector-00` este exclus — există în conținut, dar nu a avut niciodată o intrare în sidebar.
+2. **Ancorele se citesc din `id`-ul existent, nu se generează niciodată din textul titlului.** `href = "#" + element.id`. ID-urile sunt scrise de mână și identice în `en/` și `ro/`, pe când textul titlurilor este tradus — un slug din titlu ar produce ancore diferite pe fiecare limbă și ar strica interogarea `.sidebar-nav a[href="#id"]` din MECANISMUL 02.
+
 **Pași:**
-- a scrie un generator care scanează fiecare pagină după titlurile `<h3>`;
+- a scrie un generator care scanează fiecare pagină după `article.log-entry` și `div.sector-announcement`;
 - a produce elementele `<li>` potrivite în sidebar;
-- a păstra ieșirea generată identic între `en/` și `ro/`.
+- a păstra ieșirea generată identică byte cu byte între `en/` și `ro/`.
 
 **Condiții de finalizare:**
-- sidebarurile sunt derivate din titlurile reale ale paginii;
+- sidebarurile sunt derivate din conținutul real al paginii;
 - nicio listă de linkuri nu mai cere întreținere manuală.
 
 ---
