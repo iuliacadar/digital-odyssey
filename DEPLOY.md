@@ -14,8 +14,32 @@ That's it. This:
 
 1. refuses to run unless you're on `main` with a clean working tree;
 2. runs `git push origin main`;
-3. tails the resulting GitHub Actions run to completion (`make deploy-status`
-   does the same for a run already in flight).
+3. tails the GitHub Actions run for the commit it just pushed to completion.
+   It waits up to 2 minutes for GitHub to register that run, and fails with
+   an error if it never appears; it never reports on an older run instead.
+
+`make deploy-status` does step 3 on its own, for a run already in flight. By
+default it watches the run for the commit `main` points at on origin right
+now. To watch a specific commit, or wait longer:
+
+```bash
+make deploy-status DEPLOY_SHA=<full 40-character SHA> DEPLOY_WAIT=300
+```
+
+Give the **full** SHA (`git rev-parse <commit>` prints it). GitHub's run
+filter matches full SHAs only; a short one such as `7324fd0` matches
+nothing. The target expands a short SHA itself when your clone knows that
+commit, and refuses at once, asking for the full SHA, when it doesn't.
+Branch names are refused, because your local `main` may be behind origin.
+`DEPLOY_POLL` (seconds between looks, default 5) must be at least 1, written
+without a leading 0.
+
+Why it matters: right after a push, the newest run GitHub lists is often
+still the *previous* deploy. The first version of `deploy-status` watched
+"the newest run" and could report that previous deploy's green tick as this
+deploy's success (audit 2026-11-04, F10). `tools/test-deploy-status.py`
+reproduces that race with a stand-in `gh` and proves the target no longer
+falls for it.
 
 Pushing `main` directly (`git push origin main`) has the identical effect —
 `make deploy` is a safety-checked wrapper around that one command, not a
@@ -33,8 +57,10 @@ gh workflow run deploy.yml
   SSH key or HTTPS credential is already configured — nothing project-specific
   to set up.
 - `gh` (GitHub CLI), authenticated (`gh auth status`) — only needed for
-  `make deploy-status` / `rollback`'s workflow-watch step and for
-  `gh workflow run`. Not required for the underlying `git push`.
+  the workflow-watch step (`make deploy-status`, which `make deploy` runs
+  after its push) and for `gh workflow run`. Not required for the underlying
+  `git push`. If `gh` is missing or logged out, the push has still happened;
+  only the watch fails, with an error saying so.
 - No environment variables, secrets, `.env` file, or local `npm install` are
   required. The workflow itself needs no repository secrets beyond the
   automatically-provided `GITHUB_TOKEN` and the standard `github-pages`

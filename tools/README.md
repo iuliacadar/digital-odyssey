@@ -167,6 +167,41 @@ missing RO generator, 40 misrouted toggle pages, and 42 references to a
 
 ---
 
+## `test-deploy-status.py` — the flight recorder check
+
+`make deploy` pushes `main`, then `make deploy-status` reports whether the
+publish worked. That report is only worth something if it is about the
+right run. The first version watched "the newest deploy run", and right
+after a push the newest run GitHub lists is often still the *previous*
+one, so a green old deploy could be reported as this deploy's success
+(audit 2026-11-04, F10).
+
+```bash
+python3 tools/test-deploy-status.py                    # the repo's Makefile
+python3 tools/test-deploy-status.py --makefile OLD     # e.g. git show main:Makefile > OLD
+```
+
+It never talks to GitHub. A stand-in `gh` goes first on `PATH`: it plays
+back a scripted list of runs, lets the new run "appear" only after a few
+polls, records which run id it was asked to watch, and refuses any command
+it does not know, so the test cannot deploy anything by accident. Eight
+scenarios: the late-registering run (the race), a run that never appears,
+the happy path, a `gh` that is not logged in, a short SHA the clone can
+expand, a short SHA it cannot, and `DEPLOY_POLL=00` / `08` (zero in
+disguise, and a number shell arithmetic reads as broken octal). Each one
+checks the exit code **and** the run actually watched, because the old
+target's exit code in the race was a cheerful 0. A target stuck in an
+endless poll loop is killed after a short timeout, whole process group
+included, and reported as a failure.
+
+Run against the old target it fails the race and the never-appears
+scenarios with `FALSE SUCCESS`; that is the guard proving it bites. Run
+against the first fix (7ee7ef2) it fails the four newer scenarios: the
+short SHA waits out the timeout and reports no run, and `DEPLOY_POLL=00`
+calls `gh` hundreds of times in ten seconds.
+
+---
+
 ## `check-uc-banner.py` — the honesty gate
 
 Guards one rule, taken verbatim from `BACKLOG-EN.md` #008: **no log page
