@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+<!--
+  @symbol: The ship's home-screen icon (apple-touch-icon), 180 by 180 pixels.
+  @concept: The favicon mark (en/favicon.svg, ro/favicon.svg) unchanged:
+  the magenta ring #ff007f and the mint D #a7f3d0, on the theme
+  background #0a0b1e from site.webmanifest.
+  @reason: iOS ignores an SVG apple-touch-icon and fills any transparent
+  pixel with black, so the icon is a PNG with an opaque background.
+  @layout: The ring is scaled down to 138 pixels, leaving about 21 pixels
+  of margin: iOS rounds the corners and other launchers mask the icon
+  into a circle, and the margin keeps the ring whole in both.
+  @warning: The D is outlined into a path (Liberation Sans Bold, the
+  metric twin of the favicon's Arial bold) so the master renders the same
+  on every machine.
+  @pedagogy: Rebuild the PNG from this master with librsvg, straight into
+  both volumes (each volume keeps its own icon, like favicon.svg, so the
+  two copies must stay byte-identical):
+    rsvg-convert -w 180 -h 180 apple-touch-icon.svg -o ../../../../en/apple-touch-icon.png
+    cp ../../../../en/apple-touch-icon.png ../../../../ro/apple-touch-icon.png
+-->
+  <rect width="180" height="180" fill="#0a0b1e" />
+  <g transform="translate(18 18) scale(1.44)">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#ff007f" stroke-width="6" />
+    <path fill="#a7f3d0" d="M65.95 47.54Q65.95 52.87 63.87 56.83Q61.78 60.8 57.96 62.9Q54.14 65 49.21 65H35.29V30.6H47.74Q56.43 30.6 61.19 34.98Q65.95 39.37 65.95 47.54ZM58.7 47.54Q58.7 42 55.82 39.08Q52.94 36.17 47.6 36.17H42.49V59.43H48.6Q53.23 59.43 55.97 56.24Q58.7 53.04 58.7 47.54Z" />
+  </g>
+</svg>

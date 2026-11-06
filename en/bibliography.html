@@ -137,20 +137,38 @@
       so the audience knows which site the page belongs to.
     -->
 
-    <meta property="og:background_color" content="#0a0b1e" />
-    <!-- @warning:
-      og:background_color is NOT an Open Graph property: the protocol
-      (ogp.me) defines no colour, so sharing services ignore this line.
-      It does nothing today and is a candidate for removal.
+    <meta
+      property="og:image"
+      content="https://iuliacadar.github.io/digital-odyssey/shared/assets/images/brand/og-card.png"
+    />
+    <!-- @path:
+      Open Graph image: the preview picture on shared cards (Facebook,
+      LinkedIn, X, messaging apps). The URL is absolute (https://...)
+      because these services fetch the image on their own servers, and many
+      do not resolve a relative path against the page.
+      The file is a PNG because they refuse SVG and want a raster image,
+      ideally 1200x630. X reads this tag too, since the page has no
+      twitter:image of its own.
+      One card serves both volumes: it holds no words, so it lives in
+      shared/ and belongs to neither language.
     -->
 
-    <meta property="og:image" content="./favicon.svg" />
-    <!-- @path:
-      Open Graph image: the preview picture on shared cards. It points at
-      the favicon as a placeholder until a dedicated capture exists.
-      @warning: the placeholder does not work yet. Facebook, LinkedIn, X
-      and messaging apps refuse SVG here; they want a raster image (PNG or
-      JPEG, ideally 1200x630), so shared cards may show no picture at all.
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- @meta:
+      The size of the share image in pixels. With it, a service can lay out
+      the card the first time the link is shared, before it has finished
+      downloading the picture.
+    -->
+
+    <meta
+      property="og:image:alt"
+      content="D::0dy55ey logo: a mint letter D inside a magenta ring, above the name D::0dy55ey in glowing magenta capitals on a dark navy background."
+    />
+    <!-- @meta:
+      The text alternative of the share image, for people using a screen
+      reader in the apps that show the card. Like any alt text, it describes
+      the picture, not the page.
     -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -183,12 +201,13 @@
       The browser looks for favicon.svg in the appropriate folder.
     -->
 
-    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <!-- @path:
       The Apple Touch Icon: the picture iOS shows when the page is added to
-      the home screen.
-      @warning: iOS does not accept SVG here; it needs a PNG (Apple recommends 180x180).
-      With this SVG, iOS ignores the link and makes an icon of its own.
+      the home screen. It is a 180x180 PNG, the size Apple recommends,
+      because iOS does not accept SVG here. The file sits in the volume
+      folder (en/) next to favicon.svg, so this path reaches it the same
+      way the favicon link does.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
