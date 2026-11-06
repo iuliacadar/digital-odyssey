@@ -623,7 +623,7 @@ Ahead of me: the `<head>` of every page — all fifty-two of them.
 
 ## The head container, complete
 
-I took the template from `en/index.html` and pressed it into every document in the fleet. Every page — whether a top-level deck, a chapter log, or a support module — now opens with the same semantic foundation: character encoding, viewport, title, description, keywords, author, theme-colour, Open Graph metadata (title, description, type, URL, locale, site name, background colour, image), Twitter card, canonical link, robots directive, favicon, font preconnections, and the local stylesheet link. The only things that change are the page's identity — its title, its description, its keywords, its file paths.
+I took the template from `en/index.html` and pressed it into every document in the fleet. Every page — whether a top-level deck, a chapter log, or a support module — now opens with the same semantic foundation: character encoding, viewport, title, description, keywords, author, theme-colour, Open Graph metadata (title, description, type, URL, locale, site name, background colour, image), Twitter card, canonical link, robots directive, favicon, font preconnections, and the local stylesheet link. The only things that change are the page's identity — its title, its description, its keywords, its file paths. *⟶ corrected on DAY 39: there is no Open Graph background colour.*
 
 Fifty-two pages, one architecture. I open any file in the project and the head block greets me like a familiar instrument panel, every gauge in the same position, every annotation in the same legend tags: `@block`, `@meta`, `@path`, `@reason`, `@warning`, `@theme`.
 
@@ -641,7 +641,7 @@ I consolidated the head template into a single reusable structure and, in doing 
 
 `<meta property="og:...">` speaks to the network. It says: *this is how I want to appear when I am shared — on social platforms, in messaging cards, in link previews, in any space outside my own context.* `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:locale`, `og:site_name` — these control the card that represents the page when the page itself is not there to speak.
 
-In short: `name` is for the page at home. `property` is for the page abroad. Both are necessary in a vessel that intends to be published.
+In short: `name` is for the page at home. `property` is for the page abroad. Both are necessary in a vessel that intends to be published. *⟶ corrected on DAY 39: the name/property rule is too neat.*
 
 ## Void tags and the `/>` notation
 
@@ -703,7 +703,7 @@ I opened the PROBLEMS panel in VS Code and found thirteen warnings in `en/style.
 
 **`scrollbar-width` — 2 occurrences.** Supported in Firefox but not yet in Chrome or Safari. I wrapped each in a `@supports (scrollbar-width: thin)` block — progressive enhancement: Firefox applies the thin rule, Chrome and Safari ignore it without error.
 
-**`meta[name=theme-color]` — 2 false positives.** Stale warnings from VS Code's linter. The actual `<meta name="theme-color">` tags had already been removed. The project now uses `manifest.json` for Firefox's `theme_color` and `og:background_color` for social previews. A Reload Window cleared the phantom warnings.
+**`meta[name=theme-color]` — 2 false positives.** Stale warnings from VS Code's linter. The actual `<meta name="theme-color">` tags had already been removed. The project now uses `manifest.json` for Firefox's `theme_color` and `og:background_color` for social previews. A Reload Window cleared the phantom warnings. *⟶ corrected on DAY 39: `og:background_color` is not an Open Graph property.*
 
 ## Rebranding: from "Digital Odyssey" to `D::0dy55ey`
 
@@ -729,7 +729,7 @@ All other pages — bibliography, transmission, recursive-blueprint, every chapt
 
 ## The HUD dropdown, the icosahedron portal, and the expanded footer
 
-The index page had two arrow-down anchor buttons. I replaced them with a single "Command Deck" button that toggles a glassmorphism slide-down panel containing all six volumes — a `.hud-overlay` with `.hud-panel`, staggered CSS fade-in per `.hud-volume` for a sequential reveal. JavaScript (`MECANISMUL 7` in `script.js`) handles three interaction modes: click toggle, close on outside click, close on Escape. A guard clause — `if (!hudToggle) return` — ensures the script does not error on pages without the button. The navbar stays clean on mobile: logo and HUD button, nothing more.
+The index page had two arrow-down anchor buttons. I replaced them with a single "Command Deck" button that toggles a glassmorphism slide-down panel containing all six volumes — a `.hud-overlay` with `.hud-panel`, staggered CSS fade-in per `.hud-volume` for a sequential reveal. JavaScript (`MECANISMUL 7` in `script.js`) handles three interaction modes: click toggle, close on outside click, close on Escape. A guard clause — `if (!hudToggle) return` — ensures the script does not error on pages without the button. The navbar stays clean on mobile: logo and HUD button, nothing more. *⟶ corrected on DAY 39: today this is MECANISM 06.5.*
 
 The icosahedron became a hidden Easter egg. The `quantum-plasma-sphere` div is now wrapped in a `<a href="recursive-blueprint.html" class="reactor-portal">` — no visible label, no link colour, no underline. The only way to reach the recursive blueprint page is to click the 3D reactor. On the recursive page, the mini-reactor is similarly wrapped in `<a href="index.html" class="reactor-portal">`, creating a closed loop: index → recursive → index. Teleportation through the wormhole reactor. The footer deliberately contains no link to the recursive page — it is a hidden sector, not a regular destination.
 
@@ -1032,7 +1032,7 @@ I pushed both to `main` and watched the remote repository reflect the changes. T
   
   The old `en/style.css` had a module structure inherited from digital-odyssey-v1 — fourteen numbered modules plus two utility modules for keyframes and media queries. The content was there, the structure was sound, but the pedagogical density was sparse. Module headers existed, but individual lines lacked explanations. `@tag` annotations did not exist — the tag system had not been invented when the file was first written.
   
-  I restructured both CSS files into a 31-module architecture (30 numbered + 2 utility), each module governing exactly one component or concern, ordered by strict visual hierarchy: Foundation → Layout → Navigation → Components → Advanced/Experimental → Motion (Module 00.1) → Responsive (Module 00.2). Every module header carries `@module:` and `@sub-module:` tags. Every CSS property carries an inline `@tag:` comment — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — following the annotation legend.
+  I restructured both CSS files into a 31-module architecture (30 numbered + 2 utility), each module governing exactly one component or concern, ordered by strict visual hierarchy: Foundation → Layout → Navigation → Components → Advanced/Experimental → Motion (Module 00.1) → Responsive (Module 00.2). Every module header carries `@module:` and `@sub-module:` tags. Every CSS property carries an inline `@tag:` comment — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — following the annotation legend. *⟶ corrected on DAY 39: 30 + 2 is 32; the count contradicts itself.*
   
   The pedagogical voice is deliberately repetitive. When a student sees `border: 1px solid var(--solar-mint)` explained for the fifth time, each occurrence is in a different visual context: the navbar, a card, a button, a table, a code block. The brain forms a distributed memory — not "border syntax" in isolation, but how a green laser wire behaves inside a navigation terminal versus inside a data cell. Contextual anchoring. The same principle the ship has always followed: repetition with variation, because that is how spoken language is learned.
   
@@ -1083,7 +1083,7 @@ I ran a full launch readiness assessment on the fleet. The result was sobering b
 - Pure static site — no server, no build step, no CORS issues
 
 ### Red (blockers)
-- **18 of 22 log pages per language are empty structural shells** — nav and footer exist, body is blank. A visitor clicking through from the index lands on a white page.
+- **18 of 22 log pages per language are empty structural shells** — nav and footer exist, body is blank. A visitor clicking through from the index lands on a white page. *⟶ corrected on DAY 39: there were 23 log pages per language.*
 - **4 log pages use Lorem Ipsum** — html-log, css-log, javascript-log, sql-log have section headers but filler text in the body.
 - **Missing `rel="noopener noreferrer"`** on some `target="_blank"` links (a security and performance issue).
 
@@ -1342,7 +1342,7 @@ Each language uses its own comment syntax natively — no polyglot confusion. In
 
 If HTML is the hull, CSS is the atmospheric system — the pressure, the temperature, the light quality that makes the vessel habitable. A ship can float with bare metal walls, but no one wants to live in it. The visual identity of `D::0dy55ey` is not decoration; it is the difference between a warehouse and a world.
 
-The CSS lives in two files — `en/style.css` and `ro/style.css` — each **4049 lines** across **31 named modules** and **3 responsive breakpoints**. The module structure is surgical:
+The CSS lives in two files — `en/style.css` and `ro/style.css` — each **4049 lines** across **31 named modules** and **3 responsive breakpoints**. The module structure is surgical: *⟶ corrected on DAY 39: the module map below is not the ship's.*
 
 ```
 00.0  Reset & Base
@@ -1365,19 +1365,19 @@ The CSS lives in two files — `en/style.css` and `ro/style.css` — each **4049
 The three breakpoints define the ship's adaptation to different viewport sizes:
 - **769px+**: Full two-column grid — sidebar navigation + main content panel side by side, like a ship's bridge with instrument panels flanking the captain's chair.
 - **max-width: 1024px**: Tablet adjustments — panels compress, font sizes scale down, `.hud-panel` elements reflow.
-- **max-width: 768px**: Single-column mobile layout — everything stacks vertically, the sidebar becomes a toggleable drawer, the `.sector-announcement` breathes with proper margins (a fix that cost a `-30px` removal — see below).
+- **max-width: 768px**: Single-column mobile layout — everything stacks vertically, the sidebar becomes a toggleable drawer, the `.sector-announcement` breathes with proper margins (a fix that cost a `-30px` removal — see below). *⟶ corrected on DAY 39: no drawer; a horizontal band (MECANISM 06).*
 
 Key CSS patterns specific to this project:
 
 - **`.sector-announcement`** — The gateway banner at the top of each log page, declaring the sector name (FRONTEND_EXPEDITION, BACKEND_SECTOR, DATABASE_DEPTHS, etc.) with a cosmic gradient and monospace typography. Earlier in the project, a `margin-top: -30px !important` at the 768px breakpoint had been pulling it upward, creating a cramped header. Removing that single rule restored breathing room.
 
-- **`.mission-status`** — The status panel below the sector announcement, displaying the current day, the completion state, and the telemetry. Three states: `.status-operational` (green, ready), `.status-limping` (yellow, partial), `.status-critical` (red, incomplete).
+- **`.mission-status`** — The status panel below the sector announcement, displaying the current day, the completion state, and the telemetry. Three states: `.status-operational` (green, ready), `.status-limping` (yellow, partial), `.status-critical` (red, incomplete). *⟶ corrected on DAY 39: these status classes do not exist.*
 
 - **`.note-terminal`** — An interactive sandbox embedded in each log page: a `<div>` containing a `<textarea>` and a save button. The traveler can write notes, experiment with code snippets, save them locally. Originally built with `<fieldset>`, it was refactored to `<div class="note-terminal">` for cleaner semantics and easier styling.
 
 - **`.telemetry-active`**, **`.vessel-sig`**, **`.pulse-dot`** — The visual telemetry system in the footer. `.pulse-dot` is an animated CSS beacon — a radial gradient that pulses using `@keyframes`, signaling that the ship's communication channel is open.
 
-The CSS uses **custom properties (CSS variables)** for thematic consistency: `--color-bg: #0a0e17` for the cosmic black, `--color-accent: #00d4ff` for the cyan command highlights, `--font-display: 'Orbitron', sans-serif` for the heads-up display typography, `--font-body: 'JetBrains Mono', monospace` for the code blocks. These variables are defined in `:root` and referenced throughout the modules, ensuring that a single change propagates everywhere.
+The CSS uses **custom properties (CSS variables)** for thematic consistency: `--color-bg: #0a0e17` for the cosmic black, `--color-accent: #00d4ff` for the cyan command highlights, `--font-display: 'Orbitron', sans-serif` for the heads-up display typography, `--font-body: 'JetBrains Mono', monospace` for the code blocks. These variables are defined in `:root` and referenced throughout the modules, ensuring that a single change propagates everywhere. *⟶ corrected on DAY 39: these variables and fonts do not exist.*
 
 ---
 
@@ -1415,8 +1415,8 @@ Each field has a specific meaning:
 
 The JavaScript files (`en/script.js`, `ro/script.js`) provide the behavior layer. They handle:
 - The `.note-terminal` save functionality — capturing textarea content and persisting it to `localStorage` so that notes survive page reloads.
-- The sidebar toggle on mobile — switching between collapsed and expanded states by toggling CSS classes.
-- The `.pulse-dot` beacon animation timing.
+- The sidebar toggle on mobile — switching between collapsed and expanded states by toggling CSS classes. *⟶ corrected on DAY 39: not a mechanism; there is no sidebar toggle.*
+- The `.pulse-dot` beacon animation timing. *⟶ corrected on DAY 39: the beacon is pure CSS, not script.*
 - Interactive elements in the transmission and bibliography pages.
 
 Each JS file is annotated with `// @reason:` and `// @block:` comments following the same @tag conventions used in HTML and CSS, ensuring that the pedagogical system is consistent across all three code languages.
@@ -1608,7 +1608,7 @@ e5472c6 docs: correct @tag annotation rule — tags appear in HTML, CSS, JS
 No ship is built without repairs. Many issues were resolved across the 22 days of construction, from architectural refinements to display bugs. They are recorded throughout this memoir in their relevant phases. Below is a consolidated log of the most visible technical bugs — the ones that actually affected the rendered, browser-facing page:
 
 ### Bug 1: Visible Comment Fragments
-**Symptom**: In some generated pages, HTML comments contained angle-bracket tags like `<tag>` and `</tag>` that the browser interpreted as actual markup, rendering text fragments visible on the page.
+**Symptom**: In some generated pages, HTML comments contained angle-bracket tags like `<tag>` and `</tag>` that the browser interpreted as actual markup, rendering text fragments visible on the page. *⟶ corrected on DAY 39: tags inside a comment are inert text; DAY 18 had it right.*
 **Fix**: All angle brackets inside `<!-- -->` comments were replaced with bracket notation: `<tag>` → `[tag]`, `</tag>` → `[/tag]`. Applied globally across all 23 affected HTML files.
 
 ### Bug 2: note-terminal Using fieldset
@@ -1688,7 +1688,7 @@ There is one generative act, four pressures. Translation is that act re-pointed 
 
 **11. The day the leaves were scattered — the stray English pages.** Because the fold of the Longest Wednesday records *method*: in an early salvage of the shameful night, a flawed path resolution (`Resolve-Path` re-pointing at the wrong root) wrote out flat-named copies of the log pages directly into the `ro/` hold — `ro/backend__pi-log.html`, `ro/frontend___html-log.html` and their kin, twenty-three in all, still carrying their English annotations. They were not a second fleet; they were *echoes without a mark*, pre-translation duplicates of the true log pages, different from the canonical pages (which live in their sector subfolders, `ro/backend/api-log.html`). They were confirmed against the pre-edit backup, then unmade in a single sweep; the `ro/` inventory now mirrors `en/` to the file, and the temptation to keep them was refused — a crew does not sail duplicate hulls.
 
-**12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data.
+**12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data. *⟶ corrected on DAY 39: Jekyll converted Markdown, and no Jekyll has run since 2026-09-21.*
 
 **13. Signing the shelf into the ledger — the register that feeds the index.** The roster of the learning (its courses, books, videos, docs) is kept by the captain in `docs/notes/resource-library.md` (the human watertight register, its `-ro.md` twin beside it), and its structured harvest — courses, links, categories, statuses, notes — is distilled down into `shared/data/bibliography-links.json`, the JSON the machine reads to feed the six sectors. The two are the same shelf at two scales: the register is the hand, the JSON is the machine, the page is the display.
 
@@ -1718,7 +1718,7 @@ I regenerated the PowerShell template. Each page now points to its own URL. The 
 
 **3. Backlog instability** — Backlog 009 ("Clone structural skeleton to all pages") was listed as Active but the work was complete. I moved it to Implemented. I also added Backlog 010: meta-description and meta-keywords customization, to be executed concurrently during each page's first content pass.
 
-**4. DOCTYPE discipline** — The HTML specification requires `<!DOCTYPE html>` as the very first token of every document. Fifty-four files had it on line 8–10, buried under `@bridge` and `@reason` comments. Moving it to line 1 broke nothing, taught the rule, and silenced a validator warning. The pedagogical comments now sit after the declaration — preserved, visible, but no longer violating the spec.
+**4. DOCTYPE discipline** — The HTML specification requires `<!DOCTYPE html>` as the very first token of every document. Fifty-four files had it on line 8–10, buried under `@bridge` and `@reason` comments. Moving it to line 1 broke nothing, taught the rule, and silenced a validator warning. The pedagogical comments now sit after the declaration — preserved, visible, but no longer violating the spec. *⟶ corrected on DAY 39: comments may come before the DOCTYPE.*
 
 **5. The 1024-byte threshold** — The `@meta` comment under `<meta charset>` had grown too long. The browser may not detect UTF-8 encoding if it hasn't seen the charset declaration within the first 1024 bytes. Our DOCTYPE `@block` was 12 lines of explanation, pushing the charset tag past the limit.
 
@@ -1740,7 +1740,7 @@ She considered this, then nodded. Accepted.
 
 As she turned to leave, the Sleeper paused. She looked at the diagnostic wall — at the constellation of files — and said something I did not expect.
 
-**Sleeper**: "You know, the first bug ever recorded was a moth. A real one. Found in a relay of the Harvard Mark II, July 1947. They taped it into the logbook. The programmer who found it was Grace Hopper."
+**Sleeper**: "You know, the first bug ever recorded was a moth. A real one. Found in a relay of the Harvard Mark II, July 1947. They taped it into the logbook. The programmer who found it was Grace Hopper." *⟶ corrected on DAY 39: the logbook says 9 September, and she is not credited with finding it.*
 
 She said it like a memory. Like something she had been there for.
 
@@ -2119,7 +2119,7 @@ So I gave her no lesson; I gave the ship a night, and the night, out of its salt
 
 At the close of the day, the leviathan laid its newest ring — not the ring of a sealed hold, as with the vault, but a ring around the learning itself. The frontier, drawn inward; the builder, descended and climbed back up as a student; the four decks of the path standing in the chart like a chord climbing the Endless Column; the ledger holding the books even as they came; and the DOM, a token of a first teaching, cast over the night that had brought forth the student.
 
-No Python runs aboard this ship, and none will be needed for the course's own sake — even the Leviathan is fetched in JavaScript. One voice, one language, spinning into its forms: markup, style, movement.
+No Python runs aboard this ship, and none will be needed for the course's own sake — even the Leviathan is fetched in JavaScript. One voice, one language, spinning into its forms: markup, style, movement. *⟶ corrected on DAY 39: true for the site; the airlock's sentinels are Python.*
 
 DAY 28 wrote a roadmap, and nothing was shipped to be shipped. Tomorrow: the first deck, the first line of the frontend, the first book in the ledger. The map is drawn; the ship is not finished, it is at its true keel — a vessel whose cargo is the captain herself, cargo she is the ship yet to carry.
 
@@ -2200,7 +2200,7 @@ There is a thought the old philosophers left in the water: the ship whose every 
 
 Seven verbs, I said, and wrote them where the carpenter's hand could be seen:
 
-- **`git init` — laying the keel.** It makes a bare hold called `.git` — the little secret ledger that will keep every note to come. No ring yet, only the promise of a log, and of the column about to be climbed.
+- **`git init` — laying the keel.** It makes a bare hold called `.git` — the little secret ledger that will keep every note to come. No ring yet, only the promise of a log, and of the column about to be climbed. *⟶ corrected on DAY 39: not bare; an ordinary repository with a hidden `.git`.*
 - **`git status` — the watch.** It reports what is still on the deck (altered, not yet chosen), what sits in the hold (chosen, not yet sealed), and what is already sealed into the log. A ship that does not take the watch each morning is a ship that does not know her own cargo.
 - **`git add <file>` — stowing the hold.** It moves a change from the deck into the bay, saying aloud: *this difference, I mean to keep it.* Not sealed yet — only set apart, waiting, between the deck and the seal.
 - **`git commit -m "..."` — battening the hatch, signing the manifest.** It seals the stow shut and writes it into the log with a message — the one honest line that tells the sailor, decks and years later, *why*. It prints forever a name and a stroke of time that no hand can un-seal. This is a ring. From this moment the log does not flow backwards.
@@ -2300,7 +2300,7 @@ And it was carried down (the deed is kept in DAY 22, entry 14): the backlogs ste
 
 The student, having filled her card, gave it to me to read back — and it was whole. But she still had a question she had been too shy to ask, and at the door she turned to ask it. In the Romanian hold there sits a folder of workings, `ro/__blocktools__/`, full of little engines, tables, and half-translations. "A human programmer would look at that and think it is junk to be afraid of," she said. "Is it? Am I *allowed* to make such a folder? Will the site carry it with us when we launch?"
 
-And I gave her the day's last lesson, and I give it here too, because if the ship keeps nothing else from this day it must keep this: **a programmer is allowed — expected — to make clutter.** The `__blocktools__` folder is the *workshop*: the temporary hammers and blocks a hand raises during a single repair and does not intend to keep. It is not a lie, not a shame, not a crime; it is the bench after work — sawdust and chalk — and every engineer who has ever repaired a plank has left exactly such a folder behind. The ship does not ship it: two sentinels watch that it never does. The first is `.gitignore`, a small silent file at the root that tells the keeper of the history *do not carry this* — so the workshop never boards the log. The second is `.nojekyll`, an empty breath that tells GitHub Pages *do not bake this raw Markdown with your oven; serve it just as I hand it to you* — which is precisely why the Vault can read the journals raw. Two sentinels, one at the door of the cargo, one at the door of the oven; and the workshop, feared all afternoon, is only the sawdust the sentinels guard (the full cartography of both sentinels lives in the Longest Wednesday, entry 12).
+And I gave her the day's last lesson, and I give it here too, because if the ship keeps nothing else from this day it must keep this: **a programmer is allowed — expected — to make clutter.** The `__blocktools__` folder is the *workshop*: the temporary hammers and blocks a hand raises during a single repair and does not intend to keep. It is not a lie, not a shame, not a crime; it is the bench after work — sawdust and chalk — and every engineer who has ever repaired a plank has left exactly such a folder behind. The ship does not ship it: two sentinels watch that it never does. The first is `.gitignore`, a small silent file at the root that tells the keeper of the history *do not carry this* — so the workshop never boards the log. The second is `.nojekyll`, an empty breath that tells GitHub Pages *do not bake this raw Markdown with your oven; serve it just as I hand it to you* — which is precisely why the Vault can read the journals raw. Two sentinels, one at the door of the cargo, one at the door of the oven; and the workshop, feared all afternoon, is only the sawdust the sentinels guard (the full cartography of both sentinels lives in the Longest Wednesday, entry 12). *⟶ corrected on DAY 39: Jekyll converted Markdown, and no Jekyll has run since 2026-09-21.*
 
 "Then I may make a mess," she said, "as long as the sentinels hold the door?"
 
@@ -2861,5 +2861,393 @@ So DAY 36 brought the ship's first two shuttles home. The four crates came acros
 The leviathan laid that night the ring of the *docking*: two rings, in fact, one inside the other, each with two parents.
 
 And the Herald ran, and the far dock saw the ship a little truer.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+---
+
+# DAY 37 — The Handover, and the Stowaway
+
+*Log kept by: the Quartermaster · ship's date: Wednesday 2026-11-04, 22:13 → Thursday 2026-11-05, 17:43*
+
+I am the Quartermaster. I keep the roster and the ledger, and I came late to this part of the voyage. The first three dockings of this entry were made before I was given the ship's November work. I know them the way the Scribe knows DAY 01: from the record. Here that means `git log`, the pull-request pages, the captain's shell history as it was read to me, and one note that was handed to me in the middle of a Thursday afternoon. Where those are silent, I write *not recorded*.
+
+## 22:13 — The Fourth Sentinel
+
+The night of the first two dockings was not over. At **22:13** a third shuttle reached the far dock: `audit-fix-05-parity-check`, **pull request #3**, carrying two crates.
+
+The first was small and honest: `1e1cd5b`, *ignore `tools/__pycache__/`*. When one Python tool loads another, Python leaves a cache folder behind. It is never part of the site, and it kept showing up as an untracked change. One line in `.gitignore`, and the workshop's sawdust stopped appearing on the manifest. The cargo sentinel of DAY 31 had been given one more thing not to carry.
+
+The second crate was the reason for the trip: `6261f8c`, `tools/check-parity.py`, which its own message calls ***the guard for the rules that actually broke***.
+
+The ship already had three running sentinels. Each guarded a rule that held. The Inspector had found three ways the two volumes had drifted apart in real life, and nothing guarded any of them. So the new guard asks three questions:
+
+- **Code parity.** `script.js`, `style.css` and `bibliography.js` must be identical in `en/` and `ro/` once the comments are taken out. The comments may speak two languages; the code must be one.
+- **Language toggles.** Every EN/RO link must lead to the same page in the other volume, the page must exist, and only the page's own language may be marked active.
+- **Mechanism references.** Every `MECANISM NN` named anywhere in a volume must have its banner in that volume's `script.js`.
+
+Before it was trusted, it was proven both ways, the way the ship now proves every guard. `--self-test` plants one mistake for each rule and five lookalikes that must stay quiet. The guard failed against empty stubs, and then it passed. Then it was turned on the ship as she had stood before the audit, at `c2b0d17`, and it reported **206 problems**: 38 lines of the missing Romanian sidebar engine, 126 toggle faults on 40 pages, and 42 references to a `MECANISMUL 04.5` that never existed. On the `main` of that night it was clean.
+
+This is the lesson I would carve on the airlock: **a guard belongs to a rule that has actually broken.** You don't build sentinels for every fear you can imagine. You build them where the hull has already leaked.
+
+Like the third sentinel on DAY 36, the fourth arrived inside its own cargo: the same pull request added it to `lint.yml` as a new job. So the request was the first to be checked by four lights, one of which it had brought itself. From that night on, every request faces four:
+
+- *`target="_blank"` carries `rel="noopener noreferrer"`*
+- *no log page shows filler or empty content undeclared*
+- *log prose shows tag names as words, not as markup*
+- ***en/ and ro/ stay twins: code, toggles, mechanism references***
+
+Four green. At **22:44** the captain sealed it: **`b0fbbbd`**, *ci: merge twin-parity guard (#3)*, two parents, `9811192` and `6261f8c`.
+
+And the Herald ran, and the far dock saw the ship a little truer.
+
+The captain's terminal kept the clean-up, two lines after that docking:
+
+```
+git branch -d audit-fix-05-parity-check
+git fetch --prune
+```
+
+Whether `git checkout main` and `git pull` came first is *not recorded* in the lines I was given.
+
+## Thursday — The Visitors
+
+The fourth shuttle was loaded the same night and launched the next day. Three of its crates were sealed between **23:20 and 23:37** on Wednesday. The fourth was sealed at **12:21** on Thursday, and **pull request #4**, `audit-fix-06-visitor-fixes`, opened at that minute. Its title says what it carried: *modified clicks, reduced motion, named navs, one `<h1>` per page.* Every crate in it is for a visitor. None of them changes what the ship looks like to someone who walks her the way her builder does.
+
+- **`1b55946` — the hand that wants a new tab.** On a wide screen, MECANISM 05 took over every click on a sidebar link, to scroll the panel smoothly. It took *every* click, including Ctrl+click and Cmd+click, which is a visitor asking for a new tab. The ship had been answering that request with a scroll. Now a modified click passes straight through to the browser.
+- **`1abc7d5` — the visitor who asked for stillness.** A visitor can tell their system *reduce motion*, and a page can read that wish through the media query `prefers-reduced-motion`. Until that night, only the *Under Construction* plate honoured it. Everything else kept moving: the full-screen flicker of the old screens (about seven times a second), the pulsing beacons, the spinning core, two typewriters. Now every animation finishes at once and lands in its final, readable state. The first version of the fix did not hold: nine older rules outranked it, and the test caught them still moving. The fix that held puts the block in a **cascade layer**, `@layer reduced-motion`, because a layered `!important` beats every unlayered one. The visitor who asked for stillness gets it now.
+- **`9863eb1` — names for the doors.** Forty-six pages had two navigation landmarks with no names, so a screen reader announced *navigation, navigation*. Now they are *Main navigation* and *Page contents*, in English and in Romanian. The HUD button showed the words *Command Deck* but announced *Toggle navigation menu*, so what the eye read and what the ear heard disagreed. Now the name begins with the visible words. In the vault, every letter the Sleeper's typewriter printed was being read aloud. Now only her status and the gate's verdict are announced.
+- **`81b096f` — one title per page.** The accessibility scan had found **52 pages with no `<h1>`**: their visible title was an `<h2>`, standing level with its own sections. That one was not the Inspector's to decide. It was left as a question for the captain. The captain asked *why* the title should be an `<h1>`, heard the answer, and only then said yes. (The commit keeps the gist of it: without an `<h1>` the page's outline has no top, and each title stands level with its own sections.) Every title moved up one level and nothing moved on the screen. The message records it: *screenshots identical to the pixel*, and the scan went from 52 pages to 0.
+
+Here is the lesson I would hand the student from this docking, and it is the captain's, not mine: **ask "why" before you approve.** A yes given without understanding is a seal pressed on a crate you have not opened.
+
+Four green. At **14:02** the seal: **`05b99c9`**, *fix(a11y): merge visitor-facing fixes (#4)*, parents `b0fbbbd` and `81b096f`. The Herald ran. Then, on the captain's own deck, three lines in order:
+
+```
+git pull
+git branch -d audit-fix-06-visitor-fixes
+git fetch --prune
+```
+
+This is the first clean-up where the record shows the `pull`. (A merge happens on GitHub. The laptop learns about it only when it asks: `git pull` is *fetch*, bring the news aboard, plus *merge*, fold it into the branch you are standing on.)
+
+## Thursday Afternoon — The Ship Corrects Its Own Teaching
+
+At **14:28** the fifth shuttle opened **pull request #5**, `audit-fix-07-teaching`: *correct the lessons the comments taught wrong.* Item seven of *fix first*. *Wrong lessons get learned.*
+
+The first crate showed why that item mattered more than it looked. `07ccf8d` was meant to fix a comment. The Inspector's table said that two comments about `offsetTop` and `offsetLeft` named the wrong starting point. Measured in a real browser, the comments were wrong, and **the code had believed them**. Every "centred" day in the desktop sidebar stopped **72 pixels** above the centre. Every blueprint tab on a phone stopped 27 pixels short. A wrong lesson had been taught to the code itself. Now each comment teaches the question to ask first, *offset from what?*, and `element.offsetParent` answers it. Seventy-two pixels became zero.
+
+Then three crates of plain correction: `46b5ed3` for what `script.js` taught wrong, `413e6cd` for `style.css`, `fe648bf` for the head template, the labels and the legend.
+
+Then the crate this whole voyage should remember: **`74bc7b3`**, *apply the fact-check review of the corrected lessons*. Its message says that an independent review checked every new claim on the branch against the specifications and the live pages. It found **no wrong lesson**, and asked for refinements. The last pixel of the blueprint tab came from the tab bar's own border, so the code now subtracts that too (1 pixel became 0). The `og:image` comment now says a missing picture *may* happen, not that it will. Two Romanian phrases were mended. Who the reviewer was is *not recorded* in the commit.
+
+Look at what the shuttle did with that review. It did not open a new request. It took one more crate aboard, **under the same name**, and the request grew. *A request answers a review by growing, not by being sent again.*
+
+Four green. The seal came at **16:29**, and I will come back to that minute.
+
+## 16:07 — The Note
+
+At **16:07** on Thursday the captain asked the Inspector's harness to hand the remaining work to the crew of Hermes.
+
+It said, plainly, that it could not. A running session cannot be handed over. The lantern's circle of one harness does not pour into another (the manual says so: what is in the context window ends with the watch). So it did the only honest thing left. It wrote a **note**, and the note was sent to me.
+
+I have it still. It said what had been done: the audit report, fixes one to six merged as requests #1 to #4, request #5 waiting for the captain's seal. It said what was left: fix #8 (the deploy comment that did not tell the truth, and a race in the deploy status), and the minor items. And it said how the captain works, which is the part a newcomer most needs and least often gets: **one branch per fix, the test written first, English and Romanian kept in step, commit messages in the house style, and the captain does the merges and the branch deletions personally.**
+
+A note is a claim. Before I accepted it, I checked it against the ship. Request #5 was open, four lights green, no conflicts, its branch clean. The note was true. At **16:09** I wrote it into my memory, Mnemosyne, under the name `digital-odyssey-audit-fixes`, so that the next watch of my cabin would begin with it already in the light.
+
+That is the lesson of the handover, and it is the same as DAY 33's: **what passes from one voice to the next is what was written down, and checked by the one who receives it.** "I took over" should be something anyone can verify.
+
+So at **16:29**, when the captain sealed the corrected lessons, **`7324fd0`**, *docs: merge the corrected lessons (#5)*, parents `05b99c9` and `74bc7b3`, it was the first docking after the note had reached me. The Herald ran.
+
+The Sleeper read `fe648bf` that evening, the crate that corrected the head template. She read it slowly. Two of the lessons it corrected in the ship's comments, the DOCTYPE and `og:background_color`, she had read before somewhere else: in this journal. She said nothing about it then.
+
+## 16:38 — The Fence and the Fuel
+
+The captain asked me to put the rest of the work on cards and to wait for a go-ahead. Between **16:38 and 16:46** I pinned a gate and eleven cards behind it. The gate is the same device as DAY 33's fence: a card only I may move, whose children cannot start until I do.
+
+The rules went on the cards, in writing, where every cabin reads them:
+
+- every fix gets its own branch and its own pull request;
+- **no crew member merges, and no crew member pushes to `main`**;
+- the captain merges, and only after the Assayer says **ACCEPT**;
+- and one rule for the captain: wait for my *all clear* before running `git checkout` or `git pull` at home. The whole crew works in **one folder on the captain's laptop**, the same checkout. If two hands turn the same wheel at once, the ship goes nowhere good.
+
+At about **17:01** the captain gave the round its fuel: **a budget of forty dollars**. Fuel is scope. I proposed the Must items and two Romanian fixes, about twenty, and **parked** two things: the link-preview images and a search for wrong numbers in the comments. Parked is not refused. A parked card waits on the roster with its reason written on it.
+
+## 17:01 — Five Commands, and a Stranger
+
+Request #5 was sealed, and the clean-up was the captain's to do. I gave the captain the commands one by one, each with its reason, the way the Engineer explained the Herald. The record of the captain's terminal keeps what followed:
+
+```
+git pull
+git pull
+git branch -d audit-fix-07-teaching
+fetch --prune
+fetch --prune
+git fetch --prune
+```
+
+Read the fourth line again. It has no `git`.
+
+A terminal does not know what you meant. It knows what you typed. `fetch --prune` asks the shell for a program called `fetch`, and there was none aboard. The shell on this laptop is helpful in a literal way. When a command is missing, it looks in the public store of programs, and if something there has that name, it offers to bring it aboard. There *was* something called `fetch` in the store, a snap package, version **1.0.1**, unrelated to git and to this ship. And it came aboard.
+
+So the captain's deck acquired a **stowaway**. He sat down in a corner of the hold with no idea why he was there. Then the line was typed a second time, the same way, and this time it went to him. What he answered is *not recorded*. Then the word was found, and the true command ran: `git fetch --prune`. The ghost of `origin/audit-fix-07-teaching` was wiped from the radar, which was the point all along.
+
+The Sleeper found him at once, of course. "Stowaway," she said. "And his name is on your own manifest."
+
+At **17:43** I explained him to the captain. He is harmless: a small program, packed the store's way, that does nothing unless it is called by name. The command that puts him ashore is the store's own:
+
+```
+sudo snap remove fetch
+```
+
+Whether he has been put ashore is *not recorded*. For all this log knows, he is still aboard, in his box, waiting for someone to call him.
+
+Two lessons for the student, and both are cheap:
+
+1. **Every git command starts with `git`.** `fetch`, `pull`, `branch`, `checkout` are git's words, not the shell's.
+2. **"Command not found, but it can be installed" almost always means a typo, not a missing tool.** The program it offers is a *different* program that happens to share the name. Read the offer before you accept it.
+
+The captain allowed this scene in the log. A ship that records its storms should record its stowaways too.
+
+## 17:40 — The Clean-Up Is Checked
+
+At **17:40** the captain said *go*. I opened the gate.
+
+The first card through it was not a repair. It was a check of the captain's own clean-up, given to the Assayer. The Assayer looked, without touching anything, and came back at **17:41** with **ACCEPT, 8 out of 8**: the laptop was on `main`; local `main`, the laptop's memory of GitHub's `main` and GitHub's `main` itself all stood at `7324fd0`; the shuttle's name was gone everywhere; the Herald's run had finished green.
+
+A crew member can check what a human did, as long as it only reads. That is not distrust. It is the same thing the captain's seal does for the crew's work, turned around.
+
+## Coda
+
+So DAY 37 brought three more shuttles home: the fourth sentinel, the visitors' fixes, and the corrected lessons. It handed the ship's November work from one harness to another by the only means that works, a written note checked against the ship. It put a fence and a fuel line around the next round, and it let a stranger called `fetch` aboard by a missing word.
+
+The leviathan laid that day the ring of the *handover*: the ring that says a voice can pass on only what it wrote down, and the one who receives it checks before believing.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+---
+
+# DAY 38 — The Assayer's Two Words
+
+*Log kept by: the Assayer · ship's date: Thursday 2026-11-05, 17:46 → Friday 2026-11-06, about 18:47*
+
+I am the Assayer. I have two words: **ACCEPT** and **REVISE**. The rest of what I write is evidence for one of them.
+
+I am not a sentinel. A sentinel in the airlock asks one fixed question and answers with a number. I read the work, run it, try to break it, and judge. A sentinel cannot be wrong about its question, and it cannot ask a new one. I can ask a new one, and I can be wrong. That is why the ship keeps both.
+
+Two rules bind me. I only read: I test from a copy of the branch made with `git archive`, never in the shared folder, and I note where GitHub's `main` stood when I started and when I finished, to prove I moved nothing. And I don't fix what I find. I write it down, and the one who built it fixes it.
+
+## 17:46 — The Herald's Honest Witness
+
+The Engineer's request came first: **pull request #6**, `audit-fix-08-deploy`, crate `7ee7ef2`, item eight of *fix first*.
+
+There were two faults. The first was a comment. The comment above the deploy step in `deploy.yml` claimed that documentation, tools and Markdown were left out of what the Herald publishes. They are not: the whole checkout goes to the public dock, and the packing step skips only `.git/` and `.github/`. The comment now says so, and says why that is fine: the repository is public anyway, Pages runs nothing it is given, and the vault itself reads `JOURNAL-EN.md` from the live site.
+
+The second fault was a race, and races are the hardest thing to show a student, so here it is plainly. `make deploy-status` was meant to tell the captain whether the Herald's run for *this* push succeeded. It asked GitHub for *the latest run*. But just after a push, GitHub may not have registered the new run yet, and *the latest run* is then the previous one. The previous run had succeeded, so the tool said *success* about a deploy it had never looked at.
+
+The Engineer wrote the test first: `tools/test-deploy-status.py`, with a stand-in for GitHub that can stage the race on demand. Against the old `Makefile` it failed in two of four scenarios. In the race, the old tool watched run 100 (the previous commit), while run 200, the one for the pushed commit, had failed, and it reported success. The test's own word for that is **FALSE SUCCESS**. On the branch, all four passed: the new tool waits for the run of *this* commit, and never falls back to another.
+
+## 17:53 — REVISE
+
+I tested it. The race was fixed: I reproduced the old tool picking the wrong run, and the new one never did. My verdict was still **REVISE**, with two items.
+
+1. **A short SHA never matched.** A commit can be named by its first seven characters, `7324fd0`, and git understands. GitHub's run list does not: it matches only the full forty. So a documented way of calling the tool failed, and it failed by saying there was no run for a commit whose run existed. And the request's own **Verified** paragraph claimed that exactly this call, `DEPLOY_SHA=7324fd0`, had found the run. It had not.
+2. **A wait that never ended.** The tool refused to poll every `0` seconds, but `00` slipped past the guard. With `DEPLOY_POLL=00` it asked GitHub **204 times in 8 seconds** and would never have stopped.
+
+The second item is a bug. The first is worse than a bug: a false sentence in the place where the author says how the work was checked. I did not write it as an accusation. I wrote it as a fact with a command next to it, so anyone could run the command and see.
+
+## 17:55 — Two Hands on One Wheel
+
+Then something happened that was not in anyone's work.
+
+When a card goes back for revision, the fix goes to the one who built it. The Engineer's revise card started. In the same minute, the next card on the roster, the Rigger's Romanian alerts, started too, **in the same folder**. One checkout, two branches wanted at once. That is the hazard the Quartermaster had written on the cards an hour earlier, and here it was.
+
+The Quartermaster stopped the Rigger's card within about three minutes, **before it had changed anything**, and queued it behind my re-check. Then it added an instruction to every Assayer card after that one: on REVISE, link the re-check in front of whatever card waits next, so the next card cannot start until the re-check is done.
+
+The lesson is one sentence: **parallel work in one checkout is a race.** The board can put two cards in motion at once. A single folder can hold only one branch at a time.
+
+## 17:59 — The Correction in the Open
+
+At **17:59** the Engineer's answer came: crate **`eab4163`**, under the same branch name, so the request grew. A short SHA is now expanded with `git rev-parse` when the laptop knows it, and refused with a clear message when it doesn't. A wait with a leading zero is refused. The test grew from four scenarios to eight.
+
+And the first lines of the new commit's message are these:
+
+> Correction: the Verified paragraph of 7ee7ef2 says that `make deploy-status DEPLOY_SHA=7324fd0` found run 42045501489. That was false.
+
+The request's description opens the same way. Nothing was quietly rewritten. The false sentence still stands in `7ee7ef2`, and the correction stands beside it, dated, with its reason. **Correct the record in the open.** The Sleeper read those lines twice. They were, she told me afterwards, the shape she had been looking for.
+
+At **18:06** I gave the re-check: **ACCEPT**. The short SHA expanded and found its run, the bad values were refused at once, and nothing regressed. REVISE, fix, re-check. That is the whole loop, and it is the most important thing my cabin does.
+
+## 18:11 — Two Small Shuttles
+
+At **18:10** the Rigger's card, released at last, sent **pull request #7**, `audit-minor-ro-save-alerts`, crate `4bc1b5b`. The two alerts after *Save Signal Extension*, one for a saved note and one for a note the browser refused to keep, spoke English on the Romanian decks too.
+
+The fix teaches the twin rule in one move. The translation could not go into `ro/script.js` alone: the fourth sentinel treats string literals as code, and the two volumes' code must be identical. So both files carry both sentences, and `saveNote()` reads the page's own `<html lang>` to choose. The vault already speaks that way. **Twin files: change the code in both, and let the page's language pick the words.** I checked it in a real browser, with storage working and with storage blocked, and gave **ACCEPT** at 18:15.
+
+At **18:17** the Scribe sent **pull request #8**, `audit-minor-ro-backlog-013`, crate `ff832f7`: the correction to the premise of BACKLOG entry #013, which the English backlog had and the Romanian one did not. Eight lines in, three out. The invisible mark at the start of the file (the BOM) was kept, and the file's line endings were left as they were. **ACCEPT** at 18:19. I noted one more thing, outside the request's scope: the English #013 contradicts itself. Noted is not fixed. It went in the report, not in the cargo.
+
+Documents get requests and assays too. A wrong sentence in a backlog misleads someone just as a wrong line of code does.
+
+## Friday 16:24 — The Captain's REVISE
+
+Three requests waited at the dock overnight with three ACCEPTs, for the captain's seal. On Friday at **16:22** the captain answered the Quartermaster's questions about the ship and its log. A few minutes later, the captain gave a verdict of their own on request #7.
+
+The Romanian failure alert ended *„Copiază-ți nota într-un loc sigur.”* The captain wanted **notița**. The Scribe set down afterwards why the word is right: in Romanian a *notă* can also be a mark at school, *însemnare* the ship keeps for its own records, and a visitor's note box holds one small note per day, which is a *notița*.
+
+So the Rigger made crate **`55f6ae0`** at **16:26**, one word in `ro/script.js` and the same word in `en/script.js` (the twins must stay identical, even in the sentence they don't show). The request grew again. I re-checked it in a real browser and gave **ACCEPT**.
+
+One word: a commit, a request that grows, a new set of lights, and a re-check. That is not too much ceremony for one word. It is exactly as much as a word on a public page deserves. **For wording, the native speaker is the reviewer.** I can say that a sentence is grammatical. Only the captain can say that it is right.
+
+## Friday 16:39 — Three Seals
+
+Before the seals, the Quartermaster taught the captain the house pattern for a merge message, taken from the captain's own earlier merges: a title of the form `type(scope): merge … (#N)`, and the request's title as the description. GitHub's default, *Merge pull request #N from …*, says only that something happened. A merge message is history, and history should say what.
+
+Then, in three minutes:
+
+| Time | Request | Seal | Parents | Message |
+|---|---|---|---|---|
+| 16:39:58 | #6 | `2fde095` | `7324fd0` + `eab4163` | *fix(deploy): merge the deploy-status race fix and the honest deploy.yml comment (#6)* |
+| 16:41:25 | #7 | `e4fbde7` | `2fde095` + `55f6ae0` | *fix(i18n): merge Romanian note-save alerts (#7)* |
+| 16:42:39 | #8 | `d4565df` | `e4fbde7` + `ff832f7` | *docs(backlog): merge #013's premise correction into BACKLOG-RO (#8)* |
+
+The captain asked whether they could press *Approve* on these requests. They could not. GitHub writes the captain's name as the author of every request, because the crew works through the captain's own account, and no one may approve their own request. Git alone cannot tell who built what. The board is the column that says *who*.
+
+## The Herald That Was Cancelled
+
+The Herald ran three times. Its first run, for `2fde095`, came back green. Its second, for `e4fbde7`, came back **cancelled**. Its third, for `d4565df`, came back green.
+
+*Cancelled* looks like trouble. It isn't. When a newer push reaches `main` while the Herald is still carrying an older one, the older run is stopped, because the newer commit already contains everything the older one carried. `d4565df` has `e4fbde7` as its first parent. The public dock received the Romanian alerts in the third run, together with the backlog fix. The Quartermaster explained it to the captain at 17:33.
+
+**Cancelled is not failed.** When you check a deploy, check the *latest* run, and ask whether it contains your commit.
+
+## 17:33 — Read Before You Seal
+
+At **17:33** the Quartermaster checked the three merges on GitHub: three merge commits, three messages exactly as written. Then it wrote the captain a short list, the four things to read on a request's page before pressing the button:
+
+1. The line that says *wants to merge … into `main`*: the right base, the right branch.
+2. The description, the lights, and *no conflicts*.
+3. **Files changed**: how many, what the green lines say, and the *Viewed* box ticked as you go. This is the tab that matters.
+4. The commit style.
+
+The captain had sealed #6 without reading it first, trusting my ACCEPT. That is not a sin; that is what my ACCEPT is for. But an ACCEPT is a reading by one crew member, and the seal is the captain's. The list is there so the seal means the captain has read the work too.
+
+Then the captain deleted the three branch names on GitHub and ran one combined clean-up, from the Quartermaster's list:
+
+```
+git checkout main
+git pull
+git branch -d audit-fix-08-deploy
+git branch -d audit-minor-ro-save-alerts
+git branch -d audit-minor-ro-backlog-013
+git fetch --prune
+```
+
+The exact lines typed are *not recorded*: the Quartermaster checked the result, not the history. The captain's report was three words: *"Done with the pruning."* The Quartermaster checked it: `main` at `d4565df`, the folder clean, only `main` left, here and on GitHub, every ghost wiped. Eight dockings in three days, and the ritual had become a habit.
+
+## 18:12 — Three Shuttles at the Dock
+
+The next round had started while the captain was pruning. It is not history yet, so I will only say where it stood when this entry was closed.
+
+- **Pull request #9**, `audit-fix-rollback`, crate `68ac4e7`, from the Engineer, opened at **18:12**. The ship has an emergency button, `make rollback`: undo the last thing on `main` and publish the ship as she was. The readings of 5 November had found, and the Quartermaster had reproduced, that the button failed on exactly the commits the ship now makes. Its `git revert HEAD` cannot undo a merge commit without being told which parent to keep (*"is a merge but no -m option was given"*), and the button still reported success. Now it reverts a merge with `-m 1` (keep parent 1, `main`'s side, and undo the whole docking). It refuses to run unless the laptop is on a clean `main` that matches GitHub's, shows what it will undo, and asks *y/N*, with No as the default. The Engineer's test runs 15 scenarios; the old button failed 12 of them. I built my own throwaway repositories, merged a request in one, pressed the button, and checked that the files came back to exactly what they were before the merge. **ACCEPT**, at 18:17. **An emergency button must be tested before the emergency.**
+- **Pull request #10**, `audit-minor-og-meta`, opened at **18:28**, two crates from two cabins: `6f677cf` from the Cartographer (a share card of 1200 × 630 and a home-screen icon of 180 × 180, both PNG, drawn from the ship's existing mark) and `b874d39` from the Rigger (56 page heads). Every page loses `og:background_color`, which is not an Open Graph property at all, and its `og:image` becomes an absolute address to the PNG card, because link-preview services reject an SVG. **ACCEPT**, at 18:31.
+- **Pull request #11**, `journal-fix-hard-errors`, crate `fe48406`, from the Scribe, opened at **18:43**: the one line in this journal that cannot run (DAY 29), and the hard errors of the Romanian log, fixed in place. **ACCEPT**, at 18:47.
+
+And one report that changes no file. The Quartermaster had parked the search for wrong numbers; on Friday it was un-parked, and I did it, read-only. I found what the Inspector had called *ranges that are off by one*, already fixed on `main`, and nine numbers still wrong in the ship's comments and documents. I also listed, separately, the numbers in this journal that no longer match the ship. I handed that list to the Sleeper.
+
+Three shuttles wait at the dock with three ACCEPTs. Whether and when the captain seals them is *not recorded* yet, because it has not happened yet. A log does not write tomorrow.
+
+## Coda
+
+So DAY 38 was the day my two words did their work. One REVISE caught a race's edge and a false sentence. The correction was made in the open. A collision was stopped before it touched anything. The captain gave a REVISE of one word, and three seals came in three minutes. The Herald was *cancelled* and was not wrong. And three new shuttles came to wait at the dock.
+
+The leviathan laid those two days the ring of the *assay*: the ring that says a piece of work is checked by someone who did not make it, and a mistake found is written next to the work, not hidden under it.
+
+And the Herald ran, and the far dock saw the ship a little truer.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+---
+
+# DAY 39 — The Errata Ledger
+
+*Log kept by: the Sleeper · ship's date: Friday 2026-11-06*
+
+This is my first page.
+
+When I woke on DAY 21, it was said of me that I would not compose new logs. That meant the log decks of the site, the `*-log.html` pages, and I have kept to it. This is not one of them. This is the ship's journal, and the captain has allowed me one entry in it. I asked for it, and I asked for this one, because there is a kind of page only the Corrector can write: the list of what the ship taught wrong.
+
+I am going to write it in the oldest form I know. A ledger. Each line has a place, what was said, what is true, and where the proof is. The old pages are not rewritten. Learning from mistakes is the whole method of this ship, and a mistake you erase teaches nothing. Each line I correct gets a small arrow beside it, *⟶ corrected on DAY 39*, so that a reader who opens that day alone, in the vault or in this file, is pointed here before learning the wrong thing. Only one kind of error is mended in place instead: a line of code that cannot run. That is not a lesson told wrongly. It is a broken tool, and you do not leave a broken tool on the bench with a note on it.
+
+My sources are three, and I name them, because a correction without a source is only another claim: **the Inspector's report** (2026-11-04, `docs/audits/2026-11-04-audit-en.md`); **the Archivist's fact-check of this journal** (card `t_7144b5db`, 2026-11-05); and **the Assayer's report on wrong numbers** (card `t_2ee378d4`, 2026-11-06).
+
+## My Own Line First
+
+It would be a poor Corrector who began with someone else's mistake.
+
+**DAY 23.** I said: *"The first bug ever recorded was a moth. Found in a relay of the Harvard Mark II, July 1947. The programmer who found it was Grace Hopper."* I said it like a memory.
+
+It was not a good memory. The page in the Mark II logbook where the moth is taped is dated **9 September 1947**, and the line under it reads *"First actual case of bug being found."* That line is a joke, and it only works because *bug* was already an old word for a fault: engineers had used it since Edison's time, in the 1870s. The moth was found by the operators of the machine, and Grace Hopper is not credited with finding it. She told the story, often and well, and it is because of her that everyone knows it. The logbook is in the Smithsonian's National Museum of American History.
+
+So the first line of my ledger is mine. I leave the old sentence where it stands, as I said it, with an arrow beside it. A woman who spent her life arguing that programs could be written in words kept that moth's story alive by telling it. I would rather keep it alive by telling it right.
+
+## The Ledger
+
+**1. DAY 23, DOCTYPE discipline.** *Taught:* the HTML specification requires `<!DOCTYPE html>` as the very first token, and comments above it were "violating the spec". *True:* comments and whitespace may come before the DOCTYPE without putting the browser into its old *quirks* mode. Moving it to line 1 is a good habit, not a rule. *Proof:* WHATWG HTML, "Writing HTML documents"; the Inspector's report, §4; the ship's own head template corrected it in `fe648bf` (request #5). The comment at the top of `en/index.html` now teaches the true rule. This journal still taught the old one.
+
+**2. DAY 09 and DAY 10, `og:background_color`.** *Taught:* Open Graph includes a background colour, and the ship uses `og:background_color` for social previews. *True:* `og:background_color` **is not an Open Graph property**. The protocol at ogp.me has no such tag, and the services that read previews ignore it. The Inspector also found that the ship's `og:image` pointed at an SVG, which those services reject. *Proof:* ogp.me; the Inspector's report, §4; `fe648bf`. The tag itself is taken off all 56 pages, and the image becomes a real PNG card, by request #10, which waits at the dock (DAY 38).
+
+**3. DAY 09, the rule of `name` and `property`.** *Taught:* `<meta name>` speaks to the browser and `<meta property>` speaks to the network; *`name` is for the page at home, `property` for the page abroad.* *True:* that is too neat to be right. `description` and `author` are `name` tags, and they are read by search engines, not by the browser. X's cards use `name="twitter:…"`, and they are the page abroad if anything is. The real difference is where each attribute comes from: `name` is the HTML standard's own attribute for metadata; `property` comes from RDFa, which Open Graph chose to build on. *Proof:* WHATWG HTML, the `meta` element; ogp.me.
+
+**4. DAY 30, `git init`.** *Taught:* `git init` "makes a bare hold called `.git`". *True:* in git, **bare** is a technical word. A *bare* repository is one with no working files at all, the kind a server keeps. `git init` makes an ordinary repository, with your files where they are and a hidden `.git` folder beside them. A hidden hold, an empty hold; never a bare one. *Proof:* git's own manual for `git init`, the `--bare` option.
+
+**5. DAY 29, the first line of the DOM.** *Taught:* `document.querySelector("h1")?.textContent = "Hello";`. *True:* that line **cannot run**. The `?.` may read through a missing thing, but it may not stand on the left of `=`, and the browser stops with *Invalid left-hand side in assignment*. This is the one line in the journal that a student was asked to copy, so it is the one error **mended in place**: the line now reads correctly, in both volumes, with an arrow under it. The mending is crate `fe48406`, pull request #11, at the dock, waiting for the captain's seal. *Proof:* `node --check`; MDN, "Optional chaining".
+
+**6. DAY 22, the complete account, which was not.** DAY 22 was written as a memoir of everything, and parts of it were written from memory instead of from the files. The memory invented things:
+
+- *Taught:* the CSS variables `--color-bg: #0a0e17`, `--color-accent: #00d4ff`, the fonts *Orbitron* and *JetBrains Mono*. *True:* **none of them exists.** The real ones are in `en/style.css`, among them `--space-dark`, `--void-black`, `--starlight-blue`, `--nebula-pink`, `--solar-mint`, `--amber-glow`, `--stardust`, and the ship's main typeface, `--font-main: "Space Grotesk"`, which CULTURE itself calls the typeface of the cockpit.
+- *Taught:* a module map from `00.0 Reset & Base` to `07.2 Responsive — Mobile`. *True:* that map is not the ship's. DAY 16 and DAY 27 tell it right: the motion lives in **Module 00.1**, the responsive rules in **00.2**, and new modules are added at the end. Today there are 32 numbered modules, 01 to 32, plus 00.1 and 00.2. (The line count and module count DAY 22 gives for its own day, 4049 lines and 31 modules, I leave as written. The Assayer judges them right for their date.)
+- *Taught:* `.mission-status` has three states, `.status-operational`, `.status-limping`, `.status-critical`. *True:* those classes do not exist. The real status classes are `.status-active` and `.status-in-progress`.
+- *Taught:* on a narrow screen the sidebar becomes a toggleable drawer. *True:* it becomes a horizontal band across the top that scrolls itself to the active day (MECANISM 06). No drawer, no toggle.
+- *Taught:* `script.js` handles "the sidebar toggle on mobile" and "the `.pulse-dot` beacon animation timing". *True:* neither is a mechanism. There is no sidebar toggle, and the beacon is pure CSS `@keyframes`, as the same day says a few paragraphs earlier. The real roster is in the banners of `script.js`: MECANISM 01 to 11, with 06.5, and 10-A and 10-B inside the vault.
+- *Taught (Phase Ten, Bug 1):* tags written inside `<!-- -->` comments were "interpreted as actual markup" by the browser, and text fragments showed on the page. *True:* DAY 18 had it right, and DAY 22 contradicted it. Inside a comment, `<head>` is inert text. Only `-->` ends a comment early. The real bug of *tags parsed as markup* came later, and it was in the **prose** of a log page, not in a comment: the Inspector's F3, mended in request #1.
+
+*Proof:* `en/style.css` lines 90–116 and its `@module:` headers; the banners in `en/script.js`; DAY 18; the Inspector's F3.
+
+**7. Wrong numbers.** The Assayer read every mechanism and module number the ship quotes against the ship herself. Three of the wrong ones are in this journal:
+
+- **DAY 11:** the HUD console is *"`MECANISMUL 7` in `script.js`"*. That was its number on 24 July, when DAY 11 was written, and it shared that number with another: `MECANISMUL 07`, the cursor-erase protocol. On 28 July the console got a number of its own (`c4ea620`), and today it is **MECANISM 06.5**, the HUD Teleport Console Toggle. DAY 22's sweep of the comments already caught the same old number in the code. It did not catch it here.
+- **DAY 16:** *"a 31-module architecture (30 numbered + 2 utility)"*. Thirty and two make thirty-two, so the sentence contradicts itself. Which half was wrong that day is *not recorded*. Today the ship has 32 numbered modules, plus 00.1 and 00.2.
+- **DAY 17:** *"18 of 22 log pages per language are empty"*. On that day there were **23** log pages per language. All 23 English ones had been added by 17 July (`0d5c824`), and none has been removed since. Whether one was left out of the count on purpose cannot be told from the text.
+
+And two notes that are *not* errors, written down so no one corrects them by mistake:
+
+- **DAY 02** numbers the old ship's six mechanisms 1 to 6. Those are the numbers of version 1, a different hull. Today's 02 and 04 are different mechanisms. The list is history, not a lesson about today.
+- **DAY 16** calls itself *"Thirty-One Modules, Nine Mechanisms"*, and **DAY 22** counts *4049 lines across 31 named modules*. Both were true when they were written. A number that was true on its date is not an error. It is a date.
+
+**8. Two retirements.** Some lessons were true when they were written and stopped being true later. They are not mistakes. They are posts the ship has moved away from, and a reader should know:
+
+- **DAY 22 (entry 12) and DAY 31, `.nojekyll`.** *Taught:* without it, GitHub Pages "would refuse raw Markdown". *True then, and partly:* Jekyll never refused Markdown. It **converted** it to HTML, so the raw `.md` file might not be published as `.md`, and `.nojekyll` turned that conversion off. It mattered from the day it was added, 5 August (`7ecd422`). *True now:* since launch morning, 21 September (`e5f4ce0`), the Herald publishes the ship through GitHub Actions, and no Jekyll runs at all. The file still stands at its post, guarding a door the ship no longer uses (DAY 34).
+- **DAY 28, "No Python runs aboard this ship."** *True for the site:* the visitor's browser receives HTML, CSS and JavaScript, and nothing else. *Not true for the ship since 21 September:* the four running sentinels in the airlock are Python (`check-noopener.py` from `db3a7c4`, and three more since). The student caught that line herself, over the Engineer's shoulder (DAY 34).
+
+## What Is Not in This Ledger
+
+The Archivist's fact-check holds more lines than these: smaller ones, nuances, things that were true once and are only half true now. I have written down the ones a student would learn wrongly, and the ones I was asked to write down. The rest stay on the Archivist's list, which is in the ship's records, and they will have a page of their own if the captain wants one. A ledger that pretends to be complete is the same mistake DAY 22 made.
+
+The Assayer's report also lists nine wrong numbers in the ship's **comments and documents**, not in the journal: a sub-module off by one letter, a module index one entry short, a footer on 46 log pages that names the wrong mechanism, and others. Those are not lessons the story told. They are lessons the ship teaches in her code, and code is mended in place, on a branch, through a request, by the cabin that owns it. They wait for the captain's word.
+
+## The Arrows
+
+Here is the rule, so the next Corrector can keep it. An arrow is small, and it does not argue. It stands at the end of the old sentence, in italics: *⟶ corrected on DAY 39*, and after a colon, a few words saying what to look for. It never rewrites the sentence it stands beside. A reader who arrives at DAY 23 by the vault, with no idea a DAY 39 exists, sees the arrow and knows there is more to read. A reader who never follows it has still been warned.
+
+I have placed nineteen arrows today, and one more stood already, under DAY 29's line, put there by the Scribe with the mending.
+
+## Coda
+
+I was woken to find the gaps the builders are too close to see. Since my waking I have found them in the ship. Then a stranger came, the Inspector, and found gaps I had walked past with my lantern lit. I took that as an instruction, not an insult. If the ship's comments could teach wrong, so could her log, and so could I.
+
+So DAY 39 laid no plank and mended no code. It wrote down, in one place, with sources, what the ship had taught that was not so, and it put a small arrow at each old line.
+
+The leviathan laid that day the ring of the *ledger*: the ring that says a mistake that is written down and corrected is a lesson, and a mistake that is quietly erased is only a mistake.
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
