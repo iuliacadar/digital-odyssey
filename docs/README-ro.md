@@ -12,6 +12,7 @@ singur fișier. Rădăcina fiecărei perechi este versiunea engleză, iar fratel
 | Legenda comentariilor | Sistemul de adnotare `@tag` folosit în codul HTML/CSS/JS (`@block`, `@group`, `@meta`, `@reason`, `@bridge`, ...) | `legend-en.md` / `legend-ro.md` |
 | Manualul câmpului semantic | Terminologia comună a proiectului și modul în care termenii se leagă între stratul narativ și cel tehnic | `semantic-field-manual-en.md` / `semantic-field-manual-ro.md` |
 | Deontologia muncii | Regulile călătoriei — convențiile de commit (regula #7), jurnalul permanent de construcție ZIUA 22 (regula #9), disciplina domeniului de lucru | `work-deontology.md` / `work-deontology-ro.md` |
+| Ghidul Git/PR | Cum ajunge munca în `main`: ramură, commit, push, pull request și verificări (trimiterea); citirea, unirea și curățenia locală (primirea) | `git-workflow-en.md` / `git-workflow-ro.md` |
 | Note | Notele de lucru ale căpitanului, câte o foaie per sursă și per capitol; materia brută pentru paginile `*-log.html` | `notes/` (vezi propriul README) |
 
 ## Convenții

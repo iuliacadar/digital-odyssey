@@ -4,13 +4,48 @@ D::0dy55ey is a static site (no build step, no bundler, no framework
 runtime). Deployment publishes the repository as-is to GitHub Pages via a
 GitHub Actions workflow.
 
-## One-command deploy
+## How a change reaches the live site: merge a pull request
+
+**Deploys happen when a pull request is merged into `main`.** Work is done on
+a branch, sent as a pull request, checked by the Lint workflow
+(`.github/workflows/lint.yml`, the four guards in `tools/`), and merged by
+Iulia on GitHub with *Create a merge commit*. A merge is a push to `main`, so
+the deploy workflow starts by itself (see [What happens on
+deploy](#what-happens-on-deploy)). Nobody pushes to `main` directly any more;
+the one exception is the emergency [Rollback](#rollback) below.
+
+The whole path, both for whoever sends a PR and for whoever merges it,
+including the local clean-up afterwards, is in the Git/PR workflow guide:
+[`docs/git-workflow-en.md`](docs/git-workflow-en.md) (Romanian:
+[`docs/git-workflow-ro.md`](docs/git-workflow-ro.md)).
+
+To watch the deploy that a merge has just started:
+
+```bash
+make deploy-status
+```
+
+With no arguments it watches the run for the commit `main` points at on
+GitHub right now, which is the merge you just made (details below).
+
+If you merge several PRs close together, one of the deploy runs may end as
+**cancelled**. That is normal: only one deploy runs at a time and at most one
+waits behind it, so a newer merge replaces the run that was still waiting, and
+the newer commit already contains everything the older one would have
+published. Cancelled is not failed. Check the latest run, and check that it
+contains your commit.
+
+## One-command deploy (a direct push; not the normal path)
 
 ```bash
 make deploy
 ```
 
-That's it. This:
+`make deploy` pushes your local `main` straight to GitHub. That was how the
+site was published until the first pull request (PR #1, merged 2026-11-04);
+since then every change arrives through a merged pull request instead. After
+a normal merge and `git pull`, your local `main` has nothing new to push, so
+`make deploy` only watches the run. It:
 
 1. refuses to run unless you're on `main` with a clean working tree;
 2. runs `git push origin main`;
@@ -41,9 +76,10 @@ deploy's success (audit 2026-11-04, F10). `tools/test-deploy-status.py`
 reproduces that race with a stand-in `gh` and proves the target no longer
 falls for it.
 
-Pushing `main` directly (`git push origin main`) has the identical effect —
-`make deploy` is a safety-checked wrapper around that one command, not a
-separate mechanism.
+`make deploy` is a safety-checked wrapper around one command,
+`git push origin main`, not a separate mechanism. Merging a pull request on
+GitHub has the same effect on the site, because a merge is also a push to
+`main`, and it is the path this project uses.
 
 You can also trigger a redeploy of the current `main` without a new commit:
 
@@ -69,8 +105,8 @@ gh workflow run deploy.yml
 
 ## What happens on deploy
 
-`.github/workflows/deploy.yml` runs on every push to `main` (and via manual
-`workflow_dispatch`):
+`.github/workflows/deploy.yml` runs on every push to `main`, which in practice
+means every merged pull request (and via manual `workflow_dispatch`):
 
 1. checks out the repo;
 2. uploads the repository root as the Pages artifact (no build/compile step —
@@ -129,6 +165,9 @@ If `git push` is ever unavailable but you have web access to the GitHub UI:
 1. Go to the repo → Actions → "Deploy to GitHub Pages" → "Run workflow" →
    select `main` → Run. This redeploys whatever is currently on `main`
    without requiring a new push.
-2. To change content without `git`, use GitHub's web editor (press `.` on the
-   repo page, or edit a file directly in the UI) to commit to `main` directly;
-   the workflow fires on that push exactly as it would locally.
+2. To change content without `git`, edit the file in GitHub's web UI. When
+   you commit, choose **Create a new branch for this commit and start a pull
+   request**, not "Commit directly to the `main` branch". The change then goes
+   through the same checks and merge as any other PR
+   ([`docs/git-workflow-en.md`](docs/git-workflow-en.md)), and the deploy
+   starts when it is merged.
