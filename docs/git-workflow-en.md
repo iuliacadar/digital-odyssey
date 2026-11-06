@@ -179,8 +179,9 @@ Why a merge commit: it keeps every commit of the branch under its own SHA, and
 it records "this came in as one PR". `git log --first-parent main` then reads
 as one line per PR. *Squash* presses the branch into one new commit, and
 *rebase* copies each commit with a new SHA. Both are legitimate choices in
-other teams, but they lose the small commits' identity, and they make step 6
-below refuse.
+other teams, but they lose the small commits' identity, and
+`git log main..<branch>` then lists commits whose content is already in
+`main`.
 
 ### 4. Delete the branch on GitHub
 
@@ -209,7 +210,7 @@ failed.** Check the *latest* run, and check that it contains your commit.
 ```bash
 git checkout main          # step off the merged branch; you can't delete the branch you stand on
 git pull                   # fetch from GitHub, including the merge commit, and move your main forward to match
-git branch -d <branch>     # delete the local branch name; -d is the safe delete and refuses if work would be lost
+git branch -d <branch>     # delete the local branch name; -d deletes only if its commits are safe on GitHub (origin/<branch>) or in main, otherwise it refuses
 git fetch --prune          # forget origin/<branch> names whose branch GitHub has deleted
 ```
 
@@ -230,14 +231,18 @@ What each one is for:
 
 ### 7. "error: the branch '…' is not fully merged"
 
-`git branch -d` says this when the branch holds commits that your local `main`
-doesn't have. Deleting the name could lose them, so Git refuses. Usual reasons:
+`git branch -d` checks the branch against one place. While `origin/<branch>`
+still exists on your laptop (the `git push -u` of Part A, step 5 made it the
+branch's upstream, and it stays until `git fetch --prune`), it checks against
+that; once it is gone, it checks against your `main`. If the branch holds
+commits that place doesn't have, deleting the name could lose them, so Git
+refuses. In practice that means one of two things:
 
-- you haven't run `git pull` yet, so your `main` doesn't have the merge;
-- the PR isn't merged at all (check its page);
-- someone pushed a commit to the branch after the merge;
-- the PR was merged with *Squash* or *Rebase*, so `main` holds copies with
-  new SHAs, not the branch's own commits.
+- the branch has local commits you never pushed, so they are neither on GitHub
+  nor in `main`;
+- `origin/<branch>` was already pruned and your `main` lacks the branch's
+  commits: you haven't run `git pull`, the PR isn't merged, or it was merged
+  with *Squash* or *Rebase*, so `main` holds copies with new SHAs.
 
 See what is missing with:
 
@@ -248,6 +253,14 @@ git log --oneline main..<branch>   # list the commits that are on <branch> but n
 If the list is empty after a `git pull`, or you have checked every commit and
 truly don't need them, `git branch -D <branch>` (capital D) forces the delete.
 Use it only after checking. It is the one command here that can throw work away.
+
+In step 6's order, a skipped `git pull`, an unmerged PR or a *Squash* merge
+doesn't stop `-d`: the commits are safe in `origin/<branch>`, so it deletes and
+prints `warning: deleting branch '…' that has been merged to
+'refs/remotes/origin/…', but not yet merged to HEAD`. That warning means the
+commits are on GitHub but not in your `main`; list them before
+`git fetch --prune` with `git log --oneline main..origin/<branch>` (the same
+check as `git log --oneline main..<branch>`, now that the local name is gone).
 
 ### 8. The classic typo: a command without `git`
 

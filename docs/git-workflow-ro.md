@@ -191,8 +191,9 @@ De ce un commit de merge: păstrează fiecare commit al ramurii cu SHA-ul lui ș
 consemnează „asta a intrat ca un singur PR”. `git log --first-parent main` se
 citește atunci câte un rând pe PR. *Squash* presează ramura într-un singur
 commit nou, iar *rebase* copiază fiecare commit cu un SHA nou. Amândouă sunt
-alegeri legitime în alte echipe, dar pierd identitatea commit-urilor mici și
-fac pasul 6 de mai jos să refuze.
+alegeri legitime în alte echipe, dar pierd identitatea commit-urilor mici, iar
+`git log main..<ramură>` arată atunci commit-uri al căror conținut e deja în
+`main`.
 
 ### 4. Șterge ramura pe GitHub
 
@@ -221,7 +222,7 @@ rulare și verifică dacă îți conține commit-ul.
 ```bash
 git checkout main          # coboară de pe ramura unită; nu poți șterge ramura pe care stai
 git pull                   # adu de pe GitHub, inclusiv commit-ul de merge, și mută main-ul tău înainte, la fel
-git branch -d <ramură>     # șterge numele local al ramurii; -d e ștergerea sigură și refuză dacă s-ar pierde muncă
+git branch -d <ramură>     # șterge numele local al ramurii; -d șterge doar dacă commit-urile ei sunt în siguranță pe GitHub (origin/<ramură>) sau în main, altfel refuză
 git fetch --prune          # uită numele origin/<ramură> ale ramurilor pe care GitHub le-a șters
 ```
 
@@ -242,15 +243,19 @@ La ce folosește fiecare:
 
 ### 7. „error: the branch '…' is not fully merged”
 
-`git branch -d` spune asta („ramura nu e unită complet”) când ramura are
-commit-uri pe care `main`-ul tău local nu le are. Ștergerea numelui le-ar putea
-pierde, așa că Git refuză. Motive obișnuite:
+`git branch -d` spune asta („ramura nu e unită complet”) după ce compară
+ramura cu un singur loc. Cât timp `origin/<ramură>` încă există pe laptopul tău
+(`git push -u` din Partea A, pasul 5 l-a legat de ramură ca *upstream*, și
+rămâne până la `git fetch --prune`), o compară cu el; după ce dispare, o compară
+cu `main`-ul tău. Dacă ramura are commit-uri pe care locul acela nu le are,
+ștergerea numelui le-ar putea pierde, așa că Git refuză. În practică înseamnă
+unul din două lucruri:
 
-- n-ai rulat încă `git pull`, deci `main`-ul tău nu are unirea;
-- PR-ul nu e unit deloc (uită-te pe pagina lui);
-- cineva a mai urcat un commit pe ramură după unire;
-- PR-ul a fost unit cu *Squash* sau *Rebase*, deci `main` are copii cu SHA-uri
-  noi, nu commit-urile ramurii.
+- ramura are commit-uri locale pe care nu le-ai urcat niciodată, deci nu sunt
+  nici pe GitHub, nici în `main`;
+- `origin/<ramură>` a fost deja curățat și `main`-ul tău nu are commit-urile
+  ramurii: n-ai rulat încă `git pull`, PR-ul nu e unit, sau a fost unit cu
+  *Squash* ori *Rebase*, deci `main` are copii cu SHA-uri noi.
 
 Vezi ce lipsește cu:
 
@@ -262,6 +267,15 @@ Dacă lista e goală după un `git pull`, sau ai verificat fiecare commit și ch
 nu-ți mai trebuie, `git branch -D <ramură>` (D mare) forțează ștergerea.
 Folosește-l doar după verificare. E singura comandă de aici care poate arunca
 muncă.
+
+În ordinea de la pasul 6, un `git pull` sărit, un PR neunit sau o unire cu
+*Squash* nu opresc `-d`: commit-urile sunt în siguranță în `origin/<ramură>`,
+așa că șterge și afișează `warning: deleting branch '…' that has been merged to
+'refs/remotes/origin/…', but not yet merged to HEAD`. Avertismentul înseamnă că
+commit-urile sunt pe GitHub, dar nu în `main`-ul tău; vezi-le înainte de
+`git fetch --prune` cu `git log --oneline main..origin/<ramură>` (aceeași
+verificare ca `git log --oneline main..<ramură>`, acum că numele local nu mai
+există).
 
 ### 8. Greșeala clasică: o comandă fără `git`
 
