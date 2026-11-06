@@ -281,7 +281,7 @@ function saveNote(dayId) {
   } else {
     alert(
       lang === "ro"
-        ? "Semnalul NU a fost salvat: acest browser blochează stocarea locală pentru acest site (mod privat sau setări stricte de confidențialitate). Copiază-ți nota într-un loc sigur."
+        ? "Semnalul NU a fost salvat: acest browser blochează stocarea locală pentru acest site (mod privat sau setări stricte de confidențialitate). Copiază-ți notița într-un loc sigur."
         : "Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe.",
     ); // Tell the truth.
   }
