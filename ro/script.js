@@ -273,11 +273,25 @@ function saveNote(dayId) {
   //  @reason: Anunțăm succesul doar când scrierea chiar a avut loc. O alertă
   //    "salvat" după o scriere eșuată l-ar lăsa pe căpitan să închidă tabul
   //    și să piardă notița crezând că a fost arhivată.
+  //  @reason: Alertele vorbesc limba paginii. Acest fișier și geamănul său
+  //    en/script.js trebuie să conțină același cod (tools/check-parity.py),
+  //    așa că ambele volume poartă ambele propoziții și o aleg la rulare după
+  //    atributul <html lang="...">, la fel cum motorul seifului (MECANISM 10)
+  //    își alege textele. O pagină românească afișează varianta românească.
+  const lang = (document.documentElement.lang || "en").toLowerCase(); // "en" sau "ro", citit din tag-ul <html> al paginii.
   if (saved) {
     console.log(`Signal saved for sector: ${dayId}`); // Loghează o confirmare tehnică în consola dezvoltatorului.
-    alert("Signal extension saved to local archives."); // Alertă pe ecran care confirmă salvarea.
+    alert(
+      lang === "ro"
+        ? "Extensia de semnal a fost salvată în arhivele locale."
+        : "Signal extension saved to local archives.",
+    ); // Alertă pe ecran care confirmă salvarea.
   } else {
-    alert("Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe."); // Spune adevărul.
+    alert(
+      lang === "ro"
+        ? "Semnalul NU a fost salvat: acest browser blochează stocarea locală pentru acest site (mod privat sau setări stricte de confidențialitate). Copiază-ți notița într-un loc sigur."
+        : "Signal NOT saved: this browser blocks local storage for this site (private mode or strict privacy settings). Copy your note somewhere safe.",
+    ); // Spune adevărul.
   }
 }
 
