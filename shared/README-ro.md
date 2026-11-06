@@ -12,6 +12,8 @@ shared/
 ├── assets/                          # Resurse binare și vizuale
 │   ├── icons/                       # Set de iconițe SVG pentru elementele HUD
 │   ├── images/                      # Imagini raster folosite în jurnale
+│   │   ├── brand/                   # Cardul de previzualizare a linkului (masterul og-card.svg + .png)
+│   │   │                            #   și masterul apple-touch-icon.svg (PNG-urile stau în en/ și ro/)
 │   │   └── prt-sc/                  # Capturi de ecran pe capitol (prt-sc = print-screen)
 │   │       ├── html/                #   Capturi din capitolul HTML (ex. charset1024bytes_rule.png)
 │   │       └── delivery/            #   Capturi din capitolul Delivery (ex. istoric git)
