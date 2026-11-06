@@ -2160,8 +2160,10 @@ Nothing is "sent" to the script in the sense she feared. The script does not rec
 And because a teaser should give her at least one line she can copy into notes and feel the shape of, I wrote her the smallest grip — the smallest way a hand takes one branch:
 
 ```
-document.querySelector("h1")?.textContent = "Hello";
+const h = document.querySelector("h1"); if (h) h.textContent = "Hello"; // take the first <h1> in the living tree; if there is one, put "Hello" on its leaves
 ```
+
+*⟶ corrected on DAY 39: the first version of this line could not run.*
 
 Read it without fright. `document` is the whole tree. `querySelector("h1")` is the hand reaching for the first `h1` it meets, and **the first**, not the tourist. `textContent` is the words that branch carries. The line says what it does with a bluntness that is the whole point of the deck: *find the first `<h1>` in the living tree and put the words "Hello" on its leaves.* One line of script, and the page's heading changes — not because the file was touched (the file is still `<h1></h1>`, still the same recipe), but because the *tree* was changed and the plate repainted.
 
