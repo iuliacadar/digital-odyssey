@@ -3216,7 +3216,7 @@ So the first line of my ledger is mine. I leave the old sentence where it stands
 
 **7. Wrong numbers.** The Assayer read every mechanism and module number the ship quotes against the ship herself. Three of the wrong ones are in this journal:
 
-- **DAY 11:** the HUD console is *"`MECANISMUL 7` in `script.js`"*. That was its number on 24 July, when DAY 11 was written, and it shared that number with another: `MECANISMUL 07`, the cursor-erase protocol. On 28 July the console got a number of its own (`c4ea620`), and today it is **MECANISM 06.5**, the HUD Teleport Console Toggle. DAY 22's sweep of the comments already caught the same old number in the code. It did not catch it here.
+- **DAY 10:** the HUD console is *"`MECANISMUL 7` in `script.js`"*. That was its number on 24 July, when the line was written, and it shared that number with another: `MECANISMUL 07`, the cursor-erase protocol. On 28 July the console got a number of its own (`c4ea620`), and today it is **MECANISM 06.5**, the HUD Teleport Console Toggle. DAY 22's sweep of the comments already caught the same old number in the code. It did not catch it here.
 - **DAY 16:** *"a 31-module architecture (30 numbered + 2 utility)"*. Thirty and two make thirty-two, so the sentence contradicts itself. Which half was wrong that day is *not recorded*. Today the ship has 32 numbered modules, plus 00.1 and 00.2.
 - **DAY 17:** *"18 of 22 log pages per language are empty"*. On that day there were **23** log pages per language. All 23 English ones had been added by 17 July (`0d5c824`), and none has been removed since. Whether one was left out of the count on purpose cannot be told from the text.
 

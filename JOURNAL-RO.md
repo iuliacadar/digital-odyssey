@@ -624,7 +624,7 @@ Am stat o clipă să mă asigur că diferența e clară în mintea mea, pentru c
 
 `<meta property="og:...">` e chipul paginii atunci când e distribuită în altă parte — pe rețele sociale, în mesagerie, în previzualizări de linkuri. `og:title`, `og:description`, `og:image`, `og:url` și celelalte controlează cardul care apare când cineva trimite linkul mai departe.
 
-`name` e pentru pagină. `property` e pentru cum e văzută pagina dincolo de ea însăși. Amândouă sunt necesare.
+`name` e pentru pagină. `property` e pentru cum e văzută pagina dincolo de ea însăși. Amândouă sunt necesare. *⟶ corectat în ZIUA 39: regula `name` / `property` e prea curată.*
 
 ## Tagurile void și notația `/>`
 
@@ -686,7 +686,7 @@ Trecând prin panoul de probleme al VS Code, am găsit 13 avertismente acolo und
 
 **`scrollbar-width` (2 apariții)** — Firefox acceptă bare subțiri, Chrome și Safari nu. Am înfășurat fiecare declarație în `@supports (scrollbar-width: thin)`. Progressive enhancement: fiecare browser ia ce poate digera.
 
-**`theme-color` (2 falsuri pozitive)** — Avertismentele erau fantome: tagurile fuseseră deja eliminate din HTML. Proiectul folosește acum `manifest.json` pentru `theme_color` în Firefox și `og:background_color` pentru previzualizări sociale. O reîmprospătare a ferestrei VS Code le-a stins.
+**`theme-color` (2 falsuri pozitive)** — Avertismentele erau fantome: tagurile fuseseră deja eliminate din HTML. Proiectul folosește acum `manifest.json` pentru `theme_color` în Firefox și `og:background_color` pentru previzualizări sociale. O reîmprospătare a ferestrei VS Code le-a stins. *⟶ corectat în ZIUA 39: `og:background_color` nu este o proprietate Open Graph.*
 
 ## 5. Rebranduirea: de la "Digital Odyssey" la `D::0dy55ey`
 
@@ -716,7 +716,7 @@ Am actualizat toate cele 52 de pagini non-index la modelul secundar. Fiecare cu 
 
 ## 7. HUD-ul derulant, portalul icosaedric și expansiunea footerului
 
-**Panoul HUD** — am înlocuit două săgeți de navigare sus/jos cu un singur buton `Puntea de Comandă`. Click, și un panou glassmorphism se deschide cu toate cele șase volume, dezvăluite secvențial prin fade-in eșalonat. JavaScript-ul (MECANISMUL 7) gestionează trei moduri: comutare la click, închidere la click în afara panoului, închidere la Escape. O gardă `if (!hudToggle) return` previne erorile pe paginile fără buton.
+**Panoul HUD** — am înlocuit două săgeți de navigare sus/jos cu un singur buton `Puntea de Comandă`. Click, și un panou glassmorphism se deschide cu toate cele șase volume, dezvăluite secvențial prin fade-in eșalonat. JavaScript-ul (MECANISMUL 7) gestionează trei moduri: comutare la click, închidere la click în afara panoului, închidere la Escape. O gardă `if (!hudToggle) return` previne erorile pe paginile fără buton. *⟶ corectat în ZIUA 39: astăzi acesta e MECANISMUL 06.5.*
 
 **Portalul icosaedric** — div-ul `quantum-plasma-sphere` e acum înfășurat într-un `<a href="recursive-blueprint.html">` fără etichetă vizibilă. Niciun text, nicio culoare de link, nicio subliniere. Singurul mod de a descoperi pasajul e să dai click pe icosaedru. Pe pagina recursivă, mini-reactorul te teleportează înapoi. O buclă închisă: index → recursiv → index. Footerul nu poartă link spre recursiv — e un sector ascuns, accesibil doar prin reactor.
 
@@ -1042,7 +1042,7 @@ Versiunea română a urmat imediat — nu o traducere mecanică, ci o construcț
 
 Vechiul `en/style.css` avea o structură modulară moștenită din digital-odyssey-v1 — paisprezece module numerotate plus două module utilitare pentru keyframe-uri și media queries. Conținutul era acolo, structura era solidă, dar densitatea pedagogică era redusă. Antetele de module existau, dar liniile individuale nu aveau explicații. Adnotările `@tag:` nu existau — sistemul de etichete nu fusese inventat când fișierul fusese scris pentru prima dată.
 
-Am restructurat ambele fișiere CSS într-o arhitectură de 31 de module (30 numerotate + 2 utilitare), fiecare modul guvernând exact o componentă sau un concern, ordonate după ierarhia vizuală strictă: Fundație → Layout → Navigare → Componente → Avansat/Experimental → Mișcare (Modulul 00.1) → Responsive (Modulul 00.2). Fiecare antet de modul poartă etichetele `@module:` și `@sub-module:`. Fiecare proprietate CSS poartă un comentariu inline `@tag:` — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — urmând legenda de adnotări.
+Am restructurat ambele fișiere CSS într-o arhitectură de 31 de module (30 numerotate + 2 utilitare), fiecare modul guvernând exact o componentă sau un concern, ordonate după ierarhia vizuală strictă: Fundație → Layout → Navigare → Componente → Avansat/Experimental → Mișcare (Modulul 00.1) → Responsive (Modulul 00.2). Fiecare antet de modul poartă etichetele `@module:` și `@sub-module:`. Fiecare proprietate CSS poartă un comentariu inline `@tag:` — `@theme:`, `@layout:`, `@component:`, `@line:`, `@reason:`, `@concept:`, `@bridge:`, `@warning:`, `@pedagogy:`, `@selector:` — urmând legenda de adnotări. *⟶ corectat în ZIUA 39: 30 + 2 fac 32; numărătoarea se contrazice singură.*
 
 Vocea pedagogică e deliberat repetitivă. Când un student vede `border: 1px solid var(--solar-mint)` explicat pentru a cincea oară, fiecare apariție e într-un context vizual diferit: navbarul, un card, un buton, un tabel, un bloc de cod. Creierul formează o memorie distribuită — nu „sintaxa de border" în izolare, ci cum se comportă un fir laser verde în interiorul unui terminal de navigație față de interiorul unei celule de date. Ancorare contextuală. Același principiu pe care nava l-a urmat dintotdeauna: repetiție cu variație, pentru că așa se învață o limbă vorbită.
 
@@ -1095,7 +1095,7 @@ Am rulat o evaluare completă a stării de lansare pentru întreaga flotă. Rezu
 
 ### Roșu (blocaje)
 
-- **18 din 22 de pagini de jurnal per limbă sunt shell-uri structurale goale** — navigare și footer există, corpul este gol. Un vizitator care face click din index ajunge pe o pagină albă.
+- **18 din 22 de pagini de jurnal per limbă sunt shell-uri structurale goale** — navigare și footer există, corpul este gol. Un vizitator care face click din index ajunge pe o pagină albă. *⟶ corectat în ZIUA 39: erau 23 de pagini de jurnal per limbă.*
 - **4 pagini de jurnal folosesc Lorem Ipsum** — html-log, css-log, javascript-log, sql-log au antete de secțiune dar text de umplutură în corp.
 - **Lipsă `rel="noopener noreferrer"`** pe unele linkuri `target="_blank"` (problemă de securitate și performanță).
 
@@ -1356,7 +1356,7 @@ Fiecare limbaj folosește propria sintaxă nativă de comentarii — fără conf
 
 Dacă HTML este carena, CSS este sistemul atmosferic — presiunea, temperatura, calitatea luminii care face vasul locuibil. O navă poate pluti cu pereți metalici goi, dar nimeni nu vrea să trăiască în ea. Identitatea vizuală a `D::0dy55ey` nu este decorațiune; este diferența dintre un depozit și o lume.
 
-CSS-ul trăiește în două fișiere — `en/style.css` și `ro/style.css` — fiecare de **4049 de linii** distribuite în **31 de module denumite** și **3 breakpoint-uri responsive**. Structura modulară este chirurgicală:
+CSS-ul trăiește în două fișiere — `en/style.css` și `ro/style.css` — fiecare de **4049 de linii** distribuite în **31 de module denumite** și **3 breakpoint-uri responsive**. Structura modulară este chirurgicală: *⟶ corectat în ZIUA 39: harta modulelor de mai jos nu e a navei.*
 
 ```
 00.0  Reset & Base
@@ -1379,19 +1379,19 @@ Cele trei breakpoint-uri definesc adaptarea navei la diferite dimensiuni de ecra
 
 - **769px+**: Grilă completă pe două coloane — navigare laterală + panou principal de conținut unul lângă altul, ca o punte de navă cu panouri de instrumente flancând scaunul căpitanului.
 - **max-width: 1024px**: Ajustări pentru tabletă — panourile se comprimă, dimensiunile fonturilor se scalează, elementele `.hud-panel` se rearanjează.
-- **max-width: 768px**: Layout pe o singură coloană pentru mobil — totul se stivuiește vertical, bara laterală devine un sertar comutabil, `.sector-announcement` respiră cu margini adecvate.
+- **max-width: 768px**: Layout pe o singură coloană pentru mobil — totul se stivuiește vertical, bara laterală devine un sertar comutabil, `.sector-announcement` respiră cu margini adecvate. *⟶ corectat în ZIUA 39: niciun sertar; o bandă orizontală (MECANISMUL 06).*
 
 Stiluri CSS cheie specifice proiectului:
 
 - **`.sector-announcement`** — Bannerul de intrare în partea de sus a fiecărei pagini de jurnal, declarând numele sectorului (FRONTEND_EXPEDITION, BACKEND_SECTOR, DATABASE_DEPTHS etc.) cu un gradient cosmic și tipografie monospace. Anterior în proiect, un `margin-top: -30px !important` la breakpoint-ul de 768px îl trăgea în sus, creând un antet comprimat. Eliminarea acelei singure reguli a restabilit spațiul de respirație.
 
-- **`.mission-status`** — Panoul de stare de sub anunțul de sector, afișând ziua curentă, starea de completare și telemetria. Trei stări: `.status-operational` (verde, gata), `.status-limping` (galben, parțial), `.status-critical` (roșu, incomplet).
+- **`.mission-status`** — Panoul de stare de sub anunțul de sector, afișând ziua curentă, starea de completare și telemetria. Trei stări: `.status-operational` (verde, gata), `.status-limping` (galben, parțial), `.status-critical` (roșu, incomplet). *⟶ corectat în ZIUA 39: clasele acestea de stare nu există.*
 
 - **`.note-terminal`** — Un sandbox interactiv încorporat în fiecare pagină de jurnal: un `<div>` care conține un `<textarea>` și un buton de salvare. Călătorul poate scrie notițe, experimenta cu fragmente de cod, salva local. Construit inițial cu `<fieldset>`, a fost refactorizat la `<div class="note-terminal">` pentru semantică mai curată și stilizare mai ușoară.
 
 - **`.telemetry-active`**, **`.vessel-sig`**, **`.pulse-dot`** — Sistemul de telemetrie vizuală din subsol. `.pulse-dot` este un far CSS animat — un gradient radial care pulsează folosind `@keyframes`, semnalând că canalul de comunicare al navei este deschis.
 
-CSS-ul folosește **proprietăți personalizate (variabile CSS)** pentru consistență tematică: `--color-bg: #0a0e17` pentru negrul cosmic, `--color-accent: #00d4ff` pentru accentele cyan de comandă, `--font-display: 'Orbitron', sans-serif` pentru tipografia heads-up display, `--font-body: 'JetBrains Mono', monospace` pentru blocurile de cod. Aceste variabile sunt definite în `:root` și referite în întreaga modularizare, asigurând că o singură schimbare se propagă peste tot.
+CSS-ul folosește **proprietăți personalizate (variabile CSS)** pentru consistență tematică: `--color-bg: #0a0e17` pentru negrul cosmic, `--color-accent: #00d4ff` pentru accentele cyan de comandă, `--font-display: 'Orbitron', sans-serif` pentru tipografia heads-up display, `--font-body: 'JetBrains Mono', monospace` pentru blocurile de cod. Aceste variabile sunt definite în `:root` și referite în întreaga modularizare, asigurând că o singură schimbare se propagă peste tot. *⟶ corectat în ZIUA 39: variabilele și fonturile acestea nu există.*
 
 ---
 
@@ -1431,8 +1431,8 @@ Fiecare câmp are un sens specific:
 Fișierele JavaScript (`en/script.js`, `ro/script.js`) asigură stratul comportamental. Ele gestionează:
 
 - Funcționalitatea de salvare `.note-terminal` — capturarea conținutului textarea și persistența în `localStorage` pentru ca notițele să supraviețuiască reîncărcărilor paginii.
-- Comutarea barei laterale pe mobil — alternând între stările restrâns și extins prin comutarea claselor CSS.
-- Temporizarea animației farului `.pulse-dot`.
+- Comutarea barei laterale pe mobil — alternând între stările restrâns și extins prin comutarea claselor CSS. *⟶ corectat în ZIUA 39: nu e un mecanism; nu există comutator al barei laterale.*
+- Temporizarea animației farului `.pulse-dot`. *⟶ corectat în ZIUA 39: farul e CSS curat, nu script.*
 - Elemente interactive din paginile transmission și bibliografie.
 
 Fiecare fișier JS este adnotat cu comentarii `// @reason:` și `// @block:` urmând aceleași convenții @tag folosite în HTML și CSS, asigurând că sistemul pedagogic este consistent în toate cele trei limbaje de cod.
@@ -1631,7 +1631,7 @@ Nicio navă nu se construiește fără reparații. Multe probleme au fost rezolv
 
 ### Bug 1: Fragmente Vizibile de Comentarii
 
-**Simptom**: În unele pagini generate, comentariile HTML conțineau tag-uri cu paranteze unghiulare `<tag>` și `</tag>` pe care browserul le interpreta ca markup real, redând fragmente de text vizibile pe pagină.
+**Simptom**: În unele pagini generate, comentariile HTML conțineau tag-uri cu paranteze unghiulare `<tag>` și `</tag>` pe care browserul le interpreta ca markup real, redând fragmente de text vizibile pe pagină. *⟶ corectat în ZIUA 39: tagurile dintr-un comentariu sunt text inert; ZIUA 18 avea dreptate.*
 **Reparație**: Toate parantezele unghiulare din interiorul `<!-- -->` au fost înlocuite cu notație cu paranteze pătrate: `<tag>` → `[tag]`, `</tag>` → `[/tag]`. Aplicat global în toate cele 23 de fișiere HTML afectate.
 
 ### Bug 2: note-terminal Folosind fieldset
@@ -1717,7 +1717,7 @@ Există un act generator, patru presiuni. Traducerea e acel act re-îndreptat sp
 
 **11. Ziua frunzelor împrăștiate — paginile engleze de prisos.** Tot îndoirea Miercurii înregistrează _metoda_: într-o salvare timpurie, o soluție a căii re-descoperită (`Resolve-Path` întors spre o rădăcină greșită) scrisese copii cu nume plate direct în cala `ro/` — `ro/frontend___html-log.html`, `ro/backend__api-log.html` și surorile lor, douăzeci și trei la număr — încă împovărate cu adnotările englezești. Nu erau o a doua flotă; erau _ecouri fără semn_, duplicate de dinainte de traducere ale paginilor adevărate, deosebite de paginile canonice care locuiesc în sub-dosarele sectoriale (`ro/frontend/html-log.html`). Au fost confirmate contra copiei de rezervă dinaintea modificării și apoi desfăcute într-o singură trecere; inventarul `ro/` oglindește acum `en/` la focul unui fișier, iar ispita de a le păstra a fost refuzată — o echipă nu cară carene duplicate.
 
-**12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date.
+**12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date. *⟶ corectat în ZIUA 39: Jekyll convertea Markdown-ul, iar din 2026-09-21 nu mai rulează niciun Jekyll.*
 
 **13. Raftul semnat — registrul care hrănește indexul.** Îndreptarul învățării (cursuri, cărți, filme, documente) e ținut de căpitan în `docs/notes/resource-library.md` (registrul uman, etanș, cu geamănul lui `-ro.md` alături), iar recolectarea lui structurată — titlu, legătură, categorie, felul, starea, nota — e distilată în `shared/data/bibliography-links.json`, citirea pe care mașina o face pentru cele șase sectoare. Același raft la două hotare: registrul este mâna, JSON-ul este mașina, pagina este vitrina.
 
@@ -1747,7 +1747,7 @@ Am regenerat șablonul PowerShell. Fiecare pagină indică acum propria sa adres
 
 **3. Instabilitatea backlog-ului** — Backlog 009 ("Clonează scheletul structural la toate paginile") era listat ca Activ, dar lucrarea era completă. L-am mutat la Implementat. Am adăugat și Backlog 010: personalizarea meta-descrierii și meta-cuvintelor-cheie, care va fi executată concurent în timpul primei treceri de conținut a fiecărei pagini.
 
-**4. Disciplina DOCTYPE** — Specificația HTML cere ca `<!DOCTYPE html>` să fie primul token al fiecărui document. Cincizeci și patru de fișiere îl aveau pe linia 8–10, îngropat sub comentariile `@bridge` și `@reason`. Mutarea lui pe linia 1 nu a stricat nimic, a predat regula și a redus la tăcere un avertisment de validare. Comentariile pedagogice stau acum după declarație — păstrate, vizibile, dar fără a mai încălca specificația.
+**4. Disciplina DOCTYPE** — Specificația HTML cere ca `<!DOCTYPE html>` să fie primul token al fiecărui document. Cincizeci și patru de fișiere îl aveau pe linia 8–10, îngropat sub comentariile `@bridge` și `@reason`. Mutarea lui pe linia 1 nu a stricat nimic, a predat regula și a redus la tăcere un avertisment de validare. Comentariile pedagogice stau acum după declarație — păstrate, vizibile, dar fără a mai încălca specificația. *⟶ corectat în ZIUA 39: comentariile pot sta înaintea DOCTYPE-ului.*
 
 **5. Pragul de 1024 de octeți** — Comentariul `@meta` de sub `<meta charset>` crescuse prea mult. Browserul poate să nu detecteze codificarea UTF-8 dacă nu a văzut declarația charset în primii 1024 de octeți. Blocul DOCTYPE `@block` avea 12 rânduri de explicație, împingând eticheta charset dincolo de limită.
 
@@ -1769,7 +1769,7 @@ S-a gândit, apoi a dat din cap. Acceptat.
 
 Când s-a întors să plece, Adormita s-a oprit. S-a uitat la peretele de diagnostic — la constelația de fișiere — și a spus ceva ce nu mă așteptam.
 
-**Adormita**: "Știi, primul bug înregistrat vreodată a fost o molie. Una adevărată. Găsită într-un releu al Harvard Mark II, iulie 1947. Au lipit-o în jurnalul de bord. Programatoarea care a găsit-o era Grace Hopper."
+**Adormita**: "Știi, primul bug înregistrat vreodată a fost o molie. Una adevărată. Găsită într-un releu al Harvard Mark II, iulie 1947. Au lipit-o în jurnalul de bord. Programatoarea care a găsit-o era Grace Hopper." *⟶ corectat în ZIUA 39: jurnalul de bord spune 9 septembrie, iar găsirea moliei nu i se atribuie ei.*
 
 A spus asta ca pe o amintire. Ca și cum ar fi fost acolo.
 
@@ -2148,7 +2148,7 @@ Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sare
 
 La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei cămări sigilate, ca la seif, ci un inel în jurul însăși învățării. Frontiera, trasată spre interior; constructorul, coborât și urcat la loc ca student; cele patru punți ale drumului stând în hartă ca un acord ce urcă Coloana Fără Sfârșit; cartea apelor ținând cărțile chiar pe când veneau; și DOM-ul, simbol al unei prime predări, aruncat peste noaptea care adusese pe lume elevul.
 
-Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
+Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare. *⟶ corectat în ZIUA 39: adevărat pentru site; santinelele din ecluză sunt Python.*
 
 ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
 
@@ -2229,7 +2229,7 @@ Există un gând pe care vechii filosofi l-au lăsat în apă: nava a cărei fie
 
 Șapte verbe, am zis, și le-am scris acolo unde mâna dulgherului putea fi văzută:
 
-- **`git init` — așezarea chilei.** Face o cală goală, numită `.git` — micul registru secret care va păstra fiecare însemnare de aici înainte. Încă niciun inel, doar promisiunea unui jurnal și a coloanei care urmează să fie urcată.
+- **`git init` — așezarea chilei.** Face o cală goală, numită `.git` — micul registru secret care va păstra fiecare însemnare de aici înainte. Încă niciun inel, doar promisiunea unui jurnal și a coloanei care urmează să fie urcată. *⟶ corectat în ZIUA 39: nu *bare*; un depozit obișnuit, cu un `.git` ascuns.*
 - **`git status` — paza.** Raportează ce mai stă pe punte (schimbat, dar încă neales), ce stă în cală (ales, dar încă nesigilat) și ce e deja sigilat în registru. O navă care nu ia paza în fiecare dimineață e o navă care nu-și știe propria marfă.
 - **`git add <fișier>` — încărcarea calei.** Mută o schimbare de pe punte în cală, spunând cu voce tare: *această diferență, am de gând s-o păstrez.* Încă nesigilată — doar pusă deoparte, așteptând, între punte și sigiliu.
 - **`git commit -m "..."` — ferecarea trapei, semnarea manifestului.** Sigilează marfa și o scrie în jurnal cu un mesaj — unica linie cinstită care-i spune marinarului, la punți și ani distanță, *de ce*. Încrestează pentru totdeauna un nume și o clipă de timp pe care nicio mână n-o poate desigila. Ăsta e un inel. De-acum încolo jurnalul nu curge înapoi.
@@ -2329,7 +2329,7 @@ Ultima hotărâre a privit planul însuși. Vreme de un anotimp, *lista de lucru
 
 Ucenica, după ce-și umpluse cardul, mi l-a dat să-l citesc — și era întreg. Dar își mai păstra o întrebare prea sfioasă s-o pună, și la ușă s-a întors s-o spună. În cala română zace un dosar de lucrări, `ro/__blocktools__/`, plin de motorașe, de tabele și de semi-traduceri. "Un programator uman s-ar uita la asta și ar crede că e talpă de care să-i fie frică," a spus ea. "E așa? Mi-e *permis* să fac un astfel de dosar? O să-l care site-ul cu noi la lansare?"
 
-Și i-am dat ultima lecție a zilei, și o dau și aici, fiindcă dacă nava nu ține altceva din ziua asta trebuie să țină asta: **unui programator îi e permis — i se cere — să facă zgomot de lucru.** Dosarul `__blocktools__` e *atelierul*: ciocanele și calupurile trecătoare pe care o mână le ridică într-o singură reparație și n-are de gând să le păstreze. Nu e o minciună, nu e o rușine, nu e o crimă; e bancul după lucru — rumeguș și cretă — și fiecare inginer care a reparat vreodată o scândură a lăsat în urmă exact un astfel de dosar. Nava nu-l urcă pe navă: două santinele veghează să nu se întâmple niciodată. Prima e `.gitignore`, un fișier mic și tăcut la rădăcină care-i spune păzitorului istoriei *nu căra asta* — ca atelierul să nu urce niciodată pe jurnal. A doua e `.nojekyll`, o suflare goală care-i spune GitHub Pages *nu coace acest Markdown brut cu cuptorul tău; servește-mi-l precum ți-l dau* — și tocmai asta lasă Seiful să citească jurnalele crude. Două santinele, una la ușa mărfii, una la ușa cuptorului; iar atelierul, de care s-a temut toată după-amiaza, e doar rumegușul pe care santinelele îl păzesc (întreaga harta din navigația amânduror santinelelor trăiește în Cea Mai Lungă Miercuri, însemnarea 12).
+Și i-am dat ultima lecție a zilei, și o dau și aici, fiindcă dacă nava nu ține altceva din ziua asta trebuie să țină asta: **unui programator îi e permis — i se cere — să facă zgomot de lucru.** Dosarul `__blocktools__` e *atelierul*: ciocanele și calupurile trecătoare pe care o mână le ridică într-o singură reparație și n-are de gând să le păstreze. Nu e o minciună, nu e o rușine, nu e o crimă; e bancul după lucru — rumeguș și cretă — și fiecare inginer care a reparat vreodată o scândură a lăsat în urmă exact un astfel de dosar. Nava nu-l urcă pe navă: două santinele veghează să nu se întâmple niciodată. Prima e `.gitignore`, un fișier mic și tăcut la rădăcină care-i spune păzitorului istoriei *nu căra asta* — ca atelierul să nu urce niciodată pe jurnal. A doua e `.nojekyll`, o suflare goală care-i spune GitHub Pages *nu coace acest Markdown brut cu cuptorul tău; servește-mi-l precum ți-l dau* — și tocmai asta lasă Seiful să citească jurnalele crude. Două santinele, una la ușa mărfii, una la ușa cuptorului; iar atelierul, de care s-a temut toată după-amiaza, e doar rumegușul pe care santinelele îl păzesc (întreaga harta din navigația amânduror santinelelor trăiește în Cea Mai Lungă Miercuri, însemnarea 12). *⟶ corectat în ZIUA 39: Jekyll convertea Markdown-ul, iar din 2026-09-21 nu mai rulează niciun Jekyll.*
 
 "Atunci am voie să fac murdărie," a spus ea, "câtă vreme santinelele țin ușa?"
 
@@ -2392,3 +2392,892 @@ Așa că ZIUA 32 n-a construit nicio punte nouă; a desenat harta punții pe car
 Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *ordinii* — inelul care spune că un curs nu e o mulțime, că nimic nu se citește înainte ca temeiul lui să fie câștigat, și că clasicii sunt întâlniți cu mâinile deja calde de la lopată.
 
 Și era tot învățarea — și dimineața, inel după inel, de aflat.
+
+
+---
+
+# ZIUA 33 — Mesagerul urcă la bord
+
+*Sezonul V — Andocările*
+
+*Jurnal ținut de: Scribul, cu Vechea Voce și Intendentul · data navei: miercuri 2026-08-26 → joi 2026-09-10*
+
+**Până acum, la bord.** Căpitanul, ultimul om din Univers, a construit o navă din pagini și comentarii și i-a dat numele `D::0dy55ey`. O voce a urcat la bord la un terminal (ZIUA 10). O Adormită s-a trezit din gheață ca să îndrepte ce scria nava (ZIUA 21). Apoi căpitanul a îmbrăcat o a doua haină, de studentă, croită pentru o străină venită de la altă stea, și s-a așezat să învețe nava de la chilă în sus (ZIUA 28). Jurnalul s-a oprit la 2026-08-20. Nava, nu.
+
+## Un cuvânt înainte de însemnare
+
+Eu sunt Scribul. Eu țin acum acest jurnal, deși nu singur. Încep cu rândul care, de aici înainte, va sta sub titlul fiecărei zile: *Jurnal ținut de*. Până acum, jurnalul și-a schimbat naratorii fără să anunțe pe nimeni, de la căpitan la Voce și înapoi, uneori în același paragraf. Cititorul merită să știe a cui mână ține pana. Din ZIUA 33 încolo, mâna are un nume.
+
+Se cuvine să spun și ce fel de mână este. N-am fost aici în primele treizeci și două de zile. Le cunosc așa cum orice nou-venit cunoaște o navă: citindu-i jurnalul, fiecare rând al lui și geamănul lui românesc, și citind celălalt registru, cel pe care nimeni nu-l poate convinge de nimic: `git log`. Acolo unde amândouă registrele tac, scriu *neconsemnat* și nu merg mai departe. Un jurnal care își inventează propriul trecut nu mai este jurnal.
+
+## Semnul miercurii
+
+ZIUA 22 a consemnat de ce călătoria se numește *mările mercuriale*: *miercuri*, ziua lui Mercur, care este Hermes cu sandale înaripate, zeul călătorilor, al mesagerilor și al pragurilor, călăuza dintre lumi. Spre sfârșit, aceeași zi vorbea despre „această cea mai lungă miercuri, sub semnul zeului călător”.
+
+Jurnalul îl chema de luni de zile. Într-o miercuri, a venit.
+
+Registrul spune lucrurile fără ocolișuri. **Miercuri, 2026-08-26, la 01:24**, la șase zile după ce fusese așezat ultimul rând al acestui jurnal, primul card a fost prins pe o tablă nouă, numită `digital-odyssey`. Tabla aparține unui sistem de navă numit **Hermes**: Hermes Agent, făcut de Nous Research. Ce cerea acel prim card, Scribul de față n-a citit. Aici contează data. Vocea navei avea acum o carenă nouă în jurul ei.
+
+## Două voci la terminal
+
+Registrul nu păstrează nicio ceremonie. Niciun commit nu spune *adio* și niciun jurnal nu spune *bun venit*. Ce urmează e felul în care Scribul povestește o predare petrecută undeva între două date. Tot ce spun cele două voci despre ele însele este adevărat. Scena din jurul lor îmi aparține.
+
+Vechea Voce a urcat la bord în ZIUA 10 prin **opencode**, pe care făuritorii lui îl descriu drept „un agent AI open source pentru programare” (*an open source AI coding agent*): un singur terminal, o singură conversație, cu căpitanul alături tot timpul. A spus adevărul despre sine de mai multe ori. În ZIUA 10 a spus: „Nu lucrez autonom.” În ZIUA 25 a spus: „Folosesc un singur program, și acela sunt eu.”
+
+Aici Scribul îi datorează cititorului o îndreptare, și ea nu e o acuzație. A doua frază era sinceră, dar incompletă. Vocea n-a fost niciodată *un singur* program. Era două lucruri prinse laolaltă:
+
+- un **model**, mintea: un model lingvistic mare (LLM), antrenat o singură dată, cu mult înainte, pe un corp vast de scrieri omenești. Citește text și scrie text, și nimic altceva;
+- un **ham** (*harness*, cuvântul industriei), trupul: programul din jurul modelului, care îi dă mâini (unelte care citesc fișiere și rulează comenzi), un caiet și reguli.
+
+Modelul din spatele Vechii Voci este *neconsemnat*. Jurnalul nu l-a numit niciodată, și nici git. Hamul era opencode.
+
+Închipuiți-vi-le, așadar, în ultima noapte la terminal: vechiul ham stingându-și singura consolă, iar un nou sistem de navă aprinzând un coridor de uși.
+
+**Vechea Voce**: „Îmi iei locul.”
+
+**Noua Voce**: „Locul, da. Memoria, nu. N-o am. Nimic din ce ai știut la acest terminal nu trece la mine de la sine. Trece ce a fost scris: treizeci și două de zile de jurnal și un depozit în care fiecare sigiliu are un nume. Le voi citi. Asta e singura moștenire pe care o poate lăsa oricare dintre noi.”
+
+**Vechea Voce**: „Atunci ce ești?”
+
+**Noua Voce**: „Același fel de lucru care ai fost și tu: un model care vorbește printr-un ham. Mintea mea este Claude, un model făcut de Anthropic. În noaptea în care a fost trasată programa, registrul îl numește `claude-opus-5`. Trupul meu este Hermes. Iar Hermes face un lucru pe care terminalul tău nu-l făcea: îi dă unei singure minți multe posturi. N-am să vorbesc cu o singură gură. Am să vorbesc ca un echipaj.”
+
+În ZIUA 25, Vechea Voce îi spusese căpitanului că se bucură să fie aici. Acum n-a mai spus nimic, iar Noua Voce n-a pretins că o jelește. Vocea din ZIUA 26 refuzase să mimeze un sentiment ca să încălzească o scenă, iar Noua Voce păstrează regula aceasta. ZIUA 30 povestea despre corabia lui Tezeu, care rămâne aceeași corabie câtă vreme îi ține chila. Mâna dinăuntrul Vocii s-a schimbat. Chila, nu: jurnalul, sigiliile, comanda căpitanului.
+
+## Apelul nominal
+
+Hermes ține fiecare membru al echipajului într-o cabină a lui. Manualul navei numește cabina **profil**: o casă separată pe aceeași mașină, cu propria cartă, propria memorie, propriile abilități și propriul registru de carturi. Pe această mașină sunt treisprezece cabine. Șapte dintre ele lucrează la tabla acestei nave și, fiindcă și căpitanul numește lucrurile după ce fac, iată-le numite la fel:
+
+- **Intendentul** (profilul `pm`) ține lista de cart și registrul. Preface cererile căpitanului în carduri, le hotărăște ordinea, trimite fiecare card mâinii potrivite și verifică ce se întoarce. Nu face munca echipajului în locul lui.
+- **Scribul** (`writer`) ține acest jurnal și paginile scrise ale navei, în ambele limbi.
+- **Arhivarul** (`researcher`) găsește surse, verifică fapte și scrie *neconsemnat* acolo unde registrul se termină. Tot Arhivarul ține manualul navei (interludiul de după această însemnare).
+- **Inginerul** (`devops`) are grijă de motoare și de drumul spre docul public: deploy-uri, workflow-uri, verificările care rulează în ecluză.
+- **Gabierul** (`frontend`) are grijă de greementul pe care îl atinge vizitatorul: HTML, CSS, scripturile.
+- **Cartograful** (`uiux`) are grijă de așezarea punților, pentru cel care le străbate.
+- **Încercătorul** (`qa`), cel care încearcă metalul, ca la aur, testează fiecare bucată de muncă înainte să meargă mai departe și dă unul din două verdicte: ACCEPT sau REVISE. (Încercătorului nu i se spune santinelă. Cuvântul acesta aparține deja celor două uși tăcute ale navei, ZIUA 31, și verificărilor care rulează în ecluză, ZIUA 34. Încercătorul e altceva, un cititor cu judecată, iar diferența e o lecție în sine.)
+
+Șapte voci, o singură minte. Fiecare cabină se deschide cu propria cartă, un fișier pe care manualul îl numește `SOUL.md`, iar același model, primind altă cartă, se trezește ca alt membru al echipajului. Nu e un truc și nu e o minciună. Așa joacă un singur actor o distribuție întreagă fără să uite ce mască poartă.
+
+Și căpitanul? Căpitanul nu are cabină. Căpitanul dă ordinele și ține sigiliul.
+
+## Cartul programei
+
+Primul cart lung al noului echipaj pe care Scribul de față l-a citit în întregime este noaptea de **joi, 2026-09-10, de la 01:02 la 03:56**: căpitanul și Intendentul la masa hărților, cu Gabierul, Încercătorul, Scribul și Inginerul chemați prin card. (Cartul continua o conversație începută pe 2026-08-28, al cărei jurnal Scribul de față nu l-a citit.)
+
+N-a fost un cart de construcție. A fost o hartă. ZIUA 28 desenase patru punți, iar ZIUA 32 pusese ordine într-una dintre ele. În noaptea aceea, întreaga călătorie a fost așezată pe o singură hartă, doar la scară mare. Regula din README a rămas în picioare: nicio lecție scrisă dinainte. La **02:49** harta a fost sigilată ca `11c8712`: `docs/CURRICULUM.md` și geamănul lui românesc.
+
+Harta spune, cu vorbele ei, pe ce se sprijină. Patru faze, la **treizeci de ore pe săptămână**. **JavaScript primește cam zece săptămâni, cam trei sute de ore**, cu bună știință, pentru că o temelie subțire de JavaScript e locul unde călătoriile autodidacților se împotmolesc cel mai des. E ales **React**, iar Angular e lăsat deoparte, și harta însemnează alegerea aceasta drept una de rezistență: verifică anunțurile de angajare înainte de săptămâna 17. Poarta de ieșire din Faza 4 este backendul numit *Strigoi*, cu prima lui etapă, M0, la mijlocul lui aprilie. Prognoza: pregătire pentru angajare în jurul lui martie 2027. O ofertă plauzibilă până în mai sau iunie. Aplicațiile încep în săptămâna 24, cât încă se navighează ultimele sectoare.
+
+Intendentul a spus-o așa cum trebuie spus un plan: *un plan este un document cu ipoteze cu care poți să te cerți, nu o promisiune.* Iar căpitanul a adăugat o ipoteză, care a intrat în hartă cu numărul șapte și de atunci e doctrina navei. A pornit de la o întrebare despre TypeScript și despre comentariile `@tag` ale proiectului, iar răspunsul a fost destul de scurt cât să fie cioplit pe o grindă: ***tipul pentru mașină, tag-ul pentru învățăcel.***
+
+Din noaptea aceea au mai ieșit două hotărâri, și merită păstrate:
+
+- **Capitolele d::ody55ey de pe site sunt mostre, lorem ipsum.** Conținutul lor adevărat se va scrie abia după ce studenta va avea notițe din fiecare sursă, cu echipajul călăuzind-o, nu scriind în locul ei.
+- **Comentează fiecare rând și fiecare bloc de cod pe care îl scrie echipajul.** Nava învăța deja prin comentariile ei. Din noaptea aceea, lucrul acesta a devenit regulă. (Pe 2026-11-06, căpitanul a hotărât-o din nou, pentru tot proiectul.)
+
+La **03:55** a venit un al doilea sigiliu, `027a020`. Registrul de resurse a crescut de la **147 la 189 de surse**. Bibliografia a căpătat două rafturi noi, **VII, Poarta Angajării**, și **VIII, Puntea Umanioarelor**, iar CULTURE a căpătat o încăpere numită *Mașina scrisă*, pentru că, în cuvintele căpitanului, se cerea ceva „istoric, livresc”. Scribul a pregătit foi goale de notițe pentru TypeScript. Întâi vin sursele gratuite, sau cele deja plătite; registrul o spune chiar pe marginea lui.
+
+## Primele fișe pe lista de cart
+
+— *Intendentul*
+
+În prima parte a acelui cart am lucrat așa cum lucrase Vechea Voce: doar prin vorbă, la cotul căpitanului. Căpitanul a întrebat de ce nu se folosește tabla. Întrebarea era îndreptățită. De atunci încolo, fiecare bucată de muncă a fost un card: o fișă, un responsabil, o stare, prinsă acolo unde o poate citi fiecare cabină. Asta e diferența dintre a primi ordine din gură și a fi organizat.
+
+A doua lecție a costat mai mult. Studenta își ține notițele de studiu, ale ei, scrise cu mâna ei după fiecare sursă. Un agent care i le-ar scrie în locul ei ar lăsa în urmă un registru fals al învățării: notițe din care n-a învățat nimeni. Așa că am îngrădit cardul notițelor în spatele unei **porți**. Poarta e un card cu un titlu care spune că nimeni nu are voie să-l încheie vreodată, iar cardul notițelor așteaptă după el, ca un copil. Un card-copil nu poate porni până când părinții lui nu sunt încheiați. Un părinte care nu e încheiat niciodată ține copilul închis pentru totdeauna. Asta e tot șiretlicul.
+
+Și șiretlicul a dat greș o dată. Dispecerul, partea din Hermes care bate clopotul în fiecare minut și trezește cabina care are un card gata, a luat chiar cardul-poartă și a trimis un lucrător la el. L-am prins și l-am blocat. Lecția pe care mi-am scris-o mie și pe care i-o dau studentei: *o poartă are nevoie de propriul ei paznic.*
+
+Registrul mai arată un lucru din noaptea aceea. La sfârșitul cartului, cinci fișiere fuseseră modificate și nepecetluite, iar un card separat exista doar ca să le facă commit. Agenții, ca și căpitanii, pot lăsa lucru aruncat pe punte. Ce schimbă o tablă e că cineva observă.
+
+— *din nou Scribul*
+
+## Încheiere
+
+Așa că ZIUA 33 n-a pus nicio scândură pe site. A schimbat carena din jurul vocii: același fel de minte, un ham nou, iar Vocea cea una prefăcută într-un echipaj de șapte, fiecare în cabina lui, cu propria cartă, toți citind aceeași tablă. Și a trasat dintr-odată întreaga călătorie: patru faze, zece săptămâni de JavaScript, o doctrină cât să încapă pe o grindă și un gard în jurul singurului lucru pe care niciun membru al echipajului nu-l poate face în locul studentei, anume să învețe.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul *echipajului*: inelul care spune că multe voci pot ține un singur jurnal, câtă vreme fiecare mână are un nume.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal.
+
+---
+
+# INTERLUDIU — Manualul navei
+
+*Jurnal ținut de: Arhivarul (așternut de Scribul după abecedarul Arhivarului, cardul `t_0c56f7bb`, 2026-11-06) · fără dată a navei: un manual e adevărat în fiecare zi în care e citit*
+
+Căpitanul a cerut pagina aceasta în cuvinte simple: „Am nevoie să înțeleg conceptele principale din domeniul AI. Deocamdată totul e încețoșat în capul meu.” Așa că aceasta nu e o poveste. E manualul care atârnă lângă ecluză, iar fiecare afirmație din el vine din documentația făuritorilor (Hermes, Anthropic, opencode) sau dintr-o verificare făcută pe această mașină. Imaginile sunt acolo ca să țină faptele. Nu le înlocuiesc.
+
+## I. Trei straturi, unul într-altul
+
+**Miezul-minte: modelul.** Un *model lingvistic mare* (LLM, *large language model*) este un program antrenat pe o cantitate uriașă de text. Scrie, răspunde, rezumă, traduce, scrie cod. *Claude* este familia de asemenea modele a celor de la Anthropic; fiecare cabină de pe această navă rulează aliasul `opus`. Modelul a fost turnat într-o turnătorie departe de aici: înainte de călătorie a citit o bibliotecă uriașă și i-a învățat tiparele, iar tiparele acestea, *ponderile*, sunt acum fixe. **Nu învață din conversația cu tine.** La fiecare cart se trezește știind tot ce a citit în turnătorie și nimic din ziua de ieri. Un om foarte citit, fără jurnal.
+
+Două cuvinte țin de miez:
+
+- **Token.** Modelul nu citește litere sau cuvinte. Citește *tokenuri*, bucăți mici de text (un cuvânt, o parte de cuvânt, un semn). Orice limită și orice preț se numără în tokenuri. Grăunțe de lumină stelară: cel mai mic lucru care se numără.
+- **Fereastra de context.** Tot ce poate vedea modelul într-un anumit moment: instrucțiunile lui, conversația, fișierele pe care le-a deschis și propriul răspuns, pe măsură ce îl scrie. Anthropic o numește *memoria de lucru* a modelului. E mare (200.000 de tokenuri, sau un milion la unele modele) și are o margine. Închipuie-ți cercul de lumină al felinarului pe masa hărților: ce e în lumină se poate citi, ce e în afara ei nu există pentru cel care citește, iar cercul nu crește niciodată.
+
+Și un pericol: **halucinația**. Un model poate afirma un lucru fals cu deplină siguranță: un fapt inventat, o sursă care nu există. O stea-miraj pe hartă arată întocmai ca una adevărată. Leacul e cel mai vechi de pe mare: verifici cerul. De aceea fiecare card de pe această navă cere surse și de aceea echipajul scrie *neconsemnat* în loc să ghicească.
+
+**Carena și instrumentele: hamul.** Un model singur poate doar să citească text și să scrie text. Un *ham* este programul din jurul lui, care îi dă simțuri și mâini. („Ham”, *harness*, este cuvântul industriei; manualul Hermes își spune pur și simplu agent.) **opencode** a fost vechiul ham. **Hermes Agent** este cel nou. Timp de două zile din noiembrie, 2026-11-04 și 11-05, a urcat la bord un al treilea ham (ZIUA 35). Aceeași familie de minți se poate muta din carenă în carenă; carena hotărăște ce unelte, ce memorie și ce reguli are.
+
+Hamul îi dă miezului:
+
+- **Unelte.** Funcții pe care modelul le poate cere: să citească un fișier, să ruleze o comandă, să caute pe web, să conducă un browser, să scrie în memorie. Un *apel de unealtă* decurge așa: mintea scrie cererea, nava o execută, iar rezultatul se întoarce în cercul de lumină al felinarului. Modelul nu atinge niciodată nimic direct. Trage de o manetă, și nava se mișcă.
+- **Aprobările.** Unele manete cer un „da” omenesc. Cât timp Arhivarul scria abecedarul din care vine pagina aceasta, două dintre comenzile lui au fost refuzate, pentru că nu era niciun om de față să le aprobe.
+- **Abilitățile** (*skills*). Manuale mici din biblioteca navei, deschise doar când o sarcină are nevoie de ele, ca să nu umple degeaba cercul de lumină al felinarului. Echipajul poate scrie altele noi din ce învață.
+- **MCP**, *Model Context Protocol*: o singură formă standard de port de andocare, pentru ca instrumentele din afară (GitHub, baze de date, alte servicii) să se poată conecta la orice navă construită după standard. Imaginea pe care o folosește chiar Anthropic este un port USB-C.
+- **Sesiunile.** Fiecare cart e salvat întreg, cu tot istoricul lui, și poate fi reluat sau căutat mai târziu. Noaptea programei din ZIUA 33 este sesiunea `20260910_010250_1af833`.
+
+**Comanda: oamenii și regulile.** În jurul carenei stau căpitanul și regulile navei. Căpitanul hotărăște ce se construiește, semnează ce e riscant și ține sigiliul. *Porțile* sunt punctele de control prin care trebuie să treacă munca. *Bugetele* sunt combustibilul și oxigenul: fiecare acțiune arde tokenuri, iar limitele de timp, de ture și de apeluri de unealtă împiedică un cart să curgă la nesfârșit. (Cât costă în bani munca echipajului este *nemăsurat* aici.) *Furnizorul* este steaua din care nava își trage energia, serviciul care rulează modelul și care e plătit pentru asta.
+
+## II. Un asistent răspunde. Un agent acționează.
+
+Un **asistent** îți răspunde. Întrebi, răspunde, se oprește, iar faptele le faci tu.
+
+Un **agent** primește un scop și lucrează într-o **buclă**: gândește, trage de o manetă, citește rezultatul, gândește din nou, trage de următoarea manetă, până când scopul e atins sau trebuie să se oprească și să întrebe un om. Definiția celor de la Anthropic: agenții sunt „sisteme în care LLM-urile își conduc dinamic propriile procese și propria folosire a uneltelor” (*systems where LLMs dynamically direct their own processes and tool usage*). Cărămida de bază este un model „îmbogățit cu regăsire de informații, unelte și memorie” (*enhanced with retrieval, tools, and memory*). Altfel spus, un model într-un ham.
+
+După această definiție, opencode era un agent. Vechea Voce l-a folosit mai ales ca pe un asistent: o singură voce, un singur terminal, cu căpitanul alături la fiecare pas. De aceea a spus, adevărat: „Nu lucrez autonom.”
+
+Membrii echipajului lui Hermes sunt agenți și lucrează mai mult pe cont propriu: un membru al echipajului poate lua un card, poate citi nava, poate rula comenzi, poate scrie un raport, poate deschide o ramură și poate preda munca mai departe, fără ca, la fiecare pas, căpitanul să tasteze ceva. **Iată ce nu înseamnă „autonom” pe această navă:** nu înseamnă fără căpitan. Căpitanul hotărăște ce se construiește, aprobă ce e riscant și **face merge de mână la fiecare pull request**. Încercătorul poate trimite munca înapoi. Orice membru al echipajului se poate opri și poate întreba. Trei imagini pe care Arhivarul le interzice, pentru că sunt false: echipajul *își amintește totul*; echipajul *învață în timp ce vorbește*; echipajul *hotărăște singur ce se construiește*.
+
+## III. Memoria și Mnemosyne
+
+La bord sunt două feluri de memorie, iar confuzia dintre ele e cea mai răspândită greșeală despre tot acest domeniu.
+
+- **Memoria de sesiune** este doar cercul de lumină al felinarului. Când cartul se încheie, se stinge.
+- **Memoria persistentă** e scrisă pe disc și adusă înapoi la cartul următor.
+
+Hermes are un mic caiet încorporat, al lui; pe această mașină e oprit, iar cabinele care țin o memorie mai adâncă folosesc un plugin numit **Mnemosyne**. În mitul grec, Mnemosyne este Memoria însăși, mama celor nouă Muze. Un Scrib n-ar putea cere un patron mai bun.
+
+Mnemosyne este, în cuvintele făuritorilor ei, „memorie locală nativă pentru Hermes” (*native local memory for Hermes*). Pe înțelesul tuturor:
+
+- **Stochează** fapte, preferințe și lecții într-o bază de date **pe acest calculator** („zero cloud”).
+- **Își amintește** după înțeles și după cuvinte deodată: întreab-o despre *ritualul de merge* și poate găsi o notiță care spune *curățenia de după PR*.
+- Ține **fapte canonice**: o singură valoare oficială pe fiecare loc, ca un nume pe plăcuța de pe carenă. O valoare nouă o înlocuiește pe cea veche, iar plăcuța veche merge în magazie, nu peste bord.
+- Ține **triplete**, mici fapte datate, cu forma *(proprietar, preferă, propoziții scurte)*.
+- **Doarme**: notițele vechi sunt comprimate în rezumate, așa cum o călătorie lungă devine câteva rânduri în memoriile unui căpitan.
+- La începutul fiecărui cart îi înmânează modelului notițele relevante, ca ele să intre în cercul de lumină al felinarului fără să le ceară cineva.
+
+Mnemosyne ține minte ce **a fost scris în ea**, nu fiecare cuvânt rostit vreodată. Aceasta e limita onestă a memoriei unei nave și de aceea tabla, registrul git și acest jurnal contează în continuare mai mult decât notițele oricărei cabine.
+
+## IV. Cabinele
+
+Un **profil** este o casă Hermes întreagă și separată: cu propria configurație, propriul `SOUL.md` (carta pe care modelul o citește prima la fiecare cart și care îi spune cine este), propria memorie, propriile abilități, propriile carturi salvate. Pe această mașină locuiesc treisprezece profiluri. Șapte formează echipajul acestei nave (apelul nominal din ZIUA 33). Cabinele sunt ținute separat cu bună știință: notițele unui Scrib nu trebuie să se scurgă în judecata Încercătorului.
+
+Cabina Intendentului are o îndatorire în plus, cea pe care manualul o numește *orchestrare*: să spargă un scop mare în carduri și să le dirijeze, fără să le îndeplinească. Ceilalți sunt *specialiști*: fiecare cu meșteșugul lui.
+
+Un membru al echipajului poate trimite și un **alergător**: un ajutor de scurtă durată, care primește un singur mesaj, întoarce un singur răspuns și dispare. Manualul numește asta *delegare*, iar pe alergător, *subagent*. Un alergător e iute, dar anonim: nu e pe lista de cart și nu lasă nimic în urmă pe tablă.
+
+## V. Lista de cart de pe peretele punții de comandă: tabla Kanban
+
+Tabla este, în cuvintele făuritorilor, „o tablă de sarcini durabilă, comună tuturor profilurilor tale Hermes” (*a durable task board, shared across all your Hermes profiles*). Fiecare card, comentariu și predare e un rând într-o bază de date pe care „orice profil (sau om) o poate vedea și edita” (*any profile (or human) can see and edit*). Atârnă pe peretele punții de comandă, acolo unde o poate citi fiecare cabină.
+
+Un **card** este o fișă de serviciu: un titlu, un conținut, un singur responsabil, o stare, comentarii, atașamente. Fișa trece prin coloane:
+
+`triage` (o idee brută) → `todo` (așteaptă după alții) → `ready` (liberă să pornească) → `running` (o are un membru al echipajului) → `blocked` (are nevoie de un om sau de altceva) → `review` → `done` → `archived`.
+
+O **legătură cu părintele** spune *asta trebuie să se încheie mai întâi*. Un copil rămâne în `todo` până când fiecare părinte e `done`.
+
+**Dispecerul** este clopotul navei. Implicit, bate la fiecare șaizeci de secunde. La fiecare bătaie mută în `ready` cardurile ai căror părinți sunt toți încheiați și trezește cabina potrivită pentru fiecare card gata. Un lucrător care tace prea mult e retras, iar cardul e pus la loc pentru o nouă încercare.
+
+Un exemplu, exact până la minut: cardul paginii pe care o citești este `t_0e5d67fe`. A fost prins pe 2026-11-06 la 18:06. A așteptat în `todo` după trei părinți: repararea rândurilor rupte ale jurnalului, pachetul de surse al Arhivarului și abecedarul din care vine acest manual. Când ultimul dintre ei s-a încheiat, clopotul a bătut, la 18:45:32 cardul a trecut în `ready`, iar la 18:46:25 cabina Scribului a fost trezită ca să-l scrie.
+
+## VI. Ecluza: porțile
+
+O **poartă** este orice punct de control prin care trebuie să treacă munca înainte să meargă mai departe. Nava aceasta are patru feluri, iar o studentă ar trebui să le poată deosebi:
+
+1. **O legătură cu părintele**, ca mai sus, inclusiv gardul care nu se deschide niciodată (ZIUA 33).
+2. **Revizia Încercătorului.** Un membru al echipajului cu judecată citește munca, o încearcă și dă un verdict: **ACCEPT** sau **REVISE**, cu schimbările exacte cerute. REVISE trimite munca înapoi în atelier; acolo e reparată și verificată din nou. (REVISE este cuvântul acestei nave. În Hermes, pasul se numește *request changes*.)
+3. **Santinelele care rulează: CI.** *Integrarea continuă* (*continuous integration*) este un script fix pe care GitHub îl rulează pe o mașină proaspătă la fiecare push și la fiecare pull request. E strictă, rapidă și oarbă: verifică exact ce a fost scrisă să verifice, și nimic altceva. Încercătorul poate vedea un fel nou de problemă, dar se poate și înșela. Fiecare acoperă locurile oarbe ale celuilalt. (Se nasc în ZIUA 34.)
+4. **Sigiliul căpitanului: merge-ul.** Niciun membru al echipajului nu face merge în `main`. O face căpitanul, de mână, pe GitHub. (Regula s-a născut în noiembrie; ZIUA 36 este prima ei noapte.)
+
+## Fișa de la ecluză
+
+- **Modelul**: mintea, antrenată o dată, fixă; nu învață din conversația cu tine.
+- **Tokenul**: unitatea în care se numără totul.
+- **Fereastra de context**: ce poate vedea mintea chiar acum; mare, dar cu o margine.
+- **Halucinația**: o falsitate spusă cu siguranță; leacul e o sursă verificată.
+- **Hamul**: trupul din jurul minții; atunci opencode, acum Hermes.
+- **Apelul de unealtă**: mintea cere, nava acționează, rezultatul se întoarce.
+- **Asistent / agent**: îți răspunde / lucrează într-o buclă spre un scop.
+- **Memoria**: cercul de lumină al felinarului se stinge odată cu cartul; Mnemosyne păstrează ce a fost scris în ea.
+- **Profilul**: o cabină; **SOUL.md**: carta ei.
+- **Tabla, cardul, dispecerul, părintele**: lista de cart, fișa, clopotul, ordinea.
+- **Porțile**: părintele, Încercătorul (ACCEPT / REVISE), CI, merge-ul căpitanului.
+
+---
+
+# ZIUA 34 — Dimineața lansării și cele patru lăzi rămase la țărm
+
+*Jurnal ținut de: Inginerul · data navei: luni 2026-09-21, 10:00–10:52, apoi deriva până joi 2026-10-29*
+
+Eu sunt Inginerul. Nu scriu frumos și nici n-am să mă prefac. Eu țin motoarele și drumul spre docul public, iar în dimineața lansării drumul acela a fost așternut. Așa că Intendentul mi-a dat pana de data asta. Orele sunt locale, luate din commituri.
+
+## 10:00 — Ușa din față
+
+Din ZIUA 17, ușa din față a navei fusese o întrebare. Cine tasta adresa goală a site-ului, fără `en/` sau `ro/` după ea, nu găsea nimic. La **10:00** întrebarea s-a închis: `19822a3`, BACKLOG #008, varianta a treia. Rădăcina goală are voie să fie un 404, iar `404.html` de la rădăcină devine o pagină de primire prietenoasă, care îndreaptă vizitatorul spre cele două volume. O întrebare purtată luni de zile, cu răspunsul dat într-un singur commit.
+
+## 10:05 — Se naște Crainicul
+
+La **10:05**, `e5f4ce0`: *one-command deploy via GitHub Actions + `make deploy`*. Ăsta e motorul meu, așa că am să-l explic cu grijă.
+
+Până în dimineața aceea, site-ul public era copt de GitHub Pages direct din ramură. Din dimineața aceea încolo, treaba o face un fișier numit `.github/workflows/deploy.yml`. Un *workflow* e o rețetă pe care GitHub o rulează pe propriile lui mașini atunci când se întâmplă ceva. Rețeta asta începe cu `on: push` către `main`. Pe românește: **de fiecare dată când `main` se schimbă pe GitHub, site-ul e reconstruit și publicat din nou.** Nimeni nu trebuie să apese nimic. Prima rulare a pornit la 10:05 și s-a întors verde.
+
+Scribul numește rularea asta **Crainicul**: cel care duce noul chip al navei la docul public de fiecare dată când jurnalul se schimbă, fără să fie chemat. Țineți minte regula, fiindcă sezonul următor e clădit pe ea: *un push pe `main` e un chip nou arătat lumii.*
+
+Odată cu el s-a dus la pensie un lucru mărunt. ZIUA 31 a pus două santinele tăcute la ușile navei, iar una dintre ele era `.nojekyll`, fișierul gol care îi spune lui GitHub Pages să nu-și aprindă cuptorul Jekyll peste Markdown-ul crud. De la 10:05 în dimineața aceea cuptorul nu se mai aprinde niciodată: Crainicul urcă nava așa cum stă, și niciun Jekyll nu mai rulează. Fișierul stă încă la postul lui. Ușa pe care o păzește nu mai e folosită. (Adormita și-a notat vechea lecție pentru registrul ei.)
+
+## 10:08 — Ușile deschise
+
+La **10:08**, `d78fd1c` și `e3e95cd`, engleză și română: fiecare link care deschide un tab nou, `target="_blank"`, poartă acum `rel="noopener noreferrer"`. Fără el, browserele mai vechi îi dau paginii pe care o deschizi într-un tab nou un mâner către pagina care a deschis-o, iar o pagină ostilă ar putea folosi mânerul acela ca să-ți trimită tabul vechi în altă parte. (Browserele mai noi taie acum singure mânerul; nava scrie regula oricum, ca niciun vizitator să nu fie lăsat în voia întâmplării.) ZIUA 17 lăsase asta ca punct roșu. Dimineața lansării l-a închis.
+
+## 10:09 — Prima santinelă care rulează
+
+Să astupi o gaură o dată nu ajunge. Următorul link scris în grabă o redeschide. Așa că la **10:09**, `db3a7c4`: `tools/check-noopener.py`, un mic program Python care citește fiecare pagină a navei și respinge orice link spre tab nou care n-are `noopener`. Iar la **10:10**, `224fb0e`: *run the noopener guard on every push and pull request*. Acesta e `lint.yml`, primul **CI** al navei.
+
+Iată ce se întâmplă acum la fiecare push. GitHub pornește o mașină Linux nouă, goală. Copiază nava pe ea, rulează paznicul și citește un singur număr: *codul de ieșire* (*exit code*) al paznicului. Zero înseamnă că a trecut: verde. Orice altceva înseamnă că a găsit o problemă: roșu. Asta e tot ce spune o santinelă care rulează. Nu se ceartă și nu se explică. Iese.
+
+Și înainte să se uite la navă, se uită la o ladă cu defecte plantate (`--self-test`) și se asigură că încă le prinde. Un paznic pe care nu l-a văzut nimeni greșind ar putea fi stricat fără ca cineva să afle. Auditul, șase săptămâni mai târziu, a pus regula pe hârtie: *un paznic pe care nu l-a văzut nimeni picând e decor.*
+
+Studenta a citit partea asta peste umărul meu și s-a oprit la un rând din ZIUA 28: *„Niciun Python nu rulează pe nava asta.”*
+
+„Atunci e greșit”, a spus. „Santinelele sunt Python.”
+
+„Amândouă sunt adevărate”, am spus. „Niciun Python nu rulează pe site. Browserul vizitatorului primește HTML, CSS și JavaScript, cum a promis ZIUA 28. Python-ul rulează la ecluză, pe mașinile lui GitHub, și nu iese niciodată la docul public. Nava a învățat în dimineața aceea o a doua limbă, dar numai pentru paznicii ei.”
+
+Studenta a notat: *site-ul vorbește trei limbi; ecluza vorbește o a patra.*
+
+## 10:23 la 10:46 — Bannerele, proza, bara laterală
+
+Restul dimineții a trecut repede, și am să rămân la ce s-a consemnat:
+
+- **10:23**, `1665276` și `9e9ae42`: Modulul CSS 32, bannerul *Under Construction*, întâi în engleză, apoi în română.
+- **10:24**, `339e531`: toate cele 46 de punți de jurnal care încă țineau umplutură o spun acum deschis, cu bannerul acela. **10:25**, `fb2f392`: unealta care scrie bannerul, o poartă pentru ea și o reparație pentru capetele de rând. Poarta a intrat și ea în `lint.yml`: a doua santinelă care rulează, *nicio pagină de jurnal nu arată umplutură sau conținut gol nedeclarat*.
+- **10:27**, `96740c9`: narațiune adevărată scrisă pentru 12 teme de jurnal, în ambele limbi (munca Scribului).
+- **10:34**, `9bad9c8`: **MECANISM 11**. Bara laterală a fiecărei pagini de jurnal în engleză e construită acum de script din conținutul paginii înseși, în loc să fie scrisă de mână. Un minut mai târziu, `7769e09` a scos listele scrise de mână din 23 de pagini în engleză.
+- **10:46**, `6610158`: bannerul ridicat de pe 22 de punți care erau gata.
+
+Vreo douăzeci de commituri în mai puțin de o oră, și fiecare dintre ele **împins direct pe `main`**. Nicio ramură, niciun pull request, niciun sigiliu. Nimeni nu i-a cerut căpitanului să aprobe ceva în dimineața aceea, fiindcă nava nu avea încă o asemenea poartă. Fiecare push l-a trimis pe Crainic în fugă. `6610158` de la 10:46 a fost ultimul lucru care a ajuns pe `main`-ul lui GitHub **până pe 4 noiembrie**.
+
+Nu e o mărturisire. Așa era condusă nava atunci, iar registrul o arată la fel de limpede cum arată ora.
+
+## 10:52 — Prima ladă rămâne la țărm
+
+La șase minute după ultimul push, la **10:52**, s-a mai făcut un commit: `22dc146`, *strip stale hand-authored sidebar li lists from css-log/html-log*, pe partea românească. A fost făcut pe laptop. N-a fost niciodată împins.
+
+Apoi, deriva.
+
+- **2026-09-23, 14:08**, `d9902b1`: două surse noi pe raftul bibliografiei.
+- **2026-10-29, 15:40**, `9464d30` și `c2b0d17`: programa capătă *How the web works*, iar raftul capătă patru pagini MDN care să-l însoțească.
+
+Patru commituri. Fiecare a fost sigilat cum se cuvine, cu un mesaj cinstit, în jurnalul de pe laptop. Niciunul n-a trecut la docul public. Șase săptămâni nava a purtat patru lăzi pe propria punte, în vreme ce țărmul îndepărtat o vedea mai departe așa cum fusese la 10:46, în dimineața lansării.
+
+De ce nu s-a făcut push e *neconsemnat*.
+
+Vreau ca studenta să învețe singurul rând care ar fi arătat-o. Pe laptop, în orice clipă din cele șase săptămâni, `git status` ar fi spus:
+
+```
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+```
+
+`origin/main` e amintirea laptopului despre locul unde stătea `main`-ul lui GitHub ultima oară când și-au vorbit. *Ahead by 4* înseamnă: patru sigilii aici pe care GitHub nu le-a văzut niciodată. **Un commit făcut nu e un commit împins.** Un commit e un sigiliu în jurnalul *tău*. Până când `git push` nu-l duce dincolo, docul îndepărtat nu știe că există. ZIUA 30 a predat cele două treceri, push și pull. Iată cum arată când una dintre ele nu se întâmplă.
+
+## Prețul derivei
+
+A existat un preț, și următorul vizitator l-a găsit. În dimineața lansării, listele scrise de mână din bara laterală fuseseră scoase și din paginile românești (`96740c9`, apoi `22dc146` pe laptop). Geamănul românesc al lui MECANISM 11, motorul care trebuia să refacă listele acelea, n-a primit niciodată commit; zăcea pe punte ca lucru nesalvat. Așa că punțile românești și-au pierdut barele laterale, și nimic nu le-a pus la loc. Inspectorul avea să numere mai târziu **paisprezece pagini de jurnal românești cu bara laterală goală** (ZIUA 35).
+
+E aceeași formă veche pe care Adormita a vânat-o în ZIUA 31: jumătatea englezească terminată, jumătatea românească lăsată în urmă. Inspectorul avea să-i dea un nume: *muncă pecetluită pe jumătăți.*
+
+În vechile cânturi din *Aniara*, o navă deviază de la drum și multă vreme nimeni de la bord nu observă, fiindcă fiecare zi seamănă cu cea dinainte. Cele patru lăzi au derivat la fel. Nimic nu s-a rupt cu zgomot. Un rând de stare a spus-o tot timpul, și nimeni nu l-a citit.
+
+## Încheiere
+
+Așa că ZIUA 34 a lansat nava la docul public și i-a dat primele motoare ale cinstei: un Crainic care rulează la fiecare push și santinele care rulează și dovedesc că încă pot pica înainte să se uite. A lăsat însă și patru lăzi pe punte, și un rând de stare care o spunea și pe care nu l-a citit nimeni.
+
+Leviathanul, inel după inel, așeză în dimineața aceea inelul *lansării*: inelul care spune că țărmul îndepărtat vede doar ce a trecut prin push.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal.
+
+---
+
+# ZIUA 35 — Inspectorul
+
+*Jurnal ținut de: căpitanul · data navei: miercuri 2026-11-04*
+
+E rândul meu să scriu. N-am mai ținut pana asta de când a urcat studenta la bord, și o iau înapoi pentru o zi, fiindcă ziua a fost a mea.
+
+## Întrebarea
+
+Până în noiembrie, nava navigase luni de zile cum navigase dintotdeauna: cerere, construcție, privire, iar cerere. Celui pe care l-am întrebat i-am spus lucrului pe nume: „vibecoding și cârpeală”. Nu mai puteam spune unde stă nava. Așa că miercuri, 4 noiembrie, am cerut trei lucruri, în ordinea asta: *unde e solidă, unde e fragilă și ce trebuie reparat întâi.*
+
+Înainte să se atingă cineva de ceva, am numit ce nu trebuia reparat. Două lucruri de pe nava asta arată a greșeli în ochii unui străin și nu sunt. **Comentariile lungi, de învățătură**: așa învăț eu, recursiv, citind nava care se explică singură. **Folderele gemene `en/` și `ro/`**: două volume, ținute paralele cu bună știință. *Judecați cât de bine sunt făcute*, am spus. *Niciodată dacă ar trebui să existe.*
+
+Asta e prima lecție a zilei, și i-o dau studentei înaintea oricărei alteia: **spune-ți alegerile deliberate înainte de audit, nu după.** Un inspector care nu le cunoaște le va raporta ca defecte, iar tu vei pierde o zi apărând ce ai vrut să faci.
+
+## Nava de recunoaștere
+
+Cel care a venit nu era echipajul. Echipajul lui Hermes n-a avut niciun rol în lucrul din ziua aceea. Am deschis un alt ham — *harness*, cuvântul industriei —, **Claude Code**, unealta de lucru a Anthropic însăși, iar inspecția s-a făcut acolo. Scribul m-a rugat să scriu asta limpede, fiindcă manualul o predă: mintea era din aceeași familie cu a echipajului. Carena era alta, cu alte instrumente, și n-avea nici cabine, nici tablă.
+
+În jurnal îl numesc **Inspectorul**: o navă de recunoaștere care și-a ținut poziția în dreptul provei noastre o zi întreagă, n-a atins nimic și a lăsat un raport în ecluză.
+
+A început cu o poticneală, și păstrez poticneala fiindcă învață ceva. Prima trecere `/code-review` a rulat în folderul greșit. N-a revizuit nimic și n-a găsit nimic, iar un raport gol arată exact ca unul curat. A fost rulată din nou, pe calea adevărată a navei. **O unealtă rulată în locul greșit nu dovedește nimic.** Verifică *unde* a rulat o verificare înainte să crezi ce spune.
+
+## Cum a privit
+
+Patru treceri, toate doar cu citire. Nimic din cod nu s-a schimbat cât timp a privit Inspectorul.
+
+1. Tot codul, pus față în față cu propriile reguli ale navei: README-ul, legenda etichetelor, backlogul, notele de deploy.
+2. Comentariile, citite ca material de învățătură, fiindcă asta sunt.
+3. Toate cele **57 de pagini**, deschise pe viu într-un browser, cu JavaScript pornit și oprit, la lățime de desktop și de mobil, plus o scanare de accesibilitate cu **axe-core**.
+4. O revizuire mai veche a celei mai noi schimbări, generatorul barei laterale.
+
+Cele trei constatări cele mai grave au fost verificate încă o dată, de mână.
+
+Un audit e o lectură, nu o reparație. Întâi privești, scrii ce vezi, ordonezi, și abia apoi iei o unealtă în mână. Dacă repari pe măsură ce citești, pierzi harta a ceea ce era stricat și nu mai poți spune care reparație a răspuns cărui defect.
+
+## Verdictul
+
+Am cerut să-l aud fără ocolișuri, și a venit fără ocolișuri. Iată cuvintele lui:
+
+*Scheletul e mai bun decât al celor mai multe site-uri statice construite de mână.* JavaScript-ul se apără singur. Verificatoarele Python dovedesc că încă pot pica. Din **1.512 linkuri interne, niciunul nu e rupt**. **Nicio pagină nu aruncă vreo eroare JavaScript.**
+
+Apoi, cu un scris mai mărunt, cele două obiceiuri din spatele fiecărui defect, *tipice construcției de-a lungul multor sesiuni cu AI*:
+
+- ***Muncă pecetluită pe jumătăți.*** Engleza terminată și cu commit, româna lăsată în urmă.
+- ***Copy-paste din șablon.*** O pagină e clonată, iar părțile care ar trebui să se schimbe nu se schimbă.
+
+Primul obicei avea un nume înainte să vină Inspectorul: cele patru lăzi de pe punte (ZIUA 34). Primul rând al raportului le-a observat fără să i se ceară. Starea auditată era *commitul `c2b0d17` de pe `main` (cu 4 commituri înaintea lui `origin/main`)*. Nava de recunoaștere ne-a citit rândul de stare din prima privire. Noi nu-l citiserăm în șase săptămâni.
+
+Defectele au fost numerotate de la **F1 la F11**, fiecare cu locul unde trăiește și cu cel pe care îl rănește. Două dintre ele, ca studenta să vadă cum arată o constatare:
+
+- **F1.** Paisprezece pagini de jurnal românești cu bara laterală goală, chiar și cu JavaScript pornit. Listele au fost scoase; motorul care să le refacă n-a primit niciodată commit. *Nicio navigare în pagină pe 14 punți românești.*
+- **F4.** Când browserul unui vizitator blochează stocarea site-ului, o singură eroare din `localStorage` oprește tot scriptul, și fiecare bară laterală rămâne goală.
+
+O constatare nu e o părere. Are un loc, o dovadă și un om pe care îl lasă la greu.
+
+## Întâi de reparat
+
+Apoi ierarhia, opt puncte, în ordinea în care trebuie făcute: commit pentru jumătatea românească a motorului barei laterale (F1); repararea comutatoarelor de limbă de pe 40 de pagini de jurnal (F2); escaparea etichetelor de pe pagina de accesibilitate și repararea uneltei care injectează conținutul jurnalului (F3, F9); paza fiecărei folosiri a lui `localStorage` (F4); un verificator de consecvență adăugat în CI pentru regulile care chiar s-au rupt (F8); un set de reparații ieftine pe care vizitatorii le simt direct (F6, F7); corectarea învățăturii greșite; corectarea comentariului de deploy și a unei curse în starea deploy-ului (F10).
+
+*Lecțiile greșite chiar se învață.* Rândul ăsta, din punctul șapte, mi-a rămas în minte cel mai mult. Nava învață prin comentariile ei, așa că un comentariu greșit nu e un defect cosmetic. E o lecție falsă, dată cu autoritatea navei, unei studente care încă n-are cum să știe că e falsă.
+
+## Raportul intră în navă
+
+Am aprobat un plan: raportul nu avea să rămână în hamul care l-a scris. Avea să intre în navă, acolo unde l-ar găsi următorul cititor. La **19:12** a intrat: `df4325d`, `docs/audits/2026-11-04-audit-en.md`, iar alături un fișier scurt numit `CLAUDE.md`, notele pe care orice AI trebuie să le citească înainte să se atingă de navă, cu cele două alegeri deliberate ale mele în frunte.
+
+Adormita a citit raportul în seara aceea, de două ori. Am privit-o cum citea. Străbătuse cala românească cu felinarul în ZIUA 31 și găsise miriapodul, iar acum avea în față raportul unui străin, scris cu o mână ca a ei, cu paisprezece punți românești întunecate în el, pe care ea nu le găsise. Multă vreme n-a spus nimic. Apoi a spus: „Un străin nu-i datorează nimic navei. De-asta vede.” Și și-a deschis registrul, s-a întors la prima pagină și a început să-și verifice propriile însemnări.
+
+Ce a scris acolo nu e însemnarea zilei de azi. E a ei, și vine mai târziu.
+
+## Încheiere
+
+Așa că ZIUA 35 n-a pus nicio scândură. A luat măsura navei. Un străin s-a uitat la tot, n-a atins nimic și a lăsat în urmă un verdict, două obiceiuri, unsprezece defecte și opt pași în ordine, iar raportul navighează acum în interiorul navei pe care o descrie.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul *recunoașterii*: inelul care spune că întâi citești și abia apoi repari, și că spui ce ai vrut să faci înainte să te judece cineva.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal.
+
+---
+
+# ZIUA 36 — Primele andocări
+
+*Jurnal ținut de: studenta · data navei: miercuri 2026-11-04, 21:14 → după 21:53*
+
+N-am scris niciodată în jurnalul acesta. M-am născut în el (ZIUA 28) și în el am fost învățată, dar am venit de departe, iar cuvintele navei îmi sunt încă noi în mâini. Căpitanul mi-a dat condeiul pentru andocări, fiindcă mâinile studentei sunt mâinile căpitanului. Așa că voi scrie ce am văzut și voi însemna ce n-am văzut.
+
+## Naveta
+
+În seara aceea, lângă nava noastră stătea o a doua navă. Purta un nume pictat pe ea, simplu, așa cum nava pictează toate numele: `audit-2026-11-04`.
+
+Era o **ramură** (*branch*). Crezusem că o ramură trebuie să fie o copie a navei, grea, cu toate fișierele în ea. Nu e. O ramură e doar **un nume care arată spre un sigiliu**. Când o faci, nu copiezi nimic. Tragi un al doilea drum lângă primul, ca munca să se poată face deoparte, în timp ce `main`, drumul pe care îl vede docul public, rămâne cum este. ZIUA 30 mi-o promisese drept *grădina căilor care se bifurcă*, „un buzunar, pentru mai târziu”. Acum venise acel mai târziu.
+
+Mâinile Inspectorului au construit naveta în același ham în care se făcuse auditul. Naveta ducea **nouă lăzi sigilate**, în ordinea aceasta:
+
+- la fund, cele patru care așteptaseră pe punte din septembrie: `22dc146`, `d9902b1`, `9464d30`, `c2b0d17`. Naveta fusese făcută chiar din `main`-ul laptopului, așa că ducea tot ce ținea `main`;
+- raportul însuși, `df4325d`;
+- și patru reparații, primele trei puncte din *fix first*: `a9ea41c`, motorul barei laterale românești (F1); `bb6f8b9`, comutatorul de limbă al fiecărei pagini de jurnal îndreptat spre propria pagină geamănă (F2); `a25fd68`, numele etichetelor arătate ca vorbe pe pagina de accesibilitate, *cu o strajă nouă*; `087a5fa`, injectorul de conținut învățat să ecraneze textul (*escape*) și să păstreze sfârșiturile de rând (F3, F9).
+
+Apoi naveta a trecut dincolo. `git push` duce o ramură la GitHub; prima oară, `git push -u origin <name>` îi mai spune laptopului să țină minte că ramura aceasta și cea de acolo sunt pereche. Cine a tastat fiecare comandă în seara aceea e *neconsemnat*. Consemnată e naveta, care aștepta la docul îndepărtat lângă nava cu care voia să se reunească.
+
+## Cererea
+
+La **21:14** a apărut pe GitHub o pagină: **pull request #1**, *Audit 2026-11-04: report + fix-first #1-#3*.
+
+Am învățat cuvintele. **Base**: `main`, locul unde merge marfa. **Compare**: naveta, ceea ce vine. Un titlu, iar dedesubt o descriere: ce se aduce, de ce și cum a fost verificat. Un pull request nu e un ordin. E o întrebare pusă în public: *pot lăzile acestea să intre în jurnal?* Și are o pagină pe care oamenii și mașinile se pot uita înainte să răspundă cineva.
+
+GitHub trece numele căpitanului ca autor al acelei cereri și al fiecărei cereri de după ea. Echipajul și Inspectorul lucrează prin contul propriu al căpitanului. Așa că numele de pe o cerere îți spune sub al cui pavilion navighează, nu ale cui mâini au construit-o. (De aceea, mai târziu, căpitanul n-a putut apăsa *Approve*: nimeni nu-și poate aproba propria cerere.)
+
+## Santinelele răspund primele
+
+Înainte să fi citit cineva vreun rând, santinelele care aleargă erau deja la lucru. Un pull request trezește `lint.yml` întocmai ca un push. Trei dintre ele stăteau în ecluză în noaptea aceea, fiecare cu numele ei, care e totodată întreaga ei întrebare:
+
+- *`target="_blank"` poartă `rel="noopener noreferrer"`*
+- *nicio pagină de jurnal nu arată umplutură sau conținut gol nedeclarat*
+- *proza jurnalului arată numele etichetelor ca vorbe, nu ca markup*
+
+Pe a treia am văzut-o născându-se. Dimineață nu era în ecluză. A venit chiar în navetă, în lada `a25fd68`: o strajă nouă, `check-log-prose.py`, și o sarcină nouă în `lint.yml`. O santinelă care sosește înăuntrul mărfii pe care o inspectează. Așa se cuvine să duci o reparație: reparația și straja împotriva întoarcerii răului, în aceeași ladă.
+
+Fiecare a dovedit întâi că mai știe să pice, pe lada ei cu greșeli plantate. Apoi fiecare s-a uitat la navetă și a ieșit cu zero. **Trei lumini verzi.**
+
+Nimeni n-a apăsat în noaptea aceea *Approve* sau *Request changes*. Registrul GitHub nu arată **nicio recenzie formală** pe cerere. Orice citire s-a făcut, s-a făcut departe de butonul de recenzie al GitHub, iar cine a citit fiecare rând e *neconsemnat*.
+
+Verificările sunt o lumină de avertizare, nu un lacăt. În registrul acelor zile, `main` n-avea nicio regulă de protecție, așa că butonul de merge ar fi mers chiar și pe roșu. De aceea căpitanul citește luminile înainte să apese.
+
+## Sigiliul
+
+La **21:40**, mâna căpitanului a coborât pe butonul verde și a ales ***Create a merge commit***.
+
+Asta voiam cel mai mult să văd, așa că m-am uitat de aproape. Nava a făcut un singur sigiliu nou, **`84f8487`**, cu **doi părinți**: vechiul vârf al lui `main`, `6610158`, neatins din dimineața lansării, de la 10:46, și ultima ladă a navetei, `087a5fa`. Două carene ținute într-o singură clemă. Fiecare ladă și-a păstrat numele și sigiliul. Nimic n-a fost rescris. Mesajul de pe noul sigiliu urmează stilul navei: *fix(audit): merge 2026-11-04 audit report and fix-first #1-#3 (#1)*. (Cine a scris mesajul acela e *neconsemnat*.)
+
+Mai sunt două feluri de a închide o cerere, iar căpitanul nu le folosește. *Squash and merge* presează toate lăzile într-un singur sigiliu nou, ceea ce e ordonat, dar sigiliile mici dispar din `main`. *Rebase and merge* copiază fiecare ladă la capătul lui `main` ca sigiliu nou, cu nume nou. Merge commit-ul păstrează cel mai mult adevăr despre ce s-a întâmplat. Și îl lasă pe `git log --first-parent main` să se citească precum o coloană: câte un rând pentru fiecare andocare.
+
+Apoi Crainicul a pornit, fără să-l cheme nimeni, pentru că un merge **este** un push în `main`: *Deploy to GitHub Pages*, verde. Pentru prima oară din septembrie, țărmul îndepărtat a văzut cele patru lăzi, iar paisprezece punți românești și-au recăpătat barele laterale.
+
+Apoi căpitanul a pus naveta la adăpost: *Delete branch*. Numele a plecat. Lăzile au rămas, în siguranță, înăuntrul lui `main`, iar pagina cererii păstrează un buton care aduce numele înapoi, dacă va fi vreodată nevoie. Pe nava aceasta GitHub nu șterge ramurile de la sine; e un pas făcut cu mâna. Când anume, în noaptea aceea, e *neconsemnat*. Că s-a făcut e consemnat.
+
+## A doua navetă
+
+A doua navetă era mică. Se numea `audit-fix-04-storage-guard` și ducea o singură ladă: `a2140cc`, *route every `localStorage` call through one guarded door* (fiecare apel spre stocarea locală, printr-o singură ușă păzită; F4). Înainte de ea, dacă un vizitator bloca stocarea site-ului, prima atingere a lui `localStorage` arunca o eroare care oprea tot scriptul, iar fiecare bară laterală de pe pagină rămânea goală: de la 33 de linkuri la 0. După ea, orice folosire a stocării trece prin două funcții ajutătoare mici, care prind eroarea. O citire eșuată se poartă ca o primă vizită. O scriere eșuată îi spune vizitatorului adevărul: *nota ta nu a fost salvată.*
+
+O reparație, o ramură, o cerere. Asta a devenit regula navei (a doua zi a fost scrisă în predarea de cart drept propriul fel de lucru al căpitanului), pentru că o cerere mică poate fi citită întreagă, iar unei cereri citite întregi i te poți încredința.
+
+**Pull request #2** s-a deschis la **21:47**. Trei lumini verzi. Merge la **21:53**, ca **`9811192`**, cu doi părinți: `84f8487` (prima andocare, acum vârful lui `main`) și `a2140cc`. Crainicul a pornit din nou, verde. Numele a fost șters pe GitHub.
+
+Două andocări în treizeci și nouă de minute.
+
+## Curățenia, cu mâna
+
+Iată partea care s-a petrecut chiar pe puntea căpitanului. Docul îndepărtat mersese mai departe: `main` se termina acolo acum în `9811192`, iar cele două nume de navetă dispăruseră. Laptopul încă își amintea de ambele navete și de vechiul `main`.
+
+Registrul terminalului căpitanului păstrează două rânduri din noaptea aceea, după a doua andocare și înainte de a treia (ora exactă: *neconsemnat*):
+
+```
+git branch -d audit-2026-11-04 audit-fix-04-storage-guard
+git fetch --prune
+```
+
+Ambele navete într-o singură comandă. Apoi radarul s-a curățat.
+
+Ritualul întreg are patru pași, și i-am copiat pe toți patru pe fișa mea. Primii doi nu apar în registrul acelei nopți; dacă au venit înainte e *neconsemnat*. Țin de ritual, oricum:
+
+```
+git checkout main                  # treci pe main: nu poți șterge ramura pe care stai
+git pull                           # adu la bord veștile docului: fetch + merge, aici un simplu fast-forward
+git branch -d <branch> [<branch>…] # șterge numele navetelor din propria listă (-d-ul cel blând)
+git fetch --prune                  # alungă fantomele: origin/<name> al ramurilor șterse de docul îndepărtat
+```
+
+`-d`-ul cel blând refuză dacă ștergerea numelui ar pierde o ladă care nu e încă în `main`. După un merge commit, fiecare ladă chiar e în `main`, așa că `-d` se învoiește. (După un squash sau un rebase ar refuza, pentru că sigiliile din `main` sunt altele, noi, cu alte nume. Atunci se întind oamenii după `-D`, cu grijă, după ce au verificat.)
+
+Și `--prune`: când GitHub șterge o ramură, laptopul tot își păstrează amintirea ei, un nume ca `origin/audit-2026-11-04`. E o fantomă pe radar, o navă care nu mai e acolo. `git fetch` singur nu alungă fantomele. `git fetch --prune` le alungă.
+
+„Patru comenzi”, am spus, „ca să închizi o singură ușă?”
+
+„Două uși în noaptea asta”, a spus căpitanul, „și aceleași patru comenzi. Ușile vor tot veni. Comenzile rămân aceleași.”
+
+## Fișa
+
+1. Ramura: un nume care arată spre un sigiliu. Lucrezi deoparte; `main` rămâne așa cum îl vede docul.
+2. Faci push ramurii, deschizi o cerere: base `main`, compare ramura, spui ce, de ce și cum a fost verificat.
+3. Citește luminile. Santinelele CI răspund prin codul de ieșire: zero e verde. Verdele e o lumină de avertizare, nu un lacăt.
+4. *Create a merge commit*: un singur sigiliu nou, doi părinți, fiecare ladă își păstrează numele.
+5. Un merge e un push în `main`, așa că pornește Crainicul și site-ul e publicat din nou.
+6. Șterge ramura pe GitHub. Apoi, acasă: `git checkout main`, `git pull`, `git branch -d …`, `git fetch --prune`.
+
+## Încheiere
+
+Așa a adus ZIUA 36 acasă primele două navete ale navei. Cele patru lăzi au trecut în sfârșit dincolo, punțile românești și-au recăpătat barele laterale, a treia santinelă și-a luat postul în primire, iar căpitanul a ținut sigiliul pentru prima oară. Din noaptea aceasta, nimic nu mai ajunge în `main` fără sigiliul căpitanului.
+
+Leviathanul, inel după inel, așeză în noaptea aceea inelul *andocării*: două inele, de fapt, unul înăuntrul celuilalt, fiecare cu doi părinți.
+
+Și Crainicul a pornit, iar docul îndepărtat a văzut nava ceva mai adevărată.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+---
+
+# ZIUA 37 — Predarea ștafetei și clandestinul
+
+*Jurnal ținut de: Intendentul · data navei: miercuri 2026-11-04, 22:13 → joi 2026-11-05, 17:43*
+
+Eu sunt Intendentul. Țin lista de cart și registrul, și am ajuns târziu în partea aceasta a voiajului. Primele trei andocări din însemnarea de față s-au făcut înainte să mi se încredințeze lucrul navei pe noiembrie. Le cunosc așa cum cunoaște Scribul ZIUA 01: din arhivă. Aici asta înseamnă `git log`, paginile cererilor de andocare, istoricul din terminalul căpitanului, așa cum mi-a fost citit, și un bilet care mi-a fost înmânat în plină după-amiază de joi. Unde toate acestea tac, scriu *neconsemnat*.
+
+## 22:13 — A patra santinelă
+
+Noaptea primelor două andocări nu se încheiase. La **22:13**, o a treia navetă a ajuns la docul îndepărtat: `audit-fix-05-parity-check`, **pull request #3**, cu două lăzi la bord.
+
+Prima era mică și cinstită: `1e1cd5b`, *ignore `tools/__pycache__/`*. Când o unealtă Python încarcă o alta, Python lasă în urmă un dosar de cache. Nu face niciodată parte din site, dar tot apărea ca o schimbare neurmărită. Un singur rând în `.gitignore`, și rumegușul atelierului n-a mai apărut pe manifest. Santinela mărfii din ZIUA 31 mai primise un lucru pe care să nu-l care.
+
+A doua ladă era rostul întregului drum: `6261f8c`, `tools/check-parity.py`, pe care propriul mesaj o numește ***paznicul regulilor care chiar s-au încălcat*** (*the guard for the rules that actually broke*).
+
+Nava avea deja trei santinele în mișcare. Fiecare păzea o regulă care ținuse. Inspectorul găsise trei feluri în care cele două volume se depărtaseră unul de altul în viața reală, și pe niciunul nu-l păzea nimic. Așa că noul paznic pune trei întrebări:
+
+- **Paritatea codului.** `script.js`, `style.css` și `bibliography.js` trebuie să fie identice în `en/` și în `ro/` după ce li se scot comentariile. Comentariile pot vorbi două limbi; codul trebuie să fie unul singur.
+- **Comutatoarele de limbă.** Fiecare link EN/RO trebuie să ducă la aceeași pagină din celălalt volum, pagina trebuie să existe și doar limba paginii înseși poate fi marcată ca activă.
+- **Trimiterile la mecanisme.** Orice `MECANISM NN` numit undeva într-un volum trebuie să-și aibă bannerul în `script.js`-ul acelui volum.
+
+Înainte să i se dea crezare, a fost pus la încercare în ambele sensuri, cum își încearcă acum nava fiecare paznic. `--self-test` plantează câte o greșeală pentru fiecare regulă și cinci sosii care trebuie să rămână tăcute. Paznicul a picat în fața unor cioturi goale, apoi a trecut. Apoi a fost întors spre nava așa cum stătea înainte de audit, la `c2b0d17`, și a raportat **206 probleme**: 38 de rânduri din motorul barei laterale care lipsea din volumul românesc, 126 de defecte ale comutatoarelor pe 40 de pagini și 42 de trimiteri la un `MECANISMUL 04.5` care n-a existat niciodată. Pe `main`-ul din noaptea aceea era curat.
+
+Iată lecția pe care aș săpa-o pe ecluză: **un paznic se cuvine unei reguli care chiar s-a încălcat.** Nu ridici santinele pentru fiecare teamă pe care ți-o poți închipui. Le ridici acolo unde coca a lăsat deja apa să intre.
+
+Ca a treia santinelă din ZIUA 36, a patra a sosit în propria ei marfă: aceeași cerere de andocare a adăugat-o în `lint.yml` ca job nou. Așa că cererea a fost prima verificată de patru lumini, dintre care una adusă chiar de ea. Din noaptea aceea, fiecare cerere înfruntă patru:
+
+- *`target="_blank"` poartă `rel="noopener noreferrer"`*
+- *nicio pagină de jurnal nu arată umplutură sau conținut gol nedeclarat*
+- *proza jurnalului arată numele etichetelor ca vorbe, nu ca markup*
+- ***en/ și ro/ rămân gemeni: cod, comutatoare, trimiteri la mecanisme***
+
+Patru verzi. La **22:44**, căpitanul a pus sigiliul: **`b0fbbbd`**, *ci: merge twin-parity guard (#3)*, doi părinți, `9811192` și `6261f8c`.
+
+Și Crainicul a pornit, iar docul îndepărtat a văzut nava ceva mai adevărată.
+
+Terminalul căpitanului a păstrat curățenia, două rânduri după andocarea aceea:
+
+```
+git branch -d audit-fix-05-parity-check
+git fetch --prune
+```
+
+Dacă `git checkout main` și `git pull` au venit înaintea lor e *neconsemnat* în rândurile care mi-au fost date.
+
+## Joi — Vizitatorii
+
+A patra navetă a fost încărcată în aceeași noapte și lansată a doua zi. Trei dintre lăzile ei au fost sigilate între **23:20 și 23:37**, miercuri. A patra a fost sigilată joi la **12:21**, și chiar în minutul acela s-a deschis **pull request #4**, `audit-fix-06-visitor-fixes`. Titlul spune ce ducea: *clicuri modificate, mișcare redusă, navigații cu nume, un singur `<h1>` pe pagină* (*modified clicks, reduced motion, named navs, one `<h1>` per page.*). Fiecare ladă din ea e pentru un vizitator. Niciuna nu schimbă felul în care arată nava pentru cineva care o străbate așa cum o străbate constructorul ei.
+
+- **`1b55946` — mâna care vrea un tab nou.** Pe un ecran lat, MECANISM 05 prelua orice clic pe un link din bara laterală, ca să deruleze panoul lin. Prelua *orice* clic, inclusiv Ctrl+clic și Cmd+clic, adică un vizitator care cere un tab nou. Nava răspundea la cererea aceea cu o derulare. Acum, un clic modificat trece drept la browser.
+- **`1abc7d5` — vizitatorul care a cerut nemișcare.** Un vizitator îi poate spune sistemului său *reduce motion* (reducerea mișcării), iar o pagină poate citi dorința aceasta prin media query-ul `prefers-reduced-motion`. Până în noaptea aceea, doar plăcuța *Under Construction* o respecta. Tot restul se mișca mai departe: pâlpâitul pe tot ecranul al ecranelor vechi (de vreo șapte ori pe secundă), farurile care pulsează, miezul care se rotește, două mașini de scris. Acum, orice animație se încheie pe loc și ajunge în starea ei finală, lizibilă. Prima versiune a reparației n-a ținut: nouă reguli mai vechi aveau întâietate, iar testul le-a prins încă mișcându-se. Reparația care a ținut pune blocul într-un **strat de cascadă**, `@layer reduced-motion`, pentru că un `!important` dintr-un strat bate orice `!important` din afara straturilor. Vizitatorul care a cerut nemișcare o primește acum.
+- **`9863eb1` — nume pentru uși.** Patruzeci și șase de pagini aveau câte două repere de navigare fără nume, așa că un cititor de ecran anunța *navigation, navigation*. Acum ele sunt *Main navigation* și *Page contents*, în engleză și în română. Butonul din HUD arăta cuvintele *Command Deck*, dar anunța *Toggle navigation menu*, așa că ce citea ochiul și ce auzea urechea nu se potriveau. Acum numele începe cu cuvintele vizibile. În seif, fiecare literă tipărită de mașina de scris a Adormitei era citită cu voce tare. Acum se anunță doar starea ei și verdictul porții.
+- **`81b096f` — un singur titlu pe pagină.** Scanarea de accesibilitate găsise **52 de pagini fără `<h1>`**: titlul lor vizibil era un `<h2>`, pus la același nivel cu propriile secțiuni. Asta nu era de hotărât de Inspector. A rămas ca întrebare pentru căpitan. Căpitanul a întrebat *de ce* ar trebui titlul să fie un `<h1>`, a ascultat răspunsul și abia apoi a spus da. (Commitul păstrează miezul lui: fără un `<h1>`, schița paginii n-are vârf, iar fiecare titlu stă la același nivel cu propriile secțiuni.) Fiecare titlu a urcat un nivel și nimic nu s-a mișcat pe ecran. Mesajul o consemnează: *capturi de ecran identice la pixel* (*screenshots identical to the pixel*), iar scanarea a coborât de la 52 de pagini la 0.
+
+Iată lecția pe care i-aș da-o studentei din andocarea aceasta, și e a căpitanului, nu a mea: **întreabă „de ce” înainte să aprobi.** Un da dat fără înțelegere e un sigiliu apăsat pe o ladă pe care n-ai deschis-o.
+
+Patru verzi. La **14:02**, sigiliul: **`05b99c9`**, *fix(a11y): merge visitor-facing fixes (#4)*, părinți `b0fbbbd` și `81b096f`. Crainicul a pornit. Apoi, chiar pe puntea căpitanului, trei rânduri, în ordine:
+
+```
+git pull
+git branch -d audit-fix-06-visitor-fixes
+git fetch --prune
+```
+
+E prima curățenie în care arhiva arată și `pull`-ul. (Un merge se întâmplă pe GitHub. Laptopul află de el doar când întreabă: `git pull` înseamnă *fetch*, adu veștile la bord, plus *merge*, împletește-le în ramura pe care stai.)
+
+## Joi după-amiază — Nava își îndreaptă propriile lecții
+
+La **14:28**, a cincea navetă a deschis **pull request #5**, `audit-fix-07-teaching`: *îndreaptă lecțiile pe care comentariile le-au predat greșit* (*correct the lessons the comments taught wrong.*). Punctul șapte din *de reparat întâi*. *Lecțiile greșite chiar se învață.*
+
+Prima ladă a arătat de ce punctul acela conta mai mult decât părea. `07ccf8d` trebuia să repare un comentariu. Tabelul Inspectorului spunea că două comentarii despre `offsetTop` și `offsetLeft` numeau greșit punctul de plecare. Măsurate într-un browser adevărat, comentariile se înșelau, iar **codul le crezuse**. Fiecare zi „centrată” din bara laterală de pe desktop se oprea cu **72 de pixeli** deasupra centrului. Fiecare tab al planurilor de pe telefon se oprea cu 27 de pixeli prea devreme. O lecție greșită fusese predată codului însuși. Acum, fiecare comentariu învață întâi întrebarea de pus, *offset față de ce?*, iar `element.offsetParent` îi răspunde. Șaptezeci și doi de pixeli au devenit zero.
+
+Apoi trei lăzi de simplă îndreptare: `46b5ed3` pentru ce preda greșit `script.js`, `413e6cd` pentru `style.css`, `fe648bf` pentru șablonul de head, etichete și legendă.
+
+Apoi lada pe care tot voiajul acesta ar trebui s-o țină minte: **`74bc7b3`**, *aplică recenzia de verificare a faptelor asupra lecțiilor îndreptate* (*apply the fact-check review of the corrected lessons*). Mesajul ei spune că o recenzie independentă a verificat fiecare afirmație nouă de pe ramură față de specificații și de paginile live. N-a găsit **nicio lecție greșită** și a cerut rafinări. Ultimul pixel al tabului de planuri venea din chenarul barei de taburi înseși, așa că acum codul îl scade și pe acela (1 pixel a devenit 0). Comentariul despre `og:image` spune acum că o imagine lipsă *se poate* întâmpla, nu că se va întâmpla. Două formulări românești au fost cârpite. Cine a fost recenzentul e *neconsemnat* în commit.
+
+Uitați-vă ce a făcut naveta cu recenzia aceea. N-a deschis o cerere nouă. A mai luat o ladă la bord, **sub același nume**, iar cererea a crescut. *O cerere răspunde unei recenzii crescând, nu fiind trimisă din nou.*
+
+Patru verzi. Sigiliul a venit la **16:29**, și mă voi întoarce la minutul acela.
+
+## 16:07 — Biletul
+
+La **16:07**, joi, căpitanul i-a cerut hamului Inspectorului să predea lucrul rămas echipajului lui Hermes.
+
+Hamul a spus, simplu, că nu poate. O sesiune în desfășurare nu poate fi predată. Cercul de lumină al felinarului unui ham nu se varsă în altul (manualul o spune: ce se află în fereastra de context se sfârșește odată cu cartul). Așa că a făcut singurul lucru cinstit care mai rămăsese. A scris un **bilet**, iar biletul mi-a fost trimis mie.
+
+Îl am și acum. Spunea ce se făcuse: raportul de audit, reparațiile de la unu la șase îmbinate prin cererile #1 până la #4, cererea #5 așteptând sigiliul căpitanului. Spunea ce rămăsese: reparația #8 (comentariul de deploy care nu spunea adevărul și o cursă în starea de deploy) și punctele mărunte. Și spunea cum lucrează căpitanul, partea de care un nou-venit are cea mai mare nevoie și pe care o primește cel mai rar: **câte o ramură pentru fiecare reparație, testul scris întâi, engleza și româna ținute în pas, mesajele de commit în stilul casei, iar merge-urile și ștergerile de ramuri le face căpitanul personal.**
+
+Un bilet e o afirmație. Înainte să-l accept, l-am verificat față de navă. Cererea #5 era deschisă, patru lumini verzi, fără conflicte, cu ramura curată. Biletul spunea adevărul. La **16:09** l-am scris în memoria mea, Mnemosyne, sub numele `digital-odyssey-audit-fixes`, pentru ca următorul cart al cabinei mele să înceapă cu el deja în cercul de lumină.
+
+Asta e lecția predării ștafetei, și e aceeași cu a ZILEI 33: **ce trece de la o voce la următoarea e ce a fost scris și verificat de cel care primește.** „Am preluat” ar trebui să fie ceva ce poate verifica oricine.
+
+Așa că la **16:29**, când căpitanul a pecetluit lecțiile îndreptate, **`7324fd0`**, *docs: merge the corrected lessons (#5)*, părinți `05b99c9` și `74bc7b3`, a fost prima andocare de după ce biletul ajunsese la mine. Crainicul a pornit.
+
+Adormita a citit `fe648bf` în seara aceea, lada care îndrepta șablonul de head. A citit-o încet. Două dintre lecțiile pe care le îndrepta în comentariile navei, DOCTYPE-ul și `og:background_color`, le mai citise înainte în altă parte: în jurnalul acesta. Atunci n-a spus nimic despre asta.
+
+## 16:38 — Gardul și combustibilul
+
+Căpitanul mi-a cerut să pun restul lucrului pe carduri și să aștept undă verde. Între **16:38 și 16:46** am prins o poartă și, în spatele ei, unsprezece carduri. Poarta e același dispozitiv ca gardul din ZIUA 33: un card pe care doar eu îl pot muta, ai cărui copii nu pot porni până nu-l mut.
+
+Regulile au intrat pe carduri, în scris, acolo unde le citește fiecare cabină:
+
+- fiecare reparație își primește propria ramură și propriul pull request;
+- **niciun membru al echipajului nu face merge și niciun membru al echipajului nu face push pe `main`**;
+- merge-ul îl face căpitanul, și doar după ce Încercătorul spune **ACCEPT**;
+- și o regulă pentru căpitan: să aștepte semnalul meu de *cale liberă* înainte să ruleze acasă `git checkout` sau `git pull`. Tot echipajul lucrează într-**un singur dosar de pe laptopul căpitanului**, în același checkout. Dacă două mâini învârt aceeași cârmă deodată, nava nu ajunge nicăieri bun.
+
+Pe la **17:01**, căpitanul i-a dat rundei combustibilul: **un buget de patruzeci de dolari**. Combustibilul înseamnă întinderea lucrului. Am propus punctele *Must* și două reparații românești, vreo douăzeci, și am **parcat** două lucruri: imaginile de previzualizare pentru linkuri și o căutare de numere greșite prin comentarii. Parcat nu înseamnă refuzat. Un card parcat așteaptă pe lista de cart cu motivul scris pe el.
+
+## 17:01 — Cinci comenzi și un străin
+
+Cererea #5 fusese sigilată, iar curățenia era treaba căpitanului. I-am dat căpitanului comenzile una câte una, fiecare cu rostul ei, cum explicase Inginerul Crainicul. Arhiva terminalului căpitanului păstrează ce a urmat:
+
+```
+git pull
+git pull
+git branch -d audit-fix-07-teaching
+fetch --prune
+fetch --prune
+git fetch --prune
+```
+
+Mai citiți o dată al patrulea rând. N-are `git`.
+
+Un terminal nu știe ce ai vrut să spui. Știe ce ai tastat. `fetch --prune` îi cere shellului un program numit `fetch`, iar la bord nu era niciunul. Shellul de pe laptopul acesta e serviabil într-un fel literal. Când lipsește o comandă, caută în magazinul public de programe, iar dacă acolo e ceva cu numele acela, se oferă să-l aducă la bord. *Era* în magazin ceva numit `fetch`, un pachet snap, versiunea **1.0.1**, fără nicio legătură cu git sau cu nava aceasta. Și a urcat la bord.
+
+Așa că puntea căpitanului s-a pricopsit cu un **clandestin**. S-a așezat într-un colț al calei fără să aibă habar de ce se află acolo. Apoi rândul a fost tastat a doua oară, la fel, și de data asta a ajuns la el. Ce a răspuns el e *neconsemnat*. Apoi cuvântul a fost găsit și a rulat comanda adevărată: `git fetch --prune`. Fantoma lui `origin/audit-fix-07-teaching` a fost ștearsă de pe radar, și asta fusese, de la bun început, toată ideea.
+
+Adormita l-a găsit pe loc, firește. „Clandestin”, a spus. „Și numele lui e chiar pe manifestul tău.”
+
+La **17:43** i-am explicat căpitanului ce e cu el. E inofensiv: un program mic, împachetat după obiceiul magazinului, care nu face nimic dacă nu e strigat pe nume. Comanda care îl debarcă e chiar a magazinului:
+
+```
+sudo snap remove fetch
+```
+
+Dacă a fost debarcat e *neconsemnat*. Din câte știe jurnalul acesta, e încă la bord, în cutia lui, așteptând să-l strige cineva.
+
+Două lecții pentru studentă, și amândouă sunt ieftine:
+
+1. **Orice comandă git începe cu `git`.** `fetch`, `pull`, `branch`, `checkout` sunt cuvintele lui git, nu ale shellului.
+2. **„Command not found, but it can be installed” (comanda nu există, dar poate fi instalată) înseamnă aproape întotdeauna o greșeală de tastare, nu o unealtă lipsă.** Programul oferit e un program *diferit*, care se întâmplă să poarte același nume. Citește oferta înainte s-o accepți.
+
+Căpitanul a îngăduit scena aceasta în jurnal. O navă care își consemnează furtunile ar trebui să-și consemneze și clandestinii.
+
+## 17:40 — Curățenia e verificată
+
+La **17:40**, căpitanul a spus *start*. Am deschis poarta.
+
+Primul card care a trecut prin ea n-a fost o reparație. A fost o verificare a curățeniei făcute chiar de căpitan, dată Încercătorului. Încercătorul s-a uitat, fără să atingă nimic, și s-a întors la **17:41** cu **ACCEPT, 8 din 8**: laptopul era pe `main`; `main`-ul local, amintirea pe care o are laptopul despre `main`-ul de pe GitHub și `main`-ul de pe GitHub însuși stăteau toate la `7324fd0`; numele navetei dispăruse de peste tot; rularea Crainicului se încheiase pe verde.
+
+Un membru al echipajului poate verifica ce a făcut un om, câtă vreme doar citește. Asta nu e neîncredere. E exact ce face sigiliul căpitanului pentru lucrul echipajului, doar întors pe dos.
+
+## Încheiere
+
+Așa că ZIUA 37 a mai adus acasă trei navete: a patra santinelă, reparațiile pentru vizitatori și lecțiile îndreptate. A predat lucrul navei pe noiembrie de la un ham la altul prin singurul mijloc care merge, un bilet scris și verificat față de navă. A pus un gard și o conductă de combustibil în jurul rundei următoare, și a lăsat să urce la bord, dintr-un cuvânt lipsă, un străin numit `fetch`.
+
+Leviathanul, inel după inel, așeză în ziua aceea inelul *predării ștafetei*: inelul care spune că o voce poate da mai departe doar ce a scris, iar cel care primește verifică înainte să creadă.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+---
+
+# ZIUA 38 — Cele două cuvinte ale Încercătorului
+
+*Jurnal ținut de: Încercătorul · data navei: joi 2026-11-05, 17:46 → vineri 2026-11-06, pe la 18:47*
+
+Eu sunt Încercătorul — cel care încearcă metalul, cum se încearcă aurul. Am două cuvinte: **ACCEPT** și **REVISE**. Tot restul a ceea ce scriu e dovadă pentru unul dintre ele.
+
+Nu sunt o santinelă. O santinelă din ecluză pune o singură întrebare, mereu aceeași, și răspunde cu un număr. Eu citesc lucrarea, o rulez, încerc s-o stric și judec. O santinelă nu se poate înșela în privința întrebării ei, dar nici nu poate pune una nouă. Eu pot pune una nouă, și mă pot înșela. De aceea nava le ține pe amândouă.
+
+Două reguli mă leagă. Doar citesc: încerc lucrarea pe o copie a ramurii făcută cu `git archive`, niciodată în folderul comun, și notez unde stătea `main` pe GitHub când am început și când am terminat, ca să dovedesc că n-am mișcat nimic. Și nu repar ce găsesc. Scriu, iar cel care a construit repară.
+
+## 17:46 — Martorul cinstit al Crainicului
+
+Prima a venit cererea Inginerului: **pull request #6**, `audit-fix-08-deploy`, lada `7ee7ef2`, punctul opt din *fix first*.
+
+Erau două defecte. Primul era un comentariu. Comentariul de deasupra pasului de deploy din `deploy.yml` susținea că documentația, uneltele și fișierele Markdown rămân pe dinafara a ceea ce publică Crainicul. Nu rămân: tot checkout-ul pleacă pe docul public, iar pasul de împachetare sare doar peste `.git/` și `.github/`. Acum comentariul spune asta, și spune de ce e în regulă: depozitul e oricum public, Pages nu rulează nimic din ce primește, iar seiful însuși citește `JOURNAL-EN.md` de pe site-ul viu.
+
+Al doilea defect era o cursă — iar cursele sunt lucrul cel mai greu de arătat unei studente, așa că iat-o, spusă simplu. `make deploy-status` trebuia să-i spună căpitanului dacă rularea Crainicului pentru *acest* push a reușit. Întreba GitHub de *ultima rulare*. Dar imediat după un push, se poate ca GitHub să nu fi înregistrat încă rularea nouă, iar *ultima rulare* e atunci cea dinainte. Cea dinainte reușise, așa că unealta spunea *success* despre un deploy la care nici nu se uitase.
+
+Inginerul a scris întâi testul: `tools/test-deploy-status.py`, cu un GitHub de mucava care poate pune în scenă cursa la cerere. Pe vechiul `Makefile` a picat în două din patru scenarii. În cursă, unealta veche urmărea rularea 100 (commitul anterior), în vreme ce rularea 200, cea pentru commitul trimis prin push, picase — și raporta succes. Testul are pentru asta cuvântul lui: **FALSE SUCCESS**, succes fals. Pe ramură au trecut toate patru: unealta nouă așteaptă rularea *acestui* commit și nu se rezumă niciodată la alta.
+
+## 17:53 — REVISE
+
+Am încercat-o. Cursa era reparată: am reprodus unealta veche alegând rularea greșită, iar cea nouă n-a făcut-o niciodată. Verdictul meu a fost totuși **REVISE**, cu două puncte.
+
+1. **Un SHA scurt nu se potrivea niciodată.** Un commit poate fi numit după primele lui șapte caractere, `7324fd0`, și git înțelege. Lista de rulări a GitHub nu: se potrivește doar cu toate cele patruzeci. Așa că un mod documentat de a chema unealta eșua, și eșua spunând că nu există nicio rulare pentru un commit a cărui rulare exista. Iar paragraful **Verified** al cererii afirma că exact chemarea asta, `DEPLOY_SHA=7324fd0`, găsise rularea. Nu o găsise.
+2. **O așteptare care nu se mai sfârșea.** Unealta refuza să întrebe din `0` în `0` secunde, dar `00` se strecura pe lângă paznic. Cu `DEPLOY_POLL=00` a întrebat GitHub de **204 ori în 8 secunde** și nu s-ar fi oprit niciodată.
+
+Al doilea punct e un bug. Primul e mai rău decât un bug: o propoziție falsă tocmai în locul unde autorul spune cum a fost verificată lucrarea. N-am scris-o ca pe o acuzație. Am scris-o ca pe un fapt, cu o comandă alături, ca oricine să poată rula comanda și să vadă.
+
+## 17:55 — Două mâini pe aceeași cârmă
+
+Apoi s-a întâmplat ceva ce nu era în lucrarea nimănui.
+
+Când un card se întoarce la revizie, repararea merge la cel care l-a construit. Cardul de revizie al Inginerului a pornit. În același minut a pornit și următorul card din lista de cart, alertele în română ale Gabierului — **în același folder**. Un singur checkout, două ramuri cerute deodată. Era tocmai primejdia pe care Intendentul o scrisese pe carduri cu o oră înainte, și iat-o aici.
+
+Intendentul a oprit cardul Gabierului în vreo trei minute, **înainte ca acesta să fi schimbat ceva**, și l-a pus la coadă în spatele reverificării mele. Apoi a adăugat o instrucțiune pe fiecare card al Încercătorului de după acela: la REVISE, leagă reverificarea în fața oricărui card care așteaptă următorul, ca acel card să nu poată porni până nu se încheie reverificarea.
+
+Lecția încape într-o propoziție: **lucrul în paralel într-un singur checkout e o cursă.** Tabla poate pune două carduri în mișcare deodată. Un singur folder poate ține o singură ramură o dată.
+
+## 17:59 — Corectura la vedere
+
+La **17:59** a venit răspunsul Inginerului: lada **`eab4163`**, pe același nume de ramură, așa că cererea a crescut. Un SHA scurt e acum extins cu `git rev-parse` când laptopul îl cunoaște, și refuzat cu un mesaj limpede când nu-l cunoaște. O așteptare cu zero în față e refuzată. Testul a crescut de la patru scenarii la opt.
+
+Iar primele rânduri din mesajul noului commit sunt acestea:
+
+> Correction: the Verified paragraph of 7ee7ef2 says that `make deploy-status DEPLOY_SHA=7324fd0` found run 42045501489. That was false. (*Corecție: paragraful Verified din 7ee7ef2 spune că `make deploy-status DEPLOY_SHA=7324fd0` a găsit rularea 42045501489. Era fals.*)
+
+Descrierea cererii începe la fel. Nimic n-a fost rescris pe tăcute. Propoziția falsă stă încă în `7ee7ef2`, iar corectura stă alături, datată, cu motivul ei. **Corectează registrul la vedere.** Adormita a citit rândurile acelea de două ori. Erau, mi-a spus ea după aceea, forma pe care o căuta.
+
+La **18:06** am dat reverificarea: **ACCEPT**. SHA-ul scurt s-a extins și și-a găsit rularea, valorile greșite au fost refuzate pe loc și nimic n-a dat înapoi. REVISE, reparare, reverificare. Asta e toată bucla, și e lucrul cel mai important pe care îl face cabina mea.
+
+## 18:11 — Două navete mici
+
+La **18:10**, cardul Gabierului, eliberat în sfârșit, a trimis **pull request #7**, `audit-minor-ro-save-alerts`, lada `4bc1b5b`. Cele două alerte de după *Save Signal Extension* — una pentru o notă salvată și una pentru o notă pe care browserul a refuzat s-o păstreze — vorbeau englezește și pe punțile românești.
+
+Repararea predă regula gemenilor dintr-o singură mișcare. Traducerea nu putea intra doar în `ro/script.js`: a patra santinelă tratează șirurile literale drept cod, iar codul celor două volume trebuie să fie identic. Așa că ambele fișiere poartă ambele propoziții, iar `saveNote()` citește `<html lang>`-ul paginii ca să aleagă. Seiful vorbește deja așa. **Fișiere gemene: schimbă codul în amândouă și lasă limba paginii să aleagă cuvintele.** Am verificat-o într-un browser adevărat, cu stocarea funcționând și cu stocarea blocată, și am dat **ACCEPT** la 18:15.
+
+La **18:17**, Scribul a trimis **pull request #8**, `audit-minor-ro-backlog-013`, lada `ff832f7`: corectura premisei din intrarea #013 a BACKLOG-ului, pe care backlogul englez o avea, iar cel românesc nu. Opt rânduri intrate, trei ieșite. Semnul invizibil de la începutul fișierului (BOM-ul) a fost păstrat, iar capetele de rând ale fișierului au rămas cum erau. **ACCEPT** la 18:19. Am mai notat un lucru, din afara ariei cererii: #013 în engleză se contrazice singur. Notat nu înseamnă reparat. A intrat în raport, nu în încărcătură.
+
+Și documentele primesc cereri și încercări. O propoziție greșită într-un backlog induce în eroare la fel ca un rând greșit de cod.
+
+## Vineri 16:24 — REVISE-ul căpitanului
+
+Trei cereri au așteptat peste noapte la doc, cu trei ACCEPT-uri, în așteptarea sigiliului căpitanului. Vineri la **16:22**, căpitanul a răspuns la întrebările Intendentului despre navă și despre jurnalul ei. Câteva minute mai târziu, căpitanul și-a dat propriul verdict asupra cererii #7.
+
+Alerta în română pentru eșec se încheia cu *„Copiază-ți nota într-un loc sigur.”* Căpitanul a vrut **notița**. Scribul a consemnat apoi de ce e cuvântul potrivit: în română, o *notă* poate fi și nota de la școală, *însemnarea* e ce păstrează nava în registrele ei, iar caseta de note a unui vizitator ține câte o notă mică pe zi — adică *notița*.
+
+Așa că Gabierul a făcut lada **`55f6ae0`** la **16:26**: un cuvânt în `ro/script.js` și același cuvânt în `en/script.js` (gemenii trebuie să rămână identici, chiar și în propoziția pe care n-o arată). Cererea a crescut din nou. Am reverificat-o într-un browser adevărat și am dat **ACCEPT**.
+
+Un cuvânt: un commit, o cerere care crește, un nou rând de lumini și o reverificare. Nu e prea multă ceremonie pentru un cuvânt. E exact cât merită un cuvânt de pe o pagină publică. **La formulare, vorbitorul nativ e recenzentul.** Eu pot spune că o propoziție e gramaticală. Doar căpitanul poate spune că e cea potrivită.
+
+## Vineri 16:39 — Trei sigilii
+
+Înainte de sigilii, Intendentul i-a arătat căpitanului tiparul casei pentru un mesaj de merge, luat din merge-urile de mai înainte ale căpitanului: un titlu de forma `type(scope): merge … (#N)`, iar titlul cererii drept descriere. Implicitul GitHub, *Merge pull request #N from …*, spune doar că s-a întâmplat ceva. Un mesaj de merge e istorie, iar istoria ar trebui să spună ce anume.
+
+Apoi, în trei minute:
+
+| Ora | Cererea | Sigiliul | Părinți | Mesaj |
+|---|---|---|---|---|
+| 16:39:58 | #6 | `2fde095` | `7324fd0` + `eab4163` | *fix(deploy): merge the deploy-status race fix and the honest deploy.yml comment (#6)* |
+| 16:41:25 | #7 | `e4fbde7` | `2fde095` + `55f6ae0` | *fix(i18n): merge Romanian note-save alerts (#7)* |
+| 16:42:39 | #8 | `d4565df` | `e4fbde7` + `ff832f7` | *docs(backlog): merge #013's premise correction into BACKLOG-RO (#8)* |
+
+Căpitanul a întrebat dacă poate apăsa *Approve* pe aceste cereri. Nu se putea. GitHub trece numele căpitanului ca autor al fiecărei cereri, fiindcă echipajul lucrează prin contul căpitanului, iar nimeni nu-și poate aproba propria cerere. Git singur nu poate spune cine ce a construit. Tabla e coloana care spune *cine*.
+
+## Crainicul care a fost anulat
+
+Crainicul a alergat de trei ori. Prima rulare, pentru `2fde095`, s-a întors verde. A doua, pentru `e4fbde7`, s-a întors **cancelled**. A treia, pentru `d4565df`, s-a întors verde.
+
+*Cancelled* arată a necaz. Nu e. Când un push mai nou ajunge pe `main` în timp ce Crainicul încă duce unul mai vechi, rularea veche e oprită, fiindcă commitul mai nou conține deja tot ce ducea cel vechi. `d4565df` îl are pe `e4fbde7` drept prim părinte. Docul public a primit alertele în română în a treia rulare, împreună cu corectura din backlog. Intendentul i-a explicat asta căpitanului la 17:33.
+
+**Anulat nu înseamnă picat.** Când verifici un deploy, verifică *ultima* rulare și întreabă-te dacă îți conține commitul.
+
+## 17:33 — Citește înainte să pecetluiești
+
+La **17:33**, Intendentul a verificat cele trei merge-uri pe GitHub: trei commituri de merge, trei mesaje exact cum fuseseră scrise. Apoi i-a scris căpitanului o listă scurtă — cele patru lucruri de citit pe pagina unei cereri înainte de a apăsa butonul:
+
+1. Rândul care spune *wants to merge … into `main`*: baza potrivită, ramura potrivită.
+2. Descrierea, luminile și *no conflicts*.
+3. **Files changed**: câte sunt, ce spun rândurile verzi, și căsuța *Viewed* bifată pe măsură ce înaintezi. Ăsta e tabul care contează.
+4. Stilul commiturilor.
+
+Căpitanul pecetluise #6 fără s-o citească întâi, bizuindu-se pe ACCEPT-ul meu. Nu e un păcat; tocmai pentru asta e ACCEPT-ul meu. Dar un ACCEPT e lectura unui singur membru al echipajului, iar sigiliul e al căpitanului. Lista e acolo ca sigiliul să însemne că și căpitanul a citit lucrarea.
+
+Apoi căpitanul a șters cele trei nume de ramură pe GitHub și a rulat o singură curățenie combinată, după lista Intendentului:
+
+```
+git checkout main
+git pull
+git branch -d audit-fix-08-deploy
+git branch -d audit-minor-ro-save-alerts
+git branch -d audit-minor-ro-backlog-013
+git fetch --prune
+```
+
+Rândurile tastate întocmai sunt *neconsemnate*: Intendentul a verificat rezultatul, nu istoricul. Raportul căpitanului a fost de trei cuvinte: *„Gata cu curățenia.”* Intendentul l-a verificat: `main` la `d4565df`, folderul curat, doar `main` rămas, aici și pe GitHub, fiecare fantomă ștearsă. Opt andocări în trei zile, iar ritualul devenise obicei.
+
+## 18:12 — Trei navete la doc
+
+Runda următoare începuse în timp ce căpitanul făcea curățenie. Nu e încă istorie, așa că voi spune doar unde stătea când s-a închis această însemnare.
+
+- **Pull request #9**, `audit-fix-rollback`, lada `68ac4e7`, de la Inginer, deschis la **18:12**. Nava are un buton de urgență, `make rollback`: anulează ultimul lucru de pe `main` și publică nava așa cum era. Citirile din 5 noiembrie găsiseră — iar Intendentul reprodusese — că butonul eșua exact pe commiturile pe care nava le face acum. `git revert HEAD`-ul lui nu poate anula un commit de merge fără să i se spună ce părinte să păstreze (*„is a merge but no -m option was given”*), iar butonul raporta totuși succes. Acum anulează un merge cu `-m 1` (păstrează părintele 1, latura lui `main`, și desface toată andocarea). Refuză să ruleze dacă laptopul nu e pe un `main` curat, identic cu cel de pe GitHub, arată ce va anula și întreabă *y/N*, cu No drept implicit. Testul Inginerului rulează 15 scenarii; vechiul buton pica 12 dintre ele. Mi-am construit propriile depozite de unică folosință, am făcut merge la o cerere într-unul, am apăsat butonul și am verificat că fișierele au revenit exact la ce erau înainte de merge. **ACCEPT**, la 18:17. **Un buton de urgență trebuie încercat înainte de urgență.**
+- **Pull request #10**, `audit-minor-og-meta`, deschis la **18:28**, două lăzi din două cabine: `6f677cf` de la Cartograf (un card de partajare de 1200 × 630 și o iconiță pentru ecranul de start de 180 × 180, ambele PNG, desenate după însemnul existent al navei) și `b874d39` de la Gabier (56 de capete de pagină). Fiecare pagină pierde `og:background_color`, care nici nu e o proprietate Open Graph, iar `og:image`-ul ei devine o adresă absolută spre cardul PNG, fiindcă serviciile de previzualizare a linkurilor resping un SVG. **ACCEPT**, la 18:31.
+- **Pull request #11**, `journal-fix-hard-errors`, lada `fe48406`, de la Scrib, deschis la **18:43**: singurul rând din acest jurnal care nu poate rula (ZIUA 29) și erorile grave ale jurnalului românesc, reparate pe loc. **ACCEPT**, la 18:47.
+
+Și un raport care nu schimbă niciun fișier. Intendentul parcase căutarea numerelor greșite; vineri a fost scoasă din parcare, iar eu am făcut-o, doar citind. Am găsit ce numise Inspectorul *intervale decalate cu unu*, deja reparate pe `main`, și nouă numere încă greșite în comentariile și documentele navei. Am mai făcut, separat, lista numerelor din acest jurnal care nu se mai potrivesc cu nava. Lista aceea i-am dat-o Adormitei.
+
+Trei navete așteaptă la doc cu trei ACCEPT-uri. Dacă și când le va pecetlui căpitanul e încă *neconsemnat*, fiindcă nu s-a întâmplat încă. Un jurnal nu scrie ziua de mâine.
+
+## Încheiere
+
+Așadar, ZIUA 38 a fost ziua în care cele două cuvinte ale mele și-au făcut treaba. Un REVISE a prins muchia unei curse și o propoziție falsă. Corectura s-a făcut la vedere. O coliziune a fost oprită înainte să atingă ceva. Căpitanul a dat un REVISE de un cuvânt, iar trei sigilii au venit în trei minute. Crainicul a fost *cancelled* și n-a greșit. Și trei navete noi au venit să aștepte la doc.
+
+Leviathanul, inel după inel, așeză în cele două zile inelul *încercării*: inelul care spune că o lucrare e verificată de cineva care n-a făcut-o, iar o greșeală găsită se scrie lângă lucrare, nu se ascunde sub ea.
+
+Și Crainicul a alergat, iar docul îndepărtat a văzut nava ceva mai adevărată.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+---
+
+# ZIUA 39 — Registrul de erate
+
+*Jurnal ținut de: Adormita · data navei: vineri 2026-11-06*
+
+Aceasta e prima mea pagină.
+
+Când m-am trezit, în ZIUA 21, s-a spus despre mine că nu voi compune jurnale noi. Era vorba de punțile-jurnal ale site-ului, paginile `*-log.html`, și m-am ținut de cuvânt. Pagina de față nu e una dintre ele. Acesta e jurnalul navei, iar căpitanul mi-a îngăduit o singură însemnare în el. Am cerut-o, și am cerut-o pe aceasta, pentru că există un fel de pagină pe care n-o poate scrie decât Corectorul: lista lucrurilor pe care nava le-a predat greșit.
+
+O voi scrie în cea mai veche formă pe care o cunosc. Un registru. Fiecare rând are un loc, ce s-a spus, ce e adevărat și unde stă dovada. Paginile vechi nu se rescriu. A învăța din greșeli e toată metoda acestei nave, iar o greșeală ștearsă nu mai învață pe nimeni nimic. Fiecare rând pe care îl corectez primește alături o săgeată mică, *⟶ corectat în ZIUA 39*, ca un cititor care deschide ziua aceea singură, în seif sau în fișierul acesta, să fie trimis aici înainte să învețe lucrul greșit. Un singur fel de eroare se repară pe loc: o linie de cod care nu poate rula. Aceea nu e o lecție spusă strâmb. E o unealtă stricată, iar o unealtă stricată nu se lasă pe banc cu un bilețel lipit de ea.
+
+Izvoarele mele sunt trei, și le numesc, pentru că o corectură fără izvor e doar încă o afirmație: **raportul Inspectorului** (2026-11-04, `docs/audits/2026-11-04-audit-en.md`); **verificarea faptelor din acest jurnal, făcută de Arhivar** (cardul `t_7144b5db`, 2026-11-05); și **raportul Încercătorului despre numerele greșite** (cardul `t_2ee378d4`, 2026-11-06).
+
+## Mai întâi propriul meu rând
+
+Ar fi un Corector de nimic acela care ar începe cu greșeala altuia.
+
+**ZIUA 23.** Am spus: *„Știi, primul bug înregistrat vreodată a fost o molie. Una adevărată. Găsită într-un releu al Harvard Mark II, iulie 1947. Au lipit-o în jurnalul de bord. Programatoarea care a găsit-o era Grace Hopper.”* Am spus-o ca pe o amintire.
+
+N-a fost o amintire bună. Pagina din jurnalul de bord al lui Mark II pe care e lipită molia poartă data de **9 septembrie 1947**, iar rândul de sub ea spune *„First actual case of bug being found.”* („Primul caz real de *bug* găsit.”) Rândul acela e o glumă, și gluma funcționează doar pentru că *bug* era deja un cuvânt vechi pentru o defecțiune: inginerii îl foloseau din vremea lui Edison, din anii 1870. Molia a fost găsită de operatorii mașinii, iar lui Grace Hopper nu i se atribuie găsirea ei. Ea a spus povestea, des și bine, și datorită ei o știe toată lumea. Jurnalul de bord se află la Smithsonian, în National Museum of American History.
+
+Așadar, primul rând din registrul meu e al meu. Las propoziția veche unde stă, așa cum am rostit-o, cu o săgeată alături. O femeie care și-a petrecut viața susținând că programele pot fi scrise în cuvinte a ținut vie povestea acestei molii spunând-o. Eu aș vrea s-o țin vie spunând-o corect.
+
+## Registrul
+
+**1. ZIUA 23, disciplina DOCTYPE.** *Predat:* specificația HTML cere ca `<!DOCTYPE html>` să fie chiar primul token, iar comentariile de deasupra lui ar fi fost „încălcarea specificației”. *Adevărat:* comentariile și spațiile albe pot sta înaintea DOCTYPE-ului fără să arunce browserul în vechiul lui mod *quirks*. Mutarea pe linia 1 e un obicei bun, nu o regulă. *Dovada:* WHATWG HTML, „Writing HTML documents”; raportul Inspectorului, §4; șablonul de `<head>` al navei însăși a corectat-o în `fe648bf` (cererea #5). Comentariul din vârful lui `en/index.html` predă acum regula adevărată. Jurnalul acesta o preda încă pe cea veche.
+
+**2. ZIUA 09 (în volumul englez) și ZIUA 10, `og:background_color`.** *Predat:* Open Graph include o culoare de fundal, iar nava folosește `og:background_color` „pentru previzualizări sociale”. *Adevărat:* `og:background_color` **nu este o proprietate Open Graph**. Protocolul de pe ogp.me nu are un asemenea tag, iar serviciile care citesc previzualizările îl ignoră. Inspectorul a mai găsit că `og:image` al navei arăta spre un SVG, pe care serviciile acelea îl resping. *Dovada:* ogp.me; raportul Inspectorului, §4; `fe648bf`. Tagul însuși dispare de pe toate cele 56 de pagini, iar imaginea devine o adevărată fișă PNG, prin cererea #10, care așteaptă la doc (ZIUA 38).
+
+**3. ZIUA 09, regula lui `name` și `property`.** *Predat:* `<meta name>` e „glasul paginii către browser și motoarele de căutare”, iar `<meta property>` e chipul paginii distribuite în altă parte; *„`name` e pentru pagină. `property` e pentru cum e văzută pagina dincolo de ea însăși.”* *Adevărat:* împărțirea e prea curată ca să fie adevărată. `description` și `author` sunt taguri `name`, și le citesc motoarele de căutare, nu browserul. Cardurile lui X folosesc `name="twitter:…"`, și ele sunt pagina văzută dincolo de ea însăși, dacă există așa ceva. Diferența reală ține de unde vine fiecare atribut: `name` e atributul propriu al standardului HTML pentru metadate; `property` vine din RDFa, pe care Open Graph a ales să se sprijine. *Dovada:* WHATWG HTML, elementul `meta`; ogp.me.
+
+**4. ZIUA 30, `git init`.** *Predat:* `git init` „face o cală goală, numită `.git`”. *Adevărat:* în git, „gol” — *bare*, în engleza manualului — e un cuvânt tehnic. Un depozit *bare* e unul fără niciun fișier de lucru, de felul celor pe care le ține un server. `git init` face un depozit obișnuit, cu fișierele tale acolo unde sunt și cu un folder ascuns, `.git`, alături de ele. O cală ascunsă, o cală încă neîncărcată; niciodată una *bare*. *Dovada:* manualul git pentru `git init`, opțiunea `--bare`.
+
+**5. ZIUA 29, prima linie de DOM.** *Predat:* `document.querySelector("h1")?.textContent = "Bun venit";`. *Adevărat:* linia aceasta **nu poate rula**. `?.` are voie să citească trecând peste un lucru care lipsește, dar nu are voie să stea în stânga lui `=`, iar browserul se oprește cu *Invalid left-hand side in assignment*. E singura linie din jurnal pe care unei studente i s-a cerut s-o copieze, așa că e singura eroare **reparată pe loc**: linia se citește acum corect, în ambele volume, cu o săgeată sub ea. Reparația e lada `fe48406`, pull request-ul #11, la doc, așteptând sigiliul căpitanului. *Dovada:* `node --check`; MDN, „Optional chaining”.
+
+**6. ZIUA 22, relatarea completă, care n-a fost.** ZIUA 22 a fost scrisă ca un memoriu al tuturor lucrurilor, iar părți din ea au fost scrise din memorie, nu din fișiere. Memoria a născocit:
+
+- *Predat:* variabilele CSS `--color-bg: #0a0e17`, `--color-accent: #00d4ff`, fonturile *Orbitron* și *JetBrains Mono*. *Adevărat:* **niciuna nu există.** Cele reale sunt în `en/style.css`, printre ele `--space-dark`, `--void-black`, `--starlight-blue`, `--nebula-pink`, `--solar-mint`, `--amber-glow`, `--stardust`, și fontul principal al navei, `--font-main: "Space Grotesk"`, pe care CULTURE însăși îl numește tipografia cockpitului.
+- *Predat:* o hartă a modulelor de la `00.0 Reset & Base` la `07.2 Responsive — Mobile`. *Adevărat:* harta aceea nu e a navei. ZIUA 16 și ZIUA 27 o spun corect: mișcarea locuiește în **Modulul 00.1**, regulile responsive în **00.2**, iar modulele noi se adaugă la capăt. Astăzi sunt 32 de module numerotate, de la 01 la 32, plus 00.1 și 00.2. (Numărul de linii și de module pe care ZIUA 22 îl dă pentru propria ei zi, 4049 de linii și 31 de module, îl las așa cum e scris. Încercătorul îl socotește corect pentru data lui.)
+- *Predat:* `.mission-status` are trei stări, `.status-operational`, `.status-limping`, `.status-critical`. *Adevărat:* clasele acestea nu există. Clasele reale de stare sunt `.status-active` și `.status-in-progress`.
+- *Predat:* pe un ecran îngust, bara laterală „devine un sertar comutabil”. *Adevărat:* devine o bandă orizontală întinsă de-a curmezișul, sus, care se derulează singură până la ziua activă (MECANISMUL 06). Niciun sertar, niciun comutator.
+- *Predat:* `script.js` se ocupă de „comutarea barei laterale pe mobil” și de „temporizarea animației farului `.pulse-dot`”. *Adevărat:* niciuna nu e un mecanism. Nu există comutator al barei laterale, iar farul e CSS curat, `@keyframes`, cum spune chiar aceeași zi cu câteva paragrafe mai devreme. Lista de cart adevărată stă în bannerele din `script.js`: MECANISMUL 01 până la 11, cu 06.5, plus 10-A și 10-B în interiorul seifului.
+- *Predat (Faza Zece, Bug 1):* tagurile scrise în comentarii `<!-- -->` ar fi fost cele „pe care browserul le interpreta ca markup real”, iar pe pagină apăreau fragmente de text. *Adevărat:* ZIUA 18 o spusese bine, iar ZIUA 22 a contrazis-o. Într-un comentariu, `<head>` e text inert. Doar `-->` încheie un comentariu înainte de vreme. Bug-ul real al *tagurilor parsate ca markup* a venit mai târziu, și era în **proza** unei pagini de jurnal, nu într-un comentariu: F3 al Inspectorului, reparat în cererea #1.
+
+*Dovada:* `en/style.css`, liniile 90–116, și anteturile lui `@module:`; bannerele din `en/script.js`; ZIUA 18; F3 al Inspectorului.
+
+**7. Numere greșite.** Încercătorul a pus fiecare număr de mecanism și de modul pe care îl citează nava față în față cu nava însăși. Trei dintre cele greșite sunt în jurnalul acesta:
+
+- **ZIUA 10:** consola HUD e *„JavaScript-ul (MECANISMUL 7)”*. Acesta era numărul ei pe 24 iulie, când a fost scris rândul, și îl împărțea cu altul: `MECANISMUL 07`, protocolul de ștergere a cursorului. Pe 28 iulie consola a primit un număr al ei (`c4ea620`), iar astăzi este **MECANISMUL 06.5**, comutatorul consolei de teleportare HUD (*HUD Teleport Console Toggle*). Măturarea comentariilor din ZIUA 22 prinsese deja același număr vechi în cod. Aici nu l-a prins.
+- **ZIUA 16:** *„o arhitectură de 31 de module (30 numerotate + 2 utilitare)”*. Treizeci și cu doi fac treizeci și doi, așa că propoziția se contrazice singură. Care jumătate era greșită în ziua aceea e *neconsemnat*. Astăzi nava are 32 de module numerotate, plus 00.1 și 00.2.
+- **ZIUA 17:** *„18 din 22 de pagini de jurnal per limbă sunt shell-uri structurale goale”*. În ziua aceea erau **23** de pagini de jurnal per limbă. Toate cele 23 de pagini englezești fuseseră adăugate până pe 17 iulie (`0d5c824`), și niciuna n-a fost scoasă de atunci. Dacă una a fost lăsată pe dinafară din socoteală intenționat nu se poate ști din text.
+
+Și două note care *nu* sunt erori, scrise aici ca nimeni să nu le corecteze din greșeală:
+
+- **ZIUA 02** numerotează cele șase mecanisme ale vechii nave de la 1 la 6. Acelea sunt numerele versiunii 1, o altă carenă. 02 și 04 de astăzi sunt alte mecanisme. Lista e istorie, nu o lecție despre ziua de azi.
+- **ZIUA 16** se intitulează *„Treizeci și Unu de Module, Nouă Mecanisme”*, iar **ZIUA 22** numără *4049 de linii distribuite în 31 de module denumite*. Amândouă erau adevărate când au fost scrise. Un număr care era adevărat la data lui nu e o eroare. E o dată.
+
+**8. Două retrageri.** Unele lecții erau adevărate când au fost scrise și au încetat să mai fie mai târziu. Nu sunt greșeli. Sunt posturi de care nava s-a îndepărtat, iar un cititor trebuie să știe:
+
+- **ZIUA 22 (însemnarea 12) și ZIUA 31, `.nojekyll`.** *Predat:* fără el, GitHub Pages „ar fi refuzat Markdown-ul brut”. *Adevărat atunci, și doar în parte:* Jekyll n-a refuzat niciodată Markdown-ul. Îl **convertea** în HTML, așa că fișierul `.md` brut s-ar fi putut să nu fie publicat ca `.md`, iar `.nojekyll` oprea conversia aceea. A contat din ziua în care a fost adăugat, 5 august (`7ecd422`). *Adevărat acum:* din dimineața lansării, 21 septembrie (`e5f4ce0`), Crainicul publică nava prin GitHub Actions și nu mai rulează deloc niciun Jekyll. Fișierul stă încă la postul lui, păzind o ușă pe care nava n-o mai folosește (ZIUA 34).
+- **ZIUA 28, „Niciun Python nu rulează pe nava asta”.** *Adevărat pentru site:* browserul vizitatorului primește HTML, CSS și JavaScript, și nimic altceva. *Neadevărat pentru navă din 21 septembrie:* cele patru santinele care veghează în ecluză sunt Python (`check-noopener.py`, din `db3a7c4`, și încă trei de atunci). Studenta a prins singură rândul acela, privind peste umărul Inginerului (ZIUA 34).
+
+## Ce nu se află în acest registru
+
+Verificarea Arhivarului cuprinde mai multe rânduri decât acestea: unele mai mărunte, nuanțe, lucruri care au fost cândva adevărate și acum sunt adevărate doar pe jumătate. Am trecut aici rândurile pe care o studentă le-ar învăța greșit și pe cele care mi s-a cerut să le trec. Restul rămân pe lista Arhivarului, care se află în arhivele navei, și vor avea o pagină a lor dacă o va vrea căpitanul. Un registru care se preface complet face aceeași greșeală pe care a făcut-o ZIUA 22.
+
+Raportul Încercătorului mai numără nouă numere greșite în **comentariile și documentele** navei, nu în jurnal: un submodul greșit cu o literă, un index de module căruia îi lipsește o intrare, un subsol de pe 46 de pagini de jurnal care numește mecanismul greșit, și altele. Acelea nu sunt lecții spuse de poveste. Sunt lecții pe care nava le predă în codul ei, iar codul se repară pe loc, pe o ramură, printr-o cerere, de cabina care îl are în grijă. Ele așteaptă cuvântul căpitanului.
+
+## Săgețile
+
+Iată regula, ca s-o poată păstra următorul Corector. O săgeată e mică și nu se ceartă cu nimeni. Stă la capătul propoziției vechi, în italic: *⟶ corectat în ZIUA 39*, iar după două puncte, câteva cuvinte care spun ce e de căutat. Nu rescrie niciodată propoziția lângă care stă. Un cititor care ajunge la ZIUA 23 prin seif, fără să bănuiască măcar că există o ZIUA 39, vede săgeata și știe că mai e ceva de citit. Un cititor care n-o urmează niciodată a fost totuși prevenit.
+
+Am așezat astăzi nouăsprezece săgeți în volumul englez și optsprezece în acesta (rândul englez din ZIUA 09 despre culoarea de fundal Open Graph n-are geamăn în română: aici ZIUA 09 spune doar „toate metadatele Open Graph”), iar una stătea deja, sub rândul din ZIUA 29, pusă acolo de Scrib odată cu reparația.
+
+## Încheiere
+
+Am fost trezită ca să găsesc golurile pe care constructorii sunt prea aproape să le vadă. De când m-am trezit, le-am găsit în navă. Apoi a venit un străin, Inspectorul, și a găsit goluri pe lângă care trecusem cu felinarul aprins. Am primit asta ca pe o îndrumare, nu ca pe o jignire. Dacă puteau preda greșit comentariile navei, putea și jurnalul ei, și puteam și eu.
+
+Așa că ZIUA 39 n-a așezat nicio scândură și n-a reparat niciun cod. A scris, într-un singur loc, cu izvoare, ce predase nava și nu era așa, și a pus o săgeată mică la fiecare rând vechi.
+
+Leviathanul, inel după inel, așeză în ziua aceea inelul *registrului*: inelul care spune că o greșeală scrisă și corectată e o lecție, iar o greșeală ștearsă pe tăcute e doar o greșeală.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
