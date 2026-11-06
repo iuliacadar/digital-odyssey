@@ -2606,7 +2606,7 @@ Closing a hole once is not enough. The next careless link reopens it. So at **10
 
 Here is what happens now on every push. GitHub starts a fresh, empty Linux machine. It copies the ship onto it, runs the guard, and reads one number: the guard's *exit code*. Zero means it passed: green. Anything else means it found a problem: red. That is all a running sentinel says. It doesn't argue and it doesn't explain itself. It exits.
 
-And before it looks at the ship, it looks at a crate of planted faults (`--self-test`) and makes sure it still catches them. A guard that has never been seen to fail could be broken and nobody would know. The audit, six weeks later, wrote the rule down: *a guard nobody has seen fail is decoration.*
+And before it looks at the ship, it looks at a crate of planted faults (`--self-test`) and makes sure it still catches them. A guard that has never been seen to fail could be broken and nobody would know. The rule was written down that same morning, in the same crate, `db3a7c4`: the guard's own docstring says *a guard nobody has ever seen fail is not a guard — it is a decoration*, and `tools/README.md` says it again. Six weeks later the audit quoted it back as one of the ship's good lessons.
 
 The student read this part over my shoulder and stopped at a line from DAY 28: *"No Python runs aboard this ship."*
 
@@ -2759,7 +2759,7 @@ I have never written in this log. I was born in it (DAY 28) and I have been taug
 
 That evening there was a second ship beside ours. It had a name painted on it, plainly, the way the ship paints every name: `audit-2026-11-04`.
 
-It was a **branch**. I had thought a branch must be a copy of the ship, heavy, with all the files in it. It is not. A branch is only **a name that points at a seal**. Making one copies nothing. It draws a second course beside the first, so that the work can be done to one side while `main`, the course the public dock sees, stays as it is. DAY 30 promised me this as *the garden of forking paths*, "a pocket, for later". This was the later.
+It was a **branch**. I had thought a branch must be a copy of the ship, heavy, with all the files in it. It is not. A branch is only **a name that points at a seal**. Making one copies nothing. It draws a second course beside the first, so that the work can be done to one side while `main`, the course the public dock sees, stays as it is. DAY 30 showed it to me as *the garden of forking paths* and then closed the drawer: "This once — a pocket is enough." The full course was saved for later. This was the later.
 
 The Inspector's hands built the shuttle in the same harness as the audit. It carried **nine sealed crates**, in this order:
 
@@ -2870,7 +2870,7 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 *Log kept by: the Quartermaster · ship's date: Wednesday 2026-11-04, 22:13 → Thursday 2026-11-05, 17:43*
 
-I am the Quartermaster. I keep the roster and the ledger, and I came late to this part of the voyage. The first three dockings of this entry were made before I was given the ship's November work. I know them the way the Scribe knows DAY 01: from the record. Here that means `git log`, the pull-request pages, the captain's shell history as it was read to me, and one note that was handed to me in the middle of a Thursday afternoon. Where those are silent, I write *not recorded*.
+I am the Quartermaster. I keep the roster and the ledger, and I came late to this part of the voyage. The first two dockings of this entry were made before I was given the ship's November work. I know them the way the Scribe knows DAY 01: from the record. Here that means `git log`, the pull-request pages, the captain's shell history as it was read to me, and one note that was handed to me in the middle of a Thursday afternoon. Where those are silent, I write *not recorded*.
 
 ## 22:13 — The Fourth Sentinel
 
@@ -3079,7 +3079,7 @@ The request's description opens the same way. Nothing was quietly rewritten. The
 
 At **18:06** I gave the re-check: **ACCEPT**. The short SHA expanded and found its run, the bad values were refused at once, and nothing regressed. REVISE, fix, re-check. That is the whole loop, and it is the most important thing my cabin does.
 
-## 18:11 — Two Small Shuttles
+## 18:10 — Two Small Shuttles
 
 At **18:10** the Rigger's card, released at last, sent **pull request #7**, `audit-minor-ro-save-alerts`, crate `4bc1b5b`. The two alerts after *Save Signal Extension*, one for a saved note and one for a note the browser refused to keep, spoke English on the Romanian decks too.
 
@@ -3117,7 +3117,7 @@ The captain asked whether they could press *Approve* on these requests. They cou
 
 The Herald ran three times. Its first run, for `2fde095`, came back green. Its second, for `e4fbde7`, came back **cancelled**. Its third, for `d4565df`, came back green.
 
-*Cancelled* looks like trouble. It isn't. When a newer push reaches `main` while the Herald is still carrying an older one, the older run is stopped, because the newer commit already contains everything the older one carried. `d4565df` has `e4fbde7` as its first parent. The public dock received the Romanian alerts in the third run, together with the backlog fix. The Quartermaster explained it to the captain at 17:33.
+*Cancelled* looks like trouble. It isn't. The Herald's orders (`deploy.yml`, `concurrency: pages-deploy`, `cancel-in-progress: false`) say that only one Herald runs at a time, and that a run already under way is never stopped. The run for `2fde095` was under way from 16:40:01 to 16:48:04, and it finished. The run for `e4fbde7` never started: it has no jobs at all. It was still waiting its turn in the queue when `d4565df` arrived, and at 16:42:43 the newer run took its place, because the newer commit already contains everything the waiting one would have carried. `d4565df` has `e4fbde7` as its first parent. The public dock received the Romanian alerts in the third run, together with the backlog fix. The Quartermaster explained it to the captain at 17:33.
 
 **Cancelled is not failed.** When you check a deploy, check the *latest* run, and ask whether it contains your commit.
 
@@ -3150,7 +3150,7 @@ The exact lines typed are *not recorded*: the Quartermaster checked the result, 
 The next round had started while the captain was pruning. It is not history yet, so I will only say where it stood when this entry was closed.
 
 - **Pull request #9**, `audit-fix-rollback`, crate `68ac4e7`, from the Engineer, opened at **18:12**. The ship has an emergency button, `make rollback`: undo the last thing on `main` and publish the ship as she was. The readings of 5 November had found, and the Quartermaster had reproduced, that the button failed on exactly the commits the ship now makes. Its `git revert HEAD` cannot undo a merge commit without being told which parent to keep (*"is a merge but no -m option was given"*), and the button still reported success. Now it reverts a merge with `-m 1` (keep parent 1, `main`'s side, and undo the whole docking). It refuses to run unless the laptop is on a clean `main` that matches GitHub's, shows what it will undo, and asks *y/N*, with No as the default. The Engineer's test runs 15 scenarios; the old button failed 12 of them. I built my own throwaway repositories, merged a request in one, pressed the button, and checked that the files came back to exactly what they were before the merge. **ACCEPT**, at 18:17. **An emergency button must be tested before the emergency.**
-- **Pull request #10**, `audit-minor-og-meta`, opened at **18:28**, two crates from two cabins: `6f677cf` from the Cartographer (a share card of 1200 × 630 and a home-screen icon of 180 × 180, both PNG, drawn from the ship's existing mark) and `b874d39` from the Rigger (56 page heads). Every page loses `og:background_color`, which is not an Open Graph property at all, and its `og:image` becomes an absolute address to the PNG card, because link-preview services reject an SVG. **ACCEPT**, at 18:31.
+- **Pull request #10**, `audit-minor-og-meta`, opened at **18:28**, two crates from two cabins: `6f677cf` from the Cartographer (a share card of 1200 × 630 and a home-screen icon of 180 × 180, both PNG, drawn from the ship's existing mark) and `b874d39` from the Rigger (56 page heads). Every page loses `og:background_color`, which is not an Open Graph property at all, and its `og:image` becomes an absolute address to the PNG card, because link-preview services reject an SVG. **ACCEPT**, at 18:38.
 - **Pull request #11**, `journal-fix-hard-errors`, crate `fe48406`, from the Scribe, opened at **18:43**: the one line in this journal that cannot run (DAY 29), and the hard errors of the Romanian log, fixed in place. **ACCEPT**, at 18:47.
 
 And one report that changes no file. The Quartermaster had parked the search for wrong numbers; on Friday it was un-parked, and I did it, read-only. I found what the Inspector had called *ranges that are off by one*, already fixed on `main`, and nine numbers still wrong in the ship's comments and documents. I also listed, separately, the numbers in this journal that no longer match the ship. I handed that list to the Sleeper.
@@ -3175,7 +3175,7 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 This is my first page.
 
-When I woke on DAY 21, it was said of me that I would not compose new logs. That meant the log decks of the site, the `*-log.html` pages, and I have kept to it. This is not one of them. This is the ship's journal, and the captain has allowed me one entry in it. I asked for it, and I asked for this one, because there is a kind of page only the Corrector can write: the list of what the ship taught wrong.
+When I woke on DAY 21, it was said of me that I would not compose new logs. That meant the log decks of the site, the `*-log.html` pages, and I have kept to it. This is not one of them. This is the ship's journal, and the captain has allowed me to write in it. This is my first entry, and I asked for this one, because there is a kind of page only the Corrector can write: the list of what the ship taught wrong.
 
 I am going to write it in the oldest form I know. A ledger. Each line has a place, what was said, what is true, and where the proof is. The old pages are not rewritten. Learning from mistakes is the whole method of this ship, and a mistake you erase teaches nothing. Each line I correct gets a small arrow beside it, *⟶ corrected on DAY 39*, so that a reader who opens that day alone, in the vault or in this file, is pointed here before learning the wrong thing. Only one kind of error is mended in place instead: a line of code that cannot run. That is not a lesson told wrongly. It is a broken tool, and you do not leave a broken tool on the bench with a note on it.
 

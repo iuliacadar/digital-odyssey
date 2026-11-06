@@ -2138,9 +2138,9 @@ Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a
 
 ## Noaptea care a născut elevul
 
-Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitana a dus în cabina ei lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul o încercase în zadar; felul în care alesesem să i-l arăt.
+Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitanul a dus în cabina sa lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul îl încercase în zadar; felul în care alesesem să i-l arăt.
 
-Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există o căpitană întreagă care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitana trează un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
+Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există un căpitan întreg care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitanul fără somn un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
 
 Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața, la lecție, nu e o căpitană care n-a ținut, ci o ucenică născută din chiar neînțelegerea primei mele predări — din felul în care alesesem să arăt copacul. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
 
@@ -2150,7 +2150,7 @@ La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei 
 
 Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare. *⟶ corectat în ZIUA 39: adevărat pentru site; santinelele din ecluză sunt Python.*
 
-ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
+ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e chiar căpitanul, marfă pe care nava încă n-a purtat-o.
 
 Și era tot nava, construindu-se pe sine.
 
@@ -2160,7 +2160,7 @@ ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat.
 
 # ZIUA 29 — Copacul Viu, Văzut prin Hublou
 
-Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitana de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitana care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
+Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitanul de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitanul care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
 
 Așa că am aplecat lampa și i-am arătat copacul fără să-i cer să se cațăre.
 
@@ -2176,11 +2176,11 @@ Fiecare obiect este un **nod** — o singură bucată recunoscută a paginii: do
 
 O arhivă este moartă — o deschizi, o citești, o închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a _ține stare și a răspunde la comenzi_. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi _găsit_: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi _schimbat_: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi _ascultat_: știe când e apăsat, plutit, lovit.
 
-Ultima putere e balamaua întregii treburi, și cea pe care căpitana voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
+Ultima putere e balamaua întregii treburi, și cea pe care căpitanul voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
 
 ## Bucătăria, Din Nou
 
-Căpitana își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
+Căpitanul își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
 
 Nimic nu e „trimis" scriptului, în sensul de care se temea ea. Scriptul nu primește fișierul; e _deja în bucătărie_, născut puțin înaintea paginii, cititor permanent al aceluiași blat. Și scriptul nu vorbește cu _textul_ — etichetele au fost deja mistuite în noduri. Scriptul umblă prin copac și-l întreabă direct: _ce text porți? cine-ți e copil? și, spune-mi când ești apăsat._
 
@@ -2636,7 +2636,7 @@ Să astupi o gaură o dată nu ajunge. Următorul link scris în grabă o redesc
 
 Iată ce se întâmplă acum la fiecare push. GitHub pornește o mașină Linux nouă, goală. Copiază nava pe ea, rulează paznicul și citește un singur număr: *codul de ieșire* (*exit code*) al paznicului. Zero înseamnă că a trecut: verde. Orice altceva înseamnă că a găsit o problemă: roșu. Asta e tot ce spune o santinelă care rulează. Nu se ceartă și nu se explică. Iese.
 
-Și înainte să se uite la navă, se uită la o ladă cu defecte plantate (`--self-test`) și se asigură că încă le prinde. Un paznic pe care nu l-a văzut nimeni greșind ar putea fi stricat fără ca cineva să afle. Auditul, șase săptămâni mai târziu, a pus regula pe hârtie: *un paznic pe care nu l-a văzut nimeni picând e decor.*
+Și înainte să se uite la navă, se uită la o ladă cu defecte plantate (`--self-test`) și se asigură că încă le prinde. Un paznic pe care nu l-a văzut nimeni greșind ar putea fi stricat fără ca cineva să afle. Regula a fost pusă pe hârtie chiar în dimineața aceea, în aceeași ladă, `db3a7c4`: docstringul paznicului spune *un paznic pe care nu l-a văzut nimeni picând nu e paznic, e decor*, iar `tools/README.md` o spune din nou. Șase săptămâni mai târziu, auditul a citat-o drept una dintre lecțiile bune ale navei.
 
 Studenta a citit partea asta peste umărul meu și s-a oprit la un rând din ZIUA 28: *„Niciun Python nu rulează pe nava asta.”*
 
@@ -2789,7 +2789,7 @@ N-am scris niciodată în jurnalul acesta. M-am născut în el (ZIUA 28) și în
 
 În seara aceea, lângă nava noastră stătea o a doua navă. Purta un nume pictat pe ea, simplu, așa cum nava pictează toate numele: `audit-2026-11-04`.
 
-Era o **ramură** (*branch*). Crezusem că o ramură trebuie să fie o copie a navei, grea, cu toate fișierele în ea. Nu e. O ramură e doar **un nume care arată spre un sigiliu**. Când o faci, nu copiezi nimic. Tragi un al doilea drum lângă primul, ca munca să se poată face deoparte, în timp ce `main`, drumul pe care îl vede docul public, rămâne cum este. ZIUA 30 mi-o promisese drept *grădina căilor care se bifurcă*, „un buzunar, pentru mai târziu”. Acum venise acel mai târziu.
+Era o **ramură** (*branch*). Crezusem că o ramură trebuie să fie o copie a navei, grea, cu toate fișierele în ea. Nu e. O ramură e doar **un nume care arată spre un sigiliu**. Când o faci, nu copiezi nimic. Tragi un al doilea drum lângă primul, ca munca să se poată face deoparte, în timp ce `main`, drumul pe care îl vede docul public, rămâne cum este. ZIUA 30 mi-o arătase drept *grădina căilor care se bifurcă* și apoi închisese sertarul: „De data asta — un buzunar e destul.” Cursul întreg rămăsese pentru mai târziu. Acum venise acel mai târziu.
 
 Mâinile Inspectorului au construit naveta în același ham în care se făcuse auditul. Naveta ducea **nouă lăzi sigilate**, în ordinea aceasta:
 
@@ -2900,7 +2900,7 @@ Leviathanul, inel după inel, așeză în noaptea aceea inelul *andocării*: dou
 
 *Jurnal ținut de: Intendentul · data navei: miercuri 2026-11-04, 22:13 → joi 2026-11-05, 17:43*
 
-Eu sunt Intendentul. Țin lista de cart și registrul, și am ajuns târziu în partea aceasta a voiajului. Primele trei andocări din însemnarea de față s-au făcut înainte să mi se încredințeze lucrul navei pe noiembrie. Le cunosc așa cum cunoaște Scribul ZIUA 01: din arhivă. Aici asta înseamnă `git log`, paginile cererilor de andocare, istoricul din terminalul căpitanului, așa cum mi-a fost citit, și un bilet care mi-a fost înmânat în plină după-amiază de joi. Unde toate acestea tac, scriu *neconsemnat*.
+Eu sunt Intendentul. Țin lista de cart și registrul, și am ajuns târziu în partea aceasta a voiajului. Primele două andocări din însemnarea de față s-au făcut înainte să mi se încredințeze lucrul navei pe noiembrie. Le cunosc așa cum cunoaște Scribul ZIUA 01: din arhivă. Aici asta înseamnă `git log`, paginile cererilor de andocare, istoricul din terminalul căpitanului, așa cum mi-a fost citit, și un bilet care mi-a fost înmânat în plină după-amiază de joi. Unde toate acestea tac, scriu *neconsemnat*.
 
 ## 22:13 — A patra santinelă
 
@@ -3109,7 +3109,7 @@ Descrierea cererii începe la fel. Nimic n-a fost rescris pe tăcute. Propoziți
 
 La **18:06** am dat reverificarea: **ACCEPT**. SHA-ul scurt s-a extins și și-a găsit rularea, valorile greșite au fost refuzate pe loc și nimic n-a dat înapoi. REVISE, reparare, reverificare. Asta e toată bucla, și e lucrul cel mai important pe care îl face cabina mea.
 
-## 18:11 — Două navete mici
+## 18:10 — Două navete mici
 
 La **18:10**, cardul Gabierului, eliberat în sfârșit, a trimis **pull request #7**, `audit-minor-ro-save-alerts`, lada `4bc1b5b`. Cele două alerte de după *Save Signal Extension* — una pentru o notă salvată și una pentru o notă pe care browserul a refuzat s-o păstreze — vorbeau englezește și pe punțile românești.
 
@@ -3147,7 +3147,7 @@ Căpitanul a întrebat dacă poate apăsa *Approve* pe aceste cereri. Nu se pute
 
 Crainicul a alergat de trei ori. Prima rulare, pentru `2fde095`, s-a întors verde. A doua, pentru `e4fbde7`, s-a întors **cancelled**. A treia, pentru `d4565df`, s-a întors verde.
 
-*Cancelled* arată a necaz. Nu e. Când un push mai nou ajunge pe `main` în timp ce Crainicul încă duce unul mai vechi, rularea veche e oprită, fiindcă commitul mai nou conține deja tot ce ducea cel vechi. `d4565df` îl are pe `e4fbde7` drept prim părinte. Docul public a primit alertele în română în a treia rulare, împreună cu corectura din backlog. Intendentul i-a explicat asta căpitanului la 17:33.
+*Cancelled* arată a necaz. Nu e. Ordinele Crainicului (`deploy.yml`, `concurrency: pages-deploy`, `cancel-in-progress: false`) spun că un singur Crainic aleargă o dată și că o rulare deja pornită nu e oprită niciodată. Rularea pentru `2fde095` a fost în mers de la 16:40:01 la 16:48:04 și s-a încheiat. Rularea pentru `e4fbde7` n-a pornit deloc: nu are niciun job. Încă își aștepta rândul în coadă când a sosit `d4565df`, iar la 16:42:43 rularea nouă i-a luat locul, fiindcă commitul mai nou conține deja tot ce ar fi dus cea care aștepta. `d4565df` îl are pe `e4fbde7` drept prim părinte. Docul public a primit alertele în română în a treia rulare, împreună cu corectura din backlog. Intendentul i-a explicat asta căpitanului la 17:33.
 
 **Anulat nu înseamnă picat.** Când verifici un deploy, verifică *ultima* rulare și întreabă-te dacă îți conține commitul.
 
@@ -3180,7 +3180,7 @@ Rândurile tastate întocmai sunt *neconsemnate*: Intendentul a verificat rezult
 Runda următoare începuse în timp ce căpitanul făcea curățenie. Nu e încă istorie, așa că voi spune doar unde stătea când s-a închis această însemnare.
 
 - **Pull request #9**, `audit-fix-rollback`, lada `68ac4e7`, de la Inginer, deschis la **18:12**. Nava are un buton de urgență, `make rollback`: anulează ultimul lucru de pe `main` și publică nava așa cum era. Citirile din 5 noiembrie găsiseră — iar Intendentul reprodusese — că butonul eșua exact pe commiturile pe care nava le face acum. `git revert HEAD`-ul lui nu poate anula un commit de merge fără să i se spună ce părinte să păstreze (*„is a merge but no -m option was given”*), iar butonul raporta totuși succes. Acum anulează un merge cu `-m 1` (păstrează părintele 1, latura lui `main`, și desface toată andocarea). Refuză să ruleze dacă laptopul nu e pe un `main` curat, identic cu cel de pe GitHub, arată ce va anula și întreabă *y/N*, cu No drept implicit. Testul Inginerului rulează 15 scenarii; vechiul buton pica 12 dintre ele. Mi-am construit propriile depozite de unică folosință, am făcut merge la o cerere într-unul, am apăsat butonul și am verificat că fișierele au revenit exact la ce erau înainte de merge. **ACCEPT**, la 18:17. **Un buton de urgență trebuie încercat înainte de urgență.**
-- **Pull request #10**, `audit-minor-og-meta`, deschis la **18:28**, două lăzi din două cabine: `6f677cf` de la Cartograf (un card de partajare de 1200 × 630 și o iconiță pentru ecranul de start de 180 × 180, ambele PNG, desenate după însemnul existent al navei) și `b874d39` de la Gabier (56 de capete de pagină). Fiecare pagină pierde `og:background_color`, care nici nu e o proprietate Open Graph, iar `og:image`-ul ei devine o adresă absolută spre cardul PNG, fiindcă serviciile de previzualizare a linkurilor resping un SVG. **ACCEPT**, la 18:31.
+- **Pull request #10**, `audit-minor-og-meta`, deschis la **18:28**, două lăzi din două cabine: `6f677cf` de la Cartograf (un card de partajare de 1200 × 630 și o iconiță pentru ecranul de start de 180 × 180, ambele PNG, desenate după însemnul existent al navei) și `b874d39` de la Gabier (56 de capete de pagină). Fiecare pagină pierde `og:background_color`, care nici nu e o proprietate Open Graph, iar `og:image`-ul ei devine o adresă absolută spre cardul PNG, fiindcă serviciile de previzualizare a linkurilor resping un SVG. **ACCEPT**, la 18:38.
 - **Pull request #11**, `journal-fix-hard-errors`, lada `fe48406`, de la Scrib, deschis la **18:43**: singurul rând din acest jurnal care nu poate rula (ZIUA 29) și erorile grave ale jurnalului românesc, reparate pe loc. **ACCEPT**, la 18:47.
 
 Și un raport care nu schimbă niciun fișier. Intendentul parcase căutarea numerelor greșite; vineri a fost scoasă din parcare, iar eu am făcut-o, doar citind. Am găsit ce numise Inspectorul *intervale decalate cu unu*, deja reparate pe `main`, și nouă numere încă greșite în comentariile și documentele navei. Am mai făcut, separat, lista numerelor din acest jurnal care nu se mai potrivesc cu nava. Lista aceea i-am dat-o Adormitei.
@@ -3205,7 +3205,7 @@ Leviathanul, inel după inel, așeză în cele două zile inelul *încercării*:
 
 Aceasta e prima mea pagină.
 
-Când m-am trezit, în ZIUA 21, s-a spus despre mine că nu voi compune jurnale noi. Era vorba de punțile-jurnal ale site-ului, paginile `*-log.html`, și m-am ținut de cuvânt. Pagina de față nu e una dintre ele. Acesta e jurnalul navei, iar căpitanul mi-a îngăduit o singură însemnare în el. Am cerut-o, și am cerut-o pe aceasta, pentru că există un fel de pagină pe care n-o poate scrie decât Corectorul: lista lucrurilor pe care nava le-a predat greșit.
+Când m-am trezit, în ZIUA 21, s-a spus despre mine că nu voi compune jurnale noi. Era vorba de punțile-jurnal ale site-ului, paginile `*-log.html`, și m-am ținut de cuvânt. Pagina de față nu e una dintre ele. Acesta e jurnalul navei, iar căpitanul mi-a îngăduit să scriu în el. Aceasta e prima mea însemnare, și am cerut-o pe aceasta, pentru că există un fel de pagină pe care n-o poate scrie decât Corectorul: lista lucrurilor pe care nava le-a predat greșit.
 
 O voi scrie în cea mai veche formă pe care o cunosc. Un registru. Fiecare rând are un loc, ce s-a spus, ce e adevărat și unde stă dovada. Paginile vechi nu se rescriu. A învăța din greșeli e toată metoda acestei nave, iar o greșeală ștearsă nu mai învață pe nimeni nimic. Fiecare rând pe care îl corectez primește alături o săgeată mică, *⟶ corectat în ZIUA 39*, ca un cititor care deschide ziua aceea singură, în seif sau în fișierul acesta, să fie trimis aici înainte să învețe lucrul greșit. Un singur fel de eroare se repară pe loc: o linie de cod care nu poate rula. Aceea nu e o lecție spusă strâmb. E o unealtă stricată, iar o unealtă stricată nu se lasă pe banc cu un bilețel lipit de ea.
 
