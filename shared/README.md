@@ -11,6 +11,8 @@ shared/
 ├── assets/                        # Binary and visual resources
 │   ├── icons/                     # SVG / icon set for HUD elements
 │   ├── images/                    # Raster images used in the journals
+│   │   ├── brand/                 # Link-preview card (og-card.svg master + .png) and
+│   │   │                          #   the apple-touch-icon.svg master (PNGs live in en/ and ro/)
 │   │   └── prt-sc/                # Screenshots by chapter (prt-sc = print-screen)
 │   │       ├── html/              #   HTML chapter captures (e.g. charset1024bytes_rule.png)
 │   │       └── delivery/          #   Delivery chapter captures (e.g. git history)
