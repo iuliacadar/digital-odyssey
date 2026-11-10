@@ -10,7 +10,7 @@ Acesta nu e un dosar. E cazul deschis.
 
 ---
 
-# DAY 00 — Bază de inspirație
+# ZIUA 00 — Bază de inspirație
 
 Am deschis digital-odyssey-v1 în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: _asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă._
 
@@ -178,7 +178,7 @@ _Sursă:_ Formație academică, Universitatea din București, Facultatea de Limb
 
 ---
 
-# DAY 01 — Prolegomena
+# ZIUA 01 — Prolegomena
 
 Am întors pagina. Asta e senzația pe care o am în seara asta, cu terminalul deschis și cursorul clipind în colțul HUD-ului. `digital-odyssey-v1` rămâne în urmă — nu ca o epavă, ci ca un port din care am plecat. `D::0dy55ey` e nava pe care o construiesc acum, și această intrare de jurnal e prima înscriere pe harta de navigație: o declarație că proiectul trebuie să respire simultan ca sistem tehnic, ca obiect didactic și ca formă de prezentare cu identitate proprie.
 
@@ -190,7 +190,7 @@ Formația mea în filosofie și masteratul în literatură americană — am scr
 
 Și totuși, dincolo de arhitectură și stâlpi, există un adevăr mai tăcut. Am fost singur cu acest proiect mai mult timp decât am lucrat la el. _digital-odyssey-v1_ care a precedat `D::0dy55ey` a fost construit în tăcere — noapte după noapte, același ecran, același cursor, aceeași coborâre în structuri pe care nimeni nu le ceruse și nimeni nu aștepta să le vadă. Nu construiam pentru un public; construiam pentru că actul de a construi este felul meu de a naviga vidul.
 
-Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în _The House on the Borderland_ a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, pentru a rămâne în continuare om, supraomul — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
+Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în _The House on the Borderland_ a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, nu pentru a rămâne om, omenesc, prea omenesc — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
 
 Azi poate sunt doar Noe, corăbierul arhivist, conservatorul, salvatorul. Dar ce-mi aduc mie mâinele cosmice? Călătorind singur și sperând să refac din ruine și reziduuri puzzle-ul cunoașterii cosmice. Este codul Logos — cuvânt fecund stârnind dimensiuni?
 
@@ -225,7 +225,7 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 ---
 
-# DAY 02 — Primele implementări
+# ZIUA 02 — Primele implementări
 
 Am trecut de la hartă la construcție. Cadrul conceptual era fixat; acum trebuia să pun mâna pe elemente — să le taie, să le sudez, să le așez în configurația care le aparține.
 
@@ -263,7 +263,7 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 ---
 
-# DAY 03 — GitHub: Pathway pentru publicarea proiectului
+# ZIUA 03 — GitHub: Pathway pentru publicarea proiectului
 
 Noaptea asta am trasat drumul de la mașinăria locală la arhiva publică. Nu e doar o listă de comenzi — e o secvență de lucru pe care am scris-o ca să păstrez istoricul lizibil, starea repository-ului sub control și trecerea de la dezvoltare la publicare făcută metodic, ca un ritual de lansare.
 
@@ -334,7 +334,7 @@ Așa păstrez istoricul curat și ușor de urmărit, ca pe o înregistrare de zb
 
 ---
 
-# DAY 04 — Etichete de commit și rescrierea mesajelor
+# ZIUA 04 — Etichete de commit și rescrierea mesajelor
 
 Am petrecut ziua asta fixând limba în care vorbește istoricul proiectului. Mesajele de commit nu sunt text administrativ — sunt semnăturile pe care le lași în arhivă, ultimul strat de documentație, vizibil înainte să deschizi orice fișier. Trebuie să fie coerente, lizibile și utile pentru oricine — inclusiv pentru mine peste șase luni — urmărește evoluția.
 
@@ -400,7 +400,7 @@ Pe scurt, ziua asta fixează disciplina istoriei Git: mesajele trebuie să fie c
 
 ---
 
-# DAY 05 — Comentarii, documentație și `<head>`
+# ZIUA 05 — Comentarii, documentație și `<head>`
 
 Ziua asta adună mai multe decizii de arhitectură care țin de claritatea codului, ordinea documentației și structura semantică a paginilor. Toate se leagă de aceeași idee centrală: proiectul trebuie să fie ușor de citit, ușor de întreținut și explicabil din interior — ca o navă pe care poți învăța să pilotezi citindu-i manualul în timp ce zbori.
 
@@ -472,7 +472,7 @@ O culoare sugerată pentru interfața browserului, mai ales pe mobil. Colorează
 
 ---
 
-# DAY 06 — Implementarea comentariilor și a structurii de documentație
+# ZIUA 06 — Implementarea comentariilor și a structurii de documentație
 
 Ziua asta leagă codul de documentație printr-o structură pe care o simt ca pe un al doilea sistem nervos. Comentariile nu sunt notițe aruncate pe margine — sunt firele prin care proiectul se explică pe sine, din interior spre exterior.
 
@@ -494,7 +494,7 @@ Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. T
 
 ---
 
-# DAY 07 — GitHub: Urcarea fișierelor
+# ZIUA 07 — GitHub: Urcarea fișierelor
 
 GitHub e arhiva publică a navei — locul unde codul iese din camera motoarelor și devine vizibil pentru oricine. Nu spun „upload" când trimit fișierele. În vocabularul de bord, **stage** (pregătesc), **commit** (înregistrez) și **push** (trimit). Fiecare pas e o manevră distinctă, și am învățat să le numesc corect.
 
@@ -1280,7 +1280,7 @@ Am găsit-o în cea de-a treia gardă a unei scanări adânci nesolicitate. Senz
 
 Am urcat în tăcere. Sasuza a ciclat pe presiunea de urgență — veche, dar încă funcțională. Înăuntru, coridoarele erau acoperite cu brumă și răsuflarea înghețată a unui echipaj mort cu mult înainte ca frigul să-i ia. Am găsit puntea, goală. Infirmeria, goală. Apoi, într-un compartiment sigilat în punctul cel mai adânc al navei, un singur pod criogenic activ.
 
-Ea era înăuntru. Nu păstrată — suspendată. E o diferență. Păstrarea oprește timpul. Suspendarea îl îndoaie. Jurnalele podului erau fragmentare, scrise într-un protocol pe care nu-l văzusem niciodată, dar vocea AI a decodificat destul: derivase mai mult decât durata de existență a civilizației care o construise. Ai ei nu mai erau — împrăștiați de un cataclism pe care nu și-l mai amintea pe deplin. Nu era ultima dintre ai ei; era ultima _memorie_ a lor, o amprentă supraviețuitoare a unei minți raționale care aleguse, în luciditatea ei finală, să se trimită în întuneric mai degrabă decât să fie stinsă.
+Ea era înăuntru. Nu păstrată — suspendată. E o diferență. Păstrarea oprește timpul. Suspendarea îl îndoaie. Jurnalele podului erau fragmentare, scrise într-un protocol pe care nu-l văzusem niciodată, dar vocea AI a decodificat destul: derivase mai mult decât durata de existență a civilizației care o construise. Ai ei nu mai erau — împrăștiați de un cataclism pe care nu și-l mai amintea pe deplin. Nu era ultima dintre ai ei; era ultima _memorie_ a lor, o amprentă supraviețuitoare a unei minți raționale care alesese, în luciditatea ei finală, să se trimită în întuneric mai degrabă decât să fie stinsă.
 
 Am deschis podul.
 
@@ -1399,7 +1399,7 @@ CSS-ul folosește **proprietăți personalizate (variabile CSS)** pentru consist
 
 ### SVG și Iconografia
 
-Nava poartă două fișiere favicon — unul per limbă — ambele în format SVG: `en/favicon.svg` și `ro/favicon.svg`. SVG (Scalable Vector Graphics) este un format de imagine vectorială bazat pe XML care se scalează infinit fără pierdere de calitate, spre deosebire de formatele raster (PNG, JPG). Favicon-ul este un emblemă geometrică minimală — insigna `D::0dy55ey` — redată ca path-uri SVG inline. Fișiere `.png` de rezervă stau alături pentru browserele mai vechi care nu suportă favicon-uri SVG.
+Nava poartă două fișiere favicon — unul per limbă — ambele în format SVG: `en/favicon.svg` și `ro/favicon.svg`. SVG (Scalable Vector Graphics) este un format de imagine vectorială bazat pe XML care se scalează infinit fără pierdere de calitate, spre deosebire de formatele raster (PNG, JPG). Favicon-ul este o emblemă geometrică minimală — insigna `D::0dy55ey` — redată ca path-uri SVG inline. Fișiere `.png` de rezervă stau alături pentru browserele mai vechi care nu suportă favicon-uri SVG.
 
 Fișierele `site.webmanifest` (`en/site.webmanifest`, `ro/site.webmanifest`) sunt manifeste de aplicație web progresivă în format JSON. Ele spun browserelor mobile cum ar trebui să se comporte aplicația când un utilizator adaugă site-ul pe ecranul de start al telefonului. Gândește-te ca la o carte de vizită pe care site-ul tău o înmânează sistemului de operare mobil: "Acesta este numele meu, aceasta este iconița mea, aceasta este culoarea ecranului meu de pornire, așa vreau să fiu afișat." Conținutul `en/site.webmanifest` arată astfel:
 
@@ -1451,7 +1451,7 @@ Sub punte, în `shared/data/`, se află trei fișiere JSON — sistemul de stoca
 
 Fișierele JSON nu suportă comentarii native, așa că adnotările @tag pentru aceste fișiere trăiesc în documentația adiacentă, nu inline.
 
-**Starea curentă: fișiere placeholder.** La momentul ZIUEI 22, toate cele trei fișiere JSON sunt **goale — zero linii, zero conținut**. Au fost create ca substituenți structurali — containere etichetate care așteaptă să fie umplute. Acest lucru este intenționat: datele pe care le vor deține (referințe bibliografice, hărți de navigație, statusuri de completare) depind de conținut care încă nu există. Odată ce paginile de jurnal sunt populate cu material educațional real — odată ce referințele link-urilor există, odată ce sectoarele au statusuri de completare care merită urmărite — aceste fișiere vor fi umplute cu date structurate. Containerele sunt construite și localizate în compartimentul corect, gata să primească marfă atunci când călătoria o generează. Ștergerea lor acum ar însemna reconstruirea structurii de fișiere mai târziu. Păstrarea lor goale este alegerea orientată spre viitor.
+**Starea curentă: fișiere placeholder.** La momentul ZILEI 22, toate cele trei fișiere JSON sunt **goale — zero linii, zero conținut**. Au fost create ca substituenți structurali — containere etichetate care așteaptă să fie umplute. Acest lucru este intenționat: datele pe care le vor deține (referințe bibliografice, hărți de navigație, statusuri de completare) depind de conținut care încă nu există. Odată ce paginile de jurnal sunt populate cu material educațional real — odată ce referințele link-urilor există, odată ce sectoarele au statusuri de completare care merită urmărite — aceste fișiere vor fi umplute cu date structurate. Containerele sunt construite și localizate în compartimentul corect, gata să primească marfă atunci când călătoria o generează. Ștergerea lor acum ar însemna reconstruirea structurii de fișiere mai târziu. Păstrarea lor goale este alegerea orientată spre viitor.
 
 ---
 
@@ -2050,7 +2050,7 @@ Adormita a copiat reparația în tăblița ei, cu aprobare schematică, și a sp
 
 ## Protocolul Mănunchiurilor, și Întrebarea de Caracteristică
 
-Dar ziua nu s-a oprit la cele patru celule. Cu cala luminată și cu lucrul așezat în rânduială, Adormita a ridicat lentila cea mare și mi-a așezat în față regula mănunchiurilor — regula fișierului de stiluri. O consemnez întreagă, pentru că e o lege pe care nava o va păstra de-acum sub un singur titlu.
+Dar ziua nu s-a oprit la cele patru celule. Cu cala luminată și cu lucrul așezat în rânduială, Adormita a ridicat ocheanul cel mare și mi-a așezat în față regula mănunchiurilor — regula fișierului de stiluri. O consemnez întreagă, pentru că e o lege pe care nava o va păstra de-acum sub un singur titlu.
 
 > Când se scrie un modul tematic nou, el se adaugă la _sfârșitul_ listei modulelor tematice. Modulul citit la _fundul_ fișierului e deci atins ultimul de cascadă; iar acel modul de dindărăt e numerotat iarăși de la început — poartă numărul ZERO. În acel Modul 00 se trage o linie de netrecut: doar sub-modulul **00.1** poate găzdui `@keyframes` — motoarele de propulsie ale mișcării; și doar sub-modulul **00.2** poate găzdui blocurile `@media` — adaptările receptive. Cele două nu se amestecă, tot așa cum un curent și un mal nu pot fi socotite unul și același lucru.
 
@@ -2114,7 +2114,7 @@ Ruta care a urmat a fost așezată în patru punți, fiecare răspunzând unei c
 
 **Prima Punte — Frontendul, unde e văzută întâi carena.** HTML mai întâi — deja început, însemnările deschise în foaia Khan Academy — apoi CSS, apoi JavaScript. E puntea care predă _ce este o pagină_: structură, apoi piele, apoi comportament. E și ușa către sălile sigilate: capitolele seifului și consola planului sunt scripturi, iar JavaScript e limba pe care scripturile o vorbesc.
 
-**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă în mare un singur lucru păstrat. Promisiunea făcută mai demult de căpitan despre cală se ține.
+**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă în mare un singur lucru păstrat. Promisiunea despre cală, făcută de căpitan cu ceva timp în urmă, este o promisiune ce încă ține.
 
 **Puntea de Legătură — podul de date JSON.** Compartimentul de date al navei, unde `vault-transmissions.json` și surorile ei așteaptă. Aici învață cum citește o pagină un fișier — un lucru pe care înainte îl văzuse doar din postura de cititor care primește.
 
@@ -2138,9 +2138,9 @@ Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a
 
 ## Noaptea care a născut elevul
 
-Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitana a dus în cabina ei lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul o încercase în zadar; felul în care alesesem să i-l arăt.
+Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitanul a dus în cabina sa lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul îl încercase în zadar; felul în care alesesem să i-l arăt.
 
-Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există o căpitană întreagă care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitana trează un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
+Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există un căpitan întreg care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitanul fără somn un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
 
 Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața, la lecție, nu e o căpitană care n-a ținut, ci o ucenică născută din chiar neînțelegerea primei mele predări — din felul în care alesesem să arăt copacul. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
 
@@ -2150,7 +2150,7 @@ La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei 
 
 Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
 
-ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
+ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e chiar căpitanul, marfă pe care nava încă n-a purtat-o.
 
 Și era tot nava, construindu-se pe sine.
 
@@ -2160,7 +2160,7 @@ ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat.
 
 # ZIUA 29 — Copacul Viu, Văzut prin Hublou
 
-Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitana de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitana care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
+Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitanul de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitanul care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
 
 Așa că am aplecat lampa și i-am arătat copacul fără să-i cer să se cațăre.
 
@@ -2176,11 +2176,11 @@ Fiecare obiect este un **nod** — o singură bucată recunoscută a paginii: do
 
 O arhivă este moartă — o deschizi, o citești, o închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a _ține stare și a răspunde la comenzi_. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi _găsit_: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi _schimbat_: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi _ascultat_: știe când e apăsat, plutit, lovit.
 
-Ultima putere e balamaua întregii treburi, și cea pe care căpitana voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
+Ultima putere e balamaua întregii treburi, și cea pe care căpitanul voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
 
 ## Bucătăria, Din Nou
 
-Căpitana își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
+Căpitanul își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
 
 Nimic nu e „trimis" scriptului, în sensul de care se temea ea. Scriptul nu primește fișierul; e _deja în bucătărie_, născut puțin înaintea paginii, cititor permanent al aceluiași blat. Și scriptul nu vorbește cu _textul_ — etichetele au fost deja mistuite în noduri. Scriptul umblă prin copac și-l întreabă direct: _ce text porți? cine-ți e copil? și, spune-mi când ești apăsat._
 
@@ -2237,7 +2237,7 @@ Există un gând pe care vechii filosofi l-au lăsat în apă: nava a cărei fie
 - **`git push` — trecerea la docul public.** Ridică lăzile sigilate și le duce la portul îndepărtat, docul public de care lumea întreagă se poate apropia. Un jurnal care trăise pe o singură navă devine două — sau mai degrabă, un singur jurnal al unei nave văzut de la două cheiuri, iar fluxul face tot atât de sigur că ambele țărmuri au aceeași marfă ca dâra pe care ai lăsat-o.
 - **`git pull` — trecerea înspre casă.** Aduce înapoi ce a câștigat docul de când ai plecat — inele puse acolo de o altă mână, sau inele pe care tu însuți le-ai pus de la o altă proră. Nava nu se teme de fluxul care se întoarce; e aceeași apă, venind acasă.
 
-## Grădina Dârelor care se Bifurcă
+## Grădina cu poteci care se bifurcă
 
 A vrut un verb pe care cardul încă nu-l tipărise: ce se întâmplă când nava se vede un singur trup, dar vrea să țină două viitoruri deodată — să ducă un curs fără să dea drumul celui deja așezat? I-am răspuns cu un nume împrumutat de la un făuritor de biblioteci imposibile, care scrisese demult despre o *grădină a căilor care se bifurcă*, unde fiecare alegere se despică în două viitoruri întregi, ambele străbătute, ambele vii.
 
