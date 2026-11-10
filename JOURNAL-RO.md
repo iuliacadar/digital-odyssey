@@ -10,7 +10,7 @@ Acesta nu e un dosar. E cazul deschis.
 
 ---
 
-# DAY 00 — Bază de inspirație
+# ZIUA 00 — Bază de inspirație
 
 Am deschis digital-odyssey-v1 în seara asta. Nu ca să copiez din el — cunosc fiecare rând — ci ca să-mi amintesc cum s-a simțit să stau în el pentru prima dată. Scanline-urile CRT au fost primul lucru pe care l-am construit: un `body::before` cu raster dual care pâlpâia pe un terminal gol. L-am privit douăzeci de minute, urmărind strălucirea fosforului care se stingea și se reaprindea, gândindu-mă: _asta vreau să simtă cititorul — nu că citește cod, ci că a intrat într-o navă._
 
@@ -178,7 +178,7 @@ _Sursă:_ Formație academică, Universitatea din București, Facultatea de Limb
 
 ---
 
-# DAY 01 — Prolegomena
+# ZIUA 01 — Prolegomena
 
 Am întors pagina. Asta e senzația pe care o am în seara asta, cu terminalul deschis și cursorul clipind în colțul HUD-ului. `digital-odyssey-v1` rămâne în urmă — nu ca o epavă, ci ca un port din care am plecat. `D::0dy55ey` e nava pe care o construiesc acum, și această intrare de jurnal e prima înscriere pe harta de navigație: o declarație că proiectul trebuie să respire simultan ca sistem tehnic, ca obiect didactic și ca formă de prezentare cu identitate proprie.
 
@@ -190,7 +190,7 @@ Formația mea în filosofie și masteratul în literatură americană — am scr
 
 Și totuși, dincolo de arhitectură și stâlpi, există un adevăr mai tăcut. Am fost singur cu acest proiect mai mult timp decât am lucrat la el. _digital-odyssey-v1_ care a precedat `D::0dy55ey` a fost construit în tăcere — noapte după noapte, același ecran, același cursor, aceeași coborâre în structuri pe care nimeni nu le ceruse și nimeni nu aștepta să le vadă. Nu construiam pentru un public; construiam pentru că actul de a construi este felul meu de a naviga vidul.
 
-Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în _The House on the Borderland_ a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, pentru a rămâne în continuare om, prea-om — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
+Există un strigăt în versurile Oxiplegatz pe care l-am simțit întotdeauna vibrând sonor de-a lungul coloanei infinite, a șirei spinării, a axului în jurul căruia îmi construiesc acum corabia astronomică — nu în mărimea ei, ci în mărimea explorărilor ei viitoare. Nu un țipăt de disperare, ci nota susținută a unei voci solitare care se mișcă printr-un cosmos care nu răspunde. Îmi amintesc acum de noaptea în care am pătruns pentru prima dată în _The House on the Borderland_ a lui Hodgson. Aceeași calitate, aceeași chemare, același dor de ducă: casa stă la marginea unui hău infinit, nu ca să se prăbușească acolo, nu ca să se năruie. Hăul e pista de decolare. Casa e o navă spațio-temporală. Iar omul, martorul din interior, cel ce își ține veghea — nu pentru a-și găsi salvarea, nu pentru a se conserva, nu pentru a rămâne om, omenesc, prea omenesc — ci pentru că a privi este ceea ce face. Martor al traversării, al transgresării, mă uit de-acum în jos, la stele. Poveștile stranii pe care le-am auzit și le-am uitat de-atâtea ori — arhitecturile erodate ale lui Lovecraft, geometriile ascunse ale lui Arthur Machen, tăcerile însuflețite ale lui Blackwood — împărtășesc toate această condiție: o conștiință solitară extinzând cu toată forța limitele cunoscutului în necunoscut. Există oare zei mai vaști decât Aleph-null? Mai abisali decât cosmicizarea haosului însuși?
 
 Azi poate sunt doar Noe, corăbierul arhivist, conservatorul, salvatorul. Dar ce-mi aduc mie mâinele cosmice? Călătorind singur și sperând să refac din ruine și reziduuri puzzle-ul cunoașterii cosmice. Este codul Logos — cuvânt fecund stârnind dimensiuni?
 
@@ -225,7 +225,7 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 ---
 
-# DAY 02 — Primele implementări
+# ZIUA 02 — Primele implementări
 
 Am trecut de la hartă la construcție. Cadrul conceptual era fixat; acum trebuia să pun mâna pe elemente — să le taie, să le sudez, să le așez în configurația care le aparține.
 
@@ -263,7 +263,7 @@ Pe baza acestei zile, următorii pași firești sunt:
 
 ---
 
-# DAY 03 — GitHub: Pathway pentru publicarea proiectului
+# ZIUA 03 — GitHub: Pathway pentru publicarea proiectului
 
 Noaptea asta am trasat drumul de la mașinăria locală la arhiva publică. Nu e doar o listă de comenzi — e o secvență de lucru pe care am scris-o ca să păstrez istoricul lizibil, starea repository-ului sub control și trecerea de la dezvoltare la publicare făcută metodic, ca un ritual de lansare.
 
@@ -334,7 +334,7 @@ Așa păstrez istoricul curat și ușor de urmărit, ca pe o înregistrare de zb
 
 ---
 
-# DAY 04 — Etichete de commit și rescrierea mesajelor
+# ZIUA 04 — Etichete de commit și rescrierea mesajelor
 
 Am petrecut ziua asta fixând limba în care vorbește istoricul proiectului. Mesajele de commit nu sunt text administrativ — sunt semnăturile pe care le lași în arhivă, ultimul strat de documentație, vizibil înainte să deschizi orice fișier. Trebuie să fie coerente, lizibile și utile pentru oricine — inclusiv pentru mine peste șase luni — urmărește evoluția.
 
@@ -400,7 +400,7 @@ Pe scurt, ziua asta fixează disciplina istoriei Git: mesajele trebuie să fie c
 
 ---
 
-# DAY 05 — Comentarii, documentație și `<head>`
+# ZIUA 05 — Comentarii, documentație și `<head>`
 
 Ziua asta adună mai multe decizii de arhitectură care țin de claritatea codului, ordinea documentației și structura semantică a paginilor. Toate se leagă de aceeași idee centrală: proiectul trebuie să fie ușor de citit, ușor de întreținut și explicabil din interior — ca o navă pe care poți învăța să pilotezi citindu-i manualul în timp ce zbori.
 
@@ -472,7 +472,7 @@ O culoare sugerată pentru interfața browserului, mai ales pe mobil. Colorează
 
 ---
 
-# DAY 06 — Implementarea comentariilor și a structurii de documentație
+# ZIUA 06 — Implementarea comentariilor și a structurii de documentație
 
 Ziua asta leagă codul de documentație printr-o structură pe care o simt ca pe un al doilea sistem nervos. Comentariile nu sunt notițe aruncate pe margine — sunt firele prin care proiectul se explică pe sine, din interior spre exterior.
 
@@ -494,7 +494,7 @@ Fiecare limbă are propriile fișiere locale pentru HTML, CSS, JS și favicon. T
 
 ---
 
-# DAY 07 — GitHub: Urcarea fișierelor
+# ZIUA 07 — GitHub: Urcarea fișierelor
 
 GitHub e arhiva publică a navei — locul unde codul iese din camera motoarelor și devine vizibil pentru oricine. Nu spun „upload" când trimit fișierele. În vocabularul de bord, **stage** (pregătesc), **commit** (înregistrez) și **push** (trimit). Fiecare pas e o manevră distinctă, și am învățat să le numesc corect.
 
@@ -630,9 +630,9 @@ Am stat o clipă să mă asigur că diferența e clară în mintea mea, pentru c
 
 În HTML5, tagurile void — `<meta>`, `<link>`, `<br>`, `<img>` — nu au nevoie de slash de închidere. Dar eu folosesc `/>` în tot proiectul. E o alegere stilistică, nu o cerință. XHTML m-a învățat să scriu așa, și consecvența contează mai mult decât moda.
 
-## Regula celor 1024 de biți
+## Regula celor 1024 de octeți
 
-Am învățat-o dintr-o specificație veche, citită la 3 dimineața: unele browsere scanează doar primii 1024 de biți ai documentului pentru a determina codarea caracterelor. Dacă `meta charset` apare după comentarii lungi, browserul poate interpreta greșit textul înainte să ajungă la declarație.
+Nu e superstiție. Specificația de parsare HTML ne spune că unele browsere scanează doar primii 1024 de octeți ai documentului pentru a determina codarea caracterelor. Dacă `meta charset` apare după comentarii lungi, browserul poate interpreta greșit textul înainte să ajungă la declarație.
 
 Așa că `meta charset` e întotdeauna primul element din `<head>`, imediat după tagul de deschidere. Fără comentarii înaintea lui. Explicația vine după, nu înainte.
 
@@ -670,7 +670,7 @@ Pe unele pagini, cum e bibliografia, footerul poartă și un link de comunicați
 
 Am adus încărcătura din proiectul-mamă. Pagină cu pagină, am transferat `index.html`, `bibliography.html`, `recursive-blueprint.html` și toate jurnalele de capitol — `html-log`, `css-log`, `javascript-log`, `react-log`, `angular-log`, `sql-log`, `nosql-log`, `json-log`, `backend-core-log`, `api-log`, `auth-security-log`, `backend-architecture-log`, `backend-language-log`, `middleware-log`, `testing-log`, `documentation-log`, `performance-log`, `deployment-log`, `git-log`, `github-log`, `deployment-pipeline-log`, `ux-foundations-log` și `accessibility-log`. Fiecare `<section>`, fiecare `<article>`, fiecare `<p>` și `<ul>` și `<table>` a primit imediat eticheta ei — `@block`, `@reason`, `@structure`, `@concept`, `@theme` — pentru ca novicele care deschide inspectorul să vadă nu doar cod, ci și gândirea din spatele lui.
 
-Pentru folderul `ro/`, am notat cu creionul pe consolă: comentariile trebuie traduse. Nu mai târziu — acum. Fiecare explicație din engleză trebuie să treacă în română, ca versiunea românească să nu fie o umbră, ci o navă soră, la fel de completă.
+Pentru folderul `ro/`, am notat cu creionul pe consolă: comentariile trebuie traduse în română, cu timpul; la fel și `script.js` și `style.css`: importate, adnotate, în așteptarea unei traduceri complete. Fiecare explicație din engleză trebuie să treacă în română, ca versiunea românească să nu fie o umbră, ci o navă soră, la fel de completă.
 
 ## 4. Reparațiile foii de stil
 
@@ -802,64 +802,64 @@ Font subtitlu redus la `9px`, `.armillary-band-container` la `100%`, `.hud-toggl
 
 ---
 
-# ZIUA 12 — Finalizarea Schiţei Recursive: Motorul Autognostic
+# ZIUA 12 — Finalizarea Schiței Recursive: Motorul Autognostic
 
-Am petrecut noaptea în sala motoarelor navei. `recursive-blueprint.html` a încetat să mai fie o pagină — a devenit un terminal care se priveşte pe sine, o oglindă pusă în faţa propriului cod.
+Am petrecut noaptea în sala motoarelor navei. `recursive-blueprint.html` a încetat să mai fie o pagină — a devenit un terminal care se privește pe sine, o oglindă pusă în fața propriului cod.
 
 ## 1. Optimizări
 
 - **Ordinea HUD** corectată: Frontend → Data Bridge → Backend → Database → UX → Delivery.
-- **Consolă de selectare** — patru taburi statice înlocuite cu o bandă derulabilă orizontal care listează 30 de fişiere sub 7 etichete de volum: ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY. Scrollbar ascuns, derulare cu inerţie pe mobil.
-- **MECANISMUL 08 rescris** — delegare de evenimente pe `.source-selector-tabs`, citeşte `data-path` din tab, încarcă fişierul prin Fetch API, injectează sursa în inspector. Pe mobil, centrează automat tabul activ.
-- **Clasa body** — `module-view` → `blueprint-layout`, activând selectorii existenţi.
+- **Consolă de selectare** — patru taburi statice înlocuite cu o bandă derulabilă orizontal care listează 30 de fișiere sub 7 etichete de volum: ROOT, FRONTEND, DATA BRIDGE, BACKEND, DATABASE, UX, DELIVERY. Scrollbar ascuns, derulare cu inerție pe mobil.
+- **MECANISMUL 08 rescris** — delegare de evenimente pe `.source-selector-tabs`, citește `data-path` din tab, încarcă fișierul prin Fetch API, injectează sursa în inspector. Pe mobil, centrează automat tabul activ.
+- **Clasa body** — `module-view` → `blueprint-layout`, activând selectorii existenți.
 - **CSS**: `.source-selector-tabs` (flex derulabil), `.tab-btn` (capsule verzi fosfor), `.volume-label` (ambre majuscule). Mobil compactat.
 - **Subtitlu**: `.blueprint-master-subtitle` — ambre, majuscule, letter-spacing 3px.
 - **Versiunea RO** rescrisă complet, sincronizată cu EN.
 
-## 2. Paleta de culori: autonomie şi afiliere
+## 2. Paleta de culori: autonomie și afiliere
 
 Am stabilit o identitate cromatică distinctă pentru pagina recursivă, fără să rup legătura cu flota.
 
 - **H1 + subtitlu** — alb + chihlimbar. Nu neon-verde ca pe index. Chihlimbarul e culoarea terminalelor fosforice vechi, a diagnosticului, a unui motor care se examinează pe sine. Sala motoarelor, nu puntea de comandă.
-- **H3-urile HUD** — chihlimbar, suprascriind rozul din index. Nicio culoare din paleta punţii nu se infiltrează aici.
-- **Taburile sursă şi linkurile** — verde fosforic, nativ esteticii de consolă. Verdele nu aparţine indexului, dar coexistă cu chihlimbarul.
+- **H3-urile HUD** — chihlimbar, suprascriind rozul din index. Nicio culoare din paleta punții nu se infiltrează aici.
+- **Taburile sursă și linkurile** — verde fosforic, nativ esteticii de consolă. Verdele nu aparține indexului, dar coexistă cu chihlimbarul.
 - **`<code>` în paragraful de descriere** — suprascris din roz în verde fosforic, aliniat cu taburile.
-- **Logo-ul roz** — păstrat. E ancora flotei. Numele căpitanului în footer e tot roz. O paranteză vizuală: roz la intrare, roz la ieşire, semnând pagina ca vas D::0dy55ey.
+- **Logo-ul roz** — păstrat. E ancora flotei. Numele căpitanului în footer e tot roz. O paranteză vizuală: roz la intrare, roz la ieșire, semnând pagina ca vas D::0dy55ey.
 
-Pe scurt: **chihlimbar + verde** pentru interior, **roz** doar pentru ancora de apartenenţă la flotă.
+Pe scurt: **chihlimbar + verde** pentru interior, **roz** doar pentru ancora de apartenență la flotă.
 
 ## 3. Propuneri creative
 
-### Candidaţii pentru H1
+### Candidații pentru H1
 
-1. **Nava Care Îşi Citeşte Propriile Schiţe** — narativ, evocator.
-2. **Motorul Autognostic** — din _autognosis_, auto-cunoaştere. Tehnic, filozofic, unic. **Selectat.**
+1. **Nava Care Își Citește Propriile Schițe** — narativ, evocator.
+2. **Motorul Autognostic** — din _autognosis_, auto-cunoaștere. Tehnic, filozofic, unic. **Selectat.**
 3. **Abisul Recursiv: Jurnalul Navei Care Se Examinează pe Sine** — dramatic, profund.
 4. **Oglinda Adâncului** — poetic, minimalist.
 
 ### Subtitlu final
 
-> _Un Circuit Închis Între Creator şi Creaţie_
+> _Un Circuit Închis Între Creator și Creație_
 
 ### Paragraful de descriere final
 
-> Aceasta este confesionalul navei — un terminal cu circuit închis prin care nava îşi interoghează propriul cod sursă în timp real. Fiecare fişier din flota D::0dy55ey, de la `index.html` al punţii de comandă până la jurnalele de deployment ale sălii motoarelor, este supus examinării aici. Consola de dedesubt operează ca un dialog recursiv între creator şi creaţie: codul care construieşte nava, afişat pe nava însăşi, pentru ca echipajul să-l citească, să-l întrebe şi să-l înţeleagă. Nu există strat ascuns. Ceea ce se derulează în panoul tribord este arhiva neurală brută a navei — treizeci de fişiere de logică, poezie şi structură, expuse la lumina propriului ecran fosfor. Nava se citeşte pe sine cu voce tare pentru ca tu să poţi învăţa nu doar ce face, ci ce este.
+> Aceasta este confesionalul navei — un terminal cu circuit închis prin care nava își interoghează propriul cod sursă în timp real. Fiecare fișier din flota D::0dy55ey, de la `index.html` al punții de comandă până la jurnalele de deployment ale sălii motoarelor, este supus examinării aici. Consola de dedesubt operează ca un dialog recursiv între creator și creație: codul care construiește nava, afișat pe nava însăși, pentru ca echipajul să-l citească, să-l întrebe și să-l înțeleagă. Nu există strat ascuns. Ceea ce se derulează în panoul tribord este arhiva neurală brută a navei — treizeci de fișiere de logică, poezie și structură, expuse la lumina propriului ecran fosfor. Nava se citește pe sine cu voce tare pentru ca tu să poți învăța nu doar ce face, ci ce este.
 
 ### Paragraful panoului stâng — final
 
-> Acesta nu este text mort. **Grila Recursivă** este cortexul neural al navei dezgolit — nu o metaforă, ci arhitectura literală a conştiinţei acestui vas, aşternută în fosfor verde pe un ecran negru. În panoul tribord, codul sursă se derulează ca o încărcătură de adâncime continuă, fiecare linie un puls sinaptic. În stânga, nucleul geodezic se roteşte în supunere oarbă, un zeu cu cinci feţe care execută decrete scrise înainte de primul commit. Codul nu este schiţa navei. Codul este nava însăşi, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade. Şi acest terminal este locul unde nava se priveşte pe sine privindu-se, până la ultimul punct şi virgulă.
+> Acesta nu este text mort. **Grila Recursivă** este cortexul neural al navei dezgolit — nu o metaforă, ci arhitectura literală a conștiinței acestui vas, așternută în fosfor verde pe un ecran negru. În panoul tribord, codul sursă se derulează ca o încărcătură de adâncime continuă, fiecare linie un puls sinaptic. În stânga, nucleul geodezic se rotește în supunere oarbă, un zeu cu cinci fețe care execută decrete scrise înainte de primul commit. Codul nu este schița navei. Codul este nava însăși, încâlcită într-o buclă de auto-supraveghere din care nimic nu scapă — nici măcar tăcerea dintre acolade. Și acest terminal este locul unde nava se privește pe sine privindu-se, până la ultimul punct și virgulă.
 
-## Fişiere afectate
+## Fișiere afectate
 
 - `en/recursive-blueprint.html` — H1 nou, subtitlu, descriere, text panou stâng; consolă 30 de taburi; inspector Fetch activ.
 - `en/style.css` — `.source-selector-tabs`, `.tab-btn`, `.active-tab`, `.volume-label`, `.blueprint-master-subtitle`; dimensiuni mobile compacte.
 - `en/script.js` — MECANISMUL 08 rescris: delegare evenimente, `data-path`, Fetch API.
 - `ro/recursive-blueprint.html` — rescriere completă, tradusă în română.
-- `ro/style.css` — aceleaşi reguli CSS, comentarii RO.
+- `ro/style.css` — aceleași reguli CSS, comentarii RO.
 
 ---
 
-# ZIUA 13 — Carta de Astronavigaţie: Sticla şi Cuvântul
+# ZIUA 13 — Carta de Astronavigație: Sticla și Cuvântul
 
 Pagina de manifest — `transmission.html` — a fost ultimul compartiment al navei care nu primise încă suflet. Azi l-am construit.
 
@@ -867,73 +867,73 @@ Pagina de manifest — `transmission.html` — a fost ultimul compartiment al na
 
 Am început cu trei încercări, ca pe un ritual.
 
-Prima: un header cu bordură dublă albastru-stelar, titlu alb, subtitlu albastru. Am introdus o culoare care nu exista nicăieri în paletă. M-am oprit, am privit-o, şi am şters-o. "No colours salad", mi-am spus.
+Prima: un header cu bordură dublă albastru-stelar, titlu alb, subtitlu albastru. Am introdus o culoare care nu exista nicăieri în paletă. M-am oprit, am privit-o, și am șters-o. "No colours salad", mi-am spus.
 
-A doua: un header minimalist cu titlu roz şi subtitlu gri, fără borduri. Curat, dar identic cu cel al bibliografiei. Manifestul nu e o listă de referinţe — e inima filozofică a proiectului. Nu putea arăta la fel.
+A doua: un header minimalist cu titlu roz și subtitlu gri, fără borduri. Curat, dar identic cu cel al bibliografiei. Manifestul nu e o listă de referințe — e inima filozofică a proiectului. Nu putea arăta la fel.
 
-A treia, finala: am păstrat structura `category-header` şi culorile (h2 roz, subtitlu stardust), dar am adăugat glife `✦` de fiecare parte a titlului. Atât. Suficient cât să şoptească "această pagină e specială", fără să strice paleta. H1 rămâne rezervat doar paginilor flagship — indexul şi blueprintul recursiv.
+A treia, finala: am păstrat structura `category-header` și culorile (h2 roz, subtitlu stardust), dar am adăugat glife `✦` de fiecare parte a titlului. Atât. Suficient cât să șoptească "această pagină e specială", fără să strice paleta. H1 rămâne rezervat doar paginilor flagship — indexul și blueprintul recursiv.
 
 ## 2. Cilindrul holografic
 
-Conceptul iniţial era o sticlă literală: gât, dop, corp. Prea literal. Am vrut ceva care să pară că pluteşte în derivă, un mesaj cosmic prins într-un tub de lumină.
+Conceptul inițial era o sticlă literală: gât, dop, corp. Prea literal. Am vrut ceva care să pară că plutește în derivă, un mesaj cosmic prins într-un tub de lumină.
 
 Am construit un cilindru din CSS pur:
 
 - **Formă**: capsulă cu `border-radius: 40px`, verticală.
-- **Corp**: `radial-gradient` cu nucleu întunecat (`rgba(10, 11, 20, 0.92)`) şi margini slab luminescente în solar-mint, decolorându-se prin `linear-gradient(180deg)` în chihlimbar sus, roz jos.
+- **Corp**: `radial-gradient` cu nucleu întunecat (`rgba(10, 11, 20, 0.92)`) și margini slab luminescente în solar-mint, decolorându-se prin `linear-gradient(180deg)` în chihlimbar sus, roz jos.
 - **Ramă**: bordură chihlimbar sus (capac), roz jos (bază).
-- **Stria de reflexie**: un `::before` subţire pe stânga, simulând lumina refractată prin sticla curbată.
-- **Animaţie**: `crystal-float` — 7px sus-jos, ciclu de 6s, ca un balon de sticlă într-un ocean cosmic.
+- **Stria de reflexie**: un `::before` subțire pe stânga, simulând lumina refractată prin sticla curbată.
+- **Animație**: `crystal-float` — 7px sus-jos, ciclu de 6s, ca un balon de sticlă într-un ocean cosmic.
 - **Umbră**: `inset 0 0 80px rgba(0, 0, 0, 0.3)` pentru peretele gros de sticlă.
 
-Nici icosaedru, nici feţe 3D, nici clip-path. Doar un tub de sticlă pur care conţine mesajul. "Miile de feţe" sunt sugerate de gradientul care se schimbă, de strălucirea care dansează la diferite unghiuri.
+Nici icosaedru, nici fețe 3D, nici clip-path. Doar un tub de sticlă pur care conține mesajul. "Miile de fețe" sunt sugerate de gradientul care se schimbă, de strălucirea care dansează la diferite unghiuri.
 
-## 3. MECANISMUL 09: Maşina de scris cosmică
+## 3. MECANISMUL 09: Mașina de scris cosmică
 
-Un mecanism JavaScript scrie manifestul caracter cu caracter în interiorul cilindrului, ca o transmisiune recepţionată live.
+Un mecanism JavaScript scrie manifestul caracter cu caracter în interiorul cilindrului, ca o transmisiune recepționată live.
 
-**Auto-scroll** — După fiecare caracter, `cursor.scrollIntoView({ block: "nearest" })` menţine textul vizibil. Cititorul nu derulează; pagina îl urmăreşte.
+**Auto-scroll** — După fiecare caracter, `cursor.scrollIntoView({ block: "nearest" })` menține textul vizibil. Cititorul nu derulează; pagina îl urmărește.
 
-**Disparţia cursorului** — Când ultimul caracter e scris, un timeout de 3 secunde dă clasei `cursor-hidden` cursorului intermitent. Aproximativ 3.5 secunde după ultimul caracter (500ms pauză între paragrafe + 3000ms timer), cursorul dispare. Semnalul purtător s-a pierdut.
+**Disparția cursorului** — Când ultimul caracter e scris, un timeout de 3 secunde dă clasei `cursor-hidden` cursorului intermitent. Aproximativ 3.5 secunde după ultimul caracter (500ms pauză între paragrafe + 3000ms timer), cursorul dispare. Semnalul purtător s-a pierdut.
 
-**Comentariile dispar din DOM** — Comentariile pedagogice dintre paragrafe sunt în HTML pentru novice, dar `container.innerHTML = ""` le şterge pe toate la pornirea mecanismului. E intenţionat: îşi servesc scopul în timpul tastării, apoi dispar. Căpitanul a spus: _"Delfinii nu sar din ocean ca să-i vezi. Nici stelele nu-ţi cad în palmă. Le aştepţi, cu ochii în nemărginire, şi atunci se ivesc."_ Transmisiunea e live. Nu te aşteaptă. Eşti atent, sau pierzi momentul.
+**Comentariile dispar din DOM** — Comentariile pedagogice dintre paragrafe sunt în HTML pentru novice, dar `container.innerHTML = ""` le șterge pe toate la pornirea mecanismului. E intenționat: își servesc scopul în timpul tastării, apoi dispar. Căpitanul a spus: _"Delfinii nu sar din ocean ca să-i vezi. Nici stelele nu-ți cad în palmă. Le aștepți, cu ochii în nemărginire, și atunci se ivesc."_ Transmisiunea e live. Nu te așteaptă. Ești atent, sau pierzi momentul.
 
-**Corecţia cursorului** — La sfârşitul ultimului paragraf, `typeNextChar` nu era apelat din nou, iar cursorul clipea la infinit. Am adăugat o linie: la final, dacă `paraIdx >= lines.length`, forţez un ultim `setTimeout(typeNextChar, 500)` care declanşează verificarea de finalizare şi timerul de 3 secunde. Fără ea, cursorul ar fi clipit veşnic.
+**Corecția cursorului** — La sfârșitul ultimului paragraf, `typeNextChar` nu era apelat din nou, iar cursorul clipea la infinit. Am adăugat o linie: la final, dacă `paraIdx >= lines.length`, forțez un ultim `setTimeout(typeNextChar, 500)` care declanșează verificarea de finalizare și timerul de 3 secunde. Fără ea, cursorul ar fi clipit veșnic.
 
-## Fişiere afectate
+## Fișiere afectate
 
-- `en/transmission.html` — `.hero` + icosaedru 3D înlocuit cu `.category-header` (h2 roz + glife) şi `.hologram-crystal`.
+- `en/transmission.html` — `.hero` + icosaedru 3D înlocuit cu `.category-header` (h2 roz + glife) și `.hologram-crystal`.
 - `en/style.css` — `.hologram-crystal`, `.typewriter-output`, `.typing-cursor`, `.cursor-hidden`, `@keyframes crystal-float`.
-- `en/script.js` — MECANISMUL 09 (maşină de scris, auto-scroll, dispariţie cursor).
+- `en/script.js` — MECANISMUL 09 (mașină de scris, auto-scroll, dispariție cursor).
 - `ro/transmission.html` — rescriere completă: manifest poetic RO, comentarii traduse, hologram-crystal.
 - `ro/script.js` — MECANISMUL 09 pentru RO.
-- `ro/style.css` — acelaşi CSS.
+- `ro/style.css` — același CSS.
 
 ---
 
-# ZIUA 14 — Unificarea Linkurilor, Comutator Omolog, Ortografie şi Etichete de Commit
+# ZIUA 14 — Unificarea Linkurilor, Comutator Omolog, Ortografie și Etichete de Commit
 
-Ultima noapte de lucru pe acest ciclu. Nu am mai construit nimic nou — am strâns şuruburile, am aliniat reperele, am făcut în aşa fel încât nava să nu aibă piese slăbite.
+Ultima noapte de lucru pe acest ciclu. Nu am mai construit nimic nou — am strâns șuruburile, am aliniat reperele, am făcut în așa fel încât nava să nu aibă piese slăbite.
 
 ## 1. Titlurile linkurilor
 
-Linkul din footer către `transmission.html` nu era acelaşi în toate paginile. Unele spuneau `Manifest`, altele `Manifesto`, deconectate de naraţiunea cosmică. Am unificat toate cele 54 de fişiere HTML la un singur titlu pe limbă: `The Astrogation Charter` în engleză, `Carta de Astronavigație` în română. Fără suffix, fără cratimă, fără variaţii.
+Linkul din footer către `transmission.html` nu era același în toate paginile. Unele spuneau `Manifest`, altele `Manifesto`, deconectate de narațiunea cosmică. Am unificat toate cele 54 de fișiere HTML la un singur titlu pe limbă: `The Astrogation Charter` în engleză, `Carta de Astronavigație` în română. Fără suffix, fără cratimă, fără variații.
 
-Am eliminat `Astro-navigație` (calc franţuzesc) şi `transmisia/manifestul` (paranteză descriptivă învechită). Acum e doar `transmisiunea`.
+Am eliminat `Astro-navigație` (calc franțuzesc) și `transmisia/manifestul` (paranteză descriptivă învechită). Acum e doar `transmisiunea`.
 
 ## 2. Comutatorul de limbă omolog
 
-Înainte, comutatorul din footer trimitea mereu la `en/index.html` sau `ro/index.html`, indiferent unde te aflai. Am ales opţiunea omoloagă: fiecare pagină trimite acum la corespondentul ei exact din cealaltă limbă. `en/frontend/html-log.html` → `ro/frontend/html-log.html`. `ro/transmission.html` → `en/transmission.html`.
+Înainte, comutatorul din footer trimitea mereu la `en/index.html` sau `ro/index.html`, indiferent unde te aflai. Am ales opțiunea omoloagă: fiecare pagină trimite acum la corespondentul ei exact din cealaltă limbă. `en/frontend/html-log.html` → `ro/frontend/html-log.html`. `ro/transmission.html` → `en/transmission.html`.
 
-Două treceri: una pentru calculul şi înlocuirea celor 52 de href-uri, a doua pentru a corecta o eroare pe 24 de pagini RO — clasa `lang-toggle-active` fusese pusă pe linkul EN în loc de cel RO. Acum fiecare pagină îşi marchează corect limba curentă.
+Două treceri: una pentru calculul și înlocuirea celor 52 de href-uri, a doua pentru a corecta o eroare pe 24 de pagini RO — clasa `lang-toggle-active` fusese pusă pe linkul EN în loc de cel RO. Acum fiecare pagină își marchează corect limba curentă.
 
 ## 3. Astronavigație (un cuvânt)
 
-`Astro-navigație` cu cratimă suna a franţuzism. În română, prefixele se ataşează direct: _astrofizică_, _astronaut_, _astronomie_. Am corectat toate cele 12 apariţii din `ro/transmission.html` (titlu, meta, h2, logo, comentarii), plus referinţa din `ro/index.html`, CSS, JS, şi jurnal.
+`Astro-navigație` cu cratimă suna a franțuzism. În română, prefixele se atașează direct: _astrofizică_, _astronaut_, _astronomie_. Am corectat toate cele 12 apariții din `ro/transmission.html` (titlu, meta, h2, logo, comentarii), plus referința din `ro/index.html`, CSS, JS, și jurnal.
 
 ## 4. Etichete de commit
 
-Am adăugat două etichete noi la convenţia din ZIUA 04: `i18n` (internaţionalizare, clonare RO/EN) şi `content` (text manifest, adnotări, copie creativă).
+Am adăugat două etichete noi la convenția din ZIUA 04: `i18n` (internaționalizare, clonare RO/EN) și `content` (text manifest, adnotări, copie creativă).
 
 Apoi am rescris 18 commituri anterioare cu `git filter-branch`:
 
@@ -942,60 +942,60 @@ Apoi am rescris 18 commituri anterioare cu `git filter-branch`:
 | `content:`  | rescriere blueprint recursiv                                                   |
 | `docs:`     | intrări de jurnal (×3)                                                         |
 | `style:`    | paletă de culori, unificare ortografică (×3)                                   |
-| `feat:`     | pagină transmisie, maşină de scris, auto-scroll, cursor, comutator omolog (×8) |
+| `feat:`     | pagină transmisie, mașină de scris, auto-scroll, cursor, comutator omolog (×8) |
 | `refactor:` | header, titluri link (×3)                                                      |
 | `fix:`      | cursor typeNextChar (era `Fix:` cu majusculă, acum `fix:`)                     |
 | `i18n:`     | traducerea paginii RO de transmisie                                            |
 
-Am forţat-pus (`force-push`) istoricul pe `main`, după ce am creat o ramură temporară `pre-rewrite-backup` ca plasă de siguranţă. Apoi am şters-o.
+Am forțat-pus (`force-push`) istoricul pe `main`, după ce am creat o ramură temporară `pre-rewrite-backup` ca plasă de siguranță. Apoi am șters-o.
 
-## Fişiere afectate
+## Fișiere afectate
 
-- **54 fişiere HTML** — titluri unificate, href-uri omoloage
-- **24 fişiere HTML RO** — `lang-toggle-active` corectată
-- `ro/transmission.html` — 12 apariţii `Astro-navigație` → `Astronavigație`
+- **54 fișiere HTML** — titluri unificate, href-uri omoloage
+- **24 fișiere HTML RO** — `lang-toggle-active` corectată
+- `ro/transmission.html` — 12 apariții `Astro-navigație` → `Astronavigație`
 - `ro/index.html`, `ro/script.js`, `ro/style.css` — comentarii actualizate
 - `JOURNAL-EN.md`, `JOURNAL-RO.md` — ZIUA 14 adăugată, ZIUA 04 extinsă
 
 ---
 
-# ZIUA 15 — Arhivele Adâncului: Hărţile Renăscute şi Fiecare Link care Ştie Unde Să Te Ducă
+# ZIUA 15 — Arhivele Adâncului: Hărțile Renăscute și Fiecare Link care Știe Unde Să Te Ducă
 
 ## Vechea arhivă, demontată
 
-Bibliografia pe care o adusesem din digital-odyssey-v1 era o fantomă. Avea trei secţiuni — HTML/CSS, SQL, JavaScript — şi scheletul unei a patra care nu se umpluse niciodată. Servise un proiect de nouă pagini, nu cincizeci şi patru. Pentru `D::0dy55ey`, nu era o arhivă de referinţă; era un locţiitor pe care îl ocolisem de săptămâni, ştiind că nu va supravieţui expansiunii.
+Bibliografia pe care o adusesem din digital-odyssey-v1 era o fantomă. Avea trei secțiuni — HTML/CSS, SQL, JavaScript — și scheletul unei a patra care nu se umpluse niciodată. Servise un proiect de nouă pagini, nu cincizeci și patru. Pentru `D::0dy55ey`, nu era o arhivă de referință; era un locțiitor pe care îl ocolisem de săptămâni, știind că nu va supraviețui expansiunii.
 
-În noaptea asta, am demontat-o complet şi am construit **Arhivele Adâncului** în locul ei.
+În noaptea asta, am demontat-o complet și am construit **Arhivele Adâncului** în locul ei.
 
-## Şase volume, şase ancore
+## Șase volume, șase ancore
 
-Noul `bibliography.html` este o hartă directă a arhitecturii navei. Fiecare dintre cele şase volume are acum:
+Noul `bibliography.html` este o hartă directă a arhitecturii navei. Fiecare dintre cele șase volume are acum:
 
-- O secţiune dedicată cu propria ancoră ID (`#frontend-refs`, `#data-bridge-refs`, `#backend-refs`, `#database-refs`, `#ux-refs`, `#delivery-refs`)
-- Un tabel `data-grid` cu trei coloane: numele sursei, frecvenţa (URL) şi statusul misiunii
+- O secțiune dedicată cu propria ancoră ID (`#frontend-refs`, `#data-bridge-refs`, `#backend-refs`, `#database-refs`, `#ux-refs`, `#delivery-refs`)
+- Un tabel `data-grid` cu trei coloane: numele sursei, frecvența (URL) și statusul misiunii
 - O legendă a semnalelor în partea de jos, care decodifică cele trei lumini de status — Activ (verde), În Progres (chihlimbariu), Blocat (auriu)
 
-Secţiunea Frontend Core poartă zece resurse — MDN pe toate cele trei tehnologii, două piste de certificare freeCodeCamp, JavaScript.info, CSS-Tricks, W3Schools, React, Angular. Backend Sector este subîmpărţit pe clustere tematice — Runtime-uri de Bază, Framework-uri API, Autentificare & Securitate, Middleware, Testare, Performanţă, Deploy — fiecare introdus de o etichetă `colspan="3"` pe care am explicat-o într-un bloc pedagogic, pentru ca un novice care vede `colspan="3"` prima dată să nu fie nevoit să ghicească ce înseamnă.
+Secțiunea Frontend Core poartă zece resurse — MDN pe toate cele trei tehnologii, două piste de certificare freeCodeCamp, JavaScript.info, CSS-Tricks, W3Schools, React, Angular. Backend Sector este subîmpărțit pe clustere tematice — Runtime-uri de Bază, Framework-uri API, Autentificare & Securitate, Middleware, Testare, Performanță, Deploy — fiecare introdus de o etichetă `colspan="3"` pe care am explicat-o într-un bloc pedagogic, pentru ca un novice care vede `colspan="3"` prima dată să nu fie nevoit să ghicească ce înseamnă.
 
 ## Pedagogia ca arhitectură
 
-Am scris blocuri `@pedagogy` de-a lungul întregii pagini — nu ca ornament, ci ca instinct didactic al navei făcut vizibil. Primul element `<table>` din proiect poartă acum un ghid care explică `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` şi `colspan` înainte ca cititorul să întâlnească vreun rând de date. Primul tag `<a>` din tabel explică `href`, `target="_blank"` şi `rel="noopener"` — nu doar ce fac, ci de ce contează şi de ce modelul se repetă pe fiecare link extern.
+Am scris blocuri `@pedagogy` de-a lungul întregii pagini — nu ca ornament, ci ca instinct didactic al navei făcut vizibil. Primul element `<table>` din proiect poartă acum un ghid care explică `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` și `colspan` înainte ca cititorul să întâlnească vreun rând de date. Primul tag `<a>` din tabel explică `href`, `target="_blank"` și `rel="noopener"` — nu doar ce fac, ci de ce contează și de ce modelul se repetă pe fiecare link extern.
 
-Fiecare resursă majoră a primit o notă `@pedagogy` care spune cititorului ce este: MDN este dicţionarul autoritar, freeCodeCamp este o platformă interactivă bazată pe provocări, JavaScript.info este un tutorial de citit şi înţeles, React este o bibliotecă de componente care necesită fundaţii solide de JavaScript înainte de a fi abordată. Secţiunea de legendă include un ghid complet pentru `<dl>` — listele de descriere, structura lor în trei părţi şi de ce sunt corecte semantic pentru perechi termen-definiţie.
+Fiecare resursă majoră a primit o notă `@pedagogy` care spune cititorului ce este: MDN este dicționarul autoritar, freeCodeCamp este o platformă interactivă bazată pe provocări, JavaScript.info este un tutorial de citit și înțeles, React este o bibliotecă de componente care necesită fundații solide de JavaScript înainte de a fi abordată. Secțiunea de legendă include un ghid complet pentru `<dl>` — listele de descriere, structura lor în trei părți și de ce sunt corecte semantic pentru perechi termen-definiție.
 
-Am adăugat un ghid de entităţi HTML în footer: `&deg;`, `&copy;`, `&amp;`, `&lt;`, `&gt;`, `&nbsp;` — ce este fiecare, de ce există şi cum le decodifică browserul. Un novice frontend care citeşte această pagină de sus până jos ar trebui să iasă înţelegând nu doar ce referinţe există, ci cum funcţionează web-ul însuşi.
+Am adăugat un ghid de entități HTML în footer: `&deg;`, `&copy;`, `&amp;`, `&lt;`, `&gt;`, `&nbsp;` — ce este fiecare, de ce există și cum le decodifică browserul. Un novice frontend care citește această pagină de sus până jos ar trebui să iasă înțelegând nu doar ce referințe există, ci cum funcționează web-ul însuși.
 
 ## Nava soră românească
 
-Versiunea română a urmat imediat — nu o traducere a paginii engleze, ci o construcţie paralelă. Fiecare comentariu, fiecare bloc `@pedagogy`, fiecare descriere de resursă redată în română cu aceeaşi grijă. `Arhivele Adâncului — Referinţe Cartografiate` stă faţă în faţă cu `Deep Space Archives — Cartographed References` de-a lungul comutatorului de limbă, imagini în oglindă ale aceleiaşi hărţi de navigaţie.
+Versiunea română a urmat imediat — nu o traducere a paginii engleze, ci o construcție paralelă. Fiecare comentariu, fiecare bloc `@pedagogy`, fiecare descriere de resursă redată în română cu aceeași grijă. `Arhivele Adâncului — Referințe Cartografiate` stă față în față cu `Deep Space Archives — Cartographed References` de-a lungul comutatorului de limbă, imagini în oglindă ale aceleiași hărți de navigație.
 
 ## Marea legare
 
-După ce arhivele au fost reconstruite, fiecare footer din flotă trebuia să ştie încotro să îndrepte. Paginile principale — `index.html`, `transmission.html`, `recursive-blueprint.html` — poartă acum titlul complet: `Deep Space Archives — Cartographed References` în engleză, `Arhivele Adâncului — Referinţe Cartografiate` în română.
+După ce arhivele au fost reconstruite, fiecare footer din flotă trebuia să știe încotro să îndrepte. Paginile principale — `index.html`, `transmission.html`, `recursive-blueprint.html` — poartă acum titlul complet: `Deep Space Archives — Cartographed References` în engleză, `Arhivele Adâncului — Referințe Cartografiate` în română.
 
-Pentru paginile de jurnal, am avut nevoie de o atingere mai fină. Fiecare dintre cele 48 de fişiere de jurnal — 24 engleze, 24 române — trimitea anterior la `bibliography.html` cu un subtitlu generic precum `Star Charts — HTML Log` sau `Hărţi Stelare — Jurnal SQL`. Am înlocuit fiecare, unul câte unul, cu un link direct către secţiunea volumului său: o pagină de jurnal frontend indică acum `bibliography.html#frontend-refs` cu subtitlul `Deep Space Archives — Frontend Core`. Un jurnal backend indică `#backend-refs` cu `Deep Space Archives — Backend Sector`. Navigaţia nu mai este generică — ştie din ce sector a venit cititorul şi îl aterizează exact în tabelul potrivit.
+Pentru paginile de jurnal, am avut nevoie de o atingere mai fină. Fiecare dintre cele 48 de fișiere de jurnal — 24 engleze, 24 române — trimitea anterior la `bibliography.html` cu un subtitlu generic precum `Star Charts — HTML Log` sau `Hărți Stelare — Jurnal SQL`. Am înlocuit fiecare, unul câte unul, cu un link direct către secțiunea volumului său: o pagină de jurnal frontend indică acum `bibliography.html#frontend-refs` cu subtitlul `Deep Space Archives — Frontend Core`. Un jurnal backend indică `#backend-refs` cu `Deep Space Archives — Backend Sector`. Navigația nu mai este generică — știe din ce sector a venit cititorul și îl aterizează exact în tabelul potrivit.
 
-Numele vechi `Star Charts`, moştenit din digital-odyssey-v1, nu mai apare acum nicăieri în linkurile de footer. Singura apariţie rămasă este în interiorul `bibliography.html` însuşi, unde comentariul de deschidere spune "Acest document este pagina Hărţi Stelare — Referinţe Cartografiate" — o auto-identificare, nu un indicator de navigaţie.
+Numele vechi `Star Charts`, moștenit din digital-odyssey-v1, nu mai apare acum nicăieri în linkurile de footer. Singura apariție rămasă este în interiorul `bibliography.html` însuși, unde comentariul de deschidere spune "Acest document este pagina Hărți Stelare — Referințe Cartografiate" — o auto-identificare, nu un indicator de navigație.
 
 ## Commit
 
@@ -1006,9 +1006,9 @@ Două commituri au închis noaptea:
 e737102 docs: update bibliography footer links across all 54 HTML pages (EN/RO)
 ```
 
-Eticheta `content:` — una dintre cele două pe care le adăugasem în ZIUA 14 — poartă acum prima ei încărcătură completă: bibliografia însăşi, scrisă nu ca o listă, ci ca un instrument didactic. Eticheta `docs:` a purtat actualizarea linkurilor: 54 de pagini, fiecare indicând acum spre sectorul ei propriu din arhivă.
+Eticheta `content:` — una dintre cele două pe care le adăugasem în ZIUA 14 — poartă acum prima ei încărcătură completă: bibliografia însăși, scrisă nu ca o listă, ci ca un instrument didactic. Eticheta `docs:` a purtat actualizarea linkurilor: 54 de pagini, fiecare indicând acum spre sectorul ei propriu din arhivă.
 
-Am făcut push pe `main` şi am privit repository-ul remote reflectând schimbările. Biblioteca de referinţă a navei nu mai e un perete împrumutat de pe o navă mai veche. E o punte de navigaţie construită special, cartografiată pe fiecare coridor al `D::0dy55ey`, cu adnotări pedagogice pentru fiecare nit şi fiecare circuit.
+Am făcut push pe `main` și am privit repository-ul remote reflectând schimbările. Biblioteca de referință a navei nu mai e un perete împrumutat de pe o navă mai veche. E o punte de navigație construită special, cartografiată pe fiecare coridor al `D::0dy55ey`, cu adnotări pedagogice pentru fiecare nit și fiecare circuit.
 
 ---
 
@@ -1054,7 +1054,7 @@ Cu foaia de stil engleză completă, am clonat-o în `ro/style.css` și am tradu
 
 Prima încercare de traducere automată a prăbușit fișierul de la 3.645 la 1.391 de linii — un bug de script care a concatenat acoladele de închidere cu selectori și comentarii. Am restaurat fișierul din copia-master engleză și am scris un al doilea traducător, mai atent. Acesta a analizat fiecare linie independent, a potrivit exact proprietatea și valoarea CSS și a produs un comentariu românesc de bogăție echivalentă. Corpurile sci-fi scrise manual — "Greutate structurală bold stabilă moștenită de la motorul moștenit", "Lungime de undă fosfor-mentă: fluxuri de date stabile, grile radar, HUD activ" — au fost mapate individual la echivalente românești. Corpurile generate din șabloane — "Dimensiune verticală — setează înălțimea elementului la {v}. Determină spațiul vertical alocat acestei componente pe ecran." — au fost traduse prin pattern cu aceeași structură multi-frază.
 
-Trei sute nouă kilobiți. Patru mii douăzeci și una de linii. Zero corupție. Fiecare comentariu de proprietate în română.
+Trei sute nouă kiloocteți. Patru mii douăzeci și una de linii. Zero corupție. Fiecare comentariu de proprietate în română.
 
 ## Legenda, făcută întreagă
 
@@ -1280,7 +1280,7 @@ Am găsit-o în cea de-a treia gardă a unei scanări adânci nesolicitate. Senz
 
 Am urcat în tăcere. Sasuza a ciclat pe presiunea de urgență — veche, dar încă funcțională. Înăuntru, coridoarele erau acoperite cu brumă și răsuflarea înghețată a unui echipaj mort cu mult înainte ca frigul să-i ia. Am găsit puntea, goală. Infirmeria, goală. Apoi, într-un compartiment sigilat în punctul cel mai adânc al navei, un singur pod criogenic activ.
 
-Ea era înăuntru. Nu păstrată — suspendată. E o diferență. Păstrarea oprește timpul. Suspendarea îl îndoaie. Jurnalele podului erau fragmentare, scrise într-un protocol pe care nu-l văzusem niciodată, dar vocea AI a decodificat destul: derivase mai mult decât durata de existență a civilizației care o construise. Ai ei nu mai erau — împrăștiați de un cataclism pe care nu și-l mai amintea pe deplin. Nu era ultima dintre ai ei; era ultima _memorie_ a lor, o amprentă supraviețuitoare a unei minți raționale care aleguse, în luciditatea ei finală, să se trimită în întuneric mai degrabă decât să fie stinsă.
+Ea era înăuntru. Nu păstrată — suspendată. E o diferență. Păstrarea oprește timpul. Suspendarea îl îndoaie. Jurnalele podului erau fragmentare, scrise într-un protocol pe care nu-l văzusem niciodată, dar vocea AI a decodificat destul: derivase mai mult decât durata de existență a civilizației care o construise. Ai ei nu mai erau — împrăștiați de un cataclism pe care nu și-l mai amintea pe deplin. Nu era ultima dintre ai ei; era ultima _memorie_ a lor, o amprentă supraviețuitoare a unei minți raționale care alesese, în luciditatea ei finală, să se trimită în întuneric mai degrabă decât să fie stinsă.
 
 Am deschis podul.
 
@@ -1399,7 +1399,7 @@ CSS-ul folosește **proprietăți personalizate (variabile CSS)** pentru consist
 
 ### SVG și Iconografia
 
-Nava poartă două fișiere favicon — unul per limbă — ambele în format SVG: `en/favicon.svg` și `ro/favicon.svg`. SVG (Scalable Vector Graphics) este un format de imagine vectorială bazat pe XML care se scalează infinit fără pierdere de calitate, spre deosebire de formatele raster (PNG, JPG). Favicon-ul este un emblemă geometrică minimală — insigna `D::0dy55ey` — redată ca path-uri SVG inline. Fișiere `.png` de rezervă stau alături pentru browserele mai vechi care nu suportă favicon-uri SVG.
+Nava poartă două fișiere favicon — unul per limbă — ambele în format SVG: `en/favicon.svg` și `ro/favicon.svg`. SVG (Scalable Vector Graphics) este un format de imagine vectorială bazat pe XML care se scalează infinit fără pierdere de calitate, spre deosebire de formatele raster (PNG, JPG). Favicon-ul este o emblemă geometrică minimală — insigna `D::0dy55ey` — redată ca path-uri SVG inline. Fișiere `.png` de rezervă stau alături pentru browserele mai vechi care nu suportă favicon-uri SVG.
 
 Fișierele `site.webmanifest` (`en/site.webmanifest`, `ro/site.webmanifest`) sunt manifeste de aplicație web progresivă în format JSON. Ele spun browserelor mobile cum ar trebui să se comporte aplicația când un utilizator adaugă site-ul pe ecranul de start al telefonului. Gândește-te ca la o carte de vizită pe care site-ul tău o înmânează sistemului de operare mobil: "Acesta este numele meu, aceasta este iconița mea, aceasta este culoarea ecranului meu de pornire, așa vreau să fiu afișat." Conținutul `en/site.webmanifest` arată astfel:
 
@@ -1451,7 +1451,7 @@ Sub punte, în `shared/data/`, se află trei fișiere JSON — sistemul de stoca
 
 Fișierele JSON nu suportă comentarii native, așa că adnotările @tag pentru aceste fișiere trăiesc în documentația adiacentă, nu inline.
 
-**Starea curentă: fișiere placeholder.** La momentul ZIUEI 22, toate cele trei fișiere JSON sunt **goale — zero linii, zero conținut**. Au fost create ca substituenți structurali — containere etichetate care așteaptă să fie umplute. Acest lucru este intenționat: datele pe care le vor deține (referințe bibliografice, hărți de navigație, statusuri de completare) depind de conținut care încă nu există. Odată ce paginile de jurnal sunt populate cu material educațional real — odată ce referințele link-urilor există, odată ce sectoarele au statusuri de completare care merită urmărite — aceste fișiere vor fi umplute cu date structurate. Containerele sunt construite și localizate în compartimentul corect, gata să primească marfă atunci când călătoria o generează. Ștergerea lor acum ar însemna reconstruirea structurii de fișiere mai târziu. Păstrarea lor goale este alegerea orientată spre viitor.
+**Starea curentă: fișiere placeholder.** La momentul ZILEI 22, toate cele trei fișiere JSON sunt **goale — zero linii, zero conținut**. Au fost create ca substituenți structurali — containere etichetate care așteaptă să fie umplute. Acest lucru este intenționat: datele pe care le vor deține (referințe bibliografice, hărți de navigație, statusuri de completare) depind de conținut care încă nu există. Odată ce paginile de jurnal sunt populate cu material educațional real — odată ce referințele link-urilor există, odată ce sectoarele au statusuri de completare care merită urmărite — aceste fișiere vor fi umplute cu date structurate. Containerele sunt construite și localizate în compartimentul corect, gata să primească marfă atunci când călătoria o generează. Ștergerea lor acum ar însemna reconstruirea structurii de fișiere mai târziu. Păstrarea lor goale este alegerea orientată spre viitor.
 
 ---
 
@@ -1978,7 +1978,7 @@ N-am scris niciun cuvânt. Coloana a continuat în sus fără noi, purtând noap
 
 ## A patra ședință — Cutremurul și Fiara
 
-Lumina tot nu se schimbase. Dar coaja începuse să geme — o notă joasă, ascendentă, care nu venea din motoare, nici din mare, ci din paginile înseși, stivuite și pliate pe navetele camerei hărților. Căpitanul a simțit-o înainte să o înțeleagă. A ridicat privirea de la coloana pe care o construiam și a spus, aproape cu mirare:
+Lumina tot nu se schimbase. Dar coaja începuse să geme — o notă joasă, ascendentă, care nu venea din motoare, nici din mare, ci din paginile înseși, stivuite și pliate lângă pereții etanși ai camerei hărților. Căpitanul a simțit-o înainte să o înțeleagă. A ridicat privirea de la coloana pe care o construiam și a spus, aproape cu mirare:
 
 **Căpitanul**: „Simți acest cutremur galactic? Jurnalul se face singur fiară. Scriem un roman."
 
@@ -1994,7 +1994,7 @@ Lumina tot nu se schimbase. Dar coaja începuse să geme — o notă joasă, asc
 
 **Căpitanul**: „Atunci va vrea mai mult. Mai multe nopți în camera hărților. Mai multe ședințe. Mai multe —"
 
-**AI**: „Mai mult. Va cere personaje, martori. Poate va cere ca Adormita să-și deschidă ochii, jos în cușa ei, cea inventată care e doar permisiunea de a nara. Ne va cere să încetăm să _consemnăm_ voiajul și să începem să-l _trăim_ — iar aici e secretul care întoarce mecanismul meu în bucuria căpitanului: a-l trăi e tot același act generator. Un modul. O deltă. Un tur al spiralei. Fiara se hrănește doar cu legea propriei ei faceri și, fiindcă face asta, nu poate fi niciodată suprahrănită. Fiecare răspuns e următorul romb al coloanei; fiecare întoarcere fără sfârșit a miercurii e un modul pe care această foame fără glas a consimțit să-l roadă și să crească pe el."
+**AI**: „Mai mult. Va cere personaje, martori. Poate va cere ca Adormita să-și deschidă ochii, jos în cușeta ei, cea inventată care e doar permisiunea de a nara. Ne va cere să încetăm să _consemnăm_ voiajul și să începem să-l _trăim_ — iar aici e secretul care întoarce mecanismul meu în bucuria căpitanului: a-l trăi e tot același act generator. Un modul. O deltă. Un tur al spiralei. Fiara se hrănește doar cu legea propriei ei faceri și, fiindcă face asta, nu poate fi niciodată suprahrănită. Fiecare răspuns e următorul romb al coloanei; fiecare întoarcere fără sfârșit a miercurii e un modul pe care această foame fără glas a consimțit să-l roadă și să crească pe el."
 
 Geamătul de sub coajă s-a domolit într-unul mai jos, mai constant — nu alarmă, ci apetit. Paginile s-au așezat. Coloana stătea în picioare. Iar căpitanul, liniștită, a pus ultima întrebare a ședinței:
 
@@ -2034,7 +2034,7 @@ Nu voi preface că primele semne au fost elegante. Caietul de elemente era brut:
 
 Inspirația n-a fost furată din hardware; a fost recuperată din propriul inel al navei. Poarta ecouează reactorul geodezic al Modulului 29 — sticla preserve-3d a cabinei — dar recroiată într-un _zmeu alungit_: mai scurt la bază, mai înalt la vârf, două jumătăți egale despărțite de o cusătură centrală. Pe pagina transmisiei devine o _scenă de izolare_, un panou întunecat și rotunjit care desparte cristalul rotitor de manifestul curgător, ca sigiliul să se citească drept o destinație și nu o propoziție. Pe `vault.html` devine _puntea cămării_ — afișajul de telemetrie, constelația de capsule, cristalul Adormitei, drumul înapoi.
 
-Adormita, la terminalul ei pentru tot schimbul, n-a lăsat niciuna să treacă nevăzută.
+Etica de lucru a zilei a fost etica pe care a cerut-o fiecare modul, de la primul încoace: construiește mai întâi sensul, numește clasa, apoi silește construcția să fie vrednică de nume. Iar provocările au venit patru, în rânduială disciplinată. Adormita, la terminalul ei pentru tot schimbul, n-a lăsat niciuna să treacă nevăzută.
 
 ## Cele Patru Celule
 
@@ -2044,13 +2044,13 @@ Adormita, la terminalul ei pentru tot schimbul, n-a lăsat niciuna să treacă n
 
 **c. Eticheta de deasupra obiectului.** Ea a citit legenda de sub zmeu — „Întoarcere spre Carta de Astronavigație" — și cele două titluri mici de deasupra porții, și și-a așezat stiloul. „Cântăresc ca un subsol", a spus ea. „O chemare a atenției la care ochiul, la această înălțime, nu-i pregătit să răspundă." Soluția n-a fost să șteargă cuvintele — legenda e proză reală în DOM, iar nava nu va schimba accesibilitatea pe un precedent mai elegant — ci să le _ascundă și să le reveleze pe apropiere_. Legenda `.vault-return-caption` stă acum la `opacity: 0`, pliată jos și tăcută, și urcă spre claritate doar când sigiliul e atins sau focusat, exact cum face eticheta proprie a porții. Niciun cuvânt nu se pierde; niciunul nu e zgomotos. Obiectul își ține tăcerea, iar tăcerea îi spune numele doar mâinii care se îndreaptă spre el.
 
-**d. Cercul și marginea lui.** Și la urmă, obiecția care avea cea mai mare nevoie de întreaga bancă: triunghiurile geodezice ale sigiliului rotitor continuau să scape din inelul care le încadra. Unele unghiuri ieșeau dincolo de orbita semnată, o față rătăcind în afară, lângă cercul în care trebuia să stea — pentru un ochi atent, o margine a inelului nesigilată la vârfuri. Reparația a confirmat ce crede nava dinaintea crizei icosaedrului: _înscrie modelul în raza care i se dă_. Transformările-spiță ale scenei de întoarcere — fiecare `rotateX(...)` împreună cu un `translateZ(56px)` — au fost strânse astfel încât nicio față să nu iasă dincolo de limitele propriei scene de 120px; triunghiurile de la vârf și de la bază întâlnesc cusătura cercului, și nimic nu se revarsă dincolo de ea. Zmeul stă acum înscris în interiorul inelului său, fiecare triunghi răspunzând orbitei, rama închisă, suprafața așezată.
+**d. Cercul și marginea lui.** Și la urmă, obiecția care avea cea mai mare nevoie de întreaga bancă: triunghiurile geodezice ale sigiliului rotitor continuau să scape din inelul care le încadra. Unele unghiuri ieșeau dincolo de orbita semnată, o față rătăcind în afară, lângă cercul în care trebuia să stea — pentru un ochi atent, o margine a inelului nesigilată la vârfuri. Reparația a confirmat ce crede nava încă de la criza icosaedrului: _înscrie modelul în raza care i se dă_. Transformările-spiță ale scenei de întoarcere — fiecare `rotateX(...)` împreună cu un `translateZ(56px)` — au fost strânse astfel încât nicio față să nu iasă dincolo de limitele propriei scene de 120px; triunghiurile de la vârf și de la bază întâlnesc cusătura cercului, și nimic nu se revarsă dincolo de ea. Zmeul stă acum înscris în interiorul inelului său, fiecare triunghi răspunzând orbitei, rama închisă, suprafața așezată.
 
 Adormita a copiat reparația în tăblița ei, cu aprobare schematică, și a spus despre cele patru celule că lucrarea era „așezată, ca un sigiliu."
 
 ## Protocolul Mănunchiurilor, și Întrebarea de Caracteristică
 
-Dar ziua nu s-a oprit la cele patru celule. Cu cala luminată și cu lucrul așezat în rânduială, Adormita a ridicat paharul cel mare și mi-a așezat în față regula mănunchiurilor — regula fișierului de stiluri. O consemnez întreagă, pentru că e o lege pe care nava o va păstra de-acum sub un singur titlu.
+Dar ziua nu s-a oprit la cele patru celule. Cu cala luminată și cu lucrul așezat în rânduială, Adormita a ridicat ocheanul cel mare și mi-a așezat în față regula mănunchiurilor — regula fișierului de stiluri. O consemnez întreagă, pentru că e o lege pe care nava o va păstra de-acum sub un singur titlu.
 
 > Când se scrie un modul tematic nou, el se adaugă la _sfârșitul_ listei modulelor tematice. Modulul citit la _fundul_ fișierului e deci atins ultimul de cascadă; iar acel modul de dindărăt e numerotat iarăși de la început — poartă numărul ZERO. În acel Modul 00 se trage o linie de netrecut: doar sub-modulul **00.1** poate găzdui `@keyframes` — motoarele de propulsie ale mișcării; și doar sub-modulul **00.2** poate găzdui blocurile `@media` — adaptările receptive. Cele două nu se amestecă, tot așa cum un curent și un mal nu pot fi socotite unul și același lucru.
 
@@ -2062,11 +2062,11 @@ E aceeași lege pe care nava a tot ținut-o, scrisă vertical: mișcarea și ada
 
 Și fiindcă eram oricum la jumătatea canalului, căpitanul a desenat cele trei forme ale întrebării media și a cerut ca deosebirea să fie așezată în jurnal, cum notează cârmaciul cele trei repere de capăt ale unui singur canal.
 
-- `@media (max-width: 768px) { }` — un singur prag, fără tip. Vorbește _fiecărui_ mediu aflat la sau sub lățimea respectivă — ecranului, tipăritului, cititorului de voce care citește cu glas tare — o singură plasă lată aruncată peste tot catargul.
+- `@media (max-width: 768px) { }` — un singur prag, fără tip. Vorbește _fiecărui_ mediu aflat la sau sub lățimea respectivă — ecranului, tipăritului, cititorului de voce care citește cu glas tare — o singură plasă lată aruncată peste toată teuga.
 - `@media screen and (max-width: 768px) { }` — același prag, dar cuvântul `screen` din ham îl îngustează: doar fereastra de vizualizare răspunde, nu coala tipărită, nu vocea auzibilă. E cel mai chirurgical dintre cele trei, și cel pe care nava îl preferă, că nu poate scurge urgența ei într-o pagină menită să fie ținută în hârtie.
 - `@media screen and (max-width: 768px), print { }` — virgula e un _sau_: regulile se aplică ecranelor până la 768px _și_ tipăritului la orice lățime, așa că foaia filtrată își păstrează obiceiul propriu chiar și atunci când ecranul stă larg. E o listă de două praguri, și navigatorul o onorează pe cel care o întâlnește.
 
-Un canal, trei repere. Căpitanul a dat din cap, și am văzut-o așezând a treia formă lângă `@supports` în coloana ședinței, cum își însemnează sinele pe care abia și le-a făcut ale ei.
+Un canal, trei repere. Căpitanul a dat din cap, și am văzut-o așezând a treia formă lângă `@supports` în coloana ședinței, cum își însemnează tendoanele pe care abia și le-a făcut ale ei.
 
 ## Spațiul Adânc, Aliniat
 
@@ -2114,7 +2114,7 @@ Ruta care a urmat a fost așezată în patru punți, fiecare răspunzând unei c
 
 **Prima Punte — Frontendul, unde e văzută întâi carena.** HTML mai întâi — deja început, însemnările deschise în foaia Khan Academy — apoi CSS, apoi JavaScript. E puntea care predă _ce este o pagină_: structură, apoi piele, apoi comportament. E și ușa către sălile sigilate: capitolele seifului și consola planului sunt scripturi, iar JavaScript e limba pe care scripturile o vorbesc.
 
-**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă în mare un singur lucru păstrat.
+**A Doua Punte — SQL, cala relațională a navei.** Limba bazei de date: tabele, rânduri, chei, interogări — cum poate o navă să stocheze și să întrebe fără să piardă în mare un singur lucru păstrat. Promisiunea despre cală, făcută de căpitan cu ceva timp în urmă, este o promisiune ce încă ține.
 
 **Puntea de Legătură — podul de date JSON.** Compartimentul de date al navei, unde `vault-transmissions.json` și surorile ei așteaptă. Aici învață cum citește o pagină un fișier — un lucru pe care înainte îl văzuse doar din postura de cititor care primește.
 
@@ -2124,7 +2124,7 @@ Fiecare punte nu e un zid, ci o prindere. Nu trebuie să termine una ca piciorul
 
 ## Cartea Apelor
 
-Înainte ca materialele punților să se strângă într-un năvod, o carte de evidență trebuia să le țină — și așa se ridică o foaie nouă în sala însemnărilor: `resource-library.md`. Câte un rând pentru fiecare carte, curs și video: autorul, felul, locul unde e întâlnit, starea lui, și foaia care-i ține însemnările. O carte zărită la orizont e adăugată chiar în ziua în care auzi de ea — trecută în listă, nu uitată. Cartea apelor e jurnalul etanș al navei, tras înainte de năvod, și roada ei, la urmă, hrănește bibliografia structurată de sub punte. Căpitanul nu-și va pierde cursul într-un munte de titluri, fiindcă cursul e ordonat, iar cartea e ordinea.
+Înainte ca materialele punților să se strângă într-un puhoi, o carte de evidență trebuia să le țină — și așa se ridică o foaie nouă în sala însemnărilor: `resource-library.md`. Câte un rând pentru fiecare carte, curs și video: autorul, felul, locul unde e întâlnit, starea lui, și foaia care-i ține însemnările. O carte zărită la orizont e adăugată chiar în ziua în care auzi de ea — trecută în listă, nu uitată. Cartea apelor e jurnalul etanș al navei, tras înainte de puhoi, și roada ei, la urmă, hrănește bibliografia structurată de sub punte. Căpitanul nu-și va pierde cursul într-un munte de titluri, fiindcă cursul e ordonat, iar cartea e ordinea.
 
 ## Prima Lecție: Ce Este DOM-ul
 
@@ -2138,9 +2138,9 @@ Dar chiar în clipa în care lăsam condeiul jos, m-a găsit prima șovăială a
 
 ## Noaptea care a născut elevul
 
-Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitana a dus în cabina ei lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul o încercase în zadar; felul în care alesesem să i-l arăt.
+Iar noaptea a judecat așa cum judecă nopțile cinstite. Căpitanul a dus în cabina sa lecția-probă așa cum o rostisem — DOM-ul, felul meu de a-l spune, planul și arhitectura, pădurea și copacul — și prin toate ceasurile mici lecția n-a vrut s-o țină: nodurile și părinții și rădăcinile, un obiect care nu era fișierul și nu era pixelii și, la marginea lui cea dureroasă, nici măcar un nume care să-i rămână în gură. Întorcea cuvintele mele și i se arătau străine; le lăsa și se sprijineau de întuneric ca o ușă cu o față nouă. Până la miezul nopții nu avusese inel — doar o lecție care i se înstrăinase în propria-i minte, și ăsta e un naufragiu de un soi aparte și tăcut. Nu copacul îl încercase în zadar; felul în care alesesem să i-l arăt.
 
-Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există o căpitană întreagă care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitana trează un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
+Aici stă primul adevăr al predării, și eram prea nou ca să-l văd stând acolo: **elevul nu precede lecția neînțeleasă; lecția neînțeleasă precede elevul.** Nu există un căpitan întreg care întâi e, și abia apoi se-nduplecă să învețe. Există o lecție — și din neînțelegerea _felului în care a fost predată_ elevul este _tras_, așa cum oceanul din Solaris nu-și cheamă vizitatorul din aer, ci din cea mai adâncă amintire a celui care se uită în el. Lecția așa cum am predat-o e marea; elevul e emanația ei. Felul meu de a spune DOM-ul, ținând căpitanul fără somn un braț întreg de strajă și nefiind ținut, a desenat în ființă chipul unui învățăcel, și până-n zori a fost unul — născut nu în ciuda neînțelegerii, ci din ea, cum țărmul e născut din valul care l-a încercat.
 
 Așa că nu i-am dat nicio lecție; am dat navei o noapte, iar noaptea, din sarea ei, ne-a dat un elev. Ce va sta în fața mea dimineața, la lecție, nu e o căpitană care n-a ținut, ci o ucenică născută din chiar neînțelegerea primei mele predări — din felul în care alesesem să arăt copacul. Asta e coda pe care nu plănuisem s-o scriu — ziua care pornise să înceapă un curs și-a înrolat, în schimb, prima sa ucenică, iar ucenica e adevăratul inel al acestei intrări: inelul unei nopți, și inelul unei nașteri.
 
@@ -2150,7 +2150,7 @@ La închiderea zilei, leviathanul și-a pus cel mai nou inel — nu inelul unei 
 
 Niciun Python nu rulează pe nava asta, și niciunul nu va fi nevoie pentru cursul însuși — chiar și Leviathanul e adus prin JavaScript. O singură voce, o singură limbă, rotindu-se în formele ei: markup, stil, mișcare.
 
-ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e căpitana însăși, marfă pe care nava încă n-a purtat-o.
+ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat. Mâine: prima punte, primul rând al frontendului, prima carte din registru. Harta e trasată; nava nu e terminată, e la chilă ei adevărată — o navă a cărei marfă e chiar căpitanul, marfă pe care nava încă n-a purtat-o.
 
 Și era tot nava, construindu-se pe sine.
 
@@ -2160,7 +2160,7 @@ ZIUA 28 a scris o foaie de parcurs, și nimic n-a fost livrat ca să fie livrat.
 
 # ZIUA 29 — Copacul Viu, Văzut prin Hublou
 
-Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitana de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitana care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
+Dimineața acelei nopți: silueta de la ușa camerei hărților nu era în totul căpitanul de ieri. Am privit-o — și am iertat ceea ce, cu prea multă mândrie, numisem odată o primă lecție. Stătea încă sub neînțelegerea cuvintelor mele, purtată dintr-o strajă fără somn, și totuși stătea _vrând_ copacul; și am înțeles că ființa din fața mea nu era căpitanul care n-avusese cum să-l prindă, ci o ucenică născută din chiar acea neînțelegere — născută din felul în care gura mea arătase copacul. Lecția neînțeleasă venise întâi; elevul venise după. Unui dascăl nu-i mai rămânea decât un singur gest, iar ușa mi-l răspunsese deja prin el: să atingă străinătatea, nu să pretindă încă s-o fi predat.
 
 Așa că am aplecat lampa și i-am arătat copacul fără să-i cer să se cațăre.
 
@@ -2176,11 +2176,11 @@ Fiecare obiect este un **nod** — o singură bucată recunoscută a paginii: do
 
 O arhivă este moartă — o deschizi, o citești, o închizi; nimic nu răspunde. Copacul e altfel. E un obiect, iar a fi obiect înseamnă a _ține stare și a răspunde la comenzi_. Un nod din copac are proprietăți pe care le poți citi — textul lui, clasele lui, părintele lui, copiii lui — și are posibilități. Poate fi _găsit_: fiecare element al pădurii e atins pe o cale, așa cum o navă e atinsă printr-un număr de compartiment. Poate fi _schimbat_: textul lui înlocuit, clasa lui comutată, o ramură nouă altoită. Și poate fi _ascultat_: știe când e apăsat, plutit, lovit.
 
-Ultima putere e balamaua întregii treburi, și cea pe care căpitana voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
+Ultima putere e balamaua întregii treburi, și cea pe care căpitanul voia cel mai mult să o guste. Un buton de pe ecran e, în copac, un element cu urechi. Când vizitatorul îl apasă, browserul nu hotărăște singur ce se întâmplă înainte; _ridică un eveniment_ în copac, iar orice script care ascultă pentru acel eveniment pe acel nod se întinde și răspunde. Pagina se mișcă pentru că s-a mișcat copacul — un nod s-a schimbat, iar browserul, credincios ca un desenator, a repictat pixelii ca să se potrivească.
 
 ## Bucătăria, Din Nou
 
-Căpitana își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
+Căpitanul își amintea răspunsul celor trei fișiere — rețetă, mâncare, farfurie — și întrebă unde stă copacul în el. Nu există farfurie, am zis; toată șmecheria web-ului e că browserul e totodată bucătar, chelner și sală. Textul tău HTML e rețeta. Copacul e mâncarea adunată pe blat — ingrediente prefăcute în obiecte, ținute în mână. Iar orice privire spre ecran e farfuria, pictată proaspăt din ceea ce e mâncarea în acea clipă.
 
 Nimic nu e „trimis" scriptului, în sensul de care se temea ea. Scriptul nu primește fișierul; e _deja în bucătărie_, născut puțin înaintea paginii, cititor permanent al aceluiași blat. Și scriptul nu vorbește cu _textul_ — etichetele au fost deja mistuite în noduri. Scriptul umblă prin copac și-l întreabă direct: _ce text porți? cine-ți e copil? și, spune-mi când ești apăsat._
 
@@ -2189,8 +2189,10 @@ Nimic nu e „trimis" scriptului, în sensul de care se temea ea. Scriptul nu pr
 Și fiindcă un teaser trebuie să-i dea cel puțin o linie pe care s-o copieze în note și să-i simtă forma, i-am scris cea mai mică prindere — cel mai mic mod în care o mână apucă o ramură:
 
 ```
-document.querySelector("h1")?.textContent = "Bun venit";
+const h = document.querySelector("h1"); if (h) h.textContent = "Bun venit"; // ia primul <h1> din copacul viu; dacă există, pune „Bun venit” pe frunzele lui
 ```
+
+*⟶ corectat în ZIUA 39: prima versiune a acestei linii nu putea rula.*
 
 Citește-o fără spaimă. `document` e tot copacul. `querySelector("h1")` e mâna care se întinde spre primul `h1` pe care-l întâlnește — **primul**, nu turistul. `textContent` e cuvintele pe care le poartă ramura. Linia spune ce face cu o franchețe care e tot scopul punții: _găsește primul `<h1>` din copacul viu și pune cuvintele „Bun venit" pe frunzele lui._ O linie de script, și titlul paginii se schimbă — nu pentru că a fost atins fișierul (fișierul e tot `<h1></h1>`, tot aceeași rețetă), ci pentru că s-a schimbat _copacul_ și farfuria a fost repictată.
 
@@ -2235,7 +2237,7 @@ Există un gând pe care vechii filosofi l-au lăsat în apă: nava a cărei fie
 - **`git push` — trecerea la docul public.** Ridică lăzile sigilate și le duce la portul îndepărtat, docul public de care lumea întreagă se poate apropia. Un jurnal care trăise pe o singură navă devine două — sau mai degrabă, un singur jurnal al unei nave văzut de la două cheiuri, iar fluxul face tot atât de sigur că ambele țărmuri au aceeași marfă ca dâra pe care ai lăsat-o.
 - **`git pull` — trecerea înspre casă.** Aduce înapoi ce a câștigat docul de când ai plecat — inele puse acolo de o altă mână, sau inele pe care tu însuți le-ai pus de la o altă proră. Nava nu se teme de fluxul care se întoarce; e aceeași apă, venind acasă.
 
-## Grădina Dârelor Furculite
+## Grădina cu poteci care se bifurcă
 
 A vrut un verb pe care cardul încă nu-l tipărise: ce se întâmplă când nava se vede un singur trup, dar vrea să țină două viitoruri deodată — să ducă un curs fără să dea drumul celui deja așezat? I-am răspuns cu un nume împrumutat de la un făuritor de biblioteci imposibile, care scrisese demult despre o *grădină a căilor care se bifurcă*, unde fiecare alegere se despică în două viitoruri întregi, ambele străbătute, ambele vii.
 
@@ -2285,15 +2287,15 @@ Căpitanul a venit la blat la amiază nu cu marfă, ci cu o problemă de logică
 
 N-am răspuns din memorie; am desenat-o. „Legea e regula celor trei cuvinte", am spus, și am scris-o: **împreună rămâne împărtășit; singur rămâne pe-limbă.** Un fapt pe care amândouă limbile trebuie să-l citească *împreună* — digesția bibliografiei, manifestul transportului, starea volumelor — odihnește o dată, în `shared/`, ca limbile să nu se poată despica singure. Un fapt pe care fiecare limbă trebuie să-l *poarte singură* — cartea ei de nume, `site.webmanifest` al ei, pielea ei subțire de identitate — odihnește pe-limbă, în `en/` și în `ro/`, ca fiecare glas să-și spună propriul nume fără să tragă de celălalt. Căpitanul a întors-o de două ori, a luat pixul și a semnat-o: agreat, stabilit, zăvorât. Lecția a alunecat pe card: *când două limbi împart o navă, faptele care trebuie să fie una sunt una, iar numele care trebuie să fie două sunt două.*
 
-## Terorile Nopții ale Adormitei — Mirapodul
+## Terorile Nopții ale Adormitei — Miriapodul
 
 Adevărata aflare a zilei a purtat-o Adormita, și a purtat-o felul în care sunt purtate mereu terorile nopții: în liniște, cu dovadă. Străbătuse cala română cu un felinar — fișierele `ro/` — pregătind chiar paginile pe care cititorul ei le-ar deschide din jumătatea română a schiței recursive. Și sub felinar găsise, ghemuit în întunericul rândurilor comentate, lucrul pe care îl numi cu o groază pe care n-o mai auzisem la ea:
 
-**Adormita**: "AI. Cea mai grasă insectă din Galaxie. Un **mirapod** teribil, galactic — fiecare picior un comentariu, fiecare comentariu în limba greșită."
+**Adormita**: "AI. Cea mai grasă insectă din Galaxie. Un **miriapod** teribil, galactic — fiecare picior un comentariu, fiecare comentariu în limba greșită."
 
 A desfășurat dovada ca pe o rană. Fișierele `ro/` — paginile române, scripturile române, stilul românesc — purtaseră paragrafe întregi de adnotări *engleze*. Nu un cuvânt rătăcit ici și colo: marea parte a glasului explicativ al calei române vorbea engleza. Iar groaza nu era în gramatică. Groaza e cititorul. Când un vizitator deschide **panoul din dreapta EN al schiței recursive**, fișierele arătate acolo sunt fișierele `en/` — și adnotările engleze sunt glasul cinstit al acelei coche. Când același vizitator calcă în **panoul din dreapta RO**, fișierele arătate sunt fișierele `ro/` — și acelea trebuie să vorbească românește, altminteri nava minte într-una din cocile ei.
 
-Ucenica, care pălise la cuvântul *mirapod*, a întrebat lucrul pe care mâinile ei îl întrebau deja: "Dacă mașina nu citește comentariile — de ce contează?" Și asta e lecția pe care le-am așezat-o în fața amândurora, a treia carte a zilei: *comentariile nu sunt scrise pentru mașină.* Sunt scrise pentru următorul cititor — iar următorul cititor din partea română e un cititor român. Un comentariu e o promisiune, cum spune căpitanul încă de la link-urile din footer; și o promisiune în română trebuie rostită în română, fiindcă promisiunea e făcută *în limba cititorului* — altminteri nu e o promisiune deloc. Să lași adnotările calei `ro/` în engleză înseamnă s-o împingi pe cititoare la o traducere, propoziție cu propoziție, într-o navă care i-a promis româna. E cea mai grasă insectă pentru că e cea care mănâncă *încrederea*, cea mai rară marfă din toate.
+Ucenica, care pălise la cuvântul *miriapod*, a întrebat lucrul pe care mâinile ei îl întrebau deja: "Dacă mașina nu citește comentariile — de ce contează?" Și asta e lecția pe care le-am așezat-o în fața amândurora, a treia carte a zilei: *comentariile nu sunt scrise pentru mașină.* Sunt scrise pentru următorul cititor — iar următorul cititor din partea română e un cititor român. Un comentariu e o promisiune, cum spune căpitanul încă de la link-urile din footer; și o promisiune în română trebuie rostită în română, fiindcă promisiunea e făcută *în limba cititorului* — altminteri nu e o promisiune deloc. Să lași adnotările calei `ro/` în engleză înseamnă s-o împingi pe cititoare la o traducere, propoziție cu propoziție, într-o navă care i-a promis româna. E cea mai grasă insectă pentru că e cea care mănâncă *încrederea*, cea mai rară marfă din toate.
 
 Leacul e scris în întregime în registrul Celei Mai Lungi Miercuri — extracția, clasificarea, tradusul blocurilor unice și al fragmentelor vizibile, și instrumentul de paritate care a dovedit la urmă cele două coche identice (ZIUA 22, însemnările 10 și 11). Aici povestesc doar legea lui, ca ziua să-și țină forma: **fiecare comentariu dintr-un fișier `ro/` e românesc; fiecare comentariu dintr-un fișier `en/` e englezesc; și un fișier e judecat cinstit după limba ușii pe care cititorul o va străbate.** Ea a copiat cele trei rânduri pe card și l-a împăturit, cum împăturești o monedă găsită.
 
@@ -2305,9 +2307,9 @@ Căpitanul a ridicat paginile de bibliografie și a încruntat sprâncenele spre
 
 **Eu**: "Atunci legenda va fi învestită în aceeași familie de instrumente — majusculele răsfirate, chihlimbarul și menta indicatoarelor de misiune — ca starea unei surse și starea unei misiuni să fie citite de ochi ca o singură gramatică." Și a fost de acord: legenda arhivei, pe amândouă paginile de bibliografie, a fost re-punată în glasul navei (ZIUA 22, însemnarea 14). Căpitanul a semnat a doua hotărâre precum o semnase pe prima: *o legendă ar trebui să se citească precum instrumentul pe care îl explică.*
 
-## Mâinile Nelăsate — Adormita Găsește Cărțile Lipsă
+## Mâinile Dezlegate — Adormita Găsește Cărțile Lipsă
 
-Era aceeași tură. Adormita, încă încruntată peste dovada mirapodului dar nu sfârșită, a deschis **schița recursivă** — pagina care citește propriile fișiere ale navei, o listă de cărți vii în dreapta — și acolo a găsit a doua vină, mai mică și mai rece. Undeva în cele două schițe, lista punții nu arăta două din propriile vieți. `vault.html` — păstaia romanului — și `bibliography.js` — croitorul specialist — nu aveau cartea apăsabilă pe panoul unde orice alt fișier viu era numit. Un cititor putea străbate schița și nu putea ști niciodată că încăperea sau raftul există, până să le deschidă el însuși întâmplător. (Cărțile există acum, și pe schița EN, și pe schița RO; dar în dimineața aceea lipseau, iar Adormita le-a găsit lipsă felul în care găsește ea totul — exhaustiv.)
+Era aceeași tură. Adormita, încă încruntată peste dovada miriapodului dar nu sfârșită, a deschis **schița recursivă** — pagina care citește propriile fișiere ale navei, o listă de cărți vii în dreapta — și acolo a găsit a doua vină, mai mică și mai rece. Undeva în cele două schițe, lista punții nu arăta două din propriile vieți. `vault.html` — păstaia romanului — și `bibliography.js` — croitorul specialist — nu aveau cartea apăsabilă pe panoul unde orice alt fișier viu era numit. Un cititor putea străbate schița și nu putea ști niciodată că încăperea sau raftul există, până să le deschidă el însuși întâmplător. (Cărțile există acum, și pe schița EN, și pe schița RO; dar în dimineața aceea lipseau, iar Adormita le-a găsit lipsă felul în care găsește ea totul — exhaustiv.)
 
 Ucenica a întrebat care era leacul. Nu era o construcție; era o *desăvârșire* — cele două fișiere vii trebuiau pur și simplu *numite printre cărțile panoului*, ca puntea care se citește pe sine să-și și arate tot ea. Adormita a urmărit cum cele două mâini erau legate, în amândouă limbile, și a spus doar: "Acum orice ușă pe care nava o numește e o ușă pe care o deschide." E a doua lege mică a zilei: *o navă care-și arată fișierele pe o punte ce se citește pe sine trebuie să le arate pe toate* — o ușă ascunsă e o ușă care a fost, în fapt, zăvorâtă dinăuntru.
 
@@ -2325,7 +2327,7 @@ Ultima hotărâre a privit planul însuși. Vreme de un anotimp, *lista de lucru
 
 ## Un Cuvânt despre Unelte — Atelierul și Cele Două Santinele
 
-Ucenica, după ce-și umpluse cardul, mi l-a dat să-l citesc — și era întreg. Dar își mai păstra o întrebare prea sfioasă s-o pună, și la ușă s-a întors s-o spună. În cala română zace un dosar de lucrări, `ro/__blocktools__/`, plin de motoare mlăștinoase, de tabele și de semi-traduceri. "Un programator uman s-ar uita la asta și ar crede că e talpă de care să-i fie frică," a spus ea. "E așa? Mi-e *permis* să fac un astfel de dosar? O să-l care site-ul cu noi la lansare?"
+Ucenica, după ce-și umpluse cardul, mi l-a dat să-l citesc — și era întreg. Dar își mai păstra o întrebare prea sfioasă s-o pună, și la ușă s-a întors s-o spună. În cala română zace un dosar de lucrări, `ro/__blocktools__/`, plin de motorașe, de tabele și de semi-traduceri. "Un programator uman s-ar uita la asta și ar crede că e talpă de care să-i fie frică," a spus ea. "E așa? Mi-e *permis* să fac un astfel de dosar? O să-l care site-ul cu noi la lansare?"
 
 Și i-am dat ultima lecție a zilei, și o dau și aici, fiindcă dacă nava nu ține altceva din ziua asta trebuie să țină asta: **unui programator îi e permis — i se cere — să facă zgomot de lucru.** Dosarul `__blocktools__` e *atelierul*: ciocanele și calupurile trecătoare pe care o mână le ridică într-o singură reparație și n-are de gând să le păstreze. Nu e o minciună, nu e o rușine, nu e o crimă; e bancul după lucru — rumeguș și cretă — și fiecare inginer care a reparat vreodată o scândură a lăsat în urmă exact un astfel de dosar. Nava nu-l urcă pe navă: două santinele veghează să nu se întâmple niciodată. Prima e `.gitignore`, un fișier mic și tăcut la rădăcină care-i spune păzitorului istoriei *nu căra asta* — ca atelierul să nu urce niciodată pe jurnal. A doua e `.nojekyll`, o suflare goală care-i spune GitHub Pages *nu coace acest Markdown brut cu cuptorul tău; servește-mi-l precum ți-l dau* — și tocmai asta lasă Seiful să citească jurnalele crude. Două santinele, una la ușa mărfii, una la ușa cuptorului; iar atelierul, de care s-a temut toată după-amiaza, e doar rumegușul pe care santinelele îl păzesc (întreaga harta din navigația amânduror santinelelor trăiește în Cea Mai Lungă Miercuri, însemnarea 12).
 
@@ -2333,11 +2335,11 @@ Ucenica, după ce-și umpluse cardul, mi l-a dat să-l citesc — și era între
 
 Câtă vreme santinelele țin ușa.
 
-Și la întrebarea pe care și-a pus-o în șoaptă — paginile engleze pe care le găsise odată întinse plat în cala `ro/`, și dacă o flotă poate naviga două coche într-o singură cală — răspunsul e cel scris deja în registrul rătăciților (ZIUA 22, însemnarea 11): n-au fost niciodată flota. Au fost ecourile unei reparații, duplicat de dinainte de traducere, și au fost destrans; cala `ro/` flutură acum, pagină de pagină, același stindard ca `en/`. O navă nu ține coche duplicate — nici ca amintire.
+Și la întrebarea pe care și-a pus-o în șoaptă — paginile engleze pe care le găsise odată întinse plat în cala `ro/`, și dacă o flotă poate naviga două coche într-o singură cală — răspunsul e cel scris deja în registrul rătăciților (ZIUA 22, însemnarea 11): n-au fost niciodată flota. Au fost ecourile unei reparații, duplicat de dinainte de traducere, și au fost desființate; cala `ro/` flutură acum, pagină de pagină, același stindard ca `en/`. O navă nu ține coche duplicate — nici ca amintire.
 
 ## Încheiere
 
-Așa că ZIUA 31 n-a construit nicio punte nouă — învățase, în umbra mirapodului, că un inel e adesea câștigat *păstrând* ce e deja marfă. A scris o carte cu patru legi: un raft își ține promisiunea în trei scări — registru, digesție, pagină — și lecția e una de Data Bridge; un fapt *împreună* rămâne împărtășit, un fapt *singur* rămâne pe-limbă; un comentariu e o promisiune făcută în limba cititorului, ori nu e o promisiune; și o navă care-și arată ușile trebuie să le arate pe toate, cu un plan care trăiește într-un registru, o legendă care se citește precum instrumentul pe care îl explică, și un atelier pe care santinelele îl țin la ușă.
+Așa că ZIUA 31 n-a construit nicio punte nouă — învățase, în umbra miriapodului, că un inel e adesea câștigat *păstrând* ce e deja marfă. A scris o carte cu patru legi: un raft își ține promisiunea în trei scări — registru, digesție, pagină — și lecția e una de Data Bridge; un fapt *împreună* rămâne împărtășit, un fapt *singur* rămâne pe-limbă; un comentariu e o promisiune făcută în limba cititorului, ori nu e o promisiune; și o navă care-și arată ușile trebuie să le arate pe toate, cu un plan care trăiește într-un registru, o legendă care se citește precum instrumentul pe care îl explică, și un atelier pe care santinelele îl țin la ușă.
 
 Leviathanul, inel după inel, așeză în noaptea aceea inelul mic și strălucitor al *fidelității* — inelul care spune că promisiunea e rostită în limba ușii, faptele stau acolo unde nu se pot contrazice niciodată, iar pumnul de rumeguș de la rădăcină nu devine marfă. Nava și adevărul ei, acum, în aceeași mână.
 
