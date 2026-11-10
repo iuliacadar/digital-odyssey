@@ -3523,7 +3523,7 @@ Modulul 00 este întotdeauna ultimul modul al foii de stil.
    etapei rotative, astfel încât rămâne perfect vertical și centrat în timp ce
    sticla se rotește în spatele ei — cusătura este constanta, promisiunea
    despărțirii. Închis, monolitul este întreg; cusătura este fantoma tăieturii.
-   Când cursorul se apropie, cusătura se aprinde (31.0.L) de parcă cele două jumătăți
+   Când cursorul se apropie, cusătura se aprinde (31.0.K) de parcă cele două jumătăți
    ar urma să se despartă. Este pur decorativă. */
 .vault-core-seam {
   position: absolute; /* @layout: Schemă de poziționare — fixată pe cadrul linkului, peste cristal. */
@@ -4083,6 +4083,7 @@ Modulul 00 este întotdeauna ultimul modul al foii de stil.
 @sub-module: 32.3 — Eticheta de Semnal
 @sub-module: 32.4 — Proza Explicativă
 @sub-module: 32.5 — Contractul de Mișcare Redusă
+@sub-module: 32.6 — Compresia Responsivă a Bannerului (→ 00.2.B, B6)
 Domeniu: .under-construction, .under-construction::before, .uc-label,
       .uc-icon, .under-construction p.
 Scop: O avertizare onestă fixată în capul oricărei punți de jurnal ale cărei

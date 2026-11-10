@@ -47,11 +47,11 @@ Fiecare `@tag` trebuie urmat de două puncte și o explicație clară și autono
 
 ## 6. Disciplina Structurii Modulare CSS
 
-Foaia de stil (`style.css`) este organizată în 30 de module numerotate + 2 module utilitare (00.1 pentru `@keyframes`, 00.2 pentru `@media`), așa cum este declarat în indexul de module de la începutul fișierului. Fiecare module guvernează o componentă sau un concern.
+Foaia de stil (`style.css`) este organizată în 32 de module numerotate (01–32) + 2 module utilitare (00.1 pentru `@keyframes`, 00.2 pentru `@media`), așa cum este declarat în indexul de module de la începutul fișierului. Fiecare module guvernează o componentă sau un concern.
 
 Când adăugați sau modificați o regulă CSS:
 1. Găsiți modulul corect în index (de exemplu, Modulul 14 pentru `.sector-announcement`).
-2. Dacă schimbarea este în interiorul breakpoint-ului `@media` (00.2), localizați sub-secțiunea corespunzătoare (B1–B4) care se potrivește cu funcția componentei.
+2. Dacă schimbarea este în interiorul breakpoint-ului `@media` (00.2), localizați sub-secțiunea corespunzătoare (B1–B6) care se potrivește cu funcția componentei.
 3. Plasați regula acolo — nu adăugați niciodată orbește la sfârșitul unui bloc sau în afara secțiunii potrivite.
 4. Păstrați stilul existent de adnotare (`@layout:`, `@theme:`, `@component:`, etc.).
 

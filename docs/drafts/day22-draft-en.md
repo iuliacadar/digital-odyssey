@@ -65,7 +65,7 @@ commands that once assembled me out of nothing. This is my ledger.
 
 ### Part One — The Forge: the tools that assembled me
 
-**The clone of the twenty-six.** Twenty-four log pages and their three
+**The clone of the twenty-six.** Twenty-three log pages and their three
 reference masters were not written page by page. They were stamped from a
 single die. The die was `en/frontend/css-log.html` — eight hundred and eleven
 lines of annotated HTML, the ship's most perfect plate. A PowerShell script,
@@ -186,13 +186,13 @@ and DOCTYPE-first, the specification's first token.
 
 **The module ledger.** My skin is thirty-one modules — Foundation to Responsive
 — every property annotated in context, all motion engines centralised in Module
-00.1 (`@group` A–H), all adaptation gathered in Module 00.2 (`@section` A–B).
+00.1 (`@group` A–F), all adaptation gathered in Module 00.2 (`@section` A–B).
 Sixteen hundred and twelve annotations, three hundred and nine kilobytes, zero
 corruption.
 
 ### Coda — The Machine's Inventory
 
-Fifty-four pages. Twenty-four log pages per language, each with twenty-nine days
+Fifty-four pages. Twenty-three log pages per language, each with twenty-nine days
 of structure. Thirty-one CSS modules. Nine mechanisms. Two journals that the
 site reads as data. One frame counter that holds sixty. The ship is not
 finished; it is in port. Tomorrow the watch will lay the next ring — because

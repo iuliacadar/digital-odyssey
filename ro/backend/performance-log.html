@@ -1734,14 +1734,20 @@
     <!-- @block: ÎNCĂRCĂTOR DE JAVASCRIPT
       Eticheta [script] încarcă sistemele de control ale navei — un singur
       fișier JavaScript (script.js) care se află cu un director mai sus decât această
-      pagină. Acest fișier conține toate mecanismele interactive:
-      MECANISMUL 01 (Animația de tastare), MECANISMUL 04 (Terminalul de note
-      persistente prin localStorage), MECANISMUL 06.5 (Comutatorul consolei HUD)
-      și filtrul de căutare din sidebar.
+      pagină. Acest fișier conține toate mecanismele interactive ale navei.
+      Pe această pagină de jurnal se trezesc opt dintre ele: MECANISMUL 01
+      (Ascunderea/afișarea barei de navigație la scroll), MECANISMUL 02
+      (Detectarea secțiunii active din sidebar), MECANISMUL 03 (Statusul de
+      misiune — re-declanșarea animației), MECANISMUL 04 (Terminalul de note
+      persistente prin localStorage), MECANISMUL 05 (Navigația prin ancore pe
+      desktop), MECANISMUL 06 (Derularea orizontală automată a HUD-ului pe
+      mobil), MECANISMUL 10-A (Jurnalul de călătorie) și MECANISMUL 11
+      (Indexul dinamic al sidebar-ului). Restul (06.5, 07, 08, 09 și 10-B)
+      caută elemente pe care această pagină nu le are și rămân adormite.
       @path:
         Atributul src="../script.js" le spune browserelor să preia
-        en/script.js relativ la locația acestei pagini
-        (directorul acestei pagini → en/script.js).
+        ro/script.js relativ la locația acestei pagini
+        (directorul acestei pagini → ro/script.js).
       @reason:
         Plasarea etichetei script chiar înainte de /body (în loc de head)
         asigură că conținutul HTML se încarcă și se randează înainte ca
