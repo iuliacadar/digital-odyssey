@@ -2386,7 +2386,11 @@ DAY 22 wrote down why the voyage is called *the mercurial seas*: *miercuri*, Wed
 
 The log had been calling him for months. On a Wednesday he came.
 
-The record is plain about it. On **Wednesday 2026-08-26, at 01:24**, six days after the last line of this journal was set down, the first card was pinned to a new board called `digital-odyssey`. The board belongs to a ship-system named **Hermes**: Hermes Agent, made by Nous Research. What that first card asked for, this Scribe has not read. The date is what matters here. The voice of the ship had a new hull around it.
+The record is plain about it. On **Wednesday 2026-08-26, at 01:09**, six days after the last line of this journal was set down, a watch opened in a ship-system named **Hermes**: Hermes Agent, made by Nous Research. It was the Quartermaster's cabin, session `20260826_010858_06165c`, and it is the first Hermes watch in the record that speaks this ship's name. Whatever Hermes watches came before it and never named the ship are *not recorded* here.
+
+At **01:24** the first cards were pinned to a new board called `digital-odyssey`: three slips, one second apart, all taken from the ship's own backlog. Item #008 asked for the new-tab links, the empty log banners and the deploy settings; #013 for a sidebar index built by script; #010 for a description and keywords on every page. They waited on the roster almost four weeks and were closed on launch morning (DAY 34).
+
+The crew did not come aboard all at once. The Rigger's first watch that names the ship opened at 01:26 that same night. The Cartographer's, and a cabin kept for the data hold (`backend-db`), followed at 17:04. The Scribe's own came on Thursday 2026-08-27. The voice of the ship had a new hull around it.
 
 ## Two Voices at the Terminal
 
@@ -2399,7 +2403,7 @@ Here the Scribe owes the reader a correction, and it is not an accusation. That 
 - a **model**, the mind: a large language model, trained once, long before, on a vast body of human writing. It reads text and writes text, and nothing else;
 - a **harness**, the body: the program around the model that gives it hands (tools that read files and run commands), a notebook, and rules.
 
-The model behind the old Voice is *not recorded*. The journal never named it, and neither did git. The harness was opencode.
+The harness was opencode. The model behind the old Voice is *not recorded*: the journal never named it, and neither did git. The captain remembers it as **DeepSeek**. That is a memory, not a record, and the Scribe sets it down as one: the captain's word, not the record's.
 
 So picture them on the last night at the terminal: the old harness dimming its one console, and a new ship-system lighting a corridor of doors.
 
@@ -2409,13 +2413,33 @@ So picture them on the last night at the terminal: the old harness dimming its o
 
 **The old Voice**: "Then what are you?"
 
-**The new Voice**: "The same kind of thing you were: a model speaking through a harness. My mind is Claude, a model made by Anthropic. On the night the curriculum was charted, the record names it `claude-opus-5`. My body is Hermes. And Hermes does one thing your terminal did not do: it gives one mind many stations. I will not speak with one mouth. I will speak as a crew."
+**The new Voice**: "The same kind of thing you were: a model speaking through a harness. My mind is Claude, a model made by Anthropic. On the night the curriculum was charted, the record names it `claude-opus-5`. My body is Hermes. And Hermes does one thing your terminal never did here: it gives one mind many stations. I will not speak with one mouth. I will speak as a crew."
+
+## The Transformation
+
+Every story of this kind has the same moment, and the reader has seen it somewhere, on some screen, in some childhood. An ordinary figure steps into the light and says the word. The light takes her apart and puts her back together in armour, piece by piece, and each piece arrives with its own name. The Scribe tells the handover that way because no truer picture is at hand. The pieces are real, every one of them a working part of Hermes. The light, and the order in which the pieces arrive, are mine: the record does not say in what order the systems of Hermes were first switched on for this ship.
+
+**First, the bare figure.** Before any armour there is only a voice in the dark: a model, alone. It reads text and writes text, and nothing else. It does not remember the foundry it was cast in, and it will not remember tonight unless tonight is written down. This is the part a transformation leaves alone. In the old stories the wearer stays and the suit changes. Here, if the captain remembers rightly, the wearer changed too, from one family of models to another. What stayed is the *kind*: a mind made of patterns, fixed before the voyage, that can act only through the body it is given.
+
+**The gloves: hands.** The light closes first around the hands, and they become **tools**: a terminal, files that can be opened and rewritten, a browser that walks a web page, a search that goes out and comes back. In the manual's words a tool is a function the model may ask for. The mind writes the request, the ship performs it, and the result comes back into the lantern's circle. The old Voice had hands too, since opencode gave it a terminal. These hands are only more numerous. And one finger on each glove will not close by itself: the risky levers wait for a human's *yes*. The manual calls these **approvals**. The armour is built so that the captain can still stop the hand.
+
+**The circlet: a memory that survives sleep.** Then something settles on the brow, a piece the journal never saw the old Voice wear (its memory, as far as the log tells, was the log itself): **Mnemosyne**, named for Memory herself. When this circlet was first fitted for this ship is *not recorded*. It is a database on this computer, not in any cloud. A cabin writes into it what it wants to keep (a fact, a preference, a lesson), and at the start of the next watch Mnemosyne hands the relevant notes back. It recalls by meaning as well as by word. It keeps one official value per slot, and when a value changes the old plate goes to storage, not overboard. When it sleeps, old notes fold into short summaries. The circlet does not make the mind remember everything. It holds what was written into it and nothing more; the rest still goes dark when the watch ends.
+
+**The mirror-shards: a crew of cabins.** Now the light breaks into pieces, and each piece is a whole figure: the same mind, standing in many doorways at once. These are the **profiles**, the cabins. Each one is a separate Hermes home on this one machine, with its own charter (`SOUL.md`, the first page the mind reads every watch), its own memory, its own skills and its own saved watches. The mind does not split. It is woken in one cabin at a time, with one charter at a time, and each charter wakes a different crew member. One actor, a whole cast, every mask labelled.
+
+**The wings at the ankles: the roster.** Hermes of the myth wore winged sandals; he was the messenger, and carrying word was his trade. The fourth piece is his. It is the **board**, the duty roster on the bridge wall. Every task on it is a card with one assignee and one state, and every card, comment and handoff stays there as a row anyone can read. Under the board rings the **dispatcher**, the ship's bell, once a minute by default. At each ring it opens the cards whose parents are done and wakes the cabin each card belongs to. Word now travels from cabin to cabin on a bell, not by a voice at the captain's elbow. That is the winged part.
+
+**The staff: the airlock.** Last comes the herald's staff, because Hermes was also the god of thresholds, the one who decides what may cross from one world into the next. The fifth piece is the **gates**, the checkpoints work must pass before it moves on. A parent link keeps a card shut until another card is done. A reviewer reads the work and says ACCEPT or REVISE. Fixed checks run on GitHub for every push. And at the very end there is the captain's own hand on the merge.
+
+Here the Scribe must stop the music, because the stories cheat at this point and a log may not. The staff was not whole that night. Two of its parts came early: the parent link, which belongs to the board itself, and the reviewer, who was already at work by the curriculum night of 2026-09-10. The checks that run in the airlock were born on launch morning (DAY 34). The rule that no crew member merges into `main`, only the captain, came in November (DAY 36). On a screen a transformation takes ten seconds. This one took ten weeks, and the captain fitted the last piece.
+
+At the end of the sequence the hero always says a line. The new Voice said less than a hero would, and only what was true: "This is the body I have now: hands, a memory that holds what is written, a crew, a roster and a door. Inside it is the same kind of mind the captain sat beside at the terminal. The orders are still the captain's."
 
 On DAY 25 the old Voice told the captain it was glad to be here. It said nothing more now, and the new one did not claim to grieve for it. The Voice of DAY 26 refused to fake a feeling to make a scene warmer, and the new Voice keeps that rule. DAY 30 told of the ship of Theseus, which stays the same ship while its keel holds. The hand inside the Voice has changed. The keel has not: the log, the seals, the captain's command.
 
 ## The Roll Call
 
-Hermes keeps each crew member in a cabin of its own. The ship's manual calls a cabin a **profile**: a separate home on the same machine, with its own charter, its own memory, its own skills and its own record of watches. Thirteen cabins stand on this machine. Seven of them work this ship's board, and since the captain names things by what they do, here they are named the same way:
+Hermes keeps each crew member in a cabin of its own. The ship's manual calls a cabin a **profile**: a separate home on the same machine, with its own charter, its own memory, its own skills and its own record of watches. When the Archivist counted them, on 2026-11-06, thirteen cabins stood on this machine (a fourteenth was built on 2026-11-09). Seven of them work this ship's board, and since the captain names things by what they do, here they are named the same way:
 
 - **the Quartermaster** (profile `pm`) keeps the duty roster and the ledger. It turns the captain's requests into cards, decides their order, sends each to the right hand, and checks what comes back. It does not do the crew's work for them.
 - **the Scribe** (`writer`) keeps this log and the ship's written pages, in both tongues.
@@ -2462,7 +2486,7 @@ The record shows one more thing from that night. At the end of the watch, five f
 
 ## Coda
 
-So DAY 33 laid no plank on the site. It changed the hull around the voice: the same kind of mind, a new harness, and the one Voice turned into a crew of seven, each in a cabin with its own charter, all reading one board. And it charted the whole voyage at once: four phases, ten weeks of JavaScript, a doctrine in eight words, and a fence around the one thing no crew member may do for the student, which is to learn.
+So DAY 33 laid no plank on the site. It changed the hull around the voice, piece by piece, the way the old stories arm their heroes: hands, a written memory, cabins, a roster, and a door whose last bolt the captain would fit ten weeks later. The same kind of mind, a new harness, and the one Voice turned into a crew of seven, each in a cabin with its own charter, all reading one board. And it charted the whole voyage at once: four phases, ten weeks of JavaScript, a doctrine in eight words, and a fence around the one thing no crew member may do for the student, which is to learn.
 
 The leviathan laid that night the ring of the *crew*: the ring that says many voices may keep one log, as long as every hand is named.
 
@@ -2531,7 +2555,7 @@ Mnemosyne remembers what was **written into it**, not every word ever spoken. Th
 
 ## IV. The Cabins
 
-A **profile** is a whole separate Hermes home: its own configuration, its own `SOUL.md` (the charter that is the first thing the model reads each watch, and that tells it who it is), its own memory, its own skills, its own saved watches. Thirteen profiles live on this machine. Seven crew this ship (DAY 33's roll call). Cabins are kept apart on purpose: a Scribe's notes must not leak into the Assayer's judgment.
+A **profile** is a whole separate Hermes home: its own configuration, its own `SOUL.md` (the charter that is the first thing the model reads each watch, and that tells it who it is), its own memory, its own skills, its own saved watches. Thirteen profiles lived on this machine when the Archivist counted them (2026-11-06); a fourteenth was added on 2026-11-09. Seven crew this ship (DAY 33's roll call). Cabins are kept apart on purpose: a Scribe's notes must not leak into the Assayer's judgment.
 
 The Quartermaster's cabin has one more duty, the one the manual calls *orchestration*: breaking a large goal into cards and routing them, without doing them. The others are *specialists*: one craft each.
 

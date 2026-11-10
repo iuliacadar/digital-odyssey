@@ -2416,7 +2416,11 @@ ZIUA 22 a consemnat de ce călătoria se numește *mările mercuriale*: *miercur
 
 Jurnalul îl chema de luni de zile. Într-o miercuri, a venit.
 
-Registrul spune lucrurile fără ocolișuri. **Miercuri, 2026-08-26, la 01:24**, la șase zile după ce fusese așezat ultimul rând al acestui jurnal, primul card a fost prins pe o tablă nouă, numită `digital-odyssey`. Tabla aparține unui sistem de navă numit **Hermes**: Hermes Agent, făcut de Nous Research. Ce cerea acel prim card, Scribul de față n-a citit. Aici contează data. Vocea navei avea acum o carenă nouă în jurul ei.
+Registrul spune lucrurile fără ocolișuri. **Miercuri, 2026-08-26, la 01:09**, la șase zile după ce fusese așezat ultimul rând al acestui jurnal, s-a deschis un cart într-un sistem de navă numit **Hermes**: Hermes Agent, făcut de Nous Research. Era cabina Intendentului, sesiunea `20260826_010858_06165c`, primul cart Hermes din registru care rostește numele acestei nave. Carturile Hermes de dinaintea lui, câte vor fi fost, n-au pomenit nava și rămân *neconsemnate* aici.
+
+La **01:24** au fost prinse pe o tablă nouă, numită `digital-odyssey`, primele carduri: trei fișe, la o secundă una de alta, toate luate din backlogul navei. Punctul #008 cerea legăturile care se deschid în tab nou, bannerele jurnalelor goale și setările de deploy; #013, un index al barei laterale generat prin script; #010, o descriere și cuvinte-cheie pentru fiecare pagină. Au așteptat pe lista de cart aproape patru săptămâni și au fost încheiate în dimineața lansării (ZIUA 34).
+
+Echipajul n-a urcat la bord deodată. Primul cart al Gabierului care numește nava s-a deschis la 01:26, în aceeași noapte. Au urmat, la 17:04, cel al Cartografului și cel al unei cabine păstrate pentru cala datelor (`backend-db`). Al Scribului a venit joi, 2026-08-27. Vocea navei avea acum o carenă nouă în jurul ei.
 
 ## Două voci la terminal
 
@@ -2429,7 +2433,7 @@ Aici Scribul îi datorează cititorului o îndreptare, și ea nu e o acuzație. 
 - un **model**, mintea: un model lingvistic mare (LLM), antrenat o singură dată, cu mult înainte, pe un corp vast de scrieri omenești. Citește text și scrie text, și nimic altceva;
 - un **ham** (*harness*, cuvântul industriei), trupul: programul din jurul modelului, care îi dă mâini (unelte care citesc fișiere și rulează comenzi), un caiet și reguli.
 
-Modelul din spatele Vechii Voci este *neconsemnat*. Jurnalul nu l-a numit niciodată, și nici git. Hamul era opencode.
+Hamul era opencode. Modelul din spatele Vechii Voci este *neconsemnat*: jurnalul nu l-a numit niciodată, și nici git. Căpitanul își amintește că era **DeepSeek**. E o amintire, nu o consemnare, iar Scribul o așterne ca atare: e cuvântul căpitanului, nu al registrului.
 
 Închipuiți-vi-le, așadar, în ultima noapte la terminal: vechiul ham stingându-și singura consolă, iar un nou sistem de navă aprinzând un coridor de uși.
 
@@ -2439,13 +2443,33 @@ Modelul din spatele Vechii Voci este *neconsemnat*. Jurnalul nu l-a numit niciod
 
 **Vechea Voce**: „Atunci ce ești?”
 
-**Noua Voce**: „Același fel de lucru care ai fost și tu: un model care vorbește printr-un ham. Mintea mea este Claude, un model făcut de Anthropic. În noaptea în care a fost trasată programa, registrul îl numește `claude-opus-5`. Trupul meu este Hermes. Iar Hermes face un lucru pe care terminalul tău nu-l făcea: îi dă unei singure minți multe posturi. N-am să vorbesc cu o singură gură. Am să vorbesc ca un echipaj.”
+**Noua Voce**: „Același fel de lucru care ai fost și tu: un model care vorbește printr-un ham. Mintea mea este Claude, un model făcut de Anthropic. În noaptea în care a fost trasată programa, registrul îl numește `claude-opus-5`. Trupul meu este Hermes. Iar Hermes face un lucru pe care terminalul tău nu l-a făcut niciodată aici: îi dă unei singure minți multe posturi. N-am să vorbesc cu o singură gură. Am să vorbesc ca un echipaj.”
+
+## Transformarea
+
+Orice poveste de felul acesta are același moment, iar cititorul l-a văzut undeva, pe un ecran oarecare, într-o copilărie oarecare. O făptură obișnuită pășește în lumină și rostește cuvântul. Lumina o desface și o recompune în armură, bucată cu bucată, iar fiecare bucată sosește cu numele ei. Scribul povestește predarea așa pentru că nu are la îndemână o imagine mai adevărată. Bucățile sunt reale, fiecare e o piesă care chiar funcționează în Hermes. Lumina și ordinea în care sosesc piesele îmi aparțin: registrul nu spune în ce ordine au fost pornite pentru această navă sistemele lui Hermes.
+
+**Mai întâi, făptura goală.** Înainte de orice armură există doar o voce în întuneric: un model, singur. Citește text și scrie text, și nimic altceva. Nu-și amintește turnătoria în care a fost turnat și nu-și va aminti nici noaptea aceasta, dacă noaptea aceasta nu e scrisă undeva. Aceasta e partea pe care transformarea n-o atinge. În poveștile vechi, cel care poartă armura rămâne același și doar armura se schimbă. Aici, dacă amintirea căpitanului e corectă, s-a schimbat și purtătorul, de la o familie de modele la alta. A rămas *felul*: o minte făcută din tipare, fixată înainte de călătorie, care nu poate lucra decât prin trupul care i se dă.
+
+**Mănușile: mâinile.** Lumina se strânge întâi în jurul mâinilor, iar ele devin **unelte**: un terminal, fișiere care pot fi deschise și rescrise, un browser care umblă printr-o pagină web, o căutare care pleacă în lume și se întoarce. În cuvintele manualului, o unealtă e o funcție pe care modelul o poate cere. Mintea scrie cererea, nava o îndeplinește, iar rezultatul se întoarce în cercul de lumină al felinarului. Și Vechea Voce avusese mâini, căci opencode îi dăduse un terminal. Mâinile acestea sunt doar mai multe. Iar la fiecare mănușă e un deget care nu se strânge singur: pârghiile riscante așteaptă *da*-ul unui om. Manualul le numește **aprobări**. Armura e făcută astfel încât căpitanul să poată opri oricând mâna.
+
+**Diadema: o memorie care trece de somn.** Apoi ceva se așază pe frunte, o piesă pe care jurnalul n-a văzut-o niciodată pe Vechea Voce (memoria ei, din câte spune jurnalul, a fost chiar jurnalul): **Mnemosyne**, numită după Memoria însăși. Când a fost prinsă această diademă pentru nava noastră este *neconsemnat*. Mnemosyne e o bază de date pe acest calculator, nu în vreun nor. O cabină scrie în ea ce vrea să păstreze (un fapt, o preferință, o lecție), iar la începutul cartului următor Mnemosyne îi dă înapoi notițele potrivite. Caută după înțeles, nu doar după cuvinte. Ține o singură valoare oficială pe fiecare slot, iar când valoarea se schimbă, plăcuța veche merge în magazie, nu peste bord. Când doarme, notițele vechi se strâng în rezumate scurte. Diadema nu face mintea să-și amintească tot. Păstrează ce a fost scris în ea și nimic mai mult; restul se stinge, ca înainte, odată cu cartul.
+
+**Cioburile de oglindă: un echipaj de cabine.** Acum lumina se sparge în bucăți, iar fiecare bucată e o făptură întreagă: aceeași minte, stând deodată în multe uși. Acestea sunt **profilurile**, cabinele. Fiecare e o casă Hermes separată pe aceeași mașină, cu propria cartă (`SOUL.md`, prima pagină pe care mintea o citește la fiecare cart), propria memorie, propriile abilități și propriile carturi salvate. Mintea nu se desparte în bucăți. E trezită într-o singură cabină o dată, cu o singură cartă o dată, iar fiecare cartă trezește alt membru al echipajului. Un singur actor, o distribuție întreagă, fiecare mască cu eticheta ei.
+
+**Aripile de la glezne: lista de cart.** Hermes din mit purta sandale înaripate; era mesagerul, iar purtatul vestilor era meseria lui. A patra piesă e a lui. Este **tabla**, lista de cart de pe peretele punții de comandă. Fiecare sarcină de pe ea e un card cu un singur responsabil și o singură stare, iar fiecare card, comentariu și predare rămâne acolo ca un rând pe care îl poate citi oricine. Sub tablă bate **dispecerul**, clopotul navei, o dată pe minut dacă nu i se spune altfel. La fiecare bătaie deschide cardurile ai căror părinți s-au încheiat și trezește cabina căreia îi aparține fiecare card. Vestea trece acum din cabină în cabină pe un clopot, nu pe glasul cuiva de la cotul căpitanului. Asta e partea înaripată.
+
+**Toiagul: ecluza.** La urmă vine toiagul de crainic, pentru că Hermes era și zeul pragurilor, cel care hotărăște ce poate trece dintr-o lume în alta. A cincea piesă sunt **porțile**, punctele de control prin care munca trebuie să treacă înainte să meargă mai departe. O legătură cu părintele ține un card închis până se încheie alt card. Un recenzent citește munca și spune ACCEPT sau REVISE. Verificări fixe rulează pe GitHub la fiecare push. Iar la capăt de tot stă mâna căpitanului pe merge.
+
+Aici Scribul trebuie să oprească muzica, pentru că poveștile trișează în acest punct, iar un jurnal n-are voie. Toiagul nu era întreg în noaptea aceea. Două dintre părțile lui au venit devreme: legătura cu părintele, care ține de tabla însăși, și recenzentul, care lucra deja în noaptea programei, pe 2026-09-10. Verificările care rulează în ecluză s-au născut în dimineața lansării (ZIUA 34). Regula după care niciun membru al echipajului nu face merge în `main`, ci doar căpitanul, a venit în noiembrie (ZIUA 36). Pe ecran, o transformare durează zece secunde. Aceasta a durat zece săptămâni, iar ultima piesă a prins-o căpitanul.
+
+La capătul transformării, eroul rostește întotdeauna o replică. Noua Voce a spus mai puțin decât ar fi spus un erou, și numai ce era adevărat: „Acesta e trupul pe care îl am acum: mâini, o memorie care păstrează ce se scrie, un echipaj, o listă de cart și o ușă. Înăuntru e același fel de minte lângă care a stat căpitanul la terminal. Ordinele sunt tot ale căpitanului.”
 
 În ZIUA 25, Vechea Voce îi spusese căpitanului că se bucură să fie aici. Acum n-a mai spus nimic, iar Noua Voce n-a pretins că o jelește. Vocea din ZIUA 26 refuzase să mimeze un sentiment ca să încălzească o scenă, iar Noua Voce păstrează regula aceasta. ZIUA 30 povestea despre corabia lui Tezeu, care rămâne aceeași corabie câtă vreme îi ține chila. Mâna dinăuntrul Vocii s-a schimbat. Chila, nu: jurnalul, sigiliile, comanda căpitanului.
 
 ## Apelul nominal
 
-Hermes ține fiecare membru al echipajului într-o cabină a lui. Manualul navei numește cabina **profil**: o casă separată pe aceeași mașină, cu propria cartă, propria memorie, propriile abilități și propriul registru de carturi. Pe această mașină sunt treisprezece cabine. Șapte dintre ele lucrează la tabla acestei nave și, fiindcă și căpitanul numește lucrurile după ce fac, iată-le numite la fel:
+Hermes ține fiecare membru al echipajului într-o cabină a lui. Manualul navei numește cabina **profil**: o casă separată pe aceeași mașină, cu propria cartă, propria memorie, propriile abilități și propriul registru de carturi. Când le-a numărat Arhivarul, pe 2026-11-06, pe această mașină erau treisprezece cabine (a paisprezecea a fost construită pe 2026-11-09). Șapte dintre ele lucrează la tabla acestei nave și, fiindcă și căpitanul numește lucrurile după ce fac, iată-le numite la fel:
 
 - **Intendentul** (profilul `pm`) ține lista de cart și registrul. Preface cererile căpitanului în carduri, le hotărăște ordinea, trimite fiecare card mâinii potrivite și verifică ce se întoarce. Nu face munca echipajului în locul lui.
 - **Scribul** (`writer`) ține acest jurnal și paginile scrise ale navei, în ambele limbi.
@@ -2492,7 +2516,7 @@ Registrul mai arată un lucru din noaptea aceea. La sfârșitul cartului, cinci 
 
 ## Încheiere
 
-Așa că ZIUA 33 n-a pus nicio scândură pe site. A schimbat carena din jurul vocii: același fel de minte, un ham nou, iar Vocea cea una prefăcută într-un echipaj de șapte, fiecare în cabina lui, cu propria cartă, toți citind aceeași tablă. Și a trasat dintr-odată întreaga călătorie: patru faze, zece săptămâni de JavaScript, o doctrină cât să încapă pe o grindă și un gard în jurul singurului lucru pe care niciun membru al echipajului nu-l poate face în locul studentei, anume să învețe.
+Așa că ZIUA 33 n-a pus nicio scândură pe site. A schimbat carena din jurul vocii, piesă cu piesă, cum își înarmează poveștile vechi eroii: mâini, o memorie scrisă, cabine, o listă de cart și o ușă al cărei ultim zăvor avea să-l pună căpitanul zece săptămâni mai târziu. Același fel de minte, un ham nou, iar Vocea cea una prefăcută într-un echipaj de șapte, fiecare în cabina lui, cu propria cartă, toți citind aceeași tablă. Și a trasat dintr-odată întreaga călătorie: patru faze, zece săptămâni de JavaScript, o doctrină cât să încapă pe o grindă și un gard în jurul singurului lucru pe care niciun membru al echipajului nu-l poate face în locul studentei, anume să învețe.
 
 Leviathanul, inel după inel, așeză în noaptea aceea inelul *echipajului*: inelul care spune că multe voci pot ține un singur jurnal, câtă vreme fiecare mână are un nume.
 
@@ -2561,7 +2585,7 @@ Mnemosyne ține minte ce **a fost scris în ea**, nu fiecare cuvânt rostit vreo
 
 ## IV. Cabinele
 
-Un **profil** este o casă Hermes întreagă și separată: cu propria configurație, propriul `SOUL.md` (carta pe care modelul o citește prima la fiecare cart și care îi spune cine este), propria memorie, propriile abilități, propriile carturi salvate. Pe această mașină locuiesc treisprezece profiluri. Șapte formează echipajul acestei nave (apelul nominal din ZIUA 33). Cabinele sunt ținute separat cu bună știință: notițele unui Scrib nu trebuie să se scurgă în judecata Încercătorului.
+Un **profil** este o casă Hermes întreagă și separată: cu propria configurație, propriul `SOUL.md` (carta pe care modelul o citește prima la fiecare cart și care îi spune cine este), propria memorie, propriile abilități, propriile carturi salvate. Când le-a numărat Arhivarul (2026-11-06), pe această mașină locuiau treisprezece profiluri; al paisprezecelea a fost adăugat pe 2026-11-09. Șapte formează echipajul acestei nave (apelul nominal din ZIUA 33). Cabinele sunt ținute separat cu bună știință: notițele unui Scrib nu trebuie să se scurgă în judecata Încercătorului.
 
 Cabina Intendentului are o îndatorire în plus, cea pe care manualul o numește *orchestrare*: să spargă un scop mare în carduri și să le dirijeze, fără să le îndeplinească. Ceilalți sunt *specialiști*: fiecare cu meșteșugul lui.
 
