@@ -104,14 +104,45 @@ Fastest path — revert and redeploy in one step:
 make rollback
 ```
 
-This reverts the tip commit on `main` (`git revert --no-edit HEAD`) and pushes,
-which triggers a normal deploy of the reverted content. It prompts for
-confirmation before pushing.
+This undoes the newest commit on `main` with a new "revert" commit and pushes
+it, which triggers a normal deploy of the reverted content. `git revert` never
+deletes or rewrites history: it adds a commit that does the opposite, so the
+mistake and its undo both stay on record.
+
+Step by step, `make rollback`:
+
+1. **Refuses, and changes nothing, unless it is safe.** You must be on `main`;
+   nothing may be unsaved (no edited, staged or new files); and after a fresh
+   `git fetch origin main`, your `main` must be exactly GitHub's `main`. If
+   you are behind, your "newest commit" is not the live one and it would undo
+   the wrong thing; if you are ahead, the push would publish unreviewed
+   commits along with the undo. Each refusal says what to do next.
+2. **Shows exactly what will be undone.** If the newest commit is a *merge*
+   (what GitHub's "Create a merge commit" makes when a PR is merged), it
+   prints the merge and the list of commits it brought in; otherwise it
+   prints the single commit. Either way it names the commit whose files the
+   site will have afterwards.
+3. **Asks `[y/N]`.** Only `y` goes ahead; anything else, including just
+   Enter, aborts with nothing changed.
+4. **Reverts.** A merge commit has two parents: parent 1 is `main` just before
+   the merge, parent 2 is the PR branch. Git will not revert a merge until it
+   is told which side to keep, so for a merge the target runs
+   `git revert --no-edit -m 1 HEAD` ("keep main's side"), which undoes the
+   whole PR in one commit. An ordinary commit gets `git revert --no-edit HEAD`.
+5. **Pushes and watches the redeploy** with
+   `make deploy-status DEPLOY_SHA=<the revert commit>`, so the result you see
+   belongs to this rollback and not to an older run. If the push is refused,
+   it says the site is unchanged; if the deploy fails, it says the revert *is*
+   pushed and where to look.
+
+`tools/test-rollback.py` proves each of these in a throwaway repository with a
+local stand-in for GitHub; it never touches this repository or the live site.
 
 To roll back further than one commit, or to a specific known-good commit:
 
 ```bash
-git revert --no-edit <bad-commit-sha>       # for one bad commit
+git revert --no-edit <bad-commit-sha>       # for one bad ordinary commit
+git revert --no-edit -m 1 <bad-merge-sha>   # for a merged PR (a merge commit)
 # or, to reset straight to a known-good SHA (rewrites history — coordinate
 # with anyone else pushing to main before doing this):
 git reset --hard <good-sha>
