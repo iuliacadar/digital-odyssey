@@ -33,6 +33,8 @@ care vin, ca să poată fi comparate rând cu rând cu versiunea engleză.*
 
 De pe 2026-08-26 proiectul acesta a ars cam **$258.89**: **$119.91 exact** și **$138.99 estimat**.
 Asta înseamnă cam 4% din tot ce a făcut Hermes pe mașina aceasta în aceleași săptămâni.
+Fiecare total e adunat din costurile nerotunjite și abia apoi rotunjit, așa că părțile arătate pot
+diferi cu un cent de totalul lor: $1.48 + $1.25 → $2.74, și $30.58 + $12.91 + $49.25 → $92.75.
 
 | rundă | rânduri | exact | estimat | total |
 |---|---:|---:|---:|---:|
@@ -55,9 +57,9 @@ Asta înseamnă cam 4% din tot ce a făcut Hermes pe mașina aceasta în acelea�
 | Runda jurnalului | $66.00 | $49.25 | 75% |
 | Runda 3 (încă în desfășurare) | $20.00 | $1.44 | 7% |
 
-Coordonarea mea pentru rundele acestea a costat $10.27 pe 11-05, $9.56 pe 11-06 și $4.38 pe 11-10
-(până la 17:00). Adunată la carduri, reparațiile + recenzia + jurnalul fac $92.75 + $24.21 =
-**$116.95**, sub bugetele lor însumate, de $151.
+Coordonarea mea pentru rundele acestea a costat $10.27 pe 11-05 cu tot cu conversația
+importată, $9.56 pe 11-06 și $4.38 pe 11-10 (până la 17:00). Adunată la carduri, reparațiile +
+recenzia + jurnalul fac $92.75 + $24.21 = **$116.95**, sub bugetele lor însumate, de $151.
 
 **Pe zile**
 
@@ -294,15 +296,22 @@ ZIUA 37 s-au făcut tot acolo.
 ## Cum s-au făcut numerele
 
 - **Sursele.** Depozitul de sesiuni Hermes al fiecărei cabine și tabla digital-odyssey, toate deschise
-  doar în citire. Hermes păstrează un rând pentru fiecare sesiune: tokenii intrați și ieșiți, citirile
-  și scrierile din cache, modelul și un cost estimat. Nu păstrează costul pe card, așa că **unitatea
-  registrului acestuia e sesiunea.**
+  doar în citire. Hermes păstrează un rând principal pentru fiecare sesiune: tokenii intrați și ieșiți,
+  citirile și scrierile din cache, modelul și un cost estimat. Mai păstrează și un tabel de consum pe
+  sarcini (`session_model_usage`), pentru apelurile laterale: recenzia de fundal, comprimarea, aprobarea
+  și generarea titlului; registrul acesta numără doar rândul principal al sesiunii (vezi *Ce nu poate
+  vedea registrul acesta*). Hermes nu păstrează costul pe card, așa că **unitatea registrului acestuia
+  e sesiunea.**
 - **Care sesiuni sunt ale noastre.** De pe 2026-10-29 tabla numește sesiunea exactă a fiecărei rulări.
   Înainte de asta, o sesiune se numără dacă are în titlu, în dosar sau în primul mesaj id-ul unui card
   de pe tabla aceasta (id-urile cardurilor nu se repetă de la o tablă la alta). Șase sesiuni ale
   Scribului din 09-21 nu au id de card, dar au lucrat la paginile de jurnal ale proiectului; se numără,
   ca *estimate*. Sesiunile interactive se numără după partea lor din mențiunile de proiecte, și doar
-  dacă partea aceasta e de cel puțin 20% și proiectul e numit de cel puțin 5 ori.
+  dacă partea aceasta e de cel puțin 20%, proiectul e numit de cel puțin 5 ori, iar sesiunea e mai ales
+  despre proiectul acesta. O sesiune care e mai ales despre alt proiect rămâne doar cu mențiuni, chiar
+  peste prag. Un caz: o sesiune `default` din 2026-10-30 (15 din 70 de mențiuni, 21%, cam $4.77 după
+  parte) a fost despre alt proiect, așa că e lăsată la $0; e deja cuprinsă în limita de sus de $18.98
+  de mai jos.
 - **Prețurile.** Unde Hermes a salvat un preț, se folosește așa cum e. Între 2026-09-10 și 09-25 Hermes a
   salvat tokenii majorității sesiunilor Opus 5 / Opus 5.5, dar nu și prețul; Arhivarul i-a prețuit cu
   tabelul lui Hermes însuși (pe milion de tokeni, intrare / ieșire / citire din cache / scriere în
@@ -331,6 +340,13 @@ ZIUA 37 s-au făcut tot acolo.
    vin în următorul bloc de rânduri.
 7. **Hamul Inspectorului.** Consumul lui Claude Code nu e în depozitul lui Hermes. ZIUA 35, ZIUA 36 și cea
    mai mare parte din ZIUA 37 au ars combustibil pe care registrul acesta nu-l poate citi.
+8. **Apelurile laterale înregistrate pe sarcini.** Tabelul de consum pe sarcini al lui Hermes (recenzia
+   de fundal, comprimarea, aprobarea, generarea titlului) e lăsat pe dinafară. După partea fiecărei
+   sesiuni, apelurile acestea fac cam **$8.40**: $1.16 pentru sesiunea *KanbanCreate* din 08-26
+   (recenzia de fundal, $4.16 × 45/162), $6.16 pentru *Draft learning curriculum* din 09-10 (recenzia
+   de fundal, Opus 5 prețuit cu tabelul de mai sus, $10.09 × 47/77) și $1.09 pentru sesiunea mea lungă
+   de coordonare (titlul, aprobarea, recenzia de fundal și comprimarea, $1.15 × 120/127). Asta înseamnă
+   cam 3% din total; totalul rămâne cum e.
 
 ## Ținerea registrului
 

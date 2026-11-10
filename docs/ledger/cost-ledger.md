@@ -28,6 +28,8 @@ cards the captain approved together, usually with a budget. A card can need more
 
 Since 2026-08-26 this project has burned about **$258.89**: **$119.91 exact** and **$138.99 estimated**.
 That is about 4% of everything Hermes did on this machine in the same weeks.
+Every total is summed from the unrounded costs and only then rounded, so the parts shown can differ
+by a cent from their total: $1.48 + $1.25 → $2.74, and $30.58 + $12.91 + $49.25 → $92.75.
 
 | round | rows | exact | estimated | total |
 |---|---:|---:|---:|---:|
@@ -50,9 +52,9 @@ That is about 4% of everything Hermes did on this machine in the same weeks.
 | Journal round | $66.00 | $49.25 | 75% |
 | Round 3 (still running) | $20.00 | $1.44 | 7% |
 
-My coordination for these rounds cost $10.27 on 11-05, $9.56 on 11-06 and $4.38 on 11-10 (to 17:00).
-Added to the cards, fix + review + journal come to $92.75 + $24.21 = **$116.95**, under their combined
-budgets of $151.
+My coordination for these rounds cost $10.27 on 11-05 with the imported conversation, $9.56 on 11-06
+and $4.38 on 11-10 (to 17:00). Added to the cards, fix + review + journal come to $92.75 + $24.21 =
+**$116.95**, under their combined budgets of $151.
 
 **By day**
 
@@ -286,13 +288,20 @@ there too.
 ## How the numbers were made
 
 - **Sources.** Every cabin's Hermes session store and the digital-odyssey board, all opened read-only.
-  Hermes keeps one row per session: tokens in and out, cache reads and writes, the model, and an
-  estimated cost. It does not keep cost per card, so **the unit of this ledger is the session.**
+  Hermes keeps one main row per session: tokens in and out, cache reads and writes, the model, and an
+  estimated cost. It also keeps a per-task usage table (`session_model_usage`) for side calls such as
+  background review, compression, approval and title generation; this ledger counts only the
+  session's main row (see *What this ledger cannot see*). Hermes does not keep cost per card, so
+  **the unit of this ledger is the session.**
 - **Which sessions are ours.** From 2026-10-29 the board names the exact session of every run.
   Before that, a session counts if a card id of this board is in its title, folder or first prompt
   (card ids never repeat across boards). Six writer sessions of 09-21 carry no card id but did this
   project's log pages; they count, as *estimated*. Interactive sessions count at their share of
-  project mentions, and only if that share is at least 20% and the project is named at least 5 times.
+  project mentions, and only if that share is at least 20%, the project is named at least 5 times, and
+  the session is mainly about this project. A session mainly about another project stays mention-only
+  even above the bar. One case: a `default` session of 2026-10-30 (15 of 70 mentions, 21%, about $4.77
+  by share) was about another project, so it is left at $0; it is already inside the $18.98 upper bound
+  below.
 - **Prices.** Where Hermes saved a price, it is used as it is. For 2026-09-10 to 09-25 Hermes saved the
   tokens of most Opus 5 / Opus 5.5 sessions but no price; the Archivist priced them with Hermes's own
   table (per million tokens, in / out / cache read / cache write: Opus 5 $5 / $25 / $0.50 / $6.25,
@@ -318,6 +327,12 @@ there too.
 6. **Still running.** Round 3 is a snapshot. Its later cards (this one among them) come in the next row block.
 7. **The Inspector's harness.** Claude Code's own usage is not in Hermes's store. DAY 35, DAY 36 and most
    of DAY 37 burned fuel this ledger cannot read.
+8. **Side calls logged per task.** Hermes's per-task usage table (background review, compression,
+   approval, title generation) is left out. At each session's own share these calls come to about
+   **$8.40**: $1.16 for the 08-26 *KanbanCreate* session (background review, $4.16 × 45/162), $6.16 for
+   *Draft learning curriculum* on 09-10 (background review, Opus 5 priced with the table above,
+   $10.09 × 47/77), and $1.09 for my own long coordination session (title, approval, background review
+   and compression, $1.15 × 120/127). That is about 3% of the total; the total is left as it is.
 
 ## Keeping the ledger
 
