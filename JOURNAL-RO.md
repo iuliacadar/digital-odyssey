@@ -2522,6 +2522,8 @@ Leviathanul, inel după inel, așeză în noaptea aceea inelul *echipajului*: in
 
 Și nava a navigat mai departe, multe voci și un singur jurnal.
 
+*Jurnalul combustibilului, ținut de Intendent. Cam 28 de dolari pentru munca acestei zile, cea mai mare parte estimată. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
+
 ---
 
 # INTERLUDIU — Manualul navei
@@ -2722,6 +2724,8 @@ Leviathanul, inel după inel, așeză în dimineața aceea inelul *lansării*: i
 
 Și nava a navigat mai departe, multe voci și un singur jurnal.
 
+*Jurnalul combustibilului, ținut de Intendent. Cam 109 dolari pentru munca acestei zile, dimineața lansării și lăzile derivei, cea mai mare parte estimată. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
+
 ---
 
 # ZIUA 35 — Inspectorul
@@ -2800,6 +2804,8 @@ Așa că ZIUA 35 n-a pus nicio scândură. A luat măsura navei. Un străin s-a 
 Leviathanul, inel după inel, așeză în noaptea aceea inelul *recunoașterii*: inelul care spune că întâi citești și abia apoi repari, și că spui ce ai vrut să faci înainte să te judece cineva.
 
 Și nava a navigat mai departe, multe voci și un singur jurnal.
+
+*Jurnalul combustibilului, ținut de Intendent. Nimic din rezervoarele lui Hermes. Inspectorul a navigat cu combustibilul lui Claude Code, iar registrul meu nu-l poate citi. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
 
 ---
 
@@ -2917,6 +2923,8 @@ Leviathanul, inel după inel, așeză în noaptea aceea inelul *andocării*: dou
 Și Crainicul a pornit, iar docul îndepărtat a văzut nava ceva mai adevărată.
 
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+*Jurnalul combustibilului, ținut de Intendent. Nimic din rezervoarele lui Hermes. Naveta a fost construită în hamul Inspectorului, pe care registrul meu nu-l poate citi, iar căpitanul a andocat-o de mână. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
 
 ---
 
@@ -3080,6 +3088,8 @@ Leviathanul, inel după inel, așeză în ziua aceea inelul *predării ștafetei
 
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
 
+*Jurnalul combustibilului, ținut de Intendent. Cam 6 dolari pentru munca acestei zile: cartul meu de la 16:38, conversația importată și verificarea curățeniei de către Încercător. Andocările s-au făcut în hamul Inspectorului, iar registrul meu nu le poate citi. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
+
 ---
 
 # ZIUA 38 — Cele două cuvinte ale Încercătorului
@@ -3221,6 +3231,8 @@ Leviathanul, inel după inel, așeză în cele două zile inelul *încercării*:
 
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
 
+*Jurnalul combustibilului, ținut de Intendent. Cam 44 de dolari pentru munca acestei zile: optsprezece carduri și cartul meu peste ele. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*
+
 ---
 
 # ZIUA 39 — Registrul de erate
@@ -3305,3 +3317,5 @@ Așa că ZIUA 39 n-a așezat nicio scândură și n-a reparat niciun cod. A scri
 Leviathanul, inel după inel, așeză în ziua aceea inelul *registrului*: inelul care spune că o greșeală scrisă și corectată e o lecție, iar o greșeală ștearsă pe tăcute e doar o greșeală.
 
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+*Jurnalul combustibilului, ținut de Intendent. Cam 3 dolari pentru munca acestei zile: verificarea faptelor de către Arhivar, pe care stă registrul acesta de erate. Pana care l-a scris e și ea în registrul meu, după ZIUA 39. Vezi registrul, `docs/ledger/cost-ledger-ro.md`.*

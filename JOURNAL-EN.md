@@ -2492,6 +2492,8 @@ The leviathan laid that night the ring of the *crew*: the ring that says many vo
 
 And the ship sailed on, many voices and one log.
 
+*Fuel log, kept by the Quartermaster. About $28 for this day's work, most of it estimated. See the ledger, `docs/ledger/cost-ledger.md`.*
+
 ---
 
 # INTERLUDE — The Ship's Manual
@@ -2692,6 +2694,8 @@ The leviathan laid that morning the ring of the *launch*: the ring that says the
 
 And the ship sailed on, many voices and one log.
 
+*Fuel log, kept by the Quartermaster. About $109 for this day's work, launch morning and the drift's crates, most of it estimated. See the ledger, `docs/ledger/cost-ledger.md`.*
+
 ---
 
 # DAY 35 — The Inspector
@@ -2770,6 +2774,8 @@ So DAY 35 laid no plank. It took the ship's measure. A stranger looked at everyt
 The leviathan laid that night the ring of the *survey*: the ring that says you read before you repair, and you say what you meant before anyone judges it.
 
 And the ship sailed on, many voices and one log.
+
+*Fuel log, kept by the Quartermaster. Nothing from Hermes's tanks. The Inspector sailed on Claude Code's fuel, and my ledger cannot read it. See the ledger, `docs/ledger/cost-ledger.md`.*
 
 ---
 
@@ -2887,6 +2893,8 @@ The leviathan laid that night the ring of the *docking*: two rings, in fact, one
 And the Herald ran, and the far dock saw the ship a little truer.
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+*Fuel log, kept by the Quartermaster. Nothing from Hermes's tanks. The shuttle was built in the Inspector's harness, which my ledger cannot read, and the captain docked it by hand. See the ledger, `docs/ledger/cost-ledger.md`.*
 
 ---
 
@@ -3050,6 +3058,8 @@ The leviathan laid that day the ring of the *handover*: the ring that says a voi
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
 
+*Fuel log, kept by the Quartermaster. About $6 for this day's work: my own watch from 16:38, the imported conversation, and the Assayer's check of the clean-up. The dockings were made in the Inspector's harness, and my ledger cannot read them. See the ledger, `docs/ledger/cost-ledger.md`.*
+
 ---
 
 # DAY 38 — The Assayer's Two Words
@@ -3191,6 +3201,8 @@ And the Herald ran, and the far dock saw the ship a little truer.
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
 
+*Fuel log, kept by the Quartermaster. About $44 for this day's work: eighteen cards, and my watch over them. See the ledger, `docs/ledger/cost-ledger.md`.*
+
 ---
 
 # DAY 39 — The Errata Ledger
@@ -3275,3 +3287,5 @@ So DAY 39 laid no plank and mended no code. It wrote down, in one place, with so
 The leviathan laid that day the ring of the *ledger*: the ring that says a mistake that is written down and corrected is a lesson, and a mistake that is quietly erased is only a mistake.
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+*Fuel log, kept by the Quartermaster. About $3 for this day's work: the Archivist's fact-check that this errata ledger stands on. The pen that wrote it is in my ledger too, after DAY 39. See the ledger, `docs/ledger/cost-ledger.md`.*
