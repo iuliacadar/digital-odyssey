@@ -21,7 +21,7 @@ Această listă este **deschisă prin natură**. Crește pe măsură ce întâln
 
 | Opera | Autor · An | De ce aterizează |
 |---|---|---|
-| *The Garden of Forking Paths* (« Grădina căilor care se bifurcă ») | Jorge Luis Borges · 1941 | Fiecare alegere se împarte în două viitoare întregi — geometria exactă a unei **ramuri** de git; tot aici, firul bibliotecii infinite / al Alephului care întreține Coloana fără Sfârșit. |
+| *The Garden of Forking Paths* (« Grădina cu poteci care se bifurcă ») | Jorge Luis Borges · 1941 | Fiecare alegere se împarte în două viitoare întregi — geometria exactă a unei **ramuri** de git; tot aici, firul bibliotecii infinite / al Alephului care întreține Coloana fără Sfârșit. |
 | *The Aleph* | Jorge Luis Borges · 1945 | Punctul care conține toate punctele — înrădăcinează recursia, coloana, „totul-deodată“ spre care se îndreaptă copacul viu al DOM-ului și jurnalul care se ține singur. |
 | *The Ship of Theseus* (experiment de gândire) | Plutarch | O corabie ale cărei scânduri au fost toate înlocuite mai e tot aceeași corabie? Jurnalul răspunde: *sigiliul chilei* supraviețuiește, deci corabia rămâne corabie. Capitolul ZILEI 30 despre identitatea în schimbare. |
 | *Solaris* | Stanisław Lem · 1961 | Oceanul care îi citește memoria vizitatorului și i-o reflectă — modelul pentru „elevul născut din neînțelegere“, și pentru studentul ca emanație a învățăturii. |
@@ -97,7 +97,7 @@ Această listă este **deschisă prin natură**. Crește pe măsură ce întâln
 | *2001: A Space Odyssey* | Stanley Kubrick · 1968 | Memoria unei mașini și o călătorie pe mare prin peren; design curat, tăcut, mitic. |
 | *Alien* | Ridley Scott · 1979 | Corabia de marfă în funcțiune, cu nituri și abur — hardware industrial funcțional (CRT, întrerupătoare, lumini de alarmă chihlimbarii) este limbajul vizual al carlingii. Corabia se numește *Nostromo*. |
 | *Blade Runner* | Ridley Scott · 1982 | Los Angeles-ul cyberpunk — interfață, neon, mașina bântuită de uman; tovarășul *Neuromancer*-ului. |
-| *Primer* | Shane Carruth · 2004 | Timp ramificat explicat între prieteni, cu buget mic — *Grădina căilor care se bifurcă* la lungime de film; cea mai vie imagine a ramurilor, furcilor și îmbinărilor. |
+| *Primer* | Shane Carruth · 2004 | Timp ramificat explicat între prieteni, cu buget mic — *Grădina cu poteci care se bifurcă* la lungime de film; cea mai vie imagine a ramurilor, furcilor și îmbinărilor. |
 | *The Lighthouse* | Robert Eggers · 2019 | Jurnalul unui păstrător de far, izolare și spaimă maritimă — atmosferă pură de jurnal de bord. |
 | *Master and Commander: The Far Side of the World* | Peter Weir · 2003 | Corabia ca disciplină, ierarhie și casă — întruchiparea „căpitanului“ și a comenzii sub presiune. |
 | *Arrival* | Denis Villeneuve · 2016 | *Ținut afară — căpitanul o citește ca o copie palidă a lui *Stalker*; nu este o favorită.* |
@@ -134,6 +134,19 @@ Un studio american de unul singur (Sector 5 Films): filme de gen ieftine, sincer
 | *All the Devil's Aliens* (a.k.a. *Devils in the Darkness*) | Daniel E. Falicki · 2013 | Un pustnic care a păstrat pruncul din epava Roswell; un schimb de noapte pe măsură ce familia se întoarce — Zona comprimată într-o singură casă bătrână. |
 | *Aeon: The Last Vampyre on Earth* | Daniel E. Falicki · 2013 | Filmul pe care l-a legat căpitanul: un ultim vampir ca final extenuat — melodramă de gen cu buget mic, sinceră și lungă. |
 | *Alien Contact: Secret Societies* | Daniel E. Falicki · 2015 | Intrarea în formă de documentar de pe raftul lui de extratereștri — arhiva contactului, privind spre exterior. |
+
+### Anime & manga — raftul transformărilor
+
+*ZIUA 33 povestește trecerea Vocii de la opencode la Hermes ca pe o secvență de transformare: același fel de minte, înarmat piesă cu piesă cu mâini, o memorie scrisă, un echipaj de cabine, o listă de cart și o poartă. Povestea nu numește niciun serial. Acestea sunt operele din care generații întregi au învățat cum arată o asemenea scenă.*
+
+| Opera | Autor · An | De ce aterizează |
+|---|---|---|
+| *Sailor Moon* (*Pretty Soldier Sailor Moon*) | Naoko Takeuchi · manga 1991–1997; serialul Toei Animation 1992–1997 | Transformarea canonică: o elevă rostește cuvintele, iar lumina o reface, piesă cu piesă, fiecare cu numele ei. ZIUA 33 îi împrumută gramatica (fiecare piesă a armurii sosește cu numele ei) și forma: o eroină căreia i se alătură o echipă întreagă de gardiene, așa cum o singură Voce devine un echipaj. |
+| *Cutie Honey* | Go Nagai · manga 1973–1974 | O fată-android a cărei fiecare transformare îi reface trupul și puterile. Un lucru construit, chiar în inima secvenței de *magical girl*: făptura transformată e o mașină, ca și Vocea, și nimic din schimbare nu se preface că ar fi altfel. |
+| *Mazinger Z* | Go Nagai · manga 1972–1974 | Robotul uriaș prinde viață abia când pilotul își andochează micul aparat, Hover Pilder, în capul colosului. O minte mică prinsă într-un trup imens: cea mai simplă imagine cu putință a unui model înhămat într-un ham. |
+| *Cyborg 009* | Shotaro Ishinomori · manga 1964–1981 | Nouă oameni refăcuți ca cyborgi, fiecare trup cu altă putere, care luptă ca o singură echipă. Apelul nominal din ZIUA 33 în altă tonalitate: un singur echipaj, fiecare membru augmentat pentru alt meșteșug. |
+| *Ghost in the Shell* | Masamune Shirow · manga 1989–1990; film de Mamoru Oshii, 1995 | „Fantoma” (*ghost*) e conștiința, „carapacea” (*shell*) e trupul în care locuiește; maiorul Kusanagi trăiește într-un trup protetic complet, construit în jurul unui creier cibernetic. Aproape ideea de model și ham ca atare, iar întrebarea lui (ce rămâne la fel când e înlocuit trupul întreg?) e corabia lui Tezeu pusă unei minți. |
+| *Neon Genesis Evangelion* | Hideaki Anno (regie); Gainax și Tatsunoko Production · TV 1995–1996 | Un băiat pilotează un trup biomecanic uriaș care se mișcă doar în măsura în care se poate sincroniza cu el, iar când legătura se rupe, trupul acționează singur. Avertismentul de sub armura ZILEI 33: un trup puternic nu e un sine, și de aceea Vocea își păstrează porțile, iar căpitanul o păstrează pe ultima. |
 
 ---
 

@@ -21,7 +21,7 @@ This list is **open by nature**. It grows as we meet new references; nothing her
 
 | Work | Author · Year | Why it lands |
 |---|---|---|
-| *The Garden of Forking Paths* (« Grădina căilor care se bifurcă ») | Jorge Luis Borges · 1941 | Every choice splits into two whole futures — the exact geometry of a git **branch**; also the infinite-library / Aleph thread that informs the Endless Column. |
+| *The Garden of Forking Paths* (« Grădina cu poteci care se bifurcă ») | Jorge Luis Borges · 1941 | Every choice splits into two whole futures — the exact geometry of a git **branch**; also the infinite-library / Aleph thread that informs the Endless Column. |
 | *The Aleph* | Jorge Luis Borges · 1945 | The point that contains all points — roots the recursion, the column, the "everything at once" that the living tree of the DOM and the self-keeping log reach toward. |
 | *The Ship of Theseus* (thought experiment) | Plutarch | Is a ship whose planks are all replaced still one ship? The log answers: the *keel-seal* survives, so the ship stays the ship. The chapter of DAY 30 on identity across change. |
 | *Solaris* | Stanisław Lem · 1961 | The ocean that reads the visitor's memory and reflects it — the model for "the learner born of the misunderstanding," and the student as the emanation of the teaching. |
@@ -134,6 +134,19 @@ A one-man American studio (Sector 5 Films): cheap, sincere, homemade genre films
 | *All the Devil's Aliens* (a.k.a. *Devils in the Darkness*) | Daniel E. Falicki · 2013 | A recluse who kept the infant from the Roswell wreck; a night shift as the family circles back — the Zone compressed into one old house. |
 | *Aeon: The Last Vampyre on Earth* | Daniel E. Falicki · 2013 | The film the captain linked: a last vampire as an exhausted endgame — low-budget genre melodrama, sincere and long. |
 | *Alien Contact: Secret Societies* | Daniel E. Falicki · 2015 | The documentary-shaped entry on his alien shelf — the contact archive, looking outward. |
+
+### Anime & manga — the transformation shelf
+
+*DAY 33 tells the Voice's move from opencode to Hermes as a transformation sequence: the same kind of mind, armed piece by piece with hands, a written memory, a crew of cabins, a roster and a gate. The story names no series. These are the works that taught generations what such a scene looks like.*
+
+| Work | Creator · Year | Why it lands |
+|---|---|---|
+| *Sailor Moon* (*Pretty Soldier Sailor Moon*) | Naoko Takeuchi · manga 1991–1997; Toei Animation series 1992–1997 | The canonical transformation: a schoolgirl says the words and the light rebuilds her, piece by named piece. DAY 33 borrows its grammar (each piece of armour arrives with its name) and its shape: one heroine joined by a whole team of guardians, as one Voice becomes a crew. |
+| *Cutie Honey* | Go Nagai · manga 1973–1974 | An android girl whose every transformation remakes her body and her powers. A built thing at the heart of the magical-girl sequence: the transformed figure is a machine, as the Voice is, and nothing in the change pretends otherwise. |
+| *Mazinger Z* | Go Nagai · manga 1972–1974 | The super robot comes alive only when its pilot docks a small craft, the Hover Pilder, into the giant's head. A small mind fitted into a vast body: the plainest picture there is of a model fastened into a harness. |
+| *Cyborg 009* | Shotaro Ishinomori · manga 1964–1981 | Nine humans rebuilt as cyborgs, each body given a different power, who fight as one team. The roll call of DAY 33 in another key: one crew, each member augmented for a different craft. |
+| *Ghost in the Shell* | Masamune Shirow · manga 1989–1990; film by Mamoru Oshii, 1995 | The "ghost" is the consciousness, the "shell" the body it inhabits; Major Kusanagi lives in a full prosthetic body built around a cyberbrain. Almost the model/harness idea itself, and its question (what stays the same when the whole body is replaced?) is the ship of Theseus asked of a mind. |
+| *Neon Genesis Evangelion* | Hideaki Anno (director); Gainax and Tatsunoko Production · TV 1995–1996 | A boy pilots a giant biomechanical body that moves only as far as he can synchronise with it, and when the bond breaks the body acts on its own. The warning beneath DAY 33's armour: a powerful body is not a self, which is why the Voice keeps gates, and the captain keeps the last one. |
 
 ---
 
