@@ -13,6 +13,7 @@ Romanian translation.
 | Semantic field manual | The project's shared terminology and how terms map across the narrative and technical layers | `semantic-field-manual-en.md` / `semantic-field-manual-ro.md` |
 | Work deontology | The rules of the voyage — commit conventions (rule #7), the DAY 22 permanent construction log (rule #9), scope discipline | `work-deontology.md` / `work-deontology-ro.md` |
 | Git/PR workflow guide | How work reaches `main`: branch, commit, push, pull request and checks (sending); reading, merging and the local clean-up (receiving) | `git-workflow-en.md` / `git-workflow-ro.md` |
+| Cost ledger | What the voyage has cost, round by round, at API prices: the tables, the totals and the method, kept by the Quartermaster; the journal's *Fuel log* lines point here | `ledger/cost-ledger.md` / `ledger/cost-ledger-ro.md` |
 | Notes | The captain's working notes, one per-source sheet per chapter; raw material for the `*-log.html` pages | `notes/` (see its own README) |
 
 ## Conventions
