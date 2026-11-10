@@ -136,7 +136,7 @@ Hermes's own table.
 | 2026-09-21 | `t_2b50bcfe` | Assayer | Verify byte-identical EN/RO sidebar generation and no manual lists … | 1 | $1.95 | exact |
 | 2026-09-21 | `t_2c5567aa` | Rigger | Implement dynamic sidebar generation in ro/script.js (mirrored) | 1 | $15.87 | estimated |
 | 2026-09-21 | `t_470b45d2` | Rigger | Add rel=noopener noreferrer to all target=_blank links | 1 | $8.08 | estimated |
-| 2026-09-21 | `t_5400e63b` | Rigger | Fix: strip stale hand-authored sidebar <li> from … | 1 | $2.56 | estimated |
+| 2026-09-21 | `t_5400e63b` | Rigger | Fix: strip stale hand-authored sidebar &lt;li&gt; from … | 1 | $2.56 | estimated |
 | 2026-09-21 | `t_57384053` | Assayer | Fix 3 RO log pages with meta-description/og:description desync | 1 | $0.49 | exact |
 | 2026-09-21 | `t_594cc53f` | Scribe | Write meta description/keywords for log pages 13-23 | 1 | $1.78 | exact |
 | 2026-09-21 | `t_646b1f9b` | Scribe | [Should] Per-page meta description/keywords sweep (BACKLOG #010) | 1 | $0.07 | exact |
@@ -177,7 +177,7 @@ The audit's *fix first* items #8 and after, and the minor items.
 | 2026-11-06 | `t_0353851a` | Assayer | [Should] QA (read-only): the og-meta PR | 1 | $2.13 | exact |
 | 2026-11-06 | `t_2ee378d4` | Assayer | [Could] Audit minor: FIND-ONLY the off-by-one ranges (read-only report … | 1 | $5.87 | exact |
 | 2026-11-06 | `t_323d8f8e` | Cartographer | [Should] Audit minor og meta 1/2: design the 1200x630 share PNG + … | 1 | $1.87 | exact |
-| 2026-11-06 | `t_4a093bbd` | Rigger | [Should] PR #7 wording: 'nota' -> 'notița' in the RO not-saved alert … | 1 | $0.88 | exact |
+| 2026-11-06 | `t_4a093bbd` | Rigger | [Should] PR #7 wording: 'nota' -&gt; 'notița' in the RO not-saved alert … | 1 | $0.88 | exact |
 | 2026-11-06 | `t_6b01b313` | Assayer | [Should] QA re-check (read-only): PR #7 after the 'notița' fix | 1 | $0.86 | exact |
 | 2026-11-06 | `t_9c42e731` | Engineer | [Must] Fix make rollback: merge-commit tip (-m 1) + refuse unless on … | 1 | $2.45 | exact |
 | 2026-11-06 | `t_df76d96f` | Rigger | [Should] Audit minor og meta 2/2: drop og:background_color, point … | 1 | $2.93 | exact |
@@ -212,13 +212,13 @@ Season V (DAY 33 to DAY 39), the Git/PR guide, the hard-error fixes, and their c
 | 2026-11-06 | `t_a83f4575` | Assayer | [Journal] QA (read-only): Season V PR — facts, teaching, rulings | 1 | $5.13 | exact |
 | 2026-11-06 | `t_c3d49bbc` | Archivist | [Journal] researcher (read-only): source-pack addendum — sessions + … | 1 | $1.72 | exact |
 | 2026-11-06 | `t_c85f626d` | Scribe | [Journal] writer: PR A — fix DAY 29 code line + JOURNAL-RO hard errors … | 1 | $2.30 | exact |
-| 2026-11-06 | `t_d1c32bd8` | Assayer | [Journal] QA re-check (read-only): PR #12 after the DAY 36 `git branch … | 1 | $0.93 | exact |
+| 2026-11-06 | `t_d1c32bd8` | Assayer | [Journal] QA re-check (read-only): PR #12 after the DAY 36 `git branch` … | 1 | $0.93 | exact |
 | 2026-11-06 | `t_da6e1697` | Scribe | [Journal] writer: Season V 2/3 — DAY 37-39 EN + Sleeper's errata ledger … | 1 | $4.54 | exact |
 | 2026-11-06 | `t_f1a50ce7` | Assayer | [Journal] QA (read-only): PR A hard errors | 1 | $1.21 | exact |
 | 2026-11-06 | `t_fc537220` | Scribe | [Journal] writer: Season V REVISE fixes (5 items) — update PR #12, no … | 1 | $0.78 | exact |
 | 2026-11-06 | `t_fd510b32` | Assayer | [Docs] QA re-check (read-only): PR #13 after the `branch -d` fix | 1 | $1.11 | exact |
 | 2026-11-10 | `t_24db5f7e` | Assayer | [Journal] QA re-check (read-only): PR #12 after the GitS-years + "one … | 1 | $0.56 | exact |
-| 2026-11-10 | `t_5561822c` | Scribe | [Journal] writer: DAY 33 transformation of the Voice (opencode -> … | 1 | $3.06 | exact |
+| 2026-11-10 | `t_5561822c` | Scribe | [Journal] writer: DAY 33 transformation of the Voice (opencode -&gt; … | 1 | $3.06 | exact |
 | 2026-11-10 | `t_bf610bf8` | Scribe | [Journal] writer: PR #11 owner corrections (Nietzsche, 2117, ocheanul … | 1 | $2.92 | exact |
 | 2026-11-10 | `t_f8576b06` | Assayer | [Journal] QA (read-only): PR #11 + PR #12 after owner corrections + … | 1 | $3.33 | exact |
 | 2026-11-10 | `t_fc4344fb` | Scribe | [Journal] writer fix: PR #12 QA REVISE (GitS manga years; DAY 33 "one … | 1 | $0.47 | exact |
