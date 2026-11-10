@@ -327,7 +327,7 @@ Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a
 ### 002 — Pagini recursive cu metadate complete
 
 **Data:** 2026-07-27
-**Notă:** Toate paginile HTML (principale + toate cele 22 de pagini de jurnal per limbă) au acum `<head>` complet — charset, viewport, titlu, meta descriere, theme-color, favicon — cu comentarii pedagogice adecvate limbii. Anotația `@meta:` documentează fiecare tag. RO oglindește EN structural. Cele două copii originale din backlog (una „În lucru", una „Planificat") au fost consolidate și mutate aici.
+**Notă:** Toate paginile HTML (principale + toate cele 23 de pagini de jurnal per limbă; număr corectat 2026-11-10) au acum `<head>` complet — charset, viewport, titlu, meta descriere, theme-color, favicon — cu comentarii pedagogice adecvate limbii. Anotația `@meta:` documentează fiecare tag. RO oglindește EN structural. Cele două copii originale din backlog (una „În lucru", una „Planificat") au fost consolidate și mutate aici.
 
 ---
 

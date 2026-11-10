@@ -3512,7 +3512,7 @@ Module 00 is always the last module of the stylesheet.
    the spinning stage, so it stays perfectly vertical and centred while the
    glass rotates behind it — the seam is the constant, the promise of the
    split. Closed, the monolith is whole; the seam is the ghost of the cut.
-   When the cursor approaches, the seam flares (31.0.L) as if the two halves
+   When the cursor approaches, the seam flares (31.0.K) as if the two halves
    are about to part. It is purely decorative. */
 .vault-core-seam {
   position: absolute; /* @layout: Positioning scheme — pinned to the link's frame, over the crystal. */
@@ -4072,6 +4072,7 @@ Module 00 is always the last module of the stylesheet.
 @sub-module: 32.3 — Signal Label
 @sub-module: 32.4 — Explanatory Prose
 @sub-module: 32.5 — Reduced-Motion Contract
+@sub-module: 32.6 — Responsive Compression of the Banner (→ 00.2.B, B6)
 Scope: .under-construction, .under-construction::before, .uc-label,
       .uc-icon, .under-construction p.
 Purpose: An honest warning fixed to the top of any log deck whose entries are

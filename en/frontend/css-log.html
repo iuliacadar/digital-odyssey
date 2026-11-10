@@ -786,10 +786,15 @@
     <!-- @block: JAVASCRIPT LOADER
       The [script] tag loads the ship's control systems — a single
       JavaScript file (script.js) that lives one directory above this
-      page. This file contains all the interactive mechanisms:
-      MECANISM 01 (Typing Animation), MECANISM 04 (Persistent Notes
-      Terminal via localStorage), MECANISM 06.5 (HUD Console Toggle),
-      and the sidebar search filter.
+      page. This file contains every interactive mechanism of the ship.
+      Eight of them wake up on this log page: MECANISM 01 (Navbar
+      Hide/Show on Scroll), MECANISM 02 (Sidebar Active Detection),
+      MECANISM 03 (Mission Status Animation Re-trigger), MECANISM 04
+      (Persistent Notes Terminal via localStorage), MECANISM 05 (Desktop
+      Anchor Navigation), MECANISM 06 (Mobile HUD Auto-Scroll),
+      MECANISM 10-A (Voyage Log) and MECANISM 11 (Dynamic Sidebar
+      Index). The rest (06.5, 07, 08, 09 and 10-B) look for elements
+      this page does not have, and stay asleep.
       @path:
         The src="../script.js" attribute tells the browser to fetch
         en/script.js relative to this page's location

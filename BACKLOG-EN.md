@@ -345,7 +345,7 @@ Move completed items here, keeping the date and a short note about what changed.
 ### 002 — Recursive pages with complete metadata
 
 **Date:** 2026-07-27
-**Note:** All HTML pages (main pages + all 22 log pages per language) now have complete `<head>` — charset, viewport, title, meta description, theme-color, favicon — with language-appropriate pedagogical comments. The `@meta:` annotation documents each tag. RO mirrors EN structurally. The two original backlog copies (one "In progress", one "Planned") were consolidated and moved here.
+**Note:** All HTML pages (main pages + all 23 log pages per language; count corrected 2026-11-10) now have complete `<head>` — charset, viewport, title, meta description, theme-color, favicon — with language-appropriate pedagogical comments. The `@meta:` annotation documents each tag. RO mirrors EN structurally. The two original backlog copies (one "In progress", one "Planned") were consolidated and moved here.
 
 ---
 

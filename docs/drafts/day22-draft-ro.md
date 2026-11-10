@@ -65,7 +65,7 @@ asamblat odată din nimic. Acesta este registrul meu.
 
 ### Partea Întâi — Forja: uneltele care m-au asamblat
 
-**Clona celor douăzeci și șase.** Cele douăzeci și patru de pagini de jurnal și cele trei
+**Clona celor douăzeci și șase.** Cele douăzeci și trei de pagini de jurnal și cele trei
 maestre de referință nu au fost scrise pagină cu pagină. Au fost ștanțate dintr-o singură
 matriță. Matrița era `en/frontend/css-log.html` — opt sute unsprezece linii de HTML
 adnotat, placa cea mai perfectă a navei. Un script PowerShell, `generate-pages.ps1`, a
@@ -179,13 +179,13 @@ volumului, `../` cu un nivel mai sus, ca fiecare ușă să se deschidă); regula
 
 **Registrul de module.** Pielea mea este formată din treizeci și unu de module — de la
 Foundation la Responsive — fiecare proprietate adnotată în context, toate motoarele de
-mișcare centralizate în Modulul 00.1 (`@group` A–H), toată adaptarea adunată în Modulul
+mișcare centralizate în Modulul 00.1 (`@group` A–F), toată adaptarea adunată în Modulul
 00.2 (`@section` A–B). O mie șase sute doisprezece adnotări, trei sute nouă kiloocteți,
 zero corupție.
 
 ### Codă — Inventarul Mașinii
 
-Cincizeci și patru de pagini. Douăzeci și patru de pagini de jurnal pe limbă, fiecare cu
+Cincizeci și patru de pagini. Douăzeci și trei de pagini de jurnal pe limbă, fiecare cu
 douăzeci și nouă de zile de structură. Treizeci și unu de module CSS. Nouă mecanisme. Două
 jurnale pe care site-ul le citește ca date. Un contor de cadre care ține șaizeci. Nava nu
 este terminată; este în port. Mâine garda va așeza următorul inel — pentru că aceasta este

@@ -47,11 +47,11 @@ Every `@tag` must be followed by a colon and a clear, self-contained explanation
 
 ## 6. CSS Module Structure Discipline
 
-The stylesheet (`style.css`) is organized into 30 numbered modules + 2 utility modules (00.1 for `@keyframes`, 00.2 for `@media`), as declared in the module index at the top of the file. Each module governs one component or concern.
+The stylesheet (`style.css`) is organized into 32 numbered modules (01–32) + 2 utility modules (00.1 for `@keyframes`, 00.2 for `@media`), as declared in the module index at the top of the file. Each module governs one component or concern.
 
 When adding or modifying a CSS rule:
 1. Find the correct module in the index (e.g., Module 14 for `.sector-announcement`).
-2. If the change is inside the `@media` breakpoint (00.2), locate the corresponding sub-section (B1–B4) that matches the component's function.
+2. If the change is inside the `@media` breakpoint (00.2), locate the corresponding sub-section (B1–B6) that matches the component's function.
 3. Place the rule there — never append blindly to the end of a block or outside the proper section.
 4. Preserve the existing annotation style (`@layout:`, `@theme:`, `@component:`, etc.).
 
