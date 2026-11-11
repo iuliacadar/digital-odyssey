@@ -1,4 +1,4 @@
-﻿---
+﻿***
 
 # D::0dy55ey — Scriere prin deltă, sau cum să scrii prin diferențe
 
