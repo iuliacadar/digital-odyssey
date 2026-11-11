@@ -1317,6 +1317,105 @@
       "annotation": "Free GitLab alternative path."
     },
     {
+      "title": "Git Reference Manual",
+      "url": "https://git-scm.com/docs",
+      "category": "delivery-deck",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Official reference page for every git command."
+    },
+    {
+      "title": "The Linux Command Line (William Shotts)",
+      "url": "https://linuxcommand.org/tlcl.php.html",
+      "category": "delivery-deck",
+      "kind": "book",
+      "status": "queued",
+      "access": "free",
+      "annotation": "596-page book for new users; free PDF, CC BY-NC-ND."
+    },
+    {
+      "title": "The Missing Semester of Your CS Education",
+      "url": "https://missing.csail.mit.edu/",
+      "category": "delivery-deck",
+      "kind": "course",
+      "status": "queued",
+      "access": "free",
+      "annotation": "MIT course (2026): shell, command line, Git."
+    },
+    {
+      "title": "The Linux command line for beginners",
+      "url": "https://ubuntu.com/tutorials/command-line-for-beginners",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Ubuntu's own first-hour terminal tutorial."
+    },
+    {
+      "title": "GNU Bash Reference Manual",
+      "url": "https://www.gnu.org/software/bash/manual/",
+      "category": "delivery-deck",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "The official Bash shell manual."
+    },
+    {
+      "title": "GNU Coreutils Manual",
+      "url": "https://www.gnu.org/software/coreutils/manual/",
+      "category": "delivery-deck",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "ls, cp, mv, rm and the other core tools."
+    },
+    {
+      "title": "Linux man pages online",
+      "url": "https://man7.org/linux/man-pages/",
+      "category": "delivery-deck",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "The terminal's man pages, in the browser."
+    },
+    {
+      "title": "GitHub CLI Manual",
+      "url": "https://cli.github.com/manual/",
+      "category": "delivery-deck",
+      "kind": "docs",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Official manual for every gh command."
+    },
+    {
+      "title": "Git Cheat Sheet (GitHub Education)",
+      "url": "https://education.github.com/git-cheat-sheet-education.pdf",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Two-page PDF of everyday git commands."
+    },
+    {
+      "title": "explainshell",
+      "url": "https://explainshell.com/",
+      "category": "delivery-deck",
+      "kind": "community",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Paste a command, see each part explained."
+    },
+    {
+      "title": "tldr pages",
+      "url": "https://tldr.sh/",
+      "category": "delivery-deck",
+      "kind": "community",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Short practical examples for each command."
+    },
+    {
       "title": "roadmap.sh",
       "url": "https://roadmap.sh/",
       "category": "meta",
