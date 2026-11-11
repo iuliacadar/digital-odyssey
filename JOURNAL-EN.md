@@ -1,4 +1,4 @@
-﻿---
+﻿***
 
 # D::0dy55ey — Delta writing, or how to write through differences
 
