@@ -323,6 +323,8 @@ opens. They live here because the server is the half they explain.
 | Learn Git — Full Course for Beginners | freeCodeCamp | Video | https://www.youtube.com/watch?v=zTjRZNkhiEU | free | queued | — |
 | Git Basics | The Odin Project | Course | https://www.theodinproject.com/paths/foundations/courses/foundations | free | queued | — |
 | Atlassian Git Tutorials | Atlassian | Docs | https://www.atlassian.com/git/tutorials | free | queued | — |
+| Git Reference Manual | git-scm.com | Docs | https://git-scm.com/docs | free | queued | — |
+| Git Cheat Sheet | GitHub Education | Guide | https://education.github.com/git-cheat-sheet-education.pdf | free | queued | — |
 
 ## Delivery — GitHub
 
@@ -334,6 +336,20 @@ opens. They live here because the server is the half they explain.
 | Getting started with GitHub | GitHub Docs | Docs | https://docs.github.com/en/get-started | free | queued | — |
 | GitHub for Beginners (series) | GitHub Blog | Docs | https://github.blog/developer-skills/github/ | free | queued | — |
 | Git and GitHub — Full Course | Boot.dev | Video | https://www.youtube.com/watch?v=rH3zE7VlIMs | free | queued | — |
+| GitHub CLI Manual | GitHub | Docs | https://cli.github.com/manual/ | free | queued | — |
+
+## Delivery — the command line (Linux shell)
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| The Linux Command Line | William Shotts | Book | https://linuxcommand.org/tlcl.php.html | free | queued | — |
+| The Missing Semester of Your CS Education | MIT CSAIL | Course | https://missing.csail.mit.edu/ | free | queued | — |
+| The Linux command line for beginners | Ubuntu (Canonical) | Guide | https://ubuntu.com/tutorials/command-line-for-beginners | free | queued | — |
+| GNU Bash Reference Manual | GNU Project | Docs | https://www.gnu.org/software/bash/manual/ | free | queued | — |
+| GNU Coreutils Manual | GNU Project | Docs | https://www.gnu.org/software/coreutils/manual/ | free | queued | — |
+| Linux man pages online | man7.org (Michael Kerrisk) | Docs | https://man7.org/linux/man-pages/ | free | queued | — |
+| explainshell | explainshell.com | Community | https://explainshell.com/ | free | queued | — |
+| tldr pages | tldr-pages community | Community | https://tldr.sh/ | free | queued | — |
 
 ## Delivery — deployment & CI/CD
 

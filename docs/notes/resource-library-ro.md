@@ -281,6 +281,8 @@ aici pentru că serverul e jumătatea pe care o explică.
 | Learn Git — Full Course for Beginners | freeCodeCamp | Video | https://www.youtube.com/watch?v=zTjRZNkhiEU | gratuit | coadă | — |
 | Git Basics | The Odin Project | Curs | https://www.theodinproject.com/paths/foundations/courses/foundations | gratuit | coadă | — |
 | Atlassian Git Tutorials | Atlassian | Documentație | https://www.atlassian.com/git/tutorials | gratuit | coadă | — |
+| Git Reference Manual | git-scm.com | Documentație | https://git-scm.com/docs | gratuit | coadă | — |
+| Git Cheat Sheet | GitHub Education | Ghid | https://education.github.com/git-cheat-sheet-education.pdf | gratuit | coadă | — |
 
 ## Delivery — GitHub
 
@@ -292,6 +294,20 @@ aici pentru că serverul e jumătatea pe care o explică.
 | Getting started with GitHub | GitHub Docs | Documentație | https://docs.github.com/en/get-started | gratuit | coadă | — |
 | GitHub for Beginners (serie) | GitHub Blog | Documentație | https://github.blog/developer-skills/github/ | gratuit | coadă | — |
 | Git and GitHub — Full Course | Boot.dev | Video | https://www.youtube.com/watch?v=rH3zE7VlIMs | gratuit | coadă | — |
+| GitHub CLI Manual | GitHub | Documentație | https://cli.github.com/manual/ | gratuit | coadă | — |
+
+## Delivery — linia de comandă (shell-ul Linux)
+
+| Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |
+|---|---|---|---|---|---|---|
+| The Linux Command Line | William Shotts | Carte | https://linuxcommand.org/tlcl.php.html | gratuit | coadă | — |
+| The Missing Semester of Your CS Education | MIT CSAIL | Curs | https://missing.csail.mit.edu/ | gratuit | coadă | — |
+| The Linux command line for beginners | Ubuntu (Canonical) | Ghid | https://ubuntu.com/tutorials/command-line-for-beginners | gratuit | coadă | — |
+| GNU Bash Reference Manual | GNU Project | Documentație | https://www.gnu.org/software/bash/manual/ | gratuit | coadă | — |
+| GNU Coreutils Manual | GNU Project | Documentație | https://www.gnu.org/software/coreutils/manual/ | gratuit | coadă | — |
+| Linux man pages online | man7.org (Michael Kerrisk) | Documentație | https://man7.org/linux/man-pages/ | gratuit | coadă | — |
+| explainshell | explainshell.com | Comunitate | https://explainshell.com/ | gratuit | coadă | — |
+| tldr pages | comunitatea tldr-pages | Comunitate | https://tldr.sh/ | gratuit | coadă | — |
 
 ## Delivery — deployment & CI/CD
 
