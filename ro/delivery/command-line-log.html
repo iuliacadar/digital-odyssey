@@ -36,8 +36,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
       Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
-      În proiectele moderne are o utilitate practică redusă, dar o păstrez aici dacă vreau
-      să păstrez structura clasică de bază a head-ului (capului) de model.
+      http-equiv="X-UA-Compatible" imită un antet HTTP cu același nume, iar
+      content="ie=edge" îi spunea lui Internet Explorer 8–11 să deseneze
+      pagina cu motorul lui cel mai nou ("edge"), în loc de o „vizualizare de
+      compatibilitate" mai veche, care copia Internet Explorer 7. Internet
+      Explorer a fost retras, iar orice browser modern ignoră acest rând, deci
+      nu schimbă nimic pe ecran.
+      @reason:
+        Îl păstrez pentru că fiecare pagină a proiectului se deschide cu același
+        head clasic, rând cu rând. Un cititor care a studiat o pagină o
+        recunoaște pe aceasta, iar dacă aș scoate rândul doar de aici, pagina
+        ar ieși din rând.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,6 +74,14 @@
       Descrierea paginii.
       O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
       dar motoarele de căutare o pot folosi ca text descriptiv.
+      name="description" spune ce fel de metadată este aceasta, iar
+      content="..." ține propoziția însăși. Ea numește subiectele celor cinci
+      sectoare în ordinea lecturii: shell-ul, navigarea și fișierele,
+      pipe-urile și redirecționarea, permisiunile și procesele, scripturile.
+      Aceeași propoziție se repetă în og:description mai jos.
+      @todo:
+        Când zilele ei vor fi scrise, propoziția trebuie să urmeze conținutul
+        real (BACKLOG-RO.md 017, care trimite la 010).
     -->
 
     <meta
@@ -91,6 +108,10 @@
       Leg manifestul aplicației web. Firefox citește theme_color din manifest
       mai degrabă decât din eticheta meta, astfel încât acest lucru asigură suport
       consistent pentru theme-color în toate browserele moderne, inclusiv Firefox.
+      rel="manifest" îi spune browserului ce este fișierul legat: un mic
+      fișier JSON cu numele, iconițele și culorile site-ului.
+      href="../site.webmanifest" urcă un folder, din ro/delivery/ în ro/, unde
+      stă manifestul volumului, lângă favicon.svg.
     -->
 
 
@@ -99,6 +120,10 @@
       Titlul Open Graph.
       Când link-ul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
       acest text apare ca titlul cardului în locul URL-ului brut.
+      Open Graph este setul de proprietăți og: introdus de Facebook și citit
+      acum de majoritatea platformelor: property="og:title" numește câmpul,
+      iar content="..." îl umple. Valoarea este același șir ca [title]-ul de
+      mai sus, "D::0dy55ey | Jurnal Linie de Comandă".
     -->
 
     <meta
@@ -123,6 +148,10 @@
       URL-ul canonic Open Graph.
       Când pagina este distribuită, acest câmp le spune platformelor adresa exactă și permanentă a acestei pagini.
       Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
+      Adresa este absolută (https://...), pentru că un card distribuit trăiește
+      în afara site-ului și nu are o pagină față de care să rezolve o cale
+      relativă. Este adresa GitHub Pages a chiar acestui fișier,
+      ro/delivery/command-line-log.html, identică cu link-ul canonic de mai jos.
     -->
 
     <meta property="og:locale" content="ro_RO" />
@@ -186,6 +215,9 @@
       Link-ul canonic.
       Le spun motoarelor de căutare că acest URL este versiunea autoritativă a paginii.
       Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de ranking.
+      rel="canonical" numește relația, iar href ține aceeași adresă absolută
+      ca og:url de mai sus, astfel încât motoarele de căutare și cardurile
+      distribuite cad de acord asupra unui singur URL pentru această pagină.
     -->
 
     <meta name="robots" content="index, follow" />
@@ -197,9 +229,13 @@
 
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <!-- @path:
-      Leg favicon-ul paginii.
-      Calea este relativă la locația fișierului curent.
-      Browserul caută favicon.svg în folderul corespunzător.
+      Leg favicon-ul paginii: mica iconiță din fila browserului și din
+      marcaje. rel="icon" numește rolul fișierului, iar type="image/svg+xml"
+      spune că este un SVG, o imagine vectorială care rămâne clară la orice
+      dimensiune.
+      Calea este relativă la locația fișierului curent: href="../favicon.svg"
+      urcă un folder, din ro/delivery/ în ro/, unde favicon.svg stă lângă
+      index.html, așa că fiecare pagină a volumului arată aceeași iconiță.
     -->
 
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
@@ -215,12 +251,20 @@
     <!-- @reason:
       Pornesc devreme conexiunea către serverul de fonturi.
       Scopul este să reduc latența la încărcarea resurselor externe.
+      rel="preconnect" îi cere browserului să deschidă conexiunea acum (să
+      caute adresa, să deschidă conexiunea de rețea, să negocieze criptarea)
+      înainte să fie cerut vreun font. fonts.googleapis.com este serverul care
+      trimite mica foaie de stil ce descrie fontul, legată câteva rânduri mai jos.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
       Mă preconectez la domeniul care servește efectiv fișierele de font.
       crossorigin este obligatoriu pentru resursele externe servite de pe altă origine.
+      fonts.gstatic.com este locul unde stau fișierele de font propriu-zise.
+      Browserele cer fonturile mereu după regulile cross-origin (CORS), deci
+      fără crossorigin această conexiune timpurie nu s-ar potrivi cu cererea
+      de font, iar browserul ar deschide una a doua, pierzând avansul.
     -->
 
     <link
@@ -230,12 +274,26 @@
     <!-- @reason:
       Încarc fontul Space Grotesk din Google Fonts.
       display=swap îi spune browserului să folosească temporar un font de rezervă până se încarcă fontul final.
+      rel="stylesheet" spune că fișierul legat este CSS. În adresă,
+      family=Space+Grotesk numește fontul (+ ține locul spațiului din nume),
+      wght@300..700 cere fiecare grosime de la 300 (subțire) la 700 (aldin)
+      într-un singur font variabil, iar & leagă următorul parametru,
+      display=swap, astfel încât textul se poate citi imediat și nu este
+      niciodată invizibil.
     -->
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
       Leg fișierul de stiluri local.
-      Calea este relativă la locația fișierului curent.
+      Calea este relativă la locația fișierului curent: href="../style.css"
+      urcă un folder, din ro/delivery/ în ro/, la singura foaie de stil a
+      volumului. Toate paginile din ro/ o împart, deci acest jurnal primește
+      aceleași rame, culori și module ca paginile-surori, fără niciun rând de
+      CSS propriu.
+      @structure:
+        Acesta este ultimul rând din [head]. [/head]-ul de imediat după el
+        închide metadatele; tot ce urmează de la [body] este ceea ce vede
+        cititorul.
     -->
   </head>
   <!-- @block: BODY — PUNTA VIZIBILĂ
@@ -260,6 +318,12 @@
         Navbar-ul folosește flexbox (prin clasa .navbar) pentru a afișa
         sigla vasului în stânga și lista de comenzi de navigare în
         dreapta, păstrând cormana compactă și mereu vizibilă în partea de sus.
+      @line:
+        class="navbar" este cârligul acelor reguli flexbox din style.css.
+        aria-label="Navigare principală" îi dă acestui [nav] un nume, ca un
+        cititor de ecran să-l poată deosebi de al doilea [nav], cel din
+        sidebar ("Cuprinsul paginii"). [/nav], de după lista de comenzi,
+        închide cormana.
     -->
         <nav class="navbar" aria-label="Navigare principală">
       <!-- @block: IDENTITATEA TERMINALULUI
@@ -301,6 +365,13 @@
       Puntea principală este împărțită în două zone: sidebar-ul (harta expediției) și
       zona log-content. Clasa "log-layout" aplică un CSS Grid pentru o
       interfață de terminal cu două coloane.
+      @structure:
+        [main] marchează conținutul principal al paginii; o pagină are unul
+        singur, iar un cititor de ecran poate sări direct la el.
+        class="main-container" este rama comună a tuturor paginilor din
+        style.css: cel mult 1200px lățime, centrată cu margin: 0 auto, cu 40px
+        de padding în interior. A doua clasă, "log-layout", adaugă grila cu
+        două coloane pe care o folosesc doar paginile de jurnal.
     -->
     <main class="main-container log-layout">
       <!-- @block: SIDEBAR — HARTA EXPEDIȚIEI LINIEI DE COMANDĂ
@@ -315,6 +386,10 @@
           oferă sens containerului în loc să folosească un [div] generic.
           Acest lucru ajută cititoarele de ecran să anunțe rolul sidebar-ului și
           ajută motoarele de căutare să înțeleagă structura paginii.
+        @line:
+          class="log-sidebar" este cârligul pe care style.css îl folosește
+          pentru panoul translucid, de sticlă fumurie, al sidebar-ului; în
+          grila log-layout ocupă coloana din stânga.
       -->
       <aside class="log-sidebar">
         <!-- @block: NAVIGAREA DIN SIDEBAR — CONSOLA SECUNDARĂ
@@ -340,16 +415,30 @@
           <a href="#top-deck" class="map-title-link">
             <h4>Hartă Expediție Linie de Comandă</h4>
           </a>
-          <!-- @block: LISTA DE LINK-URI DIN SIDEBAR
-            [ul] (lista neordonată) deține fiecare link de zi a expediției.
-            Fiecare [li] (element de listă) conține un [a] (ancoră) care indică
-            către [article]-ul unei anumite zile prin atributul său id — acest lucru
-            se numește "fragment link" deoarece simbolul # îi spune
-            browserului să deruleze până la elementul cu acel id.
+          <!-- @block: LISTA DE LINK-URI DIN SIDEBAR — GENERATĂ LA RULARE
+            Acest [ul] (listă neordonată) este intenționat GOL în marcaj.
+            Elementele lui [li] (element de listă) sunt construite la încărcare
+            de MECANISMUL 11 din ../script.js, care citește fiecare
+            [article class="log-entry"] și fiecare
+            [div class="sector-announcement"] din conținutul jurnalului de mai
+            jos și emite câte un [a] (ancoră) pentru fiecare, în ordinea din
+            document. Fiecare [a] trimite la id-ul unei zile; se numește
+            "fragment link", pentru că simbolul # îi spune browserului să
+            deruleze până la elementul cu acel id.
             @reason:
               Fragment link-urile (href="#cli-day01") creează un cuprins
               care le permite membrilor echipajului să se teleporteze direct la orice
-              intrare fără să deruleze prin întregul jurnal.
+              intrare fără să deruleze prin întregul jurnal. Pentru că sunt
+              derivate din articolele însele, harta nu poate contrazice
+              teritoriul: scrieți o zi nouă mai jos și link-ul ei apare singur,
+              fiindcă nu mai există o a doua copie a listei de ținut la zi de mână.
+            @warning:
+              Nu scrieți de mână elemente [li] aici. MECANISMUL 11 înlocuiește
+              întregul conținut al acestei liste la DOMContentLoaded, deci orice
+              link scris în ea este aruncat în clipa în care pagina se încarcă.
+            @bridge:
+              MECANISMUL 11 din ../script.js — generatorul care umple această listă.
+              BACKLOG-RO.md, intrarea 013 — cererea pe care o închide.
           -->
           <ul>
             <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
@@ -381,6 +470,11 @@
 
               @bridge: ../script.js — MECANISMUL 11 (generarea) și
                 MECANISMUL 05 (navigarea delegată prin ancore).
+
+              @structure:
+                [/ul] închide lista goală. [/nav] și [/aside] de imediat după
+                ea închid consola secundară și sidebar-ul; urmează coloana
+                jurnalului.
             -->
           </ul>
         </nav>
@@ -1311,7 +1405,7 @@
       <!-- @block: CONSOLA SECUNDARĂ DE COMANDE
         Footer-ul se extinde dincolo de un singur link de bibliografie într-un
         panou complet de sisteme ale navei. Adăpostește Hărțile Stelare (bibliografia),
-        Carta de Astrogare (transmisia) și comutatorul de limbă
+        Carta de Astronavigație (transmisia) și comutatorul de limbă
         între versiunile în engleză și română ale proiectului.
         @concept:
           Footer-ul este stația de navigare auxiliară a navei — mai puțin
@@ -1324,6 +1418,9 @@
         pagina de transmisie și comutatorul de limbă. Folosirea unei liste
         este corectă semantic deoarece acestea sunt o colecție de
         destinații de navigare conexe.
+        class="footer-links" este cârligul pe care style.css îl folosește ca să
+        așeze cele trei elemente pe un singur rând flex centrat, care trece pe
+        un rând nou pe ecranele înguste.
       -->
       <ul class="footer-links">
         <!-- @path: Pagina de bibliografie
@@ -1338,6 +1435,10 @@
           link din footer.
           target="_blank" deschide arhiva într-un tab nou, ca acest jurnal
           să rămână deschis acolo unde l-a lăsat cititorul.
+          "Deep Space Archives — Delivery Deck" este textul link-ului: numele
+          bibliografiei în vocea navei, apoi puntea la care se deschide. Rămâne
+          în engleză, aceeași etichetă pe care o folosesc celelalte jurnale ale
+          Livrării din ro/.
         -->
         <li>
           <span class="pulse-dot"></span>
@@ -1348,12 +1449,23 @@
           ../transmission.html urcă un folder, din ro/delivery/ în ro/, la
           Carta de Astronavigație, mesajul fondator al proiectului. Se
           deschide în același tab, ca orice pagină din interiorul navei.
+          [span class="pulse-dot"] este același punct verde luminos ca la
+          primul element, iar "Carta de Astronavigație" este textul link-ului,
+          titlul paginii.
         -->
         <li>
           <span class="pulse-dot"></span>
           <a href="../transmission.html">Carta de Astronavigație</a>
         </li>
-        <!-- @bridge: Comutatorul de limbă între subproiectele EN și RO -->
+        <!-- @bridge: Comutatorul de limbă între volumele EN și RO
+          Al treilea [li] leagă această pagină de geamăna ei din cealaltă limbă.
+          en/ și ro/ sunt două copii complete ale site-ului, câte una pentru
+          fiecare limbă, cu aceleași foldere și nume de fișiere, deci geamăna
+          lui ro/delivery/command-line-log.html este
+          en/delivery/command-line-log.html.
+          Comentariul din interiorul [li]-ului explică fiecare dintre cele trei
+          rânduri ale lui.
+        -->
         <li>
           <!-- @reason:
             Comutatorul de limbă permite echipajului să treacă între versiunile
@@ -1390,6 +1502,11 @@
           Această estetică verde-fosfor face referire directă la terminalele de control
           NASA din anii 1970, unde afișajele verzi monocrome derulau
           date de telemetrie în timp real.
+        @line:
+          "//" nu este aici un comentariu de cod, ci doar text vizibil: un
+          separator în stilul afișajului de telemetrie.
+          [span class="telemetry-active"] este cârligul pe care style.css
+          (.footer span.telemetry-active) îl folosește pentru strălucirea verde.
         @warning:
           FRONTEND_EXPEDITION nu este sectorul acestei pagini: Jurnalul
           Liniei de Comandă aparține Punții de Livrare. Valoarea vine din
@@ -1419,6 +1536,11 @@
           orașului Cluj-Napoca, România — locul unde se construiește acest
           proiect. SYSTEM_TIME înregistrează data ultimei actualizări a
           footer-ului.
+          &deg; este referința de caracter pentru semnul gradului (°);
+          browserul afișează semnul, iar sursa rămâne ASCII simplu în acel loc.
+          2026.07.22 este data ultimei schimbări a footer-ului comun, nu ziua
+          în care a fost făcută această pagină: rândul este același pe fiecare
+          pagină de jurnal și se schimbă pe toate deodată.
         -->
       </p>
 
@@ -1426,6 +1548,8 @@
         Scriu linia finală a footer-ului. Aceasta declară cine a creat și deține
         acest proiect. Simbolul copyright urmat de an și de numele căpitanului
         marchează proprietatea intelectuală a conținutului.
+        &copy; este referința de caracter pentru semnul copyright (©); "de"
+        leagă numele proiectului de numele căpitanului din span-ul de mai jos.
       -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey de
@@ -1454,8 +1578,10 @@
       caută elemente pe care această pagină nu le are și rămân adormite.
       @path:
         Atributul src="../script.js" le spune browserelor să preia
-        ro/script.js relativ la locația acestei pagini
-        (directorul acestei pagini → ro/script.js).
+        ro/script.js relativ la locația acestei pagini: "../" urcă un folder,
+        din ro/delivery/ în ro/, unde stă singurul script al volumului.
+        [/script] urmează imediat, pentru că codul vine din fișier, nu din
+        spațiul dintre etichete.
       @reason:
         Plasarea etichetei script chiar înainte de /body (în loc de head)
         asigură că conținutul HTML se încarcă și se randează înainte ca
@@ -1477,12 +1603,17 @@
     style.css și comportamentul interactiv din script.js.
     @bridge:
       Pentru indexul tehnic complet al etichetelor HTML folosite în acest proiect,
-      vezi Manualul Semantic de Teren la ./docs/semantic-field-manual-ro.md.
+      vezi Manualul Semantic de Teren, docs/semantic-field-manual-ro.md, la
+      rădăcina depozitului (../../docs/ din acest fișier).
   -->
 </html>
 
 <!-- @bridge:
-  Legenda etichetelor: ./docs/legend-ro.md
+  Legenda etichetelor: docs/legend-ro.md, la rădăcina depozitului
+  (../../docs/legend-ro.md din acest fișier). Ea definește fiecare etichetă
+  folosită în aceste comentarii: @block, @line, @reason, @warning, @concept,
+  @bridge, @path, @meta, @structure, @theme și @todo, fiecare cu același
+  sens pe toate paginile proiectului.
 -->
 
 <!-- @reason:

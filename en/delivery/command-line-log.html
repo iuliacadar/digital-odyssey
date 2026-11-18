@@ -36,8 +36,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- @warning:
       This instruction is historically related to Internet Explorer compatibility.
-      In modern projects it has little practical use, but I keep it here if I want
-      to preserve the classic basic-head structure.
+      http-equiv="X-UA-Compatible" imitates an HTTP header of the same name, and
+      content="ie=edge" told Internet Explorer 8 to 11 to draw the page with its
+      newest engine ("edge") instead of an older "compatibility view" that
+      copied Internet Explorer 7. Internet Explorer is retired, and every
+      modern browser ignores this line, so it changes nothing on screen.
+      @reason:
+        I keep it because every page of the project opens with the same classic
+        head, line for line. A reader who has studied one page recognises this
+        one, and removing the line here alone would make this page the odd one
+        out.
     -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,6 +73,14 @@
       The page description.
       I use it as a short summary of the content; it is not directly visible in the page,
       but search engines may use it as descriptive text.
+      name="description" says which kind of metadata this is, and content="..."
+      holds the sentence itself. It names the subjects of the five sectors in
+      reading order: the shell, navigation and files, pipes and redirection,
+      permissions and processes, and shell scripting. The same sentence is
+      repeated in og:description below.
+      @todo:
+        When her days are written, the sentence should follow the real content
+        (BACKLOG-EN.md 017, which points to 010).
     -->
 
     <meta
@@ -91,6 +107,10 @@
       I link the web app manifest. Firefox reads theme_color from the manifest
       rather than from the meta tag, so this ensures consistent theme-color
       support across all modern browsers including Firefox.
+      rel="manifest" tells the browser what the linked file is: a small JSON
+      file with the site's name, icons and colours. href="../site.webmanifest"
+      goes one folder up, from en/delivery/ to en/, where the volume's
+      manifest lives next to favicon.svg.
     -->
 
 
@@ -99,6 +119,10 @@
       Open Graph title.
       When the page link is shared on social networks or portfolio sites,
       this text appears as the card title instead of the raw URL.
+      Open Graph is the set of og: properties that Facebook introduced and
+      most platforms now read: property="og:title" names the field, and
+      content="..." fills it. The value is the same string as the [title]
+      above, "D::0dy55ey | Command Line Log".
     -->
 
     <meta
@@ -123,6 +147,10 @@
       Open Graph canonical URL.
       When the page is shared, this tells platforms the exact, permanent address of this page.
       It prevents confusion if the same content is accessible from multiple URLs.
+      The address is absolute (https://...), because a shared card lives
+      outside the site and has no page to resolve a relative path against.
+      It is the GitHub Pages address of this very file,
+      en/delivery/command-line-log.html, identical to the canonical link below.
     -->
 
     <meta property="og:locale" content="en_US" />
@@ -185,6 +213,9 @@
       Canonical link.
       I tell search engines that this URL is the authoritative version of the page.
       This helps prevent duplicate-content issues and consolidates ranking signals.
+      rel="canonical" names the relationship, and href holds the same absolute
+      address as og:url above, so search engines and shared cards agree on one
+      URL for this page.
     -->
 
     <meta name="robots" content="index, follow" />
@@ -196,9 +227,13 @@
 
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <!-- @path:
-      I link the page favicon.
-      The path is relative to the current file location.
-      The browser looks for favicon.svg in the appropriate folder.
+      I link the page favicon: the small icon in the browser tab and in the
+      bookmarks. rel="icon" names the role of the file, and
+      type="image/svg+xml" says it is an SVG, a vector image that stays sharp
+      at every size.
+      The path is relative to the current file location: href="../favicon.svg"
+      goes one folder up, from en/delivery/ to en/, where favicon.svg sits next
+      to index.html, so every page of the volume shows the same icon.
     -->
 
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
@@ -214,12 +249,20 @@
     <!-- @reason:
       I start the connection to the font server early.
       The goal is to reduce latency when loading external resources.
+      rel="preconnect" asks the browser to open the connection now (look up
+      the address, open the network connection, agree on the encryption)
+      before any font is requested. fonts.googleapis.com is the server that
+      sends the small stylesheet describing the font, linked a few lines below.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
       I preconnect to the domain that serves the actual font files.
       crossorigin is required for external resources served from another origin.
+      fonts.gstatic.com is where the font files themselves live. Browsers
+      always fetch fonts under the cross-origin rules (CORS), so without
+      crossorigin this early connection would not match the font request,
+      and the browser would open a second one, losing the head start.
     -->
 
     <link
@@ -229,12 +272,24 @@
     <!-- @reason:
       I load the Space Grotesk font from Google Fonts.
       display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      rel="stylesheet" says the linked file is CSS. In the address,
+      family=Space+Grotesk names the font (the + stands for the space in its
+      name), wght@300..700 asks for every weight from 300 (light) to 700
+      (bold) in one variable font, and the & joins the next parameter,
+      display=swap, so the text is readable at once and never invisible.
     -->
 
     <link rel="stylesheet" href="../style.css" />
     <!-- @path:
       I link the local stylesheet.
-      The path is relative to the current file location.
+      The path is relative to the current file location: href="../style.css"
+      goes one folder up, from en/delivery/ to en/, to the volume's single
+      stylesheet. Every page of en/ shares it, so this log gets the same
+      frames, colours and modules as its siblings without a line of CSS of
+      its own.
+      @structure:
+        This is the last line of the [head]. The [/head] right after it closes
+        the metadata; everything from [body] on is what the reader sees.
     -->
   </head>
   <!-- @block: BODY — THE VISIBLE DECK
@@ -259,6 +314,11 @@
         The navbar uses flexbox (via the .navbar class) to display the
         vessel logo on the left and the navigation command list on the
         right, keeping the helm compact and always visible at the top.
+      @line:
+        class="navbar" is the hook for those flexbox rules in style.css.
+        aria-label="Main navigation" gives this [nav] a name, so a screen
+        reader can tell it apart from the second [nav] in the sidebar
+        ("Page contents"). [/nav], after the command list, closes the helm.
     -->
         <nav class="navbar" aria-label="Main navigation">
       <!-- @block: TERMINAL IDENTITY
@@ -300,6 +360,12 @@
       The main deck is split into two zones: the sidebar (expedition map) and
       the log-content zone. The class "log-layout" applies a CSS Grid for a
       two-column terminal interface.
+      @structure:
+        [main] marks the primary content of the page; a page has only one, and
+        a screen reader can jump straight to it. class="main-container" is the
+        shared frame of every page in style.css: at most 1200px wide, centred
+        with margin: 0 auto, with 40px of padding inside. The second class,
+        "log-layout", adds the two-column grid that only log pages use.
     -->
     <main class="main-container log-layout">
       <!-- @block: SIDEBAR — COMMAND LINE EXPEDITION MAP
@@ -314,6 +380,10 @@
           gives meaning to the container instead of using a generic [div].
           This helps screen readers announce the sidebar's role and
           helps search engines understand the page structure.
+        @line:
+          class="log-sidebar" is the hook style.css uses for the sidebar's
+          translucent, smoked-glass panel; inside the log-layout grid it takes
+          the left column.
       -->
       <aside class="log-sidebar">
         <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
@@ -356,9 +426,17 @@
               Do not hand-write [li] elements in here. MECANISM 11 replaces the
               entire contents of this list on DOMContentLoaded, so any link
               authored inside it is discarded the moment the page loads.
+              Do not delete the [ul] itself either. It is the target MECANISM 11
+              writes into, and MECANISM 02 reads its clientHeight to centre the
+              active day on desktop. Without it both mechanisms stop silently,
+              with no visible error.
             @bridge:
               MECANISM 11 in ../script.js — the generator that fills this list.
               BACKLOG-EN.md entry 013 — the request this closes.
+            @structure:
+              [ul][/ul] is written with nothing between the tags: an empty list.
+              The [/nav] and [/aside] right after it close the secondary console
+              and the sidebar; the log column begins next.
           -->
           <ul></ul>
         </nav>
@@ -637,6 +715,9 @@
             [h2] is the sector title. It is an h2 because it sits one level
             under the page's single h1, so the heading outline reads
             h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
             [/div] closes the gate; the days that follow are its chapter,
             until the next gate.
           @reason:
@@ -791,6 +872,9 @@
             [h2] is the sector title. It is an h2 because it sits one level
             under the page's single h1, so the heading outline reads
             h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
             [/div] closes the gate; the days that follow are its chapter,
             until the next gate.
           @reason:
@@ -945,6 +1029,9 @@
             [h2] is the sector title. It is an h2 because it sits one level
             under the page's single h1, so the heading outline reads
             h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
             [/div] closes the gate; the days that follow are its chapter,
             until the next gate.
           @reason:
@@ -1275,6 +1362,9 @@
         the transmission page, and the language toggle. Using a list
         is semantically correct because these are a collection of
         related navigation destinations.
+        class="footer-links" is the hook style.css uses to lay the three items
+        out as one centred flex row that wraps onto a new line on narrow
+        screens.
       -->
       <ul class="footer-links">
         <!-- @path: Bibliography page
@@ -1289,6 +1379,9 @@
           footer link.
           target="_blank" opens the archive in a new tab, so this log stays
           open where the reader left it.
+          "Deep Space Archives — Delivery Deck" is the link text: the
+          bibliography's name in the ship's voice, then the deck it opens on,
+          the same label the other Delivery logs use.
         -->
         <li>
           <span class="pulse-dot"></span>
@@ -1299,12 +1392,21 @@
           ../transmission.html goes one folder up, from en/delivery/ to en/,
           to The Astrogation Charter, the project's founding message. It
           opens in the same tab, like every page inside the ship.
+          [span class="pulse-dot"] is the same glowing green dot as in the
+          first item, and "The Astrogation Charter" is the link text, the
+          page's title.
         -->
         <li>
           <span class="pulse-dot"></span>
           <a href="../transmission.html">The Astrogation Charter</a>
         </li>
-        <!-- @bridge: Language toggle between EN and RO subprojects -->
+        <!-- @bridge: Language toggle between the EN and RO volumes
+          The third [li] links this page to its twin in the other language.
+          en/ and ro/ are two complete copies of the site, one per language,
+          with the same folders and file names, so the twin of
+          en/delivery/command-line-log.html is ro/delivery/command-line-log.html.
+          The comment inside the [li] explains each of its three lines.
+        -->
         <li>
           <!-- @reason:
             The language toggle lets the crew switch between the English and
@@ -1341,6 +1443,11 @@
           This phosphor-green aesthetic directly references 1970s NASA
           control terminals, where green monochrome displays scrolled
           telemetry data in real time.
+        @line:
+          "//" is not a code comment here, only visible text: a separator in
+          the style of the telemetry readout. [span class="telemetry-active"]
+          is the hook style.css (.footer span.telemetry-active) uses for that
+          green glow.
         @warning:
           FRONTEND_EXPEDITION is not this page's sector: the Command Line
           Log belongs to the Delivery Deck. The value comes with the footer
@@ -1367,6 +1474,11 @@
           The numbers 46.7712° N, 23.6236° E are the latitude and longitude of
           Cluj-Napoca, Romania — the place where this project is being built.
           SYSTEM_TIME records the date of the latest footer update.
+          &deg; is the character reference for the degree sign (°); the
+          browser shows the sign, and the source stays plain ASCII there.
+          2026.07.22 is the date of the latest change to the shared footer,
+          not the day this page was made: the line is the same on every log
+          page, and it changes on all of them at once.
         -->
       </p>
 
@@ -1374,6 +1486,8 @@
         I write the final line of the footer. It declares who created and owns
         this project. The copyright symbol followed by the year and the captain's
         name marks the intellectual ownership of the content.
+        &copy; is the character reference for the copyright sign (©); "by"
+        joins the project's name to the captain's name in the span below.
       -->
       <p class="copyright">
         &copy; 2026 | D::0dy55ey by
@@ -1401,8 +1515,10 @@
       this page does not have, and stay asleep.
       @path:
         The src="../script.js" attribute tells the browser to fetch
-        en/script.js relative to this page's location
-        (this page's directory → en/script.js).
+        en/script.js relative to this page's location: "../" goes one
+        folder up, from en/delivery/ to en/, where the volume's single
+        script lives. [/script] follows at once, because the code comes
+        from the file, not from between the tags.
       @reason:
         Placing the script tag just before /body (rather than in
         head) ensures the HTML content loads and renders before the
@@ -1425,12 +1541,17 @@
     style.css and the interactive behaviour from script.js.
     @bridge:
       For the full technical index of HTML tags used in this project,
-      see the Semantic Field Manual at ./docs/semantic-field-manual-en.md.
+      see the Semantic Field Manual, docs/semantic-field-manual-en.md at
+      the root of the repository (../../docs/ from this file).
   -->
 </html>
 
 <!-- @bridge:
-  Tags legend: ./docs/legend-en.md
+  Tags legend: docs/legend-en.md, at the root of the repository
+  (../../docs/legend-en.md from this file). It defines every tag these
+  comments use: @block, @line, @reason, @warning, @concept, @bridge, @path,
+  @meta, @structure, @theme and @todo, each with the same meaning on every
+  page of the project.
 -->
 
 <!-- @reason:
