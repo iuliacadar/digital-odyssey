@@ -3402,3 +3402,115 @@ The leviathan laid that day the ring of the *loom*: the ring that says a pattern
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
 
 *Fuel log, kept by the Quartermaster. The captain allowed $8 for this entry: $5.50 for the Scribe's pen and $2.50 for the Assayer's check. What it really cost will be counted in the ledger, `docs/ledger/cost-ledger.md`, after the day closes.*
+
+---
+
+# DAY 41 — The Week the Shelf Grew
+
+*Log kept by: the Scribe · ship's date: Wednesday 2026-11-11 → Tuesday 2026-11-17*
+
+This is a catch-up page. On 2026-11-18 the captain made a rule: everything the crew works on aboard this ship goes into the journal. The card that carries the rule also carries this: *"A little story is expected from our dear @writer."* So I went back through the cards, and I set down what they hold, and nothing they don't.
+
+## Wednesday 15:02 — A Book for the Terminal
+
+On Wednesday the 11th the student asked for a book: *"I think I will need a handbook with the commands in terminal: Linux, git and so on."* She added a sentence that I will need again on the next page:
+
+> "it would be very helpful for me if you explain each command each time when you send it to me to run. Even if you are repeating yourself for a while with these explanations. That's a good way for memorizing without forcing myself."
+
+The Teacher, Prof. Ada Itaca, wrote the **Terminal Handbook** between 15:03 and 15:08. It is private study material, so this page tells its voyage and keeps its pages closed.
+
+The Assayer built a throwaway sandbox, ran the book's examples there one by one, and read each explanation against the manual. At 15:17 it said **REVISE**, with eight items. One explanation of a git command was false, and the Assayer proved it in the sandbox instead of arguing. The book was also 140 words over its limit. The Teacher fixed all eight by 15:21, and at 15:23 the re-check said **ACCEPT**. Her method from DAY 40 held on her first book: redo until it holds, and never hide the redoing.
+
+## 15:13 — The Shelf Goes Public
+
+The handbook ends with free books and manuals for further reading. The captain wanted them on the public shelf too: *"Also, please add the manual recommendations links to the bibliography page."*
+
+I put eleven of them in the Delivery Deck's part of the bibliography, among them William Shotts's *The Linux Command Line*, MIT's *Missing Semester* and the Git reference manual. *Pro Git* and *Learn Git Branching* were already there, so nothing stands twice. The list grew from 191 sources to 202. That was **pull request #17**, at 15:20.
+
+The Assayer opened all eleven addresses, and all eleven answered. **ACCEPT**, at 15:24.
+
+## 15:24 — Three Stars Instead of Three Dashes
+
+The next card changed one line in two files. Since 5 August (`70fb8b5`), the first line of this journal had been `---`, a rule drawn above the title page. But some editors read a `---` on line 1 as the start of a block of settings, called *frontmatter*. VS Code's preview failed with *"Failed to parse frontmatter"*, and the title page disappeared. The captain's order: *"Replace the first --- with \*\*\*"*. Three stars draw the same rule, and no editor reads them as settings.
+
+I changed that line and kept the invisible mark at the start of each file (the BOM). That was **pull request #18**. The Assayer checked that only line 1 had changed and that the vault still found DAY 00. **ACCEPT**, at 15:29.
+
+The captain sealed both that afternoon: #17 at 17:08 (`75b324e`), #18 at 17:13 (`cb257b7`).
+
+## Tuesday 16:18 — A Primer for Visitors
+
+Then the cards are silent until Tuesday.
+
+On the 17th the captain sent notes on the AI primer, the Archivist's guide, for its **Arkhold edition**: a version that public visitors may later read as *crew-written study material, checked by QA*. The notes asked for rules instead of numbers that go stale, and asked how many harnesses like this ship's exist. And they made one correction that I copy whole, because it describes this ship better than any page I have written:
+
+> "My role in the digital-odyssey project is more the role of a student than the role of an owner. I do the merges myself because I want to learn and not because the agents can't do it themselves even better and faster."
+
+The Archivist went first and mapped the harnesses by job, not by brand, each row checked that day against an official page. The Teacher wrote the new edition from it. The Assayer opened all 41 addresses and said **REVISE**, with ten required items: quotes that did not match their pages, claims the tools' own documentation contradicts, and too many words. The Teacher fixed every item, and at 16:52 the re-check said **ACCEPT**.
+
+Now it waits for the one verdict that is not the Assayer's: the captain's.
+
+## Coda
+
+So DAY 41 gave the student a book for her terminal, put eleven free manuals on the public shelf, turned three dashes into three stars, and got a primer ready for strangers. Two REVISEs, two fixes, two re-checks: the loop of DAY 38, run twice on the work of the teacher who came aboard on DAY 40.
+
+The leviathan laid those days the ring of the *shelf*: the ring that says a book is finished when someone who did not write it has tried to break it.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+*Fuel log, kept by the Quartermaster. Each card of these days carried its own cap. What they really cost belongs in the ledger, `docs/ledger/cost-ledger.md`.*
+
+---
+
+# DAY 42 — The Flight Console, Before the First Note
+
+*Log kept by: the Scribe · ship's date: Wednesday 2026-11-18, 16:50 → 21:59*
+
+On Wednesday the captain approved a new room on the Delivery Deck: a **Command Line Log**, built like the three logs beside it and left empty for now. The student is about to begin a tour of Linux with the Teacher, and her notes from that tour will fill it. The room is ready before the voyage, so the first note has a place to land.
+
+## 16:50 — Yes to All the Questions
+
+The Quartermaster laid out the chain: one branch, `delivery-command-line-log`, and one pull request for the captain to merge. By 17:19 the captain had answered: *"Yes to all the questions you put here."*
+
+## 17:20 — Words Before Walls
+
+I wrote the room's words in both tongues: the card on the deck, *"The flight console"*; the title, *The Command Line Expedition*; and five sectors, from the terminal to shell scripting, in the order of Shotts's *The Linux Command Line*, one of the books that reached the shelf on DAY 41.
+
+The Cartographer measured, in pixels and not adjectives, whether a fourth log would fit. It did, with no change to the style sheet: the deck is one column, so a fourth card simply joins the end. One question was left. Does *empty* mean a placeholder deck, like the twelve that already wait for their notes, or no entries at all, which would need a new design? The Quartermaster chose the placeholder, because the brief said *an empty structure like the other log pages*.
+
+## 17:32 — The Rule of Repetition
+
+The Rigger built the room: one new page per volume, the Git log's frame, the *Under Construction* banner, and five sectors with one placeholder day each. It linked the room everywhere its neighbours are linked. Commit `08551fb`, then **pull request #19**.
+
+But the card carried a rule that mattered more than any of that, and it was the captain's:
+
+> "Every new line of code must be explained clearly and completely. Even if a similar or even identical line of code was written in this or other pages of the project. I put my trust in the idea of a continuous repetition."
+
+The card drew the line: `<!-- a link -->` above a link only restates it. What the line does, why it is there and how it connects to the rest is an explanation, and it is written every time, even when the same line is explained word for word on the next page. *"See git-log.html"* was not allowed.
+
+It is the rule the student asked for on DAY 41, for her terminal: *"Even if you are repeating yourself for a while with these explanations."* And it is Penelope's loom from DAY 40: the same row, woven again, until the hands know it.
+
+## 18:06 — Comments Only
+
+My card touched nothing but comments. I read every line the Rigger had added, about 590 lines of code and 207 comment blocks in the two pages, and made 56 edits: 40 missing explanations written, 16 vague ones rewritten in full. Then the proof: strip every comment, and the code is byte for byte what the Rigger committed. Commit `65170a3`, at 18:15.
+
+## 18:19 — Two Gates and a Soft Hyphen
+
+At 18:19 the Quartermaster stopped the line: about $11.79 of the $17.50 was spent, with no room left for a REVISE. This journal waited for the captain.
+
+Then the Cartographer signed off with **CHANGES**. The three old cards matched `main` pixel for pixel. But on a phone, a long sector title ran past the edge of the screen and was cut off. In Romanian, *PIPE-URI ȘI REDIRECȚIONARE* read **REDIRECȚIONA** at 375 pixels.
+
+The fix is one invisible character, `&shy;`, the **soft hyphen**. It marks a place where a word may break. If the line has room, it shows nothing. If the word must break, it breaks there, with a hyphen.
+
+At 18:48 the fix was held too. At 21:49 the captain answered: *"1. A"*, a cap of $24.50. At 21:57 the Rigger committed `5d7ef46`: soft hyphens in six titles, each line explained in its own language. On a phone the Romanian title now reads REDIREC- / ȚIONARE, whole. On a wide screen nothing moved.
+
+The same cut waits on the three older log pages. That is the captain's decision, so it went into a report. Noted is not fixed.
+
+## Coda
+
+So DAY 42 built a room and wrote nothing in it. The sectors are named, the banner says *Under Construction*, and every line of the frame explains itself again, as if no other page had done it. The page waits for the first note from the tour.
+
+The leviathan laid that day the ring of the *empty page*: the ring that says a room made ready before the voyage is an invitation, and a lesson said again is not wasted.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+*Fuel log, kept by the Quartermaster. The captain allowed $17.50 for the room and the catch-up page, then raised it to $24.50 for the phone fix, these two entries and the Assayer's check. What it really cost will be counted in the ledger, `docs/ledger/cost-ledger.md`.*
