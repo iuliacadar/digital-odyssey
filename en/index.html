@@ -345,6 +345,21 @@
               <li><a href="./delivery/git-log.html">Git Log</a></li>
               <li><a href="./delivery/github-log.html">GitHub Log</a></li>
               <li><a href="./delivery/deployment-pipeline-log.html">Pipeline Log</a></li>
+              <!-- @line: THE FOURTH DELIVERY LINK — COMMAND LINE LOG
+                [li] is one more item in the Delivery Deck's list of logs, so a
+                screen reader now announces four links in this volume.
+                [a href="./delivery/command-line-log.html"] is a relative path:
+                "./" is the folder this index.html lives in (en/), so the
+                browser opens en/delivery/command-line-log.html.
+                "Command Line Log" follows the "<topic> Log" label of the other
+                HUD links.
+                @reason:
+                  .hud-log-links is a wrapping flex row, so at 1440px and at
+                  375px this fourth link moves to a second line and the
+                  Delivery volume grows by one line. The Frontend, Data Bridge
+                  and Backend lists already wrap the same way.
+              -->
+              <li><a href="./delivery/command-line-log.html">Command Line Log</a></li>
             </ul>
           </div>
         </div>
@@ -764,6 +779,37 @@
           <h3>Deployment Pipeline</h3>
           <p>The automated launch sequence — continuous integration, automated testing, and the pipeline that turns commits into live deployments.</p>
           <a href="./delivery/deployment-pipeline-log.html" class="archive-link">Access Detailed Log</a>
+        </article>
+
+        <!-- @block: THE FOURTH DELIVERY CARD — COMMAND LINE
+          The Command Line Log joins the Delivery Deck as its fourth card,
+          after Deployment Pipeline. The log itself is still a placeholder
+          deck, and its own page says so with an Under Construction banner.
+          @structure:
+            [article id="command-line" class="log-entry"] is the card. It is
+            an [article] because each card stands on its own, like the cards
+            of every volume on this page. The id "command-line" is kebab-case,
+            the naming used for every id and file path in the project. The
+            class gives the card its frame in style.css.
+            [h3] is the card title, "Command Line", one level under the
+            Delivery Deck's h2.
+            [p] is the one-sentence blurb, in the deck's voice: a ship's
+            station first ("The flight console"), then what the log covers.
+            [a href="./delivery/command-line-log.html" class="archive-link"]
+            opens the log. "./" is en/, the folder of this index.html, so the
+            path reaches en/delivery/command-line-log.html. The class gives it
+            the same "Access Detailed Log" look as every card's link.
+            [/article] closes the card, and [/section] after it closes the
+            Delivery Deck.
+          @reason:
+            #delivery-deck stacks its cards in one flex column, one card per
+            row, so this card simply lands under Deployment Pipeline; there is
+            no grid row to leave half empty.
+        -->
+        <article id="command-line" class="log-entry">
+          <h3>Command Line</h3>
+          <p>The flight console — the Linux shell, its commands and pipes, and the plain-text interface that steers the whole vessel from a single prompt.</p>
+          <a href="./delivery/command-line-log.html" class="archive-link">Access Detailed Log</a>
         </article>
       </section>
     </main>

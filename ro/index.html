@@ -349,6 +349,23 @@
               <li><a href="./delivery/git-log.html">Jurnal Git</a></li>
               <li><a href="./delivery/github-log.html">Jurnal GitHub</a></li>
               <li><a href="./delivery/deployment-pipeline-log.html">Jurnal Pipeline</a></li>
+              <!-- @line: AL PATRULEA LINK AL LIVRĂRII — JURNAL LINIE DE COMANDĂ
+                [li] este încă un element în lista de jurnale a Punții de
+                Livrare, deci un cititor de ecran anunță acum patru link-uri în
+                acest volum.
+                [a href="./delivery/command-line-log.html"] este o cale relativă:
+                "./" este folderul în care stă acest index.html (ro/), deci
+                browserul deschide ro/delivery/command-line-log.html.
+                "Jurnal Linie de Comandă" urmează eticheta "Jurnal <temă>" a
+                celorlalte link-uri din HUD.
+                @reason:
+                  .hud-log-links este un rând flex care se împachetează, așa că
+                  la 1440px, la 1024px și la 375px acest al patrulea link trece
+                  pe un al doilea rând, iar volumul Livrării crește cu un rând.
+                  Listele Frontend, Data Bridge și Backend se împachetează deja
+                  la fel.
+              -->
+              <li><a href="./delivery/command-line-log.html">Jurnal Linie de Comandă</a></li>
             </ul>
           </div>
         </div>
@@ -774,6 +791,40 @@
           <h3>Pipeline de Deployment</h3>
           <p>Secvența automată de lansare — integrare continuă, testare automată și pipeline-ul care transformă commit-urile în versiuni live.</p>
           <a href="./delivery/deployment-pipeline-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
+        </article>
+
+        <!-- @block: A PATRA FIȘĂ A LIVRĂRII — LINIA DE COMANDĂ
+          Jurnalul Liniei de Comandă intră pe Puntea de Livrare ca a patra
+          fișă, după Pipeline de Deployment. Jurnalul în sine este încă o
+          punte provizorie, iar pagina lui o spune deschis printr-un banner
+          "În Construcție".
+          @structure:
+            [article id="command-line" class="log-entry"] este fișa. Este un
+            [article] pentru că fiecare fișă stă singură, ca fișele tuturor
+            volumelor de pe această pagină. Id-ul "command-line" este scris în
+            kebab-case, convenția folosită pentru fiecare id și cale de fișier
+            din proiect, și este identic în en/ și ro/. Clasa îi dă fișei rama
+            din style.css.
+            [h3] este titlul fișei, "Linia de Comandă", cu un nivel sub h2-ul
+            Punții de Livrare.
+            [p] este descrierea de o propoziție, în vocea punții: întâi o
+            stație a navei ("Consola de zbor"), apoi ce acoperă jurnalul.
+            [a href="./delivery/command-line-log.html" class="archive-link"]
+            deschide jurnalul. "./" este ro/, folderul acestui index.html, deci
+            calea ajunge la ro/delivery/command-line-log.html. Clasa îi dă
+            același aspect "Accesează Jurnalul Detaliat" ca link-ul fiecărei
+            fișe.
+            [/article] închide fișa, iar [/section] de după ea închide Puntea
+            de Livrare.
+          @reason:
+            #delivery-deck își așază fișele într-o singură coloană flex, câte
+            una pe rând, deci această fișă ajunge pur și simplu sub Pipeline de
+            Deployment; nu rămâne niciun rând de grilă pe jumătate gol.
+        -->
+        <article id="command-line" class="log-entry">
+          <h3>Linia de Comandă</h3>
+          <p>Consola de zbor — shell-ul Linux, comenzile și pipe-urile sale și interfața text care conduce întreaga navă de la un singur prompt.</p>
+          <a href="./delivery/command-line-log.html" class="archive-link">Accesează Jurnalul Detaliat</a>
         </article>
       </section>
     </main>

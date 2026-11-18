@@ -361,6 +361,30 @@
                   >Jurnal Pipeline</a
                 >
               </li>
+              <!-- @line: AL PATRULEA LINK AL LIVRĂRII — JURNAL LINIE DE COMANDĂ
+                [li] este încă un element în lista de jurnale a Punții de
+                Livrare din HUD-ul acestei pagini, aceeași listă pe care o are
+                și index.html.
+                [a href="./delivery/command-line-log.html"] este o cale relativă:
+                "./" este folderul în care stă acest recursive-blueprint.html
+                (ro/), deci browserul deschide ro/delivery/command-line-log.html.
+                "Jurnal Linie de Comandă" este eticheta pe care i-o dau și
+                celelalte HUD-uri.
+                Ruptura rândului înainte de ">" urmează formatarea acestui
+                fișier: browserul ignoră spațiile din interiorul etichetei, iar
+                textul link-ului rămâne lipit de etichetele lui.
+                @reason:
+                  Lista se împachetează, așa că la 1440px, la 1024px și la 375px
+                  acest al patrulea link trece pe un al doilea rând, cum fac
+                  deja listele mai lungi. Eticheta românească este mai lungă
+                  decât cea englezească, de aceea trece pe rândul doi și la
+                  1024px, unde "Command Line Log" încape pe primul.
+              -->
+              <li>
+                <a href="./delivery/command-line-log.html"
+                  >Jurnal Linie de Comandă</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -498,7 +522,7 @@
           <h2 class="panel-title">Fluxul Brut al Codului Sursă</h2>
 
           <!-- @block: CONSOLA DE SELECȚIE FIȘIERE
-            O consolă derulantă orizontal care listează toate cele 32 de fișiere
+            O consolă derulantă orizontal care listează toate cele 33 de fișiere
             ale proiectului grupate pe volume. Fiecare buton poartă un atribut
             data-path pe care JavaScript îl citește prin Fetch API pentru a
             prelua și afișa codul sursă. Primul tab (recursive-blueprint.html)
@@ -633,6 +657,31 @@
               data-path="delivery/deployment-pipeline-log.html"
             >
               deployment-pipeline-log.html
+            </button>
+            <!-- @file:
+              command-line-log.html — Jurnalul Liniei de Comandă, a patra pagină
+              a volumului LIVRARE.
+              [button class="tab-btn"] este un buton adevărat, deci Tab ajunge la
+              el, iar Enter sau Space îl apasă. Clasa îi dă aspectul de tab și
+              este ceea ce ascultă MECANISMUL 08 din script.js: un singur
+              ascultător de clic pe întreaga consolă găsește tabul apăsat cu
+              closest(".tab-btn"), deci un tab nou nu are nevoie de JavaScript
+              propriu.
+              data-path="delivery/command-line-log.html" este fișierul pe care
+              tabul îl preia, relativ la folderul acestei pagini (ro/), deci
+              consola afișează ro/delivery/command-line-log.html ca text brut,
+              cu tot cu comentarii.
+              Textul dintre etichete, command-line-log.html, este eticheta
+              tabului: numele fișierului, ca pe fiecare tab. Spațiile din jurul
+              lui urmează formatarea acestui fișier; butonul are white-space:
+              nowrap, iar spațiile de la margini nu se văd.
+              @reason:
+                Consola este un singur rând care nu se împachetează niciodată
+                (white-space: nowrap, overflow-x: auto), deci acest tab
+                prelungește derularea orizontală în loc să înceapă un rând nou.
+            -->
+            <button class="tab-btn" data-path="delivery/command-line-log.html">
+              command-line-log.html
             </button>
           </div>
 

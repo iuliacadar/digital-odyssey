@@ -311,6 +311,31 @@ At time of writing, canonical URLs in `og:url` and `link[rel=canonical]` point t
 
 ---
 
+### 017 — Command Line Log: the fourth Delivery log
+
+**Title:** Command Line Log: the fourth Delivery log
+
+**Description:** A log page for the Linux command line, `delivery/command-line-log.html`, approved by the captain on 2026-11-18 as an empty structure like the other placeholder decks, to be filled later from her Linux-tour notes. The structure is built: the page is a copy of `git-log.html` with five sectors (The Terminal, Navigation & Files, Pipes & Redirection, Permissions & Processes, Shell Scripting), one Lorem-ipsum day shell per sector (`cli-day00` … `cli-day04`), and the Under Construction banner. It is linked from the Delivery Deck on `index.html` (a 4th card and a 4th HUD link), from the HUD and the source-tab console of `recursive-blueprint.html`, and from the README file trees; `tools/inject_log_content.py` knows it under the topic key `commandline`.
+
+**Status:** In progress
+**Priority:** Medium
+**Phase:** Content creation, when her Linux-tour notes are ready
+
+**Why the content waits:** The sectors follow the order of her sources (Shotts' *The Linux Command Line*, checked against MIT's *Missing Semester*), but the days inside them should be her own study, not invented in advance. Each sector carries an `@todo` comment naming what she plans to log there.
+
+**Affected files:** `en/delivery/command-line-log.html`, `ro/delivery/command-line-log.html`, `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `README.md`, `en/README.md`, `ro/README.md`, `tools/inject_log_content.py`
+
+**Steps:**
+- write the days of each sector, in both languages, as new `article.log-entry` shells with the next free `cli-dayNN` id, or fill the five shells through `tools/inject_log_content.py` with a `commandline` content file;
+- update the meta description and keywords to the written content (see 010);
+- remove the Under Construction banner with `tools/add-uc-banner.py --prune` once no filler remains.
+
+**Completion conditions:**
+- every day on the page carries her real prose, in EN and RO;
+- `tools/check-uc-banner.py` reports both pages as CONTENT, with no banner left.
+
+---
+
 ## Implemented
 
 Move completed items here, keeping the date and a short note about what changed.

@@ -73,6 +73,7 @@ DIGITAL-ODYSSEY/
 │   │   ├── ux-foundations-log.html
 │   │   └── accessibility-log.html
 │   └── delivery/                      # Capitolul livrare
+│       ├── command-line-log.html      # Shell-ul Linux; punte provizorie („În Construcție”) până o umplu notițele ei
 │       ├── deployment-pipeline-log.html
 │       ├── git-log.html
 │       └── github-log.html
