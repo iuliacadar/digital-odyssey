@@ -1365,7 +1365,8 @@ document.addEventListener("DOMContentLoaded", () => {
         //  at the whole book, every day in it, so a link to that file would open
         //  every sealed capsule at once and break the game. In the author's
         //  words: "It defeats the purpose of this page." fetchJournalPackage still
-        //  reads the file, but only to cut out this one day and project it.
+        //  reads the file, but only to cut out the days of this capsule and
+        //  project them.
       });
     });
   }

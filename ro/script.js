@@ -1391,7 +1391,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //  link către acel fișier ar deschide dintr-odată toate capsulele sigilate
         //  și ar strica jocul. În cuvintele autoarei: „Anulează rostul acestei
         //  pagini.” fetchJournalPackage citește în continuare fișierul, dar doar
-        //  ca să decupeze din el această singură zi și s-o proiecteze.
+        //  ca să decupeze din el zilele acestei capsule și să le proiecteze.
       });
     });
   }
