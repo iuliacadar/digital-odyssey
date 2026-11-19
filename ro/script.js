@@ -1385,19 +1385,13 @@ document.addEventListener("DOMContentLoaded", () => {
         full.textContent = fullText; // Markdown-ul secțiunii de ZI, cum a fost fixat, verbatim.
         vaultOutput.appendChild(full);
 
-        //  Un link real către jurnalul căpitanului pe GitHub, deschis în tab nou.
-        const link = document.createElement("p");
-        link.className = "vault-journal-link";
-        const a = document.createElement("a");
-        a.href = JOURNAL_PATH;
-        a.target = "_blank"; // Tab nou ...
-        a.rel = "noopener noreferrer"; // ... fără referință înapoi prin window.opener și fără scurgere Referer.
-        a.textContent =
-          lang === "ro"
-            ? "DESCHIDE JURNALUL COMPLET (GitHub)"
-            : "OPEN THE FULL JOURNAL (GitHub)";
-        link.appendChild(a);
-        vaultOutput.appendChild(link);
+        //  Aici nu există, intenționat, niciun link către jurnalul complet. Camera
+        //  proiectează doar transmisia pe care călătorul tocmai a deblocat-o.
+        //  JOURNAL_PATH arată spre cartea întreagă, cu toate zilele ei, așa că un
+        //  link către acel fișier ar deschide dintr-odată toate capsulele sigilate
+        //  și ar strica jocul. În cuvintele autoarei: „Anulează rostul acestei
+        //  pagini.” fetchJournalPackage citește în continuare fișierul, dar doar
+        //  ca să decupeze din el această singură zi și s-o proiecteze.
       });
     });
   }

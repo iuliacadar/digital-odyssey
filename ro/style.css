@@ -3840,18 +3840,6 @@ Modulul 00 este întotdeauna ultimul modul al foii de stil.
   border-left: 2px solid rgba(167, 243, 208, 0.3); /* @theme: Coloană mint — șina stângă a arhivei. */
 }
 
-.vault-journal-link a {
-  color: var(--nebula-pink, #ff007f); /* @theme: Link nebula-pink — ancora arhivei profunde. */
-  text-decoration: none; /* @layout: Decorare de text — fără sublinere pe link-ul brut. */
-  letter-spacing: 1px; /* @layout: Spațiere de glifuri — tracking tehnic. */
-  font-size: 0.75rem; /* @layout: Scala caracterelor — mărimea linkului. */
-  text-transform: uppercase; /* @layout: Transformare de text — link cu majuscule. */
-}
-
-.vault-journal-link a:hover {
-  text-decoration: underline; /* @layout: Decorare de text — sublinere la hover pentru claritate. */
-}
-
 .vault-pending-note {
   font-style: italic; /* @layout: Stil de font — profeție în așteptare italică. */
   color: rgba(255, 255, 255, 0.6); /* @theme: Notă estompată — conținut în așteptare. */

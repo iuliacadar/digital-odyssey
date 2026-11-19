@@ -1360,19 +1360,12 @@ document.addEventListener("DOMContentLoaded", () => {
         full.textContent = fullText; // The stripped DAY-section markdown, verbatim.
         vaultOutput.appendChild(full);
 
-        //  A real link to the captain's journal on GitHub, opened in a new tab.
-        const link = document.createElement("p");
-        link.className = "vault-journal-link";
-        const a = document.createElement("a");
-        a.href = JOURNAL_PATH;
-        a.target = "_blank"; // New tab ...
-        a.rel = "noopener noreferrer"; // ... with no window.opener back-reference and no Referer leak.
-        a.textContent =
-          lang === "ro"
-            ? "DESCHIDE JURNALUL COMPLET (GitHub)"
-            : "OPEN THE FULL JOURNAL (GitHub)";
-        link.appendChild(a);
-        vaultOutput.appendChild(link);
+        //  No link to the full journal here, on purpose. The vault projects only
+        //  the transmission the traveller has just unlocked. JOURNAL_PATH points
+        //  at the whole book, every day in it, so a link to that file would open
+        //  every sealed capsule at once and break the game. In the author's
+        //  words: "It defeats the purpose of this page." fetchJournalPackage still
+        //  reads the file, but only to cut out this one day and project it.
       });
     });
   }
