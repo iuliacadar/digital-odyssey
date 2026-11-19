@@ -205,12 +205,22 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- @reason:
-      Acest document este un jurnal structurat de învățare pentru arhitectura sistemelor backend — monolit, microservicii, serverless, pattern-uri de proiectare și principii SOLID.
+      Pornesc devreme conexiunea către serverul de fonturi.
+      Scopul este să reduc latența la încărcarea resurselor externe.
+      rel="preconnect" îi cere browserului să deschidă conexiunea acum (să
+      caute adresa, să deschidă conexiunea de rețea, să negocieze criptarea)
+      înainte să fie cerut vreun font. fonts.googleapis.com este serverul care
+      trimite mica foaie de stil ce descrie fontul, legată câteva rânduri mai jos.
     -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- @reason:
-      Acest document este un jurnal structurat de învățare pentru arhitectura sistemelor backend — monolit, microservicii, serverless, pattern-uri de proiectare și principii SOLID.
+      Mă preconectez la domeniul care servește efectiv fișierele de font.
+      crossorigin este obligatoriu pentru resursele externe servite de pe altă origine.
+      fonts.gstatic.com este locul unde stau fișierele de font propriu-zise.
+      Browserele cer fonturile mereu după regulile cross-origin (CORS), deci
+      fără crossorigin această conexiune timpurie nu s-ar potrivi cu cererea
+      de font, iar browserul ar deschide una a doua, pierzând avansul.
     -->
 
     <link
@@ -218,7 +228,14 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
     />
     <!-- @reason:
-      Acest document este un jurnal structurat de învățare pentru arhitectura sistemelor backend — monolit, microservicii, serverless, pattern-uri de proiectare și principii SOLID.
+      Încarc fontul Space Grotesk din Google Fonts.
+      display=swap îi spune browserului să folosească temporar un font de rezervă până se încarcă fontul final.
+      rel="stylesheet" spune că fișierul legat este CSS. În adresă,
+      family=Space+Grotesk numește fontul (+ ține locul spațiului din nume),
+      wght@300..700 cere fiecare grosime de la 300 (subțire) la 700 (aldin)
+      într-un singur font variabil, iar & leagă următorul parametru,
+      display=swap, astfel încât textul se poate citi imediat și nu este
+      niciodată invizibil.
     -->
 
     <link rel="stylesheet" href="../style.css" />
@@ -266,8 +283,10 @@
         <li>
           <a href="../index.html" class="return-btn"
             ><!-- @reason:
-      Acest document este un jurnal structurat de învățare pentru arhitectura sistemelor backend — monolit, microservicii, serverless, pattern-uri de proiectare și principii SOLID.
-    -->← Înapoi la puntea de comandă</a
+              Simbolul săgeții spre stânga (←) este un indiciu vizual de
+              întoarcere. "Înapoi la puntea de comandă" duce la index.html,
+              puntea principală a navei-mamă.
+            -->← Înapoi la puntea de comandă</a
           >
         </li>
       </ul>
@@ -1490,8 +1509,17 @@
       <p>
         COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
         <!-- @reason:
-      Acest document este un jurnal structurat de învățare pentru arhitectura sistemelor backend — monolit, microservicii, serverless, pattern-uri de proiectare și principii SOLID.
-    -->
+          Includ coordonatele geografice și o marcă de timp a sistemului.
+          Numerele 46.7712° N, 23.6236° E sunt latitudinea și longitudinea
+          orașului Cluj-Napoca, România — locul unde se construiește acest
+          proiect. SYSTEM_TIME înregistrează data ultimei actualizări a
+          footer-ului.
+          &deg; este referința de caracter pentru semnul gradului (°);
+          browserul afișează semnul, iar sursa rămâne ASCII simplu în acel loc.
+          2026.07.22 este data ultimei schimbări a footer-ului comun, nu ziua
+          în care a fost făcută această pagină: rândul este același pe fiecare
+          pagină de jurnal și se schimbă pe toate deodată.
+        -->
       </p>
 
       <!-- @structure:
