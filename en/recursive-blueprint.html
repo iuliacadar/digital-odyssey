@@ -333,6 +333,18 @@
               <li><a href="./delivery/git-log.html">Git Log</a></li>
               <li><a href="./delivery/github-log.html">GitHub Log</a></li>
               <li><a href="./delivery/deployment-pipeline-log.html">Pipeline Log</a></li>
+              <!-- @line: THE FOURTH DELIVERY LINK — COMMAND LINE LOG
+                [li] is one more item in the Delivery Deck's list of logs in
+                this page's HUD, the same list index.html carries.
+                [a href="./delivery/command-line-log.html"] is a relative path:
+                "./" is the folder this recursive-blueprint.html lives in (en/),
+                so the browser opens en/delivery/command-line-log.html.
+                "Command Line Log" is the label the other HUDs use for it.
+                @reason:
+                  The list wraps, so at 1440px and at 375px this fourth link
+                  moves to a second line, as the longer lists already do.
+              -->
+              <li><a href="./delivery/command-line-log.html">Command Line Log</a></li>
             </ul>
           </div>
         </div>
@@ -465,7 +477,7 @@
           <h2 class="panel-title">Raw Source Stream</h2>
 
           <!-- @block: FILE SELECTOR CONSOLE
-            A horizontally scrollable console listing all 32 project files
+            A horizontally scrollable console listing all 33 project files
             grouped by volume. Each button carries a data-path attribute
             that JavaScript reads via the Fetch API to retrieve and display
             the source code. The first tab (recursive-blueprint.html) is
@@ -535,6 +547,26 @@
             <button class="tab-btn" data-path="delivery/git-log.html">git-log.html</button>
             <button class="tab-btn" data-path="delivery/github-log.html">github-log.html</button>
             <button class="tab-btn" data-path="delivery/deployment-pipeline-log.html">deployment-pipeline-log.html</button>
+            <!-- @file:
+              command-line-log.html — the Command Line Log, the fourth page of
+              the DELIVERY volume.
+              [button class="tab-btn"] is a real button, so Tab reaches it and
+              Enter or Space presses it. The class gives it the tab look and is
+              what MECANISM 08 in script.js listens for: one click listener on
+              the whole console finds the pressed tab with closest(".tab-btn"),
+              so a new tab needs no JavaScript of its own.
+              data-path="delivery/command-line-log.html" is the file the tab
+              fetches, relative to this page's folder (en/), so the console
+              shows en/delivery/command-line-log.html as raw text, comments
+              included.
+              The text between the tags, command-line-log.html, is the tab's
+              label: the file name, as on every other tab.
+              @reason:
+                The console is one row that never wraps (white-space: nowrap,
+                overflow-x: auto), so this tab extends the horizontal scroll
+                instead of starting a second row.
+            -->
+            <button class="tab-btn" data-path="delivery/command-line-log.html">command-line-log.html</button>
           </div>
 
           <!-- @block: CODE INSPECTOR TERMINAL

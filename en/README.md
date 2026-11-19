@@ -75,6 +75,7 @@ DIGITAL-ODYSSEY/
 │   │   ├── ux-foundations-log.html
 │   │   └── accessibility-log.html
 │   └── delivery/                      # Delivery chapter
+│       ├── command-line-log.html      # The Linux shell; placeholder deck (Under Construction) until her notes fill it
 │       ├── deployment-pipeline-log.html
 │       ├── git-log.html
 │       └── github-log.html

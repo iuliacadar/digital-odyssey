@@ -55,6 +55,16 @@ TARGETS = {
     "git": "delivery/git-log.html",
     "github": "delivery/github-log.html",
     "deploymentpipeline": "delivery/deployment-pipeline-log.html",
+    #  @reason: the Command Line Log, the fourth Delivery page. The key
+    #    "commandline" is the topic name a content file uses
+    #    ({"commandline": {"en": [...], "ro": [...]}}); the value is the
+    #    page's path inside each volume, so this one line reaches both
+    #    en/delivery/command-line-log.html and ro/delivery/command-line-log.html.
+    #    Until a content file carries the key, main() prints "commandline: no
+    #    content, skipped" and leaves the page as it is: Lorem shells plus the
+    #    Under Construction banner. Its five shells are exactly the shape
+    #    LOG_TEXT_RE below matches.
+    "commandline": "delivery/command-line-log.html",
 }
 
 #  @reason: Matches a log-text div holding a single Lorem-ipsum paragraph.

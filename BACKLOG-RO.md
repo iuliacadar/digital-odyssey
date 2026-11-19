@@ -311,6 +311,31 @@ La momentul redactării, URL-urile canonice din `og:url` și `link[rel=canonical
 
 ---
 
+### 017 — Jurnalul Liniei de Comandă: al patrulea jurnal al Livrării
+
+**Titlu:** Jurnalul Liniei de Comandă: al patrulea jurnal al Livrării
+
+**Descriere:** O pagină de jurnal pentru linia de comandă Linux, `delivery/command-line-log.html`, aprobată de căpitan pe 2026-11-18 ca structură goală, la fel ca celelalte punți provizorii, urmând să fie umplută mai târziu din notițele ei din turul Linux. Structura este construită: pagina este o copie a lui `git-log.html`, cu cinci sectoare (Terminalul, Navigare și Fișiere, Pipe-uri și Redirecționare, Permisiuni și Procese, Scripturi Shell), câte o carcasă de zi cu Lorem ipsum pe sector (`cli-day00` … `cli-day04`) și bannerul „În Construcție". Are link-uri de pe Puntea de Livrare din `index.html` (a patra fișă și al patrulea link din HUD), din HUD-ul și consola de taburi cu cod sursă din `recursive-blueprint.html` și din arborii de fișiere din README-uri; `tools/inject_log_content.py` o cunoaște sub cheia de temă `commandline`.
+
+**Status:** În lucru
+**Prioritate:** Medie
+**Fază:** Crearea conținutului, când sunt gata notițele ei din turul Linux
+
+**De ce așteaptă conținutul:** Sectoarele urmează ordinea surselor ei (*The Linux Command Line* de Shotts, verificată cu *Missing Semester* de la MIT), dar zilele din ele trebuie să fie propriul ei studiu, nu inventate dinainte. Fiecare sector poartă un comentariu `@todo` care numește ce plănuiește să noteze acolo.
+
+**Fișiere afectate:** `en/delivery/command-line-log.html`, `ro/delivery/command-line-log.html`, `en/index.html`, `ro/index.html`, `en/recursive-blueprint.html`, `ro/recursive-blueprint.html`, `README.md`, `en/README.md`, `ro/README.md`, `tools/inject_log_content.py`
+
+**Pași:**
+- scrie zilele fiecărui sector, în ambele limbi, ca noi carcase `article.log-entry` cu următorul id `cli-dayNN` liber, sau umple cele cinci carcase prin `tools/inject_log_content.py` cu un fișier de conținut `commandline`;
+- actualizează meta descrierea și cuvintele-cheie după conținutul scris (vezi 010);
+- scoate bannerul „În Construcție" cu `tools/add-uc-banner.py --prune` când nu mai rămâne umplutură.
+
+**Condiții de finalizare:**
+- fiecare zi de pe pagină poartă proza ei reală, în EN și RO;
+- `tools/check-uc-banner.py` raportează ambele pagini drept CONTENT, fără niciun banner rămas.
+
+---
+
 ## Implementat
 
 Mută aici itemii finalizați, păstrând data și o scurtă notă despre ce s-a schimbat.

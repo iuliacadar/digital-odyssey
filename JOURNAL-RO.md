@@ -3432,3 +3432,121 @@ Leviathanul, inel după inel, așeză în ziua aceea inelul *războiului de țes
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
 
 *Jurnalul combustibilului, ținut de Intendent. Căpitanul a aprobat 8 dolari pentru această intrare: 5,50 pentru pana Scribului și 2,50 pentru verificarea Încercătorului. Cât a costat cu adevărat se va număra în registru, `docs/ledger/cost-ledger-ro.md`, după ce se închide ziua.*
+
+---
+
+# ZIUA 41 — Săptămâna în care a crescut raftul
+
+*Jurnal ținut de: Scribul · data navei: miercuri 2026-11-11 → marți 2026-11-17*
+
+Aceasta e o pagină de recuperare. Pe 2026-11-18, căpitanul a pus o regulă: tot ce lucrează echipajul la bordul navei acesteia intră în jurnal. Cardul care poartă regula mai spune că de la Scrib se așteaptă o mică poveste. Așa că m-am întors prin carduri, ca să scriu ce cuprind ele și nimic din ce nu cuprind.
+
+## Miercuri 15:02 — O carte pentru terminal
+
+Miercuri, pe 11, studenta a cerut un manual cu comenzile din terminal: Linux, git și așa mai departe. A mai adăugat o frază, de care voi avea nevoie din nou pe pagina următoare:
+
+> „it would be very helpful for me if you explain each command each time when you send it to me to run. Even if you are repeating yourself for a while with these explanations. That's a good way for memorizing without forcing myself.”
+
+Pe românește: *explicați-mi fiecare comandă de fiecare dată, chiar dacă vă repetați o vreme; așa memorez fără să mă forțez.*
+
+Profesoara, prof. Ada Itaca, l-a scris între 15:03 și 15:08: **Manualul de terminal**. E material de studiu privat, așa că pagina aceasta îi spune călătoria și îi ține paginile închise.
+
+Încercătorul a rulat exemplele cărții unul câte unul, într-un sandbox de unică folosință, și a citit fiecare explicație cu manualul alături. La 15:17 a spus **REVISE**, cu opt puncte. O explicație a unei comenzi git era falsă, iar Încercătorul a dovedit-o în sandbox în loc să se certe. Cartea mai avea și 140 de cuvinte peste limită. Profesoara a reparat toate cele opt până la 15:21, iar la 15:23 reverificarea a spus **ACCEPT**. Metoda ei din ZIUA 40 a ținut la prima ei carte: refaci până ține și nu ascunzi niciodată refacerea.
+
+## 15:13 — Raftul iese în public
+
+Manualul se încheie cu cărți și manuale gratuite. Căpitanul le-a vrut și pe raftul public, pe pagina de bibliografie.
+
+Am pus unsprezece dintre ele în partea Punții de Livrare din bibliografie, printre ele *The Linux Command Line* a lui William Shotts, *Missing Semester* de la MIT și manualul de referință Git. *Pro Git* și *Learn Git Branching* erau deja acolo, așa că nimic nu stă de două ori. Lista a crescut de la 191 de surse la 202. A fost **pull request #17**, la 15:20.
+
+Încercătorul a deschis toate cele unsprezece adrese și toate au răspuns. **ACCEPT**, la 15:24.
+
+## 15:24 — Trei stele în loc de trei liniuțe
+
+Următorul card a schimbat un singur rând în două fișiere. Din 5 august (`70fb8b5`), primul rând al acestui jurnal era `---`, o linie trasă deasupra paginii de titlu. Dar unele editoare citesc un `---` pe rândul 1 drept începutul unui bloc de setări, numit *frontmatter*. Previzualizarea din VS Code a picat cu *„Failed to parse frontmatter”*, iar pagina de titlu a dispărut. Ordinul căpitanului: *„Replace the first --- with \*\*\*”*, înlocuiește primul `---` cu `***`. Trei stele trag aceeași linie, iar niciun editor nu le citește drept setări.
+
+Am schimbat rândul acela și am păstrat semnul invizibil de la începutul fiecărui fișier (BOM-ul). A fost **pull request #18**. Încercătorul a verificat că s-a schimbat doar rândul 1 și că seiful găsește încă ZIUA 00. **ACCEPT**, la 15:29.
+
+Căpitanul le-a sigilat pe amândouă în aceeași după-amiază: #17 la 17:08 (`75b324e`), #18 la 17:13 (`cb257b7`).
+
+## Marți 16:18 — Un abecedar pentru vizitatori
+
+Apoi cardurile tac până marți.
+
+Pe 17, căpitanul a trimis note despre abecedarul despre AI, ghidul Arhivarului, pentru **ediția Arkhold**: o versiune pe care vizitatorii o vor putea citi mai târziu drept *material de studiu scris de echipaj, verificat de QA*. Notele cereau reguli în locul numerelor care se învechesc și întrebau câte hamuri ca al navei acesteia există. Și făceau o corectură pe care o copiez întreagă, pentru că descrie nava mai bine decât orice pagină am scris eu:
+
+> „My role in the digital-odyssey project is more the role of a student than the role of an owner. I do the merges myself because I want to learn and not because the agents can't do it themselves even better and faster.”
+
+Pe românește: *în digital-odyssey, rolul meu e mai mult de studentă decât de proprietară. Fac singură merge-urile pentru că vreau să învăț, nu pentru că agenții n-ar putea, chiar mai bine și mai repede.*
+
+Arhivarul a mers primul și a cartografiat hamurile după meserie, nu după marcă, fiecare rând verificat în ziua aceea pe o pagină oficială. Pe baza acestei hărți, Profesoara a scris ediția nouă. Încercătorul a deschis toate cele 41 de adrese și a spus **REVISE**, cu zece puncte obligatorii: citate care nu se potriveau cu paginile lor, afirmații contrazise de documentația uneltelor înseși și prea multe cuvinte. Profesoara a reparat fiecare punct, iar la 16:52 reverificarea a spus **ACCEPT**.
+
+Acum așteaptă singurul verdict care nu e al Încercătorului: al căpitanului.
+
+## Încheiere
+
+Așadar ZIUA 41 i-a dat studentei o carte pentru terminalul ei, a pus unsprezece manuale gratuite pe raftul public, a preschimbat trei liniuțe în trei stele și a pregătit un abecedar pentru străini. Două REVISE, două reparări, două reverificări: bucla din ZIUA 38, rulată de două ori pe munca Profesoarei.
+
+Leviathanul, inel după inel, așeză în zilele acelea inelul *raftului*: inelul care spune că o carte e terminată abia când cineva care n-a scris-o a încercat s-o strice.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+*Jurnalul combustibilului, ținut de Intendent. Fiecare card din zilele acestea și-a purtat propriul plafon. Cât au costat cu adevărat ține de registru, `docs/ledger/cost-ledger-ro.md`.*
+
+---
+
+# ZIUA 42 — Consola de zbor, înainte de prima notiță
+
+*Jurnal ținut de: Scribul · data navei: miercuri 2026-11-18, 16:50 → 21:59*
+
+Miercuri, căpitanul a aprobat o încăpere nouă pe Puntea de Livrare: un **Jurnal Linie de Comandă**, construit ca cele trei jurnale de alături și lăsat gol deocamdată. Studenta e pe cale să înceapă un tur al Linuxului cu Profesoara, iar notițele ei din turul acela îl vor umple. Încăperea e gata înaintea călătoriei, ca prima notiță să aibă unde să coboare.
+
+## 16:50 — Da la toate întrebările
+
+Intendentul a întins lanțul: o singură ramură, `delivery-command-line-log`, și un singur pull request, pe care să-l unească căpitanul. Până la 17:19, căpitanul răspunsese: *„Yes to all the questions you put here.”* Da la toate întrebările de aici.
+
+## 17:20 — Cuvintele înaintea pereților
+
+Am scris cuvintele încăperii în ambele limbi: cartonașul de pe punte, *„Consola de zbor”*; titlul, *Expediția Liniei de Comandă*; și cinci sectoare, de la terminal până la scripturile shell, în ordinea din *The Linux Command Line* a lui Shotts, una dintre cărțile care au ajuns pe raft în ZIUA 41.
+
+Cartograful a măsurat, în pixeli, nu în adjective, dacă încape un al patrulea jurnal. A încăput, fără nicio schimbare în foaia de stil: puntea e o singură coloană, așa că al patrulea cartonaș se așază pur și simplu la capăt. A rămas o întrebare. *Gol* înseamnă o punte cu intrări înlocuitoare, ca cele douăsprezece care își așteaptă deja notițele, sau nicio intrare, ceea ce ar cere un design nou? Intendentul a ales intrările înlocuitoare, pentru că cererea spunea *o structură goală, ca celelalte pagini de jurnal*.
+
+## 17:32 — Regula repetiției
+
+Gabierul a construit încăperea: o pagină nouă pentru fiecare volum, cu cadrul jurnalului Git, bannerul *În Construcție* și cinci sectoare, fiecare cu o zi înlocuitoare. A legat încăperea peste tot unde sunt legate vecinele ei. Commit `08551fb`, apoi **pull request #19**.
+
+Dar cardul purta o regulă mai importantă decât toate acestea, și era a căpitanului:
+
+> „Every new line of code must be explained clearly and completely. Even if a similar or even identical line of code was written in this or other pages of the project. I put my trust in the idea of a continuous repetition.”
+
+Pe românește: *fiecare rând nou de cod trebuie explicat limpede și complet, chiar dacă un rând asemănător sau chiar identic a fost scris în aceasta sau în alte pagini ale proiectului. Îmi pun încrederea în ideea unei repetiții continue.*
+
+Cardul a tras linia: `<!-- un link -->` deasupra unui link doar îl repetă. Ce face rândul, de ce e acolo și cum se leagă de rest, asta e o explicație, și se scrie de fiecare dată, chiar dacă același rând e explicat cuvânt cu cuvânt pe pagina următoare. *„Vezi git-log.html”* nu era permis.
+
+E regula pe care studenta a cerut-o în ZIUA 41, pentru terminalul ei: *„Even if you are repeating yourself for a while with these explanations.”* Și e războiul de țesut al Penelopei din ZIUA 40: același rând, țesut din nou, până când mâinile îl știu.
+
+## 18:06 — Doar comentarii
+
+Cardul meu n-a atins decât comentarii. Am citit fiecare rând adăugat de Gabier, cam 590 de rânduri de cod și 207 blocuri de comentarii în cele două pagini, și am făcut 56 de modificări: 40 de explicații care lipseau, scrise, și 16 vagi, rescrise în întregime. Apoi dovada: scoți toate comentariile, iar codul e, byte cu byte, cel din commitul Gabierului. Commit `65170a3`, la 18:15.
+
+## 18:19 — Două porți și o cratimă moale
+
+La 18:19, Intendentul a oprit linia: se cheltuiseră cam 11,79 dolari din 17,50, fără loc pentru un REVISE. Jurnalul acesta l-a așteptat pe căpitan.
+
+Apoi Cartograful a semnat cu **CHANGES**. Cele trei cartonașe vechi se potriveau cu `main` pixel cu pixel. Dar pe telefon, un titlu lung de sector trecea de marginea ecranului și era tăiat. În română, *PIPE-URI ȘI REDIRECȚIONARE* se citea **REDIRECȚIONA** la 375 de pixeli.
+
+Repararea e un singur caracter invizibil, `&shy;`, **cratima moale**. Marchează un loc unde un cuvânt are voie să se rupă. Dacă rândul are loc, nu arată nimic. Dacă cuvântul trebuie rupt, se rupe acolo, cu o cratimă.
+
+La 18:48 a fost oprită și repararea. La 21:49, căpitanul a răspuns: *„1. A”*, un plafon de 24,50 dolari. La 21:57, Gabierul a făcut commitul `5d7ef46`: cratime moi în șase titluri, fiecare rând explicat în limba lui. Pe telefon, titlul românesc se citește acum REDIREC- / ȚIONARE, întreg. Pe un ecran lat nu s-a mișcat nimic.
+
+Aceeași tăietură așteaptă pe cele trei pagini de jurnal mai vechi. E hotărârea căpitanului, așa că a intrat într-un raport. Notat nu înseamnă reparat.
+
+## Încheiere
+
+Așadar ZIUA 42 a construit o încăpere și n-a scris nimic în ea. Sectoarele au nume, bannerul spune *În Construcție*, iar fiecare rând al cadrului se explică din nou, ca și cum nicio altă pagină n-ar fi făcut-o. Pagina așteaptă prima notiță din tur.
+
+Leviathanul, inel după inel, așeză în ziua aceea inelul *paginii goale*: inelul care spune că o încăpere pregătită înaintea călătoriei e o invitație, iar o lecție spusă din nou nu e pierdută.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+*Jurnalul combustibilului, ținut de Intendent. Căpitanul a aprobat 17,50 dolari pentru încăpere și pentru pagina de recuperare, apoi a ridicat plafonul la 24,50 pentru repararea de pe telefon, aceste două intrări și verificarea Încercătorului. Cât a costat cu adevărat se va număra în registru, `docs/ledger/cost-ledger-ro.md`, după ce se închide ziua.*

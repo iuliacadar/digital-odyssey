@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<!-- @block:
+  <!DOCTYPE html> trece browserul în modul standard: randare previzibilă,
+  conformă cu specificația. Fără el, pagina se randează în modul quirks,
+  care imită erorile browserelor din anii '90. Nu numește nicio versiune
+  HTML; "html" e tot ce îi trebuie HTML-ului modern (șirurile lungi de
+  versiune țin de HTML 4 și XHTML). Înaintea lui pot sta doar spații albe
+  și comentarii, deci acest comentariu ar fi putut sta deasupra lui; orice
+  alt conținut acolo ar arunca pagina în modul quirks.
+-->
+
+<html lang="ro">
+  <!-- @block:
+    Elementul rădăcină al documentului.
+    Atributul lang="ro" declară că limba principală a acestei pagini este româna.
+    Acest lucru ajută instrumentele de accesibilitate, motoarele de căutare și sistemele de procesare automată.
+  -->
+  <head>
+    <!-- @block:
+      Elementul [head] conține metadatele documentului.
+      Nu plasez aici conținutul vizibil principal; în schimb, păstrez informațiile
+      de care browserul are nevoie pentru a înțelege, pregăti și conecta resursele paginii.
+    -->
+
+            <meta charset="UTF-8" />
+    <!-- @meta:
+      Setez codificarea caracterelor la UTF-8.
+      Acest lucru asigură că diacriticele, simbolurile speciale și caracterele internaționale se afișează corect.
+
+      <meta charset="UTF-8" /> trebuie să fie în primii 1024 de octeți
+      pentru ca browserul să detecteze UTF-8 înainte de parsare. Dacă
+      nu o detectează, poate folosi o altă codificare (ex. Windows-1252)
+      și textul se va afișa greșit.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      Această instrucțiune este legată istoric de compatibilitatea cu Internet Explorer.
+      http-equiv="X-UA-Compatible" imită un antet HTTP cu același nume, iar
+      content="ie=edge" îi spunea lui Internet Explorer 8–11 să deseneze
+      pagina cu motorul lui cel mai nou ("edge"), în loc de o „vizualizare de
+      compatibilitate" mai veche, care copia Internet Explorer 7. Internet
+      Explorer a fost retras, iar orice browser modern ignoră acest rând, deci
+      nu schimbă nimic pe ecran.
+      @reason:
+        Îl păstrez pentru că fiecare pagină a proiectului se deschide cu același
+        head clasic, rând cu rând. Un cititor care a studiat o pagină o
+        recunoaște pe aceasta, iar dacă aș scoate rândul doar de aici, pagina
+        ar ieși din rând.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      Configurez viewport-ul pentru afișarea responsive.
+      width=device-width aliniază lățimea paginii cu lățimea reală a ecranului,
+      iar initial-scale=1.0 pornește fără zoom artificial.
+    -->
+
+    <title>D::0dy55ey | Jurnal Linie de Comandă</title>
+    <!-- @meta:
+      Titlul paginii.
+      Îl văd în fila browserului, în marcaje (bookmarks) și uneori în rezultatele motoarelor de căutare.
+      Urmează tiparul fiecărei pagini de jurnal: numele navei, D::0dy55ey,
+      o bară verticală ca separator, apoi numele jurnalului, "Jurnal Linie
+      de Comandă". Același șir se repetă în og:title mai jos, astfel încât
+      fila browserului și cardul distribuit numesc pagina la fel.
+    -->
+
+    <meta
+      name="description"
+      content="Un jurnal structurat care documentează linia de comandă Linux — shell-ul, navigarea, fișierele, pipe-uri, redirecționare, permisiuni, procese și scripturi."
+    />
+    <!-- @meta:
+      Descrierea paginii.
+      O folosesc ca un scurt rezumat al conținutului; nu este direct vizibilă în pagină,
+      dar motoarele de căutare o pot folosi ca text descriptiv.
+      name="description" spune ce fel de metadată este aceasta, iar
+      content="..." ține propoziția însăși. Ea numește subiectele celor cinci
+      sectoare în ordinea lecturii: shell-ul, navigarea și fișierele,
+      pipe-urile și redirecționarea, permisiunile și procesele, scripturile.
+      Aceeași propoziție se repetă în og:description mai jos.
+      @todo:
+        Când zilele ei vor fi scrise, propoziția trebuie să urmeze conținutul
+        real (BACKLOG-RO.md 017, care trimite la 010).
+    -->
+
+    <meta
+      name="keywords"
+      content="linie de comandă, linux, shell, terminal, navigare, fișiere, pipe-uri, redirecționare, permisiuni, procese, scripturi shell"
+    />
+    <!-- @meta:
+      Eticheta meta keywords listează temele principale ale paginii.
+      Aici ele sunt cele cinci sectoare ale jurnalului, în cuvintele
+      descrierii: shell-ul și terminalul, navigarea și fișierele, pipe-urile
+      și redirecționarea, permisiunile și procesele, scripturile shell.
+      Motoarele de căutare nu se mai bazează pe ea pentru poziționare, dar rămâne un rezumat
+      util care se auto-documentează privind scopul paginii și un exemplu didactic al etichetei în sine.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      Eticheta meta author declară cine a creat și întreține acest document.
+      Este un câmp standard de metadate care identifică creatorul lucrării.
+    -->
+
+    <link rel="manifest" href="../site.webmanifest" />
+    <!-- @path:
+      Leg manifestul aplicației web. Firefox citește theme_color din manifest
+      mai degrabă decât din eticheta meta, astfel încât acest lucru asigură suport
+      consistent pentru theme-color în toate browserele moderne, inclusiv Firefox.
+      rel="manifest" îi spune browserului ce este fișierul legat: un mic
+      fișier JSON cu numele, iconițele și culorile site-ului.
+      href="../site.webmanifest" urcă un folder, din ro/delivery/ în ro/, unde
+      stă manifestul volumului, lângă favicon.svg.
+    -->
+
+
+    <meta property="og:title" content="D::0dy55ey | Jurnal Linie de Comandă" />
+    <!-- @meta:
+      Titlul Open Graph.
+      Când link-ul paginii este distribuit pe rețele sociale sau site-uri de portofoliu,
+      acest text apare ca titlul cardului în locul URL-ului brut.
+      Open Graph este setul de proprietăți og: introdus de Facebook și citit
+      acum de majoritatea platformelor: property="og:title" numește câmpul,
+      iar content="..." îl umple. Valoarea este același șir ca [title]-ul de
+      mai sus, "D::0dy55ey | Jurnal Linie de Comandă".
+    -->
+
+    <meta
+      property="og:description"
+      content="Un jurnal structurat care documentează linia de comandă Linux — shell-ul, navigarea, fișierele, pipe-uri, redirecționare, permisiuni, procese și scripturi."
+    />
+    <!-- @meta:
+      Descrierea Open Graph.
+      Este rezumatul însoțitor afișat sub titlul Open Graph pe cardurile distribuite.
+      Îl păstrez aliniat cu meta descrierea pentru consistență.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Tipul Open Graph.
+      Declar această pagină ca website, tipul general pentru paginile HTML standard.
+      Pentru înregistrările de jurnal, aș putea folosi "article" în funcție de natura conținutului.
+    -->
+
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/ro/delivery/command-line-log.html" />
+    <!-- @meta:
+      URL-ul canonic Open Graph.
+      Când pagina este distribuită, acest câmp le spune platformelor adresa exactă și permanentă a acestei pagini.
+      Previne confuzia dacă același conținut este accesibil de la mai multe URL-uri.
+      Adresa este absolută (https://...), pentru că un card distribuit trăiește
+      în afara site-ului și nu are o pagină față de care să rezolve o cale
+      relativă. Este adresa GitHub Pages a chiar acestui fișier,
+      ro/delivery/command-line-log.html, identică cu link-ul canonic de mai jos.
+    -->
+
+    <meta property="og:locale" content="ro_RO" />
+    <!-- @meta:
+      Locale-ul Open Graph.
+      Îl setez la ro_RO, pentru că aceasta este versiunea în limba română a
+      paginii: ro este limba, RO este țara (România).
+      Acest lucru le spune platformelor sociale și agregatoarelor limba și varianta regională a conținutului.
+    -->
+
+    <meta property="og:site_name" content="D::0dy55ey" />
+    <!-- @meta:
+      Numele site-ului Open Graph.
+      Acesta este numele de proiect principal afișat pe cardurile de distribuire socială,
+      astfel încât publicul să știe cărui site îi aparține pagina.
+    -->
+
+    <meta
+      property="og:image"
+      content="https://iuliacadar.github.io/digital-odyssey/shared/assets/images/brand/og-card.png"
+    />
+    <!-- @path:
+      Imaginea Open Graph: imaginea de previzualizare de pe cardurile partajate
+      (Facebook, LinkedIn, X, aplicațiile de mesagerie). URL-ul este absolut
+      (https://...) pentru că aceste servicii descarcă imaginea pe propriile
+      servere, iar multe nu rezolvă o cale relativă față de pagină.
+      Fișierul este un PNG pentru că ele refuză SVG și cer o imagine raster,
+      ideal 1200x630. X citește și el acest tag, fiindcă pagina nu are un
+      twitter:image propriu.
+      Un singur card servește ambele volume: nu conține cuvinte, deci stă în
+      shared/ și nu aparține niciunei limbi.
+    -->
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- @meta:
+      Dimensiunea imaginii de partajare, în pixeli. Cu ea, serviciul poate
+      așeza cardul chiar de la prima partajare a linkului, înainte să fi
+      terminat de descărcat imaginea.
+    -->
+
+    <meta
+      property="og:image:alt"
+      content="Sigla D::0dy55ey: litera D verde-mentă într-un inel magenta, deasupra numelui D::0dy55ey scris cu majuscule magenta luminoase, pe fundal bleumarin închis."
+    />
+    <!-- @meta:
+      Textul alternativ al imaginii de partajare, pentru cei care folosesc un
+      cititor de ecran în aplicațiile care afișează cardul. Ca orice text
+      alternativ, descrie imaginea, nu pagina.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Tipul de card Twitter.
+      Aleg summary_large_image, astfel încât link-urile distribuite pe X/Twitter să afișeze
+      o previzualizare mare de imagine alături de titlu și descriere.
+    -->
+
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/ro/delivery/command-line-log.html" />
+    <!-- @meta:
+      Link-ul canonic.
+      Le spun motoarelor de căutare că acest URL este versiunea autoritativă a paginii.
+      Acest lucru ajută la prevenirea problemelor de conținut duplicat și consolidează semnalele de ranking.
+      rel="canonical" numește relația, iar href ține aceeași adresă absolută
+      ca og:url de mai sus, astfel încât motoarele de căutare și cardurile
+      distribuite cad de acord asupra unui singur URL pentru această pagină.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Eticheta meta robots.
+      Permit motoarelor de căutare să indexeze această pagină și să urmărească link-urile sale,
+      ceea ce este comportamentul implicit și așteptat pentru conținutul public.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <!-- @path:
+      Leg favicon-ul paginii: mica iconiță din fila browserului și din
+      marcaje. rel="icon" numește rolul fișierului, iar type="image/svg+xml"
+      spune că este un SVG, o imagine vectorială care rămâne clară la orice
+      dimensiune.
+      Calea este relativă la locația fișierului curent: href="../favicon.svg"
+      urcă un folder, din ro/delivery/ în ro/, unde favicon.svg stă lângă
+      index.html, așa că fiecare pagină a volumului arată aceeași iconiță.
+    -->
+
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <!-- @path:
+      Apple Touch Icon: imaginea pe care iOS o arată când pagina este adăugată
+      pe ecranul de pornire. Este un PNG de 180x180, dimensiunea recomandată de
+      Apple, pentru că iOS nu acceptă SVG aici. Fișierul stă în folderul
+      volumului (ro/), lângă favicon.svg, deci această cale ajunge la el la fel
+      ca legătura spre favicon.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      Pornesc devreme conexiunea către serverul de fonturi.
+      Scopul este să reduc latența la încărcarea resurselor externe.
+      rel="preconnect" îi cere browserului să deschidă conexiunea acum (să
+      caute adresa, să deschidă conexiunea de rețea, să negocieze criptarea)
+      înainte să fie cerut vreun font. fonts.googleapis.com este serverul care
+      trimite mica foaie de stil ce descrie fontul, legată câteva rânduri mai jos.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      Mă preconectez la domeniul care servește efectiv fișierele de font.
+      crossorigin este obligatoriu pentru resursele externe servite de pe altă origine.
+      fonts.gstatic.com este locul unde stau fișierele de font propriu-zise.
+      Browserele cer fonturile mereu după regulile cross-origin (CORS), deci
+      fără crossorigin această conexiune timpurie nu s-ar potrivi cu cererea
+      de font, iar browserul ar deschide una a doua, pierzând avansul.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      Încarc fontul Space Grotesk din Google Fonts.
+      display=swap îi spune browserului să folosească temporar un font de rezervă până se încarcă fontul final.
+      rel="stylesheet" spune că fișierul legat este CSS. În adresă,
+      family=Space+Grotesk numește fontul (+ ține locul spațiului din nume),
+      wght@300..700 cere fiecare grosime de la 300 (subțire) la 700 (aldin)
+      într-un singur font variabil, iar & leagă următorul parametru,
+      display=swap, astfel încât textul se poate citi imediat și nu este
+      niciodată invizibil.
+    -->
+
+    <link rel="stylesheet" href="../style.css" />
+    <!-- @path:
+      Leg fișierul de stiluri local.
+      Calea este relativă la locația fișierului curent: href="../style.css"
+      urcă un folder, din ro/delivery/ în ro/, la singura foaie de stil a
+      volumului. Toate paginile din ro/ o împart, deci acest jurnal primește
+      aceleași rame, culori și module ca paginile-surori, fără niciun rând de
+      CSS propriu.
+      @structure:
+        Acesta este ultimul rând din [head]. [/head]-ul de imediat după el
+        închide metadatele; tot ce urmează de la [body] este ceea ce vede
+        cititorul.
+    -->
+  </head>
+  <!-- @block: BODY — PUNTA VIZIBILĂ
+    Elementul [body] este locul unde trăiește fiecare element vizibil al paginii.
+    Tot ceea ce vede călătorul — bara de navigare, harta din sidebar,
+    înregistrările de jurnal, telemetria din subsol — este un copil al acestui
+    singur container. În metafora navei, body este puntea principală locuibilă
+    a vasului: spațiul în care echipajul umblă, citește și interacționează
+    cu sistemele navei.
+    @structure:
+      [body] este copilul direct al lui [html]. Nu are nicio stilizare
+      implicită specială în sine, dar în acest proiect moștenește fundalul
+      deep-space (#0a0b1e) și fontul Space Grotesk din style.css.
+  -->
+  <body>
+    <!-- @block: NAVIGAȚIA PRINCIPALĂ — STAȚIA CORMANEI
+      Elementul [nav] marchează semantic această secțiune ca interfața de navigare
+      principală a navei. Învelirea navbar-ului într-un [nav] le spune
+      browserelor, cititoarelor de ecran și motoarelor de căutare: "acest bloc conține
+      comenzile principale pentru deplasarea între punțile vasului."
+      @structure:
+        Navbar-ul folosește flexbox (prin clasa .navbar) pentru a afișa
+        sigla vasului în stânga și lista de comenzi de navigare în
+        dreapta, păstrând cormana compactă și mereu vizibilă în partea de sus.
+      @line:
+        class="navbar" este cârligul acelor reguli flexbox din style.css.
+        aria-label="Navigare principală" îi dă acestui [nav] un nume, ca un
+        cititor de ecran să-l poată deosebi de al doilea [nav], cel din
+        sidebar ("Cuprinsul paginii"). [/nav], de după lista de comenzi,
+        închide cormana.
+    -->
+        <nav class="navbar" aria-label="Navigare principală">
+      <!-- @block: IDENTITATEA TERMINALULUI
+        Blocul siglei afișează indicativul vasului și numele secțiunii curente.
+        Este text static (nu un link) deoarece această pagină este ea însăși o stație
+        pe navă; echipajul își citește locația aici.
+        Textul de după bara oblică, "Jurnal Linie de Comandă", este aceeași
+        etichetă pe care meniul Punții de Livrare din index.html o dă acestei
+        pagini, astfel încât meniul și cârma numesc stația la fel.
+      -->
+      <div class="logo">D::0dy55ey / Jurnal Linie de Comandă</div>
+
+      <!-- @block: COMENZILE DE NAVIGAȚIE
+        Lista nav-links conține acțiunile principale de navigare.
+        Pe paginile secundare este oferită doar o singură comandă: întoarcerea pe puntea de comandă.
+        @structure:
+          [ul class="nav-links"] ține comenzile sub formă de listă, astfel
+          încât un cititor de ecran anunță câte sunt înainte să le citească.
+          [li] este singura comandă de pe această pagină.
+          [a href="../index.html" class="return-btn"] urcă un folder, din
+          ro/delivery/ în ro/, unde se află puntea principală. Clasa îi dă în
+          style.css o ramă de buton, dar rămâne un link adevărat, pentru că
+          îl duce pe cititor la altă pagină.
+      -->
+      <ul class="nav-links">
+        <li>
+          <a href="../index.html" class="return-btn"
+            ><!-- @reason:
+              Simbolul săgeții spre stânga (←) este un indiciu vizual de
+              întoarcere. "Înapoi la puntea de comandă" duce la index.html,
+              puntea principală a navei-mamă.
+            -->← Înapoi la puntea de comandă</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- @block: CONȚINUT PRINCIPAL — JURNALUL EXPEDIȚIEI LINIEI DE COMANDĂ
+      Puntea principală este împărțită în două zone: sidebar-ul (harta expediției) și
+      zona log-content. Clasa "log-layout" aplică un CSS Grid pentru o
+      interfață de terminal cu două coloane.
+      @structure:
+        [main] marchează conținutul principal al paginii; o pagină are unul
+        singur, iar un cititor de ecran poate sări direct la el.
+        class="main-container" este rama comună a tuturor paginilor din
+        style.css: cel mult 1200px lățime, centrată cu margin: 0 auto, cu 40px
+        de padding în interior. A doua clasă, "log-layout", adaugă grila cu
+        două coloane pe care o folosesc doar paginile de jurnal.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — HARTA EXPEDIȚIEI LINIEI DE COMANDĂ
+        Sidebar-ul este înfășurat într-un element [aside] — o etichetă semantică
+        HTML5 care marchează conținutul ca fiind tangențial legat de pagina principală.
+        În metafora navei, sidebar-ul este consola navigatorului:
+        o stație secundară care deține harta expediției mai degrabă decât
+        conținutul principal al jurnalului.
+        @concept:
+          Elementul [aside] este una dintre etichetele semantice introduse
+          în HTML5. La fel ca [nav], [header], [footer] și [article],
+          oferă sens containerului în loc să folosească un [div] generic.
+          Acest lucru ajută cititoarele de ecran să anunțe rolul sidebar-ului și
+          ajută motoarele de căutare să înțeleagă structura paginii.
+        @line:
+          class="log-sidebar" este cârligul pe care style.css îl folosește
+          pentru panoul translucid, de sticlă fumurie, al sidebar-ului; în
+          grila log-layout ocupă coloana din stânga.
+      -->
+      <aside class="log-sidebar">
+        <!-- @block: NAVIGAREA DIN SIDEBAR — CONSOLA SECUNDARĂ
+          Acest [nav] din interiorul [aside] este sistemul de navigare
+          secundar. În timp ce navbar-ul de sus întoarce echipajul pe puntea de comandă,
+          această navigare din sidebar le permite să sară direct la orice zi
+          din jurnalul expediției curente.
+          @structure:
+            Clasa .sidebar-nav aplică o listă compactă, derulabilă,
+            distinctă de navbar-ul principal. map-title-link
+            din partea de sus derulează vederea înapoi la antetul principal când
+            este apăsat.
+          @line:
+            aria-label="Cuprinsul paginii" dă un nume acestui al doilea [nav],
+            ca un cititor de ecran să-l poată deosebi de navigarea principală
+            de sus.
+            [a href="#top-deck" class="map-title-link"] învelește titlul
+            hărții, deci întregul titlu este ținta clicului; #top-deck este
+            id-ul [header]-ului care deschide coloana jurnalului.
+            [h4] ține textul titlului, "Hartă Expediție Linie de Comandă".
+        -->
+        <nav class="sidebar-nav" aria-label="Cuprinsul paginii">
+          <a href="#top-deck" class="map-title-link">
+            <h4>Hartă Expediție Linie de Comandă</h4>
+          </a>
+          <!-- @block: LISTA DE LINK-URI DIN SIDEBAR — GENERATĂ LA RULARE
+            Acest [ul] (listă neordonată) este intenționat GOL în marcaj.
+            Elementele lui [li] (element de listă) sunt construite la încărcare
+            de MECANISMUL 11 din ../script.js, care citește fiecare
+            [article class="log-entry"] și fiecare
+            [div class="sector-announcement"] din conținutul jurnalului de mai
+            jos și emite câte un [a] (ancoră) pentru fiecare, în ordinea din
+            document. Fiecare [a] trimite la id-ul unei zile; se numește
+            "fragment link", pentru că simbolul # îi spune browserului să
+            deruleze până la elementul cu acel id.
+            @reason:
+              Fragment link-urile (href="#cli-day01") creează un cuprins
+              care le permite membrilor echipajului să se teleporteze direct la orice
+              intrare fără să deruleze prin întregul jurnal. Pentru că sunt
+              derivate din articolele însele, harta nu poate contrazice
+              teritoriul: scrieți o zi nouă mai jos și link-ul ei apare singur,
+              fiindcă nu mai există o a doua copie a listei de ținut la zi de mână.
+            @warning:
+              Nu scrieți de mână elemente [li] aici. MECANISMUL 11 înlocuiește
+              întregul conținut al acestei liste la DOMContentLoaded, deci orice
+              link scris în ea este aruncat în clipa în care pagina se încarcă.
+            @bridge:
+              MECANISMUL 11 din ../script.js — generatorul care umple această listă.
+              BACKLOG-RO.md, intrarea 013 — cererea pe care o închide.
+          -->
+          <ul>
+            <!-- @block: PUNCTUL DE ANCORARE AL CUPRINSULUI GENERAT
+              Această listă este intenționat goală în HTML.
+
+              Link-urile zilelor și etichetele de sector sunt construite la
+              încărcarea paginii de MECANISMUL 11 din ../script.js, citind
+              direct articolele [article class="log-entry"] și anunțurile
+              [div class="sector-announcement"] din [section class="log-content"].
+
+              @reason:
+                Înainte, fiecare [li] era scris de mână aici. Aceeași informație
+                exista astfel în două locuri — o dată ca articol de conținut și
+                o dată ca link — iar cele două puteau ajunge să nu mai fie de
+                acord. Exact asta se întâmplase: existau link-uri către zile
+                nescrise încă, deci ancore moarte pe care tastatura și cititorul
+                de ecran le anunțau ca destinații reale.
+
+              @concept:
+                "Single source of truth" — sursa unică de adevăr. Conținutul
+                paginii ESTE cuprinsul ei. O zi nouă adăugată în [section class="log-content"] apare
+                automat în hartă, fără o a doua editare, în nicio limbă.
+
+              @warning:
+                NU ștergeți elementul [ul] în sine. El este ținta în care
+                scrie MECANISMUL 11, iar MECANISMUL 02 îi citește
+                clientHeight ca să centreze ziua activă pe desktop. Fără el,
+                ambele mecanisme se opresc tăcut, fără nicio eroare vizibilă.
+
+              @bridge: ../script.js — MECANISMUL 11 (generarea) și
+                MECANISMUL 05 (navigarea delegată prin ancore).
+
+              @structure:
+                [/ul] închide lista goală. [/nav] și [/aside] de imediat după
+                ea închid consola secundară și sidebar-ul; urmează coloana
+                jurnalului.
+            -->
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- @block: ZONA DE CONȚINUT A JURNALULUI
+        Elementul [section] este un container semantic care grupează conținutul conex
+        sub o temă comună. Aici înfășoară întregul jurnal al expediției
+        — antetul, anunțurile de sector și articolele de zi. Spre deosebire de
+        [article] (care deține intrări de sine stătătoare), [section] le grupează
+        într-un capitol coerent.
+        @structure:
+          Clasa .log-content lucrează împreună cu .log-sidebar în interiorul
+          grid-ului .log-layout. Sidebar-ul ocupă coloana din stânga
+          (280px, stabilit pe .log-layout în style.css 00.2.A), iar .log-content umple spațiul rămas din
+          dreapta, creând interfața clasică de terminal cu două panouri.
+      -->
+      <section class="log-content">
+        <!-- @block: ANTETUL CATEGORIEI — TITLUL EXPEDIȚIEI
+          [header] deschide coloana jurnalului cu blocul de titlu al
+          expediției. id="top-deck" este ancora spre care trimite titlul
+          hărții din sidebar ([a href="#top-deck"]), așa că un clic pe "Hartă
+          Expediție Linie de Comandă" îl readuce pe cititor aici sus.
+          class="category-header" îi dă același aspect de bloc de titlu ca pe
+          fiecare pagină de jurnal și ca antetele volumelor din index.html.
+          [/header] închide blocul; urmează bannerul "În Construcție".
+        -->
+        <header id="top-deck" class="category-header">
+          <!-- @reason:
+            [h1] este titlul acestei pagini, iar o pagină are exact unul. Un
+            cititor de ecran sare la el ca să răspundă la întrebarea "pe ce
+            pagină sunt?", un motor de căutare îl citește drept cel mai
+            puternic indiciu al subiectului, iar h2-urile sectoarelor și
+            h3-urile zilelor de mai jos atârnă de el. Păstrează aspectul
+            titlurilor h2 din index.html pentru că regulile pentru h2 din
+            style.css numesc și ".category-header h1"; style.css 04.6 spune
+            povestea întreagă.
+          -->
+          <h1>Expediția Liniei de Comandă</h1>
+          <!-- @line:
+            [p] este subtitlul de sub titlu: o propoziție care numește ce
+            cartografiază expediția. Fiecare pagină de jurnal are unul, în
+            aceeași voce: "Cartografierea principiilor, tiparelor și
+            practicilor ...".
+          -->
+          <p>
+            Cartografierea principiilor, tiparelor și practicilor Liniei de Comandă.
+          </p>
+        </header>
+
+        <!-- @block: BANNERUL „ÎN CONSTRUCȚIE" — FARUL DE SCHELĂRIE
+          Această punte nu este terminată. În loc să lăsăm un vizitator să
+          citească proză de umplutură și să o confunde cu jurnalul navei,
+          starea este declarată deschis, în capul paginii, înaintea primei
+          porți de sector.
+          @reason:
+            Textul de umplutură care nu este etichetat drept text de umplutură
+            este o minciună tăcută: pagina pare completă, iar paragrafele par
+            conținut. Acest banner transformă acel eșec tăcut într-o stare
+            onestă, vizibilă, pe care cititorul o poate folosi.
+          @concept:
+            Notificarea nu se bazează niciodată doar pe culoare. Poartă trei
+            canale independente — glifa de pericol, cuvintele literale
+            „În Construcție" și propoziția explicativă de dedesubt. Un cititor
+            cu orice formă de daltonism sau care folosește un mod cu contrast
+            forțat ori un mod de lectură nu pierde nimic.
+          @structure:
+            [aside] marchează conținut pus deoparte față de jurnalul din jur.
+            Cu aria-label devine un reper denumit, astfel încât tehnologia
+            asistivă îl poate atinge direct sau îl poate sări complet.
+          @warning:
+            Glifa poartă aria-hidden="true" pentru că duplică cuvintele
+            alăturate. Anunțarea ei ar adăuga zgomot, nu sens.
+          @bridge:
+            Stilizarea trăiește în ro/style.css, Modulul 32 — Bannerul
+            „În Construcție". Metricile pentru punțile înguste trăiesc în
+            Modulul 00.2, B6.
+          @line:
+            Rând cu rând: [aside class="under-construction"] este caseta
+            notificării. Clasa este ceea ce caută tools/check-uc-banner.py și
+            îi dă casetei stilul de avertizare din Modulul 32.
+            aria-label="Notificare: secțiune în construcție" este numele
+            reperului, cuvintele pe care le spune cititorul de ecran când
+            ajunge la casetă.
+            [p class="uc-label"] este rândul-titlu al notificării.
+            [span class="uc-icon" aria-hidden="true"] ține glifa semnului de
+            șantier, scrisă ca referința numerică de caracter &#128679;
+            (punctul de cod 128679, emoji-ul 🚧).
+            "În Construcție" este titlul propriu-zis, în cuvinte simple.
+            Al doilea [p] explică starea într-o propoziție întreagă. Link-ul
+            lui, [a href="../index.html"], urcă un folder, din ro/delivery/ în
+            ro/, la puntea de comandă, unde sunt listate punțile terminate.
+            [/aside] închide notificarea; urmează prima poartă de sector.
+          @todo:
+            Bannerul pleacă atunci când proza ei înlocuiește ultima umplutură:
+            tools/add-uc-banner.py --prune îl scoate, iar
+            tools/check-uc-banner.py oprește build-ul (verdictul STALE) dacă o
+            pagină terminată îl mai poartă. BACKLOG-RO.md 017.
+        -->
+        <aside class="under-construction" aria-label="Notificare: secțiune în construcție">
+          <p class="uc-label">
+            <span class="uc-icon" aria-hidden="true">&#128679;</span>
+            În Construcție
+          </p>
+          <p>
+            Această punte este încă în construcție. Fiecare intrare de jurnal de
+            mai jos este text de umplutură — structura există, dar scrierea
+            nu a fost încă făcută. Nimic de aici nu este conținut real.
+            Punțile terminate sunt listate pe
+            <a href="../index.html">puntea de comandă</a>.
+          </p>
+        </aside>
+
+        <!-- ===== SECTOR 00: Terminalul ===== -->
+        <!-- @block: ANUNȚ DE SECTOR — Terminalul
+          Un anunț de sector este poarta dintre două capitole ale jurnalului:
+          un banner pe toată lățimea care îi spune cititorului că aici începe
+          un nou grup de zile. Sectorul 00 este ecluza
+          (airlock): pragul pe care cititorul îl trece înaintea Zilei 00,
+          prima zi a expediției.
+          @structure:
+            [div id="cli-sector-00" class="sector-announcement"] este
+            poarta însăși. Id-ul urmează tiparul tuturor paginilor de jurnal:
+            prefixul temei, "cli" (de la command-line interface, interfața în
+            linie de comandă), apoi "-sector-", apoi două cifre. Clasa îi dă
+            porții aspectul de banner din style.css și este unul dintre cele
+            două selectoare pe care MECANISMUL 11 din ../script.js le scanează
+            ca să construiască harta din sidebar.
+            [span] este rândul mic de deasupra titlului, "ENTER AIRLOCK". Rămâne în
+            engleză în ambele volume, ca pe fiecare jurnal-frate.
+            [h2] este titlul sectorului. Este un h2 pentru că stă cu un nivel
+            sub singurul h1 al paginii, astfel încât schița titlurilor se
+            citește h1 (expediția), h2 (sectorul), h3 (ziua).
+            [/div] închide poarta; zilele care urmează formează capitolul ei,
+            până la poarta următoare.
+          @reason:
+            MECANISMUL 11 nu îi dă Sectorului 00 niciun link în harta din
+            sidebar: sare peste orice id care se termină în -sector-00,
+            pentru că ecluza este un prag, nu o etapă de studiu. Citește
+            cele două cifre din id, niciodată din h2, așa că hărțile din
+            en/ și ro/ rămân identice, deși titlurile sunt traduse.
+          @todo:
+            Ce va nota în acest sector:
+            Ce este un shell, cum se citește promptul, primele
+            comenzi și unde găsește ajutor (man, --help, tldr,
+            explainshell).
+            Proza vine odată cu notițele ei din turul Linux (BACKLOG-RO.md 017).
+          @warning:
+            "&shy;" din "Termi&shy;nalul" este o cratimă discretă (soft
+            hyphen): un punct de despărțire invizibil. Browserul nu arată
+            nimic acolo și desenează o cratimă doar când cuvântul trebuie
+            despărțit pe două rânduri.
+            Este aici pentru că titlul sectorului are majuscule de 35px cu
+            spațiere largă între litere. Pe telefoanele cele mai înguste
+            (aspectul de 480px și mai îngust) un cuvânt lung poate fi mai lat
+            decât caseta, iar [main] ascunde tot ce trece de marginea
+            ecranului, așa că finalul cuvântului ar fi tăiat. Când nu încape,
+            cuvântul se desparte între silabe: "TERMI-" / "NALUL".
+            Nu schimbă nimic altceva: textul se citește la fel, sidebar-ul
+            nu are pastilă pentru Sectorul 00 (MECANISMUL 11 îl sare după id),
+            iar pe ecranele late cuvântul încape și nu se desparte, deci
+            titlul arată exact ca înainte.
+        -->
+        <div id="cli-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>Termi&shy;nalul</h2>
+        </div>
+
+        <!-- @block: ZIUA 00 — Terminalul :: Inițiere
+          O intrare de jurnal este o zi de studiu: o fișă de sine stătătoare
+          pe care cititorul o poate deschide, citi și adnota separat. Aceasta
+          este încă o carcasă. Structura ei este definitivă, iar proza este
+          text de umplutură până sosesc notițele ei, lucru pe care bannerul
+          "În Construcție" de mai sus îl spune deschis.
+          @structure:
+            [article] este elementul potrivit pentru că intrarea are sens și
+            singură, scoasă din pagină, ca o filă ruptă din jurnal.
+            id="cli-day00" este ținta fragmentului: link-ul "Day 00 ◈"
+            din sidebar trimite spre "#cli-day00". MECANISMUL 11 construiește
+            acel link din acest id, iar MECANISMUL 02 îl aprinde cât timp fișa
+            este pe ecran. Id-ul este identic în en/ și ro/.
+            class="log-entry" îi dă fișei rama din style.css. Este și al doilea
+            selector scanat de MECANISMUL 11 și cel pe care
+            tools/check-uc-banner.py îl numără ca să judece dacă pagina este
+            de umplutură (este, deci bannerul trebuie să rămână).
+        -->
+        <article id="cli-day00" class="log-entry">
+          <!-- @block: ANTETUL INTRĂRII
+            [h3] este titlul intrării, cu un nivel sub h2-ul sectorului.
+            Primul lui [span], "Day 00", este jetonul zilei. MECANISMUL 11
+            citește exact acest span (selectorul "h3 > span", primul copil
+            direct) ca să eticheteze butonul din sidebar, deci trebuie să
+            rămână primul copil al lui h3 și să rămână un span simplu. Rămâne
+            în engleză, ca pe toate paginile românești de jurnal.
+            [span class="meta-title"] este tema zilei. Clasa îi dă aspectul
+            mai mic, verde și cu litere rărite din style.css (.meta-title).
+            Textul lui începe cu un spațiu, ca cele două span-uri să nu se
+            lipească pe ecran.
+            [/h3] închide titlul.
+          -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> Terminalul :: Inițiere</span>
+          </h3>
+          <!-- @block: TEXTUL NARATIV AL JURNALULUI
+            [div class="log-text"] este coloana de proză a zilei; style.css îi
+            stabilește lățimea de lectură și înălțimea rândului.
+            [p] conține un paragraf Lorem ipsum: text de umplutură cu aer de
+            latină, pe care tipografii îl folosesc ca să umple o machetă
+            înainte să existe cuvintele adevărate. Bannerul din capul paginii
+            îl declară drept umplutură, ca niciun cititor să nu-l confunde cu
+            jurnalul.
+            @bridge:
+              tools/inject_log_content.py caută exact această formă, un div
+              log-text cu un singur paragraf Lorem ipsum, și înlocuiește
+              paragraful cu textul ei când o rulare de conținut ajunge la
+              această pagină (cheia "commandline" din harta ei TARGETS). Apoi
+              tools/check-log-prose.py verifică dacă proza nouă nu poartă
+              marcaj rătăcit.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: INDICATORUL STĂRII MISIUNII
+            [div class="mission-status"] este linia verde de telemetrie de sub
+            proză, stilizată în style.css ca afișajul unui centru de control al
+            misiunii din anii 1970. MECANISMUL 03 din ../script.js urmărește
+            fiecare cutie .mission-status: de fiecare dată când una ajunge 30%
+            pe ecran, resetează animația CSS de tastare a [p]-ului din ea, iar
+            linia se tastează din nou.
+            [p] poartă textul stării.
+            În Ziua 00 scrie INITIALIZING_CLI: fiecare jurnal își
+            deschide prima zi cu INITIALIZING_ plus numele scurt al temei.
+            RECEPTOR și LINK sunt câmpurile fixe, al doilea și al treilea,
+            ale afișajului. Textul stării rămâne în engleză în ambele volume.
+          -->
+          <div class="mission-status">
+            <p>STATUS: INITIALIZING_CLI | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: TERMINALUL DE NOTE
+            Terminalul de note îi permite cititorului să-și scrie propria
+            notiță sub această zi și să o păstreze în acest browser.
+            @structure:
+              [div class="note-terminal"] grupează caseta de text și butonul
+              ei; style.css le desenează ca pe o singură consolă. MECANISMUL 04
+              găsește fiecare casetă de pe pagină prin ".note-terminal textarea".
+              [textarea] este caseta de text pe mai multe rânduri.
+              name="cli-note-day00" denumește câmpul, așa cum se denumește
+              un câmp de formular. id="cli-note-day00" este adresa după care
+              saveNote() găsește caseta. Același șir este și cheia din
+              localStorage sub care se salvează notița, iar la încărcare
+              MECANISMUL 04 o citește înapoi după textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" este indiciul
+              afișat cât timp caseta e goală; dispare de îndată ce ea scrie.
+              [/textarea] urmează imediat, fără nimic între etichete, deci
+              caseta pornește goală (MECANISMUL 04 o umple la încărcare dacă a
+              fost salvată o notiță înainte).
+              [button] este un buton adevărat, deci poate fi atins cu Tab și
+              apăsat cu Enter sau Space.
+              onclick="saveNote('cli-note-day00')" cheamă funcția de salvare
+              cu același id ca al casetei de deasupra.
+              "Save Signal Extension" este eticheta butonului.
+            @warning:
+              Id-ul trebuie să fie unic în tot site-ul, pentru că este cheia de
+              stocare. Două pagini cu același id ar împărți, și ar suprascrie,
+              aceeași notiță. Prefixul "cli-" ține aceste notițe separate de
+              ale oricărui alt jurnal.
+            @bridge: saveNote('cli-note-day00') este gestionat de MECANISM 04
+            din ro/script.js - Terminalul de note persistente prin localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day00"
+              id="cli-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] închide Ziua 00. Urmează poarta sectorului următor. -->
+        </article>
+
+        <!-- ===== SECTOR 01: Navigare și Fișiere ===== -->
+        <!-- @block: ANUNȚ DE SECTOR — Navigare și Fișiere
+          Un anunț de sector este poarta dintre două capitole ale jurnalului:
+          un banner pe toată lățimea care îi spune cititorului că aici începe
+          un nou grup de zile. Sectorul 1 deschide capitolul
+          Navigare și Fișiere.
+          @structure:
+            [div id="cli-sector-01" class="sector-announcement"] este
+            poarta însăși. Id-ul urmează tiparul tuturor paginilor de jurnal:
+            prefixul temei, "cli" (de la command-line interface, interfața în
+            linie de comandă), apoi "-sector-", apoi două cifre. Clasa îi dă
+            porții aspectul de banner din style.css și este unul dintre cele
+            două selectoare pe care MECANISMUL 11 din ../script.js le scanează
+            ca să construiască harta din sidebar.
+            [span] este rândul mic de deasupra titlului, "Entering Sector 1". Rămâne în
+            engleză în ambele volume, ca pe fiecare jurnal-frate.
+            [h2] este titlul sectorului. Este un h2 pentru că stă cu un nivel
+            sub singurul h1 al paginii, astfel încât schița titlurilor se
+            citește h1 (expediția), h2 (sectorul), h3 (ziua).
+            [/div] închide poarta; zilele care urmează formează capitolul ei,
+            până la poarta următoare.
+          @reason:
+            MECANISMUL 11 transformă această poartă în pastila "S01" din
+            harta sidebar-ului. Citește cele două cifre din id, niciodată
+            din h2, așa că hărțile din en/ și ro/ rămân identice, deși
+            titlurile sunt traduse.
+          @todo:
+            Ce va nota în acest sector:
+            Deplasarea prin sistemul de fișiere (pwd, cd, ls,
+            căi), apoi crearea, copierea, mutarea, ștergerea și citirea
+            fișierelor și folderelor.
+            Proza vine odată cu notițele ei din turul Linux (BACKLOG-RO.md 017).
+        -->
+        <div id="cli-sector-01" class="sector-announcement">
+          <span>Entering Sector 1</span>
+          <h2>Navigare și Fișiere</h2>
+        </div>
+
+        <!-- @block: ZIUA 01 — Navigare și Fișiere
+          O intrare de jurnal este o zi de studiu: o fișă de sine stătătoare
+          pe care cititorul o poate deschide, citi și adnota separat. Aceasta
+          este încă o carcasă. Structura ei este definitivă, iar proza este
+          text de umplutură până sosesc notițele ei, lucru pe care bannerul
+          "În Construcție" de mai sus îl spune deschis.
+          @structure:
+            [article] este elementul potrivit pentru că intrarea are sens și
+            singură, scoasă din pagină, ca o filă ruptă din jurnal.
+            id="cli-day01" este ținta fragmentului: link-ul "Day 01 ◈"
+            din sidebar trimite spre "#cli-day01". MECANISMUL 11 construiește
+            acel link din acest id, iar MECANISMUL 02 îl aprinde cât timp fișa
+            este pe ecran. Id-ul este identic în en/ și ro/.
+            class="log-entry" îi dă fișei rama din style.css. Este și al doilea
+            selector scanat de MECANISMUL 11 și cel pe care
+            tools/check-uc-banner.py îl numără ca să judece dacă pagina este
+            de umplutură (este, deci bannerul trebuie să rămână).
+        -->
+        <article id="cli-day01" class="log-entry">
+          <!-- @block: ANTETUL INTRĂRII
+            [h3] este titlul intrării, cu un nivel sub h2-ul sectorului.
+            Primul lui [span], "Day 01", este jetonul zilei. MECANISMUL 11
+            citește exact acest span (selectorul "h3 > span", primul copil
+            direct) ca să eticheteze butonul din sidebar, deci trebuie să
+            rămână primul copil al lui h3 și să rămână un span simplu. Rămâne
+            în engleză, ca pe toate paginile românești de jurnal.
+            [span class="meta-title"] este tema zilei. Clasa îi dă aspectul
+            mai mic, verde și cu litere rărite din style.css (.meta-title).
+            Textul lui începe cu un spațiu, ca cele două span-uri să nu se
+            lipească pe ecran.
+            [/h3] închide titlul.
+          -->
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title"> Navigare și Fișiere</span>
+          </h3>
+          <!-- @block: TEXTUL NARATIV AL JURNALULUI
+            [div class="log-text"] este coloana de proză a zilei; style.css îi
+            stabilește lățimea de lectură și înălțimea rândului.
+            [p] conține un paragraf Lorem ipsum: text de umplutură cu aer de
+            latină, pe care tipografii îl folosesc ca să umple o machetă
+            înainte să existe cuvintele adevărate. Bannerul din capul paginii
+            îl declară drept umplutură, ca niciun cititor să nu-l confunde cu
+            jurnalul.
+            @bridge:
+              tools/inject_log_content.py caută exact această formă, un div
+              log-text cu un singur paragraf Lorem ipsum, și înlocuiește
+              paragraful cu textul ei când o rulare de conținut ajunge la
+              această pagină (cheia "commandline" din harta ei TARGETS). Apoi
+              tools/check-log-prose.py verifică dacă proza nouă nu poartă
+              marcaj rătăcit.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: INDICATORUL STĂRII MISIUNII
+            [div class="mission-status"] este linia verde de telemetrie de sub
+            proză, stilizată în style.css ca afișajul unui centru de control al
+            misiunii din anii 1970. MECANISMUL 03 din ../script.js urmărește
+            fiecare cutie .mission-status: de fiecare dată când una ajunge 30%
+            pe ecran, resetează animația CSS de tastare a [p]-ului din ea, iar
+            linia se tastează din nou.
+            [p] poartă textul stării.
+            Din Sectorul 1 încolo numește sectorul căruia îi aparține
+            ziua: SECTOR_01_ACTIVE, tiparul folosit de fiecare jurnal. RECEPTOR
+            și LINK sunt câmpurile fixe, al doilea și al treilea, ale
+            afișajului. Textul stării rămâne în engleză în ambele volume.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: TERMINALUL DE NOTE
+            Terminalul de note îi permite cititorului să-și scrie propria
+            notiță sub această zi și să o păstreze în acest browser.
+            @structure:
+              [div class="note-terminal"] grupează caseta de text și butonul
+              ei; style.css le desenează ca pe o singură consolă. MECANISMUL 04
+              găsește fiecare casetă de pe pagină prin ".note-terminal textarea".
+              [textarea] este caseta de text pe mai multe rânduri.
+              name="cli-note-day01" denumește câmpul, așa cum se denumește
+              un câmp de formular. id="cli-note-day01" este adresa după care
+              saveNote() găsește caseta. Același șir este și cheia din
+              localStorage sub care se salvează notița, iar la încărcare
+              MECANISMUL 04 o citește înapoi după textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" este indiciul
+              afișat cât timp caseta e goală; dispare de îndată ce ea scrie.
+              [/textarea] urmează imediat, fără nimic între etichete, deci
+              caseta pornește goală (MECANISMUL 04 o umple la încărcare dacă a
+              fost salvată o notiță înainte).
+              [button] este un buton adevărat, deci poate fi atins cu Tab și
+              apăsat cu Enter sau Space.
+              onclick="saveNote('cli-note-day01')" cheamă funcția de salvare
+              cu același id ca al casetei de deasupra.
+              "Save Signal Extension" este eticheta butonului.
+            @warning:
+              Id-ul trebuie să fie unic în tot site-ul, pentru că este cheia de
+              stocare. Două pagini cu același id ar împărți, și ar suprascrie,
+              aceeași notiță. Prefixul "cli-" ține aceste notițe separate de
+              ale oricărui alt jurnal.
+            @bridge: saveNote('cli-note-day01') este gestionat de MECANISM 04
+            din ro/script.js - Terminalul de note persistente prin localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day01"
+              id="cli-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] închide Ziua 01. Urmează poarta sectorului următor. -->
+        </article>
+
+        <!-- ===== SECTOR 02: Pipe-uri și Redirecționare ===== -->
+        <!-- @block: ANUNȚ DE SECTOR — Pipe-uri și Redirecționare
+          Un anunț de sector este poarta dintre două capitole ale jurnalului:
+          un banner pe toată lățimea care îi spune cititorului că aici începe
+          un nou grup de zile. Sectorul 2 deschide capitolul
+          Pipe-uri și Redirecționare.
+          @structure:
+            [div id="cli-sector-02" class="sector-announcement"] este
+            poarta însăși. Id-ul urmează tiparul tuturor paginilor de jurnal:
+            prefixul temei, "cli" (de la command-line interface, interfața în
+            linie de comandă), apoi "-sector-", apoi două cifre. Clasa îi dă
+            porții aspectul de banner din style.css și este unul dintre cele
+            două selectoare pe care MECANISMUL 11 din ../script.js le scanează
+            ca să construiască harta din sidebar.
+            [span] este rândul mic de deasupra titlului, "Entering Sector 2". Rămâne în
+            engleză în ambele volume, ca pe fiecare jurnal-frate.
+            [h2] este titlul sectorului. Este un h2 pentru că stă cu un nivel
+            sub singurul h1 al paginii, astfel încât schița titlurilor se
+            citește h1 (expediția), h2 (sectorul), h3 (ziua).
+            [/div] închide poarta; zilele care urmează formează capitolul ei,
+            până la poarta următoare.
+          @reason:
+            MECANISMUL 11 transformă această poartă în pastila "S02" din
+            harta sidebar-ului. Citește cele două cifre din id, niciodată
+            din h2, așa că hărțile din en/ și ro/ rămân identice, deși
+            titlurile sunt traduse.
+          @todo:
+            Ce va nota în acest sector:
+            stdin, stdout și stderr; trimiterea ieșirii în
+            fișiere; înlănțuirea comenzilor cu |; filtre precum grep, sort,
+            wc, head, tail; căutarea fișierelor cu find.
+            Proza vine odată cu notițele ei din turul Linux (BACKLOG-RO.md 017).
+          @warning:
+            "&shy;" din "Redirec&shy;ționare" este o cratimă discretă (soft
+            hyphen): un punct de despărțire invizibil. Browserul nu arată
+            nimic acolo și desenează o cratimă doar când cuvântul trebuie
+            despărțit pe două rânduri.
+            Este aici pentru că titlul sectorului are majuscule de 35px cu
+            spațiere largă între litere. Pe telefoane (aspectul de 480px și
+            mai îngust) "REDIRECȚIONARE" poate fi mai lat decât caseta, iar
+            [main] ascunde tot ce trece de marginea ecranului, așa că finalul
+            cuvântului era tăiat: la 375px se citea "REDIRECȚIONA". Acum,
+            când nu încape, cuvântul se desparte între silabe: "REDIREC-" /
+            "ȚIONARE".
+            Nu schimbă nimic altceva: textul se citește la fel, pastila "S02"
+            vine din id, nu din h2, iar pe ecranele late cuvântul încape și
+            nu se desparte, deci titlul arată exact ca înainte.
+        -->
+        <div id="cli-sector-02" class="sector-announcement">
+          <span>Entering Sector 2</span>
+          <h2>Pipe-uri și Redirec&shy;ționare</h2>
+        </div>
+
+        <!-- @block: ZIUA 02 — Pipe-uri și Redirecționare
+          O intrare de jurnal este o zi de studiu: o fișă de sine stătătoare
+          pe care cititorul o poate deschide, citi și adnota separat. Aceasta
+          este încă o carcasă. Structura ei este definitivă, iar proza este
+          text de umplutură până sosesc notițele ei, lucru pe care bannerul
+          "În Construcție" de mai sus îl spune deschis.
+          @structure:
+            [article] este elementul potrivit pentru că intrarea are sens și
+            singură, scoasă din pagină, ca o filă ruptă din jurnal.
+            id="cli-day02" este ținta fragmentului: link-ul "Day 02 ◈"
+            din sidebar trimite spre "#cli-day02". MECANISMUL 11 construiește
+            acel link din acest id, iar MECANISMUL 02 îl aprinde cât timp fișa
+            este pe ecran. Id-ul este identic în en/ și ro/.
+            class="log-entry" îi dă fișei rama din style.css. Este și al doilea
+            selector scanat de MECANISMUL 11 și cel pe care
+            tools/check-uc-banner.py îl numără ca să judece dacă pagina este
+            de umplutură (este, deci bannerul trebuie să rămână).
+        -->
+        <article id="cli-day02" class="log-entry">
+          <!-- @block: ANTETUL INTRĂRII
+            [h3] este titlul intrării, cu un nivel sub h2-ul sectorului.
+            Primul lui [span], "Day 02", este jetonul zilei. MECANISMUL 11
+            citește exact acest span (selectorul "h3 > span", primul copil
+            direct) ca să eticheteze butonul din sidebar, deci trebuie să
+            rămână primul copil al lui h3 și să rămână un span simplu. Rămâne
+            în engleză, ca pe toate paginile românești de jurnal.
+            [span class="meta-title"] este tema zilei. Clasa îi dă aspectul
+            mai mic, verde și cu litere rărite din style.css (.meta-title).
+            Textul lui începe cu un spațiu, ca cele două span-uri să nu se
+            lipească pe ecran.
+            [/h3] închide titlul.
+          -->
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title"> Pipe-uri și Redirecționare</span>
+          </h3>
+          <!-- @block: TEXTUL NARATIV AL JURNALULUI
+            [div class="log-text"] este coloana de proză a zilei; style.css îi
+            stabilește lățimea de lectură și înălțimea rândului.
+            [p] conține un paragraf Lorem ipsum: text de umplutură cu aer de
+            latină, pe care tipografii îl folosesc ca să umple o machetă
+            înainte să existe cuvintele adevărate. Bannerul din capul paginii
+            îl declară drept umplutură, ca niciun cititor să nu-l confunde cu
+            jurnalul.
+            @bridge:
+              tools/inject_log_content.py caută exact această formă, un div
+              log-text cu un singur paragraf Lorem ipsum, și înlocuiește
+              paragraful cu textul ei când o rulare de conținut ajunge la
+              această pagină (cheia "commandline" din harta ei TARGETS). Apoi
+              tools/check-log-prose.py verifică dacă proza nouă nu poartă
+              marcaj rătăcit.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: INDICATORUL STĂRII MISIUNII
+            [div class="mission-status"] este linia verde de telemetrie de sub
+            proză, stilizată în style.css ca afișajul unui centru de control al
+            misiunii din anii 1970. MECANISMUL 03 din ../script.js urmărește
+            fiecare cutie .mission-status: de fiecare dată când una ajunge 30%
+            pe ecran, resetează animația CSS de tastare a [p]-ului din ea, iar
+            linia se tastează din nou.
+            [p] poartă textul stării.
+            Din Sectorul 1 încolo numește sectorul căruia îi aparține
+            ziua: SECTOR_02_ACTIVE, tiparul folosit de fiecare jurnal. RECEPTOR
+            și LINK sunt câmpurile fixe, al doilea și al treilea, ale
+            afișajului. Textul stării rămâne în engleză în ambele volume.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: TERMINALUL DE NOTE
+            Terminalul de note îi permite cititorului să-și scrie propria
+            notiță sub această zi și să o păstreze în acest browser.
+            @structure:
+              [div class="note-terminal"] grupează caseta de text și butonul
+              ei; style.css le desenează ca pe o singură consolă. MECANISMUL 04
+              găsește fiecare casetă de pe pagină prin ".note-terminal textarea".
+              [textarea] este caseta de text pe mai multe rânduri.
+              name="cli-note-day02" denumește câmpul, așa cum se denumește
+              un câmp de formular. id="cli-note-day02" este adresa după care
+              saveNote() găsește caseta. Același șir este și cheia din
+              localStorage sub care se salvează notița, iar la încărcare
+              MECANISMUL 04 o citește înapoi după textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" este indiciul
+              afișat cât timp caseta e goală; dispare de îndată ce ea scrie.
+              [/textarea] urmează imediat, fără nimic între etichete, deci
+              caseta pornește goală (MECANISMUL 04 o umple la încărcare dacă a
+              fost salvată o notiță înainte).
+              [button] este un buton adevărat, deci poate fi atins cu Tab și
+              apăsat cu Enter sau Space.
+              onclick="saveNote('cli-note-day02')" cheamă funcția de salvare
+              cu același id ca al casetei de deasupra.
+              "Save Signal Extension" este eticheta butonului.
+            @warning:
+              Id-ul trebuie să fie unic în tot site-ul, pentru că este cheia de
+              stocare. Două pagini cu același id ar împărți, și ar suprascrie,
+              aceeași notiță. Prefixul "cli-" ține aceste notițe separate de
+              ale oricărui alt jurnal.
+            @bridge: saveNote('cli-note-day02') este gestionat de MECANISM 04
+            din ro/script.js - Terminalul de note persistente prin localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day02"
+              id="cli-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] închide Ziua 02. Urmează poarta sectorului următor. -->
+        </article>
+
+        <!-- ===== SECTOR 03: Permisiuni și Procese ===== -->
+        <!-- @block: ANUNȚ DE SECTOR — Permisiuni și Procese
+          Un anunț de sector este poarta dintre două capitole ale jurnalului:
+          un banner pe toată lățimea care îi spune cititorului că aici începe
+          un nou grup de zile. Sectorul 3 deschide capitolul
+          Permisiuni și Procese.
+          @structure:
+            [div id="cli-sector-03" class="sector-announcement"] este
+            poarta însăși. Id-ul urmează tiparul tuturor paginilor de jurnal:
+            prefixul temei, "cli" (de la command-line interface, interfața în
+            linie de comandă), apoi "-sector-", apoi două cifre. Clasa îi dă
+            porții aspectul de banner din style.css și este unul dintre cele
+            două selectoare pe care MECANISMUL 11 din ../script.js le scanează
+            ca să construiască harta din sidebar.
+            [span] este rândul mic de deasupra titlului, "Entering Sector 3". Rămâne în
+            engleză în ambele volume, ca pe fiecare jurnal-frate.
+            [h2] este titlul sectorului. Este un h2 pentru că stă cu un nivel
+            sub singurul h1 al paginii, astfel încât schița titlurilor se
+            citește h1 (expediția), h2 (sectorul), h3 (ziua).
+            [/div] închide poarta; zilele care urmează formează capitolul ei,
+            până la poarta următoare.
+          @reason:
+            MECANISMUL 11 transformă această poartă în pastila "S03" din
+            harta sidebar-ului. Citește cele două cifre din id, niciodată
+            din h2, așa că hărțile din en/ și ro/ rămân identice, deși
+            titlurile sunt traduse.
+          @todo:
+            Ce va nota în acest sector:
+            Utilizatori, grupuri și biții rwx (chmod, sudo),
+            apoi programele care rulează: ps, jobs, sarcini în fundal, kill.
+            Proza vine odată cu notițele ei din turul Linux (BACKLOG-RO.md 017).
+          @warning:
+            "&shy;" din "Permi&shy;siuni" este o cratimă discretă (soft
+            hyphen): un punct de despărțire invizibil. Browserul nu arată
+            nimic acolo și desenează o cratimă doar când cuvântul trebuie
+            despărțit pe două rânduri.
+            Este aici pentru că titlul sectorului are majuscule de 35px cu
+            spațiere largă între litere. Pe telefoanele cele mai înguste
+            (aspectul de 480px și mai îngust) un cuvânt lung poate fi mai lat
+            decât caseta, iar [main] ascunde tot ce trece de marginea
+            ecranului, așa că finalul cuvântului ar fi tăiat. Când nu încape,
+            cuvântul se desparte între silabe: "PERMI-" / "SIUNI".
+            Nu schimbă nimic altceva: textul se citește la fel, pastila "S03"
+            vine din id, nu din h2, iar pe ecranele late cuvântul încape și
+            nu se desparte, deci titlul arată exact ca înainte.
+        -->
+        <div id="cli-sector-03" class="sector-announcement">
+          <span>Entering Sector 3</span>
+          <h2>Permi&shy;siuni și Procese</h2>
+        </div>
+
+        <!-- @block: ZIUA 03 — Permisiuni și Procese
+          O intrare de jurnal este o zi de studiu: o fișă de sine stătătoare
+          pe care cititorul o poate deschide, citi și adnota separat. Aceasta
+          este încă o carcasă. Structura ei este definitivă, iar proza este
+          text de umplutură până sosesc notițele ei, lucru pe care bannerul
+          "În Construcție" de mai sus îl spune deschis.
+          @structure:
+            [article] este elementul potrivit pentru că intrarea are sens și
+            singură, scoasă din pagină, ca o filă ruptă din jurnal.
+            id="cli-day03" este ținta fragmentului: link-ul "Day 03 ◈"
+            din sidebar trimite spre "#cli-day03". MECANISMUL 11 construiește
+            acel link din acest id, iar MECANISMUL 02 îl aprinde cât timp fișa
+            este pe ecran. Id-ul este identic în en/ și ro/.
+            class="log-entry" îi dă fișei rama din style.css. Este și al doilea
+            selector scanat de MECANISMUL 11 și cel pe care
+            tools/check-uc-banner.py îl numără ca să judece dacă pagina este
+            de umplutură (este, deci bannerul trebuie să rămână).
+        -->
+        <article id="cli-day03" class="log-entry">
+          <!-- @block: ANTETUL INTRĂRII
+            [h3] este titlul intrării, cu un nivel sub h2-ul sectorului.
+            Primul lui [span], "Day 03", este jetonul zilei. MECANISMUL 11
+            citește exact acest span (selectorul "h3 > span", primul copil
+            direct) ca să eticheteze butonul din sidebar, deci trebuie să
+            rămână primul copil al lui h3 și să rămână un span simplu. Rămâne
+            în engleză, ca pe toate paginile românești de jurnal.
+            [span class="meta-title"] este tema zilei. Clasa îi dă aspectul
+            mai mic, verde și cu litere rărite din style.css (.meta-title).
+            Textul lui începe cu un spațiu, ca cele două span-uri să nu se
+            lipească pe ecran.
+            [/h3] închide titlul.
+          -->
+          <h3>
+            <span>Day 03</span>
+            <span class="meta-title"> Permisiuni și Procese</span>
+          </h3>
+          <!-- @block: TEXTUL NARATIV AL JURNALULUI
+            [div class="log-text"] este coloana de proză a zilei; style.css îi
+            stabilește lățimea de lectură și înălțimea rândului.
+            [p] conține un paragraf Lorem ipsum: text de umplutură cu aer de
+            latină, pe care tipografii îl folosesc ca să umple o machetă
+            înainte să existe cuvintele adevărate. Bannerul din capul paginii
+            îl declară drept umplutură, ca niciun cititor să nu-l confunde cu
+            jurnalul.
+            @bridge:
+              tools/inject_log_content.py caută exact această formă, un div
+              log-text cu un singur paragraf Lorem ipsum, și înlocuiește
+              paragraful cu textul ei când o rulare de conținut ajunge la
+              această pagină (cheia "commandline" din harta ei TARGETS). Apoi
+              tools/check-log-prose.py verifică dacă proza nouă nu poartă
+              marcaj rătăcit.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: INDICATORUL STĂRII MISIUNII
+            [div class="mission-status"] este linia verde de telemetrie de sub
+            proză, stilizată în style.css ca afișajul unui centru de control al
+            misiunii din anii 1970. MECANISMUL 03 din ../script.js urmărește
+            fiecare cutie .mission-status: de fiecare dată când una ajunge 30%
+            pe ecran, resetează animația CSS de tastare a [p]-ului din ea, iar
+            linia se tastează din nou.
+            [p] poartă textul stării.
+            Din Sectorul 1 încolo numește sectorul căruia îi aparține
+            ziua: SECTOR_03_ACTIVE, tiparul folosit de fiecare jurnal. RECEPTOR
+            și LINK sunt câmpurile fixe, al doilea și al treilea, ale
+            afișajului. Textul stării rămâne în engleză în ambele volume.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: TERMINALUL DE NOTE
+            Terminalul de note îi permite cititorului să-și scrie propria
+            notiță sub această zi și să o păstreze în acest browser.
+            @structure:
+              [div class="note-terminal"] grupează caseta de text și butonul
+              ei; style.css le desenează ca pe o singură consolă. MECANISMUL 04
+              găsește fiecare casetă de pe pagină prin ".note-terminal textarea".
+              [textarea] este caseta de text pe mai multe rânduri.
+              name="cli-note-day03" denumește câmpul, așa cum se denumește
+              un câmp de formular. id="cli-note-day03" este adresa după care
+              saveNote() găsește caseta. Același șir este și cheia din
+              localStorage sub care se salvează notița, iar la încărcare
+              MECANISMUL 04 o citește înapoi după textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" este indiciul
+              afișat cât timp caseta e goală; dispare de îndată ce ea scrie.
+              [/textarea] urmează imediat, fără nimic între etichete, deci
+              caseta pornește goală (MECANISMUL 04 o umple la încărcare dacă a
+              fost salvată o notiță înainte).
+              [button] este un buton adevărat, deci poate fi atins cu Tab și
+              apăsat cu Enter sau Space.
+              onclick="saveNote('cli-note-day03')" cheamă funcția de salvare
+              cu același id ca al casetei de deasupra.
+              "Save Signal Extension" este eticheta butonului.
+            @warning:
+              Id-ul trebuie să fie unic în tot site-ul, pentru că este cheia de
+              stocare. Două pagini cu același id ar împărți, și ar suprascrie,
+              aceeași notiță. Prefixul "cli-" ține aceste notițe separate de
+              ale oricărui alt jurnal.
+            @bridge: saveNote('cli-note-day03') este gestionat de MECANISM 04
+            din ro/script.js - Terminalul de note persistente prin localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day03"
+              id="cli-note-day03"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day03')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] închide Ziua 03. Urmează poarta sectorului următor. -->
+        </article>
+
+        <!-- ===== SECTOR 04: Scripturi Shell ===== -->
+        <!-- @block: ANUNȚ DE SECTOR — Scripturi Shell
+          Un anunț de sector este poarta dintre două capitole ale jurnalului:
+          un banner pe toată lățimea care îi spune cititorului că aici începe
+          un nou grup de zile. Sectorul 4 deschide capitolul
+          Scripturi Shell.
+          @structure:
+            [div id="cli-sector-04" class="sector-announcement"] este
+            poarta însăși. Id-ul urmează tiparul tuturor paginilor de jurnal:
+            prefixul temei, "cli" (de la command-line interface, interfața în
+            linie de comandă), apoi "-sector-", apoi două cifre. Clasa îi dă
+            porții aspectul de banner din style.css și este unul dintre cele
+            două selectoare pe care MECANISMUL 11 din ../script.js le scanează
+            ca să construiască harta din sidebar.
+            [span] este rândul mic de deasupra titlului, "Entering Sector 4". Rămâne în
+            engleză în ambele volume, ca pe fiecare jurnal-frate.
+            [h2] este titlul sectorului. Este un h2 pentru că stă cu un nivel
+            sub singurul h1 al paginii, astfel încât schița titlurilor se
+            citește h1 (expediția), h2 (sectorul), h3 (ziua).
+            [/div] închide poarta; zilele care urmează formează capitolul ei,
+            până la poarta următoare.
+          @reason:
+            MECANISMUL 11 transformă această poartă în pastila "S04" din
+            harta sidebar-ului. Citește cele două cifre din id, niciodată
+            din h2, așa că hărțile din en/ și ro/ rămân identice, deși
+            titlurile sunt traduse.
+          @todo:
+            Ce va nota în acest sector:
+            Transformarea comenzilor în scripturi: shebang-ul,
+            variabilele, condițiile, buclele, un script făcut executabil și
+            PATH.
+            Proza vine odată cu notițele ei din turul Linux (BACKLOG-RO.md 017).
+        -->
+        <div id="cli-sector-04" class="sector-announcement">
+          <span>Entering Sector 4</span>
+          <h2>Scripturi Shell</h2>
+        </div>
+
+        <!-- @block: ZIUA 04 — Scripturi Shell
+          O intrare de jurnal este o zi de studiu: o fișă de sine stătătoare
+          pe care cititorul o poate deschide, citi și adnota separat. Aceasta
+          este încă o carcasă. Structura ei este definitivă, iar proza este
+          text de umplutură până sosesc notițele ei, lucru pe care bannerul
+          "În Construcție" de mai sus îl spune deschis.
+          @structure:
+            [article] este elementul potrivit pentru că intrarea are sens și
+            singură, scoasă din pagină, ca o filă ruptă din jurnal.
+            id="cli-day04" este ținta fragmentului: link-ul "Day 04 ◈"
+            din sidebar trimite spre "#cli-day04". MECANISMUL 11 construiește
+            acel link din acest id, iar MECANISMUL 02 îl aprinde cât timp fișa
+            este pe ecran. Id-ul este identic în en/ și ro/.
+            class="log-entry" îi dă fișei rama din style.css. Este și al doilea
+            selector scanat de MECANISMUL 11 și cel pe care
+            tools/check-uc-banner.py îl numără ca să judece dacă pagina este
+            de umplutură (este, deci bannerul trebuie să rămână).
+        -->
+        <article id="cli-day04" class="log-entry">
+          <!-- @block: ANTETUL INTRĂRII
+            [h3] este titlul intrării, cu un nivel sub h2-ul sectorului.
+            Primul lui [span], "Day 04", este jetonul zilei. MECANISMUL 11
+            citește exact acest span (selectorul "h3 > span", primul copil
+            direct) ca să eticheteze butonul din sidebar, deci trebuie să
+            rămână primul copil al lui h3 și să rămână un span simplu. Rămâne
+            în engleză, ca pe toate paginile românești de jurnal.
+            [span class="meta-title"] este tema zilei. Clasa îi dă aspectul
+            mai mic, verde și cu litere rărite din style.css (.meta-title).
+            Textul lui începe cu un spațiu, ca cele două span-uri să nu se
+            lipească pe ecran.
+            [/h3] închide titlul.
+          -->
+          <h3>
+            <span>Day 04</span>
+            <span class="meta-title"> Scripturi Shell</span>
+          </h3>
+          <!-- @block: TEXTUL NARATIV AL JURNALULUI
+            [div class="log-text"] este coloana de proză a zilei; style.css îi
+            stabilește lățimea de lectură și înălțimea rândului.
+            [p] conține un paragraf Lorem ipsum: text de umplutură cu aer de
+            latină, pe care tipografii îl folosesc ca să umple o machetă
+            înainte să existe cuvintele adevărate. Bannerul din capul paginii
+            îl declară drept umplutură, ca niciun cititor să nu-l confunde cu
+            jurnalul.
+            @bridge:
+              tools/inject_log_content.py caută exact această formă, un div
+              log-text cu un singur paragraf Lorem ipsum, și înlocuiește
+              paragraful cu textul ei când o rulare de conținut ajunge la
+              această pagină (cheia "commandline" din harta ei TARGETS). Apoi
+              tools/check-log-prose.py verifică dacă proza nouă nu poartă
+              marcaj rătăcit.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: INDICATORUL STĂRII MISIUNII
+            [div class="mission-status"] este linia verde de telemetrie de sub
+            proză, stilizată în style.css ca afișajul unui centru de control al
+            misiunii din anii 1970. MECANISMUL 03 din ../script.js urmărește
+            fiecare cutie .mission-status: de fiecare dată când una ajunge 30%
+            pe ecran, resetează animația CSS de tastare a [p]-ului din ea, iar
+            linia se tastează din nou.
+            [p] poartă textul stării.
+            Din Sectorul 1 încolo numește sectorul căruia îi aparține
+            ziua: SECTOR_04_ACTIVE, tiparul folosit de fiecare jurnal. RECEPTOR
+            și LINK sunt câmpurile fixe, al doilea și al treilea, ale
+            afișajului. Textul stării rămâne în engleză în ambele volume.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: TERMINALUL DE NOTE
+            Terminalul de note îi permite cititorului să-și scrie propria
+            notiță sub această zi și să o păstreze în acest browser.
+            @structure:
+              [div class="note-terminal"] grupează caseta de text și butonul
+              ei; style.css le desenează ca pe o singură consolă. MECANISMUL 04
+              găsește fiecare casetă de pe pagină prin ".note-terminal textarea".
+              [textarea] este caseta de text pe mai multe rânduri.
+              name="cli-note-day04" denumește câmpul, așa cum se denumește
+              un câmp de formular. id="cli-note-day04" este adresa după care
+              saveNote() găsește caseta. Același șir este și cheia din
+              localStorage sub care se salvează notița, iar la încărcare
+              MECANISMUL 04 o citește înapoi după textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" este indiciul
+              afișat cât timp caseta e goală; dispare de îndată ce ea scrie.
+              [/textarea] urmează imediat, fără nimic între etichete, deci
+              caseta pornește goală (MECANISMUL 04 o umple la încărcare dacă a
+              fost salvată o notiță înainte).
+              [button] este un buton adevărat, deci poate fi atins cu Tab și
+              apăsat cu Enter sau Space.
+              onclick="saveNote('cli-note-day04')" cheamă funcția de salvare
+              cu același id ca al casetei de deasupra.
+              "Save Signal Extension" este eticheta butonului.
+            @warning:
+              Id-ul trebuie să fie unic în tot site-ul, pentru că este cheia de
+              stocare. Două pagini cu același id ar împărți, și ar suprascrie,
+              aceeași notiță. Prefixul "cli-" ține aceste notițe separate de
+              ale oricărui alt jurnal.
+            @bridge: saveNote('cli-note-day04') este gestionat de MECANISM 04
+            din ro/script.js - Terminalul de note persistente prin localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day04"
+              id="cli-note-day04"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day04')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] închide Ziua 04. Este ultima zi a jurnalului, deci urmează închiderea coloanei jurnalului. -->
+        </article>
+
+        <!-- @structure:
+          [/section] închide coloana jurnalului. Tot ce indexează MECANISMUL 11
+          stă între [section class="log-content"] și acest rând: cinci porți
+          de sector și cinci carcase de zi. Zilele pe care le va scrie intră
+          în sectorul căruia îi aparțin, fiecare un nou
+          [article class="log-entry"] cu următorul id cli-dayNN liber; harta
+          din sidebar le preia singură.
+        -->
+      </section>
+    <!-- @structure:
+      [/main] închide main-container. Elementul [main] înfășoară
+      conținutul principal al paginii — în acest caz, sidebar-ul și
+      coloanele log-content. Ar trebui să existe un singur [main] pe pagină.
+    -->
+    </main>
+
+    <!-- @block: FOOTER — STAȚIA DE NAVIGARE AUXILIARĂ
+      Elementul [footer] marchează secțiunea de închidere a paginii. În
+      metafora navei, footer-ul este stația din pupa — mai puțin vizibilă
+      decât cormana, dar care deține sisteme critice: hărțile stelare,
+      jurnalul de transmisie, comutatorul de limbă și semnătura
+      căpitanului.
+      @structure:
+        Clasa .footer aplică un container întunecat, cu bordură, în partea de
+        jos a viewport-ului. Folosește un layout pe coloane pentru link-uri
+        și datele de telemetrie, păstrând totul compact și lizibil.
+    -->
+    <footer class="footer">
+      <!-- @block: CONSOLA SECUNDARĂ DE COMANDE
+        Footer-ul se extinde dincolo de un singur link de bibliografie într-un
+        panou complet de sisteme ale navei. Adăpostește Hărțile Stelare (bibliografia),
+        Carta de Astronavigație (transmisia) și comutatorul de limbă
+        între versiunile în engleză și română ale proiectului.
+        @concept:
+          Footer-ul este stația de navigare auxiliară a navei — mai puțin
+          proeminentă decât overlay-ul HUD, dar esențială pentru sistemele care
+          nu aparțin unui volum specific: manifestul fondator, arhiva de
+          referință și comutatorul de limbă.
+      -->
+      <!-- @block: LISTA DE LINK-URI DIN FOOTER
+        [ul]-ul de aici grupează trei elemente [li]: link-ul de bibliografie,
+        pagina de transmisie și comutatorul de limbă. Folosirea unei liste
+        este corectă semantic deoarece acestea sunt o colecție de
+        destinații de navigare conexe.
+        class="footer-links" este cârligul pe care style.css îl folosește ca să
+        așeze cele trei elemente pe un singur rând flex centrat, care trece pe
+        un rând nou pe ecranele înguste.
+      -->
+      <ul class="footer-links">
+        <!-- @path: Pagina de bibliografie
+          ../bibliography.html urcă un folder, din ro/delivery/ în ro/, unde se
+          află bibliografia volumului. Fragmentul #delivery-refs derulează
+          direct la blocul Punții de Livrare din acea pagină (elementul ei
+          [section id="delivery-refs"]), care listează manualele gratuite de
+          linie de comandă, Git și gh, astfel încât cititorul ajunge la
+          sursele acestei punți, nu în capul unei liste lungi.
+          [span class="pulse-dot"] este gol și pur decorativ: style.css îl
+          desenează ca pe un mic punct verde luminos, farul din fața fiecărui
+          link din footer.
+          target="_blank" deschide arhiva într-un tab nou, ca acest jurnal
+          să rămână deschis acolo unde l-a lăsat cititorul.
+          "Deep Space Archives — Delivery Deck" este textul link-ului: numele
+          bibliografiei în vocea navei, apoi puntea la care se deschide. Rămâne
+          în engleză, aceeași etichetă pe care o folosesc celelalte jurnale ale
+          Livrării din ro/.
+        -->
+        <li>
+          <span class="pulse-dot"></span>
+          <!-- @warning: rel="noopener noreferrer" este obligatoriu pe orice link target="_blank" — refuză tabului nou o referință înapoi prin window.opener (tab-nabbing) și reține adresa referrer. -->
+          <a href="../bibliography.html#delivery-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Delivery Deck</a>
+        </li>
+        <!-- @path: Pagina Transmisiei / Carta de Astronavigație
+          ../transmission.html urcă un folder, din ro/delivery/ în ro/, la
+          Carta de Astronavigație, mesajul fondator al proiectului. Se
+          deschide în același tab, ca orice pagină din interiorul navei.
+          [span class="pulse-dot"] este același punct verde luminos ca la
+          primul element, iar "Carta de Astronavigație" este textul link-ului,
+          titlul paginii.
+        -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="../transmission.html">Carta de Astronavigație</a>
+        </li>
+        <!-- @bridge: Comutatorul de limbă între volumele EN și RO
+          Al treilea [li] leagă această pagină de geamăna ei din cealaltă limbă.
+          en/ și ro/ sunt două copii complete ale site-ului, câte una pentru
+          fiecare limbă, cu aceleași foldere și nume de fișiere, deci geamăna
+          lui ro/delivery/command-line-log.html este
+          en/delivery/command-line-log.html.
+          Comentariul din interiorul [li]-ului explică fiecare dintre cele trei
+          rânduri ale lui.
+        -->
+        <li>
+          <!-- @reason:
+            Comutatorul de limbă permite echipajului să treacă între versiunile
+            în engleză și română ale proiectului. Limba curentă este marcată
+            cu clasa .lang-toggle-active (evidențiere verde fosfor). Bara
+            separatoare (|) desparte vizual cele două opțiuni. Fiecare link
+            duce la ACEEAȘI pagină în cealaltă limbă, astfel încât cititorul
+            nu își pierde locul în expediție.
+          @path:
+            ../../ urcă două foldere, din ro/delivery/ până la rădăcina
+            site-ului, apoi coboară în en/ sau ro/ și ajunge la același
+            fișier, delivery/command-line-log.html. tools/check-parity.py
+            verifică dacă ambele link-uri ajung la geamăna acestei pagini.
+            Link-ul RO poartă class="lang-toggle-active" pentru că aceasta
+            este pagina în română; link-ul EN păstrează un atribut class gol,
+            ca ambele link-uri să aibă aceeași formă.
+            [span class="lang-sep"] este bara verticală dintre ele, doar un
+            separator vizual.
+          -->
+          <a href="../../en/delivery/command-line-log.html" class="">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../../ro/delivery/command-line-log.html" class="lang-toggle-active">RO</a>
+        </li>
+      </ul>
+      <!-- @block: TELEMETRIE DE SISTEM — ORBITA & STADIUL SECTORULUI
+        Prima linie de telemetrie declară în ce sector de expediție
+        se află vasul în prezent (FRONTEND_EXPEDITION) și
+        starea sistemului (ONLINE). Animația de tastare CSS dezvăluie acest
+        text caracter cu caracter la încărcarea paginii, simulând
+        un afișaj vintage de control al misiunii.
+        @theme:
+          Starea ONLINE este înfășurată într-un [span]
+          care strălucește în verde solar-mentă (#a7f3d0) cu un text-shadow neon.
+          Această estetică verde-fosfor face referire directă la terminalele de control
+          NASA din anii 1970, unde afișajele verzi monocrome derulau
+          date de telemetrie în timp real.
+        @line:
+          "//" nu este aici un comentariu de cod, ci doar text vizibil: un
+          separator în stilul afișajului de telemetrie.
+          [span class="telemetry-active"] este cârligul pe care style.css
+          (.footer span.telemetry-active) îl folosește pentru strălucirea verde.
+        @warning:
+          FRONTEND_EXPEDITION nu este sectorul acestei pagini: Jurnalul
+          Liniei de Comandă aparține Punții de Livrare. Valoarea vine din
+          footer-ul comun al paginilor de jurnal (22 din cele 23 de pagini
+          de jurnal scriu FRONTEND_EXPEDITION, sql-log scrie
+          DATABASE_EXPEDITION). O păstrez aici ca acest footer să se
+          potrivească cu cele trei pagini-surori ale Livrării; un sector
+          propriu pentru fiecare pagină este o schimbare pe tot site-ul,
+          pentru un card separat.
+      -->
+      <p>
+        SYS_ORBIT: FRONTEND_EXPEDITION
+        // STATUS:
+        <span class="telemetry-active">ONLINE</span>
+      </p>
+
+      <!-- @structure:
+        Scriu a doua linie de date de telemetrie. Aceasta ancorează proiectul în spațiul
+        fizic și timpul real. Coordonatele indică locația căpitanului,
+        iar data marchează momentul în care acest footer a fost actualizat ultima dată.
+      -->
+      <p>
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          Includ coordonatele geografice și o marcă de timp a sistemului.
+          Numerele 46.7712° N, 23.6236° E sunt latitudinea și longitudinea
+          orașului Cluj-Napoca, România — locul unde se construiește acest
+          proiect. SYSTEM_TIME înregistrează data ultimei actualizări a
+          footer-ului.
+          &deg; este referința de caracter pentru semnul gradului (°);
+          browserul afișează semnul, iar sursa rămâne ASCII simplu în acel loc.
+          2026.07.22 este data ultimei schimbări a footer-ului comun, nu ziua
+          în care a fost făcută această pagină: rândul este același pe fiecare
+          pagină de jurnal și se schimbă pe toate deodată.
+        -->
+      </p>
+
+      <!-- @structure:
+        Scriu linia finală a footer-ului. Aceasta declară cine a creat și deține
+        acest proiect. Simbolul copyright urmat de an și de numele căpitanului
+        marchează proprietatea intelectuală a conținutului.
+        &copy; este referința de caracter pentru semnul copyright (©); "de"
+        leagă numele proiectului de numele căpitanului din span-ul de mai jos.
+      -->
+      <p class="copyright">
+        &copy; 2026 | D::0dy55ey de
+        <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          Înfășor numele căpitanului într-un [span] cu clasa .vessel-sig.
+          Această clasă aplică culoarea nebula-pink (#ff007f) cu o strălucire
+          incandescentă de text-shadow. Semnătura magenta acționează ca identificatorul unic
+          al căpitanului pe toate punțile navei.
+        -->
+      </p>
+    </footer>
+
+    <!-- @block: ÎNCĂRCĂTOR DE JAVASCRIPT
+      Eticheta [script] încarcă sistemele de control ale navei — un singur
+      fișier JavaScript (script.js) care se află cu un director mai sus decât această
+      pagină. Acest fișier conține toate mecanismele interactive ale navei.
+      Pe această pagină de jurnal se trezesc opt dintre ele: MECANISMUL 01
+      (Ascunderea/afișarea barei de navigație la scroll), MECANISMUL 02
+      (Detectarea secțiunii active din sidebar), MECANISMUL 03 (Statusul de
+      misiune — re-declanșarea animației), MECANISMUL 04 (Terminalul de note
+      persistente prin localStorage), MECANISMUL 05 (Navigația prin ancore pe
+      desktop), MECANISMUL 06 (Derularea orizontală automată a HUD-ului pe
+      mobil), MECANISMUL 10-A (Jurnalul de călătorie) și MECANISMUL 11
+      (Indexul dinamic al sidebar-ului). Restul (06.5, 07, 08, 09 și 10-B)
+      caută elemente pe care această pagină nu le are și rămân adormite.
+      @path:
+        Atributul src="../script.js" le spune browserelor să preia
+        ro/script.js relativ la locația acestei pagini: "../" urcă un folder,
+        din ro/delivery/ în ro/, unde stă singurul script al volumului.
+        [/script] urmează imediat, pentru că codul vine din fișier, nu din
+        spațiul dintre etichete.
+      @reason:
+        Plasarea etichetei script chiar înainte de /body (în loc de head)
+        asigură că conținutul HTML se încarcă și se randează înainte ca
+        JavaScript-ul să se execute. Aceasta se numește încărcare întârziată (deferred loading)
+        și previne blocarea randării vizuale a paginii de către script.
+    -->
+    <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] închide puntea vizibilă. Tot ce se află în interiorul [body] —
+    navbar, sidebar, intrările de jurnal, footer — este acum finalizat de randare.
+    Browserul încetează să picteze pagina aici.
+  -->
+  </body>
+  <!-- @structure:
+    [/html] închide elementul rădăcină. Documentul este complet.
+    Browserul a terminat de construit DOM-ul (Document Object Model)
+    și pagina este complet încărcată. Ceea ce vede călătorul acum este
+    rezultatul structurii HTML combinată cu stilurile CSS din
+    style.css și comportamentul interactiv din script.js.
+    @bridge:
+      Pentru indexul tehnic complet al etichetelor HTML folosite în acest proiect,
+      vezi Manualul Semantic de Teren, docs/semantic-field-manual-ro.md, la
+      rădăcina depozitului (../../docs/ din acest fișier).
+  -->
+</html>
+
+<!-- @bridge:
+  Legenda etichetelor: docs/legend-ro.md, la rădăcina depozitului
+  (../../docs/legend-ro.md din acest fișier). Ea definește fiecare etichetă
+  folosită în aceste comentarii: @block, @line, @reason, @warning, @concept,
+  @bridge, @path, @meta, @structure, @theme și @todo, fiecare cu același
+  sens pe toate paginile proiectului.
+-->
+
+<!-- @reason:
+  Acest document este un jurnal structurat de învățare pentru linia de comandă
+  Linux. El consemnează studiul shell-ului, al navigării și fișierelor, al
+  pipe-urilor și redirecționării, al permisiunilor și proceselor și al
+  scripturilor shell. Până sosesc notițele ei din turul Linux, este o punte
+  provizorie, declarată de bannerul ei "În Construcție" (BACKLOG-RO.md 017).
+-->

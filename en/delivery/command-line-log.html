@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<!-- @block:
+  <!DOCTYPE html> switches the browser into standards mode: predictable,
+  spec-following rendering. Without it, the page renders in quirks mode,
+  which imitates the bugs of 1990s browsers. It names no HTML version;
+  "html" is all modern HTML needs (the long version strings belong to
+  HTML 4 and XHTML). Only whitespace and comments may stand before it,
+  so this comment could have sat above it; any other content there
+  would drop the page into quirks mode.
+-->
+
+<html lang="en">
+  <!-- @block:
+    The root element of the document.
+    The lang="en" attribute declares that the main language of this page is English.
+    This helps accessibility tools, search engines, and automated processing systems.
+  -->
+  <head>
+    <!-- @block:
+      The [head] contains the document metadata.
+      I do not place the main visible content here; instead, I keep the information
+      the browser needs in order to understand, prepare, and connect the page resources.
+    -->
+
+            <meta charset="UTF-8" />
+    <!-- @meta:
+      I set the character encoding to UTF-8.
+      This ensures that diacritics, special symbols, and international characters display correctly.
+
+      <meta charset="UTF-8" /> must be within the first 1024 bytes so
+      browsers detect UTF-8 before full parsing. If undetected, the
+      browser may fall back to a different encoding (e.g. Windows-1252),
+      breaking text.
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- @warning:
+      This instruction is historically related to Internet Explorer compatibility.
+      http-equiv="X-UA-Compatible" imitates an HTTP header of the same name, and
+      content="ie=edge" told Internet Explorer 8 to 11 to draw the page with its
+      newest engine ("edge") instead of an older "compatibility view" that
+      copied Internet Explorer 7. Internet Explorer is retired, and every
+      modern browser ignores this line, so it changes nothing on screen.
+      @reason:
+        I keep it because every page of the project opens with the same classic
+        head, line for line. A reader who has studied one page recognises this
+        one, and removing the line here alone would make this page the odd one
+        out.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- @meta:
+      I configure the viewport for responsive display.
+      width=device-width aligns the page width with the real screen width,
+      and initial-scale=1.0 starts without artificial zoom.
+    -->
+
+    <title>D::0dy55ey | Command Line Log</title>
+    <!-- @meta:
+      The page title.
+      I see it in the browser tab, in bookmarks, and sometimes in search engine results.
+      It follows the pattern of every log page: the ship's name, D::0dy55ey,
+      a pipe as separator, then the name of the log, "Command Line Log".
+      The same string is repeated in og:title below, so the browser tab and
+      a shared card name the page the same way.
+    -->
+
+    <meta
+      name="description"
+      content="A structured log on the Linux command line — the shell, navigation, files, pipes and redirection, permissions, processes, and shell scripting."
+    />
+    <!-- @meta:
+      The page description.
+      I use it as a short summary of the content; it is not directly visible in the page,
+      but search engines may use it as descriptive text.
+      name="description" says which kind of metadata this is, and content="..."
+      holds the sentence itself. It names the subjects of the five sectors in
+      reading order: the shell, navigation and files, pipes and redirection,
+      permissions and processes, and shell scripting. The same sentence is
+      repeated in og:description below.
+      @todo:
+        When her days are written, the sentence should follow the real content
+        (BACKLOG-EN.md 017, which points to 010).
+    -->
+
+    <meta
+      name="keywords"
+      content="command line, linux, shell, terminal, navigation, files, pipes, redirection, permissions, processes, shell scripting"
+    />
+    <!-- @meta:
+      The keywords meta tag lists the main themes of the page.
+      Here they are the five sectors of this log, in the words of its
+      description: the shell and the terminal, navigation and files, pipes
+      and redirection, permissions and processes, and shell scripting.
+      Search engines no longer rank on it, but it stays a useful, self-documenting
+      summary of the page's scope and a teaching example of the tag itself.
+    -->
+
+    <meta name="author" content="Iulia-Alexandra Cadar" />
+    <!-- @meta:
+      The author meta tag declares who created and maintains this document.
+      It is a standard metadata field that identifies the creator of the work.
+    -->
+
+    <link rel="manifest" href="../site.webmanifest" />
+    <!-- @path:
+      I link the web app manifest. Firefox reads theme_color from the manifest
+      rather than from the meta tag, so this ensures consistent theme-color
+      support across all modern browsers including Firefox.
+      rel="manifest" tells the browser what the linked file is: a small JSON
+      file with the site's name, icons and colours. href="../site.webmanifest"
+      goes one folder up, from en/delivery/ to en/, where the volume's
+      manifest lives next to favicon.svg.
+    -->
+
+
+    <meta property="og:title" content="D::0dy55ey | Command Line Log" />
+    <!-- @meta:
+      Open Graph title.
+      When the page link is shared on social networks or portfolio sites,
+      this text appears as the card title instead of the raw URL.
+      Open Graph is the set of og: properties that Facebook introduced and
+      most platforms now read: property="og:title" names the field, and
+      content="..." fills it. The value is the same string as the [title]
+      above, "D::0dy55ey | Command Line Log".
+    -->
+
+    <meta
+      property="og:description"
+      content="A structured log on the Linux command line — the shell, navigation, files, pipes and redirection, permissions, processes, and shell scripting."
+    />
+    <!-- @meta:
+      Open Graph description.
+      It is the companion summary shown under the Open Graph title on shared cards.
+      I keep it aligned with the meta description for consistency.
+    -->
+
+    <meta property="og:type" content="website" />
+    <!-- @meta:
+      Open Graph type.
+      I declare this page as a website, the general type for standard HTML pages.
+      For journal entries, I could use "article" instead depending on the content nature.
+    -->
+
+    <meta property="og:url" content="https://iuliacadar.github.io/digital-odyssey/en/delivery/command-line-log.html" />
+    <!-- @meta:
+      Open Graph canonical URL.
+      When the page is shared, this tells platforms the exact, permanent address of this page.
+      It prevents confusion if the same content is accessible from multiple URLs.
+      The address is absolute (https://...), because a shared card lives
+      outside the site and has no page to resolve a relative path against.
+      It is the GitHub Pages address of this very file,
+      en/delivery/command-line-log.html, identical to the canonical link below.
+    -->
+
+    <meta property="og:locale" content="en_US" />
+    <!-- @meta:
+      Open Graph locale.
+      I set it to en_US for the English version of the page.
+      This tells social platforms and aggregators the language and regional variant of the content.
+    -->
+
+    <meta property="og:site_name" content="D::0dy55ey" />
+    <!-- @meta:
+      Open Graph site name.
+      This is the overarching project name shown on social sharing cards,
+      so the audience knows which site the page belongs to.
+    -->
+
+    <meta
+      property="og:image"
+      content="https://iuliacadar.github.io/digital-odyssey/shared/assets/images/brand/og-card.png"
+    />
+    <!-- @path:
+      Open Graph image: the preview picture on shared cards (Facebook,
+      LinkedIn, X, messaging apps). The URL is absolute (https://...)
+      because these services fetch the image on their own servers, and many
+      do not resolve a relative path against the page.
+      The file is a PNG because they refuse SVG and want a raster image,
+      ideally 1200x630. X reads this tag too, since the page has no
+      twitter:image of its own.
+      One card serves both volumes: it holds no words, so it lives in
+      shared/ and belongs to neither language.
+    -->
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- @meta:
+      The size of the share image in pixels. With it, a service can lay out
+      the card the first time the link is shared, before it has finished
+      downloading the picture.
+    -->
+
+    <meta
+      property="og:image:alt"
+      content="D::0dy55ey logo: a mint letter D inside a magenta ring, above the name D::0dy55ey in glowing magenta capitals on a dark navy background."
+    />
+    <!-- @meta:
+      The text alternative of the share image, for people using a screen
+      reader in the apps that show the card. Like any alt text, it describes
+      the picture, not the page.
+    -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- @meta:
+      Twitter card type.
+      I choose summary_large_image so that shared links on X/Twitter display
+      a large image preview alongside the title and description.
+    -->
+
+    <link rel="canonical" href="https://iuliacadar.github.io/digital-odyssey/en/delivery/command-line-log.html" />
+    <!-- @meta:
+      Canonical link.
+      I tell search engines that this URL is the authoritative version of the page.
+      This helps prevent duplicate-content issues and consolidates ranking signals.
+      rel="canonical" names the relationship, and href holds the same absolute
+      address as og:url above, so search engines and shared cards agree on one
+      URL for this page.
+    -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- @meta:
+      Robots meta tag.
+      I allow search engines to index this page and follow its links,
+      which is the default and expected behavior for public content.
+    -->
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <!-- @path:
+      I link the page favicon: the small icon in the browser tab and in the
+      bookmarks. rel="icon" names the role of the file, and
+      type="image/svg+xml" says it is an SVG, a vector image that stays sharp
+      at every size.
+      The path is relative to the current file location: href="../favicon.svg"
+      goes one folder up, from en/delivery/ to en/, where favicon.svg sits next
+      to index.html, so every page of the volume shows the same icon.
+    -->
+
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <!-- @path:
+      The Apple Touch Icon: the picture iOS shows when the page is added to
+      the home screen. It is a 180x180 PNG, the size Apple recommends,
+      because iOS does not accept SVG here. The file sits in the volume
+      folder (en/) next to favicon.svg, so this path reaches it the same
+      way the favicon link does.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- @reason:
+      I start the connection to the font server early.
+      The goal is to reduce latency when loading external resources.
+      rel="preconnect" asks the browser to open the connection now (look up
+      the address, open the network connection, agree on the encryption)
+      before any font is requested. fonts.googleapis.com is the server that
+      sends the small stylesheet describing the font, linked a few lines below.
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- @reason:
+      I preconnect to the domain that serves the actual font files.
+      crossorigin is required for external resources served from another origin.
+      fonts.gstatic.com is where the font files themselves live. Browsers
+      always fetch fonts under the cross-origin rules (CORS), so without
+      crossorigin this early connection would not match the font request,
+      and the browser would open a second one, losing the head start.
+    -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <!-- @reason:
+      I load the Space Grotesk font from Google Fonts.
+      display=swap tells the browser to use a fallback font temporarily until the final font loads.
+      rel="stylesheet" says the linked file is CSS. In the address,
+      family=Space+Grotesk names the font (the + stands for the space in its
+      name), wght@300..700 asks for every weight from 300 (light) to 700
+      (bold) in one variable font, and the & joins the next parameter,
+      display=swap, so the text is readable at once and never invisible.
+    -->
+
+    <link rel="stylesheet" href="../style.css" />
+    <!-- @path:
+      I link the local stylesheet.
+      The path is relative to the current file location: href="../style.css"
+      goes one folder up, from en/delivery/ to en/, to the volume's single
+      stylesheet. Every page of en/ shares it, so this log gets the same
+      frames, colours and modules as its siblings without a line of CSS of
+      its own.
+      @structure:
+        This is the last line of the [head]. The [/head] right after it closes
+        the metadata; everything from [body] on is what the reader sees.
+    -->
+  </head>
+  <!-- @block: BODY — THE VISIBLE DECK
+    The [body] element is where every visible element of the page lives.
+    Everything the traveller sees — the navigation bar, the sidebar map,
+    the journal entries, the footer telemetry — is a child of this single
+    container. In the ship metaphor, the body is the main habitable deck
+    of the vessel: the space where the crew walks, reads, and interacts
+    with the ship's systems.
+    @structure:
+      The [body] is the direct child of [html]. It has no special default
+      styling by itself, but in this project it inherits the deep-space
+      background (#0a0b1e) and the Space Grotesk font from style.css.
+  -->
+  <body>
+    <!-- @block: PRIMARY NAVIGATION — THE HELM STATION
+      The [nav] element semantically marks this section as the ship's
+      primary navigation interface. Wrapping the navbar in [nav] tells
+      browsers, screen readers, and search engines: "this block contains
+      the main controls for moving between the vessel's decks."
+      @structure:
+        The navbar uses flexbox (via the .navbar class) to display the
+        vessel logo on the left and the navigation command list on the
+        right, keeping the helm compact and always visible at the top.
+      @line:
+        class="navbar" is the hook for those flexbox rules in style.css.
+        aria-label="Main navigation" gives this [nav] a name, so a screen
+        reader can tell it apart from the second [nav] in the sidebar
+        ("Page contents"). [/nav], after the command list, closes the helm.
+    -->
+        <nav class="navbar" aria-label="Main navigation">
+      <!-- @block: TERMINAL IDENTITY
+        The logo block displays the vessel callsign and the current section name.
+        It is static text (not a link) because this page is itself a station
+        on the ship; the crew reads their location here.
+        The text after the slash, "Command Line Log", is the same label the
+        Delivery Deck menu on index.html gives this page, so the menu and
+        the helm name the station the same way.
+      -->
+      <div class="logo">D::0dy55ey / Command Line Log</div>
+
+      <!-- @block: NAVIGATION COMMANDS
+        The nav-links list contains the primary navigation actions.
+        On secondary pages, only one command is offered: return to the bridge.
+        @structure:
+          [ul class="nav-links"] holds the commands as a list, so a screen
+          reader announces how many there are before reading them.
+          [li] is the one command on this page.
+          [a href="../index.html" class="return-btn"] goes one folder up,
+          from en/delivery/ to en/, where the main bridge lives. The class
+          gives it a button-like frame in style.css, but it stays a real
+          link, because it takes the reader to another page.
+      -->
+      <ul class="nav-links">
+        <li>
+          <a href="../index.html" class="return-btn"
+            ><!-- @reason:
+              The left-arrow symbol (←) acts as a visual back-direction cue.
+              "Return to Command Deck" links to index.html, the mothership's
+              main bridge.
+            -->← Return to Command Deck</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- @block: MAIN CONTENT — COMMAND LINE EXPEDITION LOG
+      The main deck is split into two zones: the sidebar (expedition map) and
+      the log-content zone. The class "log-layout" applies a CSS Grid for a
+      two-column terminal interface.
+      @structure:
+        [main] marks the primary content of the page; a page has only one, and
+        a screen reader can jump straight to it. class="main-container" is the
+        shared frame of every page in style.css: at most 1200px wide, centred
+        with margin: 0 auto, with 40px of padding inside. The second class,
+        "log-layout", adds the two-column grid that only log pages use.
+    -->
+    <main class="main-container log-layout">
+      <!-- @block: SIDEBAR — COMMAND LINE EXPEDITION MAP
+        The sidebar is wrapped in an [aside] element — a semantic HTML5
+        tag that marks content as tangentially related to the main page.
+        In the ship metaphor, the sidebar is the navigator's console:
+        a secondary station that holds the expedition map rather than
+        the primary log content.
+        @concept:
+          The [aside] element is one of several semantic tags introduced
+          in HTML5. Like [nav], [header], [footer], and [article], it
+          gives meaning to the container instead of using a generic [div].
+          This helps screen readers announce the sidebar's role and
+          helps search engines understand the page structure.
+        @line:
+          class="log-sidebar" is the hook style.css uses for the sidebar's
+          translucent, smoked-glass panel; inside the log-layout grid it takes
+          the left column.
+      -->
+      <aside class="log-sidebar">
+        <!-- @block: SIDEBAR NAVIGATION — THE SECONDARY CONSOLE
+          This [nav] inside the [aside] is the secondary navigation
+          system. While the top navbar returns the crew to the bridge,
+          this sidebar nav lets them jump directly to any day entry
+          within the current expedition log.
+          @structure:
+            The .sidebar-nav class applies a compact, scrollable list
+            layout distinct from the main navbar. The map-title-link
+            at the top scrolls the view back to the main header when
+            clicked.
+          @line:
+            aria-label="Page contents" names this second [nav], so a screen
+            reader can tell it apart from the main navigation at the top.
+            [a href="#top-deck" class="map-title-link"] wraps the map's
+            title, so the whole title is the click target; #top-deck is the
+            id of the [header] that opens the log column.
+            [h4] holds the title text, "Command Line Expedition Map".
+        -->
+        <nav class="sidebar-nav" aria-label="Page contents">
+          <a href="#top-deck" class="map-title-link">
+            <h4>Command Line Expedition Map</h4>
+          </a>
+          <!-- @block: SIDEBAR LINK LIST — GENERATED AT RUNTIME
+            This [ul] (unordered list) is deliberately EMPTY in the markup.
+            Its [li] (list item) links are built at load time by MECANISM 11
+            in ../script.js, which reads every [article class="log-entry"] and
+            every [div class="sector-announcement"] in the log content below
+            and emits one [a] (anchor) for each, in document order.
+            @reason:
+              Fragment links (href="#cli-day01") create a table of
+              contents that lets the crew teleport directly to any entry
+              without scrolling through the entire log. Deriving them from the
+              articles themselves means the map can never disagree with the
+              territory: write a new day below and its link appears on its own,
+              because there is no longer a second copy of the list to keep in
+              step by hand.
+            @warning:
+              Do not hand-write [li] elements in here. MECANISM 11 replaces the
+              entire contents of this list on DOMContentLoaded, so any link
+              authored inside it is discarded the moment the page loads.
+              Do not delete the [ul] itself either. It is the target MECANISM 11
+              writes into, and MECANISM 02 reads its clientHeight to centre the
+              active day on desktop. Without it both mechanisms stop silently,
+              with no visible error.
+            @bridge:
+              MECANISM 11 in ../script.js — the generator that fills this list.
+              BACKLOG-EN.md entry 013 — the request this closes.
+            @structure:
+              [ul][/ul] is written with nothing between the tags: an empty list.
+              The [/nav] and [/aside] right after it close the secondary console
+              and the sidebar; the log column begins next.
+          -->
+          <ul></ul>
+        </nav>
+      </aside>
+
+      <!-- @block: LOG CONTENT ZONE
+        The [section] element is a semantic container that groups related
+        content under a common theme. Here it wraps the entire expedition
+        log — the header, sector announcements, and day articles. Unlike
+        [article] (which holds self-contained entries), [section] groups
+        them into a coherent chapter.
+        @structure:
+          The .log-content class works together with .log-sidebar inside
+          the .log-layout grid. The sidebar occupies the left column
+          (280px, set on .log-layout in style.css 00.2.A), and .log-content fills the remaining space on
+          the right, creating the classic two-panel terminal interface.
+      -->
+      <section class="log-content">
+        <!-- @block: CATEGORY HEADER — THE EXPEDITION TITLE
+          [header] opens the log column with the expedition's title block.
+          id="top-deck" is the anchor the sidebar's map title points to
+          ([a href="#top-deck"]), so a click on "Command Line Expedition Map"
+          brings the reader back up here. class="category-header" gives it
+          the same title-block look as every log page and as the volume
+          headers on index.html.
+          [/header] closes the block; the Under Construction banner follows.
+        -->
+        <header id="top-deck" class="category-header">
+          <!-- @reason:
+            [h1] is this page's title, and a page has exactly one. A screen
+            reader jumps to it to answer "which page am I on?", a search
+            engine reads it as the strongest hint of the subject, and the
+            sector h2s and day h3s below hang from it. It keeps the look of
+            the h2 titles on index.html because the h2 rules in style.css
+            also name ".category-header h1"; style.css 04.6 tells that story
+            in full.
+          -->
+          <h1>The Command Line Expedition</h1>
+          <!-- @line:
+            [p] is the subtitle under the title: one sentence that names what
+            the expedition charts. Every log page carries one, in the same
+            "Charting the principles, patterns, and practices of ..." voice.
+          -->
+          <p>
+            Charting the principles, patterns, and practices of the Command Line.
+          </p>
+        </header>
+
+        <!-- @block: UNDER CONSTRUCTION BANNER — THE SCAFFOLDING BEACON
+          This deck is not finished. Rather than let a visitor read filler
+          prose and mistake it for the ship's log, the state is declared
+          openly, at the top, before the first sector gate.
+          @reason:
+            Placeholder text that is not labelled as placeholder text is a
+            silent lie: the page looks complete and the paragraphs look like
+            content. This banner turns that silent failure into an honest,
+            visible status the reader can act on.
+          @concept:
+            The notice never relies on colour alone. It carries three
+            independent channels — the hazard glyph, the literal words
+            "Under Construction", and the explanatory sentence beneath. A
+            reader with any form of colour blindness, or one using a forced-
+            colours or reader mode, loses nothing.
+          @structure:
+            [aside] marks content set apart from the surrounding log. With
+            aria-label it becomes a named landmark, so assistive technology
+            can reach it directly or skip it entirely.
+          @warning:
+            The glyph carries aria-hidden="true" because it duplicates the
+            adjacent words. Announcing it would add noise, not meaning.
+          @bridge:
+            Styling lives in en/style.css, Module 32 — Under Construction
+            Banner. The narrow-deck metrics live in Module 00.2, B6.
+          @line:
+            Line by line: [aside class="under-construction"] is the notice
+            box. The class is what tools/check-uc-banner.py looks for, and it
+            gives the box its hazard styling in Module 32.
+            aria-label="Under construction notice" is the landmark's name,
+            the words a screen reader says when it reaches the box.
+            [p class="uc-label"] is the headline line of the notice.
+            [span class="uc-icon" aria-hidden="true"] holds the construction
+            sign glyph, written as the numeric character reference &#128679;
+            (code point 128679, the 🚧 emoji).
+            "Under Construction" is the headline itself, in plain words.
+            The second [p] explains the state in a full sentence. Its link,
+            [a href="../index.html"], goes one folder up, from en/delivery/
+            to en/, to the main bridge, where the finished decks are listed.
+            [/aside] closes the notice; the first sector gate follows.
+          @todo:
+            The banner leaves when her prose replaces the last filler:
+            tools/add-uc-banner.py --prune takes it out, and
+            tools/check-uc-banner.py fails the build (verdict STALE) if a
+            finished page still carries it. BACKLOG-EN.md 017.
+        -->
+        <aside class="under-construction" aria-label="Under construction notice">
+          <p class="uc-label">
+            <span class="uc-icon" aria-hidden="true">&#128679;</span>
+            Under Construction
+          </p>
+          <p>
+            This deck is still being built. Every log entry below is placeholder
+            text — the structure is in place, but the writing has not been
+            done yet. Nothing here is real content. The finished decks are
+            listed on the <a href="../index.html">main bridge</a>.
+          </p>
+        </aside>
+
+        <!-- ===== SECTOR 00: The Terminal ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — The Terminal
+          A sector announcement is the gate between two chapters of the log:
+          a full-width banner telling the reader that a new group of days
+          begins here. Sector 00 is the airlock:
+          the threshold the reader crosses before Day 00, the first day of
+          the expedition.
+          @structure:
+            [div id="cli-sector-00" class="sector-announcement"] is the
+            gate itself. The id follows the pattern of every log page: the
+            topic prefix "cli" (short for command-line interface), then
+            "-sector-", then two digits. The class gives the gate its banner
+            look in style.css, and it is one of the two selectors MECANISM 11
+            in ../script.js scans to build the sidebar map.
+            [span] is the small line above the title, "ENTER AIRLOCK". It stays in
+            English in both volumes, as on every sibling log.
+            [h2] is the sector title. It is an h2 because it sits one level
+            under the page's single h1, so the heading outline reads
+            h1 (the expedition), h2 (the sector), h3 (the day).
+            [/div] closes the gate; the days that follow are its chapter,
+            until the next gate.
+          @reason:
+            MECANISM 11 gives Sector 00 no link in the sidebar map: it skips
+            every id ending in -sector-00, because the airlock is a
+            threshold, not a stage of study. It reads the two digits from
+            the id, never from the h2, so the en/ and ro/ maps stay
+            identical while the titles are translated.
+          @todo:
+            What she will log in this sector:
+            What a shell is, reading the prompt, her first
+            commands, and where to get help (man, --help, tldr,
+            explainshell).
+            The prose arrives with her Linux-tour notes (BACKLOG-EN.md 017).
+        -->
+        <div id="cli-sector-00" class="sector-announcement">
+          <span>ENTER AIRLOCK</span>
+          <h2>The Terminal</h2>
+        </div>
+
+        <!-- @block: DAY 00 — The Terminal :: Initiation
+          A log entry is one day of study: a self-contained card the reader
+          can open, read and annotate on its own. This one is still a shell.
+          Its structure is final; its prose is placeholder until her notes
+          arrive, and the Under Construction banner above says so openly.
+          @structure:
+            [article] is the right element because the entry makes sense on
+            its own, outside the page, like a sheet torn out of the log.
+            id="cli-day00" is the fragment target: the sidebar's
+            "Day 00 ◈" link points at "#cli-day00". MECANISM 11 builds
+            that link from this id, and MECANISM 02 lights it up while this
+            card is on screen. The id is identical in en/ and ro/.
+            class="log-entry" gives the card its frame in style.css. It is
+            also the second selector MECANISM 11 scans, and the one
+            tools/check-uc-banner.py counts to judge whether the page is
+            placeholder (it is, so the banner must stay).
+        -->
+        <article id="cli-day00" class="log-entry">
+          <!-- @block: ENTRY HEADER
+            [h3] is the entry title, one level under the sector's h2.
+            Its first [span], "Day 00", is the day token. MECANISM 11 reads
+            exactly this span (the selector "h3 > span", the first direct
+            child) to label the sidebar button, so it must stay the first
+            child of the h3 and must stay a plain span.
+            [span class="meta-title"] is the topic of the day. The class gives
+            it its smaller, green, letter-spaced look in style.css
+            (.meta-title). Its text begins with a space, so the two spans
+            never run together on screen.
+            [/h3] closes the title.
+          -->
+          <h3>
+            <span>Day 00</span>
+            <span class="meta-title"> The Terminal :: Initiation</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT
+            [div class="log-text"] is the prose column of the day; style.css
+            sets its reading width and line height.
+            [p] holds one paragraph of Lorem ipsum: Latin-looking filler text
+            that typesetters use to fill a layout before the real words
+            exist. The banner at the top of the page declares it as filler,
+            so no reader mistakes it for the log.
+            @bridge:
+              tools/inject_log_content.py looks for exactly this shape, a
+              log-text div holding one Lorem ipsum paragraph, and replaces the
+              paragraph with her text when a content run reaches this page
+              (key "commandline" in its TARGETS map). tools/check-log-prose.py
+              then checks that the new prose carries no stray markup.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            [div class="mission-status"] is the green telemetry line under the
+            prose, styled in style.css like a 1970s mission-control readout.
+            MECANISM 03 in ../script.js watches every .mission-status box:
+            each time one is 30% on screen, it resets the CSS typing
+            animation of the [p] inside, so the line types itself out again.
+            [p] carries the status text.
+            On Day 00 it reads INITIALIZING_CLI: every log opens
+            its first day with INITIALIZING_ plus the topic's short name.
+            RECEPTOR and LINK are the fixed second and third fields of the
+            readout. The status text stays in English in both volumes.
+          -->
+          <div class="mission-status">
+            <p>STATUS: INITIALIZING_CLI | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            The note terminal lets the reader write her own note under this
+            day and keep it in this browser.
+            @structure:
+              [div class="note-terminal"] groups the text box and its button;
+              style.css draws them as one console. MECANISM 04 finds every
+              text box on the page through ".note-terminal textarea".
+              [textarea] is the multi-line text box.
+              name="cli-note-day00" names the field, the way a form field
+              is named. id="cli-note-day00" is the address saveNote() uses
+              to find the box. The same string is also the localStorage key
+              the note is saved under, and on load MECANISM 04 reads the note
+              back under textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" is the hint
+              shown while the box is empty; it disappears as soon as she types.
+              [/textarea] follows straight after, with nothing between the
+              tags, so the box starts empty (MECANISM 04 fills it on load if a
+              note was saved before).
+              [button] is a real button, so it can be reached with Tab and
+              pressed with Enter or Space.
+              onclick="saveNote('cli-note-day00')" calls the save function
+              with the same id string as the box above it.
+              "Save Signal Extension" is the button's label.
+            @warning:
+              The id must be unique across the whole site, because it is the
+              storage key. Two pages sharing an id would share, and overwrite,
+              one note. The "cli-" prefix keeps these notes apart from every
+              other log.
+            @bridge: saveNote('cli-note-day00') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day00"
+              id="cli-note-day00"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day00')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] closes Day 00. The next sector gate follows. -->
+        </article>
+
+        <!-- ===== SECTOR 01: Navigation & Files ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Navigation & Files
+          A sector announcement is the gate between two chapters of the log:
+          a full-width banner telling the reader that a new group of days
+          begins here. Sector 1 opens the Navigation & Files
+          chapter.
+          @structure:
+            [div id="cli-sector-01" class="sector-announcement"] is the
+            gate itself. The id follows the pattern of every log page: the
+            topic prefix "cli" (short for command-line interface), then
+            "-sector-", then two digits. The class gives the gate its banner
+            look in style.css, and it is one of the two selectors MECANISM 11
+            in ../script.js scans to build the sidebar map.
+            [span] is the small line above the title, "Entering Sector 1". It stays in
+            English in both volumes, as on every sibling log.
+            [h2] is the sector title. It is an h2 because it sits one level
+            under the page's single h1, so the heading outline reads
+            h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
+            [/div] closes the gate; the days that follow are its chapter,
+            until the next gate.
+          @reason:
+            MECANISM 11 turns this gate into the "S01" pill of the sidebar
+            map. It reads the two digits from the id, never from the h2, so
+            the en/ and ro/ maps stay identical while the titles are
+            translated.
+          @todo:
+            What she will log in this sector:
+            Moving through the filesystem (pwd, cd, ls,
+            paths), then creating, copying, moving, deleting and reading
+            files and folders.
+            The prose arrives with her Linux-tour notes (BACKLOG-EN.md 017).
+          @warning:
+            The "&shy;" in "Navi&shy;gation" is a soft hyphen: an invisible
+            break point. The browser shows nothing there, and draws a hyphen
+            only when the word has to break across two lines.
+            It is here because the sector title is 35px capitals with wide
+            letter-spacing. On the narrowest phones (the 480px-and-narrower
+            layout) a long word can be wider than its box, and [main] hides
+            whatever runs past the screen edge, so the end of the word would
+            be cut off. When it does not fit, the word breaks between
+            syllables: "NAVI-" / "GATION".
+            It changes nothing else: the copy reads the same, the "S01" pill
+            comes from the id, not the h2, and on wider screens the word fits
+            and never breaks, so the title looks exactly as before.
+        -->
+        <div id="cli-sector-01" class="sector-announcement">
+          <span>Entering Sector 1</span>
+          <h2>Navi&shy;gation &amp; Files</h2>
+        </div>
+
+        <!-- @block: DAY 01 — Navigation & Files
+          A log entry is one day of study: a self-contained card the reader
+          can open, read and annotate on its own. This one is still a shell.
+          Its structure is final; its prose is placeholder until her notes
+          arrive, and the Under Construction banner above says so openly.
+          @structure:
+            [article] is the right element because the entry makes sense on
+            its own, outside the page, like a sheet torn out of the log.
+            id="cli-day01" is the fragment target: the sidebar's
+            "Day 01 ◈" link points at "#cli-day01". MECANISM 11 builds
+            that link from this id, and MECANISM 02 lights it up while this
+            card is on screen. The id is identical in en/ and ro/.
+            class="log-entry" gives the card its frame in style.css. It is
+            also the second selector MECANISM 11 scans, and the one
+            tools/check-uc-banner.py counts to judge whether the page is
+            placeholder (it is, so the banner must stay).
+        -->
+        <article id="cli-day01" class="log-entry">
+          <!-- @block: ENTRY HEADER
+            [h3] is the entry title, one level under the sector's h2.
+            Its first [span], "Day 01", is the day token. MECANISM 11 reads
+            exactly this span (the selector "h3 > span", the first direct
+            child) to label the sidebar button, so it must stay the first
+            child of the h3 and must stay a plain span.
+            [span class="meta-title"] is the topic of the day. The class gives
+            it its smaller, green, letter-spaced look in style.css
+            (.meta-title). Its text begins with a space, so the two spans
+            never run together on screen.
+            The ampersand is written as the character reference "&amp;";
+            the browser shows it as "&", and it can never be mistaken for
+            the start of another reference.
+            [/h3] closes the title.
+          -->
+          <h3>
+            <span>Day 01</span>
+            <span class="meta-title"> Navigation &amp; Files</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT
+            [div class="log-text"] is the prose column of the day; style.css
+            sets its reading width and line height.
+            [p] holds one paragraph of Lorem ipsum: Latin-looking filler text
+            that typesetters use to fill a layout before the real words
+            exist. The banner at the top of the page declares it as filler,
+            so no reader mistakes it for the log.
+            @bridge:
+              tools/inject_log_content.py looks for exactly this shape, a
+              log-text div holding one Lorem ipsum paragraph, and replaces the
+              paragraph with her text when a content run reaches this page
+              (key "commandline" in its TARGETS map). tools/check-log-prose.py
+              then checks that the new prose carries no stray markup.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            [div class="mission-status"] is the green telemetry line under the
+            prose, styled in style.css like a 1970s mission-control readout.
+            MECANISM 03 in ../script.js watches every .mission-status box:
+            each time one is 30% on screen, it resets the CSS typing
+            animation of the [p] inside, so the line types itself out again.
+            [p] carries the status text.
+            From Sector 1 on, it names the sector the day belongs to:
+            SECTOR_01_ACTIVE, the pattern every log uses. RECEPTOR and LINK
+            are the fixed second and third fields of the readout. The status
+            text stays in English in both volumes.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_01_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            The note terminal lets the reader write her own note under this
+            day and keep it in this browser.
+            @structure:
+              [div class="note-terminal"] groups the text box and its button;
+              style.css draws them as one console. MECANISM 04 finds every
+              text box on the page through ".note-terminal textarea".
+              [textarea] is the multi-line text box.
+              name="cli-note-day01" names the field, the way a form field
+              is named. id="cli-note-day01" is the address saveNote() uses
+              to find the box. The same string is also the localStorage key
+              the note is saved under, and on load MECANISM 04 reads the note
+              back under textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" is the hint
+              shown while the box is empty; it disappears as soon as she types.
+              [/textarea] follows straight after, with nothing between the
+              tags, so the box starts empty (MECANISM 04 fills it on load if a
+              note was saved before).
+              [button] is a real button, so it can be reached with Tab and
+              pressed with Enter or Space.
+              onclick="saveNote('cli-note-day01')" calls the save function
+              with the same id string as the box above it.
+              "Save Signal Extension" is the button's label.
+            @warning:
+              The id must be unique across the whole site, because it is the
+              storage key. Two pages sharing an id would share, and overwrite,
+              one note. The "cli-" prefix keeps these notes apart from every
+              other log.
+            @bridge: saveNote('cli-note-day01') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day01"
+              id="cli-note-day01"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day01')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] closes Day 01. The next sector gate follows. -->
+        </article>
+
+        <!-- ===== SECTOR 02: Pipes & Redirection ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Pipes & Redirection
+          A sector announcement is the gate between two chapters of the log:
+          a full-width banner telling the reader that a new group of days
+          begins here. Sector 2 opens the Pipes & Redirection
+          chapter.
+          @structure:
+            [div id="cli-sector-02" class="sector-announcement"] is the
+            gate itself. The id follows the pattern of every log page: the
+            topic prefix "cli" (short for command-line interface), then
+            "-sector-", then two digits. The class gives the gate its banner
+            look in style.css, and it is one of the two selectors MECANISM 11
+            in ../script.js scans to build the sidebar map.
+            [span] is the small line above the title, "Entering Sector 2". It stays in
+            English in both volumes, as on every sibling log.
+            [h2] is the sector title. It is an h2 because it sits one level
+            under the page's single h1, so the heading outline reads
+            h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
+            [/div] closes the gate; the days that follow are its chapter,
+            until the next gate.
+          @reason:
+            MECANISM 11 turns this gate into the "S02" pill of the sidebar
+            map. It reads the two digits from the id, never from the h2, so
+            the en/ and ro/ maps stay identical while the titles are
+            translated.
+          @todo:
+            What she will log in this sector:
+            stdin, stdout and stderr; sending output to
+            files; chaining commands with |; filters like grep, sort, wc,
+            head, tail; finding files with find.
+            The prose arrives with her Linux-tour notes (BACKLOG-EN.md 017).
+          @warning:
+            The "&shy;" in "Redi&shy;rection" is a soft hyphen: an invisible
+            break point. The browser shows nothing there, and draws a hyphen
+            only when the word has to break across two lines.
+            It is here because the sector title is 35px capitals with wide
+            letter-spacing. On phones (the 480px-and-narrower layout)
+            "REDIRECTION" can be wider than its box, and [main] hides
+            whatever runs past the screen edge, so the end of the word was
+            cut off on the narrowest screens. Now, when it does not fit, the
+            word breaks between syllables: "REDI-" / "RECTION".
+            It changes nothing else: the copy reads the same, the "S02" pill
+            comes from the id, not the h2, and on wider screens the word fits
+            and never breaks, so the title looks exactly as before.
+        -->
+        <div id="cli-sector-02" class="sector-announcement">
+          <span>Entering Sector 2</span>
+          <h2>Pipes &amp; Redi&shy;rection</h2>
+        </div>
+
+        <!-- @block: DAY 02 — Pipes & Redirection
+          A log entry is one day of study: a self-contained card the reader
+          can open, read and annotate on its own. This one is still a shell.
+          Its structure is final; its prose is placeholder until her notes
+          arrive, and the Under Construction banner above says so openly.
+          @structure:
+            [article] is the right element because the entry makes sense on
+            its own, outside the page, like a sheet torn out of the log.
+            id="cli-day02" is the fragment target: the sidebar's
+            "Day 02 ◈" link points at "#cli-day02". MECANISM 11 builds
+            that link from this id, and MECANISM 02 lights it up while this
+            card is on screen. The id is identical in en/ and ro/.
+            class="log-entry" gives the card its frame in style.css. It is
+            also the second selector MECANISM 11 scans, and the one
+            tools/check-uc-banner.py counts to judge whether the page is
+            placeholder (it is, so the banner must stay).
+        -->
+        <article id="cli-day02" class="log-entry">
+          <!-- @block: ENTRY HEADER
+            [h3] is the entry title, one level under the sector's h2.
+            Its first [span], "Day 02", is the day token. MECANISM 11 reads
+            exactly this span (the selector "h3 > span", the first direct
+            child) to label the sidebar button, so it must stay the first
+            child of the h3 and must stay a plain span.
+            [span class="meta-title"] is the topic of the day. The class gives
+            it its smaller, green, letter-spaced look in style.css
+            (.meta-title). Its text begins with a space, so the two spans
+            never run together on screen.
+            The ampersand is written as the character reference "&amp;";
+            the browser shows it as "&", and it can never be mistaken for
+            the start of another reference.
+            [/h3] closes the title.
+          -->
+          <h3>
+            <span>Day 02</span>
+            <span class="meta-title"> Pipes &amp; Redirection</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT
+            [div class="log-text"] is the prose column of the day; style.css
+            sets its reading width and line height.
+            [p] holds one paragraph of Lorem ipsum: Latin-looking filler text
+            that typesetters use to fill a layout before the real words
+            exist. The banner at the top of the page declares it as filler,
+            so no reader mistakes it for the log.
+            @bridge:
+              tools/inject_log_content.py looks for exactly this shape, a
+              log-text div holding one Lorem ipsum paragraph, and replaces the
+              paragraph with her text when a content run reaches this page
+              (key "commandline" in its TARGETS map). tools/check-log-prose.py
+              then checks that the new prose carries no stray markup.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            [div class="mission-status"] is the green telemetry line under the
+            prose, styled in style.css like a 1970s mission-control readout.
+            MECANISM 03 in ../script.js watches every .mission-status box:
+            each time one is 30% on screen, it resets the CSS typing
+            animation of the [p] inside, so the line types itself out again.
+            [p] carries the status text.
+            From Sector 1 on, it names the sector the day belongs to:
+            SECTOR_02_ACTIVE, the pattern every log uses. RECEPTOR and LINK
+            are the fixed second and third fields of the readout. The status
+            text stays in English in both volumes.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_02_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            The note terminal lets the reader write her own note under this
+            day and keep it in this browser.
+            @structure:
+              [div class="note-terminal"] groups the text box and its button;
+              style.css draws them as one console. MECANISM 04 finds every
+              text box on the page through ".note-terminal textarea".
+              [textarea] is the multi-line text box.
+              name="cli-note-day02" names the field, the way a form field
+              is named. id="cli-note-day02" is the address saveNote() uses
+              to find the box. The same string is also the localStorage key
+              the note is saved under, and on load MECANISM 04 reads the note
+              back under textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" is the hint
+              shown while the box is empty; it disappears as soon as she types.
+              [/textarea] follows straight after, with nothing between the
+              tags, so the box starts empty (MECANISM 04 fills it on load if a
+              note was saved before).
+              [button] is a real button, so it can be reached with Tab and
+              pressed with Enter or Space.
+              onclick="saveNote('cli-note-day02')" calls the save function
+              with the same id string as the box above it.
+              "Save Signal Extension" is the button's label.
+            @warning:
+              The id must be unique across the whole site, because it is the
+              storage key. Two pages sharing an id would share, and overwrite,
+              one note. The "cli-" prefix keeps these notes apart from every
+              other log.
+            @bridge: saveNote('cli-note-day02') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day02"
+              id="cli-note-day02"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day02')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] closes Day 02. The next sector gate follows. -->
+        </article>
+
+        <!-- ===== SECTOR 03: Permissions & Processes ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Permissions & Processes
+          A sector announcement is the gate between two chapters of the log:
+          a full-width banner telling the reader that a new group of days
+          begins here. Sector 3 opens the Permissions &
+          Processes chapter.
+          @structure:
+            [div id="cli-sector-03" class="sector-announcement"] is the
+            gate itself. The id follows the pattern of every log page: the
+            topic prefix "cli" (short for command-line interface), then
+            "-sector-", then two digits. The class gives the gate its banner
+            look in style.css, and it is one of the two selectors MECANISM 11
+            in ../script.js scans to build the sidebar map.
+            [span] is the small line above the title, "Entering Sector 3". It stays in
+            English in both volumes, as on every sibling log.
+            [h2] is the sector title. It is an h2 because it sits one level
+            under the page's single h1, so the heading outline reads
+            h1 (the expedition), h2 (the sector), h3 (the day).
+            The ampersand in the title is written as the character reference
+            "&amp;"; the browser shows it as "&", and it can never be mistaken
+            for the start of another reference.
+            [/div] closes the gate; the days that follow are its chapter,
+            until the next gate.
+          @reason:
+            MECANISM 11 turns this gate into the "S03" pill of the sidebar
+            map. It reads the two digits from the id, never from the h2, so
+            the en/ and ro/ maps stay identical while the titles are
+            translated.
+          @todo:
+            What she will log in this sector:
+            Users, groups and the rwx bits (chmod, sudo),
+            then running programs: ps, jobs, background tasks, kill.
+            The prose arrives with her Linux-tour notes (BACKLOG-EN.md 017).
+          @warning:
+            The two "&shy;" in "Permis&shy;sions" and "Pro&shy;cesses" are
+            soft hyphens: invisible break points. The browser shows nothing
+            there, and draws a hyphen only when a word has to break across
+            two lines.
+            They are here because the sector title is 35px capitals with
+            wide letter-spacing. On the narrowest phones (the
+            480px-and-narrower layout) a long word can be wider than its box,
+            and [main] hides whatever runs past the screen edge, so the end
+            of the word would be cut off. When a word does not fit, it breaks
+            between syllables: "PERMIS-" / "SIONS", "PRO-" / "CESSES".
+            They change nothing else: the copy reads the same, the "S03" pill
+            comes from the id, not the h2, and on wider screens the words fit
+            and never break, so the title looks exactly as before.
+        -->
+        <div id="cli-sector-03" class="sector-announcement">
+          <span>Entering Sector 3</span>
+          <h2>Permis&shy;sions &amp; Pro&shy;cesses</h2>
+        </div>
+
+        <!-- @block: DAY 03 — Permissions & Processes
+          A log entry is one day of study: a self-contained card the reader
+          can open, read and annotate on its own. This one is still a shell.
+          Its structure is final; its prose is placeholder until her notes
+          arrive, and the Under Construction banner above says so openly.
+          @structure:
+            [article] is the right element because the entry makes sense on
+            its own, outside the page, like a sheet torn out of the log.
+            id="cli-day03" is the fragment target: the sidebar's
+            "Day 03 ◈" link points at "#cli-day03". MECANISM 11 builds
+            that link from this id, and MECANISM 02 lights it up while this
+            card is on screen. The id is identical in en/ and ro/.
+            class="log-entry" gives the card its frame in style.css. It is
+            also the second selector MECANISM 11 scans, and the one
+            tools/check-uc-banner.py counts to judge whether the page is
+            placeholder (it is, so the banner must stay).
+        -->
+        <article id="cli-day03" class="log-entry">
+          <!-- @block: ENTRY HEADER
+            [h3] is the entry title, one level under the sector's h2.
+            Its first [span], "Day 03", is the day token. MECANISM 11 reads
+            exactly this span (the selector "h3 > span", the first direct
+            child) to label the sidebar button, so it must stay the first
+            child of the h3 and must stay a plain span.
+            [span class="meta-title"] is the topic of the day. The class gives
+            it its smaller, green, letter-spaced look in style.css
+            (.meta-title). Its text begins with a space, so the two spans
+            never run together on screen.
+            The ampersand is written as the character reference "&amp;";
+            the browser shows it as "&", and it can never be mistaken for
+            the start of another reference.
+            [/h3] closes the title.
+          -->
+          <h3>
+            <span>Day 03</span>
+            <span class="meta-title"> Permissions &amp; Processes</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT
+            [div class="log-text"] is the prose column of the day; style.css
+            sets its reading width and line height.
+            [p] holds one paragraph of Lorem ipsum: Latin-looking filler text
+            that typesetters use to fill a layout before the real words
+            exist. The banner at the top of the page declares it as filler,
+            so no reader mistakes it for the log.
+            @bridge:
+              tools/inject_log_content.py looks for exactly this shape, a
+              log-text div holding one Lorem ipsum paragraph, and replaces the
+              paragraph with her text when a content run reaches this page
+              (key "commandline" in its TARGETS map). tools/check-log-prose.py
+              then checks that the new prose carries no stray markup.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            [div class="mission-status"] is the green telemetry line under the
+            prose, styled in style.css like a 1970s mission-control readout.
+            MECANISM 03 in ../script.js watches every .mission-status box:
+            each time one is 30% on screen, it resets the CSS typing
+            animation of the [p] inside, so the line types itself out again.
+            [p] carries the status text.
+            From Sector 1 on, it names the sector the day belongs to:
+            SECTOR_03_ACTIVE, the pattern every log uses. RECEPTOR and LINK
+            are the fixed second and third fields of the readout. The status
+            text stays in English in both volumes.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_03_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            The note terminal lets the reader write her own note under this
+            day and keep it in this browser.
+            @structure:
+              [div class="note-terminal"] groups the text box and its button;
+              style.css draws them as one console. MECANISM 04 finds every
+              text box on the page through ".note-terminal textarea".
+              [textarea] is the multi-line text box.
+              name="cli-note-day03" names the field, the way a form field
+              is named. id="cli-note-day03" is the address saveNote() uses
+              to find the box. The same string is also the localStorage key
+              the note is saved under, and on load MECANISM 04 reads the note
+              back under textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" is the hint
+              shown while the box is empty; it disappears as soon as she types.
+              [/textarea] follows straight after, with nothing between the
+              tags, so the box starts empty (MECANISM 04 fills it on load if a
+              note was saved before).
+              [button] is a real button, so it can be reached with Tab and
+              pressed with Enter or Space.
+              onclick="saveNote('cli-note-day03')" calls the save function
+              with the same id string as the box above it.
+              "Save Signal Extension" is the button's label.
+            @warning:
+              The id must be unique across the whole site, because it is the
+              storage key. Two pages sharing an id would share, and overwrite,
+              one note. The "cli-" prefix keeps these notes apart from every
+              other log.
+            @bridge: saveNote('cli-note-day03') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day03"
+              id="cli-note-day03"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day03')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] closes Day 03. The next sector gate follows. -->
+        </article>
+
+        <!-- ===== SECTOR 04: Shell Scripting ===== -->
+        <!-- @block: SECTOR ANNOUNCEMENT — Shell Scripting
+          A sector announcement is the gate between two chapters of the log:
+          a full-width banner telling the reader that a new group of days
+          begins here. Sector 4 opens the Shell Scripting
+          chapter.
+          @structure:
+            [div id="cli-sector-04" class="sector-announcement"] is the
+            gate itself. The id follows the pattern of every log page: the
+            topic prefix "cli" (short for command-line interface), then
+            "-sector-", then two digits. The class gives the gate its banner
+            look in style.css, and it is one of the two selectors MECANISM 11
+            in ../script.js scans to build the sidebar map.
+            [span] is the small line above the title, "Entering Sector 4". It stays in
+            English in both volumes, as on every sibling log.
+            [h2] is the sector title. It is an h2 because it sits one level
+            under the page's single h1, so the heading outline reads
+            h1 (the expedition), h2 (the sector), h3 (the day).
+            [/div] closes the gate; the days that follow are its chapter,
+            until the next gate.
+          @reason:
+            MECANISM 11 turns this gate into the "S04" pill of the sidebar
+            map. It reads the two digits from the id, never from the h2, so
+            the en/ and ro/ maps stay identical while the titles are
+            translated.
+          @todo:
+            What she will log in this sector:
+            Turning commands into scripts: the shebang,
+            variables, conditions, loops, making a script executable, and
+            PATH.
+            The prose arrives with her Linux-tour notes (BACKLOG-EN.md 017).
+        -->
+        <div id="cli-sector-04" class="sector-announcement">
+          <span>Entering Sector 4</span>
+          <h2>Shell Scripting</h2>
+        </div>
+
+        <!-- @block: DAY 04 — Shell Scripting
+          A log entry is one day of study: a self-contained card the reader
+          can open, read and annotate on its own. This one is still a shell.
+          Its structure is final; its prose is placeholder until her notes
+          arrive, and the Under Construction banner above says so openly.
+          @structure:
+            [article] is the right element because the entry makes sense on
+            its own, outside the page, like a sheet torn out of the log.
+            id="cli-day04" is the fragment target: the sidebar's
+            "Day 04 ◈" link points at "#cli-day04". MECANISM 11 builds
+            that link from this id, and MECANISM 02 lights it up while this
+            card is on screen. The id is identical in en/ and ro/.
+            class="log-entry" gives the card its frame in style.css. It is
+            also the second selector MECANISM 11 scans, and the one
+            tools/check-uc-banner.py counts to judge whether the page is
+            placeholder (it is, so the banner must stay).
+        -->
+        <article id="cli-day04" class="log-entry">
+          <!-- @block: ENTRY HEADER
+            [h3] is the entry title, one level under the sector's h2.
+            Its first [span], "Day 04", is the day token. MECANISM 11 reads
+            exactly this span (the selector "h3 > span", the first direct
+            child) to label the sidebar button, so it must stay the first
+            child of the h3 and must stay a plain span.
+            [span class="meta-title"] is the topic of the day. The class gives
+            it its smaller, green, letter-spaced look in style.css
+            (.meta-title). Its text begins with a space, so the two spans
+            never run together on screen.
+            [/h3] closes the title.
+          -->
+          <h3>
+            <span>Day 04</span>
+            <span class="meta-title"> Shell Scripting</span>
+          </h3>
+          <!-- @block: NARRATIVE LOG TEXT
+            [div class="log-text"] is the prose column of the day; style.css
+            sets its reading width and line height.
+            [p] holds one paragraph of Lorem ipsum: Latin-looking filler text
+            that typesetters use to fill a layout before the real words
+            exist. The banner at the top of the page declares it as filler,
+            so no reader mistakes it for the log.
+            @bridge:
+              tools/inject_log_content.py looks for exactly this shape, a
+              log-text div holding one Lorem ipsum paragraph, and replaces the
+              paragraph with her text when a content run reaches this page
+              (key "commandline" in its TARGETS map). tools/check-log-prose.py
+              then checks that the new prose carries no stray markup.
+          -->
+          <div class="log-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique tempore minima numquam. Sint distinctio atque corporis minima debitis dolor, animi assumenda, perspiciatis quasi perferendis eos neque repellendus itaque facere!
+            </p>
+          </div>
+
+          <!-- @block: MISSION STATUS INDICATOR
+            [div class="mission-status"] is the green telemetry line under the
+            prose, styled in style.css like a 1970s mission-control readout.
+            MECANISM 03 in ../script.js watches every .mission-status box:
+            each time one is 30% on screen, it resets the CSS typing
+            animation of the [p] inside, so the line types itself out again.
+            [p] carries the status text.
+            From Sector 1 on, it names the sector the day belongs to:
+            SECTOR_04_ACTIVE, the pattern every log uses. RECEPTOR and LINK
+            are the fixed second and third fields of the readout. The status
+            text stays in English in both volumes.
+          -->
+          <div class="mission-status">
+            <p>STATUS: SECTOR_04_ACTIVE | RECEPTOR: ACTIVE | LINK: CONFIRMED</p>
+          </div>
+
+          <!-- @block: NOTE TERMINAL
+            The note terminal lets the reader write her own note under this
+            day and keep it in this browser.
+            @structure:
+              [div class="note-terminal"] groups the text box and its button;
+              style.css draws them as one console. MECANISM 04 finds every
+              text box on the page through ".note-terminal textarea".
+              [textarea] is the multi-line text box.
+              name="cli-note-day04" names the field, the way a form field
+              is named. id="cli-note-day04" is the address saveNote() uses
+              to find the box. The same string is also the localStorage key
+              the note is saved under, and on load MECANISM 04 reads the note
+              back under textarea.id.
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]" is the hint
+              shown while the box is empty; it disappears as soon as she types.
+              [/textarea] follows straight after, with nothing between the
+              tags, so the box starts empty (MECANISM 04 fills it on load if a
+              note was saved before).
+              [button] is a real button, so it can be reached with Tab and
+              pressed with Enter or Space.
+              onclick="saveNote('cli-note-day04')" calls the save function
+              with the same id string as the box above it.
+              "Save Signal Extension" is the button's label.
+            @warning:
+              The id must be unique across the whole site, because it is the
+              storage key. Two pages sharing an id would share, and overwrite,
+              one note. The "cli-" prefix keeps these notes apart from every
+              other log.
+            @bridge: saveNote('cli-note-day04') is handled by MECANISM 04
+            in en/script.js - Persistent Notes Terminal via localStorage.
+          -->
+          <div class="note-terminal">
+            <textarea
+              name="cli-note-day04"
+              id="cli-note-day04"
+              placeholder="[ ENTER CAPTAIN'S LOG EXTENSION... ]"
+            ></textarea>
+            <button onclick="saveNote('cli-note-day04')">
+              Save Signal Extension
+            </button>
+          </div>
+          <!-- @structure: [/article] closes Day 04. It is the last day of the log, so the log column closes next. -->
+        </article>
+
+        <!-- @structure:
+          [/section] closes the log column. Everything MECANISM 11 indexes
+          lives between [section class="log-content"] and this line: five
+          sector gates and five day shells. The days she writes go inside
+          the sector they belong to, each a new [article class="log-entry"]
+          with the next free cli-dayNN id; the sidebar map picks them up on
+          its own.
+        -->
+      </section>
+    <!-- @structure:
+      [/main] closes the main-container. The [main] element wraps the
+      primary content of the page — in this case, the sidebar and the
+      log-content columns. There should be only one [main] per page.
+    -->
+    </main>
+
+    <!-- @block: FOOTER — THE AUXILIARY NAVIGATION STATION
+      The [footer] element marks the closing section of the page. In
+      the ship metaphor, the footer is the aft station — less visible
+      than the helm, but holding critical systems: the star charts,
+      the transmission log, the language switch, and the captain's
+      signature.
+      @structure:
+        The .footer class applies a dark, bordered container at the
+        bottom of the viewport. It uses a column layout for the links
+        and telemetry data, keeping everything compact and readable.
+    -->
+    <footer class="footer">
+      <!-- @block: SECONDARY COMMAND CONSOLE
+        The footer expands beyond a single bibliography link into a full
+        ship-systems panel. It houses the Star Charts (bibliography),
+        The Astrogation Charter (transmission), and the language toggle
+        between the English and Romanian versions of the project.
+        @concept:
+          The footer is the ship's auxiliary navigation station — less
+          prominent than the HUD overlay, but essential for systems that
+          do not belong to a specific volume: the founding manifesto, the
+          reference archive, and the language switch.
+      -->
+      <!-- @block: FOOTER LINKS LIST
+        The [ul] here groups three [li] items: the bibliography link,
+        the transmission page, and the language toggle. Using a list
+        is semantically correct because these are a collection of
+        related navigation destinations.
+        class="footer-links" is the hook style.css uses to lay the three items
+        out as one centred flex row that wraps onto a new line on narrow
+        screens.
+      -->
+      <ul class="footer-links">
+        <!-- @path: Bibliography page
+          ../bibliography.html goes one folder up, from en/delivery/ to en/,
+          where the volume's bibliography lives. The fragment #delivery-refs
+          scrolls straight to the Delivery Deck block of that page (its
+          [section id="delivery-refs"]), which lists the free command-line,
+          Git and gh manuals, so the reader lands on this deck's sources
+          and not on the top of a long list.
+          [span class="pulse-dot"] is empty and purely decorative: style.css
+          draws it as a small glowing green dot, the beacon in front of each
+          footer link.
+          target="_blank" opens the archive in a new tab, so this log stays
+          open where the reader left it.
+          "Deep Space Archives — Delivery Deck" is the link text: the
+          bibliography's name in the ship's voice, then the deck it opens on,
+          the same label the other Delivery logs use.
+        -->
+        <li>
+          <span class="pulse-dot"></span>
+          <!-- @warning: rel="noopener noreferrer" is mandatory on every target="_blank" link — it denies the new tab a window.opener back-reference (tab-nabbing) and withholds the referrer URL. -->
+          <a href="../bibliography.html#delivery-refs" target="_blank" rel="noopener noreferrer">Deep Space Archives — Delivery Deck</a>
+        </li>
+        <!-- @path: Transmission / Astrogation Charter page
+          ../transmission.html goes one folder up, from en/delivery/ to en/,
+          to The Astrogation Charter, the project's founding message. It
+          opens in the same tab, like every page inside the ship.
+          [span class="pulse-dot"] is the same glowing green dot as in the
+          first item, and "The Astrogation Charter" is the link text, the
+          page's title.
+        -->
+        <li>
+          <span class="pulse-dot"></span>
+          <a href="../transmission.html">The Astrogation Charter</a>
+        </li>
+        <!-- @bridge: Language toggle between the EN and RO volumes
+          The third [li] links this page to its twin in the other language.
+          en/ and ro/ are two complete copies of the site, one per language,
+          with the same folders and file names, so the twin of
+          en/delivery/command-line-log.html is ro/delivery/command-line-log.html.
+          The comment inside the [li] explains each of its three lines.
+        -->
+        <li>
+          <!-- @reason:
+            The language toggle lets the crew switch between the English and
+            Romanian versions of the project. The current language is marked
+            with the .lang-toggle-active class (phosphor green highlight).
+            The separator pipe (|) visually divides the two options. Each link
+            leads to the SAME page in the other language, so the reader never
+            loses their place in the expedition.
+          @path:
+            ../../ climbs two folders, from en/delivery/ to the site root,
+            then goes down into en/ or ro/ and on to the same file,
+            delivery/command-line-log.html. tools/check-parity.py checks
+            that both links land on this page's twin.
+            The EN link carries class="lang-toggle-active" because this is
+            the English page; the RO link keeps an empty class attribute,
+            so both links have the same shape.
+            [span class="lang-sep"] is the pipe between them, a visual
+            separator only.
+          -->
+          <a href="../../en/delivery/command-line-log.html" class="lang-toggle-active">EN</a>
+          <span class="lang-sep">|</span>
+          <a href="../../ro/delivery/command-line-log.html" class="">RO</a>
+        </li>
+      </ul>
+      <!-- @block: SYSTEM TELEMETRY — SECTOR ORBIT & STATUS
+        The first telemetry line declares which expedition sector the
+        vessel is currently orbiting (FRONTEND_EXPEDITION) and the
+        system status (ONLINE). The CSS typing animation reveals this
+        text character by character when the page loads, simulating
+        a vintage mission control display.
+        @theme:
+          The ONLINE status is wrapped in a [span]
+          that glows solar-mint green (#a7f3d0) with a neon text-shadow.
+          This phosphor-green aesthetic directly references 1970s NASA
+          control terminals, where green monochrome displays scrolled
+          telemetry data in real time.
+        @line:
+          "//" is not a code comment here, only visible text: a separator in
+          the style of the telemetry readout. [span class="telemetry-active"]
+          is the hook style.css (.footer span.telemetry-active) uses for that
+          green glow.
+        @warning:
+          FRONTEND_EXPEDITION is not this page's sector: the Command Line
+          Log belongs to the Delivery Deck. The value comes with the footer
+          every log page shares (22 of the 23 log pages say
+          FRONTEND_EXPEDITION, sql-log says DATABASE_EXPEDITION). It is kept
+          here so this footer matches its three Delivery siblings; giving
+          each page its own sector is a site-wide change for its own card.
+      -->
+      <p>
+        SYS_ORBIT: FRONTEND_EXPEDITION
+        // STATUS:
+        <span class="telemetry-active">ONLINE</span>
+      </p>
+
+      <!-- @structure:
+        I write the second telemetry data line. It anchors the project in real
+        physical space and time. The coordinates point to the captain's location,
+        and the date marks when this footer was last updated.
+      -->
+      <p>
+        COORDINATES: 46.7712&deg; N, 23.6236&deg; E // SYSTEM_TIME: 2026.07.22
+        <!-- @reason:
+          I include geographic coordinates and a system timestamp.
+          The numbers 46.7712° N, 23.6236° E are the latitude and longitude of
+          Cluj-Napoca, Romania — the place where this project is being built.
+          SYSTEM_TIME records the date of the latest footer update.
+          &deg; is the character reference for the degree sign (°); the
+          browser shows the sign, and the source stays plain ASCII there.
+          2026.07.22 is the date of the latest change to the shared footer,
+          not the day this page was made: the line is the same on every log
+          page, and it changes on all of them at once.
+        -->
+      </p>
+
+      <!-- @structure:
+        I write the final line of the footer. It declares who created and owns
+        this project. The copyright symbol followed by the year and the captain's
+        name marks the intellectual ownership of the content.
+        &copy; is the character reference for the copyright sign (©); "by"
+        joins the project's name to the captain's name in the span below.
+      -->
+      <p class="copyright">
+        &copy; 2026 | D::0dy55ey by
+        <span class="vessel-sig">Iulia-Alexandra Cadar</span>
+        <!-- @theme:
+          I wrap the captain's name in a [span] with the class .vessel-sig.
+          This class applies the nebula-pink color (#ff007f) with an incandescent
+          text-shadow glow. The magenta signature acts as the captain's unique
+          identifier across all decks of the ship.
+        -->
+      </p>
+    </footer>
+
+    <!-- @block: JAVASCRIPT LOADER
+      The [script] tag loads the ship's control systems — a single
+      JavaScript file (script.js) that lives one directory above this
+      page. This file contains every interactive mechanism of the ship.
+      Eight of them wake up on this log page: MECANISM 01 (Navbar
+      Hide/Show on Scroll), MECANISM 02 (Sidebar Active Detection),
+      MECANISM 03 (Mission Status Animation Re-trigger), MECANISM 04
+      (Persistent Notes Terminal via localStorage), MECANISM 05 (Desktop
+      Anchor Navigation), MECANISM 06 (Mobile HUD Auto-Scroll),
+      MECANISM 10-A (Voyage Log) and MECANISM 11 (Dynamic Sidebar
+      Index). The rest (06.5, 07, 08, 09 and 10-B) look for elements
+      this page does not have, and stay asleep.
+      @path:
+        The src="../script.js" attribute tells the browser to fetch
+        en/script.js relative to this page's location: "../" goes one
+        folder up, from en/delivery/ to en/, where the volume's single
+        script lives. [/script] follows at once, because the code comes
+        from the file, not from between the tags.
+      @reason:
+        Placing the script tag just before /body (rather than in
+        head) ensures the HTML content loads and renders before the
+        JavaScript executes. This is called deferred loading and it
+        prevents the script from blocking the visual rendering of the
+        page.
+    -->
+    <script src="../script.js"></script>
+  <!-- @structure:
+    [/body] closes the visible deck. Everything inside the [body] —
+    navbar, sidebar, log entries, footer — is now finished rendering.
+    The browser stops painting the page here.
+  -->
+  </body>
+  <!-- @structure:
+    [/html] closes the root element. The document is complete. The
+    browser has finished constructing the DOM (Document Object Model)
+    and the page is fully loaded. What the traveller sees now is the
+    result of the HTML structure combined with the CSS styles from
+    style.css and the interactive behaviour from script.js.
+    @bridge:
+      For the full technical index of HTML tags used in this project,
+      see the Semantic Field Manual, docs/semantic-field-manual-en.md at
+      the root of the repository (../../docs/ from this file).
+  -->
+</html>
+
+<!-- @bridge:
+  Tags legend: docs/legend-en.md, at the root of the repository
+  (../../docs/legend-en.md from this file). It defines every tag these
+  comments use: @block, @line, @reason, @warning, @concept, @bridge, @path,
+  @meta, @structure, @theme and @todo, each with the same meaning on every
+  page of the project.
+-->
+
+<!-- @reason:
+  This document is a structured learning log for the Linux command line. It
+  records the study of the shell, navigation and files, pipes and redirection,
+  permissions and processes, and shell scripting. Until her Linux-tour notes
+  arrive it is a placeholder deck, declared by its Under Construction banner
+  (BACKLOG-EN.md 017).
+-->
