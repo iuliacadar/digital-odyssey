@@ -218,7 +218,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - **Sursa.** Predarea PM-ului, actualizările din 2026-11-18 și 2026-11-19, 15:00; JOURNAL ZIUA 41 (recuperare, cardul `t_4e0674d2`).
 
 ### 33 · 2026-11-18 · Cele trei metode
-- **Decizia.** Nava predă în trei feluri: (1) **ce am învățat**, paginile canonice de jurnal, din notițele ei despre cărți și cursuri; (2) **cum e construită**, cu mâinile pe cod, planul recursiv; (3) **cum a fost**, frământările personale din căutarea cunoașterii: JOURNAL și The Arkhold Records.
+- **Decizia.** Nava predă în trei feluri: (1) **ce am învățat**, paginile canonice de log, din notițele ei despre cărți și cursuri; (2) **cum e construită**, cu mâinile pe cod, planul recursiv; (3) **cum a fost**, frământările personale din căutarea cunoașterii: JOURNAL și The Arkhold Records.
 - **De ce.** Trei feluri diferite de lectură, nu trei copii ale aceluiași text.
 - **Sursa.** Spusă Prof. Ada pe 2026-11-18 (predarea PM-ului, actualizarea din 2026-11-19, 13:55); formularea adoptată pe 2026-11-19 (cardurile `t_c975e8cf`, `t_78672421`).
 
@@ -232,10 +232,10 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - **De ce.** E mărturia a cum a fost învățarea, nu o listă de tichete.
 - **Sursa.** Cardul `t_78672421` (corpul); cardul `t_5cc95f00` (corpul); predarea PM-ului, actualizarea din 2026-11-19, 16:15.
 
-### 36 · 2026-11-19 · Șase capsule fixe ◐ deschis
-- **Decizia.** Seiful lui Seldon păstrează șase capsule fixe, câte una pentru fiecare volum de pe pagina principală. Capsulele Database, UX și Delivery așteaptă până se termină jurnalul; apoi intrările rămase se împart între ele.
+### 36 · 2026-11-19 · Șase capsule fixe
+- **Decizia.** Seiful lui Seldon păstrează șase capsule FIXE, câte una pentru fiecare volum de pe pagina principală; nu se adaugă nicio capsulă pentru ZILELE de mai târziu (43 și următoarele). Capsulele Database, UX și Delivery așteaptă până se termină jurnalul; apoi intrările rămase se împart între ele.
 - **De ce.** Se potrivesc cu cele șase volume ale metodei 1.
-- **◐ deschis.** Ce se întâmplă cu ZILELE 43 și următoarele; nota învechită „When the captain writes DAY 27…” (`daysWritten` 27) e încă de corectat.
+- **De făcut (nu e o alegere).** Corectarea notei învechite „When the captain writes DAY 27…” (`daysWritten` 27) și planificarea împărțirii, când îi vine vremea (cardul `t_499b6977`).
 - **Sursa.** Cardul `t_499b6977`, comentariul `[HER DECISION 2026-11-19]`.
 
 ### 37 · 2026-11-19 · Inspirația: Arcade Explorers

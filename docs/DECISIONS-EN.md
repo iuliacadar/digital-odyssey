@@ -232,10 +232,10 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - **Why.** It is the testimony of what learning was like, not a record of tickets.
 - **Source.** Card `t_78672421` (body); card `t_5cc95f00` (body); PM handoff, update 2026-11-19 16:15.
 
-### 36 · 2026-11-19 · Six fixed capsules ◐ open
-- **Decision.** The Seldon Vault keeps six fixed capsules, one per home-page volume. The Database, UX and Delivery capsules wait until the journal is finished; then the remaining entries are split among them.
+### 36 · 2026-11-19 · Six fixed capsules
+- **Decision.** The Seldon Vault keeps six FIXED capsules, one per home-page volume; no capsule is added for later DAYs (43 and on). The Database, UX and Delivery capsules wait until the journal is finished; then the remaining entries are split among them.
 - **Why.** They match the six volumes of method 1.
-- **◐ open.** What happens to DAYs 43 and later; the stale note "When the captain writes DAY 27…" (`daysWritten` 27) is still to fix.
+- **Still to do (not a choice).** Fix the stale note "When the captain writes DAY 27…" (`daysWritten` 27), and plan the split when the time comes (card `t_499b6977`).
 - **Source.** Card `t_499b6977`, comment `[HER DECISION 2026-11-19]`.
 
 ### 37 · 2026-11-19 · The inspiration: Arcade Explorers
