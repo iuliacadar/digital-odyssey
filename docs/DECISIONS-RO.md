@@ -27,7 +27,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 | 15 | 2026-08-06 | Revizuirea ZILEI 22 amânată (BACKLOG 011); `docs/drafts/` păstrat până atunci | seif & roman |
 | 16 | 2026-08-26 | Sezonul V: echipajul urcă la bord și fiecare ZI își numește naratorul | echipaj & buget |
 | 17 | 2026-09-21 | URL-ul rădăcină: opțiunea 3, un `404.html`; `en/` e canonic | structura site-ului |
-| 18 | 2026-09-21 | Publicare prin GitHub Actions; cele patru verificatoare păzesc fiecare PR | flux de lucru & git |
+| 18 | 2026-09-21 | Publicare prin GitHub Actions; verificatoarele păzesc fiecare PR (patru din 2026-11-04) | flux de lucru & git |
 | 19 | 2026-11-06 | Doar Iulia îmbină, prin merge commit; agenții nu îmbină niciodată | flux de lucru & git |
 | 20 | 2026-11-10 | Orice lucrare a echipajului trece printr-o poartă, cu acordul ei pentru un plafon | echipaj & buget |
 | 21 | 2026-11-10 | Registrul costurilor ține socoteala combustibilului ars | echipaj & buget |
@@ -47,7 +47,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 | 35 | 2026-11-19 | Romanul e scris împreună; ea e autoarea și supervizoarea; niciodată un jurnal de sarcini | seif & roman |
 | 36 | 2026-11-19 | Seiful lui Seldon păstrează șase capsule fixe, câte una pe volum | seif & roman |
 | 37 | 2026-11-19 | Inspirația: Arcade Explorers, parcursă în sens invers | conținut |
-| 38 | 2026-11-19 | Capsulele deschise nu ar trebui să dea tot jurnalul | seif & roman |
+| 38 | 2026-11-19 | Legătura către tot jurnalul se scoate din capsulele deschise | seif & roman |
 | 39 | 2026-11-19 | Backend-ul e pus deoparte, nu respins | structura site-ului |
 | 40 | 2026-11-19 | Întâi conținutul; cele nouă idei intră în backlog și rulează în valuri | echipaj & buget |
 | 41 | 2026-11-19 | Un registru DECISIONS; revizuirea documentelor vine după el | flux de lucru & git |
@@ -141,10 +141,10 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - **De ce.** E potrivirea cea mai simplă cu arhitectura existentă: nicio setare Pages, niciun flux de redirecționare.
 - **Sursa.** BACKLOG 008, „Decision (implemented)”; JOURNAL ZIUA 17; commit `19822a3`.
 
-### 18 · 2026-09-21 · Publicare prin GitHub Actions; patru verificatoare
-- **Decizia.** Un push în `main` publică site-ul prin GitHub Actions. Fluxul Lint rulează cele patru verificatoare (`check-noopener.py`, `check-uc-banner.py`, `check-log-prose.py`, `check-parity.py`) la fiecare push și PR; ele se rulează și înaintea fiecărui commit.
+### 18 · 2026-09-21 · Publicare prin GitHub Actions; verificatoare la fiecare PR
+- **Decizia.** Un push în `main` publică site-ul prin GitHub Actions. Fluxul Lint rulează verificatoarele la fiecare push și PR; ele se rulează și înaintea fiecărui commit. Pe 2026-09-21 erau două: `check-noopener.py` (`db3a7c4`) și `check-uc-banner.py` (`fb2f392`). Pe 2026-11-04 au ajuns patru: `check-log-prose.py` (`a25fd68`) și `check-parity.py` (`6261f8c`, PR #3).
 - **De ce.** Fiecare paznic a fost scris pentru o regulă care chiar se încălcase.
-- **Sursa.** Commit-urile `e5f4ce0`, `224fb0e`; PR #3; `CLAUDE.md`, „Working rules”; `DEPLOY.md`.
+- **Sursa.** Commit-urile `e5f4ce0`, `224fb0e`, `db3a7c4`, `fb2f392`, `a25fd68`, `6261f8c`; PR #3; `CLAUDE.md`, „Working rules”; `DEPLOY.md`.
 
 ### 19 · 2026-11-06 · Doar Iulia îmbină
 - **Decizia.** Nimic nu ajunge în `main` decât printr-un pull request. Doar Iulia îmbină, cu *Create a merge commit*; agenții nu îmbină și nu fac push în `main`, niciodată. Curățenia ei locală vine doar după semnalul PM-ului, pentru că echipajul lucrează într-o singură copie locală.
@@ -155,11 +155,11 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - **Decizia.** Niciun card nu rulează până când Iulia nu aprobă un plafon pentru el; cuvintele ei se notează pe un card-poartă marcat `[HER-OK …]`; depășirea plafonului cere un nou acord.
 - *"1st wave: I agree with the budget."* (2026-11-19)
 - **De ce.** Ea hotărăște cât valorează o lucrare înainte ca banii să fie cheltuiți.
-- **Sursa.** Predarea PM-ului, „Budget record” și actualizările 2026-11-10 → 11-19; cardurile-poartă `t_86d635f8`, `t_ccd7da9e`, `t_63f7e170`; comentariul de pe acest card.
+- **Sursa.** Predarea PM-ului, „Budget record” și actualizările 2026-11-10 → 11-19; cardurile-poartă `t_86d635f8`, `t_ccd7da9e`, `t_63f7e170`; cardul `t_7e6d4581`, comentariul `[HER-OK 2026-11-19]`.
 
 ### 21 · 2026-11-10 · Registrul costurilor
 - **Decizia.** Ce cheltuiește călătoria se notează în `docs/ledger/cost-ledger-ro.md` (și în geamănul EN), cu un rând de Combustibil adăugat în ZILELE 33–39.
-- **De ce.** Ca prețul fiecărei runde să se poată citi și compara cu estimarea.
+- **De ce.** Ca prețul fiecărei runde să se poată citi, iar o rundă să se poată compara cu alta.
 - **Sursa.** PR #15 (`3dc6cc3`); `docs/ledger/cost-ledger.md`.
 
 ### 22 · 2026-11-10 · Profesoara urcă la bord
@@ -210,7 +210,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 ### 31 · 2026-11-18 · Fiecare linie nouă de cod, explicată complet
 - **Decizia.** Fiecare linie nouă de cod primește explicația ei completă, chiar dacă aceeași explicație există în altă parte.
 - **De ce.** Fiecare pagină trebuie să predea singură; repetiția e voită (intrările 11, 27).
-- **Sursa.** Predarea PM-ului, actualizarea din 2026-11-18 („Iulia added 2 rules”); QA `t_3aab23a9` a verificat-o pe PR #19 („552 added code lines all explained”).
+- **Sursa.** Predarea PM-ului, actualizarea din 2026-11-18 („Iulia added 2 rules”); QA `t_3aab23a9` a verificat-o pe PR #19 (*„I checked 552 added code lines”*).
 
 ### 32 · 2026-11-18 · Orice lucrare e consemnată în JOURNAL
 - **Decizia.** Orice lucrare a echipajului e consemnată în JOURNAL, povestită ca o zi din călătorie (intrarea 35). Ce n-a fost încă povestit intră în următoarea intrare (PR #20 și verificarea ciornelor, 2026-11-19).
@@ -243,10 +243,9 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - *"The pathway in these books is in the opposite direction than our path. We go from canonical to gamish and they go the other way around."*
 - **Sursa.** Cardul `t_5cc95f00`, comentariul `[HER 2026-11-19]`.
 
-### 38 · 2026-11-19 · Capsulele deschise nu ar trebui să dea tot jurnalul ◐ deschis
-- **Decizia.** Legătura dintr-o capsulă deschisă către întregul JOURNAL de pe GitHub n-a fost alegerea ei; în cuvintele ei, *"defeats the purpose"*.
-- **◐ deschis.** Scoaterea legăturii sau trimiterea ei doar la capitolul capsulei: alegerea ei e încă în așteptare.
-- **Sursa.** Predarea PM-ului, actualizarea din 2026-11-19, 16:15; cardul `t_985cb67b`.
+### 38 · 2026-11-19 · Legătura către tot jurnalul se scoate din capsulele deschise
+- **Decizia.** Legătura dintr-o capsulă deschisă către întregul JOURNAL de pe GitHub se scoate. N-a fost alegerea ei; în cuvintele ei, *"defeats the purpose"*.
+- **Sursa.** Predarea PM-ului, actualizările din 2026-11-19, 16:15 și 17:15; cardul `t_985cb67b` (sfatul PM-ului „remove it”, răspunsul ei „OK”; comentariul `[HER-OK 2026-11-19]`: „remove the GitHub link”).
 
 ### 39 · 2026-11-19 · Backend-ul e pus deoparte, nu respins
 - **Decizia.** Păstrarea progresului cititorului (cheile seifului) și a notițelor din terminalul de note dincolo de un singur browser cere un backend; acesta e pus deoparte, nu respins.
@@ -256,7 +255,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 ### 40 · 2026-11-19 · Întâi conținutul; ideile rulează în valuri
 - **Decizia.** Prioritatea ei e conținutul (notițe de studiu → pagini de jurnal HTML/CSS); revizuirea site-ului așteaptă. Cele nouă idei din revizuirile structurii sunt primite în backlog și fiecare rulează doar într-un val, cu plafonul ei.
 - *"OK to the 9 ideas"* · *"1st wave: I agree with the budget."*
-- **Sursa.** Poarta `t_d6f19c12` (comentariul); predarea PM-ului, actualizările 2026-11-19, 16:15 → 17:00; comentariul de pe acest card.
+- **Sursa.** Poarta `t_d6f19c12` (comentariul); predarea PM-ului, actualizările 2026-11-19, 16:15 → 17:00; cardul `t_7e6d4581`, comentariul `[HER-OK 2026-11-19]`.
 
 ### 41 · 2026-11-19 · Un registru DECISIONS, apoi revizuirea documentelor
 - **Decizia.** Nava ține acest registru DECISIONS (EN + RO), așa cum face și Strigoi. Revizuirea documentelor care rămân vine mai târziu, după această recoltă, ca nicio sursă să nu fie ștearsă înainte ca deciziile din ea să fie consemnate.

@@ -27,7 +27,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 15 | 2026-08-06 | DAY 22 retouch deferred (BACKLOG 011); `docs/drafts/` kept until then | vault & novel |
 | 16 | 2026-08-26 | Season V: the crew comes aboard and every DAY names its narrator | crew & budget |
 | 17 | 2026-09-21 | Root URL: option 3, a `404.html` stub; `en/` is canonical | site structure |
-| 18 | 2026-09-21 | Deploy through GitHub Actions; the four checkers guard every PR | workflow & git |
+| 18 | 2026-09-21 | Deploy through GitHub Actions; checkers guard every PR (four from 2026-11-04) | workflow & git |
 | 19 | 2026-11-06 | Only Iulia merges, by merge commit; agents never merge | workflow & git |
 | 20 | 2026-11-10 | Every piece of crew work runs behind a gate with her OK of a cap | crew & budget |
 | 21 | 2026-11-10 | The cost ledger records what the voyage has burned | crew & budget |
@@ -47,7 +47,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 35 | 2026-11-19 | The novel is co-written; she is author and supervisor; never a task log | vault & novel |
 | 36 | 2026-11-19 | The Seldon Vault keeps six fixed capsules, one per volume | vault & novel |
 | 37 | 2026-11-19 | The inspiration: Arcade Explorers, walked in the opposite direction | content |
-| 38 | 2026-11-19 | The opened capsules should not hand out the whole journal | vault & novel |
+| 38 | 2026-11-19 | The full-journal link is removed from opened capsules | vault & novel |
 | 39 | 2026-11-19 | The backend is parked, not rejected | site structure |
 | 40 | 2026-11-19 | Content first; the nine ideas go to the backlog and run in waves | crew & budget |
 | 41 | 2026-11-19 | A DECISIONS record; the docs review comes after it | workflow & git |
@@ -141,10 +141,10 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - **Why.** "The simplest match for the current architecture": no Pages setting and no redirect workflow needed.
 - **Source.** BACKLOG 008 "Decision (implemented)"; JOURNAL DAY 17; commit `19822a3`.
 
-### 18 · 2026-09-21 · Deploy through GitHub Actions; four checkers guard every PR
-- **Decision.** A push to `main` deploys through GitHub Actions. The Lint workflow runs the four checkers (`check-noopener.py`, `check-uc-banner.py`, `check-log-prose.py`, `check-parity.py`) on every push and PR; they are also run before each commit.
+### 18 · 2026-09-21 · Deploy through GitHub Actions; checkers guard every PR
+- **Decision.** A push to `main` deploys through GitHub Actions. The Lint workflow runs the checkers on every push and PR; they are also run before each commit. On 2026-09-21 there were two: `check-noopener.py` (`db3a7c4`) and `check-uc-banner.py` (`fb2f392`). On 2026-11-04 they grew to four: `check-log-prose.py` (`a25fd68`) and `check-parity.py` (`6261f8c`, PR #3).
 - **Why.** Each guard was written for a rule that had actually broken.
-- **Source.** Commits `e5f4ce0`, `224fb0e`; PR #3; `CLAUDE.md`, "Working rules"; `DEPLOY.md`.
+- **Source.** Commits `e5f4ce0`, `224fb0e`, `db3a7c4`, `fb2f392`, `a25fd68`, `6261f8c`; PR #3; `CLAUDE.md`, "Working rules"; `DEPLOY.md`.
 
 ### 19 · 2026-11-06 · Only Iulia merges
 - **Decision.** Nothing reaches `main` except through a pull request. Only Iulia merges, with *Create a merge commit*; agents never merge and never push to `main`. Her local clean-up comes only after the PM's all-clear, because the crew shares one checkout.
@@ -155,11 +155,11 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - **Decision.** No card runs until Iulia has OK'd a cap for it; her words are recorded on a gate card marked `[HER-OK …]`; going over the cap needs a new OK.
 - *"1st wave: I agree with the budget."* (2026-11-19)
 - **Why.** She decides what the work is worth before it is spent.
-- **Source.** PM handoff, "Budget record" and the updates of 2026-11-10 → 11-19; gate cards `t_86d635f8`, `t_ccd7da9e`, `t_63f7e170`; this card's comment.
+- **Source.** PM handoff, "Budget record" and the updates of 2026-11-10 → 11-19; gate cards `t_86d635f8`, `t_ccd7da9e`, `t_63f7e170`; card `t_7e6d4581`, comment `[HER-OK 2026-11-19]`.
 
 ### 21 · 2026-11-10 · The cost ledger
 - **Decision.** What the voyage spends is recorded in `docs/ledger/cost-ledger.md` (EN + RO), with a Fuel line added to DAYs 33–39.
-- **Why.** So the cost of each round can be read, and compared with its estimate.
+- **Why.** So the cost of each round can be read, and one round compared with another.
 - **Source.** PR #15 (`3dc6cc3`); `docs/ledger/cost-ledger.md`.
 
 ### 22 · 2026-11-10 · The teacher comes aboard
@@ -210,7 +210,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 ### 31 · 2026-11-18 · Every new code line explained in full
 - **Decision.** Every new line of code gets its full explanation, even if the same explanation exists elsewhere.
 - **Why.** Each page must teach on its own; repetition is on purpose (entries 11, 27).
-- **Source.** PM handoff, update 2026-11-18 ("Iulia added 2 rules"); QA `t_3aab23a9` checked it on PR #19 ("552 added code lines all explained").
+- **Source.** PM handoff, update 2026-11-18 ("Iulia added 2 rules"); QA `t_3aab23a9` checked it on PR #19 (*"I checked 552 added code lines"*).
 
 ### 32 · 2026-11-18 · Every piece of work is recorded in the JOURNAL
 - **Decision.** Every piece of work the crew does is recorded in the JOURNAL, told as the story of a day (entry 35). Work not yet told goes into the next entry (PR #20 and the drafts review, 2026-11-19).
@@ -243,10 +243,9 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - *"The pathway in these books is in the opposite direction than our path. We go from canonical to gamish and they go the other way around."*
 - **Source.** Card `t_5cc95f00`, comment `[HER 2026-11-19]`.
 
-### 38 · 2026-11-19 · The opened capsules should not hand out the whole journal ◐ open
-- **Decision.** The link from an opened capsule to the full JOURNAL on GitHub was not her choice; in her words it *"defeats the purpose"*.
-- **◐ open.** Remove the link, or point it to the capsule's own chapter: her choice is pending.
-- **Source.** PM handoff, update 2026-11-19 16:15; card `t_985cb67b`.
+### 38 · 2026-11-19 · The full-journal link is removed from opened capsules
+- **Decision.** The link from an opened capsule to the full JOURNAL on GitHub is removed. It was not her choice; in her words it *"defeats the purpose"*.
+- **Source.** PM handoff, updates 2026-11-19 16:15 and 17:15; card `t_985cb67b` (PM advice "remove it", her answer "OK"; comment `[HER-OK 2026-11-19]`: "remove the GitHub link").
 
 ### 39 · 2026-11-19 · The backend is parked, not rejected
 - **Decision.** Saving reader progress (vault keys) and the note-terminal notes beyond one browser needs a backend; that is parked, not rejected.
@@ -256,7 +255,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 ### 40 · 2026-11-19 · Content first; the ideas run in waves
 - **Decision.** Her priority is content (study notes → HTML/CSS log pages); the site review is on hold. The nine ideas from the structure reviews are accepted into the backlog, and each runs only in a wave with its own cap.
 - *"OK to the 9 ideas"* · *"1st wave: I agree with the budget."*
-- **Source.** Gate `t_d6f19c12` (comment); PM handoff, updates 2026-11-19 16:15 → 17:00; this card's comment.
+- **Source.** Gate `t_d6f19c12` (comment); PM handoff, updates 2026-11-19 16:15 → 17:00; card `t_7e6d4581`, comment `[HER-OK 2026-11-19]`.
 
 ### 41 · 2026-11-19 · A DECISIONS record, then the docs review
 - **Decision.** The ship keeps this DECISIONS record (EN + RO), as Strigoi does. The review of which docs to keep comes later, after this harvest, so no source is deleted before its decisions are recorded.
