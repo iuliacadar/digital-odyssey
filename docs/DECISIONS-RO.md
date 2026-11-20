@@ -51,6 +51,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 | 39 | 2026-11-19 | Backend-ul e pus deoparte, nu respins | structura site-ului |
 | 40 | 2026-11-19 | Întâi conținutul; cele nouă idei intră în backlog și rulează în valuri | echipaj & buget |
 | 41 | 2026-11-19 | Un registru DECISIONS; revizuirea documentelor vine după el | flux de lucru & git |
+| 42 | 2026-11-19 | O voce pentru fiecare metodă; naratorii JURNALULUI și regula lui | seif & roman |
 
 ## Intrări
 
@@ -261,3 +262,8 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 - **Decizia.** Nava ține acest registru DECISIONS (EN + RO), așa cum face și Strigoi. Revizuirea documentelor care rămân vine mai târziu, după această recoltă, ca nicio sursă să nu fie ștearsă înainte ca deciziile din ea să fie consemnate.
 - *"I didn't create for digital-odyssey a separate DECISIONS document as we did for strigoi, and I regret that."*
 - **Sursa.** Cardul `t_7e6d4581` (corpul); predarea PM-ului, actualizarea din 2026-11-19, 17:00.
+
+### 42 · 2026-11-19 · O voce pentru fiecare metodă a navei
+- **Decizia.** Fiecare dintre cele trei metode păstrează o singură voce: lecțiile (metoda 1), comentariile planului recursiv (2), JURNALUL (3a) și manualele Arkhold (3b). Regula stă în `docs/work-deontology-ro.md`, §10, nu în CULTURE, care e un catalog de referințe culturale; fișierul acesta consemnează decizia. Aceeași secțiune îi numește pe naratorii JURNALULUI, așază ZIUA 22 ca zi care nu se termină și dă regula pentru fiecare intrare, veche sau nouă: o poveste științifico-fantastică și o consemnare exactă tehnic a zilei, cu faptele spuse ca legendă.
+- *"sound good"* · *"OK"* · *"The JOURNAL is not just a technical manual, it is a story of a technical adventure."*
+- **Sursa.** Cardul `t_78672421` (corpul și adăugirile din 2026-11-19, 21:10 și 21:40); revizuirea structurii făcută de writer pe cardul `t_c975e8cf`, ideea 2.
