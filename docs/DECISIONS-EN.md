@@ -1,8 +1,10 @@
 # Decisions — D::0dy55ey
 
-This file records the decisions that shape the ship: what was decided, why, and where it is written down. Version 1 (2026-11-19) was recovered from the JOURNAL, the BACKLOG, the docs, `git log`, the merged PRs and the board. Romanian twin: [`DECISIONS-RO.md`](DECISIONS-RO.md).
+This file records the decisions that shape the ship: what was decided, why, and where it is written down. Version 1 (2026-11-19) was recovered from the JOURNAL, the BACKLOG, the docs, `git log`, the merged PRs and the board. Version 1.1 (2026-11-20) adds her answers of 2026-11-19 to the ⚠ and ↻ markers, and the earliest decisions, from the first ship (`digital-odyssey-v1`, 28.04 → 21.09.2026), found by the researcher (card `t_01d0fe2c`). Romanian twin: [`DECISIONS-RO.md`](DECISIONS-RO.md).
 
-**To add an entry:** give it the next number, put it at the end (entries run oldest first), add a row to the index, and write the same entry in both files. Name a source (commit, PR, JOURNAL DAY, BACKLOG item, doc section or board card) and quote Iulia's words only when a source holds them.
+**To add an entry:** give it the next number, put it at the end, add a row to the index, and write the same entry in both files. Name a source (commit, PR, JOURNAL DAY, BACKLOG item, doc section or board card) and quote Iulia's words only when a source holds them.
+
+**Numbering (v1.1).** Numbers are never reused or shifted. Entries 1–42 run oldest first. Entries 43–66 are an appended block of decisions from the first ship, older than entry 1; they were appended rather than renumbered, so every existing reference to an entry number stays valid. Entry 67 and every later entry continue in date order from there.
 
 **Markers:** ⚠ **reconstructed: please confirm** = no clear written source for the whole entry (or for its date); ◐ **open** = decided, but one part is still to choose; ↻ **check** = a later practice or text may have changed it.
 
@@ -19,9 +21,9 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 7 | 2026-07-24 | The ship reads itself: the recursive blueprint | site structure |
 | 8 | 2026-07-25 | The language toggle leads to the same page in the other language | language & translation |
 | 9 | 2026-07-29 | `en/` and `ro/` are deliberate parallel copies | language & translation |
-| 10 | 2026-07-29 | English first, then clone and translate into Romanian | language & translation |
+| 10 | 2026-07-29 | English first, then clone and translate; RO comment text in Romanian, `@tag` names in English | language & translation |
 | 11 | 2026-07-29 | Every block and line commented; repetition on purpose; never strip | comments & code |
-| 12 | 2026-07-30 | DAY 22 is the permanent construction log | workflow & git |
+| 12 | 2026-07-30 | DAY 22 is the never-ending day for major events; each working day has its own DAY | workflow & git |
 | 13 | 2026-08-05 | The journal becomes a novel, co-written | vault & novel |
 | 14 | 2026-08-05 | The Seldon Vault: the novel aboard the site, in capsules | vault & novel |
 | 15 | 2026-08-06 | DAY 22 retouch deferred (BACKLOG 011); `docs/drafts/` kept until then | vault & novel |
@@ -52,6 +54,31 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 40 | 2026-11-19 | Content first; the nine ideas go to the backlog and run in waves | crew & budget |
 | 41 | 2026-11-19 | A DECISIONS record; the docs review comes after it | workflow & git |
 | 42 | 2026-11-19 | One voice per method; the JOURNAL's narrators and its rule | vault & novel |
+| 43 | 2026-04-28 | v1: a book in Volumes, with a heading ladder from `h1` to `h5` | site structure |
+| 44 | 2026-04-28 | v1: React and Angular sit inside JavaScript, as an annex | site structure |
+| 45 | 2026-04-28 | v1: the look is retro-futurist, after *Solaris* | content |
+| 46 | 2026-04-28 | v1: the colours carry meaning (mint, amber, pink) | content |
+| 47 | 2026-04-30 | v1: dense content moves to its own log pages | site structure |
+| 48 | 2026-04-30 | v1: one lesson, one day, one article | site structure |
+| 49 | 2026-05-05 | v1: Captain's Observations, half Manual, half Journal | vault & novel |
+| 50 | 2026-05-05 | v1: hybrid day titles with protocol separators | vault & novel |
+| 51 | 2026-05-07 | v1: the note terminal, saved in the browser | site structure |
+| 52 | 2026-05-11 | v1: a 45-day HTML syllabus, grouped in weeks | content |
+| 53 | 2026-05-18 | v1: animations run three cycles, then rest | comments & code |
+| 54 | 2026-05-18 | v1: the recursive page was her idea, the last module to unlock | site structure |
+| 55 | 2026-05-20 | v1: the stylesheet becomes a manual, in numbered modules | comments & code |
+| 56 | 2026-05-20 | v1: at most two active colours on screen | content |
+| 57 | 2026-05-27 | v1: the 3D reactor, from astrolabe to icosahedron | site structure |
+| 58 | 2026-06-02 | v1: the blueprint reads the live source | site structure |
+| 59 | 2026-06-24 | v1: plain CSS, no Sass | comments & code |
+| 60 | 2026-06-02 | v1: desktop and mobile kept apart, two hemispheres | comments & code |
+| 61 | 2026-06-06 | v1: one `h1` per independent page; the site as a fleet | site structure |
+| 62 | 2026-06-03 | v1: the stylesheet refactored into a teaching Codex; calibrated values untouched | comments & code |
+| 63 | 2026-06-25 | v1: a mobile fix closes only on a real phone | workflow & git |
+| 64 | 2026-06-24 | v1: git, and a portfolio | workflow & git |
+| 65 | 2026-06-30 | v1: poetry and the clarity of the code, in balance | vault & novel |
+| 66 | 2026-09-21 | v1 is retired, with a redirect | site structure |
+| 67 | 2026-11-20 | Nothing illegal on the bibliography page | content |
 
 ## Entries
 
@@ -100,22 +127,24 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - **Why.** "A bilingual learning vessel, not a monolingual production app." Since 2026-11-04, `check-parity.py` guards the rule.
 - **Source.** `docs/work-deontology.md` §1 (`61cd338`); `CLAUDE.md`, "Deliberate decisions" 2 (`df4325d`, 2026-11-04); PR #3.
 
-### 10 · 2026-07-29 · English first, then Romanian ↻ check
-- **Decision.** A new file is perfected in English first, then cloned into `ro/` and translated.
-- **Why.** One finished model, then a faithful twin.
-- **↻ check.** §3 also says the `@tag` comments stay in English, but on 2026-08-09 and 2026-08-16 the RO comments were translated into Romanian (`e597d8c`, `3536495`), and PR #20 restored Romanian `@reason` comments. Which rule holds now: please confirm.
-- **Source.** `docs/work-deontology.md` §3.
+### 10 · 2026-07-29 · English first, then Romanian; the comment rule
+- **Decision.** A new file is perfected in English first, then cloned into `ro/` and translated. In the Romanian files the comment text is in Romanian; the `@tag` names stay in English everywhere.
+- **Why.** One finished model, then a faithful twin. The tags are one shared vocabulary (entry 3); the explanation speaks the reader's language.
+- *"the comments in the Romanian files are in Romanian and the comments tags are in English everywhere."* (her answer on PR #21, 2026-11-19)
+- **Practice before the rule.** In v1, comment language already followed the sheet: `c5daa10` (2026-06-26) put the reactor comments of `style.css` in English while `style-ro.css` kept Romanian ones. In this repo the RO comments were translated on 2026-08-09 and 2026-08-16 (`e597d8c`, `3536495`), and PR #20 restored Romanian `@reason` comments.
+- **Source.** `docs/work-deontology.md` §3; her answer on PR #21 (2026-11-19); researcher memo, card `t_01d0fe2c`.
 
 ### 11 · 2026-07-29 · Every block and line commented; never strip
 - **Decision.** Every block and every line is commented, even when patterns repeat; the long teaching comments are never stripped, shortened or "decluttered". Wrong, stale or merely restating comments are flagged and fixed.
 - **Why.** "Redundancy is acceptable and intentional: each occurrence is an opportunity for learning." The comments are the project's learning method.
 - **Source.** `docs/work-deontology.md` §4; `CLAUDE.md`, "Deliberate decisions" 1 (`df4325d`, 2026-11-04); PR #14 (wrong module numbers fixed).
 
-### 12 · 2026-07-30 · DAY 22 is the permanent construction log ↻ check
-- **Decision.** Structural work, audits and repairs append to DAY 22, "the Longest Wednesday"; only a new narrative or learning phase opens a new DAY.
-- **Why.** To keep the journal from bloating with repair days.
-- **↻ check.** Since DAY 33 the crew tells its work as new DAYs (DAY 41 and 42 record PRs), and entry 32 asks for every piece of work in the JOURNAL. Whether §9 still holds: please confirm.
-- **Source.** `docs/work-deontology.md` §9 (`61464c2`).
+### 12 · 2026-07-30 · DAY 22, the never-ending day
+- **Decision.** DAY 22, "the Longest Wednesday", is the never-ending, cosmic day. Every major event of the ship or the voyage (a major change of structure, a general clean-up, and so on) is recorded in it, whenever it happened in the timeline. It needs no date and no time. Each working day gets its own DAY (entries 32, 42).
+- *"Yes, DAY 22 is a continuous or a never-ending day. Every time a major event related to the ship or voyage occurs, it will be recorded in this DAY 22 entry even if they were done earlier or later in the timeline. It's a bending of time in our digital space."* (2026-11-19)
+- *"It never ends, that's crucial."* · *"before starting to work with Hermes, there were no real dates recorded in the JOURNAL. DAY 22 is a cosmic day, it doesn't need a dating, neither a timing."* (2026-11-20)
+- **Why.** Time bends in the ship's digital space: DAY 22 holds the events that change the ship, while each day of work is told in a DAY of its own.
+- **Source.** `docs/work-deontology.md` §9 (`61464c2`) and §10 (PR #23); her answer on PR #21 (2026-11-19); card `t_2d86b8be`, comment `[HER 2026-11-20]`.
 
 ### 13 · 2026-08-05 · The journal becomes a novel
 - **Decision.** The JOURNAL is a co-written novel, titled *D::0dy55ey — Delta writing, or how to write through differences*, with a frontispiece in both journals.
@@ -175,28 +204,30 @@ This file records the decisions that shape the ship: what was decided, why, and 
 
 ### 24 · 2026-11-10 · The Arkhold Records ◐ open
 - **Decision.** Crew-written study material may go public as a deeper layer, "how I learned informatics with the crew's help". The name is hers (*arkhold* = ark + household). Others' texts are bibliography links only; a privacy pass is mandatory; the honest label is "crew-written study material, checked by QA"; only records she calls "fit" go public, each with its own verdict.
-- **◐ open.** The format (a page on this site or a separate site) is still to decide.
+- **◐ open.** The format (a page on this site or a separate site) is still to decide. She confirmed it on 2026-11-19: *"(24) - yes, it's still open."*
 - **Source.** PM handoff, "OPEN DECISION: The Arkhold Records" and update 2026-11-10 19:00; gate `t_67a95c5f`; build gate `t_4bd9e35c`.
 
-### 25 · 2026-11-10 · The translation rule ⚠ reconstructed: please confirm
-- **Decision.** EN and RO need not be identical: beautiful and technically clear beats word for word, but the facts must match. Romanian uses comma-below ș ț. The captain is neutral (never "căpitana"); the student is feminine.
-- **⚠** Written down as a standing rule by 2026-11-10; the day she first set it is not recorded.
-- **Source.** PM handoff, "Standing rules".
+### 25 · 2026-11-10 · The translation rule
+- **Decision.** EN and RO need not be word for word, but the translation must be correct linguistically and as literature, and the facts must match; the code is identical. Romanian uses comma-below ș ț. The captain is neutral (never "căpitana"); the student is feminine.
+- *"yes, the translation doesn't have to be word-by-word. The code is identical and that's important. Translation has to be correct from a linguistic and literary pov."* (confirmed on PR #21, 2026-11-19)
+- **Practice since v1.** The v1 stylesheet manifests are translated freely, not literally, and the v1 Romanian uses comma-below letters only.
+- **Source.** PM handoff, "Standing rules"; her answer on PR #21 (2026-11-19); researcher memo, card `t_01d0fe2c`.
 
-### 26 · 2026-11-10 · No anime named inside the story ⚠ reconstructed: please confirm
+### 26 · 2026-11-10 · No anime named inside the story
 - **Decision.** No anime is named inside the novel; anime belongs in CULTURE (the anime & manga shelf).
-- **⚠** Standing rule by 2026-11-10; the day it was set is not recorded.
-- **Source.** PM handoff, "Standing rules"; CULTURE-EN "Anime & manga — the transformation shelf" (`20635d8`).
+- Confirmed on PR #21, 2026-11-19: *"(26) - OK."*
+- **Source.** PM handoff, "Standing rules"; her answer on PR #21; CULTURE-EN "Anime & manga — the transformation shelf" (`20635d8`).
 
 ### 27 · 2026-11-10 · Every command is explained, every time
 - **Decision.** Any commands sent to Iulia, varied and new ones welcome, come with one plain line each: what it does and why now, even when repeated.
 - **Why.** Repetition is her way of memorizing; she wants to learn more commands. It replaced the earlier idea of a "fixed four".
 - **Source.** PM handoff, update 2026-11-10 23:10, "COMMANDS RULE".
 
-### 28 · 2026-11-10 · Semi-automatic journal entries, later ⚠ reconstructed: please confirm
+### 28 · 2026-11-10 · Semi-automatic journal entries, later
 - **Decision.** When enough material exists, journal entries may be drafted semi-automatically, never fully automatically.
-- **⚠** Parked item by 2026-11-10; the day of her OK is not recorded.
-- **Source.** PM handoff, "Other parked items" ("her OK: semi-auto, not full").
+- Confirmed on PR #21, 2026-11-19: *"(28) - yes."*
+- **Precedent.** The v1 journal was already partly drafted by an AI chat from her sessions.
+- **Source.** PM handoff, "Other parked items" ("her OK: semi-auto, not full"); her answer on PR #21; researcher memo, card `t_01d0fe2c`.
 
 ### 29 · 2026-11-17 · Limited autonomy is her choice
 - **Decision.** The crew could run fully autonomous; it doesn't, because Iulia chooses to stay in the loop as a learner.
@@ -266,4 +297,169 @@ This file records the decisions that shape the ship: what was decided, why, and 
 ### 42 · 2026-11-19 · One voice per method of the ship
 - **Decision.** Each of the three methods keeps one voice: the lessons (method 1), the blueprint comments (2), the JOURNAL (3a) and the Arkhold handbooks (3b). The rule lives in `docs/work-deontology.md`, §10, not in CULTURE, which is a catalogue of cultural references; this file records the decision. The same section lists the JOURNAL's narrators, states DAY 22 as the never-ending day, and sets the rule for every entry, old and new: a science-fiction story and a technically exact record of the day, its facts told as legend.
 - *"sound good"* · *"OK"* · *"The JOURNAL is not just a technical manual, it is a story of a technical adventure."*
-- **Source.** Card `t_78672421` (body, and its additions of 2026-11-19, 21:10 and 21:40); the writer's structure review on card `t_c975e8cf`, idea 2.
+- **The myth DAYs stay.** Old DAYs that are pure myth, with no technical record, are kept; what is not wanted is a DAY that is pure technical record. *"the DAYs that are pure myth and no technical record are the most precious ones. Don't remove them. What we don't want are the DAYs that are pure technical record."* (2026-11-20)
+- **Source.** Card `t_78672421` (body, and its additions of 2026-11-19, 21:10 and 21:40); the writer's structure review on card `t_c975e8cf`, idea 2; merged in PR #23 (`599b3a5`); card `t_2d86b8be`, comment `[HER 2026-11-20]`.
+
+## From the first ship (v1), appended in v1.1
+
+Entries 43–66 come from the first ship, `digital-odyssey-v1`, and are older than entry 1. They are in the order of the researcher's memo (card `t_01d0fe2c`, rows V1–V24, so entry 43 = V1 and entry 66 = V24), which is mostly date order: entries 59, 60, 62 and 64 break it, and entry 59's date is only that of its first commit. The dates are those written in the v1 journal entries; that text has been in git only since `faa2631` (2026-06-24), first as `notite-manual.md`, her study notes. Line numbers (L…) are for the v1 `JURNAL.md` at `60b3ba4`.
+
+Parts of the v1 journal were drafted by an AI chat from her sessions. Only first-person notes are quoted here as her words, in the original Romanian with an English gloss after →. Lines in the AI's voice are cited as what the journal records, not as her words. Where a v1 decision seeds an entry above, "Later" names it.
+
+### 43 · 2026-04-28 · A book in Volumes, with a heading ladder
+- **Decision.** The project is a book in Volumes with a strict `h1`→`h5` heading ladder. It starts with two: *Volume I: The Frontend Landscape* and *Volume II: The Database Void*.
+- **Why.** Accessibility and clarity: the heading ladder reads as the book's table of contents.
+- *„Am organizat proiectul în două mari arii de studiu folosind elementul `<section>`”* → "I organised the project into two great areas of study, using `<section>`."
+- **Later.** Entry 1 (six volumes in one hull).
+- **Source.** v1 JURNAL `### 28.04.2026`, L41–57 and L6090–6115; `faa2631`; memo V1.
+
+### 44 · 2026-04-28 · React and Angular sit inside JavaScript
+- **Decision.** React and Angular are an annex inside JavaScript (`h4`/`h5`), not chapters of their own.
+- **Why.** They are extensions of JavaScript, not independent technologies.
+- *„HTML-ul meu este o hartă a dependențelor tehnologice, nu doar o listă de elemente.”* → "My HTML is a map of technological dependencies, not just a list of elements."
+- **Source.** v1 JURNAL L58, L6117–6121; `faa2631`; memo V2.
+
+### 45 · 2026-04-28 · The look: retro-futurist, after *Solaris*
+- **Decision.** The palette is Solar Mint, Amber, Nebula Pink and Space Dark, with CRT scanlines and frosted glass, after Tarkovsky's *Solaris* and the art of Oxyplegatz.
+- **Why.** She left the standard colours behind on purpose.
+- *„Am abandonat culorile standard pentru o estetică retro-futuristă inspirată de Solaris (Tarkovsky) și arta Oxyplegatz”* → "I abandoned standard colours for a retro-futurist aesthetic inspired by Solaris (Tarkovsky) and Oxyplegatz's art."
+- **Source.** v1 JURNAL L62–74; `faa2631`; memo V3.
+
+### 46 · 2026-04-28 · The colours carry meaning
+- **Decision.** Mint means explored and stable; amber means future, pending or a warning (`.future-log`); pink means here and now (`.active`). The coding was fixed by 06.05.2026 as the *„Codificare Cromatică Finală”* ("final colour coding").
+- **Why.** Colour shows the reader where they are in the voyage.
+- *„Bordură portocalie (Amber) cu opacitate scăzută pentru modulele viitoare”* → "a low-opacity amber border for future modules".
+- **Source.** v1 JURNAL L76–79, L181–184, L214–217; memo V4.
+
+### 47 · 2026-04-30 · Dense content moves to its own log pages
+- **Decision.** Dense content goes to dedicated pages (`html-log.html`, `sql-log.html`); the Command Deck stays clean.
+- **Why.** To avoid "infinite scroll".
+- *„Am decis separarea conținutului dens în pagini dedicate (html-log.html, sql-log.html) pentru a evita «scroll-ul infinit» și a păstra Command Deck-ul (pagina principală) curat.”* → "I decided to split dense content into dedicated pages… to avoid 'infinite scroll' and keep the Command Deck (the home page) clean."
+- **Later.** Entry 5 (the hub and the satellites).
+- **Source.** v1 JURNAL L149; `faa2631`; memo V5.
+
+### 48 · 2026-04-30 · One lesson, one day, one article
+- **Decision.** Each lesson is a day, and each day is its own `<article class="log-entry">`, closing with a Mission Status. A sticky sidebar lets the reader jump between days.
+- **Why.** Room to breathe against visual fatigue, and a sense of progress through successive ship's reports.
+- *„Această «aerisire» previne oboseala vizuală și oferă un sentiment de progresie”* → "This 'airing' prevents visual fatigue and gives a sense of progression."
+- **Source.** v1 JURNAL L161–163; memo V6.
+
+### 49 · 2026-05-05 · Captain's Observations: half Manual, half Journal
+- **Decision.** From 05–06.05.2026 each entry mixes cold technical data (the Manual) with subjective observations of the exploration (the Journal).
+- **Why.** It shows critical thinking. At that point the readers she imagined were future recruiters.
+- *„Am decis ca fiecare intrare să fie un mix între date tehnice reci (Manual) și observații subiective de explorare (Journal). Această structură demonstrează gândire critică pentru viitorii recrutori.”* → "I decided each entry should mix cold technical data (Manual) with subjective observations of exploration (Journal). This structure shows critical thinking to future recruiters."
+- **Later.** Entries 13 and 42; methods 1 and 3 of entry 33.
+- **Source.** v1 JURNAL L208–210 („Strategia de Conținut: Manual Hibrid”); memo V7.
+
+### 50 · 2026-05-05 · Hybrid day titles
+- **Decision.** Day titles join chronology and metaphor with protocol separators, `//` or `::` (for example *Day 01: The Shield Matrix // …*).
+- **Why.** It strengthens the look of a technical log.
+- *„Am adoptat un sistem de titluri hibride care îmbină cronologia (Day XX) cu metaforele de explorare (The Steel Hull), folosind separatori de tip protocol (// sau ::)”* → "I adopted hybrid titles joining chronology (Day XX) with exploration metaphors (The Steel Hull), using protocol separators (// or ::)."
+- **Later.** Possibly the root of the `::` in `D::0dy55ey` (entry 4); that link is for her to confirm.
+- **Source.** v1 JURNAL L212, example at L625; memo V8.
+
+### 51 · 2026-05-07 · The note terminal
+- **Decision.** From 07–11.05.2026 every log entry has its own textarea, saved in the browser with `localStorage`. The IDs follow a strict pattern by sector (`html-note-dayXX`, `sql-…`) and are kept apart from the article IDs.
+- **Why.** Notes persist without editing the HTML, and the prefixes stop data from different sectors from colliding.
+- *„Am «instruit» nava să folosească memoria internă a browserului”* → "I 'trained' the ship to use the browser's own memory."
+- **Later.** Entry 39 (the backend is parked, not rejected).
+- **Source.** v1 JURNAL L254–259, L284–289, L302–306, L318–322; memo V9.
+
+### 52 · 2026-05-11 · A 45-day HTML syllabus, in weeks
+- **Decision.** The HTML syllabus runs for 45 days, grouped by week in the sidebar. The manual is meant to be useful to others too.
+- **Why.** A gentler path through the material, and a manual others can follow.
+- *„Am adoptat o structură de grupare săptămânală a log-urilor pentru a îmbunătăți parcursul didactic.”* → "I adopted weekly grouping of the logs to improve the teaching path." The journal also records that the syllabus was extended to make a manual "useful to others too".
+- **Source.** v1 JURNAL L331–391; memo V10.
+
+### 53 · 2026-05-18 · Animations run three cycles, then rest
+- **Decision.** From 18–20.05.2026 animations run three cycles (about 7.5 s) and then stop. Nothing loops forever.
+- **Why.** The journal records it: infinite animations were dropped so as not to tire the reader's eyes in long reading sessions.
+- **Source.** v1 JURNAL L414; memo V11.
+
+### 54 · 2026-05-18 · The recursive page was her idea
+- **Decision.** From 18–20.05.2026: the site shows its own code, explained line by line, on a page of its own. The working name was `[ STAR_CHART_LOGIC ]`, and it was planned as the last module the journal unlocks.
+- **Why.** Edutainment: the reader sees how the ship they are sailing was built.
+- The journal, in the AI's voice, credits the idea to her ("your idea of turning style.css… into a recursive study tool") and plans the page as "the last module unlocked in the journal".
+- **Later.** Entries 7 and 34.
+- **Source.** v1 JURNAL L417–425 („Self-Documentic Code Layout”); memo V12.
+
+### 55 · 2026-05-20 · The stylesheet becomes a manual
+- **Decision.** From 20–25.05.2026 `style.css` is split into numbered modules (01–11, then 00.1 for keyframes and 00.2 for media), and every property gets a literary and functional translation.
+- **Why.** A self-documenting layout that the recursive page can read aloud.
+- *„Fiecare proprietate tehnică… are acum o traducere literară și funcțională directă, transformând codul meu într-un manual live.”* → "Every technical property now has a direct literary and functional translation, turning my code into a live manual."
+- **Later.** Entries 3 and 11.
+- **Source.** v1 JURNAL L431–462; memo V13.
+
+### 56 · 2026-05-20 · At most two active colours on screen
+- **Decision.** No more than two active colours are on screen at a time; amber was removed from the footer.
+- **Why.** Visual discipline: the journal calls it the "golden rule" of at most two active colours.
+- **Source.** v1 JURNAL L501; memo V14.
+
+### 57 · 2026-05-27 · The 3D reactor
+- **Decision.** The flat header was replaced by an armillary sphere (27–29.05.2026), then by an icosahedron of 20 triangular faces built in CSS (02.06.2026).
+- **Why.** A monumental emblem for the home page. Later it became the door to the blueprint.
+- *„Sfera din header — un veritabil mecanism armilar 3D astrolab, un motor holografic renascentist cyberpunk fluid”* → "The sphere in the header: a true 3D armillary astrolabe, a fluid Renaissance-cyberpunk holographic engine."
+- **Later.** Entry 34 (the reactor opens the blueprint).
+- **Source.** v1 JURNAL L584–604, geometry at L5834–5852; memo V15.
+
+### 58 · 2026-06-02 · The blueprint reads the live source
+- **Decision.** `recursive-blueprint.html` uses `fetch` to pull the raw `style.css` and `script.js` and shows them in a split screen, with a mini-reactor at 55% beside the code.
+- **Why.** As the journal puts it, the code behind "is no longer hidden in inert folders: it becomes the literary and didactic text the student reads".
+- **Later.** Entry 7.
+- **Source.** v1 JURNAL L720–742; the file is in `faa2631`; memo V16.
+
+### 59 · 2026-06-24 · Plain CSS, no Sass ⚠ reconstructed: please confirm
+- **Decision.** The ship is styled in native (vanilla) CSS, with no Sass or SCSS.
+- **Why.** What is studied is exactly what the browser runs; a preprocessor would strip the comments the recursive page reads; modern CSS already has variables and nesting.
+- *„am ales în mod deliberat să navigăm folosind CSS Nativ (Vanilla) în detrimentul hărților prefabricate de tip Sass/SCSS… codul pe care îl studiați în acest jurnal este EXACT materia primă pe care nava o execută în timp real.”* → "we deliberately chose native (vanilla) CSS over Sass/SCSS… the code you study in this journal is EXACTLY the raw matter the ship runs in real time." (the stylesheet manifest)
+- **⚠** The manifest carries no date; 2026-06-24 is the date of the first commit that holds it.
+- **Source.** v1 `style-ro.css` / `style-en.css` L1–30 (`@manifest`), `faa2631`; memo V17.
+
+### 60 · 2026-06-02 · Desktop and mobile kept apart
+- **Decision.** Desktop styles live in `min-width: 769px` (0.A) and mobile in `max-width: 768px` (0.B): two "hemispheres". From 2026-06-26 both are limited to `@media screen`. This reversed the audit rule of 02.06.2026 (desktop first, queries only for `max-width: 768px`) after a question asked on 03–11.06.
+- **Why.** The desktop page is an IDE-like split screen and mobile is a narrative flow; kept apart, neither has to undo the other's `!important` rules. Limiting to `screen` keeps the 3D and the dark backgrounds out of print.
+- The question that turned it: *„Este izolarea stilului de desktop într-un Media Query dedicat (`min-width: 769px`) o decizie corectă sau o abatere necanonică de la regulile CSS?”* → "Is isolating the desktop style in its own media query a correct decision, or a non-canonical deviation from the CSS rules?"
+- **Source.** v1 JURNAL L744–750 and L3971–3991; `c5daa10`; v1 `docs/mobile-notes.md` §2; memo V18.
+
+### 61 · 2026-06-06 · One `h1` per independent page; the site as a fleet
+- **Decision.** Each independent page has one `h1`: `index.html` inside the reactor, `recursive-blueprint.html` because it stands alone. Log pages start at `h2`. The site is described as a fleet: the mothership (*Nostromo*, `index`), the cargo ships (`*-log`) and the scout ship (the blueprint).
+- **Why.** Semantics, SEO and a hierarchy readers can learn. The journal credits the scout ship to her image ("the small logico-dynamic ship you intuited").
+- **Later.** Entry 5.
+- **Source.** v1 JURNAL L5748–5823; memo V19.
+
+### 62 · 2026-06-03 · A teaching Codex; calibrated values untouched
+- **Decision.** From 03–15.06.2026 the stylesheet is reordered as a course: the footer comes before the 3D modules as a breather, layout is kept apart from animation, and module 11 is split into 11.1–11.5. No calibrated value is touched: her tuned colours, shadows and sizes stay. Her students appear as readers for the first time ("golden rule for your students").
+- **Why.** It keeps the hard-won design and makes the file readable as a course.
+- **Later.** Entry 11.
+- **Source.** v1 JURNAL L763, L5338–5341, L5758, L5854–5863, L5877–5911; memo V20.
+
+### 63 · 2026-06-25 · A mobile fix closes only on a real phone
+- **Decision.** A mobile fix is closed only after a test on a real phone; "it works in F12" doesn't count. The fixes that held: the independent `scale:` property, never `transform: scale()`, on anything animated by `transform`; `px`, not `rem`, with `text-size-adjust: 100%`; `nowrap` for the typewriter line, with the hero copy shortened to fit.
+- **Why.** Desktop emulation does not reproduce how phones inflate text or draw 3D.
+- *„…în ciuda unei randări absolut imaculate în interiorul simulatorului de desktop (`F12`)”* → "…despite flawless rendering in the desktop simulator (F12)." (her TODO; written up on 2026-09-21 in `docs/mobile-notes.md`)
+- **Source.** v1 JURNAL L5943–5951 (`842bb08`); v1 `docs/mobile-notes.md` §3–§5 (`ea64993`); commits `79f7622`, `96d28c3`, `5b47b0c`; memo V21.
+
+### 64 · 2026-06-24 · Git, and a portfolio
+- **Decision.** The project entered git as `Manual_project`, with a portfolio README. On 2026-06-25 her study notes (`notite-manual.md`) were renamed as the journal "for portfolio architectural alignment" (commit message).
+- **Why.** At the time it was a portfolio piece.
+- **Later.** Entry 23: the journal began as her study notes.
+- **Source.** v1 commits `faa2631`, `0b33c01` (README), `50069cd`; memo V22.
+
+### 65 · 2026-06-30 · Poetry and the clarity of the code, in balance
+- **Decision.** Find a balance between the literary register and the technical side that keeps both, and plan a journal in 5–6 sections for long-term ideas. It is the last entry in her own hand before the move to the new repository (committed 2026-07-20).
+- *„TODO: definesc formula de echilibru între registrul literar și partea tehnică a proiectului, astfel încât să păstrez poezia, dar și claritatea codului.”* → "TODO: I'll define the balance between the literary register and the technical side of the project, so as to keep the poetry and also the clarity of the code."
+- **Later.** Entries 13 and 42.
+- **Source.** v1 JURNAL L6006–6010; `884ddb0`; memo V23.
+
+### 66 · 2026-09-21 · The first ship retired, with a redirect
+- **Decision.** v1 stays online, read-only, as an archive, with a redirect; all work goes to `digital-odyssey`. Two options were rejected: an active sibling (double the effort) and a frozen copy without a label (confusing for readers). On 2026-08-20 the old repository had been renamed `digital-odyssey-v1`, freeing the name.
+- **Why.** The successor is a complete reimplementation of the same project, with the mirrored EN/RO structure, journals, a backlog and GitHub Actions.
+- The bilingual decision record in v1 reads: *„Acest depozit… este oficial dezafectat, cu redirecționare”* → "This repository is officially decommissioned, with redirect."
+- **Source.** v1 JURNAL L6277–6324 (`60b3ba4`); README rename `d44244f`; memo V24.
+
+## Entries, continued
+
+### 67 · 2026-11-20 · Nothing illegal on the bibliography page
+- **Decision.** The bibliography lists only what can be reached legally.
+- *"nothing that's illegal goes on that page."*
+- **Source.** Card `t_2d86b8be`, comment `[HER 2026-11-20]`.
