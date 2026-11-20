@@ -302,7 +302,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 
 ## De pe prima navă (v1), adăugate în v1.1
 
-Intrările 43–66 vin de pe prima navă, `digital-odyssey-v1`, și sunt mai vechi decât intrarea 1. Urmează ordinea din memoriul cercetătorului (cardul `t_01d0fe2c`, rândurile V1–V24, deci intrarea 43 = V1 și intrarea 66 = V24), care e ordinea datelor, cu excepția intrării 59, a cărei dată e doar cea a primului ei commit. Datele sunt cele scrise în intrările jurnalului de pe v1; textul acela e în git abia de la `faa2631` (2026-06-24), întâi sub numele `notite-manual.md`, notițele ei de studiu. Numerele de rând (L…) se referă la `JURNAL.md` de pe v1, la `60b3ba4`.
+Intrările 43–66 vin de pe prima navă, `digital-odyssey-v1`, și sunt mai vechi decât intrarea 1. Urmează ordinea din memoriul cercetătorului (cardul `t_01d0fe2c`, rândurile V1–V24, deci intrarea 43 = V1 și intrarea 66 = V24), care e în mare ordinea datelor: intrările 59, 60, 62 și 64 o încalcă, iar data intrării 59 e doar cea a primului ei commit. Datele sunt cele scrise în intrările jurnalului de pe v1; textul acela e în git abia de la `faa2631` (2026-06-24), întâi sub numele `notite-manual.md`, notițele ei de studiu. Numerele de rând (L…) se referă la `JURNAL.md` de pe v1, la `60b3ba4`.
 
 Părți din jurnalul de pe v1 au fost scrise de un chat AI, pornind de la sesiunile ei. Aici sunt citate drept cuvintele ei doar notițele la persoana întâi, în româna originală. Rândurile scrise cu vocea AI-ului sunt citate ca ce consemnează jurnalul, nu drept cuvintele ei. Acolo unde o decizie de pe v1 e sămânța unei intrări de mai sus, „Mai târziu” o numește.
 

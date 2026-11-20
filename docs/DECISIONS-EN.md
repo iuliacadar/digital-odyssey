@@ -302,7 +302,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 
 ## From the first ship (v1), appended in v1.1
 
-Entries 43–66 come from the first ship, `digital-odyssey-v1`, and are older than entry 1. They are in the order of the researcher's memo (card `t_01d0fe2c`, rows V1–V24, so entry 43 = V1 and entry 66 = V24), which is date order except for entry 59, whose date is only that of its first commit. The dates are those written in the v1 journal entries; that text has been in git only since `faa2631` (2026-06-24), first as `notite-manual.md`, her study notes. Line numbers (L…) are for the v1 `JURNAL.md` at `60b3ba4`.
+Entries 43–66 come from the first ship, `digital-odyssey-v1`, and are older than entry 1. They are in the order of the researcher's memo (card `t_01d0fe2c`, rows V1–V24, so entry 43 = V1 and entry 66 = V24), which is mostly date order: entries 59, 60, 62 and 64 break it, and entry 59's date is only that of its first commit. The dates are those written in the v1 journal entries; that text has been in git only since `faa2631` (2026-06-24), first as `notite-manual.md`, her study notes. Line numbers (L…) are for the v1 `JURNAL.md` at `60b3ba4`.
 
 Parts of the v1 journal were drafted by an AI chat from her sessions. Only first-person notes are quoted here as her words, in the original Romanian with an English gloss after →. Lines in the AI's voice are cited as what the journal records, not as her words. Where a v1 decision seeds an entry above, "Later" names it.
 
