@@ -3829,18 +3829,6 @@ Module 00 is always the last module of the stylesheet.
   border-left: 2px solid rgba(167, 243, 208, 0.3); /* @theme: Mint spine — the archive's left rail. */
 }
 
-.vault-journal-link a {
-  color: var(--nebula-pink, #ff007f); /* @theme: Nebula-pink link — the deep-archive tether. */
-  text-decoration: none; /* @layout: Text decoration — no underline on the raw link. */
-  letter-spacing: 1px; /* @layout: Glyph spacing — technical tracking. */
-  font-size: 0.75rem; /* @layout: Character scale — link size. */
-  text-transform: uppercase; /* @layout: Text transform — uppercase link. */
-}
-
-.vault-journal-link a:hover {
-  text-decoration: underline; /* @layout: Text decoration — underline on hover for clarity. */
-}
-
 .vault-pending-note {
   font-style: italic; /* @layout: Font style — italic pending prophecy. */
   color: rgba(255, 255, 255, 0.6); /* @theme: Muted note — awaiting content. */
