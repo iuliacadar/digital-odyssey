@@ -426,6 +426,16 @@ overlap — worth prioritising over the pure-pleasure entries above.
 | The Annotated Turing | Charles Petzold | Book | https://www.wiley.com/en-us/The+Annotated+Turing-p-9780470229057 | subscription (O'Reilly) / purchase | queued | — |
 | Resilient Web Design | Jeremy Keith | Book | https://resilientwebdesign.com/ | free | queued | — |
 
+### Fiction — stories where the machine is the plot
+
+Added 2026-11-20 at the captain's request. Links go to the author's or a
+catalogue page only; nothing here points at an unlicensed copy.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| The Martian | Andy Weir (2011; Crown, 2014) | Novel | https://andyweirauthor.com/ | purchase | queued | — |
+| Arcade Explorers (4 gamebooks: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane*, *The Magnetic Ghost of Shadow Island*) | Seth McEvoy & Laure Smith — Dell / Laurel-Leaf (1985) | Gamebook series | https://www.gamebooks.org/Series/37/Show | purchase (second-hand, out of print) | queued | — |
+
 ### The long-form magazines — for a reading habit, not a syllabus
 
 | Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
