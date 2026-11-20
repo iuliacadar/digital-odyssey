@@ -324,6 +324,28 @@ aici pentru că serverul e jumătatea pe care o explică.
 
 ---
 
+## Puntea Umanioarelor — ficțiune în care mașina e intriga
+
+Adăugate pe 2026-11-20, la cererea căpitanului. Restul punții (texte primare,
+eseuri, istorii narative) stă deocamdată doar în varianta engleză a acestei
+biblioteci. Legăturile duc numai la pagina autorului sau la un catalog; nimic
+de aici nu trimite la o copie fără licență.
+
+| Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |
+|---|---|---|---|---|---|---|
+| The Martian (Marțianul) | Andy Weir (2011; Crown, 2014) | Roman | https://andyweirauthor.com/ | cumpărare | coadă | — |
+| Arcade Explorers (4 cărți-joc: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane*, *The Magnetic Ghost of Shadow Island*) | Seth McEvoy și Laure Smith — Dell / Laurel-Leaf (1985) | Serie de cărți-joc | https://www.gamebooks.org/Series/37/Show | cumpărare (la mâna a doua, epuizate) | coadă | — |
+
+De ce merită citite:
+
+- **The Martian** — un jurnal de supraviețuire, zi de zi, în care chimia și
+  calculul orbital adevărate sunt chiar intriga.
+- **Arcade Explorers** — science-fiction la persoana a doua: cititorul
+  tastează BASIC pe parcurs și ajunge la final cu un joc. Drumul invers față de
+  cel al acestei nave.
+
+---
+
 ## Alegerea următorului curs
 
 | Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |

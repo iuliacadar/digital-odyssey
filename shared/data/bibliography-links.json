@@ -1785,6 +1785,24 @@
       "annotation": "Jeremy Keith. A history of the web's design philosophy. Free, and a two-evening read."
     },
     {
+      "title": "The Martian",
+      "url": "https://andyweirauthor.com/",
+      "category": "humanities",
+      "kind": "book",
+      "status": "queued",
+      "access": "purchase",
+      "annotation": "Andy Weir, 2011 / Crown 2014. A survival log, day by day, where real chemistry and orbital math are the plot."
+    },
+    {
+      "title": "Arcade Explorers (4 gamebooks)",
+      "url": "https://www.gamebooks.org/Series/37/Show",
+      "category": "humanities",
+      "kind": "book",
+      "status": "queued",
+      "access": "purchase",
+      "annotation": "Seth McEvoy & Laure Smith, Dell / Laurel-Leaf, 1985. Second-person sci-fi where the reader types BASIC and ends with a game: the opposite road to this ship's. Out of print; second-hand copies only."
+    },
+    {
       "title": "A List Apart",
       "url": "https://alistapart.com/",
       "category": "humanities",
