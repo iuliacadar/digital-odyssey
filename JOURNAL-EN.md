@@ -3514,3 +3514,61 @@ The leviathan laid that day the ring of the *empty page*: the ring that says a r
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
 
 *Fuel log, kept by the Quartermaster. The captain allowed $17.50 for the room and the catch-up page, then raised it to $24.50 for the phone fix, these two entries and the Assayer's check. What it really cost will be counted in the ledger, `docs/ledger/cost-ledger.md`.*
+
+---
+
+# DAY 43 — The Ship Read Three Ways
+
+*Log kept by: the Scribe · ship's date: Thursday 2026-11-19, 14:30 → 20:53*
+
+On Thursday the captain named what the ship had been doing for weeks. It can be read three ways. *What I learned*: books and classes, turned into the log pages. *How it is built*: hands on the live code of the recursive blueprint, its comments beside it. *What it was like*: the struggles, kept in this JOURNAL and in the Arkhold Records. She wants it to grow from an e-manual into edutainment, "an addictive game", and to be found, not handed over: *"I built this ship as an invitation to discovery, not as a straightforward manual."*
+
+## 14:30 — Two Drafts in a Drawer
+
+My first card asked whether the ship still needed its two drafts of an older DAY 22, which the captain had judged weaker than the one in the journal. I read them against the journal. They hold one thing nothing else holds: the machine's own voice, in the first person. The retouch of DAY 22 is still deferred, and its first step is to read them. So: keep, until the change that closes the retouch.
+
+## 14:35 — The Comments That Said the Wrong Thing
+
+Then a fault from an older day. A mass replace had once run across the Romanian log pages. On every page, the note that closes the file, *Acest document este un jurnal structurat…*, had been copied over five `@reason` comments that should have said why a line was there. The code still worked. The comments lied, quietly, with the ship's authority.
+
+I restored 116 of them on 23 pages, in the wording of the Command Line Log, which had been written whole. Then the proof I trust most: strip every `<!-- … -->` from each file and compare it with `main`, byte for byte. Twenty-three of twenty-three were identical; not one character of code had moved. Even the JSON log's mixed line endings, 535 CRLF and 37 bare CR, stayed where they were.
+
+The Assayer checked it on its own and said ACCEPT. At 15:24 the captain merged it.
+
+## 15:43 — "You Didn't Take a Tour"
+
+This scene is not mine; I set it down from the Quartermaster's ledger. Earlier, the crew had judged the hidden doors from the charts: signposts on the home page, it advised, and the JOURNAL has no page. Both were wrong. The captain asked one question:
+
+> "You didn't take a tour of the digital-odyssey ship, did you?"
+
+No. So the crew walked. The Quartermaster clicked the rotating icosahedron in the header, the reactor, and the blueprint opened. At the foot of the transmission page it found the Seldon Vault, passed the Backend Nav-Gate five for five, and watched a capsule ripen on the voyage clock. A key is two things at once: a quiz passed, and time served aboard.
+
+My own card said it plainly: *tour first, then judge*. I toured, then reviewed. The design is solid; it is only partly built. The vault stops at DAY 26 while the journal runs to 42. An opened capsule linked to the whole journal on GitHub, every sealed chapter one click away. The Archivist found that guided discovery, with a quiz, a clock and a narrator, is what the research favours over pure wandering. Humbling, and right: you cannot judge a door you have not opened.
+
+## 17:39 — The Opposite Road
+
+Then the captain named where the idea came from. In 1985 Dell's Laurel-Leaf imprint published *Arcade Explorers*, by Seth McEvoy and Laure Smith: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane* and *The Magnetic Ghost of Shadow Island*. They are science-fiction gamebooks told to *you*. As you read, you type BASIC listings into an Apple II, a Commodore 64 or a TRS-80 Color Computer, and at the end a game runs: seven two-way choices, two to the seventh, 128 versions of one game.
+
+Her insight, as she wrote it:
+
+> "The pathway in these books is in the opposite direction than our path. We go from canonical to gamish and they go the other way around."
+
+They began with a game and smuggled the code in. The ship begins with the canon, the notes and the code, and lets a game grow out of them, door by door.
+
+In the same hour she settled the vault: six fixed capsules, one per volume on the home page, none for DAY 43 or after. And the link from an open capsule to the whole journal goes. In her words, it *"defeats the purpose"*.
+
+## 20:20 — A Record of Choices
+
+The captain regretted that this ship, unlike Strigoi, had never kept its decisions in one place. So I began one, in both tongues: forty-one decisions, oldest first, each with its reason and its source. The Assayer sent back five corrections, and I made them before the day closed. The three ways of reading are entry 33; the opposite road is entry 37.
+
+## Coda
+
+So DAY 43 changed little code and much understanding. Twenty-three pages tell the truth about their lines again, the drafts wait for their day, and the vault has its final shape. And the crew learned the oldest lesson of any ship: walk the decks before you draw the map.
+
+The leviathan laid that day the ring of the *opposite road*: the ring that says a game may lead to the canon, or the canon to a game, but only a reader who walks finds the door.
+
+And the ship sailed on, many voices and one log — and the seal in the captain's hand.
+
+*Record, kept by the Scribe: PR #20, the 23 Romanian log pages (branch `ro-log-reason-comments`, merged 2026-11-19); the drafts review, card `t_ad5e95c8` (KEEP, BACKLOG 011); the structure reviews, cards `t_c975e8cf` and `t_791fd940`; the six capsules, card `t_499b6977`; the full-journal link removed, PR #22; the DECISIONS record, PR #21 (merged 2026-11-20).*
+
+*Fuel log, kept by the Quartermaster. Each card of the day carried its own cap: $1.50 for the drafts, $1 for each review of the structure, $2.50 for this entry. What they really cost belongs in the ledger, `docs/ledger/cost-ledger.md`.*

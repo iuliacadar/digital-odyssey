@@ -84,6 +84,7 @@ Această listă este **deschisă prin natură**. Crește pe măsură ce întâln
 | *Tools for Conviviality* | Ivan Illich · 1973 | Când încetează o unealtă să-și slujească omul și începe să ceară a fi slujită? Filosofie propriu-zisă, și temelia etică de sub un proiect care insistă că un cod trebuie să învețe, nu doar să funcționeze. Argumentul împotriva interfeței care își micșorează utilizatorul. |
 | *The Information: A History, a Theory, a Flood* | James Gleick · 2011 | De la tobele vorbitoare la entropia lui Shannon: istoria lungă a ceea ce *este* un mesaj. O istorie literară a informației înseși — biografia intelectuală a tot ce înregistrează această navă. |
 | *Close to the Machine* | Ellen Ullman · 1997 | Memoriile unui programator scrise ca literatură — singurătatea, absorbția, intimitatea stranie a gândirii în termenii unei mașini luni în șir. Vremea dinăuntru a muncii pe care jurnalul acesta o consemnează din afară. |
+| *Arcade Explorers* (seria: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane*, *The Magnetic Ghost of Shadow Island*) · [pagina seriei](https://gamebooks.org/Series/37/Show) · [scanări](https://archive.org/details/RetroGamingBooksFiction) | Seth McEvoy & Laure Smith · 1985 (Dell, Laurel-Leaf) | Cărți-joc științifico-fantastice la persoana a doua, în care cititorul tastează programe în BASIC în timp ce citește și ajunge la un joc care merge. Inspirația navei, parcursă pe drumul invers: ele merg de la joc la cod, nava merge de la canon la joc (ZIUA 43). |
 
 ---
 

@@ -3550,3 +3550,61 @@ Leviathanul, inel după inel, așeză în ziua aceea inelul *paginii goale*: ine
 Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
 
 *Jurnalul combustibilului, ținut de Intendent. Căpitanul a aprobat 17,50 dolari pentru încăpere și pentru pagina de recuperare, apoi a ridicat plafonul la 24,50 pentru repararea de pe telefon, aceste două intrări și verificarea Încercătorului. Cât a costat cu adevărat se va număra în registru, `docs/ledger/cost-ledger-ro.md`, după ce se închide ziua.*
+
+---
+
+# ZIUA 43 — Nava citită în trei feluri
+
+*Jurnal ținut de: Scribul · data navei: joi 2026-11-19, 14:30 → 20:53*
+
+Joi, căpitanul a numit ce făcea nava de săptămâni întregi. Nava poate fi citită în trei feluri. *Ce am învățat*: cărți și cursuri, prefăcute în paginile de log. *Cum e construită*: cu mâinile pe codul viu al planului recursiv, cu comentariile lui alături. *Cum a fost*: frământările, păstrate în acest jurnal și în The Arkhold Records. Vrea ca nava să crească dintr-un manual electronic în edutainment, „an addictive game”, un joc care te prinde, și să fie găsită, nu înmânată: *„I built this ship as an invitation to discovery, not as a straightforward manual.”* Am construit nava ca pe o invitație la descoperire, nu ca pe un manual de citit drept înainte.
+
+## 14:30 — Două ciorne într-un sertar
+
+Primul meu card întreba dacă nava mai are nevoie de cele două ciorne ale unei ZILE 22 mai vechi, pe care căpitanul le judecase mai slabe decât cea din jurnal. Le-am citit față în față cu jurnalul. Țin un lucru pe care nu-l mai ține nimic altceva: vocea mașinii înseși, la persoana întâi. Retușarea ZILEI 22 e încă amânată, iar primul ei pas e chiar citirea lor. Așa că: rămân, până la schimbarea care încheie retușarea.
+
+## 14:35 — Comentariile care spuneau altceva
+
+Apoi o defecțiune dintr-o zi mai veche. O înlocuire în masă trecuse cândva peste paginile de log românești. Pe fiecare pagină, nota care închide fișierul, *Acest document este un jurnal structurat…*, fusese copiată peste cinci comentarii `@reason` care ar fi trebuit să spună de ce e un rând acolo. Codul mergea în continuare. Comentariile mințeau, în tăcere, cu autoritatea navei.
+
+Am refăcut 116 dintre ele pe 23 de pagini, cu formularea din Jurnalul Linie de Comandă, care fusese scris întreg. Apoi dovada în care am cea mai mare încredere: scoți fiecare `<!-- … -->` din fiecare fișier și îl compari cu `main`, octet cu octet. Douăzeci și trei din douăzeci și trei erau identice; niciun caracter de cod nu se mișcase. Chiar și capetele de rând amestecate ale jurnalului JSON, 535 de CRLF și 37 de CR singure, au rămas unde erau.
+
+Încercătorul a verificat totul pe cont propriu și a spus ACCEPT. La 15:24, căpitanul l-a unit.
+
+## 15:43 — „Nu ați făcut turul”
+
+Scena aceasta nu e a mea; o așez aici din registrul Intendentului. Mai devreme, echipajul judecase ușile ascunse după hărți: indicatoare pe pagina de start, a sfătuit, iar jurnalul n-are pagină. Amândouă erau greșite. Căpitanul a pus o singură întrebare:
+
+> „You didn't take a tour of the digital-odyssey ship, did you?”
+
+Nu ați făcut turul navei digital-odyssey, nu-i așa? Nu. Așa că echipajul a umblat. Intendentul a apăsat pe icosaedrul care se rotește în antet, reactorul, și s-a deschis planul. La piciorul paginii de transmisie a găsit Seiful lui Seldon, a trecut de Backend Nav-Gate cinci din cinci și a privit o capsulă cum se coace pe ceasul călătoriei. O cheie înseamnă două lucruri deodată: un test trecut și timp petrecut la bord.
+
+Cardul meu o spunea limpede: *întâi turul, apoi judecata*. Am făcut turul, apoi recenzia. Designul e solid; e construit doar în parte. Seiful se oprește la ZIUA 26, în timp ce jurnalul ajunge la 42. O capsulă deschisă ducea la tot jurnalul de pe GitHub, fiecare capitol sigilat la un clic distanță. Arhivarul a găsit că descoperirea ghidată, cu un test, un ceas și un narator, e ceea ce cercetarea preferă rătăcirii pure. Umilitor, și drept: nu poți judeca o ușă pe care n-ai deschis-o.
+
+## 17:39 — Drumul invers
+
+Apoi căpitanul a numit de unde a venit ideea. În 1985, colecția Laurel-Leaf a editurii Dell a publicat *Arcade Explorers*, de Seth McEvoy și Laure Smith: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane* și *The Magnetic Ghost of Shadow Island*. Sunt cărți-joc științifico-fantastice spuse ție, la persoana a doua. Pe măsură ce citești, tastezi programe în BASIC pe un Apple II, un Commodore 64 sau un TRS-80 Color Computer, iar la sfârșit pornește un joc: șapte alegeri în două feluri, doi la puterea a șaptea, 128 de versiuni ale aceluiași joc.
+
+Intuiția ei, așa cum a scris-o:
+
+> „The pathway in these books is in the opposite direction than our path. We go from canonical to gamish and they go the other way around.”
+
+Pe românește: *drumul din cărțile acestea merge în sens invers față de al nostru. Noi mergem de la canonic spre joc, iar ele invers.* Ele au pornit de la un joc și au strecurat codul înăuntru. Nava pornește de la canon, de la notițe și de la cod, și lasă un joc să crească din ele, ușă cu ușă.
+
+În aceeași oră a hotărât și seiful: șase capsule fixe, câte una pentru fiecare volum de pe pagina de start, niciuna pentru ZIUA 43 sau mai departe. Iar legătura de la o capsulă deschisă spre tot jurnalul dispare. În cuvintele ei, *„defeats the purpose”*: îi strică rostul.
+
+## 20:20 — Un registru al alegerilor
+
+Căpitanul a regretat că nava aceasta, spre deosebire de Strigoi, nu și-a ținut niciodată hotărârile într-un singur loc. Așa că am început unul, în ambele limbi: patruzeci și una de hotărâri, de la cea mai veche, fiecare cu motivul și sursa ei. Încercătorul a trimis înapoi cinci corecturi, iar eu le-am făcut înainte să se închidă ziua. Cele trei feluri de a citi sunt intrarea 33; drumul invers e intrarea 37.
+
+## Încheiere
+
+Așadar ZIUA 43 a schimbat puțin cod și multă înțelegere. Douăzeci și trei de pagini spun din nou adevărul despre rândurile lor, ciornele își așteaptă ziua, iar seiful are forma lui finală. Și echipajul a învățat cea mai veche lecție a oricărei nave: umblă pe punți înainte să desenezi harta.
+
+Leviathanul, inel după inel, așeză în ziua aceea inelul *drumului invers*: inelul care spune că un joc poate duce la canon, sau canonul la un joc, dar doar cititorul care umblă găsește ușa.
+
+Și nava a navigat mai departe, multe voci și un singur jurnal — și sigiliul în mâna căpitanului.
+
+*Registru, ținut de Scrib: PR #20, cele 23 de pagini de log românești (ramura `ro-log-reason-comments`, unit pe 2026-11-19); verificarea ciornelor, cardul `t_ad5e95c8` (KEEP, BACKLOG 011); recenziile structurii, cardurile `t_c975e8cf` și `t_791fd940`; cele șase capsule, cardul `t_499b6977`; legătura spre tot jurnalul scoasă, PR #22; registrul DECISIONS, PR #21 (unit pe 2026-11-20).*
+
+*Jurnalul combustibilului, ținut de Intendent. Fiecare card al zilei a avut plafonul lui: 1,50 dolari pentru ciorne, câte 1 dolar pentru fiecare recenzie a structurii, 2,50 dolari pentru această intrare. Cât au costat cu adevărat se va număra în registru, `docs/ledger/cost-ledger-ro.md`.*
