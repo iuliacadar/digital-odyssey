@@ -51,6 +51,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 39 | 2026-11-19 | The backend is parked, not rejected | site structure |
 | 40 | 2026-11-19 | Content first; the nine ideas go to the backlog and run in waves | crew & budget |
 | 41 | 2026-11-19 | A DECISIONS record; the docs review comes after it | workflow & git |
+| 42 | 2026-11-19 | One voice per method; the JOURNAL's narrators and its rule | vault & novel |
 
 ## Entries
 
@@ -261,3 +262,8 @@ This file records the decisions that shape the ship: what was decided, why, and 
 - **Decision.** The ship keeps this DECISIONS record (EN + RO), as Strigoi does. The review of which docs to keep comes later, after this harvest, so no source is deleted before its decisions are recorded.
 - *"I didn't create for digital-odyssey a separate DECISIONS document as we did for strigoi, and I regret that."*
 - **Source.** Card `t_7e6d4581` (body); PM handoff, update 2026-11-19 17:00.
+
+### 42 · 2026-11-19 · One voice per method of the ship
+- **Decision.** Each of the three methods keeps one voice: the lessons (method 1), the blueprint comments (2), the JOURNAL (3a) and the Arkhold handbooks (3b). The rule lives in `docs/work-deontology.md`, §10, not in CULTURE, which is a catalogue of cultural references; this file records the decision. The same section lists the JOURNAL's narrators, states DAY 22 as the never-ending day, and sets the rule for every entry, old and new: a science-fiction story and a technically exact record of the day, its facts told as legend.
+- *"sound good"* · *"OK"* · *"The JOURNAL is not just a technical manual, it is a story of a technical adventure."*
+- **Source.** Card `t_78672421` (body, and its additions of 2026-11-19, 21:10 and 21:40); the writer's structure review on card `t_c975e8cf`, idea 2.
