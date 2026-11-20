@@ -84,6 +84,7 @@ This list is **open by nature**. It grows as we meet new references; nothing her
 | *Tools for Conviviality* | Ivan Illich · 1973 | When does a tool stop serving its user and begin demanding to be served? Philosophy proper, and the ethical floor beneath a project that insists code must teach rather than merely work. The argument against the interface that makes its user smaller. |
 | *The Information: A History, a Theory, a Flood* | James Gleick · 2011 | From talking drums to Shannon's entropy: the long history of what a message *is*. A literary history of information itself — the intellectual biography of everything this vessel logs. |
 | *Close to the Machine* | Ellen Ullman · 1997 | A programmer's memoir written as literature — the loneliness, the absorption, the strange intimacy of thinking in a machine's terms for months. The interior weather of the work this journal records from the outside. |
+| *Arcade Explorers* (series: *Save the Venturians!*, *Revenge of the Raster Gang*, *The Electronic Hurricane*, *The Magnetic Ghost of Shadow Island*) · [series page](https://gamebooks.org/Series/37/Show) · [scans](https://archive.org/details/RetroGamingBooksFiction) | Seth McEvoy & Laure Smith · 1985 (Dell, Laurel-Leaf) | Second-person science-fiction gamebooks in which the reader types BASIC listings while reading and ends with a playable game. The ship's inspiration, walked the opposite road: they go from the game to the code, the ship goes from the canon to the game (DAY 43). |
 
 ---
 
