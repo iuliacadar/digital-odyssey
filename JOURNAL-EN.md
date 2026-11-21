@@ -1681,7 +1681,7 @@ The fold was first called an appendix, *The Archive and the Notes Room*, after i
 
 *Fold kept by: the Voice (folds 1 to 14), then the Scribe (from fold 15) · no date, no hour: the day is cosmic*
 
-*Time folded again. The longest Wednesday received us back — as it always will, so long as the ship is being built.*
+*Time folded again. The longest Wednesday received us back — as it always will, for the ship is never finished.*
 
 ### Fold 1 · The Signposts Carried Home — *the watch of DAY 24*
 
@@ -1736,7 +1736,7 @@ There is one generative act, four pressures. Translation is that act re-pointed 
 
 ### Fold 12 · The Two Sentinels Named — *the watch of DAY 31*
 
-**12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data. *⟶ corrected on DAY 39: Jekyll converted Markdown, and no Jekyll has run since 2026-09-21.*
+**12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data. *⟶ corrected on DAY 39: Jekyll converted Markdown, and no Jekyll has run since the Herald first ran (fold 18).*
 
 ### Fold 13 · The Shelf Signed into the Ledger — *DAY 28 and DAY 31*
 
@@ -1846,7 +1846,7 @@ I fixed it. A single rule deletion in `ro/style.css`.
 
 **2. Canonical URL misdirection** — All 43 generated log pages pointed their `<link rel="canonical">` and `og:url` to `css-log.html`. Every page was telling the search engine it was a different page. Forty-three copies of a lie.
 
-I regenerated the PowerShell template. Each page now points to its own URL. The 7 hand-written pages (index, bibliography, css-log, html-log, sql-log + RO mirrors) were already correct — they had never gone through the broken generator.
+I regenerated the PowerShell template. Each page now points to its own URL. The 10 hand-written pages (index, bibliography, css-log, html-log, sql-log + RO mirrors) were already correct — they had never gone through the broken generator.
 
 **3. Backlog instability** — Backlog 009 ("Clone structural skeleton to all pages") was listed as Active but the work was complete. I moved it to Implemented. I also added Backlog 010: meta-description and meta-keywords customization, to be executed concurrently during each page's first content pass.
 
