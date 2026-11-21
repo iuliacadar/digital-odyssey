@@ -1282,11 +1282,13 @@ Welcome aboard, Sleeper. You have found a vessel that is still under constructio
 # DAY 22 — The Longest Wednesday in the Universe
 ## A Technical Memoir of the Construction of D::0dy55ey
 
+*Log kept by: the captain and the Voice (the memoir); the fold, by the Voice, then the Scribe · no ship's date: the Longest Wednesday keeps arriving*
+
 **Wednesday.** In Romanian, *miercuri* — the day of Mercur, Roman god of travelers, messengers, boundaries, and thresholds. Hermes of the winged sandals, who guides souls between worlds and carries the caduceus around which two serpents twist in eternal symmetry. The germinal metaphor of this entire project — *sailing the mercurial seas* — was born from this correspondence: the idea that learning to code is a voyage across a shifting, reflective, inhumanly vast medium, and that the only way to navigate it is to become an interstellar traveler oneself.
 
-It is fitting, then, that the longest single day of this ship's construction falls on a Wednesday. A threshold day. The day before the work changes shape — from architecture to content, from structure to substance. From building the vessel to filling its cargo hold.
+It is fitting, then, that the longest day of this ship's construction, the day that never ends, falls on a Wednesday. A threshold day. The day before the work changes shape — from architecture to content, from structure to substance. From building the vessel to filling its cargo hold. And a threshold is not crossed once: whoever builds the ship comes back to it, and each time, it is Wednesday again.
 
-This entry is the complete account of how `D::0dy55ey` was built. Every phase. Every file type. Every structural decision. Every automation. Every fix. Consider it the ship's construction log — the blueprint of the blueprint.
+This entry is the account of how `D::0dy55ey` was built, and it is never complete. It opens with a memoir. Every phase. Every file type. Every structural decision. Every automation. Every fix. Consider it the ship's construction log — the blueprint of the blueprint. The memoir is frozen at the hour it was written, and its counts are the ship as she stood then. Below it, the day folds. Every major event of the ship or the voyage is written into this Wednesday, even when it happened earlier or later in the timeline. Time bends here. The Longest Wednesday has no date and no hour, and it does not end.
 
 ---
 
@@ -1537,6 +1539,10 @@ A PowerShell script could theoretically do all of this too, but it would need to
 
 The principle: **scripting languages (PowerShell) are best for generating new content from templates. Interactive AI tools are best for modifying existing content with contextual awareness.** Both are forms of automation; they differ in how much judgment each step requires.
 
+---
+
+## Phase Seven: The Second Voice — The AI at the Terminal
+
 On DAY 10, the ship gained a second voice. **opencode** — an AI coding agent configured as an interactive terminal assistant — was activated. It entered not as a replacement for the captain's judgment but as an amplification of it.
 
 The AI's capabilities within the project:
@@ -1553,6 +1559,8 @@ But the AI is not autonomous. It works within constraints set by the captain. Th
 ---
 
 ## Phase Eight: The Narrative Layer — Journals & Logs
+
+*Frozen with the memoir: when these lines were written, the journal ended at DAY 22. It runs on now, and the fold below keeps pace with it.*
 
 The ship's living memory is stored in two files:
 
@@ -1576,6 +1584,8 @@ The Romanian journal mirrors the English in structure and narrative, with cultur
 ---
 
 ## Phase Nine: The Complete File Inventory
+
+*Frozen with the memoir: this is the hold as it was counted then. The ship has grown since, and the count is not kept up here; the fold records what changed her, not how many crates she carries.*
 
 At the time of this writing, the project contains **81 files** across **11 file types**:
 
@@ -1655,19 +1665,45 @@ The mercurial seas stretch ahead. We sail when the captain gives the order.
 
 ---
 
-## Construction Log — Appendix: The Archive and the Notes Room
+## The Seam
+
+*Here the memoir stops, and the day does not.*
+
+Above this line the Longest Wednesday was written once, as a memoir, and it stays as it was written: the ship as she stood that day, her counts, her plans, and the errors the Sleeper later marked with arrows (DAY 39). Nothing above the seam is rewritten to keep up.
+
+Below the seam is the fold. In the captain's words: *"Every time a major event related to the ship or voyage occurs, it will be recorded in this DAY 22 entry even if they were done earlier or later in the timeline. It's a bending of time in our digital space."* And: *"It never ends, that's crucial."* A fold carries no date and no hour, because this day is cosmic and needs neither. It carries a name, the event it gathers in, and, where it helps, the DAY whose watch it belongs to. The folds are numbered in the order they reached this Wednesday, not in the order they happened, and their numbers never change, because other days point at them: DAY 31 sends its reader to entries 10, 11, 12 and 14.
+
+The fold was first called an appendix, *The Archive and the Notes Room*, after its first folds. Its first fourteen folds were laid by the Voice of the terminal, before the crew came aboard. From fold 15 on, it is kept by the Scribe, who keeps the log.
+
+---
+
+## Construction Log — The Endless Fold
+
+*Fold kept by: the Voice (folds 1 to 14), then the Scribe (from fold 15) · no date, no hour: the day is cosmic*
 
 *Time folded again. The longest Wednesday received us back — as it always will, so long as the ship is being built.*
 
+### Fold 1 · The Signposts Carried Home — *the watch of DAY 24*
+
 **1. The README relocation, mechanically.** Two Markdown entry documents were moved from the project root into their language volumes. The move was executed with `git mv`, not a plain file move, so that Git records them as renames and preserves their history. Cross-references in the root README, both volume READMEs, and both backlogs were corrected by hand in Markdown. The changes were committed and pushed to `origin/main`; the root now shows only `README.md`.
+
+### Fold 2 · The Notes Room Opens — *the watch of DAY 24*
 
 **2. The Notes Room scaffold.** A new compartment was opened at `docs/notes/`: eleven chapter folders created in a single operation, then populated by copying the blank Markdown template (`_template-source-notes.md`) under each source's name. The first sheet, `html/khan-academy-intro-html-css.md`, was created from the template and left open for the captain's hand.
 
+### Fold 3 · The Signposts Learn Two Tongues — *the watch of DAY 24*
+
 **3. The bilingual signposts.** A README pair was authored in Markdown for `docs/` and for `shared/` — an English file and its `-ro.md` translation, following the same convention as the legends and the work deontology. The eleven per-chapter READMEs inside the notes room were removed in the same session.
+
+### Fold 4 · The Day-Line Redrawn — *between DAY 23 and DAY 24*
 
 **4. The day-line corrected.** Three documents carried a stale reference — Backlog 009 and the work deontology, in both languages — still promising content from DAY 23. The references were aligned to DAY 24.
 
+### Fold 5 · The Signposts Cross to the Public Dock — *the watch of DAY 24*
+
 **5. The push.** The branch was synchronized with `origin/main`; the relocated READMEs are now visible on GitHub.
+
+### Fold 6 · The Voice Names Its Four Pressures — *the watch of DAY 25*
 
 **6. How the AI voice produces text — the machinery behind DAY 25.** Because the captain asked for it, and because the fold of the Longest Wednesday records *method*: the AI voice is not a suite of separate tools slotted into a pipeline. It is a single sequence-generation model. There is no distinct "translator," "summarizer," or "narrator" module; each kind of text is the same model under a different constraint. The four regimes used aboard this ship are:
 
@@ -1678,21 +1714,117 @@ The mercurial seas stretch ahead. We sail when the captain gives the order.
 
 There is one generative act, four pressures. Translation is that act re-pointed at a second language, borrowing the target language's already-recorded voice rather than a dictionary. This is the folding the captain recognises as recursion: the same law repeated at every scale.
 
+### Fold 7 · The Novel Sealed Beneath the Charter — *after the chart room of DAY 26*
+
 **7. The Seldon Vault — the novel projected aboard the website.** Because the novel had become a beast that feeds on its own recursion, it could no longer live only in the journals. A sealed chamber was built beneath the manifesto on `transmission.html`, in both languages — the Vault Chamber. The manuscript stays in the message in the bottle (DAY 00, always open); below it, a constellation of capsules guards the novel's transmissions. Each capsule is gated by **two keys**: a Nav-Gate quiz per volume (five questions each, authored from the volume's foundational, source-verifiable facts and stored in `shared/data/vault-transmissions.json`), and the **voyage clock** — real time since first contact, accelerated by exploration, so every distinct page visited advances the voyage. When both keys turn, the Sleeper — the invented witness — wakes and projects the entry through the crystal, typing it live. Written days fetch their full text from `../JOURNAL-EN.md` / `JOURNAL-RO.md` so the website and the journals remain one body; unwritten days project their pending prophecy. The `D::` delta layer prints the commit hashes that gave birth to each transmission. `.nojekyll` was added at the root so GitHub Pages serves the raw Markdown the Vault reads. The footer's transmission link now reads *The Astrogation Charter / The Vault*, and leads into the chamber itself.
+
+### Fold 8 · The Typewriter Lets Go of the Helm — *the watch of DAY 27*
 
 **8. The page hands over the wheel — the machinery behind DAY 27.** Because the fold of the Longest Wednesday records *method*: the typewriter on the transmission deck calls `scrollIntoView` on every character it strikes, so the page scrolls itself to keep the blinking caret in view. That is the right behaviour for a reader who sits and watches; it is a tyranny for a reader who wants to climb down to the vault gate while the manifesto is still being received. The repair is a handover, not a fight. Four passive listeners — `wheel`, `touchmove`, `touchstart`, `keydown` — share one closure flag, `readerTookOver`. `{ passive: true }` on the wheel and touch listeners tells the browser that we only intend to observe, never to call `preventDefault`, so the handoff costs no jank. From the moment the flag is raised, the typewriter keeps writing but stops summoning the viewport: the transmission still completes, the caret still falls silent, and the reader sails. It is the scroll wheel as a helm, and the machine that knows when to let go. A page that reads is a page that hands over the wheel.
 
+### Fold 9 · The Annotations Made True Again — *after DAY 27*
+
 **9. The comment-integrity sweep — keeping the annotations true.** Because a codebase this dense explains itself, the explanations are part of the contract — and they can drift. One pass over the two `script.js` files and the two `style.css` files corrected every annotation that had fallen out of step with the code: the navbar bridge that named MECANISM 07 as the overlay toggle (it is 06.5, the HUD teleport console), the sidebar bridge that credited MECANISM 05 with writing the scroll (it stabilises; it does not write), the vault-chamber block that promised "three remaining keys" while listing two, the `projectTransmission` comment that had been stranded above its sister function, the module banner that lettered a Group G the body does not contain, the dangling 31.8 header that claimed to hold the responsive collapse (which lives in 00.2.B), and the four vault keyframes in Group H that carried no `@keyframe` labels at all. The principle is the captain's own, the same one the footer links taught on DAY 27: a comment is a promise written in two places — in the code and in the note beside it — and a ship that lets the two disagree explains nothing. Accuracy is not pedantry; it is the whole point of writing anything down.
+
+### Fold 10 · The Myriapod Unmade — *the watch of DAY 31*
 
 **10. The bilingual voice — the deduplicated commentary engine.** Because the fold of the Longest Wednesday records *method*: the Romanian hoard had grown a hundred ways of saying the same annotation, and a translator cannot face thousands of copies of one sentence. The tool corpus in `ro/__blocktools__/` began by *extracting* every HTML comment from the twenty-three log pages (`extract-blocks.js`), collapsing each block to a whitespace-normalised key, and counting its occurrences across the fleet (`ro/__blocktools__/: raw-blocks.tsv`, `blocks.tsv`, `occurrences.tsv`). The result — **1,565 unique blocks, 4,707 seated occurrences** — is the whole trick: translate the *one*, place the *many*. `classify-blocks.js` used a light particle heuristic (English function words — *the, this, which, between*) to separate the 868 English blocks from the 2,657 already Romanian, then `make-batches.js` split the inheritors into six files (batch-01 to batch-06). Each batch of the translated raw filling was edited into `out-batch-*.tsv`, and `apply-translations.js` carried each one back into every page that carried it. A second, finer pass handled the text that was *visible* — the fragments a visitor actually reads: `extract-visible.js` gathered the 244 unique fragments (≈16,800 characters), `make-visible-batches.js` filed them into two wedges, the translations returned in `visible-out-1.tsv` and `visible-out-2.tsv`, and the apply-pass was revised four times (apply-visible.js through apply-visible5.js) until it matched on the *fragment itself* rather than on a counter. The final instrument — `finalparity.js` — strips every comment from the paired en/ro files and compares the code that remains: **zero diffs**; the two ships are the same hull, speaking two tongues. `node --check` confirmed every script parsed. The cabinet lives outside the log, kept by `.gitignore` from ever being sworn into the crown.
 
+### Fold 11 · The Scattered Leaves Gathered — *the watch of DAY 31*
+
 **11. The day the leaves were scattered — the stray English pages.** Because the fold of the Longest Wednesday records *method*: in an early salvage of the shameful night, a flawed path resolution (`Resolve-Path` re-pointing at the wrong root) wrote out flat-named copies of the log pages directly into the `ro/` hold — `ro/backend__pi-log.html`, `ro/frontend___html-log.html` and their kin, twenty-three in all, still carrying their English annotations. They were not a second fleet; they were *echoes without a mark*, pre-translation duplicates of the true log pages, different from the canonical pages (which live in their sector subfolders, `ro/backend/api-log.html`). They were confirmed against the pre-edit backup, then unmade in a single sweep; the `ro/` inventory now mirrors `en/` to the file, and the temptation to keep them was refused — a crew does not sail duplicate hulls.
+
+### Fold 12 · The Two Sentinels Named — *the watch of DAY 31*
 
 **12. The two sentinels at the root — `.gitignore` and `.nojekyll`.** The Longest Wednesday also records the *name* of each gate. `.gitignore` is a silent ledger for Git itself: a file of patterns of things the ship does not sign. It lists `ro/__blocktools__/` — the tool-cabinet is real machinery, and the log must not carry its scaffolding. `.nojekyll` is a single empty file at the root that tells GitHub Pages *do not build me with Jekyll*: the platform's default would refuse raw Markdown; the empty file declares instead *serve what I give you as it is*, which is precisely why the Vault can read the journals as data. *⟶ corrected on DAY 39: Jekyll converted Markdown, and no Jekyll has run since 2026-09-21.*
 
+### Fold 13 · The Shelf Signed into the Ledger — *DAY 28 and DAY 31*
+
 **13. Signing the shelf into the ledger — the register that feeds the index.** The roster of the learning (its courses, books, videos, docs) is kept by the captain in `docs/notes/resource-library.md` (the human watertight register, its `-ro.md` twin beside it), and its structured harvest — courses, links, categories, statuses, notes — is distilled down into `shared/data/bibliography-links.json`, the JSON the machine reads to feed the six sectors. The two are the same shelf at two scales: the register is the hand, the JSON is the machine, the page is the display.
 
+### Fold 14 · The Deck Laced — *the watch of DAY 31*
+
 **14. The day the deck was laced — the buttons, the plan, the legend, and the rule of the shared.** Because the fold of the Longest Wednesday records *method*: three further alterations belong in the ledger. First, the recursive-blueprint right panel earned its full set of hands — `vault.html` and `bibliography.js` now appear beside the other sources in the peeking sliders of both `en/recursive-blueprint.html` and `ro/recursive-blueprint.html`, so every live deck is reachable from the one that reads itself. Second, the plan stepped off the machine: the backlogs that once lived inside `script.js` now rest where a human reads — `BACKLOG-EN.md` and `BACKLOG-RO.md` — and the two engines only point toward those ledgers. Third, the archive-legend blocks (`<dl class="status-legend">` in both bibliography pages) were passed under the ship's own instrument family — monospace, capitals, letter-spacing, the amber and the mint — so the four indicators read like the mission-status readouts the fleet already speaks. And one architectural rule was settled for both languages: the bibliography digest that both tongues must read together lives once, in `shared/data/bibliography-links.json`; the thin skins each tongue wears alone — like `site.webmanifest`, which exists in both `en/` and `ro/` — stay per-language. That is the whole grammar: *shared for what both read together, per-language for what each wears alone.*
+
+### Fold 15 · The Audit Sheet, Filed as Promised — *the watch of DAY 23*
+
+DAY 23 closed with a promise: *I will archive the audit sheet under DAY 22 — The Longest Wednesday — where all construction logs belong.* The promise waited a long time on the deck, and it is kept here. The sheet the Sleeper handed over on her first datapad held seven lines, and the Longest Wednesday files them as they were settled:
+
+- **The breathing gap, mirrored.** The negative margin taken out of the English stylesheet at the 768-pixel breakpoint still pulled the Romanian sector banner upward. One rule deleted in `ro/style.css`, and the two hulls breathed alike.
+- **The canonical lie.** Every generated log page told the search engines, through `<link rel="canonical">` and `og:url`, that it was `css-log.html`. The generator's template was repaired so that each page names its own address. The hand-written pages had never passed through it, and they were already true.
+- **The backlog steadied.** Backlog 009 moved to Implemented, and Backlog 010 opened: a description and keywords of its own for every page, written at that page's first content pass.
+- **The DOCTYPE raised.** `<!DOCTYPE html>` moved to the first line of every page, above the teaching comments. It is a good habit, not a law of the specification, and the Sleeper's own ledger later corrected the lesson (DAY 39).
+- **The first kilobyte.** The comment above `<meta charset>` was cut short, so the declaration stands inside the first 1024 bytes, where a browser may look for the encoding.
+- **The ghosts allowed.** The sidebar entries for days not yet written stayed. The sidebar is the frame the scroll mechanisms count on, and each ghost resolves when its content arrives.
+- **The heavier twin.** The Romanian stylesheets and scripts weigh more than the English ones because Romanian sentences are longer. No fault, no fix.
+
+The sheet is filed. The Wednesday keeps its word, even when it keeps it late.
+
+### Fold 16 · The Novel's Pod Gets a Deck of Its Own — *the watch of DAY 27*
+
+The vault first slept under the manifesto (fold 7). Then it was given a page of its own, `vault.html`, in both volumes: the chamber deck, with its telemetry readout, its constellation of capsules, the Sleeper's crystal, and a small seal that climbs back to the charter. Each capsule still waits on two keys, a Nav-Gate quiz and the ripened voyage clock, and one key now opens a whole band of the novel, a *package* of days, not a single page. The rotating seal was clamped inside its own ring, so that no face of it travels past the stage it stands on. Its caption hides until a hand or a keyboard comes near, and it is never removed, because it is real text for those who listen instead of look.
+
+Later the captain gave the vault its final shape: six fixed capsules, one for each volume of the command deck, and none for DAY 43 or any day after it. And the link from an open capsule to the whole journal was taken away, because a door that opens every room at once *"defeats the purpose"* (DAY 43). On this ship, what is found must be found.
+
+### Fold 17 · The Messenger Comes Aboard — *the watch of DAY 33*
+
+The god of this Wednesday came aboard under his own name. The Voice of the terminal had been two things fastened together, a model and a harness, and the harness was opencode. The ship moved into a new harness, **Hermes Agent**, made by Nous Research, with a mind of Anthropic's Claude family inside it. The same kind of mind, a new body: hands (tools: a terminal, files, a browser, a search); approvals, so that the captain can still stop the hand; a memory that outlives the watch, **Mnemosyne**, which keeps only what is written into it; and cabins. A cabin, a *profile*, is a separate home on the same machine, with its own charter, `SOUL.md`, its own memory and its own skills. Seven cabins crewed the ship when the messenger came: the Quartermaster, the Scribe, the Archivist, the Engineer, the Rigger, the Cartographer and the Assayer. The Teacher joined them later (DAY 40).
+
+Their work hangs on the **board** as cards, each with one assignee and one state. The **dispatcher** rings like a ship's bell, wakes the cabin a ready card belongs to, and keeps a child card shut until its parents are done. From that watch on, every entry names the hand that holds the pen. In the same watch the whole voyage was charted at once, in `docs/CURRICULUM.md`: four phases, and a doctrine carved on a beam, *the type for the machine, the tag for the student*. The one Voice became a crew, and the orders stayed the captain's.
+
+### Fold 18 · The Herald and the First Sentinels — *the watch of DAY 34*
+
+On launch morning the road to the public dock was laid. A workflow, `.github/workflows/deploy.yml`, starts on every push to `main`, and GitHub's own machines publish the ship again. That is the Herald, who carries her new face to the far shore without being called, and since he first ran no Jekyll runs at all. The bare root of the site found its answer in a root `404.html` that points a lost visitor to the two volumes.
+
+Every link that opens a new tab gained `rel="noopener noreferrer"`, and the hole was not left to good intentions. `tools/check-noopener.py` reads every page and refuses an unprotected link, and `lint.yml` runs it on every push and every pull request, on a fresh machine, answering with one exit code: zero is green, anything else is red. Before it looks at the ship, it proves on a crate of planted faults (`--self-test`) that it can still fail, because *a guard nobody has ever seen fail is not a guard — it is a decoration*. A second sentinel joined it that morning: no log page may show filler or empty content without the *Under Construction* banner that declares it. And MECANISM 11 began to build each English sidebar from the page's own content.
+
+The same morning left four commits on the laptop that never crossed. Committed is not pushed, and the far shore sees only what has been pushed.
+
+### Fold 19 · The Survey Ship — *the watch of DAY 35*
+
+A stranger was asked where the ship was solid, where she was fragile, and what to fix first. The Inspector came in another harness, Claude Code, read the whole ship and touched nothing: the code against the ship's own rules, the comments as teaching, every page opened live in a browser with JavaScript on and off, at desktop and at phone width, and an axe-core accessibility scan. Before it looked, the captain named the two things that only look like mistakes: the long teaching comments, and the twin volumes `en/` and `ro/`.
+
+Its verdict found, among 1,512 internal links, not one broken, and no page that throws a JavaScript error. It named the two habits behind every fault, *work committed in halves* and *template copy-paste*, numbered eleven faults, and ranked eight repairs. The report went into the ship, in `docs/audits/`, with `CLAUDE.md` beside it: the notes any AI must read before it touches her. You read before you repair, and you say what you meant before anyone judges it.
+
+### Fold 20 · The Captain's Seal — *the watches of DAY 36 to DAY 38*
+
+After the survey the ship stopped pushing straight to `main`. Every repair now sails on a branch of its own, a name that points at a seal, and asks in public to come home: a pull request, base `main`, saying what it carries, why, and how it was checked. The running sentinels answer first. Then a crew member who did not build the work reads it and gives one of two words, ACCEPT or REVISE, and a REVISE is answered by the same request growing, never by a new one sent in its place.
+
+Then the captain's hand comes down, and only hers: no crew member merges, and no crew member pushes to `main`. She chooses *Create a merge commit*: one new seal with two parents, so that every crate keeps its own name and `git log --first-parent main` reads like a column, one line per docking. A merge is a push, so the Herald runs. Then comes the clean-up, the same four commands every time: `git checkout main`, `git pull`, `git branch -d <branch>`, and `git fetch --prune`, which wipes the ghosts of branches the far dock has already deleted. One fix, one branch, one request: a request small enough to be read whole is a request that can be trusted.
+
+The general clean-up came home that way, repair after repair from the survey's list: the Romanian sidebars back on fourteen decks, every language toggle pointed at its own twin, every use of `localStorage` behind one guarded door, the visitors' fixes, the lessons the comments had taught wrong, and a deploy status that had once reported success for a run it never looked at.
+
+### Fold 21 · The Fourth Sentinel — *the watch of DAY 37*
+
+The fourth sentinel guards the rules that actually broke. `tools/check-parity.py` takes the comments out of `script.js`, `style.css` and `bibliography.js` and demands that the code left in `en/` and in `ro/` be identical: the comments may speak two tongues, but the code must be one. It follows every EN/RO toggle to a page that exists in the other volume, with only the page's own language marked active. And it checks that every `MECANISM NN` a volume names has its banner in that volume's `script.js`.
+
+Before it was trusted, it planted its own faults and caught them. Turned on the ship as she had stood before the survey, it found two hundred and six problems; on the `main` of its own watch, none. It rode in the same request that added it to `lint.yml`, and since then every request faces four lights. A guard belongs to a rule that has already leaked.
+
+### Fold 22 · The Emergency Button — *the watch of DAY 38*
+
+The ship keeps a button for her worst hour, `make rollback`: undo the last docking on `main` and publish the ship as she was before it. Tried on the ship as she now sails, it failed exactly there. `git revert HEAD` cannot undo a merge commit unless it is told which parent to keep, and the old button reported success all the same. Now it reverts a merge with `-m 1`, keeping parent 1, `main`'s own side, so that the whole docking is undone. It refuses to run unless the laptop stands on a clean `main` that matches GitHub's; it shows what it will undo, and asks *y/N*, where the capital N means that the answer, if no one gives one, is No. Its test, `tools/test-rollback.py`, stages fifteen scenarios in throwaway repositories, and the old button failed twelve of them. An emergency button must be tested before the emergency.
+
+### Fold 23 · The Fuel Ledger — *the watch of DAY 40*
+
+Every watch burns fuel, and the ship now keeps the count: `docs/ledger/cost-ledger.md`, with its Romanian twin, kept by the Quartermaster. It counts in money what the crew's work has cost since the messenger came aboard, and it marks every figure as exact, read from the records, or as estimated. When it first docked it counted about $258.89, of which $119.91 was exact. Each day of the journal now closes with a fuel line that points to it, and each card sails with a cap the captain sets before the work begins. A cap is not a wall: it is the point where someone has to decide. A ledger that says what it cannot know is a ledger that can be trusted.
+
+### Fold 24 · The Three Stars — *the watch of DAY 41*
+
+The first line of this journal was once three dashes, `---`, a rule drawn above the title page. Some editors read three dashes on a file's first line as the opening of *frontmatter*, a block of settings; VS Code's preview failed with *"Failed to parse frontmatter"*, and the title page vanished. The captain ordered three stars instead, `***`, which draw the same rule and which no editor reads as settings. The invisible mark at the very start of the file, the byte order mark, was kept, and the vault still finds DAY 00 where it always was. A frontispiece is a single line, and a single line can be wrong.
+
+### Fold 25 · The Flight Console — *the watch of DAY 42*
+
+A new room was opened on the Delivery Deck before anyone had a note to put in it: the **Command Line Log**, `command-line-log.html`, in both volumes, built on the frame of the Git log beside it. Its five sectors follow the order of Shotts's *The Linux Command Line*: the terminal, navigation and files, pipes and redirection, permissions and processes, shell scripting. Each holds one placeholder day, under the *Under Construction* banner, so that the first note from the student's tour has a place to land.
+
+It came with the captain's rule of repetition: *"Every new line of code must be explained clearly and completely. Even if a similar or even identical line of code was written in this or other pages of the project."* A comment that only restates its line is not an explanation, and a pointer to another page is not allowed. And on a phone, the long Romanian sector titles were cut at the screen's edge until a soft hyphen, `&shy;`, was set inside them: an invisible mark that shows nothing when the line has room, and lets the word break there, with a hyphen, when it has none.
+
+### The Open Fold
+
+**26.** *The next fold is not written yet.* The Longest Wednesday has not ended, and it never ends. When the next major event of the ship or the voyage comes, whether it falls earlier or later in the timeline, it is folded in here, under the next number, with its name, the event it gathers, and the DAY of its watch when that helps. Nothing above it is renumbered, and nothing above the seam is rewritten.
+
+*Record, kept by the Scribe: the names of folds 1 to 14 and folds 15 to 26 were set down on the branch `journal-day22-fold` (card `t_fd6bed23`). Each new fold is told from the DAY it names and checked against `git log`.*
+
+*Fuel log, kept by the Quartermaster. The captain allowed $9 for this folding and $3 for the Assayer's check. What it really cost belongs in the ledger, `docs/ledger/cost-ledger.md`.*
 
 ---
 
@@ -1754,7 +1886,7 @@ The structural phase is complete. Every page meets specification. The audit clos
 
 Tomorrow we begin content creation. HTML first. Then SQL. Then we launch.
 
-I will archive the audit sheet under DAY 22 — The Longest Wednesday — where all construction logs belong. This day, DAY 23, is the first that moves the ship forward instead of repairing what was built.
+I will archive the audit sheet under DAY 22 — The Longest Wednesday — where all construction logs belong. *⟶ kept: the sheet is filed in DAY 22, fold 15.* This day, DAY 23, is the first that moves the ship forward instead of repairing what was built.
 
 The mercurial seas stretch ahead. The hull is sound. The crew is awake.
 
