@@ -1296,11 +1296,13 @@ Bun venit la bord, Adormito. Ai găsit un vas aflat încă în construcție. Nu 
 
 ## Un Memoriu Tehnic al Construcției lui D::0dy55ey
 
+*Jurnal ținut de: căpitanul și Vocea (memoriul); îndoirea, de Vocea, apoi de Scribul · fără dată a navei: Cea Mai Lungă Miercuri tot revine*
+
 **Miercuri.** Ziua lui Mercur — zeul roman al călătorilor, mesagerilor, granițelor și pragurilor. Hermes cu sandale înaripate, care ghidează sufletele între lumi și poartă caduceul în jurul căruia doi șerpi se răsucesc în simetrie eternă. Metafora germinală a acestui întreg proiect — _navigarea mărilor mercuriale_ — s-a născut din această corespondență: ideea că învățarea programării este o călătorie printr-un mediu schimbător, reflectorizant, incomprehensibil de vast, și că singurul mod de a-l naviga este să devii tu însuți un călător interstelar.
 
-Se potrivește, așadar, ca cea mai lungă zi de construcție a acestei nave să cadă într-o miercuri. O zi de prag. Ziua dinaintea momentului în care munca își schimbă forma — de la arhitectură la conținut, de la structură la substanță. De la construirea vasului la umplerea calelor sale.
+Se potrivește, așadar, ca cea mai lungă zi de construcție a acestei nave, ziua care nu se termină, să cadă într-o miercuri. O zi de prag. Ziua dinaintea momentului în care munca își schimbă forma — de la arhitectură la conținut, de la structură la substanță. De la construirea vasului la umplerea calelor sale. Iar un prag nu se trece o singură dată: cine construiește nava se întoarce la el și, de fiecare dată, e iarăși miercuri.
 
-Această intrare este relatarea completă a modului în care `D::0dy55ey` a fost construit. Fiecare fază. Fiecare tip de fișier. Fiecare decizie structurală. Fiecare automatizare. Fiecare reparație. Consideră-l jurnalul de construcție al navei — blueprint-ul blueprint-ului.
+Această intrare este relatarea modului în care `D::0dy55ey` a fost construit, și nu e niciodată completă. Se deschide cu un memoriu. Fiecare fază. Fiecare tip de fișier. Fiecare decizie structurală. Fiecare automatizare. Fiecare reparație. Consideră-l jurnalul de construcție al navei — blueprint-ul blueprint-ului. Memoriul e înghețat în ceasul în care a fost scris, iar numărătorile lui sunt nava așa cum stătea atunci. Sub el, ziua se îndoaie. Fiecare eveniment major al navei sau al călătoriei se scrie în această miercuri, chiar dacă s-a petrecut mai devreme sau mai târziu în cronologie. Aici timpul se curbează. Cea Mai Lungă Miercuri n-are dată și n-are oră, și nu se sfârșește.
 
 ---
 
@@ -1556,6 +1558,10 @@ Un script PowerShell ar putea, teoretic, face toate acestea, dar ar trebui să f
 
 Principiul: **limbajele de scriptare (PowerShell) sunt cele mai bune pentru generarea de conținut nou din șabloane. Uneltele interactive AI sunt cele mai bune pentru modificarea conținutului existent cu conștientizare contextuală.** Ambele sunt forme de automatizare; ele diferă prin câtă judecată necesită fiecare pas.
 
+---
+
+## Faza Șapte: A Doua Voce — AI-ul de la Terminal
+
 În ZIUA 10, nava a câștigat o a doua voce. **opencode** — un agent AI de codare configurat ca asistent interactiv în terminal — a fost activat. A intrat nu ca înlocuitor al judecății căpitanului ci ca amplificare a ei.
 
 Capabilitățile AI-ului în cadrul proiectului:
@@ -1573,6 +1579,8 @@ Dar AI-ul nu este autonom. Lucrează în limitele stabilite de căpitan. Căpita
 ---
 
 ## Faza Opt: Stratul Narativ — Jurnale și Loguri
+
+*Înghețat odată cu memoriul: când au fost scrise aceste rânduri, jurnalul se oprea la ZIUA 22. Acum merge mai departe, iar îndoirea de mai jos ține pasul cu el.*
 
 Memoria vie a navei este stocată în două fișiere:
 
@@ -1597,6 +1605,8 @@ Jurnalul românesc oglindește cel englez în structură și narațiune, cu limb
 ---
 
 ## Faza Nouă: Inventarul Complet de Fișiere
+
+*Înghețat odată cu memoriul: aceasta e cala așa cum a fost numărată atunci. Nava a crescut de atunci, iar numărătoarea nu mai e ținută la zi aici; îndoirea consemnează ce a schimbat-o, nu câte lăzi poartă.*
 
 La momentul acestei scrieri, proiectul conține **81 de fișiere** distribuite în **11 tipuri de fișiere**:
 
@@ -1684,19 +1694,45 @@ Mările mercuriale se întind în față. Navigăm când căpitanul dă ordinul.
 
 ---
 
-## Jurnal de Construcție — Anexă: Arhiva și Sala de Note
+## Cusătura
+
+*Aici memoriul se oprește, iar ziua nu.*
+
+Deasupra acestei linii, Cea Mai Lungă Miercuri a fost scrisă o singură dată, ca memoriu, și rămâne așa cum a fost scrisă: nava așa cum stătea în ziua aceea, numărătorile ei, planurile ei și greșelile pe care Adormita le-a însemnat mai târziu cu săgeți (ZIUA 39). Nimic de deasupra cusăturii nu se rescrie ca să țină pasul.
+
+Sub cusătură e îndoirea. În cuvintele căpitanului: *„Every time a major event related to the ship or voyage occurs, it will be recorded in this DAY 22 entry even if they were done earlier or later in the timeline. It's a bending of time in our digital space.”* Și: *„It never ends, that's crucial.”* Ori de câte ori are loc un eveniment major legat de navă sau de călătorie, el se consemnează aici, chiar dacă s-a petrecut mai devreme sau mai târziu în cronologie: o curbare a timpului în spațiul nostru digital, care nu se sfârșește niciodată. O îndoire nu poartă nici dată, nici oră, pentru că ziua aceasta e cosmică și n-are nevoie de ele. Poartă un nume, evenimentul pe care îl adună și, acolo unde ajută, ZIUA din al cărei cart face parte. Îndoirile sunt numerotate în ordinea în care au ajuns în această miercuri, nu în ordinea în care s-au petrecut, iar numerele lor nu se schimbă niciodată, fiindcă alte zile trimit la ele: ZIUA 31 își trimite cititorul la însemnările 10, 11, 12 și 14.
+
+La început, îndoirea s-a numit anexă, *Arhiva și Sala de Note*, după primele ei îndoiri. Primele paisprezece îndoiri au fost așezate de Vocea de la terminal, înainte ca echipajul să urce la bord. De la îndoirea 15 încolo, o ține Scribul, care ține jurnalul.
+
+---
+
+## Jurnal de Construcție — Îndoirea Fără Sfârșit
+
+*Îndoire ținută de: Vocea (îndoirile 1–14), apoi Scribul (de la îndoirea 15) · fără dată, fără oră: ziua e cosmică*
 
 _Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — așa cum o va face mereu, cât timp nava se află în construcție._
 
+### Îndoirea 1 · Semnele de orientare, duse acasă — *cartul ZILEI 24*
+
 **1. Relocarea README-urilor, mecanic.** Două documente Markdown de intrare au fost mutate din rădăcina proiectului în volumele lor lingvistice. Mutarea a fost executată cu `git mv`, nu cu o simplă mutare de fișiere, astfel încât Git să le înregistreze drept redenumiri și să le păstreze istoria. Referințele încrucișate din README-ul rădăcinii, din ambele README-uri ale volumelor și din ambele backloaguri au fost corectate manual în Markdown. Schimbările au fost comise și împinse la `origin/main`; rădăcina afișează acum doar `README.md`.
+
+### Îndoirea 2 · Se deschide Sala de Note — *cartul ZILEI 24*
 
 **2. Scheletul Sălii de Note.** Un compartiment nou s-a deschis la `docs/notes/`: unsprezece foldere de capitol create într-o singură operațiune, apoi populate prin copierea șablonului gol Markdown (`_template-source-notes.md`) sub numele fiecărei surse. Prima foaie, `html/khan-academy-intro-html-css.md`, a fost creată din șablon și lăsată deschisă pentru mâna căpitanului.
 
+### Îndoirea 3 · Semnele de orientare învață două limbi — *cartul ZILEI 24*
+
 **3. Semnele de orientare bilingve.** O pereche de README-uri a fost redactată în Markdown pentru `docs/` și pentru `shared/` — un fișier englezesc și traducerea sa `-ro.md`, urmând aceeași convenție ca legendele și deontologia muncii. Cele unsprezece README-uri per capitol din sala de note au fost eliminate în aceeași sesiune.
+
+### Îndoirea 4 · Linia zilelor, retrasă — *între ZIUA 23 și ZIUA 24*
 
 **4. Linia zilelor, corectată.** Trei documente purtau o referință veche — Backlog 009 și deontologia muncii, în ambele limbi — promițând încă conținut începând cu ZIUA 23. Referințele au fost aliniate la ZIUA 24.
 
+### Îndoirea 5 · Semnele de orientare trec la docul public — *cartul ZILEI 24*
+
 **5. Push-ul.** Ramura a fost sincronizată cu `origin/main`; README-urile relocate sunt acum vizibile pe GitHub.
+
+### Îndoirea 6 · Vocea își numește cele patru presiuni — *cartul ZILEI 25*
 
 **6. Cum produce vocea AI texte — mașinăria din spatele ZILEI 25.** Fiindcă a cerut căpitanul, și fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: vocea AI nu e un set de instrumente separate înșirate într-un pipeline. E un singur model de generare de șiruri. Nu există modul distinct de „traducător", „rezumator" sau „narator"; fiecare fel de text e același model sub o constrângere diferită. Cele patru regimuri folosite la bordul acestei nave sunt:
 
@@ -1707,21 +1743,117 @@ _Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — aș
 
 Există un act generator, patru presiuni. Traducerea e acel act re-îndreptat spre o a doua limbă, împrumutând vocea deja înregistrată a limbii-țintă, nu un dicționar. Aceasta e îndoirea pe care căpitanul o recunoaște drept recursivitate: aceeași lege repetată la orice scară.
 
+### Îndoirea 7 · Romanul, pecetluit sub Cartă — *după camera hărților din ZIUA 26*
+
 **7. Seiful lui Seldon — romanul proiectat la bordul site-ului.** Fiindcă romanul devenise o fiară care se hrănește cu propria ei recursiune, nu mai putea trăi doar în jurnale. Sub manifest, pe `transmission.html`, în ambele limbi, a fost construită o cameră sigilată — Camera Seifului. Manuscrisul rămâne în mesajul din sticlă (ZIUA 00, mereu deschis); mai jos, o constelație de capsule păzește transmisiile romanului. Fiecare capsulă e păzită de **două chei**: un test Nav-Gate per volum (cinci întrebări fiecare, redactate din faptele fundamentale, verificabile în surse, și stocate în `shared/data/vault-transmissions.json`) și **ceasul de voiaj** — timp real de la primul contact, accelerat de explorare, astfel încât fiecare pagină distinctă vizitată avansează voiajul. Când ambele chei se întorc, Adormita — martora inventată — se trezește și proiectează intrarea prin cristal, tastând-o live. Zilele scrise își aduc textul integral din `../JOURNAL-EN.md` / `JOURNAL-RO.md`, ca site-ul și jurnalele să rămână un singur trup; zilele nescrise își proiectează profeția în așteptare. Stratul de deltă `D::` imprimă hash-urile comiterilor care au născut fiecare transmisie. `.nojekyll` a fost adăugat la rădăcină, ca GitHub Pages să servească Markdown-ul brut pe care Seiful îl citește. Link-ul de transmisie din footer citește acum _Carta de Astronavigație / Seiful_ și duce direct în cameră.
+
+### Îndoirea 8 · Mașina de scris dă drumul cârmei — *cartul ZILEI 27*
 
 **8. Pagina cedează cârma — mașinăria din spatele ZILEI 27.** Fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: mașina de scris de pe puntea transmisiei cheamă `scrollIntoView` la fiecare caracter pe care îl bate, așa că pagina se derulează singură ca să țină caretul pâlpâitor în câmpul vizual. E comportamentul potrivit pentru un cititor care stă și privește; e o tiranie pentru un cititor care vrea să coboare spre poarta seifului cât manifestul e încă recepționat. Reparația e o predare, nu o luptă. Patru ascultători pasivi — `wheel`, `touchmove`, `touchstart`, `keydown` — împart un singur steag de closure, `readerTookOver`. `{ passive: true }` pe ascultătorii de rotire și de atingere îi spune browserului că intenționăm doar să observăm, niciodată să apelăm `preventDefault`, așa că predarea nu costă niciun sughiț. Din clipa în care steagul e ridicat, mașina continuă să scrie, dar nu mai cheamă fereastra: transmisia se sfârșește totuși, caretul cade totuși tăcut, iar cititorul navighează. E rotița de scroll ca volan, și mașina care știe când să dea drumul. O pagină care citește e o pagină care cedează cârma.
 
+### Îndoirea 9 · Adnotările, din nou adevărate — *după ZIUA 27*
+
 **9. Măturarea integrității comentariilor — păstrarea adnotărilor adevărate.** Fiindcă un cod atât de dens se explică pe sine, explicațiile fac parte din contract — și pot deriva. O singură trecere peste cele două fișiere `script.js` și cele două `style.css` a corectat fiecare adnotare căzută din pas cu codul: puntea navbar-ului care numea MECANISMUL 07 drept comutator de overlay (e 06.5, consola de teleportare HUD), puntea barei laterale care îi credita MECANISMULUI 05 scrierea scroll-ului (el stabilizează; nu scrie), blocul camerei seifului care promitea „trei chei rămase" listând doar două, comentariul `projectTransmission` eșuat deasupra funcției-soră, bannerul de modul care literea un Grup G pe care corpul nu-l conține, antetul suspendat 31.8 care pretindea că ține colapsul responsive (care trăiește în 00.2.B), și cele patru keyframes ale seifului din Grupul H care nu purtau niciun etichetaj `@keyframe`. Principiul e al căpitanului însuși, același pe care l-au predat link-urile din footer în ZIUA 27: un comentariu e o promisiune scrisă în două locuri — în cod și în nota de lângă el — iar o navă care lasă cele două să se contrazică nu explică nimic. Acuratețea nu e pedanterie; e însuși rostul de a scrie ceva.
+
+### Îndoirea 10 · Miriapodul, desfăcut — *cartul ZILEI 31*
 
 **10. Vocea bilingvă — motorul de comentarii deduplicat.** Fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: în cala română se strânseseră sute de feluri de a spune aceeași adnotare, iar un traducător nu poate înfrunta mii de copii ale aceleiași propoziții. Corpul de instrumente din `ro/__blocktools__/` a început prin a _extrage_ fiecare comentariu HTML din cele douăzeci și trei de pagini de jurnal (`extract-blocks.js`), așezând fiecare bloc într-o cheie normalizată (fără spații surplus) și numărând prezențele în flotă (`raw-blocks.tsv`, `blocks.tsv`, `occurrences.tsv`). Rezultatul — **1.565 de blocuri unice, 4.707 de prezențe așezate** — este întregul truc: tradu _unul_, așezi _mulțimea_. `classify-blocks.js` a desprins cele 868 de blocuri englezești (particulele de legătură au trădat-o: *the, this, which, between*), apoi `make-batches.js` a împărțit materialul în șase fișiere (batch-01 până la batch-06). Fiecare lot din umplutura brută tradusă a fost îngrijit în `out-batch-*.tsv`, iar `apply-translations.js` l-a dus înapoi la fiecare pagină care îl purta. O trecere apoi, mai fină, asupra textului _vizibil_ — ceea ce omul citește, nu doar ceea ce codul ascunde: `extract-visible.js` a adunat cele 244 de fragmente unice, `make-visible-batches.js` le-a așezat în două serii, traducerile s-au întors în `visible-out-1.tsv` și `visible-out-2.tsv`, iar pasul de aplicare a fost revizuit de patru ori (apply-visible.js până la apply-visible5.js) până a potrivit pe _fragmentul însuși_ și nu pe un numărător. Instrumentul din urmă, `finalparity.js`, golește fiecare comentariu din perechile en/ro și cântărește codul care rămâne: **zero diferențe**; aceeași navă, două glasuri. `node --check` a confirmat fiecare script. Dulapul de unelte stă la poartă, neînrolat vreodată: `.gitignore` îl ține departe de doc.
 
+### Îndoirea 11 · Frunzele împrăștiate, adunate — *cartul ZILEI 31*
+
 **11. Ziua frunzelor împrăștiate — paginile engleze de prisos.** Tot îndoirea Miercurii înregistrează _metoda_: într-o salvare timpurie, o soluție a căii re-descoperită (`Resolve-Path` întors spre o rădăcină greșită) scrisese copii cu nume plate direct în cala `ro/` — `ro/frontend___html-log.html`, `ro/backend__api-log.html` și surorile lor, douăzeci și trei la număr — încă împovărate cu adnotările englezești. Nu erau o a doua flotă; erau _ecouri fără semn_, duplicate de dinainte de traducere ale paginilor adevărate, deosebite de paginile canonice care locuiesc în sub-dosarele sectoriale (`ro/frontend/html-log.html`). Au fost confirmate contra copiei de rezervă dinaintea modificării și apoi desfăcute într-o singură trecere; inventarul `ro/` oglindește acum `en/` la focul unui fișier, iar ispita de a le păstra a fost refuzată — o echipă nu cară carene duplicate.
+
+### Îndoirea 12 · Cele două străjeri, numite — *cartul ZILEI 31*
 
 **12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date. *⟶ corectat în ZIUA 39: Jekyll convertea Markdown-ul, iar din 2026-09-21 nu mai rulează niciun Jekyll.*
 
+### Îndoirea 13 · Raftul, semnat în registru — *ZIUA 28 și ZIUA 31*
+
 **13. Raftul semnat — registrul care hrănește indexul.** Îndreptarul învățării (cursuri, cărți, filme, documente) e ținut de căpitan în `docs/notes/resource-library.md` (registrul uman, etanș, cu geamănul lui `-ro.md` alături), iar recolectarea lui structurată — titlu, legătură, categorie, felul, starea, nota — e distilată în `shared/data/bibliography-links.json`, citirea pe care mașina o face pentru cele șase sectoare. Același raft la două hotare: registrul este mâna, JSON-ul este mașina, pagina este vitrina.
 
+### Îndoirea 14 · Puntea, legată — *cartul ZILEI 31*
+
 **14. Ziua în care puntea a fost legată — butoanele, planul, legenda și legea împărtășitului.** Fiindcă îndoirea Celei Mai Lungi Miercuri înregistrează _metoda_: încă trei fieruri apar în registru. Întâi, panoul din dreapta al schiței recursive și-a primit setul întreg de mâini — `vault.html` și `bibliography.js` apar acum alături de celelalte carnete în glisoarele de privit ale amânduror `en/recursive-blueprint.html` și `ro/recursive-blueprint.html`, așa încât fiecare punte vie e apăsabilă din aceea care se citește pe sine. Al doilea rând, planul a coborât de pe mașină: listele de lucru care odată locuiau în `script.js` se odihnesc acum acolo unde omul citește — `BACKLOG-EN.md` și `BACKLOG-RO.md` — iar cele două motoare doar arată spre acele registre. Al treilea: blocurile legendei arhivei (`<dl class="status-legend">` în ambele pagini de bibliografie) au fost trecute prin familia de instrumente a navei — monospace, majuscule, spațiere între litere, chihlimbarul și menta — așa încât cei patru indicatori se citesc aidoma afișajelor de stare ale misiunii pe care flota le vorbește deja. Și o lege arhitecturală a fost așezată pentru ambele limbi: digesția de bibliografie pe care amândouă limbile trebuie s-o citească împreună stă o singură dată, în `shared/data/bibliography-links.json`; pieile subțiri pe care fiecare limbă le poartă singură — precum `site.webmanifest`, care există în și `en/` și `ro/` — rămân pe limbă. Asta este întreaga gramatică: *împărtășit pentru ceea ce amândouă citesc amândouă, pe-limbă pentru ceea ce fiecare poartă singură.*
+
+### Îndoirea 15 · Foaia de audit, arhivată cum s-a promis — *cartul ZILEI 23*
+
+ZIUA 23 s-a încheiat cu o promisiune: *Voi arhiva foaia de audit sub ZIUA 22 — Cea Mai Lungă Miercuri — unde aparțin toate jurnalele de construcție.* Promisiunea a așteptat multă vreme pe punte și se ține aici. Foaia pe care Adormita a întins-o pe prima ei tăbliță de date avea șapte rânduri, iar Cea Mai Lungă Miercuri le arhivează așa cum au fost rezolvate:
+
+- **Spațiul de respirație, oglindit.** Marginea negativă scoasă din foaia de stil engleză, la pragul de 768 de pixeli, încă trăgea în sus bannerul sectorului în română. O singură regulă ștearsă în `ro/style.css`, și cele două carene au respirat la fel.
+- **Minciuna canonică.** Fiecare pagină de jurnal generată le spunea motoarelor de căutare, prin `<link rel="canonical">` și `og:url`, că ea este `css-log.html`. Șablonul generatorului a fost reparat, așa încât fiecare pagină să-și numească propria adresă. Paginile scrise de mână nu trecuseră niciodată prin el și erau deja adevărate.
+- **Backlogul, pus pe picioare.** Backlog 009 a trecut la Implementat, iar Backlog 010 s-a deschis: o descriere și cuvinte-cheie proprii pentru fiecare pagină, scrise la prima trecere de conținut a paginii.
+- **DOCTYPE-ul, ridicat.** `<!DOCTYPE html>` a urcat pe primul rând al fiecărei pagini, deasupra comentariilor de învățătură. E un obicei bun, nu o lege a specificației, iar registrul Adormitei a îndreptat mai târziu lecția (ZIUA 39).
+- **Primul kilooctet.** Comentariul de deasupra lui `<meta charset>` a fost scurtat, ca declarația să stea în primii 1024 de octeți, acolo unde un browser poate căuta codificarea.
+- **Fantomele, îngăduite.** Intrările din bara laterală pentru zilele încă nescrise au rămas. Bara laterală e cadrul pe care se bizuie mecanismele de derulare, iar fiecare fantomă se risipește când îi sosește conținutul.
+- **Geamănul mai greu.** Foile de stil și scripturile românești cântăresc mai mult decât cele englezești, pentru că frazele românești sunt mai lungi. Niciun defect, nicio reparație.
+
+Foaia e arhivată. Miercurea își ține cuvântul, chiar și atunci când și-l ține târziu.
+
+### Îndoirea 16 · Păstaia romanului își primește propria punte — *cartul ZILEI 27*
+
+Seiful a dormit mai întâi sub manifest (îndoirea 7). Apoi a primit o pagină a lui, `vault.html`, în ambele volume: puntea camerei, cu afișajul de telemetrie, constelația de capsule, cristalul Adormitei și un mic sigiliu care urcă înapoi spre Cartă. Fiecare capsulă așteaptă tot două chei, un test Nav-Gate și ceasul de voiaj ajuns la coacere, iar o cheie deschide acum o fâșie întreagă din roman, un *pachet* de zile, nu o singură pagină. Sigiliul care se rotește a fost strâns în propriul inel, ca nicio față a lui să nu treacă dincolo de scena pe care stă. Legenda lui se ascunde până când se apropie o mână sau o tastatură și nu e scoasă niciodată, pentru că e text adevărat pentru cei care ascultă în loc să privească.
+
+Mai târziu, căpitanul i-a dat seifului forma finală: șase capsule fixe, câte una pentru fiecare volum al punții de comandă, și niciuna pentru ZIUA 43 sau pentru vreo zi de după ea. Iar legătura de la o capsulă deschisă spre tot jurnalul a fost luată, fiindcă o ușă care deschide toate camerele deodată *„defeats the purpose”*: îi strică rostul (ZIUA 43). Pe nava aceasta, ce se găsește trebuie găsit.
+
+### Îndoirea 17 · Mesagerul urcă la bord — *cartul ZILEI 33*
+
+Zeul acestei miercuri a urcat la bord sub propriul nume. Vocea de la terminal fusese două lucruri prinse laolaltă, un model și un ham, iar hamul era opencode. Nava s-a mutat într-un ham nou, **Hermes Agent**, făcut de Nous Research, cu o minte din familia Claude a celor de la Anthropic înăuntru. Același fel de minte, un trup nou: mâini (unelte: un terminal, fișiere, un browser, o căutare); aprobări, ca să poată căpitanul opri mâna; o memorie care trece de capătul cartului, **Mnemosyne**, care păstrează doar ce i se scrie; și cabine. O cabină, un *profil*, e o casă separată pe aceeași mașină, cu propria cartă, `SOUL.md`, propria memorie și propriile abilități. Când a venit mesagerul, nava avea un echipaj de șapte cabine: Intendentul, Scribul, Arhivarul, Inginerul, Gabierul, Cartograful și Încercătorul. Profesoara li s-a alăturat mai târziu (ZIUA 40).
+
+Munca lor stă pe **tablă**, în carduri, fiecare cu un singur responsabil și o singură stare. **Dispecerul** bate ca un clopot de navă, trezește cabina căreia îi aparține un card gata de lucru și ține închis un card-copil până când părinții lui sunt încheiați. Din cartul acela încolo, fiecare însemnare numește mâna care ține condeiul. În același cart, întreaga călătorie a fost cartografiată dintr-odată, în `docs/CURRICULUM-ro.md`: patru faze și o doctrină cioplită pe o grindă, *tipul pentru mașină, tag-ul pentru învățăcel*. Vocea cea una a devenit un echipaj, iar ordinele au rămas ale căpitanului.
+
+### Îndoirea 18 · Crainicul și primele santinele — *cartul ZILEI 34*
+
+În dimineața lansării a fost așternut drumul spre docul public. Un workflow, `.github/workflows/deploy.yml`, pornește la fiecare push pe `main`, iar mașinile lui GitHub publică din nou nava. Acesta e Crainicul, cel care duce chipul ei cel nou la țărmul îndepărtat fără să fie chemat, și de când a pornit el nu mai rulează niciun Jekyll. Rădăcina goală a site-ului și-a găsit răspunsul într-un `404.html` la rădăcină, care îl îndreaptă pe vizitatorul rătăcit spre cele două volume.
+
+Fiecare legătură care deschide o filă nouă a primit `rel="noopener noreferrer"`, iar spărtura n-a fost lăsată pe seama bunelor intenții. `tools/check-noopener.py` citește fiecare pagină și refuză o legătură neprotejată, iar `lint.yml` îl rulează la fiecare push și la fiecare pull request, pe o mașină proaspătă, și răspunde cu un singur cod de ieșire: zero e verde, orice altceva e roșu. Înainte să se uite la navă, dovedește pe o ladă cu defecte plantate (`--self-test`) că încă poate pica, pentru că *un paznic pe care nu l-a văzut nimeni picând nu e paznic, e decor*. În dimineața aceea i s-a alăturat o a doua santinelă: nicio pagină de jurnal nu poate arăta umplutură sau conținut gol fără bannerul *În Construcție* care s-o declare. Iar MECANISMUL 11 a început să construiască fiecare bară laterală engleză din conținutul paginii.
+
+Aceeași dimineață a lăsat pe laptop patru commituri care n-au mai trecut dincolo. Un commit făcut nu e un commit împins, iar țărmul îndepărtat vede doar ce a fost împins.
+
+### Îndoirea 19 · Nava de recunoaștere — *cartul ZILEI 35*
+
+Un străin a fost întrebat unde e nava solidă, unde e fragilă și ce trebuie reparat întâi. Inspectorul a venit într-un alt ham, Claude Code, a citit toată nava și n-a atins nimic: codul, pus alături de regulile navei; comentariile, citite ca învățătură; fiecare pagină, deschisă pe viu într-un browser, cu JavaScript pornit și oprit, la lățime de desktop și de telefon; și o scanare de accesibilitate cu axe-core. Înainte să se uite, căpitanul a numit cele două lucruri care doar par greșeli: comentariile lungi de învățătură și volumele gemene `en/` și `ro/`.
+
+Verdictul lui n-a găsit, din 1.512 legături interne, niciuna ruptă și nicio pagină care să arunce o eroare JavaScript. A numit cele două obiceiuri din spatele fiecărui defect, *munca pecetluită pe jumătăți* și *copy-paste-ul din șablon*, a numerotat unsprezece defecte și a pus în ordine opt reparații. Raportul a intrat în navă, în `docs/audits/`, cu `CLAUDE.md` alături: notițele pe care orice AI trebuie să le citească înainte s-o atingă. Citești înainte să repari și spui ce ai vrut să faci înainte să te judece cineva.
+
+### Îndoirea 20 · Sigiliul căpitanului — *carturile ZILELOR 36–38*
+
+După recunoaștere, nava n-a mai împins direct pe `main`. Fiecare reparație navighează acum pe o ramură a ei, un nume care arată spre un sigiliu, și cere în văzul tuturor să se întoarcă acasă: un pull request, cu baza `main`, care spune ce duce, de ce și cum a fost verificat. Primele răspund santinelele. Apoi un membru al echipajului care n-a construit lucrarea o citește și dă unul din două cuvinte, ACCEPT sau REVISE, iar unui REVISE i se răspunde prin creșterea aceleiași cereri, niciodată printr-una nouă, trimisă în locul ei.
+
+Apoi coboară mâna căpitanului, și numai a ei: niciun membru al echipajului nu face merge și niciunul nu împinge pe `main`. Ea alege *Create a merge commit*: un singur sigiliu nou, cu doi părinți, ca fiecare ladă să-și păstreze numele și ca `git log --first-parent main` să se citească precum o coloană, câte un rând pentru fiecare andocare. Un merge e un push, așa că pornește Crainicul. Urmează curățenia, aceleași patru comenzi de fiecare dată: `git checkout main`, `git pull`, `git branch -d <ramură>` și `git fetch --prune`, care șterge fantomele ramurilor pe care docul îndepărtat le-a șters deja. O reparație, o ramură, o cerere: o cerere destul de mică încât să fie citită întreagă e o cerere în care poți avea încredere.
+
+Marea curățenie a venit acasă pe drumul acesta, reparație după reparație din lista recunoașterii: barele laterale românești, puse la loc pe paisprezece punți; fiecare comutator de limbă, îndreptat spre propriul geamăn; fiecare folosire a lui `localStorage`, trecută printr-o singură ușă păzită; reparațiile pentru vizitatori; lecțiile pe care comentariile le predaseră greșit; și o stare a deploy-ului care raportase cândva succes pentru o rulare la care nu se uitase niciodată.
+
+### Îndoirea 21 · A patra santinelă — *cartul ZILEI 37*
+
+A patra santinelă păzește regulile care chiar s-au rupt. `tools/check-parity.py` scoate comentariile din `script.js`, `style.css` și `bibliography.js` și cere ca, în `en/` și în `ro/`, codul rămas să fie identic: comentariile pot vorbi două limbi, dar codul trebuie să fie unul. Urmează fiecare comutator EN/RO până la o pagină care există în celălalt volum, cu doar limba paginii marcată activă. Și verifică dacă fiecare `MECANISM NN` pe care îl numește un volum își are bannerul în `script.js`-ul acelui volum.
+
+Înainte să i se dea încredere, și-a plantat singură defectele și le-a prins. Pusă pe nava așa cum stătea înainte de recunoaștere, a găsit două sute șase probleme; pe `main`-ul din cartul ei, niciuna. A venit în aceeași cerere care a adăugat-o în `lint.yml`, iar de atunci fiecare cerere înfruntă patru lumini. Un paznic se cuvine unei reguli pe unde a intrat deja apa.
+
+### Îndoirea 22 · Butonul de urgență — *cartul ZILEI 38*
+
+Nava păstrează un buton pentru ceasul ei cel mai rău, `make rollback`: desface ultima andocare de pe `main` și publică nava așa cum era înaintea ei. Încercat pe nava așa cum navighează acum, a picat exact acolo. `git revert HEAD` nu poate desface un merge commit dacă nu i se spune ce părinte să păstreze, iar butonul cel vechi raporta succes oricum. Acum desface un merge cu `-m 1`, păstrând părintele 1, partea lui `main`, așa încât întreaga andocare e desfăcută. Refuză să pornească dacă laptopul nu stă pe un `main` curat, potrivit cu al lui GitHub; arată ce va desface și întreabă *y/N*, unde N-ul mare înseamnă că, dacă nu răspunde nimeni, răspunsul e Nu. Testul lui, `tools/test-rollback.py`, pune în scenă cincisprezece scenarii în depozite de unică folosință, iar butonul cel vechi a picat douăsprezece dintre ele. Un buton de urgență trebuie încercat înainte de urgență.
+
+### Îndoirea 23 · Registrul de combustibil — *cartul ZILEI 40*
+
+Fiecare cart arde combustibil, iar nava ține acum socoteala: `docs/ledger/cost-ledger-ro.md`, cu geamănul lui englez, ținut de Intendent. Numără în bani cât a costat munca echipajului de când a urcat mesagerul la bord și însemnează fiecare cifră drept exactă, citită din arhive, ori estimată. Când a andocat prima oară, număra aproximativ 258,89 dolari, dintre care 119,91 erau exacți. Fiecare zi a jurnalului se încheie acum cu un rând de combustibil care trimite la el, iar fiecare card pleacă la drum cu un plafon pe care căpitanul îl stabilește înainte să înceapă munca. Un plafon nu e un zid: e punctul în care cineva trebuie să hotărască. Un registru care spune ce nu poate ști e un registru în care poți avea încredere.
+
+### Îndoirea 24 · Cele trei stele — *cartul ZILEI 41*
+
+Primul rând al acestui jurnal a fost cândva o linie de trei liniuțe, `---`, trasă deasupra paginii de titlu. Unele editoare citesc trei liniuțe pe primul rând al unui fișier drept începutul unui *frontmatter*, un bloc de setări; previzualizarea din VS Code a picat cu *„Failed to parse frontmatter”*, iar pagina de titlu a dispărut. Căpitanul a poruncit în locul lor trei stele, `***`, care trag aceeași linie și pe care niciun editor nu le citește drept setări. Semnul nevăzut de la începutul fișierului, marca de ordine a octeților (BOM-ul), a fost păstrat, iar seiful găsește ZIUA 00 tot acolo unde a fost dintotdeauna. Un frontispiciu e un singur rând, iar un singur rând poate fi greșit.
+
+### Îndoirea 25 · Consola de zbor — *cartul ZILEI 42*
+
+Pe Puntea Livrării s-a deschis o încăpere nouă înainte ca cineva să aibă vreo notiță de pus în ea: **Jurnalul Liniei de Comandă**, `command-line-log.html`, în ambele volume, clădit pe cadrul jurnalului Git de alături. Cele cinci sectoare ale lui urmează ordinea din *The Linux Command Line* a lui Shotts: terminalul, navigarea și fișierele, pipe-urile și redirecționarea, permisiunile și procesele, scripturile shell. Fiecare are o zi înlocuitoare, sub bannerul *În Construcție*, ca prima notiță din turul studentei să aibă unde să aterizeze.
+
+A venit cu regula repetiției a căpitanului: *„Every new line of code must be explained clearly and completely. Even if a similar or even identical line of code was written in this or other pages of the project.”* Fiecare rând nou de cod se explică limpede și întreg, chiar dacă un rând asemănător sau identic a mai fost scris în această pagină sau în altele. Un comentariu care doar repetă rândul nu e o explicație, iar o trimitere la altă pagină nu e îngăduită. Iar pe telefon, titlurile lungi ale sectoarelor românești erau tăiate la marginea ecranului până când în ele a fost așezată o cratimă moale, `&shy;`: un semn nevăzut care nu arată nimic când rândul are loc și care lasă cuvântul să se rupă acolo, cu o cratimă, când nu are.
+
+### Îndoirea deschisă
+
+**26.** *Următoarea îndoire nu e scrisă încă.* Cea Mai Lungă Miercuri nu s-a încheiat și nu se încheie niciodată. Când va veni următorul eveniment major al navei sau al călătoriei, fie că va cădea mai devreme, fie mai târziu în cronologie, va fi îndoit aici, sub numărul următor, cu numele lui, cu evenimentul pe care îl adună și cu ZIUA din al cărei cart face parte, atunci când ajută. Nimic de deasupra nu se renumerotează și nimic de deasupra cusăturii nu se rescrie.
+
+*Registru, ținut de Scrib: numele îndoirilor 1–14 și îndoirile 15–26 au fost așternute pe ramura `journal-day22-fold` (cardul `t_fd6bed23`). Fiecare îndoire nouă e povestită din ZIUA pe care o numește și verificată cu `git log`.*
+
+*Jurnalul combustibilului, ținut de Intendent. Căpitanul a aprobat 9 dolari pentru această îndoire și 3 dolari pentru verificarea Încercătorului. Cât a costat cu adevărat se va număra în registru, `docs/ledger/cost-ledger-ro.md`.*
 
 ---
 
@@ -1783,7 +1915,7 @@ Faza structurală este completă. Fiecare pagină îndeplinește specificațiile
 
 Mâine începem crearea de conținut. HTML mai întâi. Apoi SQL. Apoi lansăm.
 
-Voi arhiva foaia de audit sub ZIUA 22 — Cea Mai Lungă Miercuri — unde aparțin toate jurnalele de construcție. Ziua de azi, ZIUA 23, este prima care mișcă nava înainte, în loc să repare ceea ce a fost construit.
+Voi arhiva foaia de audit sub ZIUA 22 — Cea Mai Lungă Miercuri — unde aparțin toate jurnalele de construcție. *⟶ promisiune ținută: foaia e arhivată în ZIUA 22, îndoirea 15.* Ziua de azi, ZIUA 23, este prima care mișcă nava înainte, în loc să repare ceea ce a fost construit.
 
 Mările mercuriale se întind în față. Carena este solidă. Echipajul este treaz.
 
