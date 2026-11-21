@@ -326,6 +326,61 @@ opens. They live here because the server is the half they explain.
 | Git Reference Manual | git-scm.com | Docs | https://git-scm.com/docs | free | queued | — |
 | Git Cheat Sheet | GitHub Education | Guide | https://education.github.com/git-cheat-sheet-education.pdf | free | queued | — |
 
+### GeeksforGeeks — one article per roadmap stage
+
+Added 2026-11-21 at the captain's request: twenty GeeksforGeeks articles, one or
+more per stage of the Git roadmap (setup, everyday commits, history, undo,
+remotes, branches, collaboration, strategies, recovery, automation), plus the
+tutorial index. Links go to geeksforgeeks.org only, where the articles are free
+to read; nothing here points at a mirror or a copy. A longer vetted list (57
+articles) can be added on request.
+
+| Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |
+|---|---|---|---|---|---|---|
+| Git Tutorial | GeeksforGeeks | Course | https://www.geeksforgeeks.org/git/git-tutorial/ | free | queued | — |
+| Git Introduction | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-introduction/ | free | queued | — |
+| Setting Up Git Using git config | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/how-to-set-up-git-using-git-config/ | free | queued | — |
+| States of a File in Git | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/states-of-a-file-in-git-working-directory/ | free | queued | — |
+| Committing in Git | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/committing-in-git/ | free | queued | — |
+| How to Write Good Commit Messages | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/how-to-write-good-commit-messages-in-github/ | free | queued | — |
+| Git Logs | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/how-to-check-git-logs/ | free | queued | — |
+| Undo a Commit in Git | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/how-to-undo-a-commit-in-git/ | free | queued | — |
+| Difference Between Git Fetch and Git Pull | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-difference-between-git-fetch-and-git-pull/ | free | queued | — |
+| Introduction to Git Branch | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/introduction-to-git-branch/ | free | queued | — |
+| Handling Merge Conflicts in Git | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/merge-conflicts-and-how-to-handle-them/ | free | queued | — |
+| Git Rebase | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/rebasing-of-branches-in-git/ | free | queued | — |
+| Git Cherry Pick | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-cherry-pick/ | free | queued | — |
+| How to Create a Pull Request in GitHub | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/how-to-create-a-pull-request-in-github/ | free | queued | — |
+| Git Flow vs GitHub Flow | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-flow-vs-github-flow/ | free | queued | — |
+| Trunk-Based Development | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/devops/trunk-based-development-in-software-development/ | free | queued | — |
+| Git Refs and Reflogs | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/using-refs-and-reflogs-in-git/ | free | queued | — |
+| Git Debugging | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-debugging/ | free | queued | — |
+| Git Hooks | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/git-hooks/ | free | queued | — |
+| Introduction to GitHub Actions | GeeksforGeeks | Guide | https://www.geeksforgeeks.org/git/introduction-to-github-actions/ | free | queued | — |
+
+What each one covers:
+
+- **Git Tutorial** — Index of GfG Git articles, basics to advanced.
+- **Git Introduction** — What Git is and how its workflow fits together.
+- **Setting Up Git Using git config** — Name, email, default branch and config levels.
+- **States of a File in Git** — Untracked, modified, staged, committed.
+- **Committing in Git** — git commit, messages and --amend.
+- **How to Write Good Commit Messages** — Imperative subjects, bodies and type prefixes.
+- **Git Logs** — git log with --oneline, --graph and filters.
+- **Undo a Commit in Git** — reset (soft, hard) and revert, when to use which.
+- **Difference Between Git Fetch and Git Pull** — Download first, or download and merge.
+- **Introduction to Git Branch** — Create, switch and delete branches.
+- **Handling Merge Conflicts in Git** — Read conflict markers and resolve them.
+- **Git Rebase** — Replay commits; never rebase public history.
+- **Git Cherry Pick** — Copy one commit onto another branch.
+- **How to Create a Pull Request in GitHub** — Branch, push, open, review, merge.
+- **Git Flow vs GitHub Flow** — Release and hotfix branches versus one deployable main.
+- **Trunk-Based Development** — Small, frequent merges to main, with feature flags.
+- **Git Refs and Reflogs** — Branches as pointers; the reflog as safety net.
+- **Git Debugging** — git bisect: binary search for the bad commit.
+- **Git Hooks** — pre-commit and friends in .git/hooks.
+- **Introduction to GitHub Actions** — Workflows, events, jobs, steps and runners.
+
 ## Delivery — GitHub
 
 | Resource | Author / Channel | Kind | Where | Access | Status | Notes sheet |

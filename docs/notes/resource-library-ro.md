@@ -284,6 +284,62 @@ aici pentru că serverul e jumătatea pe care o explică.
 | Git Reference Manual | git-scm.com | Documentație | https://git-scm.com/docs | gratuit | coadă | — |
 | Git Cheat Sheet | GitHub Education | Ghid | https://education.github.com/git-cheat-sheet-education.pdf | gratuit | coadă | — |
 
+### GeeksforGeeks — câte un articol pentru fiecare etapă a drumului
+
+Adăugate pe 2026-11-21, la cererea căpitanului: douăzeci de articole
+GeeksforGeeks, cel puțin unul pentru fiecare etapă a drumului Git (instalare,
+commit-urile de zi cu zi, istoric, anulare, depozite la distanță, ramuri,
+colaborare, strategii, recuperare, automatizare), plus indexul tutorialului.
+Legăturile duc numai la geeksforgeeks.org, unde articolele se citesc gratuit;
+nimic de aici nu trimite la o oglindă sau la o copie. O listă mai lungă, deja
+verificată (57 de articole), se poate adăuga la cerere.
+
+| Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |
+|---|---|---|---|---|---|---|
+| Git Tutorial | GeeksforGeeks | Curs | https://www.geeksforgeeks.org/git/git-tutorial/ | gratuit | coadă | — |
+| Git Introduction | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-introduction/ | gratuit | coadă | — |
+| Setting Up Git Using git config | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/how-to-set-up-git-using-git-config/ | gratuit | coadă | — |
+| States of a File in Git | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/states-of-a-file-in-git-working-directory/ | gratuit | coadă | — |
+| Committing in Git | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/committing-in-git/ | gratuit | coadă | — |
+| How to Write Good Commit Messages | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/how-to-write-good-commit-messages-in-github/ | gratuit | coadă | — |
+| Git Logs | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/how-to-check-git-logs/ | gratuit | coadă | — |
+| Undo a Commit in Git | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/how-to-undo-a-commit-in-git/ | gratuit | coadă | — |
+| Difference Between Git Fetch and Git Pull | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-difference-between-git-fetch-and-git-pull/ | gratuit | coadă | — |
+| Introduction to Git Branch | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/introduction-to-git-branch/ | gratuit | coadă | — |
+| Handling Merge Conflicts in Git | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/merge-conflicts-and-how-to-handle-them/ | gratuit | coadă | — |
+| Git Rebase | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/rebasing-of-branches-in-git/ | gratuit | coadă | — |
+| Git Cherry Pick | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-cherry-pick/ | gratuit | coadă | — |
+| How to Create a Pull Request in GitHub | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/how-to-create-a-pull-request-in-github/ | gratuit | coadă | — |
+| Git Flow vs GitHub Flow | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-flow-vs-github-flow/ | gratuit | coadă | — |
+| Trunk-Based Development | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/devops/trunk-based-development-in-software-development/ | gratuit | coadă | — |
+| Git Refs and Reflogs | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/using-refs-and-reflogs-in-git/ | gratuit | coadă | — |
+| Git Debugging | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-debugging/ | gratuit | coadă | — |
+| Git Hooks | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/git-hooks/ | gratuit | coadă | — |
+| Introduction to GitHub Actions | GeeksforGeeks | Ghid | https://www.geeksforgeeks.org/git/introduction-to-github-actions/ | gratuit | coadă | — |
+
+Ce acoperă fiecare:
+
+- **Git Tutorial** — Indexul articolelor GfG despre Git, de la bază la avansat.
+- **Git Introduction** — Ce este Git și cum se leagă pașii fluxului său de lucru.
+- **Setting Up Git Using git config** — Nume, e-mail, ramura implicită și nivelurile de configurare.
+- **States of a File in Git** — Neurmărit, modificat, pregătit (staged), salvat (committed).
+- **Committing in Git** — git commit, mesajele și --amend.
+- **How to Write Good Commit Messages** — Subiect la imperativ, corpul mesajului și prefixele de tip.
+- **Git Logs** — git log cu --oneline, --graph și filtre.
+- **Undo a Commit in Git** — reset (soft, hard) și revert: când îl folosești pe fiecare.
+- **Difference Between Git Fetch and Git Pull** — Doar descarci, sau descarci și unești (merge).
+- **Introduction to Git Branch** — Creezi, schimbi și ștergi ramuri.
+- **Handling Merge Conflicts in Git** — Citești marcajele de conflict și le rezolvi.
+- **Git Rebase** — Reaplici commit-urile; istoria publică nu se rescrie cu rebase.
+- **Git Cherry Pick** — Copiezi un singur commit pe altă ramură.
+- **How to Create a Pull Request in GitHub** — Ramură, push, deschidere, revizuire, merge.
+- **Git Flow vs GitHub Flow** — Ramuri de release și hotfix, față de un singur main mereu gata de livrare.
+- **Trunk-Based Development** — Merge-uri mici și dese în main, cu feature flags.
+- **Git Refs and Reflogs** — Ramurile ca pointeri; reflog-ul ca plasă de siguranță.
+- **Git Debugging** — git bisect: căutare binară după commit-ul stricat.
+- **Git Hooks** — pre-commit și ceilalți hooks din .git/hooks.
+- **Introduction to GitHub Actions** — Workflow-uri, evenimente, job-uri, pași și runnere.
+
 ## Delivery — GitHub
 
 | Resursa | Autor / Canal | Felul | Unde | Acces | Stare | Fișă de note |

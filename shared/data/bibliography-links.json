@@ -1326,6 +1326,186 @@
       "annotation": "Official reference page for every git command."
     },
     {
+      "title": "Git Tutorial (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-tutorial/",
+      "category": "delivery-deck",
+      "kind": "course",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Index of GfG Git articles, basics to advanced."
+    },
+    {
+      "title": "Git Introduction (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-introduction/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "What Git is and how its workflow fits together."
+    },
+    {
+      "title": "Setting Up Git Using git config (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/how-to-set-up-git-using-git-config/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Name, email, default branch and config levels."
+    },
+    {
+      "title": "States of a File in Git (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/states-of-a-file-in-git-working-directory/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Untracked, modified, staged, committed."
+    },
+    {
+      "title": "Committing in Git (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/committing-in-git/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "git commit, messages and --amend."
+    },
+    {
+      "title": "How to Write Good Commit Messages (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/how-to-write-good-commit-messages-in-github/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Imperative subjects, bodies and type prefixes."
+    },
+    {
+      "title": "Git Logs (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/how-to-check-git-logs/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "git log with --oneline, --graph and filters."
+    },
+    {
+      "title": "Undo a Commit in Git (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/how-to-undo-a-commit-in-git/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "reset (soft, hard) and revert, when to use which."
+    },
+    {
+      "title": "Difference Between Git Fetch and Git Pull (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-difference-between-git-fetch-and-git-pull/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Download first, or download and merge."
+    },
+    {
+      "title": "Introduction to Git Branch (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/introduction-to-git-branch/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Create, switch and delete branches."
+    },
+    {
+      "title": "Handling Merge Conflicts in Git (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/merge-conflicts-and-how-to-handle-them/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Read conflict markers and resolve them."
+    },
+    {
+      "title": "Git Rebase (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/rebasing-of-branches-in-git/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Replay commits; never rebase public history."
+    },
+    {
+      "title": "Git Cherry Pick (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-cherry-pick/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Copy one commit onto another branch."
+    },
+    {
+      "title": "How to Create a Pull Request in GitHub (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/how-to-create-a-pull-request-in-github/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Branch, push, open, review, merge."
+    },
+    {
+      "title": "Git Flow vs GitHub Flow (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-flow-vs-github-flow/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Release and hotfix branches versus one deployable main."
+    },
+    {
+      "title": "Trunk-Based Development (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/devops/trunk-based-development-in-software-development/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Small, frequent merges to main, with feature flags."
+    },
+    {
+      "title": "Git Refs and Reflogs (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/using-refs-and-reflogs-in-git/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Branches as pointers; the reflog as safety net."
+    },
+    {
+      "title": "Git Debugging (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-debugging/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "git bisect: binary search for the bad commit."
+    },
+    {
+      "title": "Git Hooks (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/git-hooks/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "pre-commit and friends in .git/hooks."
+    },
+    {
+      "title": "Introduction to GitHub Actions (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/git/introduction-to-github-actions/",
+      "category": "delivery-deck",
+      "kind": "guide",
+      "status": "queued",
+      "access": "free",
+      "annotation": "Workflows, events, jobs, steps and runners."
+    },
+    {
       "title": "The Linux Command Line (William Shotts)",
       "url": "https://linuxcommand.org/tlcl.php.html",
       "category": "delivery-deck",
