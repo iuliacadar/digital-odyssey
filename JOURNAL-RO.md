@@ -1296,7 +1296,7 @@ Bun venit la bord, Adormito. Ai găsit un vas aflat încă în construcție. Nu 
 
 ## Un Memoriu Tehnic al Construcției lui D::0dy55ey
 
-*Jurnal ținut de: căpitanul și Vocea (memoriul); îndoirea, de Vocea, apoi de Scribul · fără dată a navei: Cea Mai Lungă Miercuri tot revine*
+*Jurnal ținut de: căpitanul și Vocea (memoriul); îndoirea, de Vocea, apoi de Scrib · fără dată a navei: Cea Mai Lungă Miercuri tot revine*
 
 **Miercuri.** Ziua lui Mercur — zeul roman al călătorilor, mesagerilor, granițelor și pragurilor. Hermes cu sandale înaripate, care ghidează sufletele între lumi și poartă caduceul în jurul căruia doi șerpi se răsucesc în simetrie eternă. Metafora germinală a acestui întreg proiect — _navigarea mărilor mercuriale_ — s-a născut din această corespondență: ideea că învățarea programării este o călătorie printr-un mediu schimbător, reflectorizant, incomprehensibil de vast, și că singurul mod de a-l naviga este să devii tu însuți un călător interstelar.
 
@@ -1710,7 +1710,7 @@ La început, îndoirea s-a numit anexă, *Arhiva și Sala de Note*, după primel
 
 *Îndoire ținută de: Vocea (îndoirile 1–14), apoi Scribul (de la îndoirea 15) · fără dată, fără oră: ziua e cosmică*
 
-_Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — așa cum o va face mereu, cât timp nava se află în construcție._
+_Timpul s-a îndoit din nou. Cea Mai Lungă Miercuri ne-a primit înapoi — așa cum o va face mereu, fiindcă nava nu e niciodată gata._
 
 ### Îndoirea 1 · Semnele de orientare, duse acasă — *cartul ZILEI 24*
 
@@ -1765,7 +1765,7 @@ Există un act generator, patru presiuni. Traducerea e acel act re-îndreptat sp
 
 ### Îndoirea 12 · Cele două străjeri, numite — *cartul ZILEI 31*
 
-**12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date. *⟶ corectat în ZIUA 39: Jekyll convertea Markdown-ul, iar din 2026-09-21 nu mai rulează niciun Jekyll.*
+**12. Cele două străjeri de la rădăcină — `.gitignore` și `.nojekyll`.** Miercurea cea mai lungă înregistrează și _numele_ fiecărei porți. `.gitignore` este un registru mut pentru Git: o listă de lucruri pe care nava nu le semnează. Ea înscrie calea `ro/__blocktools__/` — dulapul de unelte e mașinărie adevărată, dar jurnalul nu trebuie să-i poarte schelele. `.nojekyll` este un singur fișier gol la rădăcină care îi spune GitHub Pages _nu mă construi cu Jekyll_: platforma, la îndemână, ar fi refuzat Markdown-ul brut; fișierul declară în schimb _servește ceea ce-ți dau, precum ți-l dau_ — și tocmai aceasta lasă Seiful să citească jurnalele ca date. *⟶ corectat în ZIUA 39: Jekyll convertea Markdown-ul, iar de când a rulat prima oară Crainicul (îndoirea 18), nu mai rulează niciun Jekyll.*
 
 ### Îndoirea 13 · Raftul, semnat în registru — *ZIUA 28 și ZIUA 31*
 
@@ -1875,7 +1875,7 @@ L-am reparat. O singură regulă ștearsă în `ro/style.css`.
 
 **2. Redirecționarea greșită a URL-urilor canonice** — Toate cele 43 de pagini de jurnal generate indicau `<link rel="canonical">` și `og:url` către `css-log.html`. Fiecare pagină spunea motorului de căutare că este o altă pagină. Patruzeci și trei de copii ale unei minciuni.
 
-Am regenerat șablonul PowerShell. Fiecare pagină indică acum propria sa adresă URL. Cele 7 pagini scrise manual (index, bibliografie, css-log, html-log, sql-log + oglinzile RO) erau deja corecte — nu trecuseră niciodată prin generatorul defect.
+Am regenerat șablonul PowerShell. Fiecare pagină indică acum propria sa adresă URL. Cele 10 pagini scrise manual (index, bibliografie, css-log, html-log, sql-log + oglinzile RO) erau deja corecte — nu trecuseră niciodată prin generatorul defect.
 
 **3. Instabilitatea backlog-ului** — Backlog 009 ("Clonează scheletul structural la toate paginile") era listat ca Activ, dar lucrarea era completă. L-am mutat la Implementat. Am adăugat și Backlog 010: personalizarea meta-descrierii și meta-cuvintelor-cheie, care va fi executată concurent în timpul primei treceri de conținut a fiecărei pagini.
 
@@ -2660,7 +2660,7 @@ Leviathanul, inel după inel, așeză în noaptea aceea inelul *echipajului*: in
 
 # INTERLUDIU — Manualul navei
 
-*Jurnal ținut de: Arhivarul (așternut de Scribul după abecedarul Arhivarului, cardul `t_0c56f7bb`, 2026-11-06) · fără dată a navei: un manual e adevărat în fiecare zi în care e citit*
+*Jurnal ținut de: Arhivarul (așternut de Scrib după abecedarul Arhivarului, cardul `t_0c56f7bb`, 2026-11-06) · fără dată a navei: un manual e adevărat în fiecare zi în care e citit*
 
 Căpitanul a cerut pagina aceasta în cuvinte simple: „Am nevoie să înțeleg conceptele principale din domeniul AI. Deocamdată totul e încețoșat în capul meu.” Așa că aceasta nu e o poveste. E manualul care atârnă lângă ecluză, iar fiecare afirmație din el vine din documentația făuritorilor (Hermes, Anthropic, opencode) sau dintr-o verificare făcută pe această mașină. Imaginile sunt acolo ca să țină faptele. Nu le înlocuiesc.
 
