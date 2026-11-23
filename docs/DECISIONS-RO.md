@@ -79,6 +79,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 | 65 | 2026-06-30 | v1: poezia și claritatea codului, în echilibru | seif & roman |
 | 66 | 2026-09-21 | v1 e retrasă, cu redirecționare | structura site-ului |
 | 67 | 2026-11-20 | Nimic ilegal pe pagina de bibliografie | conținut |
+| 68 | 2026-11-21 | Niciun calendar real în JURNAL de la ZIUA 33; datele stau în concordanță | seif & roman |
 
 ## Intrări
 
@@ -164,7 +165,7 @@ Acest fișier păstrează deciziile care dau forma navei: ce s-a hotărât, de c
 ### 16 · 2026-08-26 · Sezonul V: echipajul urcă la bord, naratorul are nume
 - **Decizia.** De la ZIUA 33, jurnalul e ținut de membri numiți ai echipajului, iar fiecare ZI începe cu *Jurnal ținut de*.
 - **De ce.** Până atunci, naratorul se schimba fără să spună nimănui; cititorul merită să știe a cui mână ține condeiul (Scribul).
-- **Sursa.** JOURNAL ZIUA 33 „A Word Before the Entry” (data navei 2026-08-26 → 2026-09-10); PR #12.
+- **Sursa.** JOURNAL ZIUA 33 „A Word Before the Entry” (date reale 2026-08-26 → 2026-09-10); PR #12.
 
 ### 17 · 2026-09-21 · URL-ul rădăcină: opțiunea 3
 - **Decizia.** Nu există `index.html` în rădăcină; rădăcina goală servește un `404.html` cu legături către `en/` și `ro/`; `en/index.html` rămâne canonic.
@@ -463,3 +464,9 @@ Părți din jurnalul de pe v1 au fost scrise de un chat AI, pornind de la sesiun
 - **Decizia.** Bibliografia trece doar ce poate fi găsit pe căi legale.
 - *"nothing that's illegal goes on that page."*
 - **Sursa.** Cardul `t_2d86b8be`, comentariul `[HER 2026-11-20]`.
+
+### 68 · 2026-11-21 · Niciun calendar real în JURNAL de la ZIUA 33; datele stau în concordanță
+- **Decizia.** De la ZIUA 33 încoace, și în fiecare ZI nouă, JURNALUL nu mai poartă date reale din calendar. În antet scrie `socoteala navei:` (EN `ship's reckoning:`), nu o dată. Textul numără timpul pe ZILE și relativ (*a doua zi*, *la șase săptămâni după dimineața lansării*). Orele rămân, ca ceas al navei. Zilele săptămânii rămân doar acolo unde poartă un sens (miercurea, ziua lui Mercur, care este Hermes). Numele reale care conțin o dată (ramuri, căi de fișiere, mesaje de commit, titluri de PR) rămân, la fel și datele din istoria lumii (molia din 1947). Fiecare dată reală stă în [`journal-concordance.md`](journal-concordance.md), câte un rând pe ZI, cu legătură din registrul costurilor.
+- *"the journal's form is the fiction (the space and time) and the content is real. So, real dates are pointless in this."* („Forma jurnalului e ficțiunea (spațiul și timpul), iar conținutul e real. Așa că datele reale n-au rost aici.”)
+- Acordul ei, 2026-11-23: *"Real dates since DAY 33: follow @writer's advice."* („Datele reale de la ZIUA 33: urmați sfatul lui @writer.”)
+- **Sursa.** Cardul `t_7f221902` (memoriul Scribului, `dates-memo.md`, recomandarea §c); cardul `t_9f964a15`, comentariul `[HER-OK 2026-11-23]`; `docs/work-deontology-ro.md` §10.3.

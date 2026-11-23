@@ -274,7 +274,7 @@ Sesiunea mea de coordonare e împărțită după momentul în care mi-am scris m
 nu povestește nicio zi (mai ales scrierea și verificarea jurnalului însuși) are rândul ei, ca
 coloana să dea totuși totalul.
 
-| ziua din jurnal | data navei | ce se numără | combustibil |
+| ziua din jurnal | data reală | ce se numără | combustibil |
 |---|---|---|---:|
 | ZIUA 33 | 2026-08-26 → 2026-09-10 | toate rândurile din 08-26 și 09-10: tabla pregătită, cartul curriculumului, primele carduri | $27.81 |
 | ZIUA 34 | 2026-09-21, apoi deriva până la 2026-10-29 | toate rândurile din 09-21 (dimineața lansării), 09-23 și 10-29 (lăzile derivei) | $108.73 |
@@ -288,6 +288,8 @@ coloana să dea totuși totalul.
 
 Fiecare rând e rotunjit la cent, așa că rândurile pot da un cent mai mult sau mai puțin decât
 totalul. Rândul *Jurnalul combustibilului* din jurnal rotunjește din nou, la dolar întreg.
+Jurnalul însuși nu mai poartă date reale (DECISIONS 68). Toată potrivirea ZIUA → calendar e în
+[`docs/journal-concordance.md`](../journal-concordance.md).
 
 Cei $0.00 ai zilelor ZIUA 35 și ZIUA 36 nu înseamnă că zilele acelea au fost gratuite. S-a lucrat în
 ele în alt ham, Claude Code, iar combustibilul lui e *neconsemnat* aici. Cele mai multe andocări din
