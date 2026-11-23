@@ -3605,7 +3605,7 @@ Căpitanul le-a sigilat pe amândouă în aceeași după-amiază: #17 la 17:08 (
 
 Apoi cardurile tac până în a șaptea zi.
 
-Pe 17, căpitanul a trimis note despre abecedarul despre AI, ghidul Arhivarului, pentru **ediția Arkhold**: o versiune pe care vizitatorii o vor putea citi mai târziu drept *material de studiu scris de echipaj, verificat de QA*. Notele cereau reguli în locul numerelor care se învechesc și întrebau câte hamuri ca al navei acesteia există. Și făceau o corectură pe care o copiez întreagă, pentru că descrie nava mai bine decât orice pagină am scris eu:
+În ziua aceea, căpitanul a trimis note despre abecedarul despre AI, ghidul Arhivarului, pentru **ediția Arkhold**: o versiune pe care vizitatorii o vor putea citi mai târziu drept *material de studiu scris de echipaj, verificat de QA*. Notele cereau reguli în locul numerelor care se învechesc și întrebau câte hamuri ca al navei acesteia există. Și făceau o corectură pe care o copiez întreagă, pentru că descrie nava mai bine decât orice pagină am scris eu:
 
 > „My role in the digital-odyssey project is more the role of a student than the role of an owner. I do the merges myself because I want to learn and not because the agents can't do it themselves even better and faster.”
 

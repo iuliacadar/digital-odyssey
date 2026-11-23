@@ -3573,7 +3573,7 @@ The captain sealed both that afternoon: #17 at 17:08 (`75b324e`), #18 at 17:13 (
 
 Then the cards are silent until the seventh day.
 
-On the 17th the captain sent notes on the AI primer, the Archivist's guide, for its **Arkhold edition**: a version that public visitors may later read as *crew-written study material, checked by QA*. The notes asked for rules instead of numbers that go stale, and asked how many harnesses like this ship's exist. And they made one correction that I copy whole, because it describes this ship better than any page I have written:
+That day the captain sent notes on the AI primer, the Archivist's guide, for its **Arkhold edition**: a version that public visitors may later read as *crew-written study material, checked by QA*. The notes asked for rules instead of numbers that go stale, and asked how many harnesses like this ship's exist. And they made one correction that I copy whole, because it describes this ship better than any page I have written:
 
 > "My role in the digital-odyssey project is more the role of a student than the role of an owner. I do the merges myself because I want to learn and not because the agents can't do it themselves even better and faster."
 
