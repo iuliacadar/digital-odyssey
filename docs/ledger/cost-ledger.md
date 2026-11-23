@@ -266,7 +266,7 @@ that the day tells of.** Each session is counted in one day only. My coordinatio
 by when my messages were written. Work that no day tells of (mostly writing and checking the
 journal itself) has its own line, so the column still adds up to the total.
 
-| journal day | ship's date | what is counted | fuel |
+| journal day | real date | what is counted | fuel |
 |---|---|---|---:|
 | DAY 33 | 2026-08-26 → 2026-09-10 | every row of 08-26 and 09-10: the board set up, the curriculum watch, the first cards | $27.81 |
 | DAY 34 | 2026-09-21, then the drift to 2026-10-29 | every row of 09-21 (launch morning), 09-23 and 10-29 (the drift's crates) | $108.73 |
@@ -280,6 +280,8 @@ journal itself) has its own line, so the column still adds up to the total.
 
 Each line is rounded to the cent, so the lines can add up to a cent more or less than the total.
 The *Fuel log* line in the journal rounds again, to the whole dollar.
+The journal itself no longer carries real dates (DECISIONS 68). The full DAY → calendar mapping is in
+[`docs/journal-concordance.md`](../journal-concordance.md).
 
 The $0.00 of DAY 35 and DAY 36 does not mean those days were free. They were worked in another
 harness, Claude Code, and its fuel is *not recorded* here. Most of the dockings in DAY 37 were made

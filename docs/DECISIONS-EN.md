@@ -79,6 +79,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 | 65 | 2026-06-30 | v1: poetry and the clarity of the code, in balance | vault & novel |
 | 66 | 2026-09-21 | v1 is retired, with a redirect | site structure |
 | 67 | 2026-11-20 | Nothing illegal on the bibliography page | content |
+| 68 | 2026-11-21 | No real calendar in the JOURNAL from DAY 33; the dates live in the concordance | vault & novel |
 
 ## Entries
 
@@ -164,7 +165,7 @@ This file records the decisions that shape the ship: what was decided, why, and 
 ### 16 · 2026-08-26 · Season V: the crew comes aboard, the narrator is named
 - **Decision.** From DAY 33 the journal is kept by named crew members, and every DAY opens with *Log kept by*.
 - **Why.** "Until now the journal changed narrators without telling anyone … A reader deserves to know whose hand holds the pen." (the Scribe)
-- **Source.** JOURNAL DAY 33 "A Word Before the Entry" (ship's date 2026-08-26 → 2026-09-10); PR #12.
+- **Source.** JOURNAL DAY 33 "A Word Before the Entry" (real dates 2026-08-26 → 2026-09-10); PR #12.
 
 ### 17 · 2026-09-21 · Root URL: option 3
 - **Decision.** No root `index.html`; the bare root serves a `404.html` stub linking to `en/` and `ro/`; `en/index.html` stays canonical.
@@ -463,3 +464,9 @@ Parts of the v1 journal were drafted by an AI chat from her sessions. Only first
 - **Decision.** The bibliography lists only what can be reached legally.
 - *"nothing that's illegal goes on that page."*
 - **Source.** Card `t_2d86b8be`, comment `[HER 2026-11-20]`.
+
+### 68 · 2026-11-21 · No real calendar in the JOURNAL from DAY 33; the dates live in the concordance
+- **Decision.** From DAY 33 on, and in every new DAY, the JOURNAL carries no real calendar dates. The header says `ship's reckoning:` (RO `socoteala navei:`) instead of a date. The text counts time by DAY and in relative time (*the next day*, *six weeks after launch morning*). Clock times stay, as the ship's clock. Weekdays stay only where they carry meaning (Wednesday, the day of Mercury, who is Hermes). Real names that hold a date (branches, file paths, commit messages, PR titles) stay, and so do dates of the world's history (the moth of 1947). Every real date lives in [`journal-concordance.md`](journal-concordance.md), one row per DAY, linked from the cost ledger.
+- *"the journal's form is the fiction (the space and time) and the content is real. So, real dates are pointless in this."*
+- Her go-ahead, 2026-11-23: *"Real dates since DAY 33: follow @writer's advice."*
+- **Source.** Card `t_7f221902` (the writer's memo `dates-memo.md`, recommendation §c); card `t_9f964a15`, comment `[HER-OK 2026-11-23]`; `docs/work-deontology.md` §10.3.

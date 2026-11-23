@@ -138,6 +138,8 @@ Named in the story but never narrators: the Rigger (`frontend`) and the Cartogra
 
 Every entry, new or old (DAY 00 onward), is two things at once: a science-fiction story, and a clear, technically exact record of the day. Technical depth lives inside the scene: the real problem, the real fix, the right terms, code when it matters. The bare technical fact is always told beautifully, epically, as legend: the JOURNAL is the mythos of a technical adventure, never a manual. The legend may never cost the facts their exactness. Bookkeeping (branch names, SHAs, card ids, PR numbers) goes in the closing log lines, like the fuel log, not in the body.
 
+**No calendar in the novel (from DAY 33 on, and in every new DAY; DECISIONS 68).** No narrator writes a real calendar date, a month, or a weekday without meaning into the JOURNAL: the header says `ship's reckoning:`, the text counts time by DAY and in relative time, the clock keeps its hours, and the real dates go in `docs/journal-concordance.md`.
+
 ---
 
 *These principles are living — they evolve as the project grows. Update this file when a new convention becomes permanent.*

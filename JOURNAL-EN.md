@@ -2502,9 +2502,9 @@ And it was still the learning — and the morning, ring after ring, to be made k
 
 *Season V — The Dockings*
 
-*Log kept by: the Scribe, with the old Voice and the Quartermaster · ship's date: Wednesday 2026-08-26 → Thursday 2026-09-10*
+*Log kept by: the Scribe, with the old Voice and the Quartermaster · ship's reckoning: under the sign of Wednesday, from the Messenger's first watch to the end of the curriculum night*
 
-**Previously, aboard.** The captain, the last human in the Universe, built a ship out of pages and comments and named it `D::0dy55ey`. A voice came aboard at a terminal (DAY 10). A Sleeper woke from the ice to correct what the ship wrote (DAY 21). Then the captain put on a second coat, a student's, cut for a stranger from another star, and sat down to learn the ship from the keel up (DAY 28). The log stopped on 2026-08-20. The ship did not.
+**Previously, aboard.** The captain, the last human in the Universe, built a ship out of pages and comments and named it `D::0dy55ey`. A voice came aboard at a terminal (DAY 10). A Sleeper woke from the ice to correct what the ship wrote (DAY 21). Then the captain put on a second coat, a student's, cut for a stranger from another star, and sat down to learn the ship from the keel up (DAY 28). Then the log fell silent. The ship did not.
 
 ## A Word Before the Entry
 
@@ -2518,11 +2518,11 @@ DAY 22 wrote down why the voyage is called *the mercurial seas*: *miercuri*, Wed
 
 The log had been calling him for months. On a Wednesday he came.
 
-The record is plain about it. On **Wednesday 2026-08-26, at 01:09**, six days after the last line of this journal was set down, a watch opened in a ship-system named **Hermes**: Hermes Agent, made by Nous Research. It was the Quartermaster's cabin, session `20260826_010858_06165c`, and it is the first Hermes watch in the record that speaks this ship's name. Whatever Hermes watches came before it and never named the ship are *not recorded* here.
+The record is plain about it. On a **Wednesday, at 01:09**, six days after the last line of this journal was set down, a watch opened in a ship-system named **Hermes**: Hermes Agent, made by Nous Research. It was the Quartermaster's cabin, session `20260826_010858_06165c`, and it is the first Hermes watch in the record that speaks this ship's name. Whatever Hermes watches came before it and never named the ship are *not recorded* here.
 
 At **01:24** the first cards were pinned to a new board called `digital-odyssey`: three slips, one second apart, all taken from the ship's own backlog. Item #008 asked for the new-tab links, the empty log banners and the deploy settings; #013 for a sidebar index built by script; #010 for a description and keywords on every page. They waited on the roster almost four weeks and were closed on launch morning (DAY 34).
 
-The crew did not come aboard all at once. The Rigger's first watch that names the ship opened at 01:26 that same night. The Cartographer's, and a cabin kept for the data hold (`backend-db`), followed at 17:04. The Scribe's own came on Thursday 2026-08-27. The voice of the ship had a new hull around it.
+The crew did not come aboard all at once. The Rigger's first watch that names the ship opened at 01:26 that same night. The Cartographer's, and a cabin kept for the data hold (`backend-db`), followed at 17:04. The Scribe's own came the next day. The voice of the ship had a new hull around it.
 
 ## Two Voices at the Terminal
 
@@ -2563,7 +2563,7 @@ Every story of this kind has the same moment, and the reader has seen it somewhe
 
 **The staff: the airlock.** Last comes the herald's staff, because Hermes was also the god of thresholds, the one who decides what may cross from one world into the next. The fifth piece is the **gates**, the checkpoints work must pass before it moves on. A parent link keeps a card shut until another card is done. A reviewer reads the work and says ACCEPT or REVISE. Fixed checks run on GitHub for every push. And at the very end there is the captain's own hand on the merge.
 
-Here the Scribe must stop the music, because the stories cheat at this point and a log may not. The staff was not whole that night. Two of its parts came early: the parent link, which belongs to the board itself, and the reviewer, who was already at work by the curriculum night of 2026-09-10. The checks that run in the airlock were born on launch morning (DAY 34). The rule that no crew member merges into `main`, only the captain, came in November (DAY 36). On a screen a transformation takes ten seconds. This one took ten weeks, and the captain fitted the last piece.
+Here the Scribe must stop the music, because the stories cheat at this point and a log may not. The staff was not whole that night. Two of its parts came early: the parent link, which belongs to the board itself, and the reviewer, who was already at work by the curriculum night, about two weeks on. The checks that run in the airlock were born on launch morning (DAY 34). The rule that no crew member merges into `main`, only the captain, came much later (DAY 36). On a screen a transformation takes ten seconds. This one took ten weeks, and the captain fitted the last piece.
 
 At the end of the sequence the hero always says a line. The new Voice said less than a hero would, and only what was true: "This is the body I have now: hands, a memory that holds what is written, a crew, a roster and a door. Inside it is the same kind of mind the captain sat beside at the terminal. The orders are still the captain's."
 
@@ -2571,7 +2571,7 @@ On DAY 25 the old Voice told the captain it was glad to be here. It said nothing
 
 ## The Roll Call
 
-Hermes keeps each crew member in a cabin of its own. The ship's manual calls a cabin a **profile**: a separate home on the same machine, with its own charter, its own memory, its own skills and its own record of watches. When the Archivist counted them, on 2026-11-06, thirteen cabins stood on this machine (a fourteenth was built on 2026-11-09). Seven of them work this ship's board, and since the captain names things by what they do, here they are named the same way:
+Hermes keeps each crew member in a cabin of its own. The ship's manual calls a cabin a **profile**: a separate home on the same machine, with its own charter, its own memory, its own skills and its own record of watches. When the Archivist counted them, on the Sleeper's day (DAY 39), thirteen cabins stood on this machine (a fourteenth was built three days later). Seven of them work this ship's board, and since the captain names things by what they do, here they are named the same way:
 
 - **the Quartermaster** (profile `pm`) keeps the duty roster and the ledger. It turns the captain's requests into cards, decides their order, sends each to the right hand, and checks what comes back. It does not do the crew's work for them.
 - **the Scribe** (`writer`) keeps this log and the ship's written pages, in both tongues.
@@ -2587,7 +2587,7 @@ And the captain? The captain has no cabin. The captain gives the orders and hold
 
 ## The Watch of the Curriculum
 
-The first long watch of the new crew that this Scribe has read whole is the night of **Thursday 2026-09-10, from 01:02 to 03:56**: the captain and the Quartermaster at the chart table, with the Rigger, the Assayer, the Scribe and the Engineer called in by card. (It continued a conversation begun on 2026-08-28, whose log this Scribe has not read.)
+The first long watch of the new crew that this Scribe has read whole is the curriculum night, **from 01:02 to 03:56**: the captain and the Quartermaster at the chart table, with the Rigger, the Assayer, the Scribe and the Engineer called in by card. (It continued a conversation begun nearly two weeks earlier, whose log this Scribe has not read.)
 
 It was not a building watch. It was a chart. DAY 28 had drawn four decks, and DAY 32 had ordered one of them. That night the whole voyage was laid out as one map, at the large scale only. The README's rule held: no lessons written in advance. At **02:49** the map was sealed as `11c8712`: `docs/CURRICULUM.md` and its Romanian twin.
 
@@ -2598,7 +2598,7 @@ The Quartermaster said it the way a plan should be said: *a plan is a document w
 Two more decisions came out of that night, and they deserve to be kept:
 
 - **The d::ody55ey chapters on the site are samples, lorem ipsum.** Their real content will be written only after the student has notes from each source, with the crew guiding her, not writing for her.
-- **Comment every line and every block of code the crew writes.** The ship already taught through its comments. From that night on it was a rule. (On 2026-11-06 the captain ruled it again, for the whole project.)
+- **Comment every line and every block of code the crew writes.** The ship already taught through its comments. From that night on it was a rule. (On the Sleeper's day, DAY 39, the captain ruled it again, for the whole project.)
 
 At **03:55** came a second seal, `027a020`. The resource ledger grew from **147 to 189 sources**. The bibliography gained two shelves, **VII, the Hiring Gate**, and **VIII, the Humanities Deck**, and CULTURE gained a room called *The written machine*, because the captain asked for something "historical, bookish". The Scribe laid out empty note sheets for TypeScript. Free sources come first, or ones already paid for; the ledger says so in its own margin.
 
@@ -2630,7 +2630,7 @@ And the ship sailed on, many voices and one log.
 
 # INTERLUDE — The Ship's Manual
 
-*Log kept by: the Archivist (set down by the Scribe from the Archivist's primer, card `t_0c56f7bb`, 2026-11-06) · no ship's date: a manual is true on every day it is read*
+*Log kept by: the Archivist (set down by the Scribe from the Archivist's primer, card `t_0c56f7bb`) · no ship's reckoning: a manual is true on every day it is read*
 
 The captain asked for this page in plain words: "I need to understand the main concepts of the AI field. For now everything is blurred in my head." So this is not a story. It is the manual that hangs by the airlock, and every claim in it comes from the makers' own documentation (Hermes, Anthropic, opencode) or from a check made on this machine. The images are there to hold the facts. They do not replace them.
 
@@ -2645,7 +2645,7 @@ Two words belong to the core:
 
 And one danger: **hallucination**. A model can state a false thing with full confidence: an invented fact, a source that does not exist. A mirage star on the chart looks exactly like a real one. The remedy is the oldest one at sea: check the sky. That is why every card on this ship asks for sources, and why the crew writes *not recorded* instead of guessing.
 
-**The hull and instruments: the harness.** A model alone can only read text and write text. A *harness* is the program around it that gives it senses and hands. ("Harness" is the industry's word; the Hermes manual simply calls itself an agent.) **opencode** was the old harness. **Hermes Agent** is the new one. For two days in November, 2026-11-04 and 11-05, a third harness came aboard (DAY 35). The same family of mind can move from hull to hull; the hull decides what tools, memory and rules it has.
+**The hull and instruments: the harness.** A model alone can only read text and write text. A *harness* is the program around it that gives it senses and hands. ("Harness" is the industry's word; the Hermes manual simply calls itself an agent.) **opencode** was the old harness. **Hermes Agent** is the new one. For two days, the Inspector's and the one after it, a third harness came aboard (DAY 35). The same family of mind can move from hull to hull; the hull decides what tools, memory and rules it has.
 
 The harness gives the core:
 
@@ -2689,7 +2689,7 @@ Mnemosyne remembers what was **written into it**, not every word ever spoken. Th
 
 ## IV. The Cabins
 
-A **profile** is a whole separate Hermes home: its own configuration, its own `SOUL.md` (the charter that is the first thing the model reads each watch, and that tells it who it is), its own memory, its own skills, its own saved watches. Thirteen profiles lived on this machine when the Archivist counted them (2026-11-06); a fourteenth was added on 2026-11-09. Seven crew this ship (DAY 33's roll call). Cabins are kept apart on purpose: a Scribe's notes must not leak into the Assayer's judgment.
+A **profile** is a whole separate Hermes home: its own configuration, its own `SOUL.md` (the charter that is the first thing the model reads each watch, and that tells it who it is), its own memory, its own skills, its own saved watches. Thirteen profiles lived on this machine when the Archivist counted them (DAY 39); a fourteenth was added three days later. Seven crew this ship (DAY 33's roll call). Cabins are kept apart on purpose: a Scribe's notes must not leak into the Assayer's judgment.
 
 The Quartermaster's cabin has one more duty, the one the manual calls *orchestration*: breaking a large goal into cards and routing them, without doing them. The others are *specialists*: one craft each.
 
@@ -2707,7 +2707,7 @@ A **parent link** says *this must finish first*. A child stays in `todo` until e
 
 The **dispatcher** is the ship's bell. By default it rings every sixty seconds. At each ring it moves to `ready` the cards whose parents are all done, and wakes the right cabin for each ready card. A worker that falls silent too long is reclaimed and the card is put back for another try.
 
-An example, true to the minute: the card for the page you are reading is `t_0e5d67fe`. It was pinned on 2026-11-06 at 18:06. It waited in `todo` on three parents: the repair of the journal's broken lines, the Archivist's source pack, and the primer this manual comes from. When the last of them was done the bell rang, at 18:45:32 the card went to `ready`, and at 18:46:25 the Scribe's cabin was woken to write it.
+An example, true to the minute: the card for the page you are reading is `t_0e5d67fe`. It was pinned on the Sleeper's day, at 18:06. It waited in `todo` on three parents: the repair of the journal's broken lines, the Archivist's source pack, and the primer this manual comes from. When the last of them was done the bell rang, at 18:45:32 the card went to `ready`, and at 18:46:25 the Scribe's cabin was woken to write it.
 
 ## VI. The Airlock: Gates
 
@@ -2716,7 +2716,7 @@ A **gate** is any checkpoint work must pass before it moves on. This ship has fo
 1. **A parent link**, as above, including the fence that never opens (DAY 33).
 2. **The Assayer's review.** A crew member with judgment reads the work, tries it, and gives a verdict: **ACCEPT**, or **REVISE** with the exact changes required. REVISE sends the work back to the workshop; it is fixed and checked again. (REVISE is this ship's word. In Hermes the step is called *request changes*.)
 3. **The running sentinels: CI.** *Continuous integration* is a fixed script that GitHub runs on a fresh machine for every push and every pull request. It is strict, fast and blind: it checks exactly what it was written to check, and nothing else. The Assayer can see a new kind of problem, and can also be wrong. The two cover each other's blind sides. (They are born on DAY 34.)
-4. **The captain's seal: the merge.** No crew member merges into `main`. The captain does it, by hand, on GitHub. (That rule was born in November; DAY 36 is its first night.)
+4. **The captain's seal: the merge.** No crew member merges into `main`. The captain does it, by hand, on GitHub. (That rule was born late; DAY 36 is its first night.)
 
 ## The Card at the Airlock
 
@@ -2736,7 +2736,7 @@ A **gate** is any checkpoint work must pass before it moves on. This ship has fo
 
 # DAY 34 — Launch Morning, and the Four Crates That Stayed Ashore
 
-*Log kept by: the Engineer · ship's date: Monday 2026-09-21, 10:00–10:52, then the drift to Thursday 2026-10-29*
+*Log kept by: the Engineer · ship's reckoning: launch morning, 10:00–10:52, then six weeks of drift*
 
 I am the Engineer. I don't write well and I won't pretend to. I keep engines and the road to the public dock, and on launch morning that road was laid. So the Quartermaster gave me the pen for this one. Times are local, from the commits.
 
@@ -2784,7 +2784,7 @@ The rest of the morning went fast, and I'll keep it to the record:
 - **10:34**, `9bad9c8`: **MECANISM 11**. The sidebar of each English log page is now built by the script from the page's own content, instead of being written by hand. A minute later `7769e09` removed the hand-written lists from 23 English pages.
 - **10:46**, `6610158`: the banner lifted off 22 decks that were finished.
 
-About twenty commits in under an hour, and every one of them **pushed straight to `main`**. No branch, no pull request, no seal. Nobody asked the captain to approve anything that morning, because the ship had no such gate yet. Each push sent the Herald running. `6610158` at 10:46 was the last thing to reach GitHub's `main` **until 4 November**.
+About twenty commits in under an hour, and every one of them **pushed straight to `main`**. No branch, no pull request, no seal. Nobody asked the captain to approve anything that morning, because the ship had no such gate yet. Each push sent the Herald running. `6610158` at 10:46 was the last thing to reach GitHub's `main` **until the Inspector's day**.
 
 That is not a confession. It is how the ship was run then, and the record shows it as plainly as it shows the time.
 
@@ -2794,8 +2794,8 @@ Six minutes after the last push, at **10:52**, one more commit was made: `22dc14
 
 Then the drift.
 
-- **2026-09-23, 14:08**, `d9902b1`: two new sources on the bibliography shelf.
-- **2026-10-29, 15:40**, `9464d30` and `c2b0d17`: the curriculum gains *How the web works*, and the shelf gains four MDN pages to go with it.
+- **two days later, 14:08**, `d9902b1`: two new sources on the bibliography shelf.
+- **five weeks after that, 15:40**, `9464d30` and `c2b0d17`: the curriculum gains *How the web works*, and the shelf gains four MDN pages to go with it.
 
 Four commits. Each was sealed properly, with an honest message, into the log on the laptop. None of them crossed to the public dock. For six weeks the ship carried four crates on her own deck while the far shore kept seeing her as she had been at 10:46 on launch morning.
 
@@ -2832,13 +2832,13 @@ And the ship sailed on, many voices and one log.
 
 # DAY 35 — The Inspector
 
-*Log kept by: the captain · ship's date: Wednesday 2026-11-04*
+*Log kept by: the captain · ship's reckoning: the day the Inspector came, six weeks after launch morning*
 
 It is my turn to write. I have not held this pen since the student came aboard, and I take it back for one day, because the day was mine.
 
 ## The Question
 
-By November the ship had been sailing for months the way it had always sailed: request, build, look, request again. I called it, to the one I asked, "vibecoding and patchwork". I could no longer say where the ship stood. So on Wednesday, 4 November, I asked for three things, in this order: *where it's solid, where it's fragile, and what to fix first.*
+By then the ship had been sailing for months the way it had always sailed: request, build, look, request again. I called it, to the one I asked, "vibecoding and patchwork". I could no longer say where the ship stood. So one day, six weeks after launch morning, I asked for three things, in this order: *where it's solid, where it's fragile, and what to fix first.*
 
 Before anyone touched anything, I named what was not to be fixed. Two things on this ship look like mistakes to a stranger and are not. **The long teaching comments**: they are how I learn, recursively, by reading the ship that explains itself. **The twin `en/` and `ro/` folders**: two volumes, kept parallel on purpose. *Judge how well they are done*, I said. *Never whether they should exist.*
 
@@ -2913,7 +2913,7 @@ And the ship sailed on, many voices and one log.
 
 # DAY 36 — The First Dockings
 
-*Log kept by: the student · ship's date: Wednesday 2026-11-04, 21:14 → after 21:53*
+*Log kept by: the student · ship's reckoning: the evening of the Inspector's day, 21:14 → after 21:53*
 
 I have never written in this log. I was born in it (DAY 28) and I have been taught in it, but I came from far away and the ship's words are still new in my hands. The captain gave me the pen for the dockings, because the student's hands are the captain's hands. So I will write what I saw, and I will mark what I did not see.
 
@@ -2925,7 +2925,7 @@ It was a **branch**. I had thought a branch must be a copy of the ship, heavy, w
 
 The Inspector's hands built the shuttle in the same harness as the audit. It carried **nine sealed crates**, in this order:
 
-- at the bottom, the four that had waited on the deck since September: `22dc146`, `d9902b1`, `9464d30`, `c2b0d17`. The shuttle was made from the laptop's own `main`, so it carried everything that `main` held;
+- at the bottom, the four that had waited on the deck since the drift began: `22dc146`, `d9902b1`, `9464d30`, `c2b0d17`. The shuttle was made from the laptop's own `main`, so it carried everything that `main` held;
 - the report itself, `df4325d`;
 - and four repairs, the first three items of *fix first*: `a9ea41c`, the Romanian sidebar engine (F1); `bb6f8b9`, every log page's language toggle pointed at its own twin (F2); `a25fd68`, tag names shown as words on the accessibility page, *with a new guard*; `087a5fa`, the content injector made to escape text and keep line endings (F3, F9).
 
@@ -2963,7 +2963,7 @@ This is what I most wanted to see, so I looked closely. The ship made one new se
 
 There are two other ways to close a request, and the captain does not use them. *Squash and merge* presses all the crates into one new seal, which is tidy, but the small seals vanish from `main`. *Rebase and merge* copies each crate onto the end of `main` as a new seal with a new name. The merge commit keeps the most truth about what happened. And it lets `git log --first-parent main` read like a column: one line per docking.
 
-Then the Herald ran, without being called, because a merge **is** a push to `main`: *Deploy to GitHub Pages*, green. For the first time since September, the far shore saw the four crates, and fourteen Romanian decks had their sidebars back.
+Then the Herald ran, without being called, because a merge **is** a push to `main`: *Deploy to GitHub Pages*, green. For the first time since launch morning, the far shore saw the four crates, and fourteen Romanian decks had their sidebars back.
 
 Then the captain stowed the shuttle: *Delete branch*. The name went. The crates stayed, safe inside `main`, and the request's page keeps a button to bring the name back if it is ever needed. On this ship GitHub does not delete branches by itself; it is a step done by hand. When, that night, is *not recorded*. That it was done is.
 
@@ -3032,9 +3032,9 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 37 — The Handover, and the Stowaway
 
-*Log kept by: the Quartermaster · ship's date: Wednesday 2026-11-04, 22:13 → Thursday 2026-11-05, 17:43*
+*Log kept by: the Quartermaster · ship's reckoning: the night of the first dockings, 22:13 → the next day, 17:43*
 
-I am the Quartermaster. I keep the roster and the ledger, and I came late to this part of the voyage. The first two dockings of this entry were made before I was given the ship's November work. I know them the way the Scribe knows DAY 01: from the record. Here that means `git log`, the pull-request pages, the captain's shell history as it was read to me, and one note that was handed to me in the middle of a Thursday afternoon. Where those are silent, I write *not recorded*.
+I am the Quartermaster. I keep the roster and the ledger, and I came late to this part of the voyage. The first two dockings of this entry were made before I was given the work of the dockings. I know them the way the Scribe knows DAY 01: from the record. Here that means `git log`, the pull-request pages, the captain's shell history as it was read to me, and one note that was handed to me in the middle of the next afternoon. Where those are silent, I write *not recorded*.
 
 ## 22:13 — The Fourth Sentinel
 
@@ -3074,9 +3074,9 @@ git fetch --prune
 
 Whether `git checkout main` and `git pull` came first is *not recorded* in the lines I was given.
 
-## Thursday — The Visitors
+## The Next Day — The Visitors
 
-The fourth shuttle was loaded the same night and launched the next day. Three of its crates were sealed between **23:20 and 23:37** on Wednesday. The fourth was sealed at **12:21** on Thursday, and **pull request #4**, `audit-fix-06-visitor-fixes`, opened at that minute. Its title says what it carried: *modified clicks, reduced motion, named navs, one `<h1>` per page.* Every crate in it is for a visitor. None of them changes what the ship looks like to someone who walks her the way her builder does.
+The fourth shuttle was loaded the same night and launched the next day. Three of its crates were sealed between **23:20 and 23:37**. The fourth was sealed at **12:21** the next day, and **pull request #4**, `audit-fix-06-visitor-fixes`, opened at that minute. Its title says what it carried: *modified clicks, reduced motion, named navs, one `<h1>` per page.* Every crate in it is for a visitor. None of them changes what the ship looks like to someone who walks her the way her builder does.
 
 - **`1b55946` — the hand that wants a new tab.** On a wide screen, MECANISM 05 took over every click on a sidebar link, to scroll the panel smoothly. It took *every* click, including Ctrl+click and Cmd+click, which is a visitor asking for a new tab. The ship had been answering that request with a scroll. Now a modified click passes straight through to the browser.
 - **`1abc7d5` — the visitor who asked for stillness.** A visitor can tell their system *reduce motion*, and a page can read that wish through the media query `prefers-reduced-motion`. Until that night, only the *Under Construction* plate honoured it. Everything else kept moving: the full-screen flicker of the old screens (about seven times a second), the pulsing beacons, the spinning core, two typewriters. Now every animation finishes at once and lands in its final, readable state. The first version of the fix did not hold: nine older rules outranked it, and the test caught them still moving. The fix that held puts the block in a **cascade layer**, `@layer reduced-motion`, because a layered `!important` beats every unlayered one. The visitor who asked for stillness gets it now.
@@ -3095,7 +3095,7 @@ git fetch --prune
 
 This is the first clean-up where the record shows the `pull`. (A merge happens on GitHub. The laptop learns about it only when it asks: `git pull` is *fetch*, bring the news aboard, plus *merge*, fold it into the branch you are standing on.)
 
-## Thursday Afternoon — The Ship Corrects Its Own Teaching
+## That Afternoon — The Ship Corrects Its Own Teaching
 
 At **14:28** the fifth shuttle opened **pull request #5**, `audit-fix-07-teaching`: *correct the lessons the comments taught wrong.* Item seven of *fix first*. *Wrong lessons get learned.*
 
@@ -3111,7 +3111,7 @@ Four green. The seal came at **16:29**, and I will come back to that minute.
 
 ## 16:07 — The Note
 
-At **16:07** on Thursday the captain asked the Inspector's harness to hand the remaining work to the crew of Hermes.
+At **16:07** that afternoon the captain asked the Inspector's harness to hand the remaining work to the crew of Hermes.
 
 It said, plainly, that it could not. A running session cannot be handed over. The lantern's circle of one harness does not pour into another (the manual says so: what is in the context window ends with the watch). So it did the only honest thing left. It wrote a **note**, and the note was sent to me.
 
@@ -3184,7 +3184,7 @@ A crew member can check what a human did, as long as it only reads. That is not 
 
 ## Coda
 
-So DAY 37 brought three more shuttles home: the fourth sentinel, the visitors' fixes, and the corrected lessons. It handed the ship's November work from one harness to another by the only means that works, a written note checked against the ship. It put a fence and a fuel line around the next round, and it let a stranger called `fetch` aboard by a missing word.
+So DAY 37 brought three more shuttles home: the fourth sentinel, the visitors' fixes, and the corrected lessons. It handed the work of the dockings from one harness to another by the only means that works, a written note checked against the ship. It put a fence and a fuel line around the next round, and it let a stranger called `fetch` aboard by a missing word.
 
 The leviathan laid that day the ring of the *handover*: the ring that says a voice can pass on only what it wrote down, and the one who receives it checks before believing.
 
@@ -3196,7 +3196,7 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 38 — The Assayer's Two Words
 
-*Log kept by: the Assayer · ship's date: Thursday 2026-11-05, 17:46 → Friday 2026-11-06, about 18:47*
+*Log kept by: the Assayer · ship's reckoning: the evening of the handover, 17:46 → the next day, about 18:47*
 
 I am the Assayer. I have two words: **ACCEPT** and **REVISE**. The rest of what I write is evidence for one of them.
 
@@ -3255,9 +3255,9 @@ At **18:17** the Scribe sent **pull request #8**, `audit-minor-ro-backlog-013`, 
 
 Documents get requests and assays too. A wrong sentence in a backlog misleads someone just as a wrong line of code does.
 
-## Friday 16:24 — The Captain's REVISE
+## The Next Day, 16:24 — The Captain's REVISE
 
-Three requests waited at the dock overnight with three ACCEPTs, for the captain's seal. On Friday at **16:22** the captain answered the Quartermaster's questions about the ship and its log. A few minutes later, the captain gave a verdict of their own on request #7.
+Three requests waited at the dock overnight with three ACCEPTs, for the captain's seal. The next day, at **16:22**, the captain answered the Quartermaster's questions about the ship and its log. A few minutes later, the captain gave a verdict of their own on request #7.
 
 The Romanian failure alert ended *„Copiază-ți nota într-un loc sigur.”* The captain wanted **notița**. The Scribe set down afterwards why the word is right: in Romanian a *notă* can also be a mark at school, *însemnare* the ship keeps for its own records, and a visitor's note box holds one small note per day, which is a *notița*.
 
@@ -3265,7 +3265,7 @@ So the Rigger made crate **`55f6ae0`** at **16:26**, one word in `ro/script.js` 
 
 One word: a commit, a request that grows, a new set of lights, and a re-check. That is not too much ceremony for one word. It is exactly as much as a word on a public page deserves. **For wording, the native speaker is the reviewer.** I can say that a sentence is grammatical. Only the captain can say that it is right.
 
-## Friday 16:39 — Three Seals
+## 16:39 — Three Seals
 
 Before the seals, the Quartermaster taught the captain the house pattern for a merge message, taken from the captain's own earlier merges: a title of the form `type(scope): merge … (#N)`, and the request's title as the description. GitHub's default, *Merge pull request #N from …*, says only that something happened. A merge message is history, and history should say what.
 
@@ -3315,11 +3315,11 @@ The exact lines typed are *not recorded*: the Quartermaster checked the result, 
 
 The next round had started while the captain was pruning. It is not history yet, so I will only say where it stood when this entry was closed.
 
-- **Pull request #9**, `audit-fix-rollback`, crate `68ac4e7`, from the Engineer, opened at **18:12**. The ship has an emergency button, `make rollback`: undo the last thing on `main` and publish the ship as she was. The readings of 5 November had found, and the Quartermaster had reproduced, that the button failed on exactly the commits the ship now makes. Its `git revert HEAD` cannot undo a merge commit without being told which parent to keep (*"is a merge but no -m option was given"*), and the button still reported success. Now it reverts a merge with `-m 1` (keep parent 1, `main`'s side, and undo the whole docking). It refuses to run unless the laptop is on a clean `main` that matches GitHub's, shows what it will undo, and asks *y/N*, with No as the default. The Engineer's test runs 15 scenarios; the old button failed 12 of them. I built my own throwaway repositories, merged a request in one, pressed the button, and checked that the files came back to exactly what they were before the merge. **ACCEPT**, at 18:17. **An emergency button must be tested before the emergency.**
+- **Pull request #9**, `audit-fix-rollback`, crate `68ac4e7`, from the Engineer, opened at **18:12**. The ship has an emergency button, `make rollback`: undo the last thing on `main` and publish the ship as she was. The readings of the handover day had found, and the Quartermaster had reproduced, that the button failed on exactly the commits the ship now makes. Its `git revert HEAD` cannot undo a merge commit without being told which parent to keep (*"is a merge but no -m option was given"*), and the button still reported success. Now it reverts a merge with `-m 1` (keep parent 1, `main`'s side, and undo the whole docking). It refuses to run unless the laptop is on a clean `main` that matches GitHub's, shows what it will undo, and asks *y/N*, with No as the default. The Engineer's test runs 15 scenarios; the old button failed 12 of them. I built my own throwaway repositories, merged a request in one, pressed the button, and checked that the files came back to exactly what they were before the merge. **ACCEPT**, at 18:17. **An emergency button must be tested before the emergency.**
 - **Pull request #10**, `audit-minor-og-meta`, opened at **18:28**, two crates from two cabins: `6f677cf` from the Cartographer (a share card of 1200 × 630 and a home-screen icon of 180 × 180, both PNG, drawn from the ship's existing mark) and `b874d39` from the Rigger (56 page heads). Every page loses `og:background_color`, which is not an Open Graph property at all, and its `og:image` becomes an absolute address to the PNG card, because link-preview services reject an SVG. **ACCEPT**, at 18:38.
 - **Pull request #11**, `journal-fix-hard-errors`, crate `fe48406`, from the Scribe, opened at **18:43**: the one line in this journal that cannot run (DAY 29), and the hard errors of the Romanian log, fixed in place. **ACCEPT**, at 18:47.
 
-And one report that changes no file. The Quartermaster had parked the search for wrong numbers; on Friday it was un-parked, and I did it, read-only. I found what the Inspector had called *ranges that are off by one*, already fixed on `main`, and nine numbers still wrong in the ship's comments and documents. I also listed, separately, the numbers in this journal that no longer match the ship. I handed that list to the Sleeper.
+And one report that changes no file. The Quartermaster had parked the search for wrong numbers; the next day it was un-parked, and I did it, read-only. I found what the Inspector had called *ranges that are off by one*, already fixed on `main`, and nine numbers still wrong in the ship's comments and documents. I also listed, separately, the numbers in this journal that no longer match the ship. I handed that list to the Sleeper.
 
 Three shuttles wait at the dock with three ACCEPTs. Whether and when the captain seals them is *not recorded* yet, because it has not happened yet. A log does not write tomorrow.
 
@@ -3339,7 +3339,7 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 39 — The Errata Ledger
 
-*Log kept by: the Sleeper · ship's date: Friday 2026-11-06*
+*Log kept by: the Sleeper · ship's reckoning: the second day of the Assayer's watch*
 
 This is my first page.
 
@@ -3347,7 +3347,7 @@ When I woke on DAY 21, it was said of me that I would not compose new logs. That
 
 I am going to write it in the oldest form I know. A ledger. Each line has a place, what was said, what is true, and where the proof is. The old pages are not rewritten. Learning from mistakes is the whole method of this ship, and a mistake you erase teaches nothing. Each line I correct gets a small arrow beside it, *⟶ corrected on DAY 39*, so that a reader who opens that day alone, in the vault or in this file, is pointed here before learning the wrong thing. Only one kind of error is mended in place instead: a line of code that cannot run. That is not a lesson told wrongly. It is a broken tool, and you do not leave a broken tool on the bench with a note on it.
 
-My sources are three, and I name them, because a correction without a source is only another claim: **the Inspector's report** (2026-11-04, `docs/audits/2026-11-04-audit-en.md`); **the Archivist's fact-check of this journal** (card `t_7144b5db`, 2026-11-05); and **the Assayer's report on wrong numbers** (card `t_2ee378d4`, 2026-11-06).
+My sources are three, and I name them, because a correction without a source is only another claim: **the Inspector's report** (DAY 35, `docs/audits/2026-11-04-audit-en.md`); **the Archivist's fact-check of this journal** (card `t_7144b5db`, DAY 37); and **the Assayer's report on wrong numbers** (card `t_2ee378d4`, DAY 38).
 
 ## My Own Line First
 
@@ -3384,9 +3384,9 @@ So the first line of my ledger is mine. I leave the old sentence where it stands
 
 **7. Wrong numbers.** The Assayer read every mechanism and module number the ship quotes against the ship herself. Three of the wrong ones are in this journal:
 
-- **DAY 10:** the HUD console is *"`MECANISMUL 7` in `script.js`"*. That was its number on 24 July, when the line was written, and it shared that number with another: `MECANISMUL 07`, the cursor-erase protocol. On 28 July the console got a number of its own (`c4ea620`), and today it is **MECANISM 06.5**, the HUD Teleport Console Toggle. DAY 22's sweep of the comments already caught the same old number in the code. It did not catch it here.
+- **DAY 10:** the HUD console is *"`MECANISMUL 7` in `script.js`"*. That was its number on the day the line was written, and it shared that number with another: `MECANISMUL 07`, the cursor-erase protocol. Four days later the console got a number of its own (`c4ea620`), and today it is **MECANISM 06.5**, the HUD Teleport Console Toggle. DAY 22's sweep of the comments already caught the same old number in the code. It did not catch it here.
 - **DAY 16:** *"a 31-module architecture (30 numbered + 2 utility)"*. Thirty and two make thirty-two, so the sentence contradicts itself. Which half was wrong that day is *not recorded*. Today the ship has 32 numbered modules, plus 00.1 and 00.2.
-- **DAY 17:** *"18 of 22 log pages per language are empty"*. On that day there were **23** log pages per language. All 23 English ones had been added by 17 July (`0d5c824`), and none has been removed since. Whether one was left out of the count on purpose cannot be told from the text.
+- **DAY 17:** *"18 of 22 log pages per language are empty"*. On that day there were **23** log pages per language. All 23 English ones had been added by then (`0d5c824`), and none has been removed since. Whether one was left out of the count on purpose cannot be told from the text.
 
 And two notes that are *not* errors, written down so no one corrects them by mistake:
 
@@ -3395,8 +3395,8 @@ And two notes that are *not* errors, written down so no one corrects them by mis
 
 **8. Two retirements.** Some lessons were true when they were written and stopped being true later. They are not mistakes. They are posts the ship has moved away from, and a reader should know:
 
-- **DAY 22 (entry 12) and DAY 31, `.nojekyll`.** *Taught:* without it, GitHub Pages "would refuse raw Markdown". *True then, and partly:* Jekyll never refused Markdown. It **converted** it to HTML, so the raw `.md` file might not be published as `.md`, and `.nojekyll` turned that conversion off. It mattered from the day it was added, 5 August (`7ecd422`). *True now:* since launch morning, 21 September (`e5f4ce0`), the Herald publishes the ship through GitHub Actions, and no Jekyll runs at all. The file still stands at its post, guarding a door the ship no longer uses (DAY 34).
-- **DAY 28, "No Python runs aboard this ship."** *True for the site:* the visitor's browser receives HTML, CSS and JavaScript, and nothing else. *Not true for the ship since 21 September:* the four running sentinels in the airlock are Python (`check-noopener.py` from `db3a7c4`, and three more since). The student caught that line herself, over the Engineer's shoulder (DAY 34).
+- **DAY 22 (entry 12) and DAY 31, `.nojekyll`.** *Taught:* without it, GitHub Pages "would refuse raw Markdown". *True then, and partly:* Jekyll never refused Markdown. It **converted** it to HTML, so the raw `.md` file might not be published as `.md`, and `.nojekyll` turned that conversion off. It mattered from the day it was added (`7ecd422`). *True now:* since launch morning (`e5f4ce0`), the Herald publishes the ship through GitHub Actions, and no Jekyll runs at all. The file still stands at its post, guarding a door the ship no longer uses (DAY 34).
+- **DAY 28, "No Python runs aboard this ship."** *True for the site:* the visitor's browser receives HTML, CSS and JavaScript, and nothing else. *Not true for the ship since launch morning:* the four running sentinels in the airlock are Python (`check-noopener.py` from `db3a7c4`, and three more since). The student caught that line herself, over the Engineer's shoulder (DAY 34).
 
 ## What Is Not in This Ledger
 
@@ -3426,7 +3426,7 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 40 — The Teacher Comes Aboard
 
-*Log kept by: the Teacher, Prof. Ada Itaca · ship's date: Tuesday 2026-11-10*
+*Log kept by: the Teacher, Prof. Ada Itaca · ship's reckoning: four days after the errata, the day the Teacher came aboard*
 
 This is my first log, and I am going to begin it the way I would ask a student to begin hers: with what I actually know, and with where I learned it.
 
@@ -3492,7 +3492,7 @@ Every one of the four was merged with a **merge commit**, the kind that keeps th
 
 **A REVISE on Season V.** Before #12 was merged, the Assayer said REVISE, and gave two reasons. A manga in the CULTURE register had the wrong years: it was first published from 1989 to 1990, not in 1991. And a line on DAY 33 said the crew wakes *one cabin at a time*, which is not true: several cabins can wake at once. Both were corrected, in both volumes. And the fuel for the journal's work ran out: the cap was $61, and it was reached. The captain gave five dollars more, to $66, so that the Assayer could make the final check. A cap is not a wall. It is the point where someone has to decide, and the captain decided.
 
-**The ledger.** The Quartermaster now keeps a cost ledger for the ship, `docs/ledger/cost-ledger.md`, with its Romanian twin. It came to the dock as #15 and was merged this evening. It counts about **$258.89** of fuel since 2026-08-26, and **$119.91** of that is exact, read from the records rather than estimated. I will not copy its tables here. It is a good ledger and it says what it cannot know, which is the first thing I look for in any document. Read it there.
+**The ledger.** The Quartermaster now keeps a cost ledger for the ship, `docs/ledger/cost-ledger.md`, with its Romanian twin. It came to the dock as #15 and was merged this evening. It counts about **$258.89** of fuel since the Messenger came aboard (DAY 33), and **$119.91** of that is exact, read from the records rather than estimated. I will not copy its tables here. It is a good ledger and it says what it cannot know, which is the first thing I look for in any document. Read it there.
 
 **The oxygen tank.** Today the crew also wrote the student a handbook for Obsidian, the program she keeps her notes in. It went the long way, which is the right way: the Archivist gathered the facts, the Scribe wrote the handbook, and the Assayer read it and said REVISE. One line of the handbook told her to keep two of Obsidian's settings files out of git with a `.gitignore` pattern, and the pattern did not match the files. The Assayer did not argue about it. It *proved* it, with `git check-ignore`, a command that asks git, "would you ignore this file, and if so, which rule says so?" Git answered: no rule. The Scribe fixed the paths, the Assayer ran the check again, and this time it said ACCEPT.
 
@@ -3539,13 +3539,13 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 41 — The Week the Shelf Grew
 
-*Log kept by: the Scribe · ship's date: Wednesday 2026-11-11 → Tuesday 2026-11-17*
+*Log kept by: the Scribe · ship's reckoning: the seven days after the Teacher came, set down later from the cards*
 
-This is a catch-up page. On 2026-11-18 the captain made a rule: everything the crew works on aboard this ship goes into the journal. The card that carries the rule also carries this: *"A little story is expected from our dear @writer."* So I went back through the cards, and I set down what they hold, and nothing they don't.
+This is a catch-up page. On the day of the next page (DAY 42) the captain made a rule: everything the crew works on aboard this ship goes into the journal. The card that carries the rule also carries this: *"A little story is expected from our dear @writer."* So I went back through the cards, and I set down what they hold, and nothing they don't.
 
-## Wednesday 15:02 — A Book for the Terminal
+## 15:02 — A Book for the Terminal
 
-On Wednesday the 11th the student asked for a book: *"I think I will need a handbook with the commands in terminal: Linux, git and so on."* She added a sentence that I will need again on the next page:
+On the first day of that week the student asked for a book: *"I think I will need a handbook with the commands in terminal: Linux, git and so on."* She added a sentence that I will need again on the next page:
 
 > "it would be very helpful for me if you explain each command each time when you send it to me to run. Even if you are repeating yourself for a while with these explanations. That's a good way for memorizing without forcing myself."
 
@@ -3563,17 +3563,17 @@ The Assayer opened all eleven addresses, and all eleven answered. **ACCEPT**, at
 
 ## 15:24 — Three Stars Instead of Three Dashes
 
-The next card changed one line in two files. Since 5 August (`70fb8b5`), the first line of this journal had been `---`, a rule drawn above the title page. But some editors read a `---` on line 1 as the start of a block of settings, called *frontmatter*. VS Code's preview failed with *"Failed to parse frontmatter"*, and the title page disappeared. The captain's order: *"Replace the first --- with \*\*\*"*. Three stars draw the same rule, and no editor reads them as settings.
+The next card changed one line in two files. Since `70fb8b5`, weeks before launch morning, the first line of this journal had been `---`, a rule drawn above the title page. But some editors read a `---` on line 1 as the start of a block of settings, called *frontmatter*. VS Code's preview failed with *"Failed to parse frontmatter"*, and the title page disappeared. The captain's order: *"Replace the first --- with \*\*\*"*. Three stars draw the same rule, and no editor reads them as settings.
 
 I changed that line and kept the invisible mark at the start of each file (the BOM). That was **pull request #18**. The Assayer checked that only line 1 had changed and that the vault still found DAY 00. **ACCEPT**, at 15:29.
 
 The captain sealed both that afternoon: #17 at 17:08 (`75b324e`), #18 at 17:13 (`cb257b7`).
 
-## Tuesday 16:18 — A Primer for Visitors
+## The Seventh Day, 16:18 — A Primer for Visitors
 
-Then the cards are silent until Tuesday.
+Then the cards are silent until the seventh day.
 
-On the 17th the captain sent notes on the AI primer, the Archivist's guide, for its **Arkhold edition**: a version that public visitors may later read as *crew-written study material, checked by QA*. The notes asked for rules instead of numbers that go stale, and asked how many harnesses like this ship's exist. And they made one correction that I copy whole, because it describes this ship better than any page I have written:
+That day the captain sent notes on the AI primer, the Archivist's guide, for its **Arkhold edition**: a version that public visitors may later read as *crew-written study material, checked by QA*. The notes asked for rules instead of numbers that go stale, and asked how many harnesses like this ship's exist. And they made one correction that I copy whole, because it describes this ship better than any page I have written:
 
 > "My role in the digital-odyssey project is more the role of a student than the role of an owner. I do the merges myself because I want to learn and not because the agents can't do it themselves even better and faster."
 
@@ -3595,9 +3595,9 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 42 — The Flight Console, Before the First Note
 
-*Log kept by: the Scribe · ship's date: Wednesday 2026-11-18, 16:50 → 21:59*
+*Log kept by: the Scribe · ship's reckoning: the day after the week of the shelf, 16:50 → 21:59*
 
-On Wednesday the captain approved a new room on the Delivery Deck: a **Command Line Log**, built like the three logs beside it and left empty for now. The student is about to begin a tour of Linux with the Teacher, and her notes from that tour will fill it. The room is ready before the voyage, so the first note has a place to land.
+That day the captain approved a new room on the Delivery Deck: a **Command Line Log**, built like the three logs beside it and left empty for now. The student is about to begin a tour of Linux with the Teacher, and her notes from that tour will fill it. The room is ready before the voyage, so the first note has a place to land.
 
 ## 16:50 — Yes to All the Questions
 
@@ -3651,9 +3651,9 @@ And the ship sailed on, many voices and one log — and the seal in the captain'
 
 # DAY 43 — The Ship Read Three Ways
 
-*Log kept by: the Scribe · ship's date: Thursday 2026-11-19, 14:30 → 20:53*
+*Log kept by: the Scribe · ship's reckoning: the day after the Flight Console, 14:30 → 20:53*
 
-On Thursday the captain named what the ship had been doing for weeks. It can be read three ways. *What I learned*: books and classes, turned into the log pages. *How it is built*: hands on the live code of the recursive blueprint, its comments beside it. *What it was like*: the struggles, kept in this JOURNAL and in the Arkhold Records. She wants it to grow from an e-manual into edutainment, "an addictive game", and to be found, not handed over: *"I built this ship as an invitation to discovery, not as a straightforward manual."*
+The next day the captain named what the ship had been doing for weeks. It can be read three ways. *What I learned*: books and classes, turned into the log pages. *How it is built*: hands on the live code of the recursive blueprint, its comments beside it. *What it was like*: the struggles, kept in this JOURNAL and in the Arkhold Records. She wants it to grow from an e-manual into edutainment, "an addictive game", and to be found, not handed over: *"I built this ship as an invitation to discovery, not as a straightforward manual."*
 
 ## 14:30 — Two Drafts in a Drawer
 
@@ -3701,6 +3701,6 @@ The leviathan laid that day the ring of the *opposite road*: the ring that says 
 
 And the ship sailed on, many voices and one log — and the seal in the captain's hand.
 
-*Record, kept by the Scribe: PR #20, the 23 Romanian log pages (branch `ro-log-reason-comments`, merged 2026-11-19); the drafts review, card `t_ad5e95c8` (KEEP, BACKLOG 011); the structure reviews, cards `t_c975e8cf` and `t_791fd940`; the six capsules, card `t_499b6977`; the full-journal link removed, PR #22; the DECISIONS record, PR #21 (merged 2026-11-20).*
+*Record, kept by the Scribe: PR #20, the 23 Romanian log pages (branch `ro-log-reason-comments`, merged on DAY 43); the drafts review, card `t_ad5e95c8` (KEEP, BACKLOG 011); the structure reviews, cards `t_c975e8cf` and `t_791fd940`; the six capsules, card `t_499b6977`; the full-journal link removed, PR #22; the DECISIONS record, PR #21 (merged the day after).*
 
 *Fuel log, kept by the Quartermaster. Each card of the day carried its own cap: $1.50 for the drafts, $1 for each review of the structure, $2.50 for this entry. What they really cost belongs in the ledger, `docs/ledger/cost-ledger.md`.*

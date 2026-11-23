@@ -138,6 +138,8 @@ Numiți în poveste, dar niciodată naratori: Gabierul (`frontend`) și Cartogra
 
 Fiecare intrare, nouă sau veche (din ZIUA 00 încoace), e două lucruri deodată: o poveste științifico-fantastică și o consemnare clară, exactă tehnic, a zilei. Adâncimea tehnică trăiește în scenă: problema reală, reparația reală, termenii corecți, cod când contează. Faptul tehnic gol e spus mereu frumos, epic, ca legendă: JURNALUL e mitul unei aventuri tehnice, niciodată un manual. Legenda nu are voie să coste exactitatea faptelor. Evidența (nume de ramuri, SHA-uri, id-uri de carduri, numere de PR) merge în rândurile de jurnal de la final, ca jurnalul combustibilului, nu în corpul textului.
 
+**Niciun calendar în roman (de la ZIUA 33 încoace, și în fiecare ZI nouă; DECISIONS 68).** Niciun narator nu scrie în JURNAL o dată reală din calendar, o lună sau o zi a săptămânii fără sens în poveste: antetul spune `socoteala navei:`, textul numără timpul pe ZILE și relativ, ceasul își păstrează orele, iar datele reale merg în `docs/journal-concordance.md`.
+
 ---
 
 *Aceste principii sunt vii — ele evoluează pe măsură ce proiectul crește. Actualizați acest fișier atunci când o nouă convenție devine permanentă.*
